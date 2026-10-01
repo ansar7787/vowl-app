@@ -6,661 +6,649 @@
         {
             "id": "SPK_DIALOGUEROLEPLAY_L31_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you're visiting your cousin.",
-            "explanation": "'I'm going to...' is a simple, natural way to talk about weekend plans.",
-            "partnerDialogue": "What are your plans for the weekend?",
-            "sampleAnswer": "I'm going to visit my cousin.",
+            "instruction": "Handle a wrong-person call.",
+            "hint": "Say Marco is out and offer to take a message.",
+            "explanation": "On the phone, \"Can I take a message?\" is the standard way to offer help when someone is unavailable.",
+            "partnerDialogue": "Hello, is Marco there?",
+            "sampleAnswer": "He's not here at the moment. Can I pass on a message?",
             "acceptedSynonyms": [
-                "visit my cousin",
-                "going to visit family",
-                "see my cousin",
-                "visiting my cousin"
+                "he's not here at the moment. can i pass on a message",
+                "sorry, he's not in. would you like to leave a message",
+                "he's out right now. can i take a message"
             ],
-            "correctAnswer": "I'm going to visit my cousin.",
             "smartReplies": [
-                "I'm going to visit my cousin.",
-                "Visiting my cousin, actually.",
-                "I'll probably visit my cousin."
+                "Sorry, he's not in. Would you like to leave a message?",
+                "He's not here at the moment. Can I pass on a message?",
+                "He's out right now. Can I take a message?"
             ],
+            "correctAnswer": "He's not here at the moment. Can I pass on a message?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L31_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say yes, and name the chess club.",
-            "explanation": "Naming a specific club makes a yes/no answer feel much more personal.",
-            "partnerDialogue": "Are you joining any clubs this term?",
-            "sampleAnswer": "Yes, I'm joining the chess club.",
+            "instruction": "Reschedule a call.",
+            "hint": "You're in a meeting. Ask them to call back at two.",
+            "explanation": "Explain why in three words, then give a specific time. \"Call back later\" alone is too vague to be useful.",
+            "partnerDialogue": "Hi, it's Priya from the bank. Is this a good time to talk?",
+            "sampleAnswer": "Actually, I'm in a meeting. Could you call back at two?",
             "acceptedSynonyms": [
-                "joining the chess club",
-                "yes, chess club",
-                "the chess club",
-                "signing up for chess"
+                "actually, i'm in a meeting. could you call back at two",
+                "i'm busy right now. could we talk at two",
+                "not really. can you call me back after two",
+                "actually, i am in a meeting. could you call back at two"
             ],
-            "correctAnswer": "Yes, I'm joining the chess club.",
             "smartReplies": [
-                "Yes, I'm joining the chess club.",
-                "I'm joining the chess club.",
-                "Yes, the chess club, actually."
+                "Actually, I'm in a meeting. Could you call back at two?",
+                "I'm busy right now. Could we talk at two?",
+                "Not really. Can you call me back after two?"
             ],
+            "correctAnswer": "Actually, I'm in a meeting. Could you call back at two?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L31_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say Thursday only, for a few hours.",
-            "explanation": "Limiting your answer to one day shows how to give a precise, not overly long, response.",
-            "partnerDialogue": "Are you working overtime this week?",
-            "sampleAnswer": "Just on Thursday, for a few hours.",
+            "instruction": "Fix a bad connection.",
+            "hint": "Explain the signal is bad and say what you'll do.",
+            "explanation": "Naming the problem and your solution together shows you're handling it, and the caller doesn't have to guess.",
+            "partnerDialogue": "Hello? I can't hear you very well.",
+            "sampleAnswer": "Sorry, the signal's bad. Let me move to another room.",
             "acceptedSynonyms": [
-                "just on thursday",
-                "a few hours thursday",
-                "only thursday",
-                "thursday, briefly"
+                "sorry, the signal's bad. let me move to another room",
+                "the line's breaking up. i'll call you back in a minute",
+                "sorry about that. i'll go somewhere with better signal"
             ],
-            "correctAnswer": "Just on Thursday, for a few hours.",
             "smartReplies": [
-                "Just on Thursday, for a few hours.",
-                "Only Thursday, a few hours.",
-                "Just Thursday afternoon, briefly."
+                "The line's breaking up. I'll call you back in a minute.",
+                "Sorry about that. I'll go somewhere with better signal.",
+                "Sorry, the signal's bad. Let me move to another room."
             ],
+            "correctAnswer": "Sorry, the signal's bad. Let me move to another room.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L32_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say almost, and mention your charger.",
-            "explanation": "'Almost' plus one missing item is a natural way to answer an unfinished task.",
-            "partnerDialogue": "Did you pack everything you need?",
-            "sampleAnswer": "Almost, I still need to grab my charger.",
+            "instruction": "Confirm a booking.",
+            "hint": "Give the name and the number of nights.",
+            "explanation": "Front desks need two facts: the name on the booking and how long you are staying.",
+            "partnerDialogue": "Good evening. Do you have a reservation with us?",
+            "sampleAnswer": "Yes, the booking is in the name of Okafor. Two nights.",
             "acceptedSynonyms": [
-                "still need my charger",
-                "almost, just the charger",
-                "need to grab my charger",
-                "forgot my charger"
+                "yes, the booking is in the name of okafor. two nights",
+                "yes, under the name okafor, for two nights",
+                "i do. it's under okafor, two nights"
             ],
-            "correctAnswer": "Almost, I still need to grab my charger.",
             "smartReplies": [
-                "Almost, I still need to grab my charger.",
-                "Almost — just my charger left.",
-                "Nearly, I still need my charger."
+                "Yes, the booking is in the name of Okafor. Two nights.",
+                "Yes, under the name Okafor, for two nights.",
+                "I do. It's under Okafor, two nights."
             ],
+            "correctAnswer": "Yes, the booking is in the name of Okafor. Two nights.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L32_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say yes, and that they found it relaxing.",
-            "explanation": "Reporting someone else's opinion with 'they said...' is a useful everyday structure.",
-            "partnerDialogue": "Did your parents enjoy the trip?",
-            "sampleAnswer": "Yes, they said it was relaxing.",
+            "instruction": "React and ask about cost.",
+            "hint": "Say that sounds good and ask if breakfast is included.",
+            "explanation": "Reacting first, then asking a practical question, sounds friendlier than firing off questions.",
+            "partnerDialogue": "Breakfast is served from seven to ten in the restaurant.",
+            "sampleAnswer": "Lovely. Does the room price include it?",
             "acceptedSynonyms": [
-                "said it was relaxing",
-                "yes, very relaxing",
-                "they loved it",
-                "found it relaxing"
+                "lovely. does the room price include it",
+                "good to know. is that included",
+                "great. is it included in the price",
+                "is it included"
             ],
-            "correctAnswer": "Yes, they said it was relaxing.",
             "smartReplies": [
-                "Yes, they said it was relaxing.",
-                "They said it was relaxing.",
-                "Yes, very relaxing, apparently."
+                "Good to know. Is that included?",
+                "Lovely. Does the room price include it?",
+                "Great. Is it included in the price?"
             ],
+            "correctAnswer": "Lovely. Does the room price include it?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L32_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say yes, and where the coupon came from.",
-            "explanation": "Mentioning the source of the coupon makes this a clear, complete shopping answer.",
-            "partnerDialogue": "Did you use a coupon for this order?",
-            "sampleAnswer": "Yes, I used the one from the email.",
+            "instruction": "Refuse help politely.",
+            "hint": "Say you can manage your bag and ask where the lift is.",
+            "explanation": "\"I can manage\" is the polite way to refuse help without sounding cold.",
+            "partnerDialogue": "Your room's on the fourth floor. Would you like help with your luggage?",
+            "sampleAnswer": "No need, it's light. Where's the elevator?",
             "acceptedSynonyms": [
-                "used the email coupon",
-                "yes, from the email",
-                "coupon from email",
-                "used one from email"
+                "no need, it's light. where's the elevator",
+                "i'm fine, thank you. which way is the elevator",
+                "no, thanks, i can manage. where's the lift",
+                "no, thanks, i can manage",
+                "no need, it is light. where's the elevator"
             ],
-            "correctAnswer": "Yes, I used the one from the email.",
             "smartReplies": [
-                "Yes, I used the one from the email.",
-                "I used the one from the email.",
-                "Yes, the coupon from the email."
+                "No need, it's light. Where's the elevator?",
+                "I'm fine, thank you. Which way is the elevator?",
+                "No, thanks, I can manage. Where's the lift?"
             ],
+            "correctAnswer": "No need, it's light. Where's the elevator?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L33_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say a little, but you still enjoyed it.",
-            "explanation": "Combining a mild complaint with a positive note keeps the answer honest and polite.",
-            "partnerDialogue": "Was the food too spicy for you?",
-            "sampleAnswer": "A little, but I still enjoyed it.",
+            "instruction": "Summarize an experience.",
+            "hint": "Say the trip was great, but mention the rain.",
+            "explanation": "\"But\" and \"though\" let you mix good and bad in one sentence, which sounds like real speech.",
+            "partnerDialogue": "How was your trip to Istanbul?",
+            "sampleAnswer": "It was wonderful. The food was amazing, but it rained twice.",
             "acceptedSynonyms": [
-                "a little spicy",
-                "still enjoyed it",
-                "a bit, but good",
-                "enjoyed it anyway"
+                "it was wonderful. the food was amazing, but it rained twice",
+                "great! we ate so well, though it rained a bit",
+                "really good. it rained two days, but the food was amazing"
             ],
-            "correctAnswer": "A little, but I still enjoyed it.",
             "smartReplies": [
-                "A little, but I still enjoyed it.",
-                "A bit spicy, but good.",
-                "A little, though I liked it anyway."
+                "Great! We ate so well, though it rained a bit.",
+                "It was wonderful. The food was amazing, but it rained twice.",
+                "Really good. It rained two days, but the food was amazing."
             ],
+            "correctAnswer": "It was wonderful. The food was amazing, but it rained twice.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L33_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and say when you can help.",
-            "explanation": "Offering a specific time, like 'after lunch', makes an offer to help sound genuine.",
-            "partnerDialogue": "Can you help me set up my new tablet?",
-            "sampleAnswer": "Sure, I can help you after lunch.",
+            "instruction": "Explain what you missed.",
+            "hint": "Say you missed the game because you worked late.",
+            "explanation": "\"I missed it\" plus a reason is a full answer. Nobody needs an apology for missing a match.",
+            "partnerDialogue": "Did you see the game last night?",
+            "sampleAnswer": "No, I missed it. I was working late.",
             "acceptedSynonyms": [
-                "help after lunch",
-                "sure, after lunch",
-                "can help later",
-                "yes, after lunch"
+                "no, i missed it. i was working late",
+                "no, i was stuck at the office",
+                "i didn't, unfortunately. i had to work late"
             ],
-            "correctAnswer": "Sure, I can help you after lunch.",
             "smartReplies": [
-                "Sure, I can help you after lunch.",
-                "I can help after lunch.",
-                "Sure, right after lunch works."
+                "No, I was stuck at the office.",
+                "I didn't, unfortunately. I had to work late.",
+                "No, I missed it. I was working late."
             ],
+            "correctAnswer": "No, I missed it. I was working late.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L33_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say a little better, and thank them.",
-            "explanation": "Thanking someone for asking about your health is a warm, natural touch.",
-            "partnerDialogue": "Are you feeling better than yesterday?",
-            "sampleAnswer": "A little better, thank you for asking.",
+            "instruction": "Explain an injury.",
+            "hint": "Say you fell off your bike and it's only a sprain.",
+            "explanation": "Adding \"only\" or \"just\" tells the listener not to worry, which is what they really want to know.",
+            "partnerDialogue": "What happened to your arm?",
+            "sampleAnswer": "I came off my bike last week. It's just a sprain.",
             "acceptedSynonyms": [
-                "a little better",
-                "feeling better",
-                "thanks for asking",
-                "better than yesterday"
+                "i came off my bike last week. it's just a sprain",
+                "i fell off my bike last week. it's only a sprain",
+                "nothing serious. i fell off my bike and sprained it",
+                "i came off my bike last week. it is just a sprain"
             ],
-            "correctAnswer": "A little better, thank you for asking.",
             "smartReplies": [
-                "A little better, thank you for asking.",
-                "A bit better, thanks.",
-                "Better today, thank you."
+                "I fell off my bike last week. It's only a sprain.",
+                "I came off my bike last week. It's just a sprain.",
+                "Nothing serious. I fell off my bike and sprained it."
             ],
+            "correctAnswer": "I came off my bike last week. It's just a sprain.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L34_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say yes, and mention the new film.",
-            "explanation": "Naming the specific movie makes your weekend plan sound more concrete.",
-            "partnerDialogue": "Are you going to the movies this weekend?",
-            "sampleAnswer": "Yes, we're planning to see the new film.",
+            "instruction": "Talk about holiday plans.",
+            "hint": "Say where you're going and who you're visiting.",
+            "explanation": "Use \"going to\" or the present continuous (\"we're flying\") for plans that are already arranged.",
+            "partnerDialogue": "Any plans for the holidays?",
+            "sampleAnswer": "We're flying to Lisbon to see my grandparents.",
             "acceptedSynonyms": [
-                "see the new film",
-                "yes, the new movie",
-                "planning to watch it",
-                "going to see it"
+                "we're flying to lisbon to see my grandparents",
+                "we're going to lisbon to visit my grandparents",
+                "yes, we're visiting my grandparents in lisbon",
+                "we are flying to lisbon to see my grandparents"
             ],
-            "correctAnswer": "Yes, we're planning to see the new film.",
             "smartReplies": [
-                "Yes, we're planning to see the new film.",
-                "We're planning to see the new film.",
-                "Yes, the new film, hopefully."
+                "We're going to Lisbon to visit my grandparents.",
+                "Yes, we're visiting my grandparents in Lisbon.",
+                "We're flying to Lisbon to see my grandparents."
             ],
+            "correctAnswer": "We're flying to Lisbon to see my grandparents.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L34_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say it was busy, but still good.",
-            "explanation": "Combining two contrasting details, busy and good, makes an answer feel balanced and real.",
-            "partnerDialogue": "How was your day yesterday?",
-            "sampleAnswer": "It was busy, but pretty good overall.",
+            "instruction": "Answer and probe.",
+            "hint": "Say you're meeting a friend and ask why they are asking.",
+            "explanation": "\"Why, what's up?\" is a natural way to find out if the question hides an invitation.",
+            "partnerDialogue": "What are you doing after class?",
+            "sampleAnswer": "Nothing much. Why, do you have an idea?",
             "acceptedSynonyms": [
-                "busy but good",
-                "pretty good overall",
-                "busy, though fine",
-                "good, just busy"
+                "nothing much. why, do you have an idea",
+                "not sure yet. why? did you want to do something",
+                "i'm meeting a friend for coffee. why, what's up"
             ],
-            "correctAnswer": "It was busy, but pretty good overall.",
             "smartReplies": [
-                "It was busy, but pretty good overall.",
-                "Busy, but good overall.",
-                "Pretty good, just a busy day."
+                "Not sure yet. Why? Did you want to do something?",
+                "I'm meeting a friend for coffee. Why, what's up?",
+                "Nothing much. Why, do you have an idea?"
             ],
+            "correctAnswer": "Nothing much. Why, do you have an idea?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L34_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say the holiday starts in two weeks.",
-            "explanation": "'It starts in...' is the standard pattern for describing an upcoming date.",
-            "partnerDialogue": "When is the next school holiday?",
-            "sampleAnswer": "It starts in about two weeks.",
+            "instruction": "Express an uncertain plan.",
+            "hint": "Say you'd like to take the exam but you're not sure yet.",
+            "explanation": "\"I'd like to, but...\" is a good way to state a wish and an honest doubt together.",
+            "partnerDialogue": "Are you going to take the exam this year?",
+            "sampleAnswer": "I'd like to, but I'm not sure I'm ready yet.",
             "acceptedSynonyms": [
-                "in two weeks",
-                "starts in two weeks",
-                "about two weeks away",
-                "two weeks from now"
+                "i'd like to, but i'm not sure i'm ready yet",
+                "maybe. it depends on my practice test results",
+                "that's the plan, but i need more practice first",
+                "i would like to, but i am not sure i am ready yet"
             ],
-            "correctAnswer": "It starts in about two weeks.",
             "smartReplies": [
-                "It starts in about two weeks.",
-                "In about two weeks.",
-                "Two weeks from now, I believe."
+                "Maybe. It depends on my practice test results.",
+                "I'd like to, but I'm not sure I'm ready yet.",
+                "That's the plan, but I need more practice first."
             ],
+            "correctAnswer": "I'd like to, but I'm not sure I'm ready yet.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L35_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Name the coworker covering for you.",
-            "explanation": "Naming a specific person makes a workplace answer clear and useful.",
-            "partnerDialogue": "Who is covering for you tomorrow?",
-            "sampleAnswer": "My coworker Sam is covering for me.",
+            "instruction": "Describe a person.",
+            "hint": "Describe your new boss: tall, short grey hair, glasses.",
+            "explanation": "Start with the biggest visible feature (height) and then add smaller ones. It keeps descriptions clear.",
+            "partnerDialogue": "What does your new boss look like?",
+            "sampleAnswer": "She's tall, with short grey hair and glasses.",
             "acceptedSynonyms": [
-                "sam is covering",
-                "my coworker sam",
-                "sam's covering for me",
-                "sam will cover"
+                "she's tall, with short grey hair and glasses",
+                "she's quite tall and wears glasses. her hair's short and grey",
+                "tall, short grey hair, glasses. you can't miss her",
+                "she's tall with short grey hair"
             ],
-            "correctAnswer": "My coworker Sam is covering for me.",
             "smartReplies": [
-                "My coworker Sam is covering for me.",
-                "Sam's covering for me.",
-                "Sam will be covering my shift."
+                "She's tall, with short grey hair and glasses.",
+                "She's quite tall and wears glasses. Her hair's short and grey.",
+                "Tall, short grey hair, glasses. You can't miss her."
             ],
+            "correctAnswer": "She's tall, with short grey hair and glasses.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L35_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Suggest a safe departure time.",
-            "explanation": "'We should leave by...' is a natural way to suggest a plan with a reason.",
-            "partnerDialogue": "What time should we leave for the airport?",
-            "sampleAnswer": "We should leave by seven to be safe.",
+            "instruction": "Describe a place with a contrast.",
+            "hint": "Say it's quiet and green but has few shops.",
+            "explanation": "A positive and a negative (\"but there aren't many\") makes a description feel honest.",
+            "partnerDialogue": "What's your neighborhood like?",
+            "sampleAnswer": "Very peaceful, with lots of trees, but few shops.",
             "acceptedSynonyms": [
-                "leave by seven",
-                "by seven, to be safe",
-                "seven, just in case",
-                "leave around seven"
+                "very peaceful, with lots of trees, but few shops",
+                "it's quiet and green, but there aren't many shops",
+                "pretty quiet. there's a big park, but not many stores"
             ],
-            "correctAnswer": "We should leave by seven to be safe.",
             "smartReplies": [
-                "We should leave by seven to be safe.",
-                "Let's leave by seven, just in case.",
-                "Better leave by seven."
+                "It's quiet and green, but there aren't many shops.",
+                "Pretty quiet. There's a big park, but not many stores.",
+                "Very peaceful, with lots of trees, but few shops."
             ],
+            "correctAnswer": "Very peaceful, with lots of trees, but few shops.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L35_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say how often you call: every Sunday.",
-            "explanation": "Adverbs of frequency, like 'every Sunday', describe habits clearly and naturally.",
-            "partnerDialogue": "How often do you call your grandmother?",
-            "sampleAnswer": "I call her every Sunday evening.",
+            "instruction": "Describe a personality.",
+            "hint": "Describe him fairly: one good point, one small flaw.",
+            "explanation": "\"A bit\" softens a criticism, which is polite when talking about someone you live with.",
+            "partnerDialogue": "What's your new roommate like?",
+            "sampleAnswer": "Easygoing and kind. The only problem is he's messy.",
             "acceptedSynonyms": [
-                "every sunday",
-                "call her weekly",
-                "sunday evenings",
-                "every sunday evening"
+                "easygoing and kind. the only problem is he's messy",
+                "really nice, though a little untidy",
+                "he's friendly, but he's a bit messy"
             ],
-            "correctAnswer": "I call her every Sunday evening.",
             "smartReplies": [
-                "I call her every Sunday evening.",
-                "Every Sunday evening.",
-                "Every Sunday, without fail."
+                "Really nice, though a little untidy.",
+                "Easygoing and kind. The only problem is he's messy.",
+                "He's friendly, but he's a bit messy."
             ],
+            "correctAnswer": "Easygoing and kind. The only problem is he's messy.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L36_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say yes, and mention the thirty-day policy.",
-            "explanation": "Store policies are often expressed as a number of days, so this detail matters.",
-            "partnerDialogue": "Can I return this if it doesn't fit?",
-            "sampleAnswer": "Yes, you have thirty days to return it.",
+            "instruction": "Describe symptoms.",
+            "hint": "Say your head and throat hurt.",
+            "explanation": "English uses \"have a headache\" or \"have a sore throat\" for pain, and \"hurts\" for a general ache.",
+            "partnerDialogue": "You don't look well. What's wrong?",
+            "sampleAnswer": "My head hurts and I have a sore throat.",
             "acceptedSynonyms": [
-                "thirty days to return",
-                "yes, thirty days",
-                "thirty-day return",
-                "within thirty days"
+                "my head hurts and i have a sore throat",
+                "i have a headache and my throat hurts",
+                "i've got a terrible headache and a sore throat"
             ],
-            "correctAnswer": "Yes, you have thirty days to return it.",
             "smartReplies": [
-                "Yes, you have thirty days to return it.",
-                "You have thirty days to return it.",
-                "Yes, thirty days, no problem."
+                "I have a headache and my throat hurts.",
+                "I've got a terrible headache and a sore throat.",
+                "My head hurts and I have a sore throat."
             ],
+            "correctAnswer": "My head hurts and I have a sore throat.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L36_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree enthusiastically to splitting dessert.",
-            "explanation": "'That sounds like a great idea' is a warm, natural way to agree to a suggestion.",
-            "partnerDialogue": "Do you want to split a dessert?",
-            "sampleAnswer": "Sure, that sounds like a great idea.",
+            "instruction": "Describe when it started.",
+            "hint": "Say it began yesterday and is getting worse.",
+            "explanation": "Doctors always ask \"since when?\" so give a time and whether it's getting better or worse.",
+            "partnerDialogue": "Have you had this pain before?",
+            "sampleAnswer": "No, it started yesterday, and it's getting worse.",
             "acceptedSynonyms": [
-                "sounds like a great idea",
-                "sure, let's split it",
-                "great idea",
-                "yes, let's share"
+                "no, it started yesterday, and it's getting worse",
+                "this is the first time. it started yesterday",
+                "never before. it began yesterday and hurts more now",
+                "no, it started yesterday, and it is getting worse"
             ],
-            "correctAnswer": "Sure, that sounds like a great idea.",
             "smartReplies": [
-                "Sure, that sounds like a great idea.",
-                "That sounds great, let's split one.",
-                "Sure, let's share one."
+                "This is the first time. It started yesterday.",
+                "No, it started yesterday, and it's getting worse.",
+                "Never before. It began yesterday and hurts more now."
             ],
+            "correctAnswer": "No, it started yesterday, and it's getting worse.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L36_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say yes, and how many times it crashed.",
-            "explanation": "Giving a specific number, like 'twice', makes a tech complaint far more useful.",
-            "partnerDialogue": "Did the app crash again?",
-            "sampleAnswer": "Yes, it closed twice this morning.",
+            "instruction": "Accept care.",
+            "hint": "Ask for water and a blanket.",
+            "explanation": "Say exactly what would help. \"Anything\" makes it hard for the person who offered.",
+            "partnerDialogue": "You should rest. Do you need anything?",
+            "sampleAnswer": "A glass of water would be great. And a blanket.",
             "acceptedSynonyms": [
-                "closed twice",
-                "crashed twice",
-                "yes, twice today",
-                "closed two times"
+                "a glass of water would be great. and a blanket",
+                "could you bring me some water and a blanket",
+                "just some water and a blanket, please"
             ],
-            "correctAnswer": "Yes, it closed twice this morning.",
             "smartReplies": [
-                "Yes, it closed twice this morning.",
-                "It closed twice this morning.",
-                "Yes, twice already today."
+                "Could you bring me some water and a blanket?",
+                "A glass of water would be great. And a blanket.",
+                "Just some water and a blanket, please."
             ],
+            "correctAnswer": "A glass of water would be great. And a blanket.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L37_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say yes, and how long you ran.",
-            "explanation": "Adding a duration, like 'thirty minutes', makes a fitness answer specific and complete.",
-            "partnerDialogue": "Did you go for your morning run today?",
-            "sampleAnswer": "Yes, I ran for thirty minutes.",
+            "instruction": "Recommend with a reason.",
+            "hint": "Pick the blue bike because it looks lighter.",
+            "explanation": "A recommendation is stronger with \"because\" or a reason. Without it, the listener has to guess.",
+            "partnerDialogue": "Which is better for a beginner, the blue bike or the black one?",
+            "sampleAnswer": "The blue one, I think. It seems easier to ride.",
             "acceptedSynonyms": [
-                "ran for thirty minutes",
-                "yes, thirty minutes",
-                "ran this morning",
-                "thirty-minute run"
+                "the blue one, i think. it seems easier to ride",
+                "i'd pick the blue one. it's lighter",
+                "the blue one looks lighter, so it's probably easier"
             ],
-            "correctAnswer": "Yes, I ran for thirty minutes.",
             "smartReplies": [
-                "Yes, I ran for thirty minutes.",
-                "I ran for thirty minutes.",
-                "Yes, a good thirty minutes."
+                "The blue one, I think. It seems easier to ride.",
+                "I'd pick the blue one. It's lighter.",
+                "The blue one looks lighter, so it's probably easier."
             ],
+            "correctAnswer": "The blue one, I think. It seems easier to ride.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L37_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say almost, with two episodes left.",
-            "explanation": "'Almost' plus a specific number gives a clear sense of how close you are to finishing.",
-            "partnerDialogue": "Did you finish that TV series yet?",
-            "sampleAnswer": "Almost, I have two episodes left.",
+            "instruction": "Compare two options.",
+            "hint": "Compare the two, including a downside.",
+            "explanation": "Comparatives (faster, cheaper) plus \"but\" show both sides of a choice.",
+            "partnerDialogue": "Is the train faster than the bus?",
+            "sampleAnswer": "Yes, much faster, but it costs more.",
             "acceptedSynonyms": [
-                "two episodes left",
-                "almost finished",
-                "nearly done, two left",
-                "just two more"
+                "yes, much faster, but it costs more",
+                "yes, it's quicker, but the tickets are more expensive",
+                "it is, though the bus is cheaper",
+                "yes, but it costs more"
             ],
-            "correctAnswer": "Almost, I have two episodes left.",
             "smartReplies": [
-                "Almost, I have two episodes left.",
-                "Almost — two episodes to go.",
-                "Nearly done, just two left."
+                "Yes, much faster, but it costs more.",
+                "Yes, it's quicker, but the tickets are more expensive.",
+                "It is, though the bus is cheaper."
             ],
+            "correctAnswer": "Yes, much faster, but it costs more.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L37_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Describe your usual habit, with one exception.",
-            "explanation": "'Usually... but sometimes...' is a natural way to describe a habit that isn't absolute.",
-            "partnerDialogue": "Do you usually cook or eat out?",
-            "sampleAnswer": "I usually cook, but I eat out sometimes.",
+            "instruction": "Make a joint decision.",
+            "hint": "Choose the small car because there are only two of you.",
+            "explanation": "When deciding for two people, use \"we\" or \"for two people\" so the choice feels shared.",
+            "partnerDialogue": "Should we rent the small car or the big one?",
+            "sampleAnswer": "The small one is enough. It's cheaper for two people.",
             "acceptedSynonyms": [
-                "usually cook",
-                "cook, but eat out sometimes",
-                "mostly cook at home",
-                "cook most of the time"
+                "the small one is enough. it's cheaper for two people",
+                "the small one, i think. it's cheaper and we don't need more space",
+                "the small one. there are just two of us",
+                "the small one is enough. it is cheaper for two people"
             ],
-            "correctAnswer": "I usually cook, but I eat out sometimes.",
             "smartReplies": [
-                "I usually cook, but I eat out sometimes.",
-                "Mostly cook, but not always.",
-                "Usually cook, sometimes eat out."
+                "The small one, I think. It's cheaper and we don't need more space.",
+                "The small one is enough. It's cheaper for two people.",
+                "The small one. There are just two of us."
             ],
+            "correctAnswer": "The small one is enough. It's cheaper for two people.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L38_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say who you sat with at lunch.",
-            "explanation": "'I sat with...' is the simple past pattern for describing where you were.",
-            "partnerDialogue": "Who did you sit with at lunch?",
-            "sampleAnswer": "I sat with my friend from class.",
+            "instruction": "Give a reason with \"because\".",
+            "hint": "Answer 'why' with a real reason about the course.",
+            "explanation": "\"Because it...\" answers \"why\" directly and can start a sentence when the question was a \"why\".",
+            "partnerDialogue": "Why did you choose this university?",
+            "sampleAnswer": "Mainly because its engineering program is strong.",
             "acceptedSynonyms": [
-                "sat with my friend",
-                "with a classmate",
-                "friend from class",
-                "sat next to my friend"
+                "mainly because its engineering program is strong",
+                "the engineering course here is very good",
+                "because it has a strong engineering department"
             ],
-            "correctAnswer": "I sat with my friend from class.",
             "smartReplies": [
-                "I sat with my friend from class.",
-                "With a friend from class.",
-                "I sat next to my classmate."
+                "The engineering course here is very good.",
+                "Mainly because its engineering program is strong.",
+                "Because it has a strong engineering department."
             ],
+            "correctAnswer": "Mainly because its engineering program is strong.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L38_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say yes, and mention the clear plan.",
-            "explanation": "Reporting a shared decision with 'we agreed on...' is useful workplace language.",
-            "partnerDialogue": "Did the meeting go well today?",
-            "sampleAnswer": "Yes, we agreed on a clear plan.",
+            "instruction": "Explain a personal choice.",
+            "hint": "Say you stopped eating meat for ethical reasons.",
+            "explanation": "\"Mostly\" or \"mainly\" is honest when you have more than one reason but want to keep it short.",
+            "partnerDialogue": "Why aren't you eating meat anymore?",
+            "sampleAnswer": "For ethical reasons, mostly. I feel better too.",
             "acceptedSynonyms": [
-                "agreed on a plan",
-                "yes, went well",
-                "a clear plan",
-                "went smoothly"
+                "for ethical reasons, mostly. i feel better too",
+                "it's mostly about the animals. i feel better without it",
+                "i don't like how it's produced, so i stopped"
             ],
-            "correctAnswer": "Yes, we agreed on a clear plan.",
             "smartReplies": [
-                "Yes, we agreed on a clear plan.",
-                "We agreed on a clear plan.",
-                "Yes, we settled on a plan."
+                "It's mostly about the animals. I feel better without it.",
+                "I don't like how it's produced, so I stopped.",
+                "For ethical reasons, mostly. I feel better too."
             ],
+            "correctAnswer": "For ethical reasons, mostly. I feel better too.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L38_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say yes, and where you exchanged it.",
-            "explanation": "Naming the location, 'at the bank', makes this a specific, useful travel answer.",
-            "partnerDialogue": "Did you exchange your money already?",
-            "sampleAnswer": "Yes, I changed it at the bank.",
+            "instruction": "Justify a career move.",
+            "hint": "Say you want new skills and a bigger team.",
+            "explanation": "Focus on what you want to gain, not what you dislike. It sounds more positive to a listener.",
+            "partnerDialogue": "Why do you want to change jobs?",
+            "sampleAnswer": "I feel I've stopped learning here.",
             "acceptedSynonyms": [
-                "changed it at the bank",
-                "yes, at the bank",
-                "exchanged at the bank",
-                "did it at the bank"
+                "i feel i've stopped learning here",
+                "i'd like more challenge and a bigger team",
+                "i want to learn new skills and work with a bigger team",
+                "i want to learn new skills",
+                "i feel i have stopped learning here"
             ],
-            "correctAnswer": "Yes, I changed it at the bank.",
             "smartReplies": [
-                "Yes, I changed it at the bank.",
-                "I changed it at the bank.",
-                "Yes, at the bank earlier."
+                "I feel I've stopped learning here.",
+                "I'd like more challenge and a bigger team.",
+                "I want to learn new skills and work with a bigger team."
             ],
+            "correctAnswer": "I feel I've stopped learning here.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L39_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say yes, and that you grew up nearby.",
-            "explanation": "'We grew up together' is a warm way to describe a close family relationship.",
-            "partnerDialogue": "Are you close with your cousins?",
-            "sampleAnswer": "Yes, we grew up together nearby.",
+            "instruction": "Suggest an activity.",
+            "hint": "Suggest hiking and give the weather as a reason.",
+            "explanation": "\"Why don't we...?\" and \"How about...?\" are natural ways to make a suggestion to a friend.",
+            "partnerDialogue": "I don't know what to do this weekend.",
+            "sampleAnswer": "We could go hiking. It's meant to be sunny.",
             "acceptedSynonyms": [
-                "grew up together",
-                "yes, quite close",
-                "close with them",
-                "grew up nearby"
+                "we could go hiking. it's meant to be sunny",
+                "how about a hike? the forecast looks good",
+                "why don't we go hiking? the weather's supposed to be good",
+                "we could go hiking. it is meant to be sunny"
             ],
-            "correctAnswer": "Yes, we grew up together nearby.",
             "smartReplies": [
-                "Yes, we grew up together nearby.",
-                "We grew up together nearby.",
-                "Yes, very close — we grew up together."
+                "How about a hike? The forecast looks good.",
+                "Why don't we go hiking? The weather's supposed to be good.",
+                "We could go hiking. It's meant to be sunny."
             ],
+            "correctAnswer": "We could go hiking. It's meant to be sunny.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L39_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you'll pay with your card.",
-            "explanation": "'I'll pay with...' is the direct, simple way to answer a payment question.",
-            "partnerDialogue": "Are you paying with cash or card?",
-            "sampleAnswer": "I'll pay with my card, thanks.",
+            "instruction": "Offer a solution.",
+            "hint": "Suggest ordering takeaway a couple of nights a week.",
+            "explanation": "\"Maybe we could...\" offers an idea without pushing it, which fits a tired friend.",
+            "partnerDialogue": "I'm tired of cooking every night.",
+            "sampleAnswer": "What about ordering food twice a week?",
             "acceptedSynonyms": [
-                "pay with my card",
-                "using my card",
-                "card, please",
-                "i'll use my card"
+                "what about ordering food twice a week",
+                "maybe we could order in twice a week",
+                "why not get takeaway a couple of nights a week"
             ],
-            "correctAnswer": "I'll pay with my card, thanks.",
             "smartReplies": [
-                "I'll pay with my card, thanks.",
-                "Card, please.",
-                "I'll use my card, thank you."
+                "Maybe we could order in twice a week?",
+                "What about ordering food twice a week?",
+                "Why not get takeaway a couple of nights a week?"
             ],
+            "correctAnswer": "What about ordering food twice a week?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L39_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say yes, and the reservation time.",
-            "explanation": "Confirming a specific detail, like the time booked, shows real follow-through.",
-            "partnerDialogue": "Did you remember to make a reservation?",
-            "sampleAnswer": "Yes, I booked a table for seven.",
+            "instruction": "Give practical advice.",
+            "hint": "Suggest restarting the laptop and deleting old files.",
+            "explanation": "Give the easiest fix first. Then offer a second option if the first doesn't work.",
+            "partnerDialogue": "My laptop is so slow lately.",
+            "sampleAnswer": "You could delete old files, or just restart it.",
             "acceptedSynonyms": [
-                "booked a table",
-                "yes, for seven",
-                "table for seven",
-                "reserved for seven"
+                "you could delete old files, or just restart it",
+                "have you tried restarting it? or you could delete old files",
+                "maybe restart it, and clear some old files"
             ],
-            "correctAnswer": "Yes, I booked a table for seven.",
             "smartReplies": [
-                "Yes, I booked a table for seven.",
-                "I booked a table for seven.",
-                "Yes, for seven o'clock."
+                "Have you tried restarting it? Or you could delete old files.",
+                "Maybe restart it, and clear some old files.",
+                "You could delete old files, or just restart it."
             ],
+            "correctAnswer": "You could delete old files, or just restart it.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L40_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say yes, because your laptop is old.",
-            "explanation": "Giving a reason after 'yes' makes this answer feel natural, not abrupt.",
-            "partnerDialogue": "Are you switching to a new laptop soon?",
-            "sampleAnswer": "Yes, mine is getting really old.",
+            "instruction": "Ask permission politely.",
+            "hint": "Ask if you can put your coat somewhere.",
+            "explanation": "\"Is it okay if I...?\" is a soft way to ask in someone else's home.",
+            "partnerDialogue": "Come in! Sit anywhere.",
+            "sampleAnswer": "Thanks. Is it okay if I put my coat here?",
             "acceptedSynonyms": [
-                "mine is getting old",
-                "yes, it's old",
-                "time for a new one",
-                "laptop's outdated"
+                "thanks. is it okay if i put my coat here",
+                "thanks. can i hang my coat somewhere",
+                "thank you. do you mind if i leave my coat here",
+                "is it okay if i put my coat here"
             ],
-            "correctAnswer": "Yes, mine is getting really old.",
             "smartReplies": [
-                "Yes, mine is getting really old.",
-                "Mine is getting really old.",
-                "Yes, it's about time for a new one."
+                "Thanks. Is it okay if I put my coat here?",
+                "Thanks. Can I hang my coat somewhere?",
+                "Thank you. Do you mind if I leave my coat here?"
             ],
+            "correctAnswer": "Thanks. Is it okay if I put my coat here?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L40_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Admit honestly that you haven't been.",
-            "explanation": "'Honestly, not as much as I should' is a natural, humble way to admit a habit could improve.",
-            "partnerDialogue": "Have you been drinking enough water lately?",
-            "sampleAnswer": "Honestly, not as much as I should.",
+            "instruction": "Ask a favor from an authority.",
+            "hint": "Apologize and ask to stay five minutes.",
+            "explanation": "Apologize first, then ask a small favor. Keep the time short so the person can say yes easily.",
+            "partnerDialogue": "Excuse me, sir, you can't park there.",
+            "sampleAnswer": "Oh, sorry. Is it okay if I stay for five minutes?",
             "acceptedSynonyms": [
-                "not as much as i should",
-                "honestly, not enough",
-                "could drink more",
-                "not really, no"
+                "oh, sorry. is it okay if i stay for five minutes",
+                "i'm sorry. may i leave the car for a few minutes",
+                "sorry, i didn't see the sign. can i just wait five minutes",
+                "oh, sorry, is it okay if i stay five minutes"
             ],
-            "correctAnswer": "Honestly, not as much as I should.",
             "smartReplies": [
-                "Honestly, not as much as I should.",
-                "Not really, if I'm honest.",
-                "Probably not enough, honestly."
+                "I'm sorry. May I leave the car for a few minutes?",
+                "Oh, sorry. Is it okay if I stay for five minutes?",
+                "Sorry, I didn't see the sign. Can I just wait five minutes?"
             ],
+            "correctAnswer": "Oh, sorry. Is it okay if I stay for five minutes?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L40_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Name the music genre: jazz.",
-            "explanation": "Naming a genre and its effect, 'it helps me relax', makes this answer more personal.",
-            "partnerDialogue": "What kind of music were you listening to?",
-            "sampleAnswer": "Mostly jazz, it helps me relax.",
+            "instruction": "Offer an alternative.",
+            "hint": "There's no chair. Say you can stand at the back.",
+            "explanation": "Solving the problem yourself (\"I can stand\") is more helpful than waiting for others to fix it.",
+            "partnerDialogue": "We're all out of chairs in the meeting room.",
+            "sampleAnswer": "Don't worry, I don't mind standing at the back.",
             "acceptedSynonyms": [
-                "mostly jazz",
-                "jazz music",
-                "helps me relax",
-                "jazz, to unwind"
+                "don't worry, i don't mind standing at the back",
+                "that's fine. would you mind if i stood at the back",
+                "no problem. i can stand at the back if that's okay",
+                "that's fine, i can stand at the back",
+                "do not worry, i do not mind standing at the back"
             ],
-            "correctAnswer": "Mostly jazz, it helps me relax.",
             "smartReplies": [
-                "Mostly jazz, it helps me relax.",
-                "Just some jazz, to relax.",
-                "Mostly jazz — it's calming."
+                "That's fine. Would you mind if I stood at the back?",
+                "Don't worry, I don't mind standing at the back.",
+                "No problem. I can stand at the back if that's okay."
             ],
+            "correctAnswer": "Don't worry, I don't mind standing at the back.",
             "emotionTag": "Neutral"
         }
     ]

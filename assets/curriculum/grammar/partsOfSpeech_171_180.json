@@ -8,23 +8,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'what' as used in the sentence below?",
-            "targetWord": "what",
-            "sentence": "What surprised every single observer was the remarkable speed at which the crisis unfolded.",
+            "question": "What grammatical job does 'announced' do in this sentence?",
+            "targetWord": "announced",
+            "sentence": "Local officials announced Tuesday that funding for the new library, delayed for over a year, would finally be released next month.",
             "options": [
-                "Pronoun",
-                "Conjunction",
-                "Determiner",
+                "Adjective",
+                "Verb",
+                "Noun",
                 "Adverb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Pronoun",
-            "hint": "'What' introduces a noun clause here. Is it a relative pronoun or a conjunction?",
-            "explanation": "'What' is a pronoun - it is a relative pronoun introducing a noun clause ('what surprised everyone') that acts as the subject. It is equivalent to 'the thing that'. Compare: 'what time is it?' (interrogative determiner) vs. 'what surprised me' (relative pronoun).",
-            "grammarRule": "Pronouns",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Verb",
+            "hint": "Notice what the word is attached to. What action did they take on Tuesday?",
+            "explanation": "'Announced' is a verb here, describing the officials' action of making a public statement.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -32,23 +32,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'reification' as used in the sentence below?",
-            "targetWord": "reification",
-            "sentence": "Reification occurs whenever abstract concepts are mistakenly treated as if they were concrete objects.",
+            "question": "Staying with that sentence, which category describes 'delayed'?",
+            "targetWord": "delayed",
+            "sentence": "Local officials announced Tuesday that funding for the new library, delayed for over a year, would finally be released next month.",
             "options": [
-                "Noun",
+                "Adverb",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Abstract philosophical nouns name cognitive errors. What does 'reification' name?",
-            "explanation": "'Reification' is a noun - it names the error of treating an abstraction as if it were a real, physical thing. It is the subject of the sentence.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "This word, set off by commas, describes the funding's situation without a linking verb. What had happened to the funding?",
+            "explanation": "'Delayed' functions as an adjective here, describing the funding's postponed status — it appears in an interrupting phrase, similar to 'exhausted' from an earlier lesson.",
+            "grammarRule": "Participial adjective in an interrupting phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb form",
+                "adjective form"
             ]
         },
         {
@@ -56,23 +56,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'obsequious' as used in the sentence below?",
-            "targetWord": "obsequious",
-            "sentence": "His relentlessly obsequious manner towards senior management alienated him from all his peers.",
+            "question": "In the same sentence, what role does 'released' play?",
+            "targetWord": "released",
+            "sentence": "Local officials announced Tuesday that funding for the new library, delayed for over a year, would finally be released next month.",
             "options": [
+                "Adverb",
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe a person's manner of behaviour. What does 'obsequious' describe?",
-            "explanation": "'Obsequious' is an adjective - it modifies 'manner' and means excessively eager to please in a way that seems insincere. Character adjectives (obsequious, sycophantic, deferential) describe overly compliant behaviour.",
-            "grammarRule": "Adjectives",
+            "correctAnswer": "Verb",
+            "hint": "Ask how it connects to the words near it. What will finally happen to the funding next month?",
+            "explanation": "'Released' is a verb here, used in the passive voice ('would be released') to describe what will happen to the funding.",
+            "grammarRule": "Verb in the passive voice",
             "transformations": [
-                "noun form",
-                "verb form"
+                "active voice",
+                "passive voice"
             ]
         },
         {
@@ -80,23 +80,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'where' as used in the sentence below?",
-            "targetWord": "where",
-            "sentence": "The small coastal village where she grew up no longer appears on any modern maps.",
+            "question": "Which category fits 'melted' in this recipe step?",
+            "targetWord": "melted",
+            "sentence": "Once the butter has melted completely, stir in the flour quickly to avoid lumps forming.",
             "options": [
-                "Pronoun",
-                "Conjunction",
                 "Adverb",
-                "Noun"
+                "Adjective",
+                "Noun",
+                "Verb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adverb",
-            "hint": "'Where' introduces a relative clause modifying 'village'. Does it stand for a place, like the adverbial phrase 'in which'?",
-            "explanation": "'Where' is a relative adverb here - it introduces the relative clause 'where she grew up', modifying 'village', and stands for the adverbial phrase 'in which'. Unlike relative pronouns such as 'which' or 'who', 'where' replaces a location phrase, not a noun.",
-            "grammarRule": "Adverbs",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Verb",
+            "hint": "Let the sentence, not the spelling, decide. What has happened to the butter?",
+            "explanation": "'Melted' is a verb here, used in the present perfect tense ('has melted') to describe the completed change in the butter.",
+            "grammarRule": "Verb in the present perfect tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-participle form"
             ]
         },
         {
@@ -104,23 +104,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'bifurcation' as used in the sentence below?",
-            "targetWord": "bifurcation",
-            "sentence": "The bifurcation of the political movement into two rival factions weakened both sides considerably.",
+            "question": "Back in that same step, what kind of word is 'to avoid'?",
+            "targetWord": "to avoid",
+            "sentence": "Once the butter has melted completely, stir in the flour quickly to avoid lumps forming.",
             "options": [
-                "Noun",
+                "Adverb",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Adjective"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Abstract nouns name the splitting of something into two parts. What does 'bifurcation' name?",
-            "explanation": "'Bifurcation' is a noun - it names the division or splitting into two branches. It is the subject of the sentence. The prefix 'bi-' means two.",
-            "grammarRule": "Nouns",
+            "correctAnswer": "Adverb",
+            "hint": "This 'to + verb' phrase explains why you should stir quickly, modifying the verb 'stir.' Why should you stir quickly?",
+            "explanation": "'To avoid' is an infinitive functioning as an adverb here, showing the purpose of stirring quickly.",
+            "grammarRule": "Infinitive of purpose modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "infinitive use",
+                "gerund use"
             ]
         },
         {
@@ -128,23 +128,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'inimical' as used in the sentence below?",
-            "targetWord": "inimical",
-            "sentence": "Such entrenched habits are fundamentally inimical to any serious attempt at original creative thinking.",
+            "question": "Which grammatical category fits 'forming' in that same step?",
+            "targetWord": "forming",
+            "sentence": "Once the butter has melted completely, stir in the flour quickly to avoid lumps forming.",
             "options": [
-                "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Noun"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives can describe things that are harmful to something. What does 'inimical' describe?",
-            "explanation": "'Inimical' is an adjective - it follows the linking verb 'are' as a predicate adjective and means harmful to or acting against something. The prefix 'in-' negates 'amical' (friendly).",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Noun",
+            "hint": "This '-ing' word names an activity and acts as the object of 'avoid.' What should be prevented?",
+            "explanation": "'Forming' is a gerund here, functioning as the object of 'avoid' — it names the unwanted outcome of lumps developing.",
+            "grammarRule": "Gerund functioning as the object of 'avoid'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "gerund use",
+                "infinitive use"
             ]
         },
         {
@@ -152,23 +152,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'that' as used in the sentence below?",
-            "targetWord": "that",
-            "sentence": "The compelling evidence clearly shows that the initial theoretical model was fundamentally flawed.",
+            "question": "Which grammatical category best describes 'going' here?",
+            "targetWord": "going",
+            "sentence": "\"I was going to call you, but—\" \"Don't worry about it, I already heard the news.\"",
             "options": [
-                "Conjunction",
-                "Pronoun",
-                "Determiner",
-                "Adverb"
+                "Verb",
+                "Adverb",
+                "Noun",
+                "Adjective"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Conjunction",
-            "hint": "'That' can be a pronoun, determiner, or conjunction. Does it introduce a noun clause here?",
-            "explanation": "'That' is a conjunction (subordinating) - it introduces the noun clause 'that the initial model was flawed' as the object of 'shows'. Compare: 'the book that I read' (relative pronoun) vs. 'she said that she knew' (conjunction).",
-            "grammarRule": "Conjunctions",
+            "correctAnswer": "Verb",
+            "hint": "This '-ing' word combines with 'was' to describe a plan that got interrupted. What was the speaker about to do?",
+            "explanation": "'Going' functions as part of the verb here, combining with 'was' in the expression 'was going to' to describe an interrupted intention.",
+            "grammarRule": "Verb in the past progressive tense expressing intention",
             "transformations": [
-                "noun form",
-                "verb form"
+                "gerund use",
+                "progressive verb use"
             ]
         },
         {
@@ -176,23 +176,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'lacuna' as used in the sentence below?",
-            "targetWord": "lacuna",
-            "sentence": "The researchers identified a significant lacuna in the existing body of published academic literature.",
+            "question": "The word 'worry' is being used as which grammatical category?",
+            "targetWord": "worry",
+            "sentence": "\"I was going to call you, but—\" \"Don't worry about it, I already heard the news.\"",
             "options": [
                 "Noun",
+                "Adverb",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Academic nouns name gaps in knowledge. What does 'lacuna' name here?",
-            "explanation": "'Lacuna' is a noun - it names a gap or missing portion in a body of knowledge. It follows 'a significant'. Its plural is 'lacunae'.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Verb",
+            "hint": "Focus on its role in this sentence only. What is the second speaker telling the first speaker not to do?",
+            "explanation": "'Worry' is a verb here, used in a negative command ('Don't worry') telling the listener not to be concerned.",
+            "grammarRule": "Verb in a negative imperative",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -200,23 +200,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'recalcitrant' as used in the sentence below?",
-            "targetWord": "recalcitrant",
-            "sentence": "Even the most recalcitrant students eventually responded positively to her unconventional teaching methods.",
+            "question": "Based on how it is used here, 'news' is a:",
+            "targetWord": "news",
+            "sentence": "\"I was going to call you, but—\" \"Don't worry about it, I already heard the news.\"",
             "options": [
                 "Noun",
                 "Verb",
                 "Adjective",
                 "Adverb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives can describe stubborn resistance to authority. What does 'recalcitrant' describe?",
-            "explanation": "'Recalcitrant' is an adjective - it modifies 'students' and means stubbornly resistant to authority or discipline.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Remember from an earlier lesson that this word ends in '-s' but is still singular. What did the second speaker already hear?",
+            "explanation": "'News' is a singular, uncountable noun here — the same word and pattern taught in an earlier lesson on misconceptions.",
+            "grammarRule": "Uncountable noun ending in -s, functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular use",
+                "same plural form"
             ]
         },
         {
@@ -224,23 +224,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'which' as used in the sentence below?",
-            "targetWord": "which",
-            "sentence": "The landmark government policy, which had been in place for several decades, was finally repealed.",
+            "question": "Classify 'lightweight' as it appears in this description.",
+            "targetWord": "lightweight",
+            "sentence": "This lightweight jacket, designed for unpredictable weather, keeps you dry without feeling bulky.",
             "options": [
-                "Pronoun",
-                "Conjunction",
-                "Determiner",
-                "Adverb"
+                "Verb",
+                "Adverb",
+                "Noun",
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Pronoun",
-            "hint": "'Which' introduces a non-defining relative clause. Is it a pronoun or a conjunction?",
-            "explanation": "'Which' is a relative pronoun - it introduces the non-defining relative clause 'which had been in place for decades'. Non-defining clauses (set off by commas) add non-essential information. 'Which' refers back to 'policy'.",
-            "grammarRule": "Pronouns",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "Think about the job it performs here. What quality does 'lightweight' give the jacket?",
+            "explanation": "'Lightweight' is an adjective here, modifying 'jacket' and describing how little it weighs.",
+            "grammarRule": "Attributive adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "related noun (weight)"
             ]
         },
         {
@@ -248,23 +248,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'zeitgeist' as used in the sentence below?",
-            "targetWord": "zeitgeist",
-            "sentence": "Her early and influential work captured the cultural zeitgeist of the 1960s with remarkable precision.",
+            "question": "Now consider 'designed' in that same description. What part of speech is it?",
+            "targetWord": "designed",
+            "sentence": "This lightweight jacket, designed for unpredictable weather, keeps you dry without feeling bulky.",
             "options": [
                 "Noun",
+                "Adverb",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Cultural nouns name the defining spirit of a historical period. What does 'zeitgeist' name?",
-            "explanation": "'Zeitgeist' is a noun - it names the defining spirit or mood of a historical period (from German: Zeit = time, Geist = spirit). It follows 'the cultural'.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "This word, set off by commas, describes the jacket's purpose without a linking verb. What was the jacket made for?",
+            "explanation": "'Designed' functions as an adjective here, describing the jacket's intended purpose — it appears in an interrupting phrase, similar to 'exhausted' and 'delayed' from earlier lessons.",
+            "grammarRule": "Participial adjective in an interrupting phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb form",
+                "adjective form"
             ]
         },
         {
@@ -272,23 +272,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'tendentious' as used in the sentence below?",
-            "targetWord": "tendentious",
-            "sentence": "Several critics described the documentary as unacceptably tendentious and lacking in journalistic balance.",
+            "question": "Looking at the same description, how is 'without' functioning?",
+            "targetWord": "without",
+            "sentence": "This lightweight jacket, designed for unpredictable weather, keeps you dry without feeling bulky.",
             "options": [
-                "Noun",
+                "Preposition",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Conjunction",
+                "Noun"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives can describe work that promotes a specific viewpoint unfairly. What does 'tendentious' describe?",
-            "explanation": "'Tendentious' is an adjective - it follows the linking verb 'as' and describes the documentary as promoting a particular cause rather than balanced information.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Preposition",
+            "hint": "Notice what the word is attached to. What feeling does the jacket avoid causing?",
+            "explanation": "'Without' is a preposition here, introducing the gerund phrase 'feeling bulky' as something the jacket avoids causing.",
+            "grammarRule": "Preposition introducing a negated result",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related conjunction use"
             ]
         },
         {
@@ -296,23 +296,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'as' as used in the sentence below?",
-            "targetWord": "as",
-            "sentence": "As the critical deadline approached, the entire team worked with increasing urgency and focus.",
+            "question": "In this context, what part of speech is 'overcast'?",
+            "targetWord": "overcast",
+            "sentence": "Skies will remain overcast throughout the morning, though temperatures should climb steadily by early afternoon.",
             "options": [
-                "Conjunction",
-                "Preposition",
+                "Verb",
                 "Adverb",
-                "Pronoun"
+                "Noun",
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Conjunction",
-            "hint": "'As' can be a conjunction or a preposition. Is it introducing a time clause here?",
-            "explanation": "'As' is a subordinating conjunction of time - it introduces the clause 'as the deadline approached'. Compare: 'she works as a consultant' (preposition = describing role) vs. 'as time passed' (conjunction = introducing clause).",
-            "grammarRule": "Conjunctions",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "Notice what the word is attached to. What quality do the skies have?",
+            "explanation": "'Overcast' is an adjective here, describing the cloudy condition of the skies, following the linking verb 'remain'.",
+            "grammarRule": "Predicate adjective after a linking verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "positive form",
+                "related noun (overcast sky)"
             ]
         },
         {
@@ -320,23 +320,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'substrate' as used in the sentence below?",
-            "targetWord": "substrate",
-            "sentence": "The specific biological substrate on which the cells were grown significantly affected the outcomes.",
+            "question": "Which grammatical category fits 'though' in that same report?",
+            "targetWord": "though",
+            "sentence": "Skies will remain overcast throughout the morning, though temperatures should climb steadily by early afternoon.",
             "options": [
                 "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
+                "Preposition",
+                "Conjunction",
+                "Verb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Scientific nouns name the base on which processes occur. What does 'substrate' name?",
-            "explanation": "'Substrate' is a noun - it names the surface or medium on which an organism grows. It follows 'The specific biological'.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Conjunction",
+            "hint": "This word introduces a contrast with the cloudy skies mentioned first. What contrast does it set up?",
+            "explanation": "'Though' is a subordinating conjunction here, introducing a clause that contrasts with the overcast skies — despite the clouds, temperatures will still rise.",
+            "grammarRule": "Subordinating conjunction introducing a contrast clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related conjunction (although)"
             ]
         },
         {
@@ -344,23 +344,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'inveterate' as used in the sentence below?",
-            "targetWord": "inveterate",
-            "sentence": "He was a completely inveterate traveller who never stayed in the same city for longer than a month.",
+            "question": "Staying with that report, which category describes 'steadily'?",
+            "targetWord": "steadily",
+            "sentence": "Skies will remain overcast throughout the morning, though temperatures should climb steadily by early afternoon.",
             "options": [
-                "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Verb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives can describe deeply ingrained habits. What does 'inveterate' tell us?",
-            "explanation": "'Inveterate' is an adjective - it modifies 'traveller' and means having a firmly established habit unlikely to change.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adverb",
+            "hint": "Focus on its role in this sentence only. How will the temperature climb?",
+            "explanation": "'Steadily' is a manner adverb modifying the verb 'climb', describing the consistent pace of the temperature rise.",
+            "grammarRule": "Manner adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "adverb form"
             ]
         },
         {
@@ -368,23 +368,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'once' as used in the sentence below?",
-            "targetWord": "once",
-            "sentence": "Once the initial prototype had been successfully tested, the final design was approved for manufacturing.",
+            "question": "Which part of speech is 'to switch' as it is used here?",
+            "targetWord": "to switch",
+            "sentence": "\"What made you decide to switch careers?\" \"Honestly, it was the realization that I wanted something more meaningful.\"",
             "options": [
-                "Conjunction",
                 "Adverb",
                 "Noun",
+                "Verb",
                 "Adjective"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Conjunction",
-            "hint": "'Once' can be an adverb or conjunction. Does it introduce a time clause here?",
-            "explanation": "'Once' is a subordinating conjunction of time - it introduces the clause 'once the prototype had been tested' and means 'after' or 'as soon as'. Compare: 'I once lived here' (adverb = at a past time) vs. 'once it was ready, we began' (conjunction).",
-            "grammarRule": "Conjunctions",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Noun",
+            "hint": "This 'to + verb' phrase names what was decided, acting as the object of 'decide.' What did the person decide to do?",
+            "explanation": "'To switch' is an infinitive here, functioning as the object of 'decide' — it names the choice being asked about.",
+            "grammarRule": "Infinitive functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "infinitive use",
+                "gerund use"
             ]
         },
         {
@@ -392,23 +392,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'palimpsest' as used in the sentence below?",
-            "targetWord": "palimpsest",
-            "sentence": "The ancient city itself is a palimpsest, with layers of civilisation's history visible in every street.",
+            "question": "What kind of word is 'Honestly' in this interview?",
+            "targetWord": "Honestly",
+            "sentence": "\"What made you decide to switch careers?\" \"Honestly, it was the realization that I wanted something more meaningful.\"",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Noun",
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Literary nouns can be used metaphorically. What does 'palimpsest' name metaphorically?",
-            "explanation": "'Palimpsest' is a noun - literally, a manuscript with earlier writing erased and written over; metaphorically, something that shows layers of its own history. It follows 'a'.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adverb",
+            "hint": "This word comments on the truthfulness of the whole statement that follows, rather than modifying one verb. What does 'Honestly' signal here?",
+            "explanation": "'Honestly' functions as a sentence adverb here, signaling that the speaker is being candid about their answer.",
+            "grammarRule": "Sentence adverb expressing honesty",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "adverb form"
             ]
         },
         {
@@ -416,23 +416,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'sanguine' as used in the sentence below?",
-            "targetWord": "sanguine",
-            "sentence": "Despite the significant and repeated setbacks, she remained surprisingly sanguine about the project's prospects.",
+            "question": "Which part of speech does 'that' represent in this interview?",
+            "targetWord": "that",
+            "sentence": "\"What made you decide to switch careers?\" \"Honestly, it was the realization that I wanted something more meaningful.\"",
             "options": [
+                "Conjunction",
+                "Pronoun",
                 "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
+                "Verb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives can describe a hopeful disposition. What does 'sanguine' describe here?",
-            "explanation": "'Sanguine' is an adjective - it follows the linking verb 'remained' as a predicate adjective and means optimistic or positive even in difficult situations.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Conjunction",
+            "hint": "This word introduces a clause that explains what the realization was, rather than describing a noun or standing alone. What was the realization?",
+            "explanation": "'That' functions as a subordinating conjunction here, introducing the noun clause 'I wanted something more meaningful' as the content of 'the realization' — the same noun-clause pattern seen in an earlier lesson.",
+            "grammarRule": "Subordinating conjunction introducing a noun clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "relative pronoun use"
             ]
         },
         {
@@ -440,23 +440,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'for' as used in the sentence below?",
-            "targetWord": "for",
-            "sentence": "She had always wanted to be a teacher, for she truly believed education had the power to change lives.",
+            "question": "What part of speech is 'sincerely' in this email?",
+            "targetWord": "sincerely",
+            "sentence": "We sincerely apologize for the delay and want to assure you that your order will ship within two business days.",
             "options": [
-                "Conjunction",
-                "Preposition",
+                "Noun",
+                "Verb",
                 "Adverb",
-                "Noun"
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Conjunction",
-            "hint": "'For' can be a preposition or a conjunction. Does it introduce a reason clause here?",
-            "explanation": "'For' is a coordinating conjunction - it introduces a clause giving the reason. This is a formal, literary usage meaning 'because'. It is one of the FANBOYS. Compare: 'wait for me' (preposition) vs. 'she was happy, for she had succeeded' (conjunction = because).",
-            "grammarRule": "Conjunctions",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "Check the words directly around it for clues. How does the company apologize?",
+            "explanation": "'Sincerely' is a manner adverb modifying the verb 'apologize', emphasizing the genuineness of the apology.",
+            "grammarRule": "Manner adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "adverb form"
             ]
         },
         {
@@ -464,23 +464,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'taxonomy' as used in the sentence below?",
-            "targetWord": "taxonomy",
-            "sentence": "Linnaeus developed the binomial taxonomy still used today to classify all living organisms.",
+            "question": "Within that same email, 'to assure' is functioning as a:",
+            "targetWord": "to assure",
+            "sentence": "We sincerely apologize for the delay and want to assure you that your order will ship within two business days.",
             "options": [
+                "Adverb",
                 "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Verb"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "Noun",
-            "hint": "Scientific nouns name systems of classification. What does 'taxonomy' name here?",
-            "explanation": "'Taxonomy' is a noun - it names a system of classification, particularly of organisms into groups. The suffix '-logy' means 'the study of'.",
-            "grammarRule": "Nouns",
+            "hint": "This 'to + verb' phrase names what the company wants to do, acting as the object of 'want.' What does the company want to do?",
+            "explanation": "'To assure' is an infinitive here, functioning as the object of 'want' — it names the reassurance the company intends to give.",
+            "grammarRule": "Infinitive functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "infinitive use",
+                "gerund use"
             ]
         },
         {
@@ -488,23 +488,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'abstruse' as used in the sentence below?",
-            "targetWord": "abstruse",
-            "sentence": "Some of the later chapters were so abstruse that even established specialists in the field found them challenging.",
+            "question": "In that same email, what part of speech is 'that'?",
+            "targetWord": "that",
+            "sentence": "We sincerely apologize for the delay and want to assure you that your order will ship within two business days.",
             "options": [
                 "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
+                "Conjunction",
+                "Pronoun",
+                "Verb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives can describe concepts very difficult to understand. What does 'abstruse' describe?",
-            "explanation": "'Abstruse' is an adjective - it follows 'so' in an intensifying construction and describes the chapters as extremely obscure and difficult. Difficulty adjectives (abstruse, arcane, esoteric) describe things hard to understand.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Conjunction",
+            "hint": "This word introduces a clause naming what the company wants to assure the customer of, rather than describing a noun. What is the company assuring?",
+            "explanation": "'That' functions as a subordinating conjunction here, introducing the noun clause 'your order will ship within two business days' as the content of the assurance.",
+            "grammarRule": "Subordinating conjunction introducing a noun clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "relative pronoun use"
             ]
         },
         {
@@ -512,23 +512,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'as' as used in the sentence below?",
-            "targetWord": "as",
-            "sentence": "She now works successfully as a consultant for several leading global technology companies.",
+            "question": "What role does 'originally' play in this bulletin?",
+            "targetWord": "originally",
+            "sentence": "The park renovation—originally scheduled for spring—will now begin in early summer due to permit delays.",
             "options": [
-                "Preposition",
-                "Conjunction",
+                "Verb",
+                "Noun",
                 "Adverb",
-                "Pronoun"
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Preposition",
-            "hint": "'As' was a conjunction in level 175. Here, does it introduce a clause or a noun phrase?",
-            "explanation": "'As' is a preposition - it introduces the noun phrase 'a consultant' and describes her professional role. Compare: 'as she arrived' (conjunction = introducing clause) vs. 'works as a consultant' (preposition = introducing noun phrase describing role).",
-            "grammarRule": "Prepositions",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "Set aside what you know about this word in general. When was the renovation first scheduled?",
+            "explanation": "'Originally' is a time adverb modifying the adjective 'scheduled', describing the initial plan before it changed.",
+            "grammarRule": "Time adverb modifying a participial adjective",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "adverb form"
             ]
         },
         {
@@ -536,23 +536,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'dialectic' as used in the sentence below?",
-            "targetWord": "dialectic",
-            "sentence": "His entire philosophical framework was built upon the concept of the Hegelian dialectic of opposing forces.",
+            "question": "Now consider 'scheduled' in that same bulletin. What part of speech is it?",
+            "targetWord": "scheduled",
+            "sentence": "The park renovation—originally scheduled for spring—will now begin in early summer due to permit delays.",
             "options": [
+                "Adjective",
                 "Noun",
                 "Verb",
-                "Adjective",
                 "Adverb"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Philosophical nouns name methods of reasoning. What does 'dialectic' name?",
-            "explanation": "'Dialectic' is a noun - it names a method of reasoning involving the opposition and reconciliation of contradictory ideas. It follows 'the Hegelian'.",
-            "grammarRule": "Nouns",
+            "correctAnswer": "Adjective",
+            "hint": "This word, set off by dashes, describes the renovation's original plan without a linking verb. What was originally true about the renovation?",
+            "explanation": "'Scheduled' functions as an adjective here, describing the renovation's original timing — it appears in an interrupting phrase set off by dashes, similar to commas in earlier lessons.",
+            "grammarRule": "Participial adjective in an interrupting phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb form",
+                "adjective form"
             ]
         },
         {
@@ -560,23 +560,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'perspicacious' as used in the sentence below?",
-            "targetWord": "perspicacious",
-            "sentence": "Her remarkably perspicacious analysis of the data revealed important patterns that all others had missed.",
+            "question": "Back in that same bulletin, what kind of word is 'due to'?",
+            "targetWord": "due to",
+            "sentence": "The park renovation—originally scheduled for spring—will now begin in early summer due to permit delays.",
             "options": [
+                "Conjunction",
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Preposition"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives can describe unusual intellectual sharpness. What does 'perspicacious' describe?",
-            "explanation": "'Perspicacious' is an adjective - it modifies 'analysis' and means having a ready insight; unusually perceptive. Intellectual ability adjectives (perspicacious, astute, incisive) describe sharp understanding.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Preposition",
+            "hint": "This expression introduces a reason for the new schedule. What caused the change?",
+            "explanation": "'Due to' functions as a compound preposition here, introducing the reason for the renovation's new start date.",
+            "grammarRule": "Compound preposition introducing a reason phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related conjunction (because)"
             ]
         },
         {
@@ -584,23 +584,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'like' as used in the sentence below?",
-            "targetWord": "like",
-            "sentence": "He spoke with the measured authority of someone like a seasoned and experienced diplomat.",
+            "question": "Identify the part of speech of 'charging' in this context.",
+            "targetWord": "charging",
+            "sentence": "If the device still won't turn on after charging overnight, try holding the power button for ten seconds.",
             "options": [
-                "Preposition",
-                "Conjunction",
+                "Adjective",
+                "Noun",
                 "Adverb",
                 "Verb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Preposition",
-            "hint": "Does 'like' introduce a comparison with a noun phrase (preposition) or a full clause (conjunction)?",
-            "explanation": "'Like' is a preposition - it introduces the noun phrase 'a seasoned diplomat' and shows comparison. Compare: 'it looks like it will rain' (informal conjunction = followed by clause) vs. 'speaks like a diplomat' (preposition = followed by noun).",
-            "grammarRule": "Prepositions",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Noun",
+            "hint": "This '-ing' word names an activity and follows the preposition 'after.' What was done to the device overnight?",
+            "explanation": "'Charging' is a gerund here, functioning as the object of the preposition 'after' — it names the process the device underwent.",
+            "grammarRule": "Gerund functioning as the object of a preposition",
             "transformations": [
-                "noun form",
-                "verb form"
+                "gerund use",
+                "verb use"
             ]
         },
         {
@@ -608,23 +608,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'aporia' as used in the sentence below?",
-            "targetWord": "aporia",
-            "sentence": "The lecture ended deliberately with an aporia - an unresolved question left intentionally open for contemplation.",
+            "question": "And in that same step, what part of speech is 'holding'?",
+            "targetWord": "holding",
+            "sentence": "If the device still won't turn on after charging overnight, try holding the power button for ten seconds.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Noun",
+                "Verb"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "Noun",
-            "hint": "Rhetorical nouns name states of unresolved doubt. What does 'aporia' name?",
-            "explanation": "'Aporia' is a noun - it names a state of genuine uncertainty or an insoluble problem used in philosophy and rhetoric. It follows 'an'.",
-            "grammarRule": "Nouns",
+            "hint": "This '-ing' word names an activity and acts as the object of 'try.' What should the user attempt to do?",
+            "explanation": "'Holding' is a gerund here, functioning as the object of 'try' — it names the troubleshooting action being suggested.",
+            "grammarRule": "Gerund functioning as the object of 'try'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "gerund use",
+                "infinitive use"
             ]
         },
         {
@@ -632,23 +632,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'pellucid' as used in the sentence below?",
-            "targetWord": "pellucid",
-            "sentence": "Her scholarly writing was particularly noted for its striking pellucid clarity, even on complex topics.",
+            "question": "Looking at the same step, how is 'still' functioning?",
+            "targetWord": "still",
+            "sentence": "If the device still won't turn on after charging overnight, try holding the power button for ten seconds.",
             "options": [
-                "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Verb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives can describe exceptional clarity. What does 'pellucid' describe?",
-            "explanation": "'Pellucid' is an adjective - it modifies 'clarity' and means transparently clear in meaning or style. Literary style adjectives (pellucid, lucid, opaque) describe the clarity of communication.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adverb",
+            "hint": "Look at what this word does in this exact sentence. What continues to be true about the device, even after charging?",
+            "explanation": "'Still' is an adverb here, modifying the verb phrase 'won't turn on' and showing that the problem persists despite the charging.",
+            "grammarRule": "Adverb showing continuation",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adverb use",
+                "related adjective (continuing)"
             ]
         },
         {
@@ -656,23 +656,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'but' as used in the sentence below?",
-            "targetWord": "but",
-            "sentence": "No one but the principal investigator had authorised access to the classified documents.",
+            "question": "In this sentence, 'delayed' is functioning as a:",
+            "targetWord": "delayed",
+            "sentence": "Although the flight was delayed for nearly three hours, the ground crew, clearly exhausted from the earlier storm, managed to reboard passengers efficiently, which impressed everyone waiting.",
             "options": [
-                "Preposition",
-                "Conjunction",
-                "Adverb",
-                "Noun"
+                "Verb",
+                "Adjective",
+                "Noun",
+                "Adverb"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Preposition",
-            "hint": "'But' was a conjunction in level 21. Here, does it follow 'No one' and introduce a noun phrase like 'except'?",
-            "explanation": "'But' is a preposition - it means 'except' and introduces 'the principal investigator'. Compare: 'I wanted to go, but it rained' (conjunction) vs. 'no one but her' (preposition = except). ('But' returns as an adverb in level 181.)",
-            "grammarRule": "Prepositions",
+            "correctAnswer": "Verb",
+            "hint": "Check the words directly around it for clues. What happened to the flight?",
+            "explanation": "'Delayed' is a verb here, used in the passive voice ('was delayed') to describe what happened to the flight — contrast this with participial adjective uses of similar words elsewhere in this course.",
+            "grammarRule": "Verb in the passive voice",
             "transformations": [
-                "noun form",
-                "verb form"
+                "active voice",
+                "passive voice"
             ]
         },
         {
@@ -680,23 +680,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'shibboleths' as used in the sentence below?",
-            "targetWord": "shibboleths",
-            "sentence": "Certain political words have become shibboleths - markers of tribal identity rather than vehicles of genuine thought.",
+            "question": "In the same sentence, what role does 'exhausted' play?",
+            "targetWord": "exhausted",
+            "sentence": "Although the flight was delayed for nearly three hours, the ground crew, clearly exhausted from the earlier storm, managed to reboard passengers efficiently, which impressed everyone waiting.",
             "options": [
                 "Noun",
+                "Adverb",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Cultural nouns name words used as tests of identity. What do 'shibboleths' name here?",
-            "explanation": "'Shibboleths' is a noun (the plural of 'shibboleth') - it names a custom or word that distinguishes members of a group from outsiders. Originally a biblical password, now used metaphorically for any identity marker.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "This word, set off by commas, describes the crew's condition without a linking verb. What state was the ground crew in?",
+            "explanation": "'Exhausted' functions as an adjective here, describing the crew's tired condition — it appears in an interrupting phrase, just like in an earlier lesson about passengers at an airport.",
+            "grammarRule": "Participial adjective in an interrupting phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb form",
+                "adjective form"
             ]
         },
         {
@@ -704,23 +704,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'equivocal' as used in the sentence below?",
-            "targetWord": "equivocal",
-            "sentence": "His carefully worded response was deliberately equivocal, designed to avoid any firm commitment either way.",
+            "question": "And in that same sentence, what part of speech is 'which'?",
+            "targetWord": "which",
+            "sentence": "Although the flight was delayed for nearly three hours, the ground crew, clearly exhausted from the earlier storm, managed to reboard passengers efficiently, which impressed everyone waiting.",
             "options": [
-                "Noun",
+                "Pronoun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Conjunction",
+                "Noun"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives can describe language intentionally open to more than one interpretation. What does 'equivocal' describe?",
-            "explanation": "'Equivocal' is an adjective - it follows the linking verb 'was' as a predicate adjective and means open to more than one interpretation; deliberately ambiguous. The opposite is 'unequivocal'.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Pronoun",
+            "hint": "This word refers back to the entire situation of the crew managing to reboard passengers efficiently, not just one noun. What does 'which' refer to here?",
+            "explanation": "'Which' is a relative pronoun referring back to the whole idea of the crew's efficient work — the same whole-clause pattern practiced throughout this course.",
+            "grammarRule": "Relative pronoun referring to a whole clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "relative use",
+                "interrogative use"
             ]
         }
     ]

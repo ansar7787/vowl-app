@@ -5,543 +5,393 @@
     "quests": [
         {
             "id": "gq_l111_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She resigned ___ principle - she refused to compromise.",
-            "options": [
-                "for",
-                "in",
-                "by",
-                "on"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "on",
-            "hint": "Which preposition follows 'on' to form this idiomatic phrase?",
-            "explanation": "'On principle' = because of personal ethics or beliefs: She resigned on principle. Other 'on' phrases: on purpose (deliberately), on behalf of (representing), on the whole (generally), on the contrary.",
-            "grammarRule": "Formal Prepositional Phrases (Advanced)"
+            "question": "I ___ waiting for almost an hour.",
+            "options": ["has been", "am", "have been", "was"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "have been",
+            "hint": "This emphasizes an activity that has continued right up to now.",
+            "explanation": "Present perfect continuous (have/has been + -ing) highlights an ongoing activity: have been waiting. The focus is on the duration of the waiting itself, still continuing now.",
+            "grammarRule": "Present Perfect Continuous: Form"
         },
         {
             "id": "gq_l111_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The budget was cut ___ the detriment of the research department.",
-            "options": [
-                "for",
-                "at",
-                "to",
-                "in"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "to",
-            "hint": "This phrase means 'causing harm to'.",
-            "explanation": "'To the detriment of' = harming or damaging: to the detriment of the research department. Other formal prepositional phrases: to the benefit of, at the expense of, at the cost of.",
-            "grammarRule": "Formal Prepositional Phrases (Advanced)"
+            "question": "She ___ studying all night; she looks exhausted.",
+            "options": ["has been", "have been", "is", "was"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "has been",
+            "hint": "The subject 'she' needs the third-person form of this continuous perfect tense.",
+            "explanation": "'She' takes 'has been' in this tense: has been studying. Her current tiredness is a visible result of this ongoing activity.",
+            "grammarRule": "Present Perfect Continuous: Third-Person Singular"
         },
         {
             "id": "gq_l111_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Her actions were ___ keeping with company policy.",
-            "options": [
-                "beyond",
-                "in",
-                "out of",
-                "without"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "out of",
-            "hint": "She acted contrary to policy - which phrase expresses this?",
-            "explanation": "'Out of keeping with' = not consistent with, contrary to: out of keeping with company policy. Compare: 'in keeping with' = consistent with. These are fixed formal prepositional phrases.",
-            "grammarRule": "Formal Prepositional Phrases (Advanced)"
+            "question": "\u2014 Why are your hands so dirty?\n\u2014 I ___ working in the garden all morning.",
+            "options": ["have been", "has been", "am", "was"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "have been",
+            "hint": "The dirty hands are the visible result of an ongoing activity.",
+            "explanation": "The dirty hands are explained by an activity that's been happening for a while: have been working in the garden, matching the pattern from Question 1.",
+            "grammarRule": "Present Perfect Continuous: Form"
         },
         {
             "id": "gq_l112_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "He ___ having caused any damage.",
-            "options": [
-                "agreed",
-                "denied",
-                "admitted",
-                "refused"
-            ],
+            "question": "I ___ this book for two weeks; I'm almost finished.",
+            "options": ["have read", "have been reading", "has read", "has been reading"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "denied",
-            "hint": "He said it was NOT true that he caused damage.",
-            "explanation": "'Deny + gerund' = say something is not true: He denied having caused any damage. 'Admit' = accepting guilt. 'Deny having done' = claim you did not do something. These reporting verbs have distinct grammatical patterns.",
-            "grammarRule": "Reporting Verbs + Gerund"
+            "correctAnswer": "have been reading",
+            "hint": "The focus here is on the ongoing process, not a finished count.",
+            "explanation": "'Have been reading' emphasizes the ongoing process over two weeks. This differs from 'have read', which would focus on a completed result or quantity.",
+            "grammarRule": "Present Perfect Continuous vs Simple: Ongoing Process"
         },
         {
             "id": "gq_l112_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She ___ to have been in the building that night.",
-            "options": [
-                "insisted",
-                "refused",
-                "denied",
-                "admitted"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "admitted",
-            "hint": "She accepted the fact about being there.",
-            "explanation": "'Admit to + gerund' or 'admit + to + having + past participle': She admitted to having been in the building. 'Admit' = acknowledge the truth of something, often something negative. Compare 'deny' = say it is not true.",
-            "grammarRule": "Reporting Verbs + Gerund"
+            "question": "I ___ three books this month already.",
+            "options": ["have been reading", "has been reading", "have read", "has read"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "have read",
+            "hint": "This focuses on a finished number of completed items, not an ongoing process.",
+            "explanation": "'Have read' fits here because the focus is a completed count of finished books: have read three books. This contrasts with 'have been reading', which highlighted the process itself in Question 1.",
+            "grammarRule": "Present Perfect: Completed Quantity"
         },
         {
             "id": "gq_l112_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The professor ___ that the research was preliminary.",
-            "options": [
-                "pointed out",
-                "acknowledged",
-                "warned",
-                "stated"
-            ],
+            "question": "\u2014 Your eyes look tired.\n\u2014 Yeah, I ___ at the screen all day.",
+            "options": ["have stared", "have been staring", "has stared", "has been staring"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "acknowledged",
-            "hint": "Which verb means to formally recognise something, perhaps reluctantly?",
-            "explanation": "'Acknowledge' = formally recognise or admit: The professor acknowledged that the research was preliminary. It carries a sense of accepting a fact, sometimes despite reservations. 'Pointed out' = drew attention to.",
-            "grammarRule": "Reporting Verbs + Gerund"
+            "correctAnswer": "have been staring",
+            "hint": "The tiredness comes from a continuous activity, not a finished count.",
+            "explanation": "The tired eyes result from an ongoing activity over the whole day: have been staring, matching the process-focused pattern from Question 1.",
+            "grammarRule": "Present Perfect Continuous vs Simple: Ongoing Process"
         },
         {
             "id": "gq_l113_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Do you know where she ___?",
-            "options": [
-                "she is working",
-                "does she work",
-                "she works",
-                "is she working"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "she works",
-            "hint": "Embedded questions use statement word order.",
-            "explanation": "Embedded questions (inside Do you know...? I wonder... Can you tell me...?) use statement word order: Do you know where she works? Not Do you know where does she work? Statement order = no inversion.",
-            "grammarRule": "Embedded Questions"
+            "question": "By the time I arrived, the meeting ___ already started.",
+            "options": ["has", "have", "was", "had"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "had",
+            "hint": "This event finished before another past event (my arrival).",
+            "explanation": "Past perfect (had + past participle) describes something that happened before another past event: the meeting had started before I arrived.",
+            "grammarRule": "Past Perfect: Form"
         },
         {
             "id": "gq_l113_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Could you explain to me why the decision ___?",
-            "options": [
-                "made",
-                "has made",
-                "did they make",
-                "was made"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "was made",
-            "hint": "Embedded passive question.",
-            "explanation": "Embedded questions use statement word order: Could you explain why the decision was made? The passive (was made) is appropriate. Do not use question word order in embedded questions.",
-            "grammarRule": "Embedded Questions"
+            "question": "She ___ finished her homework before dinner.",
+            "options": ["had", "have", "has", "was"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "had",
+            "hint": "One past action (finishing homework) happened before another past action (dinner).",
+            "explanation": "'Had' fits since finishing homework happened before dinner, another point in the past: had finished before dinner.",
+            "grammarRule": "Past Perfect: Form"
         },
         {
             "id": "gq_l113_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I would be interested to know ___ would be affected by this change.",
-            "options": [
-                "how many peoples",
-                "how much people",
-                "how many people",
-                "how many a people"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "how many people",
-            "hint": "'People' is irregular - which quantifier is correct?",
-            "explanation": "'People' is already plural (no 's'). Use 'how many people': How many people would be affected? Never 'how much people' (people is countable) or 'peoples' (incorrect plural).",
-            "grammarRule": "Embedded Questions"
+            "question": "\u2014 Was Tom there when you got to the party?\n\u2014 No, he ___ already left.",
+            "options": ["had", "has", "have", "was"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "had",
+            "hint": "Tom's leaving happened before another past moment: your arrival.",
+            "explanation": "Since Tom left before you arrived, another point in the past, 'had left' is correct: he had already left by then.",
+            "grammarRule": "Past Perfect: Form"
         },
         {
             "id": "gq_l114_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Much ___ I disagree, I respect your decision.",
-            "options": [
-                "however",
-                "while",
-                "as",
-                "though"
-            ],
+            "question": "When I got home, I realized I ___ my keys at the office.",
+            "options": ["left", "have left", "had left", "has left"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "as",
-            "hint": "'Much as' introduces a formal concessive clause.",
-            "explanation": "'Much as + subject + verb' = even though (literary/formal): Much as I disagree, I respect your decision. This structure is used for formal concession. Synonym: Although I strongly disagree...",
-            "grammarRule": "Concessive Structures (Advanced)"
+            "correctAnswer": "had left",
+            "hint": "Leaving the keys happened before another past moment: realizing it at home.",
+            "explanation": "The keys were left behind before realizing it at home, so past perfect is needed: had left them at the office, before the later realization.",
+            "grammarRule": "Past Perfect vs Simple Past: Sequencing"
         },
         {
             "id": "gq_l114_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Try ___ he might, he couldn't open the jar.",
-            "options": [
-                "though",
-                "however hard",
-                "as",
-                "however"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "as",
-            "hint": "Inverted concessive: 'Try as he might'.",
-            "explanation": "'Try as + subject + might' = no matter how hard someone tries: Try as he might, he couldn't open the jar. This is a formal/literary inversion of 'As hard as he might try...'",
-            "grammarRule": "Concessive Structures (Advanced)"
+            "question": "When I got home, I ___ dinner right away.",
+            "options": ["had made", "have made", "has made", "made"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "made",
+            "hint": "These two actions happen one after another, not one before the other.",
+            "explanation": "Simple past fits here because both actions happen in sequence, not one before the other: got home, then made dinner. Past perfect would only apply if making dinner happened before getting home.",
+            "grammarRule": "Past Perfect vs Simple Past: Sequencing"
         },
         {
             "id": "gq_l114_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ its many flaws, the proposal deserves serious consideration.",
-            "options": [
-                "Although",
-                "However",
-                "Whatever",
-                "Despite"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Despite",
-            "hint": "A noun phrase follows - which word is correct?",
-            "explanation": "'Despite + noun phrase': Despite its many flaws, the proposal deserves consideration. 'However' needs an adjective after it. 'Although' needs a clause (subject + verb). 'Whatever' does not fit.",
-            "grammarRule": "Concessive Structures (Advanced)"
+            "question": "\u2014 Did you know about the change before the meeting?\n\u2014 No, I ___ heard about it until someone told me there.",
+            "options": ["didn't", "hadn't", "haven't", "don't"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "hadn't",
+            "hint": "Not knowing something happened before another past event: being told at the meeting.",
+            "explanation": "'Hadn't heard' shows the lack of knowledge existed before a later past point, being told at the meeting, matching the past perfect negative pattern.",
+            "grammarRule": "Past Perfect: Negative"
         },
         {
             "id": "gq_l115_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ the data to be inaccurate, the conclusions would need to be revisited.",
-            "options": [
-                "Have",
-                "If was",
-                "Were",
-                "Should prove"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Were",
-            "hint": "Formal conditional inversion - very formal style.",
-            "explanation": "'Were + subject + to + infinitive' is a highly formal conditional inversion: Were the data to be inaccurate, the conclusions would need revisiting. This replaces 'If the data were to be inaccurate...' Common in academic writing.",
-            "grammarRule": "Formal Conditional Inversion"
+            "question": "By the time the police arrived, the thief ___ already escaped.",
+            "options": ["had", "was", "has", "have"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "had",
+            "hint": "'By the time' is a classic signal phrase for this tense.",
+            "explanation": "'By the time' commonly introduces past perfect, showing one event was complete before another: had escaped by the time they arrived.",
+            "grammarRule": "Past Perfect: By The Time"
         },
         {
             "id": "gq_l115_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Had the government ___ earlier, the crisis might have been averted.",
-            "options": [
-                "be intervening",
-                "intervene",
-                "intervened",
-                "been intervening"
-            ],
+            "question": "___ she left the house, she had checked all the windows.",
+            "options": ["After", "By", "Before", "Since"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "intervened",
-            "hint": "Third conditional inversion - which verb form follows 'had'?",
-            "explanation": "'Had + subject + past participle' = third conditional inversion: Had the government intervened earlier = If the government had intervened earlier. The past participle must follow 'had'.",
-            "grammarRule": "Formal Conditional Inversion"
+            "correctAnswer": "Before",
+            "hint": "The checking happened earlier than the leaving, which comes second in the sentence.",
+            "explanation": "'Before' introduces the later action (leaving), while the earlier action (checking windows) correctly stays in past perfect: had checked before she left.",
+            "grammarRule": "Past Perfect: Before"
         },
         {
             "id": "gq_l115_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ any questions arise, please contact the helpdesk.",
-            "options": [
-                "Had",
-                "Should",
-                "Were",
-                "If will"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Should",
-            "hint": "Formal first conditional inversion for future possibility.",
-            "explanation": "'Should + subject + base verb' is formal conditional inversion: Should any questions arise, please contact the helpdesk. This equals 'If any questions arise...' Common in formal letters, notices, and legal documents.",
-            "grammarRule": "Formal Conditional Inversion"
+            "question": "\u2014 Did you eat before the movie?\n\u2014 Yes, we ___ already eaten dinner.",
+            "options": ["have", "has", "was", "had"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "had",
+            "hint": "Eating happened before another past event: going to the movie.",
+            "explanation": "Since eating happened before going to the movie, another past event, past perfect fits: had already eaten before the movie.",
+            "grammarRule": "Past Perfect: Form"
         },
         {
             "id": "gq_l116_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "In academic writing, which sentence is most appropriate?",
-            "options": [
-                "The results were really surprising, right?",
-                "The results proved to be somewhat surprising.",
-                "The results, they surprised us.",
-                "The results were kind of surprising."
-            ],
+            "question": "This time tomorrow, I ___ lying on a beach.",
+            "options": ["will", "will be", "am", "was"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "The results proved to be somewhat surprising.",
-            "hint": "Academic writing uses formal, hedged language.",
-            "explanation": "Academic writing avoids: informal words (kind of, really), question tags, and subject repetition (The results, they...). 'Proved to be somewhat surprising' uses formal vocabulary and hedging ('somewhat').",
-            "grammarRule": "Academic Writing Register"
+            "correctAnswer": "will be",
+            "hint": "This describes an action in progress at a specific future moment.",
+            "explanation": "Future continuous (will be + -ing) describes an action in progress at a future point: will be lying on the beach at that exact time tomorrow.",
+            "grammarRule": "Future Continuous: Form"
         },
         {
             "id": "gq_l116_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which version is best for an academic essay?",
-            "options": [
-                "I will tell you about climate change in this essay.",
-                "This essay examines the causes and effects of climate change.",
-                "In this essay, I'm gonna talk about climate change.",
-                "Let's talk about what causes climate change."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "This essay examines the causes and effects of climate change.",
-            "hint": "Academic essays use formal, impersonal language.",
-            "explanation": "Academic essays prefer formal, impersonal language: This essay examines... Avoid: contractions (gonna), second person (you), first person commands (Let's), and informal vocabulary.",
-            "grammarRule": "Academic Writing Register"
+            "question": "At 8 pm, we ___ having dinner.",
+            "options": ["will be", "will", "are", "were"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "will be",
+            "hint": "The specific future time '8 pm' signals an action in progress then.",
+            "explanation": "'At 8 pm' pinpoints a moment in the future, matching future continuous: will be having dinner at that time.",
+            "grammarRule": "Future Continuous: Form"
         },
         {
             "id": "gq_l116_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which discourse marker best signals a logical conclusion in an essay?",
-            "options": [
-                "In conclusion,",
-                "OK, so,",
-                "So basically,",
-                "Anyway,"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "In conclusion,",
-            "hint": "Which phrase formally signals the final summary of an argument?",
-            "explanation": "'In conclusion' is a formal marker for the final paragraph of an essay. It signals the summary of the argument. Informal equivalents (anyway, OK so, so basically) are completely inappropriate in academic writing.",
-            "grammarRule": "Academic Writing Register"
+            "question": "\u2014 Can you call me at noon?\n\u2014 I might be busy; I ___ probably still working then.",
+            "options": ["will", "am", "will be", "was"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "will be",
+            "hint": "The word 'then' points to an action in progress at that future moment.",
+            "explanation": "'Will be working' describes an action expected to be in progress at noon, matching the same pattern practiced in Questions 1 and 2.",
+            "grammarRule": "Future Continuous: Form"
         },
         {
             "id": "gq_l117_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "A: 'Are you going?' B: 'I might ___.'",
-            "options": [
-                "go",
-                "-",
-                "to",
-                "be"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "-",
-            "hint": "After 'might', what is implied but omitted?",
-            "explanation": "After modal verbs in short responses, we omit the rest: I might [go]. The verb is omitted after the modal. This is ellipsis. 'I might.' is the complete, grammatically correct short answer.",
-            "grammarRule": "Ellipsis"
+            "question": "I ___ call you as soon as I arrive.",
+            "options": ["will be", "am", "was", "will"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "will",
+            "hint": "This is a simple, quick future action, not something ongoing at a specific moment.",
+            "explanation": "'Will' fits a simple future action or decision: will call you. There's no specific future moment where the calling is 'in progress', so future continuous isn't needed here.",
+            "grammarRule": "Future Continuous vs Simple Future"
         },
         {
             "id": "gq_l117_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'She never reads books, but her brother ___.'",
-            "options": [
-                "does",
-                "did",
-                "reads",
-                "reads does"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "does",
-            "hint": "Which auxiliary correctly contrasts in this ellipsis?",
-            "explanation": "When the verb is omitted (ellipsis), use the auxiliary: Her brother does [read books]. 'Does' replaces 'reads books' using auxiliary substitution - 'do/does/did' replaces a full verb phrase.",
-            "grammarRule": "Ellipsis"
+            "question": "At this time next week, I ___ relaxing on vacation.",
+            "options": ["am", "will be", "will", "was"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "will be",
+            "hint": "'At this time next week' points to a specific future moment, unlike Question 1.",
+            "explanation": "'At this time next week' pinpoints a future moment, so future continuous fits: will be relaxing at that exact time, contrasting with the simple future in Question 1.",
+            "grammarRule": "Future Continuous vs Simple Future"
         },
         {
             "id": "gq_l117_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'I expected the film to be better, and it turned out ___.'",
-            "options": [
-                "to be so",
-                "to be",
-                "-",
-                "it was"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "to be",
-            "hint": "Which phrase completes the sentence avoiding repetition?",
-            "explanation": "'It turned out to be [better/as expected]' - 'to be' is retained to avoid repetition. The complement is omitted but understood. This is ellipsis where the infinitive marker is kept: it turned out to be [so].",
-            "grammarRule": "Ellipsis"
+            "question": "\u2014 What are your plans for the weekend?\n\u2014 I'm not sure yet, but I ___ probably visit my parents.",
+            "options": ["will", "was", "will be", "am"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "will",
+            "hint": "This is a general, uncertain plan, not an action tied to one exact future moment.",
+            "explanation": "'Will' fits this general, uncertain future plan: will probably visit. No specific moment is pinned down, so future continuous isn't needed, unlike Question 2.",
+            "grammarRule": "Future Continuous vs Simple Future"
         },
         {
             "id": "gq_l118_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The company launched a new product. ___ was met with positive reviews.",
-            "options": [
-                "It",
-                "The product",
-                "That",
-                "Which"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "It",
-            "hint": "Which pronoun creates cohesion by referring back to 'the product'?",
-            "explanation": "'It' is the natural pronoun for 'the new product' in the following sentence: It was met with positive reviews. Pronouns create cohesion by referring back to nouns already mentioned (anaphora).",
-            "grammarRule": "Cohesion: Pronoun Reference"
+            "question": "I ___ never been to New York.",
+            "options": ["had", "has", "have", "having"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "have",
+            "hint": "The subject is 'I', describing a life experience up to now.",
+            "explanation": "'I' takes 'have' in present perfect for life experience: have never been. This reviews the pattern first introduced in Level 106.",
+            "grammarRule": "Present Perfect: Life Experience"
         },
         {
             "id": "gq_l118_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Some researchers argue for stricter controls. Others claim ___ would stifle innovation.",
-            "options": [
-                "those",
-                "it",
-                "this",
-                "these"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "this",
-            "hint": "Which word refers back to 'stricter controls' as a concept?",
-            "explanation": "'This' refers back to a concept or idea just mentioned: this would stifle innovation = stricter controls would stifle innovation. 'This' and 'that' can refer to whole ideas, not just single nouns.",
-            "grammarRule": "Cohesion: Pronoun Reference"
+            "question": "I've ___ studying its history for months, so I feel like I know it well.",
+            "options": ["have", "been", "has", "was"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "been",
+            "hint": "This completes the present perfect continuous form after 've.",
+            "explanation": "'I've been studying' completes the present perfect continuous form, emphasizing the ongoing months of study, as practiced in Level 111.",
+            "grammarRule": "Present Perfect Continuous: Form"
         },
         {
             "id": "gq_l118_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'The first team finished in two hours. The second team took three.' What does 'three' refer to?",
-            "options": [
-                "Three hours",
-                "Three tasks",
-                "Three members",
-                "Three teams"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Three hours",
-            "hint": "What is implied by 'three' at the end?",
-            "explanation": "'The second team took three' = three hours. This is ellipsis - 'hours' is omitted because it was mentioned earlier. Ellipsis removes words that can be understood from context, creating natural cohesion.",
-            "grammarRule": "Cohesion: Pronoun Reference"
+            "question": "\u2014 Had you met her before the conference?\n\u2014 No, I ___ never met her until then.",
+            "options": ["did", "have", "had", "has"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "had",
+            "hint": "Match the same tense the question itself already used.",
+            "explanation": "The reply matches the question's own past perfect: had never met her, describing a situation true before the conference.",
+            "grammarRule": "Past Perfect: Form"
         },
         {
             "id": "gq_l119_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ that the economic situation will improve soon.",
-            "options": [
-                "People believe that",
-                "It believes",
-                "It is believed",
-                "There is believed"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "It is believed",
-            "hint": "Impersonal passive for general beliefs in formal writing.",
-            "explanation": "'It is believed that...' is a formal impersonal passive. It avoids identifying who believes it: It is believed that the economy will improve. Other examples: It is thought that... It is estimated that... It is hoped that...",
-            "grammarRule": "Impersonal Passive Structures"
+            "question": "By the time we got to the theater, the film ___ already started.",
+            "options": ["was", "have", "has", "had"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "had",
+            "hint": "This event finished before another past event, your arrival.",
+            "explanation": "'By the time' signals past perfect once again: the film had started before you arrived, missing the beginning.",
+            "grammarRule": "Past Perfect: By The Time"
         },
         {
             "id": "gq_l119_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ to measure risk in financial markets.",
-            "options": [
-                "It uses various methods",
-                "There are various methods use",
-                "They use various methods",
-                "Various methods are used"
-            ],
+            "question": "We ___ waiting outside for twenty minutes when they finally opened the doors.",
+            "options": ["have been", "has been", "were", "had been"],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Various methods are used",
-            "hint": "Which passive sentence is formal and avoids naming an agent?",
-            "explanation": "Passive: Various methods are used to measure risk. This is formal and impersonal - no agent is named. 'They' is vague in formal writing. Passive removes the need to name a subject/agent.",
-            "grammarRule": "Impersonal Passive Structures"
+            "correctAnswer": "had been",
+            "hint": "This ongoing action was already happening before another past event, the doors opening.",
+            "explanation": "Past perfect continuous (had been + -ing) shows an ongoing action leading up to another past event: had been waiting before the doors opened.",
+            "grammarRule": "Past Perfect Continuous: Form"
         },
         {
             "id": "gq_l119_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ important to consider all the evidence before drawing conclusions.",
-            "options": [
-                "It is",
-                "There is",
-                "This is",
-                "That is"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "It is",
-            "hint": "Impersonal 'it' as a dummy subject.",
-            "explanation": "'It is + adjective + to + infinitive' uses 'it' as a dummy (empty) subject: It is important to consider all the evidence. 'It' has no meaning itself - it simply fills the subject position. Very common in formal writing.",
-            "grammarRule": "Impersonal Passive Structures"
+            "question": "\u2014 How was the trip?\n\u2014 Great, though we ___ traveling for over twelve hours by the time we landed.",
+            "options": ["have been", "had been", "has been", "were"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "had been",
+            "hint": "The traveling was ongoing right up until another past event: landing.",
+            "explanation": "'Had been traveling' shows the ongoing journey leading up to landing, another past point, matching the pattern from Question 2.",
+            "grammarRule": "Past Perfect Continuous: Form"
         },
         {
             "id": "gq_l120_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I remember ___ that song - it was in 1995.",
-            "options": [
-                "hearing",
-                "to hear",
-                "heard",
-                "hear"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "hearing",
-            "hint": "'Remember + -ing' refers to a past memory.",
-            "explanation": "'Remember + gerund' = have a memory of doing something in the past: I remember hearing that song in 1995. Compare: 'Remember + infinitive' = don't forget to do something (future): Remember to lock the door!",
-            "grammarRule": "Verb Patterns (Gerund/Infinitive)"
+            "question": "I ___ working on this project for six months, and I finally finished it yesterday.",
+            "options": ["have been", "had been", "has been", "was"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "had been",
+            "hint": "The finishing happened yesterday, a specific past point, so the ongoing work leading up to it needs a matching past tense.",
+            "explanation": "Since the project was finished yesterday, a specific past point, the ongoing work leading up to it takes past perfect continuous: had been working, then finished.",
+            "grammarRule": "Past Perfect Continuous: Form"
         },
         {
             "id": "gq_l120_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She stopped ___ a call when she noticed the fire.",
-            "options": [
-                "having made",
-                "answering",
-                "making",
-                "to make"
-            ],
+            "question": "By next month, I ___ living here for ten years.",
+            "options": ["will be", "have been", "had been", "will have been"],
             "correctAnswerIndex": 3,
-            "correctAnswer": "to make",
-            "hint": "'Stop + to-infinitive' means she paused in order to do it.",
-            "explanation": "'Stop + to + infinitive' = pause in order to do something else: She stopped to make a call. Compare: 'Stop + gerund' = quit doing: She stopped making calls = she no longer makes them. The meaning changes completely.",
-            "grammarRule": "Verb Patterns (Gerund/Infinitive)"
+            "correctAnswer": "will have been",
+            "hint": "This looks ahead to a future point and measures a duration that will be complete by then.",
+            "explanation": "'Will have been' looks forward to a future point and counts a duration reaching up to it: will have been living here for ten years by next month. This combines the future and perfect ideas from this entire stage into one advanced form.",
+            "grammarRule": "Future Perfect Continuous: Form"
         },
         {
             "id": "gq_l120_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "They went on ___ even after the lights went out.",
-            "options": [
-                "talk",
-                "talking",
-                "to talk",
-                "having talked"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "talking",
-            "hint": "'Go on + -ing' means continuing the same activity.",
-            "explanation": "'Go on + gerund' = continue doing the same thing: They went on talking. Compare: 'Go on + infinitive' = proceed to do something new: After dinner, she went on to give a speech. Each form has a different meaning.",
-            "grammarRule": "Verb Patterns (Gerund/Infinitive)"
+            "question": "\u2014 Tell me about your journey to get here.\n\u2014 Well, by the time I got this job, I ___ applied to over fifty companies.",
+            "options": ["did", "have", "has", "had"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "had",
+            "hint": "This closes Stage 6 with the same 'by the time' signal practiced throughout this block.",
+            "explanation": "'By the time I got this job' signals past perfect once more: had applied to fifty companies before that point, wrapping up the full journey through perfect and continuous tenses covered across Levels 101 to 120.",
+            "grammarRule": "Past Perfect: By The Time"
         }
     ]
 }

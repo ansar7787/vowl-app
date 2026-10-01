@@ -8,8 +8,8 @@
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The large corporation proudly announced record profits during the annual shareholder meeting.",
-            "sentence": "The large corporation proudly announced record profits during the annual shareholder meeting.",
+            "question": "The lab technician calibrates this equipment every Monday morning.",
+            "sentence": "The lab technician calibrates this equipment every Monday morning.",
             "options": [
                 "Active",
                 "Passive"
@@ -17,79 +17,79 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Which noun is responsible for making this announcement?",
-            "explanation": "This is active voice: the corporation (the doer) performed the action announced directly on record profits. In passive, this would flip to: Record profits were proudly announced during the annual shareholder meeting.",
-            "grammarRule": "Agentless Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "First identify the tense - habitual present - then find the doer before calibrates.",
+            "explanation": "The lab technician is the doer of calibrates, simple present active describing a routine. Passive version: This equipment is calibrated every Monday morning by the lab technician.",
+            "grammarRule": "Simple Present Active",
+            "activeVoice": "The lab technician calibrates this equipment every Monday morning.",
+            "passiveVoice": "This equipment is calibrated every Monday morning by the lab technician."
         },
         {
             "id": "vs_l111_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Dedicated volunteers planted over a thousand trees along the riverbank last weekend.",
-            "sentence": "Dedicated volunteers planted over a thousand trees along the riverbank last weekend.",
+            "question": "The contract was terminated without any prior notice to either party.",
+            "sentence": "The contract was terminated without any prior notice to either party.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Who performs the action planted? Look right before the verb.",
-            "explanation": "This is active voice: volunteers (the doer) performed the action planted directly on over a thousand trees. In passive, this would flip to: Over a thousand trees were planted along the riverbank last weekend.",
-            "grammarRule": "Agentless Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "First identify the tense - a completed past event - then look for was plus a past participle.",
+            "explanation": "The contract (receiver) was terminated, simple past passive, with no party named as responsible. Active form: Someone terminated the contract without any prior notice to either party.",
+            "grammarRule": "Simple Past Passive",
+            "activeVoice": "Someone terminated the contract without any prior notice to either party.",
+            "passiveVoice": "The contract was terminated without any prior notice to either party."
         },
         {
             "id": "vs_l111_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The controversial proposed pipeline was ultimately rejected after months of public protest.",
-            "sentence": "The controversial proposed pipeline was ultimately rejected after months of public protest.",
+            "question": "The committee will finalize the agenda sometime tomorrow afternoon.",
+            "sentence": "The committee will finalize the agenda sometime tomorrow afternoon.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus a past participle (rejected). No agent is named, but the subject still receives the action.",
-            "explanation": "This is passive voice: the pipeline (receiver) was rejected, but the sentence does not name who rejected it. In active, this would flip to: Regulators ultimately rejected the controversial proposed pipeline after months of public protest.",
-            "grammarRule": "Agentless Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "First identify the tense - a future plan - then find the doer before will finalize.",
+            "explanation": "The committee is the doer of will finalize, future simple active. Passive version: The agenda will be finalized sometime tomorrow afternoon by the committee.",
+            "grammarRule": "Future Simple Active",
+            "activeVoice": "The committee will finalize the agenda sometime tomorrow afternoon.",
+            "passiveVoice": "The agenda will be finalized sometime tomorrow afternoon by the committee."
         },
         {
             "id": "vs_l112_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "It was officially announced that the flight would depart from a different gate.",
-            "sentence": "It was officially announced that the flight would depart from a different gate.",
+            "question": "Right now, the crew is repaving the section of road near the school.",
+            "sentence": "Right now, the crew is repaving the section of road near the school.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Notice it opens the sentence as a placeholder subject, not the airline itself.",
-            "explanation": "This is passive voice: it functions as a placeholder subject, with was announced plus that reporting the statement impersonally. In active, this would flip to: The airline officially announced that the flight would depart from a different gate.",
-            "grammarRule": "Reported Statement Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "First identify the tense - an action in progress right now - then find the doer before is repaving.",
+            "explanation": "The crew is the doer of is repaving, present continuous active. Passive version: The section of road near the school is being repaved by the crew right now.",
+            "grammarRule": "Present Continuous Active",
+            "activeVoice": "Right now, the crew is repaving the section of road near the school.",
+            "passiveVoice": "The section of road near the school is being repaved by the crew right now."
         },
         {
             "id": "vs_l112_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "It was reported that tourism had declined sharply throughout the past year.",
-            "sentence": "It was reported that tourism had declined sharply throughout the past year.",
+            "question": "The negotiations were being closely monitored when the talks suddenly broke down.",
+            "sentence": "The negotiations were being closely monitored when the talks suddenly broke down.",
             "options": [
                 "Active",
                 "Passive"
@@ -97,19 +97,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "This sentence opens with a placeholder it rather than a real subject performing the reporting.",
-            "explanation": "This is passive voice: it functions as a placeholder subject, with was reported plus that reporting the finding impersonally. In active, this would flip to: Analysts reported that tourism had declined sharply throughout the past year.",
-            "grammarRule": "Reported Statement Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "First identify the tense - an ongoing past action interrupted by another - then look for were being plus a past participle.",
+            "explanation": "The negotiations (receiver) were being monitored, past continuous passive, describing an action in progress when another past event happened. No specific monitor is named. Active form: Officials were closely monitoring the negotiations when the talks suddenly broke down.",
+            "grammarRule": "Past Continuous Passive",
+            "activeVoice": "Officials were closely monitoring the negotiations when the talks suddenly broke down.",
+            "passiveVoice": "The negotiations were being closely monitored when the talks suddenly broke down."
         },
         {
             "id": "vs_l112_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The tour guide explained that the ancient ruins predated the entire empire.",
-            "sentence": "The tour guide explained that the ancient ruins predated the entire empire.",
+            "question": "By next week, the marketing team will be launching the campaign in three new countries.",
+            "sentence": "By next week, the marketing team will be launching the campaign in three new countries.",
             "options": [
                 "Active",
                 "Passive"
@@ -117,19 +117,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Who is doing the explaining? Check right before the verb.",
-            "explanation": "This is active voice: the guide (the doer) performed the action explained directly, introducing the reported clause. In passive, this would flip to: It was explained by the tour guide that the ancient ruins predated the entire empire.",
-            "grammarRule": "Reported Statement Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "First identify the tense - a future action in progress at a specific time - then find the doer before will be launching.",
+            "explanation": "The marketing team is the doer of will be launching, future continuous active, describing an action expected to be underway at a future point. Passive version: By next week, the campaign will be being launched in three new countries by the marketing team (grammatically correct but unusual; a simple future passive reads more naturally: the campaign will be launched).",
+            "grammarRule": "Future Continuous Active",
+            "activeVoice": "By next week, the marketing team will be launching the campaign in three new countries.",
+            "passiveVoice": "By next week, the campaign will be launched in three new countries by the marketing team."
         },
         {
             "id": "vs_l113_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The talented firm would attract better talent if it offered flexible work schedules.",
-            "sentence": "The talented firm would attract better talent if it offered flexible work schedules.",
+            "question": "The architects have finalized the blueprint after three rounds of revisions.",
+            "sentence": "The architects have finalized the blueprint after three rounds of revisions.",
             "options": [
                 "Active",
                 "Passive"
@@ -137,59 +137,59 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before would attract.",
-            "explanation": "This is active voice: the firm (the doer) would perform the action attract directly on better talent. In passive, this would flip to: Better talent would be attracted if the firm offered flexible work schedules.",
-            "grammarRule": "Second Conditional Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "First identify the tense - completed with present relevance - then find the doer before have finalized.",
+            "explanation": "The architects is the doer of have finalized, present perfect active. Passive version: The blueprint has been finalized after three rounds of revisions by the architects.",
+            "grammarRule": "Present Perfect Active",
+            "activeVoice": "The architects have finalized the blueprint after three rounds of revisions.",
+            "passiveVoice": "The blueprint has been finalized after three rounds of revisions by the architects."
         },
         {
             "id": "vs_l113_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "He would eventually complete the marathon if his old injury healed in time.",
-            "sentence": "He would eventually complete the marathon if his old injury healed in time.",
+            "question": "The samples had already been contaminated before the new procedure was introduced.",
+            "sentence": "The samples had already been contaminated before the new procedure was introduced.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Who performs the action would complete? Look right before the verb.",
-            "explanation": "This is active voice: he (the doer) would perform the action complete directly on the marathon. In passive, this would flip to: The marathon would eventually be completed if his old injury healed in time.",
-            "grammarRule": "Second Conditional Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "First identify the tense - completed before another past event - then look for had been plus a past participle.",
+            "explanation": "The samples (receiver) had been contaminated, past perfect passive, describing something completed before another past event, the new procedure was introduced. No specific cause is named as agent. Active form: Something had already contaminated the samples before the new procedure was introduced.",
+            "grammarRule": "Past Perfect Passive",
+            "activeVoice": "Something had already contaminated the samples before the new procedure was introduced.",
+            "passiveVoice": "The samples had already been contaminated before the new procedure was introduced."
         },
         {
             "id": "vs_l113_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The corporate merger would be blocked if regulators found serious antitrust concerns.",
-            "sentence": "The corporate merger would be blocked if regulators found serious antitrust concerns.",
+            "question": "By the time the show starts, the crew will have set up every piece of equipment.",
+            "sentence": "By the time the show starts, the crew will have set up every piece of equipment.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for would be plus a past participle (blocked). The subject receives the action here.",
-            "explanation": "This is passive voice: the merger (receiver) would be blocked, but no specific blocker is named. In active, this would flip to: Regulators would block the corporate merger if they found serious antitrust concerns.",
-            "grammarRule": "Second Conditional Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "First identify the tense - completed before a future point - then find the doer before will have set up.",
+            "explanation": "The crew is the doer of will have set up, future perfect active. Passive version: By the time the show starts, every piece of equipment will have been set up by the crew.",
+            "grammarRule": "Future Perfect Active",
+            "activeVoice": "By the time the show starts, the crew will have set up every piece of equipment.",
+            "passiveVoice": "By the time the show starts, every piece of equipment will have been set up by the crew."
         },
         {
             "id": "vs_l114_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The community center was fully renovated using generous donations from local families.",
-            "sentence": "The community center was fully renovated using generous donations from local families.",
+            "question": "The results should have been double-checked before they were published online.",
+            "sentence": "The results should have been double-checked before they were published online.",
             "options": [
                 "Active",
                 "Passive"
@@ -197,59 +197,59 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus a past participle (renovated). No agent is named, but the subject still receives the action.",
-            "explanation": "This is passive voice: the community center (receiver) was renovated, but the renovator is not named directly. In active, this would flip to: Volunteers fully renovated the community center using generous donations from local families.",
-            "grammarRule": "Agentless Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Identify all three layers here - modal, perfect, passive. Look for should have been plus a past participle.",
+            "explanation": "The results (receiver) should have been double-checked - a modal perfect passive combining three layers: should (modal) + have been (perfect passive) + double-checked (past participle). No specific editor is named. Active form: Someone should have double-checked the results before they were published online.",
+            "grammarRule": "Perfect Modal Passive",
+            "activeVoice": "Someone should have double-checked the results before they were published online.",
+            "passiveVoice": "The results should have been double-checked before they were published online."
         },
         {
             "id": "vs_l114_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The scenic mountain overlook was closed indefinitely due to unstable rock formations.",
-            "sentence": "The scenic mountain overlook was closed indefinitely due to unstable rock formations.",
+            "question": "The construction crew must be working through the night to finish by the deadline.",
+            "sentence": "The construction crew must be working through the night to finish by the deadline.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "The overlook did not close itself. No one performing the closing is mentioned here.",
-            "explanation": "This is passive voice: the overlook (receiver) was closed, but the closer is not named directly. In active, this would flip to: Park rangers closed the scenic mountain overlook indefinitely due to unstable rock formations.",
-            "grammarRule": "Agentless Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Identify the layers here - modal plus continuous. Find the doer before must be working.",
+            "explanation": "The construction crew is the doer of must be working, a modal continuous active combining certainty (must) with an ongoing action (be working). Passive version, if needed: The night shift must be being worked by the construction crew to finish by the deadline (awkward; active voice is the natural choice for this structure).",
+            "grammarRule": "Modal Continuous Active",
+            "activeVoice": "The construction crew must be working through the night to finish by the deadline.",
+            "passiveVoice": "No natural passive form exists here; active voice is strongly preferred for modal continuous structures like this one."
         },
         {
             "id": "vs_l114_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The city council will officially finalize the new bus routes by next spring.",
-            "sentence": "The city council will officially finalize the new bus routes by next spring.",
+            "question": "The vaccine will have been tested on thousands of volunteers by the time it's approved.",
+            "sentence": "The vaccine will have been tested on thousands of volunteers by the time it's approved.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before will finalize.",
-            "explanation": "This is active voice: the council (the doer) will perform the action finalize directly on the new bus routes. In passive, this would flip to: The new bus routes will officially be finalized by the city council by next spring.",
-            "grammarRule": "Agentless Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Identify the layers here - future, perfect, passive. Look for will have been plus a past participle.",
+            "explanation": "The vaccine (receiver) will have been tested - future perfect passive, combining will have (future perfect) with been tested (passive), describing something completed before a future point. No specific lab is named. Active form: Researchers will have tested the vaccine on thousands of volunteers by the time it's approved.",
+            "grammarRule": "Future Perfect Passive",
+            "activeVoice": "Researchers will have tested the vaccine on thousands of volunteers by the time it's approved.",
+            "passiveVoice": "The vaccine will have been tested on thousands of volunteers by the time it's approved."
         },
         {
             "id": "vs_l115_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Leading economists warned that inflation would continue rising steadily through next year.",
-            "sentence": "Leading economists warned that inflation would continue rising steadily through next year.",
+            "question": "The landlord doesn't inspect the property more than once a year.",
+            "sentence": "The landlord doesn't inspect the property more than once a year.",
             "options": [
                 "Active",
                 "Passive"
@@ -257,39 +257,39 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before warned.",
-            "explanation": "This is active voice: economists (the doer) performed the action warned directly, introducing the reported clause. In passive, this would flip to: It was warned by leading economists that inflation would continue rising steadily through next year.",
-            "grammarRule": "Reported Statement Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "First identify the tense - habitual present, negative - then find the doer before doesn't inspect.",
+            "explanation": "The landlord is the doer of doesn't inspect, negative simple present active. Passive version: The property isn't inspected more than once a year by the landlord.",
+            "grammarRule": "Simple Present Active (Negative)",
+            "activeVoice": "The landlord doesn't inspect the property more than once a year.",
+            "passiveVoice": "The property isn't inspected more than once a year by the landlord."
         },
         {
             "id": "vs_l115_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The company CEO admitted that they had seriously underestimated the production costs.",
-            "sentence": "The company CEO admitted that they had seriously underestimated the production costs.",
+            "question": "The shipment hadn't been tracked properly before it went missing entirely.",
+            "sentence": "The shipment hadn't been tracked properly before it went missing entirely.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Who performs the action admitted? Look right before the verb.",
-            "explanation": "This is active voice: the CEO (the doer) performed the action admitted directly, introducing the reported clause. In passive, this would flip to: It was admitted by the company CEO that they had seriously underestimated the production costs.",
-            "grammarRule": "Reported Statement Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "First identify the tense - negative, completed before another past event - then look for hadn't been plus a past participle.",
+            "explanation": "The shipment (receiver) hadn't been tracked, negative past perfect passive, describing something that failed to happen before another past event, it went missing. No tracker is named. Active form: The courier hadn't tracked the shipment properly before it went missing entirely.",
+            "grammarRule": "Past Perfect Passive (Negative)",
+            "activeVoice": "The courier hadn't tracked the shipment properly before it went missing entirely.",
+            "passiveVoice": "The shipment hadn't been tracked properly before it went missing entirely."
         },
         {
             "id": "vs_l115_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "It was publicly claimed that the factory had violated environmental protection laws.",
-            "sentence": "It was publicly claimed that the factory had violated environmental protection laws.",
+            "question": "The proposal won't be considered until all the paperwork is complete.",
+            "sentence": "The proposal won't be considered until all the paperwork is complete.",
             "options": [
                 "Active",
                 "Passive"
@@ -297,59 +297,59 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for it was plus a past participle (claimed) plus that, an impersonal passive pattern.",
-            "explanation": "This is passive voice: it functions as a placeholder subject, with was claimed plus that reporting the accusation impersonally. In active, this would flip to: Environmental groups publicly claimed that the factory had violated environmental protection laws.",
-            "grammarRule": "Reported Statement Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "First identify the tense - future, negative - then look for won't be plus a past participle.",
+            "explanation": "The proposal (receiver) won't be considered, negative future simple passive, with no committee named. Active form: The committee won't consider the proposal until all the paperwork is complete.",
+            "grammarRule": "Future Simple Passive (Negative)",
+            "activeVoice": "The committee won't consider the proposal until all the paperwork is complete.",
+            "passiveVoice": "The proposal won't be considered until all the paperwork is complete."
         },
         {
             "id": "vs_l116_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The regional airline would offer more routes if passenger demand increased quite steadily.",
-            "sentence": "The regional airline would offer more routes if passenger demand increased quite steadily.",
+            "question": "Has the shipment been inspected by customs yet?",
+            "sentence": "Has the shipment been inspected by customs yet?",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before would offer.",
-            "explanation": "This is active voice: the airline (the doer) would perform the action offer directly on more routes. In passive, this would flip to: More routes would be offered if passenger demand increased quite steadily.",
-            "grammarRule": "Second Conditional Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "First identify the tense - present perfect - then look for been plus a past participle after has.",
+            "explanation": "The shipment (receiver) has been inspected, present perfect passive question, with customs named as the agent. Active form: Has customs inspected the shipment yet?",
+            "grammarRule": "Present Perfect Passive Question",
+            "activeVoice": "Has customs inspected the shipment yet?",
+            "passiveVoice": "Has the shipment been inspected by customs yet?"
         },
         {
             "id": "vs_l116_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The entire proposal would be rejected if the final budget exceeded expectations.",
-            "sentence": "The entire proposal would be rejected if the final budget exceeded expectations.",
+            "question": "Will the new policy affect employees who work remotely?",
+            "sentence": "Will the new policy affect employees who work remotely?",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for would be plus a past participle (rejected). The subject receives the action here.",
-            "explanation": "This is passive voice: the proposal (receiver) would be rejected, but no specific rejector is named. In active, this would flip to: The board would reject the entire proposal if the final budget exceeded expectations.",
-            "grammarRule": "Second Conditional Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "First identify the tense - future - then find the doer before will affect.",
+            "explanation": "The new policy is the doer of will affect, future simple active question. Passive version: Will employees who work remotely be affected by the new policy?",
+            "grammarRule": "Future Simple Active Question",
+            "activeVoice": "Will the new policy affect employees who work remotely?",
+            "passiveVoice": "Will employees who work remotely be affected by the new policy?"
         },
         {
             "id": "vs_l116_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The entire trip would be postponed if the distant volcano continued erupting violently.",
-            "sentence": "The entire trip would be postponed if the distant volcano continued erupting violently.",
+            "question": "Was the machine being repaired when the second breakdown happened?",
+            "sentence": "Was the machine being repaired when the second breakdown happened?",
             "options": [
                 "Active",
                 "Passive"
@@ -357,19 +357,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for would be plus a past participle (postponed). The subject receives the action here.",
-            "explanation": "This is passive voice: the trip (receiver) would be postponed, but no specific organizer is named. In active, this would flip to: Organizers would postpone the entire trip if the distant volcano continued erupting violently.",
-            "grammarRule": "Second Conditional Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "First identify the tense - past continuous - then look for being plus a past participle after was.",
+            "explanation": "The machine (receiver) was being repaired, past continuous passive question, with no technician named. Active form: Was a technician repairing the machine when the second breakdown happened?",
+            "grammarRule": "Past Continuous Passive Question",
+            "activeVoice": "Was a technician repairing the machine when the second breakdown happened?",
+            "passiveVoice": "Was the machine being repaired when the second breakdown happened?"
         },
         {
             "id": "vs_l117_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The ambitious startup unveiled a groundbreaking new product at the annual conference.",
-            "sentence": "The ambitious startup unveiled a groundbreaking new product at the annual conference.",
+            "question": "Even though the report has been reviewed twice, the manager still hasn't approved it.",
+            "sentence": "Even though the report has been reviewed twice, the manager still hasn't approved it.",
             "options": [
                 "Active",
                 "Passive"
@@ -377,19 +377,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before unveiled.",
-            "explanation": "This is active voice: the startup (the doer) performed the action unveiled directly on a new product. In passive, this would flip to: A groundbreaking new product was unveiled at the annual conference.",
-            "grammarRule": "Agentless Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Two clauses appear here. Focus on the main clause: the manager still hasn't approved it.",
+            "explanation": "The manager is the doer of hasn't approved in the main clause, negative present perfect active, even though the earlier clause, has been reviewed, is passive. Passive version of the main clause: It still hasn't been approved by the manager, even though the report has been reviewed twice.",
+            "grammarRule": "Present Perfect Active (Negative, Mixed Clauses)",
+            "activeVoice": "Even though the report has been reviewed twice, the manager still hasn't approved it.",
+            "passiveVoice": "Even though the report has been reviewed twice, it still hasn't been approved by the manager."
         },
         {
             "id": "vs_l117_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Concerned neighbors organized a petition against the proposed downtown apartment complex.",
-            "sentence": "Concerned neighbors organized a petition against the proposed downtown apartment complex.",
+            "question": "While the guests were being seated, the kitchen was already preparing the first course.",
+            "sentence": "While the guests were being seated, the kitchen was already preparing the first course.",
             "options": [
                 "Active",
                 "Passive"
@@ -397,19 +397,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Who performs the action organized? Look right before the verb.",
-            "explanation": "This is active voice: neighbors (the doer) performed the action organized directly on a petition. In passive, this would flip to: A petition against the proposed downtown apartment complex was organized by concerned neighbors.",
-            "grammarRule": "Agentless Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Two clauses appear here. Focus on the main clause: the kitchen was already preparing the first course.",
+            "explanation": "The kitchen is the doer of was preparing in the main clause, past continuous active, even though the first clause, were being seated, is passive. Passive version of the main clause: While the guests were being seated, the first course was already being prepared by the kitchen.",
+            "grammarRule": "Past Continuous Active (Mixed Clauses)",
+            "activeVoice": "While the guests were being seated, the kitchen was already preparing the first course.",
+            "passiveVoice": "While the guests were being seated, the first course was already being prepared by the kitchen."
         },
         {
             "id": "vs_l117_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The long abandoned warehouse was gradually transformed into affordable housing units downtown.",
-            "sentence": "The long abandoned warehouse was gradually transformed into affordable housing units downtown.",
+            "question": "Since the new manager took over, several long-standing procedures have been changed completely.",
+            "sentence": "Since the new manager took over, several long-standing procedures have been changed completely.",
             "options": [
                 "Active",
                 "Passive"
@@ -417,19 +417,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus a past participle (transformed). No agent is named, but the subject still receives the action.",
-            "explanation": "This is passive voice: the warehouse (receiver) was transformed, but the transformer is not named directly. In active, this would flip to: Developers gradually transformed the long abandoned warehouse into affordable housing units downtown.",
-            "grammarRule": "Agentless Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Two clauses appear here. Focus on the main clause: several long-standing procedures have been changed completely.",
+            "explanation": "Several long-standing procedures (receiver) have been changed in the main clause, present perfect passive, even though the first clause, took over, is active. No one besides the manager is implied as responsible. Active form: Since the new manager took over, she has changed several long-standing procedures completely.",
+            "grammarRule": "Present Perfect Passive (Mixed Clauses)",
+            "activeVoice": "Since the new manager took over, she has changed several long-standing procedures completely.",
+            "passiveVoice": "Since the new manager took over, several long-standing procedures have been changed completely."
         },
         {
             "id": "vs_l118_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "It was formally stated that the airline would fully compensate all affected passengers.",
-            "sentence": "It was formally stated that the airline would fully compensate all affected passengers.",
+            "question": "The invoice was already paid when the reminder email arrived.",
+            "sentence": "The invoice was already paid when the reminder email arrived.",
             "options": [
                 "Active",
                 "Passive"
@@ -437,19 +437,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for it was plus a past participle (stated) plus that, an impersonal passive pattern.",
-            "explanation": "This is passive voice: it functions as a placeholder subject, with was stated plus that reporting the promise impersonally. In active, this would flip to: The airline formally stated that it would fully compensate all affected passengers.",
-            "grammarRule": "Reported Statement Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Compare was paid with has been paid - which one connects the action to another specific past event rather than to now?",
+            "explanation": "The invoice (receiver) was paid, simple past passive, tied to a specific past moment (when the reminder email arrived) rather than connected to the present. No payer is named. Active form: Someone had already paid the invoice when the reminder email arrived (note: for full accuracy about sequence, had paid would be even more precise, but was paid is what the given sentence uses).",
+            "grammarRule": "Simple Past Passive",
+            "activeVoice": "Someone paid the invoice before the reminder email arrived.",
+            "passiveVoice": "The invoice was already paid when the reminder email arrived."
         },
         {
             "id": "vs_l118_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "It was strongly argued that stricter regulations would unfairly harm small businesses.",
-            "sentence": "It was strongly argued that stricter regulations would unfairly harm small businesses.",
+            "question": "The invoice had already been paid when the reminder email arrived.",
+            "sentence": "The invoice had already been paid when the reminder email arrived.",
             "options": [
                 "Active",
                 "Passive"
@@ -457,39 +457,39 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for it was plus a past participle (argued) plus that, an impersonal passive pattern.",
-            "explanation": "This is passive voice: it functions as a placeholder subject, with was argued plus that reporting the opinion impersonally. In active, this would flip to: Critics strongly argued that stricter regulations would unfairly harm small businesses.",
-            "grammarRule": "Reported Statement Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Now compare had been paid with was paid - what does adding had change about the sequence of events?",
+            "explanation": "The invoice (receiver) had been paid, past perfect passive, clearly showing the payment happened before another past event, the reminder email arrived - a more precise sequencing than the simple past version. Active form: Someone had already paid the invoice when the reminder email arrived.",
+            "grammarRule": "Past Perfect Passive",
+            "activeVoice": "Someone had already paid the invoice when the reminder email arrived.",
+            "passiveVoice": "The invoice had already been paid when the reminder email arrived."
         },
         {
             "id": "vs_l118_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Climate scientists confirmed that the glacier had retreated significantly since nineteen ninety.",
-            "sentence": "Climate scientists confirmed that the glacier had retreated significantly since nineteen ninety.",
+            "question": "The invoice has been paid, so you can disregard the earlier reminder.",
+            "sentence": "The invoice has been paid, so you can disregard the earlier reminder.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Which noun is actively making this confirmation?",
-            "explanation": "This is active voice: scientists (the doer) performed the action confirmed directly, introducing the reported clause. In passive, this would flip to: It was confirmed by climate scientists that the glacier had retreated significantly since nineteen ninety.",
-            "grammarRule": "Reported Statement Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Now compare has been paid with had been paid - which one connects the action to the present moment rather than to another past event?",
+            "explanation": "The invoice (receiver) has been paid, present perfect passive, connecting the completed action to now (so you can disregard the reminder) rather than to another past event. Active form: Someone has paid the invoice, so you can disregard the earlier reminder.",
+            "grammarRule": "Present Perfect Passive",
+            "activeVoice": "Someone has paid the invoice, so you can disregard the earlier reminder.",
+            "passiveVoice": "The invoice has been paid, so you can disregard the earlier reminder."
         },
         {
             "id": "vs_l119_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The federal agency launched a thorough investigation into the suspicious trading activity.",
-            "sentence": "The federal agency launched a thorough investigation into the suspicious trading activity.",
+            "question": "By the time the auditors finish next month, they will have thoroughly reviewed every account.",
+            "sentence": "By the time the auditors finish next month, they will have thoroughly reviewed every account.",
             "options": [
                 "Active",
                 "Passive"
@@ -497,39 +497,39 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Which noun is the one launching the investigation?",
-            "explanation": "This is active voice: the agency (the doer) performed the action launched directly on an investigation. In passive, this would flip to: A thorough investigation into the suspicious trading activity was launched by the federal agency.",
-            "grammarRule": "Agentless Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Identify the tense - future perfect - then find the doer before will have reviewed.",
+            "explanation": "They is the doer of will have reviewed, future perfect active, describing something that will be complete before a future point. Passive version: By the time the auditors finish next month, every account will have been thoroughly reviewed.",
+            "grammarRule": "Future Perfect Active",
+            "activeVoice": "By the time the auditors finish next month, they will have thoroughly reviewed every account.",
+            "passiveVoice": "By the time the auditors finish next month, every account will have been thoroughly reviewed."
         },
         {
             "id": "vs_l119_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The signed contract would be voided if either side seriously breached the terms.",
-            "sentence": "The signed contract would be voided if either side seriously breached the terms.",
+            "question": "Although the machine hasn't broken down in years, it is being serviced as a precaution.",
+            "sentence": "Although the machine hasn't broken down in years, it is being serviced as a precaution.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for would be plus a past participle (voided). The subject receives the action here.",
-            "explanation": "This is passive voice: the contract (receiver) would be voided, but no specific voider is emphasized. In active, this would flip to: Either side would void the signed contract if they seriously breached the terms.",
-            "grammarRule": "Second Conditional Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Two clauses appear here. Focus on the main clause: it is being serviced.",
+            "explanation": "Wait - check carefully: it is being serviced is actually passive, not active. The machine (it, receiver) is being serviced, present continuous passive, even though the first clause, hasn't broken down, is active. Active form: Although the machine hasn't broken down in years, technicians are servicing it as a precaution.",
+            "grammarRule": "Present Continuous Passive (Mixed Clauses)",
+            "activeVoice": "Although the machine hasn't broken down in years, technicians are servicing it as a precaution.",
+            "passiveVoice": "Although the machine hasn't broken down in years, it is being serviced as a precaution."
         },
         {
             "id": "vs_l119_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Government reporters confirmed that the minister would formally resign by this Friday.",
-            "sentence": "Government reporters confirmed that the minister would formally resign by this Friday.",
+            "question": "The negotiators must have reached some kind of agreement, since both sides look relieved.",
+            "sentence": "The negotiators must have reached some kind of agreement, since both sides look relieved.",
             "options": [
                 "Active",
                 "Passive"
@@ -537,59 +537,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Who performs the action confirmed? Look right before the verb.",
-            "explanation": "This is active voice: reporters (the doer) performed the action confirmed directly, introducing the reported clause. In passive, this would flip to: It was confirmed by government reporters that the minister would formally resign by this Friday.",
-            "grammarRule": "Reported Statement Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Identify the tense - modal perfect - then find the doer before must have reached.",
+            "explanation": "The negotiators is the doer of must have reached, modal perfect active expressing a confident guess about a completed past event. Passive version: Some kind of agreement must have been reached by the negotiators, since both sides look relieved.",
+            "grammarRule": "Perfect Modal Passive Active",
+            "activeVoice": "The negotiators must have reached some kind of agreement, since both sides look relieved.",
+            "passiveVoice": "Some kind of agreement must have been reached by the negotiators, since both sides look relieved."
         },
         {
             "id": "vs_l120_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The historic downtown theater was fully restored through a massive fundraising campaign.",
-            "sentence": "The historic downtown theater was fully restored through a massive fundraising campaign.",
-            "options": [
-                "Active",
-                "Passive"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus a past participle (restored). No agent is named, but the subject still receives the action.",
-            "explanation": "This milestone checkpoint reviews passive voice: the theater (receiver) was restored, but no specific restorer is named. In active, this would flip to: A massive fundraising campaign fully restored the historic downtown theater.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
-        },
-        {
-            "id": "vs_l120_q2",
-            "instruction": "FLIP THE VOICE TRANSMUTER",
-            "subtype": "voiceSwap",
-            "interactionType": "choice",
-            "question": "It was officially announced that the annual festival would be cancelled this year.",
-            "sentence": "It was officially announced that the annual festival would be cancelled this year.",
-            "options": [
-                "Active",
-                "Passive"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "This sentence begins with it, a placeholder, rather than the organizers themselves.",
-            "explanation": "This milestone checkpoint reviews passive voice: it functions as a placeholder subject, with was announced plus that reporting the decision impersonally. In active, this would flip to: Organizers officially announced that the annual festival would be cancelled this year.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
-        },
-        {
-            "id": "vs_l120_q3",
-            "instruction": "FLIP THE VOICE TRANSMUTER",
-            "subtype": "voiceSwap",
-            "interactionType": "choice",
-            "question": "The determined team would win the championship if they trained much harder this season.",
-            "sentence": "The determined team would win the championship if they trained much harder this season.",
+            "question": "This checkpoint mixes every tense so far: The new terminal will have been operating for a full year by next spring.",
+            "sentence": "This checkpoint mixes every tense so far: The new terminal will have been operating for a full year by next spring.",
             "options": [
                 "Active",
                 "Passive"
@@ -597,11 +557,51 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before would win, then decide the voice.",
-            "explanation": "This milestone checkpoint reviews active voice: the team (the doer) would perform the action win directly on the championship. In passive, this would flip to: The championship would be won by the determined team if they trained much harder this season.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Identify the tense - future perfect continuous - then find the doer before will have been operating, checking whether operate needs an object here.",
+            "explanation": "This checkpoint reviews future perfect continuous active: the new terminal is the doer of will have been operating, and operate is used here without an object, describing its own ongoing function rather than an action on something else - so no passive form applies to this particular sentence.",
+            "grammarRule": "Future Perfect Continuous Active (No Passive Possible)",
+            "activeVoice": "The new terminal will have been operating for a full year by next spring.",
+            "passiveVoice": "No passive form exists - operate has no object here, so there is no receiver to become the subject."
+        },
+        {
+            "id": "vs_l120_q2",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "This checkpoint mixes every tense so far: The missing shipment still hasn't been located despite a full week of searching.",
+            "sentence": "This checkpoint mixes every tense so far: The missing shipment still hasn't been located despite a full week of searching.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Identify the tense - present perfect, negative - then look for hasn't been plus a past participle.",
+            "explanation": "This checkpoint reviews negative present perfect passive: the missing shipment (receiver) hasn't been located, with no specific search team named. Active form: The search team still hasn't located the missing shipment despite a full week of searching.",
+            "grammarRule": "Present Perfect Passive (Negative)",
+            "activeVoice": "The search team still hasn't located the missing shipment despite a full week of searching.",
+            "passiveVoice": "The missing shipment still hasn't been located despite a full week of searching."
+        },
+        {
+            "id": "vs_l120_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "This checkpoint mixes every tense so far: If the funding hadn't been cut, the clinic would have hired two more doctors by now.",
+            "sentence": "This checkpoint mixes every tense so far: If the funding hadn't been cut, the clinic would have hired two more doctors by now.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Focus on the main clause. Find the doer right before would have hired.",
+            "explanation": "This checkpoint reviews third conditional active in the main clause: the clinic is the doer of would have hired, even though the if-clause, hadn't been cut, is passive. Passive version of the main clause: Two more doctors would have been hired by the clinic by now if the funding hadn't been cut.",
+            "grammarRule": "Third Conditional Active",
+            "activeVoice": "If the funding hadn't been cut, the clinic would have hired two more doctors by now.",
+            "passiveVoice": "Two more doctors would have been hired by the clinic by now if the funding hadn't been cut."
         }
     ]
 }

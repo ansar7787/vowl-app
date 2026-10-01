@@ -8,23 +8,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'hard' as used in the sentence below?",
-            "targetWord": "hard",
-            "sentence": "The stone floor was hard and cold beneath her feet in the early morning.",
+            "question": "Identify the part of speech of 'To succeed' in this context.",
+            "targetWord": "To succeed",
+            "sentence": "To succeed in this role requires patience and clear communication.",
             "options": [
-                "Noun",
+                "Verb",
                 "Adjective",
                 "Adverb",
-                "Verb"
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Adjective",
-            "hint": "Context determines whether 'hard' is an adjective or adverb. What noun does it describe here?",
-            "explanation": "'Hard' is an adjective - it follows the linking verb 'was' as a predicate adjective, describing the physical quality of 'the stone floor'. Compare: 'she worked hard' (adverb) vs. 'a hard floor' (adjective).",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Noun",
+            "hint": "When a 'to + verb' phrase names an idea and acts as the subject, it functions as a word. What requires patience and communication?",
+            "explanation": "'To succeed' is an infinitive functioning as a noun here — it names the goal and serves as the subject of the sentence.",
+            "grammarRule": "Infinitive functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "infinitive use",
+                "gerund use"
             ]
         },
         {
@@ -32,9 +32,9 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'principal' as used in the sentence below?",
-            "targetWord": "principal",
-            "sentence": "The school principal gave an inspiring speech at the start of the new academic year.",
+            "question": "Now what part of speech is 'to succeed' in this sentence?",
+            "targetWord": "to succeed",
+            "sentence": "Everyone wants to succeed in the new role.",
             "options": [
                 "Noun",
                 "Verb",
@@ -43,12 +43,12 @@
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "Noun",
-            "hint": "Nouns name professional roles. Is 'principal' naming a person's role here?",
-            "explanation": "'Principal' is a noun - it names the head of a school. Note the spelling: 'principal' (noun/adjective = main) vs. 'principle' (noun only = a rule or belief).",
-            "grammarRule": "Nouns",
+            "hint": "The same 'to + verb' phrase can also act as the object of a verb like 'wants.' What does everyone want?",
+            "explanation": "'To succeed' functions as a noun here too, but now as the object of 'wants' rather than the subject — infinitives can fill either role.",
+            "grammarRule": "Infinitive functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "infinitive use",
+                "gerund use"
             ]
         },
         {
@@ -56,23 +56,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'overlook' as used in the sentence below?",
-            "targetWord": "overlook",
-            "sentence": "Under pressure, it is surprisingly easy to overlook important details in a complex contract.",
+            "question": "Based on how it is used here, 'requires' is a:",
+            "targetWord": "requires",
+            "sentence": "To succeed in this role requires patience and clear communication.",
             "options": [
                 "Noun",
+                "Adverb",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "Verb",
-            "hint": "Verbs can describe cognitive failures. What is easy to do unintentionally?",
-            "explanation": "'Overlook' is a verb - it follows 'to' as an infinitive and describes failing to notice something. 'Overlook' can be a noun ('a scenic overlook'), but here it clearly follows 'to'.",
-            "grammarRule": "Verbs",
+            "hint": "Check the words directly around it for clues. What does succeeding in this role need?",
+            "explanation": "'Requires' is a verb here, describing what succeeding in the role demands — patience and clear communication.",
+            "grammarRule": "Action verb in present tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "-s form"
             ]
         },
         {
@@ -80,23 +80,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'fast' as used in the sentence below?",
-            "targetWord": "fast",
-            "sentence": "She boarded the fast train and arrived in the city well before midday.",
+            "question": "What grammatical job does 'to catch' do in this sentence?",
+            "targetWord": "to catch",
+            "sentence": "She left early to catch the last train.",
             "options": [
                 "Noun",
+                "Verb",
                 "Adjective",
-                "Adverb",
-                "Verb"
+                "Adverb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Adjective",
-            "hint": "Context reveals whether 'fast' modifies a noun (adjective) or a verb (adverb). What noun does 'fast' modify?",
-            "explanation": "'Fast' is an adjective - it comes directly before 'train' in an attributive position. Compare: 'a fast train' (adjective) vs. 'she ran fast' (adverb). ('Fast' returns as a verb in level 184 and noun in level 198.)",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adverb",
+            "hint": "This 'to + verb' phrase explains why she left early, modifying the verb. Why did she leave early?",
+            "explanation": "'To catch' is an infinitive functioning as an adverb here, showing the purpose of her leaving early — it modifies the verb 'left'.",
+            "grammarRule": "Infinitive of purpose modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "infinitive use",
+                "gerund use"
             ]
         },
         {
@@ -104,23 +104,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'conduct' as used in the sentence below?",
-            "targetWord": "conduct",
-            "sentence": "The investigation focused closely on his professional conduct during the crisis.",
+            "question": "The word 'to reserve' is being used as which grammatical category?",
+            "targetWord": "to reserve",
+            "sentence": "Naledi called ahead to reserve a table.",
             "options": [
                 "Noun",
+                "Adverb",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns can name abstract concepts like behaviour. Is 'conduct' naming behaviour here?",
-            "explanation": "'Conduct' is a noun - it names someone's behaviour. It follows 'his professional'. Compare: 'to conduct a meeting' (verb) vs. 'professional conduct' (noun). Stress differs: CON-duct (n) vs. con-DUCT (v).",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adverb",
+            "hint": "This 'to + verb' phrase also explains why an action was taken. Why did Naledi call ahead?",
+            "explanation": "'To reserve' is an infinitive functioning as an adverb here, showing the purpose of Naledi's call — just like 'to catch' in the previous sentence.",
+            "grammarRule": "Infinitive of purpose modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "infinitive use",
+                "gerund use"
             ]
         },
         {
@@ -128,23 +128,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'well' as used in the sentence below?",
-            "targetWord": "well",
-            "sentence": "She did not feel well enough to attend the important board meeting that morning.",
+            "question": "Now consider 'table' in that same sentence. What part of speech is it?",
+            "targetWord": "table",
+            "sentence": "Naledi called ahead to reserve a table.",
             "options": [
+                "Verb",
                 "Noun",
-                "Adjective",
                 "Adverb",
-                "Verb"
+                "Adjective"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Adjective",
-            "hint": "Context determines whether 'well' is adjective or adverb. Does it describe how she feels or how she acts?",
-            "explanation": "'Well' is an adjective here - it follows the linking verb 'feel' as a predicate adjective describing her health. Compare: 'she performed well' (adverb = manner) vs. 'she felt well' (adjective = state of health).",
-            "grammarRule": "Adjectives",
+            "correctAnswer": "Noun",
+            "hint": "Check the words directly around it for clues. What did Naledi reserve?",
+            "explanation": "'Table' is a noun here, naming the item Naledi reserved — it functions as the direct object of 'reserve'.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "plural form"
             ]
         },
         {
@@ -152,23 +152,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'fine' as used in the sentence below?",
-            "targetWord": "fine",
-            "sentence": "The antique vase was made from exceptionally fine porcelain and was several centuries old.",
+            "question": "Which category fits 'to complete' in this sentence?",
+            "targetWord": "to complete",
+            "sentence": "There are several forms to complete before the appointment.",
             "options": [
+                "Verb",
                 "Noun",
-                "Adjective",
                 "Adverb",
-                "Verb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Adjective",
-            "hint": "Adjectives can describe very high quality. What does 'fine' describe here?",
-            "explanation": "'Fine' is an adjective - it describes the quality of 'porcelain', meaning of very high quality and delicacy. ('Fine' returns as a verb in level 199, meaning to impose a financial penalty.)",
-            "grammarRule": "Adjectives",
+            "hint": "This 'to + verb' phrase describes which forms are meant, modifying the noun right before it. What must be done with the forms?",
+            "explanation": "'To complete' is an infinitive functioning as an adjective here, modifying 'forms' and describing what needs to be done with them.",
+            "grammarRule": "Infinitive functioning as an adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "infinitive use",
+                "gerund use"
             ]
         },
         {
@@ -176,23 +176,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'debate' as used in the sentence below?",
-            "targetWord": "debate",
-            "sentence": "The lengthy public debate about the proposed policy change lasted well into the evening.",
+            "question": "Now, which category describes 'To complete' in this sentence?",
+            "targetWord": "To complete",
+            "sentence": "To complete the forms took nearly an hour.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
+                "Verb",
+                "Noun",
                 "Adverb"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "Noun",
-            "hint": "Nouns name formal discussions. Is 'debate' naming a discussion as a concept?",
-            "explanation": "'Debate' is a noun - it follows 'The lengthy public'. Compare: 'they debated the issue' (verb) vs. 'the debate lasted' (noun naming the event itself).",
-            "grammarRule": "Nouns",
+            "hint": "The same 'to + verb' phrase can also act as the subject of a sentence. What took nearly an hour?",
+            "explanation": "'To complete' functions as a noun here, acting as the subject — contrast this with the earlier sentence, where 'to complete' modified the noun 'forms' as an adjective.",
+            "grammarRule": "Infinitive functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "infinitive use",
+                "gerund use"
             ]
         },
         {
@@ -200,23 +200,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'permit' as used in the sentence below?",
-            "targetWord": "permit",
-            "sentence": "Current regulations do not permit the sale of alcohol to any person under the age of eighteen.",
+            "question": "Classify 'took' as it appears in this sentence.",
+            "targetWord": "took",
+            "sentence": "To complete the forms took nearly an hour.",
             "options": [
+                "Adjective",
                 "Noun",
                 "Verb",
-                "Adjective",
                 "Adverb"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "Verb",
-            "hint": "Legal verbs describe what rules allow or forbid. What do the regulations prevent?",
-            "explanation": "'Permit' is a verb - it follows 'do not' as the main verb. Compare: 'do you have a permit?' (noun = a licence) vs. 'regulations do not permit it' (verb = to allow). Stress: PER-mit (n) vs. per-MIT (v).",
-            "grammarRule": "Verbs",
+            "hint": "Let the sentence, not the spelling, decide. What did completing the forms do?",
+            "explanation": "'Took' is a verb here, describing the amount of time the task required.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -224,9 +224,297 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'long' as used in the sentence below?",
-            "targetWord": "long",
-            "sentence": "She has long been considered the finest violinist of her entire generation.",
+            "question": "Which grammatical category best describes 'To succeed' here?",
+            "targetWord": "To succeed",
+            "sentence": "To succeed, the intern needed extra time to review the manual, which nobody had bothered to update in years.",
+            "options": [
+                "Verb",
+                "Adverb",
+                "Noun",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adverb",
+            "hint": "This 'to + verb' phrase at the start explains why the intern needed extra time, modifying the verb 'needed.' Why did the intern need extra time?",
+            "explanation": "'To succeed' functions as an adverb here, meaning 'in order to succeed' — it modifies the verb 'needed' by explaining its purpose.",
+            "grammarRule": "Infinitive of purpose modifying a verb",
+            "transformations": [
+                "infinitive use",
+                "gerund use"
+            ]
+        },
+        {
+            "id": "pos_l124_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Within that same sentence, 'to review' is functioning as a:",
+            "targetWord": "to review",
+            "sentence": "To succeed, the intern needed extra time to review the manual, which nobody had bothered to update in years.",
+            "options": [
+                "Noun",
+                "Verb",
+                "Adjective",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "This 'to + verb' phrase describes what the extra time was for, modifying the noun right before it. What was the extra time needed for?",
+            "explanation": "'To review' functions as an adjective here, modifying 'time' and describing its purpose.",
+            "grammarRule": "Infinitive functioning as an adjective modifying a noun",
+            "transformations": [
+                "infinitive use",
+                "gerund use"
+            ]
+        },
+        {
+            "id": "pos_l124_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Staying with that sentence, which category describes 'to update'?",
+            "targetWord": "to update",
+            "sentence": "To succeed, the intern needed extra time to review the manual, which nobody had bothered to update in years.",
+            "options": [
+                "Verb",
+                "Noun",
+                "Adjective",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Noun",
+            "hint": "This 'to + verb' phrase names what nobody had done, acting as the object of 'bothered.' What had nobody bothered to do?",
+            "explanation": "'To update' functions as a noun here, acting as the object of 'bothered' — it names the neglected task.",
+            "grammarRule": "Infinitive functioning as a direct object",
+            "transformations": [
+                "infinitive use",
+                "gerund use"
+            ]
+        },
+        {
+            "id": "pos_l125_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "What part of speech is 'reading' in this sentence?",
+            "targetWord": "reading",
+            "sentence": "Farah loves reading mystery novels.",
+            "options": [
+                "Noun",
+                "Adverb",
+                "Adjective",
+                "Verb"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "This '-ing' word names an activity and acts as the object of 'loves.' What does Farah love doing?",
+            "explanation": "'Reading' is a gerund here, functioning as the direct object of 'loves' — it names the activity Farah enjoys.",
+            "grammarRule": "Gerund functioning as a direct object",
+            "transformations": [
+                "gerund use",
+                "infinitive use"
+            ]
+        },
+        {
+            "id": "pos_l125_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "This time, 'to read' is functioning as a:",
+            "targetWord": "to read",
+            "sentence": "Farah loves to read mystery novels.",
+            "options": [
+                "Noun",
+                "Verb",
+                "Adverb",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "This 'to + verb' phrase means almost the same thing as the gerund in the previous sentence. What does Farah love to do?",
+            "explanation": "'To read' is an infinitive here, also functioning as the direct object of 'loves' — with a verb like 'love,' the gerund and infinitive can often be used interchangeably with little change in meaning.",
+            "grammarRule": "Infinitive functioning as a direct object",
+            "transformations": [
+                "infinitive use",
+                "gerund use"
+            ]
+        },
+        {
+            "id": "pos_l125_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "What role does 'mystery' play in this sentence?",
+            "targetWord": "mystery",
+            "sentence": "Farah loves to read mystery novels.",
+            "options": [
+                "Adverb",
+                "Verb",
+                "Noun",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "Remember the pattern where one noun modifies another from an earlier lesson. What kind of novels does Farah read?",
+            "explanation": "'Mystery' functions as an adjective here, modifying 'novels' to specify the genre — the same noun-as-adjective pattern seen with 'kitchen table' and 'paper cup' earlier in this course.",
+            "grammarRule": "Noun functioning as an adjective modifying another noun",
+            "transformations": [
+                "noun use",
+                "adjective use"
+            ]
+        },
+        {
+            "id": "pos_l126_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "How is 'Remembering' functioning in this sentence?",
+            "targetWord": "Remembering",
+            "sentence": "Remembering to lock the supply closet became a nightly ritual for the last employee to leave.",
+            "options": [
+                "Adverb",
+                "Verb",
+                "Noun",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Noun",
+            "hint": "This '-ing' word names an activity and acts as the subject. What became a nightly ritual?",
+            "explanation": "'Remembering' is a gerund here, functioning as the subject of the sentence.",
+            "grammarRule": "Gerund functioning as the subject",
+            "transformations": [
+                "gerund use",
+                "infinitive use"
+            ]
+        },
+        {
+            "id": "pos_l126_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "In the same sentence, what role does 'to lock' play?",
+            "targetWord": "to lock",
+            "sentence": "Remembering to lock the supply closet became a nightly ritual for the last employee to leave.",
+            "options": [
+                "Verb",
+                "Adjective",
+                "Adverb",
+                "Noun"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Noun",
+            "hint": "This 'to + verb' phrase names what needed to be remembered, acting as the object of the gerund 'remembering.' What did the employee need to remember?",
+            "explanation": "'To lock' is an infinitive here, functioning as the object of 'remembering' — it names the task that had to be recalled.",
+            "grammarRule": "Infinitive functioning as a direct object",
+            "transformations": [
+                "infinitive use",
+                "gerund use"
+            ]
+        },
+        {
+            "id": "pos_l126_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "In that same sentence, what part of speech is 'to leave'?",
+            "targetWord": "to leave",
+            "sentence": "Remembering to lock the supply closet became a nightly ritual for the last employee to leave.",
+            "options": [
+                "Noun",
+                "Verb",
+                "Adverb",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "This 'to + verb' phrase describes which employee is meant, modifying the noun right before it. Which employee is being described?",
+            "explanation": "'To leave' functions as an adjective here, modifying 'employee' and describing which one is meant — the last one to go.",
+            "grammarRule": "Infinitive functioning as an adjective modifying a noun",
+            "transformations": [
+                "infinitive use",
+                "gerund use"
+            ]
+        },
+        {
+            "id": "pos_l127_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "In this sentence, 'to improve' is functioning as a:",
+            "targetWord": "to improve",
+            "sentence": "The best way to improve your writing is to read widely and to practice every day.",
+            "options": [
+                "Adjective",
+                "Adverb",
+                "Verb",
+                "Noun"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adjective",
+            "hint": "This 'to + verb' phrase describes which way is meant, modifying the noun right before it. What kind of way is being described?",
+            "explanation": "'To improve' functions as an adjective here, modifying 'way' and describing its purpose.",
+            "grammarRule": "Infinitive functioning as an adjective modifying a noun",
+            "transformations": [
+                "infinitive use",
+                "gerund use"
+            ]
+        },
+        {
+            "id": "pos_l127_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Looking at the same sentence, how is 'to read' functioning?",
+            "targetWord": "to read",
+            "sentence": "The best way to improve your writing is to read widely and to practice every day.",
+            "options": [
+                "Adjective",
+                "Noun",
+                "Verb",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Noun",
+            "hint": "This 'to + verb' phrase follows the linking verb 'is' and renames the subject. What is the best way, according to the sentence?",
+            "explanation": "'To read' functions as a noun here, acting as the subject complement after the linking verb 'is' — it renames 'the best way'.",
+            "grammarRule": "Infinitive functioning as a subject complement",
+            "transformations": [
+                "infinitive use",
+                "gerund use"
+            ]
+        },
+        {
+            "id": "pos_l127_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Back in that same sentence, what kind of word is 'and'?",
+            "targetWord": "and",
+            "sentence": "The best way to improve your writing is to read widely and to practice every day.",
+            "options": [
+                "Adjective",
+                "Conjunction",
+                "Noun",
+                "Verb"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Conjunction",
+            "hint": "Think about the job it performs here. What word connects 'to read widely' and 'to practice every day'?",
+            "explanation": "'And' is a coordinating conjunction here, joining the two infinitive phrases that both rename 'the best way'.",
+            "grammarRule": "Coordinating conjunction joining two phrases",
+            "transformations": [
+                "conjunction use",
+                "related conjunction (or)"
+            ]
+        },
+        {
+            "id": "pos_l128_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which part of speech does 'to clear' represent in this sentence?",
+            "targetWord": "to clear",
+            "sentence": "Passengers should arrive two hours early to clear security and to avoid missing their flight.",
             "options": [
                 "Noun",
                 "Adjective",
@@ -235,300 +523,12 @@
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "Adverb",
-            "hint": "Adverbs can describe duration. Does 'long' modify the verb phrase 'been considered'?",
-            "explanation": "'Long' is an adverb - it modifies 'has been considered' and means 'for a long time'. Compare: 'a long journey' (adjective) vs. 'she has long been known for it' (adverb = for a long time).",
-            "grammarRule": "Adverbs",
+            "hint": "This 'to + verb' phrase explains why passengers should arrive early, modifying the verb 'arrive.' Why should they arrive early?",
+            "explanation": "'To clear' is an infinitive functioning as an adverb here, showing the purpose of arriving early.",
+            "grammarRule": "Infinitive of purpose modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l124_q2",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'transfer' as used in the sentence below?",
-            "targetWord": "transfer",
-            "sentence": "The smooth transfer of power from one government to the next was widely praised.",
-            "options": [
-                "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns can name processes and transitions. Is 'transfer' naming a process here?",
-            "explanation": "'Transfer' is a noun - it follows 'The smooth'. Compare: 'to transfer files' (verb) vs. 'the transfer of power' (noun). Stress: TRANS-fer (n) vs. trans-FER (v).",
-            "grammarRule": "Nouns",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l124_q3",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'advocate' as used in the sentence below?",
-            "targetWord": "advocate",
-            "sentence": "She has spent her entire career fighting to advocate for the rights of marginalised communities.",
-            "options": [
-                "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe the act of publicly supporting a cause. What has she spent her career doing?",
-            "explanation": "'Advocate' is a verb - it follows 'to' as an infinitive. Compare: 'a legal advocate' (noun = a person) vs. 'to advocate for change' (verb = to support).",
-            "grammarRule": "Verbs",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l125_q1",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'even' as used in the sentence below?",
-            "targetWord": "even",
-            "sentence": "Even the most experienced and seasoned researchers were surprised by the unexpected results.",
-            "options": [
-                "Noun",
-                "Adjective",
-                "Adverb",
-                "Conjunction"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adverb",
-            "hint": "Adverbs can add emphasis. What does 'even' add here?",
-            "explanation": "'Even' is an adverb - it intensifies the noun phrase 'the most experienced researchers' and emphasises that their surprise was unexpected.",
-            "grammarRule": "Adverbs",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l125_q2",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'compound' as used in the sentence below?",
-            "targetWord": "compound",
-            "sentence": "Doctors warned against taking this medicine alongside other compound substances.",
-            "options": [
-                "Noun",
-                "Adjective",
-                "Verb",
-                "Adverb"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives can describe complex mixtures. What does 'compound' tell us about the substances?",
-            "explanation": "'Compound' is an adjective - it modifies 'substances', meaning they consist of multiple combined elements. 'Compound' can be a noun, adjective, or verb depending on context.",
-            "grammarRule": "Adjectives",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l125_q3",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'underlie' as used in the sentence below?",
-            "targetWord": "underlie",
-            "sentence": "Several deeply complex factors underlie the ongoing political instability in the region.",
-            "options": [
-                "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs can describe what forms the basis of something. What do the complex factors do?",
-            "explanation": "'Underlie' is a verb - it is in the present simple and describes the foundational relationship. 'Underlying' is the participial adjective form (the underlying cause).",
-            "grammarRule": "Verbs",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l126_q1",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'just' as used in the sentence below?",
-            "targetWord": "just",
-            "sentence": "The final report was just published, so the initial findings are still being reviewed.",
-            "options": [
-                "Noun",
-                "Adjective",
-                "Adverb",
-                "Conjunction"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adverb",
-            "hint": "Adverbs can express that something happened very recently. What does 'just' tell us about when the report was published?",
-            "explanation": "'Just' is an adverb - it modifies 'was published' and means 'very recently'. 'Just' has multiple adverb meanings: recently, exactly, only, barely.",
-            "grammarRule": "Adverbs",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l126_q2",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'supplement' as used in the sentence below?",
-            "targetWord": "supplement",
-            "sentence": "She took a daily vitamin D supplement throughout the long winter months.",
-            "options": [
-                "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Health nouns name products taken in addition to food. Is 'supplement' naming a product here?",
-            "explanation": "'Supplement' is a noun - it follows 'a daily vitamin D', confirming it is a noun. Compare: 'to supplement her income' (verb) vs. 'a dietary supplement' (noun). Stress: SUP-ple-ment (n) vs. SUP-ple-ment (v).",
-            "grammarRule": "Nouns",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l126_q3",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'emerge' as used in the sentence below?",
-            "targetWord": "emerge",
-            "sentence": "New and compelling evidence began to emerge that called the original theory into question.",
-            "options": [
-                "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe things becoming visible for the first time. What did new evidence start to do?",
-            "explanation": "'Emerge' is a verb - it follows 'began to'. 'Emergence' is the noun form.",
-            "grammarRule": "Verbs",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l127_q1",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'only' as used in the sentence below?",
-            "targetWord": "only",
-            "sentence": "She had only just arrived when the power cut plunged the entire office into complete darkness.",
-            "options": [
-                "Noun",
-                "Adjective",
-                "Adverb",
-                "Conjunction"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adverb",
-            "hint": "Adverbs can restrict the meaning of another word. What does 'only' modify here?",
-            "explanation": "'Only' is an adverb - it modifies the adverb 'just' in 'only just', emphasising she had barely arrived in time. 'Only' can be an adverb, adjective, or conjunction depending on context.",
-            "grammarRule": "Adverbs",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l127_q2",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'specimen' as used in the sentence below?",
-            "targetWord": "specimen",
-            "sentence": "The museum recently acquired a remarkably rare specimen of an insect thought to be extinct.",
-            "options": [
-                "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Scientific nouns name individual examples. What does 'specimen' name here?",
-            "explanation": "'Specimen' is a noun - it names an individual example collected for scientific study. It follows 'a remarkably rare'.",
-            "grammarRule": "Nouns",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l127_q3",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'eradicate' as used in the sentence below?",
-            "targetWord": "eradicate",
-            "sentence": "The international organisation was founded with the goal to eradicate extreme poverty worldwide.",
-            "options": [
-                "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe the complete elimination of problems. What was the organisation's goal?",
-            "explanation": "'Eradicate' is a verb - it follows 'to' as an infinitive. 'Eradication' is the noun form.",
-            "grammarRule": "Verbs",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l128_q1",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'still' as used in the sentence below?",
-            "targetWord": "still",
-            "sentence": "Researchers are still actively searching for an effective and reliable treatment for the condition.",
-            "options": [
-                "Noun",
-                "Adjective",
-                "Adverb",
-                "Conjunction"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adverb",
-            "hint": "Adverbs can express continuation. Does 'still' indicate the searching is ongoing?",
-            "explanation": "'Still' is an adverb - it modifies 'are searching' and means the action is continuing. Compare: 'still water' (adjective = not moving) vs. 'still searching' (adverb = continuing).",
-            "grammarRule": "Adverbs",
-            "transformations": [
-                "noun form",
-                "verb form"
+                "infinitive use",
+                "gerund use"
             ]
         },
         {
@@ -536,23 +536,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'paradigm' as used in the sentence below?",
-            "targetWord": "paradigm",
-            "sentence": "The discovery marked a fundamental and irreversible shift in the accepted scientific paradigm.",
+            "question": "Which grammatical category fits 'missing' in that same sentence?",
+            "targetWord": "missing",
+            "sentence": "Passengers should arrive two hours early to clear security and to avoid missing their flight.",
             "options": [
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Adjective"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "Noun",
-            "hint": "Academic nouns name accepted frameworks. What does 'paradigm' name here?",
-            "explanation": "'Paradigm' is a noun - it names the dominant model of understanding within a field. It follows 'the accepted scientific'.",
-            "grammarRule": "Nouns",
+            "hint": "This '-ing' word names an activity and acts as the object of 'avoid.' What are passengers trying to avoid?",
+            "explanation": "'Missing' is a gerund here, functioning as the object of 'avoid' — verbs like 'avoid' are typically followed by a gerund rather than an infinitive.",
+            "grammarRule": "Gerund functioning as the object of 'avoid'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "gerund use",
+                "infinitive use"
             ]
         },
         {
@@ -560,23 +560,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'consolidate' as used in the sentence below?",
-            "targetWord": "consolidate",
-            "sentence": "The primary aim of the merger was to consolidate the company's dominant market position.",
+            "question": "And in that same sentence, what part of speech is 'security'?",
+            "targetWord": "security",
+            "sentence": "Passengers should arrive two hours early to clear security and to avoid missing their flight.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Verb",
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Business verbs describe strengthening existing positions. What was the merger's aim?",
-            "explanation": "'Consolidate' is a verb - it follows 'to' as an infinitive. 'Consolidation' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Noun",
+            "hint": "Check the words directly around it for clues. What must passengers clear?",
+            "explanation": "'Security' is a noun here, naming the checkpoint passengers must pass through — it functions as the direct object of 'clear'.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "related adjective (secure)"
             ]
         },
         {
@@ -584,23 +584,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'rather' as used in the sentence below?",
-            "targetWord": "rather",
-            "sentence": "She found the lecture content rather dry, although the visiting professor was clearly engaging.",
+            "question": "In this context, what part of speech is 'who'?",
+            "targetWord": "who",
+            "sentence": "Patients who need to reschedule their appointment should call the clinic before missing their scheduled time.",
             "options": [
+                "Verb",
+                "Pronoun",
                 "Noun",
-                "Adjective",
-                "Adverb",
                 "Conjunction"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adverb",
-            "hint": "Adverbs can modify adjectives to indicate a moderate degree. What does 'rather' modify here?",
-            "explanation": "'Rather' is an adverb - it modifies the adjective 'dry' and suggests a moderate negative quality (somewhat dry). 'Rather' indicates a moderate degree and often softens a criticism.",
-            "grammarRule": "Adverbs",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "This word introduces a clause identifying which patients are meant. Which patients should call the clinic?",
+            "explanation": "'Who' is a relative pronoun introducing the clause 'who need to reschedule their appointment', identifying which patients the sentence addresses.",
+            "grammarRule": "Relative pronoun introducing a descriptive clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "subject form",
+                "object form (whom)"
             ]
         },
         {
@@ -608,23 +608,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'consensus' as used in the sentence below?",
-            "targetWord": "consensus",
-            "sentence": "There is now a broad and growing scientific consensus that immediate climate action is essential.",
+            "question": "Within that same sentence, 'to reschedule' is functioning as a:",
+            "targetWord": "to reschedule",
+            "sentence": "Patients who need to reschedule their appointment should call the clinic before missing their scheduled time.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Verb",
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Noun",
-            "hint": "Abstract nouns name states of general agreement. What does 'consensus' name?",
-            "explanation": "'Consensus' is a noun - it names a state of general agreement among a group. It follows 'a broad and growing scientific'.",
-            "grammarRule": "Nouns",
+            "hint": "This 'to + verb' phrase names what certain patients need, acting as the object of 'need.' What do these patients need to do?",
+            "explanation": "'To reschedule' is an infinitive here, functioning as the object of 'need' — it names the action some patients require.",
+            "grammarRule": "Infinitive functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "infinitive use",
+                "gerund use"
             ]
         },
         {
@@ -632,23 +632,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'perpetuate' as used in the sentence below?",
-            "targetWord": "perpetuate",
-            "sentence": "Such damaging stereotypes only serve to perpetuate deeply harmful misconceptions about the group.",
+            "question": "Which grammatical category fits 'missing' in that same sentence?",
+            "targetWord": "missing",
+            "sentence": "Patients who need to reschedule their appointment should call the clinic before missing their scheduled time.",
             "options": [
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe causing something harmful to continue. What do stereotypes do?",
-            "explanation": "'Perpetuate' is a verb - it follows 'to' in 'serve to perpetuate'. 'Perpetuation' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "This '-ing' word names an activity and follows a preposition. What should patients avoid before calling?",
+            "explanation": "'Missing' is a gerund here, functioning as the object of the preposition 'before' — it names the outcome patients should try to prevent by calling ahead.",
+            "grammarRule": "Gerund functioning as the object of a preposition",
             "transformations": [
-                "noun form",
-                "verb form"
+                "gerund use",
+                "infinitive use"
             ]
         },
         {
@@ -656,23 +656,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'quite' as used in the sentence below?",
-            "targetWord": "quite",
-            "sentence": "The experimental results were quite different from what the research team had initially predicted.",
+            "question": "Which part of speech is 'Determined' as it is used here?",
+            "targetWord": "Determined",
+            "sentence": "Determined to finish on time, the crew, who had been working since dawn, found a faster way to seal the roof before the rain arrived.",
             "options": [
+                "Adverb",
                 "Noun",
                 "Adjective",
-                "Adverb",
-                "Conjunction"
+                "Verb"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Adverb",
-            "hint": "Adverbs can modify adjectives to indicate degree. What does 'quite' modify here?",
-            "explanation": "'Quite' is an adverb - it modifies the adjective 'different'. 'Quite' has two uses: 'fairly/moderately' ('quite good') or 'completely' with absolute adjectives ('quite wrong').",
-            "grammarRule": "Adverbs",
+            "correctAnswer": "Adjective",
+            "hint": "This word describes the crew's mindset and opens the sentence like a descriptive phrase. What quality does 'Determined' give the crew?",
+            "explanation": "'Determined' functions as an adjective here, describing the crew's mindset — it begins a participial phrase that modifies 'the crew' later in the sentence.",
+            "grammarRule": "Participial adjective modifying the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb form",
+                "adjective form"
             ]
         },
         {
@@ -680,23 +680,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'catalyst' as used in the sentence below?",
-            "targetWord": "catalyst",
-            "sentence": "The economic crisis acted as a powerful catalyst for sweeping reform of the entire banking system.",
+            "question": "In the same sentence, what role does 'to seal' play?",
+            "targetWord": "to seal",
+            "sentence": "Determined to finish on time, the crew, who had been working since dawn, found a faster way to seal the roof before the rain arrived.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Noun",
+                "Verb"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name agents that cause change. What does 'catalyst' name metaphorically here?",
-            "explanation": "'Catalyst' is a noun - it names something that causes or accelerates change (literally: a chemical substance; metaphorically: any trigger for change). It follows 'a powerful'.",
-            "grammarRule": "Nouns",
+            "correctAnswer": "Adjective",
+            "hint": "This 'to + verb' phrase describes which way is meant, modifying the noun right before it. What was the faster way for?",
+            "explanation": "'To seal' functions as an adjective here, modifying 'way' and describing its purpose — the same pattern seen with 'a way to improve' earlier in this file.",
+            "grammarRule": "Infinitive functioning as an adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "infinitive use",
+                "gerund use"
             ]
         },
         {
@@ -704,23 +704,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'scrutinise' as used in the sentence below?",
-            "targetWord": "scrutinise",
-            "sentence": "Independent auditors were brought in specifically to scrutinise the company's entire financial records.",
+            "question": "Now consider 'who' in that same sentence. What part of speech is it?",
+            "targetWord": "who",
+            "sentence": "Determined to finish on time, the crew, who had been working since dawn, found a faster way to seal the roof before the rain arrived.",
             "options": [
                 "Noun",
+                "Pronoun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Conjunction"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe intensive examination. What were the auditors brought in to do?",
-            "explanation": "'Scrutinise' is a verb - it follows 'to' as an infinitive. 'Scrutiny' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Pronoun",
+            "hint": "This word introduces a clause describing the crew. What had the crew been doing since dawn?",
+            "explanation": "'Who' is a relative pronoun introducing the clause 'who had been working since dawn', describing the crew.",
+            "grammarRule": "Relative pronoun introducing a descriptive clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "subject form",
+                "object form (whom)"
             ]
         }
     ]

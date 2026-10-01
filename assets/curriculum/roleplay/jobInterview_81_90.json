@@ -4,633 +4,633 @@
     "levels": "81-90",
     "quests": [
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that makes a real judgment call and communicates it, rather than guessing or stalling.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Why are you changing careers?",
+            "interviewerQuestion": "Imagine two different managers each hand you an urgent task at the same time, both claiming their deadline is today. Neither is available to ask right now. What do you do?",
             "options": [
-                "My old career just wasn't working out for me.",
-                "I'm not entirely sure yet, but I wanted a change.",
-                "I've realized my strengths and interests align more closely with this field, and I'm ready to build a new set of skills."
+                "I'd wait a few minutes to see if either manager becomes available, since I don't want to guess wrong about which one is actually more urgent. and I'd rather lose a couple of minutes checking than risk starting the wrong task and having to backtrack later on.",
+                "I'd just start with whichever task seems quicker to finish, so I can get at least one thing off my plate and move on to the second one right after.",
+                "I'd quickly estimate which task has the bigger consequence if delayed, start on that one, and send both managers a short message explaining my plan so neither is left wondering."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Framing a career change around alignment with your strengths sounds more intentional than framing it around dissatisfaction.",
-            "explanation": "Framing the change around genuine alignment with your strengths shows intentional decision-making, while vague dissatisfaction or uncertainty can raise questions about commitment.",
+            "hint": "When you truly can't ask, make the best judgment call you can and tell people your reasoning.",
+            "explanation": "Choosing based on likely consequence, and communicating the plan, is the best available option when nobody can weigh in immediately. Choosing by ease ignores actual importance, and waiting wastes time that neither manager has.",
             "id": "ji_l81_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "concerned",
+                "uncertain",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that acknowledges both sides quickly rather than fully committing to one.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What led you to pursue a different career path?",
+            "interviewerQuestion": "You're restocking shelves when your manager asks you to help with a big delivery, but a customer nearby clearly needs assistance too. Both feel urgent. What's your move?",
             "options": [
-                "I discovered a genuine passion for this field through volunteer work, and I've been building relevant skills ever since.",
-                "I wanted to try something different after a while in my last field.",
-                "Honestly, the opportunities just seemed better in this direction."
+                "I'd help with the delivery first since that's what my manager specifically asked me to do, and hope the customer finds someone else or waits until I'm free.",
+                "I'd briefly tell the customer I'll be right with them, let my manager know I'll help after a couple of minutes, and quickly assist the customer since that's usually the faster of the two.",
+                "I'd try to do a bit of both at once, checking on the customer while also unloading part of the delivery, so neither one falls completely behind. even if it means neither the customer nor the delivery gets my full attention for those first few minutes of the shift."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "A specific experience that sparked your interest is more convincing than a vague desire for change.",
-            "explanation": "A specific experience that sparked genuine interest, paired with concrete steps you've taken, is far more convincing than a vague desire for change.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "A brief acknowledgment to both sides usually beats fully committing to one or trying to split your attention.",
+            "explanation": "Quickly acknowledging both and handling the faster task first respects both people without leaving anyone stuck. Prioritizing your manager's request alone can leave a customer unhelped, and splitting attention often means doing both poorly.",
             "id": "ji_l81_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "concerned",
+                "reassured",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response where urgency, not order of request, decides who's helped first.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you explain your career transition to employers?",
+            "interviewerQuestion": "Two patients both need attention at the same moment, and you can only help one first. How do you decide?",
             "options": [
-                "I try to focus mostly on the new field and downplay my past experience.",
-                "I highlight the transferable skills from my previous field and connect them clearly to what this role requires.",
-                "I explain that my old field just wasn't the right fit for me."
+                "I'd call for another staff member to help with one of them, since I don't think I should be the one deciding which patient is more urgent.",
+                "I'd help whichever patient called for me first, since that seems like the fairest way to decide who gets attention first. since patients usually understand that things work on a first-come basis, even in a busy clinical setting like this one.",
+                "I'd do a quick check of which situation seems more serious or time-sensitive, address that one first, and let the other patient know I'll be right with them."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Connecting transferable skills to the new role turns a transition into a strength, not a gap.",
-            "explanation": "Connecting transferable skills to the new role turns a career transition into a strength, rather than something that needs to be explained away.",
+            "hint": "Urgency, not order of request, should usually decide who's helped first in a situation like this.",
+            "explanation": "Briefly assessing real urgency and reassuring the other patient balances speed with judgment. Going by who called first ignores the seriousness of each situation, and always deferring the decision to someone else can cause a dangerous delay if no one else is available.",
             "id": "ji_l81_q3",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "concerned",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that asks a quick, specific question while there's still time to get one.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle working remotely?",
+            "interviewerQuestion": "Your manager asks you to 'handle the client file' before leaving for the day, without saying exactly what that means. What's your best move?",
             "options": [
-                "I set a consistent schedule, communicate proactively with my team, and create a dedicated workspace to stay focused.",
-                "I manage it fine, though staying focused can be a challenge some days.",
-                "I prefer working from home since there are fewer distractions from coworkers."
+                "I'd do what I think 'handle' probably means, based on similar situations before, and hope that's close enough to what she wanted.",
+                "I'd leave it until tomorrow when she's back, since I don't want to do the wrong thing with a client's file. even if I can't be fully certain about it.",
+                "I'd ask a quick clarifying question before she leaves, like whether she means updating it, sending it, or something else, so I don't guess wrong on something client-facing."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "A specific routine involving structure and proactive communication shows real remote-work discipline.",
-            "explanation": "A specific routine involving structure and proactive communication shows real remote-work discipline, while a general comment about focus or a comparison to office distractions is less concrete.",
+            "hint": "A quick clarifying question, asked while you still can, usually beats guessing or waiting.",
+            "explanation": "Asking a fast, specific question while she's still available prevents a costly guess on something client-facing. Guessing based on past situations might be wrong, and waiting an entire day risks the task not getting done when it may have been needed sooner.",
             "id": "ji_l82_q1",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain",
+                "concerned",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the moderate, reversible action over doing nothing or going all-in on a guess.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What strategies do you use to stay productive when working from home?",
+            "interviewerQuestion": "You're told to 'sort out the back area' with no other details, and your supervisor has already left the building. What do you do?",
             "options": [
-                "I just try to treat it like a normal workday as much as possible.",
-                "I find I'm actually more productive at home than in an office.",
-                "I use time-blocking to separate focused work from meetings, and I check in with my team at set points during the day."
+                "I'd use my judgment based on what's usually meant by that phrase here, tidy the area in a sensible, reversible way, and send my supervisor a quick note about what I did in case they meant something different.",
+                "I'd do a full reorganization of the whole area exactly the way I think it should be, since nobody gave me specific limits to work within.",
+                "I'd just leave the back area as it is until I can get proper clarification, since I don't want to do something that turns out to be wrong."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Naming a specific method, like time-blocking, is stronger than a general statement about productivity.",
-            "explanation": "Naming a specific method like time-blocking gives real, actionable proof of your productivity strategy, rather than a general claim.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "When nobody's available, a moderate, easily-adjusted action plus a follow-up note is usually safer than doing nothing or going all-in on your own interpretation.",
+            "explanation": "A reasonable, easily reversible action paired with a follow-up note shows initiative without risking real damage if your interpretation is off. Doing nothing wastes the time available, and committing to a big change on your own guess risks a bigger problem if you guessed wrong.",
             "id": "ji_l82_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "reassured",
+                "concerned",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response where sharp clarifying questions come before real work begins.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you stay connected with your team while working remotely?",
+            "interviewerQuestion": "A client sends a one-line brief: 'something fun for social media, you know what works.' What's your first step?",
             "options": [
-                "I respond quickly whenever someone messages me.",
-                "I make a point to join video calls with cameras on and reach out proactively rather than waiting to be contacted.",
-                "I rely on our team chat to stay in the loop on most things."
+                "I'd send back two or three quick questions about tone, audience, or examples they like, so the direction is clearer before I put real time into it.",
+                "I'd wait for them to send more details on their own, since it's really their job to clarify what they actually want before I get started. and I'd rather spend that time on something else productive than start guessing at a brief this vague and open-ended.",
+                "I'd just go with my own best guess of what 'fun' probably means for their brand, since asking too many questions might make it seem like I don't know what I'm doing."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Proactively reaching out shows stronger connection-building than simply responding when contacted.",
-            "explanation": "Proactively reaching out to your team shows genuine effort to stay connected, while simply responding quickly or relying on chat is more passive.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "A few sharp clarifying questions upfront usually saves more time than they cost.",
+            "explanation": "A short round of clarifying questions protects your time and the client's expectations before real work begins. Guessing risks a wasted first draft, and waiting passively for more detail may mean the deadline arrives before any clarity does.",
             "id": "ji_l82_q3",
             "interviewerReaction": [
-                "disappointed",
                 "impressed",
-                "disappointed"
+                "uncertain",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that checks in directly before escalating or ignoring it.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What interests you about this industry?",
+            "interviewerQuestion": "You realize a teammate's part of a shared project is going to be late, and it will affect your own piece. What do you do?",
             "options": [
-                "It seems like a stable industry with good job security.",
-                "I'm drawn to how quickly this industry evolves and the opportunity to keep learning and solving new problems.",
-                "I don't have a strong preference, but this industry seemed interesting enough."
+                "I'd go straight to our lead to report that they're falling behind, since it's important that management knows as soon as possible. though I recognize that might not hold up.",
+                "I'd wait to see if they finish in time anyway, since it's not really my responsibility to manage someone else's part of the project.",
+                "I'd let them know I noticed, ask if they need help or if I should adjust my own timeline, and give our lead a heads-up if it looks like it'll affect the overall deadline."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Genuine intellectual interest in the field's nature is more compelling than stability alone.",
-            "explanation": "Genuine interest in the industry's nature, like its pace of change, is more compelling to employers than a general comment about stability.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Checking in directly with the teammate first is usually more constructive than either ignoring it or escalating immediately.",
+            "explanation": "Checking in directly, offering help, and flagging it if needed balances support with honesty about the risk. Waiting passively risks a late surprise for everyone, and escalating immediately without a direct conversation can feel like going over their head unnecessarily.",
             "id": "ji_l83_q1",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "concerned",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that makes sure the task gets done, whoever technically owns it.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Why did you choose to pursue a career in this industry?",
+            "interviewerQuestion": "You notice a coworker hasn't finished a closing task that affects the store opening properly tomorrow. It's near the end of your shift. What do you do?",
             "options": [
-                "I've always been fascinated by how this industry solves real-world problems, and I wanted to contribute to that directly.",
-                "It seemed like a good industry to build a career in long-term.",
-                "A few people I know work in this industry, so I looked into it."
+                "I'd just finish it myself without saying anything, since it's easier than bringing it up and might seem like I'm calling them out.",
+                "I'd mention it to them directly in case they forgot, and if they can't finish it before we leave, I'd help finish it myself or make sure the opening team knows.",
+                "I'd leave it as is, since it's technically their responsibility and not something I should have to fix on my own time. but I'm not fully confident saying that."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "A personal connection to the industry's purpose is a more compelling answer than a general or secondhand reason.",
-            "explanation": "A personal connection to the industry's purpose shows authentic motivation, which is more compelling than general career planning or secondhand influence.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Making sure the task gets done, and that the right people know, usually matters more than who technically owns it.",
+            "explanation": "Checking in, then either helping or informing the next shift, ensures the store opens properly either way. Quietly fixing it without a word doesn't help the coworker learn, and leaving it undone risks a real problem for the opening team.",
             "id": "ji_l83_q2",
             "interviewerReaction": [
+                "uncertain",
                 "impressed",
-                "disappointed",
                 "disappointed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response with a polite check-in and a backup plan, rather than waiting or skipping a safeguard.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What excites you most about working in this field?",
+            "interviewerQuestion": "A teammate was supposed to review your code yesterday so it could ship today, but they haven't gotten to it. What's your next step?",
             "options": [
-                "The potential for career growth in this field is appealing to me.",
-                "It's a field that seems to have a lot of job openings right now.",
-                "I'm excited by the chance to work on projects that have a direct, visible impact on people's lives."
+                "I'd ship the code without the review, since waiting any longer risks missing today's release entirely, and the code is probably fine. and I'd rather ship something imperfect on time than risk missing the release window over one delayed review.",
+                "I'd just wait for them to get to it whenever they can, since pushing them might come across as impatient or pressuring.",
+                "I'd send them a polite reminder and ask if there's a blocker, and if they're genuinely swamped, I'd ask if someone else on the team could review it instead so we still make today's release."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Impact-driven excitement tends to leave a stronger impression than growth potential or job availability.",
-            "explanation": "Impact-driven excitement shows genuine passion for the work itself, while growth potential or job availability are more self-focused, practical considerations.",
+            "hint": "A polite check-in with a backup plan is usually better than either waiting indefinitely or skipping an important step.",
+            "explanation": "Checking in and lining up a backup reviewer keeps the release on track without skipping a safeguard. Waiting silently risks the deadline entirely, and skipping the review removes a safety check that exists for a reason.",
             "id": "ji_l83_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "concerned",
+                "uncertain",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that turns a dismissal into a real discussion without escalating.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What would you do if a customer was upset about a delayed order?",
+            "interviewerQuestion": "In a meeting, a coworker dismisses your idea fairly abruptly in front of the team. What do you do right then?",
             "options": [
-                "I'd apologize and let them know there's not much I can do about shipping delays.",
-                "I'd apologize sincerely, explain the situation honestly, and offer a solution like an updated timeline or a reasonable resolution.",
-                "I'd escalate it to a manager right away since delays aren't something I can control."
+                "I'd drop the idea for now and bring it up with them one-on-one afterward, since I don't want to create tension in front of the whole team.",
+                "I'd calmly ask them what specifically concerns them about the idea, so we can actually discuss it rather than leave it at a flat dismissal.",
+                "I'd push back firmly right there, since letting a dismissal like that go unanswered might make it seem like I agree with them. since I think letting a dismissive comment slide in front of everyone could set a bad precedent for how my ideas get treated going forward."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Owning the conversation with a concrete solution shows stronger customer service than deflecting to limits or escalating immediately.",
-            "explanation": "Offering a concrete solution shows ownership of the customer's experience, while deflecting to limitations or escalating immediately can make the customer feel unheard.",
+            "professionalismRating": 4,
+            "hint": "Asking for their reasoning right away usually keeps the discussion useful without escalating it.",
+            "explanation": "Calmly asking for their specific concern turns a dismissal into an actual conversation, right when it matters. Dropping it avoids conflict but also avoids getting your idea a fair hearing, and pushing back firmly risks turning a disagreement into a confrontation.",
             "id": "ji_l84_q1",
             "interviewerReaction": [
-                "disappointed",
+                "uncertain",
                 "impressed",
-                "disappointed"
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that handles the customer first and the misunderstanding privately after.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How would you respond if a customer felt they were treated unfairly?",
+            "interviewerQuestion": "A coworker blames you for a mistake in front of a customer, and you know it wasn't actually your fault. What do you do in the moment?",
             "options": [
-                "I'd explain our policy clearly so they understand why the situation happened.",
-                "I'd apologize for the inconvenience and note their feedback for the team.",
-                "I'd listen fully to their concern, acknowledge how they feel, and work with them to find a fair resolution."
+                "I'd stay calm, help resolve the customer's issue first, and address the mix-up with my coworker privately once the customer has been taken care of.",
+                "I'd let it go completely, since making a scene in front of a customer would probably make the situation look worse for everyone involved.",
+                "I'd correct my coworker in front of the customer right away, since I don't think it's fair to let the wrong impression stand even for a few minutes."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Actively working toward a resolution together shows more genuine care than simply explaining policy or noting feedback.",
-            "explanation": "Working toward a resolution together shows genuine care for the outcome, while explaining policy or just noting feedback can feel dismissive of the customer's actual concern.",
+            "hint": "Handling the customer's need first, then clearing up the misunderstanding privately, usually works best.",
+            "explanation": "Prioritizing the customer and addressing the blame privately afterward keeps the moment professional and still resolves the misunderstanding. Correcting your coworker publicly can embarrass everyone in front of the customer, and letting it go entirely leaves a false impression uncorrected.",
             "id": "ji_l84_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "reassured",
+                "uncertain",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the short, calm line that holds your ground without escalating.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What would you do if a customer demanded a refund you weren't authorized to give?",
+            "interviewerQuestion": "A coworker keeps interrupting you every time you try to speak in a meeting. How do you handle it in the moment?",
             "options": [
-                "I'd explain what I can offer within my authority and quickly loop in someone who can approve a refund if needed.",
-                "I'd tell them I'm not able to help with that and refer them elsewhere.",
-                "I'd try to convince them that a refund isn't really necessary."
+                "I'd stop trying to make my point in that meeting and just wait for a better opportunity to bring it up another time.",
+                "I'd calmly say something like 'let me just finish this point' and continue, without making it a bigger issue in front of the group.",
+                "I'd interrupt them right back the next time it happens, since that seems like the only way to actually get a word in during the meeting. even though I know that might turn the meeting into more of a back-and-forth than it needs to be for everyone else in the room."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Offering what you can plus quickly involving the right person shows more ownership than referring them away or arguing against their request.",
-            "explanation": "Offering what's within your authority and quickly involving the right person shows ownership of the situation, while referring them away or arguing against their request leaves the customer without real help.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "A short, calm, direct line is usually enough to hold your space without escalating.",
+            "explanation": "A brief, calm request to finish your point holds your ground without creating a scene. Giving up your point avoids conflict but means it goes unheard, and interrupting back can turn the meeting into a back-and-forth that derails the discussion.",
             "id": "ji_l84_q3",
             "interviewerReaction": [
-                "impressed",
                 "disappointed",
-                "disappointed"
+                "impressed",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that defuses tension by moving the conversation somewhere calmer.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What would you do if you disagreed with a company policy?",
+            "interviewerQuestion": "A customer is raising their voice at you in the middle of the store about a late order. Other customers are starting to notice. What do you do?",
             "options": [
-                "I'd raise my concerns through the appropriate channels with specific reasoning, while still following the policy in the meantime.",
-                "I'd voice my disagreement to my coworkers to see if they felt the same way.",
-                "I'd follow the policy since it's not really my place to question it."
+                "I'd lower my own voice, acknowledge their frustration, and offer to move somewhere quieter to sort out the details of their order.",
+                "I'd ask them to please lower their voice, since it's making other customers uncomfortable and isn't really necessary to get help. even though I haven't tested that assumption.",
+                "I'd apologize repeatedly and try to fix the order as fast as possible right there, hoping that solving it quickly will calm things down before it gets any more attention."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Raising concerns through proper channels while still complying shows both initiative and professionalism.",
-            "explanation": "Raising concerns through appropriate channels while still complying shows both initiative and respect for the organization, unlike venting to coworkers or simply staying silent.",
+            "hint": "Moving the conversation somewhere calmer usually defuses tension faster than trying to fix things on the spot in public.",
+            "explanation": "Staying calm and offering a quieter space to talk defuses the tension and protects both the customer's dignity and the store's atmosphere. Rushing a fix in public doesn't address the emotional tension, and asking them to lower their voice can come across as dismissive of their frustration.",
             "id": "ji_l85_q1",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "reassured",
+                "concerned",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that acknowledges frustration directly instead of over-explaining or delaying.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How would you handle a policy that you felt was unfair?",
+            "interviewerQuestion": "You receive an angry email from a client threatening to cancel their contract over a minor delay. How do you respond?",
             "options": [
-                "I'd mention it during a casual conversation with my manager at some point.",
-                "I'd document specific examples of the issue and present them constructively to someone who could actually make a change.",
-                "I'd try to work around it as much as I reasonably could."
+                "I'd reply promptly, acknowledge the delay and their frustration directly, explain what's being done about it, and offer a quick call if they'd like to talk it through.",
+                "I'd reply with a detailed explanation of exactly why the delay happened, including all the internal reasons, so they understand it wasn't really anyone's fault.",
+                "I'd wait a day before responding, so I have time to calm down and think about the best way to word my reply to them."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Presenting specific, documented examples to the right person is stronger than casual mentions or workarounds.",
-            "explanation": "Presenting specific, documented examples to someone who can act on them is a constructive approach, while casual mentions or workarounds don't address the issue directly.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Acknowledging the frustration directly usually matters more early on than a full explanation of the cause.",
+            "explanation": "A prompt, direct acknowledgment paired with an offer to talk shows the client they're being taken seriously right away. A long internal explanation can feel like excuse-making, and waiting a full day on an already-angry client risks losing their patience entirely.",
             "id": "ji_l85_q2",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "reassured",
+                "uncertain",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response where you personally own the follow-through, not just the fix.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What would you do if a new policy negatively affected your team?",
+            "interviewerQuestion": "A customer on the phone says this is the third time they've called about the same unresolved issue, and they're clearly at the end of their patience. What's your approach?",
             "options": [
-                "I'd let the team know I understand their frustration and encourage them to adjust.",
-                "I'd wait to see if the policy changed on its own over time.",
-                "I'd gather feedback from the team and present a clear, constructive case to leadership about the impact."
+                "I'd explain that these things can sometimes take a few tries to fully resolve, and reassure them that it should be sorted out eventually.",
+                "I'd apologize and transfer them to a specialist team that handles this specific kind of issue, since they'll be able to fix it more thoroughly than I can.",
+                "I'd apologize for the repeated hassle, take full ownership of getting it resolved this time, and personally follow up once it's actually fixed instead of just closing the ticket."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Advocating for the team with leadership shows stronger initiative than simply sympathizing or waiting.",
-            "explanation": "Advocating for the team with a clear, evidence-based case shows leadership, while simply sympathizing or waiting passively doesn't work toward an actual solution.",
+            "hint": "Taking personal ownership of the follow-through often matters as much as fixing the technical issue itself.",
+            "explanation": "Owning the resolution personally, including the follow-up, rebuilds trust after repeated failed attempts. A transfer might be necessary but can feel like being passed around again, and explaining that these things take time doesn't address the customer's exhausted patience.",
             "id": "ji_l85_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "concerned",
+                "uncertain",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that stays open while gently probing the part that felt off.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle working with people from different backgrounds?",
+            "interviewerQuestion": "Your manager gives you feedback that feels exaggerated and a little unfair, in a tone that stings. How do you respond in the moment?",
             "options": [
-                "I treat everyone the same regardless of their background.",
-                "I try to adapt my communication a little, depending on the person.",
-                "I stay curious and open, and I make an effort to understand different perspectives and working styles."
+                "I'd listen without interrupting, thank them for the feedback, and ask a clarifying question about the specific part that felt off, saving a fuller conversation for later if needed.",
+                "I'd point out right away that I think the feedback is exaggerated and explain why I don't think it's entirely fair. or that's the impression I have, anyway.",
+                "I'd just apologize and agree with everything they said, even the parts that didn't feel quite right, to avoid making the conversation more difficult."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Genuine curiosity about different perspectives is a stronger answer than treating everyone identically.",
-            "explanation": "Genuine curiosity about different perspectives shows real inclusivity, while treating everyone exactly the same can overlook meaningful differences that matter to people.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Staying open in the moment, while gently probing the specific part that felt off, usually works better than immediate pushback or full agreement.",
+            "explanation": "Listening fully and asking a targeted question about the unfair part keeps the moment calm while still addressing your concern. Disputing it immediately can seem defensive, and agreeing with everything, even the inaccurate parts, doesn't actually resolve anything.",
             "id": "ji_l86_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "reassured",
+                "concerned",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that separates staying composed publicly from raising the tone privately.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you worked effectively with a diverse team.",
+            "interviewerQuestion": "Your manager criticizes your performance in front of your teammates, using a tone you feel is too harsh for the mistake. What do you do?",
             "options": [
-                "On a project with team members from several countries, I made sure to check in individually to understand different communication preferences.",
-                "I've worked with diverse teams before and it generally went fine.",
-                "I focused on being respectful to everyone equally."
+                "I'd stay quiet in the meeting and avoid bringing it up again afterward, since raising it later might make things awkward between us going forward.",
+                "I'd stay composed in the moment, and ask to speak with them privately afterward to understand the feedback better and share how the tone felt to me.",
+                "I'd say something in the moment to point out that the tone felt too harsh, since I don't think it's fair to just let a manager speak to me like that."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "A specific example of adapting to individual preferences is stronger than a general, vague statement.",
-            "explanation": "A specific example of adapting to individual communication preferences gives real evidence of inclusive teamwork, rather than a general or vague claim.",
+            "hint": "A private follow-up usually addresses both the feedback and the tone more effectively than an in-the-moment reaction.",
+            "explanation": "Staying composed publicly and raising the tone privately afterward addresses both issues without creating a scene. Responding to the tone in the moment can escalate things in front of others, and never raising it at all leaves a legitimate concern unaddressed.",
             "id": "ji_l86_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain",
+                "reassured",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that hears them out fully before correcting the record.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you make sure everyone on a diverse team feels included?",
+            "interviewerQuestion": "Your manager criticizes a decision you made, but it's clear they're working from incorrect information about what actually happened. How do you respond?",
             "options": [
-                "I make sure meetings are open for anyone to contribute if they want to.",
-                "I actively invite quieter voices into discussions and check that decisions reflect a range of perspectives.",
-                "I try to be friendly and welcoming to everyone on the team."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Actively inviting participation is stronger than simply keeping the door open or being friendly.",
-            "explanation": "Actively inviting quieter voices into discussions shows real effort toward inclusion, while simply keeping meetings open or being friendly doesn't guarantee everyone actually feels heard.",
-            "id": "ji_l86_q3",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "What would you do in your first 30 days in this role?",
-            "options": [
-                "I'd try to prove myself quickly by taking on as much as possible.",
-                "I'd mostly observe and wait until I felt fully ready before contributing much.",
-                "I'd focus on learning the team's processes, meeting key stakeholders, and identifying a few early opportunities to add value."
+                "I'd interrupt to correct them as soon as I realize they have the wrong information, since it doesn't make sense to let the conversation continue on a false premise.",
+                "I'd let the feedback stand as is for now, since correcting my manager in the moment might come across as making excuses.",
+                "I'd let them finish, then respectfully explain what actually happened with any relevant details or evidence, so the feedback is based on accurate information."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Balancing learning with early, meaningful contribution is stronger than rushing in or waiting too long.",
-            "explanation": "Balancing learning with early contribution shows thoughtful onboarding, while rushing to prove yourself or waiting too long to contribute are both less effective approaches.",
-            "id": "ji_l87_q1",
+            "professionalismRating": 4,
+            "hint": "Hearing them out fully before correcting the record usually lands better than interrupting or staying silent.",
+            "explanation": "Letting them finish, then calmly correcting the record with evidence, respects the conversation while still setting the facts straight. Staying silent leaves inaccurate feedback unchallenged, and interrupting can come across as dismissive even when you're right.",
+            "id": "ji_l86_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "concerned",
+                "uncertain",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that gives your manager the full picture instead of absorbing it silently.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How would you approach your first month at a new company?",
+            "interviewerQuestion": "You're already at capacity with your current tasks when your manager adds another urgent one. What do you do?",
             "options": [
-                "I'd spend most of the time reading documentation and getting up to speed.",
-                "I'd prioritize understanding the team's goals and building relationships, while looking for a quick, meaningful win.",
-                "I'd wait for my manager to assign specific tasks before doing much independently."
+                "I'd tell my manager honestly what I'm currently working on and ask them to help me prioritize, rather than silently trying to do everything at once.",
+                "I'd tell my manager I can't take on anything else right now, since I'm already at capacity with what I have. but I haven't really examined that closely.",
+                "I'd take on the new task without saying anything and just try to work faster or stay later to fit everything in."
+            ],
+            "correctAnswerIndex": 0,
+            "professionalismRating": 5,
+            "hint": "Giving your manager the full picture and letting them help prioritize is usually more useful than silently overloading yourself or flatly declining.",
+            "explanation": "Being honest about your workload and asking for help prioritizing gives your manager the information they need to make a fair call. Silently overloading yourself risks burnout or mistakes, and flatly declining without offering the full picture can look uncooperative.",
+            "id": "ji_l87_q1",
+            "interviewerReaction": [
+                "reassured",
+                "uncertain",
+                "concerned"
+            ]
+        },
+        {
+            "instruction": "Choose the response that raises a capacity problem to someone who can actually fix it.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Your ticket queue is piling up faster than you can handle, and it's not slowing down. What's your next move?",
+            "options": [
+                "I'd try to work through tickets faster by giving shorter, less detailed responses, just to keep the queue moving. since keeping the numbers moving in the right direction seems more important than the length of any individual response.",
+                "I'd flag to my supervisor that the volume is beyond what I can manage alone, so they can decide whether to bring in help or adjust expectations.",
+                "I'd keep working at my normal pace and assume the queue will eventually calm down on its own once things settle."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Raising a capacity problem to someone who can actually fix it is usually more effective than quietly changing your own standards or waiting it out.",
+            "explanation": "Flagging the volume problem to your supervisor gives someone with more resources the chance to actually solve it. Rushing through tickets sacrifices quality, and waiting passively assumes a problem will resolve itself with no real basis for that assumption.",
+            "id": "ji_l87_q2",
+            "interviewerReaction": [
+                "concerned",
+                "reassured",
+                "uncertain"
+            ]
+        },
+        {
+            "instruction": "Choose the response that flags the real coverage gap while still doing your best in the meantime.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "You're covering for two colleagues who are both out sick, and patients are starting to wait longer than usual. What do you do?",
+            "options": [
+                "I'd just keep working through it on my own as best I can, since everyone is short-staffed sometimes and I don't want to seem like I can't handle it.",
+                "I'd let my supervisor know the coverage gap is creating real wait times, so they can decide whether to bring in extra help, while I keep working through patients as efficiently as I can in the meantime.",
+                "I'd start telling patients that wait times will just be longer today, since there's not really much else I can do about the staffing shortage."
             ],
             "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Combining relationship-building with an early contribution shows a proactive, well-rounded start.",
-            "explanation": "Combining relationship-building with an early meaningful contribution shows a proactive, well-rounded start, unlike focusing only on documentation or waiting for direction.",
-            "id": "ji_l87_q2",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "What are your priorities when starting a new job?",
-            "options": [
-                "Building trust with my new team and understanding what success looks like in the role, so I can contribute effectively early on.",
-                "Learning the company culture as thoroughly as I can before doing much else.",
-                "Getting familiar with all the tools and systems first."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Understanding what success looks like helps guide meaningful early contributions, more than tools or culture alone.",
-            "explanation": "Understanding what success looks like helps you contribute meaningfully right away, while focusing only on culture or tools delays actually adding value.",
+            "hint": "Letting someone with the ability to add resources know about a genuine coverage gap is usually more effective than absorbing it silently or just informing patients.",
+            "explanation": "Flagging the coverage gap to your supervisor, while still doing your best in the meantime, gives the situation a real chance to improve. Absorbing it silently risks burnout and slower service, and simply informing patients doesn't address the underlying staffing problem.",
             "id": "ji_l87_q3",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "concerned",
+                "reassured",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the suggestion that gets concrete about trade-offs instead of voting or deferring to authority.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you balance quality and speed in your work?",
+            "interviewerQuestion": "Your team is evenly split between two approaches to a project, and the discussion is starting to go in circles. What do you suggest?",
             "options": [
-                "I identify which parts of a task most need precision and move faster through the lower-risk parts.",
-                "I try to work as quickly as possible without sacrificing quality too much.",
-                "I usually prioritize quality first, even if it takes longer."
+                "I'd suggest we quickly list the actual pros and cons of each approach on a board, so the discussion focuses on specifics rather than repeating the same points.",
+                "I'd suggest we let whoever's most senior on the team make the final call, since someone needs to break the tie at some point. even if the specifics might vary quite a bit.",
+                "I'd suggest we just take a vote and go with whichever approach gets more support, since that seems like the fairest way to settle it."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Identifying which parts need precision shows more nuanced judgment than a general preference for one or the other.",
-            "explanation": "Identifying which parts of a task need the most precision shows nuanced judgment, while a general preference for speed or quality alone doesn't reflect that same level of thought.",
+            "professionalismRating": 4,
+            "hint": "Getting concrete about the actual trade-offs usually resolves circular arguments better than voting or deferring to authority alone.",
+            "explanation": "Listing real pros and cons focuses the discussion on substance and often reveals a natural answer. A vote can settle a disagreement without actually resolving the reasoning behind it, and deferring to seniority skips engaging with the ideas themselves.",
             "id": "ji_l88_q1",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain",
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the suggestion that gets the reasoning out in the open instead of avoiding it or blending ideas by default.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you had to balance thoroughness with a tight timeline.",
+            "interviewerQuestion": "Two team members have very different visions for an upcoming event, and the rest of the team is starting to take sides. What do you do?",
             "options": [
-                "I did my best to be thorough within the time I had available.",
-                "I focused my detailed review on the highest-risk sections of the report and moved efficiently through the rest.",
-                "I prioritized meeting the deadline, even if it meant a lighter review overall."
+                "I'd stay out of it and let the two of them work it out between themselves, since it's really their disagreement to resolve.",
+                "I'd suggest the two of them present their ideas clearly to the group with the reasoning behind each, so everyone can weigh in based on substance rather than who they happen to agree with personally.",
+                "I'd try to combine both of their ideas into a single plan, since that seems like the option most likely to keep everyone happy."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Focusing thoroughness where it matters most is a more strategic balance than a general effort or prioritizing one side.",
-            "explanation": "Focusing thorough review on the highest-risk areas is a strategic balance of speed and quality, unlike a general effort to be thorough or simply prioritizing the deadline.",
+            "professionalismRating": 4,
+            "hint": "Getting the reasoning out in the open usually helps a team move past personal sides toward the actual best option.",
+            "explanation": "Surfacing the reasoning behind each idea helps the team evaluate based on merit rather than loyalty. Combining ideas can sound diplomatic but sometimes creates a worse, patchwork result, and staying out of it entirely lets a growing team split continue unaddressed.",
             "id": "ji_l88_q2",
             "interviewerReaction": [
                 "disappointed",
                 "impressed",
-                "disappointed"
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the proposal that sets a real decision deadline instead of deferring to one person or waiting indefinitely.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you decide when it's okay to move quickly versus when to slow down?",
+            "interviewerQuestion": "Your team can't agree on which technical approach to use, and the deadline is close enough that the debate itself is costing time. What do you propose?",
             "options": [
-                "I generally try to move at a consistent pace across all my work.",
-                "I slow down mainly when I'm unsure about something.",
-                "I consider the potential impact of an error — high-stakes work gets more care, while routine tasks can move faster."
+                "I'd propose we timebox the discussion, agree on one approach by the end of it based on the strongest reasoning presented, and commit to it as a team even if not everyone fully agrees.",
+                "I'd propose we just go with whichever approach the most experienced person on the team prefers, since they probably have the best instincts here.",
+                "I'd propose we keep discussing until everyone genuinely agrees, since making a rushed decision on something this important seems risky."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Basing your pace on potential impact shows more strategic thinking than a consistent pace or reacting only to uncertainty.",
-            "explanation": "Basing your pace on potential impact shows strategic thinking about where quality matters most, unlike a fixed, consistent pace or only slowing down when uncertain.",
+            "hint": "Setting a decision deadline usually resolves a stalled debate better than deferring to one person or waiting for full agreement.",
+            "explanation": "Timeboxing the discussion and committing as a team respects the real time pressure while still weighing the actual arguments. Deferring to seniority skips evaluating the reasoning, and waiting for full agreement can cost more time than the team actually has.",
             "id": "ji_l88_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "impressed",
+                "uncertain",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that checks relative urgency instead of automatic compliance or automatically finishing your own task.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What would you do if a project's scope suddenly changed?",
+            "interviewerQuestion": "You're deep into a task with its own deadline when a senior leader asks you to drop everything for something they say is urgent. What do you do?",
             "options": [
-                "I'd try to fit the new scope into the existing timeline as best I could.",
-                "I'd flag my concerns but proceed with the original plan until told otherwise.",
-                "I'd clarify the new expectations with stakeholders, then reassess the timeline and resources needed to meet them."
+                "I'd drop what I'm doing immediately without asking any questions, since it's a senior leader making the request and I don't want to seem like I'm pushing back.",
+                "I'd finish my current task first before looking at their request, since I already had a deadline of my own to meet. since I think it's usually fair to assume my manager's original request should take priority unless I'm told very clearly otherwise.",
+                "I'd quickly ask how urgent it is relative to my current deadline, and if it's genuinely more pressing, I'd switch and let whoever's expecting my original task know about the delay."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Clarifying new expectations and reassessing resources is stronger than forcing the old plan to fit or waiting passively.",
-            "explanation": "Clarifying new expectations and reassessing what's needed shows proactive planning, while forcing the old plan to fit or waiting passively can lead to unrealistic outcomes.",
+            "professionalismRating": 4,
+            "hint": "A quick check on relative urgency usually beats either automatic compliance or automatically finishing what you started.",
+            "explanation": "Briefly checking real urgency, then communicating any resulting delay, respects both priorities. Dropping everything without question can mean neglecting something equally important, and finishing your own task first risks ignoring something genuinely more urgent.",
             "id": "ji_l89_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "concerned",
+                "uncertain",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response with a real judgment call about urgency, communicated clearly to both sides.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How would you handle a client expanding a project's requirements mid-way through?",
+            "interviewerQuestion": "Another department urgently asks for your help right when you're in the middle of a task your own manager assigned. What's your move?",
             "options": [
-                "I'd document the new requirements, discuss the impact on timeline and budget, and get agreement before proceeding.",
-                "I'd try to accommodate the changes without raising the timeline as an issue.",
-                "I'd let the client know it's outside the original agreement and leave it at that."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Getting clear agreement on impact before proceeding protects both the project and the relationship.",
-            "explanation": "Getting clear agreement on the impact before proceeding protects the project's success, while quietly accommodating changes or simply refusing them both create risk down the line.",
-            "id": "ji_l89_q2",
-            "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "What steps would you take if new requirements were added to a nearly finished project?",
-            "options": [
-                "I'd try to squeeze them in quickly since the project is almost finished anyway.",
-                "I'd assess how the new requirements affect what's already done, then propose a realistic plan to incorporate them.",
-                "I'd push back since the project was already close to completion."
+                "I'd help the other department right away, since urgent requests usually come first, and figure my manager will understand once I explain later. since I think it's generally safer to assume urgency from outside the team outweighs whatever I already had planned for the day.",
+                "I'd quickly check with my manager or use my judgment on how urgent my current task really is, and let the other department know when I can realistically help.",
+                "I'd tell the other department I can't help since I'm busy with something my own manager assigned to me."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Assessing the real impact and proposing a realistic plan is stronger than rushing changes in or resisting them outright.",
-            "explanation": "Assessing the impact and proposing a realistic plan shows careful judgment, while rushing changes in or resisting them outright can compromise either the project's quality or the relationship with the requester.",
-            "id": "ji_l89_q3",
+            "professionalismRating": 4,
+            "hint": "A quick judgment call about relative urgency, communicated clearly, usually works better than assuming one request automatically outranks the other.",
+            "explanation": "Checking urgency and communicating a realistic timeline respects both tasks without guessing blindly. Assuming any urgent request automatically wins risks abandoning your manager's priority without their knowledge, and refusing outright might leave a genuinely important request unaddressed.",
+            "id": "ji_l89_q2",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "concerned",
+                "reassured",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response for a situation where the urgency gap is large enough not to need much deliberation.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle a demanding client?",
+            "interviewerQuestion": "You're finishing a routine ticket when you get an urgent message that a system is down and affecting many users. What do you do?",
             "options": [
-                "I set clear, realistic expectations early and communicate proactively so there are no surprises along the way.",
-                "I try to accommodate as many of their requests as I reasonably can.",
-                "I stay patient and let them know I'm doing my best."
+                "I'd try to work on both at once, switching back and forth between the outage and my current ticket so neither one is completely ignored. even though I know that splitting focus like that usually means neither task gets the attention it probably needs in a moment like this.",
+                "I'd finish my current ticket first since I'm already close to done with it, and then move to the outage right after.",
+                "I'd pause my current ticket, since a widespread outage almost always outweighs a routine task, quickly note where I left off, and switch to the outage."
+            ],
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Some situations have an urgency difference large enough that the decision doesn't really need much deliberation.",
+            "explanation": "Recognizing that a widespread outage clearly outweighs a routine ticket, and switching promptly, shows good judgment about scale. Finishing the smaller task first delays a bigger problem unnecessarily, and splitting attention between the two likely slows down the more urgent fix.",
+            "id": "ji_l89_q3",
+            "interviewerReaction": [
+                "uncertain",
+                "concerned",
+                "reassured"
+            ]
+        },
+        {
+            "instruction": "Choose the response where naming your assumption separates a smart call from a risky guess.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "You need to make a decision right now, but you're missing one key piece of information, and the person who has it isn't reachable, while the deadline is in ten minutes. What do you do?",
+            "options": [
+                "I'd make the most reasonable decision I can with what I know, clearly note the assumption I'm making, and flag it to be corrected quickly once the missing information becomes available.",
+                "I'd just wait past the deadline for the information to come in, since making a decision without it doesn't feel safe.",
+                "I'd guess at the missing piece without mentioning it to anyone, since raising it might make me look unprepared right before a deadline."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Setting clear expectations early prevents many issues that come from managing a demanding client reactively.",
-            "explanation": "Setting clear expectations early and communicating proactively prevents many issues, while simply accommodating requests or staying patient doesn't address the root of a demanding relationship.",
+            "hint": "Naming your assumption clearly is what separates a smart judgment call from a risky guess.",
+            "explanation": "Making a reasonable call, being transparent about the assumption, and flagging it for correction is a defensible way to handle real time pressure. Missing the deadline entirely avoids the risk but creates a bigger problem, and guessing silently hides a risk that others deserve to know about.",
             "id": "ji_l90_q1",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "reassured",
+                "concerned",
+                "skeptical"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that's honest about the gap while still giving something useful in the moment.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you managed a particularly demanding client relationship.",
+            "interviewerQuestion": "A client asks you a question mid-call that you can't fully answer because a colleague who has the details is unavailable, and the client is waiting on the line. What do you do?",
             "options": [
-                "I did my best to respond quickly to whatever they needed.",
-                "I stayed flexible and adjusted my work around their requests.",
-                "I scheduled regular check-ins to align on priorities upfront, which reduced last-minute demands significantly over time."
+                "I'd tell them I don't know and that they'll need to call back later once I have the right person available. though it's only a loose impression, really.",
+                "I'd give them a confident, specific answer based on my best guess, since hesitating on the call might make them lose confidence in me.",
+                "I'd tell the client honestly that I want to confirm the exact details before giving them a firm answer, give them my best general sense of it now, and follow up with the specifics shortly after."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Proactively aligning on priorities reduces demanding behavior more than simply reacting quickly or staying flexible.",
-            "explanation": "Proactively aligning on priorities through regular check-ins addresses demanding behavior at its source, while reacting quickly or just staying flexible doesn't change the underlying pattern.",
+            "professionalismRating": 4,
+            "hint": "Being honest about the gap while still giving something useful in the moment usually serves the client better than a confident guess or a dead end.",
+            "explanation": "Being upfront about the gap, offering a general answer now, and following up with specifics respects both honesty and the client's time. A confident guess risks giving wrong information, and telling them to call back later offers nothing useful in the moment.",
             "id": "ji_l90_q2",
             "interviewerReaction": [
                 "disappointed",
-                "disappointed",
-                "impressed"
+                "concerned",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response where missing the deadline is clearly the smaller cost.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you set boundaries with a client who expects too much?",
+            "interviewerQuestion": "Production needs a go or no-go decision from you in the next five minutes, but one of the usual safety checks hasn't been completed and there's no time to run it fully. What do you do?",
             "options": [
-                "I try to meet their expectations as much as possible to maintain the relationship.",
-                "I clearly communicate what's realistic within our agreement and offer alternatives when requests go beyond that.",
-                "I let them know their expectations may need to be adjusted, without much further discussion."
+                "I'd try to quickly guess whether it's probably fine based on how the equipment has been running lately, and make the call either way within the five minutes.",
+                "I'd say no-go until at least a quick partial check can confirm there's no obvious risk, even if that means missing the five-minute window, since a full stop is safer than an unverified go-ahead.",
+                "I'd say go, since the check has passed every other time recently and the odds of a real problem seem low enough to accept given the time pressure."
             ],
             "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Clear communication paired with alternatives is a stronger boundary than overaccommodating or a brief, undiscussed statement.",
-            "explanation": "Clear communication paired with alternatives sets a respectful boundary while preserving the relationship, unlike overaccommodating every request or leaving the conversation too brief to resolve anything.",
+            "hint": "When a decision involves real safety risk, missing a deadline is almost always the smaller cost.",
+            "explanation": "Choosing no-go until even a partial safety check can be done treats real risk appropriately, even at the cost of the deadline. Assuming it's probably fine based on past performance is exactly the kind of shortcut safety checks exist to prevent, and guessing under time pressure on a safety matter is not a defensible judgment call.",
             "id": "ji_l90_q3",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "concerned",
+                "reassured",
+                "skeptical"
             ]
         }
     ]

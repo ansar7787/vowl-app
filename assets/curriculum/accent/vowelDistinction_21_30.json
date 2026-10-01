@@ -11,14 +11,14 @@
             "word": "pen",
             "textToSpeak": "pen",
             "options": [
-                "/e/",
-                "/æ/"
+                "/æ/",
+                "/e/"
             ],
             "correctAnswer": "/e/",
-            "correctAnswerIndex": 0,
-            "hint": "Think of how you say 'pen'. The vowel in 'pen' should feel the same way. That is the DRESS sound, not the TRAP sound in 'bag'.",
-            "explanation": "'pen' contains the DRESS vowel /e/: a short, mid-front vowel made with the mouth half-open. This is the same vowel sound found in 'bed' and 'pen'.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
+            "correctAnswerIndex": 1,
+            "hint": "Open the mouth about halfway: one finger-width. 'Pen' should not need a wide jaw.",
+            "explanation": "The jaw is half open and the tongue mid-front. A wider mouth would turn 'pen' into 'pan'.",
+            "vowelTensionRule": "/e/ has the jaw half open and the tongue mid-front; /æ/ needs the jaw dropped clearly lower, tongue low and forward, mouth wide.",
             "vowelChart": {
                 "x": 0.15,
                 "y": 0.4
@@ -29,20 +29,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "bed",
-            "textToSpeak": "bed",
+            "word": "cat",
+            "textToSpeak": "cat",
             "options": [
-                "/e/",
-                "/æ/"
+                "/æ/",
+                "/e/"
             ],
-            "correctAnswer": "/e/",
+            "correctAnswer": "/æ/",
             "correctAnswerIndex": 0,
-            "hint": "Say 'pen' out loud, then say 'bed'. If the stressed vowel feels the same, you are hearing /e/, not the TRAP vowel in 'bag'.",
-            "explanation": "'bed' is pronounced with /e/, the DRESS vowel: a short, mid-front vowel made with the mouth half-open. Practising this contrast against the TRAP vowel sharpens your ear for one of English's key vowel pairs.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
+            "hint": "Drop your jaw further than feels natural and stretch the corners of the mouth. That is how 'cat' feels.",
+            "explanation": "Low, forward tongue and a wide mouth. A narrower mouth would drift towards the vowel of 'pet'.",
+            "vowelTensionRule": "Check the mouth opening: roughly one finger-width for /e/, closer to two stacked fingers for /æ/.",
             "vowelChart": {
-                "x": 0.15,
-                "y": 0.4
+                "x": 0.2,
+                "y": 0.9
             }
         },
         {
@@ -50,20 +50,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "cat",
-            "textToSpeak": "cat",
+            "word": "ten",
+            "textToSpeak": "ten",
             "options": [
-                "/e/",
-                "/æ/"
+                "/æ/",
+                "/e/"
             ],
-            "correctAnswer": "/æ/",
+            "correctAnswer": "/e/",
             "correctAnswerIndex": 1,
-            "hint": "The key difference is between /æ/ and /e/. In 'cat', listen for a short, low-front vowel - the jaw drops and the mouth opens wide, just like in 'bag'.",
-            "explanation": "'cat' contains the TRAP vowel /æ/: a short, low-front vowel - the jaw drops and the mouth opens wide. This is the same vowel sound found in 'cat' and 'bag'.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
+            "hint": "The nasal /n/ tempts learners to open wider. Keep the jaw half open.",
+            "explanation": "The jaw stays moderate. Opening wider would give 'tan'.",
+            "vowelTensionRule": "/æ/ is longer and more spread than /e/. Learners often use /e/ for both, so exaggerate the jaw drop at first.",
             "vowelChart": {
-                "x": 0.2,
-                "y": 0.9
+                "x": 0.15,
+                "y": 0.4
             }
         },
         {
@@ -71,20 +71,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "ten",
-            "textToSpeak": "ten",
+            "word": "man",
+            "textToSpeak": "man",
             "options": [
                 "/e/",
                 "/æ/"
             ],
-            "correctAnswer": "/e/",
-            "correctAnswerIndex": 0,
-            "hint": "Tune your ear to 'bed'. 'ten' uses that exact vowel (/e/), the DRESS sound. Do not let it drift toward the TRAP vowel.",
-            "explanation": "Here, 'ten' uses the DRESS vowel (/e/) - a short, mid-front vowel made with the mouth half-open. Notice how different this feels from the TRAP vowel in 'cat'.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
+            "correctAnswer": "/æ/",
+            "correctAnswerIndex": 1,
+            "hint": "'Man' and 'men' differ only by jaw drop. For 'man', go low.",
+            "explanation": "The mouth opens wide, and the vowel lengthens a little before /n/ while keeping its low front quality.",
+            "vowelTensionRule": "Tongue height is the cue: it falls from mid-front /e/ to low-front /æ/. Lips are slightly spread for both.",
             "vowelChart": {
-                "x": 0.15,
-                "y": 0.4
+                "x": 0.2,
+                "y": 0.9
             }
         },
         {
@@ -92,24 +92,66 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "bag",
-            "textToSpeak": "bag",
+            "word": "bed",
+            "textToSpeak": "bed",
             "options": [
-                "/e/",
-                "/æ/"
+                "/æ/",
+                "/e/"
+            ],
+            "correctAnswer": "/e/",
+            "correctAnswerIndex": 1,
+            "hint": "Feel the jaw: half closed for 'bed', not dropped as in 'bad'.",
+            "explanation": "Mid-front tongue and a modest jaw drop. Drop the jaw further and it becomes 'bad'.",
+            "vowelTensionRule": "Spread the lips slightly for both, but let the jaw do the work: /e/ stops about halfway, /æ/ keeps going.",
+            "vowelChart": {
+                "x": 0.15,
+                "y": 0.4
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L22_Q3",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "back",
+            "textToSpeak": "back",
+            "options": [
+                "/æ/",
+                "/e/"
             ],
             "correctAnswer": "/æ/",
-            "correctAnswerIndex": 1,
-            "hint": "Think of how you say 'bag'. The vowel in 'bag' should feel the same way. That is the TRAP sound, not the DRESS sound in 'bed'.",
-            "explanation": "'bag' is pronounced with /æ/, the TRAP vowel: a short, low-front vowel - the jaw drops and the mouth opens wide. Practising this contrast against the DRESS vowel sharpens your ear for one of English's key vowel pairs.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
+            "correctAnswerIndex": 0,
+            "hint": "The final /k/ closes the word fast, but the vowel before it needs a wide jaw.",
+            "explanation": "A wide mouth that is easier to see in a mirror than to hear. Check your jaw as you say it.",
+            "vowelTensionRule": "If a word with /æ/ is coming out as /e/, check that the front of the tongue is low, not hovering at mid-height.",
             "vowelChart": {
                 "x": 0.2,
                 "y": 0.9
             }
         },
         {
-            "id": "ACC_VOWELDISTINCTION_L22_Q3",
+            "id": "ACC_VOWELDISTINCTION_L23_Q1",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "head",
+            "textToSpeak": "head",
+            "options": [
+                "/e/",
+                "/æ/"
+            ],
+            "correctAnswer": "/e/",
+            "correctAnswerIndex": 0,
+            "hint": "The letters ea usually say 'ee', but not here. Think of 'bed' with an h.",
+            "explanation": "Ea usually spells the long vowel, but 'head', 'dead' and 'breath' break the rule.",
+            "vowelTensionRule": "Before nasals and voiced stops /æ/ tends to lengthen while /e/ stays brief, but the jaw gap is still the deciding cue.",
+            "vowelChart": {
+                "x": 0.15,
+                "y": 0.4
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L23_Q2",
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
@@ -121,205 +163,16 @@
             ],
             "correctAnswer": "/æ/",
             "correctAnswerIndex": 1,
-            "hint": "'hand' is built on the TRAP vowel: a short, low-front vowel - the jaw drops and the mouth opens wide. Use 'bag' as your reference - that is the sound you are listening for.",
-            "explanation": "The vowel sound in 'hand' is /æ/, the TRAP vowel - a short, low-front vowel - the jaw drops and the mouth opens wide. It contrasts with the DRESS vowel /e/, heard in words like 'bed'.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
+            "hint": "A nasal cluster /nd/ follows. The vowel before it is low and wide.",
+            "explanation": "The /nd/ ending changes nothing. It is the same wide vowel as in 'cat'.",
+            "vowelTensionRule": "/e/ and /æ/ differ by about one step of tongue height on the vowel chart: mid-front versus near-open front.",
             "vowelChart": {
                 "x": 0.2,
                 "y": 0.9
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L23_Q1",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "red",
-            "textToSpeak": "red",
-            "options": [
-                "/e/",
-                "/æ/"
-            ],
-            "correctAnswer": "/e/",
-            "correctAnswerIndex": 0,
-            "hint": "The vowel in 'red' is a short, mid-front vowel made with the mouth half-open. Think of 'bed' - it uses the same sound. The TRAP vowel in 'cat' feels quite different.",
-            "explanation": "Here, 'red' uses the DRESS vowel (/e/) - a short, mid-front vowel made with the mouth half-open. Notice how different this feels from the TRAP vowel in 'cat'.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
-            "vowelChart": {
-                "x": 0.15,
-                "y": 0.4
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L23_Q2",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "desk",
-            "textToSpeak": "desk",
-            "options": [
-                "/e/",
-                "/æ/"
-            ],
-            "correctAnswer": "/e/",
-            "correctAnswerIndex": 0,
-            "hint": "The vowel in 'desk' is a short, mid-front vowel made with the mouth half-open. Think of 'pen' - it uses the same sound. The TRAP vowel in 'bag' feels quite different.",
-            "explanation": "'desk' is built on the DRESS vowel /e/: a short, mid-front vowel made with the mouth half-open. Keep this anchored against 'pen' so you can recognise it in new words too.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
-            "vowelChart": {
-                "x": 0.15,
-                "y": 0.4
             }
         },
         {
             "id": "ACC_VOWELDISTINCTION_L23_Q3",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "bank",
-            "textToSpeak": "bank",
-            "options": [
-                "/e/",
-                "/æ/"
-            ],
-            "correctAnswer": "/æ/",
-            "correctAnswerIndex": 1,
-            "hint": "Say 'cat' out loud, then say 'bank'. If the stressed vowel feels the same, you are hearing /æ/, not the DRESS vowel in 'pen'.",
-            "explanation": "'bank' is pronounced with /æ/, the TRAP vowel: a short, low-front vowel - the jaw drops and the mouth opens wide. Practising this contrast against the DRESS vowel sharpens your ear for one of English's key vowel pairs.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
-            "vowelChart": {
-                "x": 0.2,
-                "y": 0.9
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L24_Q1",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "help",
-            "textToSpeak": "help",
-            "options": [
-                "/e/",
-                "/æ/"
-            ],
-            "correctAnswer": "/e/",
-            "correctAnswerIndex": 0,
-            "hint": "'help' is built on the DRESS vowel: a short, mid-front vowel made with the mouth half-open. Use 'pen' as your reference - that is the sound you are listening for.",
-            "explanation": "'help' is built on the DRESS vowel /e/: a short, mid-front vowel made with the mouth half-open. Keep this anchored against 'pen' so you can recognise it in new words too.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
-            "vowelChart": {
-                "x": 0.15,
-                "y": 0.4
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L24_Q2",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "map",
-            "textToSpeak": "map",
-            "options": [
-                "/e/",
-                "/æ/"
-            ],
-            "correctAnswer": "/æ/",
-            "correctAnswerIndex": 1,
-            "hint": "Tune your ear to 'bag'. 'map' uses that exact vowel (/æ/), the TRAP sound. Do not let it drift toward the DRESS vowel.",
-            "explanation": "'map' contains the TRAP vowel /æ/: a short, low-front vowel - the jaw drops and the mouth opens wide. This is the same vowel sound found in 'cat' and 'bag'.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
-            "vowelChart": {
-                "x": 0.2,
-                "y": 0.9
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L24_Q3",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "fan",
-            "textToSpeak": "fan",
-            "options": [
-                "/e/",
-                "/æ/"
-            ],
-            "correctAnswer": "/æ/",
-            "correctAnswerIndex": 1,
-            "hint": "The key difference is between /æ/ and /e/. In 'fan', listen for a short, low-front vowel - the jaw drops and the mouth opens wide, just like in 'cat'.",
-            "explanation": "The vowel sound in 'fan' is /æ/, the TRAP vowel - a short, low-front vowel - the jaw drops and the mouth opens wide. It contrasts with the DRESS vowel /e/, heard in words like 'bed'.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
-            "vowelChart": {
-                "x": 0.2,
-                "y": 0.9
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L25_Q1",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "test",
-            "textToSpeak": "test",
-            "options": [
-                "/e/",
-                "/æ/"
-            ],
-            "correctAnswer": "/e/",
-            "correctAnswerIndex": 0,
-            "hint": "This word uses the DRESS vowel - a short, mid-front vowel made with the mouth half-open. It sounds like 'pen', not like 'bag' which is the TRAP vowel /æ/.",
-            "explanation": "'test' contains the DRESS vowel /e/: a short, mid-front vowel made with the mouth half-open. This is the same vowel sound found in 'bed' and 'pen'.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
-            "vowelChart": {
-                "x": 0.15,
-                "y": 0.4
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L25_Q2",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "best",
-            "textToSpeak": "best",
-            "options": [
-                "/e/",
-                "/æ/"
-            ],
-            "correctAnswer": "/e/",
-            "correctAnswerIndex": 0,
-            "hint": "The vowel in 'best' is a short, mid-front vowel made with the mouth half-open. Think of 'bed' - it uses the same sound. The TRAP vowel in 'cat' feels quite different.",
-            "explanation": "The vowel sound in 'best' is /e/, the DRESS vowel - a short, mid-front vowel made with the mouth half-open. It contrasts with the TRAP vowel /æ/, heard in words like 'cat'.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
-            "vowelChart": {
-                "x": 0.15,
-                "y": 0.4
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L25_Q3",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "plan",
-            "textToSpeak": "plan",
-            "options": [
-                "/e/",
-                "/æ/"
-            ],
-            "correctAnswer": "/æ/",
-            "correctAnswerIndex": 1,
-            "hint": "The vowel in 'plan' is a short, low-front vowel - the jaw drops and the mouth opens wide. Think of 'bag' - it uses the same sound. The DRESS vowel in 'bed' feels quite different.",
-            "explanation": "The vowel sound in 'plan' is /æ/, the TRAP vowel - a short, low-front vowel - the jaw drops and the mouth opens wide. It contrasts with the DRESS vowel /e/, heard in words like 'bed'.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
-            "vowelChart": {
-                "x": 0.2,
-                "y": 0.9
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L26_Q1",
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
@@ -331,226 +184,100 @@
             ],
             "correctAnswer": "/e/",
             "correctAnswerIndex": 0,
-            "hint": "'bread' is built on the DRESS vowel: a short, mid-front vowel made with the mouth half-open. Use 'pen' as your reference - that is the sound you are listening for.",
-            "explanation": "The vowel sound in 'bread' is /e/, the DRESS vowel - a short, mid-front vowel made with the mouth half-open. It contrasts with the TRAP vowel /æ/, heard in words like 'cat'.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
+            "hint": "Same ea spelling trap as before. Listen for the half-open vowel after /br/.",
+            "explanation": "The /br/ cluster makes the vowel feel shorter, but the jaw still stays half open.",
+            "vowelTensionRule": "Spelling won't tell you: a gives /e/ in 'many' and /æ/ in 'cat', and ea gives /e/ in 'head'. Decide with ears and jaw.",
             "vowelChart": {
                 "x": 0.15,
                 "y": 0.4
             }
         },
         {
-            "id": "ACC_VOWELDISTINCTION_L26_Q2",
+            "id": "ACC_VOWELDISTINCTION_L24_Q1",
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "pack",
-            "textToSpeak": "pack",
+            "word": "bag",
+            "textToSpeak": "bag",
             "options": [
-                "/e/",
-                "/æ/"
+                "/æ/",
+                "/e/"
             ],
             "correctAnswer": "/æ/",
-            "correctAnswerIndex": 1,
-            "hint": "'pack' is built on the TRAP vowel: a short, low-front vowel - the jaw drops and the mouth opens wide. Use 'cat' as your reference - that is the sound you are listening for.",
-            "explanation": "Here, 'pack' uses the TRAP vowel (/æ/) - a short, low-front vowel - the jaw drops and the mouth opens wide. Notice how different this feels from the DRESS vowel in 'bed'.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
+            "correctAnswerIndex": 0,
+            "hint": "Voiced /g/ makes the vowel feel longer. Keep the jaw wide, then close with /g/.",
+            "explanation": "Voiced /g/ stretches the vowel slightly, but its quality stays wide. Don't let the extra length push you towards the other vowel.",
+            "vowelTensionRule": "The contrast is clearest in stressed syllables; in weak syllables both tend to drift towards a neutral vowel.",
             "vowelChart": {
                 "x": 0.2,
                 "y": 0.9
             }
         },
         {
-            "id": "ACC_VOWELDISTINCTION_L26_Q3",
+            "id": "ACC_VOWELDISTINCTION_L24_Q2",
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "class",
-            "textToSpeak": "class",
+            "word": "said",
+            "textToSpeak": "said",
+            "options": [
+                "/æ/",
+                "/e/"
+            ],
+            "correctAnswer": "/e/",
+            "correctAnswerIndex": 1,
+            "hint": "The ai spelling normally says 'ay'. This word is a famous exception.",
+            "explanation": "Ai normally says 'ay', but 'said' is an irregular spelling that rhymes with 'bed'.",
+            "vowelTensionRule": "A self-check: rest a hand under your chin. The jaw should drop noticeably further for /æ/.",
+            "vowelChart": {
+                "x": 0.15,
+                "y": 0.4
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L24_Q3",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "black",
+            "textToSpeak": "black",
             "options": [
                 "/e/",
                 "/æ/"
             ],
             "correctAnswer": "/æ/",
             "correctAnswerIndex": 1,
-            "hint": "Tune your ear to 'cat'. 'class' uses that exact vowel (/æ/), the TRAP sound. Do not let it drift toward the DRESS vowel.",
-            "explanation": "'class' is built on the TRAP vowel /æ/: a short, low-front vowel - the jaw drops and the mouth opens wide. Keep this anchored against 'bag' so you can recognise it in new words too.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
+            "hint": "The /bl/ cluster tempts you to hurry the vowel. Slow down and drop the jaw.",
+            "explanation": "After the cluster the jaw drops wide, and then /k/ shuts it.",
+            "vowelTensionRule": "Both are short, so the only question is how high the front of the tongue rises.",
             "vowelChart": {
                 "x": 0.2,
                 "y": 0.9
             }
         },
         {
-            "id": "ACC_VOWELDISTINCTION_L27_Q1",
+            "id": "ACC_VOWELDISTINCTION_L25_Q1",
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "fresh",
-            "textToSpeak": "fresh",
+            "word": "friend",
+            "textToSpeak": "friend",
             "options": [
                 "/e/",
                 "/æ/"
             ],
             "correctAnswer": "/e/",
             "correctAnswerIndex": 0,
-            "hint": "Say 'bed' out loud, then say 'fresh'. If the stressed vowel feels the same, you are hearing /e/, not the TRAP vowel in 'cat'.",
-            "explanation": "'fresh' is pronounced with /e/, the DRESS vowel: a short, mid-front vowel made with the mouth half-open. Practising this contrast against the TRAP vowel sharpens your ear for one of English's key vowel pairs.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
+            "hint": "The ie spelling is another trap. 'Friend' rhymes with 'send'.",
+            "explanation": "The i is silent. Say 'frend' and the vowel lands in the right place.",
+            "vowelTensionRule": "/e/ has the jaw half open and the tongue mid-front; /æ/ needs the jaw dropped clearly lower, tongue low and forward, mouth wide.",
             "vowelChart": {
                 "x": 0.15,
                 "y": 0.4
             }
         },
         {
-            "id": "ACC_VOWELDISTINCTION_L27_Q2",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "letter",
-            "textToSpeak": "letter",
-            "options": [
-                "/e/",
-                "/æ/"
-            ],
-            "correctAnswer": "/e/",
-            "correctAnswerIndex": 0,
-            "hint": "Listen to the main vowel in 'letter'. It should match 'bed', the DRESS vowel /e/ - not the TRAP vowel you hear in 'cat'.",
-            "explanation": "'letter' contains the DRESS vowel /e/: a short, mid-front vowel made with the mouth half-open. This is the same vowel sound found in 'bed' and 'pen'.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
-            "vowelChart": {
-                "x": 0.15,
-                "y": 0.4
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L27_Q3",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "lab",
-            "textToSpeak": "lab",
-            "options": [
-                "/e/",
-                "/æ/"
-            ],
-            "correctAnswer": "/æ/",
-            "correctAnswerIndex": 1,
-            "hint": "The vowel in 'lab' is a short, low-front vowel - the jaw drops and the mouth opens wide. Think of 'bag' - it uses the same sound. The DRESS vowel in 'pen' feels quite different.",
-            "explanation": "'lab' contains the TRAP vowel /æ/: a short, low-front vowel - the jaw drops and the mouth opens wide. This is the same vowel sound found in 'cat' and 'bag'.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
-            "vowelChart": {
-                "x": 0.2,
-                "y": 0.9
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L28_Q1",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "dress",
-            "textToSpeak": "dress",
-            "options": [
-                "/e/",
-                "/æ/"
-            ],
-            "correctAnswer": "/e/",
-            "correctAnswerIndex": 0,
-            "hint": "Say 'pen' out loud, then say 'dress'. If the stressed vowel feels the same, you are hearing /e/, not the TRAP vowel in 'bag'.",
-            "explanation": "'dress' is pronounced with /e/, the DRESS vowel: a short, mid-front vowel made with the mouth half-open. Practising this contrast against the TRAP vowel sharpens your ear for one of English's key vowel pairs.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
-            "vowelChart": {
-                "x": 0.15,
-                "y": 0.4
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L28_Q2",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "dad",
-            "textToSpeak": "dad",
-            "options": [
-                "/e/",
-                "/æ/"
-            ],
-            "correctAnswer": "/æ/",
-            "correctAnswerIndex": 1,
-            "hint": "The key difference is between /æ/ and /e/. In 'dad', listen for a short, low-front vowel - the jaw drops and the mouth opens wide, just like in 'bag'.",
-            "explanation": "Here, 'dad' uses the TRAP vowel (/æ/) - a short, low-front vowel - the jaw drops and the mouth opens wide. Notice how different this feels from the DRESS vowel in 'bed'.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
-            "vowelChart": {
-                "x": 0.2,
-                "y": 0.9
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L28_Q3",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "glad",
-            "textToSpeak": "glad",
-            "options": [
-                "/e/",
-                "/æ/"
-            ],
-            "correctAnswer": "/æ/",
-            "correctAnswerIndex": 1,
-            "hint": "'glad' is built on the TRAP vowel: a short, low-front vowel - the jaw drops and the mouth opens wide. Use 'bag' as your reference - that is the sound you are listening for.",
-            "explanation": "The vowel sound in 'glad' is /æ/, the TRAP vowel - a short, low-front vowel - the jaw drops and the mouth opens wide. It contrasts with the DRESS vowel /e/, heard in words like 'bed'.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
-            "vowelChart": {
-                "x": 0.2,
-                "y": 0.9
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L29_Q1",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "left",
-            "textToSpeak": "left",
-            "options": [
-                "/e/",
-                "/æ/"
-            ],
-            "correctAnswer": "/e/",
-            "correctAnswerIndex": 0,
-            "hint": "Say 'pen' out loud, then say 'left'. If the stressed vowel feels the same, you are hearing /e/, not the TRAP vowel in 'bag'.",
-            "explanation": "The vowel sound in 'left' is /e/, the DRESS vowel - a short, mid-front vowel made with the mouth half-open. It contrasts with the TRAP vowel /æ/, heard in words like 'cat'.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
-            "vowelChart": {
-                "x": 0.15,
-                "y": 0.4
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L29_Q2",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "rest",
-            "textToSpeak": "rest",
-            "options": [
-                "/e/",
-                "/æ/"
-            ],
-            "correctAnswer": "/e/",
-            "correctAnswerIndex": 0,
-            "hint": "The key difference is between /e/ and /æ/. In 'rest', listen for a short, mid-front vowel made with the mouth half-open, just like in 'bed'.",
-            "explanation": "The vowel sound in 'rest' is /e/, the DRESS vowel - a short, mid-front vowel made with the mouth half-open. It contrasts with the TRAP vowel /æ/, heard in words like 'cat'.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
-            "vowelChart": {
-                "x": 0.15,
-                "y": 0.4
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L29_Q3",
+            "id": "ACC_VOWELDISTINCTION_L25_Q2",
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
@@ -562,12 +289,285 @@
             ],
             "correctAnswer": "/æ/",
             "correctAnswerIndex": 1,
-            "hint": "Compare 'bag' (/æ/) with 'pen' (/e/). The vowel in 'apple' matches one of these - which one feels right?",
-            "explanation": "'apple' contains the TRAP vowel /æ/: a short, low-front vowel - the jaw drops and the mouth opens wide. This is the same vowel sound found in 'cat' and 'bag'.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
+            "hint": "Imagine biting into one: the jaw drops wide to start the word.",
+            "explanation": "The stressed first syllable begins wide open. The final -le is a syllabic /l/, not a vowel.",
+            "vowelTensionRule": "Check the mouth opening: roughly one finger-width for /e/, closer to two stacked fingers for /æ/.",
             "vowelChart": {
                 "x": 0.2,
                 "y": 0.9
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L25_Q3",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "tool",
+            "textToSpeak": "tool",
+            "options": [
+                "/uː/",
+                "/ʊ/"
+            ],
+            "correctAnswer": "/uː/",
+            "correctAnswerIndex": 0,
+            "hint": "Back to rounding: lips pushed forward, vowel held before the dark /l/.",
+            "explanation": "Lips rounded, vowel held: the same contrast as 'full' versus 'fool' that you practised earlier.",
+            "vowelTensionRule": "In a mirror, /uː/ shows a tight forward pout and /ʊ/ a gentle, relaxed circle.",
+            "vowelChart": {
+                "x": 0.9,
+                "y": 0.1
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L26_Q1",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "many",
+            "textToSpeak": "many",
+            "options": [
+                "/e/",
+                "/æ/"
+            ],
+            "correctAnswer": "/e/",
+            "correctAnswerIndex": 0,
+            "hint": "The a spelling lies. 'Many' starts with the same vowel as 'men'.",
+            "explanation": "The a is pronounced like an e, a historical oddity. 'Any' behaves the same way.",
+            "vowelTensionRule": "/æ/ is longer and more spread than /e/. Learners often use /e/ for both, so exaggerate the jaw drop at first.",
+            "vowelChart": {
+                "x": 0.15,
+                "y": 0.4
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L26_Q2",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "happy",
+            "textToSpeak": "happy",
+            "options": [
+                "/e/",
+                "/æ/"
+            ],
+            "correctAnswer": "/æ/",
+            "correctAnswerIndex": 1,
+            "hint": "Hear it as 'hap-ee'. The first syllable is wide, the second is just a light /i/.",
+            "explanation": "The stressed first syllable is wide. The final vowel is only a light, weak /i/.",
+            "vowelTensionRule": "Tongue height is the cue: it falls from mid-front /e/ to low-front /æ/. Lips are slightly spread for both.",
+            "vowelChart": {
+                "x": 0.2,
+                "y": 0.9
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L26_Q3",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "finish",
+            "textToSpeak": "finish",
+            "options": [
+                "/iː/",
+                "/ɪ/"
+            ],
+            "correctAnswer": "/ɪ/",
+            "correctAnswerIndex": 1,
+            "hint": "Both vowels in 'finish' are short and loose. No smile required.",
+            "explanation": "Both vowels are short and lax. If you smile, you have said 'feenish'.",
+            "vowelTensionRule": "/ɪ/ is lax and slightly lowered; /iː/ is higher and tenser with spread lips. Quality carries the contrast, and length only reinforces it.",
+            "vowelChart": {
+                "x": 0.25,
+                "y": 0.2
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L27_Q1",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "weather",
+            "textToSpeak": "weather",
+            "options": [
+                "/æ/",
+                "/e/"
+            ],
+            "correctAnswer": "/e/",
+            "correctAnswerIndex": 1,
+            "hint": "The ea strikes again. Say it aloud: the first vowel sounds like 'wet'.",
+            "explanation": "Another ea spelling with the short vowel. 'Whether' sounds identical in RP, so the ear alone cannot tell them apart.",
+            "vowelTensionRule": "Spread the lips slightly for both, but let the jaw do the work: /e/ stops about halfway, /æ/ keeps going.",
+            "vowelChart": {
+                "x": 0.15,
+                "y": 0.4
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L27_Q2",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "family",
+            "textToSpeak": "family",
+            "options": [
+                "/æ/",
+                "/e/"
+            ],
+            "correctAnswer": "/æ/",
+            "correctAnswerIndex": 0,
+            "hint": "Ignore the weak syllables that follow and drop the jaw wide on the first.",
+            "explanation": "The strong syllable is the first one. The weak syllables after it are not part of this contrast.",
+            "vowelTensionRule": "If a word with /æ/ is coming out as /e/, check that the front of the tongue is low, not hovering at mid-height.",
+            "vowelChart": {
+                "x": 0.2,
+                "y": 0.9
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L27_Q3",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "ready",
+            "textToSpeak": "ready",
+            "options": [
+                "/e/",
+                "/æ/"
+            ],
+            "correctAnswer": "/e/",
+            "correctAnswerIndex": 0,
+            "hint": "Two vowels, the first strong. The strong one is half open.",
+            "explanation": "Ea spells this vowel in 'ready', 'steady' and 'instead'.",
+            "vowelTensionRule": "Before nasals and voiced stops /æ/ tends to lengthen while /e/ stays brief, but the jaw gap is still the deciding cue.",
+            "vowelChart": {
+                "x": 0.15,
+                "y": 0.4
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L28_Q1",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "message",
+            "textToSpeak": "message",
+            "options": [
+                "/e/",
+                "/æ/"
+            ],
+            "correctAnswer": "/e/",
+            "correctAnswerIndex": 0,
+            "hint": "Two syllables, the first stressed. Half-open jaw, then a quick weak ending.",
+            "explanation": "A short half-open vowel in the stressed first syllable. The -age ending is weak.",
+            "vowelTensionRule": "/e/ and /æ/ differ by about one step of tongue height on the vowel chart: mid-front versus near-open front.",
+            "vowelChart": {
+                "x": 0.15,
+                "y": 0.4
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L28_Q2",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "passenger",
+            "textToSpeak": "passenger",
+            "options": [
+                "/e/",
+                "/æ/"
+            ],
+            "correctAnswer": "/æ/",
+            "correctAnswerIndex": 1,
+            "hint": "Three syllables; the first carries the stress. Wide jaw there.",
+            "explanation": "Although 'pass' alone takes the long open vowel in RP, 'passenger' keeps the short wide one.",
+            "vowelTensionRule": "Spelling won't tell you: a gives /e/ in 'many' and /æ/ in 'cat', and ea gives /e/ in 'head'. Decide with ears and jaw.",
+            "vowelChart": {
+                "x": 0.2,
+                "y": 0.9
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L28_Q3",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "language",
+            "textToSpeak": "language",
+            "options": [
+                "/æ/",
+                "/e/"
+            ],
+            "correctAnswer": "/æ/",
+            "correctAnswerIndex": 0,
+            "hint": "The -gu- is a /gw/ sound, so the vowel sits before the nasal /ŋ/. Keep the jaw wide.",
+            "explanation": "The nasal /ŋ/ colours the vowel slightly, but the jaw still drops wide.",
+            "vowelTensionRule": "The contrast is clearest in stressed syllables; in weak syllables both tend to drift towards a neutral vowel.",
+            "vowelChart": {
+                "x": 0.2,
+                "y": 0.9
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L29_Q1",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "lemon",
+            "textToSpeak": "lemon",
+            "options": [
+                "/æ/",
+                "/e/"
+            ],
+            "correctAnswer": "/e/",
+            "correctAnswerIndex": 1,
+            "hint": "Two syllables, strong then weak. The strong one is half open.",
+            "explanation": "Stress falls on le-, with the short half-open vowel. The second syllable is weak.",
+            "vowelTensionRule": "A self-check: rest a hand under your chin. The jaw should drop noticeably further for /æ/.",
+            "vowelChart": {
+                "x": 0.15,
+                "y": 0.4
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L29_Q2",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "camera",
+            "textToSpeak": "camera",
+            "options": [
+                "/e/",
+                "/æ/"
+            ],
+            "correctAnswer": "/æ/",
+            "correctAnswerIndex": 1,
+            "hint": "Strong, weak, weak: drop the jaw on the first vowel and let the other two shrink.",
+            "explanation": "In casual speech it sounds like 'cam-ra', but the strong first vowel is unchanged.",
+            "vowelTensionRule": "Both are short, so the only question is how high the front of the tongue rises.",
+            "vowelChart": {
+                "x": 0.2,
+                "y": 0.9
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L29_Q3",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "medical",
+            "textToSpeak": "medical",
+            "options": [
+                "/æ/",
+                "/e/"
+            ],
+            "correctAnswer": "/e/",
+            "correctAnswerIndex": 1,
+            "hint": "The stressed syllable is the first. The 'di' that follows is short and weak.",
+            "explanation": "Stress sits on the first syllable. The weak /ɪ/ in 'di' must not steal it.",
+            "vowelTensionRule": "/e/ has the jaw half open and the tongue mid-front; /æ/ needs the jaw dropped clearly lower, tongue low and forward, mouth wide.",
+            "vowelChart": {
+                "x": 0.15,
+                "y": 0.4
             }
         },
         {
@@ -575,17 +575,17 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "guess",
-            "textToSpeak": "guess",
+            "word": "necessary",
+            "textToSpeak": "necessary",
             "options": [
                 "/e/",
                 "/æ/"
             ],
             "correctAnswer": "/e/",
             "correctAnswerIndex": 0,
-            "hint": "The vowel in 'guess' is a short, mid-front vowel made with the mouth half-open. Think of 'bed' - it uses the same sound. The TRAP vowel in 'bag' feels quite different.",
-            "explanation": "'guess' is built on the DRESS vowel /e/: a short, mid-front vowel made with the mouth half-open. Keep this anchored against 'pen' so you can recognise it in new words too.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
+            "hint": "Four syllables, but only the first is strong. Half-open mouth.",
+            "explanation": "Only the first of the four syllables is strong. Don't let the weak ones pull the stress away.",
+            "vowelTensionRule": "Check the mouth opening: roughly one finger-width for /e/, closer to two stacked fingers for /æ/.",
             "vowelChart": {
                 "x": 0.15,
                 "y": 0.4
@@ -596,17 +596,17 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "snack",
-            "textToSpeak": "snack",
+            "word": "travel",
+            "textToSpeak": "travel",
             "options": [
-                "/e/",
-                "/æ/"
+                "/æ/",
+                "/e/"
             ],
             "correctAnswer": "/æ/",
-            "correctAnswerIndex": 1,
-            "hint": "Compare 'cat' (/æ/) with 'pen' (/e/). The vowel in 'snack' matches one of these - which one feels right?",
-            "explanation": "'snack' contains the TRAP vowel /æ/: a short, low-front vowel - the jaw drops and the mouth opens wide. This is the same vowel sound found in 'cat' and 'bag'.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
+            "correctAnswerIndex": 0,
+            "hint": "Strong first syllable, then a syllabic /l/. Open wide for the vowel.",
+            "explanation": "The /tr/ cluster does not change the vowel; the jaw simply drops after it.",
+            "vowelTensionRule": "/æ/ is longer and more spread than /e/. Learners often use /e/ for both, so exaggerate the jaw drop at first.",
             "vowelChart": {
                 "x": 0.2,
                 "y": 0.9
@@ -617,20 +617,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "gallery",
-            "textToSpeak": "gallery",
+            "word": "rule",
+            "textToSpeak": "rule",
             "options": [
-                "/e/",
-                "/æ/"
+                "/uː/",
+                "/ʊ/"
             ],
-            "correctAnswer": "/æ/",
-            "correctAnswerIndex": 1,
-            "hint": "Think of how you say 'cat'. The vowel in 'gallery' should feel the same way. That is the TRAP sound, not the DRESS sound in 'pen'.",
-            "explanation": "'gallery' is pronounced with /æ/, the TRAP vowel: a short, low-front vowel - the jaw drops and the mouth opens wide. Practising this contrast against the DRESS vowel sharpens your ear for one of English's key vowel pairs.",
-            "vowelTensionRule": "/e/ (DRESS) is made with the mouth only slightly open and the tongue mid-high. /æ/ (TRAP) needs the jaw to drop further and the mouth to open wider, spreading the lips slightly.",
+            "correctAnswer": "/uː/",
+            "correctAnswerIndex": 0,
+            "hint": "Lips pushed forward and held, then /l/.",
+            "explanation": "Long and rounded, like the vowel in 'true' and 'soup'.",
+            "vowelTensionRule": "Short oo words (book, good, foot) take /ʊ/, long ones (food, moon) take /uː/. No spelling rule separates them, so group them by sound.",
             "vowelChart": {
-                "x": 0.2,
-                "y": 0.9
+                "x": 0.9,
+                "y": 0.1
             }
         }
     ]

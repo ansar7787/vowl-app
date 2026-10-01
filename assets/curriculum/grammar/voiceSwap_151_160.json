@@ -8,8 +8,8 @@
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The jury should have carefully weighed all the evidence before reaching such a controversial verdict.",
-            "sentence": "The jury should have carefully weighed all the evidence before reaching such a controversial verdict.",
+            "question": "Both parties signed the documents this afternoon.",
+            "sentence": "Both parties signed the documents this afternoon.",
             "options": [
                 "Active",
                 "Passive"
@@ -17,39 +17,39 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Look at the main verb phrase should have weighed. Who was supposed to weigh the evidence?",
-            "explanation": "This is active voice: the jury (the doer) should have performed the action weighed directly on all the evidence. In passive, this would flip to: All the evidence should have been carefully weighed before such a controversial verdict was reached.",
-            "grammarRule": "Perfect Modal Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Check agreement: both parties (plural) takes signed with no auxiliary needed. Find the doer right before it.",
+            "explanation": "Both parties is the doer of signed, simple past active - no auxiliary or agreement issue arises here since simple past verbs don't change for number. Passive version: The documents were signed by both parties this afternoon.",
+            "grammarRule": "Simple Past Active",
+            "activeVoice": "Both parties signed the documents this afternoon.",
+            "passiveVoice": "The documents were signed by both parties this afternoon."
         },
         {
             "id": "vs_l151_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The entire department must have overlooked several critical errors given the deeply flawed final report.",
-            "sentence": "The entire department must have overlooked several critical errors given the deeply flawed final report.",
+            "question": "The invoice was paid in full before the deadline.",
+            "sentence": "The invoice was paid in full before the deadline.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Who performs the action must have overlooked? Look right before the verb.",
-            "explanation": "This is active voice: the entire department (the doer) must have performed the action overlooked directly on several critical errors. In passive, this would flip to: Several critical errors must have been overlooked given the deeply flawed final report.",
-            "grammarRule": "Perfect Modal Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Check the auxiliary: was, not were. Does it match a singular or plural subject?",
+            "explanation": "The invoice (singular, receiver) was paid - a common learner error is writing were paid with a singular subject; was correctly matches the singular invoice. Active form: The client paid the invoice in full before the deadline.",
+            "grammarRule": "Simple Past Passive (Agreement Check)",
+            "activeVoice": "The client paid the invoice in full before the deadline.",
+            "passiveVoice": "The invoice was paid in full before the deadline."
         },
         {
             "id": "vs_l151_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "All the evidence should have been carefully weighed before such a controversial verdict was reached.",
-            "sentence": "All the evidence should have been carefully weighed before such a controversial verdict was reached.",
+            "question": "The two suspects have been released on bail pending trial.",
+            "sentence": "The two suspects have been released on bail pending trial.",
             "options": [
                 "Active",
                 "Passive"
@@ -57,19 +57,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for should have been plus a past participle (weighed). The subject receives the action here.",
-            "explanation": "This is passive voice: all the evidence (receiver) should have been weighed, but no specific weigher is named. In active, this would flip to: The jury should have carefully weighed all the evidence before reaching such a controversial verdict.",
-            "grammarRule": "Perfect Modal Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Check the auxiliary: have, not has. Does it match a plural or singular subject?",
+            "explanation": "The two suspects (plural, receiver) have been released - a common learner error is writing has been released with a plural subject; have correctly matches the plural suspects. Active form: The court has released the two suspects on bail pending trial.",
+            "grammarRule": "Present Perfect Passive (Agreement Check)",
+            "activeVoice": "The court has released the two suspects on bail pending trial.",
+            "passiveVoice": "The two suspects have been released on bail pending trial."
         },
         {
             "id": "vs_l152_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The team would have met the deadline if the client had provided feedback much sooner.",
-            "sentence": "The team would have met the deadline if the client had provided feedback much sooner.",
+            "question": "Last night's storm broke the window.",
+            "sentence": "Last night's storm broke the window.",
             "options": [
                 "Active",
                 "Passive"
@@ -77,19 +77,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before would have met.",
-            "explanation": "This is active voice: the team (the doer) would have performed the action met directly on the deadline. In passive, this would flip to: The deadline would have been met if the client had provided feedback much sooner.",
-            "grammarRule": "Third Conditional Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Check the past-tense form: broke, not breaked. Find the doer right before it.",
+            "explanation": "Last night's storm is the doer of broke, correctly using the irregular simple past form; a common learner error is writing breaked, following the regular -ed pattern incorrectly. Passive version: The window was broken during last night's storm.",
+            "grammarRule": "Simple Past Active (Irregular Verb)",
+            "activeVoice": "Last night's storm broke the window.",
+            "passiveVoice": "The window was broken during last night's storm."
         },
         {
             "id": "vs_l152_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The tight deadline would have been met if the client had provided feedback much sooner.",
-            "sentence": "The tight deadline would have been met if the client had provided feedback much sooner.",
+            "question": "The contract has been written in unusually clear language this time.",
+            "sentence": "The contract has been written in unusually clear language this time.",
             "options": [
                 "Active",
                 "Passive"
@@ -97,19 +97,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for would have been plus a past participle (met). The subject receives the action here.",
-            "explanation": "This is passive voice: the deadline (receiver) would have been met, but no specific meeter is emphasized. In active, this would flip to: The team would have met the tight deadline if the client had provided feedback much sooner.",
-            "grammarRule": "Third Conditional Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Check the past participle: written, not writed or wrote. Is this an irregular verb?",
+            "explanation": "The contract (receiver) has been written - write is irregular, with written as its past participle; a common learner error is using wrote (the simple past form) instead of the past participle here. Active form: The lawyer has written the contract in unusually clear language this time.",
+            "grammarRule": "Present Perfect Passive (Irregular Participle)",
+            "activeVoice": "The lawyer has written the contract in unusually clear language this time.",
+            "passiveVoice": "The contract has been written in unusually clear language this time."
         },
         {
             "id": "vs_l152_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The experiment would have succeeded if the researchers had controlled every variable more carefully.",
-            "sentence": "The experiment would have succeeded if the researchers had controlled every variable more carefully.",
+            "question": "The thief had already stolen the jewelry before the alarm went off.",
+            "sentence": "The thief had already stolen the jewelry before the alarm went off.",
             "options": [
                 "Active",
                 "Passive"
@@ -117,19 +117,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "This sentence uses succeeded, an intransitive verb with no object, so it stays grammatically active despite describing an unreal past outcome.",
-            "explanation": "This is active voice: succeeded has no object and cannot be passivized, even though the sentence describes an unreal past outcome. The true passive test (a receiver plus be plus participle) does not apply here, since there is no one and nothing for the experiment to act upon.",
-            "grammarRule": "Third Conditional Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Check the past participle: stolen, not stealed or stole. Find the doer right before had stolen.",
+            "explanation": "The thief is the doer of had stolen, using the correct irregular past participle form; a common learner error would be writing had stealed or had stole instead. Passive version: The jewelry had already been stolen before the alarm went off.",
+            "grammarRule": "Past Perfect Active (Irregular Participle)",
+            "activeVoice": "The thief had already stolen the jewelry before the alarm went off.",
+            "passiveVoice": "The jewelry had already been stolen before the alarm went off."
         },
         {
             "id": "vs_l153_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The editor approved the manuscript because the claims had been independently verified by three reviewers.",
-            "sentence": "The editor approved the manuscript because the claims had been independently verified by three reviewers.",
+            "question": "A team of local architects constructed the building in 1932.",
+            "sentence": "A team of local architects constructed the building in 1932.",
             "options": [
                 "Active",
                 "Passive"
@@ -137,19 +137,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Look at the main clause: the editor approved the manuscript. The embedded clause happens to be passive, but the main clause is active.",
-            "explanation": "The main clause is active: the editor (the doer) approved the manuscript directly. The embedded clause had been verified is passive, but the main sentence voice remains active. In passive, the main clause alone would flip to: The manuscript was approved by the editor because the claims had been independently verified.",
-            "grammarRule": "Mixed Clause Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Check the tense: constructed (simple past), tied to a specific finished date. Find the doer right before it.",
+            "explanation": "A team of local architects is the doer of constructed, simple past active, fitting a specific finished date, 1932, rather than a present-connected present perfect. Passive version: The building was constructed in 1932 by a team of local architects.",
+            "grammarRule": "Simple Past Active (Tense Check)",
+            "activeVoice": "A team of local architects constructed the building in 1932.",
+            "passiveVoice": "The building was constructed in 1932 by a team of local architects."
         },
         {
             "id": "vs_l153_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The proposal was rejected by the city after residents who had organized for months voiced strong objections.",
-            "sentence": "The proposal was rejected by the city after residents who had organized for months voiced strong objections.",
+            "question": "The results have been finalized as of this morning, so we can proceed.",
+            "sentence": "The results have been finalized as of this morning, so we can proceed.",
             "options": [
                 "Active",
                 "Passive"
@@ -157,59 +157,59 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look at the main clause: the proposal was rejected. Notice the subject receives the action here.",
-            "explanation": "The main clause is passive: the proposal (receiver) was rejected by the city, the agent named after by. In active, the main clause alone would flip to: The city rejected the proposal after residents who had organized for months voiced strong objections.",
-            "grammarRule": "Mixed Clause Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Check the tense: have been finalized (present perfect), not were finalized. Does this connect to the present moment or to a specific past point?",
+            "explanation": "The results (receiver) have been finalized - present perfect passive fits because the action connects to now (as of this morning, so we can proceed); a common learner error is writing were finalized, which would disconnect the action from its present relevance. Active form: The team has finalized the results as of this morning, so we can proceed.",
+            "grammarRule": "Present Perfect Passive (Tense Check)",
+            "activeVoice": "The team has finalized the results as of this morning, so we can proceed.",
+            "passiveVoice": "The results have been finalized as of this morning, so we can proceed."
         },
         {
             "id": "vs_l153_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The manuscript was finally approved because reviewers confirmed that the claims had been independently verified.",
-            "sentence": "The manuscript was finally approved because reviewers confirmed that the claims had been independently verified.",
+            "question": "By the time firefighters arrived, the flames had already spread to the roof.",
+            "sentence": "By the time firefighters arrived, the flames had already spread to the roof.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look at the main clause: the manuscript was approved. Notice the subject receives the action here.",
-            "explanation": "The main clause is passive: the manuscript (receiver) was approved, but no specific approver is directly named in the main clause. In active, the main clause alone would flip to: Someone finally approved the manuscript because reviewers confirmed that the claims had been independently verified.",
-            "grammarRule": "Mixed Clause Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Check the tense: had already spread (past perfect), not spread. Does this event happen before or after firefighters arrived?",
+            "explanation": "The flames is the doer of had spread, correctly using past perfect to show this happened before another past event, firefighters arrived; a common learner error is using simple past, spread, which would blur that sequence. Since spread is intransitive here, no passive version exists for this clause.",
+            "grammarRule": "Past Perfect Active (No Passive Possible)",
+            "activeVoice": "By the time firefighters arrived, the flames had already spread to the roof.",
+            "passiveVoice": "No passive form exists - spread has no object here, so there is no receiver to become the subject."
         },
         {
             "id": "vs_l154_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The findings should have been published earlier once the replication studies proved so consistent.",
-            "sentence": "The findings should have been published earlier once the replication studies proved so consistent.",
+            "question": "The critic reviewed the restaurant harshly after a disappointing meal.",
+            "sentence": "The critic reviewed the restaurant harshly after a disappointing meal.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for should have been plus a past participle (published). The subject receives the action here.",
-            "explanation": "This is passive voice: the findings (receiver) should have been published, but no specific publisher is named. In active, this would flip to: The researchers should have published the findings earlier once the replication studies proved so consistent.",
-            "grammarRule": "Perfect Modal Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Check who does the reviewing and who gets reviewed. A common mistake reverses these roles.",
+            "explanation": "The critic is the doer of reviewed, acting on the restaurant, the receiver. A common learner error when converting to passive is accidentally reversing the roles, writing The critic was reviewed by the restaurant, which would completely change the meaning. Correct passive: The restaurant was reviewed harshly by the critic after a disappointing meal.",
+            "grammarRule": "Active with Subject-Object Reversal Trap",
+            "activeVoice": "The critic reviewed the restaurant harshly after a disappointing meal.",
+            "passiveVoice": "The restaurant was reviewed harshly by the critic after a disappointing meal."
         },
         {
             "id": "vs_l154_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The original decision must have been reconsidered given how dramatically public opinion ultimately shifted.",
-            "sentence": "The original decision must have been reconsidered given how dramatically public opinion ultimately shifted.",
+            "question": "The employee was reprimanded by the supervisor for repeated tardiness.",
+            "sentence": "The employee was reprimanded by the supervisor for repeated tardiness.",
             "options": [
                 "Active",
                 "Passive"
@@ -217,19 +217,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for must have been plus a past participle (reconsidered). The subject receives the action here.",
-            "explanation": "This is passive voice: the decision (receiver) must have been reconsidered, but no specific reconsiderer is named. In active, this would flip to: Officials must have reconsidered the original decision given how dramatically public opinion ultimately shifted.",
-            "grammarRule": "Perfect Modal Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Check who does the reprimanding and who receives it. A common mistake reverses these roles.",
+            "explanation": "The employee (receiver) was reprimanded, with the supervisor correctly named as the one who took action. A common learner error would reverse this, writing The supervisor was reprimanded by the employee, which describes the opposite situation. Active form: The supervisor reprimanded the employee for repeated tardiness.",
+            "grammarRule": "Passive with Subject-Object Reversal Trap",
+            "activeVoice": "The supervisor reprimanded the employee for repeated tardiness.",
+            "passiveVoice": "The employee was reprimanded by the supervisor for repeated tardiness."
         },
         {
             "id": "vs_l154_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Officials must have reconsidered the original decision given how dramatically public opinion ultimately shifted.",
-            "sentence": "Officials must have reconsidered the original decision given how dramatically public opinion ultimately shifted.",
+            "question": "The committee outvoted the chairperson on the final proposal.",
+            "sentence": "The committee outvoted the chairperson on the final proposal.",
             "options": [
                 "Active",
                 "Passive"
@@ -237,19 +237,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before must have reconsidered.",
-            "explanation": "This is active voice: officials (the doer) must have performed the action reconsidered directly on the original decision. In passive, this would flip to: The original decision must have been reconsidered by officials given how dramatically public opinion ultimately shifted.",
-            "grammarRule": "Perfect Modal Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Check who does the outvoting and who is outvoted. A common mistake reverses these roles.",
+            "explanation": "The committee is the doer of outvoted, acting on the chairperson, the receiver. Reversing these roles when converting to passive, The committee was outvoted by the chairperson, would describe an entirely different outcome. Correct passive: The chairperson was outvoted by the committee on the final proposal.",
+            "grammarRule": "Active with Subject-Object Reversal Trap",
+            "activeVoice": "The committee outvoted the chairperson on the final proposal.",
+            "passiveVoice": "The chairperson was outvoted by the committee on the final proposal."
         },
         {
             "id": "vs_l155_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The scholar would have finished the manuscript if the archive had granted access much sooner.",
-            "sentence": "The scholar would have finished the manuscript if the archive had granted access much sooner.",
+            "question": "A senior investigator is looking into this complaint.",
+            "sentence": "A senior investigator is looking into this complaint.",
             "options": [
                 "Active",
                 "Passive"
@@ -257,39 +257,39 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before would have finished.",
-            "explanation": "This is active voice: the scholar (the doer) would have performed the action finished directly on the manuscript. In passive, this would flip to: The manuscript would have been finished if the archive had granted access much sooner.",
-            "grammarRule": "Third Conditional Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Check the preposition: looking into must stay together as one unit. Find the doer right before it.",
+            "explanation": "A senior investigator is the doer of is looking into, keeping the preposition into attached to looking - a common learner error is dropping into, writing is looking this complaint, which is ungrammatical since look into is a single prepositional verb. Passive version: This complaint is being looked into by a senior investigator.",
+            "grammarRule": "Prepositional Verb Active (Preposition Check)",
+            "activeVoice": "A senior investigator is looking into this complaint.",
+            "passiveVoice": "This complaint is being looked into by a senior investigator."
         },
         {
             "id": "vs_l155_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "He would have gladly taken the position if the company had matched his current salary.",
-            "sentence": "He would have gladly taken the position if the company had matched his current salary.",
+            "question": "The children are cared for by a rotating group of relatives.",
+            "sentence": "The children are cared for by a rotating group of relatives.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Who performs the action would have taken? Look right before the verb.",
-            "explanation": "This is active voice: he (the doer) would have performed the action taken directly on the position. In passive, this would flip to: The position would have gladly been taken if the company had matched his current salary.",
-            "grammarRule": "Third Conditional Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Check the preposition: for must stay attached to cared. What would happen if for were dropped?",
+            "explanation": "The children (receiver) are cared for - a common learner error is dropping for, writing The children are cared by a rotating group of relatives, which is ungrammatical since care for needs its preposition. Active form: A rotating group of relatives cares for the children.",
+            "grammarRule": "Prepositional Verb Passive (Missing Preposition Trap)",
+            "activeVoice": "A rotating group of relatives cares for the children.",
+            "passiveVoice": "The children are cared for by a rotating group of relatives."
         },
         {
             "id": "vs_l155_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The entire manuscript would have been finished if the archive had granted access much sooner.",
-            "sentence": "The entire manuscript would have been finished if the archive had granted access much sooner.",
+            "question": "The proposal was agreed to by every member of the board.",
+            "sentence": "The proposal was agreed to by every member of the board.",
             "options": [
                 "Active",
                 "Passive"
@@ -297,19 +297,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for would have been plus a past participle (finished). The subject receives the action here.",
-            "explanation": "This is passive voice: the manuscript (receiver) would have been finished, but no specific finisher is emphasized. In active, this would flip to: The scholar would have finished the entire manuscript if the archive had granted access much sooner.",
-            "grammarRule": "Third Conditional Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Check the preposition: to must stay attached to agreed. What would happen if to were dropped?",
+            "explanation": "The proposal (receiver) was agreed to - a common learner error is dropping to, writing The proposal was agreed by every member of the board, which changes the natural pattern since agree to needs its preposition when used this way. Active form: Every member of the board agreed to the proposal.",
+            "grammarRule": "Prepositional Verb Passive (Missing Preposition Trap)",
+            "activeVoice": "Every member of the board agreed to the proposal.",
+            "passiveVoice": "The proposal was agreed to by every member of the board."
         },
         {
             "id": "vs_l156_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The council approved the budget because the projections had been reviewed by independent economists.",
-            "sentence": "The council approved the budget because the projections had been reviewed by independent economists.",
+            "question": "Staff must inspect the equipment before every use.",
+            "sentence": "Staff must inspect the equipment before every use.",
             "options": [
                 "Active",
                 "Passive"
@@ -317,19 +317,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Look at the main clause: the council approved the budget. The embedded clause happens to be passive, but the main clause is active.",
-            "explanation": "The main clause is active: the council (the doer) approved the budget directly. The embedded clause had been reviewed is passive, but the main sentence voice remains active. In passive, the main clause alone would flip to: The budget was approved by the council because the projections had been reviewed by independent economists.",
-            "grammarRule": "Mixed Clause Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Check the modal structure: must inspect, not must to inspect or must inspects. Find the doer right before it.",
+            "explanation": "Staff is the doer of must inspect, using the correct modal active pattern, modal + base verb; a common learner error is adding to or -s, writing must to inspect or must inspects. Passive version: The equipment must be inspected before every use.",
+            "grammarRule": "Modal Verbs Active (Structure Check)",
+            "activeVoice": "Staff must inspect the equipment before every use.",
+            "passiveVoice": "The equipment must be inspected before every use."
         },
         {
             "id": "vs_l156_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The proposed budget was approved because the projections that economists reviewed appeared remarkably solid.",
-            "sentence": "The proposed budget was approved because the projections that economists reviewed appeared remarkably solid.",
+            "question": "The decision should have been reviewed more carefully before it was finalized.",
+            "sentence": "The decision should have been reviewed more carefully before it was finalized.",
             "options": [
                 "Active",
                 "Passive"
@@ -337,79 +337,79 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look at the main clause: the budget was approved. Notice the subject receives the action here.",
-            "explanation": "The main clause is passive: the budget (receiver) was approved, but no specific approver is directly named in the main clause. In active, the main clause alone would flip to: The council approved the proposed budget because the projections that economists reviewed appeared remarkably solid.",
-            "grammarRule": "Mixed Clause Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Check the modal perfect structure: should have been reviewed, not should have reviewed or should has been reviewed. Is the pattern modal + have + been + past participle correct here?",
+            "explanation": "The decision (receiver) should have been reviewed - the correct modal perfect passive pattern is modal + have + been + past participle; common learner errors include should have reviewed (missing been, which changes it to active-looking) or should has been reviewed (wrong auxiliary). Active form: The board should have reviewed the decision more carefully before it was finalized.",
+            "grammarRule": "Perfect Modal Passive (Structure Check)",
+            "activeVoice": "The board should have reviewed the decision more carefully before it was finalized.",
+            "passiveVoice": "The decision should have been reviewed more carefully before it was finalized."
         },
         {
             "id": "vs_l156_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The policy was revised after critics whose concerns had been dismissed gained wider public support.",
-            "sentence": "The policy was revised after critics whose concerns had been dismissed gained wider public support.",
+            "question": "Visitors can borrow up to five books at a time from this library.",
+            "sentence": "Visitors can borrow up to five books at a time from this library.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look at the main clause: the policy was revised. Notice the subject receives the action here.",
-            "explanation": "The main clause is passive: the policy (receiver) was revised, but no specific reviser is directly named in the main clause. In active, the main clause alone would flip to: Officials revised the policy after critics whose concerns had been dismissed gained wider public support.",
-            "grammarRule": "Mixed Clause Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Check the modal structure: can borrow, not can borrowed or can be borrow. Find the doer right before can borrow.",
+            "explanation": "Visitors is the doer of can borrow, using the correct modal active pattern, modal + base verb; common learner errors include can borrowed (adding -ed unnecessarily). Passive version: Up to five books at a time can be borrowed from this library by visitors.",
+            "grammarRule": "Modal Verbs Active (Structure Check)",
+            "activeVoice": "Visitors can borrow up to five books at a time from this library.",
+            "passiveVoice": "Up to five books at a time can be borrowed from this library by visitors."
         },
         {
             "id": "vs_l157_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Scientists should have replicated the study before announcing such a groundbreaking and controversial discovery.",
-            "sentence": "Scientists should have replicated the study before announcing such a groundbreaking and controversial discovery.",
+            "question": "The scholarship was awarded to the student with the highest overall average.",
+            "sentence": "The scholarship was awarded to the student with the highest overall average.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Look at the main verb phrase should have replicated. Who was supposed to replicate the study?",
-            "explanation": "This is active voice: scientists (the doer) should have performed the action replicated directly on the study. In passive, this would flip to: The study should have been replicated before such a groundbreaking and controversial discovery was announced.",
-            "grammarRule": "Perfect Modal Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Check the agent placement: to the student shows who received it, not who gave it. Who actually performed the awarding?",
+            "explanation": "The scholarship (receiver) was awarded to the student - a common misunderstanding is treating the student as the agent since they appear right after the verb; but to here introduces the beneficiary, not the doer. The true agent, a scholarship committee, is left unnamed. Active form: A scholarship committee awarded the scholarship to the student with the highest overall average.",
+            "grammarRule": "Passive with Beneficiary Phrase (Not Agent)",
+            "activeVoice": "A scholarship committee awarded the scholarship to the student with the highest overall average.",
+            "passiveVoice": "The scholarship was awarded to the student with the highest overall average."
         },
         {
             "id": "vs_l157_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The investment firm must have seriously miscalculated the risk given how badly it performed.",
-            "sentence": "The investment firm must have seriously miscalculated the risk given how badly it performed.",
+            "question": "The keys were left with the front desk for safekeeping.",
+            "sentence": "The keys were left with the front desk for safekeeping.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Who performs the action must have miscalculated? Look right before the verb.",
-            "explanation": "This is active voice: the investment firm (the doer) must have performed the action miscalculated directly on the risk. In passive, this would flip to: The risk must have been seriously miscalculated by the investment firm given how badly it performed.",
-            "grammarRule": "Perfect Modal Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Check the phrase with the front desk - does this name who performed the leaving, or where the keys ended up?",
+            "explanation": "The keys (receiver) were left with the front desk - with here shows where the keys were placed, not who performed the action; a common misreading treats the front desk as the agent. The true doer is left unnamed. Active form: The guest left the keys with the front desk for safekeeping.",
+            "grammarRule": "Passive with Location Phrase (Not Agent)",
+            "activeVoice": "The guest left the keys with the front desk for safekeeping.",
+            "passiveVoice": "The keys were left with the front desk for safekeeping."
         },
         {
             "id": "vs_l157_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The study should have been replicated before such a groundbreaking and controversial discovery was announced.",
-            "sentence": "The study should have been replicated before such a groundbreaking and controversial discovery was announced.",
+            "question": "The trophy was presented to the winning team by the mayor.",
+            "sentence": "The trophy was presented to the winning team by the mayor.",
             "options": [
                 "Active",
                 "Passive"
@@ -417,19 +417,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for should have been plus a past participle (replicated). The subject receives the action here.",
-            "explanation": "This is passive voice: the study (receiver) should have been replicated, but no specific replicator is named. In active, this would flip to: Scientists should have replicated the study before announcing such a groundbreaking and controversial discovery.",
-            "grammarRule": "Perfect Modal Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Two phrases follow the verb here: to the winning team and by the mayor. Which one names the true agent?",
+            "explanation": "The trophy (receiver) was presented - by the mayor correctly names the true agent, while to the winning team names the beneficiary; confusing these two roles is a common meaning-changing error. Active form: The mayor presented the trophy to the winning team.",
+            "grammarRule": "Passive with Agent and Beneficiary Both Named",
+            "activeVoice": "The mayor presented the trophy to the winning team.",
+            "passiveVoice": "The trophy was presented to the winning team by the mayor."
         },
         {
             "id": "vs_l158_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The board would have rejected the merger if the audit had revealed the hidden debts.",
-            "sentence": "The board would have rejected the merger if the audit had revealed the hidden debts.",
+            "question": "The company grew rapidly during its first five years.",
+            "sentence": "The company grew rapidly during its first five years.",
             "options": [
                 "Active",
                 "Passive"
@@ -437,79 +437,79 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before would have rejected.",
-            "explanation": "This is active voice: the board (the doer) would have performed the action rejected directly on the merger. In passive, this would flip to: The merger would have been rejected if the audit had revealed the hidden debts.",
-            "grammarRule": "Third Conditional Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Check whether grew has an object here. A common error tries to force a passive form on verbs like this.",
+            "explanation": "The company is the doer of grew, used intransitively to describe its own change rather than an action performed on something else; a common learner error is forcing an unnatural passive, The company was grown rapidly, which doesn't make sense with this meaning of grow. This sentence simply has no passive form.",
+            "grammarRule": "Active (No Passive Possible)",
+            "activeVoice": "The company grew rapidly during its first five years.",
+            "passiveVoice": "No passive form exists - grow has no object here, so there is no receiver to become the subject."
         },
         {
             "id": "vs_l158_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The merger would have been rejected if the audit had revealed the hidden company debts.",
-            "sentence": "The merger would have been rejected if the audit had revealed the hidden company debts.",
+            "question": "The negotiations lasted nearly six hours before both sides reached an agreement.",
+            "sentence": "The negotiations lasted nearly six hours before both sides reached an agreement.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for would have been plus a past participle (rejected). The subject receives the action here.",
-            "explanation": "This is passive voice: the merger (receiver) would have been rejected, but no specific rejector is emphasized. In active, this would flip to: The board would have rejected the merger if the audit had revealed the hidden company debts.",
-            "grammarRule": "Third Conditional Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Check whether lasted has an object here. A common error tries to force a passive form on verbs like this.",
+            "explanation": "The negotiations is the doer of lasted, used intransitively to describe duration rather than an action done to something; a common learner error is forcing an unnatural passive, Nearly six hours was lasted by the negotiations, which isn't valid English. This sentence has no passive form.",
+            "grammarRule": "Active (No Passive Possible)",
+            "activeVoice": "The negotiations lasted nearly six hours before both sides reached an agreement.",
+            "passiveVoice": "No passive form exists - last has no object here, so there is no receiver to become the subject."
         },
         {
             "id": "vs_l158_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The scholarship would have been awarded differently if the committee had weighed the essays more evenly.",
-            "sentence": "The scholarship would have been awarded differently if the committee had weighed the essays more evenly.",
+            "question": "The situation worsened considerably after the second wave of layoffs.",
+            "sentence": "The situation worsened considerably after the second wave of layoffs.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for would have been plus a past participle (awarded). The subject receives the action here.",
-            "explanation": "This is passive voice: the scholarship (receiver) would have been awarded differently, but no specific awarder is emphasized. In active, this would flip to: The committee would have awarded the scholarship differently if they had weighed the essays more evenly.",
-            "grammarRule": "Third Conditional Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Check whether worsened has an object here. A common error tries to force a passive form on verbs like this.",
+            "explanation": "The situation is the doer of worsened, used intransitively to describe its own change; a common learner error is forcing an unnatural passive, The situation was worsened considerably, which changes the meaning by implying someone caused it deliberately. Without a named cause, the intransitive active form is the natural, unforced choice.",
+            "grammarRule": "Active (No Natural Passive Without Named Cause)",
+            "activeVoice": "The situation worsened considerably after the second wave of layoffs.",
+            "passiveVoice": "No natural passive form exists here without naming a specific cause of the worsening."
         },
         {
             "id": "vs_l159_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The chairman should have fully disclosed the conflict before the vote that later sparked controversy.",
-            "sentence": "The chairman should have fully disclosed the conflict before the vote that later sparked controversy.",
+            "question": "The applications were reviewed carefully by a panel of three judges.",
+            "sentence": "The applications were reviewed carefully by a panel of three judges.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Look at the main verb phrase should have disclosed. Who was supposed to disclose the conflict?",
-            "explanation": "This is active voice: the chairman (the doer) should have performed the action disclosed directly on the conflict. In passive, this would flip to: The conflict should have been fully disclosed before the vote that later sparked controversy.",
-            "grammarRule": "Perfect Modal Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Check both agreement (were, plural) and the preposition-free structure here. Is everything correctly matched?",
+            "explanation": "The applications (plural, receiver) were reviewed - the auxiliary were correctly matches the plural subject, and reviewed needs no attached preposition, unlike verbs such as look into. Active form: A panel of three judges reviewed the applications carefully.",
+            "grammarRule": "Simple Past Passive (Agreement Check)",
+            "activeVoice": "A panel of three judges reviewed the applications carefully.",
+            "passiveVoice": "The applications were reviewed carefully by a panel of three judges."
         },
         {
             "id": "vs_l159_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The obvious conflict should have been fully disclosed before the vote that later sparked controversy.",
-            "sentence": "The obvious conflict should have been fully disclosed before the vote that later sparked controversy.",
+            "question": "The mistake shouldn't have been overlooked given how obvious it was.",
+            "sentence": "The mistake shouldn't have been overlooked given how obvious it was.",
             "options": [
                 "Active",
                 "Passive"
@@ -517,19 +517,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for should have been plus a past participle (disclosed). The subject receives the action here.",
-            "explanation": "This is passive voice: the conflict (receiver) should have been disclosed, but no specific discloser is named. In active, this would flip to: The chairman should have fully disclosed the obvious conflict before the vote that later sparked controversy.",
-            "grammarRule": "Perfect Modal Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Check the modal perfect structure: shouldn't have been overlooked. Is every piece, modal, negative, have, been, participle, present and correctly ordered?",
+            "explanation": "The mistake (receiver) shouldn't have been overlooked - every piece of the modal perfect passive is present and correctly ordered: shouldn't (modal, negative) + have + been + overlooked (past participle). Active form: The reviewer shouldn't have overlooked the mistake given how obvious it was.",
+            "grammarRule": "Perfect Modal Passive (Negative, Structure Check)",
+            "activeVoice": "The reviewer shouldn't have overlooked the mistake given how obvious it was.",
+            "passiveVoice": "The mistake shouldn't have been overlooked given how obvious it was."
         },
         {
             "id": "vs_l159_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The financial analysts must have missed key indicators given how suddenly the market ultimately crashed.",
-            "sentence": "The financial analysts must have missed key indicators given how suddenly the market ultimately crashed.",
+            "question": "The negotiator persuaded both sides to accept the compromise.",
+            "sentence": "The negotiator persuaded both sides to accept the compromise.",
             "options": [
                 "Active",
                 "Passive"
@@ -537,19 +537,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before must have missed.",
-            "explanation": "This is active voice: the financial analysts (the doer) must have performed the action missed directly on key indicators. In passive, this would flip to: Key indicators must have been missed by the financial analysts given how suddenly the market ultimately crashed.",
-            "grammarRule": "Perfect Modal Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Check who does the persuading and who is persuaded. A common mistake reverses these roles.",
+            "explanation": "The negotiator is the doer of persuaded, acting on both sides, the receiver. Reversing these roles when converting to passive would misstate who influenced whom. Correct passive: Both sides were persuaded to accept the compromise by the negotiator.",
+            "grammarRule": "Active with Subject-Object Reversal Trap",
+            "activeVoice": "The negotiator persuaded both sides to accept the compromise.",
+            "passiveVoice": "Both sides were persuaded to accept the compromise by the negotiator."
         },
         {
             "id": "vs_l160_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The report should have been finalized before the panel exhausted from weeks of hearings adjourned.",
-            "sentence": "The report should have been finalized before the panel exhausted from weeks of hearings adjourned.",
+            "question": "This checkpoint reviews error awareness: The shipment was tracked closely after the previous delay.",
+            "sentence": "This checkpoint reviews error awareness: The shipment was tracked closely after the previous delay.",
             "options": [
                 "Active",
                 "Passive"
@@ -557,19 +557,39 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "The report could not finalize itself. No one performing that task is named here.",
-            "explanation": "This milestone checkpoint reviews passive voice: the report (receiver) should have been finalized, but no specific finalizer is named. In active, this would flip to: Staff should have finalized the report before the panel exhausted from weeks of hearings adjourned.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Check the auxiliary: was, matching the singular shipment. Is everything correctly matched?",
+            "explanation": "This checkpoint reviews agreement in passive voice: the shipment (singular, receiver) was tracked, correctly matching in number; a common error would use were instead. Active form: The logistics team tracked the shipment closely after the previous delay.",
+            "grammarRule": "Simple Past Passive (Agreement Check)",
+            "activeVoice": "The logistics team tracked the shipment closely after the previous delay.",
+            "passiveVoice": "The shipment was tracked closely after the previous delay."
         },
         {
             "id": "vs_l160_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The chief editor firmly rejected the submission because the sources had not been properly verified.",
-            "sentence": "The chief editor firmly rejected the submission because the sources had not been properly verified.",
+            "question": "This checkpoint reviews error awareness: The stolen documents were finally found hidden in a locked drawer.",
+            "sentence": "This checkpoint reviews error awareness: The stolen documents were finally found hidden in a locked drawer.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Check the past participle: found, the correct irregular form. Is this used correctly here?",
+            "explanation": "This checkpoint reviews irregular participles: the stolen documents (receiver) were found, correctly using found rather than an incorrect regular form like finded. Active form: Investigators finally found the stolen documents hidden in a locked drawer.",
+            "grammarRule": "Simple Past Passive (Irregular Participle)",
+            "activeVoice": "Investigators finally found the stolen documents hidden in a locked drawer.",
+            "passiveVoice": "The stolen documents were finally found hidden in a locked drawer."
+        },
+        {
+            "id": "vs_l160_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "This checkpoint reviews error awareness: The mayor congratulated the volunteers for their tireless community work.",
+            "sentence": "This checkpoint reviews error awareness: The mayor congratulated the volunteers for their tireless community work.",
             "options": [
                 "Active",
                 "Passive"
@@ -577,31 +597,11 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Look at the main clause: the editor rejected the submission. The embedded clause happens to be passive, but the main clause is active.",
-            "explanation": "This milestone checkpoint reviews a mixed sentence: the main clause is active (the chief editor rejected the submission), while the embedded clause had not been verified is passive. In passive, the main clause alone would flip to: The submission was firmly rejected by the chief editor because the sources had not been properly verified.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
-        },
-        {
-            "id": "vs_l160_q3",
-            "instruction": "FLIP THE VOICE TRANSMUTER",
-            "subtype": "voiceSwap",
-            "interactionType": "choice",
-            "question": "The submission was firmly rejected because the sources that the writer had cited proved unreliable.",
-            "sentence": "The submission was firmly rejected because the sources that the writer had cited proved unreliable.",
-            "options": [
-                "Active",
-                "Passive"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look at the main clause: the submission was rejected. Notice the subject receives the action here.",
-            "explanation": "This milestone checkpoint reviews passive voice: the submission (receiver) was rejected, but no specific rejector is directly named in the main clause. In active, the main clause alone would flip to: Someone firmly rejected the submission because the sources that the writer had cited proved unreliable.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Check who does the congratulating and who receives it. Confirm the roles aren't reversed.",
+            "explanation": "This checkpoint reviews subject-object roles: the mayor is the doer of congratulated, acting on the volunteers, the receiver. Reversing these in passive voice would misstate who praised whom. Correct passive: The volunteers were congratulated for their tireless community work by the mayor.",
+            "grammarRule": "Active with Subject-Object Reversal Trap",
+            "activeVoice": "The mayor congratulated the volunteers for their tireless community work.",
+            "passiveVoice": "The volunteers were congratulated for their tireless community work by the mayor."
         }
     ]
 }

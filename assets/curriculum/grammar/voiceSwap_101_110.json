@@ -8,8 +8,8 @@
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Government officials formally announced significant new tax reforms for small businesses yesterday.",
-            "sentence": "Government officials formally announced significant new tax reforms for small businesses yesterday.",
+            "question": "The committee approved a detailed proposal covering three separate phases of construction.",
+            "sentence": "The committee approved a detailed proposal covering three separate phases of construction.",
             "options": [
                 "Active",
                 "Passive"
@@ -17,79 +17,79 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before announced.",
-            "explanation": "This is active voice: government officials (the doer) performed the action announced directly on the tax reforms. In passive, this would flip to: Significant new tax reforms for small businesses were formally announced yesterday.",
-            "grammarRule": "Agentless Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Ignore the long description after proposal. Find the doer right before approved.",
+            "explanation": "The committee is the doer of approved, and a detailed proposal covering three separate phases of construction is simply a long object, not a separate clause - don't let its length distract you from the core doer-verb-receiver structure. Passive version: A detailed proposal covering three separate phases of construction was approved by the committee.",
+            "grammarRule": "Active with Complex Object",
+            "activeVoice": "The committee approved a detailed proposal covering three separate phases of construction.",
+            "passiveVoice": "A detailed proposal covering three separate phases of construction was approved by the committee."
         },
         {
             "id": "vs_l101_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The entire board unanimously approved the ambitious merger despite strong shareholder opposition.",
-            "sentence": "The entire board unanimously approved the ambitious merger despite strong shareholder opposition.",
+            "question": "A detailed proposal covering three separate phases of construction was approved by the committee.",
+            "sentence": "A detailed proposal covering three separate phases of construction was approved by the committee.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Who performs the action approved? Look right before the verb.",
-            "explanation": "This is active voice: the board (the doer) performed the action approved directly on the merger. In passive, this would flip to: The ambitious merger was unanimously approved despite strong shareholder opposition.",
-            "grammarRule": "Agentless Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "The long noun phrase at the start is the subject here, not multiple subjects. Look for was plus a past participle after it.",
+            "explanation": "A detailed proposal covering three separate phases of construction (receiver) was approved - the entire long phrase functions as one grammatical subject, with the committee named as agent. Active form: The committee approved a detailed proposal covering three separate phases of construction.",
+            "grammarRule": "Passive with Complex Subject",
+            "activeVoice": "The committee approved a detailed proposal covering three separate phases of construction.",
+            "passiveVoice": "A detailed proposal covering three separate phases of construction was approved by the committee."
         },
         {
             "id": "vs_l101_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Thousands of jobs were eliminated during the recent economic downturn.",
-            "sentence": "Thousands of jobs were eliminated during the recent economic downturn.",
+            "question": "Investigators recovered a badly damaged laptop containing critical evidence from the wreckage.",
+            "sentence": "Investigators recovered a badly damaged laptop containing critical evidence from the wreckage.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for were plus a past participle (eliminated). No agent is named, but the subject still receives the action.",
-            "explanation": "This is passive voice: thousands of jobs (receiver) were eliminated, but the sentence does not name a specific cause. In active, this would flip to: The severe recession eliminated thousands of jobs during the recent economic downturn.",
-            "grammarRule": "Agentless Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer right before recovered, ignoring the long description of the laptop.",
+            "explanation": "Investigators is the doer of recovered, with a badly damaged laptop containing critical evidence as one long object - don't mistake the object's internal description for a second clause. Passive version: A badly damaged laptop containing critical evidence was recovered from the wreckage by investigators.",
+            "grammarRule": "Active with Complex Object",
+            "activeVoice": "Investigators recovered a badly damaged laptop containing critical evidence from the wreckage.",
+            "passiveVoice": "A badly damaged laptop containing critical evidence was recovered from the wreckage by investigators."
         },
         {
             "id": "vs_l102_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "It was widely reported that the company would relocate its headquarters soon.",
-            "sentence": "It was widely reported that the company would relocate its headquarters soon.",
+            "question": "The engineer who designed the original system reviewed our proposed changes.",
+            "sentence": "The engineer who designed the original system reviewed our proposed changes.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for it was plus a past participle (reported) plus that, an impersonal passive pattern.",
-            "explanation": "This is passive voice: it functions as a placeholder subject, with was reported plus that reporting the statement impersonally. In active, this would flip to: Reporters widely reported that the company would relocate its headquarters soon.",
-            "grammarRule": "Reported Statement Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "The relative clause who designed the original system describes the engineer, but doesn't change the sentence's main verb. Find the doer of reviewed.",
+            "explanation": "The engineer, described further by who designed the original system, is the doer of reviewed - the relative clause modifies the subject without becoming a separate main clause. Passive version: Our proposed changes were reviewed by the engineer who designed the original system.",
+            "grammarRule": "Active with Relative Clause (Subject)",
+            "activeVoice": "The engineer who designed the original system reviewed our proposed changes.",
+            "passiveVoice": "Our proposed changes were reviewed by the engineer who designed the original system."
         },
         {
             "id": "vs_l102_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "It was publicly announced that the corporate merger had finally been approved.",
-            "sentence": "It was publicly announced that the corporate merger had finally been approved.",
+            "question": "The medication that the doctor prescribed was recalled last week.",
+            "sentence": "The medication that the doctor prescribed was recalled last week.",
             "options": [
                 "Active",
                 "Passive"
@@ -97,19 +97,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for it was plus a past participle (announced) plus that, an impersonal passive pattern.",
-            "explanation": "This is passive voice: it functions as a placeholder subject, with was announced plus that reporting the statement impersonally. In active, this would flip to: Officials publicly announced that the corporate merger had finally been approved.",
-            "grammarRule": "Reported Statement Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "The medication is the true subject of the main clause. Look for was plus a past participle after the relative clause that the doctor prescribed.",
+            "explanation": "The medication (receiver), described by the relative clause that the doctor prescribed, was recalled - the main clause is passive, even though the embedded relative clause the doctor prescribed is itself active. Active form of the main clause: The manufacturer recalled the medication that the doctor prescribed last week.",
+            "grammarRule": "Passive with Relative Clause (Subject)",
+            "activeVoice": "The manufacturer recalled the medication that the doctor prescribed last week.",
+            "passiveVoice": "The medication that the doctor prescribed was recalled last week."
         },
         {
             "id": "vs_l102_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The company spokesperson publicly confirmed that major layoffs would begin next month.",
-            "sentence": "The company spokesperson publicly confirmed that major layoffs would begin next month.",
+            "question": "The reviewer praised the novel that had taken the author nearly a decade to finish.",
+            "sentence": "The reviewer praised the novel that had taken the author nearly a decade to finish.",
             "options": [
                 "Active",
                 "Passive"
@@ -117,39 +117,39 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before confirmed.",
-            "explanation": "This is active voice: the spokesperson (the doer) performed the action confirmed directly, introducing the reported clause. In passive, this would flip to: It was publicly confirmed by the company spokesperson that major layoffs would begin next month.",
-            "grammarRule": "Reported Statement Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer of praised, ignoring the relative clause describing the novel.",
+            "explanation": "The reviewer is the doer of praised, with the novel that had taken the author nearly a decade to finish as one long object containing its own relative clause. Passive version: The novel that had taken the author nearly a decade to finish was praised by the reviewer.",
+            "grammarRule": "Active with Relative Clause (Object)",
+            "activeVoice": "The reviewer praised the novel that had taken the author nearly a decade to finish.",
+            "passiveVoice": "The novel that had taken the author nearly a decade to finish was praised by the reviewer."
         },
         {
             "id": "vs_l103_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The growing company would hire more staff if investors provided additional capital.",
-            "sentence": "The growing company would hire more staff if investors provided additional capital.",
+            "question": "The findings of the report, despite months of careful research, were largely ignored by policymakers.",
+            "sentence": "The findings of the report, despite months of careful research, were largely ignored by policymakers.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before would hire. Second conditional describes an unreal present situation.",
-            "explanation": "This is active voice: the company (the doer) would perform the action hire directly on more staff. In passive, this would flip to: More staff would be hired if investors provided additional capital.",
-            "grammarRule": "Second Conditional Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "The true subject is the findings, not report or research. Look for were plus a past participle after all the inserted description.",
+            "explanation": "The findings (receiver) - of the report is simply a modifier, and despite months of careful research is an inserted phrase, neither of which is the grammatical subject - were ignored is the real verb phrase, and policymakers is the named agent. Active form: Policymakers largely ignored the findings of the report, despite months of careful research.",
+            "grammarRule": "Passive with Distracting Modifiers",
+            "activeVoice": "Policymakers largely ignored the findings of the report, despite months of careful research.",
+            "passiveVoice": "The findings of the report, despite months of careful research, were largely ignored by policymakers."
         },
         {
             "id": "vs_l103_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "She would happily accept the offer if the company doubled her salary.",
-            "sentence": "She would happily accept the offer if the company doubled her salary.",
+            "question": "One of the interns, much to everyone's surprise, solved the bug within an hour.",
+            "sentence": "One of the interns, much to everyone's surprise, solved the bug within an hour.",
             "options": [
                 "Active",
                 "Passive"
@@ -157,19 +157,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Who performs the action would accept? Look right before the verb.",
-            "explanation": "This is active voice: she (the doer) would perform the action accept directly on the offer. In passive, this would flip to: The offer would happily be accepted if the company doubled her salary.",
-            "grammarRule": "Second Conditional Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "The true subject is one, not interns or everyone. Find the doer of solved, ignoring the inserted phrase.",
+            "explanation": "One (of the interns) is the actual grammatical subject, and much to everyone's surprise is simply inserted commentary, not the subject - one is the doer of solved. Passive version: The bug, much to everyone's surprise, was solved within an hour by one of the interns.",
+            "grammarRule": "Active with Distracting Modifiers",
+            "activeVoice": "One of the interns, much to everyone's surprise, solved the bug within an hour.",
+            "passiveVoice": "The bug, much to everyone's surprise, was solved within an hour by one of the interns."
         },
         {
             "id": "vs_l103_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The building would be demolished if the city approved the new development plan.",
-            "sentence": "The building would be demolished if the city approved the new development plan.",
+            "question": "Several pages of the contract, buried deep in the fine print, were never actually read by either side.",
+            "sentence": "Several pages of the contract, buried deep in the fine print, were never actually read by either side.",
             "options": [
                 "Active",
                 "Passive"
@@ -177,59 +177,59 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for would be plus a past participle (demolished). The subject receives the action here.",
-            "explanation": "This is passive voice: the building (receiver) would be demolished, but no specific demolisher is named. In active, this would flip to: The developer would demolish the building if the city approved the new development plan.",
-            "grammarRule": "Second Conditional Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "The true subject is several pages, not contract or fine print. Look for were plus a past participle.",
+            "explanation": "Several pages (receiver) of the contract - buried deep in the fine print is a modifying phrase, not the subject - were read is the real passive verb, with either side as the agent. Active form: Neither side ever actually read several pages of the contract, buried deep in the fine print.",
+            "grammarRule": "Passive with Distracting Modifiers",
+            "activeVoice": "Neither side ever actually read several pages of the contract, buried deep in the fine print.",
+            "passiveVoice": "Several pages of the contract, buried deep in the fine print, were never actually read by either side."
         },
         {
             "id": "vs_l104_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Several new federal regulations were quickly introduced to strengthen national consumer protection.",
-            "sentence": "Several new federal regulations were quickly introduced to strengthen national consumer protection.",
+            "question": "The panel of judges declared the young violinist the clear winner of the competition.",
+            "sentence": "The panel of judges declared the young violinist the clear winner of the competition.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for were plus a past participle (introduced). No agent is named, but the subject still receives the action.",
-            "explanation": "This is passive voice: new regulations (receiver) were introduced, but the sentence does not name who introduced them. In active, this would flip to: Lawmakers quickly introduced several new federal regulations to strengthen national consumer protection.",
-            "grammarRule": "Agentless Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer of declared - notice there are two objects here: the young violinist and the clear winner.",
+            "explanation": "The panel of judges is the doer of declared, with the young violinist as the direct object and the clear winner as an object complement describing her. Passive version: The young violinist was declared the clear winner of the competition by the panel of judges.",
+            "grammarRule": "Active with Object Complement",
+            "activeVoice": "The panel of judges declared the young violinist the clear winner of the competition.",
+            "passiveVoice": "The young violinist was declared the clear winner of the competition by the panel of judges."
         },
         {
             "id": "vs_l104_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The popular mountain hiking trail was closed after several dangerous rockslides occurred.",
-            "sentence": "The popular mountain hiking trail was closed after several dangerous rockslides occurred.",
+            "question": "The board appointed her interim director while the search for a permanent replacement continued.",
+            "sentence": "The board appointed her interim director while the search for a permanent replacement continued.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus a past participle (closed). No agent is named, but the subject still receives the action.",
-            "explanation": "This is passive voice: the hiking trail (receiver) was closed, but the closer is not named directly. In active, this would flip to: Park officials closed the popular mountain hiking trail after several dangerous rockslides occurred.",
-            "grammarRule": "Agentless Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer of appointed - notice the object complement interim director describing her.",
+            "explanation": "The board is the doer of appointed, with her as the object and interim director as a complement describing that role. Passive version: She was appointed interim director while the search for a permanent replacement continued.",
+            "grammarRule": "Active with Object Complement",
+            "activeVoice": "The board appointed her interim director while the search for a permanent replacement continued.",
+            "passiveVoice": "She was appointed interim director while the search for a permanent replacement continued."
         },
         {
             "id": "vs_l104_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Officials will finally reopen the national border once health conditions improve significantly.",
-            "sentence": "Officials will finally reopen the national border once health conditions improve significantly.",
+            "question": "Critics consider this restaurant one of the finest in the entire city.",
+            "sentence": "Critics consider this restaurant one of the finest in the entire city.",
             "options": [
                 "Active",
                 "Passive"
@@ -237,19 +237,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before will reopen.",
-            "explanation": "This is active voice: officials (the doer) will perform the action reopen directly on the border. In passive, this would flip to: The national border will finally be reopened once health conditions improve significantly.",
-            "grammarRule": "Agentless Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer of consider - notice the object complement one of the finest.",
+            "explanation": "Critics is the doer of consider, with this restaurant as the object and one of the finest in the entire city as a complement describing it. Passive version: This restaurant is considered one of the finest in the entire city by critics.",
+            "grammarRule": "Active with Object Complement",
+            "activeVoice": "Critics consider this restaurant one of the finest in the entire city.",
+            "passiveVoice": "This restaurant is considered one of the finest in the entire city by critics."
         },
         {
             "id": "vs_l105_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Financial analysts confirmed that the national economy would recover by next year.",
-            "sentence": "Financial analysts confirmed that the national economy would recover by next year.",
+            "question": "After nearly a decade of construction delays and cost overruns, the new terminal finally opened to the public.",
+            "sentence": "After nearly a decade of construction delays and cost overruns, the new terminal finally opened to the public.",
             "options": [
                 "Active",
                 "Passive"
@@ -257,59 +257,59 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Who is doing the confirming here? Check right before the verb.",
-            "explanation": "This is active voice: analysts (the doer) performed the action confirmed directly, introducing the reported clause. In passive, this would flip to: It was confirmed by financial analysts that the national economy would recover by next year.",
-            "grammarRule": "Reported Statement Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Ignore the long introductory phrase. Find the doer right before opened.",
+            "explanation": "The new terminal is the doer of opened, appearing only after a long introductory phrase describing years of delay - don't mistake that opening phrase for the subject. Since open here has no object, no passive form exists for this particular sentence.",
+            "grammarRule": "Active with Long Introductory Phrase (No Passive Possible)",
+            "activeVoice": "After nearly a decade of construction delays and cost overruns, the new terminal finally opened to the public.",
+            "passiveVoice": "No passive form exists - open has no object in this sentence, so there is no receiver to become the subject."
         },
         {
             "id": "vs_l105_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The city mayor promised that the new subway line would open soon.",
-            "sentence": "The city mayor promised that the new subway line would open soon.",
+            "question": "Despite repeated warnings from environmental groups, the permit was granted without any further review.",
+            "sentence": "Despite repeated warnings from environmental groups, the permit was granted without any further review.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Who performs the action promised? Look right before the verb.",
-            "explanation": "This is active voice: the mayor (the doer) performed the action promised directly, introducing the reported clause. In passive, this would flip to: It was promised by the city mayor that the new subway line would open soon.",
-            "grammarRule": "Reported Statement Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Ignore the long introductory phrase. Look for was plus a past participle after it.",
+            "explanation": "The permit (receiver), following a long introductory phrase, was granted - the passive verb phrase appears after the modifier, with the reviewing body left unnamed. Active form: Despite repeated warnings from environmental groups, officials granted the permit without any further review.",
+            "grammarRule": "Passive with Long Introductory Phrase",
+            "activeVoice": "Despite repeated warnings from environmental groups, officials granted the permit without any further review.",
+            "passiveVoice": "Despite repeated warnings from environmental groups, the permit was granted without any further review."
         },
         {
             "id": "vs_l105_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "It was widely rumored that the struggling company was secretly planning major layoffs.",
-            "sentence": "It was widely rumored that the struggling company was secretly planning major layoffs.",
+            "question": "Following months of quiet negotiation between both companies, the two firms finally signed the merger agreement.",
+            "sentence": "Following months of quiet negotiation between both companies, the two firms finally signed the merger agreement.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for it was plus a past participle (rumored) plus that, an impersonal passive pattern.",
-            "explanation": "This is passive voice: it functions as a placeholder subject, with was rumored plus that reporting the claim impersonally. In active, this would flip to: People widely rumored that the struggling company was secretly planning major layoffs.",
-            "grammarRule": "Reported Statement Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Ignore the long introductory phrase. Find the doer right before signed.",
+            "explanation": "The two firms is the doer of signed, appearing after a long introductory phrase - the subject doesn't move just because extra information comes before it. Passive version: Following months of quiet negotiation between both companies, the merger agreement was finally signed by the two firms.",
+            "grammarRule": "Active with Long Introductory Phrase",
+            "activeVoice": "Following months of quiet negotiation between both companies, the two firms finally signed the merger agreement.",
+            "passiveVoice": "Following months of quiet negotiation between both companies, the merger agreement was finally signed by the two firms."
         },
         {
             "id": "vs_l106_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The busy city would reduce traffic if more residents used bicycles daily.",
-            "sentence": "The busy city would reduce traffic if more residents used bicycles daily.",
+            "question": "If the city expands the subway line, thousands of commuters will save considerable time each day.",
+            "sentence": "If the city expands the subway line, thousands of commuters will save considerable time each day.",
             "options": [
                 "Active",
                 "Passive"
@@ -317,19 +317,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before would reduce.",
-            "explanation": "This is active voice: the city (the doer) would perform the action reduce directly on traffic. In passive, this would flip to: Traffic would be reduced if more residents used bicycles daily.",
-            "grammarRule": "Second Conditional Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Focus on the main clause. Find the doer right before will save.",
+            "explanation": "Thousands of commuters is the doer of will save in the main clause, first conditional active, even though the if-clause names a different subject, the city. Passive version of the main clause: Considerable time will be saved each day by thousands of commuters if the city expands the subway line.",
+            "grammarRule": "First Conditional Active",
+            "activeVoice": "If the city expands the subway line, thousands of commuters will save considerable time each day.",
+            "passiveVoice": "Considerable time will be saved each day by thousands of commuters if the city expands the subway line."
         },
         {
             "id": "vs_l106_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Emissions would be cut quite significantly if factories adopted much cleaner technology.",
-            "sentence": "Emissions would be cut quite significantly if factories adopted much cleaner technology.",
+            "question": "If more residents used bicycles daily, traffic congestion would be reduced significantly across downtown.",
+            "sentence": "If more residents used bicycles daily, traffic congestion would be reduced significantly across downtown.",
             "options": [
                 "Active",
                 "Passive"
@@ -337,39 +337,39 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for would be plus a past participle (cut). The subject receives the action here.",
-            "explanation": "This is passive voice: emissions (receiver) would be cut, but no specific reducer is emphasized. In active, this would flip to: Factories would cut emissions quite significantly if they adopted much cleaner technology.",
+            "hint": "Focus on the main clause. Look for would be plus a past participle.",
+            "explanation": "Traffic congestion (receiver) would be reduced - second conditional passive in the main clause: would + be + past participle, describing a hypothetical result. Residents remain unnamed as agent here. Active form: If more residents used bicycles daily, they would reduce traffic congestion significantly across downtown.",
             "grammarRule": "Second Conditional Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "activeVoice": "If more residents used bicycles daily, they would reduce traffic congestion significantly across downtown.",
+            "passiveVoice": "If more residents used bicycles daily, traffic congestion would be reduced significantly across downtown."
         },
         {
             "id": "vs_l106_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The project would be delayed if the permit were not approved soon.",
-            "sentence": "The project would be delayed if the permit were not approved soon.",
+            "question": "If the factory adopts the new safety protocol, workplace injuries will likely decrease next year.",
+            "sentence": "If the factory adopts the new safety protocol, workplace injuries will likely decrease next year.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for would be plus a past participle (delayed). The subject receives the action here.",
-            "explanation": "This is passive voice: the project (receiver) would be delayed, but no specific delayer is named. In active, this would flip to: Officials would delay the project if the permit were not approved soon.",
-            "grammarRule": "Second Conditional Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Focus on the main clause. Find the doer right before will decrease, and check whether decrease needs an object here.",
+            "explanation": "Workplace injuries is the doer of will decrease in the main clause, and decrease is used without an object here, describing a change in the subject itself - so this sentence has no passive counterpart in the main clause.",
+            "grammarRule": "First Conditional Active (No Passive Possible)",
+            "activeVoice": "If the factory adopts the new safety protocol, workplace injuries will likely decrease next year.",
+            "passiveVoice": "No passive form exists in the main clause - decrease has no object here, so there is no receiver to become the subject."
         },
         {
             "id": "vs_l107_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The growing company proudly launched an ambitious new product line last quarter.",
-            "sentence": "The growing company proudly launched an ambitious new product line last quarter.",
+            "question": "If you heat water past a hundred degrees Celsius at sea level, it boils.",
+            "sentence": "If you heat water past a hundred degrees Celsius at sea level, it boils.",
             "options": [
                 "Active",
                 "Passive"
@@ -377,19 +377,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before launched.",
-            "explanation": "This is active voice: the company (the doer) performed the action launched directly on a new product line. In passive, this would flip to: An ambitious new product line was proudly launched last quarter.",
-            "grammarRule": "Agentless Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Focus on the main clause. Find the doer right before boils, checking whether boil needs an object here.",
+            "explanation": "It (water) is the doer of boils in the main clause, a zero conditional describing a general truth, and boil is intransitive here, so no passive form exists for that clause - only the if-clause, you heat water, could become passive: Water is heated past a hundred degrees Celsius at sea level.",
+            "grammarRule": "Zero Conditional Active (No Passive in Main Clause)",
+            "activeVoice": "If you heat water past a hundred degrees Celsius at sea level, it boils.",
+            "passiveVoice": "No passive form exists in the main clause - boil has no object here, so there is no receiver to become the subject."
         },
         {
             "id": "vs_l107_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Federal investigators quickly uncovered several serious safety violations during the surprise inspection.",
-            "sentence": "Federal investigators quickly uncovered several serious safety violations during the surprise inspection.",
+            "question": "If the deadline had been extended, the entire team would have finished the project on time.",
+            "sentence": "If the deadline had been extended, the entire team would have finished the project on time.",
             "options": [
                 "Active",
                 "Passive"
@@ -397,19 +397,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Who performs the action uncovered? Look right before the verb.",
-            "explanation": "This is active voice: investigators (the doer) performed the action uncovered directly on several violations. In passive, this would flip to: Several serious safety violations were quickly uncovered during the surprise inspection.",
-            "grammarRule": "Agentless Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Focus on the main clause. Find the doer right before would have finished.",
+            "explanation": "The entire team is the doer of would have finished in the main clause, a third conditional active describing an unreal past result, even though the if-clause itself, had been extended, is passive. Passive version of the main clause: The project would have been finished on time by the entire team if the deadline had been extended.",
+            "grammarRule": "Third Conditional Active",
+            "activeVoice": "If the deadline had been extended, the entire team would have finished the project on time.",
+            "passiveVoice": "The project would have been finished on time by the entire team if the deadline had been extended."
         },
         {
             "id": "vs_l107_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Authorities finally reopened the historic route after extensive safety upgrades were completed.",
-            "sentence": "Authorities finally reopened the historic route after extensive safety upgrades were completed.",
+            "question": "If the warning had been issued sooner, many of the injuries could have been prevented.",
+            "sentence": "If the warning had been issued sooner, many of the injuries could have been prevented.",
             "options": [
                 "Active",
                 "Passive"
@@ -417,19 +417,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look at the main clause: Authorities reopened the historic route (active), but notice the embedded clause were completed is itself passive.",
-            "explanation": "The main clause is active: authorities (the doer) reopened the historic route. In passive, the main clause would flip to: The historic route was finally reopened by authorities after extensive safety upgrades were completed.",
-            "grammarRule": "Agentless Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Focus on the main clause. Look for could have been plus a past participle.",
+            "explanation": "Many of the injuries (receiver) could have been prevented - third conditional passive in the main clause, describing an unreal past outcome, with no specific authority named. Active form: If officials had issued the warning sooner, they could have prevented many of the injuries.",
+            "grammarRule": "Third Conditional Passive",
+            "activeVoice": "If officials had issued the warning sooner, they could have prevented many of the injuries.",
+            "passiveVoice": "If the warning had been issued sooner, many of the injuries could have been prevented."
         },
         {
             "id": "vs_l108_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Airport officials clearly explained that the delay resulted from a technical malfunction.",
-            "sentence": "Airport officials clearly explained that the delay resulted from a technical malfunction.",
+            "question": "The insurance company should have settled a claim this straightforward within a matter of days.",
+            "sentence": "The insurance company should have settled a claim this straightforward within a matter of days.",
             "options": [
                 "Active",
                 "Passive"
@@ -437,19 +437,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before explained.",
-            "explanation": "This is active voice: officials (the doer) performed the action explained directly, introducing the reported clause. In passive, this would flip to: It was clearly explained by airport officials that the delay resulted from a technical malfunction.",
-            "grammarRule": "Reported Statement Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer right before should have settled, ignoring the long object description.",
+            "explanation": "The insurance company is the doer of should have settled, with a claim this straightforward within a matter of days functioning as one long object. Passive version: A claim this straightforward should have been settled within a matter of days by the insurance company.",
+            "grammarRule": "Modal Perfect Active with Complex Object",
+            "activeVoice": "The insurance company should have settled a claim this straightforward within a matter of days.",
+            "passiveVoice": "A claim this straightforward should have been settled within a matter of days by the insurance company."
         },
         {
             "id": "vs_l108_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "It was suggested by the outside consultant that the entire team reconsider the original timeline.",
-            "sentence": "It was suggested by the outside consultant that the entire team reconsider the original timeline.",
+            "question": "A vaccine capable of preventing the disease entirely has finally been developed after years of trials.",
+            "sentence": "A vaccine capable of preventing the disease entirely has finally been developed after years of trials.",
             "options": [
                 "Active",
                 "Passive"
@@ -457,119 +457,99 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for it was plus a past participle (suggested) plus that, an impersonal passive pattern.",
-            "explanation": "This is passive voice: it functions as a placeholder subject, with was suggested by the outside consultant introducing the source, and that reporting the suggestion. In active, this would flip to: The outside consultant suggested that the entire team reconsider the original timeline.",
-            "grammarRule": "Reported Statement Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "The subject is a vaccine, heavily modified. Look for has been plus a past participle.",
+            "explanation": "A vaccine capable of preventing the disease entirely (receiver) has been developed - a long, modified subject followed by the present perfect passive, with the research team left unnamed. Active form: Researchers have finally developed a vaccine capable of preventing the disease entirely after years of trials.",
+            "grammarRule": "Present Perfect Passive with Complex Subject",
+            "activeVoice": "Researchers have finally developed a vaccine capable of preventing the disease entirely after years of trials.",
+            "passiveVoice": "A vaccine capable of preventing the disease entirely has finally been developed after years of trials."
         },
         {
             "id": "vs_l108_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "It was formally reported by local residents that the new construction disrupted their daily routine.",
-            "sentence": "It was formally reported by local residents that the new construction disrupted their daily routine.",
+            "question": "The city must repair a stretch of highway that has been closed for nearly a year.",
+            "sentence": "The city must repair a stretch of highway that has been closed for nearly a year.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "It here stands in for the real subject. Notice the reporting verb comes before that.",
-            "explanation": "This is passive voice: it functions as a placeholder subject, with was reported by local residents introducing the claim, and that reporting the statement. In active, this would flip to: Local residents formally reported that the new construction disrupted their daily routine.",
-            "grammarRule": "Reported Statement Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer right before must repair, ignoring the relative clause describing the highway.",
+            "explanation": "The city is the doer of must repair, with a stretch of highway that has been closed for nearly a year as one long object containing its own passive relative clause. Passive version: A stretch of highway that has been closed for nearly a year must be repaired by the city.",
+            "grammarRule": "Modal Verbs Active with Relative Clause Object",
+            "activeVoice": "The city must repair a stretch of highway that has been closed for nearly a year.",
+            "passiveVoice": "A stretch of highway that has been closed for nearly a year must be repaired by the city."
         },
         {
             "id": "vs_l109_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The state senator publicly announced sweeping economic reforms during the press conference.",
-            "sentence": "The state senator publicly announced sweeping economic reforms during the press conference.",
+            "question": "The recommendations made by the safety board, unlike those from the previous committee, were adopted almost immediately.",
+            "sentence": "The recommendations made by the safety board, unlike those from the previous committee, were adopted almost immediately.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Who is making this announcement? Check right before the verb.",
-            "explanation": "This is active voice: the senator (the doer) performed the action announced directly on sweeping reforms. In passive, this would flip to: Sweeping economic reforms were publicly announced during the press conference.",
-            "grammarRule": "Agentless Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "There are three noun phrases here: recommendations, safety board, previous committee. Only one is the true subject. Look for were plus a past participle.",
+            "explanation": "The recommendations (receiver) - made by the safety board and unlike those from the previous committee are both modifying phrases, not separate subjects - were adopted is the real verb, with the true decision-makers left unnamed. Active form: Officials adopted the recommendations made by the safety board, unlike those from the previous committee, almost immediately.",
+            "grammarRule": "Passive with Multiple Noun Phrases",
+            "activeVoice": "Officials adopted the recommendations made by the safety board, unlike those from the previous committee, almost immediately.",
+            "passiveVoice": "The recommendations made by the safety board, unlike those from the previous committee, were adopted almost immediately."
         },
         {
             "id": "vs_l109_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The deal would be cancelled if either party failed to sign by Friday.",
-            "sentence": "The deal would be cancelled if either party failed to sign by Friday.",
+            "question": "The head of the department, along with two senior researchers, presented the findings to the board.",
+            "sentence": "The head of the department, along with two senior researchers, presented the findings to the board.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for would be plus a past participle (cancelled). The subject receives the action here.",
-            "explanation": "This is passive voice: the deal (receiver) would be cancelled, but no specific canceller is emphasized. In active, this would flip to: Either party would cancel the deal if they failed to sign by Friday.",
-            "grammarRule": "Second Conditional Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "There are three noun phrases here: head, department, researchers. Only one leads the true subject. Find the doer of presented.",
+            "explanation": "The head (of the department), along with two senior researchers as an added phrase, is the doer of presented - along with doesn't create a second subject the way and would. Passive version: The findings were presented to the board by the head of the department, along with two senior researchers.",
+            "grammarRule": "Active with Multiple Noun Phrases",
+            "activeVoice": "The head of the department, along with two senior researchers, presented the findings to the board.",
+            "passiveVoice": "The findings were presented to the board by the head of the department, along with two senior researchers."
         },
         {
             "id": "vs_l109_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The small startup would attract more funding if it demonstrated steady growth.",
-            "sentence": "The small startup would attract more funding if it demonstrated steady growth.",
+            "question": "The version of the app released last month, unlike the earlier beta, was praised for its stability.",
+            "sentence": "The version of the app released last month, unlike the earlier beta, was praised for its stability.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Who performs the action would attract? Look right before the verb.",
-            "explanation": "This is active voice: the startup (the doer) would perform the action attract directly on more funding. In passive, this would flip to: More funding would be attracted if the small startup demonstrated steady growth.",
-            "grammarRule": "Second Conditional Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "There are several noun phrases here: version, app, month, beta. Only one is the true subject. Look for was plus a past participle.",
+            "explanation": "The version (receiver) - of the app released last month and unlike the earlier beta are both modifying phrases - was praised is the real passive verb, with reviewers left unnamed. Active form: Reviewers praised the version of the app released last month, unlike the earlier beta, for its stability.",
+            "grammarRule": "Passive with Multiple Noun Phrases",
+            "activeVoice": "Reviewers praised the version of the app released last month, unlike the earlier beta, for its stability.",
+            "passiveVoice": "The version of the app released last month, unlike the earlier beta, was praised for its stability."
         },
         {
             "id": "vs_l110_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "It was confirmed that the delayed flight would depart after several more hours.",
-            "sentence": "It was confirmed that the delayed flight would depart after several more hours.",
-            "options": [
-                "Active",
-                "Passive"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for it was plus a past participle (confirmed) plus that, an impersonal passive pattern.",
-            "explanation": "This checkpoint reviews passive voice: it functions as a placeholder subject, with was confirmed plus that reporting the statement impersonally. In active, this would flip to: The airline confirmed that the delayed flight would depart after several more hours.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
-        },
-        {
-            "id": "vs_l110_q2",
-            "instruction": "FLIP THE VOICE TRANSMUTER",
-            "subtype": "voiceSwap",
-            "interactionType": "choice",
-            "question": "The city fully restored the riverside path after the severe flooding subsided.",
-            "sentence": "The city fully restored the riverside path after the severe flooding subsided.",
+            "question": "This checkpoint reviews complex objects: The auditors flagged several transactions that lacked proper documentation.",
+            "sentence": "This checkpoint reviews complex objects: The auditors flagged several transactions that lacked proper documentation.",
             "options": [
                 "Active",
                 "Passive"
@@ -577,19 +557,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before restored, then decide the voice.",
-            "explanation": "This checkpoint reviews active voice: the city (the doer) performed the action restored directly on the riverside path. In passive, this would flip to: The riverside path was fully restored by the city after the severe flooding subsided.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer right before flagged, ignoring the relative clause describing the transactions.",
+            "explanation": "This checkpoint reviews active voice with a relative-clause object: the auditors is the doer of flagged, with several transactions that lacked proper documentation as one long object. Passive version: Several transactions that lacked proper documentation were flagged by the auditors.",
+            "grammarRule": "Active with Relative Clause (Object)",
+            "activeVoice": "The auditors flagged several transactions that lacked proper documentation.",
+            "passiveVoice": "Several transactions that lacked proper documentation were flagged by the auditors."
         },
         {
-            "id": "vs_l110_q3",
+            "id": "vs_l110_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The budget would be approved by the entire committee if all members reached consensus.",
-            "sentence": "The budget would be approved by the entire committee if all members reached consensus.",
+            "question": "This checkpoint reviews complex objects: A proposal covering nearly every department, unlike last year's narrower plan, was rejected outright.",
+            "sentence": "This checkpoint reviews complex objects: A proposal covering nearly every department, unlike last year's narrower plan, was rejected outright.",
             "options": [
                 "Active",
                 "Passive"
@@ -597,11 +577,31 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for would be plus a past participle (approved), followed by by naming who does the action.",
-            "explanation": "This checkpoint reviews passive voice: the budget (receiver) would be approved by the entire committee, the agent named after by. In active, this would flip to: The entire committee would approve the budget if all members reached consensus.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Several noun phrases appear here: proposal, department, plan. Only one is the true subject. Look for was plus a past participle.",
+            "explanation": "This checkpoint reviews passive voice with multiple noun phrases: a proposal (receiver) - covering nearly every department and unlike last year's narrower plan are modifiers - was rejected is the true verb, with the board left unnamed. Active form: The board rejected a proposal covering nearly every department, unlike last year's narrower plan, outright.",
+            "grammarRule": "Passive with Multiple Noun Phrases",
+            "activeVoice": "The board rejected a proposal covering nearly every department, unlike last year's narrower plan, outright.",
+            "passiveVoice": "A proposal covering nearly every department, unlike last year's narrower plan, was rejected outright."
+        },
+        {
+            "id": "vs_l110_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "This checkpoint reviews complex objects: If the funding had been approved earlier, the clinic could have hired several more nurses.",
+            "sentence": "This checkpoint reviews complex objects: If the funding had been approved earlier, the clinic could have hired several more nurses.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Focus on the main clause. Find the doer right before could have hired.",
+            "explanation": "This checkpoint reviews third conditional active in the main clause: the clinic is the doer of could have hired, even though the if-clause itself, had been approved, is passive. Passive version of the main clause: Several more nurses could have been hired by the clinic if the funding had been approved earlier.",
+            "grammarRule": "Third Conditional Active",
+            "activeVoice": "If the funding had been approved earlier, the clinic could have hired several more nurses.",
+            "passiveVoice": "Several more nurses could have been hired by the clinic if the funding had been approved earlier."
         }
     ]
 }

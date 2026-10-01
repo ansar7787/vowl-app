@@ -1,547 +1,547 @@
 {
-    "gameType": "situationalResponse",
-    "batchIndex": 10,
-    "levels": "91-100",
-    "quests": [
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You receive feedback that you come across as too aggressive in meetings.",
-            "options": [
-                "That's surprising, I don't feel aggressive at all.",
-                "I'll try to soften my tone going forward.",
-                "I didn't realize I was coming across that way.",
-                "Thanks for telling me - can you give an example?"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "A specific example turns vague feedback into something you can actually act on.",
-            "explanation": "Asking for a specific example is the most constructive, appropriate way to respond to feedback about your tone.",
-            "id": "sr_l91_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel thanks for telling me - can you give an example? in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A client asks you to do something that is clearly outside your professional expertise.",
-            "options": [
-                "That's outside my area - let me refer you.",
-                "I'm not really trained to handle that, sorry.",
-                "I could try, though it's not my specialty.",
-                "That's a bit beyond what I usually do."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Referring them to the right expert is more helpful than attempting it yourself.",
-            "explanation": "Referring the client to the right expert is the most responsible, appropriate way to handle a request outside your scope.",
-            "id": "sr_l91_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel that's outside my area - let me refer you. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "At a dinner party, you accidentally knock a glass of red wine onto the white tablecloth.",
-            "options": [
-                "That's going to leave a stain, I'm afraid.",
-                "I'm so sorry - let me help clean this up.",
-                "I feel terrible, I promise I'll replace it.",
-                "Please tell me that comes out in the wash."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Apologizing and immediately offering to help is the most gracious response.",
-            "explanation": "Apologizing and immediately offering to help clean up is the most gracious, appropriate response to this accident.",
-            "id": "sr_l91_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel i'm so sorry - let me help clean this up. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You must deliver the news to your team that an important project has been cancelled.",
-            "options": [
-                "Unfortunately, the project's been cancelled, sorry.",
-                "This decision was completely out of our hands.",
-                "I wish I had better news to share today.",
-                "I know this is disappointing - here's what's next."
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Naming the disappointment before moving to next steps feels most respectful.",
-            "explanation": "Acknowledging the disappointment before outlining next steps is the most respectful way to deliver this news.",
-            "id": "sr_l92_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel i know this is disappointing - here's what's next. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "An upset customer insists on speaking to someone in charge about their service experience.",
-            "options": [
-                "Of course, let me get my manager for you.",
-                "I can actually help you myself, if you'd like.",
-                "May I ask what happened, so I can help?",
-                "I understand - one moment, please."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Respecting their direct request is the most appropriate first move.",
-            "explanation": "Respecting their request and getting a manager promptly is the most appropriate way to handle this situation.",
-            "id": "sr_l92_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel of course, let me get my manager for you. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A professional cover letter needs a strong first sentence. What should it do?",
-            "options": [
-                "Introduce yourself and your years of experience.",
-                "Explain briefly why the company interests you.",
-                "State the role and one reason you're a strong fit.",
-                "Mention how you heard about the position."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Naming the role and your fit immediately grabs a hiring manager's attention.",
-            "explanation": "Stating the role and your strongest fit right away is the most effective way to open a cover letter.",
-            "id": "sr_l92_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel state the role and one reason you're a strong fit. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "Your pharmacy calls to say your prescription refill is delayed by a supply issue.",
-            "options": [
-                "That's frustrating, I really need it soon.",
-                "Is there a substitute you could offer me?",
-                "I hope this doesn't happen too often.",
-                "Okay, do you know roughly when it'll be in?"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Asking for a timeline gives you something concrete to plan around.",
-            "explanation": "Calmly asking for a timeline is the most practical, appropriate response to an unexpected supply delay.",
-            "id": "sr_l93_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel okay, do you know roughly when it'll be in? in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A business partner you're meeting comes from a culture where a firm handshake is considered too forward.",
-            "options": [
-                "I should probably research this beforehand.",
-                "I'll offer a slight bow instead, just in case.",
-                "I'll follow their lead on the greeting.",
-                "A polite nod is probably the safest choice."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Watching and matching their greeting avoids any assumptions.",
-            "explanation": "Following the other person's lead is the most respectful, culturally appropriate way to handle an unfamiliar greeting.",
-            "id": "sr_l93_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel i'll follow their lead on the greeting. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You need to ask your line manager for a day of annual leave at short notice.",
-            "options": [
-                "Could I take tomorrow off? Something's come up.",
-                "I'm really sorry for the short notice on this.",
-                "I know this is last minute, but I need a day.",
-                "Something urgent has come up, unfortunately."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Asking clearly and briefly explaining is more effective than over-apologizing.",
-            "explanation": "A clear, brief request with a short reason is the most effective way to ask for short-notice leave.",
-            "id": "sr_l93_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel could i take tomorrow off? something's come up. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "Partway through a first date, you realize there is no romantic connection.",
-            "options": [
-                "This has been nice, but I don't think it's a match.",
-                "I've enjoyed this, though I don't feel a spark.",
-                "I think we might work better as friends.",
-                "I'm not really feeling a connection, honestly."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Kind honesty now saves both people time and confusion later.",
-            "explanation": "Kind, direct honesty is the most respectful way to end a date that isn't working romantically.",
-            "id": "sr_l94_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel i've enjoyed this, though i don't feel a spark. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A client is angry that a deadline was missed, and you believe their expectations were unrealistic from the start.",
-            "options": [
-                "The original timeline was honestly never realistic.",
-                "I'm sorry, though the scope did change along the way.",
-                "I understand the frustration - let's reset the timeline.",
-                "Let's discuss what a realistic timeline looks like."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Acknowledging feelings before addressing facts keeps the conversation calm.",
-            "explanation": "Acknowledging their frustration before resetting expectations is the most professional, de-escalating response.",
-            "id": "sr_l94_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel i understand the frustration - let's reset the timeline. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A performance appraisal is due for a strong-performing member of your team.",
-            "options": [
-                "They've had a genuinely excellent year overall.",
-                "Their consistent results and initiative stand out clearly.",
-                "Their contributions have exceeded expectations.",
-                "Their reliability makes them a real asset here."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Naming specific, observable strengths makes an appraisal most useful.",
-            "explanation": "Naming specific, observable strengths is the most useful, appropriate way to write a strong performance appraisal.",
-            "id": "sr_l94_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel their consistent results and initiative stand out clearly. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You want to cancel plans with a friend at the last minute because you feel completely drained.",
-            "options": [
-                "I'm running on empty - could we reschedule?",
-                "I'm so sorry, something's come up tonight.",
-                "I don't think I can make it out, sorry.",
-                "Today's been a lot - can we do another day?"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Being honest about needing rest, and proposing a new time, keeps things caring.",
-            "explanation": "Being honest about needing rest while proposing a new time is the most caring way to cancel last minute.",
-            "id": "sr_l95_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel i'm running on empty - could we reschedule? in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You witness a colleague taking personal items from the shared office supply cupboard.",
-            "options": [
-                "I noticed you taking some supplies just now.",
-                "Those are meant to be for office use only.",
-                "I should probably mention this to someone.",
-                "Hey, are those for a work project?"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "A light, curious question gives them room to explain before assuming the worst.",
-            "explanation": "A light, non-accusatory question is the most appropriate first response before assuming wrongdoing.",
-            "id": "sr_l95_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel hey, are those for a work project? in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "In a queue, someone tries to push in ahead of several people who arrived first.",
-            "options": [
-                "There's a line here, you know, like everyone else.",
-                "Excuse me, the queue actually starts back there.",
-                "We've all been waiting a while, actually.",
-                "I don't think that's really fair, is it?"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "A calm, factual statement about the queue avoids unnecessary conflict.",
-            "explanation": "A calm, factual statement is the most effective, appropriate way to address someone cutting in line.",
-            "id": "sr_l95_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel excuse me, the queue actually starts back there. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A business dinner is running significantly over time, and you have another commitment.",
-            "options": [
-                "I'm afraid I have somewhere else to be.",
-                "I really should get going before too long.",
-                "This has been great - I need to head off soon.",
-                "I've got another commitment coming up shortly."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Naming the positive experience softens a necessary early exit.",
-            "explanation": "Acknowledging the enjoyable evening before excusing yourself is the most graceful way to leave early.",
-            "id": "sr_l96_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel this has been great - i need to head off soon. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A colleague you're coaching on presentation skills keeps apologizing for every small mistake.",
-            "options": [
-                "You're doing great - try dropping the apologies.",
-                "There's really no need to apologize so much.",
-                "Try to relax, you're being too hard on yourself.",
-                "Mistakes are normal, so don't worry about them."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Pairing encouragement with one concrete tip is the most useful kind of coaching.",
-            "explanation": "Pairing genuine encouragement with one specific, actionable tip is the most helpful way to coach someone.",
-            "id": "sr_l96_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel you're doing great - try dropping the apologies. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You have been on hold with a company for twenty minutes, and someone finally answers.",
-            "options": [
-                "Finally, I've been waiting forever, honestly.",
-                "That was a really long wait, wasn't it?",
-                "I was starting to think nobody would answer.",
-                "Hi there - thanks for picking up, I need some help."
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Moving straight to a friendly, practical opening keeps the call productive.",
-            "explanation": "Moving straight to a friendly, practical opening is the most efficient way to start a call after a long hold.",
-            "id": "sr_l96_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel hi there - thanks for picking up, i need some help. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "Your smart home device keeps mishearing your commands, and a friend visiting asks how you like it.",
-            "options": [
-                "Honestly, it barely understands anything I say.",
-                "It's useful, but the voice recognition needs work.",
-                "It's been more trouble than it's worth, really.",
-                "I'm getting used to it, slowly but surely."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "A balanced answer names both what works and what doesn't.",
-            "explanation": "A balanced answer naming both strengths and flaws is the most natural, honest way to answer a casual question.",
-            "id": "sr_l97_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel it's useful, but the voice recognition needs work. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A colleague asks you to recommend them for a promotion that you genuinely do not think they are ready for.",
-            "options": [
-                "Let's talk about what the role would need first.",
-                "I don't think you're quite ready yet, honestly.",
-                "I'd rather not put my name behind this one.",
-                "What makes you feel ready for this step?"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Focusing on the role's requirements avoids a blunt personal judgment.",
-            "explanation": "Focusing the conversation on the role's requirements is the most constructive way to handle this request.",
-            "id": "sr_l97_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel let's talk about what the role would need first. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "Someone asks you what three qualities define outstanding professional communication.",
-            "options": [
-                "Confidence, structure, and a strong vocabulary.",
-                "Precision, warmth, and good timing.",
-                "Clarity, honesty, and genuine listening.",
-                "Directness, patience, and clear structure."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "The best answer balances clear speaking with genuinely hearing others.",
-            "explanation": "Clarity, honesty, and genuine listening together capture what makes communication truly outstanding.",
-            "id": "sr_l97_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel clarity, honesty, and genuine listening. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A university interviewer asks: 'Why do you want to study specifically at this university?'",
-            "options": [
-                "It has a great reputation in my field of interest.",
-                "I've always dreamed of studying here, honestly.",
-                "The campus and location really appeal to me.",
-                "Your research strengths align with my specific interests."
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "A specific, researched reason stands out far more than a general one.",
-            "explanation": "Giving a specific, well-researched reason is the most compelling, appropriate answer to this common question.",
-            "id": "sr_l98_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel your research strengths align with my specific interests. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A colleague begins crying unexpectedly at their desk in the open-plan office.",
-            "options": [
-                "Are you doing okay? What's wrong?",
-                "Would you like to step outside for a minute?",
-                "Take whatever time you need, it's okay.",
-                "Is there anything at all I can do?"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Offering a private space first protects their dignity in a public office.",
-            "explanation": "Offering a private space first is the most considerate, appropriate response to this situation.",
-            "id": "sr_l98_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel would you like to step outside for a minute? in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A new project lands on your desk, and you lack confidence in your ability to deliver it.",
-            "options": [
-                "I'm honestly not sure I'm ready for this yet.",
-                "I'll give it a try, though I have some doubts.",
-                "Could someone more experienced help oversee this?",
-                "I'll take it on and flag if I need support."
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Accepting while naming a plan for support shows both confidence and honesty.",
-            "explanation": "Accepting the challenge while proactively naming a plan for support is the most confident, appropriate response.",
-            "id": "sr_l98_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel i'll take it on and flag if i need support. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You find out the company you interviewed with has hired someone else.",
-            "options": [
-                "That's disappointing, but thanks for telling me.",
-                "I appreciate you letting me know either way.",
-                "Thanks for letting me know - I'd love feedback.",
-                "I hope you'll think of me for future roles."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Asking directly for feedback turns a rejection into something useful.",
-            "explanation": "Asking directly for feedback is the most proactive, appropriate way to respond to this kind of news.",
-            "id": "sr_l99_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel thanks for letting me know - i'd love feedback. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "Your team is about to make a decision that you believe is ethically questionable.",
-            "options": [
-                "I have real concerns about this - can we discuss?",
-                "I'm not sure this decision sits right with me.",
-                "Have we considered the ethical side of this?",
-                "This feels like it could backfire on us."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Naming your concern directly and inviting discussion is the clearest first step.",
-            "explanation": "Directly naming your concern and inviting discussion is the most responsible way to raise an ethical issue.",
-            "id": "sr_l99_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel i have real concerns about this - can we discuss? in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You need to explain a complex technical concept to a completely non-technical audience.",
-            "options": [
-                "I'll try to keep the technical terms to a minimum.",
-                "Let me explain this using a simple, everyday example.",
-                "I'll break this down into a few simple steps.",
-                "Let me simplify this as much as I can."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "A relatable, everyday example makes technical ideas click fastest.",
-            "explanation": "Using a simple, everyday example is the most effective way to explain a technical concept to a general audience.",
-            "id": "sr_l99_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel let me explain this using a simple, everyday example. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A senior mentor gives you glowing, very positive feedback. How should you respond?",
-            "options": [
-                "That really means a lot, thank you so much.",
-                "I couldn't have done it without your support.",
-                "Thank you - your guidance made a real difference.",
-                "Thank you, I've learned so much from you."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Naming their specific role in your growth makes the thanks most genuine.",
-            "explanation": "Directly crediting their guidance is the warmest, most appropriate way to receive praise from a mentor.",
-            "id": "sr_l100_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel thank you - your guidance made a real difference. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A junior colleague asks for the one piece of advice you'd give before their first big client presentation.",
-            "options": [
-                "Just make sure you know your numbers cold.",
-                "Speak slower than feels natural at first.",
-                "Take a breath before you start talking.",
-                "Watch the room more closely than your slides."
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "The best presenters read the room, not just recite prepared content.",
-            "explanation": "Watching the room, not just the material, is the advice that most separates good presenters from great ones.",
-            "id": "sr_l100_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel watch the room more closely than your slides. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most appropriate response.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A mentee asks what one habit has helped your career the most, hoping for a genuinely surprising answer.",
-            "options": [
-                "Asking for feedback often, and actually using it.",
-                "Staying curious about every part of the job.",
-                "Showing up early and staying a little late.",
-                "Keeping a written log of daily priorities."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Feedback-seeking compounds faster than almost any other single professional habit.",
-            "explanation": "Actively seeking feedback and using it is the single habit that most consistently accelerates career growth.",
-            "id": "sr_l100_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel asking for feedback often, and actually using it. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        }
-    ]
+  "gameType": "situationalResponse",
+  "batchIndex": 10,
+  "levels": "91-100",
+  "quests": [
+    {
+      "instruction": "Choose the most useful feedback.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A friend asks how her wedding speech went. The story about her grandfather was moving, but the ending felt rushed.",
+      "options": [
+        "It was pretty good, though you talked a bit fast.",
+        "Your speech was fine, but the ending was weak and I think people noticed it.",
+        "Great job! Everyone loved it, especially the ending, so no changes needed.",
+        "The story about your grandfather really moved people. The ending felt rushed, though — maybe slow down there?"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Name one specific strength and one specific fix.",
+      "explanation": "Praising a specific moment and pointing to one fixable part makes the feedback believable and useful. Vague praise or blanket criticism gives her nothing to act on.",
+      "id": "sr_l91_q1",
+      "culturalNote": "Specific feedback is easier to trust than general compliments.",
+      "formalityScore": 30
+    },
+    {
+      "instruction": "Pick the best feedback to give.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A junior colleague has sent you a report with several number errors, and you want to help without discouraging him.",
+      "options": [
+        "The report has a lot of problems, so I've marked them all for you to correct before tomorrow morning.",
+        "It's not ready to send to the client yet, so please go through it again and see what you find.",
+        "Thanks, I'll fix the numbers myself this afternoon.",
+        "There's good content here. Let's fix the numbers together."
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Balance honesty with support and a shared next step.",
+      "explanation": "A short positive note plus a joint fix keeps morale up and solves the problem. Marking errors alone, sending him back blind, or fixing it silently teach little.",
+      "id": "sr_l91_q2",
+      "culturalNote": "Junior staff learn faster when feedback comes with a way to improve.",
+      "formalityScore": 60
+    },
+    {
+      "instruction": "Choose the best way to respond.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "Your manager tells you that you often interrupt others in meetings. You hadn't noticed.",
+      "options": [
+        "Thanks for telling me. Could you point out an example so I can watch for it?",
+        "I don't think I interrupt that often, but I'll keep it in mind from now on.",
+        "Others interrupt more than I do, so it seems unfair to single me out for it.",
+        "You're right, I'm terrible at listening, and I always have been, ever since school."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Accept the feedback and ask for something concrete.",
+      "explanation": "Thanking her and asking for an example turns vague feedback into something you can change. Denial, deflection, or harsh self-criticism block progress.",
+      "id": "sr_l91_q3",
+      "culturalNote": "Asking for an example shows openness and helps you act on feedback.",
+      "formalityScore": 65
+    },
+    {
+      "instruction": "Pick the most tactful reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A friend shares a health claim online that you know has been disproved. You want to disagree without embarrassing him.",
+      "options": [
+        "That's not true, and you shouldn't share it, since it could mislead people.",
+        "I read something different — that study was disproved. Want me to send you the article so we can look together?",
+        "Maybe, I'm not sure, I'll have to think about that some more later on.",
+        "Everyone knows that's a myth, so I'm surprised you would believe it at all."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Offer evidence and a joint look.",
+      "explanation": "Offering a source to check together respects his intelligence. Direct commands, vague doubt, or ridicule turn it into a contest.",
+      "id": "sr_l92_q1",
+      "culturalNote": "Sharing sources tends to invite curiosity rather than defensiveness.",
+      "formalityScore": 30
+    },
+    {
+      "instruction": "Choose the most professional reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "In a meeting, a senior executive presents a projection you think is too optimistic.",
+      "options": [
+        "That's not what the data shows, so I think we should reconsider the whole plan.",
+        "I see it slightly differently. Could I share the numbers that led me there?",
+        "You're the expert here, so I'm sure your view is right and mine is probably wrong.",
+        "I disagree, but I'll do what you decide."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Disagree by offering evidence, not opposition.",
+      "explanation": "Framing your view as a different reading and offering data is respectful and constructive. Blunt contradiction or silent deference doesn't inform the decision.",
+      "id": "sr_l92_q2",
+      "culturalNote": "Disagreeing with senior people usually lands better when grounded in data.",
+      "formalityScore": 75
+    },
+    {
+      "instruction": "What would you say?",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "Dinner with the family turns heated when politics come up.",
+      "options": [
+        "You always get like this when we talk about politics, and it ruins every family dinner we have.",
+        "I don't want to argue at dinner, so I'll just stay quiet and not say anything more about it.",
+        "Let's agree to disagree and pass the potatoes.",
+        "Maybe we should discuss something else, since some of us have very different opinions here."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Close the argument lightly without winning it.",
+      "explanation": "A light, friendly close ends the argument without blame. Accusations or withdrawing leave tension in the room.",
+      "id": "sr_l92_q3",
+      "culturalNote": "Humor is a common way to defuse family arguments, though it depends on the family.",
+      "formalityScore": 25
+    },
+    {
+      "instruction": "Choose the best way to respond.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "At a party, friends push you to have a drink, but you're driving and don't want one.",
+      "options": [
+        "No thanks, I don't drink, and I'd appreciate it if people stopped asking me about it.",
+        "Okay, just one, then, but I won't have any more, I promise you all.",
+        "Drinking's really not my thing, and I think it's silly that everybody's making a big deal of it.",
+        "I'm good with this, thanks — I'm driving. Who's up for a game?"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Decline once, give a simple reason, and change the subject.",
+      "explanation": "A calm no with a reason and a new topic moves things on. Lecturing, giving in, or criticizing others prolongs the pressure.",
+      "id": "sr_l93_q1",
+      "culturalNote": "Offering an alternative activity is a common way to redirect social pressure.",
+      "formalityScore": 25
+    },
+    {
+      "instruction": "Pick the most professional reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "Coworkers start gossiping about your boss at a Friday lunch and ask you to join in.",
+      "options": [
+        "I don't really have anything to say about the boss, and I'd rather not get involved in the gossip.",
+        "I've heard things too, but I shouldn't say.",
+        "I'd rather not talk about him behind his back.",
+        "Let's not talk about work, since it's the weekend and we're supposed to be relaxing."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "State your limit plainly without judging them.",
+      "explanation": "A short, calm limit avoids lecturing. Long explanations, hints, or deflections either invite more pressure or share what you shouldn't.",
+      "id": "sr_l93_q2",
+      "culturalNote": "Refusing to gossip is usually respected, especially when stated without judgment.",
+      "formalityScore": 40
+    },
+    {
+      "instruction": "Choose the most tactful reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A close friend asks you to lend him money for the third time. You don't want to mix money and friendship.",
+      "options": [
+        "I care about you, but I don't lend money to friends — it's a rule that protects the friendship. I can help you look at options.",
+        "I'd love to help you out, but I'm a bit short myself at the moment, so I can't.",
+        "I can lend you fifty, but I really need it back by Friday, no matter what happens.",
+        "You should ask your family for the money, because I don't think it's my place."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Set a principle, not an excuse, and offer another kind of help.",
+      "explanation": "Stating a personal rule and offering other help is honest and caring. Excuses, conditional loans, or redirecting can strain trust.",
+      "id": "sr_l93_q3",
+      "culturalNote": "Personal rules about lending money are common and easier to accept than invented excuses.",
+      "formalityScore": 30
+    },
+    {
+      "instruction": "Choose the most gracious reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A colleague proudly tells you his new salary, which is well above yours, and asks what you make.",
+      "options": [
+        "That's nice for you, but I don't think it's appropriate to talk about pay at work.",
+        "Wow, that's a lot more than I earn, and I guess I should have negotiated harder.",
+        "Good for you. I suppose some people are just luckier than others in this company.",
+        "Congratulations. I'd rather not compare numbers, but I'm glad it's going well for you."
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Be warm, and keep your boundary.",
+      "explanation": "Congratulating him while declining to compare respects both of you. Lecturing, revealing your pay, or sniping changes the tone.",
+      "id": "sr_l94_q1",
+      "culturalNote": "Attitudes toward sharing salary vary; declining politely is always acceptable.",
+      "formalityScore": 55
+    },
+    {
+      "instruction": "What would you say?",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A friend criticizes your partner and you're not comfortable with it.",
+      "options": [
+        "You don't know him the way I do, so I don't think you should be judging him so quickly.",
+        "I hear your concern, but I'd rather not discuss him like that.",
+        "Maybe you're right, I've wondered about that too.",
+        "Everyone has flaws, including your partner, so let's not start pointing fingers at each other."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Acknowledge her worry and set a limit.",
+      "explanation": "Acknowledging her care while ending the topic protects the relationship. Defensiveness, agreement, or counter-accusations escalate.",
+      "id": "sr_l94_q2",
+      "culturalNote": "Close friends often criticize out of concern, so acknowledging the intent helps.",
+      "formalityScore": 30
+    },
+    {
+      "instruction": "Choose the most natural reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A friend proudly shows you a very expensive purchase and asks what you think. You'd have chosen differently.",
+      "options": [
+        "I think you paid too much for it, and there are better options available for less.",
+        "It looks well made. What made you pick it over the other one?",
+        "It's nice, I suppose, if you like that sort of thing, though it isn't really my taste.",
+        "Wow, amazing! You must be so happy, and I'm so jealous of you right now."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Find something true and ask a curious question.",
+      "explanation": "A true compliment and a real question stay honest and friendly. Blunt criticism, faint praise, or fake envy either hurt or mislead.",
+      "id": "sr_l94_q3",
+      "culturalNote": "Curious questions let you engage without lying or criticizing.",
+      "formalityScore": 30
+    },
+    {
+      "instruction": "Choose the most professional reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A client says your design 'just doesn't feel right' but can't say why.",
+      "options": [
+        "Thanks — could you tell me what feels off? I'd like to get it right.",
+        "I followed the brief exactly, so I'm not sure what else you expected me to do here.",
+        "I'm sorry you don't like it, but a lot of other clients have loved this style.",
+        "I'll change it, but you should have told me what you wanted at the start of the project."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Ask for specifics without defending.",
+      "explanation": "A short, open question moves the client from feelings to details. Defending, comparing, or blaming closes the door.",
+      "id": "sr_l95_q1",
+      "culturalNote": "Vague feedback often improves once you ask what specifically feels wrong.",
+      "formalityScore": 75
+    },
+    {
+      "instruction": "Choose the most mature reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A friend says, 'You talk about yourself a lot.' It stings, but she has a point.",
+      "options": [
+        "I don't think that's true, because I ask people about themselves quite a lot already.",
+        "You're right, I'm a terrible friend, and I'm sorry I've been so selfish all these years.",
+        "Thanks for the feedback, though I'd say you do exactly the same thing to me sometimes.",
+        "That's hard to hear, but I appreciate you being honest. Can you give me an example, so I can pay attention to it?"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Acknowledge the sting and ask for something usable.",
+      "explanation": "Naming the discomfort while asking for an example shows openness. Denying, over-apologizing, or counter-attacking avoid the feedback.",
+      "id": "sr_l95_q2",
+      "culturalNote": "Hard feedback from friends can be a sign of trust.",
+      "formalityScore": 30
+    },
+    {
+      "instruction": "Pick the most professional reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A peer publicly criticizes your project plan in a meeting, and you think part of it is unfair.",
+      "options": [
+        "Thanks for raising that. I'd like to look into it and follow up after the meeting.",
+        "That's not a fair criticism, and I think you're misunderstanding the whole project entirely.",
+        "You should have brought this up with me privately, instead of doing it in front of everyone.",
+        "You're right, I made a mistake, and I feel terrible about it in front of everyone here."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Stay calm and move it offline.",
+      "explanation": "Acknowledging and deferring avoids a public fight and protects the project. Rebuttal, scolding, or self-blame all escalate.",
+      "id": "sr_l95_q3",
+      "culturalNote": "In many workplaces, taking heated topics offline is a sign of professionalism.",
+      "formalityScore": 65
+    },
+    {
+      "instruction": "What would you say?",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "Your friends want to skip class for the afternoon. You'd rather go.",
+      "options": [
+        "You guys go ahead, because I don't want to get in trouble for skipping, and I've already missed too many.",
+        "I'm going to class — catch you at lunch?",
+        "I don't think it's a good idea to skip, since we have a test soon and could really use the notes.",
+        "Maybe I'll come if I can leave early."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Say what you're doing and keep the friendship.",
+      "explanation": "A short statement plus a plan to meet keeps things friendly. Explanations, lectures, or maybes give more room for pressure.",
+      "id": "sr_l96_q1",
+      "culturalNote": "Short, casual refusals often work best with peers.",
+      "formalityScore": 20
+    },
+    {
+      "instruction": "Pick the most constructive reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "Your team agrees on a timeline you think is too tight, and everyone seems ready to move on.",
+      "options": [
+        "I don't think we should do this, and I'm surprised none of you can see how risky it is.",
+        "If everyone's happy with it, then I'm sure it's fine, and I won't say anything about my doubts.",
+        "Before we finalize, can I play devil's advocate on the timeline? I'm worried it's too tight.",
+        "I have a few concerns, but they're probably unimportant, so maybe we could discuss them later, if ever."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Raise the concern before the decision closes.",
+      "explanation": "Framing your worry as a test of the plan makes it easier to hear. Blunt opposition, silence, or downplaying leave the risk unaddressed.",
+      "id": "sr_l96_q2",
+      "culturalNote": "'Devil's advocate' is a familiar way to invite challenge without personal conflict.",
+      "formalityScore": 65
+    },
+    {
+      "instruction": "Choose the most sensible reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A cousin urges you to invest in a scheme that promises high returns and seems unclear.",
+      "options": [
+        "Thanks for thinking of me, but I don't invest in anything I can't check independently. I'll pass, and I'd suggest you look into it carefully too.",
+        "That sounds like a scam, and I really think you should stay away from it altogether.",
+        "I'm not sure I've got enough money, but it sounds interesting, so send me the details.",
+        "I'll think about it, but I need to talk to my partner first, so I can't promise anything."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Decline on principle and express care.",
+      "explanation": "Stating your rule and caring for him keeps the family relationship while protecting you. Accusing, hedging, or stalling don't help either of you.",
+      "id": "sr_l96_q3",
+      "culturalNote": "Family investment pitches are common; a personal rule is easy to accept.",
+      "formalityScore": 40
+    },
+    {
+      "instruction": "Choose the best way to respond.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "Someone posts an offensive joke in a group chat and a few people react with laughing emojis.",
+      "options": [
+        "Can we keep the jokes in this chat a bit more respectful, please, since some of us feel uncomfortable?",
+        "I'm sure you didn't mean it, but I think some people might find that joke hurtful.",
+        "Ha ha, very funny, maybe next time try a different type of joke, if you don't mind.",
+        "That joke isn't okay with me."
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "State your own view briefly.",
+      "explanation": "A short, personal statement is hard to argue with and makes your limit clear. Group-speaking, excuses, or fake laughter dilute it.",
+      "id": "sr_l97_q1",
+      "culturalNote": "Speaking for yourself avoids claiming to represent people who haven't spoken.",
+      "formalityScore": 30
+    },
+    {
+      "instruction": "What would you say?",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "Your friends never invite Ben, a quiet member of the group. You'd like to change that gently.",
+      "options": [
+        "It's not fair that we never invite Ben, and it makes us look like a really mean group.",
+        "I'm sure Ben has other plans this time.",
+        "Should we invite Ben too? He'd probably like to come.",
+        "I'll invite him on my own, because you clearly don't want to include him in the plans."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Suggest it as a question, not a criticism.",
+      "explanation": "A simple question invites the group to agree without feeling accused. Accusations, avoidance, or ultimatums create resistance.",
+      "id": "sr_l97_q2",
+      "culturalNote": "Framing inclusion as a suggestion works better than criticism of the group.",
+      "formalityScore": 25
+    },
+    {
+      "instruction": "Choose the most caring reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "Two of your friends have argued, and one asks you to say who's right.",
+      "options": [
+        "I think you're both right in some ways, but it's really something you two should sort out.",
+        "I'd rather not get involved, because it's between the two of you and not my problem.",
+        "You're being unfair to her, and I think you should apologize before things get any worse.",
+        "I care about you both, so I don't want to take sides. I'm happy to listen if it helps, though."
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Stay neutral and available.",
+      "explanation": "Declining to take sides while offering to listen keeps both friendships. Splitting the difference, avoiding, or judging can each cost you.",
+      "id": "sr_l97_q3",
+      "culturalNote": "Being asked to take sides is common; supportive neutrality is often the safest response.",
+      "formalityScore": 30
+    },
+    {
+      "instruction": "Pick the most professional message.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "You're telling a job candidate that they weren't selected.",
+      "options": [
+        "We were impressed by your experience, but unfortunately we've chosen someone whose skills are a closer match to the role.",
+        "We've had a lot of applicants, so we can't offer you the position, but we wish you the best.",
+        "Thank you for your time. We've decided to go with another candidate.",
+        "Thanks for coming in. We'll keep your CV on file, and we might contact you if anything changes."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Be clear and kind without giving false hope.",
+      "explanation": "A short, courteous, clear message respects the candidate's time. Long justifications, generic replies, or vague hopes can mislead.",
+      "id": "sr_l98_q1",
+      "culturalNote": "Clear rejections are generally kinder than open-ended ones.",
+      "formalityScore": 80
+    },
+    {
+      "instruction": "Choose the most constructive reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A teammate proposes an ambitious idea that would cost twice your budget.",
+      "options": [
+        "That won't work, because the budget is too small, so let's drop it and think of something else.",
+        "I like the ambition. The budget is the sticking point — can we look at cheaper options?",
+        "It's a great idea, but maybe not right now, and possibly not this year, we'll see how it goes.",
+        "I love it, but I'm not the one who decides, so you should ask someone else about it."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Credit the idea and name the real obstacle.",
+      "explanation": "Naming a specific constraint and offering to problem-solve keeps the idea alive. Rejecting, delaying vaguely, or passing the buck doesn't help.",
+      "id": "sr_l98_q2",
+      "culturalNote": "Explaining why something won't work makes 'no' easier to accept.",
+      "formalityScore": 55
+    },
+    {
+      "instruction": "Pick the most gracious reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A close friend asks you to be her bridesmaid, but work will prevent you from taking part in all the planning.",
+      "options": [
+        "I'm sorry, I'd love to do it, but I just don't think the timing will be right for me.",
+        "I'll think about it and let you know, though I can't promise anything at this stage.",
+        "I'm honored you asked. I can't commit to a bridesmaid's role because of work, but I'd love to help in another way.",
+        "I'm not really a bridesmaid person, so I'd rather not do it, and I hope that's okay."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Thank her, be honest, and offer something else.",
+      "explanation": "Gratitude, honesty, and an alternative preserve the friendship. Vague timing, stalling, or a blunt refusal don't.",
+      "id": "sr_l98_q3",
+      "culturalNote": "Being asked to be part of a wedding party is meaningful, so a warm reply matters.",
+      "formalityScore": 35
+    },
+    {
+      "instruction": "Choose the most respectful reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "Someone comments online with an opinion you disagree with.",
+      "options": [
+        "I respectfully disagree with your post, and I think there are several factual errors in your argument that need correcting.",
+        "That's a really uninformed opinion, and I'd suggest you do some more research before posting anything else.",
+        "I'm sorry you feel that way, but you're wrong.",
+        "I see it differently, but thanks for sharing your view."
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Disagree without escalating.",
+      "explanation": "A short, polite note of difference keeps the conversation civil. Point-by-point corrections or insults invite arguments.",
+      "id": "sr_l99_q1",
+      "culturalNote": "Online disagreements often escalate; brevity can help.",
+      "formalityScore": 40
+    },
+    {
+      "instruction": "Choose the most neighborly reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A neighbor complains that your car blocks his view when you park on the street.",
+      "options": [
+        "The rules say I can park there, and I don't think you have any right to complain.",
+        "I understand your concern. Would it help if I parked on the other side after six?",
+        "I'll try to park elsewhere, but it's difficult because there isn't much space on this street.",
+        "I've parked there for years, and nobody has ever complained about it before you did."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Acknowledge the concern and offer a workable change.",
+      "explanation": "Offering a specific compromise keeps things friendly. Citing rules, vague promises, or history defend your position but don't solve the issue.",
+      "id": "sr_l99_q2",
+      "culturalNote": "Local parking rules differ, and neighborly solutions are usually better than legal arguments.",
+      "formalityScore": 40
+    },
+    {
+      "instruction": "Pick the most respectful reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "In literature class, you interpret a passage differently from your teacher.",
+      "options": [
+        "I don't agree with your interpretation, and I think the text supports a different reading.",
+        "That's an interesting view, but I'm not sure it's what the author meant in the passage.",
+        "I read that passage a bit differently. I saw the narrator as unreliable — could I explain why?",
+        "You may be right, and I'm probably wrong, so I'll just go with your interpretation."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Present your reading as a question, with reasons.",
+      "explanation": "Asking to explain your view invites discussion and shows critical thinking. Blunt disagreement or silent deferral doesn't.",
+      "id": "sr_l99_q3",
+      "culturalNote": "Many teachers welcome alternate interpretations backed by evidence.",
+      "formalityScore": 65
+    },
+    {
+      "instruction": "Choose the most professional reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "Your boss gives you feedback in front of the team. You agree with one point but disagree with another.",
+      "options": [
+        "Thanks. I agree on the timeline. I'd like to talk about the budget point separately if that's okay.",
+        "I don't think that's fair, and I'd like to respond to each of your points right now.",
+        "I understand your comments, and I'll make all the changes you asked for, right away.",
+        "Thank you for the feedback, though I think there may have been a misunderstanding on your part."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Accept what's valid and defer the rest.",
+      "explanation": "Agreeing where you can and moving the rest offline is calm and professional. Publicly rebutting, over-agreeing, or hinting at her mistake create problems.",
+      "id": "sr_l100_q1",
+      "culturalNote": "Splitting agreement from disagreement helps you keep credibility.",
+      "formalityScore": 70
+    },
+    {
+      "instruction": "What would you say?",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A friend keeps giving you advice when you're just trying to vent.",
+      "options": [
+        "Thanks — I'm just venting right now, not looking for advice.",
+        "I appreciate that you care, but I'd rather make my own decisions and learn from my own mistakes.",
+        "I've heard all that before, and I know what I'm doing, so you don't need to keep telling me.",
+        "Thanks, I'll think about it if I have time."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Tell her what kind of support you want.",
+      "explanation": "Naming what you need lets her help in the right way. Lectures, irritation, or fake agreement don't fix the mismatch.",
+      "id": "sr_l100_q2",
+      "culturalNote": "Telling friends whether you want advice or just listening is a common, healthy habit.",
+      "formalityScore": 25
+    },
+    {
+      "instruction": "Choose the best way to respond.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "At work, colleagues expect everyone to stay late tonight. You can stay a little while but not indefinitely.",
+      "options": [
+        "I'm sorry, I can't stay late tonight, since I have plans that I can't change at short notice.",
+        "Fine, I'll stay as long as it takes, but I'm not happy about it at all, so please remember that.",
+        "I can stay until six tonight, but I can't do later. Let's decide what's most important to finish by then.",
+        "Everyone should be allowed to leave at five, because working late isn't fair to anyone."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Set your limit and help the team prioritize.",
+      "explanation": "Stating a clear limit and offering to prioritize is cooperative. Refusing outright, resenting, or generalizing don't help the team.",
+      "id": "sr_l100_q3",
+      "culturalNote": "Overtime norms vary widely between workplaces and countries.",
+      "formalityScore": 60
+    }
+  ]
 }

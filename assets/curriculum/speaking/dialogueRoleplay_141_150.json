@@ -6,661 +6,658 @@
         {
             "id": "SPK_DIALOGUEROLEPLAY_L141_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Suggest scaling back and protecting downtime.",
-            "explanation": "'Burning the candle at both ends' is a common idiom for overworking yourself in multiple directions.",
-            "partnerDialogue": "I've been burning the candle at both ends lately, and it's catching up with me.",
-            "sampleAnswer": "Maybe it's time to scale back and protect a little downtime.",
+            "instruction": "De-escalate an angry caller.",
+            "hint": "The caller is angry and repeating. Decide what they need to hear first.",
+            "explanation": "Angry customers need three things in order: acknowledgment, ownership, and a specific next step.",
+            "partnerDialogue": "This is the third time I've called and nobody has fixed anything. I want to speak to someone who can actually help!",
+            "sampleAnswer": "I'm sorry you've had to call three times. I'll escalate this right away and give you my direct number.",
             "acceptedSynonyms": [
-                "scale back, protect downtime",
-                "time to slow down a bit",
-                "cut back and rest more",
-                "protect some downtime"
+                "i'm sorry you've had to call three times. i'll escalate this right away and give you my direct number",
+                "you have every right to be upset. let me stay on the line and sort this out with you now",
+                "i completely understand your frustration, and i'm sorry. i'll take ownership of this and call you back by five with a solution",
+                "i am sorry you've had to call three times. i will escalate this right away and give you my direct number"
             ],
-            "correctAnswer": "Maybe it's time to scale back and protect a little downtime.",
             "smartReplies": [
-                "Maybe it's time to scale back and protect a little downtime.",
-                "Perhaps it's time to slow down and protect some rest.",
-                "Sounds like it's time to cut back a bit."
+                "I'm sorry you've had to call three times. I'll escalate this right away and give you my direct number.",
+                "You have every right to be upset. Let me stay on the line and sort this out with you now.",
+                "I completely understand your frustration, and I'm sorry. I'll take ownership of this and call you back by five with a solution."
             ],
+            "correctAnswer": "I'm sorry you've had to call three times. I'll escalate this right away and give you my direct number.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L141_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Suggest spacing out review sessions.",
-            "explanation": "'Stick better' is a natural way to describe information being genuinely retained, not just memorized.",
-            "partnerDialogue": "I feel like I'm constantly cramming instead of actually learning.",
-            "sampleAnswer": "Spacing out your review sessions usually helps the material stick better.",
+            "instruction": "Respond to a review threat.",
+            "hint": "Stay calm and keep control without arguing.",
+            "explanation": "Don't argue about the threat. Show you want to solve the problem, and offer something concrete.",
+            "partnerDialogue": "I'll write a terrible review if you don't refund me.",
+            "sampleAnswer": "I'd hate for you to leave unhappy. Let me see what I can do, and I'll refund the delivery fee right now.",
             "acceptedSynonyms": [
-                "spacing out review sessions",
-                "space out your studying",
-                "review in smaller spaced sessions",
-                "spread study sessions out more"
+                "i'd hate for you to leave unhappy. let me see what i can do, and i'll refund the delivery fee right now",
+                "i understand. give me two minutes to see what's possible. i want to put this right",
+                "that's your right, but i'd like the chance to solve it first. may i check with my manager",
+                "i would hate for you to leave unhappy. let me see what i can do, and i will refund the delivery fee right now"
             ],
-            "correctAnswer": "Spacing out your review sessions usually helps the material stick better.",
             "smartReplies": [
-                "Spacing out your review sessions usually helps the material stick better.",
-                "Spreading your reviews out tends to help it stick.",
-                "Shorter, spaced-out sessions usually work better than cramming."
+                "I understand. Give me two minutes to see what's possible. I want to put this right.",
+                "I'd hate for you to leave unhappy. Let me see what I can do, and I'll refund the delivery fee right now.",
+                "That's your right, but I'd like the chance to solve it first. May I check with my manager?"
             ],
+            "correctAnswer": "I'd hate for you to leave unhappy. Let me see what I can do, and I'll refund the delivery fee right now.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L141_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Suggest writing down the scope clearly.",
-            "explanation": "'Pinning down' is useful vocabulary for making something vague concrete and fixed.",
-            "partnerDialogue": "This client keeps moving the goalposts on every revision.",
-            "sampleAnswer": "It might be worth pinning down the scope in writing before we continue.",
+            "instruction": "Defend a policy without sounding rigid.",
+            "hint": "Empathize, then present what you can do.",
+            "explanation": "If the rule can't change, focus on what you can change. Customers accept limits better with options.",
+            "partnerDialogue": "Your policy is ridiculous.",
+            "sampleAnswer": "I'm sorry it seems that way. Could you tell me what you'd consider fair?",
             "acceptedSynonyms": [
-                "pin down the scope in writing",
-                "get the scope in writing",
-                "define the scope clearly first",
-                "put the scope in writing"
+                "i'm sorry it seems that way. could you tell me what you'd consider fair",
+                "i hear you, and i know policies can feel rigid. what i can do is offer you a credit and explain the options",
+                "i understand it's frustrating. let me explain why it exists, and see if there's any flexibility",
+                "i am sorry it seems that way. could you tell me what you'd consider fair"
             ],
-            "correctAnswer": "It might be worth pinning down the scope in writing before we continue.",
             "smartReplies": [
-                "It might be worth pinning down the scope in writing before we continue.",
-                "Maybe we should get the scope in writing first.",
-                "Worth nailing down the scope on paper before going further."
+                "I'm sorry it seems that way. Could you tell me what you'd consider fair?",
+                "I hear you, and I know policies can feel rigid. What I can do is offer you a credit and explain the options.",
+                "I understand it's frustrating. Let me explain why it exists, and see if there's any flexibility."
             ],
+            "correctAnswer": "I'm sorry it seems that way. Could you tell me what you'd consider fair?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L142_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and celebrate the unplanned spirit.",
-            "explanation": "'Leave room for surprises' reframes lack of planning as a positive travel quality.",
-            "partnerDialogue": "We really winged this whole trip, and somehow it's working out.",
-            "sampleAnswer": "Sometimes the best trips happen when you leave room for surprises.",
+            "instruction": "Take on an urgent task realistically.",
+            "hint": "Accept the urgency but be honest about what's possible.",
+            "explanation": "Under pressure, don't promise the impossible. Promise the essentials and a timeline.",
+            "partnerDialogue": "The client is furious. I need this fixed by tonight.",
+            "sampleAnswer": "I'll do it, but I might need Sam's help on the data. Is that okay?",
             "acceptedSynonyms": [
-                "leave room for surprises",
-                "best trips are unplanned sometimes",
-                "spontaneity can work out well",
-                "surprises make the best trips"
+                "i'll do it, but i might need sam's help on the data. is that okay",
+                "understood. i'll make it my priority. to be realistic, i can fix the main issue tonight and finish the rest in the morning",
+                "i'll get on it now. can we agree what \"fixed\" means, so i focus on the right thing",
+                "i will do it, but i might need sam's help on the data. is that okay"
             ],
-            "correctAnswer": "Sometimes the best trips happen when you leave room for surprises.",
             "smartReplies": [
-                "Sometimes the best trips happen when you leave room for surprises.",
-                "The best trips often come from a little spontaneity.",
-                "Leaving room for surprises can make a trip memorable."
+                "Understood. I'll make it my priority. To be realistic, I can fix the main issue tonight and finish the rest in the morning.",
+                "I'll do it, but I might need Sam's help on the data. Is that okay?",
+                "I'll get on it now. Can we agree what \"fixed\" means, so I focus on the right thing?"
             ],
+            "correctAnswer": "I'll do it, but I might need Sam's help on the data. Is that okay?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L142_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Normalize it, and suggest setting boundaries.",
-            "explanation": "'Your timeline, not theirs' is a clear, respectful way to describe a personal boundary.",
-            "partnerDialogue": "My parents keep dropping hints about wanting grandchildren.",
-            "sampleAnswer": "That's a common one, just let them know it's your timeline, not theirs.",
+            "instruction": "Calm a panicking team.",
+            "hint": "Steady the team without dismissing the risk.",
+            "explanation": "Calming others means acknowledging risk and giving a small next step.",
+            "partnerDialogue": "Everyone's panicking. Are we going to make it?",
+            "sampleAnswer": "It's tight, but doable. Let's take it step by step.",
             "acceptedSynonyms": [
-                "it's your timeline, not theirs",
-                "let them know it's your choice",
-                "your decision, on your time",
-                "make clear it's your timeline"
+                "it's tight, but doable. let's take it step by step",
+                "we can, but only if we stay calm and cut the extras. let's list what's essential",
+                "i think so. let's focus on the three things that matter most",
+                "we can, but only if we stay calm and cut the extras",
+                "it is tight, but doable. let's take it step by step"
             ],
-            "correctAnswer": "That's a common one, just let them know it's your timeline, not theirs.",
             "smartReplies": [
-                "That's a common one, just let them know it's your timeline, not theirs.",
-                "Very common — just remind them it's your decision to make.",
-                "That happens a lot, be clear it's on your own timeline."
+                "We can, but only if we stay calm and cut the extras. Let's list what's essential.",
+                "It's tight, but doable. Let's take it step by step.",
+                "I think so. Let's focus on the three things that matter most."
             ],
+            "correctAnswer": "It's tight, but doable. Let's take it step by step.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L142_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and admit it works on you too.",
-            "explanation": "'Myself included sometimes' adds honest, relatable self-awareness to the observation.",
-            "partnerDialogue": "This store seems to be banking on nostalgia to sell these products.",
-            "sampleAnswer": "It works on a lot of people, myself included sometimes.",
+            "instruction": "Own a communication failure.",
+            "hint": "Accept responsibility and promise a new habit.",
+            "explanation": "A displeased manager needs to hear the mistake, a short explanation, and a commitment to change.",
+            "partnerDialogue": "Why wasn't I told earlier?",
+            "sampleAnswer": "That's on me. I underestimated it. Here's what I've done since, and what I need.",
             "acceptedSynonyms": [
-                "works on me too sometimes",
-                "it works on plenty of people",
-                "myself included, honestly",
-                "gets me sometimes too"
+                "that's on me. i underestimated it. here's what i've done since, and what i need",
+                "you're right, i should have flagged it sooner. i thought i could fix it myself. from now on, i'll raise issues early",
+                "i apologize. i hoped to solve it first, but it was wrong not to tell you",
+                "that is on me. i underestimated it. here's what i have done since, and what i need"
             ],
-            "correctAnswer": "It works on a lot of people, myself included sometimes.",
             "smartReplies": [
-                "It works on a lot of people, myself included sometimes.",
-                "It gets a lot of people, me too, honestly.",
-                "Nostalgia is powerful, it works on plenty of us."
+                "That's on me. I underestimated it. Here's what I've done since, and what I need.",
+                "You're right, I should have flagged it sooner. I thought I could fix it myself. From now on, I'll raise issues early.",
+                "I apologize. I hoped to solve it first, but it was wrong not to tell you."
             ],
+            "correctAnswer": "That's on me. I underestimated it. Here's what I've done since, and what I need.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L143_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and suggest trying somewhere new.",
-            "explanation": "'I've heard the same' backs up the opinion with outside confirmation, not just your own view.",
-            "partnerDialogue": "This place seems to be coasting on its old reputation now.",
-            "sampleAnswer": "I've heard the same, it might be worth trying somewhere newer.",
+            "instruction": "Keep a meeting on schedule.",
+            "hint": "Park a topic without dismissing it.",
+            "explanation": "\"Let's park that\" acknowledges the topic, delays it, and keeps the meeting moving.",
+            "partnerDialogue": "Can we move on? We're running out of time.",
+            "sampleAnswer": "Good point. I'll note it down and follow up separately. Now, the budget.",
             "acceptedSynonyms": [
-                "worth trying somewhere newer",
-                "heard the same, try new places",
-                "maybe explore other options",
-                "worth checking out newer spots"
+                "good point. i'll note it down and follow up separately. now, the budget",
+                "sure. let's take that offline. moving on to the budget",
+                "of course. let's park that for now and pick it up afterwards. next item: the budget",
+                "good point. i will note it down and follow up separately. now, the budget"
             ],
-            "correctAnswer": "I've heard the same, it might be worth trying somewhere newer.",
             "smartReplies": [
-                "I've heard the same, it might be worth trying somewhere newer.",
-                "I've heard that too, maybe worth exploring newer places.",
-                "Same here, might be time to try somewhere new."
+                "Sure. Let's take that offline. Moving on to the budget.",
+                "Of course. Let's park that for now and pick it up afterwards. Next item: the budget.",
+                "Good point. I'll note it down and follow up separately. Now, the budget."
             ],
+            "correctAnswer": "Good point. I'll note it down and follow up separately. Now, the budget.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L143_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and explain the trap: features vs usability.",
-            "explanation": "Contrasting features with usability makes a sharp, specific point about software design.",
-            "partnerDialogue": "This software keeps adding features nobody actually asked for.",
-            "sampleAnswer": "It's a common trap, more features don't always mean better usability.",
+            "instruction": "Handle an interruption.",
+            "hint": "Ask to finish, then promise to listen.",
+            "explanation": "Politely requesting to finish is assertive, and promising to listen keeps the mood constructive.",
+            "partnerDialogue": "Sorry to jump in, but that's not what we agreed.",
+            "sampleAnswer": "Fair enough. Could I just complete this thought? Then I'd like to hear your version.",
             "acceptedSynonyms": [
-                "more features, not better usability",
-                "features don't equal usability",
-                "usability often suffers with more features",
-                "quantity over usability, common trap"
+                "fair enough. could i just complete this thought? then i'd like to hear your version",
+                "let's check the notes after this. may i finish first",
+                "thanks for raising it. let me finish my point, and then you can tell me where you think we differ",
+                "fair enough. could i just complete this thought? then i would like to hear your version"
             ],
-            "correctAnswer": "It's a common trap, more features don't always mean better usability.",
             "smartReplies": [
-                "It's a common trap, more features don't always mean better usability.",
-                "Classic trap — more features rarely means easier to use.",
-                "True, adding features doesn't always improve usability."
+                "Fair enough. Could I just complete this thought? Then I'd like to hear your version.",
+                "Let's check the notes after this. May I finish first?",
+                "Thanks for raising it. Let me finish my point, and then you can tell me where you think we differ."
             ],
+            "correctAnswer": "Fair enough. Could I just complete this thought? Then I'd like to hear your version.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L143_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Recommend getting checked, rather than assuming.",
-            "explanation": "'Instead of assuming' contrasts a proactive step with passive worry or denial.",
-            "partnerDialogue": "I keep brushing off these symptoms as just being tired.",
-            "sampleAnswer": "It's probably worth getting them checked instead of assuming the worst case.",
+            "instruction": "Break a silence.",
+            "hint": "Contribute a real concern to get discussion started.",
+            "explanation": "If nobody speaks, volunteering a specific question or concern helps others join.",
+            "partnerDialogue": "Does anyone have any thoughts?",
+            "sampleAnswer": "I have one. What happens if the supplier is late?",
             "acceptedSynonyms": [
-                "worth getting them checked",
-                "get it checked instead of assuming",
-                "better to check than assume",
-                "check it out rather than guess"
+                "i have one. what happens if the supplier is late",
+                "i'll go first, if that's helpful. my main concern is the timeline. i don't think we've allowed enough time for testing",
+                "maybe i can start. i think we should clarify who owns the final decision",
+                "i'll go first, my main concern is the timeline"
             ],
-            "correctAnswer": "It's probably worth getting them checked instead of assuming the worst case.",
             "smartReplies": [
-                "It's probably worth getting them checked instead of assuming the worst case.",
-                "Better to get it checked than keep guessing.",
-                "Worth getting it looked at, rather than assuming it's nothing."
+                "I have one. What happens if the supplier is late?",
+                "I'll go first, if that's helpful. My main concern is the timeline. I don't think we've allowed enough time for testing.",
+                "Maybe I can start. I think we should clarify who owns the final decision."
             ],
+            "correctAnswer": "I have one. What happens if the supplier is late?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L144_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and mention weaker writing.",
-            "explanation": "'Running on fumes' is a vivid idiom for something losing its original energy or quality.",
-            "partnerDialogue": "This show seems to be running on fumes after the first season.",
-            "sampleAnswer": "I noticed that too, the writing felt noticeably weaker.",
+            "instruction": "Defend your numbers.",
+            "hint": "Acknowledge the challenge and explain your basis.",
+            "explanation": "A challenge is an invitation, not an attack. Say where the figures come from, and offer detail.",
+            "partnerDialogue": "Your figures seem optimistic. What are they based on?",
+            "sampleAnswer": "Good point. They come from our pilot results, though I agree there's some uncertainty.",
             "acceptedSynonyms": [
-                "writing felt noticeably weaker",
-                "noticed that too, weaker writing",
-                "yes, the writing dropped off",
-                "agreed, quality dipped after season one"
+                "good point. they come from our pilot results, though i agree there's some uncertainty",
+                "thanks for asking. i used the average of three quarters, and i'd be happy to walk you through it later",
+                "that's a fair question. they're based on last year's data, with a five percent growth assumption. i can share the details afterwards",
+                "good point. they come from our pilot results, though i agree there is some uncertainty"
             ],
-            "correctAnswer": "I noticed that too, the writing felt noticeably weaker.",
             "smartReplies": [
-                "I noticed that too, the writing felt noticeably weaker.",
-                "Same here, the writing definitely lost something.",
-                "I agree, it feels weaker than the first season."
+                "Good point. They come from our pilot results, though I agree there's some uncertainty.",
+                "Thanks for asking. I used the average of three quarters, and I'd be happy to walk you through it later.",
+                "That's a fair question. They're based on last year's data, with a five percent growth assumption. I can share the details afterwards."
             ],
+            "correctAnswer": "Good point. They come from our pilot results, though I agree there's some uncertainty.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L144_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Accept the compliment, and credit the team.",
-            "explanation": "'Team effort' modestly shares credit rather than fully accepting individual praise.",
-            "partnerDialogue": "She mentioned that you'd been a huge help during the move.",
-            "sampleAnswer": "That's kind of her to say, it was honestly a team effort.",
+            "instruction": "Handle a request to go back.",
+            "hint": "Respond helpfully and restate the key point.",
+            "explanation": "Going back to a slide is a chance to restate the main message for everyone.",
+            "partnerDialogue": "Could you go back to the last slide? I missed it.",
+            "sampleAnswer": "Of course. Let me go back. This slide shows the cost timeline.",
             "acceptedSynonyms": [
-                "honestly a team effort",
-                "kind of her, but a team effort",
-                "everyone pitched in, really",
-                "it was really a group effort"
+                "of course. let me go back. this slide shows the cost timeline",
+                "certainly. here you are. the key point is that costs fall by fifteen percent after year one",
+                "sure, one moment. it shows how the savings build up over time"
             ],
-            "correctAnswer": "That's kind of her to say, it was honestly a team effort.",
             "smartReplies": [
-                "That's kind of her to say, it was honestly a team effort.",
-                "That's sweet of her, though it was really a group effort.",
-                "Kind of her to mention, but everyone pitched in."
+                "Of course. Let me go back. This slide shows the cost timeline.",
+                "Certainly. Here you are. The key point is that costs fall by fifteen percent after year one.",
+                "Sure, one moment. It shows how the savings build up over time."
             ],
+            "correctAnswer": "Of course. Let me go back. This slide shows the cost timeline.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L144_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Suggest starting review earlier this time.",
-            "explanation": "'This time' implies a change from a usual pattern, based on the new information.",
-            "partnerDialogue": "The professor implied that the final would be tougher than usual.",
-            "sampleAnswer": "Then it's probably worth starting our review a bit earlier this time.",
+            "instruction": "Simplify an explanation.",
+            "hint": "Rephrase in plain words with a benefit.",
+            "explanation": "If someone doesn't understand, don't repeat. Rephrase, and use a concrete benefit.",
+            "partnerDialogue": "I don't understand how this helps us.",
+            "sampleAnswer": "Let me rephrase that. It means fewer errors, so fewer complaints. Does that help?",
             "acceptedSynonyms": [
-                "start review earlier this time",
-                "better start reviewing sooner",
-                "worth beginning our review early",
-                "should start earlier this term"
+                "let me rephrase that. it means fewer errors, so fewer complaints. does that help",
+                "let me explain more simply. in short, it saves each team about two hours a week. does that make it clearer",
+                "fair point, i could have been clearer. it reduces repeat work. shall i give an example"
             ],
-            "correctAnswer": "Then it's probably worth starting our review a bit earlier this time.",
             "smartReplies": [
-                "Then it's probably worth starting our review a bit earlier this time.",
-                "In that case, we should start reviewing sooner this time.",
-                "Maybe we should get an earlier start on studying, then."
+                "Let me explain more simply. In short, it saves each team about two hours a week. Does that make it clearer?",
+                "Fair point, I could have been clearer. It reduces repeat work. Shall I give an example?",
+                "Let me rephrase that. It means fewer errors, so fewer complaints. Does that help?"
             ],
+            "correctAnswer": "Let me rephrase that. It means fewer errors, so fewer complaints. Does that help?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L145_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Acknowledge the info, and say you'll remember it.",
-            "explanation": "'Keep that in mind' is a natural, low-key way to acknowledge useful but uncertain information.",
-            "partnerDialogue": "He let slip that leadership is considering some restructuring.",
-            "sampleAnswer": "Good to know, I'll keep that in mind during the planning.",
+            "instruction": "Respond to an accusation of stealing credit.",
+            "hint": "Apologize for the effect, not only the intention.",
+            "explanation": "\"I'm sorry it looked that way\" acknowledges their perception. Then you can fix it.",
+            "partnerDialogue": "You took credit for my idea in the meeting.",
+            "sampleAnswer": "I hear you, and I apologize. You're right that it started with you. I'll make sure that's clear.",
             "acceptedSynonyms": [
-                "keep that in mind",
-                "good to know, noted",
-                "i'll factor that into planning",
-                "noted, i'll remember that"
+                "i hear you, and i apologize. you're right that it started with you. i'll make sure that's clear",
+                "i'm sorry it looked that way. that wasn't my intention. i should have mentioned you, and i'll correct it with the team today",
+                "that wasn't fair to you. let me put it right in the next email",
+                "i hear you, and i apologize. you are right that it started with you. i will make sure that is clear"
             ],
-            "correctAnswer": "Good to know, I'll keep that in mind during the planning.",
             "smartReplies": [
-                "Good to know, I'll keep that in mind during the planning.",
-                "Noted, I'll factor that into the planning.",
-                "Good to know, I'll bear that in mind going forward."
+                "I'm sorry it looked that way. That wasn't my intention. I should have mentioned you, and I'll correct it with the team today.",
+                "That wasn't fair to you. Let me put it right in the next email.",
+                "I hear you, and I apologize. You're right that it started with you. I'll make sure that's clear."
             ],
+            "correctAnswer": "I hear you, and I apologize. You're right that it started with you. I'll make sure that's clear.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L145_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Suggest heading out early.",
-            "explanation": "'Beat the rush' is a common, useful phrase for avoiding crowds by timing things well.",
-            "partnerDialogue": "The guide mentioned this trail gets quite crowded by midday.",
-            "sampleAnswer": "Then we should head out early to beat the rush.",
+            "instruction": "Ask for a specific example.",
+            "hint": "Invite details instead of arguing.",
+            "explanation": "Asking for an example turns \"You never\" into a solvable problem.",
+            "partnerDialogue": "I feel like you never listen to me.",
+            "sampleAnswer": "I'm sorry you feel that way. I'd like to understand what's been going wrong. Can you give me an example?",
             "acceptedSynonyms": [
-                "head out early to beat the rush",
-                "leave early, beat the crowds",
-                "start early to avoid the rush",
-                "get going early then"
+                "i'm sorry you feel that way. i'd like to understand what's been going wrong. can you give me an example",
+                "i do want to listen. can we talk about it properly, without distractions",
+                "that's hard to hear, but i'd like to change it. when have i not listened",
+                "i am sorry you feel that way. i would like to understand what's been going wrong. can you give me an example"
             ],
-            "correctAnswer": "Then we should head out early to beat the rush.",
             "smartReplies": [
-                "Then we should head out early to beat the rush.",
-                "Let's leave early, then, to avoid the crowds.",
-                "We should get an early start to beat the rush."
+                "I do want to listen. Can we talk about it properly, without distractions?",
+                "I'm sorry you feel that way. I'd like to understand what's been going wrong. Can you give me an example?",
+                "That's hard to hear, but I'd like to change it. When have I not listened?"
             ],
+            "correctAnswer": "I'm sorry you feel that way. I'd like to understand what's been going wrong. Can you give me an example?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L145_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Suggest checking in with her honestly.",
-            "explanation": "'Checking in...honestly' shows a caring, direct way to address a family member's feelings.",
-            "partnerDialogue": "My sister implied she felt left out of the wedding planning.",
-            "sampleAnswer": "It might be worth checking in with her honestly about how she feels.",
+            "instruction": "Accept a colleague's apology.",
+            "hint": "Accept and move forward to the actual problem.",
+            "explanation": "After an apology, take a step toward the problem itself. It signals the conflict is over.",
+            "partnerDialogue": "Look, I overreacted yesterday.",
+            "sampleAnswer": "No problem. It's forgotten. Now, how do we solve it?",
             "acceptedSynonyms": [
-                "check in with her honestly",
-                "worth talking to her honestly",
-                "have an honest check-in with her",
-                "ask her directly how she feels"
+                "no problem. it's forgotten. now, how do we solve it",
+                "thanks for saying that. i was sharp as well. let's start again and sort out the actual issue",
+                "i appreciate it. i could have handled it better too. shall we look at the problem together",
+                "thanks for saying that, i was sharp as well",
+                "no problem. it is forgotten. now, how do we solve it"
             ],
-            "correctAnswer": "It might be worth checking in with her honestly about how she feels.",
             "smartReplies": [
-                "It might be worth checking in with her honestly about how she feels.",
-                "Maybe have an honest talk with her about it.",
-                "Worth checking in with her directly about how she's feeling."
+                "Thanks for saying that. I was sharp as well. Let's start again and sort out the actual issue.",
+                "No problem. It's forgotten. Now, how do we solve it?",
+                "I appreciate it. I could have handled it better too. Shall we look at the problem together?"
             ],
+            "correctAnswer": "No problem. It's forgotten. Now, how do we solve it?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L146_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Acknowledge, and suggest waiting.",
-            "explanation": "'Holding off' is useful vocabulary for delaying a purchase strategically.",
-            "partnerDialogue": "The salesperson hinted there might be a better deal next week.",
-            "sampleAnswer": "Good to know, it might be worth holding off until then.",
+            "instruction": "Answer \"Why you?\" without arrogance.",
+            "hint": "Focus on what you offer, not a comparison.",
+            "explanation": "Say what you'd bring. Avoid criticizing other candidates or overselling.",
+            "partnerDialogue": "Why should we choose you over other candidates?",
+            "sampleAnswer": "Because I'm not only qualified; I'm genuinely excited about what you're building.",
             "acceptedSynonyms": [
-                "worth holding off until then",
-                "good to know, i'll wait",
-                "maybe wait until next week",
-                "hold off for the better deal"
+                "because i'm not only qualified; i'm genuinely excited about what you're building",
+                "i'd say my mix of technical skills and customer experience is unusual. i can contribute from week one",
+                "i can't compare myself with them, but i can tell you what i'd bring: experience in your industry and a track record of finishing projects early",
+                "i can't compare myself with them, but i can tell you what i'd bring",
+                "because i am not only qualified; i am genuinely excited about what you are building"
             ],
-            "correctAnswer": "Good to know, it might be worth holding off until then.",
             "smartReplies": [
-                "Good to know, it might be worth holding off until then.",
-                "Good tip, maybe we should wait until then.",
-                "Worth holding off, if a better deal's coming."
+                "Because I'm not only qualified; I'm genuinely excited about what you're building.",
+                "I'd say my mix of technical skills and customer experience is unusual. I can contribute from week one.",
+                "I can't compare myself with them, but I can tell you what I'd bring: experience in your industry and a track record of finishing projects early."
             ],
+            "correctAnswer": "Because I'm not only qualified; I'm genuinely excited about what you're building.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L146_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "React with curiosity about the change.",
-            "explanation": "'What direction they'll take it' shows genuine curiosity, not just passive interest.",
-            "partnerDialogue": "The chef hinted that the menu is getting a major overhaul soon.",
-            "sampleAnswer": "That's exciting, I'm curious what direction they'll take it.",
+            "instruction": "Discuss a difficulty.",
+            "hint": "Mention a real challenge and how you solved it.",
+            "explanation": "A good \"struggle\" answer ends with what you learned or changed.",
+            "partnerDialogue": "Where did you struggle in your last role?",
+            "sampleAnswer": "Communicating with a difficult supplier. I learned to be firmer and clearer.",
             "acceptedSynonyms": [
-                "curious what direction they'll take",
-                "exciting, wonder what's next",
-                "curious to see the new direction",
-                "interested in where it's headed"
+                "communicating with a difficult supplier. i learned to be firmer and clearer",
+                "managing competing priorities at first. i solved it by creating a weekly plan and agreeing with my manager what came first",
+                "learning a new system quickly. i asked for extra training and practiced after hours"
             ],
-            "correctAnswer": "That's exciting, I'm curious what direction they'll take it.",
             "smartReplies": [
-                "That's exciting, I'm curious what direction they'll take it.",
-                "Exciting — I wonder what they'll do with it.",
-                "That's interesting, curious to see where they take it."
+                "Managing competing priorities at first. I solved it by creating a weekly plan and agreeing with my manager what came first.",
+                "Learning a new system quickly. I asked for extra training and practiced after hours.",
+                "Communicating with a difficult supplier. I learned to be firmer and clearer."
             ],
+            "correctAnswer": "Communicating with a difficult supplier. I learned to be firmer and clearer.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L146_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Express hope it fixes existing bugs.",
-            "explanation": "'Bugs we've been dealing with' references a shared, specific ongoing problem.",
-            "partnerDialogue": "The developer hinted that a major update is coming next quarter.",
-            "sampleAnswer": "Hopefully it addresses some of the bugs we've been dealing with.",
+            "instruction": "Ask for time to decide.",
+            "hint": "Show gratitude and ask for a reasonable extension.",
+            "explanation": "Thank first, then ask for time with a clear reason. Employers understand.",
+            "partnerDialogue": "We'd like to offer you the job, but we need an answer by tomorrow.",
+            "sampleAnswer": "That's wonderful news. Is it possible to have two more days to review the offer?",
             "acceptedSynonyms": [
-                "addresses the bugs we've had",
-                "hopefully fixes our current bugs",
-                "hope it solves those bugs",
-                "fixing the bugs would help"
+                "that's wonderful news. is it possible to have two more days to review the offer",
+                "thank you, i'm delighted. could i have until friday? i'd like to read the contract carefully before i decide",
+                "i appreciate it. may i ask for an extra day? it's an important decision",
+                "that is wonderful news. is it possible to have two more days to review the offer"
             ],
-            "correctAnswer": "Hopefully it addresses some of the bugs we've been dealing with.",
             "smartReplies": [
-                "Hopefully it addresses some of the bugs we've been dealing with.",
-                "Hopefully it fixes some of our ongoing issues.",
-                "Fingers crossed it clears up the bugs we've had."
+                "Thank you, I'm delighted. Could I have until Friday? I'd like to read the contract carefully before I decide.",
+                "I appreciate it. May I ask for an extra day? It's an important decision.",
+                "That's wonderful news. Is it possible to have two more days to review the offer?"
             ],
+            "correctAnswer": "That's wonderful news. Is it possible to have two more days to review the offer?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L147_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and mention small changes adding up.",
-            "explanation": "'Add up significantly over time' is a natural, encouraging way to describe gradual progress.",
-            "partnerDialogue": "The doctor hinted that lifestyle changes might help more than medication.",
-            "sampleAnswer": "That's worth exploring, small changes can add up significantly over time.",
+            "instruction": "Give a first-day plan.",
+            "hint": "Sequence tasks and set a check-in.",
+            "explanation": "When guiding beginners, order tasks and set a specific time to check how they're doing.",
+            "partnerDialogue": "Where do I begin?",
+            "sampleAnswer": "Let's take it slowly. Today, just meet the team and read the guide.",
             "acceptedSynonyms": [
-                "small changes add up over time",
-                "worth exploring, they add up",
-                "little changes make a big difference",
-                "small steps add up eventually"
+                "let's take it slowly. today, just meet the team and read the guide",
+                "first get access to the system, then i'll walk you through our process",
+                "start by reading the onboarding guide. then shadow anna for the day, and we'll meet at four to see how it went"
             ],
-            "correctAnswer": "That's worth exploring, small changes can add up significantly over time.",
             "smartReplies": [
-                "That's worth exploring, small changes can add up significantly over time.",
-                "Worth a try, small changes add up more than people think.",
-                "That's worth trying, little shifts can make a big difference."
+                "First get access to the system, then I'll walk you through our process.",
+                "Start by reading the onboarding guide. Then shadow Anna for the day, and we'll meet at four to see how it went.",
+                "Let's take it slowly. Today, just meet the team and read the guide."
             ],
+            "correctAnswer": "Let's take it slowly. Today, just meet the team and read the guide.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L147_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Show cautious interest, with a condition.",
-            "explanation": "'As long as...' expresses conditional support rather than unqualified excitement.",
-            "partnerDialogue": "The director hinted that the sequel will take a darker turn.",
-            "sampleAnswer": "That could be interesting, as long as it stays true to the characters.",
+            "instruction": "React to an honest mistake.",
+            "hint": "Calm the person and turn it into a fix.",
+            "explanation": "Mistakes are opportunities. Thank the person for honesty, help fix it, and suggest a rule.",
+            "partnerDialogue": "I made a mistake and deleted a file.",
+            "sampleAnswer": "Don't panic. It happens. Let's check the backup first. Next time, ask me before deleting anything shared.",
             "acceptedSynonyms": [
-                "as long as it's true to characters",
-                "interesting, if it respects the characters",
-                "could work, if characters stay consistent",
-                "fine, as long as characters feel right"
+                "don't panic. it happens. let's check the backup first. next time, ask me before deleting anything shared",
+                "okay, tell me exactly what happened. we may be able to restore it",
+                "thanks for telling me straight away. let's fix it together",
+                "do not panic. it happens. let's check the backup first. next time, ask me before deleting anything shared"
             ],
-            "correctAnswer": "That could be interesting, as long as it stays true to the characters.",
             "smartReplies": [
-                "That could be interesting, as long as it stays true to the characters.",
-                "Could work, as long as the characters stay consistent.",
-                "Interesting idea, provided it respects the characters."
+                "Don't panic. It happens. Let's check the backup first. Next time, ask me before deleting anything shared.",
+                "Okay, tell me exactly what happened. We may be able to restore it.",
+                "Thanks for telling me straight away. Let's fix it together."
             ],
+            "correctAnswer": "Don't panic. It happens. Let's check the backup first. Next time, ask me before deleting anything shared.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L147_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Explain why: tasks feel bigger than they are.",
-            "explanation": "This insight explains the psychology behind procrastination, not just its symptoms.",
-            "partnerDialogue": "I keep putting off things I know I should just get over with.",
-            "sampleAnswer": "Procrastination usually grows the task in our heads bigger than it really is.",
+            "instruction": "Give balanced coaching.",
+            "hint": "Confirm what's right and add one correction.",
+            "explanation": "Good feedback is specific and short: one thing to keep, one thing to change.",
+            "partnerDialogue": "Am I doing this right?",
+            "sampleAnswer": "You're on the right track. Let me show you a quicker way.",
             "acceptedSynonyms": [
-                "grows the task bigger than it is",
-                "makes tasks seem bigger than they are",
-                "the task seems worse in your head",
-                "procrastination inflates the task"
+                "you're on the right track. let me show you a quicker way",
+                "very good. just double-check the totals before sending",
+                "yes, mostly. one thing to change: always add the date in the header. otherwise it's excellent",
+                "you are on the right track. let me show you a quicker way"
             ],
-            "correctAnswer": "Procrastination usually grows the task in our heads bigger than it really is.",
             "smartReplies": [
-                "Procrastination usually grows the task in our heads bigger than it really is.",
-                "It usually feels bigger in your head than it actually is.",
-                "The task often seems worse than it turns out to be."
+                "You're on the right track. Let me show you a quicker way.",
+                "Very good. Just double-check the totals before sending.",
+                "Yes, mostly. One thing to change: always add the date in the header. Otherwise it's excellent."
             ],
+            "correctAnswer": "You're on the right track. Let me show you a quicker way.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L148_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Suggest talking to someone in the field.",
-            "explanation": "Talking to someone with real experience is genuinely practical advice for a career decision.",
-            "partnerDialogue": "I've been wrestling with whether this major is really right for me.",
-            "sampleAnswer": "That's a big question, maybe talk to someone already working in the field.",
+            "instruction": "Counter a longer delivery time.",
+            "hint": "Trade something for a shorter time.",
+            "explanation": "In negotiation, offer something (a larger order) when you ask for something (a shorter time).",
+            "partnerDialogue": "We can deliver in six weeks, not four.",
+            "sampleAnswer": "Could you do partial delivery in four weeks and the rest in six?",
             "acceptedSynonyms": [
-                "talk to someone in the field",
-                "ask someone already working in it",
-                "get advice from someone in that career",
-                "speak to a professional in the field"
+                "could you do partial delivery in four weeks and the rest in six",
+                "that's longer than we planned. what would it take to get it to four",
+                "six weeks is difficult for us. if we increased the order by ten percent, could you reduce it to five"
             ],
-            "correctAnswer": "That's a big question, maybe talk to someone already working in the field.",
             "smartReplies": [
-                "That's a big question, maybe talk to someone already working in the field.",
-                "Big decision — maybe chat with someone already in that field.",
-                "Worth talking to someone with real experience in it."
+                "Could you do partial delivery in four weeks and the rest in six?",
+                "That's longer than we planned. What would it take to get it to four?",
+                "Six weeks is difficult for us. If we increased the order by ten percent, could you reduce it to five?"
             ],
+            "correctAnswer": "Could you do partial delivery in four weeks and the rest in six?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L148_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Suggest raising your workload with your manager.",
-            "explanation": "'Directly' emphasizes the importance of clear, honest communication, not hinting around it.",
-            "partnerDialogue": "I feel like I'm spread too thin across these projects.",
-            "sampleAnswer": "It's probably time to flag your workload to your manager directly.",
+            "instruction": "Move from price to volume.",
+            "hint": "Accept the price but ask for something in return for commitment.",
+            "explanation": "When the price is fixed, use commitment as leverage: length, volume, or loyalty.",
+            "partnerDialogue": "Our prices are fixed.",
+            "sampleAnswer": "That's fine, but a longer contract might change things. Could we discuss that?",
             "acceptedSynonyms": [
-                "flag your workload to your manager",
-                "talk to your manager about workload",
-                "raise the workload issue directly",
-                "tell your manager you're overloaded"
+                "that's fine, but a longer contract might change things. could we discuss that",
+                "i understand. if i commit to a year, would you consider a volume discount",
+                "then perhaps we can talk about payment terms. would sixty days be possible",
+                "that is fine, but a longer contract might change things. could we discuss that"
             ],
-            "correctAnswer": "It's probably time to flag your workload to your manager directly.",
             "smartReplies": [
-                "It's probably time to flag your workload to your manager directly.",
-                "Might be time to raise it with your manager directly.",
-                "Worth telling your manager plainly that you're stretched thin."
+                "I understand. If I commit to a year, would you consider a volume discount?",
+                "Then perhaps we can talk about payment terms. Would sixty days be possible?",
+                "That's fine, but a longer contract might change things. Could we discuss that?"
             ],
+            "correctAnswer": "That's fine, but a longer contract might change things. Could we discuss that?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L148_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and suggest slowing down.",
-            "explanation": "'For the rest of the trip' shows a practical, forward-looking adjustment to the plan.",
-            "partnerDialogue": "It feels like we're trying to see everything instead of experiencing anything.",
-            "sampleAnswer": "You're right, maybe we should slow down for the rest of the trip.",
+            "instruction": "Modify a condition.",
+            "hint": "Accept the principle and adjust the detail.",
+            "explanation": "You can accept a principle but negotiate the details. It shows flexibility.",
+            "partnerDialogue": "We'd need a deposit up front.",
+            "sampleAnswer": "That's reasonable, although a smaller deposit would suit us better. Would twenty percent work, with the balance on delivery?",
             "acceptedSynonyms": [
-                "slow down for the rest of the trip",
-                "should slow the pace down now",
-                "let's ease up from here",
-                "slow things down going forward"
+                "that's reasonable, although a smaller deposit would suit us better. would twenty percent work, with the balance on delivery",
+                "could we split it: some now, some at shipping",
+                "i'm comfortable with that if it's refundable in case of delay",
+                "that is reasonable, although a smaller deposit would suit us better. would twenty percent work, with the balance on delivery"
             ],
-            "correctAnswer": "You're right, maybe we should slow down for the rest of the trip.",
             "smartReplies": [
-                "You're right, maybe we should slow down for the rest of the trip.",
-                "Fair point, let's ease up for the rest of the trip.",
-                "Agreed, we should slow the pace down from here."
+                "Could we split it: some now, some at shipping?",
+                "I'm comfortable with that if it's refundable in case of delay.",
+                "That's reasonable, although a smaller deposit would suit us better. Would twenty percent work, with the balance on delivery?"
             ],
+            "correctAnswer": "That's reasonable, although a smaller deposit would suit us better. Would twenty percent work, with the balance on delivery?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L149_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Validate the burden, and grant permission to step back.",
-            "explanation": "'It's okay to...' gently gives someone permission to set a healthy limit.",
-            "partnerDialogue": "I feel like I'm always the one smoothing things over at gatherings.",
-            "sampleAnswer": "That's a heavy role to carry, it's okay to step back sometimes.",
+            "instruction": "Manage scope creep.",
+            "hint": "Avoid a flat no and show the consequences.",
+            "explanation": "When clients request extras, explain the impact on time or cost and let them choose.",
+            "partnerDialogue": "Can you add another feature? It won't take long, right?",
+            "sampleAnswer": "We can, though it would change the cost. Shall I send you a revised quote?",
             "acceptedSynonyms": [
-                "okay to step back sometimes",
-                "heavy role, you can step back",
-                "fine to take a break from that role",
-                "you don't always have to do it"
+                "we can, though it would change the cost. shall i send you a revised quote",
+                "it's a fair request, but it would affect the timeline. we could add it in the next phase, or extend the deadline",
+                "possibly, but i'd like to check with the team first. may i get back to you by friday"
             ],
-            "correctAnswer": "That's a heavy role to carry, it's okay to step back sometimes.",
             "smartReplies": [
-                "That's a heavy role to carry, it's okay to step back sometimes.",
-                "That's a lot to carry, it's fine to step back now and then.",
-                "That's a tough role — you don't always have to fill it."
+                "It's a fair request, but it would affect the timeline. We could add it in the next phase, or extend the deadline.",
+                "We can, though it would change the cost. Shall I send you a revised quote?",
+                "Possibly, but I'd like to check with the team first. May I get back to you by Friday?"
             ],
+            "correctAnswer": "We can, though it would change the cost. Shall I send you a revised quote?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L149_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Suggest setting and sticking to a budget.",
-            "explanation": "'Sticking to it' emphasizes the discipline needed to resist upselling tactics.",
-            "partnerDialogue": "Sometimes I feel like I'm being upsold every time I walk in here.",
-            "sampleAnswer": "It's worth going in with a clear budget and sticking to it.",
+            "instruction": "Refuse free work politely.",
+            "hint": "Honor loyalty but keep a boundary.",
+            "explanation": "Recognizing loyalty softens a refusal. Offer a smaller alternative you can control.",
+            "partnerDialogue": "I need this done for free, because we're a long-term customer.",
+            "sampleAnswer": "I'd like to help. I'm not able to waive the fee, but I can speed it up.",
             "acceptedSynonyms": [
-                "clear budget, stick to it",
-                "set a budget and stick with it",
-                "go in with a firm budget",
-                "stick to a set spending limit"
+                "i'd like to help. i'm not able to waive the fee, but i can speed it up",
+                "we really value your loyalty. i can't do it free, but i can offer a discount on this job",
+                "i appreciate your loyalty, but i can only offer a reduced price. would that work",
+                "i would like to help. i am not able to waive the fee, but i can speed it up"
             ],
-            "correctAnswer": "It's worth going in with a clear budget and sticking to it.",
             "smartReplies": [
-                "It's worth going in with a clear budget and sticking to it.",
-                "Worth setting a firm budget before you go in.",
-                "Going in with a set budget usually helps."
+                "We really value your loyalty. I can't do it free, but I can offer a discount on this job.",
+                "I'd like to help. I'm not able to waive the fee, but I can speed it up.",
+                "I appreciate your loyalty, but I can only offer a reduced price. Would that work?"
             ],
+            "correctAnswer": "I'd like to help. I'm not able to waive the fee, but I can speed it up.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L149_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and mention the price-quality gap.",
-            "explanation": "'Don't always match' points out a specific, fair critique rather than a blanket complaint.",
-            "partnerDialogue": "I feel like we're overpaying for the atmosphere more than the food.",
-            "sampleAnswer": "That's a fair point, the prices don't always match the quality here.",
+            "instruction": "Avoid over-promising.",
+            "hint": "Refuse to guarantee and reassure with process.",
+            "explanation": "Honest professionals avoid guarantees and describe how they'll reduce risk.",
+            "partnerDialogue": "Can you promise it will work?",
+            "sampleAnswer": "I can't guarantee it, but I'm confident based on the tests so far.",
             "acceptedSynonyms": [
-                "prices don't match the quality",
-                "fair point, overpriced for the food",
-                "quality doesn't justify the cost",
-                "you're paying more for atmosphere"
+                "i can't guarantee it, but i'm confident based on the tests so far",
+                "i can promise we'll do our best and test thoroughly. i wouldn't want to guarantee something i can't control",
+                "i'll be honest: no one can promise that. but here's how we'll reduce the risk",
+                "i can promise we'll do our best and test thoroughly",
+                "i cannot guarantee it, but i am confident based on the tests so far"
             ],
-            "correctAnswer": "That's a fair point, the prices don't always match the quality here.",
             "smartReplies": [
-                "That's a fair point, the prices don't always match the quality here.",
-                "Fair — you're often paying more for atmosphere than food.",
-                "True, the quality doesn't quite justify the prices."
+                "I can promise we'll do our best and test thoroughly. I wouldn't want to guarantee something I can't control.",
+                "I'll be honest: no one can promise that. But here's how we'll reduce the risk.",
+                "I can't guarantee it, but I'm confident based on the tests so far."
             ],
+            "correctAnswer": "I can't guarantee it, but I'm confident based on the tests so far.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L150_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and emphasize fundamentals.",
-            "explanation": "Contrasting fundamentals with flashy extras makes a clear, memorable critique.",
-            "partnerDialogue": "It feels like we're chasing every new trend instead of fixing the basics.",
-            "sampleAnswer": "That's a fair criticism, solid fundamentals matter more than flashy extras.",
+            "instruction": "Give a manager the short version.",
+            "hint": "Your manager wants speed. Lead with the impact.",
+            "explanation": "Managers want the bottom line first: what happened, effect, action.",
+            "partnerDialogue": "Give me the short version.",
+            "sampleAnswer": "We're two days behind because of a supplier. I have a plan to limit the impact.",
             "acceptedSynonyms": [
-                "fundamentals matter more than extras",
-                "fair point, basics come first",
-                "solid basics beat flashy trends",
-                "fundamentals over flashy extras"
+                "we're two days behind because of a supplier. i have a plan to limit the impact",
+                "the supplier's late, so we'll finish friday instead of wednesday. nothing else is affected",
+                "short version: delayed by two days, everything else on track",
+                "we are two days behind because of a supplier. i have a plan to limit the impact"
             ],
-            "correctAnswer": "That's a fair criticism, solid fundamentals matter more than flashy extras.",
             "smartReplies": [
-                "That's a fair criticism, solid fundamentals matter more than flashy extras.",
-                "Fair point, the basics matter more than the flashy stuff.",
-                "Agreed, solid fundamentals beat trendy extras every time."
+                "The supplier's late, so we'll finish Friday instead of Wednesday. Nothing else is affected.",
+                "We're two days behind because of a supplier. I have a plan to limit the impact.",
+                "Short version: delayed by two days, everything else on track."
             ],
+            "correctAnswer": "We're two days behind because of a supplier. I have a plan to limit the impact.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L150_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Reframe it as your body needing rest.",
-            "explanation": "This reframes exhaustion as a clear, understandable signal rather than a personal failing.",
-            "partnerDialogue": "I feel like I'm constantly running on empty these days.",
-            "sampleAnswer": "That's your body's way of asking for a real break.",
+            "instruction": "Explain the same delay to a client.",
+            "hint": "The client is unhappy. Balance apology and information.",
+            "explanation": "With clients, a courteous apology and a clear new date matter more than technical detail.",
+            "partnerDialogue": "Why is it late?",
+            "sampleAnswer": "We've had an unexpected supply issue, and I'm sorry. We expect to finish by Friday.",
             "acceptedSynonyms": [
-                "your body asking for a break",
-                "your body needs real rest",
-                "a sign you need a proper break",
-                "your body's telling you to rest"
+                "we've had an unexpected supply issue, and i'm sorry. we expect to finish by friday",
+                "i apologize for the delay. one of our suppliers had a problem, and we're now working to deliver by friday",
+                "thank you for your patience. there was a delay with a component, and we're aiming for friday",
+                "we've had an unexpected supply issue, and i am sorry. we expect to finish by friday"
             ],
-            "correctAnswer": "That's your body's way of asking for a real break.",
             "smartReplies": [
-                "That's your body's way of asking for a real break.",
-                "That sounds like your body asking for actual rest.",
-                "That's a clear sign you need a proper break."
+                "We've had an unexpected supply issue, and I'm sorry. We expect to finish by Friday.",
+                "I apologize for the delay. One of our suppliers had a problem, and we're now working to deliver by Friday.",
+                "Thank you for your patience. There was a delay with a component, and we're aiming for Friday."
             ],
+            "correctAnswer": "We've had an unexpected supply issue, and I'm sorry. We expect to finish by Friday.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L150_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and explain the mismatch.",
-            "explanation": "'Don't always align' clearly names the gap between two different kinds of success.",
-            "partnerDialogue": "It seems like critics and audiences are rarely on the same page anymore.",
-            "sampleAnswer": "That's true, popular appeal and critical praise don't always align.",
+            "instruction": "Explain the same delay to a friend.",
+            "hint": "Casual tone. Skip the formalities.",
+            "explanation": "With friends, use casual, short language and emotion. It would sound strange to speak like a report.",
+            "partnerDialogue": "Where have you been all week? You look wrecked.",
+            "sampleAnswer": "Work's been insane. A supplier let us down, so everything's been running late.",
             "acceptedSynonyms": [
-                "popular appeal and praise don't align",
-                "true, critics and fans often differ",
-                "the two rarely match up",
-                "audience and critic opinions often clash"
+                "work's been insane. a supplier let us down, so everything's been running late",
+                "long story: a supplier was late and it messed up the whole schedule",
+                "some delivery thing went wrong, so we're a couple of days behind. it's been mad"
             ],
-            "correctAnswer": "That's true, popular appeal and critical praise don't always align.",
             "smartReplies": [
-                "That's true, popular appeal and critical praise don't always align.",
-                "True, what critics love and what audiences love often differ.",
-                "Fair point, popularity and critical acclaim rarely line up."
+                "Long story: a supplier was late and it messed up the whole schedule.",
+                "Work's been insane. A supplier let us down, so everything's been running late.",
+                "Some delivery thing went wrong, so we're a couple of days behind. It's been mad."
             ],
+            "correctAnswer": "Work's been insane. A supplier let us down, so everything's been running late.",
             "emotionTag": "Neutral"
         }
     ]

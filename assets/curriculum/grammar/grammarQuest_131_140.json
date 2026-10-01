@@ -5,543 +5,393 @@
     "quests": [
         {
             "id": "gq_l131_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The ___ of evidence supporting the theory is overwhelming.",
-            "options": [
-                "amount",
-                "gathering",
-                "mount",
-                "body"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "body",
-            "hint": "Which noun collocates with 'evidence' in academic English?",
-            "explanation": "'A body of evidence' = a collection of evidence: a body of evidence supporting the theory. Other collocations: a wealth of evidence, mounting evidence, compelling evidence, anecdotal evidence.",
-            "grammarRule": "Academic Collocations"
+            "question": "If you heat water to 100 degrees, it ___ .",
+            "options": ["will boil", "boils", "boiled", "would boil"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "boils",
+            "hint": "This is a scientific fact, true every single time, not a one-time future event.",
+            "explanation": "The zero conditional uses present simple in both parts for general truths and facts: if you heat water, it boils. This is always true, not just a future possibility.",
+            "grammarRule": "Zero Conditional"
         },
         {
             "id": "gq_l131_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The findings have significant ___ for healthcare policy.",
-            "options": [
-                "implicated",
-                "implication",
-                "implying",
-                "implications"
-            ],
+            "question": "Plants die if they ___ enough water.",
+            "options": ["won't get", "didn't get", "wouldn't get", "don't get"],
             "correctAnswerIndex": 3,
-            "correctAnswer": "implications",
-            "hint": "Which noun means 'consequences or effects' (plural)?",
-            "explanation": "'Implications' (plural noun) = consequences or effects for something: significant implications for healthcare policy. Singular: implication. 'Have implications for' is a key academic collocation.",
-            "grammarRule": "Academic Collocations"
+            "correctAnswer": "don't get",
+            "hint": "This general truth needs the present tense in its negative form too.",
+            "explanation": "The zero conditional stays in present simple even in the negative: if they don't get water. 'Won't get' would wrongly shift this general truth into future tense.",
+            "grammarRule": "Zero Conditional: Negative"
         },
         {
             "id": "gq_l131_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The research ___ a clear link between diet and cognitive decline.",
-            "options": [
-                "establishes",
-                "does",
-                "makes",
-                "gets"
-            ],
+            "question": "\u2014 What happens if you mix red and blue?\n\u2014 You ___ purple.",
+            "options": ["get", "will get", "got", "would get"],
             "correctAnswerIndex": 0,
-            "correctAnswer": "establishes",
-            "hint": "Which verb means 'to prove or demonstrate conclusively'?",
-            "explanation": "'Establish a link' = prove that a connection exists: The research establishes a clear link. Key academic collocations: establish a connection, establish a pattern, establish a precedent, establish criteria.",
-            "grammarRule": "Academic Collocations"
+            "correctAnswer": "get",
+            "hint": "This is always true, like a simple recipe or rule, not a one-time prediction.",
+            "explanation": "This describes a general fact about color mixing, so present simple fits: you get purple, following the zero conditional pattern from Question 1.",
+            "grammarRule": "Zero Conditional"
         },
         {
             "id": "gq_l132_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "This study is ___ in scope to the one conducted in 2020.",
-            "options": [
-                "comparative as",
-                "superior to",
-                "comparable with",
-                "comparable by"
-            ],
+            "question": "If it rains tomorrow, we ___ the picnic.",
+            "options": ["cancel", "cancelled", "will cancel", "would cancel"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "comparable with",
-            "hint": "Which structure compares the scope of two studies?",
-            "explanation": "'Comparable with' = similar enough to be compared: comparable with/to the 2020 study. 'Similar in scope to' also works. Note: 'comparable with' = similar; 'superior to' = better than. Use correct prepositions.",
-            "grammarRule": "Comparative Structures (Formal)"
+            "correctAnswer": "will cancel",
+            "hint": "This is a real, likely possibility about a specific future event.",
+            "explanation": "The first conditional uses 'if + present simple, will + base verb' for real future possibilities: if it rains, we will cancel. This differs from the zero conditional, which describes general truths rather than one specific future event.",
+            "grammarRule": "First Conditional"
         },
         {
             "id": "gq_l132_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Her performance was ___ that of last year.",
-            "options": [
-                "higher as",
-                "superior to",
-                "above than",
-                "better than"
-            ],
+            "question": "If you study hard, you ___ the exam.",
+            "options": ["pass", "will pass", "passed", "would pass"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "superior to",
-            "hint": "Which phrase formally shows one thing is better?",
-            "explanation": "'Superior to' = formally better than: Her performance was superior to that of last year. Note: 'superior to' (not 'superior than'). 'That of' refers back to her performance. Formal comparisons often use 'to', not 'than'.",
-            "grammarRule": "Comparative Structures (Formal)"
+            "correctAnswer": "will pass",
+            "hint": "This is a realistic future result of a possible action.",
+            "explanation": "'Will pass' fits this realistic future outcome: study hard, will pass. The if-clause stays present ('study'), while the result clause uses 'will'.",
+            "grammarRule": "First Conditional"
         },
         {
             "id": "gq_l132_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The sample size is ___ that used in the 2022 study.",
-            "options": [
-                "double larger",
-                "is twice as larger as",
-                "twice as large as",
-                "twice larger than"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "twice as large as",
-            "hint": "Multiplication comparison - which form is correct?",
-            "explanation": "'Twice as large as' is the correct structure: multiplier + as + adjective + as. Never 'twice larger than' - that wrongly mixes comparative (-er/more) with multiplication. Also: three times as many as, half as large as.",
-            "grammarRule": "Comparative Structures (Formal)"
+            "question": "\u2014 What will you do if you miss the bus?\n\u2014 I ___ a taxi.",
+            "options": ["take", "took", "would take", "will take"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "will take",
+            "hint": "This is a realistic plan for a real possible future situation.",
+            "explanation": "'Will take' fits this realistic future plan, matching the pattern from Questions 1 and 2: if I miss it, I will take a taxi.",
+            "grammarRule": "First Conditional"
         },
         {
             "id": "gq_l133_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The plan was expensive and risky. ___, the board approved it.",
-            "options": [
-                "As a result,",
-                "Nevertheless,",
-                "Consequently,",
-                "Accordingly,"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Nevertheless,",
-            "hint": "The outcome goes against what you'd expect from the first sentence.",
-            "explanation": "'Nevertheless' introduces a result that contradicts expectation: the plan was expensive and risky, yet the board approved it anyway. 'Consequently,' 'as a result,' and 'accordingly' all signal an expected, logical outcome - which doesn't fit here, since approving a risky, expensive plan is the unexpected choice.",
-            "grammarRule": "Discourse Connectors / Concessive Prepositions"
+            "question": "___ you hurry, you'll miss the train.",
+            "options": ["Unless", "If", "When", "Although"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Unless",
+            "hint": "This means 'if you don't hurry', a negative condition.",
+            "explanation": "'Unless' means 'if not', fitting first conditional sentences with a negative condition: unless you hurry (if you don't hurry), you'll miss it.",
+            "grammarRule": "First Conditional: Unless"
         },
         {
             "id": "gq_l133_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The city has excellent transport. ___, it suffers from air pollution.",
-            "options": [
-                "Nevertheless,",
-                "On the other hand,",
-                "In contrast,",
-                "Conversely,"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "On the other hand,",
-            "hint": "We're introducing a contrasting negative aspect.",
-            "explanation": "'On the other hand' introduces a contrasting point when discussing pros and cons: excellent transport vs air pollution. 'Conversely' suggests an opposite situation entirely. 'Nevertheless' concedes a difficulty.",
-            "grammarRule": "Discourse Connectors / Concessive Prepositions"
+            "question": "If you finish early, you ___ leave.",
+            "options": ["would", "might have", "may", "could have"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "may",
+            "hint": "This grants permission for a realistic future possibility, softer than 'will'.",
+            "explanation": "Modals like 'may' can replace 'will' in first conditional sentences to express permission or possibility: you may leave, softer than a plain certainty.",
+            "grammarRule": "First Conditional: Modal Variations"
         },
         {
             "id": "gq_l133_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "His undeniable talent ___, he has failed to achieve major success.",
-            "options": [
-                "despite",
-                "notwithstanding",
-                "in spite of",
-                "regardless of"
-            ],
+            "question": "\u2014 What should I do if it's too spicy?\n\u2014 You ___ add some yogurt to cool it down.",
+            "options": ["would", "should", "might have", "could have"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "notwithstanding",
-            "hint": "This is one of the few English prepositions that can follow the noun it governs.",
-            "explanation": "'Notwithstanding' can be placed after its noun in formal English: His undeniable talent notwithstanding, he has failed to achieve success. This postpositive use is typical of legal and formal writing. 'Despite,' 'in spite of,' and 'regardless of' must come before the noun (despite his talent), not after it.",
-            "grammarRule": "Discourse Connectors / Concessive Prepositions"
+            "correctAnswer": "should",
+            "hint": "This offers advice within a realistic future condition.",
+            "explanation": "'Should' can replace 'will' to give advice within a first conditional structure: if it's spicy, you should add yogurt.",
+            "grammarRule": "First Conditional: Modal Variations"
         },
         {
             "id": "gq_l134_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I will support you ___ what the outcome is.",
-            "options": [
-                "no matter",
-                "however",
-                "whatever",
-                "regardless"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "whatever",
-            "hint": "Which word introduces a 'no matter what' clause?",
-            "explanation": "'Whatever + subject + verb' = no matter what: I will support you whatever the outcome is. 'However' needs an adjective after it. 'Regardless' needs 'of'. 'Whatever' directly introduces the noun clause.",
-            "grammarRule": "Concessive Conjunctions"
+            "question": "If I ___ more money, I would travel the world.",
+            "options": ["had", "have", "will have", "would have"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "had",
+            "hint": "This describes an unreal, hypothetical present situation, not a real possibility.",
+            "explanation": "The second conditional uses 'if + past simple, would + base verb' for unreal or unlikely present situations: if I had more money (but I don't), I would travel.",
+            "grammarRule": "Second Conditional"
         },
         {
             "id": "gq_l134_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ she knew the risks, she accepted the offer without hesitation.",
-            "options": [
-                "Even though",
-                "While",
-                "When",
-                "As"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Even though",
-            "hint": "We need an unambiguous concessive meaning - not a word that could also mean 'because' or 'at the same time as'.",
-            "explanation": "'Even though' is unambiguously concessive (= despite the fact that): Even though she knew the risks, she accepted the offer. 'While' can mean 'although' but often suggests timing instead; 'as' commonly means 'because'; 'when' is purely temporal. None of these guarantee the contrast that 'even though' makes clear.",
-            "grammarRule": "Concessive Conjunctions"
+            "question": "If she knew the answer, she ___ tell you.",
+            "options": ["will", "would", "would have", "will have"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "would",
+            "hint": "The word 'knew' (past form) signals this hypothetical structure.",
+            "explanation": "'Would' pairs with the past-tense if-clause 'knew' in this hypothetical: if she knew, she would tell you, describing a present situation that isn't actually true.",
+            "grammarRule": "Second Conditional"
         },
         {
             "id": "gq_l134_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "He chose the Paris job ___ being closer to his family in London.",
-            "options": [
-                "in spite of",
-                "despite",
-                "even though",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "in spite of",
-            "hint": "A gerund follows - which concession word accepts this?",
-            "explanation": "'In spite of + gerund': in spite of being closer to his family. 'Despite' also works: despite being closer. 'Although' must be followed by a subject and verb: although it meant being closer to his family.",
-            "grammarRule": "Concessive Conjunctions"
+            "question": "\u2014 What would you do if you won the lottery?\n\u2014 I ___ buy a house.",
+            "options": ["will", "would have", "would", "have"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "would",
+            "hint": "The question itself already used this hypothetical structure with 'would'.",
+            "explanation": "The reply matches the question's own hypothetical structure: would buy a house, describing an imagined, unlikely present or future situation.",
+            "grammarRule": "Second Conditional"
         },
         {
             "id": "gq_l135_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She ___ it difficult to concentrate in noisy environments.",
-            "options": [
-                "thinks",
-                "considers",
-                "finds",
-                "feels"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "finds",
-            "hint": "Which verb follows 'subject + verb + it + adjective + infinitive'?",
-            "explanation": "'Find + it + adjective + to-infinitive': She finds it difficult to concentrate. 'Find' is used for personal experience and discovery. 'Think' and 'consider' are for opinions. 'Feel' is for emotional states.",
-            "grammarRule": "Verb + Object + Complement Patterns"
+            "question": "If I ___ you, I would apologize.",
+            "options": ["was", "am", "be", "were"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "were",
+            "hint": "In this hypothetical structure, 'be' traditionally takes one special form for every subject.",
+            "explanation": "In second conditional sentences, 'were' is traditionally used for all subjects, including 'I': if I were you. Although 'was' is common in casual speech, 'were' remains the standard, more formal choice.",
+            "grammarRule": "Second Conditional: If I Were"
         },
         {
             "id": "gq_l135_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "They considered the plan ___ .",
-            "options": [
-                "to be risky",
-                "risky",
-                "as risky",
-                "is risky"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "risky",
-            "hint": "Which form follows 'consider' in an object complement structure?",
-            "explanation": "'Consider + object + adjective' (no 'to be'): They considered the plan risky. OR: 'Consider + object + to be + adjective': They considered the plan to be risky. Both are correct; the 'to be' form is slightly more formal.",
-            "grammarRule": "Verb + Object + Complement Patterns"
+            "question": "If he ___ taller, he could reach the shelf.",
+            "options": ["were", "was", "is", "be"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "were",
+            "hint": "This same special rule applies to every subject, not just 'I'.",
+            "explanation": "'Were' extends to all subjects in this structure, including 'he': if he were taller, matching the pattern from Question 1.",
+            "grammarRule": "Second Conditional: If I Were"
         },
         {
             "id": "gq_l135_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The judge ___ the evidence inadmissible.",
-            "options": [
-                "judged",
-                "ruled",
-                "held",
-                "deemed"
-            ],
+            "question": "\u2014 What would you do if you were president?\n\u2014 If I ___ president, I would improve education.",
+            "options": ["was", "am", "is", "were"],
             "correctAnswerIndex": 3,
-            "correctAnswer": "deemed",
-            "hint": "Which formal verb means 'officially judged or considered to be'?",
-            "explanation": "'Deem + object + adjective' = formally judge or consider: The judge deemed the evidence inadmissible. 'Deem' is very formal, used in legal and official contexts. 'Ruled' is also used in legal contexts.",
-            "grammarRule": "Verb + Object + Complement Patterns"
+            "correctAnswer": "were",
+            "hint": "The reply echoes the exact structure the question already used.",
+            "explanation": "The reply matches the question's own use of 'were': if I were president, following the same hypothetical pattern from Questions 1 and 2.",
+            "grammarRule": "Second Conditional: If I Were"
         },
         {
             "id": "gq_l136_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "You ___ called first - the office was closed.",
-            "options": [
-                "should have",
-                "would",
-                "should",
-                "might have"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "should have",
-            "hint": "Advice about something that should have happened but didn't.",
-            "explanation": "'Should have + past participle' = criticism or advice about a past action that didn't happen: You should have called first = you didn't call, but you should have. The office was already closed.",
-            "grammarRule": "Modals of Past Deduction/Regret"
+            "question": "If I ___ earlier, I wouldn't have missed the train.",
+            "options": ["left", "would leave", "had left", "have left"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "had left",
+            "hint": "This describes an unreal past situation, something that didn't actually happen.",
+            "explanation": "The third conditional uses 'if + past perfect, would have + past participle' for unreal past situations: if I had left earlier (but I didn't), I wouldn't have missed it.",
+            "grammarRule": "Third Conditional"
         },
         {
             "id": "gq_l136_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She ___ the password - only three people knew it.",
-            "options": [
-                "needn't have changed",
-                "must have changed",
-                "could have forgotten",
-                "might have forgotten"
-            ],
+            "question": "If she had studied harder, she ___ passed the exam.",
+            "options": ["will have", "would have", "had", "would"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "must have changed",
-            "hint": "We're making a confident deduction about who changed it.",
-            "explanation": "'Must have + past participle' = confident past deduction: She must have changed the password = we're almost certain she did it. Only three people knew it, so it must have been her.",
-            "grammarRule": "Modals of Past Deduction/Regret"
+            "correctAnswer": "would have",
+            "hint": "This past regret needs the perfect form after 'would', not the plain base verb.",
+            "explanation": "'Would have' pairs with past perfect in the if-clause to express a past regret: had studied, would have passed, describing something that never actually happened.",
+            "grammarRule": "Third Conditional"
         },
         {
             "id": "gq_l136_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "He ___ prepared more food - there was plenty left over.",
-            "options": [
-                "mustn't have",
-                "shouldn't have",
-                "didn't need to",
-                "needn't have"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "needn't have",
-            "hint": "He prepared too much - the preparation was unnecessary in hindsight.",
-            "explanation": "'Needn't have + past participle' = did something that turned out to be unnecessary: He needn't have prepared more food (he did prepare it, but it was unnecessary). 'Didn't need to' = didn't prepare (and it wasn't necessary - no action taken).",
-            "grammarRule": "Modals of Past Deduction/Regret"
+            "question": "\u2014 Why didn't you call me?\n\u2014 If I ___ known your new number, I would have called.",
+            "options": ["have", "would have", "had", "did"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "had",
+            "hint": "This describes an unreal past situation, matching the pattern from Question 1.",
+            "explanation": "'Had known' completes the past perfect if-clause for this unreal past situation, matching 'would have called' as the result.",
+            "grammarRule": "Third Conditional"
         },
         {
             "id": "gq_l137_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She admitted ___ the money from the register.",
-            "options": [
-                "taking",
-                "to taking",
-                "take",
-                "to have taken"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "to taking",
-            "hint": "'Admit to' is followed by -ing.",
-            "explanation": "'Admit to + gerund': She admitted to taking the money. Also correct: 'admitted taking' (without 'to'). Both patterns are used. 'Admit to having taken' (perfect gerund) also works: She admitted to having taken the money.",
-            "grammarRule": "Reporting Verb Patterns (Gerund/Infinitive)"
+            "question": "If water freezes, it ___ into ice.",
+            "options": ["will turn", "turned", "would turn", "turns"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "turns",
+            "hint": "This is a scientific fact, true every time \u2014 which conditional type does that describe?",
+            "explanation": "This is a zero conditional, describing a general scientific truth: if it freezes, it turns to ice, always true.",
+            "grammarRule": "Zero Conditional"
         },
         {
             "id": "gq_l137_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The doctor advised ___ smoking immediately.",
-            "options": [
-                "to give up",
-                "her to give up",
-                "her give up",
-                "her giving up"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "her to give up",
-            "hint": "'Advise' with an object takes which pattern?",
-            "explanation": "'Advise + object + to + infinitive': The doctor advised her to give up smoking. Without an object: The doctor advised giving up smoking. The most common pattern with an indirect object is: advise + person + to + base verb.",
-            "grammarRule": "Reporting Verb Patterns (Gerund/Infinitive)"
+            "question": "If it snows tomorrow, we ___ build a snowman.",
+            "options": ["build", "built", "will build", "would build"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "will build",
+            "hint": "This is a real, specific future possibility, not a general fact.",
+            "explanation": "This is a first conditional, a realistic possibility about tomorrow specifically: if it snows, we will build a snowman. This contrasts with the general zero-conditional fact in Question 1.",
+            "grammarRule": "First Conditional"
         },
         {
             "id": "gq_l137_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I wouldn't recommend ___ before checking the weather.",
-            "options": [
-                "going",
-                "to go",
-                "you going",
-                "you to go"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "going",
-            "hint": "'Recommend' without a personal object takes -ing.",
-            "explanation": "Without a personal object: recommend + gerund: I wouldn't recommend going. With an object and a formal clause: I would recommend that you go (subjunctive). 'Recommend + to + infinitive' is not used without an object.",
-            "grammarRule": "Reporting Verb Patterns (Gerund/Infinitive)"
+            "question": "\u2014 What would you do if you saw a ghost?\n\u2014 I ___ probably scream!",
+            "options": ["will", "would", "build", "would have"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "would",
+            "hint": "Seeing a ghost is unlikely and hypothetical \u2014 which conditional type fits that?",
+            "explanation": "This is a second conditional, imagining an unlikely hypothetical situation: if I saw a ghost, I would scream, contrasting with the realistic future possibility in Question 2.",
+            "grammarRule": "Second Conditional"
         },
         {
             "id": "gq_l138_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The ___ of the new tax policy is still debated.",
-            "options": [
-                "effectiveness",
-                "effective",
-                "effect",
-                "effectively"
-            ],
+            "question": "If I had more time now, I ___ help you.",
+            "options": ["would", "would have", "will", "had"],
             "correctAnswerIndex": 0,
-            "correctAnswer": "effectiveness",
-            "hint": "After 'The', which noun form means 'the quality of being effective'?",
-            "explanation": "'Effectiveness' (noun) = the quality of being effective: The effectiveness of the policy is debated. Common academic nouns: effectiveness, efficiency, accuracy, significance, relevance. Each has a distinct meaning.",
-            "grammarRule": "Nominalisation (Academic)"
+            "correctAnswer": "would",
+            "hint": "The word 'now' points to a present hypothetical situation, not a past one.",
+            "explanation": "'Now' signals a present hypothetical, calling for simple 'would', not 'would have': if I had time now, I would help.",
+            "grammarRule": "Second Conditional"
         },
         {
             "id": "gq_l138_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "His ___ of the data led to an incorrect conclusion.",
-            "options": [
-                "interpretation",
-                "interpreting",
-                "interpreted",
-                "interpretive"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "interpretation",
-            "hint": "After 'His' (possessive), a noun is needed.",
-            "explanation": "'His interpretation of the data' - 'interpretation' is the noun: His interpretation led to an error. Nominalisation: interpret → interpretation, analyse → analysis, conclude → conclusion, suggest → suggestion.",
-            "grammarRule": "Nominalisation (Academic)"
+            "question": "If I had had more time yesterday, I ___ helped you.",
+            "options": ["will have", "had", "would", "would have"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "would have",
+            "hint": "The word 'yesterday' points to a past hypothetical, unlike Question 1.",
+            "explanation": "'Yesterday' signals a past hypothetical (third conditional), calling for 'would have': had had time, would have helped. Compare this with the present hypothetical in Question 1.",
+            "grammarRule": "Third Conditional"
         },
         {
             "id": "gq_l138_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "There is growing ___ that the programme is effective.",
-            "options": [
-                "proof",
-                "evidences",
-                "evidence",
-                "evidential"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "proof",
-            "hint": "Which uncountable noun means data supporting a claim?",
-            "explanation": "'Evidence' is uncountable in academic English - no plural 'evidences': There is growing evidence that... 'Proof' is also uncountable. 'Evidence' is more commonly used for partial or accumulating support; 'proof' implies certainty.",
-            "grammarRule": "Nominalisation (Academic)"
+            "question": "\u2014 Do you regret not going to the party?\n\u2014 Yes, if I ___ known it would be so fun, I would have gone.",
+            "options": ["have", "had", "would have", "did"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "had",
+            "hint": "This regret is about the past, matching the third conditional pattern from Question 2.",
+            "explanation": "'Had known' completes this past-perfect if-clause for a genuine past regret, matching the third conditional pattern reviewed in Question 2.",
+            "grammarRule": "Third Conditional"
         },
         {
             "id": "gq_l139_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The company's decline was ___ poor management and economic pressures.",
-            "options": [
-                "as a result",
-                "since",
-                "because",
-                "due to"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "due to",
-            "hint": "Which phrase introduces a noun phrase cause?",
-            "explanation": "'Due to + noun phrase' explains a cause: due to poor management and economic pressures. 'Because' needs a subject + verb: because management was poor. 'As a result' introduces a result, not a cause.",
-            "grammarRule": "Cause and Result Connectors"
+            "question": "If you ___ the instructions, you wouldn't have made that mistake.",
+            "options": ["had followed", "followed", "would follow", "follow"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "had followed",
+            "hint": "This mistake already happened in the past \u2014 which conditional type reflects on unreal past events?",
+            "explanation": "This is a third conditional reflecting on a past mistake: had followed the instructions, wouldn't have made the mistake, describing something that didn't actually happen.",
+            "grammarRule": "Third Conditional"
         },
         {
             "id": "gq_l139_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Sales fell by 30%. ___, the company restructured.",
-            "options": [
-                "Consequently",
-                "Despite",
-                "Although",
-                "Due to"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Consequently",
-            "hint": "Which discourse marker introduces a result that follows?",
-            "explanation": "'Consequently' introduces a result: Sales fell by 30%. Consequently, the company restructured. Other result markers: as a result, therefore, thus, hence. 'Due to' introduces a cause, not a result.",
-            "grammarRule": "Cause and Result Connectors"
+            "question": "If I were rich, I ___ donate to charity.",
+            "options": ["will", "would have", "would", "had"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "would",
+            "hint": "This is an unreal hypothetical about the present, not a real possibility.",
+            "explanation": "This is a second conditional, an unreal hypothetical about now: if I were rich, I would donate, reviewing the pattern from Level 134.",
+            "grammarRule": "Second Conditional"
         },
         {
             "id": "gq_l139_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The illness ___ her absence from work for several weeks.",
-            "options": [
-                "caused to",
-                "resulted from",
-                "resulted in",
-                "led to"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "resulted in",
-            "hint": "Which phrase shows that illness caused the absence?",
-            "explanation": "'Result in + noun' = have as a consequence: The illness resulted in her absence. 'Lead to' works too. 'Caused to' is incorrect (say 'caused her absence' or 'caused her to be absent'). 'Result from' = be caused by (opposite direction).",
-            "grammarRule": "Cause and Result Connectors"
+            "question": "\u2014 What happens if the temperature drops below zero?\n\u2014 Water ___ .",
+            "options": ["freezes", "will freeze", "froze", "would freeze"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "freezes",
+            "hint": "This is a general scientific fact, true every time.",
+            "explanation": "This is a zero conditional describing a general scientific truth: water freezes below zero, reviewing the pattern from Level 131.",
+            "grammarRule": "Zero Conditional"
         },
         {
             "id": "gq_l140_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "It is vital that she ___ all requirements before applying.",
-            "options": [
-                "has met",
-                "is meeting",
-                "meets",
-                "meet"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "meet",
-            "hint": "Mandative subjunctive after 'it is vital that'.",
-            "explanation": "Mandative subjunctive: It is vital/essential/important/necessary + that + subject + base verb for all persons: It is vital that she meet all requirements. No '-s' for third person in the subjunctive. Very formal.",
-            "grammarRule": "Subjunctive Mood (Formal)"
+            "question": "If you ___ any issues, please contact support immediately.",
+            "options": ["have", "will have", "had", "would have"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "have",
+            "hint": "This is a real, ongoing possibility framed as an instruction, using present tense in the if-clause.",
+            "explanation": "Instructions like this use present simple in the if-clause, similar to first conditional structure: if you have issues, contact support. This is a very common pattern in real workplace and support messages.",
+            "grammarRule": "First Conditional: Instructions"
         },
         {
             "id": "gq_l140_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The committee recommended that the issue ___ at the next meeting.",
-            "options": [
-                "be addressed",
-                "is addressed",
-                "should address",
-                "was addressed"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "be addressed",
-            "hint": "'Recommend that' triggers the subjunctive.",
-            "explanation": "Subjunctive: recommend/suggest/propose/demand/insist + that + subject + base verb: recommended that the issue be addressed. Both 'be addressed' (subjunctive passive) and 'should be addressed' are correct in formal English.",
-            "grammarRule": "Subjunctive Mood (Formal)"
+            "question": "If I ___ you, I'd double-check those numbers before submitting.",
+            "options": ["am", "was", "be", "were"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "were",
+            "hint": "This is the same advice-giving structure practiced in Level 135.",
+            "explanation": "'If I were you' is a fixed way of giving advice, reviewing the pattern from Level 135: if I were you, I'd double-check.",
+            "grammarRule": "Second Conditional: If I Were"
         },
         {
             "id": "gq_l140_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "If ___ otherwise agreed, all payments are due within 30 days.",
-            "options": [
-                "it has been",
-                "unless",
-                "not",
-                "otherwise"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "not",
-            "hint": "A formal conditional clause - what fills the blank?",
-            "explanation": "'If not otherwise agreed' = unless otherwise agreed (meaning: if no other agreement exists). This is a set legal/commercial phrase: If not otherwise agreed, payment is due within 30 days. Common in contracts and legal documents.",
-            "grammarRule": "Subjunctive Mood (Formal)"
+            "question": "\u2014 Looking back, would you have done anything differently?\n\u2014 If I ___ what I know now, I would have taken the other job offer.",
+            "options": ["knew", "had known", "would know", "have known"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "had known",
+            "hint": "This closes Stage 7 by reflecting on an unreal past situation, one last time.",
+            "explanation": "'Had known' completes this final third conditional reflection on the past, wrapping up the full journey through zero, first, second, and third conditionals covered across Levels 131 to 140.",
+            "grammarRule": "Third Conditional"
         }
     ]
 }

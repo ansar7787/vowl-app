@@ -5,23 +5,23 @@
     "quests": [
         {
             "id": "ACC_VOWELDISTINCTION_L101_Q1",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE STRESSED SYLLABLE",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "law",
-            "textToSpeak": "law",
+            "word": "meeting",
+            "textToSpeak": "meeting",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/ɪ/",
+                "/iː/"
             ],
-            "correctAnswer": "/ɔː/",
-            "correctAnswerIndex": 0,
-            "hint": "The vowel in 'law' is a long, mid-back vowel with strongly rounded lips. Think of 'ball' - it uses the same sound. The LOT vowel in 'dog' feels quite different.",
-            "explanation": "'law' is pronounced with /ɔː/, the THOUGHT vowel: a long, mid-back vowel with strongly rounded lips. Practising this contrast against the LOT vowel sharpens your ear for one of English's key vowel pairs.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "correctAnswer": "/iː/",
+            "correctAnswerIndex": 1,
+            "hint": "Two vowels from the pair share this word. The stressed first syllable is the one that counts.",
+            "explanation": "Only the stressed first syllable counts. The -ing ending holds a short weak /ɪ/, which is why the question points to the stressed syllable.",
+            "vowelTensionRule": "Try whispering: even without voice the difference in tongue height is audible, which shows that quality, not just length, carries the contrast.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.6
+                "x": 0.1,
+                "y": 0.1
             }
         },
         {
@@ -29,20 +29,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "ball",
-            "textToSpeak": "ball",
+            "word": "budget",
+            "textToSpeak": "budget",
             "options": [
-                "/ɔː/",
+                "/ʌ/",
                 "/ɒ/"
             ],
-            "correctAnswer": "/ɔː/",
+            "correctAnswer": "/ʌ/",
             "correctAnswerIndex": 0,
-            "hint": "The key difference is between /ɔː/ and /ɒ/. In 'ball', listen for a long, mid-back vowel with strongly rounded lips, just like in 'ball'.",
-            "explanation": "'ball' is built on the THOUGHT vowel /ɔː/: a long, mid-back vowel with strongly rounded lips. Keep this anchored against 'ball' so you can recognise it in new words too.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "hint": "Keep the lips neutral in the first syllable, since b-u-d usually gives the lazy central vowel.",
+            "explanation": "Central and unrounded. Rounded lips would give 'bodge'.",
+            "vowelTensionRule": "Lip rounding is the clearest cue: /ɒ/ has it, /ʌ/ does not.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.6
+                "x": 0.6,
+                "y": 0.8
             }
         },
         {
@@ -50,17 +50,17 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "wash",
-            "textToSpeak": "wash",
+            "word": "sponsor",
+            "textToSpeak": "sponsor",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/ɒ/",
+                "/ʌ/"
             ],
             "correctAnswer": "/ɒ/",
-            "correctAnswerIndex": 1,
-            "hint": "Say 'dog' out loud, then say 'wash'. If the stressed vowel feels the same, you are hearing /ɒ/, not the THOUGHT vowel in 'ball'.",
-            "explanation": "The vowel sound in 'wash' is /ɒ/, the LOT vowel - a short, open-back vowel with rounded lips. It contrasts with the THOUGHT vowel /ɔː/, heard in words like 'law'.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "correctAnswerIndex": 0,
+            "hint": "Round the lips lightly in the stressed first syllable; this o is short and open, not the o of 'son'.",
+            "explanation": "The stressed first syllable has a short, lightly rounded vowel. The second syllable is a weak schwa, so only the first needs attention.",
+            "vowelTensionRule": "A plain o before a consonant cluster is usually the short, lightly rounded /ɒ/. Compare the o in 'son', which is spelled the same but is /ʌ/.",
             "vowelChart": {
                 "x": 0.95,
                 "y": 0.8
@@ -71,20 +71,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "call",
-            "textToSpeak": "call",
+            "word": "passport",
+            "textToSpeak": "passport",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/æ/",
+                "/ɑː/"
             ],
-            "correctAnswer": "/ɔː/",
-            "correctAnswerIndex": 0,
-            "hint": "Tune your ear to 'law'. 'call' uses that exact vowel (/ɔː/), the THOUGHT sound. Do not let it drift toward the LOT vowel.",
-            "explanation": "The vowel sound in 'call' is /ɔː/, the THOUGHT vowel - a long, mid-back vowel with strongly rounded lips. It contrasts with the LOT vowel /ɒ/, heard in words like 'hot'. Fun fact: in many American accents, THOUGHT and LOT words like these have merged into one sound - but in careful, standard pronunciation they stay distinct, exactly as practiced here.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "correctAnswer": "/ɑː/",
+            "correctAnswerIndex": 1,
+            "hint": "A BATH word: the a before ss is long in RP. Jaw wide, lips neutral.",
+            "explanation": "A BATH word in RP, like 'pass' and 'class'. Don't copy the short vowel of 'passenger'.",
+            "vowelTensionRule": "In RP, BATH words such as pass, class and last take /ɑː/. 'Passenger' keeps /æ/ because the next syllable changes the pattern.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.6
+                "x": 0.9,
+                "y": 0.95
             }
         },
         {
@@ -92,19 +92,19 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "watch",
-            "textToSpeak": "watch",
+            "word": "luggage",
+            "textToSpeak": "luggage",
             "options": [
-                "/ɔː/",
+                "/ʌ/",
                 "/ɒ/"
             ],
-            "correctAnswer": "/ɒ/",
-            "correctAnswerIndex": 1,
-            "hint": "Listen to the main vowel in 'watch'. It should match 'hot', the LOT vowel /ɒ/ - not the THOUGHT vowel you hear in 'law'.",
-            "explanation": "The vowel sound in 'watch' is /ɒ/, the LOT vowel - a short, open-back vowel with rounded lips. It contrasts with the THOUGHT vowel /ɔː/, heard in words like 'law'.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "correctAnswer": "/ʌ/",
+            "correctAnswerIndex": 0,
+            "hint": "No lip rounding in the stressed first syllable. Think 'lug', as in lugging a bag.",
+            "explanation": "The u spelling is regular. The second syllable is weak and not part of this choice.",
+            "vowelTensionRule": "Think of the lips first: a small rounded gap for /ɒ/, a loose unrounded one for /ʌ/.",
             "vowelChart": {
-                "x": 0.95,
+                "x": 0.6,
                 "y": 0.8
             }
         },
@@ -113,20 +113,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "want",
-            "textToSpeak": "want",
+            "word": "ticket",
+            "textToSpeak": "ticket",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/ɪ/",
+                "/e/"
             ],
-            "correctAnswer": "/ɒ/",
-            "correctAnswerIndex": 1,
-            "hint": "The key difference is between /ɒ/ and /ɔː/. In 'want', listen for a short, open-back vowel with rounded lips, just like in 'dog'.",
-            "explanation": "'want' is pronounced with /ɒ/, the LOT vowel: a short, open-back vowel with rounded lips. Practising this contrast against the THOUGHT vowel sharpens your ear for one of English's key vowel pairs. You will often meet this word in everyday conversation.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "correctAnswer": "/ɪ/",
+            "correctAnswerIndex": 0,
+            "hint": "Keep the mouth gap small in both syllables. 'Ticket' is not 'tecket'.",
+            "explanation": "Both syllables hold the short vowel. Opening the jaw in the first would sound wrong in RP.",
+            "vowelTensionRule": "Both are short front vowels, but /e/ is lower and more open. Let the jaw drop a little further for /e/.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.8
+                "x": 0.25,
+                "y": 0.2
             }
         },
         {
@@ -134,20 +134,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "wall",
-            "textToSpeak": "wall",
+            "word": "lecture",
+            "textToSpeak": "lecture",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/æ/",
+                "/e/"
             ],
-            "correctAnswer": "/ɔː/",
-            "correctAnswerIndex": 0,
-            "hint": "Say 'law' out loud, then say 'wall'. If the stressed vowel feels the same, you are hearing /ɔː/, not the LOT vowel in 'dog'.",
-            "explanation": "The vowel sound in 'wall' is /ɔː/, the THOUGHT vowel - a long, mid-back vowel with strongly rounded lips. It contrasts with the LOT vowel /ɒ/, heard in words like 'hot'.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "correctAnswer": "/e/",
+            "correctAnswerIndex": 1,
+            "hint": "Half-open jaw in the stressed first syllable; the ending is just /tʃə/.",
+            "explanation": "The jaw stays half open, and the weak ending changes nothing.",
+            "vowelTensionRule": "Check the mouth opening: roughly one finger-width for /e/, closer to two stacked fingers for /æ/.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.6
+                "x": 0.15,
+                "y": 0.4
             }
         },
         {
@@ -155,20 +155,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "talk",
-            "textToSpeak": "talk",
+            "word": "exam",
+            "textToSpeak": "exam",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/e/",
+                "/æ/"
             ],
-            "correctAnswer": "/ɔː/",
-            "correctAnswerIndex": 0,
-            "hint": "Think of how you say 'ball'. The vowel in 'talk' should feel the same way. That is the THOUGHT sound, not the LOT sound in 'hot'.",
-            "explanation": "'talk' is built on the THOUGHT vowel /ɔː/: a long, mid-back vowel with strongly rounded lips. Keep this anchored against 'ball' so you can recognise it in new words too.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "correctAnswer": "/æ/",
+            "correctAnswerIndex": 1,
+            "hint": "The weak first syllable is quick. Drop the jaw wide for the second.",
+            "explanation": "The stress is on the second syllable. The first is weak, so don't let it pull the stress forward.",
+            "vowelTensionRule": "/æ/ is longer and more spread than /e/. Learners often use /e/ for both, so exaggerate the jaw drop at first.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.6
+                "x": 0.2,
+                "y": 0.9
             }
         },
         {
@@ -176,20 +176,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "common",
-            "textToSpeak": "common",
+            "word": "term",
+            "textToSpeak": "term",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/ɜː/",
+                "/ɔː/"
             ],
-            "correctAnswer": "/ɒ/",
-            "correctAnswerIndex": 1,
-            "hint": "Tune your ear to 'hot'. 'common' uses that exact vowel (/ɒ/), the LOT sound. Do not let it drift toward the THOUGHT vowel.",
-            "explanation": "Here, 'common' uses the LOT vowel (/ɒ/) - a short, open-back vowel with rounded lips. Notice how different this feels from the THOUGHT vowel in 'law'.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "correctAnswer": "/ɜː/",
+            "correctAnswerIndex": 0,
+            "hint": "Hold one steady vowel with relaxed lips. The er spelling is not or.",
+            "explanation": "Er in a stressed syllable spells the steady central vowel. Rounding the lips would drift towards the vowel of 'torn'.",
+            "vowelTensionRule": "Check your lips: still and unrounded for /ɜː/, a clear oval for /ɔː/.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.8
+                "x": 0.5,
+                "y": 0.5
             }
         },
         {
@@ -197,20 +197,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "walk",
-            "textToSpeak": "walk",
+            "word": "screen",
+            "textToSpeak": "screen",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/iː/",
+                "/ɪ/"
             ],
-            "correctAnswer": "/ɔː/",
+            "correctAnswer": "/iː/",
             "correctAnswerIndex": 0,
-            "hint": "Listen to the main vowel in 'walk'. It should match 'ball', the THOUGHT vowel /ɔː/ - not the LOT vowel you hear in 'dog'.",
-            "explanation": "'walk' is pronounced with /ɔː/, the THOUGHT vowel: a long, mid-back vowel with strongly rounded lips. Practising this contrast against the LOT vowel sharpens your ear for one of English's key vowel pairs.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "hint": "Three consonants first, then a held vowel with spread lips.",
+            "explanation": "After the /skr/ cluster the vowel must still be tense and long.",
+            "vowelTensionRule": "A voiceless consonant after the vowel shortens both. If duration seems to vanish, rely on the tense quality of /iː/.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.6
+                "x": 0.1,
+                "y": 0.1
             }
         },
         {
@@ -218,41 +218,41 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "problem",
-            "textToSpeak": "problem",
+            "word": "website",
+            "textToSpeak": "website",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/æ/",
+                "/e/"
             ],
-            "correctAnswer": "/ɒ/",
+            "correctAnswer": "/e/",
             "correctAnswerIndex": 1,
-            "hint": "Think of how you say 'hot'. The vowel in 'problem' should feel the same way. That is the LOT sound, not the THOUGHT sound in 'law'.",
-            "explanation": "'problem' is pronounced with /ɒ/, the LOT vowel: a short, open-back vowel with rounded lips. Practising this contrast against the THOUGHT vowel sharpens your ear for one of English's key vowel pairs.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "hint": "Half-open jaw in the stressed first syllable.",
+            "explanation": "The jaw is half open, not as wide as in 'wax'.",
+            "vowelTensionRule": "Tongue height is the cue: it falls from mid-front /e/ to low-front /æ/. Lips are slightly spread for both.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.8
+                "x": 0.15,
+                "y": 0.4
             }
         },
         {
             "id": "ACC_VOWELDISTINCTION_L104_Q3",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE FIRST SYLLABLE",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "product",
-            "textToSpeak": "product",
+            "word": "download",
+            "textToSpeak": "download",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/aʊ/",
+                "/əʊ/"
             ],
-            "correctAnswer": "/ɒ/",
-            "correctAnswerIndex": 1,
-            "hint": "The key difference is between /ɒ/ and /ɔː/. In 'product', listen for a short, open-back vowel with rounded lips, just like in 'hot'.",
-            "explanation": "Here, 'product' uses the LOT vowel (/ɒ/) - a short, open-back vowel with rounded lips. Notice how different this feels from the THOUGHT vowel in 'law'.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "correctAnswer": "/aʊ/",
+            "correctAnswerIndex": 0,
+            "hint": "This word holds both diphthongs of the pair. Judge the first syllable only.",
+            "explanation": "It begins wide open and the second syllable closes with a different diphthong. Which syllable you listen to decides the answer.",
+            "vowelTensionRule": "Spelling traps: ow can be /aʊ/ (cow) or /əʊ/ (slow), and ou is /aʊ/ in out but /əʊ/ in soul.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.8
+                "x": 0.5,
+                "y": 0.5
             }
         },
         {
@@ -260,20 +260,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "saw",
-            "textToSpeak": "saw",
+            "word": "medicine",
+            "textToSpeak": "medicine",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/e/",
+                "/æ/"
             ],
-            "correctAnswer": "/ɔː/",
+            "correctAnswer": "/e/",
             "correctAnswerIndex": 0,
-            "hint": "Listen to the main vowel in 'saw'. It should match 'ball', the THOUGHT vowel /ɔː/ - not the LOT vowel you hear in 'hot'.",
-            "explanation": "'saw' is built on the THOUGHT vowel /ɔː/: a long, mid-back vowel with strongly rounded lips. Keep this anchored against 'ball' so you can recognise it in new words too.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "hint": "Often two syllables in RP: 'med-sin'. Half-open jaw.",
+            "explanation": "Many speakers drop the middle vowel, which doesn't alter the first.",
+            "vowelTensionRule": "Spread the lips slightly for both, but let the jaw do the work: /e/ stops about halfway, /æ/ keeps going.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.6
+                "x": 0.15,
+                "y": 0.4
             }
         },
         {
@@ -281,20 +281,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "draw",
-            "textToSpeak": "draw",
+            "word": "fever",
+            "textToSpeak": "fever",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/ɪ/",
+                "/iː/"
             ],
-            "correctAnswer": "/ɔː/",
-            "correctAnswerIndex": 0,
-            "hint": "Say 'ball' out loud, then say 'draw'. If the stressed vowel feels the same, you are hearing /ɔː/, not the LOT vowel in 'dog'.",
-            "explanation": "The vowel sound in 'draw' is /ɔː/, the THOUGHT vowel - a long, mid-back vowel with strongly rounded lips. It contrasts with the LOT vowel /ɒ/, heard in words like 'hot'. Fun fact: in many American accents, THOUGHT and LOT words like these have merged into one sound - but in careful, standard pronunciation they stay distinct, exactly as practiced here.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "correctAnswer": "/iː/",
+            "correctAnswerIndex": 1,
+            "hint": "Hold the first vowel with spread lips and a tense tongue.",
+            "explanation": "Spread lips and a long vowel. A short vowel would sound like 'fivver'.",
+            "vowelTensionRule": "/ɪ/ is lower and more central than /iː/ on the chart, so the tongue shifts slightly down and back.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.6
+                "x": 0.1,
+                "y": 0.1
             }
         },
         {
@@ -302,20 +302,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "adopt",
-            "textToSpeak": "adopt",
+            "word": "surgeon",
+            "textToSpeak": "surgeon",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/ʌ/",
+                "/ɜː/"
             ],
-            "correctAnswer": "/ɒ/",
+            "correctAnswer": "/ɜː/",
             "correctAnswerIndex": 1,
-            "hint": "Tune your ear to 'dog'. 'adopt' uses that exact vowel (/ɒ/), the LOT sound. Do not let it drift toward the THOUGHT vowel.",
-            "explanation": "The vowel sound in 'adopt' is /ɒ/, the LOT vowel - a short, open-back vowel with rounded lips. It contrasts with the THOUGHT vowel /ɔː/, heard in words like 'law'. Fun fact: in many American accents, THOUGHT and LOT words like these have merged into one sound - but in careful, standard pronunciation they stay distinct, exactly as practiced here.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "hint": "The ur spelling signals a long central vowel in RP.",
+            "explanation": "Ur gives the long central vowel in the first syllable, and the second syllable is weak.",
+            "vowelTensionRule": "Hold /ɜː/ steadily with the tongue mid-central. /ʌ/ is lower and clipped.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.8
+                "x": 0.5,
+                "y": 0.5
             }
         },
         {
@@ -323,20 +323,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "cause",
-            "textToSpeak": "cause",
+            "word": "salad",
+            "textToSpeak": "salad",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/æ/",
+                "/e/"
             ],
-            "correctAnswer": "/ɔː/",
+            "correctAnswer": "/æ/",
             "correctAnswerIndex": 0,
-            "hint": "This word uses the THOUGHT vowel - a long, mid-back vowel with strongly rounded lips. It sounds like 'law', not like 'dog' which is the LOT vowel /ɒ/.",
-            "explanation": "'cause' contains the THOUGHT vowel /ɔː/: a long, mid-back vowel with strongly rounded lips. This is the same vowel sound found in 'law' and 'ball'. Fun fact: in many American accents, THOUGHT and LOT words like these have merged into one sound - but in careful, standard pronunciation they stay distinct, exactly as practiced here.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "hint": "A wide jaw in the first syllable. It isn't 'seled'.",
+            "explanation": "A wide vowel in the first syllable and a weak schwa in the second.",
+            "vowelTensionRule": "If a word with /æ/ is coming out as /e/, check that the front of the tongue is low, not hovering at mid-height.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.6
+                "x": 0.2,
+                "y": 0.9
             }
         },
         {
@@ -344,20 +344,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "yacht",
-            "textToSpeak": "yacht",
+            "word": "chicken",
+            "textToSpeak": "chicken",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/ɪ/",
+                "/iː/"
             ],
-            "correctAnswer": "/ɒ/",
-            "correctAnswerIndex": 1,
-            "hint": "Say 'hot' out loud, then say 'yacht'. If the stressed vowel feels the same, you are hearing /ɒ/, not the THOUGHT vowel in 'law'.",
-            "explanation": "'yacht' is pronounced with /ɒ/, the LOT vowel: a short, open-back vowel with rounded lips. Practising this contrast against the THOUGHT vowel sharpens your ear for one of English's key vowel pairs. Fun fact: in many American accents, THOUGHT and LOT words like these have merged into one sound - but in careful, standard pronunciation they stay distinct, exactly as practiced here.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "correctAnswer": "/ɪ/",
+            "correctAnswerIndex": 0,
+            "hint": "Both vowels are short and loose. Your lips should never spread.",
+            "explanation": "Spreading the lips would turn it into 'cheeken', so keep them neutral.",
+            "vowelTensionRule": "/ɪ/ is lax and slightly lowered; /iː/ is higher and tenser with spread lips. Quality carries the contrast, and length only reinforces it.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.8
+                "x": 0.25,
+                "y": 0.2
             }
         },
         {
@@ -365,20 +365,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "hospital",
-            "textToSpeak": "hospital",
+            "word": "roast",
+            "textToSpeak": "roast",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/ɒ/",
+                "/əʊ/"
             ],
-            "correctAnswer": "/ɒ/",
+            "correctAnswer": "/əʊ/",
             "correctAnswerIndex": 1,
-            "hint": "'hospital' is built on the LOT vowel: a short, open-back vowel with rounded lips. Use 'dog' as your reference - that is the sound you are listening for.",
-            "explanation": "'hospital' is pronounced with /ɒ/, the LOT vowel: a short, open-back vowel with rounded lips. Practising this contrast against the THOUGHT vowel sharpens your ear for one of English's key vowel pairs.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "hint": "The oa spelling signals closing lips. It isn't 'rost'.",
+            "explanation": "The glide to a rounded ending is what separates it from the short vowel.",
+            "vowelTensionRule": "/əʊ/ glides from central to a rounded back position; /ɒ/ is a short, steady, open rounded vowel.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.8
+                "x": 0.5,
+                "y": 0.5
             }
         },
         {
@@ -386,41 +386,41 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "pause",
-            "textToSpeak": "pause",
+            "word": "discount",
+            "textToSpeak": "discount",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/aʊ/",
+                "/əʊ/"
             ],
-            "correctAnswer": "/ɔː/",
+            "correctAnswer": "/aʊ/",
             "correctAnswerIndex": 0,
-            "hint": "'pause' is built on the THOUGHT vowel: a long, mid-back vowel with strongly rounded lips. Use 'ball' as your reference - that is the sound you are listening for.",
-            "explanation": "'pause' is pronounced with /ɔː/, the THOUGHT vowel: a long, mid-back vowel with strongly rounded lips. Practising this contrast against the LOT vowel sharpens your ear for one of English's key vowel pairs.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "hint": "In the noun, the first syllable is stressed; the diphthong sits in the second.",
+            "explanation": "The ou spelling is typical, and the glide opens wide before closing.",
+            "vowelTensionRule": "/aʊ/ starts wide open and closes to a rounded back position; /əʊ/ starts mid-central and closes to the same rounded place.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.6
+                "x": 0.5,
+                "y": 0.5
             }
         },
         {
             "id": "ACC_VOWELDISTINCTION_L107_Q2",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE STRESSED SYLLABLE",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "sport",
-            "textToSpeak": "sport",
+            "word": "receipt",
+            "textToSpeak": "receipt",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/iː/",
+                "/ɪ/"
             ],
-            "correctAnswer": "/ɔː/",
+            "correctAnswer": "/iː/",
             "correctAnswerIndex": 0,
-            "hint": "Listen to the main vowel in 'sport'. It should match 'law', the THOUGHT vowel /ɔː/ - not the LOT vowel you hear in 'hot'.",
-            "explanation": "The vowel sound in 'sport' is /ɔː/, the THOUGHT vowel - a long, mid-back vowel with strongly rounded lips. It contrasts with the LOT vowel /ɒ/, heard in words like 'hot'.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "hint": "Silent p. The stress is on the second syllable.",
+            "explanation": "A weak /ɪ/ at the start, but the long vowel in the stressed syllable. The silent p is pure spelling.",
+            "vowelTensionRule": "Smile and press the tongue high behind the lower teeth for /iː/. For /ɪ/ let tongue and jaw relax a touch lower, lips neutral.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.6
+                "x": 0.1,
+                "y": 0.1
             }
         },
         {
@@ -428,20 +428,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "pocket",
-            "textToSpeak": "pocket",
+            "word": "brand",
+            "textToSpeak": "brand",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/e/",
+                "/æ/"
             ],
-            "correctAnswer": "/ɒ/",
+            "correctAnswer": "/æ/",
             "correctAnswerIndex": 1,
-            "hint": "'pocket' is built on the LOT vowel: a short, open-back vowel with rounded lips. Use 'hot' as your reference - that is the sound you are listening for.",
-            "explanation": "'pocket' contains the LOT vowel /ɒ/: a short, open-back vowel with rounded lips. This is the same vowel sound found in 'hot' and 'dog'. Fun fact: in many American accents, THOUGHT and LOT words like these have merged into one sound - but in careful, standard pronunciation they stay distinct, exactly as practiced here.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "hint": "A wide jaw after /br/, then /nd/ closes it.",
+            "explanation": "The /nd/ ending keeps the vowel wide, so the jaw stays open until the tongue closes.",
+            "vowelTensionRule": "Before nasals and voiced stops /æ/ tends to lengthen while /e/ stays brief, but the jaw gap is still the deciding cue.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.8
+                "x": 0.2,
+                "y": 0.9
             }
         },
         {
@@ -449,20 +449,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "morning",
-            "textToSpeak": "morning",
+            "word": "party",
+            "textToSpeak": "party",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/æ/",
+                "/ɑː/"
             ],
-            "correctAnswer": "/ɔː/",
-            "correctAnswerIndex": 0,
-            "hint": "This word uses the THOUGHT vowel - a long, mid-back vowel with strongly rounded lips. It sounds like 'ball', not like 'dog' which is the LOT vowel /ɒ/.",
-            "explanation": "'morning' is pronounced with /ɔː/, the THOUGHT vowel: a long, mid-back vowel with strongly rounded lips. Practising this contrast against the LOT vowel sharpens your ear for one of English's key vowel pairs. Fun fact: in many American accents, THOUGHT and LOT words like these have merged into one sound - but in careful, standard pronunciation they stay distinct, exactly as practiced here.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "correctAnswer": "/ɑː/",
+            "correctAnswerIndex": 1,
+            "hint": "The ar spelling signals a long open vowel.",
+            "explanation": "The short wide vowel would turn it into 'patty', so hold the vowel long and open.",
+            "vowelTensionRule": "In RP many words with a before f, s, th or n plus a consonant take /ɑː/ (the BATH set). That is a vocabulary fact, not a spelling rule.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.6
+                "x": 0.9,
+                "y": 0.95
             }
         },
         {
@@ -470,20 +470,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "forgot",
-            "textToSpeak": "forgot",
+            "word": "invite",
+            "textToSpeak": "invite",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/aɪ/",
+                "/eɪ/"
             ],
-            "correctAnswer": "/ɒ/",
-            "correctAnswerIndex": 1,
-            "hint": "Listen to the main vowel in 'forgot'. It should match 'dog', the LOT vowel /ɒ/ - not the THOUGHT vowel you hear in 'ball'.",
-            "explanation": "The vowel sound in 'forgot' is /ɒ/, the LOT vowel - a short, open-back vowel with rounded lips. It contrasts with the THOUGHT vowel /ɔː/, heard in words like 'law'.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "correctAnswer": "/aɪ/",
+            "correctAnswerIndex": 0,
+            "hint": "After the quick first syllable, open the jaw wide for the vowel that carries the stress.",
+            "explanation": "The i_e spelling gives this open-start diphthong regularly.",
+            "vowelTensionRule": "Listen to the start point: an open, ah-like beginning means /aɪ/, an eh-like beginning means /eɪ/.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.8
+                "x": 0.5,
+                "y": 0.5
             }
         },
         {
@@ -491,20 +491,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "gossip",
-            "textToSpeak": "gossip",
+            "word": "together",
+            "textToSpeak": "together",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/æ/",
+                "/e/"
             ],
-            "correctAnswer": "/ɒ/",
+            "correctAnswer": "/e/",
             "correctAnswerIndex": 1,
-            "hint": "Listen to the main vowel in 'gossip'. It should match 'dog', the LOT vowel /ɒ/ - not the THOUGHT vowel you hear in 'ball'.",
-            "explanation": "'gossip' is pronounced with /ɒ/, the LOT vowel: a short, open-back vowel with rounded lips. Practising this contrast against the THOUGHT vowel sharpens your ear for one of English's key vowel pairs.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "hint": "After a quick, weak start, keep the jaw half open on the stressed vowel.",
+            "explanation": "The first syllable is weak and quick, and the stressed vowel comes after it.",
+            "vowelTensionRule": "/e/ and /æ/ differ by about one step of tongue height on the vowel chart: mid-front versus near-open front.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.8
+                "x": 0.15,
+                "y": 0.4
             }
         },
         {
@@ -512,20 +512,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "important",
-            "textToSpeak": "important",
+            "word": "train",
+            "textToSpeak": "train",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/eɪ/",
+                "/aɪ/"
             ],
-            "correctAnswer": "/ɔː/",
+            "correctAnswer": "/eɪ/",
             "correctAnswerIndex": 0,
-            "hint": "Say 'ball' out loud, then say 'important'. If the stressed vowel feels the same, you are hearing /ɔː/, not the LOT vowel in 'dog'.",
-            "explanation": "'important' is built on the THOUGHT vowel /ɔː/: a long, mid-back vowel with strongly rounded lips. Keep this anchored against 'ball' so you can recognise it in new words too.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "hint": "Start at mid height and rise. The ai spelling again.",
+            "explanation": "A word with an open start would sound like 'trine'.",
+            "vowelTensionRule": "Spelling traps: i_e, igh and y give /aɪ/, while a_e, ai and ay give /eɪ/. Words like eight and height show the exceptions.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.6
+                "x": 0.5,
+                "y": 0.5
             }
         },
         {
@@ -533,41 +533,41 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "before",
-            "textToSpeak": "before",
+            "word": "taxi",
+            "textToSpeak": "taxi",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/æ/",
+                "/e/"
             ],
-            "correctAnswer": "/ɔː/",
+            "correctAnswer": "/æ/",
             "correctAnswerIndex": 0,
-            "hint": "Compare 'ball' (/ɔː/) with 'dog' (/ɒ/). The vowel in 'before' matches one of these - which one feels right?",
-            "explanation": "Here, 'before' uses the THOUGHT vowel (/ɔː/) - a long, mid-back vowel with strongly rounded lips. Notice how different this feels from the LOT vowel in 'hot'.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "hint": "A wide first syllable, then a light /i/ at the end.",
+            "explanation": "The x spells /ks/ and follows a wide vowel.",
+            "vowelTensionRule": "Spelling won't tell you: a gives /e/ in 'many' and /æ/ in 'cat', and ea gives /e/ in 'head'. Decide with ears and jaw.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.6
+                "x": 0.2,
+                "y": 0.9
             }
         },
         {
             "id": "ACC_VOWELDISTINCTION_L109_Q3",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE FIRST SYLLABLE",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "topic",
-            "textToSpeak": "topic",
+            "word": "engine",
+            "textToSpeak": "engine",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/ɪ/",
+                "/e/"
             ],
-            "correctAnswer": "/ɒ/",
+            "correctAnswer": "/e/",
             "correctAnswerIndex": 1,
-            "hint": "Compare 'dog' (/ɒ/) with 'ball' (/ɔː/). The vowel in 'topic' matches one of these - which one feels right?",
-            "explanation": "'topic' is built on the LOT vowel /ɒ/: a short, open-back vowel with rounded lips. Keep this anchored against 'dog' so you can recognise it in new words too.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "hint": "Judge the stressed first syllable. Half-open jaw.",
+            "explanation": "The half-open vowel sits in the stressed first syllable. The weak vowel in the second syllable is not what is being asked.",
+            "vowelTensionRule": "Tongue height is the cue: /ɪ/ sits close to high front, /e/ is mid-front with the jaw about half open.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.8
+                "x": 0.15,
+                "y": 0.4
             }
         },
         {
@@ -575,20 +575,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "floor",
-            "textToSpeak": "floor",
+            "word": "library",
+            "textToSpeak": "library",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/eɪ/",
+                "/aɪ/"
             ],
-            "correctAnswer": "/ɔː/",
-            "correctAnswerIndex": 0,
-            "hint": "The vowel in 'floor' is a long, mid-back vowel with strongly rounded lips. Think of 'ball' - it uses the same sound. The LOT vowel in 'dog' feels quite different.",
-            "explanation": "'floor' is built on the THOUGHT vowel /ɔː/: a long, mid-back vowel with strongly rounded lips. Keep this anchored against 'ball' so you can recognise it in new words too.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "correctAnswer": "/aɪ/",
+            "correctAnswerIndex": 1,
+            "hint": "Open start in the first syllable. Many speakers squeeze the middle.",
+            "explanation": "The following syllables are weak and often squeezed together.",
+            "vowelTensionRule": "Both end in a glide towards /ɪ/, but /aɪ/ starts wide open and /eɪ/ starts mid-front.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.6
+                "x": 0.5,
+                "y": 0.5
             }
         },
         {
@@ -596,20 +596,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "profit",
-            "textToSpeak": "profit",
+            "word": "post",
+            "textToSpeak": "post",
             "options": [
-                "/ɔː/",
+                "/əʊ/",
                 "/ɒ/"
             ],
-            "correctAnswer": "/ɒ/",
-            "correctAnswerIndex": 1,
-            "hint": "This word uses the LOT vowel - a short, open-back vowel with rounded lips. It sounds like 'hot', not like 'law' which is the THOUGHT vowel /ɔː/.",
-            "explanation": "The vowel sound in 'profit' is /ɒ/, the LOT vowel - a short, open-back vowel with rounded lips. It contrasts with the THOUGHT vowel /ɔː/, heard in words like 'law'.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "correctAnswer": "/əʊ/",
+            "correctAnswerIndex": 0,
+            "hint": "Closing lips and a relaxed start.",
+            "explanation": "An o before st is a hazard. 'Lost' is short, but 'post' glides.",
+            "vowelTensionRule": "The lips close up through /əʊ/ and finish in a small round. For /ɒ/ the jaw stays open and the lips stable.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.8
+                "x": 0.5,
+                "y": 0.5
             }
         },
         {
@@ -617,20 +617,20 @@
             "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "chocolate",
-            "textToSpeak": "chocolate",
+            "word": "council",
+            "textToSpeak": "council",
             "options": [
-                "/ɔː/",
-                "/ɒ/"
+                "/əʊ/",
+                "/aʊ/"
             ],
-            "correctAnswer": "/ɒ/",
+            "correctAnswer": "/aʊ/",
             "correctAnswerIndex": 1,
-            "hint": "Compare 'dog' (/ɒ/) with 'ball' (/ɔː/). The vowel in 'chocolate' matches one of these - which one feels right?",
-            "explanation": "Here, 'chocolate' uses the LOT vowel (/ɒ/) - a short, open-back vowel with rounded lips. Notice how different this feels from the THOUGHT vowel in 'law'.",
-            "vowelTensionRule": "/ɒ/ (LOT) is short, with the lips loosely rounded and the jaw low. /ɔː/ (THOUGHT) is longer, with the lips more firmly rounded and the tongue held higher and further back.",
+            "hint": "A wide start. The ou spelling.",
+            "explanation": "It sounds the same as 'counsel' in RP, though the spelling differs.",
+            "vowelTensionRule": "Only /aʊ/ opens the jaw wide at the start. /əʊ/ begins relaxed and rounds the lips more steadily.",
             "vowelChart": {
-                "x": 0.95,
-                "y": 0.8
+                "x": 0.5,
+                "y": 0.5
             }
         }
     ]

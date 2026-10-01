@@ -5,512 +5,512 @@
     "quests": [
         {
             "id": "sva_l21_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE SENTENCE",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Tom and Maria ___ a flat near the university.",
-            "hint": "Two people joined by 'and' make a plural compound subject.",
-            "explanation": "When two subjects are joined by 'and', they form a plural subject that takes the base form of the verb. 'Tom and Maria share' - not 'shares'.",
+            "question": "The manager and the accountant ___ the budget every quarter.",
+            "hint": "When two different subjects are joined by 'and', think about how many things are doing the action together.",
+            "explanation": "'The manager' and 'the accountant' are joined by 'and', creating a compound subject that is treated as plural — even though each noun alone is singular. Plural subjects take the base verb form: 'review'.",
+            "options": [
+                "review",
+                "reviews"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "review",
+            "grammarRule": "Compound subject joined by 'and' takes a plural verb",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l21_q2",
+            "instruction": "COMPLETE THE SENTENCE",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "A laptop and a phone ___ enough for most remote work.",
+            "hint": "Count how many separate items 'and' is connecting here.",
+            "explanation": "'A laptop' and 'a phone' are two separate items connected by 'and', so together they form a plural subject. That's why the sentence needs 'are', not 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are",
+            "grammarRule": "Compound subject joined by 'and' takes a plural verb",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l21_q3",
+            "instruction": "COMPLETE THE SENTENCE",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The violin and the piano ___ beautifully together in this piece.",
+            "hint": "Two instruments joined by 'and' act as a single plural subject for the verb.",
+            "explanation": "'The violin' and 'the piano' are joined by 'and', forming a compound subject. Compound subjects joined by 'and' always take a plural verb, so 'sound' is correct.",
+            "options": [
+                "sounds",
+                "sound"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "sound",
+            "grammarRule": "Compound subject joined by 'and' takes a plural verb",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l22_q1",
+            "instruction": "CHOOSE THE CORRECT VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "My brother and I ___ a small business together.",
+            "hint": "Whenever 'I' is joined to another subject with 'and', the combination is always plural - just like 'we'.",
+            "explanation": "'My brother and I' together form a plural subject, equivalent to 'we'. Plural subjects take the base verb form: 'run'.",
+            "options": [
+                "run",
+                "runs"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "run",
+            "grammarRule": "Compound subject with 'and I' takes a plural verb",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l22_q2",
+            "instruction": "CHOOSE THE CORRECT VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "My roommate and I ___ grocery shopping every Sunday.",
+            "hint": "Replace the compound subject with 'we' to check which verb form fits.",
+            "explanation": "'My roommate and I' can be replaced with 'we', a plural pronoun. Plural subjects use the base verb form, so 'go' is correct.",
+            "options": [
+                "goes",
+                "go"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "go",
+            "grammarRule": "Compound subject with 'and I' takes a plural verb",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l22_q3",
+            "instruction": "CHOOSE THE CORRECT VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Her sister and she ___ the same college next year.",
+            "hint": "Two people joined by 'and' always act together as a plural subject.",
+            "explanation": "'Her sister and she' together form a plural subject, so the verb takes the base form: 'attend', not 'attends'.",
+            "options": [
+                "attend",
+                "attends"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "attend",
+            "grammarRule": "Compound subject with 'and I' takes a plural verb",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l23_q1",
+            "instruction": "CHOOSE THE CORRECT VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "He and I ___ the same gym near downtown.",
+            "hint": "Two pronouns joined by 'and' work the same way as 'we'.",
+            "explanation": "'He and I' together act as a plural subject, similar to 'we'. Plural subjects take the base verb form: 'use'.",
+            "options": [
+                "use",
+                "uses"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "use",
+            "grammarRule": "Compound subject formed by two pronouns joined by 'and'",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l23_q2",
+            "instruction": "CHOOSE THE CORRECT VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "You and she ___ always welcome to join the study group.",
+            "hint": "Think of 'you and she' as equivalent to 'you both' - which form of 'be' fits?",
+            "explanation": "'You and she' forms a plural subject, so the sentence needs 'are', not 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are",
+            "grammarRule": "Compound subject formed by two pronouns joined by 'and'",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l23_q3",
+            "instruction": "CHOOSE THE CORRECT VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "They and their neighbors ___ a block party every August.",
+            "hint": "Even with two plural-sounding parts, check the overall subject as one combined group.",
+            "explanation": "'They and their neighbors' is a compound subject joined by 'and', so it takes the plural, base verb form: 'organize'.",
+            "options": [
+                "organizes",
+                "organize"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "organize",
+            "grammarRule": "Compound subject formed by two pronouns joined by 'and'",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l24_q1",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Maria and Carlos ___ the new marketing campaign together.",
+            "hint": "Two named people joined by 'and' always create a plural subject, no matter their individual roles.",
+            "explanation": "'Maria and Carlos' are two people joined by 'and', forming a plural subject. The verb takes the base form: 'manage'.",
+            "options": [
+                "manages",
+                "manage"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "manage",
+            "grammarRule": "Compound subject with two proper nouns joined by 'and'",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l24_q2",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "London and Paris ___ among the most visited cities in Europe.",
+            "hint": "Even place names, when joined by 'and', combine into a plural subject.",
+            "explanation": "'London and Paris' are two separate cities joined by 'and', so the subject is plural. Plural subjects use the base verb form: 'rank'.",
+            "options": [
+                "rank",
+                "ranks"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "rank",
+            "grammarRule": "Compound subject with two proper nouns joined by 'and'",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l24_q3",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Netflix and Disney+ ___ competing subscription services.",
+            "hint": "Brand names joined by 'and' follow the same compound-subject rule as any other noun.",
+            "explanation": "'Netflix and Disney+' are joined by 'and', creating a plural subject. That's why the verb is 'remain', not 'remains'.",
+            "options": [
+                "remain",
+                "remains"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "remain",
+            "grammarRule": "Compound subject with two proper nouns joined by 'and'",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l25_q1",
+            "instruction": "SPOT THE EXCEPTION",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Macaroni and cheese ___ my daughter's favorite meal.",
+            "hint": "Some food combinations joined by 'and' are really thought of as a single dish, not two separate things.",
+            "explanation": "'Macaroni and cheese' names one dish, even though it contains 'and'. When a compound refers to a single idea or item, it takes a singular verb: 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "Compound expressions treated as a single unit take a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l25_q2",
+            "instruction": "SPOT THE EXCEPTION",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Bread and butter ___ a simple but satisfying snack.",
+            "hint": "Ask whether the two nouns joined by 'and' describe one combined thing or two separate things.",
+            "explanation": "'Bread and butter' is understood as a single food item here, so it's treated as a singular subject. The verb takes -s: 'makes'.",
+            "options": [
+                "make",
+                "makes"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "makes",
+            "grammarRule": "Compound expressions treated as a single unit take a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l25_q3",
+            "instruction": "SPOT THE EXCEPTION",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The bar and grill on Main Street ___ a great weekend crowd.",
+            "hint": "This isn't two separate places - it's one business with a compound name.",
+            "explanation": "'The bar and grill' refers to a single restaurant, not two different places, so it's treated as a singular subject: 'attracts'.",
+            "options": [
+                "attract",
+                "attracts"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "attracts",
+            "grammarRule": "Compound expressions treated as a single unit take a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l26_q1",
+            "instruction": "FIND THE REAL SUBJECT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The old wooden bridge and the newly built highway ___ the two towns.",
+            "hint": "Ignore the describing words in front of each noun and focus on how many things are joined by 'and'.",
+            "explanation": "Despite the long descriptive phrases, the subject is still two things joined by 'and': 'the bridge' and 'the highway'. That makes it a plural subject: 'connect'.",
+            "options": [
+                "connect",
+                "connects"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "connect",
+            "grammarRule": "Compound subject with descriptive modifiers still takes a plural verb",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l26_q2",
+            "instruction": "FIND THE REAL SUBJECT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "A well-known chef and a rising food blogger ___ hosting the cooking show this season.",
+            "hint": "Strip away the adjectives and count the actual people joined by 'and'.",
+            "explanation": "The subject is 'a chef' and 'a food blogger', two people joined by 'and', so it's plural: 'are hosting'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are",
+            "grammarRule": "Compound subject with descriptive modifiers still takes a plural verb",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l26_q3",
+            "instruction": "FIND THE REAL SUBJECT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The company's oldest client and its newest investor ___ meeting with the board today.",
+            "hint": "Even with possessives and long descriptions, two separate people joined by 'and' form a plural subject.",
+            "explanation": "'The oldest client' and 'the newest investor' are two people joined by 'and', creating a plural subject that takes 'are'.",
+            "options": [
+                "are",
+                "is"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "are",
+            "grammarRule": "Compound subject with descriptive modifiers still takes a plural verb",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l27_q1",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Doctors and nurses ___ long shifts during flu season.",
+            "hint": "Both parts of this subject are already plural - what happens when you join two plural groups with 'and'?",
+            "explanation": "'Doctors' and 'nurses' are both plural, and joining them with 'and' keeps the subject plural overall. The verb stays in the base form: 'work'.",
+            "options": [
+                "works",
+                "work"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "work",
+            "grammarRule": "Compound subject formed by two plural nouns joined by 'and'",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l27_q2",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Teachers and parents ___ concerns about the new schedule.",
+            "hint": "Notice that both nouns end in -s already - that's a strong clue about the verb form.",
+            "explanation": "Both 'teachers' and 'parents' are plural, so the combined subject stays plural, taking the base verb: 'share'.",
             "options": [
                 "share",
                 "shares"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "share",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l21_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The manager and the assistant ___ the office together.",
-            "hint": "Two people connected by 'and' form a plural subject.",
-            "explanation": "'The manager and the assistant' is a compound subject joined by 'and'. Two or more subjects joined by 'and' always take a plural verb: 'run', not 'runs'.",
-            "options": [
-                "runs",
-                "run"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "run",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l21_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Bread and butter ___ a simple but satisfying meal.",
-            "hint": "When two things are treated as one unit or idea, they take a singular verb.",
-            "explanation": "'Bread and butter' refers to a single dish or combination, not two separate things. Pairs that function as a unit take a singular verb: 'makes', not 'make'.",
-            "options": [
-                "makes",
-                "make"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "makes",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l22_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Either the manager or the assistant ___ that report daily.",
-            "hint": "With 'either…or', the verb agrees with the subject closer to it ('assistant' is singular).",
-            "explanation": "With 'either…or', the verb agrees with the subject nearest to it. 'The assistant' is singular, so the verb takes -s: 'prepares'.",
-            "options": [
-                "prepare",
-                "prepares"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "prepares",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l22_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Either the manager or the assistants ___ that report daily.",
-            "hint": "With 'either…or', the verb agrees with the nearer subject ('assistants' is plural).",
-            "explanation": "When 'either…or' is used, the verb agrees with the subject closest to it. 'The assistants' is plural, so the verb takes the base form: 'prepare'.",
-            "options": [
-                "prepare",
-                "prepares"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "prepare",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l22_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Neither the cat nor the dog ___ interested in their food.",
-            "hint": "With 'neither…nor', the verb agrees with the nearer subject ('dog' is singular).",
-            "explanation": "With 'neither…nor', the verb agrees with the subject nearest to it. 'The dog' is singular, so the verb is 'is', not 'are'.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l23_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Neither the cats nor the dog ___ interested in their food.",
-            "hint": "'Neither…nor' - the verb matches the nearer subject. 'Dog' is singular.",
-            "explanation": "When 'neither…nor' connects a plural and a singular subject, the verb agrees with the one closest to it. 'The dog' is singular, so 'is' is correct.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l23_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Neither the cat nor the dogs ___ eating today.",
-            "hint": "'Neither…nor' - verb agrees with the nearer subject. 'Dogs' is plural.",
-            "explanation": "With 'neither…nor', the verb agrees with the nearest subject. 'The dogs' is plural, so the verb must be 'are', not 'is'.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l23_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "My brother and I ___ planning a surprise party.",
-            "hint": "Two people ('my brother' + 'I') joined by 'and' create a plural subject.",
-            "explanation": "When 'I' is part of a compound subject joined by 'and', the whole subject is plural. 'My brother and I are planning' - not 'is planning'.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l24_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The team ___ practising hard for the final.",
-            "hint": "A team is one unit - singular in standard English.",
-            "explanation": "In standard English, collective nouns like 'team', 'group', and 'committee' are treated as singular when acting as a unit. 'The team is practising.'",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l24_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The committee ___ meeting this Thursday afternoon.",
-            "hint": "A committee acting as one group takes a singular verb.",
-            "explanation": "Collective nouns such as 'committee', 'board', and 'staff' take a singular verb when the group acts together as a unit.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l24_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The jury ___ reached a unanimous verdict.",
-            "hint": "The jury acted together as a single body - use the singular.",
-            "explanation": "When a collective noun (like 'jury') acts as a single unit, it takes a singular verb. 'The jury has reached' means they acted together.",
-            "options": [
-                "have",
-                "has"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l25_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The family ___ gathering at my grandmother's house.",
-            "hint": "The family as a single unit takes a singular verb.",
-            "explanation": "In standard English, 'family' takes a singular verb when it acts as one group. 'The family is gathering' treats them as a single unit.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l25_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The children in my class ___ very curious learners.",
-            "hint": "Focus on the true subject: 'children' (not 'class') - 'children' is plural.",
-            "explanation": "The subject is 'the children', not 'my class'. A prepositional phrase ('in my class') sits between the subject and verb but does not change the agreement. 'Children' is plural, so 'are' is correct.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l25_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The cost of the repairs ___ very high.",
-            "hint": "The true subject is 'cost' (singular), not 'repairs'.",
-            "explanation": "The subject is 'the cost', not 'the repairs'. Prepositional phrases do not change subject-verb agreement. 'Cost' is singular, so the verb is 'is'.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l26_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The results of the experiment ___ surprising.",
-            "hint": "The true subject is 'results' (plural), not 'experiment'.",
-            "explanation": "The subject is 'the results', not 'the experiment'. 'Results' is plural, so the verb must be 'are'. Don't be misled by the prepositional phrase 'of the experiment'.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l26_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The quality of these materials ___ very poor.",
-            "hint": "The subject is 'quality' (singular) - don't be misled by 'materials'.",
-            "explanation": "'The quality' is the true subject. The phrase 'of these materials' is a prepositional modifier. Since 'quality' is singular, the verb is 'is'.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l26_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The number of applicants ___ rising each year.",
-            "hint": "'The number of' is always singular - it refers to one count.",
-            "explanation": "The phrase 'the number of' is always singular. 'The number is rising.' Don't confuse this with 'a number of', which is plural.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l27_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "A number of students ___ absent today.",
-            "hint": "'A number of' means 'several' - it takes a plural verb.",
-            "explanation": "'A number of' is different from 'the number of'. 'A number of students' means 'several students' and takes a plural verb: 'are'.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l27_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The price of flights ___ usually highest in summer.",
-            "hint": "The subject is 'price' (singular), not 'flights'.",
-            "explanation": "'The price' is the true subject. The prepositional phrase 'of flights' does not affect agreement. 'Price' is singular, so the verb is 'is'.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "grammarRule": "Compound subject formed by two plural nouns joined by 'and'",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l27_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The majority of the land ___ owned by the government.",
-            "hint": "'The majority of' with an uncountable noun ('land') takes a singular verb.",
-            "explanation": "When 'the majority of' is followed by an uncountable noun like 'land', the verb is singular. 'The majority of the land is owned' - not 'are owned'.",
+            "question": "Cats and dogs ___ different body language when they feel anxious.",
+            "hint": "Two plural groups joined by 'and' still add up to a plural subject.",
+            "explanation": "'Cats' and 'dogs' are each plural, and joining them with 'and' does not change that — the subject remains plural: 'show'.",
             "options": [
-                "is",
-                "are"
+                "show",
+                "shows"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswer": "show",
+            "grammarRule": "Compound subject formed by two plural nouns joined by 'and'",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l28_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE SENTENCE",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The majority of the voters ___ in favour of the plan.",
-            "hint": "'The majority of' with a countable plural noun ('voters') takes a plural verb.",
-            "explanation": "When 'the majority of' is followed by a countable plural noun like 'voters', the verb is plural. 'The majority of the voters are in favour.'",
+            "question": "The invoice and the receipt ___ attached to this email.",
+            "hint": "Look at how many documents are being described together.",
+            "explanation": "'The invoice' and 'the receipt' are two separate documents joined by 'and', forming a plural subject: 'are attached'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "grammarRule": "Compound subject joined by 'and' in real-world contexts",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l28_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE SENTENCE",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The group of tourists ___ waiting outside the museum.",
-            "hint": "'The group' is a single collective unit - singular verb.",
-            "explanation": "'The group' is the true subject, not 'tourists'. A group acting together as a unit takes a singular verb: 'is waiting'.",
+            "question": "Customer feedback and sales data ___ our decisions about new products.",
+            "hint": "Two different sources of information joined by 'and' work together as one plural subject.",
+            "explanation": "'Customer feedback' and 'sales data' are two separate things joined by 'and', so the subject is plural: 'guide'.",
             "options": [
-                "is",
-                "are"
+                "guide",
+                "guides"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswer": "guide",
+            "grammarRule": "Compound subject joined by 'and' in real-world contexts",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l28_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE SENTENCE",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "A group of children ___ playing in the garden.",
-            "hint": "Focus on the children - plural individuals are acting, not one group.",
-            "explanation": "Here, 'a group of children' emphasises the individual children rather than the group as a unit, so the verb is 'are'. Context matters with collective nouns.",
+            "question": "The flight delay and the missing luggage ___ her whole trip.",
+            "hint": "Two separate problems joined by 'and' combine into one plural subject.",
+            "explanation": "'The flight delay' and 'the missing luggage' are two events joined by 'and', creating a plural subject: 'ruin'.",
             "options": [
-                "is",
-                "are"
+                "ruins",
+                "ruin"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswer": "ruin",
+            "grammarRule": "Compound subject joined by 'and' in real-world contexts",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l29_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The staff at that school ___ highly qualified.",
-            "hint": "'Staff' as a collective unit takes a singular verb.",
-            "explanation": "In standard English, 'staff' is a collective noun that takes a singular verb when it acts as a unit. 'The staff is highly qualified.'",
+            "question": "The teacher of math and science ___ extra office hours this week.",
+            "hint": "The word 'and' here connects two subjects the teacher teaches, not two teachers - find the true subject.",
+            "explanation": "Even though 'and' appears in the sentence, it's inside the phrase 'of math and science', which just describes one teacher. The real subject is singular: 'the teacher', so the verb takes -s: 'offers'.",
             "options": [
-                "is",
-                "are"
+                "offer",
+                "offers"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "offers",
+            "grammarRule": "'And' inside a modifying phrase does not create a compound subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l29_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Her advice and support ___ very helpful.",
-            "hint": "Two nouns joined by 'and' form a plural subject.",
-            "explanation": "'Advice and support' are two separate things joined by 'and', creating a plural subject. The verb must be 'are', not 'is'.",
+            "question": "The report on sales and marketing ___ due by Friday.",
+            "hint": "Ask what the sentence is really about: one report, or two separate reports?",
+            "explanation": "The subject is 'the report', a single singular noun. 'On sales and marketing' just describes its contents; the 'and' there doesn't create a compound subject. So the verb is 'is'.",
             "options": [
                 "is",
                 "are"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "'And' inside a modifying phrase does not create a compound subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l29_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Oil and water ___ not mix.",
-            "hint": "Two different substances joined by 'and' make a plural subject.",
-            "explanation": "'Oil and water' refers to two distinct substances, making a plural compound subject. The verb is 'do not mix', not 'does not mix'.",
+            "question": "The professor of biology and chemistry ___ two courses this semester.",
+            "hint": "Check whether 'and' joins two different subjects or just two subjects the professor teaches.",
+            "explanation": "'And' connects 'biology' and 'chemistry', the subjects taught — not two professors. The real subject, 'the professor', is singular, so the verb takes -s: 'teaches'.",
             "options": [
-                "do",
-                "does"
+                "teach",
+                "teaches"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "do",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "teaches",
+            "grammarRule": "'And' inside a modifying phrase does not create a compound subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l30_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Each parent and child ___ a wristband at the entrance.",
-            "hint": "'Each' always makes the subject singular, even in a compound.",
-            "explanation": "When 'each' precedes a compound subject joined by 'and', the subject is still treated as singular. 'Each parent and child receives' - not 'receive'.",
+            "question": "The pilot and the co-pilot ___ a final safety check before takeoff.",
+            "hint": "Two people joined by 'and' - remember the basic compound subject rule.",
+            "explanation": "'The pilot' and 'the co-pilot' are joined by 'and', forming a plural subject that takes the base verb form: 'complete'.",
             "options": [
-                "receive",
-                "receives"
+                "completes",
+                "complete"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "receives",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswer": "complete",
+            "grammarRule": "Compound subject joined by 'and' takes a plural verb",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l30_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Every teacher and student ___ invited to the ceremony.",
-            "hint": "'Every' makes compound subjects singular in formal English.",
-            "explanation": "Like 'each', the word 'every' treats a compound subject as singular. 'Every teacher and student is invited' - because we think of each one individually.",
+            "question": "Fish and chips ___ a classic British dish.",
+            "hint": "Remember: some food names joined by 'and' describe one single dish.",
+            "explanation": "'Fish and chips' refers to a single dish, so it's treated as a singular subject and takes 'is', not 'are'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "Compound expressions treated as a single unit take a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l30_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The news ___ not what we expected.",
-            "hint": "'News' ends in -s but is an uncountable singular noun.",
-            "explanation": "'News' looks plural because it ends in -s, but it is an uncountable noun and always takes a singular verb: 'The news is', not 'The news are'.",
+            "question": "The director of sales and operations ___ the quarterly report today.",
+            "hint": "'And' here connects two departments the director oversees, not two directors.",
+            "explanation": "The real subject is 'the director', a single person; 'of sales and operations' just describes their role. Singular subjects take -s: 'presents'.",
             "options": [
-                "are",
-                "is"
+                "presents",
+                "present"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "presents",
+            "grammarRule": "'And' inside a modifying phrase does not create a compound subject",
             "subjectType": "Singular"
         }
     ]

@@ -5,543 +5,393 @@
     "quests": [
         {
             "id": "gq_l31_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "If it ___, we will cancel the picnic.",
-            "options": [
-                "rained",
-                "would rain",
-                "rains",
-                "will rain"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "rains",
-            "hint": "The 'if' clause in first conditional uses simple present.",
-            "explanation": "First conditional: if + present simple, will + base verb. The 'if' clause uses present simple (not 'will'): If it rains, we will cancel. This describes a real, possible future situation.",
-            "grammarRule": "First Conditional"
+            "question": "I ___ a great documentary about the ocean last night.",
+            "options": ["seen", "see", "seeing", "saw"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "saw",
+            "hint": "This verb changes completely in the past, with no '-ed' at all.",
+            "explanation": "'See' has the irregular past form 'saw'. 'Seen' is a different form, used only with a helper verb like 'have' (have seen), never alone.",
+            "grammarRule": "Simple Past: Irregular Verbs"
         },
         {
             "id": "gq_l31_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "If she studies harder, she ___ pass the exam.",
-            "options": [
-                "will",
-                "might",
-                "would",
-                "can"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "will",
-            "hint": "The result clause of first conditional uses 'will'.",
-            "explanation": "First conditional result clause: will + base verb. 'She will pass' = the predicted result if the condition is met. The 'if' clause is present simple; the main clause has 'will'.",
-            "grammarRule": "First Conditional"
+            "question": "She ___ three cookies before dinner, and now she isn't hungry.",
+            "options": ["eated", "ate", "eaten", "eating"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "ate",
+            "hint": "'Eat' doesn't follow the regular '-ed' pattern.",
+            "explanation": "The simple past of 'eat' is 'ate'. 'Eaten' is a different form used with 'have', and 'eated' isn't a real word.",
+            "grammarRule": "Simple Past: Irregular Verbs"
         },
         {
             "id": "gq_l31_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "You ___ feel better if you eat something.",
-            "options": [
-                "will",
-                "might",
-                "would",
-                "could"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "will",
-            "hint": "This is a real, likely situation - use first conditional.",
-            "explanation": "First conditional expresses real possibilities: You will feel better if you eat something. 'Will' in the result clause shows a predicted outcome of a real condition.",
-            "grammarRule": "First Conditional"
+            "question": "\u2014 Did you finish the report?\n\u2014 Yes, I ___ it home to work on it over the weekend.",
+            "options": ["taked", "take", "took", "taken"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "took",
+            "hint": "This verb's past form changes its vowel sound.",
+            "explanation": "'Take' becomes 'took' in the simple past. 'Taken' needs a helper verb like 'have', and there is no such word as 'taked'.",
+            "grammarRule": "Simple Past: Irregular Verbs"
         },
         {
             "id": "gq_l32_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I ___ eat a lot of sweets when I was young.",
-            "options": [
-                "am used to",
-                "used",
-                "used to",
-                "use to"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "used to",
-            "hint": "'Used to' describes a past habit that no longer exists.",
-            "explanation": "'Used to + base verb' describes a past habit or state that has changed: I used to eat sweets = I ate them regularly in the past, but I don't now. Always 'used to', never 'use to' (except in questions/negatives).",
-            "grammarRule": "Used To"
+            "question": "At 8 pm last night, I ___ dinner in the kitchen.",
+            "options": ["was cooking", "cooked", "cook", "were cooking"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "was cooking",
+            "hint": "Think about an action that was in progress at that exact moment in the past.",
+            "explanation": "'Was/were + -ing' describes an action already in progress at a specific past moment: I was cooking at 8 pm. 'Cooked' would suggest the action was already complete.",
+            "grammarRule": "Past Continuous: Form"
         },
         {
             "id": "gq_l32_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She ___ live in Paris before she moved to Rome.",
-            "options": [
-                "is used to",
-                "uses to",
-                "use to",
-                "used to"
-            ],
+            "question": "We ___ for the bus when it started to rain.",
+            "options": ["waited", "was waiting", "wait", "were waiting"],
             "correctAnswerIndex": 3,
-            "correctAnswer": "used to",
-            "hint": "A past situation that is no longer true.",
-            "explanation": "'Used to' shows a past state: She used to live in Paris (but she doesn't anymore). Don't confuse with 'be used to' (accustomed to) + -ing: She is used to living in Rome (= she is accustomed to it).",
-            "grammarRule": "Used To"
+            "correctAnswer": "were waiting",
+            "hint": "The subject is 'we', which needs the plural form of 'be'.",
+            "explanation": "'We' takes 'were' in the past continuous: we were waiting. 'Was' would only match a singular subject like 'I', 'he', or 'she'.",
+            "grammarRule": "Past Continuous: Form"
         },
         {
             "id": "gq_l32_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "They ___ play outside all day as children.",
-            "options": [
-                "use",
-                "used to",
-                "were used to",
-                "are used to"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "use",
-            "hint": "A past habit from childhood.",
-            "explanation": "'Used to + base verb' = past habit: They used to play outside all day. Negative: They didn't use to play outside. Question: Did they use to play outside?",
-            "grammarRule": "Used To"
+            "question": "\u2014 What were you doing at midnight?\n\u2014 I ___ , believe it or not.",
+            "options": ["slept", "were sleeping", "was sleeping", "sleep"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "was sleeping",
+            "hint": "Match the tense already set by the question and the subject 'I'.",
+            "explanation": "The question 'were you doing' sets up past continuous, and 'I' takes 'was': I was sleeping. This describes what was in progress at that moment.",
+            "grammarRule": "Past Continuous: Form"
         },
         {
             "id": "gq_l33_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "MAKE THE SENTENCE WORK",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She has worked here ___ 2019.",
-            "options": [
-                "for",
-                "ago",
-                "since",
-                "during"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "since",
-            "hint": "Is the reference a specific point in time or a duration?",
-            "explanation": "Use 'since' with a specific point in time: since 2019, since Monday, since last year. Use 'for' with a duration: for three years, for a long time, for two months.",
-            "grammarRule": "Since / For"
+            "question": "I ___ dinner when the phone rang.",
+            "options": ["cooked", "was cooking", "were cooking", "cook"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "was cooking",
+            "hint": "One action was already happening when a shorter, sudden action interrupted it.",
+            "explanation": "The longer, ongoing action uses past continuous: I was cooking. The sudden, interrupting action uses simple past: the phone rang. This pairing is one of the most useful patterns in English storytelling.",
+            "grammarRule": "Past Continuous vs Simple Past"
         },
         {
             "id": "gq_l33_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I haven't seen him ___ a long time.",
-            "options": [
-                "since",
-                "ago",
-                "from",
-                "for"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "for",
-            "hint": "'A long time' is a duration - use 'for'.",
-            "explanation": "'A long time' is a period of time (duration), so use 'for': for a long time. 'Since' must be followed by a specific starting point: since last year, since Tuesday.",
-            "grammarRule": "Since / For"
+            "question": "The phone ___ while I was cooking dinner.",
+            "options": ["was ringing", "rang", "rings", "ring"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "rang",
+            "hint": "This is the short, sudden event that interrupted the longer action.",
+            "explanation": "The interrupting event takes simple past: the phone rang. Using 'was ringing' here would wrongly suggest the ringing itself was the ongoing background action.",
+            "grammarRule": "Past Continuous vs Simple Past"
         },
         {
             "id": "gq_l33_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "They have been married ___ ten years.",
-            "options": [
-                "during",
-                "since",
-                "ago",
-                "for"
-            ],
+            "question": "\u2014 What happened?\n\u2014 I ___ a shower when I heard the fire alarm.",
+            "options": ["took", "take", "were taking", "was taking"],
             "correctAnswerIndex": 3,
-            "correctAnswer": "for",
-            "hint": "Ten years is a period, not a specific start point.",
-            "explanation": "'For + duration': for ten years, for six months, for a week. 'Since + point in time': since 2014, since April. They have been married for ten years = the marriage has lasted ten years.",
-            "grammarRule": "Since / For"
+            "correctAnswer": "was taking",
+            "hint": "Which action was already in progress when the alarm interrupted it?",
+            "explanation": "The shower was the ongoing background action, so it takes past continuous: I was taking a shower. The alarm, which interrupted it, correctly stays in simple past: I heard.",
+            "grammarRule": "Past Continuous vs Simple Past"
         },
         {
             "id": "gq_l34_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "You ___ see a doctor if you feel that pain.",
-            "options": [
-                "should",
-                "have to",
-                "ought",
-                "must to"
-            ],
+            "question": "I ___ him tomorrow at 3 pm; it's already on my calendar.",
+            "options": ["am meeting", "meet", "meets", "will meeting"],
             "correctAnswerIndex": 0,
-            "correctAnswer": "should",
-            "hint": "'Should' gives advice in a helpful but not forceful way.",
-            "explanation": "'Should' gives advice or a recommendation: You should see a doctor. It's less strong than 'must'. 'Should' is always followed by a base verb, never 'to should' or 'should to'.",
-            "grammarRule": "Modals of Advice"
+            "correctAnswer": "am meeting",
+            "hint": "This plan is already fixed and scheduled, not just a guess about the future.",
+            "explanation": "Present continuous can describe a fixed future arrangement, especially with a specific time: I am meeting him tomorrow. This works because the plan is already confirmed, like an appointment.",
+            "grammarRule": "Present Continuous for Future Arrangements"
         },
         {
             "id": "gq_l34_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "You ___ eat junk food every day - it's very unhealthy.",
-            "options": [
-                "mustn't",
-                "would",
-                "should",
-                "shouldn't"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "shouldn't",
-            "hint": "The advice is negative - don't do this.",
-            "explanation": "'Shouldn't' = should not. Use it to advise against something: You shouldn't eat junk food every day. It's a strong recommendation not to do something.",
-            "grammarRule": "Modals of Advice"
+            "question": "___ you doing anything this weekend?",
+            "options": ["Do", "Is", "Are", "Will"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Are",
+            "hint": "The main verb here already ends in '-ing'.",
+            "explanation": "Since the sentence already uses '-ing' (doing), it needs 'are' to form present continuous: Are you doing anything? This is a common, natural way to ask about someone's plans.",
+            "grammarRule": "Present Continuous for Future Arrangements"
         },
         {
             "id": "gq_l34_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She ___ apologise for what she did.",
-            "options": [
-                "should",
-                "ought to",
-                "can",
-                "had better"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "should",
-            "hint": "Which modal verb gives a moral recommendation?",
-            "explanation": "'Should' expresses moral obligation or advice: She should apologise. Note: 'ought to' is similar and means the same thing, but 'should' is more commonly used in everyday English.",
-            "grammarRule": "Modals of Advice"
+            "question": "\u2014 Can you come to the meeting on Friday?\n\u2014 Sorry, I ___ a dentist appointment then.",
+            "options": ["have", "has", "am having", "will having"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "am having",
+            "hint": "This appointment is already fixed on the calendar, like the meeting in Q1.",
+            "explanation": "A fixed, pre-arranged plan like a dentist appointment is naturally expressed with present continuous: I am having an appointment. Simple present 'have' would sound more like a general fact than a scheduled event.",
+            "grammarRule": "Present Continuous for Future Arrangements"
         },
         {
             "id": "gq_l35_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The keys are ___ the table.",
-            "options": [
-                "in",
-                "by",
-                "at",
-                "on"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "on",
-            "hint": "The keys are resting on a surface.",
-            "explanation": "Use 'on' for surfaces: on the table, on the floor, on the wall, on the shelf. Use 'in' for enclosed spaces: in the box, in the room, in the bag.",
-            "grammarRule": "Prepositions of Place"
+            "question": "I ___ study medicine after high school; I've already decided.",
+            "options": ["am going to", "will", "going to", "am go to"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "am going to",
+            "hint": "This is a decision made before now, not one happening at the moment of speaking.",
+            "explanation": "'Going to' expresses a plan or intention decided earlier: I am going to study medicine. It fits perfectly with 'I've already decided', which shows the decision isn't new.",
+            "grammarRule": "Future: Going To for Plans"
         },
         {
             "id": "gq_l35_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She lives ___ the corner of Oak Street.",
-            "options": [
-                "in",
-                "at",
-                "by",
-                "on"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "at",
-            "hint": "A 'corner' is a very specific point - use 'at'.",
-            "explanation": "Use 'at' for specific points or addresses: at the corner, at the bus stop, at 5 Park Lane. Use 'on' for streets: on Oak Street. Use 'in' for cities/countries: in London.",
-            "grammarRule": "Prepositions of Place"
+            "question": "Look at those clouds! It ___ rain soon.",
+            "options": ["will", "going to", "is go to", "is going to"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "is going to",
+            "hint": "There's visible evidence right now that supports this prediction.",
+            "explanation": "'Going to' is used for predictions based on present evidence, like dark clouds: it is going to rain. 'Will' would suggest more of a guess without visible proof.",
+            "grammarRule": "Future: Going To for Predictions with Evidence"
         },
         {
             "id": "gq_l35_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The cat is hiding ___ the bed.",
-            "options": [
-                "under",
-                "on",
-                "at",
-                "in"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "under",
-            "hint": "The cat is directly below the bed.",
-            "explanation": "'Under' means below something: under the bed, under the table, under the bridge. Compare: above (higher, not touching), below (lower, not touching), under (directly below).",
-            "grammarRule": "Prepositions of Place"
+            "question": "\u2014 Why do you have your suitcase out already?\n\u2014 I ___ visit my parents this weekend.",
+            "options": ["will", "am going to", "going", "am go"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "am going to",
+            "hint": "The suitcase shows this trip was already planned before this conversation.",
+            "explanation": "Since the plan clearly existed before now (the suitcase is already packed), 'going to' is the natural choice: I am going to visit my parents.",
+            "grammarRule": "Future: Going To for Plans"
         },
         {
             "id": "gq_l36_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "There isn't ___ coffee left.",
-            "options": [
-                "much",
-                "many",
-                "few",
-                "a few"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "much",
-            "hint": "Coffee is uncountable - which word goes with uncountable nouns?",
-            "explanation": "Use 'much' with uncountable nouns in negatives and questions: not much coffee, How much water? Use 'many' with countable nouns: many cups, How many cups?",
-            "grammarRule": "Quantifiers: Much/Many"
+            "question": "The phone is ringing. I ___ answer it.",
+            "options": ["am going to", "going to", "will", "am go to"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "will",
+            "hint": "This decision is being made right now, at this exact second.",
+            "explanation": "'Will' is used for decisions made at the moment of speaking, with no earlier planning: I'll answer it. 'Going to' would suggest the decision existed before the phone even rang.",
+            "grammarRule": "Future: Will for Spontaneous Decisions"
         },
         {
             "id": "gq_l36_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "How ___ people came to the event?",
-            "options": [
-                "much",
-                "little",
-                "very",
-                "many"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "many",
-            "hint": "'People' is countable - use 'many'.",
-            "explanation": "Use 'many' with countable nouns: How many people? How many chairs? Not much people (wrong). 'Much' is for uncountable: How much time? How much money?",
-            "grammarRule": "Quantifiers: Much/Many"
+            "question": "I think it ___ be a great party tonight.",
+            "options": ["is going to", "will", "going to", "am going"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "will",
+            "hint": "This is a personal opinion or guess, not a prediction based on visible proof.",
+            "explanation": "'Will' fits predictions based on opinion or belief, especially after 'I think': I think it will be great. 'Going to' would suggest something more certain, based on clear evidence.",
+            "grammarRule": "Future: Will for Predictions with Opinion"
         },
         {
             "id": "gq_l36_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She doesn't have ___ experience in sales.",
-            "options": [
-                "much",
-                "few",
-                "many",
-                "a lot of"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "much",
-            "hint": "'Experience' (general skill) is uncountable - use 'much'.",
-            "explanation": "'Experience' as general background/skill is uncountable: much experience, not 'many experiences'. In negatives: She doesn't have much experience. In questions: Does she have much experience?",
-            "grammarRule": "Quantifiers: Much/Many"
+            "question": "\u2014 We're out of milk.\n\u2014 Okay, I ___ buy some on my way home.",
+            "options": ["am going to", "going to", "going", "will"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "will",
+            "hint": "This offer is being decided right now, as a reaction to the news.",
+            "explanation": "This is a spontaneous offer made in response to the situation, which calls for 'will': I'll buy some. There was no plan to buy milk before hearing there was none.",
+            "grammarRule": "Future: Will for Spontaneous Decisions"
         },
         {
             "id": "gq_l37_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "You ___ wear a seatbelt in a car. It's the law.",
-            "options": [
-                "must",
-                "should",
-                "could",
-                "might"
-            ],
+            "question": "She ___ finish her degree next year; she's already planned every semester.",
+            "options": ["is going to", "will", "going to", "is go to"],
             "correctAnswerIndex": 0,
-            "correctAnswer": "must",
-            "hint": "This is a law - use 'must' for strong obligation.",
-            "explanation": "'Must' expresses strong obligation or a rule: You must wear a seatbelt. It is essential and required. 'Should' is softer (advice). 'Must' suggests there are serious consequences if you don't.",
-            "grammarRule": "Modals of Obligation"
+            "correctAnswer": "is going to",
+            "hint": "Compare this to a phone ringing right now \u2014 is this decision old or brand new?",
+            "explanation": "Since every semester is already planned, this is an established plan, not a spontaneous decision, so it takes 'going to': she is going to finish. 'Will' would suggest a fresh guess, which doesn't fit here.",
+            "grammarRule": "Future: Will vs Going To"
         },
         {
             "id": "gq_l37_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She ___ finish the report before Friday.",
-            "options": [
-                "has to",
-                "have to",
-                "should to",
-                "must to"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "has to",
-            "hint": "Third person singular of 'have to' is 'has to'.",
-            "explanation": "'Has to' (third person singular of 'have to') expresses external obligation - someone else requires it. She has to finish the report = it's required by her manager or deadline.",
-            "grammarRule": "Modals of Obligation"
+            "question": "\u2014 I'm so tired today.\n\u2014 I ___ make you some tea; that always helps.",
+            "options": ["am going to", "will", "going to", "am go"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "will",
+            "hint": "This offer only exists because of what was just said \u2014 it's a reaction, not a prior plan.",
+            "explanation": "This offer is created in the moment as a response to hearing 'I'm so tired', which calls for 'will': I'll make you some tea. It contrasts with 'going to', which would need an earlier decision.",
+            "grammarRule": "Future: Will vs Going To"
         },
         {
             "id": "gq_l37_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "We ___ be late - the boss is already here.",
-            "options": [
-                "mustn't",
-                "can't",
-                "don't have to",
-                "mustn't to"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "mustn't",
-            "hint": "Being late is completely forbidden.",
-            "explanation": "'Mustn't' expresses prohibition (not allowed): We mustn't be late! Compare with 'don't have to' (no obligation, optional): You don't have to come (you can if you want to, but it's not required).",
-            "grammarRule": "Modals of Obligation"
+            "question": "\u2014 What are your plans after graduation?\n\u2014 I ___ travel for a year; I've already bought the ticket.",
+            "options": ["is going to", "will", "am going to", "will going"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "am going to",
+            "hint": "A bought ticket is strong proof this plan was made before now.",
+            "explanation": "Having already bought a ticket shows a confirmed plan, which needs 'going to': I am going to travel. 'Will' would sound like the decision is still being made right now, which contradicts the bought ticket.",
+            "grammarRule": "Future: Will vs Going To"
         },
         {
             "id": "gq_l38_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "MAKE THE SENTENCE WORK",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The woman ___ lives next door is a doctor.",
-            "options": [
-                "what",
-                "whose",
-                "who",
-                "which"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "who",
-            "hint": "The clause refers to 'the woman' - a person.",
-            "explanation": "Use 'who' in relative clauses for people: The woman who lives next door. Use 'which' for things and animals. 'That' can replace both 'who' and 'which' in defining relative clauses.",
-            "grammarRule": "Relative Pronouns"
+            "question": "I'll call you ___ , once I finish this meeting.",
+            "options": ["tomorrow", "the tomorrow", "in tomorrow", "tomorrow's"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "tomorrow",
+            "hint": "This time word never needs an article or preposition in front of it.",
+            "explanation": "Like 'yesterday', 'tomorrow' stands alone with no 'the' or preposition: call you tomorrow, not 'in tomorrow' or 'the tomorrow'.",
+            "grammarRule": "Time Expressions: Tomorrow"
         },
         {
             "id": "gq_l38_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "This is the book ___ I told you about.",
-            "options": [
-                "which",
-                "who",
-                "whom",
-                "whose"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "which",
-            "hint": "The clause refers to 'the book' - a thing.",
-            "explanation": "Use 'which' for things and animals: the book which I told you about. 'Who' is for people. Note: 'that' can also be used informally: the book that I told you about.",
-            "grammarRule": "Relative Pronouns"
+            "question": "We're meeting ___ to plan the project.",
+            "options": ["the next week", "in next week", "next week's", "next week"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "next week",
+            "hint": "This phrase already includes its own sense of time, with no extra word needed.",
+            "explanation": "'Next week', like 'next year' or 'next month', doesn't take 'the' or 'in' before it: meeting next week, not 'in next week'.",
+            "grammarRule": "Time Expressions: Next + Time Period"
         },
         {
             "id": "gq_l38_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I met a woman ___ husband is a famous chef.",
-            "options": [
-                "who",
-                "that",
-                "which",
-                "whose"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "whose",
-            "hint": "We need a possessive relative pronoun.",
-            "explanation": "'Whose' is the possessive relative pronoun for people: a woman whose husband is a chef. It means 'her husband'. Compare: the car whose wheels are broken (also possible for things).",
-            "grammarRule": "Relative Pronouns"
+            "question": "\u2014 When does the flight leave?\n\u2014 ___ two hours, so we should head to the gate soon.",
+            "options": ["At", "On", "In", "For"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "In",
+            "hint": "This describes how much time will pass before the event happens.",
+            "explanation": "'In' + a period of time describes how soon something will happen from now: in two hours, in a week. 'At' is used for a specific clock time or point, not a duration.",
+            "grammarRule": "Time Expressions: In + Duration"
         },
         {
             "id": "gq_l39_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "English ___ all over the world.",
-            "options": [
-                "is spoken",
-                "speak",
-                "is speaking",
-                "speaks"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is spoken",
-            "hint": "When the focus is on what happens, not who does it.",
-            "explanation": "Passive voice: am/is/are + past participle. 'English is spoken all over the world' = we don't focus on who speaks it. Present simple passive: is/are + past participle.",
-            "grammarRule": "Passive Voice (Present Simple)"
+            "question": "I ___ to the store yesterday, but I forgot to buy milk.",
+            "options": ["go", "went", "gone", "going"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "went",
+            "hint": "The word 'yesterday' anchors this action clearly in the past.",
+            "explanation": "'Yesterday' calls for simple past: I went to the store. This reviews the irregular past tense of 'go' first seen back in Level 25.",
+            "grammarRule": "Simple Past: Irregular Verbs"
         },
         {
             "id": "gq_l39_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "These cars ___ in Germany.",
-            "options": [
-                "manufacture",
-                "manufactures",
-                "are manufactured",
-                "is manufactured"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "are manufactured",
-            "hint": "'These cars' is plural - passive must match.",
-            "explanation": "For plural subjects in present simple passive, use 'are + past participle': These cars are manufactured in Germany. For singular: This car is manufactured in Germany.",
-            "grammarRule": "Passive Voice (Present Simple)"
+            "question": "I ___ back tomorrow to pick up the milk I forgot.",
+            "options": ["went", "go", "gone", "am going to go"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "am going to go",
+            "hint": "This is a plan you've already decided on, for a future day.",
+            "explanation": "Since the plan to return is already made, 'going to' fits: I am going to go back tomorrow. Notice the sentence now shifts from yesterday's past action to a new future plan.",
+            "grammarRule": "Future: Going To for Plans"
         },
         {
             "id": "gq_l39_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The letters ___ every Monday.",
-            "options": [
-                "delivers",
-                "deliver",
-                "are delivered",
-                "is delivered"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "are delivered",
-            "hint": "Focus on what happens to the letters, not who delivers them.",
-            "explanation": "'The letters' is plural, so use 'are delivered'. Present simple passive for plural: are + past participle. The letters are delivered every Monday.",
-            "grammarRule": "Passive Voice (Present Simple)"
+            "question": "\u2014 Were you at the meeting this morning?\n\u2014 No, I ___ a client call at the same time.",
+            "options": ["had", "was having", "have", "am having"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "was having",
+            "hint": "This describes something already in progress at that exact moment this morning.",
+            "explanation": "Since the call was happening at the same time as the meeting, past continuous fits best: I was having a call. Simple past 'had' would suggest a completed, separate event instead of an overlapping one.",
+            "grammarRule": "Past Continuous vs Simple Past"
         },
         {
             "id": "gq_l40_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "If I won the lottery, I ___ travel the world.",
-            "options": [
-                "would",
-                "could",
-                "will",
-                "had"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "would",
-            "hint": "Second conditional uses 'would' in the result clause.",
-            "explanation": "Second conditional: if + past simple, would + base verb. 'If I won' (imaginary condition) → 'I would travel' (imagined result). This expresses unlikely or unreal situations.",
-            "grammarRule": "Second Conditional"
+            "question": "Hi team, just a quick update \u2014 I ___ finish the report by Friday, as planned.",
+            "options": ["will", "am going to", "going to", "am go to"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "am going to",
+            "hint": "The words 'as planned' are a strong clue about which future form to choose.",
+            "explanation": "'As planned' confirms this is an existing plan, not a new decision, so 'going to' is correct: I am going to finish. This is exactly the kind of everyday workplace message this grammar is used for.",
+            "grammarRule": "Future: Will vs Going To"
         },
         {
             "id": "gq_l40_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "FIX THE GRAMMAR",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She would buy a bigger house if she ___ more money.",
-            "options": [
-                "have",
-                "has",
-                "would have",
-                "had"
-            ],
+            "question": "Sorry I'm late \u2014 I ___ stuck in traffic for almost an hour.",
+            "options": ["was", "am", "were", "is"],
             "correctAnswerIndex": 0,
-            "correctAnswer": "have",
-            "hint": "The 'if' clause in second conditional uses simple past.",
-            "explanation": "Second conditional: if + past simple. 'If she had' (not 'would have' in the if clause). Main clause: 'she would buy'. This describes an unreal present condition.",
-            "grammarRule": "Second Conditional"
+            "correctAnswer": "was",
+            "hint": "Go all the way back to basics: who is the subject, and what tense does 'sorry I'm late' suggest?",
+            "explanation": "This event is already finished by the time of speaking, so the past form of 'be' is needed with 'I': I was stuck. This revisits the very first grammar point from Level 1, now inside a real, everyday excuse.",
+            "grammarRule": "Verb 'To Be': Simple Past"
         },
         {
             "id": "gq_l40_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "If he ___ the truth, everyone would be shocked.",
-            "options": [
-                "tell",
-                "tells",
-                "told",
-                "will tell"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "told",
-            "hint": "The second conditional 'if' clause uses past simple.",
-            "explanation": "Second conditional 'if' clause: simple past. 'If he told the truth' = this is unlikely or imaginary. Main clause: 'would + base verb'. If he told the truth, everyone would be shocked.",
-            "grammarRule": "Second Conditional"
+            "question": "\u2014 Did you call the client yesterday?\n\u2014 Yes, and I ___ meet them again next Tuesday to finalize things.",
+            "options": ["will", "going to", "went to", "am going to"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "am going to",
+            "hint": "By the time of this conversation, has this next meeting already been arranged?",
+            "explanation": "Since the follow-up meeting was arranged during yesterday's call, it's an existing plan by the time of speaking, so 'going to' fits: I am going to meet them. This closes Stage 2 by combining past, present, and future choices in one natural exchange.",
+            "grammarRule": "Future: Will vs Going To"
         }
     ]
 }

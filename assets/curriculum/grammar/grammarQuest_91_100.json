@@ -5,543 +5,393 @@
     "quests": [
         {
             "id": "gq_l91_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "He promised he ___ the report before the deadline.",
-            "options": [
-                "would have submitted",
-                "would submit",
-                "submits",
-                "will submit"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "would submit",
-            "hint": "'Will' in direct speech shifts to 'would' in reported speech.",
-            "explanation": "In reported speech, 'will' shifts to 'would': I will submit the report → He promised he would submit the report. 'Would submit' (not 'would have submitted', which implies it is already done).",
-            "grammarRule": "Reported Speech (Advanced)"
+            "question": "___ the door, please.",
+            "options": ["Close", "You close", "Closing", "Closes"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Close",
+            "hint": "Commands start directly with the base verb, with no subject stated.",
+            "explanation": "Imperatives use the base form of the verb with no subject: Close the door. Adding 'you' before it would sound unnatural for a simple instruction.",
+            "grammarRule": "Imperatives: Affirmative"
         },
         {
             "id": "gq_l91_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She warned us ___ touch the equipment.",
-            "options": [
-                "not to",
-                "don't",
-                "not",
-                "to not"
-            ],
+            "question": "___ your seatbelt before we start driving.",
+            "options": ["Fasten", "You fasten", "Fastening", "Fastens"],
             "correctAnswerIndex": 0,
-            "correctAnswer": "not to",
-            "hint": "Reported negative commands: 'warned us ___ touch'.",
-            "explanation": "Reported negative commands/warnings use 'not to + infinitive': She warned us not to touch the equipment. Positive: She told us to be careful. Pattern: tell/warn/advise/ask + object + not to + base verb.",
-            "grammarRule": "Reported Speech (Advanced)"
+            "correctAnswer": "Fasten",
+            "hint": "This is a direct instruction, so no ending or subject is added to the verb.",
+            "explanation": "Instructions use the plain base verb form: Fasten your seatbelt. 'Fastens' would only be correct with a stated third-person subject, which imperatives don't use.",
+            "grammarRule": "Imperatives: Affirmative"
         },
         {
             "id": "gq_l91_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "They denied ___ responsible for the incident.",
-            "options": [
-                "being",
-                "to be",
-                "that they are",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "being",
-            "hint": "'Deny' is followed by a gerund.",
-            "explanation": "'Deny + gerund': They denied being responsible. 'Deny doing something' = say you did not do it. Also: deny making, deny having. 'Deny + that clause' also works: They denied that they were responsible.",
-            "grammarRule": "Reported Speech (Advanced)"
+            "question": "\u2014 How do I get to the station?\n\u2014 ___ straight and turn left at the light.",
+            "options": ["You go", "Going", "Goes", "Go"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Go",
+            "hint": "Giving directions is another common use of the imperative.",
+            "explanation": "Directions are commonly given as imperatives: Go straight, turn left. This keeps the instruction quick and direct, without a stated subject.",
+            "grammarRule": "Imperatives: Affirmative"
         },
         {
             "id": "gq_l92_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ student must submit the assignment by Friday.",
-            "options": [
-                "All",
-                "Each of",
-                "Every",
-                "Both"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Every",
-            "hint": "Which quantifier uses a singular noun and singular verb?",
-            "explanation": "'Every + singular noun + singular verb': Every student must submit. 'All + plural noun': All students must submit. 'Each' also uses singular: Each student must submit. 'Both' implies exactly two.",
-            "grammarRule": "Quantifiers: Every/Both/Neither"
+            "question": "___ touch that pan; it's still hot.",
+            "options": ["No", "Don't", "Not", "Doesn't"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Don't",
+            "hint": "Negative commands need this specific helper word before the base verb.",
+            "explanation": "Negative imperatives are formed with 'don't' + base verb: don't touch. 'Doesn't' would only be used with a stated third-person subject, which imperatives don't have.",
+            "grammarRule": "Imperatives: Negative"
         },
         {
             "id": "gq_l92_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I like ___ options - either would work for me.",
-            "options": [
-                "neither",
-                "both",
-                "none",
-                "each"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "both",
-            "hint": "Two options are acceptable - which means 'the two'?",
-            "explanation": "'Both' refers to two things and means 'the two': I like both options. 'Either' = one or the other. 'Neither' = not one or the other (negative). 'Each' focuses on items individually.",
-            "grammarRule": "Quantifiers: Every/Both/Neither"
+            "question": "___ forget to lock the door when you leave.",
+            "options": ["Not", "No", "Don't", "Doesn't"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Don't",
+            "hint": "Same rule as before \u2014 negative commands always start the same way.",
+            "explanation": "'Don't' remains the correct negative command starter regardless of the verb: don't forget. 'Not' alone can't begin a negative imperative in standard English.",
+            "grammarRule": "Imperatives: Negative"
         },
         {
             "id": "gq_l92_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ of the candidates was particularly impressive.",
-            "options": [
-                "Neither",
-                "Either",
-                "Both",
-                "None"
-            ],
+            "question": "\u2014 Should I wait for you?\n\u2014 No, ___ wait, I'll catch up later.",
+            "options": ["don't", "not", "no", "doesn't"],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Neither",
-            "hint": "Two candidates were not impressive - which negative word fits?",
-            "explanation": "'Neither' is negative and refers to exactly two: Neither of the candidates was impressive = not the first and not the second. 'None' is used for three or more: None of the five candidates was impressive.",
-            "grammarRule": "Quantifiers: Every/Both/Neither"
+            "correctAnswer": "don't",
+            "hint": "This is telling someone not to do something, using the same pattern as before.",
+            "explanation": "The negative command 'don't wait' tells the listener not to do the action, following the same pattern practiced in the last two questions.",
+            "grammarRule": "Imperatives: Negative"
         },
         {
             "id": "gq_l93_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "He worked overtime ___ to his regular duties.",
-            "options": [
-                "as well as",
-                "additional",
-                "in addition",
-                "plus"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as well as",
-            "hint": "Which phrase adds information to what already exists?",
-            "explanation": "'In addition to' and 'as well as' both add information: He worked overtime in addition to/as well as his regular duties. 'In addition' (without 'to') connects sentences: He worked overtime. In addition, he attended all meetings.",
-            "grammarRule": "Formal Prepositional Phrases (Concession)"
+            "question": "___ you close the window? It's a bit cold.",
+            "options": ["Would", "Shall", "Should", "Will"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Will",
+            "hint": "This is a simple, direct request between people who know each other well.",
+            "explanation": "'Will you...?' makes a straightforward, everyday request: Will you close the window? It's less formal than some other request patterns you'll see next.",
+            "grammarRule": "Requests: Will You"
         },
         {
             "id": "gq_l93_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Success came ___ her personal life.",
-            "options": [
-                "at the expense of",
-                "for the cost of",
-                "despite with",
-                "in spite of"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "at the expense of",
-            "hint": "Her success harmed her personal life - which phrase shows this trade-off?",
-            "explanation": "'At the expense of' = by sacrificing or harming something else: Success came at the expense of her personal life. This phrase implies a cost or negative consequence of achieving something.",
-            "grammarRule": "Formal Prepositional Phrases (Concession)"
+            "question": "___ you mind closing the window? It's a bit cold in here.",
+            "options": ["Will", "Would", "Shall", "Can"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Would",
+            "hint": "This request uses a fixed polite phrase built with a specific modal.",
+            "explanation": "'Would you mind...?' is a fixed polite request pattern; 'will you mind' isn't natural English. This is a softer way of asking the same thing as Question 1.",
+            "grammarRule": "Requests: Would You Mind"
         },
         {
             "id": "gq_l93_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She completed the course ___ all the difficulties she faced.",
-            "options": [
-                "although",
-                "nevertheless",
-                "despite",
-                "in spite"
-            ],
+            "question": "\u2014 ___ you be able to send me the file by tomorrow?\n\u2014 Of course, no problem.",
+            "options": ["Could", "Will", "Would", "Shall"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "despite",
-            "hint": "Which concession word is followed by a noun phrase?",
-            "explanation": "'Despite + noun/noun phrase/gerund': despite all the difficulties. 'In spite of' works the same way. 'Although' and 'even though' need a subject + verb clause: although she faced difficulties.",
-            "grammarRule": "Formal Prepositional Phrases (Concession)"
+            "correctAnswer": "Would",
+            "hint": "This request uses another fixed, softened phrase with 'be able to'.",
+            "explanation": "'Would you be able to...?' is a polite, softened way of asking for a favor, commonly used in professional messages.",
+            "grammarRule": "Requests: Would You Be Able To"
         },
         {
             "id": "gq_l94_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The company showed great ___ in responding to the crisis.",
-            "options": [
-                "flexible",
-                "inflexible",
-                "flexibly",
-                "flexibility"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "flexibility",
-            "hint": "After 'great', we need a noun form.",
-            "explanation": "After adjectives like 'great', 'complete', 'significant', we need a noun. Flexible → flexibility (-ity suffix). Other examples: able → ability, creative → creativity, sensitive → sensitivity.",
-            "grammarRule": "Academic Adjectives"
+            "question": "___ I open a window for you? It's quite warm in here.",
+            "options": ["Will", "Should", "Shall", "Must"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Shall",
+            "hint": "The speaker is offering to do something for someone else.",
+            "explanation": "'Shall I...?' is used to offer to do something for another person: Shall I open a window? This is different from a request, where you're asking someone else to act.",
+            "grammarRule": "Offers: Shall I"
         },
         {
             "id": "gq_l94_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The results were quite ___.",
-            "options": [
-                "expected",
-                "unexpected",
-                "unexpectedly",
-                "unxpecting"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "unexpected",
-            "hint": "The results were surprising - choose the correct adjective form.",
-            "explanation": "'Unexpected' = not expected, surprising. The prefix 'un-' adds a negative meaning: expected → unexpected, usual → unusual, reliable → unreliable. 'Unexpectedly' is an adverb - wrong in this position.",
-            "grammarRule": "Academic Adjectives"
+            "question": "___ you like some tea while you wait?",
+            "options": ["Would", "Could", "Will", "Shall"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Would",
+            "hint": "This is a polite way of offering something to a guest.",
+            "explanation": "'Would you like...?' is the standard polite way to offer something: Would you like some tea? This fixed phrase is used constantly in hospitality and everyday offers.",
+            "grammarRule": "Offers: Would You Like"
         },
         {
             "id": "gq_l94_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She has ___ ability to connect with people.",
-            "options": [
-                "a remarkable",
-                "remark",
-                "remarking",
-                "remarkably"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "a remarkable",
-            "hint": "Before a noun (ability), we need an adjective with an article.",
-            "explanation": "'A remarkable ability': remarkable (adjective) + ability (noun). Note: 'remarkable' starts with a consonant sound, so use 'a', not 'an'. 'Remarkably' is an adverb: remarkably fast. Check the word class needed.",
-            "grammarRule": "Academic Adjectives"
+            "question": "\u2014 You look tired.\n\u2014 ___ I get you some coffee?",
+            "options": ["Will", "Shall", "Should", "Do"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Shall",
+            "hint": "The speaker is offering to help, just like in Question 1.",
+            "explanation": "'Shall I...?' again offers to do something helpful for someone: Shall I get you coffee? This mirrors the offer pattern from Question 1.",
+            "grammarRule": "Offers: Shall I"
         },
         {
             "id": "gq_l95_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I ___ this problem all morning and I still haven't solved it.",
-            "options": [
-                "have been thinking about",
-                "was thinking about",
-                "think about",
-                "thought about"
-            ],
+            "question": "___ go for a walk; the weather's really nice today.",
+            "options": ["Let's", "We let", "Lets", "Let"],
             "correctAnswerIndex": 0,
-            "correctAnswer": "have been thinking about",
-            "hint": "An action that began in the past and continues up to now - which tense combination fits?",
-            "explanation": "Present perfect continuous (have been + -ing): used for activities in progress from a past time up to now, emphasising duration: I have been thinking about this all morning. Still unresolved.",
-            "grammarRule": "Past Perfect Continuous"
+            "correctAnswer": "Let's",
+            "hint": "This contraction means 'let us' and starts a suggestion that includes both speakers.",
+            "explanation": "'Let's' (let us) is used to suggest doing something together: Let's go for a walk. 'Lets' without the apostrophe would be a different word entirely, meaning 'allows'.",
+            "grammarRule": "Suggestions: Let's"
         },
         {
             "id": "gq_l95_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "When I arrived, they ___ a heated debate.",
-            "options": [
-                "are having",
-                "have been having",
-                "were having",
-                "had been having"
-            ],
+            "question": "___ we try the new restaurant downtown this weekend?",
+            "options": ["Why not", "Why doesn't", "Why don't", "Why aren't"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "were having",
-            "hint": "An ongoing action at a specific past moment.",
-            "explanation": "Past continuous (were having) = an action in progress at a specific past moment: When I arrived (past moment), they were having a debate (in progress). Past perfect continuous would imply the debate had ended before I arrived.",
-            "grammarRule": "Past Perfect Continuous"
+            "correctAnswer": "Why don't",
+            "hint": "The subject here is 'we', which needs its matching negative helper verb.",
+            "explanation": "'Why don't we...?' is a common way to make a suggestion: why don't we try it? 'Why not' would need a different sentence structure, without a subject directly after it.",
+            "grammarRule": "Suggestions: Why Don't We"
         },
         {
             "id": "gq_l95_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "By the time you read this, I ___ the country.",
-            "options": [
-                "will leave",
-                "will have left",
-                "have left",
-                "will be leaving"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "will have left",
-            "hint": "A completed future action before another future point.",
-            "explanation": "Future perfect (will have + past participle): I will have left the country = the leaving will be completed before you read this. Future perfect shows completion before a future reference point.",
-            "grammarRule": "Past Perfect Continuous"
+            "question": "\u2014 I'm bored, there's nothing to do.\n\u2014 ___ about watching a movie together?",
+            "options": ["What", "Why", "Which", "How"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "How",
+            "hint": "This fixed phrase for making a suggestion always starts the same way.",
+            "explanation": "'How about...?' is a fixed suggestion phrase: how about watching a movie? 'What about' also exists but has a slightly different, more neutral use, often for raising a topic rather than suggesting an activity.",
+            "grammarRule": "Suggestions: How About"
         },
         {
             "id": "gq_l96_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The project took twice ___ long as expected.",
-            "options": [
-                "very",
-                "as",
-                "so",
-                "more"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "as",
-            "hint": "Multiplication in comparison: 'twice as ___ as'.",
-            "explanation": "'Twice as long as' is a comparison using a multiplier: twice as long as expected. Structure: X times + as + adjective + as. Examples: three times as expensive as, half as much as, four times as fast as.",
-            "grammarRule": "Comparative Structures"
+            "question": "\u2014 Would you like some cake?\n\u2014 Yes, ___ , thank you.",
+            "options": ["please", "thanks", "yes", "okay"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "please",
+            "hint": "This word naturally follows 'yes' when politely accepting an offer.",
+            "explanation": "'Yes, please' is the standard polite way to accept an offer in English, followed here by an extra 'thank you' for good measure.",
+            "grammarRule": "Polite Responses: Accepting Offers"
         },
         {
             "id": "gq_l96_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The ___ you practise, the better you get.",
-            "options": [
-                "more",
-                "many",
-                "much",
-                "most"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "more",
-            "hint": "Double comparatives express a proportional relationship.",
-            "explanation": "'The more..., the better' is a double comparative: The more you practise, the better you get. It shows that as one thing increases, another also changes. The + comparative, the + comparative.",
-            "grammarRule": "Comparative Structures"
+            "question": "\u2014 Would you like some more coffee?\n\u2014 No, ___ , I'm okay for now.",
+            "options": ["yes", "thanks", "okay", "please"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "thanks",
+            "hint": "This word pairs naturally with 'no' when politely declining an offer.",
+            "explanation": "'No, thanks' is the standard polite way to decline an offer, showing appreciation while still saying no.",
+            "grammarRule": "Polite Responses: Declining Offers"
         },
         {
             "id": "gq_l96_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She earns ___ less than her male colleagues.",
-            "options": [
-                "much more",
-                "so",
-                "far",
-                "very"
-            ],
+            "question": "\u2014 Shall I help you with those bags?\n\u2014 That would be ___ , thank you so much!",
+            "options": ["goods", "gooder", "great", "much"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "far",
-            "hint": "Which word can intensify a comparative adjective?",
-            "explanation": "'Far' (and 'much', 'a lot', 'considerably', 'significantly') can intensify comparative forms: far less, much better, considerably larger. Never use 'very' before comparatives - 'very better' is incorrect.",
-            "grammarRule": "Comparative Structures"
+            "correctAnswer": "great",
+            "hint": "This word expresses enthusiastic thanks for the offer.",
+            "explanation": "'That would be great' warmly accepts an offer of help. 'Goods' and 'gooder' aren't real adjective forms in this context.",
+            "grammarRule": "Polite Responses: Accepting Offers"
         },
         {
             "id": "gq_l97_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The government had to ___ the plan due to public opposition.",
-            "options": [
-                "call off",
-                "give up on",
-                "back out on",
-                "put off"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "call off",
-            "hint": "The plan was cancelled - which phrasal verb means 'to cancel'?",
-            "explanation": "'Call off' = to cancel: They had to call off the plan. 'Put off' = to postpone (delay to a later time). 'Give up on' = to stop trying. 'Back out' = to withdraw from an agreement. Each has a distinct meaning.",
-            "grammarRule": "Phrasal Verbs (Formal Contexts)"
+            "question": "I was wondering if you ___ help me with this problem.",
+            "options": ["can", "will", "must", "could"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "could",
+            "hint": "This softened, indirect request pairs with the more tentative modal, not the direct one.",
+            "explanation": "'I was wondering if you could...' is a gentle, indirect way of making a request, softer than a direct 'can you'. This pattern is common in polite emails and conversations.",
+            "grammarRule": "Indirect Requests: I Was Wondering If"
         },
         {
             "id": "gq_l97_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She couldn't ___ the idea of selling her childhood home.",
-            "options": [
-                "come to terms with",
-                "get away with",
-                "put up with",
-                "look into"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "come to terms with",
-            "hint": "She found it emotionally difficult to accept.",
-            "explanation": "'Come to terms with' = to accept or deal with something difficult: She couldn't come to terms with selling her home. 'Put up with' = tolerate. 'Get away with' = escape consequences. 'Look into' = investigate.",
-            "grammarRule": "Phrasal Verbs (Formal Contexts)"
+            "question": "Do you think you ___ finish this report by Friday?",
+            "options": ["can", "must", "should", "could"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "could",
+            "hint": "This is another tentative, softened way of asking, similar to Question 1.",
+            "explanation": "'Do you think you could...?' is another indirect, gentle request pattern, softer than simply asking 'can you finish this?'",
+            "grammarRule": "Indirect Requests: Do You Think You Could"
         },
         {
             "id": "gq_l97_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The detective decided to ___ the case more carefully.",
-            "options": [
-                "look over",
-                "look up",
-                "look after",
-                "look into"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "look into",
-            "hint": "The detective is going to investigate further.",
-            "explanation": "'Look into' = to investigate or examine: look into the case. 'Look up' = search for information. 'Look over' = review quickly. 'Look after' = take care of. Phrasal verbs have meanings distinct from their parts.",
-            "grammarRule": "Phrasal Verbs (Formal Contexts)"
+            "question": "\u2014 I was wondering if you ___ mind helping me move this weekend.\n\u2014 Not at all, happy to help.",
+            "options": ["will", "would", "could", "can"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "would",
+            "hint": "This combines two patterns you already know: the indirect opener and the fixed 'mind' phrase.",
+            "explanation": "This combines 'I was wondering if' with 'would you mind', both patterns from earlier in this stage: wondering if you would mind helping.",
+            "grammarRule": "Requests: Would You Mind"
         },
         {
             "id": "gq_l98_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ in Paris, she speaks French fluently.",
-            "options": [
-                "Being born",
-                "Having been born",
-                "Born",
-                "Having born"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Having been born",
-            "hint": "The passive meaning of 'being born' in the past requires which form?",
-            "explanation": "'Having been born' is the perfect passive participle: Having been born in Paris, she speaks French fluently. It shows the first action is completed and occurred before the main clause. 'Born' alone also works informally.",
-            "grammarRule": "Participle Clauses (Advanced)"
+            "question": "___ the oven to 200 degrees before baking.",
+            "options": ["You preheat", "Preheating", "Preheat", "Preheats"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Preheat",
+            "hint": "Recipe instructions are a very common place to find this sentence type.",
+            "explanation": "Recipe instructions use the imperative form: Preheat the oven. This is the same base-verb pattern practiced back in Level 91, now in a real cooking context.",
+            "grammarRule": "Imperatives: Affirmative"
         },
         {
             "id": "gq_l98_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Not ___ what to say, she remained silent.",
-            "options": [
-                "know",
-                "knowing",
-                "knew",
-                "known"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "knowing",
-            "hint": "Present participle for a simultaneous situation.",
-            "explanation": "'Not knowing what to say' = because she didn't know what to say. Present participle clauses (not knowing, feeling, seeing) express a situation simultaneous with or causing the action of the main clause.",
-            "grammarRule": "Participle Clauses (Advanced)"
+            "question": "___ run near the pool; the ground is slippery.",
+            "options": ["Don't", "Not", "No", "Never"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Don't",
+            "hint": "This is a warning sign, using the negative command pattern from Level 92.",
+            "explanation": "Safety warnings often use negative imperatives: Don't run. This follows the same pattern practiced earlier with 'don't touch' and 'don't forget'.",
+            "grammarRule": "Imperatives: Negative"
         },
         {
             "id": "gq_l98_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The book ___, she returned it to the library.",
-            "options": [
-                "was finished",
-                "having finished",
-                "finishing",
-                "finished"
-            ],
+            "question": "\u2014 What should I do in a fire?\n\u2014 ___ calm and leave the building immediately.",
+            "options": ["You stay", "Staying", "Stays", "Stay"],
             "correctAnswerIndex": 3,
-            "correctAnswer": "finished",
-            "hint": "An absolute participle clause - the book is the subject of 'finished'.",
-            "explanation": "'The book finished' is an absolute participle clause (with its own subject, different from the main clause subject). 'Having finished the book, she returned it' is another valid form where the subject is the same throughout.",
-            "grammarRule": "Participle Clauses (Advanced)"
+            "correctAnswer": "Stay",
+            "hint": "Safety instructions are another real-world imperative context.",
+            "explanation": "Emergency instructions rely on clear imperatives: Stay calm, leave immediately. Short, direct commands are easiest to follow quickly in urgent situations.",
+            "grammarRule": "Imperatives: Affirmative"
         },
         {
             "id": "gq_l99_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ you need any help, please don't hesitate to ask.",
-            "options": [
-                "Were",
-                "If should",
-                "If were",
-                "Should"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Should",
-            "hint": "Formal first conditional - 'if' replaced by inversion.",
-            "explanation": "'Should + subject + base verb' = 'If + subject + should + base verb' in formal English: Should you need any help = If you should need any help. This inversion is common in formal letters and official notices.",
-            "grammarRule": "Formal Conditional Inversion"
+            "question": "___ you mind turning down the music a little?",
+            "options": ["Will", "Would", "Shall", "Could"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Would",
+            "hint": "This fixed phrase from Level 93 only works with one specific modal.",
+            "explanation": "'Would you mind...?' remains fixed; 'will you mind' or 'could you mind' aren't natural English, as practiced back in Level 93.",
+            "grammarRule": "Requests: Would You Mind"
         },
         {
             "id": "gq_l99_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ I in your position, I would reconsider.",
-            "options": [
-                "Should",
-                "Had",
-                "If were",
-                "Were"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Were",
-            "hint": "Second conditional inversion - 'were' moves to the front.",
-            "explanation": "'Were + subject...' = 'If + subject + were...' in formal English: Were I in your position = If I were in your position. This inversion replaces 'if' and is formal or literary in style.",
-            "grammarRule": "Formal Conditional Inversion"
+            "question": "\u2014 I can't decide what to eat tonight.\n\u2014 ___ about trying that new sushi place?",
+            "options": ["Which", "How", "What", "Why"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "How",
+            "hint": "This is the same fixed suggestion phrase from Level 95.",
+            "explanation": "'How about...?' suggests an idea, just as practiced in Level 95: how about trying sushi?",
+            "grammarRule": "Suggestions: How About"
         },
         {
             "id": "gq_l99_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ she told me the truth, I would have forgiven her.",
-            "options": [
-                "Were",
-                "If had",
-                "Should",
-                "Had"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Had",
-            "hint": "Third conditional inversion - which auxiliary moves to the front?",
-            "explanation": "'Had + subject + past participle' = 'If + subject + had + past participle' (third conditional inversion): Had she told me the truth = If she had told me the truth. Had, were, and should can all replace 'if' in formal conditionals.",
-            "grammarRule": "Formal Conditional Inversion"
+            "question": "\u2014 Can I get you anything?\n\u2014 ___ , I'm fine for now, thank you.",
+            "options": ["No", "Not", "Never", "None"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "No",
+            "hint": "This is the simplest, most natural way to politely decline here.",
+            "explanation": "'No, I'm fine' is the natural, polite way to decline an offer. 'Never' or 'none' would sound oddly strong or out of place for such a small, friendly offer.",
+            "grammarRule": "Polite Responses: Declining Offers"
         },
         {
             "id": "gq_l100_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The meeting ___ at that time.",
-            "options": [
-                "still holds",
-                "was still being held",
-                "is still being held",
-                "was still holding"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "was still being held",
-            "hint": "An ongoing action at a past moment, described passively.",
-            "explanation": "Past continuous passive: was/were + being + past participle: The meeting was still being held at that time. This combines the continuity of past continuous with passive voice.",
-            "grammarRule": "Passive Voice (Past Continuous)"
+            "question": "\u2014 Excuse me, ___ you help me find the exit?\n\u2014 Of course, right this way.",
+            "options": ["must", "should", "shall", "could"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "could",
+            "hint": "This is a polite request to someone you don't know, similar to Level 84's stranger scenario.",
+            "explanation": "'Could you...?' remains a safe, polite choice for requests to strangers, echoing the register lessons from Level 84.",
+            "grammarRule": "Requests: Could You"
         },
         {
             "id": "gq_l100_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The contract ___ by both parties before the deadline.",
-            "options": [
-                "was signed",
-                "has been signed",
-                "had signed",
-                "had been signed"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "had been signed",
-            "hint": "The signing was completed before another past event (the deadline).",
-            "explanation": "Past perfect passive: had been + past participle: The contract had been signed before the deadline. Shows a passive action completed before another past reference point.",
-            "grammarRule": "Passive Voice (Past Perfect)"
+            "question": "\u2014 ___ I take your coat?\n\u2014 Oh, thank you, that's very kind.",
+            "options": ["Will", "Shall", "Should", "Must"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Shall",
+            "hint": "Someone is offering to do something helpful for a guest, just like in Level 94.",
+            "explanation": "'Shall I...?' offers a helpful service, exactly as practiced in Level 94: shall I take your coat?",
+            "grammarRule": "Offers: Shall I"
         },
         {
             "id": "gq_l100_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The new product ___ next spring.",
-            "options": [
-                "will launch",
-                "is going to launch",
-                "will be launched",
-                "has been launched"
-            ],
+            "question": "\u2014 I'm sorry, but you ___ smoke inside the restaurant.\n\u2014 Oh, I didn't realize, sorry about that.",
+            "options": ["don't have to", "shouldn't", "mustn't", "might not"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "will be launched",
-            "hint": "The product is the thing being launched - passive is needed.",
-            "explanation": "Future passive: will be + past participle: The new product will be launched next spring. The focus is on the product, not who launches it. 'Will launch' would wrongly make the product the one doing the launching.",
-            "grammarRule": "Passive Voice (Future Simple)"
+            "correctAnswer": "mustn't",
+            "hint": "This closes Stage 5 by returning to the prohibition rule from Level 88.",
+            "explanation": "'Mustn't' expresses a firm prohibition, the same rule practiced in Level 88: mustn't smoke here, it's against the rules. This wraps up the full journey from basic questions through modals, requests, offers, and polite communication across Levels 81 to 100.",
+            "grammarRule": "Mustn't: Prohibition"
         }
     ]
 }

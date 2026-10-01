@@ -8,28 +8,24 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "Our neighbor drives a small red truck.",
+            "sentence": "Each employee receives a badge.",
             "shuffledWords": [
-                "truck",
-                "small",
-                "a",
-                "red",
-                "drives",
-                "neighbor",
-                "Our"
+                "receives",
+                "Each",
+                "employee",
+                "badge",
+                "a"
             ],
             "correctOrder": [
-                6,
-                5,
-                4,
-                2,
                 1,
-                3,
-                0
+                2,
+                0,
+                4,
+                3
             ],
-            "hint": "Subject first, then the verb, then the object with its describing words.",
-            "explanation": "Our neighbor (subject) drives (verb) a small red truck (object), following standard Subject-Verb-Object order.",
-            "grammarRule": "Simple Present (SVO)",
+            "hint": "Each pairs with a singular noun and emphasizes every individual member one by one.",
+            "explanation": "Each treats employee as an individual unit within a group; it takes a singular noun and singular verb, just like every, but with a stronger sense of 'one by one.'",
+            "grammarRule": "Determiners: Each / Every / Another",
             "structureType": "S-V-O"
         },
         {
@@ -37,26 +33,24 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "The baker bakes fresh bread daily.",
+            "sentence": "Every apartment includes a balcony.",
             "shuffledWords": [
-                "The",
-                "daily",
-                "bread",
-                "baker",
-                "bakes",
-                "fresh"
+                "includes",
+                "balcony",
+                "Every",
+                "a",
+                "apartment"
             ],
             "correctOrder": [
+                2,
+                4,
                 0,
                 3,
-                4,
-                5,
-                2,
                 1
             ],
-            "hint": "Place the frequency word 'daily' at the very end.",
-            "explanation": "The baker (subject) bakes (verb) fresh bread (object), with daily added at the end to show frequency.",
-            "grammarRule": "Simple Present (SVO)",
+            "hint": "Every also takes a singular noun, but it views the group as a whole rather than one by one.",
+            "explanation": "Every functions like each before a singular noun, but it emphasizes the whole set of apartments rather than examining them individually.",
+            "grammarRule": "Determiners: Each / Every / Another",
             "structureType": "S-V-O"
         },
         {
@@ -64,28 +58,24 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "The nurse helps sick patients every day.",
+            "sentence": "She requests another appointment slot.",
             "shuffledWords": [
-                "nurse",
-                "day",
-                "sick",
-                "every",
-                "The",
-                "helps",
-                "patients"
+                "another",
+                "requests",
+                "She",
+                "slot",
+                "appointment"
             ],
             "correctOrder": [
-                4,
-                0,
-                5,
                 2,
-                6,
-                3,
-                1
+                1,
+                0,
+                4,
+                3
             ],
-            "hint": "Keep the subject and verb together, then add the object, then the frequency phrase.",
-            "explanation": "The nurse (subject) helps (verb) sick patients (object), followed by every day to show how often.",
-            "grammarRule": "Simple Present (SVO)",
+            "hint": "Another means 'one more' or 'a different one' and sits in the same slot as a or an.",
+            "explanation": "Another combines the meaning of 'an' and 'other' into one word, and it occupies the same position as an article directly before the noun phrase.",
+            "grammarRule": "Determiners: Each / Every / Another",
             "structureType": "S-V-O"
         },
         {
@@ -93,28 +83,26 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "There are two books on the shelf.",
+            "sentence": "She admires a lovely little cottage.",
             "shuffledWords": [
-                "two",
-                "on",
-                "shelf",
-                "the",
-                "books",
-                "are",
-                "There"
+                "little",
+                "She",
+                "a",
+                "lovely",
+                "cottage",
+                "admires"
             ],
             "correctOrder": [
-                6,
-                5,
-                0,
-                4,
                 1,
+                5,
+                2,
                 3,
-                2
+                0,
+                4
             ],
-            "hint": "Start with 'There are' before the plural noun, then add the location.",
-            "explanation": "There are introduces the existence of something, followed by the plural noun books and its location.",
-            "grammarRule": "There is / There are",
+            "hint": "Opinion words like lovely go before size words like little, closer to the speaker's feeling about the noun.",
+            "explanation": "English adjective order places opinion before size: lovely (how she feels about it) comes before little (its size), both before the noun cottage.",
+            "grammarRule": "Multiple Adjective Order: Opinion + Size",
             "structureType": "S-V-O"
         },
         {
@@ -122,28 +110,26 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "There is a spider on the wall.",
+            "sentence": "We prefer a beautiful small apartment.",
             "shuffledWords": [
-                "wall",
-                "spider",
-                "There",
-                "the",
-                "is",
+                "small",
+                "prefer",
+                "We",
+                "apartment",
                 "a",
-                "on"
+                "beautiful"
             ],
             "correctOrder": [
                 2,
+                1,
                 4,
                 5,
-                1,
-                6,
-                3,
-                0
+                0,
+                3
             ],
-            "hint": "Use 'There is' before a singular noun, then the location.",
-            "explanation": "There is introduces one thing, a spider, followed by its location on the wall.",
-            "grammarRule": "There is / There are",
+            "hint": "The same opinion-before-size rule applies here: beautiful is an opinion, small is a size.",
+            "explanation": "Beautiful expresses an opinion and comes before small, which states a fact about size — reinforcing the opinion-then-size pattern before the noun apartment.",
+            "grammarRule": "Multiple Adjective Order: Opinion + Size",
             "structureType": "S-V-O"
         },
         {
@@ -151,28 +137,28 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "There are many students in the library.",
+            "sentence": "The tourists enjoy a charming tiny village.",
             "shuffledWords": [
-                "many",
-                "in",
-                "There",
-                "the",
-                "library",
-                "are",
-                "students"
+                "charming",
+                "enjoy",
+                "village",
+                "tourists",
+                "The",
+                "tiny",
+                "a"
             ],
             "correctOrder": [
-                2,
-                5,
-                0,
-                6,
-                1,
+                4,
                 3,
-                4
+                1,
+                6,
+                0,
+                5,
+                2
             ],
-            "hint": "'There are' goes first with plural nouns, followed by quantity and location.",
-            "explanation": "There are begins the sentence, followed by many students and the location in the library.",
-            "grammarRule": "There is / There are",
+            "hint": "Don't let a longer subject change the rule — opinion still comes before size in the object phrase.",
+            "explanation": "Even with a fuller sentence, charming (opinion) still precedes tiny (size) before the noun village, showing the rule holds regardless of sentence length.",
+            "grammarRule": "Multiple Adjective Order: Opinion + Size",
             "structureType": "S-V-O"
         },
         {
@@ -180,26 +166,26 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "Her brother lost his new wallet.",
+            "sentence": "He owns a small old house.",
             "shuffledWords": [
-                "brother",
-                "lost",
-                "Her",
-                "wallet",
-                "his",
-                "new"
+                "owns",
+                "old",
+                "He",
+                "a",
+                "house",
+                "small"
             ],
             "correctOrder": [
                 2,
                 0,
-                1,
-                4,
+                3,
                 5,
-                3
+                1,
+                4
             ],
-            "hint": "Possessive words like 'her' and 'his' come right before the noun they describe.",
-            "explanation": "Her describes brother, and his describes wallet, each placed directly before its noun.",
-            "grammarRule": "Possessive Adjectives",
+            "hint": "Size words like small come before age words like old, closer to the noun they belong with.",
+            "explanation": "The standard order places size before age: small describes physical size, old describes age, and both come before the noun house.",
+            "grammarRule": "Multiple Adjective Order: Size + Age",
             "structureType": "S-V-O"
         },
         {
@@ -207,26 +193,26 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "Their parents sold their old house.",
+            "sentence": "They manage a large ancient estate.",
             "shuffledWords": [
-                "old",
-                "parents",
-                "their",
-                "house",
-                "sold",
-                "Their"
+                "large",
+                "a",
+                "manage",
+                "ancient",
+                "They",
+                "estate"
             ],
             "correctOrder": [
-                5,
-                1,
                 4,
                 2,
+                1,
                 0,
-                3
+                3,
+                5
             ],
-            "hint": "The possessive word 'their' goes before each noun it belongs to.",
-            "explanation": "Their appears before parents and again before old house, showing ownership in both places.",
-            "grammarRule": "Possessive Adjectives",
+            "hint": "Large describes size and comes first; ancient describes age and comes second, right before the noun.",
+            "explanation": "Large (size) precedes ancient (age), following the same size-then-age pattern, both modifying the noun estate.",
+            "grammarRule": "Multiple Adjective Order: Size + Age",
             "structureType": "S-V-O"
         },
         {
@@ -234,26 +220,28 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "My cousin painted her bedroom yellow.",
+            "sentence": "The museum displays a tiny antique clock.",
             "shuffledWords": [
-                "her",
-                "painted",
-                "bedroom",
-                "My",
-                "yellow",
-                "cousin"
+                "displays",
+                "a",
+                "clock",
+                "tiny",
+                "antique",
+                "museum",
+                "The"
             ],
             "correctOrder": [
-                3,
+                6,
                 5,
-                1,
                 0,
-                2,
-                4
+                1,
+                3,
+                4,
+                2
             ],
-            "hint": "Possessives go directly before the noun, and color words often come at the end.",
-            "explanation": "My describes cousin, her describes bedroom, and yellow describes the new color at the end.",
-            "grammarRule": "Possessive Adjectives",
+            "hint": "Keep the size adjective closest to the article, and the age adjective closest to the noun.",
+            "explanation": "Tiny (size) sits right after the article a, and antique (age) sits right before the noun clock, in the expected order.",
+            "grammarRule": "Multiple Adjective Order: Size + Age",
             "structureType": "S-V-O"
         },
         {
@@ -261,26 +249,26 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "The manager explained the plan clearly.",
+            "sentence": "She sells an old round mirror.",
             "shuffledWords": [
-                "clearly",
-                "plan",
-                "the",
-                "explained",
-                "The",
-                "manager"
+                "an",
+                "She",
+                "old",
+                "round",
+                "mirror",
+                "sells"
             ],
             "correctOrder": [
-                4,
-                5,
-                3,
-                2,
                 1,
-                0
+                5,
+                0,
+                2,
+                3,
+                4
             ],
-            "hint": "The manner adverb 'clearly' goes at the end, after the object.",
-            "explanation": "Clearly describes how the manager explained, so it follows the object the plan.",
-            "grammarRule": "Adverb Placement (Manner)",
+            "hint": "Age words like old come before shape words like round, just before the noun.",
+            "explanation": "Old describes the mirror's age and round describes its shape; English places age before shape, both directly before the noun mirror.",
+            "grammarRule": "Multiple Adjective Order: Age + Shape",
             "structureType": "S-V-O"
         },
         {
@@ -288,26 +276,28 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "The workers finished the project quickly.",
+            "sentence": "The shop stocks a new rectangular desk.",
             "shuffledWords": [
-                "workers",
-                "finished",
                 "The",
-                "quickly",
-                "project",
-                "the"
+                "new",
+                "a",
+                "shop",
+                "desk",
+                "rectangular",
+                "stocks"
             ],
             "correctOrder": [
-                2,
                 0,
+                3,
+                6,
+                2,
                 1,
                 5,
-                4,
-                3
+                4
             ],
-            "hint": "Place the manner adverb after the object, at the end of the sentence.",
-            "explanation": "Quickly tells us how the workers finished, positioned after the object the project.",
-            "grammarRule": "Adverb Placement (Manner)",
+            "hint": "The same pattern continues: an age-related word comes first, then a shape word, then the noun.",
+            "explanation": "New indicates age (recently made) and rectangular indicates shape; new comes first, following the age-before-shape rule, before the noun desk.",
+            "grammarRule": "Multiple Adjective Order: Age + Shape",
             "structureType": "S-V-O"
         },
         {
@@ -315,26 +305,26 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "She organized the files carefully yesterday.",
+            "sentence": "We admire an ancient circular tower.",
             "shuffledWords": [
-                "files",
-                "carefully",
-                "She",
-                "organized",
-                "yesterday",
-                "the"
+                "tower",
+                "We",
+                "circular",
+                "admire",
+                "ancient",
+                "an"
             ],
             "correctOrder": [
-                2,
+                1,
                 3,
                 5,
-                0,
-                1,
-                4
+                4,
+                2,
+                0
             ],
-            "hint": "The manner adverb comes right after the object, before the time word.",
-            "explanation": "Carefully shows how she organized the files, and yesterday tells us when, in that order.",
-            "grammarRule": "Adverb Placement (Manner)",
+            "hint": "Even with 'an' instead of 'a', the age-then-shape order stays exactly the same.",
+            "explanation": "Ancient (age) precedes circular (shape) regardless of which article is used, confirming that age-before-shape is a fixed rule, not tied to a specific article.",
+            "grammarRule": "Multiple Adjective Order: Age + Shape",
             "structureType": "S-V-O"
         },
         {
@@ -342,26 +332,28 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "The plane landed at the airport.",
+            "sentence": "He wears a red Italian leather jacket.",
             "shuffledWords": [
-                "plane",
-                "airport",
-                "the",
-                "at",
-                "The",
-                "landed"
+                "He",
+                "leather",
+                "a",
+                "jacket",
+                "red",
+                "wears",
+                "Italian"
             ],
             "correctOrder": [
-                4,
                 0,
                 5,
-                3,
                 2,
-                1
+                4,
+                6,
+                1,
+                3
             ],
-            "hint": "The place phrase comes right after the verb.",
-            "explanation": "At the airport tells us where the plane landed, placed after the verb.",
-            "grammarRule": "Prepositional Phrases (Place)",
+            "hint": "With three describing words, go color, then where it's from, then what it's made of, right before the noun.",
+            "explanation": "The order color → origin → material → noun applies here: red (color), Italian (origin), leather (material), then jacket, forming a longer but still rule-governed chain.",
+            "grammarRule": "Multiple Adjective Order: Color + Origin + Material",
             "structureType": "S-V-O"
         },
         {
@@ -369,26 +361,28 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "Our train arrived at the station.",
+            "sentence": "She carries a black French leather handbag.",
             "shuffledWords": [
-                "train",
-                "arrived",
-                "the",
-                "Our",
-                "at",
-                "station"
+                "She",
+                "leather",
+                "handbag",
+                "French",
+                "carries",
+                "black",
+                "a"
             ],
             "correctOrder": [
-                3,
                 0,
-                1,
                 4,
-                2,
-                5
+                6,
+                5,
+                3,
+                1,
+                2
             ],
-            "hint": "Put the location phrase directly after the verb arrived.",
-            "explanation": "At the station shows the place, coming right after the verb arrived.",
-            "grammarRule": "Prepositional Phrases (Place)",
+            "hint": "The same three-part chain repeats: color first, then nationality, then material, then the noun.",
+            "explanation": "Black (color), French (origin), and leather (material) stack in that exact order before handbag, matching the pattern from the previous sentence with new vocabulary.",
+            "grammarRule": "Multiple Adjective Order: Color + Origin + Material",
             "structureType": "S-V-O"
         },
         {
@@ -396,26 +390,30 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "We stayed in a cozy cabin.",
+            "sentence": "The company sells a blue German steel toolbox.",
             "shuffledWords": [
-                "cabin",
-                "in",
-                "We",
-                "stayed",
-                "cozy",
-                "a"
+                "toolbox",
+                "a",
+                "steel",
+                "sells",
+                "blue",
+                "company",
+                "The",
+                "German"
             ],
             "correctOrder": [
-                2,
+                6,
+                5,
                 3,
                 1,
-                5,
                 4,
+                7,
+                2,
                 0
             ],
-            "hint": "The place phrase follows the verb, with the adjective before the noun.",
-            "explanation": "In a cozy cabin tells us where we stayed, with cozy describing cabin.",
-            "grammarRule": "Prepositional Phrases (Place)",
+            "hint": "A longer subject doesn't change the chain — color, origin, and material still line up the same way before the noun.",
+            "explanation": "Blue (color), German (origin), and steel (material) follow the identical three-step order before toolbox, showing the pattern transfers to new subjects and objects alike.",
+            "grammarRule": "Multiple Adjective Order: Color + Origin + Material",
             "structureType": "S-V-O"
         },
         {
@@ -423,30 +421,26 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "He washed the dishes and cleaned the counter.",
+            "sentence": "We need five large wooden crates.",
             "shuffledWords": [
-                "counter",
-                "He",
-                "and",
-                "the",
-                "the",
-                "washed",
-                "dishes",
-                "cleaned"
+                "crates",
+                "wooden",
+                "large",
+                "need",
+                "five",
+                "We"
             ],
             "correctOrder": [
-                1,
                 5,
                 3,
-                6,
-                2,
-                7,
                 4,
+                2,
+                1,
                 0
             ],
-            "hint": "The word 'and' connects two actions done by the same subject.",
-            "explanation": "And joins two verb phrases, washed the dishes and cleaned the counter, done by the same subject he.",
-            "grammarRule": "Coordinating Conjunctions (and/but)",
+            "hint": "A number goes first, then a size word, then a material word, right before the noun.",
+            "explanation": "Five (quantity) comes first, large (size) second, and wooden (material) third — quantity always leads a chain of adjectives before the noun crates.",
+            "grammarRule": "Quantity + Adjective(s) + Noun",
             "structureType": "S-V-O"
         },
         {
@@ -454,28 +448,28 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "She wanted pizza but ordered a salad.",
+            "sentence": "The bakery displays three fresh chocolate cakes.",
             "shuffledWords": [
-                "pizza",
-                "She",
-                "wanted",
-                "salad",
-                "but",
-                "ordered",
-                "a"
+                "The",
+                "three",
+                "cakes",
+                "fresh",
+                "bakery",
+                "displays",
+                "chocolate"
             ],
             "correctOrder": [
-                1,
-                2,
                 0,
                 4,
                 5,
+                1,
+                3,
                 6,
-                3
+                2
             ],
-            "hint": "'But' shows a contrast between two actions by the same subject.",
-            "explanation": "But connects two contrasting ideas: what she wanted and what she actually ordered.",
-            "grammarRule": "Coordinating Conjunctions (and/but)",
+            "hint": "The quantity word starts the phrase, followed by a freshness word, then a flavor or type word.",
+            "explanation": "Three (quantity) opens the noun phrase, followed by fresh (condition) and chocolate (type), all before the noun cakes.",
+            "grammarRule": "Quantity + Adjective(s) + Noun",
             "structureType": "S-V-O"
         },
         {
@@ -483,28 +477,26 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "They practiced hard and won the match.",
+            "sentence": "She collects several rare vintage postcards.",
             "shuffledWords": [
-                "hard",
-                "the",
-                "practiced",
-                "match",
-                "They",
-                "and",
-                "won"
+                "postcards",
+                "several",
+                "vintage",
+                "She",
+                "rare",
+                "collects"
             ],
             "correctOrder": [
+                3,
+                5,
+                1,
                 4,
                 2,
-                0,
-                5,
-                6,
-                1,
-                3
+                0
             ],
-            "hint": "'And' links two actions in the order they happened.",
-            "explanation": "And joins practiced hard and won the match, two actions performed by the same subject.",
-            "grammarRule": "Coordinating Conjunctions (and/but)",
+            "hint": "Several leads the phrase, then an opinion word, then an age-related word, then the noun.",
+            "explanation": "Several (quantity) comes first, rare (opinion/value) second, and vintage (age/style) third, all positioned before postcards.",
+            "grammarRule": "Quantity + Adjective(s) + Noun",
             "structureType": "S-V-O"
         },
         {
@@ -512,28 +504,24 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "We visited an old castle last summer.",
+            "sentence": "He cleans the kitchen counter.",
             "shuffledWords": [
-                "castle",
-                "an",
-                "last",
-                "We",
-                "summer",
-                "old",
-                "visited"
+                "counter",
+                "He",
+                "cleans",
+                "kitchen",
+                "the"
             ],
             "correctOrder": [
-                3,
-                6,
                 1,
-                5,
-                0,
                 2,
-                4
+                4,
+                3,
+                0
             ],
-            "hint": "Subject, past verb, object, then the time expression at the end.",
-            "explanation": "We (subject) visited (past verb) an old castle (object), with last summer showing when.",
-            "grammarRule": "Simple Past (SVO)",
+            "hint": "Two nouns can combine into one unit, like kitchen counter — treat them as a single object.",
+            "explanation": "Kitchen and counter combine into one compound noun, kitchen counter, which functions together as a single object after the verb cleans.",
+            "grammarRule": "Compound Noun Phrases (Noun + Noun)",
             "structureType": "S-V-O"
         },
         {
@@ -541,28 +529,24 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "The band played their new song loudly.",
+            "sentence": "She charges her phone battery.",
             "shuffledWords": [
-                "loudly",
-                "played",
-                "song",
-                "The",
-                "their",
-                "new",
-                "band"
+                "charges",
+                "her",
+                "battery",
+                "phone",
+                "She"
             ],
             "correctOrder": [
-                3,
-                6,
-                1,
                 4,
-                5,
-                2,
-                0
+                0,
+                1,
+                3,
+                2
             ],
-            "hint": "Keep subject and verb together, then the object, then the manner adverb.",
-            "explanation": "The band (subject) played (verb) their new song (object), with loudly describing how.",
-            "grammarRule": "Simple Past (SVO)",
+            "hint": "Phone battery works the same way — the first noun describes what kind of battery it is.",
+            "explanation": "Phone battery is a compound noun where phone specifies the type of battery; the two words stay together as one object unit.",
+            "grammarRule": "Compound Noun Phrases (Noun + Noun)",
             "structureType": "S-V-O"
         },
         {
@@ -570,28 +554,26 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "I watched an exciting soccer game yesterday.",
+            "sentence": "The team updates the project timeline.",
             "shuffledWords": [
-                "an",
-                "game",
-                "yesterday",
-                "watched",
-                "I",
-                "exciting",
-                "soccer"
+                "timeline",
+                "updates",
+                "the",
+                "The",
+                "team",
+                "project"
             ],
             "correctOrder": [
-                4,
                 3,
-                0,
-                5,
-                6,
+                4,
                 1,
-                2
+                2,
+                5,
+                0
             ],
-            "hint": "Place the adjective before the noun, and the time word at the end.",
-            "explanation": "Exciting describes soccer game, and yesterday tells us when I watched it.",
-            "grammarRule": "Simple Past (SVO)",
+            "hint": "Project timeline is another noun-plus-noun combination that acts as a single object after the article the.",
+            "explanation": "Project timeline combines two nouns into one compound object, following the article the and the verb updates, just like kitchen counter and phone battery.",
+            "grammarRule": "Compound Noun Phrases (Noun + Noun)",
             "structureType": "S-V-O"
         },
         {
@@ -599,26 +581,28 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "She bought a shiny new laptop.",
+            "sentence": "My sister's laptop needs a battery replacement.",
             "shuffledWords": [
-                "bought",
-                "shiny",
+                "sister's",
+                "battery",
                 "a",
-                "new",
                 "laptop",
-                "She"
+                "My",
+                "replacement",
+                "needs"
             ],
             "correctOrder": [
-                5,
+                4,
                 0,
+                3,
+                6,
                 2,
                 1,
-                3,
-                4
+                5
             ],
-            "hint": "Describing words about appearance usually come before words about age, like 'new'.",
-            "explanation": "Shiny (appearance) comes before new (age), and both are placed before the noun laptop.",
-            "grammarRule": "Adjective-Noun Order",
+            "hint": "Add 's directly to the owner's name to show possession, then follow with what they own.",
+            "explanation": "Sister's uses an apostrophe-s to show that the laptop belongs to the sister; the possessive noun phrase sister's laptop functions as the subject.",
+            "grammarRule": "Possessive 's Noun Phrases",
             "structureType": "S-V-O"
         },
         {
@@ -626,26 +610,28 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "He owns a sleek black smartphone.",
+            "sentence": "The company's new policy affects every employee.",
             "shuffledWords": [
-                "a",
-                "smartphone",
-                "owns",
-                "black",
-                "sleek",
-                "He"
+                "affects",
+                "employee",
+                "new",
+                "The",
+                "every",
+                "policy",
+                "company's"
             ],
             "correctOrder": [
-                5,
+                3,
+                6,
                 2,
+                5,
                 0,
                 4,
-                3,
                 1
             ],
-            "hint": "Shape or style words come before color words, then the noun.",
-            "explanation": "Sleek describes style, black is the color, and both come before the noun smartphone.",
-            "grammarRule": "Adjective-Noun Order",
+            "hint": "The company's works the same way as sister's — apostrophe-s marks ownership, even for an organization.",
+            "explanation": "Company's shows that policy belongs to the company; possessive 's applies to organizations just as it does to people, forming the subject company's new policy.",
+            "grammarRule": "Possessive 's Noun Phrases",
             "structureType": "S-V-O"
         },
         {
@@ -653,26 +639,28 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "I found a tiny silver coin.",
+            "sentence": "Our manager's calendar shows several upcoming meetings.",
             "shuffledWords": [
-                "found",
-                "I",
-                "coin",
-                "silver",
-                "tiny",
-                "a"
+                "several",
+                "Our",
+                "calendar",
+                "manager's",
+                "upcoming",
+                "shows",
+                "meetings"
             ],
             "correctOrder": [
                 1,
-                0,
-                5,
-                4,
                 3,
-                2
+                2,
+                5,
+                0,
+                4,
+                6
             ],
-            "hint": "Size words like 'tiny' come before color or material words like 'silver'.",
-            "explanation": "Tiny (size) comes before silver (color), and both come before the noun coin.",
-            "grammarRule": "Adjective-Noun Order",
+            "hint": "A possessive subject can appear alongside a quantifier in the object, like several upcoming meetings.",
+            "explanation": "Manager's marks possession for the subject calendar, while several upcoming meetings in the object combines a quantifier and adjective, reviewing earlier noun-phrase skills.",
+            "grammarRule": "Possessive 's Noun Phrases",
             "structureType": "S-V-O"
         },
         {
@@ -680,113 +668,111 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "She takes medicine after every meal.",
+            "sentence": "She gives him a discount.",
             "shuffledWords": [
-                "medicine",
-                "after",
-                "meal",
-                "takes",
-                "every",
-                "She"
+                "discount",
+                "him",
+                "She",
+                "gives",
+                "a"
             ],
             "correctOrder": [
-                5,
+                2,
                 3,
-                0,
                 1,
                 4,
-                2
+                0
             ],
-            "hint": "The time phrase 'after every meal' comes at the end.",
-            "explanation": "After every meal tells us when she takes medicine, following the object medicine.",
-            "grammarRule": "Prepositional Phrases (Time & Place)",
-            "structureType": "S-V-O"
+            "hint": "The person who receives something comes right after the verb, before the thing being given.",
+            "explanation": "Him is the indirect object (who receives the discount) and comes immediately after the verb gives, before the direct object a discount.",
+            "grammarRule": "Double Object Order: Indirect + Direct Object",
+            "structureType": "S-V-O-O"
         },
         {
             "id": "wr_l19_q2",
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "He exercises at the gym daily.",
+            "sentence": "The manager offers them a promotion.",
             "shuffledWords": [
-                "gym",
-                "exercises",
-                "the",
-                "He",
-                "daily",
-                "at"
+                "a",
+                "offers",
+                "The",
+                "manager",
+                "promotion",
+                "them"
             ],
             "correctOrder": [
+                2,
                 3,
                 1,
                 5,
-                2,
                 0,
                 4
             ],
-            "hint": "Place the location phrase before the frequency word at the end.",
-            "explanation": "At the gym shows the place, and daily shows how often, in that order.",
-            "grammarRule": "Prepositional Phrases (Time & Place)",
-            "structureType": "S-V-O"
+            "hint": "Them stands in for the receivers and goes directly after the verb, ahead of what's being offered.",
+            "explanation": "Them (indirect object) follows the verb offers directly, and a promotion (direct object) comes after it — the receiver is named before the thing received.",
+            "grammarRule": "Double Object Order: Indirect + Direct Object",
+            "structureType": "S-V-O-O"
         },
         {
             "id": "wr_l19_q3",
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "We rested in the park after lunch.",
+            "sentence": "Our teacher sends us a detailed schedule.",
             "shuffledWords": [
-                "park",
-                "after",
-                "rested",
-                "in",
-                "lunch",
-                "the",
-                "We"
+                "a",
+                "teacher",
+                "sends",
+                "detailed",
+                "us",
+                "schedule",
+                "Our"
             ],
             "correctOrder": [
                 6,
-                2,
-                3,
-                5,
-                0,
                 1,
-                4
+                2,
+                4,
+                0,
+                3,
+                5
             ],
-            "hint": "The place phrase comes before the time phrase at the end.",
-            "explanation": "In the park tells us where, and after lunch tells us when, both following the verb rested.",
-            "grammarRule": "Prepositional Phrases (Time & Place)",
-            "structureType": "S-V-O"
+            "hint": "Even with a describing word in the direct object, the receiver pronoun still comes first.",
+            "explanation": "Us (indirect object) still comes right after sends, before the fuller direct object phrase a detailed schedule, showing the pattern holds with added detail.",
+            "grammarRule": "Double Object Order: Indirect + Direct Object",
+            "structureType": "S-V-O-O"
         },
         {
             "id": "wr_l20_q1",
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "The excited children ran quickly toward the playground.",
+            "sentence": "The chef prepares a delicious homemade tomato soup.",
             "shuffledWords": [
-                "playground",
-                "children",
-                "excited",
-                "the",
-                "ran",
                 "The",
-                "quickly",
-                "toward"
+                "prepares",
+                "chef",
+                "homemade",
+                "delicious",
+                "a",
+                "soup",
+                "tomato"
             ],
             "correctOrder": [
-                5,
+                0,
                 2,
                 1,
+                5,
                 4,
-                6,
-                7,
                 3,
-                0
+                7,
+                6
             ],
-            "hint": "Combine the adjective and subject, then the verb, the manner adverb, and the place.",
-            "explanation": "This review sentence links an adjective, subject, verb, manner adverb, and place phrase in standard order.",
-            "grammarRule": "Basic Sentence Structure (Review)",
+            "hint": "Stack the adjectives in order — opinion, then a descriptive type, then what it's made with — before the noun.",
+            "explanation": "Delicious (opinion), homemade (origin/type), and tomato (material/type) line up before soup, combining several adjective-order rules from this file into one natural sentence.",
+            "grammarRule": "Noun Phrase Mastery (Review)",
             "structureType": "S-V-O"
         },
         {
@@ -794,30 +780,32 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "Our whole family enjoyed the delicious dinner together.",
+            "sentence": "My brother's new apartment has a spacious modern kitchen.",
             "shuffledWords": [
-                "dinner",
-                "family",
-                "together",
-                "delicious",
-                "Our",
-                "enjoyed",
-                "whole",
-                "the"
+                "a",
+                "kitchen",
+                "spacious",
+                "modern",
+                "has",
+                "My",
+                "brother's",
+                "apartment",
+                "new"
             ],
             "correctOrder": [
-                4,
-                6,
-                1,
                 5,
+                6,
+                8,
                 7,
-                3,
+                4,
                 0,
-                2
+                2,
+                3,
+                1
             ],
-            "hint": "Keep the subject and its describing words together before the verb.",
-            "explanation": "This sentence reviews Subject-Verb-Object order along with an adjective (delicious) and a closing adverb (together).",
-            "grammarRule": "Basic Sentence Structure (Review)",
+            "hint": "Combine a possessive subject with a size-then-style adjective pair in the object, just like earlier levels.",
+            "explanation": "Brother's shows possession in the subject, while spacious (size) and modern (age/style) follow the size-before-age-style pattern in the object before kitchen.",
+            "grammarRule": "Noun Phrase Mastery (Review)",
             "structureType": "S-V-O"
         },
         {
@@ -825,31 +813,33 @@
             "instruction": "REORDER WORDS",
             "subtype": "wordReorder",
             "interactionType": "reorder",
-            "sentence": "The young athlete trained hard every single day.",
+            "sentence": "The hotel offers guests a free hot breakfast buffet.",
             "shuffledWords": [
-                "every",
-                "athlete",
-                "hard",
                 "The",
-                "day",
-                "young",
-                "trained",
-                "single"
+                "hot",
+                "buffet",
+                "guests",
+                "hotel",
+                "a",
+                "offers",
+                "free",
+                "breakfast"
             ],
             "correctOrder": [
+                0,
+                4,
+                6,
                 3,
                 5,
-                1,
-                6,
-                2,
-                0,
                 7,
-                4
+                1,
+                8,
+                2
             ],
-            "hint": "Subject with adjective, then verb, then manner word, then the frequency phrase.",
-            "explanation": "This checkpoint sentence combines an adjective, past-tense verb, manner adverb, and frequency phrase in natural order.",
-            "grammarRule": "Basic Sentence Structure (Review)",
-            "structureType": "S-V-O"
+            "hint": "Bring together a double object with a multi-adjective noun phrase: receiver first, then a full descriptive object.",
+            "explanation": "Guests is the indirect object right after offers, and a free hot breakfast buffet is the direct object, stacking two adjectives (free, hot) with the compound noun breakfast buffet.",
+            "grammarRule": "Noun Phrase Mastery (Review)",
+            "structureType": "S-V-O-O"
         }
     ]
 }

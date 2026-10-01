@@ -8,23 +8,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'appears' as used in the sentence below?",
-            "targetWord": "appears",
-            "sentence": "The solution to the problem appears simpler than it actually turns out to be.",
+            "question": "What grammatical job does 'report' do in this sentence?",
+            "targetWord": "report",
+            "sentence": "Although the quarterly report wasn't due until Friday, Devika submitted it a full three days early.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Conjunction",
+                "Noun",
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Some verbs link the subject to a description. What kind of verb is 'appears' here?",
-            "explanation": "'Appears' is a linking verb - it connects 'the solution' to the predicate adjective 'simpler'. Linking verbs (appear, seem, become, feel, taste) describe a state, not an action.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Noun",
+            "hint": "Notice what the word is attached to. What wasn't due until Friday?",
+            "explanation": "'Report' is a noun here, naming the document that had a deadline — it functions as the subject of the first clause.",
+            "grammarRule": "Common noun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "plural form"
             ]
         },
         {
@@ -32,23 +32,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'tense' as used in the sentence below?",
-            "targetWord": "tense",
-            "sentence": "The atmosphere in the boardroom became extremely tense just before the announcement.",
+            "question": "And in that same sentence, what part of speech is 'submitted'?",
+            "targetWord": "submitted",
+            "sentence": "Although the quarterly report wasn't due until Friday, Devika submitted it a full three days early.",
             "options": [
-                "Noun",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Noun"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe emotional atmospheres. What does 'tense' tell us about the atmosphere?",
-            "explanation": "'Tense' is an adjective - it follows the linking verb 'became' as a predicate adjective. Note: 'tense' in grammar is a noun, but here it describes a feeling.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Verb",
+            "hint": "Focus on its role in this sentence only. What action did she take with the report?",
+            "explanation": "'Submitted' is a verb describing Devika's action of turning in the report ahead of schedule.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -56,23 +56,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'resolve' as used in the sentence below?",
-            "targetWord": "resolve",
-            "sentence": "Both sides agreed to meet and resolve the dispute through mediation.",
+            "question": "Staying with that sentence, which category describes 'Although'?",
+            "targetWord": "Although",
+            "sentence": "Although the quarterly report wasn't due until Friday, Devika submitted it a full three days early.",
             "options": [
-                "Noun",
+                "Conjunction",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Preposition",
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Conflict-resolution verbs describe ending disagreements. What did both sides agree to do?",
-            "explanation": "'Resolve' is a verb - it appears after 'and' as a coordinating infinitive ('to meet and resolve'). 'Resolution' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Conjunction",
+            "hint": "This word introduces a clause that contrasts with the rest of the sentence. What contrast does it set up?",
+            "explanation": "'Although' is a subordinating conjunction introducing a clause that contrasts with what follows — the report wasn't due yet, but Devika submitted it early anyway.",
+            "grammarRule": "Subordinating conjunction introducing a contrast clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related preposition (despite)"
             ]
         },
         {
@@ -80,23 +80,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'seems' as used in the sentence below?",
-            "targetWord": "seems",
-            "sentence": "The new policy seems unfair to many of the workers directly affected by it.",
+            "question": "What kind of word is 'overwhelming' in this sentence?",
+            "targetWord": "overwhelming",
+            "sentence": "\"I know the assignment feels overwhelming,\" the teacher said, \"but if you break it into smaller steps, it becomes manageable.\"",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Noun",
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Linking verbs connect subjects to predicate adjectives. What kind of verb is 'seems'?",
-            "explanation": "'Seems' is a linking verb - it connects 'the new policy' to the predicate adjective 'unfair'. It expresses appearance without describing an action.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "Let the sentence, not the spelling, decide. What does 'overwhelming' describe about the assignment?",
+            "explanation": "'Overwhelming' is an adjective describing how the assignment feels to the student, following the linking verb 'feels'.",
+            "grammarRule": "Predicate adjective after a linking verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb form",
+                "adjective form"
             ]
         },
         {
@@ -104,23 +104,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'strategic' as used in the sentence below?",
-            "targetWord": "strategic",
-            "sentence": "The company made a highly strategic decision to expand operations into emerging Asian markets.",
+            "question": "Looking at the same sentence, how is 'if' functioning?",
+            "targetWord": "if",
+            "sentence": "\"I know the assignment feels overwhelming,\" the teacher said, \"but if you break it into smaller steps, it becomes manageable.\"",
             "options": [
                 "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
+                "Preposition",
+                "Conjunction",
+                "Verb"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe the purposefulness of business decisions. What does 'strategic' describe?",
-            "explanation": "'Strategic' is an adjective - it describes the noun 'decision', indicating it was carefully planned for long-term advantage.",
-            "grammarRule": "Adjectives",
+            "correctAnswer": "Conjunction",
+            "hint": "This word introduces a condition. Under what condition does the assignment become manageable?",
+            "explanation": "'If' is a subordinating conjunction introducing a conditional clause — breaking the assignment into steps is the condition for it becoming manageable.",
+            "grammarRule": "Subordinating conjunction introducing a conditional clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related conjunction (unless)"
             ]
         },
         {
@@ -128,23 +128,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'retain' as used in the sentence below?",
-            "targetWord": "retain",
-            "sentence": "The company worked extremely hard to retain its most experienced employees during the restructure.",
+            "question": "Within that same sentence, 'manageable' is functioning as a:",
+            "targetWord": "manageable",
+            "sentence": "\"I know the assignment feels overwhelming,\" the teacher said, \"but if you break it into smaller steps, it becomes manageable.\"",
             "options": [
                 "Noun",
+                "Adverb",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Management verbs describe keeping valuable people. What did the company work to do?",
-            "explanation": "'Retain' is a verb - it follows 'to' as an infinitive. 'Retention' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "Look at what this word does in this exact sentence. What does the assignment become?",
+            "explanation": "'Manageable' is an adjective describing the assignment's new state after being broken into steps, following the linking verb 'becomes'.",
+            "grammarRule": "Predicate adjective after a linking verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "positive form",
+                "comparative form"
             ]
         },
         {
@@ -152,23 +152,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'remains' as used in the sentence below?",
-            "targetWord": "remains",
-            "sentence": "The precise location of the missing artefact remains unknown to researchers to this day.",
+            "question": "Which grammatical category best describes 'asked' here?",
+            "targetWord": "asked",
+            "sentence": "Even though the twins had already eaten dinner, they still asked for dessert before bedtime, which made their mother laugh.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Adverb",
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "Verb",
-            "hint": "Linking verbs can indicate a continuing state. What kind of verb is 'remains'?",
-            "explanation": "'Remains' is a linking verb - it connects 'the location' to the predicate adjective 'unknown'. It means 'continues to be'.",
-            "grammarRule": "Verbs",
+            "hint": "Let the sentence, not the spelling, decide. What did they ask for?",
+            "explanation": "'Asked' is a verb describing the twins' action of requesting dessert.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -176,23 +176,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'subtle' as used in the sentence below?",
-            "targetWord": "subtle",
-            "sentence": "There was a very subtle difference in tone between the two versions of the speech.",
+            "question": "Which grammatical category fits 'which' in that same sentence?",
+            "targetWord": "which",
+            "sentence": "Even though the twins had already eaten dinner, they still asked for dessert before bedtime, which made their mother laugh.",
             "options": [
-                "Noun",
+                "Pronoun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe the degree of perceptibility. What does 'subtle' tell us about the difference?",
-            "explanation": "'Subtle' is an adjective - it modifies the noun 'difference', meaning it was delicate and not immediately obvious.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Pronoun",
+            "hint": "This word can refer back to an entire situation, not just one noun. What does 'which' refer to here?",
+            "explanation": "'Which' is a relative pronoun referring back to the whole idea of the twins asking for dessert — it introduces a clause commenting on that entire situation, not just a single noun.",
+            "grammarRule": "Relative pronoun referring to a whole clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "relative use",
+                "interrogative use"
             ]
         },
         {
@@ -200,23 +200,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'undermine' as used in the sentence below?",
-            "targetWord": "undermine",
-            "sentence": "Persistent criticism can gradually undermine a person's self-confidence over time.",
+            "question": "And in that same sentence, what part of speech is 'before'?",
+            "targetWord": "before",
+            "sentence": "Even though the twins had already eaten dinner, they still asked for dessert before bedtime, which made their mother laugh.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Preposition",
+                "Noun",
+                "Conjunction"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Psychological verbs describe gradual weakening. What can constant criticism do?",
-            "explanation": "'Undermine' is a verb - it follows the modal 'can'. 'Undermining' can be an adjective, but here it is clearly the main verb.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Preposition",
+            "hint": "Think about the job it performs here. What noun follows 'before' here?",
+            "explanation": "'Before' is a preposition here, introducing the noun phrase 'bedtime' rather than a full clause.",
+            "grammarRule": "Preposition introducing a time phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "conjunction use"
             ]
         },
         {
@@ -224,23 +224,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'prove' as used in the sentence below?",
-            "targetWord": "prove",
-            "sentence": "Time and experience often prove that patience is ultimately more valuable than urgency.",
+            "question": "In this sentence, 'exhausted' is functioning as a:",
+            "targetWord": "exhausted",
+            "sentence": "By the time the connecting flight boarded, most passengers, exhausted from the layover, had already found seats near the gate.",
             "options": [
-                "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Verb"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs can take a 'that' clause as their direct object. What does 'time and experience' do to the claim about patience?",
-            "explanation": "'Prove' is a verb - it is the main predicate, with 'that' introducing a noun clause as its object. It shows what time and experience demonstrate.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Adjective",
+            "hint": "Think about the job it performs here. What state were the passengers in?",
+            "explanation": "'Exhausted' is an adjective describing the passengers' tired state — here it appears in an interrupting phrase, set off by commas, rather than after a linking verb.",
+            "grammarRule": "Participial adjective in an interrupting phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb form",
+                "adjective form"
             ]
         },
         {
@@ -248,23 +248,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'abstract' as used in the sentence below?",
-            "targetWord": "abstract",
-            "sentence": "The philosophical concept of infinity is deeply abstract and notoriously difficult to visualise.",
+            "question": "Staying with that sentence, which category describes 'near'?",
+            "targetWord": "near",
+            "sentence": "By the time the connecting flight boarded, most passengers, exhausted from the layover, had already found seats near the gate.",
             "options": [
-                "Noun",
-                "Verb",
+                "Preposition",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Noun"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe the nature of ideas. What does 'abstract' tell us about the concept?",
-            "explanation": "'Abstract' is an adjective - it follows the linking verb 'is' as a predicate adjective. 'Abstract' can be a noun (in art) or verb (to summarise), but here it clearly describes a quality.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Preposition",
+            "hint": "Ask how it connects to the words near it. Where did passengers find seats?",
+            "explanation": "'Near' is a preposition introducing the phrase that shows the seats' location relative to the gate.",
+            "grammarRule": "Preposition introducing a location phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related adverb use"
             ]
         },
         {
@@ -272,23 +272,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'distinguish' as used in the sentence below?",
-            "targetWord": "distinguish",
-            "sentence": "It is essential to distinguish clearly between established fact and personal opinion in academic writing.",
+            "question": "Which grammatical category fits 'boarded' in that same sentence?",
+            "targetWord": "boarded",
+            "sentence": "By the time the connecting flight boarded, most passengers, exhausted from the layover, had already found seats near the gate.",
             "options": [
                 "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Verb"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Verb",
-            "hint": "Cognitive verbs describe intellectual differentiation. What is essential in academic writing?",
-            "explanation": "'Distinguish' is a verb - it follows 'to' as an infinitive. 'Distinction' is the noun form.",
-            "grammarRule": "Verbs",
+            "hint": "Check the words directly around it for clues. What action did the flight take?",
+            "explanation": "'Boarded' is a verb describing the flight beginning to let passengers on.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -296,23 +296,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'tastes' as used in the sentence below?",
-            "targetWord": "tastes",
-            "sentence": "This soup tastes completely different without the fresh herbs - it is far less vibrant.",
+            "question": "Which part of speech is 'Whenever' as it is used here?",
+            "targetWord": "Whenever",
+            "sentence": "Whenever the app updates automatically, users sometimes lose their saved preferences, which frustrates long-time customers.",
             "options": [
-                "Noun",
+                "Preposition",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Some sensory verbs are linking verbs. Is 'tastes' describing an action or a quality?",
-            "explanation": "'Tastes' is a linking verb - it connects 'this soup' to the predicate adjective 'different'. Sensory linking verbs (taste, smell, feel, look, sound) describe how something is perceived.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Conjunction",
+            "hint": "This word introduces a clause showing every time something happens. When do users lose their preferences?",
+            "explanation": "'Whenever' is a subordinating conjunction introducing a clause that applies every time the app updates automatically.",
+            "grammarRule": "Subordinating conjunction introducing a recurring time clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related conjunction (when)"
             ]
         },
         {
@@ -320,23 +320,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'coherent' as used in the sentence below?",
-            "targetWord": "coherent",
-            "sentence": "The essay needed a much more coherent structure before it could be submitted for marking.",
+            "question": "Back in that same sentence, what kind of word is 'automatically'?",
+            "targetWord": "automatically",
+            "sentence": "Whenever the app updates automatically, users sometimes lose their saved preferences, which frustrates long-time customers.",
             "options": [
-                "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Verb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe the logical organisation of written work. What does 'coherent' tell us?",
-            "explanation": "'Coherent' is an adjective - it modifies the noun 'structure', meaning logically consistent and clearly organised.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adverb",
+            "hint": "Ask how it connects to the words near it. How does the app update?",
+            "explanation": "'Automatically' is a manner adverb modifying the verb 'updates', describing that it happens without a person triggering it.",
+            "grammarRule": "Manner adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "adverb form"
             ]
         },
         {
@@ -344,23 +344,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'clarify' as used in the sentence below?",
-            "targetWord": "clarify",
-            "sentence": "Could you please clarify exactly what you meant by that comment in the final report?",
+            "question": "Within that same sentence, 'which' is functioning as a:",
+            "targetWord": "which",
+            "sentence": "Whenever the app updates automatically, users sometimes lose their saved preferences, which frustrates long-time customers.",
             "options": [
-                "Noun",
+                "Pronoun",
+                "Conjunction",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Communication verbs describe making things easier to understand. What is the speaker being asked to do?",
-            "explanation": "'Clarify' is a verb - it is the main verb of a polite request. 'Clarification' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Pronoun",
+            "hint": "Like in an earlier lesson, this word can refer to a whole situation rather than one noun. What does 'which' refer to here?",
+            "explanation": "'Which' is a relative pronoun referring back to the entire situation of users losing their preferences — the same pattern seen in an earlier lesson about the twins.",
+            "grammarRule": "Relative pronoun referring to a whole clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "relative use",
+                "interrogative use"
             ]
         },
         {
@@ -368,23 +368,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'feels' as used in the sentence below?",
-            "targetWord": "feels",
-            "sentence": "The fabric of this shirt feels rough against bare skin and needs to be washed first.",
+            "question": "Based on how it is used here, 'fit' is a:",
+            "targetWord": "fit",
+            "sentence": "\"If the item doesn't fit,\" the clerk explained, \"you can exchange it within thirty days, provided you keep the receipt.\"",
             "options": [
+                "Adverb",
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "Verb",
-            "hint": "Sensory linking verbs connect subjects to qualities. How is 'feels' functioning here?",
-            "explanation": "'Feels' is a linking verb - it connects 'the fabric' to the predicate adjective 'rough'. Compare: 'she feels the fabric' (action verb) vs. 'the fabric feels rough' (linking verb).",
-            "grammarRule": "Verbs",
+            "hint": "Set aside what you know about this word in general. What might the item fail to do?",
+            "explanation": "'Fit' is a verb here, describing whether the item matches the customer's size.",
+            "grammarRule": "Action verb in present tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -392,23 +392,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'inherent' as used in the sentence below?",
-            "targetWord": "inherent",
-            "sentence": "There is an inherent risk in all forms of financial investment, however cautious the investor.",
+            "question": "In that same sentence, what part of speech is 'provided'?",
+            "targetWord": "provided",
+            "sentence": "\"If the item doesn't fit,\" the clerk explained, \"you can exchange it within thirty days, provided you keep the receipt.\"",
             "options": [
-                "Noun",
+                "Preposition",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe qualities built into something by nature. What does 'inherent' tell us?",
-            "explanation": "'Inherent' is an adjective - it modifies the noun 'risk', meaning the risk is naturally built into the activity.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Conjunction",
+            "hint": "This word introduces a condition, similar to 'if.' Under what condition can the customer exchange the item?",
+            "explanation": "'Provided' functions as a subordinating conjunction here, meaning 'on the condition that' — it introduces the requirement of keeping the receipt.",
+            "grammarRule": "Subordinating conjunction introducing a condition",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related conjunction (if)"
             ]
         },
         {
@@ -416,23 +416,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'integrate' as used in the sentence below?",
-            "targetWord": "integrate",
-            "sentence": "The aim of the project was to integrate the new software with all existing company systems.",
+            "question": "In the same sentence, what role does 'receipt' play?",
+            "targetWord": "receipt",
+            "sentence": "\"If the item doesn't fit,\" the clerk explained, \"you can exchange it within thirty days, provided you keep the receipt.\"",
             "options": [
-                "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Verb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Technology verbs describe combining systems. What was the project's aim?",
-            "explanation": "'Integrate' is a verb - it follows 'to' as an infinitive. 'Integration' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Noun",
+            "hint": "Check the words directly around it for clues. What must the customer keep?",
+            "explanation": "'Receipt' is a noun here, naming the proof of purchase the customer must retain — it functions as the direct object of 'keep'.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "plural form"
             ]
         },
         {
@@ -440,23 +440,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'sounds' as used in the sentence below?",
-            "targetWord": "sounds",
-            "sentence": "The proposed plan sounds entirely reasonable on paper, but may be difficult to execute.",
+            "question": "In this context, what part of speech is 'inconclusive'?",
+            "targetWord": "inconclusive",
+            "sentence": "Because the results came back inconclusive, the doctor recommended a follow-up test, even though the patient was eager to avoid another appointment.",
             "options": [
-                "Noun",
                 "Verb",
                 "Adjective",
+                "Noun",
                 "Adverb"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Sensory linking verbs connect subjects to qualities. How is 'sounds' functioning here?",
-            "explanation": "'Sounds' is a linking verb - it connects 'the plan' to the predicate adjective 'reasonable'. It expresses how the plan is perceived, not what it does.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Adjective",
+            "hint": "Set aside what you know about this word in general. What quality did the results have?",
+            "explanation": "'Inconclusive' is an adjective describing the uncertain nature of the results, following the linking verb phrase 'came back'.",
+            "grammarRule": "Predicate adjective after a linking verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "positive form",
+                "comparative form"
             ]
         },
         {
@@ -464,23 +464,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'relevant' as used in the sentence below?",
-            "targetWord": "relevant",
-            "sentence": "Please ensure that all examples used in the essay are directly relevant to the question set.",
+            "question": "Looking at the same sentence, how is 'recommended' functioning?",
+            "targetWord": "recommended",
+            "sentence": "Because the results came back inconclusive, the doctor recommended a follow-up test, even though the patient was eager to avoid another appointment.",
             "options": [
-                "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Noun"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe the appropriateness of evidence. What does 'relevant' tell us?",
-            "explanation": "'Relevant' is an adjective - it follows the linking verb 'are' as a predicate adjective, describing the appropriateness of the examples.",
-            "grammarRule": "Adjectives",
+            "correctAnswer": "Verb",
+            "hint": "Set aside what you know about this word in general. What action did the doctor take?",
+            "explanation": "'Recommended' is a verb describing the doctor's suggestion of a follow-up test.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -488,23 +488,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'eliminate' as used in the sentence below?",
-            "targetWord": "eliminate",
-            "sentence": "The committee voted unanimously to eliminate the least effective programmes from next year's budget.",
+            "question": "Now consider 'even though' in that same sentence. What part of speech is it?",
+            "targetWord": "even though",
+            "sentence": "Because the results came back inconclusive, the doctor recommended a follow-up test, even though the patient was eager to avoid another appointment.",
             "options": [
+                "Conjunction",
                 "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
+                "Preposition",
+                "Verb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Decision-making verbs describe removing things. What did the committee vote to do?",
-            "explanation": "'Eliminate' is a verb - it follows 'to' as an infinitive. 'Elimination' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Conjunction",
+            "hint": "This expression introduces a contrast at the end of the sentence. What contrast does it introduce here?",
+            "explanation": "'Even though' functions as a subordinating conjunction here, introducing a clause that contrasts with the doctor's recommendation — the patient wanted to avoid another visit, yet the test was still suggested.",
+            "grammarRule": "Subordinating conjunction introducing a contrast clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related conjunction (although)"
             ]
         },
         {
@@ -512,23 +512,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'grew' as used in the sentence below?",
-            "targetWord": "grew",
-            "sentence": "She gradually grew more confident with every public speaking engagement she completed.",
+            "question": "Identify the part of speech of 'who' in this context.",
+            "targetWord": "who",
+            "sentence": "Residents who missed the deadline can still apply online, but they will be charged a late fee unless they have a documented emergency.",
             "options": [
-                "Noun",
+                "Conjunction",
+                "Pronoun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "'Grew' can function as a linking verb meaning 'became'. What is 'grew' connecting here?",
-            "explanation": "'Grew' is a linking verb - it connects 'she' to the predicate adjective 'more confident', meaning she gradually became more confident. Compare: 'the plant grew' (action) vs. 'she grew confident' (linking = became).",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Pronoun",
+            "hint": "Set aside what you know about this word in general. Which residents can still apply?",
+            "explanation": "'Who' is a relative pronoun introducing the clause 'who missed the deadline', identifying which residents the sentence is about.",
+            "grammarRule": "Relative pronoun introducing a descriptive clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "subject form",
+                "object form (whom)"
             ]
         },
         {
@@ -536,23 +536,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'dominant' as used in the sentence below?",
-            "targetWord": "dominant",
-            "sentence": "English has gradually become the dominant language of global business communication.",
+            "question": "And in that same sentence, what part of speech is 'unless'?",
+            "targetWord": "unless",
+            "sentence": "Residents who missed the deadline can still apply online, but they will be charged a late fee unless they have a documented emergency.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Conjunction",
+                "Noun",
+                "Preposition"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe relative prominence. What does 'dominant' tell us about English?",
-            "explanation": "'Dominant' is an adjective - it follows the linking verb 'become' as a predicate adjective. The suffix '-ant' is a common adjective-forming ending.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Conjunction",
+            "hint": "This word introduces an exception to the late fee. Under what condition would the fee not apply?",
+            "explanation": "'Unless' is a subordinating conjunction introducing the one exception to being charged a late fee — having a documented emergency.",
+            "grammarRule": "Subordinating conjunction introducing a condition",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related conjunction (if)"
             ]
         },
         {
@@ -560,23 +560,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'facilitate' as used in the sentence below?",
-            "targetWord": "facilitate",
-            "sentence": "Technology has the potential to facilitate much more efficient communication across remote teams.",
+            "question": "Back in that same sentence, what kind of word is 'documented'?",
+            "targetWord": "documented",
+            "sentence": "Residents who missed the deadline can still apply online, but they will be charged a late fee unless they have a documented emergency.",
             "options": [
-                "Noun",
                 "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe enabling processes. What can technology do?",
-            "explanation": "'Facilitate' is a verb - it follows 'to' as an infinitive. 'Facilitation' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "This word from a verb form can describe a noun's quality. What kind of emergency qualifies for an exception?",
+            "explanation": "'Documented' functions as an adjective here, modifying 'emergency' and describing that it must be backed up with proof.",
+            "grammarRule": "Participial adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb form",
+                "adjective form"
             ]
         },
         {
@@ -584,23 +584,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'turned' as used in the sentence below?",
-            "targetWord": "turned",
-            "sentence": "The situation quickly turned dangerous once the large crowds began to gather in the square.",
+            "question": "What kind of word is 'As soon as' in this sentence?",
+            "targetWord": "As soon as",
+            "sentence": "As soon as the storm passed, the crew, who had been sheltering since early afternoon, cautiously stepped outside to assess the damage.",
             "options": [
+                "Preposition",
+                "Conjunction",
                 "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
+                "Verb"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "'Turned' can function as a linking verb meaning 'became'. What is it connecting?",
-            "explanation": "'Turned' is a linking verb - it connects 'the situation' to the predicate adjective 'dangerous'. 'Turn' as a linking verb (turn cold, turn dangerous) indicates a change of state.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Conjunction",
+            "hint": "This three-word expression introduces a clause showing that one event happened immediately after another. What happened right after the storm passed?",
+            "explanation": "'As soon as' functions as a compound subordinating conjunction here, introducing the clause 'the storm passed' to show the crew acted immediately afterward.",
+            "grammarRule": "Compound subordinating conjunction introducing an immediate time clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related conjunction (once)"
             ]
         },
         {
@@ -608,23 +608,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'concurrent' as used in the sentence below?",
-            "targetWord": "concurrent",
-            "sentence": "The two major projects were running on concurrent timelines that overlapped considerably.",
+            "question": "In the same sentence, what role does 'who' play?",
+            "targetWord": "who",
+            "sentence": "As soon as the storm passed, the crew, who had been sheltering since early afternoon, cautiously stepped outside to assess the damage.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Pronoun",
+                "Noun",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe timing relationships. What does 'concurrent' tell us about the timelines?",
-            "explanation": "'Concurrent' is an adjective - it modifies the noun 'timelines', meaning they were happening at the same time.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "This word introduces a clause describing the crew. What had the crew been doing?",
+            "explanation": "'Who' is a relative pronoun introducing the clause 'who had been sheltering since early afternoon', describing the crew.",
+            "grammarRule": "Relative pronoun introducing a descriptive clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "subject form",
+                "object form (whom)"
             ]
         },
         {
@@ -632,23 +632,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'mediate' as used in the sentence below?",
-            "targetWord": "mediate",
-            "sentence": "They called in an entirely independent expert to mediate between the two opposing parties.",
+            "question": "Which grammatical category fits 'cautiously' in that same sentence?",
+            "targetWord": "cautiously",
+            "sentence": "As soon as the storm passed, the crew, who had been sheltering since early afternoon, cautiously stepped outside to assess the damage.",
             "options": [
+                "Adverb",
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Conflict-resolution verbs describe the role of a neutral third party. What was the expert called in to do?",
-            "explanation": "'Mediate' is a verb - it follows 'to' as an infinitive. 'Mediation' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adverb",
+            "hint": "Set aside what you know about this word in general. How did the crew step outside?",
+            "explanation": "'Cautiously' is a manner adverb modifying the verb 'stepped', describing the careful way the crew moved after the storm.",
+            "grammarRule": "Manner adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "adverb form"
             ]
         },
         {
@@ -656,23 +656,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'went' as used in the sentence below?",
-            "targetWord": "went",
-            "sentence": "The entire plan went completely wrong when the keynote speaker cancelled at the last moment.",
+            "question": "Based on how it is used here, 'dragged on' is a:",
+            "targetWord": "dragged on",
+            "sentence": "Even though the negotiations had dragged on for hours, both sides finally reached an agreement that satisfied everyone in the room, which relieved the exhausted mediator.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Adverb",
+                "Noun"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "Verb",
-            "hint": "'Went' can function as a linking verb in the idiom 'went wrong'. What is it connecting?",
-            "explanation": "'Went' is a linking verb - in 'went wrong', it functions like 'became' and connects 'the plan' to the predicate adjective 'wrong'. Compare: 'she went to the shop' (movement) vs. 'the plan went wrong' (linking).",
-            "grammarRule": "Verbs",
+            "hint": "This two-word expression describes something continuing longer than expected. What did the negotiations do?",
+            "explanation": "'Dragged on' is a phrasal verb describing the negotiations continuing tediously for a long time.",
+            "grammarRule": "Phrasal verb in past perfect",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form (drag on)",
+                "past-participle form"
             ]
         },
         {
@@ -680,23 +680,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'negligible' as used in the sentence below?",
-            "targetWord": "negligible",
-            "sentence": "The impact of the policy change on daily operations was negligible in the short term.",
+            "question": "Within that same sentence, 'that' is functioning as a:",
+            "targetWord": "that",
+            "sentence": "Even though the negotiations had dragged on for hours, both sides finally reached an agreement that satisfied everyone in the room, which relieved the exhausted mediator.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Conjunction",
+                "Pronoun"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe the size of an effect. What does 'negligible' tell us about the impact?",
-            "explanation": "'Negligible' is an adjective - it follows the linking verb 'was' as a predicate adjective, meaning the impact was so small as to be not worth considering.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Pronoun",
+            "hint": "This word introduces a clause describing one specific noun just before it. What does the clause 'that satisfied everyone in the room' describe?",
+            "explanation": "'That' is a relative pronoun introducing a clause describing 'an agreement' specifically — this is a restrictive clause, telling us exactly which agreement is meant.",
+            "grammarRule": "Relative pronoun introducing a restrictive clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "relative use",
+                "demonstrative use"
             ]
         },
         {
@@ -704,23 +704,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'formulate' as used in the sentence below?",
-            "targetWord": "formulate",
-            "sentence": "The team worked closely together to formulate a coherent strategy for the upcoming financial year.",
+            "question": "In that same sentence, what part of speech is 'which'?",
+            "targetWord": "which",
+            "sentence": "Even though the negotiations had dragged on for hours, both sides finally reached an agreement that satisfied everyone in the room, which relieved the exhausted mediator.",
             "options": [
                 "Noun",
+                "Pronoun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Conjunction"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Planning verbs describe developing something carefully. What did the team work to do?",
-            "explanation": "'Formulate' is a verb - it follows 'to' as an infinitive. 'Formulation' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Pronoun",
+            "hint": "Unlike the previous word, this word refers back to an entire situation rather than one specific noun. What does 'which' refer to here?",
+            "explanation": "'Which' is a relative pronoun referring back to the whole idea of both sides reaching an agreement — contrast this with 'that' earlier in the sentence, which described only the noun 'agreement' itself.",
+            "grammarRule": "Relative pronoun referring to a whole clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "relative use",
+                "interrogative use"
             ]
         }
     ]

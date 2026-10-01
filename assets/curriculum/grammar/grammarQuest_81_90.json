@@ -5,543 +5,393 @@
     "quests": [
         {
             "id": "gq_l81_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The man ___ I told you about is here.",
-            "options": [
-                "who",
-                "whose",
-                "whom",
-                "which"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "whom",
-            "hint": "The pronoun is the object of 'told' - use the formal object form.",
-            "explanation": "In relative clauses where the pronoun is the object, use 'whom' (formal) or 'who/that' (informal): the man whom I told you about. In defining relative clauses, the pronoun can also be omitted: the man I told you about.",
-            "grammarRule": "Relative Clauses (Advanced)"
+            "question": "___ you speak French?",
+            "options": ["Do", "Are", "Is", "Can"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Can",
+            "hint": "This question asks about ability, which uses its own special helper verb.",
+            "explanation": "Modal verbs like 'can' move to the front of the question by themselves, without needing 'do': Can you speak French? There's no 'do you can' in English.",
+            "grammarRule": "Yes/No Questions with Modals"
         },
         {
             "id": "gq_l81_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "My sister, ___ is a nurse, works night shifts.",
-            "options": [
-                "that",
-                "which",
-                "whose",
-                "who"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "who",
-            "hint": "Extra information about 'my sister' - which pronoun?",
-            "explanation": "Non-defining relative clauses add extra, non-essential information. They use commas and can only use 'who' (for people), never 'that'. My sister, who is a nurse, works night shifts. Remove the clause and the sentence still makes sense.",
-            "grammarRule": "Relative Clauses (Advanced)"
+            "question": "What ___ I do to help with the move?",
+            "options": ["do", "can", "am", "is"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "can",
+            "hint": "This asks about possible actions, not a routine habit.",
+            "explanation": "'Can' fits naturally after a WH-word when asking about possibility: what can I do? 'Do' would only be needed with an ordinary action verb, not a modal.",
+            "grammarRule": "WH-Questions with Modals"
         },
         {
             "id": "gq_l81_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The reason ___ she left is still a mystery.",
-            "options": [
-                "that",
-                "why",
-                "for which",
-                "when"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "why",
-            "hint": "A reason clause uses a specific relative adverb.",
-            "explanation": "'The reason why...' is the natural pattern: The reason why she left is still a mystery. 'Why' acts as a relative adverb. You can also omit 'why': The reason she left. 'For which' is very formal but also possible.",
-            "grammarRule": "Relative Clauses (Advanced)"
+            "question": "\u2014 ___ you help me carry this box?\n\u2014 Sure, no problem.",
+            "options": ["Do", "Are", "Can", "Is"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Can",
+            "hint": "This is a request for help, using a modal verb.",
+            "explanation": "'Can' begins the question directly since it's a modal verb: Can you help me? This is the same pattern practiced in Question 1.",
+            "grammarRule": "Yes/No Questions with Modals"
         },
         {
             "id": "gq_l82_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I ___ what you mean.",
-            "options": [
-                "am understanding",
-                "have understood",
-                "understand",
-                "was understanding"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "understand",
-            "hint": "Is 'understand' a state or an action?",
-            "explanation": "Stative verbs describe states, not actions, and are NOT used in continuous forms. Examples: understand, know, believe, love, hate, want, need, belong, seem, appear. 'I understand' is correct; 'I am understanding' is wrong.",
-            "grammarRule": "Stative vs. Dynamic Verbs"
+            "question": "She ___ speak three languages fluently.",
+            "options": ["can", "must", "should", "may"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "can",
+            "hint": "This describes a skill she has, not an obligation or suggestion.",
+            "explanation": "'Can' expresses ability: she can speak three languages. 'Must' would wrongly suggest an obligation, not a skill.",
+            "grammarRule": "Can: Ability"
         },
         {
             "id": "gq_l82_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "This bag ___ to my mother.",
-            "options": [
-                "is belonging",
-                "having belonged",
-                "has been belonging",
-                "belongs"
-            ],
+            "question": "He ___ swim; he never learned as a kid.",
+            "options": ["mustn't", "shouldn't", "mayn't", "can't"],
             "correctAnswerIndex": 3,
-            "correctAnswer": "belongs",
-            "hint": "'Belong' is stative - can it be used in continuous form?",
-            "explanation": "'Belong' is a stative verb expressing ownership. It cannot normally be used in continuous tenses: This bag belongs to my mother. 'Is belonging' is incorrect. Stative verbs describe a state, not an ongoing action.",
-            "grammarRule": "Stative vs. Dynamic Verbs"
+            "correctAnswer": "can't",
+            "hint": "The reason given is about a missing skill, not a rule being broken.",
+            "explanation": "'Can't' shows a lack of ability: can't swim, never learned. 'Mustn't' would suggest swimming is forbidden, which isn't the reason given here.",
+            "grammarRule": "Can: Negative Ability"
         },
         {
             "id": "gq_l82_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She ___ each sample carefully before writing her review - she's a professional wine taster.",
-            "options": [
-                "taste",
-                "tastes",
-                "is tasting",
-                "has been tasting"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "is tasting",
-            "hint": "Here 'taste' describes an active process happening right now, not a fixed quality.",
-            "explanation": "Some verbs are both stative and dynamic. 'Taste' (stative): The soup tastes good. 'Taste' (dynamic): She is tasting each sample = she is actively doing it right now. Context tells you which meaning is intended.",
-            "grammarRule": "Stative vs. Dynamic Verbs"
+            "question": "\u2014 Can your brother drive?\n\u2014 No, he ___ ; he doesn't have a license yet.",
+            "options": ["can't", "mustn't", "doesn't", "won't"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "can't",
+            "hint": "Match the same modal verb the question already used.",
+            "explanation": "The short answer echoes the modal from the question: Can he drive? No, he can't. Not having a license explains the lack of ability, not a rule against it.",
+            "grammarRule": "Can: Negative Ability"
         },
         {
             "id": "gq_l83_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ you study regularly, you will improve.",
-            "options": [
-                "Even if",
-                "As long as",
-                "Unless",
-                "Whereas"
-            ],
+            "question": "When I was young, I ___ run very fast.",
+            "options": ["can", "could", "was able", "must"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "As long as",
-            "hint": "Which conditional word means 'on the condition that'?",
-            "explanation": "'As long as' = on the condition that: As long as you study regularly, you will improve. 'Unless' = if not: You won't improve unless you study. Both are conditional, but they work in different ways.",
-            "grammarRule": "Conditional Conjunctions"
+            "correctAnswer": "could",
+            "hint": "This ability belonged to the past, not now.",
+            "explanation": "'Could' expresses general ability in the past: I could run fast as a kid. 'Can' would wrongly place this ability in the present.",
+            "grammarRule": "Could: Past Ability"
         },
         {
             "id": "gq_l83_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ you finish by 5 pm, you can leave early.",
-            "options": [
-                "Even though",
-                "Provided that",
-                "As if",
-                "Unless"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Provided that",
-            "hint": "Which phrase means 'if and only if this condition is met'?",
-            "explanation": "'Provided that' = on the condition that: Provided that you finish by 5 pm, you can leave early. Also: Providing that, As long as. These express a condition for a permission or arrangement.",
-            "grammarRule": "Conditional Conjunctions"
+            "question": "As a child, I ___ climb trees really well.",
+            "options": ["can", "must", "could", "was able"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "could",
+            "hint": "This describes a general skill you had throughout childhood, not a single achievement.",
+            "explanation": "'Could' fits general, ongoing past ability, like a childhood skill: I could climb trees. This is different from describing one specific successful moment.",
+            "grammarRule": "Could: Past Ability"
         },
         {
             "id": "gq_l83_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I won't lend you my car ___ you promise to drive carefully.",
-            "options": [
-                "provided that",
-                "unless",
-                "if",
-                "as long as"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "unless",
-            "hint": "The sentence is negative - which word means 'except if'?",
-            "explanation": "'Unless' = except if / if not: I won't lend you my car unless you promise to drive carefully = I will only lend it IF you promise. 'Unless' introduces the condition that prevents the negative result.",
-            "grammarRule": "Conditional Conjunctions"
+            "question": "\u2014 Were you able to fix the printer?\n\u2014 Yes, I ___ fix it in about ten minutes.",
+            "options": ["could", "can", "must", "was able to"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "was able to",
+            "hint": "This describes one specific success, not a general skill you always had.",
+            "explanation": "For a single, specific past achievement, 'was able to' is the more natural choice: was able to fix it. This differs from 'could', which better suits a general ability, as in Question 1.",
+            "grammarRule": "Was Able To: Specific Past Achievement"
         },
         {
             "id": "gq_l84_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ the economic situation, investors are cautious.",
-            "options": [
-                "Due to",
-                "In spite of",
-                "Because of",
-                "In view of"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "In view of",
-            "hint": "Which phrase means 'considering' or 'given' the situation?",
-            "explanation": "'In view of' = considering, given: In view of the economic situation, investors are cautious. Compare: Due to/Because of = as a result of (cause), In spite of/Despite = although (concession).",
-            "grammarRule": "Formal Prepositional Phrases"
+            "question": "You're texting a close friend to ask for a small favor. Which sounds most natural?",
+            "options": ["Might you help me?", "Can you help me?", "Shall you help me?", "Could you possibly assist me?"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Can you help me?",
+            "hint": "Think about how casual the relationship and the situation are.",
+            "explanation": "'Can you help me?' is simple and natural for a casual request between friends. The other options sound overly formal or unnatural for a quick text to someone close to you.",
+            "grammarRule": "Can vs Could: Register"
         },
         {
             "id": "gq_l84_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She completed the project ___ schedule.",
-            "options": [
-                "before",
-                "ahead of",
-                "in accordance to",
-                "in front of"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "ahead of",
-            "hint": "Which phrase means 'earlier than planned'?",
-            "explanation": "'Ahead of schedule' = earlier than planned. Collocations: ahead of schedule (early), behind schedule (late), on schedule (on time). 'In front of' is about physical position, not time.",
-            "grammarRule": "Formal Prepositional Phrases"
+            "question": "You're writing a formal email to your manager asking for extra time. Which is most appropriate?",
+            "options": ["Could you possibly give me a bit more time?", "Give me more time.", "Can you give me more time?", "You must give me more time."],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Could you possibly give me a bit more time?",
+            "hint": "Formal workplace requests are usually softened with extra polite language.",
+            "explanation": "'Could you possibly...' is a softer, more formal request suited to writing to a manager. A direct command or an overly casual 'can' would feel out of place in this professional context.",
+            "grammarRule": "Can vs Could: Register"
         },
         {
             "id": "gq_l84_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She agreed ___ her manager's advice.",
-            "options": [
-                "on following",
-                "in following",
-                "to follow",
-                "with following"
-            ],
+            "question": "Talking to a stranger on the street, which is the most polite way to ask for directions?",
+            "options": ["Tell me the way to the station.", "Can you tell me the way to the station?", "Could you please tell me the way to the station?", "You tell me the way to station?"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "to follow",
-            "hint": "'Agree to do something' means to consent.",
-            "explanation": "'Agree to + infinitive' = consent to do: She agreed to follow her manager's advice. 'Agree with' = share someone's opinion: I agree with you. 'Agree on' = reach consensus: They agreed on a plan.",
-            "grammarRule": "Formal Prepositional Phrases"
+            "correctAnswer": "Could you please tell me the way to the station?",
+            "hint": "With strangers, the safest choice usually combines a softer modal with an extra polite word.",
+            "explanation": "'Could you please...' combines a softer modal with 'please', making it the most polite option for approaching a stranger. A bare command would sound rude in this situation.",
+            "grammarRule": "Can vs Could: Register"
         },
         {
             "id": "gq_l85_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "What surprised me most ___ how quickly she recovered.",
-            "options": [
-                "was",
-                "were",
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "hint": "Cleft sentence about a past observation - which tense?",
-            "explanation": "In cleft sentences with 'What + subject + verb', use past tense for past situations: What surprised me was... Use present for ongoing: What surprises me is... Here, 'surprised' = past, so 'was'.",
-            "grammarRule": "Cleft Sentences (Past)"
+            "question": "___ I use your phone for a second? Mine just died.",
+            "options": ["Must", "Should", "Have to", "Can"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Can",
+            "hint": "This is a casual request for permission between people who know each other.",
+            "explanation": "'Can' is the natural, everyday choice for asking permission informally: Can I use your phone? 'Must' and 'have to' express obligation instead, not permission.",
+            "grammarRule": "Can: Informal Permission"
         },
         {
             "id": "gq_l85_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "It ___ Maria who first noticed the problem.",
-            "options": [
-                "was",
-                "is",
-                "has",
-                "has been"
-            ],
+            "question": "Excuse me, sir, ___ I ask you a question?",
+            "options": ["May", "Can", "Must", "Should"],
             "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "hint": "This cleft sentence describes something that happened in the past - which verb form?",
-            "explanation": "'It was + noun phrase + who/that': It was Maria who first noticed the problem. This is a past event, so 'was'. 'It is' would be used for present situations or general truths.",
-            "grammarRule": "Cleft Sentences (Past)"
+            "correctAnswer": "May",
+            "hint": "The word 'sir' signals a formal, respectful tone.",
+            "explanation": "'May' is the traditionally formal choice for asking permission, fitting the respectful address 'sir'. While 'can' is common in casual speech, 'may' matches this formal situation.",
+            "grammarRule": "May: Formal Permission"
         },
         {
             "id": "gq_l85_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "What the company ___ is a better marketing strategy.",
-            "options": [
-                "needed",
-                "are needing",
-                "needs",
-                "is needing"
-            ],
+            "question": "\u2014 ___ I be excused from class?\n\u2014 Yes, but hurry back.",
+            "options": ["Must", "Can", "May", "Should"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "needs",
-            "hint": "'Need' is stative - which form is appropriate in present tense?",
-            "explanation": "'Need' is often stative and doesn't normally use continuous form: What the company needs is a better strategy. 'Is needing' is unusual. What + the company + needs = the thing the company requires.",
-            "grammarRule": "Cleft Sentences (Past)"
+            "correctAnswer": "May",
+            "hint": "This is a classic, well-known phrase used to ask a teacher for formal permission.",
+            "explanation": "'May I be excused?' is a set formal phrase for requesting permission, especially from a teacher or authority figure.",
+            "grammarRule": "May: Formal Permission"
         },
         {
             "id": "gq_l86_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The water is ___ boiling - don't touch it!",
-            "options": [
-                "a little",
-                "absolutely",
-                "quite",
-                "very"
-            ],
+            "question": "You ___ wear a seatbelt in this car; it's the law.",
+            "options": ["should", "must", "can", "may"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "absolutely",
-            "hint": "Non-gradable/extreme adjectives use 'absolutely', not 'very'.",
-            "explanation": "Some adjectives are extreme/non-gradable: boiling, freezing, exhausted, delicious, terrible, perfect, furious. Use 'absolutely' with these: absolutely boiling. Use 'very' with gradable adjectives: very hot.",
-            "grammarRule": "Intensifiers with Extreme Adjectives"
+            "correctAnswer": "must",
+            "hint": "The word 'law' signals something required, not just recommended.",
+            "explanation": "'Must' expresses strong obligation or necessity: must wear a seatbelt, it's required by law. 'Should' would only suggest advice, which is weaker than a legal requirement.",
+            "grammarRule": "Must: Strong Obligation"
         },
         {
             "id": "gq_l86_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "This food is ___ delicious!",
-            "options": [
-                "absolutely",
-                "very",
-                "a bit",
-                "rather"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "absolutely",
-            "hint": "'Delicious' is an extreme adjective - which intensifier is correct?",
-            "explanation": "'Absolutely' is used before extreme (non-gradable) adjectives: absolutely delicious, absolutely perfect, absolutely awful. 'Very delicious' is incorrect - 'delicious' is already an extreme word; you cannot grade it further.",
-            "grammarRule": "Intensifiers with Extreme Adjectives"
+            "question": "All passengers ___ show their passports at the gate.",
+            "options": ["can", "may", "should", "must"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "must",
+            "hint": "This is a required procedure at security, not a friendly suggestion.",
+            "explanation": "'Must' fits official requirements like airport procedures: must show your passport. This describes something required of every passenger, not optional advice.",
+            "grammarRule": "Must: Strong Obligation"
         },
         {
             "id": "gq_l86_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She was ___ exhausted after the marathon.",
-            "options": [
-                "rather",
-                "completely",
-                "slightly",
-                "very"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "completely",
-            "hint": "Non-gradable adjectives like 'exhausted' pair with 'completely'.",
-            "explanation": "'Completely' and 'absolutely' are used with extreme adjectives: completely exhausted, absolutely exhausted. 'Very exhausted' is commonly heard in informal speech but is technically imprecise.",
-            "grammarRule": "Intensifiers with Extreme Adjectives"
+            "question": "\u2014 Do I really need to finish this today?\n\u2014 Yes, you ___ ; the deadline is tonight.",
+            "options": ["must", "can", "may", "could"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "must",
+            "hint": "A firm deadline tonight signals strong necessity, not just a suggestion.",
+            "explanation": "A hard deadline calls for 'must', showing there's no real choice: you must finish it. This is stronger than 'should', which only offers advice.",
+            "grammarRule": "Must: Strong Obligation"
         },
         {
             "id": "gq_l87_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The formal equivalent of 'We need to talk about this' is:",
-            "options": [
-                "I would like to discuss this matter with you.",
-                "I should tell you this stuff.",
-                "I need a chat with you.",
-                "Let's have a talk."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "I would like to discuss this matter with you.",
-            "hint": "Which option uses formal vocabulary and full verb forms?",
-            "explanation": "Formal: I would like to discuss this matter with you. Key: 'would like' (formal) vs 'need' (neutral); 'discuss' (formal) vs 'talk about' (neutral); 'matter' (formal) vs 'thing' (vague/informal).",
-            "grammarRule": "Formal Register / Vocabulary"
+            "question": "I ___ wear a uniform at my job; it's the company policy.",
+            "options": ["must", "have to", "may", "can"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "have to",
+            "hint": "This rule comes from outside the speaker, not from their own personal feeling.",
+            "explanation": "'Have to' is often preferred for rules imposed by someone else, like a workplace policy: have to wear a uniform. 'Must' tends to feel more personal, as if the speaker made the rule themselves.",
+            "grammarRule": "Have To: External Obligation"
         },
         {
             "id": "gq_l87_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which is the most formal synonym for 'use'?",
-            "options": [
-                "use up",
-                "employ",
-                "make use of",
-                "utilize"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "employ",
-            "hint": "Which verb has the highest formality level?",
-            "explanation": "Level of formality: utilise > employ > make use of > use. Both 'employ' and 'utilise' are formal synonyms for 'use' in professional/academic contexts. 'Use up' means to exhaust a supply.",
-            "grammarRule": "Formal Register / Vocabulary"
+            "question": "I ___ apologize to her; I feel terrible about what happened.",
+            "options": ["must", "have to", "can", "should"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "must",
+            "hint": "This obligation comes from the speaker's own strong personal feeling.",
+            "explanation": "'Must' suits obligations that come from the speaker's own conscience or strong feeling: I must apologize, I feel terrible. This contrasts with the external company rule in Question 1.",
+            "grammarRule": "Must: Internal Obligation"
         },
         {
             "id": "gq_l87_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The most formal version of 'We need to start again' is:",
-            "options": [
-                "We've gotta redo this.",
-                "It will be necessary to recommence.",
-                "We should start it again.",
-                "Let's start over."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "It will be necessary to recommence.",
-            "hint": "Which option uses the most formal vocabulary and structure?",
-            "explanation": "'It will be necessary to recommence' uses formal vocabulary ('recommence' = begin again) and an impersonal structure ('It will be necessary to...'). Avoid contractions and informal words in formal contexts.",
-            "grammarRule": "Formal Register / Vocabulary"
+            "question": "\u2014 Why are you leaving so early?\n\u2014 I ___ pick up my kids; the school requires a parent there by 3.",
+            "options": ["must", "should", "can", "have to"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "have to",
+            "hint": "The school's own requirement is the source of this obligation, not the speaker's personal feeling.",
+            "explanation": "Since the school's rule creates this obligation, 'have to' fits best: have to pick up the kids, the school requires it. This mirrors the external-rule pattern from Question 1.",
+            "grammarRule": "Have To: External Obligation"
         },
         {
             "id": "gq_l88_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She gave ___ a present.",
-            "options": [
-                "to him me",
-                "him",
-                "him me",
-                "me him"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "him",
-            "hint": "Two objects after 'give' - which order?",
-            "explanation": "Double object verbs: give + indirect object (person) + direct object (thing): She gave him a present. Or: She gave a present to him. Without 'to', the person (indirect) must come before the thing (direct).",
-            "grammarRule": "Indirect Objects and Word Order"
+            "question": "You ___ smoke in this building; it's strictly forbidden.",
+            "options": ["don't have to", "shouldn't", "can't", "mustn't"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "mustn't",
+            "hint": "The word 'forbidden' points to a clear prohibition, not just a lack of requirement.",
+            "explanation": "'Mustn't' expresses prohibition, that something is not allowed: mustn't smoke, it's forbidden. This is very different from 'don't have to', which simply means it isn't required.",
+            "grammarRule": "Mustn't: Prohibition"
         },
         {
             "id": "gq_l88_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "He showed ___ his paintings.",
-            "options": [
-                "his to us",
-                "to us his",
-                "us his",
-                "his us"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "us his",
-            "hint": "Indirect object before direct object - which order is correct?",
-            "explanation": "Double object: show + person + thing: He showed us his paintings. Alternative: He showed his paintings to us. Without a preposition, the person (indirect) must come before the thing (direct).",
-            "grammarRule": "Indirect Objects and Word Order"
+            "question": "You ___ come to the party if you're tired; it's totally optional.",
+            "options": ["mustn't", "don't have to", "can't", "shouldn't"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "don't have to",
+            "hint": "The word 'optional' shows there's no rule forcing this action, not that it's banned.",
+            "explanation": "'Don't have to' means something isn't required, but it's still allowed: don't have to come, it's optional. This is the opposite meaning from 'mustn't' in Question 1, even though both contain a negative.",
+            "grammarRule": "Don't Have To: No Obligation"
         },
         {
             "id": "gq_l88_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Can you explain ___ the problem?",
-            "options": [
-                "me to",
-                "me",
-                "to me",
-                "for me"
-            ],
+            "question": "\u2014 Do I need to bring my own laptop?\n\u2014 No, you ___ ; we'll provide one for you.",
+            "options": ["mustn't", "can't", "don't have to", "shouldn't"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "to me",
-            "hint": "Some verbs always use a preposition with the indirect object.",
-            "explanation": "Some verbs always require 'to' before the indirect object: explain to me, describe to him, suggest to her, announce to them. Unlike give/show/tell, these verbs cannot use the 'person + thing' order without a preposition.",
-            "grammarRule": "Indirect Objects and Word Order"
+            "correctAnswer": "don't have to",
+            "hint": "Being given a laptop means bringing one is unnecessary, not forbidden.",
+            "explanation": "Since a laptop will be provided, bringing one simply isn't necessary: don't have to bring it. Saying 'mustn't' here would wrongly suggest bringing a laptop is against the rules.",
+            "grammarRule": "Don't Have To: No Obligation"
         },
         {
             "id": "gq_l89_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ leaving the house, she always checks her email.",
-            "options": [
-                "Before",
-                "While",
-                "After",
-                "Until"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "After",
-            "hint": "Which time conjunction means she does this first, then leaves?",
-            "explanation": "'Before' = earlier than another action: Before leaving, she checks her email (checking happens first). 'After' = later. 'While' = at the same time. 'Until' = up to a point in time.",
-            "grammarRule": "Time Conjunctions"
+            "question": "You ___ see a doctor about that cough; it's been two weeks.",
+            "options": ["should", "can", "may", "must"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "should",
+            "hint": "This is friendly advice, not a strict legal or workplace requirement.",
+            "explanation": "'Should' offers advice or a recommendation: should see a doctor. It's softer than 'must', which would sound like a strict command rather than caring advice.",
+            "grammarRule": "Should: Advice"
         },
         {
             "id": "gq_l89_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The lights went out ___ we were watching the film.",
-            "options": [
-                "since",
-                "as soon as",
-                "during",
-                "while"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "as soon as",
-            "hint": "Something interrupted an ongoing action.",
-            "explanation": "'While + past continuous' for an interrupted action: The lights went out while we were watching the film. 'During' is a preposition followed by a noun: during the film. 'As soon as' means immediately after.",
-            "grammarRule": "Time Conjunctions"
+            "question": "You ___ stay up so late; you need your rest.",
+            "options": ["mustn't", "can't", "shouldn't", "don't have to"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "shouldn't",
+            "hint": "This is caring advice against something, not a strict rule.",
+            "explanation": "'Shouldn't' gives negative advice: shouldn't stay up late. 'Mustn't' would sound like a firm prohibition, which is stronger than simple advice about rest.",
+            "grammarRule": "Should: Negative Advice"
         },
         {
             "id": "gq_l89_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ I hear back from them, I'll let you know.",
-            "options": [
-                "Since",
-                "Until",
-                "While",
-                "As soon as"
-            ],
+            "question": "\u2014 My back hurts from sitting all day.\n\u2014 You ___ take breaks and stretch more often.",
+            "options": ["must", "can", "may", "should"],
             "correctAnswerIndex": 3,
-            "correctAnswer": "As soon as",
-            "hint": "We want to express 'immediately when I hear back'.",
-            "explanation": "'As soon as' = immediately when: As soon as I hear back, I'll let you know. Compare: When I hear back (at that time), Until I hear back (up to that point), Once I hear back (very similar to 'as soon as').",
-            "grammarRule": "Time Conjunctions"
+            "correctAnswer": "should",
+            "hint": "This is a helpful suggestion in response to a complaint, not a command.",
+            "explanation": "'Should' is the natural way to give friendly, caring advice in response to a problem: should take breaks. This matches the same use as Question 1.",
+            "grammarRule": "Should: Advice"
         },
         {
             "id": "gq_l90_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The film was ___ good but not quite excellent.",
-            "options": [
-                "fairly",
-                "rather",
-                "very",
-                "quite"
-            ],
+            "question": "\u2014 Do I need approval to take this Friday off?\n\u2014 Yes, you ___ ask your manager first.",
+            "options": ["may", "have to", "can", "should"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "rather",
-            "hint": "Which intensifier means 'to a moderate extent' in British English?",
-            "explanation": "In British English, 'quite' is often a weak intensifier: quite good = fairly good (not outstanding). 'Rather' is slightly stronger: rather good. Order: quite good < rather good < very good < extremely good.",
-            "grammarRule": "Degree Adverbs"
+            "correctAnswer": "have to",
+            "hint": "This is a required company procedure, not just friendly advice.",
+            "explanation": "Since approval is a required workplace procedure, 'have to' fits best: have to ask your manager. This echoes the external-obligation pattern practiced in Level 87.",
+            "grammarRule": "Have To: External Obligation"
         },
         {
             "id": "gq_l90_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "He is ___ the most talented player on the team.",
-            "options": [
-                "much more",
-                "by far",
-                "so far",
-                "very far"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "by far",
-            "hint": "We want to say he is clearly, obviously the best.",
-            "explanation": "'By far' emphasises the greatest degree: He is by far the most talented. 'By far + superlative' says something is clearly the most/best/worst. Never 'very far the most'.",
-            "grammarRule": "Degree Adverbs"
+            "question": "\u2014 Is it okay if I leave a bit early today?\n\u2014 Sure, you ___ , just let the front desk know.",
+            "options": ["mustn't", "should", "can", "must"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "can",
+            "hint": "This grants permission for something optional, not a requirement or a rule against it.",
+            "explanation": "'Can' grants permission here: you can leave early. This is different from 'must', which would wrongly suggest leaving early is required.",
+            "grammarRule": "Can: Permission"
         },
         {
             "id": "gq_l90_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The presentation was ___ a success.",
-            "options": [
-                "rather a",
-                "quite",
-                "something like a",
-                "something of"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "something of",
-            "hint": "Which expression means 'to some extent a success' with a hint of reservation?",
-            "explanation": "'Something of a success' = to some degree a success, but with some reservation. It hedges: The presentation was something of a success. Compare: quite a success (positive) vs something of a success (slightly more cautious).",
-            "grammarRule": "Degree Adverbs"
+            "question": "\u2014 I'm not sure how to word this email.\n\u2014 You ___ keep it short and polite; that usually works best.",
+            "options": ["must", "can", "should", "may"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "should",
+            "hint": "This closes Stage 5 with the same kind of gentle advice practiced in Level 89.",
+            "explanation": "'Should' offers a helpful suggestion rather than a strict command, matching the advice pattern from Level 89 and wrapping up the full set of modal meanings covered in this stage: ability, permission, obligation, and advice.",
+            "grammarRule": "Should: Advice"
         }
     ]
 }

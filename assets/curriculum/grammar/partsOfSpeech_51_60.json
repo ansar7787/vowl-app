@@ -8,23 +8,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'meal' as used in the sentence below?",
-            "targetWord": "meal",
-            "sentence": "She prepared a three-course meal for her friends on Friday evening.",
+            "question": "What role does 'produce' play in this sentence?",
+            "targetWord": "produce",
+            "sentence": "The farmers market sells fresh produce every Saturday morning.",
             "options": [
-                "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Noun",
-            "hint": "Nouns name specific eating occasions. What does 'meal' name here?",
-            "explanation": "'Meal' is a noun - it names a specific eating occasion. Meal nouns (meal, breakfast, lunch, dinner) are countable nouns naming structured eating events.",
-            "grammarRule": "Nouns",
+            "hint": "Check the words directly around it for clues. What does the market sell?",
+            "explanation": "'Produce' is a noun here, naming the fresh fruits and vegetables sold at the market — it functions as the direct object of 'sells'. Notice the stress falls on the first syllable in this noun use.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "verb use"
             ]
         },
         {
@@ -32,23 +32,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'fresh' as used in the sentence below?",
-            "targetWord": "fresh",
-            "sentence": "He preferred fresh orange juice over anything that came from a carton.",
+            "question": "Now look at 'produce' here. What part of speech is it?",
+            "targetWord": "produce",
+            "sentence": "The factory can produce two thousand units each day.",
             "options": [
+                "Adverb",
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe the quality of food. What does 'fresh' tell us about the juice?",
-            "explanation": "'Fresh' is an adjective - it describes the quality of 'orange juice', meaning newly made and natural.",
-            "grammarRule": "Adjectives",
+            "correctAnswer": "Verb",
+            "hint": "The same word can also name the action of manufacturing something. What can the factory do?",
+            "explanation": "'Produce' functions as a verb here, meaning to manufacture — contrast this with the earlier noun use naming goods themselves. The stress shifts to the second syllable in this verb use.",
+            "grammarRule": "Verb following the modal 'can'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb use",
+                "noun use"
             ]
         },
         {
@@ -56,23 +56,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'charge' as used in the sentence below?",
-            "targetWord": "charge",
-            "sentence": "Remember to charge your phone overnight before the long journey tomorrow.",
+            "question": "In this sentence, 'because of' is functioning as a:",
+            "targetWord": "because of",
+            "sentence": "The flight was delayed because of the storm.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Conjunction",
+                "Noun",
+                "Preposition"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Technology verbs describe device-related actions. What action should be performed?",
-            "explanation": "'Charge' is a verb - it is used as an imperative describing the action of supplying electrical power to a device.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Preposition",
+            "hint": "This two-word expression introduces a reason and is followed by a noun, not a full clause. What caused the delay?",
+            "explanation": "'Because of' functions as a compound preposition here, introducing the noun phrase 'the storm' as the reason for the delay. Compare this with 'because' alone, which introduces a full clause instead.",
+            "grammarRule": "Compound preposition introducing a reason phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related conjunction (because)"
             ]
         },
         {
@@ -80,23 +80,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'update' as used in the sentence below?",
-            "targetWord": "update",
-            "sentence": "The app requires a software update before it will function properly.",
+            "question": "The word 'contract' is being used as which grammatical category?",
+            "targetWord": "contract",
+            "sentence": "Both companies signed the contract after months of negotiation.",
             "options": [
-                "Noun",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Noun",
-            "hint": "Technology nouns name processes. Is 'update' naming a technology process here?",
-            "explanation": "'Update' is a noun - it follows 'a' and 'software', confirming it is a noun. Compare: 'please update the app' (verb) vs. 'requires an update' (noun).",
-            "grammarRule": "Nouns",
+            "hint": "Notice what the word is attached to. What did both companies sign?",
+            "explanation": "'Contract' is a noun here, naming the formal agreement the companies signed — it functions as the direct object of 'signed'.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "verb use"
             ]
         },
         {
@@ -104,23 +104,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'spicy' as used in the sentence below?",
-            "targetWord": "spicy",
-            "sentence": "She loves spicy food, but her brother prefers something much milder.",
+            "question": "Now, which category describes 'contract' in this sentence?",
+            "targetWord": "contract",
+            "sentence": "Metal will contract slightly as the temperature drops.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Verb",
+                "Noun"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe the taste of food. What taste quality does 'spicy' describe?",
-            "explanation": "'Spicy' is an adjective - it describes the taste of 'food'. Taste adjectives (spicy, sweet, sour, bitter, salty, savoury) describe how food tastes.",
-            "grammarRule": "Adjectives",
+            "correctAnswer": "Verb",
+            "hint": "The same word can also name the action of shrinking. What will metal do as it cools?",
+            "explanation": "'Contract' functions as a verb here, meaning to shrink — contrast this with the earlier noun use naming a formal agreement. The stress shifts to the second syllable in this verb use.",
+            "grammarRule": "Verb following the modal 'will'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb use",
+                "noun use"
             ]
         },
         {
@@ -128,23 +128,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'connect' as used in the sentence below?",
-            "targetWord": "connect",
-            "sentence": "You need to connect the device to the internet before using it.",
+            "question": "What part of speech is 'elderly' in this sentence?",
+            "targetWord": "elderly",
+            "sentence": "The clinic offers free rides for elderly patients.",
             "options": [
                 "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Verb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Technology verbs describe actions with devices. What technical action is described?",
-            "explanation": "'Connect' is a verb - it follows 'to' as an infinitive and describes the technical action of establishing a link.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "Remember that '-ly' words are not automatically adverbs. What quality does 'elderly' give to the patients?",
+            "explanation": "'Elderly' is an adjective modifying 'patients', describing their age group — like 'friendly' and 'lonely' from earlier lessons, it is formed with '-ly' but functions as an adjective.",
+            "grammarRule": "Attributive adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "comparative form"
             ]
         },
         {
@@ -152,23 +152,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'network' as used in the sentence below?",
-            "targetWord": "network",
-            "sentence": "A strong network of professional contacts helped her find a new job.",
+            "question": "In this context, what part of speech is 'conduct'?",
+            "targetWord": "conduct",
+            "sentence": "The teacher praised the students' conduct during the field trip.",
             "options": [
-                "Noun",
+                "Adverb",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Noun",
-            "hint": "Nouns name professional structures. What does 'network' name here?",
-            "explanation": "'Network' is a noun - it names an interconnected group of contacts. It follows 'A strong', confirming it is a noun. 'Network' can also be a verb ('to network at events').",
-            "grammarRule": "Nouns",
+            "hint": "Ask how it connects to the words near it. What did the teacher praise?",
+            "explanation": "'Conduct' is a noun here, naming the students' behavior during the trip — it functions as the direct object of 'praised'.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "verb use"
             ]
         },
         {
@@ -176,23 +176,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'crispy' as used in the sentence below?",
-            "targetWord": "crispy",
-            "sentence": "The crispy fried chicken was the most popular dish at the catered event.",
+            "question": "Now look at 'conduct' here. What part of speech is it?",
+            "targetWord": "conduct",
+            "sentence": "Researchers will conduct the survey next month.",
             "options": [
                 "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Verb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe food texture. What texture quality does 'crispy' describe?",
-            "explanation": "'Crispy' is an adjective - it describes the texture of the fried chicken. Texture adjectives (crispy, crunchy, tender, chewy) describe how food feels when eaten.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Verb",
+            "hint": "The same word can also name the action of carrying something out. What will researchers do next month?",
+            "explanation": "'Conduct' functions as a verb here, meaning to carry out — contrast this with the earlier noun use naming behavior. The stress shifts to the second syllable in this verb use.",
+            "grammarRule": "Verb following the modal 'will'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb use",
+                "noun use"
             ]
         },
         {
@@ -200,23 +200,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'download' as used in the sentence below?",
-            "targetWord": "download",
-            "sentence": "She had to download the latest version of the application from the website.",
+            "question": "Which category fits 'in front of' in this sentence?",
+            "targetWord": "in front of",
+            "sentence": "The taxi waited in front of the hotel entrance.",
             "options": [
-                "Noun",
+                "Preposition",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Technology verbs describe digital actions. What digital action did she perform?",
-            "explanation": "'Download' is a verb - it follows 'to' as an infinitive and describes transferring data from a remote source. 'Download' can be a noun ('the download took five minutes'), but here it is a verb.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Preposition",
+            "hint": "This three-word expression shows position relative to a place. Where did the taxi wait?",
+            "explanation": "'In front of' functions as a compound preposition here, introducing the phrase that shows the taxi's position relative to the hotel entrance.",
+            "grammarRule": "Compound preposition introducing a location phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related preposition (behind)"
             ]
         },
         {
@@ -224,23 +224,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'data' as used in the sentence below?",
-            "targetWord": "data",
-            "sentence": "The research team spent months carefully analysing the collected data.",
+            "question": "What part of speech is 'permit' in this sentence?",
+            "targetWord": "permit",
+            "sentence": "The vendors need a permit to sell food downtown.",
             "options": [
-                "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Noun",
-            "hint": "Nouns can name information. What does 'data' name here?",
-            "explanation": "'Data' is a noun - it names a body of collected information. It is an uncountable noun in modern usage, though strictly 'data' is the plural of 'datum'.",
-            "grammarRule": "Nouns",
+            "hint": "Set aside what you know about this word in general. What do the vendors need?",
+            "explanation": "'Permit' is a noun here, naming the official document the vendors need — it functions as the direct object of 'need'.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "verb use"
             ]
         },
         {
@@ -248,23 +248,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'creamy' as used in the sentence below?",
-            "targetWord": "creamy",
-            "sentence": "The creamy pasta sauce was made with fresh herbs and aged parmesan.",
+            "question": "This time, what part of speech is 'permit'?",
+            "targetWord": "permit",
+            "sentence": "The new policy will permit remote work twice a week.",
             "options": [
-                "Noun",
                 "Verb",
                 "Adjective",
+                "Noun",
                 "Adverb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe food consistency. What quality does 'creamy' describe?",
-            "explanation": "'Creamy' is an adjective - it describes the consistency of the pasta sauce. Consistency adjectives (creamy, smooth, thick, runny) describe how food looks and feels.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Verb",
+            "hint": "The same word can also name the action of allowing something. What will the new policy do?",
+            "explanation": "'Permit' functions as a verb here, meaning to allow — contrast this with the earlier noun use naming a document. The stress shifts to the second syllable in this verb use.",
+            "grammarRule": "Verb following the modal 'will'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb use",
+                "noun use"
             ]
         },
         {
@@ -272,23 +272,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'search' as used in the sentence below?",
-            "targetWord": "search",
-            "sentence": "She used the app to search for the nearest pharmacy open at night.",
+            "question": "Which grammatical category best describes 'orderly' here?",
+            "targetWord": "orderly",
+            "sentence": "The volunteers formed an orderly line outside the shelter.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
+                "Verb",
+                "Noun",
                 "Adverb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Technology verbs describe digital actions. What action did she perform?",
-            "explanation": "'Search' is a verb - it follows 'to' as an infinitive describing her action. 'Search' can be a noun ('a search'), but here it follows 'to' and names an action.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adjective",
+            "hint": "Another '-ly' word describing a quality, not an action. What quality does 'orderly' give the line?",
+            "explanation": "'Orderly' is an adjective modifying 'line', describing how neatly organized it was — like 'elderly,' it is an adjective despite ending in '-ly'.",
+            "grammarRule": "Attributive adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "comparative form"
             ]
         },
         {
@@ -296,23 +296,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'storage' as used in the sentence below?",
-            "targetWord": "storage",
-            "sentence": "The phone ran out of storage, so she deleted hundreds of old photos.",
+            "question": "Identify the part of speech of 'increase' in this context.",
+            "targetWord": "increase",
+            "sentence": "The company announced a modest increase in salaries.",
             "options": [
-                "Noun",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Noun",
-            "hint": "Technology nouns name digital resources. What resource does 'storage' name?",
-            "explanation": "'Storage' is a noun - it names the available space on a device. It is an uncountable noun (no article needed). Technology resource nouns (storage, memory, bandwidth) are often uncountable.",
-            "grammarRule": "Nouns",
+            "hint": "Focus on its role in this sentence only. What did the company announce?",
+            "explanation": "'Increase' is a noun here, naming the rise in salaries — it functions as the direct object of 'announced'.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "verb use"
             ]
         },
         {
@@ -320,23 +320,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'bitter' as used in the sentence below?",
-            "targetWord": "bitter",
-            "sentence": "The coffee was far too bitter, so she added a generous spoon of sugar.",
+            "question": "Now what part of speech is 'increase' in this sentence?",
+            "targetWord": "increase",
+            "sentence": "Prices will increase slightly next quarter.",
             "options": [
-                "Noun",
+                "Adverb",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe the taste of drinks and food. What taste does 'bitter' describe?",
-            "explanation": "'Bitter' is an adjective - it follows the linking verb 'was' as a predicate adjective. Predicate adjectives follow linking verbs and describe the subject.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Verb",
+            "hint": "The same word can also name the action of rising. What will prices do next quarter?",
+            "explanation": "'Increase' functions as a verb here, meaning to rise — contrast this with the earlier noun use naming the amount of the rise itself. The stress shifts to the second syllable in this verb use.",
+            "grammarRule": "Verb following the modal 'will'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb use",
+                "noun use"
             ]
         },
         {
@@ -344,23 +344,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'share' as used in the sentence below?",
-            "targetWord": "share",
-            "sentence": "Would you like to share the dessert, or shall we each order our own?",
+            "question": "The word 'According to' is being used as which grammatical category?",
+            "targetWord": "According to",
+            "sentence": "According to the forecast, the storm should pass by evening.",
             "options": [
-                "Noun",
+                "Preposition",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Conjunction",
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe social actions. What action is being proposed?",
-            "explanation": "'Share' is a verb - it follows 'to' in the infinitive after 'like'. 'Share' can be a noun ('a share of profits'), but here it expresses an action.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Preposition",
+            "hint": "This expression introduces the source of information. Where does this information about the storm come from?",
+            "explanation": "'According to' functions as a compound preposition here, introducing the source of the information — the forecast.",
+            "grammarRule": "Compound preposition introducing a source",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related verb (state)"
             ]
         },
         {
@@ -368,23 +368,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'screen' as used in the sentence below?",
-            "targetWord": "screen",
-            "sentence": "The screen on her laptop was cracked after she dropped it on the stairs.",
+            "question": "Classify 'desert' as it appears in this sentence.",
+            "targetWord": "desert",
+            "sentence": "The caravan crossed the desert before sunrise.",
             "options": [
                 "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Verb"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "Noun",
-            "hint": "Nouns name parts of technology devices. What component does 'screen' name?",
-            "explanation": "'Screen' is a noun - it names a physical component of a device. It follows 'The', confirming its noun function. 'Screen' can also be a verb ('to screen candidates'), but here it is clearly a noun.",
-            "grammarRule": "Nouns",
+            "hint": "Check the words directly around it for clues. What did the caravan cross?",
+            "explanation": "'Desert' is a noun here, naming the arid landscape the caravan crossed — it functions as the direct object of 'crossed'. Notice the stress falls on the first syllable in this noun use.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "verb use"
             ]
         },
         {
@@ -392,23 +392,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'grilled' as used in the sentence below?",
-            "targetWord": "grilled",
-            "sentence": "She ordered a grilled salmon fillet with a side of roasted vegetables.",
+            "question": "Now, how is 'desert' functioning here?",
+            "targetWord": "desert",
+            "sentence": "Soldiers were warned never to desert their post.",
             "options": [
+                "Adverb",
                 "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Verb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Past participles describe cooking methods. What cooking method does 'grilled' describe?",
-            "explanation": "'Grilled' is an adjective - it is a past participle describing how 'salmon fillet' was cooked. Cooking-method adjectives (grilled, fried, baked, steamed) describe food preparation.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Verb",
+            "hint": "The same word can also name the action of abandoning something. What were soldiers warned never to do?",
+            "explanation": "'Desert' functions as a verb here, meaning to abandon — contrast this with the earlier noun use naming a landscape. The stress shifts to the second syllable in this verb use.",
+            "grammarRule": "Verb following the infinitive marker 'to'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb use",
+                "noun use"
             ]
         },
         {
@@ -416,23 +416,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'type' as used in the sentence below?",
-            "targetWord": "type",
-            "sentence": "He can type eighty words per minute without looking at the keyboard.",
+            "question": "What kind of word is 'anxious' in this sentence?",
+            "targetWord": "anxious",
+            "sentence": "The travelers grew anxious as the delay stretched past two hours.",
             "options": [
-                "Noun",
                 "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe skills and abilities. What skill is described?",
-            "explanation": "'Type' is a verb - it follows the modal 'can', confirming its verb role. 'Type' can be a noun ('a type of food'), but here it follows 'can' as a modal verb construction.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "Focus on its role in this sentence only. What did the travelers become?",
+            "explanation": "'Anxious' is an adjective describing the travelers' emotional state after the linking verb 'grew'.",
+            "grammarRule": "Predicate adjective after a linking verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "positive form",
+                "comparative form"
             ]
         },
         {
@@ -440,23 +440,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'signal' as used in the sentence below?",
-            "targetWord": "signal",
-            "sentence": "There was no mobile signal in the remote mountain cabin.",
+            "question": "Based on how it is used here, 'content' is a:",
+            "targetWord": "content",
+            "sentence": "The editor reviewed the content before publishing the article.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Adverb",
+                "Verb"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "Noun",
-            "hint": "Technology nouns name connectivity resources. What does 'signal' name here?",
-            "explanation": "'Signal' is a noun - it names the wireless connection strength. It follows 'no', confirming its noun function. 'Signal' can also be a verb ('she signalled to him'), but here it is a noun.",
-            "grammarRule": "Nouns",
+            "hint": "Notice what the word is attached to. What did the editor review?",
+            "explanation": "'Content' is a noun here, naming the material inside the article — it functions as the direct object of 'reviewed'. Notice the stress falls on the first syllable in this noun use.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "adjective use"
             ]
         },
         {
@@ -464,23 +464,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'portable' as used in the sentence below?",
-            "targetWord": "portable",
-            "sentence": "She bought a portable speaker so she could listen to music in the garden.",
+            "question": "Next, what role does 'content' play in this sentence?",
+            "targetWord": "content",
+            "sentence": "Grandpa seemed content just watching the birds from the porch.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Adverb",
+                "Noun"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "Adjective",
-            "hint": "Adjectives describe practical properties of devices. What property does 'portable' describe?",
-            "explanation": "'Portable' is an adjective - it describes a key property of the speaker (it can be carried). Technology adjectives (portable, wireless, digital, rechargeable) describe device features.",
-            "grammarRule": "Adjectives",
+            "hint": "The same word can also describe a feeling of satisfaction. What does 'content' describe about Grandpa?",
+            "explanation": "'Content' functions as an adjective here, describing Grandpa's satisfaction after the linking verb 'seemed' — contrast this with the earlier noun use naming material. The stress shifts to the second syllable in this adjective use.",
+            "grammarRule": "Predicate adjective after a linking verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "noun use"
             ]
         },
         {
@@ -488,23 +488,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'text' as used in the sentence below?",
-            "targetWord": "text",
-            "sentence": "She asked him to text her when he arrived safely at the airport.",
+            "question": "In this sentence, 'whether' is functioning as a:",
+            "targetWord": "whether",
+            "sentence": "The coach hasn't decided whether the game will proceed.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Preposition",
+                "Noun",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Technology verbs describe digital communication. What communication action is described?",
-            "explanation": "'Text' is a verb - it means 'to send a text message'. 'Text' can be a noun ('a text', 'some text'), but here it follows 'to' as an infinitive verb.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Conjunction",
+            "hint": "Notice what the word is attached to. What hasn't the coach decided?",
+            "explanation": "'Whether' is a subordinating conjunction introducing a noun clause expressing an unresolved choice — it connects that clause to the verb 'decided'.",
+            "grammarRule": "Subordinating conjunction introducing a noun clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related conjunction (if)"
             ]
         },
         {
@@ -512,23 +512,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'recipe' as used in the sentence below?",
-            "targetWord": "recipe",
-            "sentence": "She found a brilliant recipe for classic French onion soup online.",
+            "question": "What role does 'minute' play in this sentence?",
+            "targetWord": "minute",
+            "sentence": "Give me one minute to finish this email.",
             "options": [
-                "Noun",
                 "Verb",
                 "Adjective",
+                "Noun",
                 "Adverb"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "Noun",
-            "hint": "Nouns name instructional documents. What does 'recipe' name?",
-            "explanation": "'Recipe' is a noun - it names a set of cooking instructions. It follows 'a brilliant', confirming its noun function.",
-            "grammarRule": "Nouns",
+            "hint": "Let the sentence, not the spelling, decide. What is being asked for here?",
+            "explanation": "'Minute' is a noun here, naming the small unit of time requested — it functions as the direct object of 'give'. Notice the stress falls on the first syllable in this noun use.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "adjective use"
             ]
         },
         {
@@ -536,23 +536,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'wireless' as used in the sentence below?",
-            "targetWord": "wireless",
-            "sentence": "The conference room was equipped with a wireless presentation system.",
+            "question": "This time, 'minute' is functioning as a:",
+            "targetWord": "minute",
+            "sentence": "The jeweler examined the minute scratches under a magnifying glass.",
             "options": [
-                "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Verb"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "Adjective",
-            "hint": "Adjectives describe technology features. What feature does 'wireless' describe?",
-            "explanation": "'Wireless' is an adjective - it describes a feature of the system (operating without cables). Technology adjectives (wireless, digital, automated, rechargeable) describe device features.",
-            "grammarRule": "Adjectives",
+            "hint": "The same word can also describe something extremely small. What quality do the scratches have?",
+            "explanation": "'Minute' functions as an adjective here, meaning extremely small — contrast this with the earlier noun use naming a unit of time. Notice the pronunciation and stress change in this adjective use.",
+            "grammarRule": "Attributive adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "noun use"
             ]
         },
         {
@@ -560,23 +560,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'order' as used in the sentence below?",
-            "targetWord": "order",
-            "sentence": "They decided to order takeaway instead of cooking after the long day.",
+            "question": "Which part of speech is 'instead of' as it is used here?",
+            "targetWord": "instead of",
+            "sentence": "The team chose a video call instead of an in-person meeting.",
             "options": [
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Conjunction",
+                "Preposition"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe commercial and social actions. What action did they decide to take?",
-            "explanation": "'Order' is a verb - it follows 'to' as an infinitive. 'Order' can be a noun ('an order'), but here it follows 'to' and names an action.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Preposition",
+            "hint": "This two-word expression introduces an alternative that was not chosen. What did the team decide against?",
+            "explanation": "'Instead of' functions as a compound preposition here, introducing the option the team chose not to use.",
+            "grammarRule": "Compound preposition introducing an alternative",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related conjunction (rather than)"
             ]
         },
         {
@@ -584,23 +584,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'battery' as used in the sentence below?",
-            "targetWord": "battery",
-            "sentence": "The car would not start because the battery had completely died.",
+            "question": "What grammatical job does 'subject' do in this sentence?",
+            "targetWord": "subject",
+            "sentence": "History was Naledi's favorite subject in school.",
             "options": [
+                "Adverb",
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "Noun",
-            "hint": "Nouns name power sources. What does 'battery' name here?",
-            "explanation": "'Battery' is a noun - it names a power source. It follows 'the', confirming its noun function.",
-            "grammarRule": "Nouns",
+            "hint": "Notice what the word is attached to. What was Naledi's favorite topic?",
+            "explanation": "'Subject' is a noun here, naming the academic topic Naledi enjoyed most — it functions as the subject complement of the sentence.",
+            "grammarRule": "Common noun functioning as the subject complement",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "verb use"
             ]
         },
         {
@@ -608,23 +608,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'tender' as used in the sentence below?",
-            "targetWord": "tender",
-            "sentence": "The slow-cooked beef was wonderfully tender and fell apart easily.",
+            "question": "Now what part of speech is 'subject' in this sentence?",
+            "targetWord": "subject",
+            "sentence": "The committee decided to subject every proposal to a public vote.",
             "options": [
-                "Noun",
                 "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Noun"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe the texture of cooked meat. What quality does 'tender' describe?",
-            "explanation": "'Tender' is an adjective - it follows the linking verb 'was' as a predicate adjective describing the texture of the beef.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Verb",
+            "hint": "The same word can also name the action of exposing something to a process. What did the committee decide to do to every proposal?",
+            "explanation": "'Subject' functions as a verb here, meaning to expose something to a process — contrast this with the earlier noun use naming a topic of study. The stress shifts to the second syllable in this verb use.",
+            "grammarRule": "Verb following the infinitive marker 'to'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb use",
+                "noun use"
             ]
         },
         {
@@ -632,23 +632,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'reset' as used in the sentence below?",
-            "targetWord": "reset",
-            "sentence": "Try to reset the router if you are unable to connect to the internet.",
+            "question": "Now, which category describes 'subject' in this sentence?",
+            "targetWord": "subject",
+            "sentence": "All prices are subject to change without notice.",
             "options": [
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Technology verbs describe actions for fixing problems. What action is suggested?",
-            "explanation": "'Reset' is a verb - it describes the action of restarting a device to restore default settings. It is used as an imperative. 'Reset' can be a noun ('a factory reset'), but here it is clearly a verb.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "The same word can also describe something that is liable or exposed to a condition. What does 'subject' tell us about the prices?",
+            "explanation": "'Subject' functions as an adjective here, meaning liable to — a third role for this word, alongside the noun and verb uses already seen. It is usually followed by 'to'.",
+            "grammarRule": "Predicate adjective followed by 'to'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "noun use"
             ]
         },
         {
@@ -656,23 +656,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'feedback' as used in the sentence below?",
-            "targetWord": "feedback",
-            "sentence": "She received very encouraging feedback from her line manager last week.",
+            "question": "How is 'Due to' functioning in this sentence?",
+            "targetWord": "Due to",
+            "sentence": "Due to the sudden increase in demand, the factory agreed to produce extra units, and the manager signed a new contract with the supplier by the end of the week.",
             "options": [
                 "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
+                "Conjunction",
+                "Preposition",
+                "Verb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name types of information. What does 'feedback' name here?",
-            "explanation": "'Feedback' is a noun - it names comments received about performance. It is uncountable ('some feedback', not 'a feedback').",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Preposition",
+            "hint": "This expression introduces a reason at the start of a long sentence. What caused the factory's decision?",
+            "explanation": "'Due to' functions as a compound preposition here, introducing the reason — a sudden rise in demand — for everything that follows.",
+            "grammarRule": "Compound preposition introducing a reason phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related conjunction (because)"
             ]
         },
         {
@@ -680,23 +680,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'savoury' as used in the sentence below?",
-            "targetWord": "savoury",
-            "sentence": "He preferred savoury snacks like nuts and crackers over anything sweet.",
+            "question": "In the same sentence, what role does 'increase' play?",
+            "targetWord": "increase",
+            "sentence": "Due to the sudden increase in demand, the factory agreed to produce extra units, and the manager signed a new contract with the supplier by the end of the week.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Noun",
+                "Adjective"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe the taste profile of food. What taste profile does 'savoury' describe?",
-            "explanation": "'Savoury' is an adjective - it describes the taste of the snacks (salty and herby, not sweet). It is the opposite of 'sweet' in food description.",
-            "grammarRule": "Adjectives",
+            "correctAnswer": "Noun",
+            "hint": "From earlier in this file, remember this word can be a word or a verb. Which role does it play here, right after 'sudden'?",
+            "explanation": "'Increase' is a noun here, naming the rise in demand — it follows the adjective 'sudden', which would not be possible if it were functioning as a verb.",
+            "grammarRule": "Common noun functioning as the object of a preposition",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "verb use"
             ]
         },
         {
@@ -704,23 +704,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'log' as used in the sentence below?",
-            "targetWord": "log",
-            "sentence": "You need to log in with your username and password to access your account.",
+            "question": "Now consider 'produce' in that same sentence. What part of speech is it?",
+            "targetWord": "produce",
+            "sentence": "Due to the sudden increase in demand, the factory agreed to produce extra units, and the manager signed a new contract with the supplier by the end of the week.",
             "options": [
-                "Noun",
                 "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "Verb",
-            "hint": "Technology verbs describe digital authentication. What action must be performed?",
-            "explanation": "'Log' is a verb - it is part of the phrasal verb 'log in', meaning to enter credentials to access a system. 'Log' can be a noun ('a log file', 'a log cabin'), but here it is part of a phrasal verb.",
-            "grammarRule": "Verbs",
+            "hint": "Remember 'produce' can be a noun or a word. Here it follows 'to' — what role does that suggest?",
+            "explanation": "'Produce' functions as a verb here, meaning to manufacture, following the infinitive marker 'to' — contrast this with its earlier use in this file as a noun naming farm goods.",
+            "grammarRule": "Verb following the infinitive marker 'to'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb use",
+                "noun use"
             ]
         }
     ]

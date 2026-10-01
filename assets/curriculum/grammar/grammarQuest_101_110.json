@@ -5,543 +5,393 @@
     "quests": [
         {
             "id": "gq_l101_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "You ___ told me earlier - I had no idea.",
-            "options": [
-                "would have",
-                "should have",
-                "must have",
-                "ought to"
-            ],
+            "question": "I ___ finished my homework, so I can relax now.",
+            "options": ["had", "have", "has", "having"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "should have",
-            "hint": "Past obligation that wasn't fulfilled.",
-            "explanation": "'Should have + past participle' expresses regret or criticism about a past action that didn't happen: You should have told me = you didn't tell me, but you should have. Contrast: 'must have' = deduction about the past.",
-            "grammarRule": "Modals of Past Deduction"
+            "correctAnswer": "have",
+            "hint": "The subject is 'I', and this connects a past action to the present moment.",
+            "explanation": "Present perfect uses 'have' + past participle for I/you/we/they: I have finished. The result (being able to relax) matters right now, which is the key idea behind this tense.",
+            "grammarRule": "Present Perfect: Form"
         },
         {
             "id": "gq_l101_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "They ___ taken a wrong turn - they're an hour late.",
-            "options": [
-                "should have",
-                "must have",
-                "would have",
-                "could have"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "must have",
-            "hint": "We're making a logical deduction about the past.",
-            "explanation": "'Must have + past participle' = confident deduction about the past: They must have taken a wrong turn = this is the most likely explanation. Compare: might have (possibility), should have (obligation not met).",
-            "grammarRule": "Modals of Past Deduction"
+            "question": "She ___ lost her keys; she can't find them anywhere.",
+            "options": ["have", "had", "having", "has"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "has",
+            "hint": "The subject 'she' needs the third-person form of 'have'.",
+            "explanation": "With he/she/it, present perfect uses 'has': she has lost her keys. The present result, not being able to find them, is what makes this tense the right choice.",
+            "grammarRule": "Present Perfect: Third-Person Singular"
         },
         {
             "id": "gq_l101_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She ___ finished the project, but she ran out of time.",
-            "options": [
-                "could have",
-                "would have",
-                "must have",
-                "should have"
-            ],
+            "question": "\u2014 Where's Tom?\n\u2014 He ___ already left for the airport.",
+            "options": ["has", "have", "had", "having"],
             "correctAnswerIndex": 0,
-            "correctAnswer": "could have",
-            "hint": "She had the ability but didn't complete it.",
-            "explanation": "'Could have + past participle' = a past ability or opportunity that wasn't used: She could have finished, but she ran out of time. Compare: might have (possibility), would have (unreal result).",
-            "grammarRule": "Modals of Past Deduction"
+            "correctAnswer": "has",
+            "hint": "Match the subject 'he' with the correct present perfect helper verb.",
+            "explanation": "'He' takes 'has' in the present perfect: he has left. The relevant result now is that Tom simply isn't here anymore.",
+            "grammarRule": "Present Perfect: Third-Person Singular"
         },
         {
             "id": "gq_l102_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Combine correctly using 'although': 'The report was thorough. It could have been more concise.'",
-            "options": [
-                "Although was thorough, the report could have been more concise.",
-                "The report was thorough although it can be more concise.",
-                "Although the report was thorough, however it could have been more concise.",
-                "Although the report was thorough, it could have been more concise."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Although the report was thorough, it could have been more concise.",
-            "hint": "'Although' and 'however' cannot be used together.",
-            "explanation": "'Although + clause, main clause': Although the report was thorough, it could have been more concise. Do NOT use 'however' in the same sentence as 'although'. Both show contrast, but 'however' connects separate sentences.",
-            "grammarRule": "Combining Sentences (Concession/Cause)"
+            "question": "I have never ___ to Japan, but I'd love to go.",
+            "options": ["be", "was", "been", "being"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "been",
+            "hint": "This is the special past participle form of 'be', used after 'have'.",
+            "explanation": "'Be' has the irregular past participle 'been', used with have/has: have been to Japan. 'Was' would be simple past, which doesn't pair with 'have' this way.",
+            "grammarRule": "Present Perfect: Irregular Past Participles"
         },
         {
             "id": "gq_l102_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Combine using 'despite': 'She had excellent qualifications. She didn't get the job.'",
-            "options": [
-                "Despite her excellent qualifications, she didn't get the job.",
-                "Despite of her excellent qualifications, she didn't get the job.",
-                "Despite she had excellent qualifications, she didn't get the job.",
-                "She didn't get the job, despite her qualifications were excellent."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Despite her excellent qualifications, she didn't get the job.",
-            "hint": "'Despite' never takes 'of' and never takes a clause.",
-            "explanation": "'Despite + noun phrase (no subject + verb)': Despite her excellent qualifications, she didn't get the job. Common error: 'despite of' - 'of' is NOT used after 'despite'. Use 'in spite of' for an alternative.",
-            "grammarRule": "Combining Sentences (Concession/Cause)"
+            "question": "Have you ___ your homework yet?",
+            "options": ["do", "did", "done", "doing"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "done",
+            "hint": "This is the past participle of 'do', different from its simple past form.",
+            "explanation": "'Do' has the past participle 'done': have you done it? This differs from the simple past 'did', which wouldn't fit after 'have'.",
+            "grammarRule": "Present Perfect: Irregular Past Participles"
         },
         {
             "id": "gq_l102_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Combine using 'thanks to': 'Everyone worked hard. The project succeeded.'",
-            "options": [
-                "Despite everyone worked hard, the project succeeded.",
-                "Thanks to everyone worked hard, the project succeeded.",
-                "The project succeeded thanks to everyone's hard work.",
-                "The project succeeded, thanks everyone's hard work."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The project succeeded thanks to everyone's hard work.",
-            "hint": "'Thanks to' introduces the reason for a positive outcome.",
-            "explanation": "'Thanks to + noun phrase' = because of (with a positive cause): The project succeeded thanks to everyone's hard work. 'Due to' and 'owing to' are similar but more neutral in tone.",
-            "grammarRule": "Combining Sentences (Concession/Cause)"
+            "question": "\u2014 Has she seen the new movie?\n\u2014 Yes, she's already ___ it twice.",
+            "options": ["see", "saw", "seeing", "seen"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "seen",
+            "hint": "This is the past participle of 'see', matching the question's own form.",
+            "explanation": "'See' has the past participle 'seen': has seen, has already seen. This matches the form the question itself already used.",
+            "grammarRule": "Present Perfect: Irregular Past Participles"
         },
         {
             "id": "gq_l103_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The research ___ that sleep deprivation impairs cognitive function.",
-            "options": [
-                "shows",
-                "makes clear",
-                "demonstrates",
-                "indicates"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "demonstrates",
-            "hint": "Which verb is most appropriate in formal academic writing?",
-            "explanation": "In academic writing, 'demonstrates' is strong and formal: The research demonstrates that... Synonyms: shows, reveals, indicates, suggests (for less certainty), demonstrates (for strong evidence from research). Choose based on certainty.",
-            "grammarRule": "Academic Reporting Verbs"
+            "question": "I ___ to Paris last year with my family.",
+            "options": ["went", "have gone", "has gone", "go"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "went",
+            "hint": "'Last year' names a specific, finished point in time.",
+            "explanation": "A specific past time expression like 'last year' calls for simple past: went last year. Present perfect avoids exact time markers like this.",
+            "grammarRule": "Present Perfect vs Simple Past: Specific Time"
         },
         {
             "id": "gq_l103_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The findings ___ further investigation.",
-            "options": [
-                "want",
-                "warrant",
-                "require",
-                "need"
-            ],
+            "question": "I ___ to Paris; I absolutely loved it there.",
+            "options": ["went", "have been", "has been", "go"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "warrant",
-            "hint": "Which verb is most formal and precise?",
-            "explanation": "'Warrant' = justify or deserve (formal): The findings warrant further investigation. It implies the evidence is sufficient to justify more research. 'Require' and 'need' are also acceptable but less formal in academic writing.",
-            "grammarRule": "Academic Reporting Verbs"
+            "correctAnswer": "have been",
+            "hint": "No specific time is mentioned here \u2014 this is just a general life experience.",
+            "explanation": "Without a specific time marker, present perfect fits general life experience: I have been to Paris. This contrasts with 'went last year' from Question 1, which named an exact time.",
+            "grammarRule": "Present Perfect: Life Experience"
         },
         {
             "id": "gq_l103_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "This study has ___ important implications for public health policy.",
-            "options": [
-                "a lot of",
-                "significant",
-                "great",
-                "many"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "significant",
-            "hint": "Which adjective is most appropriate in formal academic contexts?",
-            "explanation": "'Significant' is the most precise academic adjective here: significant implications. In academic writing, use: significant (not big), substantial (not large), demonstrate (not show), conduct (not do). Precision matters.",
-            "grammarRule": "Academic Reporting Verbs"
+            "question": "\u2014 Did you finish the report yesterday?\n\u2014 Yes, I ___ it yesterday afternoon.",
+            "options": ["have finished", "has finished", "finished", "finish"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "finished",
+            "hint": "'Yesterday afternoon' is another specific point already in the past.",
+            "explanation": "Since 'yesterday afternoon' names an exact time, simple past fits: finished it yesterday. This is the same rule from Question 1, applied to a new example.",
+            "grammarRule": "Present Perfect vs Simple Past: Specific Time"
         },
         {
             "id": "gq_l104_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The drug ___ reduce symptoms in some patients.",
-            "options": [
-                "would seem to",
-                "might tend to",
-                "is seeming to",
-                "appears to"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "appears to",
-            "hint": "Which phrase hedges a claim about the drug's effect?",
-            "explanation": "'Appears to + infinitive' is a formal hedging phrase: The drug appears to reduce symptoms. Other hedging: seems to, tends to, is thought to, would appear to. These soften claims and show academic caution.",
-            "grammarRule": "Hedging Language: Seem / Appear"
+            "question": "I've ___ finished my homework, so I can relax now.",
+            "options": ["already", "yet", "just", "never"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "already",
+            "hint": "This word emphasizes that something happened sooner than expected, in a positive sentence.",
+            "explanation": "'Already' appears in affirmative sentences to show something is done, often earlier than expected: already finished. 'Yet' is reserved for questions and negatives.",
+            "grammarRule": "Already vs Yet: Affirmative"
         },
         {
             "id": "gq_l104_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "There ___ be some connection between the two events.",
-            "options": [
-                "ought to",
-                "appears",
-                "might",
-                "seems to"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "might",
-            "hint": "Uncertainty about a present situation - which modal fits?",
-            "explanation": "'Might' expresses possibility/uncertainty: There might be some connection. In formal writing: may, might, could all hedge claims about possibility. 'Would' would suggest a hypothetical, not a real possibility.",
-            "grammarRule": "Hedging Language: Seem / Appear"
+            "question": "Have you finished your homework ___ ?",
+            "options": ["already", "just", "ever", "yet"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "yet",
+            "hint": "This word typically appears at the end of questions, asking if something has happened by now.",
+            "explanation": "'Yet' fits at the end of questions asking whether something has happened by now: finished yet? This is the question counterpart to 'already' in Question 1.",
+            "grammarRule": "Already vs Yet: Questions"
         },
         {
             "id": "gq_l104_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The data ___ that levels have been declining over recent years.",
-            "options": [
-                "appear to indicate",
-                "seems indicating",
-                "appears to indicate",
-                "are appearing to show"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "appear to indicate",
-            "hint": "'Data' is plural - which option matches and hedges correctly?",
-            "explanation": "'Data' is technically plural (datum = singular), so use: The data appear to indicate. 'Appear to indicate' combines hedging ('appear') with formal style. Note: in informal use, 'data appears' is increasingly accepted.",
-            "grammarRule": "Hedging Language: Seem / Appear"
+            "question": "\u2014 Has he called you back?\n\u2014 Not ___ , but I'm sure he will soon.",
+            "options": ["already", "just", "yet", "never"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "yet",
+            "hint": "This short negative answer pairs with the same word used in questions.",
+            "explanation": "'Not yet' is a common short answer meaning something hasn't happened, but is still expected: hasn't called yet. This matches the question form practiced in Question 2.",
+            "grammarRule": "Already vs Yet: Negative"
         },
         {
             "id": "gq_l105_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Choose the grammatically correct sentence:",
-            "options": [
-                "Despite the fact of raining, we went out.",
-                "Despite of the fact it was raining, we went out.",
-                "Despite the fact it rained, we went out.",
-                "Despite the fact that it was raining, we went out."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Despite the fact that it was raining, we went out.",
-            "hint": "'The fact' must be followed by 'that'.",
-            "explanation": "'Despite the fact that + subject + verb': Despite the fact that it was raining, we went out. 'Despite of' is wrong (no 'of' after 'despite'). 'The fact' must be followed by 'that' + a full clause.",
-            "grammarRule": "Formal Sentence Structures"
+            "question": "I've ___ arrived; give me a minute to settle in.",
+            "options": ["just", "yet", "ever", "never"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "just",
+            "hint": "This word shows something happened a very short moment ago.",
+            "explanation": "'Just' shows an action was completed very recently: have just arrived. It highlights how little time has passed since the action happened.",
+            "grammarRule": "Just: Recent Completion"
         },
         {
             "id": "gq_l105_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Choose the sentence with correct usage of 'provided':",
-            "options": [
-                "Provided that you will have a ticket, you can enter.",
-                "Providing you have a ticket, you can enter.",
-                "You can enter providing to have a ticket.",
-                "Provided of having a ticket, you can enter."
-            ],
+            "question": "She's ___ finished her workout, so she's a bit tired.",
+            "options": ["yet", "just", "ever", "never"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Providing you have a ticket, you can enter.",
-            "hint": "'Providing/Provided (that)' + present simple for future conditionals.",
-            "explanation": "'Providing / Provided (that) + present simple': Providing you have a ticket, you can enter. Future conditionals use present tense in the if/provided clause. 'Providing to have' is incorrect.",
-            "grammarRule": "Formal Sentence Structures"
+            "correctAnswer": "just",
+            "hint": "The tiredness is a direct, immediate result of something that ended only a moment ago.",
+            "explanation": "'Just' fits here because the tiredness is a fresh, immediate result: has just finished, so she's tired now.",
+            "grammarRule": "Just: Recent Completion"
         },
         {
             "id": "gq_l105_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ you finish early, give me a call and I'll come and get you.",
-            "options": [
-                "Unless",
-                "In the event",
-                "If",
-                "In case"
-            ],
+            "question": "\u2014 Is dinner ready?\n\u2014 Yes, I've ___ put it on the table; it's still steaming.",
+            "options": ["yet", "already", "just", "never"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "If",
-            "hint": "This describes an action to take in response to something happening - not a precaution.",
-            "explanation": "'If you finish early, call me' states a condition and its result. 'In case' works differently - it describes a precaution taken in advance regardless of outcome ('Take an umbrella in case it rains' = take it now, just in case). 'In case you finish early, call me' would wrongly suggest calling as a precaution rather than as a response to finishing early.",
-            "grammarRule": "Formal Sentence Structures"
+            "correctAnswer": "just",
+            "hint": "The food is still steaming \u2014 this happened only moments ago.",
+            "explanation": "The detail 'still steaming' points to something extremely recent, matching 'just': have just put it on the table.",
+            "grammarRule": "Just: Recent Completion"
         },
         {
             "id": "gq_l106_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The hotel ___ we stayed was wonderful.",
-            "options": [
-                "at which",
-                "which",
-                "where",
-                "in which"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "in which",
-            "hint": "We need a relative pronoun + preposition for location.",
-            "explanation": "'In which' combines a preposition with a relative pronoun: The hotel in which we stayed. This equals 'The hotel where we stayed.' Both are correct, but 'in which' is more formal. Don't say 'the hotel which we stayed' alone.",
-            "grammarRule": "Relative Clauses with Prepositions"
+            "question": "Have you ___ been to Australia?",
+            "options": ["never", "ever", "already", "yet"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "ever",
+            "hint": "This word asks about experience at any point in someone's life, in a question.",
+            "explanation": "'Ever' is used in questions asking about experience at any time: have you ever been? 'Never' would only appear in a negative statement, not a question like this.",
+            "grammarRule": "Ever vs Never: Questions"
         },
         {
             "id": "gq_l106_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The year ___ I graduated was 2015.",
-            "options": [
-                "which",
-                "that",
-                "when",
-                "on which"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "on which",
-            "hint": "A relative adverb for time.",
-            "explanation": "'The year when I graduated' = the year in which I graduated. 'When' is a relative adverb for time: the year when, the day when, the moment when. 'On which' is also formally correct.",
-            "grammarRule": "Relative Clauses with Prepositions"
+            "question": "I've ___ tried sushi before; I'd like to though.",
+            "options": ["ever", "already", "never", "yet"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "never",
+            "hint": "This is a statement, not a question, saying this has not happened at any time.",
+            "explanation": "'Never' fits statements meaning 'not at any time': have never tried it. This is the statement counterpart to 'ever', which only appears in questions and negatives.",
+            "grammarRule": "Ever vs Never: Statements"
         },
         {
             "id": "gq_l106_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She is the person ___ I owe my success.",
-            "options": [
-                "that",
-                "who",
-                "to whom",
-                "whom"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "to whom",
-            "hint": "The preposition 'owe TO someone' must be included.",
-            "explanation": "'To whom' includes the preposition in the relative clause: the person to whom I owe my success (formal). Informal: the person that I owe my success to. In formal writing, prepositions go before 'whom'.",
-            "grammarRule": "Relative Clauses with Prepositions"
+            "question": "\u2014 Have you ever tried skydiving?\n\u2014 No, I've ___ done anything that extreme!",
+            "options": ["ever", "never", "already", "yet"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "never",
+            "hint": "The reply is a statement responding to the question's 'ever'.",
+            "explanation": "The answer switches to 'never' because it's now a statement, not a question: have never done anything that extreme, echoing the pattern from Question 2.",
+            "grammarRule": "Ever vs Never: Statements"
         },
         {
             "id": "gq_l107_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She said that she ___ the film the night before.",
-            "options": [
-                "sees",
-                "saw",
-                "had seen",
-                "has seen"
-            ],
+            "question": "I've lived here ___ ten years.",
+            "options": ["since", "during", "for", "by"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "had seen",
-            "hint": "The viewing happened before 'said' - two layers of past.",
-            "explanation": "In reported speech, an event that happened before the reporting verb needs the past perfect: She said she had seen the film the night before. The past perfect (had seen) makes clear it happened earlier than 'said'.",
-            "grammarRule": "Reported Speech (Advanced)"
+            "correctAnswer": "for",
+            "hint": "This introduces a length of time, continuing up to now.",
+            "explanation": "'For' introduces duration that continues into the present with present perfect: have lived for ten years. This is the same 'for' rule from Level 62, now paired with present perfect instead of simple past.",
+            "grammarRule": "Present Perfect: For + Duration"
         },
         {
             "id": "gq_l107_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "While he was reviewing the documents, he ___ an error.",
-            "options": [
-                "has noticed",
-                "was noticing",
-                "noticed",
-                "notices"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "noticed",
-            "hint": "A momentary action interrupting a background past action.",
-            "explanation": "Simple past (noticed) is used for a momentary, completed action. The background action (reviewing) is past continuous (was reviewing). 'Noticed' is the right form for the sudden, brief event of discovery.",
-            "grammarRule": "Reported Speech (Advanced)"
+            "question": "I've known her ___ we were kids.",
+            "options": ["for", "since", "during", "until"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "since",
+            "hint": "This introduces the starting point of the friendship, not its length.",
+            "explanation": "'Since' introduces the starting point of a situation continuing to now: known her since we were kids. This mirrors the 'since' rule from Level 62, now used with present perfect.",
+            "grammarRule": "Present Perfect: Since + Starting Point"
         },
         {
             "id": "gq_l107_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "By the time the century ends, the population ___ significantly.",
-            "options": [
-                "will grow",
-                "will be growing",
-                "will have grown",
-                "grew"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "will have grown",
-            "hint": "The growth will be completed by a future time.",
-            "explanation": "Future perfect: will have grown = the growth will be complete by the end of the century. 'By the time + future reference' triggers future perfect: will have + past participle.",
-            "grammarRule": "Reported Speech (Advanced)"
+            "question": "\u2014 How long have you worked here?\n\u2014 ___ 2015.",
+            "options": ["For", "During", "By", "Since"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Since",
+            "hint": "2015 is a starting point in time, not a length of time.",
+            "explanation": "A specific year like 2015 is a starting point, so 'since' fits: since 2015. 'For' would only work with a length of time, like 'for nine years'.",
+            "grammarRule": "Present Perfect: Since + Starting Point"
         },
         {
             "id": "gq_l108_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She ___ completely ignored my advice.",
-            "options": [
-                "had completely",
-                "had",
-                "has completely",
-                "has"
-            ],
+            "question": "___ long have you been studying English?",
+            "options": ["What", "When", "How", "Since"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "has completely",
-            "hint": "Adverbs like 'completely' go between auxiliary and main verb.",
-            "explanation": "Adverbs go between the auxiliary (have/had) and the main verb (past participle): She has completely ignored my advice. Never: She has ignored completely my advice. This is the mid-position rule for adverbs in perfect tenses.",
-            "grammarRule": "Present Perfect (Emphasis/Inversion)"
+            "correctAnswer": "How",
+            "hint": "This fixed phrase asks specifically about duration.",
+            "explanation": "'How long' is the fixed phrase for asking about duration: how long have you studied? 'What long' isn't a real English question phrase.",
+            "grammarRule": "Present Perfect: How Long Questions"
         },
         {
             "id": "gq_l108_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "He ___ often been late for work recently.",
-            "options": [
-                "was",
-                "had",
-                "has",
-                "is"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "has",
-            "hint": "'Often' is mid-position - what auxiliary fits with 'recently' and 'been'?",
-            "explanation": "'Has often been': present perfect with the adverb 'often' in mid-position. 'Recently' signals present perfect, and 'been' is the past participle. Adverbs go between auxiliary and participle in perfect tenses.",
-            "grammarRule": "Present Perfect (Emphasis/Inversion)"
+            "question": "How long ___ you known each other?",
+            "options": ["have", "did", "do", "has"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "have",
+            "hint": "The subject 'you' needs the matching present perfect helper verb.",
+            "explanation": "'You' takes 'have' in present perfect questions: how long have you known? 'Did' would shift this into simple past, losing the ongoing sense.",
+            "grammarRule": "Present Perfect: How Long Questions"
         },
         {
             "id": "gq_l108_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Rarely ___ I seen such creativity.",
-            "options": [
-                "has",
-                "have",
-                "do",
-                "did"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "have",
-            "hint": "Inverted negative adverbial - which auxiliary matches 'I'?",
-            "explanation": "'Rarely have I seen...' - negative adverbials (rarely, never, seldom, barely) at the beginning cause inversion: auxiliary + subject. I + have (present perfect) → Rarely have I seen. Not 'has' (that's for he/she/it).",
-            "grammarRule": "Present Perfect (Emphasis/Inversion)"
+            "question": "\u2014 How long has she been waiting?\n\u2014 She's been waiting ___ almost an hour.",
+            "options": ["since", "during", "by", "for"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "for",
+            "hint": "'Almost an hour' is a length of time, not a starting point.",
+            "explanation": "'Almost an hour' describes a duration, so 'for' fits: waiting for almost an hour. 'Since' would need a specific starting point instead, like 'since 3 o'clock'.",
+            "grammarRule": "Present Perfect: For + Duration"
         },
         {
             "id": "gq_l109_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She works ___; ___ money she earns.",
-            "options": [
-                "the harder / the more",
-                "the harder / the most",
-                "the hardest / the most",
-                "harder / more"
-            ],
+            "question": "I've ___ finished the report, so I can send it now.",
+            "options": ["already", "for", "yet", "ever"],
             "correctAnswerIndex": 0,
-            "correctAnswer": "the harder / the more",
-            "hint": "Double comparative: both parts use 'the + comparative'.",
-            "explanation": "'The + comparative..., the + comparative': The harder she works, the more money she earns. Both parts must use the same structure. 'The harder' pairs with 'the more'.",
-            "grammarRule": "Double Comparatives"
+            "correctAnswer": "already",
+            "hint": "This is an affirmative sentence about something finished sooner than expected.",
+            "explanation": "'Already' fits this affirmative statement about a completed task: have already finished, so it can be sent, reviewing the pattern from Level 104.",
+            "grammarRule": "Already vs Yet: Affirmative"
         },
         {
             "id": "gq_l109_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She likes both ___ and cooking.",
-            "options": [
-                "baking",
-                "bake",
-                "to baking",
-                "to bake"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "baking",
-            "hint": "Parallel structure: both sides of 'and' must match grammatically.",
-            "explanation": "Parallel structure requires matching grammatical forms: She likes baking and cooking (both gerunds). She likes to bake and to cook (both infinitives) also works. Mixing (baking and to cook) breaks parallelism.",
-            "grammarRule": "Double Comparatives"
+            "question": "Have you ___ visited Italy?",
+            "options": ["already", "never", "yet", "ever"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "ever",
+            "hint": "This is a question about experience at any point in life.",
+            "explanation": "'Ever' fits this experience question: have you ever visited? This reviews the pattern from Level 106.",
+            "grammarRule": "Ever vs Never: Questions"
         },
         {
             "id": "gq_l109_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She is not only talented ___ also extremely dedicated.",
-            "options": [
-                "but she is",
-                "but",
-                "but she's",
-                "and"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "but",
-            "hint": "Not only...but also is a fixed parallel structure.",
-            "explanation": "Not only...but also is a correlative conjunction: She is not only talented but also extremely dedicated. The word but is required. Never not only...and also.",
-            "grammarRule": "Double Comparatives"
+            "question": "\u2014 Has the package arrived ___ ?\n\u2014 No, not yet.",
+            "options": ["already", "just", "yet", "ever"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "yet",
+            "hint": "This question word is answered with 'not yet' in the reply.",
+            "explanation": "'Yet' fits questions asking if something has happened by now: arrived yet? The reply 'not yet' directly confirms this word choice.",
+            "grammarRule": "Already vs Yet: Questions"
         },
         {
             "id": "gq_l110_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___, the new policy led to unexpected results.",
-            "options": [
-                "However",
-                "Consequently",
-                "Nevertheless",
-                "Notwithstanding"
-            ],
+            "question": "I ___ worked in marketing for over five years.",
+            "options": ["have", "has", "had", "having"],
             "correctAnswerIndex": 0,
-            "correctAnswer": "However",
-            "hint": "The results were unexpected - which word introduces contrast?",
-            "explanation": "'However' introduces a contrast: However, the new policy led to unexpected results (we didn't expect this). 'Consequently' = as a result. 'Nevertheless' = despite that. 'Notwithstanding' = despite (very formal).",
-            "grammarRule": "Discourse Connectors (Advanced)"
+            "correctAnswer": "have",
+            "hint": "This describes professional experience continuing to the present, a common interview pattern.",
+            "explanation": "Present perfect is the natural choice for describing ongoing professional experience in interviews: I have worked for five years, and I'm still working in the field.",
+            "grammarRule": "Present Perfect: For + Duration"
         },
         {
             "id": "gq_l110_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The first theory has merit. ___, the second is more compelling.",
-            "options": [
-                "Besides",
-                "Furthermore",
-                "Moreover",
-                "Nevertheless"
-            ],
+            "question": "___ you ever managed a team before?",
+            "options": ["Did", "Do", "Has", "Have"],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Nevertheless",
-            "hint": "We concede the first point, but the second is stronger.",
-            "explanation": "'Nevertheless' = despite this: The first theory has merit. Nevertheless, the second is more compelling. It concedes a point before making a contrasting one. 'Moreover'/'Furthermore' add supporting points.",
-            "grammarRule": "Discourse Connectors (Advanced)"
+            "correctAnswer": "Have",
+            "hint": "This is a life-experience question, matching the subject 'you'.",
+            "explanation": "'Have you ever...?' asks about experience at any point up to now, matching the pattern from Level 106. 'Did' would need a specific past time to sound natural.",
+            "grammarRule": "Ever vs Never: Questions"
         },
         {
             "id": "gq_l110_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ to achieving financial targets, the company must also consider sustainability.",
-            "options": [
-                "Besides",
-                "In addition",
-                "Furthermore",
-                "Other than"
-            ],
+            "question": "\u2014 Tell me about your experience.\n\u2014 I haven't ___ worked in this exact industry, but I'm a fast learner.",
+            "options": ["already", "ever", "never", "yet"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "In addition",
-            "hint": "Which phrase means 'as well as' when adding another key point?",
-            "explanation": "'In addition to + noun/gerund': In addition to achieving financial targets, the company must consider sustainability. 'Besides' is similar but slightly less formal. 'Furthermore' connects complete sentences.",
-            "grammarRule": "Discourse Connectors (Advanced)"
+            "correctAnswer": "ever",
+            "hint": "This honest admission uses the negative form, but still needs the question-style partner word.",
+            "explanation": "'Haven't ever' works the same way as 'never', pairing 'ever' with a negative verb: haven't ever worked here. This closes Stage 6's opening block by combining present perfect with the ever/never distinction from Level 106.",
+            "grammarRule": "Ever vs Never: Negative"
         }
     ]
 }

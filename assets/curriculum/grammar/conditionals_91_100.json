@@ -1,577 +1,577 @@
 {
-    "gameType": "conditionals",
-    "batchIndex": 10,
-    "levels": "91-100",
-    "quests": [
-        {
-            "id": "cl_l91_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "Unless you book the flight by midnight,",
-            "options": [
-                "the price would go up.",
-                "the price would have gone up.",
-                "the price goes up.",
-                "the price will go up."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "the price will go up.",
-            "hint": "'Unless you book' = 'if you do NOT book' - real first conditional travel warning.",
-            "explanation": "'Unless' = 'if not'. Failing to book by midnight is a real risk. 'The price will go up' (will + infinitive) - the real, imminent consequence. Airline prices genuinely rise as departure approaches.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l91_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she had been more diplomatic in her response,",
-            "options": [
-                "the client would have remained satisfied.",
-                "the client would remain satisfied.",
-                "the client remains satisfied.",
-                "the client will remain satisfied."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the client would have remained satisfied.",
-            "hint": "Past perfect = she was too blunt - third conditional for a client communication regret.",
-            "explanation": "Third conditional = unreal past. She wasn't diplomatic enough (past perfect = the careful response that didn't happen). If she had been (imaginary), the client would have remained satisfied (would have + past participle - the preserved business relationship).",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l91_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "As long as he practises daily,",
-            "options": [
-                "he could achieve professional level within a year.",
-                "he would achieve.",
-                "he would have achieved.",
-                "he achieves."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "he would achieve.",
-            "hint": "'As long as he practises daily' = 'if he does' - 'could' for a realistic but ambitious goal.",
-            "explanation": "'As long as' = 'if'. Daily practice is a real, achievable commitment. 'He could achieve professional level' (could + infinitive) - an ambitious but realistic goal. 'Could' acknowledges this is genuinely possible but not guaranteed - practice helps but talent and context also matter.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l92_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the prototype had been user-tested earlier,",
-            "options": [
-                "the design flaws would have been identified sooner.",
-                "the flaws would be identified sooner.",
-                "the flaws are identified sooner.",
-                "the flaws will be identified sooner."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the design flaws would have been identified sooner.",
-            "hint": "Past perfect = testing was delayed - third conditional for a product design lesson.",
-            "explanation": "Third conditional = unreal past. User testing was delayed (past perfect = earlier testing that didn't happen). If it had been tested sooner (imaginary), the design flaws would have been identified earlier (would have + passive past participle - the prevented product launch problem).",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l92_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "Unless the board approves the budget increase,",
-            "options": [
-                "the expansion plan will have to be put on hold.",
-                "the plan would be put on hold.",
-                "the plan would have been put on hold.",
-                "the plan is put on hold."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the expansion plan will have to be put on hold.",
-            "hint": "'Unless the board approves' = 'if it does NOT approve' - real business consequence.",
-            "explanation": "'Unless' = 'if not'. Board approval is a real requirement. 'The plan will have to be put on hold' (will + infinitive) - the real organisational consequence of the budget being denied. A real corporate governance scenario.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l92_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "Provided that the evidence is strong enough,",
-            "options": [
-                "the case will proceed to trial.",
-                "the case would proceed.",
-                "the case would have proceeded.",
-                "the case proceeds."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the case will proceed to trial.",
-            "hint": "'Provided that evidence is strong' = 'if it is' - formal legal condition with 'will'.",
-            "explanation": "'Provided that' = 'if' (legal context). Strong evidence is a real, assessable condition. 'The case will proceed to trial' (will + infinitive) - the real legal outcome when the evidentiary standard is met. A formal legal conditional.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l93_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she had been promoted to director last year,",
-            "options": [
-                "she would be earning considerably more now.",
-                "she would have earned more.",
-                "she earns more now.",
-                "she will earn more."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "she would be earning considerably more now.",
-            "hint": "Past perfect + present salary - mixed conditional about a missed promotion.",
-            "explanation": "Mixed conditional: If + past perfect (unreal past event), would + be (present consequence). She wasn't promoted (past perfect = the missed career event). If she had been (imaginary), she would be earning more NOW (would + infinitive - the present salary she'd have). Past event → present income.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l93_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "Unless the project manager escalates the issue,",
-            "options": [
-                "it will continue to block progress.",
-                "it would continue.",
-                "it would have continued.",
-                "it continues."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "it will continue to block progress.",
-            "hint": "'Unless the PM escalates' = 'if they do NOT escalate' - real project management consequence.",
-            "explanation": "'Unless' = 'if not'. Failing to escalate is a real management risk. 'It will continue to block progress' (will + infinitive) - the real, ongoing consequence of inaction. A real project management warning.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l93_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "As long as the exchange rate remains favourable,",
-            "options": [
-                "exports will remain competitive.",
-                "exports would remain competitive.",
-                "exports would have remained competitive.",
-                "exports remain competitive."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "exports will remain competitive.",
-            "hint": "'As long as rates are favourable' = 'if they are' - real economic condition with 'will'.",
-            "explanation": "'As long as' = 'provided that'. A favourable exchange rate is a real macroeconomic condition. 'Exports will remain competitive' (will + infinitive) - the real commercial outcome. A real international trade scenario.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l94_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the research had been published sooner,",
-            "options": [
-                "other scientists would have been able to build on it earlier.",
-                "they would build on it.",
-                "they build on it.",
-                "they will build on it."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "other scientists would have been able to build on it earlier.",
-            "hint": "Past perfect = delayed publication - third conditional for an academic impact regret.",
-            "explanation": "Third conditional = unreal past. The research was published late (past perfect = earlier publication that didn't happen). If it had been published sooner (imaginary), other scientists would have been able to build on it earlier (would have + past participle - the missed scientific progress).",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l94_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "Unless the infrastructure is modernised,",
-            "options": [
-                "the system will fail to cope with increased demand.",
-                "the system would fail.",
-                "the system would have failed.",
-                "the system fails."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the system will fail to cope with increased demand.",
-            "hint": "'Unless infrastructure is modernised' = 'if it is NOT' - real capacity warning.",
-            "explanation": "'Unless' = 'if not'. Failure to modernise is a real possibility. 'The system will fail to cope' (will + infinitive) - the real, predictable capacity consequence. A real infrastructure planning warning.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l94_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "Provided that volunteers arrive on time,",
-            "options": [
-                "the event will run smoothly.",
-                "the event would run smoothly.",
-                "the event would have run smoothly.",
-                "the event runs smoothly."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the event will run smoothly.",
-            "hint": "'Provided that volunteers arrive' = 'if they do' - real event management condition.",
-            "explanation": "'Provided that' = 'if'. Volunteer punctuality is a real operational condition. 'The event will run smoothly' (will + infinitive) - the real outcome when the condition is met. A practical event management scenario.",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l95_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If he had launched the product six months earlier,",
-            "options": [
-                "he would be the market leader by now.",
-                "he would have been market leader.",
-                "he is the market leader.",
-                "he will be market leader."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "he would be the market leader by now.",
-            "hint": "Past perfect + present market position - mixed conditional about a launch timing decision.",
-            "explanation": "Mixed conditional: If + past perfect (unreal past timing), would + be (present market position). He launched too late. If he had launched earlier (imaginary), he would be the market leader NOW (would + infinitive - the present competitive standing he'd have). Past timing → present position.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l95_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "Unless employees are regularly engaged in development,",
-            "options": [
-                "motivation will fall and turnover will rise.",
-                "motivation would fall.",
-                "motivation would have fallen.",
-                "motivation falls."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "motivation will fall and turnover will rise.",
-            "hint": "'Unless employees are developed' = 'if they are NOT' - real HR consequence.",
-            "explanation": "'Unless' = 'if not'. Neglecting development is a real management risk. 'Motivation will fall and turnover will rise' (will + infinitive) - the real, predictable HR consequence. Parallel 'will' clauses show both consequences clearly.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l95_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "As long as the safety checks are completed,",
-            "options": [
-                "the construction can begin.",
-                "the construction would begin.",
-                "the construction would have begun.",
-                "the construction begins."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the construction can begin.",
-            "hint": "'As long as safety checks are done' = 'if they are' - 'can' shows enabled construction.",
-            "explanation": "'As long as' = 'provided that'. Completing safety checks is a real, required condition. 'The construction can begin' (can + infinitive) - the permitted activity once the safety condition is satisfied. 'Can' emphasises the enabling nature of completing the checks.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l96_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the government hadn't subsidised renewable energy,",
-            "options": [
-                "solar panels would cost three times as much today.",
-                "solar panels would cost three times as much.",
-                "solar panels cost three times as much.",
-                "solar panels will cost three times as much."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "solar panels would cost three times as much today.",
-            "hint": "Negative past perfect + present cost - mixed conditional about energy policy impact.",
-            "explanation": "Mixed conditional: If + past perfect negative, would + cost (present price). The government DID subsidise (negative past perfect = the reverse). If it HADN'T (imaginary), solar panels would cost three times as much TODAY (would + infinitive - the present price impact of the missing policy).",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l96_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "Unless the flooding is managed effectively,",
-            "options": [
-                "downstream communities will face serious risks.",
-                "communities would face risks.",
-                "communities would have faced risks.",
-                "communities face risks."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "downstream communities will face serious risks.",
-            "hint": "'Unless flooding is managed' = 'if it is NOT managed effectively' - real environmental risk.",
-            "explanation": "'Unless' = 'if not'. Ineffective flood management is a real risk. 'Communities will face serious risks' (will + infinitive) - the real, predictable consequence of poor flood management. A real environmental emergency management scenario.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l96_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "Provided that the medication is taken consistently,",
-            "options": [
-                "the condition will be well managed.",
-                "the condition would be managed.",
-                "the condition would have been managed.",
-                "the condition is managed."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the condition will be well managed.",
-            "hint": "'Provided that it's taken consistently' = 'if it is' - real medical outcome.",
-            "explanation": "'Provided that' = 'if' (medical context). Consistent medication is a real, achievable condition. 'The condition will be well managed' (will + infinitive) - the real medical outcome when treatment is followed correctly. A real chronic condition management scenario.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l97_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she had accepted the role in Singapore,",
-            "options": [
-                "she would be fluent in Mandarin by now.",
-                "she would have been fluent.",
-                "she is fluent in Mandarin.",
-                "she will be fluent."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "she would be fluent in Mandarin by now.",
-            "hint": "Past perfect + present language skill - mixed conditional about a career decision.",
-            "explanation": "Mixed conditional: If + past perfect (unreal past decision), would + be (present ability). She declined the role. If she had accepted it (imaginary), she would be fluent in Mandarin BY NOW (would + infinitive - the present linguistic ability she'd have). Past career choice → present skill level.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l97_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "Unless the organisation adapts to new technologies,",
-            "options": [
-                "it will lose its competitive edge.",
-                "it would lose its edge.",
-                "it would have lost its edge.",
-                "it loses its edge."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "it will lose its competitive edge.",
-            "hint": "'Unless it adapts' = 'if it does NOT adapt' - real competitive consequence.",
-            "explanation": "'Unless' = 'if not'. Failure to adapt is a real strategic risk. 'It will lose its competitive edge' (will + infinitive) - the real, predictable consequence of technological stagnation. A real digital transformation warning.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l97_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "As long as the partnership remains mutually beneficial,",
-            "options": [
-                "both companies will continue to collaborate.",
-                "both would continue.",
-                "both would have continued.",
-                "both continue."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "both companies will continue to collaborate.",
-            "hint": "'As long as it's mutually beneficial' = 'if it is' - real business partnership condition.",
-            "explanation": "'As long as' = 'provided that'. Mutual benefit is a real, ongoing commercial condition. 'Both companies will continue to collaborate' (will + infinitive) - the real commercial outcome when the partnership condition is met. A real business partnership scenario.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l98_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the company had invested in staff training five years ago,",
-            "options": [
-                "its productivity would be significantly higher now.",
-                "its productivity would have been higher.",
-                "its productivity is higher.",
-                "its productivity will be higher."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "its productivity would have been higher.",
-            "hint": "Past perfect + present productivity - mixed conditional about a training investment decision.",
-            "explanation": "Mixed conditional: If + past perfect (unreal past investment), would + be (present output). The company didn't invest in training. If it had (imaginary), productivity would be significantly higher NOW (would + infinitive - the present performance level it would have). Past investment → present output.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l98_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "Unless the water table is replenished,",
-            "options": [
-                "the region will face severe drought within a decade.",
-                "the region would face drought.",
-                "the region would have faced drought.",
-                "the region faces drought."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the region will face severe drought within a decade.",
-            "hint": "'Unless the water table is replenished' = 'if it is NOT' - real environmental consequence.",
-            "explanation": "'Unless' = 'if not'. Failure to replenish groundwater is a real, measurable risk. 'The region will face severe drought' (will + infinitive) - the real, scientifically predicted consequence of water table depletion. A real environmental resource management scenario.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l98_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "Provided that the new hire integrates well with the team,",
-            "options": [
-                "the department will become much more efficient.",
-                "it would become more efficient.",
-                "it would have become more efficient.",
-                "it becomes more efficient."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the department will become much more efficient.",
-            "hint": "'Provided that the hire integrates well' = 'if they do' - real HR outcome with 'will'.",
-            "explanation": "'Provided that' = 'if'. Team integration is a real, observable condition. 'The department will become more efficient' (will + infinitive) - the real expected organisational benefit. A real team dynamics scenario in conditional form.",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l99_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she had pursued a career in academia,",
-            "options": [
-                "she would be conducting cutting-edge research now.",
-                "she would have conducted research.",
-                "she conducts research now.",
-                "she will conduct research."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "she would be conducting cutting-edge research now.",
-            "hint": "Past perfect + present career activity - mixed conditional about an academic career path.",
-            "explanation": "Mixed conditional: If + past perfect (unreal past career choice), would + be (present work). She chose a different career. If she had pursued academia (imaginary), she would be conducting cutting-edge research NOW (would + infinitive - the present professional activity she'd have). Past choice → present career.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l99_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "Unless pension contributions are increased,",
-            "options": [
-                "many workers will face financial hardship in retirement.",
-                "workers would face hardship.",
-                "workers would have faced hardship.",
-                "workers face hardship."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "many workers will face financial hardship in retirement.",
-            "hint": "'Unless contributions are increased' = 'if they are NOT' - real retirement planning consequence.",
-            "explanation": "'Unless' = 'if not'. Insufficient pension saving is a real, widespread risk. 'Many workers will face hardship in retirement' (will + infinitive) - the real, predictable long-term consequence of under-saving. A real social policy warning.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l99_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "As long as the data is handled in compliance with regulations,",
-            "options": [
-                "the company will avoid significant fines.",
-                "the company would avoid fines.",
-                "the company would have avoided fines.",
-                "the company avoids fines."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "the company would avoid fines.",
-            "hint": "'As long as data is handled compliantly' = 'if it is' - real legal compliance outcome.",
-            "explanation": "'As long as' = 'provided that'. Regulatory compliance is a real, ongoing legal condition. 'The company will avoid fines' (will + infinitive) - the real legal outcome when data protection laws are followed. A real GDPR/data compliance scenario.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l100_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she had been appointed to the committee earlier,",
-            "options": [
-                "she would have had more influence over the final decision.",
-                "she would have more influence.",
-                "she has more influence.",
-                "she will have more influence."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "she would have had more influence over the final decision.",
-            "hint": "Past perfect = late appointment - third conditional for a governance influence regret.",
-            "explanation": "Third conditional = unreal past. She was appointed too late (past perfect = the earlier appointment that didn't happen). If she had been appointed sooner (imaginary), she would have had more influence (would have + past participle - the missed decision-making impact).",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l100_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "Unless the structural survey is completed first,",
-            "options": [
-                "the building will not be safe to occupy.",
-                "it would not be safe.",
-                "it would not have been safe.",
-                "it is not safe to occupy."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the building will not be safe to occupy.",
-            "hint": "'Unless the survey is done first' = 'if it is NOT done first' - real safety precondition.",
-            "explanation": "'Unless' = 'if not'. Skipping the structural survey is a real, dangerous possibility. 'The building will not be safe to occupy' (will + infinitive) - the real safety consequence of missing the required inspection. A real building safety regulation scenario.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l100_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "Provided that the two sides reach a compromise,",
-            "options": [
-                "the industrial dispute will be resolved without a strike.",
-                "it would be resolved.",
-                "it would have been resolved.",
-                "it is resolved."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the industrial dispute will be resolved without a strike.",
-            "hint": "'Provided that they reach a compromise' = 'if they do' - real labour relations outcome.",
-            "explanation": "'Provided that' = 'if'. A compromise is a real, possible negotiated outcome. 'The dispute will be resolved without a strike' (will + infinitive) - the real outcome when the negotiation condition is met. A real labour relations scenario.",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 1
-        }
-    ]
+  "gameType": "conditionals",
+  "batchIndex": 10,
+  "levels": "91-100",
+  "quests": [
+    {
+      "id": "cl_l91_q1",
+      "instruction": "SELECT THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If I had more experience,",
+      "options": [
+        "I would apply for the senior role.",
+        "I apply for the senior role.",
+        "I will apply for the senior role.",
+        "I would have applied for the senior role."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "I would apply for the senior role.",
+      "hint": "A present lack of experience, imagined differently now.",
+      "explanation": "The speaker currently lacks experience, so this imagines a different present situation, using second conditional (past simple + would), not the past-focused third conditional.",
+      "grammarRule": "Second Conditional",
+      "conditionalType": 2
+    },
+    {
+      "id": "cl_l91_q2",
+      "instruction": "MATCH THE OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If I had gained more experience at my last job,",
+      "options": [
+        "I qualify for the senior role.",
+        "I will qualify for the senior role.",
+        "I would qualify for the senior role.",
+        "I would have qualified for the senior role."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "I would have qualified for the senior role.",
+      "hint": "A past opportunity at a specific former job — third conditional.",
+      "explanation": "This refers to a specific past job that has ended, so third conditional (past perfect + would have + past participle) is correct, unlike the present-focused version above.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l91_q3",
+      "instruction": "FIND THE RIGHT OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If she spoke French,",
+      "options": [
+        "she would translate the documents herself.",
+        "she would have translated the documents herself.",
+        "she translates the documents herself.",
+        "she will translate the documents herself."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "she would translate the documents herself.",
+      "hint": "A present skill she doesn't have — second conditional.",
+      "explanation": "She doesn't currently speak French, so this imagines a different present ability, using past simple + would.",
+      "grammarRule": "Second Conditional",
+      "conditionalType": 2
+    },
+    {
+      "id": "cl_l92_q1",
+      "instruction": "COMPLETE THE IDEA",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If he had learned French in school,",
+      "options": [
+        "he would translate the documents himself.",
+        "he translates the documents himself.",
+        "he will translate the documents himself.",
+        "he would have translated the documents himself."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "he would have translated the documents himself.",
+      "hint": "A past educational choice — third conditional.",
+      "explanation": "School is finished, so this refers to a specific unreal past decision and its imagined past result, using past perfect + would have + past participle.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l92_q2",
+      "instruction": "CONNECT THE CONDITION",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If we had a bigger budget this year,",
+      "options": [
+        "we would hire two more designers.",
+        "we would have hired two more designers.",
+        "we hire two more designers.",
+        "we will hire two more designers."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "we would hire two more designers.",
+      "hint": "A present financial situation — second conditional.",
+      "explanation": "The budget this year is a current, ongoing situation, so second conditional (past simple + would) fits the present hypothetical.",
+      "grammarRule": "Second Conditional",
+      "conditionalType": 2
+    },
+    {
+      "id": "cl_l92_q3",
+      "instruction": "LINK THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If we had had a bigger budget last year,",
+      "options": [
+        "we would have brought on two more designers.",
+        "we bring on two more designers.",
+        "we would bring on two more designers.",
+        "we will bring on two more designers."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "we would have brought on two more designers.",
+      "hint": "A specific past year that has ended — third conditional.",
+      "explanation": "'Last year' is a completed, specific past period, so third conditional (past perfect + would have + past participle) is correct.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l93_q1",
+      "instruction": "COMPLETE THE LINK",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the bridge weren't closed right now,",
+      "options": [
+        "the drive takes twenty minutes.",
+        "the drive will take twenty minutes.",
+        "the drive would have taken twenty minutes.",
+        "the drive would take twenty minutes."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the drive would take twenty minutes.",
+      "hint": "'Right now' signals a present unreal situation.",
+      "explanation": "'Right now' points to the present moment, so second conditional (past simple 'weren't' + would) is correct.",
+      "grammarRule": "Second Conditional",
+      "conditionalType": 2
+    },
+    {
+      "id": "cl_l93_q2",
+      "instruction": "PICK THE NATURAL RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the bridge hadn't been closed that day,",
+      "options": [
+        "the drive would have been much quicker.",
+        "the drive is much quicker.",
+        "the drive will be much quicker.",
+        "the drive would be much quicker."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the drive would have been much quicker.",
+      "hint": "'That day' signals a specific completed past event.",
+      "explanation": "'That day' refers to one specific, finished past event, so third conditional (past perfect + would have + past participle) is correct.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l93_q3",
+      "instruction": "CHOOSE THE RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If I owned a car,",
+      "options": [
+        "commuting is so much easier.",
+        "commuting will be so much easier.",
+        "commuting would be so much easier.",
+        "commuting would have been so much easier."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "commuting would be so much easier.",
+      "hint": "A present situation — the speaker doesn't own a car now.",
+      "explanation": "The speaker currently has no car, an ongoing present fact, so second conditional (past simple + would) is correct.",
+      "grammarRule": "Second Conditional",
+      "conditionalType": 2
+    },
+    {
+      "id": "cl_l94_q1",
+      "instruction": "COMPLETE THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If I had bought that stock last year,",
+      "options": [
+        "I will double my money.",
+        "I would double my money.",
+        "I double my money.",
+        "I would have doubled my money."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "I would have doubled my money.",
+      "hint": "A specific past financial decision — third conditional.",
+      "explanation": "'Last year' refers to a completed past opportunity, so third conditional (past perfect + would have + past participle) fits.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l94_q2",
+      "instruction": "FINISH THE CONDITIONAL",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If I had more capital to invest,",
+      "options": [
+        "I would have bought that stock today.",
+        "I would buy that stock today.",
+        "I buy that stock today.",
+        "I will buy that stock today."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "I would buy that stock today.",
+      "hint": "A present financial limitation — second conditional.",
+      "explanation": "This describes the speaker's current, ongoing lack of capital, so second conditional (past simple + would) is correct.",
+      "grammarRule": "Second Conditional",
+      "conditionalType": 2
+    },
+    {
+      "id": "cl_l94_q3",
+      "instruction": "SELECT THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If they had diversified their portfolio earlier,",
+      "options": [
+        "they will weather the crash better.",
+        "they would have weathered the crash better.",
+        "they would weather the crash better.",
+        "they weather the crash better."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "they would have weathered the crash better.",
+      "hint": "A past financial decision affecting a completed past event.",
+      "explanation": "This refers to a specific past crash and a past decision that wasn't made, so third conditional (past perfect + would have + past participle) is correct.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l95_q1",
+      "instruction": "MATCH THE OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If she practiced every day,",
+      "options": [
+        "she will improve quickly.",
+        "she would improve quickly.",
+        "she improves quickly.",
+        "she would have improved quickly."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "she would improve quickly.",
+      "hint": "A present/ongoing hypothetical habit.",
+      "explanation": "This imagines a present or ongoing habit she doesn't currently have, so second conditional (past simple + would) fits.",
+      "grammarRule": "Second Conditional",
+      "conditionalType": 2
+    },
+    {
+      "id": "cl_l95_q2",
+      "instruction": "FIND THE RIGHT OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If she had practiced every day last year,",
+      "options": [
+        "she improves much faster.",
+        "she would have improved much faster.",
+        "she will improve much faster.",
+        "she would improve much faster."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "she would have improved much faster.",
+      "hint": "A specific, completed past year — third conditional.",
+      "explanation": "'Last year' is a specific, finished period, so third conditional (past perfect + would have + past participle) is correct.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l95_q3",
+      "instruction": "COMPLETE THE IDEA",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the team communicated better,",
+      "options": [
+        "fewer mistakes will happen.",
+        "fewer mistakes happen.",
+        "fewer mistakes would happen.",
+        "fewer mistakes would have happened."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "fewer mistakes would happen.",
+      "hint": "An ongoing present situation, not one finished event.",
+      "explanation": "This describes an ongoing present team dynamic, so second conditional (past simple + would) is correct.",
+      "grammarRule": "Second Conditional",
+      "conditionalType": 2
+    },
+    {
+      "id": "cl_l96_q1",
+      "instruction": "CONNECT THE CONDITION",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the team had communicated better during the launch,",
+      "options": [
+        "the whole rollout will run far more smoothly.",
+        "the whole rollout would run far more smoothly.",
+        "the whole rollout would have run far more smoothly.",
+        "the whole rollout runs far more smoothly."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the whole rollout would have run far more smoothly.",
+      "hint": "'During the launch' points to a specific, completed past event.",
+      "explanation": "'During the launch' refers to a specific, finished past event, so third conditional (past perfect + would have + past participle) is correct.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l96_q2",
+      "instruction": "LINK THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If I knew how to code,",
+      "options": [
+        "I will build the app myself.",
+        "I would have built the app myself.",
+        "I build the app myself.",
+        "I would build the app myself."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "I would build the app myself.",
+      "hint": "A present skill the speaker lacks — second conditional.",
+      "explanation": "The speaker currently doesn't know how to code, an ongoing present fact, so second conditional (past simple + would) is correct.",
+      "grammarRule": "Second Conditional",
+      "conditionalType": 2
+    },
+    {
+      "id": "cl_l96_q3",
+      "instruction": "COMPLETE THE LINK",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If I had learned to code in college,",
+      "options": [
+        "I would have built the app myself back then.",
+        "I would build the app myself back then.",
+        "I will build the app myself.",
+        "I build the app myself."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "I would have built the app myself back then.",
+      "hint": "'In college' and 'back then' point clearly to a finished past period.",
+      "explanation": "'In college' and 'back then' clearly locate this in a finished past period, so third conditional (past perfect + would have + past participle) is correct.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l97_q1",
+      "instruction": "PICK THE NATURAL RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the flight weren't fully booked,",
+      "options": [
+        "we would have upgraded to business class.",
+        "we will upgrade to business class.",
+        "we would upgrade to business class.",
+        "we upgrade to business class."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "we would upgrade to business class.",
+      "hint": "A present, ongoing situation about this flight.",
+      "explanation": "The flight's booking status is a current, ongoing fact, so second conditional (past simple 'weren't' + would) fits.",
+      "grammarRule": "Second Conditional",
+      "conditionalType": 2
+    },
+    {
+      "id": "cl_l97_q2",
+      "instruction": "CHOOSE THE RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the flight hadn't been fully booked,",
+      "options": [
+        "we would have flown business class instead.",
+        "we will fly business class instead.",
+        "we fly business class instead.",
+        "we would fly business class instead."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "we would have flown business class instead.",
+      "hint": "A specific, completed past flight — third conditional.",
+      "explanation": "This refers to one specific, already-completed flight, so third conditional (past perfect + would have + past participle) is correct.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l97_q3",
+      "instruction": "COMPLETE THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If I had a bit more patience,",
+      "options": [
+        "I would handle these situations far better.",
+        "I would have handled these situations far better.",
+        "I will handle these situations far better.",
+        "I handle these situations far better."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "I would handle these situations far better.",
+      "hint": "An ongoing present personality trait.",
+      "explanation": "This describes the speaker's current, ongoing character, so second conditional (past simple + would) is correct.",
+      "grammarRule": "Second Conditional",
+      "conditionalType": 2
+    },
+    {
+      "id": "cl_l98_q1",
+      "instruction": "FINISH THE CONDITIONAL",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If she hadn't cancelled the meeting,",
+      "options": [
+        "we sign the contract that afternoon.",
+        "we would sign the contract that afternoon.",
+        "we will sign the contract that afternoon.",
+        "we would have signed the contract that afternoon."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "we would have signed the contract that afternoon.",
+      "hint": "'That afternoon' points to one specific, completed past event.",
+      "explanation": "'That afternoon' locates this in a specific, finished past moment, so third conditional (past perfect + would have + past participle) is correct.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l98_q2",
+      "instruction": "SELECT THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If she weren't so overwhelmed with work,",
+      "options": [
+        "she will take on the new client happily.",
+        "she would take on the new client happily.",
+        "she would have taken on the new client happily.",
+        "she takes on the new client happily."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "she would take on the new client happily.",
+      "hint": "An ongoing present workload situation.",
+      "explanation": "Her workload is a current, ongoing situation, so second conditional (past simple 'weren't' + would) is correct.",
+      "grammarRule": "Second Conditional",
+      "conditionalType": 2
+    },
+    {
+      "id": "cl_l98_q3",
+      "instruction": "MATCH THE OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the printer worked properly,",
+      "options": [
+        "we won't waste so much paper.",
+        "we don't waste so much paper.",
+        "we wouldn't have wasted so much paper.",
+        "we wouldn't waste so much paper."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "we wouldn't waste so much paper.",
+      "hint": "An ongoing present equipment problem.",
+      "explanation": "The printer's malfunction is a current, ongoing problem, so second conditional (past simple + would) is correct.",
+      "grammarRule": "Second Conditional",
+      "conditionalType": 2
+    },
+    {
+      "id": "cl_l99_q1",
+      "instruction": "FIND THE RIGHT OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the printer hadn't jammed this morning,",
+      "options": [
+        "we won't go through so much paper.",
+        "we wouldn't go through so much paper.",
+        "we don't go through so much paper.",
+        "we wouldn't have gone through so much paper."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "we wouldn't have gone through so much paper.",
+      "hint": "'This morning' refers to one specific, completed past event.",
+      "explanation": "'This morning' points to a specific, finished past event, so third conditional (past perfect + wouldn't have + past participle) is correct.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l99_q2",
+      "instruction": "COMPLETE THE IDEA",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If I had a stronger internet connection,",
+      "options": [
+        "video calls don't freeze so often.",
+        "video calls wouldn't have frozen so often.",
+        "video calls won't freeze so often.",
+        "video calls wouldn't freeze so often."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "video calls wouldn't freeze so often.",
+      "hint": "An ongoing present connectivity issue.",
+      "explanation": "This describes an ongoing, current connection problem, so second conditional (past simple + would) is correct.",
+      "grammarRule": "Second Conditional",
+      "conditionalType": 2
+    },
+    {
+      "id": "cl_l99_q3",
+      "instruction": "CONNECT THE CONDITION",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the router hadn't failed last night,",
+      "options": [
+        "the video call doesn't freeze constantly.",
+        "the video call won't freeze constantly.",
+        "the video call wouldn't freeze constantly.",
+        "the video call wouldn't have frozen constantly."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the video call wouldn't have frozen constantly.",
+      "hint": "'Last night' refers to a specific, completed past event.",
+      "explanation": "'Last night' locates this in a specific, finished past event, so third conditional (past perfect + wouldn't have + past participle) is correct.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l100_q1",
+      "instruction": "LINK THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the company were smaller,",
+      "options": [
+        "decisions would have happened much faster.",
+        "decisions happen much faster.",
+        "decisions would happen much faster.",
+        "decisions will happen much faster."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "decisions would happen much faster.",
+      "hint": "An ongoing present company size, not a past event.",
+      "explanation": "The company's current size is an ongoing present fact, so second conditional (past simple 'were' + would) is correct.",
+      "grammarRule": "Second Conditional",
+      "conditionalType": 2
+    },
+    {
+      "id": "cl_l100_q2",
+      "instruction": "COMPLETE THE LINK",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the company had stayed smaller,",
+      "options": [
+        "decisions would have moved through much faster.",
+        "decisions would move through much faster.",
+        "decisions will move through much faster.",
+        "decisions move through much faster."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "decisions would have moved through much faster.",
+      "hint": "A completed past growth process — third conditional, capstone contrast.",
+      "explanation": "'Had stayed' refers to a past growth process that has already happened and finished, so third conditional (past perfect + would have + past participle) is correct, contrasting with the present hypothetical above.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l100_q3",
+      "instruction": "PICK THE NATURAL RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If I hadn't lost my notes before the exam,",
+      "options": [
+        "I remember every formula.",
+        "I would have remembered every formula.",
+        "I would remember every formula.",
+        "I will remember every formula."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "I would have remembered every formula.",
+      "hint": "A specific, completed past event — third conditional.",
+      "explanation": "This refers to one specific, finished past exam, so third conditional (past perfect + would have + past participle) is correct.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    }
+  ]
 }

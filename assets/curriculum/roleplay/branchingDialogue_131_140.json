@@ -1,787 +1,787 @@
 {
-    "gameType": "branchingDialogue",
-    "batchIndex": 14,
-    "levels": "131-140",
-    "quests": [
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I've been asked to take command of an operation I believe has insufficient resources to succeed. Do I accept or decline?'",
-            "options": [
-                "I'd accept, but only after formally documenting my resource assessment - so there's a clear record that the risk was flagged.",
-                "Decline - no professional should accept a mission they believe is under-resourced.",
-                "Accept and find creative ways to succeed with limited resources - that is what leadership is about."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Accept with a formal, documented objection rather than a silent yes or a flat no.",
-            "explanation": "Documenting the assessment before accepting preserves professional integrity while still fulfilling the duty. 'Decline - no professional should accept an under-resourced mission' treats 'inadequate' the same as 'impossible.' 'Accept and find creative ways to succeed' accepts without leaving any record of the risk.",
-            "id": "bd_l131_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I need to advise a foreign government on their internal security architecture. My government has an interest in the outcome. How do I manage the conflict between my role as an adviser and my government's interests?'",
-            "options": [
-                "I'd disclose the conflict fully before starting - they deserve to know my government has an interest before accepting my advice.",
-                "Focus on providing the best professional advice possible and let your government manage their interests separately.",
-                "Consult with your government first to understand the extent of their interest before providing any advice."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Disclose the conflict to the foreign government before any advice is given.",
-            "explanation": "Full disclosure treats the foreign government as an equal party with a right to know. 'Focus on the best advice and let your government manage separately' skips the disclosure obligation entirely. 'Consult your government first' centres your own government's interests over the other party's right to know.",
-            "id": "bd_l131_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I've been asked to create a dish that uses an ingredient that I know is sourced from ecologically destructive practices. The client insists. How do you respond?'",
-            "options": [
-                "I'd decline, explain exactly why, and offer a responsibly-sourced alternative - and if they insist, I'd decline the whole commission.",
-                "Use the ingredient this once as a commercial exception while advocating for change in sourcing practices.",
-                "Raise the sourcing concern with the client and provide information about the ecological impact so they can make an informed decision."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Decline with a clear reason and an alternative, and hold that line if they push back.",
-            "explanation": "A clear decline, a genuine alternative, and a firm line if pushed is principled and consistent. 'Use it this once as an exception' undermines the very principle being claimed. 'Raise the concern and let them decide' hands off a decision that calls for a professional stance.",
-            "id": "bd_l131_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'A pharmaceutical company is offering a very large donation to our research institute, but only if we commit to using their products in our research. What is the right response?'",
-            "options": [
-                "Seek advice from your ethics committee before deciding.",
-                "I'd decline it as structured - a commitment to specific products creates exactly the bias research funding needs to avoid.",
-                "Accept the donation with full disclosure in all publications - transparency mitigates the conflict."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Decline the restricted structure, since transparency alone doesn't remove a methodological bias.",
-            "explanation": "Naming the exact mechanism of bias, and declining the restricted structure, protects research integrity directly. 'Accept with full disclosure - transparency mitigates the conflict' makes the bias visible without removing it. 'Seek advice from your ethics committee' delays a decision that already has a clear answer.",
-            "id": "bd_l132_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'A major customer has just told me confidentially that they're planning to move their business to a competitor at contract renewal. I still have six months on the contract. What do you do?'",
-            "options": [
-                "Ask them directly what it would take to change their decision and negotiate accordingly.",
-                "Prepare for the loss of the account and begin finding replacement revenue.",
-                "I'd use the six months to understand what's really driving it, address genuine concerns, and demonstrate value through action, not promises."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Use the remaining time to understand and demonstrate value, not just negotiate or give up.",
-            "explanation": "Understanding the real driver first, then demonstrating value through action, uses the six months strategically. 'Ask what it would take and negotiate accordingly' jumps to negotiation before understanding the actual cause. 'Prepare for the loss and find replacement revenue' concedes while there's still real opportunity left.",
-            "id": "bd_l132_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I've been asked to comment publicly on an incident at another airline that I know was handled correctly by the crew but is being misrepresented in the media. What do you do?'",
-            "options": [
-                "Contact the other airline's crew through appropriate channels to offer support, but don't comment publicly.",
-                "I'm not commenting on this specific incident, but I can tell you what correct procedure actually looks like here.",
-                "Comment publicly in defence of the crew - pilots supporting each other in misrepresented incidents is professionally appropriate."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Correct the public record on procedure without commenting on the specific incident.",
-            "explanation": "This corrects the misleading narrative while being explicit about what is and isn't being commented on. 'Contact the crew privately but don't comment publicly' offers peer support without correcting the public record. 'Comment publicly in defence of the crew' risks looking like a defence of this specific incident rather than a correction of the misrepresentation.",
-            "id": "bd_l132_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'An experienced officer under my command believes I made the wrong tactical call in a recent operation. They've raised this formally. How do you respond?'",
-            "options": [
-                "I'd engage with it properly - review the documentation, meet them privately, and give a specific answer to their specific criticism.",
-                "This is healthy - invite the officer to present their case in a team debrief so the learning is shared.",
-                "Acknowledge the formal nature of the challenge and process it through the appropriate review procedures."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Engage substantively with the specific criticism rather than just processing it formally.",
-            "explanation": "Reviewing, meeting privately, and answering specifically shows genuine engagement with whether the criticism is right. 'Acknowledge and process through review procedures' is bureaucratic without substantive engagement. 'Invite them to present in a team debrief' is only appropriate after this private engagement has happened.",
-            "id": "bd_l133_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I'm developing an assessment tool for identifying future intelligence analysts. What specific qualities most predict long-term excellence in analytical work?'",
-            "options": [
-                "Look for candidates with strong academic credentials and relevant subject-matter expertise.",
-                "I'd look for calibrated confidence, real intellectual honesty about the limits of their knowledge, and the ability to change their mind when evidence changes.",
-                "Assess analytical reasoning, attention to detail, pattern recognition, and the ability to work under pressure."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name specific, sophisticated qualities rather than a general assessment framework.",
-            "explanation": "Naming specific qualities - calibration, honesty about limits, and updating on evidence - identifies what genuinely predicts excellence. 'Analytical reasoning, attention to detail, pattern recognition' describes a general assessment framework, not the specific predictive qualities. 'Gather additional intelligence and conduct a rigorous review' doesn't answer the question at all.",
-            "id": "bd_l133_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I want to close the restaurant for a full year while I spend time in different culinary traditions around the world. What are the professional and personal questions I need to answer first?'",
-            "options": [
-                "Research the visa, work permit, and immigration requirements for each country you plan to visit.",
-                "Will the identity survive a year away, can key staff be kept on leave, and what's my honest reason for wanting to do this?",
-                "Study the culinary traditions carefully and consult with authentic practitioners before proceeding."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Ask the substantive professional and personal questions, not just the logistics.",
-            "explanation": "These questions get at identity, staff, and honest motivation - the substantive issues behind the decision. 'Research visa and immigration requirements' is an important practical step, not a professional or personal question. 'Study culinary traditions and consult practitioners' addresses the trip's purpose, not the decision to take it.",
-            "id": "bd_l133_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I've been asked to give a public lecture on a topic where the science is clear but the policy implications are deeply contested politically. How do you navigate this?'",
-            "options": [
-                "Restrict the lecture to the scientific evidence and decline to comment on policy implications.",
-                "Present the science clearly and frame the policy implications as questions for democratic deliberation rather than as your personal position.",
-                "I'd be explicit about the structure throughout - here's what the science settles, and here's where I have views that go beyond it."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Make the structure of the talk explicit rather than avoiding the contested part entirely.",
-            "explanation": "Making the science-versus-opinion structure explicit is honest and protects credibility better than avoidance. 'Restrict the lecture to scientific evidence' abandons a legitimate role for expert input on policy. 'Frame implications as questions for deliberation' avoids sharing a genuine view that, clearly labelled, would be more useful.",
-            "id": "bd_l134_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I'm in a negotiation where the other party has just threatened to walk away if I don't agree to their last demand. Do I believe them?'",
-            "options": [
-                "I'd check their actual alternative to a deal, whether they've made empty threats like this before, and whether their tone sounds genuine or tactical.",
-                "Make a small concession on a low-value item to signal good faith without meeting their full demand.",
-                "Call their bluff - if they want to walk away they will, and no concession at this point is worth it."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Assess the threat with specific tests before deciding how to respond.",
-            "explanation": "These specific tests - alternative, pattern, and tone - give a real basis for assessing credibility. 'Call their bluff' decides to proceed without any assessment first. 'Make a small concession to signal good faith' also skips the assessment, and risks inviting a bigger demand if the threat is genuine.",
-            "id": "bd_l134_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I want to develop a mentoring programme specifically for women pilots in our airline where women are significantly underrepresented. What design considerations matter most?'",
-            "options": [
-                "I'd pair them with mentors who have real operational credibility, build peer networks alongside the mentoring, and target the specific points where women leave the pathway.",
-                "Recruit more women into the pilot pipeline through targeted outreach and scholarships.",
-                "Ensure the programme is visible and endorsed by senior leadership to signal its importance."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Give specific design considerations, not just visibility and endorsement.",
-            "explanation": "Naming credibility, peer networks, and data-driven targeting gives real, specific design substance. 'Ensure visibility and senior endorsement' is one useful element, not the most important design consideration. 'Follow SOPs and consult technical documentation' doesn't address programme design at all.",
-            "id": "bd_l134_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I've been offered a senior position in a different organisation that would represent a significant career advancement. My current team is in a critical phase of a mission. What do you think about?'",
-            "options": [
-                "I'd weigh whether it's genuinely better work or just more senior work, and honestly assess what my leaving would actually cost the team right now.",
-                "Consider the financial implications of the new role compared to your current position.",
-                "Think about whether the career opportunity aligns with your long-term professional goals."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Weigh the genuine quality of the opportunity against an honest cost to the team.",
-            "explanation": "Distinguishing better work from merely more senior work, plus an honest cost assessment, covers the real substance of this decision. 'Think about long-term professional goals' is one relevant but self-focused dimension. 'Ensure clear objectives and regular briefings' doesn't address the decision being asked about at all.",
-            "id": "bd_l135_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I need to build public trust in an intelligence organisation that has recently experienced a major scandal. What approach actually works?'",
-            "options": [
-                "Focus on rebuilding the organisation's public image through consistent, positive messaging over time.",
-                "Appoint a respected independent review panel and implement their recommendations transparently.",
-                "Communication campaigns and promises don't work - what works is real external accountability, and a sustained period where change is independently verified."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name what genuinely rebuilds trust versus what only appears to.",
-            "explanation": "Naming what actually works, including sustained independent verification, is the specific and counter-intuitive answer here. 'Appoint an independent review panel and implement recommendations' is one useful element, but treats the process as sufficient on its own. 'Gather additional intelligence and conduct rigorous review' doesn't address rebuilding public trust at all.",
-            "id": "bd_l135_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I've been offered the opportunity to create a permanent culinary legacy project - something that will outlast my career. What principles guide the design of something meant to endure?'",
-            "options": [
-                "Draw inspiration from your culinary heritage and contemporary trends to create something distinctive and memorable.",
-                "Create something that represents the best of your culinary vision and can inspire future generations.",
-                "Design it to survive without you specifically, build in room for others to correct it later, and hand the governance to the people it serves."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Design for transferability and community governance, not personal vision.",
-            "explanation": "Transferability, room for correction, and community governance are the actual principles that let something outlast its founder. 'Represents the best of your culinary vision' centres the founder rather than what makes something endure. 'Draw inspiration from heritage and trends' describes content, not principles of endurance.",
-            "id": "bd_l135_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I want to create a research environment where people feel safe admitting uncertainty and error. What specific behaviours from me as the leader create that environment?'",
-            "options": [
-                "Share your own uncertainties publicly and specifically, respond to a shared error with curiosity before judgment, and never let the person who flags it pay a cost for it.",
-                "Publicly reward the team members who never make mistakes to set a clear standard.",
-                "Create formal processes for error reporting and uncertainty acknowledgment that make them standard practice."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name specific leader behaviours, not the formal systems around them.",
-            "explanation": "Naming specific behaviours - modelling vulnerability, curiosity first, and no penalty for flagging errors - gives real, actionable leadership practices. 'Create formal processes for error reporting' builds systems without the leader behaviours that give them meaning. 'Conduct a thorough review and consult colleagues' doesn't address leadership behaviour at all.",
-            "id": "bd_l136_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I need to expand internationally but I have limited capital and cannot afford to fail. What market entry strategy minimises the risk of a costly failure?'",
-            "options": [
-                "Enter the market with the most potential first to generate the strongest possible return on the initial investment.",
-                "It has to reach positive cash flow before needing more capital, and test the riskiest assumptions early - that points to distribution partnerships, not direct investment.",
-                "Conduct comprehensive market research and develop a well-evidenced strategic response to the competitive challenge."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Prioritise capital discipline and early testing over chasing the biggest opportunity first.",
-            "explanation": "Naming cash-flow discipline and early assumption-testing gives a strategy actually suited to limited capital. 'Enter the market with the most potential first' prioritises upside over the downside protection that capital constraint requires. 'Conduct comprehensive market research' is sound but doesn't name a specific capital-appropriate strategy.",
-            "id": "bd_l136_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I've been offered the chance to write the standard operating procedures for a brand new type of aircraft that has never entered commercial service before. What principles guide how you write an SOP for the genuinely unknown?'",
-            "options": [
-                "Follow the published procedures precisely and consult the relevant sections of the flight manual before proceeding.",
-                "I'd design around the manufacturer's test data on failure modes, write for when the primary system fails, and build in review triggers early on.",
-                "Follow established aviation SOP development methodology and consult extensively with the manufacturer and test pilots."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Design specifically for the unknown, using test data and early review points.",
-            "explanation": "Using test data for unknown failure modes, and building in early review triggers, addresses the genuine absence of operational history. 'Follow established SOP methodology and consult the manufacturer' describes the process without these specific design principles. 'Follow published procedures and consult the flight manual' doesn't apply when no such procedures exist yet.",
-            "id": "bd_l136_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I need to lead a complex multi-partner operation where each partner has different rules of engagement. How do you create coherent command?'",
-            "options": [
-                "Conduct thorough pre-mission planning and ensure all personnel are briefed on their roles and contingencies.",
-                "Establish a unified command structure with clear decision authority at each level.",
-                "I'd map every scenario against each partner's rules of engagement, find the conflict points, and set a clear protocol for who has authority when they clash."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Make the differences between partners explicit and managed, not unified away.",
-            "explanation": "Mapping specific conflicts and setting a real-time authority protocol manages the actual differences rather than ignoring them. 'Establish a unified command structure' is the goal but doesn't address how to handle genuinely different rules of engagement. 'Conduct thorough pre-mission planning and briefing' is a general statement.",
-            "id": "bd_l137_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I've discovered that an operation I've been running has produced results that my organisation will want to publicise, but the methods used would be controversial if disclosed. How do you handle this tension?'",
-            "options": [
-                "Prioritise the organisation's interest in publicising the results over procedural formality.",
-                "I'd be completely transparent with oversight about the methods, even if not publicly, and let them decide what's appropriate to publicise.",
-                "Ensure the results are communicated effectively and let the oversight process handle any concerns about methods in its own time."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Disclose fully to oversight before any decision is made about publicising results.",
-            "explanation": "Full transparency with oversight, ahead of any publicity decision, protects the integrity of the process. 'Communicate the results effectively and let oversight handle concerns in its own time' sequences disclosure in a way that pre-empts the oversight decision. 'Follow established protocols and consult your handler' is a general statement.",
-            "id": "bd_l137_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I'm being asked to consult on making an historic city's traditional street food culture sustainable in the face of rapid urban development. What framework do you bring to this challenge?'",
-            "options": [
-                "Document the existing food culture comprehensively and advocate for protected zones where traditional street food can continue to operate.",
-                "Focus on modernising the food stalls and improving hygiene standards to meet contemporary expectations.",
-                "I'd centre the vendors' voices, not the planners - real economic viability for them, not the tourism industry, and protection that doesn't turn it into a museum piece."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Centre vendor voices and economic viability, not documentation or preservation zones alone.",
-            "explanation": "Centring vendor voices and their real economic viability addresses who preservation efforts are actually meant to serve. 'Document comprehensively and advocate for protected zones' is a valuable tactic, not a full framework. 'Study the traditions and consult practitioners' is a reasonable first step but not the framework itself.",
-            "id": "bd_l137_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I'm advising a national health authority on a complex ethical question about resource allocation in a context of genuine scarcity. What framework guides this type of advice?'",
-            "options": [
-                "Apply established bioethical frameworks such as those used for organ allocation or pandemic triage.",
-                "No framework removes the tension between competing principles here - the honest one names it openly and involves the affected communities in understanding why.",
-                "Follow established professional guidelines and consult with relevant specialists and oversight bodies as appropriate."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name the unavoidable tension explicitly rather than presenting a resolved framework.",
-            "explanation": "Naming the tension openly, with genuine community engagement, is the most honest framework for a genuinely contested trade-off. 'Apply established bioethical frameworks' is a useful input but treating it as the whole answer misses the transparency obligation. 'Follow established guidelines and consult specialists' is a general statement.",
-            "id": "bd_l138_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I want to understand why my best people keep leaving and going to my competitor. I've done exit interviews but I don't believe the answers I'm getting. How do you find the truth?'",
-            "options": [
-                "Conduct deeper exit interviews using an independent third party who can elicit more honest responses.",
-                "Review your compensation and benefits packages to ensure they remain competitive in the market.",
-                "I'd talk to people who left months ago, once they don't feel at risk, and ask the ones who stayed what almost made them leave."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Look beyond the exit interview itself to people who've had time and distance.",
-            "explanation": "Talking to people well after departure, and to those who stayed, reaches honesty that exit interviews rarely get to. 'Deeper exit interviews with an independent third party' still asks people at the moment of departure, when social pressure still applies. 'Review compensation and benefits' assumes the cause without actually investigating it.",
-            "id": "bd_l138_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I've been asked to advise a government on developing a national culinary identity that can be promoted internationally. What are the most important things to get right?'",
-            "options": [
-                "Resist curating a 'greatest hits' version, let everyday cooks and eaters lead the identity, not the tourism board, and build on real access, not showcases.",
-                "Partner with well-known chefs and food personalities who can lend international credibility.",
-                "Identify the most distinctive and internationally appealing elements of the national cuisine and develop a comprehensive promotion strategy around them."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Resist curation and centre the people who actually live the cuisine daily.",
-            "explanation": "Resisting curation and centring everyday practitioners avoids the sanitised version that most promotion campaigns produce. 'Identify the most appealing elements and develop a promotion strategy' is precisely the curated tourism-board approach this answer warns against. 'Apply your expertise and consult colleagues' is a general statement.",
-            "id": "bd_l138_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I've been asked to advise on the design of a health system for a country that has very different cultural values around health, illness, and the doctor-patient relationship from those embedded in the systems I know. How do you approach this?'",
-            "options": [
-                "Prioritise clinical outcomes and international best practice over local custom wherever the two conflict.",
-                "Study the comparative health systems literature and case studies from similar cultural contexts.",
-                "I'd spend real time learning the actual cultural values from practitioners and patients, then treat those values as a design constraint, not a problem to fix."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Learn from people inside the system, and treat their values as a constraint, not an obstacle.",
-            "explanation": "Learning directly from practitioners and patients, and holding values as a constraint rather than a problem, respects the culture being designed for. 'Study comparative literature and case studies' positions you as studying from outside rather than genuinely engaging. 'Follow established clinical guidelines' is a general statement unrelated to cultural design.",
-            "id": "bd_l139_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I'm about to enter a partnership with an organisation whose values I broadly share but where our definitions of success are quite different. How do you design a partnership that can survive this difference?'",
-            "options": [
-                "I'd make each side's definition of success explicit in writing from the start, and build in a regular joint review to surface tension early.",
-                "Develop a shared definition of success that both parties can commit to from the start.",
-                "Ensure all business activities comply with relevant regulations and reflect the organisation's stated values."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Design for the difference to survive, rather than trying to eliminate it.",
-            "explanation": "Making each definition explicit, plus a regular review, designs a partnership that can survive a real, lasting difference. 'Develop a shared definition both parties commit to' tries to eliminate a difference that may not be eliminable. 'Ensure compliance and reflect stated values' is a general statement.",
-            "id": "bd_l139_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I've been asked to develop a framework for making decisions about deploying autonomous systems in flight operations. What principles should govern when autonomous systems should have decision authority and when humans should retain it?'",
-            "options": [
-                "Adopt a principle of graduated autonomy where autonomous systems advise and humans decide until trust is sufficiently established.",
-                "Autonomous systems should own decisions needing speed beyond human reaction time, humans should own contextual judgment calls, and failures should hand back more control to humans, not less.",
-                "Apply your command authority, consult the relevant documentation, and follow established decision-making frameworks."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Give specific criteria for the authority split, including what happens during failure.",
-            "explanation": "Naming specific criteria, including the failure-mode principle, gives a real governing framework for authority division. 'Graduated autonomy where systems advise until trust is established' is a process approach, not principles for dividing authority. 'Apply your command authority and follow established frameworks' is a general statement.",
-            "id": "bd_l139_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I've been offered an opportunity to testify before an international tribunal on events I was involved in. Some of what I know would be damaging to my own institution. What is your guidance?'",
-            "options": [
-                "Consult with your institution's legal team before testifying to understand what you are and are not obligated to disclose.",
-                "Weigh the potential damage to your institution against the value of your testimony.",
-                "I'd testify truthfully and completely - my obligation is to the truth, not my institution, and this isn't really a close question."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "State the obligation clearly and unambiguously, without treating it as a close call.",
-            "explanation": "Naming the obligation to truth over institution, and treating it as unambiguous, is the specific and principled answer here. 'Consult your institution's legal team first' is useful for legal parameters but frames this as a legal question rather than an ethical one. 'Apply established doctrine and best practices' is a general statement.",
-            "id": "bd_l140_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I've been asked to help design the operational security architecture for a major international summit. What are the most important things to get right that are commonly got wrong?'",
-            "options": [
-                "Conduct a comprehensive threat assessment and design the security architecture to address all identified threat vectors.",
-                "The common mistakes are over-investing in the perimeter while under-investing in insider threat, and treating the summit as one event instead of many smaller ones.",
-                "Increase the security budget significantly to cover every conceivable threat scenario."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name the specific, commonly made mistakes rather than describing the standard process.",
-            "explanation": "Naming specific, commonly made errors gives real insight beyond the standard security process. 'Conduct a comprehensive threat assessment addressing all threat vectors' is the standard process, which is exactly what commonly produces these errors. 'Follow established protocols and consult your handler' is a general statement.",
-            "id": "bd_l140_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I've been asked to create a food programme for a conflict-affected community that needs to restore communal bonds as well as provide nutrition. How does food serve this function?'",
-            "options": [
-                "Ensure the programme provides culturally appropriate food that respects the community's traditional food practices.",
-                "Focus on maximising the nutritional value and caloric content of each meal provided.",
-                "Cooking together, not just delivering food, rebuilds the relationships conflict disrupted - and eating together rebuilds a basic trust that nutrition alone misses."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Explain the social mechanism, not just the requirement for culturally appropriate food.",
-            "explanation": "Naming the specific social mechanisms - shared preparation and shared eating - explains how food serves communal restoration beyond nutrition. 'Provide culturally appropriate food respecting traditional practices' is one relevant element, not the specific mechanisms. 'Apply your expertise and consult colleagues' is a general statement.",
-            "id": "bd_l140_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        }
-    ]
+  "gameType": "branchingDialogue",
+  "batchIndex": 14,
+  "levels": "131-140",
+  "quests": [
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker who misunderstood your tone in a message",
+      "scene": "A coworker replies to your Slack message: 'Wow, okay, didn't realize you'd be so annoyed about this.' You weren't actually annoyed, just brief because you were rushing.",
+      "options": [
+        "I wasn't annoyed, to be fair, I said that fairly quickly, so it's worth double-checking — and I'm honestly still working out how I feel about the whole thing.",
+        "I don't know why you'd think that, I was being totally normal.",
+        "Sorry, that wasn't meant to sound annoyed — I was just rushing between meetings. Didn't mean for it to come across that way at all."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When a message is misread as annoyed or harsh, explain the real reason warmly rather than just denying it or getting defensive.",
+      "explanation": "Explaining the real reason (rushing) and expressing warmth clears up the misunderstanding quickly and repairs the tone. A bare denial doesn't explain what actually happened, which could leave lingering doubt. A defensive response may make your coworker feel dismissed, which could make the misunderstanding worse rather than better.",
+      "id": "bd_l131_q1",
+      "consequencePreviews": [
+        "Here, the bare denial doesn't explain the actual reason or soften the moment, which could leave the misunderstanding lingering.",
+        "Realistically, the defensive tone may make your coworker feel dismissed rather than actually clearing up the misunderstanding.",
+        "In this moment, you clarify the misunderstanding honestly and warmly, which repairs the moment quickly."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who took your joke the wrong way",
+      "scene": "A friend texts: 'That comment kind of stung, not gonna lie.' You made a joke that you genuinely didn't mean to hurt them.",
+      "options": [
+        "Oh no, I really didn't mean it that way at all — I'm sorry it landed like that, that wasn't my intention.",
+        "It was just a joke.",
+        "Sorry you took it that way."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When someone tells you a joke hurt them, acknowledge their feelings and clarify your intent, rather than dismissing it or using a conditional apology.",
+      "explanation": "Acknowledging their feelings sincerely and clarifying your genuine intent shows real care and helps repair the friendship. Calling it 'just a joke' minimizes their actual feelings about it, even if that wasn't your intention. 'Sorry you took it that way' subtly shifts responsibility onto their interpretation rather than genuinely owning the impact.",
+      "id": "bd_l131_q2",
+      "consequencePreviews": [
+        "Here, you acknowledge their feelings sincerely and clarify your intent, which helps repair the moment.",
+        "As a result, dismissing it as 'just a joke' may minimize how your friend actually felt, even though the joke wasn't meant to hurt.",
+        "The phrasing subtly places the issue on how they interpreted it, rather than genuinely owning the impact of the comment."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a close friend who misread a short reply during an already tense week between you",
+      "scene": "A close friend texts: 'Are you mad at me? Your reply felt really cold.' You've both been going through a tense patch lately, and your reply genuinely was just short because you were busy, not upset.",
+      "options": [
+        "I'm not mad, just busy, in hindsight, I hadn't really thought it through, though I'd want to think it over more — and to be fair I only heard about this a few minutes ago myself.",
+        "Not mad at all, I promise — I've just been really swamped this week. I know things have felt a bit off between us lately though, so let's actually talk properly soon?",
+        "Why would you think that? I've been nothing but normal, thinking about it now, I hadn't checked how that would actually land, so there might be a better way to handle it — and I haven't really run it past anyone else yet."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When a misread message happens during a period of underlying tension, clarify the immediate moment while also opening space to address the bigger picture.",
+      "explanation": "Clarifying honestly and acknowledging the broader tension opens a path to actually addressing what's really going on between you, not just this one message. Simply clarifying the immediate reply misses a chance to address the bigger, underlying tension your friend may genuinely be sensing. A defensive response risks confirming, rather than reassuring, your friend's suspicion that something's actually wrong.",
+      "id": "bd_l131_q3",
+      "consequencePreviews": [
+        "As a result, the brief clarification addresses this one message but misses the chance to acknowledge the broader tension your friend may actually be sensing.",
+        "You clarify honestly while also acknowledging the broader tension, opening space for a real conversation rather than just this one moment.",
+        "Here, the defensive response may inadvertently confirm your friend's sense that something's off, rather than reassuring them."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker who made a sharp comment about your work in front of others",
+      "scene": "In a meeting, a coworker says: 'This part of the plan is honestly kind of sloppy,' referring to a section you worked hard on, in front of the whole team.",
+      "options": [
+        "That's not sloppy at all, I put a lot of work into it, in fairness, I hadn't checked how that would actually land, but I'm not totally set on it.",
+        "I'd like to understand what specifically feels sloppy — can we go through it together so I can actually address it?",
+        "Wow, okay, harsh."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When someone makes a sharp comment about your work, redirecting it toward specifics keeps the conversation professional and constructive.",
+      "explanation": "Calmly asking for specifics redirects a sharp comment into something you can actually act on, staying professional in front of the team. Defending your effort focuses on how you feel rather than engaging with any real, underlying concern. Reacting to the tone, without moving toward anything useful, doesn't help resolve the situation.",
+      "id": "bd_l132_q1",
+      "consequencePreviews": [
+        "You may notice that the defensive reaction focuses on your own effort rather than engaging with whatever specific concern might actually exist.",
+        "Here, you respond calmly and professionally, redirecting a sharp comment into something constructive.",
+        "In this moment, the comment reacts to the tone of the criticism but doesn't move the conversation toward anything constructive."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a classmate who snapped at you during a stressful group project",
+      "scene": "A classmate says sharply: 'Can you just do it right this time?' after you made a small error in the shared document.",
+      "options": [
+        "There's no need to be rude about it, looking back, I was going more on instinct than anything, but I'm not totally set on it.",
+        "Sorry, I'll fix it.",
+        "I hear you're frustrated — I'll fix it now. Is there something else going on, or is it mainly about the document?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When someone snaps during a stressful task, addressing the task calmly while gently checking in on the underlying stress often de-escalates better than only apologizing or calling out the tone.",
+      "explanation": "Addressing the task and gently checking in on the underlying stress de-escalates the moment while still being responsive to their frustration. Simply apologizing and fixing it addresses the task but misses a chance to check in on what might really be going on. Calling out the rudeness directly, in an already stressful moment, risks escalating tension rather than calming it.",
+      "id": "bd_l132_q2",
+      "consequencePreviews": [
+        "As a result, the comment addresses the tone directly but may escalate tension rather than de-escalating an already stressful moment.",
+        "In this moment, the response fixes the immediate issue but doesn't address the unusually sharp tone, which might be worth checking on.",
+        "As a result, you address the immediate task calmly while gently checking if there's more behind the sharp tone."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a senior colleague who made a sharp, somewhat public comment questioning your judgment on a decision",
+      "scene": "In a meeting with several other colleagues present, a senior colleague says: 'I'm surprised you went with that approach, seems like a pretty questionable call.' You made the decision deliberately, based on data they may not have seen.",
+      "options": [
+        "I'd be glad to walk through the reasoning — there's some data from the recent user testing that shaped that call, happy to share it so we're on the same page.",
+        "I thought it was the right call based on the data I had.",
+        "That's a bit of an unfair thing to say in front of everyone."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When someone senior questions your judgment publicly, calmly redirect toward the substantive reasoning behind your decision, rather than defending yourself or addressing the public nature of the comment.",
+      "explanation": "Calmly offering to walk through the specific reasoning redirects a public challenge into a substantive, professional conversation that could resolve the real question. Simply defending your reasoning, without offering the data, sounds justificatory rather than genuinely collaborative. Commenting on the fairness of the public criticism, even if valid, risks escalating tension rather than moving toward a productive resolution.",
+      "id": "bd_l132_q3",
+      "consequencePreviews": [
+        "As a result, you respond calmly and professionally, redirecting the public criticism into a substantive, evidence-based conversation.",
+        "Realistically, the defensive framing focuses on justifying yourself rather than actually offering to share the specific reasoning that could resolve the question.",
+        "In this moment, commenting on the fairness of the public criticism may escalate the tension rather than redirecting toward the substantive issue."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a roommate who's upset about a chore disagreement",
+      "scene": "A roommate says, clearly frustrated: 'I feel like I'm always the one doing the dishes around here.' You feel like you've actually been doing your fair share lately.",
+      "options": [
+        "That's not really true, I did the dishes twice this week already.",
+        "I've actually been doing a lot too.",
+        "I hear that you're feeling like it's uneven — can we actually look at this week together and see how it's been split? I want us to actually be fair about it."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When someone voices irritation you don't entirely share, validate the emotion first, then suggest a fair, concrete way to check the underlying facts as a team.",
+      "explanation": "Acknowledging their feeling first, then proposing to look at it together, respects their frustration while working toward an actual, fair resolution. Countering immediately with your own perspective, without acknowledging theirs first, can feel dismissive even if your point is valid. Leading with a factual correction skips validating their feeling, which risks escalating rather than de-escalating the disagreement.",
+      "id": "bd_l133_q1",
+      "consequencePreviews": [
+        "In this moment, leading with a factual correction, without acknowledging their feeling first, may escalate rather than resolve the disagreement.",
+        "As a result, countering their feeling immediately, without first acknowledging it, may come across as dismissive of their frustration.",
+        "As a result, you validate their feeling while proposing a concrete, fair way to actually look at the situation together."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a partner who's upset that you forgot something important",
+      "scene": "Your partner says, hurt: 'You completely forgot our anniversary was this week.' You didn't forget entirely, but you did lose track of the exact date.",
+      "options": [
+        "You're right, I lost track of the exact date, and I'm really sorry — that wasn't okay. Can we do something special this weekend to make up for it?",
+        "I didn't completely forget, I just lost track of the exact day.",
+        "I'm sorry, I've just been really busy lately with work and everything else going on."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When you've genuinely made a mistake that hurt someone, own it honestly and propose a way to make it right, rather than defending the details or leading with excuses.",
+      "explanation": "Owning the mistake honestly, apologizing sincerely, and proposing a real way to make it up shows genuine accountability. Focusing on the technical detail of what you did or didn't forget prioritizes defending yourself over acknowledging your partner's real hurt. Leading with an explanation about being busy, before a genuine apology, can come across as excuse-making rather than true accountability.",
+      "id": "bd_l133_q2",
+      "consequencePreviews": [
+        "You own the mistake honestly, apologize sincerely, and propose a genuine way to make it right.",
+        "You may notice that the clarification focuses on defending yourself rather than acknowledging the hurt your partner is actually feeling.",
+        "In this moment, leading with an explanation, before a genuine apology, may come across as making excuses rather than truly owning the mistake."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a business partner who's frustrated about feeling excluded from a decision, where you genuinely believed you had kept them informed",
+      "scene": "Your business partner says, upset: 'I feel completely out of the loop on this hire, like you just went ahead without me.' You genuinely believed you'd mentioned it in your last two check-ins, though clearly the message didn't land the way you intended.",
+      "options": [
+        "I did mention it, in our last two check-ins actually.",
+        "I'm sorry it felt that way — I thought I'd mentioned it in our last couple of check-ins, but clearly that didn't come across clearly enough. Let's figure out a better way to keep each other in the loop on things like this going forward.",
+        "I'm sorry you feel that way."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When someone feels excluded despite your genuine effort to include them, acknowledge their feeling, honestly explain your side, and propose a concrete fix for how you communicate going forward.",
+      "explanation": "Acknowledging their genuine feeling, honestly sharing your side, and proposing a concrete fix addresses both the immediate hurt and the real, underlying communication gap. Leading with the factual correction about mentioning it twice, without acknowledging their feeling first, risks making them feel unheard. A vague, conditional apology doesn't address what actually happened or offer any real path to preventing it from happening again.",
+      "id": "bd_l133_q3",
+      "consequencePreviews": [
+        "Leading with a factual correction, without first acknowledging how excluded they feel, risks escalating rather than resolving the tension.",
+        "As a result, you acknowledge their genuine feeling, honestly explain your side without dismissing theirs, and propose a real fix for the future.",
+        "Here, the vague, conditional apology doesn't address the substance of what happened or offer any real solution going forward."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend you had a heated disagreement with last week",
+      "scene": "You had a genuinely heated argument with a friend last week about a sensitive topic, and you haven't spoken since. You want to repair things.",
+      "options": [
+        "Hey, I've been thinking about our conversation last week — I don't love how it ended, and I really value our friendship. Can we talk properly sometime soon?",
+        "I still think I was right about what I said, but I guess we should talk.",
+        "Hey, what's up?"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When reaching out after a heated argument, name the value of the relationship and invite a genuine conversation, rather than pretending nothing happened or reopening the argument.",
+      "explanation": "Naming the value of the friendship and inviting a real conversation opens the door to genuine repair after a difficult argument. Pretending nothing happened avoids the real issue, which likely still needs to be addressed for the friendship to actually move forward. Leading with your own position risks reopening the argument rather than starting a genuine process of repair.",
+      "id": "bd_l134_q1",
+      "consequencePreviews": [
+        "As a result, you take the first step toward repair honestly, naming the value of the friendship and inviting a real conversation.",
+        "You may notice that leading with your own position, rather than the value of the friendship, may reignite the argument rather than starting a genuine repair.",
+        "Realistically, acting as though nothing happened avoids acknowledging the argument, which likely still needs to be addressed."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a sibling you haven't spoken to since a family disagreement",
+      "scene": "You and a sibling had a difficult disagreement at a family event a few weeks ago, and things have been tense since. You want to reach out.",
+      "options": [
+        "Hey, how've you been?",
+        "I think you overreacted at Mom's, but we should probably talk, I mean, I was going more on instinct than anything, but that could easily change.",
+        "I've been thinking about what happened at Mom's — I don't want this to sit between us. Can we find some time to actually talk it through?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When reaching out to repair a family rift, name your discomfort with the distance honestly and propose a real conversation, rather than avoiding the topic or leading with judgment.",
+      "explanation": "Naming your discomfort with the current distance, and proposing a real conversation, opens an honest path toward repair. Avoiding the actual issue, even with a friendly opener, may leave the underlying tension completely unaddressed. Leading with a judgment about their reaction risks reigniting the very disagreement you're trying to repair.",
+      "id": "bd_l134_q2",
+      "consequencePreviews": [
+        "Realistically, avoiding the actual issue entirely may leave the underlying tension unaddressed, even if the conversation feels friendly on the surface.",
+        "Here, leading with a judgment about their reaction risks reigniting the disagreement rather than genuinely starting to repair things.",
+        "You initiate repair honestly, naming your discomfort with the distance and proposing a real conversation."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a former close friend you had a serious falling out with over a year ago, where you both said hurtful things",
+      "scene": "You haven't spoken to a former close friend in over a year, since a falling out where you both said things you regret. You've recently started to genuinely miss the friendship and want to consider reaching out.",
+      "options": [
+        "Hey, it's been a while, hope you're doing well, if I'm honest, I hadn't really thought it through, so there might be a better way to handle it — and to be fair I only heard about this a few minutes ago myself, and I haven't really run it past anyone else yet.",
+        "I've been thinking about you, and I know a lot was said that year that I've genuinely come to regret on my end. I'm not expecting things to go back to how they were, but I'd really value the chance to talk, if you're open to it.",
+        "I think we should talk about what happened, I still think a lot of what you said was out of line."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When reaching out after a serious, long-standing rift, acknowledge your own part honestly and leave real room for the other person's response, rather than being overly casual or leading with judgment about their behavior.",
+      "explanation": "Acknowledging your own regret honestly, while leaving genuine room for their response, respects both the seriousness of the rift and the real uncertainty about how they might feel. A casual, breezy opener may understate the real weight of a falling out this significant, which could feel dismissive. Leading with judgment about their part, even if it has some truth, risks reigniting the very conflict you're hoping to move past.",
+      "id": "bd_l134_q3",
+      "consequencePreviews": [
+        "Realistically, the casual opener, after such a significant and difficult rift, may feel like it's avoiding the real weight of what happened between you.",
+        "Here, you reach out honestly, owning your part without demanding reconciliation, which respects the complexity of a long, difficult rift.",
+        "Leading with judgment about their part in the falling out, even if partly justified, risks reigniting the conflict rather than genuinely opening a path to repair."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker who consistently disagrees with your ideas in meetings",
+      "scene": "A coworker has pushed back on nearly every idea you've proposed in the last three meetings, again saying: 'I don't think that's the right approach' to your latest suggestion.",
+      "options": [
+        "You disagree with basically everything I suggest at this point.",
+        "Okay, noted.",
+        "You've raised some good points before — I'm curious what approach you'd suggest instead, since we clearly see this differently."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When someone repeatedly disagrees with your ideas, inviting their actual alternative keeps the conversation constructive, even if you want to address the pattern separately later.",
+      "explanation": "Inviting their actual alternative keeps the discussion constructive and focused on finding a good solution, rather than on the disagreement itself. A flat 'noted' doesn't actually engage with the disagreement or move things forward. Naming the pattern directly, in the meeting itself, may feel more confrontational than the moment calls for, even if it's worth addressing separately.",
+      "id": "bd_l135_q1",
+      "consequencePreviews": [
+        "In this moment, naming the pattern directly, in the meeting itself, may come across as more confrontational than necessary in the moment.",
+        "Here, the flat response doesn't actually engage with the disagreement or try to move the discussion forward productively.",
+        "As a result, you respond constructively, inviting their actual alternative rather than reacting to the pattern of disagreement."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a classmate who dismisses your suggestions in group projects",
+      "scene": "In a group project, a classmate says: 'That won't work,' dismissing your suggestion again, without much explanation, as they've done several times before.",
+      "options": [
+        "Alright, noted, in hindsight, I hadn't checked how that would actually land, so feel free to push back — and I probably should have asked a few more questions before saying anything.",
+        "Can you help me understand what specifically wouldn't work about it? I want to make sure I understand your concern.",
+        "You always shoot down my ideas without really explaining why, in hindsight, I was going more on instinct than anything, so I could be wrong."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When someone dismisses your idea without explanation, asking for their specific reasoning keeps things constructive and might actually reveal a valid concern.",
+      "explanation": "Asking for the specific reasoning invites a constructive conversation and might reveal a genuinely valid concern behind the dismissal. A flat 'okay' doesn't actually try to understand what's behind the repeated dismissals. Naming the pattern directly, in the middle of active group work, risks more tension than the immediate task requires, even if it's worth addressing separately.",
+      "id": "bd_l135_q2",
+      "consequencePreviews": [
+        "In this moment, the flat response doesn't actually engage with understanding why your suggestion was dismissed.",
+        "Realistically, you respond constructively, asking for the specific reasoning behind the dismissal rather than reacting to the pattern.",
+        "As a result, naming the pattern directly, in the middle of group work, may create more tension than the immediate task actually calls for."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a colleague on a cross-functional team who has publicly disagreed with your proposals in the last several joint meetings, seemingly more than the substance warrants",
+      "scene": "In another joint meeting, a colleague from a different department once again pushes back firmly on your proposal, saying: 'This really doesn't account for how our team's workflow actually functions.' This is the fourth time in a row they've pushed back this firmly.",
+      "options": [
+        "That's a fair point about the workflow — could we set up a short session outside this meeting to really understand your team's process, so future proposals actually account for it properly?",
+        "Noted, we'll take another look.",
+        "You've pushed back pretty firmly on the last four proposals now, is something specific going on? What would you do instead? Honestly, I was just going with my gut on that one — and I probably should have asked a few more questions before saying anything."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When a recurring pattern of pushback might reflect a real, deeper misalignment, propose a structural fix (like a dedicated session) rather than just responding to each instance or calling out the pattern publicly.",
+      "explanation": "Engaging constructively with the immediate substance, while proposing a dedicated session to address the deeper issue, is a genuinely useful way to resolve what might be a real, recurring misalignment. A flat acknowledgment doesn't engage with the substance or address the pattern that's clearly recurring. Calling out the pattern directly, in a joint meeting with people from both teams present, risks more tension than a private, structural conversation would create.",
+      "id": "bd_l135_q3",
+      "consequencePreviews": [
+        "Here, you respond constructively to the immediate substance while proposing a structural fix for what might be a recurring, deeper misalignment.",
+        "As a result, the flat response doesn't engage with the substance or address what might be a recurring, deeper misalignment between the teams.",
+        "Here, directly naming the pattern in a joint meeting, in front of colleagues from both teams, may feel more confrontational than the situation calls for."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who's upset that you cancelled plans, but it was for a good reason",
+      "scene": "A friend says, clearly hurt: 'You've cancelled on me twice this month, it feels like I'm not a priority.' Both times were due to genuine emergencies, but you understand why the pattern feels concerning to them.",
+      "options": [
+        "Both times were emergencies, I couldn't help it.",
+        "I'm sorry, you're right, I haven't been a good friend lately.",
+        "I really understand why that feels that way, even though both times were genuine emergencies — you are a priority to me, and I want to find a way to make that clearer going forward."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When someone's hurt by a pattern that has a genuine explanation, validate their feeling and explain honestly, rather than only justifying yourself or being overly self-critical.",
+      "explanation": "Validating their feeling while honestly explaining the reason respects both their genuine concern and the actual, valid circumstances. Leading only with the justification, without acknowledging their feeling, risks seeming dismissive of something that legitimately concerns them. Being overly self-critical isn't an accurate reflection of the situation, since both cancellations genuinely were outside your control.",
+      "id": "bd_l136_q1",
+      "consequencePreviews": [
+        "In this moment, leading only with the justification, without acknowledging their feeling, may come across as dismissive of a genuinely valid concern about the pattern.",
+        "You may notice that the overly self-critical response doesn't accurately reflect that both cancellations were genuinely due to emergencies outside your control.",
+        "In this moment, you validate their feeling honestly while clarifying the reason, without dismissing their genuine concern about the pattern."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker who's frustrated about a missed deadline that was actually caused by someone else on the team",
+      "scene": "A coworker says, frustrated: 'This whole thing is behind schedule because of you.' In reality, the delay was caused by a different team member's late input, though you understand the confusion.",
+      "options": [
+        "I get why it looks that way — actually the hold-up was on Priya's input, which I was waiting on. Let's sort out with her how we get back on track.",
+        "That's really unfair of you to say.",
+        "It's not my fault, it was Priya's delay."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When wrongly blamed for a delay, clarify the actual situation calmly and move toward a solution, rather than focusing only on defending yourself or the unfairness of the accusation.",
+      "explanation": "Clarifying the actual situation calmly, and moving toward a solution, corrects the misunderstanding while keeping the focus on fixing the schedule. Framing it as 'not my fault' focuses on assigning blame rather than actually solving the problem. Focusing on how unfair the accusation feels doesn't clarify what actually happened or move things toward a resolution.",
+      "id": "bd_l136_q2",
+      "consequencePreviews": [
+        "As a result, you calmly clarify the actual situation while moving toward a solution, rather than just defending yourself.",
+        "Focusing on how unfair the accusation feels doesn't clarify the actual situation or move toward solving the real problem.",
+        "Realistically, the framing focuses on assigning blame rather than moving the conversation toward actually solving the schedule problem."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a client who's upset about a delay that was genuinely caused by their own team's late approvals, but you don't want to damage the relationship by seeming to blame them",
+      "scene": "A client says, frustrated: 'This project is really behind where it should be at this point.' The delay was genuinely caused by their own team's slow approval process, but you want to raise this diplomatically without damaging the relationship.",
+      "options": [
+        "We've been working hard on this despite some challenges.",
+        "I understand the frustration with where things stand — looking back, a lot of the delay traces to approval turnaround times on a few key decisions. Would it help to set up a faster approval process together for the next phase?",
+        "The delays have actually been on your team's end with approvals."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When a delay is genuinely caused by a client's own team, but you want to protect the relationship, name the real cause diplomatically and immediately pivot to a collaborative fix for going forward.",
+      "explanation": "Naming the real cause diplomatically, without direct blame, and immediately proposing a collaborative fix protects the relationship while still addressing the real issue honestly. A vague deflection avoids the real cause entirely, which means the same problem is likely to recur in the next phase. Directly stating that the delay was their fault, even if accurate, risks unnecessary damage to the relationship when a more diplomatic framing could achieve the same honest outcome.",
+      "id": "bd_l136_q3",
+      "consequencePreviews": [
+        "You may notice that the vague deflection avoids naming the real cause, which means the same delay is likely to happen again in the next phase.",
+        "Here, you raise the real cause diplomatically, without direct blame, and immediately pivot to a collaborative solution that protects the relationship.",
+        "Here, the direct, unsoftened statement of blame, even though accurate, risks damaging a relationship where diplomacy would achieve the same result more safely."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend group where two friends had a falling out and you're caught in the middle",
+      "scene": "Two friends in your group had a falling out, and one of them says to you: 'You're my friend too, right? You should be on my side about this.'",
+      "options": [
+        "Yeah, of course, I'm on your side, if I'm being honest, I wasn't considering every angle, so there might be a better way to handle it — and I probably should have asked a few more questions before saying anything.",
+        "I don't really want to get involved in this at all.",
+        "You're both my friends, and I care about you both — I'd rather not take sides, but I'm happy to listen if you want to talk through how you're feeling."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When you're stuck in the middle of two people you care about who are fighting, affirm your bond with each of them and offer an open ear, without picking a camp.",
+      "explanation": "Affirming both friendships while declining to take sides, and offering to listen, protects both relationships without you becoming part of the conflict. Taking sides could seriously damage your relationship with the other friend, without actually resolving their disagreement. Completely withdrawing, without offering any support, may feel like abandonment to a friend who's genuinely going through something difficult.",
+      "id": "bd_l137_q1",
+      "consequencePreviews": [
+        "Taking sides in someone else's conflict could damage your relationship with the other friend, without genuinely resolving anything.",
+        "As a result, the complete withdrawal, without offering to listen, may feel like you're abandoning a friend who's genuinely struggling.",
+        "Realistically, you affirm the friendship honestly while declining to take sides, which protects both relationships."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "two coworkers in conflict, one of whom asks you to back their version of events",
+      "scene": "A coworker involved in a dispute with another team member says: 'You were in that meeting too, back me up that I'm right about this, okay?'",
+      "options": [
+        "Sure, I'll back you up.",
+        "I do remember some of what happened, but I'd rather just share what I actually recall accurately, rather than 'backing you up' either way.",
+        "I'd rather not get involved in this, if I'm honest, I wasn't considering every angle, so let me know if that's off — and there's a decent chance I'd see it differently after sleeping on it."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When someone wants you to vouch for their version of a workplace disagreement, offer an honest, factual account of what you remember, rather than aligning with one party or staying completely silent.",
+      "explanation": "Offering to share what you accurately recall keeps you honest and neutral, which is actually the most useful thing you can offer in a factual dispute. Agreeing to 'back them up' regardless of accuracy risks putting you in a difficult position if their version isn't quite right. Declining to get involved at all might avoid taking sides, but if you do have accurate, relevant information, withholding it doesn't help resolve the dispute fairly.",
+      "id": "bd_l137_q2",
+      "consequencePreviews": [
+        "Here, agreeing to support their version, regardless of accuracy, could put you in a difficult position if it isn't actually accurate.",
+        "Here, you stay honest and neutral, offering to share accurate information without becoming an ally in the dispute.",
+        "Realistically, declining entirely might avoid taking sides, but if you have genuinely relevant, accurate information, withholding it doesn't help resolve the actual dispute fairly."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a family conflict where two relatives are pressuring you to align with their version of a longstanding disagreement at a family gathering",
+      "scene": "At a family gathering, one relative pulls you aside and says: 'You know I'm right about what happened, back me up if it comes up today, okay?' referring to a long-running family disagreement you're only partially familiar with.",
+      "options": [
+        "I care about you both, and honestly I don't feel like I know the full history well enough to weigh in fairly — I'd rather just stay out of it today, if that's okay.",
+        "I really don't want to be involved in family drama at all, honestly, I wasn't considering every angle, but I'm not totally set on it — and a lot depends on details I haven't really looked into yet.",
+        "Okay, I'll back you up if it comes up, actually, I wasn't considering every angle, so there might be a better way to handle it — and honestly the whole situation caught me a bit off guard."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "For a long-running, tangled family disagreement you weren't closely involved in, be upfront that you can't judge it fairly and keep a neutral footing, instead of picking a camp or waving the whole matter away.",
+      "explanation": "Honestly acknowledging your limited understanding, while declining to take sides, respects both relatives without you becoming entangled in a conflict you don't fully grasp. Agreeing to back a side in a longstanding dispute you don't fully understand risks real damage if the full picture turns out to be more complicated. Dismissing it as 'drama' may feel disrespectful to someone who's genuinely and legitimately upset, even if you'd rather not get involved.",
+      "id": "bd_l137_q3",
+      "consequencePreviews": [
+        "As a result, you honestly acknowledge your limited perspective while declining to be pulled into a longstanding conflict you don't fully understand.",
+        "The dismissive framing of it as 'drama' may feel disrespectful to a relative who's genuinely upset about something that matters to them.",
+        "You may notice that agreeing to support a side in a conflict you don't fully understand could seriously backfire and damage other family relationships."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker who apologizes but seems to not fully understand what they did wrong",
+      "scene": "A coworker says: 'Sorry if what I said upset you,' after making a comment that dismissed your idea in front of the team without really engaging with it.",
+      "options": [
+        "That's alright, I suppose, I hadn't fully worked out how it'd play out, so there might be a better way to handle it — and there's a decent chance I'd see it differently after sleeping on it.",
+        "I appreciate that — what actually bothered me was that the idea didn't get a real chance to be discussed. I'd love for that not to happen again.",
+        "You should know exactly what you did wrong without me having to explain it."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When an apology feels incomplete because the other person doesn't seem to understand the actual issue, naming it specifically helps more than accepting vaguely or expecting them to already know.",
+      "explanation": "Naming the actual issue specifically, after accepting the apology, gives your coworker the clear information they need to actually change their behavior. Accepting with just 'it's fine' leaves the real issue unaddressed, which means it could easily happen again. Expecting them to already understand, without explaining, isn't realistic and doesn't actually resolve anything.",
+      "id": "bd_l138_q1",
+      "consequencePreviews": [
+        "In this moment, accepting without clarifying the actual issue means your coworker may not understand what specifically needs to change.",
+        "As a result, you accept the apology while clearly naming what actually needs to change, which gives them useful, specific information.",
+        "Realistically, expecting them to already understand, without explaining, may leave the actual issue unaddressed and unresolved."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who apologizes quickly without addressing the actual issue",
+      "scene": "A friend says: 'Sorry, my bad,' after showing up over an hour late to something important to you, without acknowledging how that specifically affected your plans.",
+      "options": [
+        "Thanks, I appreciate that — it actually meant I missed part of what we were there for. Could we plan a bit more of a buffer next time?",
+        "It's okay, don't worry about it.",
+        "An hour late is pretty inconsiderate, honestly."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "A quick, generic apology can be accepted while still naming the specific impact and asking for a specific change, rather than fully dismissing it or just expressing frustration.",
+      "explanation": "Accepting the apology while naming the real impact and a specific request going forward gives your friend genuinely useful information. Fully dismissing the impact means your friend may not realize how the lateness actually affected your plans this time. Expressing frustration alone, without a specific request, doesn't give your friend anything concrete to actually change next time.",
+      "id": "bd_l138_q2",
+      "consequencePreviews": [
+        "As a result, you accept the apology while clearly naming the actual impact and a specific request going forward.",
+        "In this moment, dismissing the real impact means your friend may not understand how the lateness actually affected you this time.",
+        "Realistically, the comment expresses frustration but doesn't clearly ask for the specific change that would actually help going forward."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a manager who apologizes for a mistake but the apology feels more about protecting themselves than genuinely understanding the impact",
+      "scene": "Your manager says: 'I'm sorry if that decision caused any issues,' after making a unilateral call that significantly disrupted your team's workflow for the week, without acknowledging the specific disruption it caused.",
+      "options": [
+        "That's alright, these things happen, to be honest, I hadn't fully worked out how it'd play out, though I'm open to changing my mind — and I haven't really run it past anyone else yet, and to be fair I only heard about this a few minutes ago myself.",
+        "That decision really disrupted the whole team's work this week, looking back, I was just going with my gut on that one, so I could be wrong — and a lot depends on details I haven't really looked into yet.",
+        "I appreciate you saying that — to be specific, it meant the team had to redo two days of work, which was a real setback. Going forward, it'd really help to be looped in before decisions like that."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When a manager's apology feels vague or self-protective, naming the specific, concrete impact and a specific request for the future is more useful than dismissing it or only pointing out the impact.",
+      "explanation": "Naming the specific, concrete impact and a specific request for the future gives your manager genuinely useful, actionable information, professionally delivered. Accepting the apology without naming the real impact means the actual cost of the decision goes unacknowledged. Naming the impact without any acknowledgment of the apology, or a specific ask, risks feeling more like a complaint than the constructive feedback it could actually be.",
+      "id": "bd_l138_q3",
+      "consequencePreviews": [
+        "Accepting without naming the real impact means your manager may not understand the actual, concrete cost of the decision.",
+        "As a result, naming the impact without acknowledging the apology first, or proposing a specific ask, may come across as more confrontational than necessary.",
+        "In this moment, you accept the gesture while clearly and professionally naming the specific, concrete impact and a specific ask for the future."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker who's clearly annoyed but denies it when asked",
+      "scene": "You ask a coworker: 'Is everything okay? You seem a bit off today.' They respond curtly: 'I'm fine,' but their tone suggests otherwise, and it's affecting a task you're working on together.",
+      "options": [
+        "Okay, no pressure — just know I'm around if something's on your mind. In the meantime, want to tackle the report together, or would some space help first?",
+        "You clearly don't seem fine though.",
+        "Okay, well let's just get the report done then."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When someone denies being upset but clearly seems affected, respect their answer while leaving room for support, and offer flexibility on the shared task.",
+      "explanation": "Respecting their answer while leaving room for support, and offering flexibility on the task, balances genuine care with practical progress. Directly contradicting 'I'm fine' can feel like you don't believe them, which may make them shut down further. Moving straight to the task, without acknowledging anything, risks ignoring something that's clearly affecting both them and the work.",
+      "id": "bd_l139_q1",
+      "consequencePreviews": [
+        "As a result, you respect their answer while leaving room for support, and you address the practical task with flexibility.",
+        "In this moment, directly contradicting their stated answer may make them feel pressured rather than genuinely supported.",
+        "Moving straight to the task, without leaving any room for support, may ignore something that's clearly affecting them and the work."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a teammate who insists a plan is fine despite visible signs of stress",
+      "scene": "A teammate says: 'The timeline's fine, we've got this,' but they look visibly stressed and you've noticed slipping deadlines on their part of the project.",
+      "options": [
+        "You don't seem fine, the deadlines have been slipping, I mean, I hadn't really thought it through, so feel free to push back — and there's a decent chance I'd see it differently after sleeping on it.",
+        "Okay, sounds good, let's keep going then, honestly, I hadn't fully worked out how it'd play out, though I'm open to changing my mind — and a lot depends on details I haven't really looked into yet.",
+        "Okay — if anything changes though, I'd rather know sooner than later so we can adjust together. How's the workload feeling on your end?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When someone insists things are fine despite visible signs of strain, accept their answer while genuinely opening a door for them to share more if needed.",
+      "explanation": "Accepting their answer while genuinely opening a door for more honesty respects their stated position without ignoring what you're actually observing. Directly contradicting their confidence about the timeline may put them on the defensive rather than inviting real honesty. Fully accepting at face value ignores visible signs that the timeline might genuinely be at risk, which could hurt the project later.",
+      "id": "bd_l139_q2",
+      "consequencePreviews": [
+        "In this moment, directly contradicting their stated confidence may put them on the defensive rather than opening an honest conversation.",
+        "You may notice that accepting completely at face value misses the visible signs suggesting the timeline might genuinely be at risk.",
+        "You accept their answer while opening a genuine door for them to share if things aren't actually fine."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a direct report who insists everything is fine despite signs of genuine burnout that could have serious consequences if unaddressed",
+      "scene": "A direct report says: 'I'm totally fine, just a busy season,' but you've noticed a real pattern over the past month — working very late consistently, uncharacteristic mistakes, and a flatter affect in meetings. As their manager, you feel a real responsibility here.",
+      "options": [
+        "Okay, if you say so, let's keep moving then.",
+        "I hear you, and I don't want to push — I have noticed some patterns over the last month though, like the late hours and a few uncharacteristic mistakes, and I want to check in properly, because your wellbeing genuinely matters to me here.",
+        "You're clearly not fine, I can see you're burning out."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "As a manager noticing a genuine, concerning pattern, respectfully name the specific things you've observed rather than fully accepting a denial or directly telling someone how they feel.",
+      "explanation": "Respecting their stated answer while honestly naming the specific, observed pattern balances respect for their autonomy with your genuine responsibility as their manager. Fully accepting the denial, given the visible pattern and your role, risks missing a genuine burnout situation that could have real consequences. Directly telling them they're burning out, even if likely true, may make them defensive rather than opening a genuine conversation about what's actually going on.",
+      "id": "bd_l139_q3",
+      "consequencePreviews": [
+        "You may notice that accepting fully at face value, given your role and the visible pattern, risks missing a genuine burnout situation that could have serious consequences.",
+        "Here, you respect their stated answer while honestly naming the specific pattern you've observed, given your genuine responsibility as their manager.",
+        "Realistically, directly telling them how they feel, even if likely accurate, may make them defensive rather than genuinely opening up about what's going on."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend whose repeated behavior has genuinely strained the friendship over time",
+      "scene": "A friend has repeatedly cancelled on you, been late, and seemed distracted when you do spend time together, over several months. This has genuinely started to affect how close you feel to them.",
+      "options": [
+        "Hey, we should hang out again soon, it's been a while, I guess, I wasn't considering every angle, though I'd want to think it over more — and I'm honestly still working out how I feel about the whole thing, and I know that's not the most thought-out response, but it's where my head's at right now.",
+        "I feel like our friendship isn't really what it used to be anymore, in hindsight, I hadn't really thought it through, so take it with a grain of salt — and I'm honestly still working out how I feel about the whole thing, and a lot depends on details I haven't really looked into yet.",
+        "I want to be honest with you — I've noticed some distance building between us over the last few months, with plans and how present you've seemed. I really value our friendship, and I wanted to check in about it honestly rather than letting it just drift."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "For a bond that's genuinely grown distant because of a recurring habit, spelling out that pattern truthfully, alongside reaffirming how much the connection matters, opens up a real conversation far better than a casual invite to meet up or an unclear comment that things feel off.",
+      "explanation": "Naming the specific pattern honestly, while affirming the friendship's value, opens a genuine conversation about something that's clearly been building for months. Suggesting a casual hangout avoids naming the real, underlying pattern, which likely won't resolve anything on its own. A vague, somewhat final statement about the friendship changing doesn't specify what's actually happened or clearly invite a path toward repair.",
+      "id": "bd_l140_q1",
+      "consequencePreviews": [
+        "As a result, the casual suggestion avoids naming the real pattern that's actually been affecting the friendship, which may not resolve the underlying issue.",
+        "You may notice that the vague, somewhat final-sounding statement doesn't specify the actual pattern or clearly invite a path toward repair.",
+        "Realistically, you name the pattern honestly and specifically, while affirming the value of the friendship, opening a real conversation rather than letting things quietly fade."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a work friendship that's become strained after a promotion changed the reporting relationship between you",
+      "scene": "A close work friend became your manager after a recent promotion, and things have felt noticeably different and more distant between you since, though neither of you has actually addressed it directly.",
+      "options": [
+        "I've noticed things have felt a bit different between us since the promotion, and I really value our friendship — could we talk honestly about how to navigate this new dynamic together?",
+        "So, how's the new role treating you? Is that reasonable, or am I off base? Honestly, I said that fairly quickly — and there's a decent chance I'd see it differently after sleeping on it.",
+        "Things feel really different between us now that you're my manager, I mean, that was more of a first reaction, so there might be a better way to handle it — and to be fair I only heard about this a few minutes ago myself."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When how two people relate has genuinely changed because of something like a new title or role, describe that change truthfully, reaffirm how much you value each other, and invite an open conversation about handling it going forward.",
+      "explanation": "Naming the real shift honestly, affirming the friendship, and inviting an honest conversation addresses the genuine, if unspoken, change directly. A surface-level question about the new role avoids the real, underlying shift that's actually affecting your relationship. Simply stating that things feel different, without affirming the friendship or inviting a conversation, names the problem but doesn't move toward actually addressing it together.",
+      "id": "bd_l140_q2",
+      "consequencePreviews": [
+        "As a result, you name the real shift honestly, affirm the relationship, and invite an honest conversation about the new dynamic.",
+        "As a result, the surface-level question avoids naming the real shift that's actually been affecting your relationship since the promotion.",
+        "Realistically, the statement names the change but doesn't affirm the friendship or clearly invite a conversation about navigating it together."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a long-term friendship that has quietly grown distant over years due to diverging life circumstances, with no single incident to point to",
+      "scene": "You and a friend of over a decade have quietly grown apart over the last few years, as your lives have gone in different directions — no falling out, no single incident, just genuine drift. You've been thinking about whether and how to address this honestly.",
+      "options": [
+        "We should really catch up sometime, it's been way too long, actually, I hadn't stopped to think it all the way through, though I'd want to think it over more — and there's a decent chance I'd see it differently after sleeping on it, and honestly the whole situation caught me a bit off guard.",
+        "I've been thinking about us lately — I don't think anything really went wrong, our lives have just pulled us in different directions over the years. I still really value what we've had, and I'd love to find a way to stay connected, even if it looks different now.",
+        "I feel like we've just grown apart over the years, it happens I guess."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "For a long friendship that's drifted gradually with no single cause, honestly name the undramatic nature of the drift, affirm the relationship's real value, and actively invite a renewed, realistic connection.",
+      "explanation": "Honestly naming the gradual, undramatic nature of the drift, affirming the real value of the friendship, and actively inviting reconnection offers a genuine, realistic path forward for a long, meaningful relationship. A casual suggestion to catch up glosses over the real, years-long drift, which may make any reconnection feel less grounded. A resigned acknowledgment that you've 'grown apart' is honest but doesn't affirm the relationship's value or actively invite the kind of renewed connection that seems genuinely possible here.",
+      "id": "bd_l140_q3",
+      "consequencePreviews": [
+        "As a result, the casual suggestion doesn't acknowledge the genuine, years-long drift, which may make any actual reconnection feel less honest or lasting.",
+        "You honestly name the genuine, undramatic nature of the drift, affirm the real value of the long history, and open a path to a renewed, realistic connection.",
+        "You may notice that the resigned framing accurately names the drift but doesn't affirm the relationship's value or actively invite a path toward reconnecting."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    }
+  ]
 }

@@ -7,55 +7,195 @@
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Of the many memorable meals I've had the privilege of enjoying, few have rivaled what I anticipate tonight will offer, beginning with the osetra caviar, continuing through the Bresse chicken, and culminating, I trust, in the vintage port reduction tart.",
+            "prompt": "For the table of six: two chicken parm, swap the pasta for salad on one of them; one vegetarian lasagna; and one gluten-free pizza.",
             "options": [
-                "Osetra Caviar",
-                "Bresse Chicken",
-                "Vintage Port Reduction Tart",
-                "Beluga Caviar"
+                "Gluten-Free Pizza",
+                "Chicken Parmesan",
+                "Vegetarian Lasagna",
+                "Regular Pizza"
             ],
-            "correctAnswer": "Osetra Caviar, Bresse Chicken, Vintage Port Reduction Tart",
-            "hint": "This elaborate opening reflects on past meals before finally naming tonight's three courses.",
-            "explanation": "This sentence uses several embedded clauses before reaching the actual order — a hallmark of highly formal spoken English. ‘Bresse chicken’ is a prized French breed known for its exceptional flavor and quality.",
+            "correctAnswer": "Gluten-Free Pizza, Chicken Parmesan, Vegetarian Lasagna",
+            "hint": "A big group order stacks several dish types together - track each distinct dish, not the headcount.",
+            "explanation": "Large group orders can include several different dishes; the substitution on one chicken parm doesn't create an extra item, since 'two chicken parm' is still one dish type.",
             "id": "go_l181_q1",
             "menuItems": [
-                "Osetra Caviar",
-                "Bresse Chicken",
-                "Vintage Port Reduction Tart",
-                "Beluga Caviar"
+                "Gluten-Free Pizza",
+                "Chicken Parmesan",
+                "Vegetarian Lasagna",
+                "Regular Pizza"
             ],
             "menuPrices": [
-                "$10.00",
-                "$19.25",
-                "$11.25",
-                "$18.00"
+                "$15.00",
+                "$16.00",
+                "$13.00",
+                "$13.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Should the kitchen find itself able to accommodate a request born more of curiosity than necessity, I would be most grateful for the white truffle carpaccio, to be followed, in due course, by the A5 wagyu, and, when the moment feels right, the gold leaf chocolate delice.",
+            "prompt": "Split it up: three of us want the burger, no bun for one of them; two want the fish and chips; and could we get an extra portion of mushy peas for the table?",
             "options": [
-                "White Truffle Carpaccio",
-                "A5 Wagyu",
-                "Gold Leaf Chocolate Delice",
-                "Osetra Caviar"
+                "Mushy Peas",
+                "Burger",
+                "Onion Rings",
+                "Fish and Chips"
             ],
-            "correctAnswer": "White Truffle Carpaccio, A5 Wagyu, Gold Leaf Chocolate Delice",
-            "hint": "An elaborate conditional opens this request, softening it considerably before the three dishes are named.",
-            "explanation": "‘Should the kitchen find itself able to…’ is an extremely formal conditional structure. ‘A5’ refers to the highest quality grade of Japanese wagyu beef, prized for its marbling.",
+            "correctAnswer": "Mushy Peas, Burger, Fish and Chips",
+            "hint": "A no-bun variant on one burger doesn't create a new dish type - just track the three real items.",
+            "explanation": "'No bun for one of them' modifies a single serving within a larger group count, but it's still the same dish type as the others.",
             "id": "go_l181_q2",
             "menuItems": [
-                "White Truffle Carpaccio",
-                "A5 Wagyu",
-                "Gold Leaf Chocolate Delice",
-                "Osetra Caviar"
+                "Mushy Peas",
+                "Burger",
+                "Onion Rings",
+                "Fish and Chips"
+            ],
+            "menuPrices": [
+                "$3.00",
+                "$9.00",
+                "$3.50",
+                "$12.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "OK, everyone's ready: Dana wants the salmon but no capers, Priya wants the vegan curry, and the rest of us are splitting two large pizzas - one meat, one veggie.",
+            "options": [
+                "Veggie Pizza",
+                "Meat Pizza",
+                "Salmon",
+                "Chicken Curry"
+            ],
+            "correctAnswer": "Veggie Pizza, Meat Pizza, Salmon",
+            "hint": "Four people are mentioned, but only three of today's options are up for selection - notice which one isn't offered as a tile this time.",
+            "explanation": "Not every real item in a busy group order becomes a selectable option in every question - here, the vegan curry is mentioned but isn't among today's four choices.",
+            "id": "go_l181_q3",
+            "menuItems": [
+                "Veggie Pizza",
+                "Meat Pizza",
+                "Salmon",
+                "Chicken Curry"
             ],
             "menuPrices": [
                 "$14.00",
-                "$15.25",
-                "$8.50",
+                "$15.00",
+                "$19.00",
+                "$13.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "OK, so: I'm vegetarian, my brother's allergic to shellfish, and my mom's gluten-free. I'll have the veggie burger, he'll have the chicken skewers, and she'll have the steak with a gluten-free bun swapped for a lettuce wrap.",
+            "options": [
+                "Steak",
+                "Chicken Skewers",
+                "Regular Bun",
+                "Veggie Burger"
+            ],
+            "correctAnswer": "Steak, Chicken Skewers, Veggie Burger",
+            "hint": "Three different dietary needs shape three different dishes for three people.",
+            "explanation": "This level tracks three separate restrictions across three diners at once - each dish reflects one person's specific need.",
+            "id": "go_l182_q1",
+            "menuItems": [
+                "Steak",
+                "Chicken Skewers",
+                "Regular Bun",
+                "Veggie Burger"
+            ],
+            "menuPrices": [
+                "$22.00",
+                "$12.00",
+                "$0.50",
+                "$9.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Between us: no nuts for me, no dairy for my partner, and no pork for our friend. I'll do the grilled chicken, she'll do the vegan pasta, and he'll do the beef stir-fry.",
+            "options": [
+                "Beef Stir-fry",
+                "Pork Stir-fry",
+                "Grilled Chicken",
+                "Vegan Pasta"
+            ],
+            "correctAnswer": "Beef Stir-fry, Grilled Chicken, Vegan Pasta",
+            "hint": "Three restrictions are stated first, then three dishes follow, one per person.",
+            "explanation": "Stating all the restrictions together before naming the dishes is an efficient way to communicate a complex group's needs at once.",
+            "id": "go_l182_q2",
+            "menuItems": [
+                "Beef Stir-fry",
+                "Pork Stir-fry",
+                "Grilled Chicken",
+                "Vegan Pasta"
+            ],
+            "menuPrices": [
+                "$16.00",
+                "$15.00",
+                "$14.00",
+                "$13.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "We're sharing the nachos, but could half be made without cheese, since I'm dairy-free? And I'll have the black bean tacos as my main.",
+            "options": [
+                "Loaded Nachos",
+                "Chicken Tacos",
+                "Black Bean Tacos",
+                "Nachos"
+            ],
+            "correctAnswer": "Black Bean Tacos, Nachos",
+            "hint": "A half-and-half preparation request still describes just one shared starter, plus one individual main.",
+            "explanation": "A half-modified shared dish is still one order, prepared with a partial accommodation - it doesn't split into two separate menu items.",
+            "id": "go_l182_q3",
+            "menuItems": [
+                "Loaded Nachos",
+                "Chicken Tacos",
+                "Black Bean Tacos",
+                "Nachos"
+            ],
+            "menuPrices": [
+                "$11.00",
+                "$12.00",
+                "$11.00",
+                "$9.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Since I'm vegan, could the burrito bowl have tofu instead of chicken, and could you leave off the sour cream? I also just don't like cilantro, so no cilantro either, and a lemonade.",
+            "options": [
+                "Iced Tea",
+                "Burrito Bowl with Tofu",
+                "Lemonade",
+                "Burrito Bowl with Chicken"
+            ],
+            "correctAnswer": "Burrito Bowl with Tofu, Lemonade",
+            "hint": "A dietary substitution and two separate preference-based removals all describe the very same bowl.",
+            "explanation": "This shows dietary need (vegan) and personal taste (disliking cilantro) combining on one dish - both are valid reasons for a modifier.",
+            "id": "go_l183_q1",
+            "menuItems": [
+                "Iced Tea",
+                "Burrito Bowl with Tofu",
+                "Lemonade",
+                "Burrito Bowl with Chicken"
+            ],
+            "menuPrices": [
+                "$3.00",
+                "$11.00",
+                "$3.00",
                 "$10.00"
             ]
         },
@@ -63,699 +203,447 @@
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "It is not without some hesitation, given how rarely I permit myself such indulgence, that I find myself ordering the beluga caviar, the aged duck, and, unable to resist, the opera cake.",
+            "prompt": "I can't have gluten, so could the fish be grilled without the breading? And I'd also prefer it without capers - I'm not really a fan, and a side of steamed vegetables.",
             "options": [
-                "Beluga Caviar",
-                "Aged Duck",
-                "Opera Cake",
-                "Napoleon"
+                "Roasted Potatoes",
+                "Grilled Fish without Breading",
+                "Breaded Fish",
+                "Steamed Vegetables"
             ],
-            "correctAnswer": "Beluga Caviar, Aged Duck, Opera Cake",
-            "hint": "The customer admits rare indulgence before confidently naming all three courses.",
-            "explanation": "‘It is not without some hesitation that…’ is a formal way of admitting mixed feelings while still proceeding with a decision. ‘Unable to resist’ shows genuine temptation winning out.",
-            "id": "go_l181_q3",
-            "menuItems": [
-                "Beluga Caviar",
-                "Aged Duck",
-                "Opera Cake",
-                "Napoleon"
-            ],
-            "menuPrices": [
-                "$18.00",
-                "$10.00",
-                "$7.25",
-                "$20.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Whatever else this evening holds, let it be said that we began with the foie gras terrine, proceeded to the whole roasted turbot, and, as any memorable evening ought to, concluded with the grand marnier soufflé.",
-            "options": [
-                "Foie Gras Terrine",
-                "Whole Roasted Turbot",
-                "Grand Marnier Soufflé",
-                "Chocolate Soufflé"
-            ],
-            "correctAnswer": "Foie Gras Terrine, Whole Roasted Turbot, Grand Marnier Soufflé",
-            "hint": "This reflective sentence uses formal, almost ceremonial language to describe a completed meal.",
-            "explanation": "‘Whatever else this evening holds, let it be said that…’ is a formal, almost ceremonial way of summarizing a meal's highlights. A ‘Grand Marnier soufflé’ is flavored with the famous orange liqueur.",
-            "id": "go_l182_q1",
-            "menuItems": [
-                "Foie Gras Terrine",
-                "Whole Roasted Turbot",
-                "Grand Marnier Soufflé",
-                "Chocolate Soufflé"
-            ],
-            "menuPrices": [
-                "$9.75",
-                "$15.25",
-                "$2.00",
-                "$12.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "That the langoustine quenelle alone justified the journey here is a claim I do not make lightly; nonetheless, I shall also have the squab en croûte, and the champagne sorbet to close what I expect will be a remarkable meal.",
-            "options": [
-                "Langoustine Quenelle",
-                "Squab en Croûte",
-                "Champagne Sorbet",
-                "Turbot Ceviche"
-            ],
-            "correctAnswer": "Langoustine Quenelle, Squab en Croûte, Champagne Sorbet",
-            "hint": "A bold claim about the starter is qualified before the rest of the order follows.",
-            "explanation": "‘I do not make [a claim] lightly’ shows the speaker takes their own words seriously. A ‘quenelle’ is a delicate, oval-shaped dumpling, here made from langoustine.",
-            "id": "go_l182_q2",
-            "menuItems": [
-                "Langoustine Quenelle",
-                "Squab en Croûte",
-                "Champagne Sorbet",
-                "Turbot Ceviche"
-            ],
-            "menuPrices": [
-                "$4.50",
-                "$7.25",
-                "$3.25",
-                "$9.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "In the event that the kitchen has already run out of the black winter truffle soup, I would ask only that you let me know before proceeding to the Kobe beef wellington and, eventually, the truffle honey baklava.",
-            "options": [
-                "Black Winter Truffle Soup",
-                "Kobe Beef Wellington",
-                "Truffle Honey Baklava",
-                "Opera Cake"
-            ],
-            "correctAnswer": "Black Winter Truffle Soup, Kobe Beef Wellington, Truffle Honey Baklava",
-            "hint": "The customer anticipates a possible shortage and asks to be informed, without changing the rest of the order.",
-            "explanation": "‘In the event that…’ is a formal way of saying ‘if.’ This structure shows practical foresight about a popular dish potentially running out.",
-            "id": "go_l182_q3",
-            "menuItems": [
-                "Black Winter Truffle Soup",
-                "Kobe Beef Wellington",
-                "Truffle Honey Baklava",
-                "Opera Cake"
-            ],
-            "menuPrices": [
-                "$5.75",
-                "$12.50",
-                "$9.75",
-                "$7.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "If pressed to name the single dish I most looked forward to this evening, it would be the sea urchin, though the milk-fed lamb and the chestnut vacherin promise to be no less memorable.",
-            "options": [
-                "Sea Urchin",
-                "Milk-Fed Lamb",
-                "Chestnut Vacherin",
-                "Golden Caviar"
-            ],
-            "correctAnswer": "Sea Urchin, Milk-Fed Lamb, Chestnut Vacherin",
-            "hint": "The customer singles out one favorite while still confirming genuine enthusiasm for the other two.",
-            "explanation": "‘If pressed to name…’ introduces a hypothetical situation of being asked to choose a favorite. ‘Milk-fed lamb’ refers to very young lamb raised only on milk, prized for its tenderness.",
-            "id": "go_l183_q1",
-            "menuItems": [
-                "Sea Urchin",
-                "Milk-Fed Lamb",
-                "Chestnut Vacherin",
-                "Golden Caviar"
-            ],
-            "menuPrices": [
-                "$2.00",
-                "$21.75",
-                "$12.50",
-                "$13.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "There being no occasion more deserving of such extravagance, we have chosen, without a hint of restraint, the golden caviar, the lobster thermidor, and the saffron panna cotta.",
-            "options": [
-                "Golden Caviar",
-                "Lobster Thermidor",
-                "Saffron Panna Cotta",
-                "Beluga Caviar"
-            ],
-            "correctAnswer": "Golden Caviar, Lobster Thermidor, Saffron Panna Cotta",
-            "hint": "This sentence justifies an especially lavish order by declaring the occasion worthy of it.",
-            "explanation": "‘There being no occasion more deserving…’ is a formal absolute construction, common in elevated written and spoken English to justify a significant decision.",
+            "correctAnswer": "Grilled Fish without Breading, Steamed Vegetables",
+            "hint": "A necessary dietary change and an optional taste preference both shape the same order.",
+            "explanation": "Distinguishing between what's medically necessary and what's just a preference isn't required for the order itself - both modifiers apply the same way.",
             "id": "go_l183_q2",
             "menuItems": [
-                "Golden Caviar",
-                "Lobster Thermidor",
-                "Saffron Panna Cotta",
-                "Beluga Caviar"
+                "Roasted Potatoes",
+                "Grilled Fish without Breading",
+                "Breaded Fish",
+                "Steamed Vegetables"
             ],
             "menuPrices": [
-                "$13.75",
-                "$17.75",
-                "$6.00",
-                "$18.00"
+                "$3.50",
+                "$17.00",
+                "$15.00",
+                "$4.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Much as I might have been tempted to defer entirely to the chef, I find I already know precisely what I want: the A5 wagyu tartare, the black cod in miso, and, saving the best for last, the petit fours royale.",
+            "prompt": "I'm dairy-free, so the mac and cheese is out for me - but could I get the same sauce made with a plant-based cheese if you have it? Server: We can do that, actually. Customer: Perfect, I'll have that, then, and a sparkling water.",
             "options": [
-                "A5 Wagyu Tartare",
-                "Black Cod in Miso",
-                "Petit Fours Royale",
-                "Napoleon"
+                "Still Water",
+                "Sparkling Water",
+                "Plant-Based Mac and Cheese",
+                "Regular Mac and Cheese"
             ],
-            "correctAnswer": "A5 Wagyu Tartare, Black Cod in Miso, Petit Fours Royale",
-            "hint": "The customer briefly considers letting the chef decide before confidently naming their own choices.",
-            "explanation": "‘Much as I might have been tempted to…’ acknowledges a road not taken. ‘Saving the best for last’ is a common idiom describing dessert as the meal's final highlight.",
+            "correctAnswer": "Sparkling Water, Plant-Based Mac and Cheese",
+            "hint": "The conditional backup plan becomes irrelevant once the kitchen confirms the modification is possible.",
+            "explanation": "Setting up a backup plan is smart, but once the preferred option is confirmed as possible, the backup plan is simply never used.",
             "id": "go_l183_q3",
             "menuItems": [
-                "A5 Wagyu Tartare",
-                "Black Cod in Miso",
-                "Petit Fours Royale",
-                "Napoleon"
+                "Still Water",
+                "Sparkling Water",
+                "Plant-Based Mac and Cheese",
+                "Regular Mac and Cheese"
             ],
             "menuPrices": [
-                "$4.50",
-                "$12.50",
-                "$7.25",
-                "$20.50"
+                "$2.50",
+                "$3.00",
+                "$11.00",
+                "$9.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "As we draw this remarkable evening to a close, allow me to say that the turbot ceviche, the périgord truffle risotto, and the napoleon will be remembered long after the last course has been cleared.",
+            "prompt": "Is the vegan chili available today? Server: Sorry, we sold out an hour ago. Customer: Ah - is there another vegan option? The lentil soup? Perfect, I'll have that, with bread.",
             "options": [
-                "Turbot Ceviche",
-                "Périgord Truffle Risotto",
-                "Napoleon",
-                "Opera Cake"
+                "Garlic Bread",
+                "Bread",
+                "Vegan Chili",
+                "Lentil Soup"
             ],
-            "correctAnswer": "Turbot Ceviche, Périgord Truffle Risotto, Napoleon",
-            "hint": "This reflective, closing-style sentence looks back on the meal as if summarizing it afterward.",
-            "explanation": "‘Périgord’ is a region in France famous for its black truffles, often used to describe especially prized truffle dishes. This sentence's reflective tone suits a memorable, high-end dining experience.",
+            "correctAnswer": "Bread, Lentil Soup",
+            "hint": "An unavailable dietary-friendly dish leads to a second dietary-friendly option, not just any dish.",
+            "explanation": "When a dietary-suitable dish is unavailable, the natural next question narrows down to other suitable options, not the whole menu.",
             "id": "go_l184_q1",
             "menuItems": [
-                "Turbot Ceviche",
-                "Périgord Truffle Risotto",
-                "Napoleon",
-                "Opera Cake"
+                "Garlic Bread",
+                "Bread",
+                "Vegan Chili",
+                "Lentil Soup"
             ],
             "menuPrices": [
-                "$9.75",
-                "$16.50",
-                "$20.50",
-                "$7.25"
+                "$2.50",
+                "$2.00",
+                "$7.00",
+                "$6.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Of the many memorable meals I've had the privilege of enjoying, few have rivaled what I anticipate tonight will offer, beginning with the osetra caviar, continuing through the whole roasted turbot, and culminating, I trust, in the vintage port reduction tart.",
+            "prompt": "Customer: Do you have anything gluten-free that isn't just a salad? Server: The grilled salmon with rice works. Customer: That's perfect, actually - I was getting tired of salads. I'll have that, and a lemonade.",
             "options": [
-                "Osetra Caviar",
-                "Whole Roasted Turbot",
-                "Vintage Port Reduction Tart",
-                "Golden Caviar"
+                "Iced Tea",
+                "Gluten-Free Salad",
+                "Grilled Salmon with Rice",
+                "Lemonade"
             ],
-            "correctAnswer": "Osetra Caviar, Whole Roasted Turbot, Vintage Port Reduction Tart",
-            "hint": "This elaborate reflective opening returns once more with a new main course.",
-            "explanation": "This structure continues to use several embedded clauses before finally arriving at the three-course order.",
+            "correctAnswer": "Grilled Salmon with Rice, Lemonade",
+            "hint": "The customer expresses mild frustration before accepting a welcome alternative.",
+            "explanation": "A small aside about being tired of salads adds realistic personality to the exchange without changing what's actually ordered.",
             "id": "go_l184_q2",
             "menuItems": [
-                "Osetra Caviar",
-                "Whole Roasted Turbot",
-                "Vintage Port Reduction Tart",
-                "Golden Caviar"
+                "Iced Tea",
+                "Gluten-Free Salad",
+                "Grilled Salmon with Rice",
+                "Lemonade"
             ],
             "menuPrices": [
-                "$10.00",
-                "$15.25",
-                "$11.25",
-                "$13.75"
+                "$3.00",
+                "$9.00",
+                "$18.00",
+                "$3.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Should the kitchen find itself able to accommodate a request born more of curiosity than necessity, I would be most grateful for the white truffle carpaccio, to be followed, in due course, by the squab en croûte, and, when the moment feels right, the gold leaf chocolate delice.",
+            "prompt": "Is the vegan burger available? No? What about the veggie wrap - also out? Oh no. OK, then just a big side salad and some fries, I suppose.",
             "options": [
-                "White Truffle Carpaccio",
-                "Squab en Croûte",
-                "Gold Leaf Chocolate Delice",
-                "Beluga Caviar"
+                "Veggie Wrap",
+                "Vegan Burger",
+                "Fries",
+                "Side Salad"
             ],
-            "correctAnswer": "White Truffle Carpaccio, Squab en Croûte, Gold Leaf Chocolate Delice",
-            "hint": "This elaborate conditional request returns once more with a new main course.",
-            "explanation": "This structure continues to soften a simple request with extremely formal, indirect language.",
+            "correctAnswer": "Fries, Side Salad",
+            "hint": "Two unavailable options in a row lead to a fallback choice, marked by resignation.",
+            "explanation": "'I suppose' shows the final choice isn't the customer's first preference, but it's still the real, final order once two other options failed.",
             "id": "go_l184_q3",
             "menuItems": [
-                "White Truffle Carpaccio",
-                "Squab en Croûte",
-                "Gold Leaf Chocolate Delice",
-                "Beluga Caviar"
+                "Veggie Wrap",
+                "Vegan Burger",
+                "Fries",
+                "Side Salad"
             ],
             "menuPrices": [
-                "$14.00",
-                "$7.25",
-                "$8.50",
-                "$18.00"
+                "$9.00",
+                "$10.00",
+                "$3.00",
+                "$8.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "It is not without some hesitation, given how rarely I permit myself such indulgence, that I find myself ordering the beluga caviar, the Kobe beef wellington, and, unable to resist, the opera cake.",
+            "prompt": "We're already running late for a movie - is there anything that can come out in under ten minutes? The soup and sandwich combo, both of us, quickly, please, and two waters.",
             "options": [
-                "Beluga Caviar",
-                "Kobe Beef Wellington",
-                "Opera Cake",
-                "Napoleon"
+                "Soup and Sandwich Combo",
+                "Water",
+                "Full Dinner",
+                "Soda"
             ],
-            "correctAnswer": "Beluga Caviar, Kobe Beef Wellington, Opera Cake",
-            "hint": "This hesitant-but-indulgent structure returns once more.",
-            "explanation": "This structure continues to show genuine, if slightly guilty, enthusiasm for an indulgent order.",
+            "correctAnswer": "Soup and Sandwich Combo, Water",
+            "hint": "A firm time constraint narrows the order down to the fastest option for both people.",
+            "explanation": "Time pressure combined with two people ordering the same thing shows how constraints can simplify a final decision.",
             "id": "go_l185_q1",
             "menuItems": [
-                "Beluga Caviar",
-                "Kobe Beef Wellington",
-                "Opera Cake",
-                "Napoleon"
+                "Soup and Sandwich Combo",
+                "Water",
+                "Full Dinner",
+                "Soda"
             ],
             "menuPrices": [
-                "$18.00",
-                "$12.50",
-                "$7.25",
-                "$20.50"
+                "$9.00",
+                "$0.00",
+                "$16.00",
+                "$5.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Whatever else this evening holds, let it be said that we began with the foie gras terrine, proceeded to the milk-fed lamb, and, as any memorable evening ought to, concluded with the grand marnier soufflé.",
+            "prompt": "Server: The kitchen's backed up tonight - starters are taking twenty minutes. Customer: In that case, skip the starter for us and just bring the mains when they're ready: the steak and the salmon.",
             "options": [
-                "Foie Gras Terrine",
-                "Milk-Fed Lamb",
-                "Grand Marnier Soufflé",
-                "Chocolate Soufflé"
+                "Steak",
+                "Salmon",
+                "Shrimp Cocktail",
+                "Calamari"
             ],
-            "correctAnswer": "Foie Gras Terrine, Milk-Fed Lamb, Grand Marnier Soufflé",
-            "hint": "This ceremonial, reflective structure returns once more.",
-            "explanation": "This structure continues to summarize a meal's highlights in a formal, almost celebratory tone.",
+            "correctAnswer": "Steak, Salmon",
+            "hint": "A kitchen delay leads the customer to skip an entire course rather than wait.",
+            "explanation": "Adjusting the whole structure of an order in response to a delay is a realistic, practical solution to a timing problem.",
             "id": "go_l185_q2",
             "menuItems": [
-                "Foie Gras Terrine",
-                "Milk-Fed Lamb",
-                "Grand Marnier Soufflé",
-                "Chocolate Soufflé"
+                "Steak",
+                "Salmon",
+                "Shrimp Cocktail",
+                "Calamari"
             ],
             "menuPrices": [
-                "$9.75",
-                "$21.75",
-                "$2.00",
-                "$12.50"
+                "$26.00",
+                "$19.00",
+                "$13.00",
+                "$11.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "That the langoustine quenelle alone justified the journey here is a claim I do not make lightly; nonetheless, I shall also have the lobster thermidor, and the champagne sorbet to close what I expect will be a remarkable meal.",
+            "prompt": "Half of us have a train to catch in thirty minutes - could their food come out first? They'll have the sandwiches, and the rest of us, who aren't in a rush, will have the steaks.",
             "options": [
-                "Langoustine Quenelle",
-                "Lobster Thermidor",
-                "Champagne Sorbet",
-                "Turbot Ceviche"
+                "Sandwich",
+                "Salad",
+                "Steak",
+                "Burger"
             ],
-            "correctAnswer": "Langoustine Quenelle, Lobster Thermidor, Champagne Sorbet",
-            "hint": "This bold-claim structure returns once more with a new main course.",
-            "explanation": "This structure continues to qualify a strong opening statement before completing the full order.",
+            "correctAnswer": "Sandwich, Steak",
+            "hint": "The group splits into two timing categories, each with its own dish.",
+            "explanation": "Splitting a group's timing needs while keeping track of two separate dish choices is a genuinely advanced ordering skill.",
             "id": "go_l185_q3",
             "menuItems": [
-                "Langoustine Quenelle",
-                "Lobster Thermidor",
-                "Champagne Sorbet",
-                "Turbot Ceviche"
+                "Sandwich",
+                "Salad",
+                "Steak",
+                "Burger"
             ],
             "menuPrices": [
-                "$4.50",
-                "$17.75",
-                "$3.25",
-                "$9.75"
+                "$8.50",
+                "$8.00",
+                "$26.00",
+                "$9.50"
             ]
         },
         {
-            "instruction": "Tap the items to fulfill the customer's order.",
+            "instruction": "Tap the items to fulfill the guest's final order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "In the event that the kitchen has already run out of the black winter truffle soup, I would ask only that you let me know before proceeding to the black cod in miso and, eventually, the truffle honey baklava.",
+            "prompt": "Server (rushed): OK go, go, what do you need? Customer: Um - the chicken, no wait, the beef, and a coke, quickly!",
             "options": [
-                "Black Winter Truffle Soup",
-                "Black Cod in Miso",
-                "Truffle Honey Baklava",
-                "Opera Cake"
+                "Beef",
+                "Chicken",
+                "Diet Coke",
+                "Coke"
             ],
-            "correctAnswer": "Black Winter Truffle Soup, Black Cod in Miso, Truffle Honey Baklava",
-            "hint": "This practical, shortage-anticipating structure returns once more.",
-            "explanation": "This structure continues to show thoughtful foresight about the availability of a popular starter.",
+            "correctAnswer": "Beef, Coke",
+            "hint": "A rushed, pressured exchange still contains a clear correction - trust the final word.",
+            "explanation": "Even under time pressure and with hesitation, the customer's final, corrected choice is what should be tapped.",
             "id": "go_l186_q1",
             "menuItems": [
-                "Black Winter Truffle Soup",
-                "Black Cod in Miso",
-                "Truffle Honey Baklava",
-                "Opera Cake"
+                "Beef",
+                "Chicken",
+                "Diet Coke",
+                "Coke"
             ],
             "menuPrices": [
-                "$5.75",
-                "$12.50",
-                "$9.75",
-                "$7.25"
+                "$16.00",
+                "$14.00",
+                "$2.75",
+                "$2.75"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "If pressed to name the single dish I most looked forward to this evening, it would be the sea urchin, though the périgord truffle risotto and the chestnut vacherin promise to be no less memorable.",
+            "prompt": "Server: We're slammed, sorry - quick, what'll it be? Customer: Uh, the special, whatever that is today, and water, tap water's fine.",
             "options": [
-                "Sea Urchin",
-                "Périgord Truffle Risotto",
-                "Chestnut Vacherin",
-                "Golden Caviar"
+                "Special",
+                "Sparkling Water",
+                "Tap Water",
+                "Sirloin"
             ],
-            "correctAnswer": "Sea Urchin, Périgord Truffle Risotto, Chestnut Vacherin",
-            "hint": "This favorite-dish structure returns once more with new courses.",
-            "explanation": "This structure continues to highlight one standout dish while affirming enthusiasm for the rest of the meal.",
+            "correctAnswer": "Special, Tap Water",
+            "hint": "The customer accepts an unknown dish under time pressure, trusting the label 'special.'",
+            "explanation": "'Whatever that is today' shows the customer ordering without full information, purely because of the rushed situation.",
             "id": "go_l186_q2",
             "menuItems": [
-                "Sea Urchin",
-                "Périgord Truffle Risotto",
-                "Chestnut Vacherin",
-                "Golden Caviar"
-            ],
-            "menuPrices": [
-                "$2.00",
-                "$16.50",
-                "$12.50",
-                "$13.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "There being no occasion more deserving of such extravagance, we have chosen, without a hint of restraint, the golden caviar, the Bresse chicken, and the saffron panna cotta.",
-            "options": [
-                "Golden Caviar",
-                "Bresse Chicken",
-                "Saffron Panna Cotta",
-                "Beluga Caviar"
-            ],
-            "correctAnswer": "Golden Caviar, Bresse Chicken, Saffron Panna Cotta",
-            "hint": "This occasion-justifying structure returns once more.",
-            "explanation": "This structure continues to use a formal absolute construction to justify an especially lavish choice.",
-            "id": "go_l186_q3",
-            "menuItems": [
-                "Golden Caviar",
-                "Bresse Chicken",
-                "Saffron Panna Cotta",
-                "Beluga Caviar"
-            ],
-            "menuPrices": [
-                "$13.75",
-                "$19.25",
-                "$6.00",
-                "$18.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Much as I might have been tempted to defer entirely to the chef, I find I already know precisely what I want: the beluga caviar, the A5 wagyu, and, saving the best for last, the petit fours royale.",
-            "options": [
-                "Beluga Caviar",
-                "A5 Wagyu",
-                "Petit Fours Royale",
-                "Napoleon"
-            ],
-            "correctAnswer": "Beluga Caviar, A5 Wagyu, Petit Fours Royale",
-            "hint": "This self-assured structure returns once more.",
-            "explanation": "This structure continues to show a confident customer who briefly considered — then declined — deferring entirely to the chef.",
-            "id": "go_l187_q1",
-            "menuItems": [
-                "Beluga Caviar",
-                "A5 Wagyu",
-                "Petit Fours Royale",
-                "Napoleon"
+                "Special",
+                "Sparkling Water",
+                "Tap Water",
+                "Sirloin"
             ],
             "menuPrices": [
                 "$18.00",
-                "$15.25",
-                "$7.25",
-                "$20.50"
+                "$3.00",
+                "$0.00",
+                "$22.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "As we draw this remarkable evening to a close, allow me to say that the turbot ceviche, the aged duck, and the napoleon will be remembered long after the last course has been cleared.",
+            "prompt": "Customer: Wait, does the- Server: Sorry, no time, kitchen's closing in two minutes! Customer: OK, OK - the burger, plain, and a coke, quickly!",
             "options": [
-                "Turbot Ceviche",
-                "Aged Duck",
-                "Napoleon",
-                "Opera Cake"
+                "Burger",
+                "Diet Coke",
+                "Cheeseburger",
+                "Coke"
             ],
-            "correctAnswer": "Turbot Ceviche, Aged Duck, Napoleon",
-            "hint": "This reflective, closing-style structure returns once more.",
-            "explanation": "This structure continues to summarize a meal in a warm, formal, retrospective tone.",
+            "correctAnswer": "Burger, Coke",
+            "hint": "An attempted question is cut short by real time pressure, so the customer orders without getting an answer.",
+            "explanation": "Sometimes real time pressure means a clarifying question never gets answered - the customer has to decide anyway.",
+            "id": "go_l186_q3",
+            "menuItems": [
+                "Burger",
+                "Diet Coke",
+                "Cheeseburger",
+                "Coke"
+            ],
+            "menuPrices": [
+                "$9.00",
+                "$2.75",
+                "$9.50",
+                "$2.75"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Server: I'm so sorry, we're completely out of that dish. Customer: Oh, that's totally fine, don't worry about it! I'll just have the pasta instead, and a side salad.",
+            "options": [
+                "Side Salad",
+                "Pasta",
+                "Original Dish",
+                "Caesar Salad"
+            ],
+            "correctAnswer": "Side Salad, Pasta",
+            "hint": "A gracious, reassuring response follows bad news before the actual replacement order.",
+            "explanation": "Responding warmly to bad news keeps the interaction pleasant, which matters as much as the words of the order itself.",
+            "id": "go_l187_q1",
+            "menuItems": [
+                "Side Salad",
+                "Pasta",
+                "Original Dish",
+                "Caesar Salad"
+            ],
+            "menuPrices": [
+                "$4.00",
+                "$13.00",
+                "$18.00",
+                "$4.50"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Server: I have to admit, I forgot to put your order in - I'm really sorry. Customer: Oh no, that happens! No big deal - can we just go with the chicken and rice now, please?",
+            "options": [
+                "Rice",
+                "Chicken",
+                "Mashed Potatoes",
+                "Steak"
+            ],
+            "correctAnswer": "Rice, Chicken",
+            "hint": "The customer forgives a real mistake gracefully before restating the order.",
+            "explanation": "Reacting kindly to an honest mistake is socially appropriate and keeps the situation calm for everyone.",
             "id": "go_l187_q2",
             "menuItems": [
-                "Turbot Ceviche",
-                "Aged Duck",
-                "Napoleon",
-                "Opera Cake"
+                "Rice",
+                "Chicken",
+                "Mashed Potatoes",
+                "Steak"
             ],
             "menuPrices": [
-                "$9.75",
-                "$10.00",
-                "$20.50",
-                "$7.25"
+                "$3.00",
+                "$14.00",
+                "$3.50",
+                "$26.00"
             ]
         },
         {
-            "instruction": "Tap the items to fulfill the customer's order.",
+            "instruction": "Tap the items to fulfill the guest's final order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Of the many memorable meals I've had the privilege of enjoying, few have rivaled what I anticipate tonight will offer, beginning with the osetra caviar, continuing through the milk-fed lamb, and culminating, I trust, in the vintage port reduction tart.",
+            "prompt": "Customer: I don't want to make this awkward, but I think we might have been undercharged - we had three mains, not two. It should be the pasta, the salmon, and the steak.",
             "options": [
-                "Osetra Caviar",
-                "Milk-Fed Lamb",
-                "Vintage Port Reduction Tart",
-                "Golden Caviar"
+                "Salmon",
+                "Steak",
+                "Pasta",
+                "Risotto"
             ],
-            "correctAnswer": "Osetra Caviar, Milk-Fed Lamb, Vintage Port Reduction Tart",
-            "hint": "This elaborate reflective opening makes another appearance.",
-            "explanation": "This structure continues to build anticipation through several embedded clauses before naming the final order.",
+            "correctAnswer": "Salmon, Steak, Pasta",
+            "hint": "The customer proactively points out an error that benefits them, rather than staying quiet.",
+            "explanation": "Honestly pointing out an undercharge, even though it costs the customer more, is a socially responsible and realistic choice some diners make.",
             "id": "go_l187_q3",
             "menuItems": [
-                "Osetra Caviar",
-                "Milk-Fed Lamb",
-                "Vintage Port Reduction Tart",
-                "Golden Caviar"
+                "Salmon",
+                "Steak",
+                "Pasta",
+                "Risotto"
             ],
             "menuPrices": [
-                "$10.00",
-                "$21.75",
-                "$11.25",
-                "$13.75"
+                "$19.00",
+                "$26.00",
+                "$13.00",
+                "$15.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Should the kitchen find itself able to accommodate a request born more of curiosity than necessity, I would be most grateful for the white truffle carpaccio, to be followed, in due course, by the lobster thermidor, and, when the moment feels right, the gold leaf chocolate delice.",
+            "prompt": "I'm vegetarian and the veggie burger's sold out, so is there anything else meat-free? Server: The stuffed peppers. Customer: I'll have those, then, no cheese since I'm also dairy-free today, and a side salad.",
             "options": [
-                "White Truffle Carpaccio",
-                "Lobster Thermidor",
-                "Gold Leaf Chocolate Delice",
-                "Beluga Caviar"
+                "Side Salad",
+                "Veggie Burger",
+                "Caesar Salad",
+                "Stuffed Peppers"
             ],
-            "correctAnswer": "White Truffle Carpaccio, Lobster Thermidor, Gold Leaf Chocolate Delice",
-            "hint": "This elaborate conditional request appears once more.",
-            "explanation": "This structure continues to soften a request through extremely formal, indirect phrasing.",
+            "correctAnswer": "Side Salad, Stuffed Peppers",
+            "hint": "An unavailable item, a dietary question, a server suggestion, and a second dietary note all combine before the final order.",
+            "explanation": "This level combines an unavailability problem with two separate dietary considerations, resolved through a single natural conversation.",
             "id": "go_l188_q1",
             "menuItems": [
-                "White Truffle Carpaccio",
-                "Lobster Thermidor",
-                "Gold Leaf Chocolate Delice",
-                "Beluga Caviar"
+                "Side Salad",
+                "Veggie Burger",
+                "Caesar Salad",
+                "Stuffed Peppers"
             ],
             "menuPrices": [
-                "$14.00",
-                "$17.75",
-                "$8.50",
-                "$18.00"
+                "$4.00",
+                "$9.00",
+                "$4.50",
+                "$13.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "It is not without some hesitation, given how rarely I permit myself such indulgence, that I find myself ordering the sea urchin, the black cod in miso, and, unable to resist, the opera cake.",
+            "prompt": "Could the salmon be prepared without butter since I'm dairy-free, and could you check if there's a lower-sodium option for the sauce too, since my doctor recommended I watch my salt intake? And a side of steamed vegetables, no added salt.",
             "options": [
-                "Sea Urchin",
-                "Black Cod in Miso",
-                "Opera Cake",
-                "Napoleon"
+                "Steamed Vegetables",
+                "Roasted Potatoes",
+                "Salmon without Butter",
+                "Salmon with Butter"
             ],
-            "correctAnswer": "Sea Urchin, Black Cod in Miso, Opera Cake",
-            "hint": "This hesitant-but-indulgent structure appears once more.",
-            "explanation": "This structure continues to admit rare indulgence while confidently naming a full three-course order.",
+            "correctAnswer": "Steamed Vegetables, Salmon without Butter",
+            "hint": "Two separate health-related requests, from two different reasons, both apply to this order.",
+            "explanation": "Diners sometimes combine a dietary restriction with a doctor's recommendation - both are legitimate, communicated reasons for a modified order.",
             "id": "go_l188_q2",
             "menuItems": [
-                "Sea Urchin",
-                "Black Cod in Miso",
-                "Opera Cake",
-                "Napoleon"
+                "Steamed Vegetables",
+                "Roasted Potatoes",
+                "Salmon without Butter",
+                "Salmon with Butter"
             ],
             "menuPrices": [
-                "$2.00",
-                "$12.50",
-                "$7.25",
-                "$20.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Whatever else this evening holds, let it be said that we began with the foie gras terrine, proceeded to the périgord truffle risotto, and, as any memorable evening ought to, concluded with the grand marnier soufflé.",
-            "options": [
-                "Foie Gras Terrine",
-                "Périgord Truffle Risotto",
-                "Grand Marnier Soufflé",
-                "Chocolate Soufflé"
-            ],
-            "correctAnswer": "Foie Gras Terrine, Périgord Truffle Risotto, Grand Marnier Soufflé",
-            "hint": "This ceremonial, reflective structure appears once more.",
-            "explanation": "This structure continues to summarize a full meal in warm, formal, retrospective language.",
-            "id": "go_l188_q3",
-            "menuItems": [
-                "Foie Gras Terrine",
-                "Périgord Truffle Risotto",
-                "Grand Marnier Soufflé",
-                "Chocolate Soufflé"
-            ],
-            "menuPrices": [
-                "$9.75",
-                "$16.50",
-                "$2.00",
-                "$12.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "That the langoustine quenelle alone justified the journey here is a claim I do not make lightly; nonetheless, I shall also have the Bresse chicken, and the champagne sorbet to close what I expect will be a remarkable meal.",
-            "options": [
-                "Langoustine Quenelle",
-                "Bresse Chicken",
-                "Champagne Sorbet",
-                "Turbot Ceviche"
-            ],
-            "correctAnswer": "Langoustine Quenelle, Bresse Chicken, Champagne Sorbet",
-            "hint": "This bold-claim structure appears once more.",
-            "explanation": "This structure continues to qualify an enthusiastic opening statement before completing a full, confident order.",
-            "id": "go_l189_q1",
-            "menuItems": [
-                "Langoustine Quenelle",
-                "Bresse Chicken",
-                "Champagne Sorbet",
-                "Turbot Ceviche"
-            ],
-            "menuPrices": [
-                "$4.50",
-                "$19.25",
-                "$3.25",
-                "$9.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "In the event that the kitchen has already run out of the black winter truffle soup, I would ask only that you let me know before proceeding to the A5 wagyu and, eventually, the truffle honey baklava.",
-            "options": [
-                "Black Winter Truffle Soup",
-                "A5 Wagyu",
-                "Truffle Honey Baklava",
-                "Opera Cake"
-            ],
-            "correctAnswer": "Black Winter Truffle Soup, A5 Wagyu, Truffle Honey Baklava",
-            "hint": "This practical, shortage-anticipating structure appears once more.",
-            "explanation": "This structure continues to show thoughtful foresight about a popular starter's availability.",
-            "id": "go_l189_q2",
-            "menuItems": [
-                "Black Winter Truffle Soup",
-                "A5 Wagyu",
-                "Truffle Honey Baklava",
-                "Opera Cake"
-            ],
-            "menuPrices": [
-                "$5.75",
-                "$15.25",
-                "$9.75",
-                "$7.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "If pressed to name the single dish I most looked forward to this evening, it would be the golden caviar, though the aged duck and the chestnut vacherin promise to be no less memorable.",
-            "options": [
-                "Golden Caviar",
-                "Aged Duck",
-                "Chestnut Vacherin",
-                "Beluga Caviar"
-            ],
-            "correctAnswer": "Golden Caviar, Aged Duck, Chestnut Vacherin",
-            "hint": "This favorite-dish structure appears once more.",
-            "explanation": "This structure continues to highlight one standout dish while confirming genuine enthusiasm for the entire meal.",
-            "id": "go_l189_q3",
-            "menuItems": [
-                "Golden Caviar",
-                "Aged Duck",
-                "Chestnut Vacherin",
-                "Beluga Caviar"
-            ],
-            "menuPrices": [
-                "$13.75",
-                "$10.00",
-                "$12.50",
+                "$4.00",
+                "$3.50",
+                "$19.00",
                 "$18.00"
             ]
         },
@@ -763,84 +651,196 @@
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "There being no occasion more deserving of such extravagance, we have chosen, without a hint of restraint, the A5 wagyu tartare, the whole roasted turbot, and the saffron panna cotta.",
+            "prompt": "Could I get the risotto without dairy? Server: It's made with a cream base throughout, I'm afraid, we can't remove it. Customer: OK, then what about the vegetable stir-fry - is that dairy-free? Yes? Great, I'll have that, with rice.",
             "options": [
-                "A5 Wagyu Tartare",
-                "Whole Roasted Turbot",
-                "Saffron Panna Cotta",
-                "Golden Caviar"
+                "Rice",
+                "Fried Rice",
+                "Risotto",
+                "Vegetable Stir-fry"
             ],
-            "correctAnswer": "A5 Wagyu Tartare, Whole Roasted Turbot, Saffron Panna Cotta",
-            "hint": "This occasion-justifying structure makes its final appearance in this set of levels.",
-            "explanation": "This structure closes out this portion of the tier with the same formal justification for an especially lavish order.",
-            "id": "go_l190_q1",
+            "correctAnswer": "Rice, Vegetable Stir-fry",
+            "hint": "A failed substitution attempt leads to a completely different dish, confirmed as suitable before ordering.",
+            "explanation": "When a substitution truly isn't possible, switching to an entirely different dish, after confirming it fits the need, is the practical next step.",
+            "id": "go_l188_q3",
             "menuItems": [
-                "A5 Wagyu Tartare",
-                "Whole Roasted Turbot",
-                "Saffron Panna Cotta",
-                "Golden Caviar"
+                "Rice",
+                "Fried Rice",
+                "Risotto",
+                "Vegetable Stir-fry"
             ],
             "menuPrices": [
-                "$4.50",
-                "$15.25",
-                "$6.00",
-                "$13.75"
+                "$3.00",
+                "$3.00",
+                "$14.00",
+                "$12.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Much as I might have been tempted to defer entirely to the chef, I find I already know precisely what I want: the white truffle carpaccio, the squab en croûte, and, saving the best for last, the petit fours royale.",
+            "prompt": "We've got twenty minutes before our show starts, my sister's vegan, and my dad doesn't do spicy - so, quickest vegan thing that's not spicy? Server: The lentil soup. Customer: Perfect, that for her, and I'll have the mild chicken.",
             "options": [
-                "White Truffle Carpaccio",
-                "Squab en Croûte",
-                "Petit Fours Royale",
-                "Napoleon"
+                "Spicy Chicken",
+                "Lentil Soup",
+                "Mild Chicken",
+                "Vegan Curry"
             ],
-            "correctAnswer": "White Truffle Carpaccio, Squab en Croûte, Petit Fours Royale",
-            "hint": "This self-assured structure makes its final appearance here.",
-            "explanation": "This sentence closes out this portion of the tier, once again showing a confident customer with a clear, complete vision for their meal.",
-            "id": "go_l190_q2",
+            "correctAnswer": "Lentil Soup, Mild Chicken",
+            "hint": "Three constraints (time, diet, spice tolerance) are stated together before the server offers one solution.",
+            "explanation": "Stacking multiple constraints into a single question is an efficient, advanced way to get a fast, suitable recommendation from the server.",
+            "id": "go_l189_q1",
             "menuItems": [
-                "White Truffle Carpaccio",
-                "Squab en Croûte",
-                "Petit Fours Royale",
-                "Napoleon"
+                "Spicy Chicken",
+                "Lentil Soup",
+                "Mild Chicken",
+                "Vegan Curry"
+            ],
+            "menuPrices": [
+                "$13.00",
+                "$6.00",
+                "$13.00",
+                "$12.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "OK, given that half the table's gluten-free and we need to eat fast before the game starts, what's quick and safe for everyone? Server: The rice bowls, all gluten-free, ready in ten. Customer: Let's do that - two rice bowls, and I'll grab a coke.",
+            "options": [
+                "Gluten-Free Pasta",
+                "Rice Bowl",
+                "Diet Coke",
+                "Coke"
+            ],
+            "correctAnswer": "Rice Bowl, Coke",
+            "hint": "Two constraints are solved at once by a single dish type the server suggests.",
+            "explanation": "A well-chosen menu item can sometimes satisfy several constraints simultaneously - here, both the dietary need and the time pressure.",
+            "id": "go_l189_q2",
+            "menuItems": [
+                "Gluten-Free Pasta",
+                "Rice Bowl",
+                "Diet Coke",
+                "Coke"
+            ],
+            "menuPrices": [
+                "$13.00",
+                "$12.00",
+                "$2.75",
+                "$2.75"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Honestly, there's no single thing that's both nut-free and ready quickly - could we just get the salad, hold the walnuts, even if it takes a couple extra minutes? We don't mind waiting a bit for that one, and two lemonades.",
+            "options": [
+                "Salad with Walnuts",
+                "Lemonade",
+                "Salad without Walnuts",
+                "Iced Tea"
+            ],
+            "correctAnswer": "Lemonade, Salad without Walnuts",
+            "hint": "When no option satisfies every constraint perfectly, the group consciously accepts a small trade-off.",
+            "explanation": "Real decisions sometimes require accepting an imperfect trade-off - the group here knowingly chooses a slight wait over a less safe option.",
+            "id": "go_l189_q3",
+            "menuItems": [
+                "Salad with Walnuts",
+                "Lemonade",
+                "Salad without Walnuts",
+                "Iced Tea"
+            ],
+            "menuPrices": [
+                "$8.00",
+                "$3.00",
+                "$9.00",
+                "$3.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Big table, sorry in advance: I'm vegan, my husband's gluten-free, the kids just want plain pasta, and we're on a bit of a schedule - could you tell us what can come out fastest that covers all that? Server: The vegetable stir-fry works for you two, and the kids' pasta is always quick.",
+            "options": [
+                "Chicken Stir-fry",
+                "Kids' Pasta",
+                "Kids' Pizza",
+                "Vegetable Stir-fry"
+            ],
+            "correctAnswer": "Kids' Pasta, Vegetable Stir-fry",
+            "hint": "Several constraints - two diets, kids' preferences, and time - are solved together by the server's single suggestion.",
+            "explanation": "This level brings together everything from the unit: multiple dietary needs, a group order, and a timing constraint, all resolved in one natural exchange.",
+            "id": "go_l190_q1",
+            "menuItems": [
+                "Chicken Stir-fry",
+                "Kids' Pasta",
+                "Kids' Pizza",
+                "Vegetable Stir-fry"
             ],
             "menuPrices": [
                 "$14.00",
-                "$7.25",
-                "$7.25",
-                "$20.50"
+                "$6.00",
+                "$6.50",
+                "$13.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "As we draw this remarkable evening to a close, allow me to say that the turbot ceviche, the Kobe beef wellington, and the napoleon will be remembered long after the last course has been cleared.",
+            "prompt": "Is the seafood platter available? Sold out? OK - is there a shellfish-free seafood option, since my brother's allergic, that's still quick, since we've got a reservation elsewhere at eight? Server: The salmon, ten minutes. Customer: Perfect, that for him, and the rest of us will have the steaks.",
             "options": [
-                "Turbot Ceviche",
-                "Kobe Beef Wellington",
-                "Napoleon",
-                "Opera Cake"
+                "Seafood Platter",
+                "Shrimp Cocktail",
+                "Salmon",
+                "Steak"
             ],
-            "correctAnswer": "Turbot Ceviche, Kobe Beef Wellington, Napoleon",
-            "hint": "This reflective, closing-style structure makes its final appearance, closing out this portion of the expert level range.",
-            "explanation": "This sentence closes out this section of the tier with the same warm, formal, retrospective tone used to mark a truly memorable meal.",
-            "id": "go_l190_q3",
+            "correctAnswer": "Salmon, Steak",
+            "hint": "An unavailable dish, an allergy, and a timing constraint all get resolved together before the group's order is finalized.",
+            "explanation": "This mirrors the most demanding real restaurant situations: unavailability, an allergy, and a hard deadline, worked through in one connected conversation.",
+            "id": "go_l190_q2",
             "menuItems": [
-                "Turbot Ceviche",
-                "Kobe Beef Wellington",
-                "Napoleon",
-                "Opera Cake"
+                "Seafood Platter",
+                "Shrimp Cocktail",
+                "Salmon",
+                "Steak"
             ],
             "menuPrices": [
-                "$9.75",
-                "$12.50",
-                "$20.50",
-                "$7.25"
+                "$28.00",
+                "$13.00",
+                "$19.00",
+                "$26.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "OK, so: two of us are vegetarian and the mushroom risotto's off tonight - what's the fastest meat-free thing, since we're already late? Server: The veggie flatbread, five minutes. Customer: We'll take two of those, and honestly, just tap water for the table, to keep it quick.",
+            "options": [
+                "Mushroom Risotto",
+                "Sparkling Water",
+                "Tap Water",
+                "Veggie Flatbread"
+            ],
+            "correctAnswer": "Tap Water, Veggie Flatbread",
+            "hint": "Unavailability, a dietary need, and serious time pressure all combine in this final, most demanding level of the unit.",
+            "explanation": "This final level of the Advanced Scenarios unit requires holding several real constraints in mind at once and following a fast-moving, realistic conversation.",
+            "id": "go_l190_q3",
+            "menuItems": [
+                "Mushroom Risotto",
+                "Sparkling Water",
+                "Tap Water",
+                "Veggie Flatbread"
+            ],
+            "menuPrices": [
+                "$16.00",
+                "$3.00",
+                "$0.00",
+                "$11.00"
             ]
         }
     ]

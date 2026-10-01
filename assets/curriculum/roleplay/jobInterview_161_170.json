@@ -4,376 +4,376 @@
     "levels": "161-170",
     "quests": [
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that picks up exactly where you left off with the specific point.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you communicate with a board of directors?",
+            "interviewerQuestion": "[Interviewer cuts in] Okay, stop there, I think I get it. Moving on—actually, finish that last thought first, what were you about to say?",
             "options": [
-                "I make sure to provide thorough, detailed reports on our performance.",
-                "I present information concisely, lead with the key implications, and anticipate the questions they're most likely to ask before they ask them.",
-                "I focus on being transparent about both successes and challenges."
+                "It's okay, we can just move on, it probably wasn't that important anyway.",
+                "Sure, I was just about to say that the change also reduced onboarding time for new hires, which was an added benefit beyond the original goal.",
+                "Oh, sorry, I don't really remember exactly where I was, it was something about the impact I think, but I lost my train of thought a bit there."
             ],
             "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Leading with implications and anticipating questions respects a board's limited time more than thoroughness or transparency alone.",
-            "explanation": "Leading with key implications and anticipating likely questions respects the board's limited time and demonstrates command of the material, while thorough detail or general transparency alone doesn't provide that same efficient, anticipatory communication.",
+            "hint": "Pick up exactly where you left off with the specific point you were making, rather than losing track or dismissing it.",
+            "explanation": "Picking up exactly where you left off, with the specific point intact, shows real composure under an interruption. Losing track of your own thought undermines confidence, and dismissing your own point as unimportant wastes a chance to actually answer what was asked.",
             "id": "ji_l161_q1",
             "interviewerReaction": [
                 "disappointed",
                 "impressed",
-                "disappointed"
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that smoothly resumes your point with the specific detail you were building toward.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you presented a difficult update to a board.",
+            "interviewerQuestion": "[Interviewer interrupts] Sorry, sorry, go ahead, I didn't mean to cut you off, please continue.",
             "options": [
-                "I presented the facts honestly, including the challenges we faced.",
-                "I prepared thoroughly so I could answer any question they raised.",
-                "I framed the update around what the board needed to decide, rather than everything we had done, which kept the conversation focused and productive."
+                "That's alright, honestly I think I'd already said the important part anyway.",
+                "Oh, um, I think I was talking about a project, but I'm not totally sure where exactly I was in the story anymore. but that's admittedly a bit of a simplification.",
+                "No worries at all. I was saying that after we made that change, customer complaints about that specific issue dropped by about 60% within the first month."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Framing the update around required decisions is more strategic than honest facts alone or general preparation.",
-            "explanation": "Framing an update around what the board needs to decide keeps the conversation focused on what matters most to them, while presenting facts honestly or being generally prepared doesn't provide that same strategic focus.",
+            "professionalismRating": 4,
+            "hint": "Smoothly resume your point with the specific detail you were building toward, rather than losing the thread.",
+            "explanation": "Smoothly resuming with the specific detail you were building toward shows genuine composure and keeps the answer's momentum. Losing track of the story undermines the answer's credibility, and assuming you'd already made the important point skips content that was clearly still coming.",
             "id": "ji_l161_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "uncertain",
+                "uncertain",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that resumes confidently and specifically, without visible rattling.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you build credibility with a board over time?",
+            "interviewerQuestion": "[Interviewer cuts in abruptly] Hold on, let me stop you, actually never mind, keep going with what you were saying.",
             "options": [
-                "I consistently deliver on what I say I will, and when results fall short, I explain why candidly rather than minimizing the gap.",
-                "I make sure my reports are accurate and well-prepared.",
-                "I try to build strong personal relationships with board members."
+                "Sure, so I was explaining that the redesign let us cut our support ticket volume nearly in half, which was the real proof the change had worked.",
+                "That's fine, I think I was basically finished with my point anyway.",
+                "Sorry, that kind of threw me off a bit, I think I need a second to remember exactly what I was saying before that. but I'd want to think about it more before committing to that."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Consistent follow-through combined with candor about shortfalls builds credibility more durably than accuracy or relationships alone.",
-            "explanation": "Consistent follow-through combined with candor about shortfalls builds durable, earned credibility over time, while accurate reports or strong personal relationships alone doesn't provide that same track record of reliability.",
+            "professionalismRating": 4,
+            "hint": "Resume confidently and specifically, without letting the interruption visibly rattle your train of thought.",
+            "explanation": "Resuming confidently with a specific detail shows real composure despite an abrupt, confusing interruption. Admitting the interruption threw you off undercuts confidence unnecessarily, and assuming you were basically finished skips real content that hadn't been said yet.",
             "id": "ji_l161_q3",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "reassured",
+                "uncertain",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that honors the explicit one-word format with an actual short answer.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you navigate failure at an organizational scale?",
+            "interviewerQuestion": "Rapid fire, one word or short phrase only: Excel or Google Sheets?",
             "options": [
-                "I communicate honestly with all affected stakeholders.",
-                "I lead with transparency about what happened, take visible ownership, and channel the organization's energy into a specific, credible path forward.",
-                "I focus the organization on learning from what went wrong."
+                "I don't have a strong preference, honestly, either one is fine with me.",
+                "That really depends on the specific use case and what the team is already using, so it's hard to just pick one in a single word.",
+                "Excel, for complex formulas."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Combining ownership, transparency, and a credible forward path is more complete than communication or learning alone.",
-            "explanation": "Combining visible ownership, transparency, and a credible path forward addresses both the emotional and practical dimensions of large-scale failure, while communication or a general focus on learning alone doesn't provide that same complete response.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Honor the explicit one-word format with an actual short answer, not an explanation of why it's hard to choose.",
+            "explanation": "Giving an actual short answer, exactly as instructed, respects the explicit rapid-fire format. Explaining why it's hard to choose ignores the format entirely, and having no preference doesn't give a real answer within the constraint.",
             "id": "ji_l162_q1",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "losing interest",
+                "pleased"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the real, short, direct answer, matching the explicit format request.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you led an organization through a significant failure.",
+            "interviewerQuestion": "Same rules, short answers only: mornings or evenings for focused work?",
             "options": [
-                "I made sure leadership took responsibility and communicated clearly.",
-                "I focused on understanding the root causes before acting.",
-                "I publicly acknowledged the failure without deflecting blame, then rallied the organization around a specific, time-bound recovery plan that restored confidence."
+                "Mornings, definitely.",
+                "Either one works for me, I guess, I don't really have a strong preference.",
+                "I think it depends on the day and what's going on, so it's a bit hard to give just a short answer to something like that."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "A specific, time-bound recovery plan that restores confidence is stronger than general leadership accountability or root-cause analysis alone.",
-            "explanation": "A specific, time-bound recovery plan restores confidence through visible, credible action, while general leadership accountability or root-cause analysis alone doesn't provide that same tangible reassurance to the wider organization.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Give a real, short, direct answer, matching the explicit format request.",
+            "explanation": "A real, short, direct answer matches exactly what was asked for in a rapid-fire round. Explaining the dependency on circumstances breaks the format, and a noncommittal 'either one' doesn't actually answer the question.",
             "id": "ji_l162_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "pleased",
+                "uncertain",
+                "losing interest"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the direct, real choice, since the format explicitly calls for a quick answer.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you maintain organizational confidence after a major failure?",
+            "interviewerQuestion": "Quick one: would you rather have more autonomy or more mentorship right now?",
             "options": [
-                "I show that we understand exactly what went wrong and have already begun taking concrete, verifiable steps to prevent it from happening again.",
-                "I remind the organization of our track record and resilience.",
-                "I communicate a clear plan for how we'll move forward."
+                "Mentorship, at this stage.",
+                "I could go either way on that one, honestly.",
+                "That's an interesting question,. or at least that's my instinct here."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Concrete, verifiable steps already underway build more confidence than reminders of past resilience or a general plan alone.",
-            "explanation": "Concrete, verifiable steps already underway provide tangible proof of change, while reminders of past resilience or a general plan for moving forward doesn't offer that same immediate, demonstrable evidence.",
+            "professionalismRating": 4,
+            "hint": "Give a direct, real choice, since the format explicitly calls for a quick answer.",
+            "explanation": "Giving a direct, real choice respects the explicit request for a quick answer. Discussing the ideal balance of both avoids actually choosing, and 'either way' doesn't commit to anything the interviewer can learn from.",
             "id": "ji_l162_q3",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "pleased",
+                "uncertain",
+                "losing interest"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that states the actual point immediately, without excessive apology.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle leaving a company amid restructuring?",
+            "interviewerQuestion": "[Interviewer glances at their watch] Look, I've got another call soon. Can you just get to the point?",
             "options": [
-                "I explain the circumstances factually and without unnecessary detail.",
-                "I acknowledge it was a difficult transition for the organization.",
-                "I describe it honestly as part of a broader organizational shift, focus on what I contributed while there, and speak confidently about what I'm ready to bring next."
+                "Sorry, yeah, let me just quickly wrap up what I was saying, it's just there were a couple more things I wanted to mention before we finish up.",
+                "Of course, the point is: I cut our onboarding time by half, and I'd bring that same instinct for simplifying processes to this role.",
+                "Oh, sorry, um, I'll try to be quicker, I guess I'm not totally sure what the main point was at this point."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Combining honest context, concrete contribution, and confident forward-looking framing is more complete than factual brevity or acknowledging difficulty alone.",
-            "explanation": "Combining honest context, a concrete account of contribution, and confident forward-looking framing gives a complete, reassuring narrative, while factual brevity or simply acknowledging the difficulty of the transition doesn't provide that same rounded picture.",
+            "hint": "State the actual point immediately and clearly, respecting the visible time pressure without apologizing excessively.",
+            "explanation": "Stating the actual point immediately and clearly respects the visible time pressure and keeps composure. Trying to fit in more content ignores the explicit request to wrap up, and losing track of your own point under pressure undermines confidence unnecessarily.",
             "id": "ji_l163_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "losing interest",
+                "reassured",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that answers directly and immediately, matching the stated urgency.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me how you'd discuss departing a company during a major restructuring.",
+            "interviewerQuestion": "[Interviewer sighs] We're really behind schedule, so let's speed this up. What's your answer?",
             "options": [
-                "I'd frame it as a natural outcome of significant organizational change, highlight what I accomplished, and connect it clearly to the value I bring now.",
-                "I'd be honest about the circumstances and what led to my departure.",
-                "I'd explain that many roles were affected by the restructuring."
+                "Understood, my answer is yes, I'm comfortable with that level of travel, and I've done similar travel in my last role without issue.",
+                "Sorry about that, I know we're behind, let me just think for a second about the best way to summarize everything I wanted to say.",
+                "Oh, okay, sorry, I'll try to hurry, I think my answer was something like maybe. even if the specifics might vary quite a bit."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Connecting the departure clearly to your current value is a stronger frame than general honesty or noting shared circumstances.",
-            "explanation": "Connecting the departure clearly to the value you bring now reframes it constructively and forward-looking, while general honesty about circumstances or noting that many roles were affected doesn't provide that same purposeful narrative.",
+            "hint": "Answer directly and immediately, matching the stated urgency without stalling.",
+            "explanation": "Answering directly and immediately matches the stated urgency and keeps the interview moving. Taking a moment to plan a summary ignores the explicit request to speed up, and a vague 'maybe' doesn't actually answer the question at all.",
             "id": "ji_l163_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "reassured",
+                "losing interest",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the exact yes or no requested.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How would you respond if asked to elaborate on why your position was eliminated?",
+            "interviewerQuestion": "[Interviewer taps pen impatiently] I need a decision here, not a whole explanation. Yes or no?",
             "options": [
-                "I'd give a clear, factual account of what happened.",
-                "I'd explain candidly that it was a structural decision unrelated to performance, then pivot confidently to what I've built on since and what I offer now.",
-                "I'd note that the decision reflected the company's broader needs, not mine."
+                "Um, I think probably yes, though it's hard to say for absolutely certain.",
+                "Well, it's a bit more complicated than a simple yes or no, so let me just briefly explain the context behind it first.",
+                "Yes."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Combining candor with a confident pivot forward is stronger than a purely factual account or emphasizing the company's needs alone.",
-            "explanation": "Combining candid explanation with a confident pivot toward current value gives a complete, forward-focused answer, while a purely factual account or simply emphasizing the company's needs alone doesn't provide that same reassuring momentum.",
+            "hint": "Give the exact yes or no requested, since anything else ignores the explicit, direct instruction.",
+            "explanation": "Giving the exact yes or no requested directly respects an explicit, direct instruction. Insisting on providing context anyway ignores the instruction entirely, and a hedged 'probably yes' doesn't give the clean answer that was demanded.",
             "id": "ji_l163_q3",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "losing interest",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that answers the clear final version of the question directly.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you navigate an ethical dilemma at work?",
+            "interviewerQuestion": "So when you were, uh, the thing with the project, how did that, did you, what was your role in the... sorry, let me just ask, what did you actually do on that project?",
             "options": [
-                "I ground my decision in our core values rather than short-term convenience, even when the ethical choice carries real short-term cost.",
-                "I consult with trusted colleagues before deciding how to proceed.",
-                "I weigh the potential consequences of each possible choice."
+                "Sorry, I'm not totally sure I followed the question, could you maybe try asking it in a completely different way?",
+                "No problem, I led the client communication for that project, coordinating updates between our team and the client's team weekly.",
+                "Um, I think I understood most of it, so I'll just talk generally about the project overall. even though I haven't tested that assumption."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Grounding decisions in core values, even at real cost, reflects stronger ethical leadership than consultation or consequence-weighing alone.",
-            "explanation": "Grounding decisions in core values, even when it carries real short-term cost, reflects genuine ethical leadership, while consulting colleagues or weighing consequences alone doesn't guarantee that same principled commitment when it's actually difficult.",
+            "hint": "Once the interviewer self-corrects to a clear final question, answer that clear version directly and confidently.",
+            "explanation": "Answering the clear final version of the question directly, once it lands, shows real listening and composure through a garbled start. Asking them to rephrase entirely ignores that they already clarified it themselves, and answering generally without addressing the actual final question wastes the clarity they just provided.",
             "id": "ji_l164_q1",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain",
+                "reassured",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that answers the clarified final version directly.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you faced a genuine ethical dilemma at work.",
+            "interviewerQuestion": "What I mean is, like, the time when you had to, the deadline thing, how did you, sorry, what I'm asking is: how did you handle that tight deadline?",
             "options": [
-                "I carefully considered the pros and cons before making my decision.",
-                "I chose the option that was harder in the short term but aligned with our values, even though it meant disappointing some stakeholders.",
-                "I sought guidance from others who had faced similar situations."
+                "Sure, I'll just talk about deadlines in general, since I think that covers roughly what you're asking. even if I haven't fully thought it through.",
+                "I think I understand what you're asking, but could you maybe restate the whole question one more time just to be safe?",
+                "Got it, I handled it by cutting the scope down to the must-haves first, and coming back for the extras after the deadline was met."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Choosing the values-aligned option despite short-term cost is a stronger example than general deliberation or seeking guidance alone.",
-            "explanation": "Choosing the values-aligned option despite real short-term cost demonstrates genuine ethical conviction, while general deliberation over pros and cons or seeking guidance from others doesn't necessarily show that same willingness to act on principle.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Answer the clarified final version of the question directly, since the interviewer did the clarifying work themselves.",
+            "explanation": "Answering the clarified final version directly respects the effort the interviewer already made to self-correct. Asking for a full restatement is unnecessary once they've clearly landed on the actual question, and answering generally about deadlines skips the specific thing they finally asked about.",
             "id": "ji_l164_q2",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "uncertain",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that answers the final, clear version directly without asking for repetition.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you make sure ethical considerations aren't overridden by business pressure?",
+            "interviewerQuestion": "Can you tell me about, um, the client, no wait, the team thing, sorry, let me restart: tell me about a time you helped a struggling teammate.",
             "options": [
-                "I try to stay mindful of our values when making decisions.",
-                "I make sure ethical implications are part of every major discussion.",
-                "I establish clear ethical boundaries in advance, before pressure arises, so decisions in the moment aren't influenced by immediate business incentives."
+                "Sorry, that was a bit confusing, could you try asking that one more time, just to make sure I answer the right question?",
+                "Sure, I'll just talk about teamwork in general, since that seems close enough to what you were asking. at least that's roughly how I'd think about it.",
+                "Of course. A teammate was falling behind on a shared task, so I offered to take a portion of it and walked her through the part she was stuck on."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Pre-establishing clear boundaries before pressure arises protects against in-the-moment compromise better than general mindfulness or discussion alone.",
-            "explanation": "Pre-establishing clear ethical boundaries before pressure arises protects decision-making from being swayed in the moment, while general mindfulness of values or including ethics in discussions doesn't provide that same firm, pre-committed safeguard.",
+            "professionalismRating": 4,
+            "hint": "Once the interviewer restarts and clarifies, answer that final, clear version directly without asking for further repetition.",
+            "explanation": "Answering the final, clear version of the restarted question directly shows attentive listening despite the confusing start. Asking them to repeat it again is unnecessary since they already landed on a clear question, and talking about teamwork generally avoids the specific example that was actually requested.",
             "id": "ji_l164_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "uncertain",
+                "uncertain",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that treats 'full story' as the key details and just delivers both requirements together.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you lead through a company-wide layoff?",
+            "interviewerQuestion": "I want the full, complete story with all the details, but also, keep it under a minute. Go.",
             "options": [
-                "I make sure the process is handled with care and compassion.",
-                "I communicate the reasoning honestly and directly, treat those affected with real dignity, and give remaining employees clarity about what comes next.",
-                "I try to communicate transparently throughout the process."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Combining honest reasoning, dignity for those affected, and clarity for those remaining is more complete than general care or transparency alone.",
-            "explanation": "Combining honest reasoning, genuine dignity for those affected, and clarity for remaining employees addresses the full scope of a layoff's impact, while general care or transparency alone doesn't provide that same comprehensive response.",
-            "id": "ji_l165_q1",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you had to lead your organization through layoffs.",
-            "options": [
-                "I made sure every affected employee heard directly and personally from their manager, with clear information and real support, rather than learning through impersonal channels.",
-                "I made sure the process was handled respectfully and fairly.",
-                "I focused on clear communication throughout the process."
+                "I'll hit the key details in under a minute: our biggest client threatened to leave over a delay, I personally took over communication, rebuilt trust with weekly updates, and they renewed their contract two months later.",
+                "That's a bit of a tricky combination, since giving the full complete story usually takes more than a minute to properly get through.",
+                "I'll try my best, though it might be hard to fit everything in that short a time."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Ensuring direct, personal communication from managers is a more concrete standard than general respect or clear communication alone.",
-            "explanation": "Ensuring direct, personal communication from managers with real support shows concrete respect for affected employees, while general fairness or communication alone doesn't guarantee that same personal, dignified experience.",
-            "id": "ji_l165_q2",
+            "hint": "Treat 'full story' as meaning the key details, not every detail, and simply deliver both requirements together rather than commenting on the tension.",
+            "explanation": "Treating 'full story' as the key details, not literally everything, resolves the apparent tension and just delivers both requirements. Pointing out the tension instead of answering wastes the limited time given, and vaguely promising to try without actually doing it fails to meet either requirement.",
+            "id": "ji_l165_q1",
             "interviewerReaction": [
                 "impressed",
+                "losing interest",
+                "uncertain"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that resolves the tension by framing a challenge as genuinely positive.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Be totally honest with me, but also, I don't want to hear anything negative. Tell me about your last job.",
+            "options": [
+                "I'll try to keep it positive, though it's a little hard to be fully honest and only say good things at the same time.",
+                "That's a bit of a contradiction, since being totally honest sometimes means saying something that isn't entirely positive.",
+                "Honestly, it was a good experience overall, I learned a lot about client management, and the parts that were challenging, like tight deadlines, pushed me to get more organized, which I see as a net positive."
+            ],
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Resolve the tension by framing anything challenging as genuinely positive in outcome, rather than pointing out the contradiction.",
+            "explanation": "Resolving the tension by genuinely framing a challenge as a positive outcome satisfies both honesty and positivity at once. Pointing out the contradiction instead of answering avoids the question, and admitting the two requests are hard to reconcile stalls instead of actually reconciling them.",
+            "id": "ji_l165_q2",
+            "interviewerReaction": [
+                "uncertain",
+                "losing interest",
+                "pleased"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that gives genuinely shareable specifics while naming what stays confidential.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Give me specifics, real names and numbers, but don't share anything confidential. Tell me about your last project.",
+            "options": [
+                "I'll try to be as specific as I reasonably can without crossing any lines, though it's a bit hard to know exactly where that line is.",
+                "I can share that the project increased efficiency by 22% for the team, using a workflow tool called Asana, without naming the client, since that specific detail would be confidential.",
+                "That's a tricky balance, since being specific with real names sometimes bumps up against staying within confidentiality limits."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 5,
+            "hint": "Give the specifics that are genuinely shareable while naming what stays confidential, rather than commenting on the tension.",
+            "explanation": "Giving genuinely shareable specifics while clearly naming what stays confidential satisfies both parts of the request smoothly. Pointing out the tension instead of navigating it avoids answering, and vaguely trying to find the line without actually giving specifics fails the request for real numbers.",
+            "id": "ji_l165_q3",
+            "interviewerReaction": [
+                "uncertain",
+                "impressed",
+                "losing interest"
+            ]
+        },
+        {
+            "instruction": "Choose the response with genuine composure and a real, improved answer.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "[Tone shifts sharply] Actually, you know what, I don't think that answer was very good at all. Try again, and this time make it count.",
+            "options": [
+                "Oh, sorry, I didn't realize it wasn't landing well, let me just try to explain it a little differently this time.",
+                "Fair, let me improve it: instead of a general claim about being organized, here's a specific example, I built a shared calendar system that our whole department still uses, which cut scheduling conflicts by half.",
+                "Oh, okay, um, I'm not really sure what else to say that would be different from what I already said."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 5,
+            "hint": "Respond to the sharper tone with genuine composure and a real, improved answer, not just a nervous reaction.",
+            "explanation": "Responding with composure and a genuinely improved, specific answer treats the sharp tone as useful feedback rather than an attack. A nervous, apologetic rewording doesn't actually improve the substance, and admitting you have nothing else fails to make count as requested.",
+            "id": "ji_l166_q1",
+            "interviewerReaction": [
                 "disappointed",
+                "impressed",
                 "disappointed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response with concrete evidence of your seriousness, not just a verbal reassurance.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you rebuild trust with remaining employees after layoffs?",
+            "interviewerQuestion": "[Suddenly sharper] Honestly, I'm not sure you're taking this seriously. Prove me wrong right now.",
             "options": [
-                "I check in regularly to understand how the team is feeling.",
-                "I try to reassure the team about the company's future direction.",
-                "I'm honest about the reasoning behind the decisions and give the remaining team a clear, credible picture of what stability looks like going forward."
+                "Oh, I didn't mean to give that impression, I'm not really sure what else I can say to prove that right now.",
+                "I'm sorry you feel that way, I really am taking this seriously, I promise, even if it might not have come across clearly.",
+                "I take this very seriously, and to show it: I researched your last three product launches before this interview, and I have specific questions about the most recent one I'd like to ask you later."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "A clear, credible picture of what comes next builds more trust than checking in on feelings or general reassurance alone.",
-            "explanation": "A clear, credible picture of what stability looks like going forward gives remaining employees something concrete to trust, while checking in on feelings or offering general reassurance alone doesn't provide that same substantive foundation.",
-            "id": "ji_l165_q3",
-            "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle a high-stakes client relationship at risk?",
-            "options": [
-                "I proactively acknowledge the issue directly with the client, take ownership of what went wrong, and present a specific plan to rebuild their confidence.",
-                "I reach out promptly to understand their concerns.",
-                "I work to resolve the underlying issue as quickly as possible."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Proactively owning the issue and presenting a specific plan is more complete than reaching out to understand or simply resolving the issue alone.",
-            "explanation": "Proactively owning the issue and presenting a specific plan directly addresses the client's confidence, while reaching out to understand concerns or simply resolving the underlying issue alone doesn't provide that same complete, reassuring response.",
-            "id": "ji_l166_q1",
-            "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you saved a client relationship that was at risk of ending.",
-            "options": [
-                "I addressed their concerns honestly and worked to regain their trust.",
-                "I met with the client in person, owned our mistakes without excuses, and presented a concrete recovery plan with specific commitments and timelines.",
-                "I made sure senior leadership was involved in resolving the issue."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "A concrete recovery plan with specific commitments is stronger than general honesty or leadership involvement alone.",
-            "explanation": "A concrete recovery plan with specific commitments and timelines gives the client tangible reassurance, while general honesty about concerns or simply involving senior leadership doesn't provide that same substantive, actionable proof of change.",
+            "hint": "Respond to the sharp accusation with concrete evidence of your seriousness, not just a verbal reassurance.",
+            "explanation": "Responding with concrete evidence of genuine preparation directly proves the point rather than just asserting it. A verbal promise without evidence doesn't actually prove anything, and admitting you're unsure what else to say fails to meet the direct challenge at all.",
             "id": "ji_l166_q2",
             "interviewerReaction": [
                 "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response with a sharper, more specific answer, not an apology or visible uncertainty.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you rebuild confidence with a client after a significant service failure?",
+            "interviewerQuestion": "[Tone turns notably colder] Frankly, that was a weak answer. What do you actually have to offer this company?",
             "options": [
-                "I apologize sincerely and commit to doing better going forward.",
-                "I increase communication to keep them informed of our progress.",
-                "I deliver on a series of specific, visible commitments over time, since consistent action rebuilds trust more effectively than words alone."
+                "I'm sorry it came across that way, I do think I have quite a bit to offer, I'm just not sure how to explain it any better than I already did.",
+                "Oh, um, that's tough to hear, I'm not totally sure how to answer that right now. though it's hard to know for sure without being in it.",
+                "Fair, let me be sharper: I've directly increased sales conversion by 15% in a similar role, and I'd bring that same data-driven approach to improving your team's funnel here."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "A series of visible, delivered commitments over time rebuilds trust more concretely than apology or increased communication alone.",
-            "explanation": "A series of visible, delivered commitments over time provides concrete, repeated proof of change, while a sincere apology or increased communication alone doesn't offer that same sustained, demonstrable evidence.",
+            "hint": "Respond to the colder tone with a sharper, more specific answer, not an apology or visible uncertainty.",
+            "explanation": "Responding with a sharper, more specific answer directly meets a demand for something more substantial. Apologizing while admitting you can't explain it better doesn't actually improve the answer, and visible uncertainty under a cold tone undercuts confidence without adding content.",
             "id": "ji_l166_q3",
             "interviewerReaction": [
                 "disappointed",
@@ -382,253 +382,253 @@
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that stays calm and offers a clear, brief next step.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you navigate a public relations crisis?",
+            "interviewerQuestion": "[Long silence after your answer, interviewer just looks at you without responding]",
             "options": [
-                "I respond quickly with honest, factual information, take responsibility where it's due, and avoid the temptation to minimize or spin the situation.",
-                "I coordinate closely with our communications team on messaging.",
-                "I make sure our response is measured and carefully considered."
+                "Um, so, was that not what you were looking for? I can also mention that one time when, well, there was also a situation with a client, and, um, I guess I could talk about that too if it helps.",
+                "Happy to add more detail if that would help, or I can move on to another example if you'd prefer, whatever's most useful for you.",
+                "..."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Quick, honest responsiveness with genuine accountability is more effective than careful coordination or measured caution alone.",
-            "explanation": "Quick, honest responsiveness combined with genuine accountability maintains public trust during a crisis, while careful coordination on messaging or a measured, cautious response alone can look slow or evasive when speed and candor matter most.",
+            "hint": "Stay calm and offer a clear, brief next step, rather than nervously filling the silence or freezing entirely.",
+            "explanation": "Staying calm and offering a clear, useful next step handles silence with composure rather than anxiety. Nervously rambling to fill the silence undermines the strength of the answer already given, and freezing entirely leaves an awkward moment with no forward motion.",
             "id": "ji_l167_q1",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "losing interest",
+                "reassured",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that offers a calm, brief invitation to continue the conversation.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you managed a public relations crisis.",
+            "interviewerQuestion": "[The interviewer says nothing for several long seconds after your answer]",
             "options": [
-                "I worked to ensure our public statements were accurate and consistent.",
-                "I monitored the situation closely and responded as needed.",
-                "I got ahead of the story by proactively sharing accurate information before speculation filled the gap, which maintained our credibility throughout."
+                "I'm happy to elaborate on any part of that if it would be useful, just let me know.",
+                "...",
+                "Sorry, was that not clear? I can also add that there were a few other factors involved too, like, um, there was also some stuff with timing and budget that I could get into if that helps."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Proactively getting ahead of the story is a stronger strategy than ensuring accuracy or monitoring and reacting alone.",
-            "explanation": "Proactively getting ahead of the story prevents speculation from filling an information gap, while ensuring accurate statements or monitoring and reacting alone doesn't provide that same preventive, credibility-preserving action.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Offer a calm, brief invitation to continue the conversation, rather than rambling nervously or sitting in silence.",
+            "explanation": "Offering a calm, brief invitation to elaborate handles the silence gracefully without undermining the answer already given. Rambling nervously into vague new details weakens the original answer, and sitting in total silence leaves the moment stuck with no way forward.",
             "id": "ji_l167_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "reassured",
+                "uncertain",
+                "losing interest"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that stays calm and patient, offering an easy option to continue.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you protect your organization's reputation during a public crisis?",
+            "interviewerQuestion": "[Interviewer pauses for an unusually long time, writing something down without speaking]",
             "options": [
-                "I focus on clear, consistent messaging across all channels.",
-                "I make sure our actions, not just our statements, visibly reflect the values we claim to hold, since actions rebuild credibility faster than words alone.",
-                "I make sure our response addresses the concerns being raised."
+                "Take your time, I'm happy to wait, or if there's anything you'd like me to expand on, I'm glad to do that too.",
+                "...",
+                "Sorry, is everything okay? I can also mention a couple more examples if that would help clarify things a bit more for you."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Visible, values-aligned action rebuilds credibility more than messaging consistency or addressing stated concerns alone.",
-            "explanation": "Visible, values-aligned action rebuilds credibility more convincingly than words, while clear messaging or simply addressing stated concerns alone doesn't provide that same tangible proof that the organization's actions match its claims.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Stay calm and patient, offering an easy option to continue, rather than assuming something is wrong or freezing up.",
+            "explanation": "Staying calm and patient, with an easy option to continue, handles a long pause with genuine composure. Assuming something is wrong and rushing to fill the gap with more content projects anxiety, and total silence leaves an awkward moment unaddressed.",
             "id": "ji_l167_q3",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "reassured",
+                "uncertain",
+                "losing interest"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response with specific, checkable detail rather than a general assurance.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you address a scandal involving your team?",
+            "interviewerQuestion": "[No warmup, first question] Your resume looks impressive, but resumes are easy to embellish. Prove to me right now that any of this is real.",
             "options": [
-                "I handle the situation carefully and discreetly to protect the team.",
-                "I investigate thoroughly and fairly, take appropriate action based on the facts, and communicate transparently about what happened and what changes will follow.",
-                "I make sure the issue is addressed swiftly and decisively."
+                "I understand the skepticism, but everything on there is genuinely accurate, and I wouldn't put anything on my resume I couldn't back up.",
+                "That's a bit of a tough way to start, but I promise it's all true.",
+                "Fair to ask. Take the project I list where I cut costs by $50,000, I can walk you through the specific line items we cut and even the vendor we renegotiated with, in as much detail as you'd like."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Thorough investigation combined with transparent communication is more complete than discretion or swiftness alone.",
-            "explanation": "Thorough, fair investigation combined with transparent communication about outcomes shows real accountability, while handling things carefully and discreetly or acting swiftly without full transparency doesn't provide that same complete, trustworthy response.",
+            "hint": "Respond immediately with specific, checkable detail rather than a general assurance of honesty.",
+            "explanation": "Responding immediately with specific, checkable detail actually proves the point rather than just asserting it. A general assurance of honesty is exactly the kind of unproven claim the question anticipated, and calling the opening 'tough' without offering proof fails to meet the challenge at all.",
             "id": "ji_l168_q1",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you had to address serious misconduct within your team.",
-            "options": [
-                "I conducted a fair, thorough investigation, took clear and appropriate action based on the findings, and used the situation to strengthen our practices going forward.",
-                "I addressed the situation directly and took it very seriously.",
-                "I made sure the matter was handled appropriately and fairly."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Turning the situation into a concrete improvement to practices is stronger than general seriousness or a vague standard of fairness.",
-            "explanation": "Turning the situation into a concrete improvement to organizational practices shows real accountability and growth, while general seriousness or a vague standard of fairness alone doesn't provide that same lasting, systemic response.",
-            "id": "ji_l168_q2",
-            "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "How do you balance protecting your team with holding them accountable?",
-            "options": [
-                "I try to be fair to everyone involved throughout the process.",
-                "I focus on resolving the issue while minimizing further disruption.",
-                "I separate the two clearly — I hold individuals accountable for their actions fairly, while still supporting the broader team through a difficult situation."
-            ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Clearly separating individual accountability from broader team support is a more sophisticated balance than general fairness or minimizing disruption alone.",
-            "explanation": "Clearly separating individual accountability from broader team support shows sophisticated, principled leadership, while general fairness or a focus on minimizing disruption alone doesn't provide that same clear distinction between the two responsibilities.",
-            "id": "ji_l168_q3",
-            "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "uncertain",
+                "unconvinced",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that invites specific scrutiny and offers detail on demand.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you rebuild stakeholder confidence after a setback?",
+            "interviewerQuestion": "[First question, no small talk] I'll be direct: I doubt half of what's on a typical resume. Convince me yours is the other half.",
             "options": [
-                "I communicate transparently about our path forward.",
-                "I focus on demonstrating steady improvement over time.",
-                "I present a specific, credible plan with measurable milestones, then consistently report on progress against it, even when the news isn't fully positive."
-            ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Measurable milestones with consistent, honest progress reporting rebuild confidence more concretely than transparency or general improvement alone.",
-            "explanation": "Measurable milestones combined with consistent, honest progress reporting gives stakeholders concrete, verifiable evidence of recovery, while general transparency or a vague sense of steady improvement alone doesn't provide that same specific, trackable accountability.",
-            "id": "ji_l169_q1",
-            "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you rebuilt confidence with stakeholders after a difficult period.",
-            "options": [
-                "I communicated openly about our plans for improvement.",
-                "I set specific, public commitments with clear deadlines and then made sure we hit every single one, which rebuilt credibility through demonstrated reliability.",
-                "I worked to consistently exceed expectations going forward."
+                "I get why you'd be skeptical in general, but I can assure you everything I've listed is completely accurate and honestly represented.",
+                "Happy to. Ask me about any specific line, and I'll give you names, numbers, or outcomes I can back up in detail, starting with the client retention project if you'd like.",
+                "That's a direct way to start, but I can say confidently that mine is accurate."
             ],
             "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Public, specific commitments that are consistently met rebuild credibility more concretely than open communication or a general effort to exceed expectations.",
-            "explanation": "Public, specific commitments consistently met provide concrete, verifiable proof of reliability, while open communication about plans or a general effort to exceed expectations doesn't offer that same specific, trackable accountability.",
-            "id": "ji_l169_q2",
+            "hint": "Invite specific scrutiny and offer to provide detail on demand, rather than simply asserting accuracy.",
+            "explanation": "Inviting specific scrutiny and offering detail on demand actively proves credibility rather than just claiming it. A general assurance of accuracy doesn't actually demonstrate anything, and confidently asserting accuracy without offering to prove it fails to meet a direct challenge for proof.",
+            "id": "ji_l168_q2",
             "interviewerReaction": [
-                "disappointed",
+                "uncertain",
                 "impressed",
-                "disappointed"
+                "unconvinced"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that names the specific number immediately and offers to walk through the proof.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you know when stakeholder confidence has genuinely been restored?",
+            "interviewerQuestion": "[Opening question, immediately] Let's skip the pleasantries. Give me one number from your resume you can defend under real scrutiny, right now.",
             "options": [
-                "I look for concrete signals, like renewed investment or engagement, rather than relying on the absence of complaints as a sign of success.",
-                "I pay attention to the overall tone of stakeholder feedback.",
-                "I consider whether concerns have mostly stopped coming up."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Concrete signals like renewed engagement are more reliable evidence than feedback tone or the absence of complaints.",
-            "explanation": "Concrete signals like renewed investment or engagement provide reliable, measurable evidence of restored confidence, while relying on feedback tone or simply the absence of complaints doesn't offer that same objective proof.",
-            "id": "ji_l169_q3",
-            "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "How do you negotiate with a difficult counterpart?",
-            "options": [
-                "I stay calm and professional, regardless of how they behave.",
-                "I try to remain firm on the points that matter most to me.",
-                "I focus on understanding their underlying interests rather than reacting to their tactics, which usually reveals a path to agreement even when the dynamic feels adversarial."
+                "Okay, that's a tough start, let me think for a second about which number would hold up best under that kind of scrutiny.",
+                "That's a pretty direct way to open, but I'm confident in the numbers I've included, they're all genuinely accurate. even if I can't be fully certain about it.",
+                "The 30% reduction in processing time from my last role. I can walk you through the before-and-after process, step by step, and the specific change that caused it."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Understanding underlying interests, rather than reacting to tactics, is more strategic than staying calm or remaining firm alone.",
-            "explanation": "Understanding underlying interests rather than reacting to difficult tactics often reveals a genuine path to agreement, while staying calm and professional or simply remaining firm on key points alone doesn't provide that same strategic insight into what's actually driving the difficulty.",
-            "id": "ji_l170_q1",
+            "hint": "Name the specific number immediately and offer to walk through the proof, rather than commenting on the directness or stalling to choose one.",
+            "explanation": "Naming the specific number immediately and offering to walk through the proof meets the direct challenge head-on. Commenting on how direct the opening is stalls instead of answering, and needing time to choose which number would 'hold up best' suggests uncertainty about your own claims.",
+            "id": "ji_l168_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "unconvinced",
+                "uncertain",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that keeps your position consistent with what you said earlier, phrased differently.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you negotiated successfully with someone known for being difficult.",
+            "interviewerQuestion": "Earlier you said you value autonomy. Let me ask it a different way: how much do you like being told exactly what to do?",
             "options": [
-                "I identified that their difficult behavior stemmed from a specific unaddressed concern, and once I addressed that directly, the entire negotiation shifted.",
-                "I stayed patient and professional throughout the process.",
-                "I prepared thoroughly so I wouldn't be caught off guard."
+                "I guess it depends, sometimes I like autonomy and sometimes I don't mind being told what to do, it really varies.",
+                "Consistent with what I said before, not very much, ideally, I prefer understanding the goal and figuring out the best path myself, though I'm glad to follow specific direction when the situation genuinely calls for it.",
+                "I actually don't mind being told what to do, I think clear instructions are usually pretty helpful in most situations at work."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 5,
+            "hint": "Keep your answer consistent with what you said earlier, phrased differently but not contradicted.",
+            "explanation": "Keeping the answer consistent with your earlier stated preference, just phrased differently, shows real reliability. Reversing course entirely contradicts your own earlier answer, and a vague 'it varies' avoids committing to anything checkable against what you said before.",
+            "id": "ji_l169_q1",
+            "interviewerReaction": [
+                "uncertain",
+                "reassured",
+                "skeptical"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that stays aligned with the earlier claim, showing what it looks like in practice.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "You mentioned you're detail-oriented earlier. Different angle: how do you feel about double-checking your own work before submitting it?",
+            "options": [
+                "That's very much in line with what I said, I always build in time to double-check before submitting, since catching my own errors early is part of what being detail-oriented actually looks like day to day.",
+                "Honestly, I don't always double-check everything, sometimes I just submit things and fix issues later if they come up.",
+                "It depends on the task, sometimes I double-check carefully and sometimes I don't really bother with it."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Identifying and addressing the specific concern behind difficult behavior is more strategic than patience or preparation alone.",
-            "explanation": "Identifying and directly addressing the specific concern behind difficult behavior can shift an entire negotiation, while staying patient and professional or simply being well-prepared alone doesn't provide that same targeted insight into the real obstacle.",
+            "hint": "Keep your answer aligned with the earlier claim, showing what that trait actually looks like in practice.",
+            "explanation": "Keeping the answer aligned with the earlier claim, and showing what it looks like in practice, demonstrates real consistency. Admitting you don't always double-check contradicts the earlier claim of being detail-oriented, and a variable answer doesn't hold up against what you said before.",
+            "id": "ji_l169_q2",
+            "interviewerReaction": [
+                "reassured",
+                "skeptical",
+                "uncertain"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that keeps your position aligned with the earlier claim about ambiguity.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "You said earlier you're comfortable with ambiguity. Let me rephrase: how do you react when you're given a task with no clear instructions at all?",
+            "options": [
+                "Honestly, tasks like that can be a little frustrating for me, since it's hard to know where to even start without more guidance.",
+                "Consistent with what I said, I actually find that kind of task energizing, since it means I get to define the approach myself, which is exactly what being comfortable with ambiguity means for me in practice.",
+                "It depends on the task, sometimes I handle it fine and sometimes it stresses me out a bit more than I'd like."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 5,
+            "hint": "Keep your answer aligned with the earlier claim about ambiguity, showing what that comfort actually looks like in practice.",
+            "explanation": "Keeping the answer aligned with the earlier claim, and showing what it looks like in a concrete situation, demonstrates genuine consistency. Admitting frustration contradicts the earlier claim of comfort with ambiguity, and a variable answer doesn't hold up against the earlier statement.",
+            "id": "ji_l169_q3",
+            "interviewerReaction": [
+                "skeptical",
+                "reassured",
+                "uncertain"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that absorbs the interruption, tone shift, and pivot smoothly with a ready example.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "[Interrupting] Wait, stop. [Tone sharpens] Actually, that answer wasn't convincing at all. [Pivots] Forget that question, tell me instead about a time you failed completely.",
+            "options": [
+                "Understood, switching gears: I once launched a product update without adequately testing an edge case, and it broke checkout for a small but real group of users for about two hours before we caught and fixed it. That was entirely my oversight in the testing process.",
+                "Sure, that's fine, I don't really have anything specific ready for that, but I've definitely failed at things before.",
+                "Oh, okay, sorry, that's a lot at once, let me think for a second about a good failure example to give you here."
+            ],
+            "correctAnswerIndex": 0,
+            "professionalismRating": 5,
+            "hint": "Absorb the interruption, tone shift, and pivot smoothly, delivering a specific, ready failure example immediately.",
+            "explanation": "Absorbing the interruption, sharper tone, and pivot smoothly, then delivering a specific, ready example immediately, shows real composure under a genuinely stressful combined moment. Needing time to think undercuts confidence at exactly the wrong moment, and admitting nothing is ready fails to answer the redirected question at all.",
+            "id": "ji_l170_q1",
+            "interviewerReaction": [
+                "impressed",
+                "disappointed",
+                "uncertain"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that meets the sharp challenge and pivot with immediate, checkable evidence.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "[Cutting in] Hold on. [Colder tone] Frankly, I don't think you're prepared for this role. [Redirect] Let's move on, tell me why I should trust you with a client relationship.",
+            "options": [
+                "Fair to ask directly. In my last role, I managed a client relationship worth $200,000 annually for two years without a single missed deliverable, and I built enough trust that they specifically requested to keep working with me when I changed teams.",
+                "I understand the concern, and I really do think I'm prepared, I just need a moment to think of a good example to back that up properly.",
+                "That's tough to hear, and I don't have a specific example ready right now, but I generally think I'm good with clients."
+            ],
+            "correctAnswerIndex": 0,
+            "professionalismRating": 5,
+            "hint": "Meet the sharp challenge and pivot with immediate, specific, checkable evidence, not a general reassurance or delay.",
+            "explanation": "Meeting the sharp challenge and redirect with immediate, specific, checkable evidence answers the demand directly under real pressure. Needing a moment to think undercuts confidence exactly when composure matters most, and a general claim with no example fails to answer the specific question asked.",
             "id": "ji_l170_q2",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
+                "uncertain",
                 "disappointed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that absorbs the sharp pivot and gives a genuinely honest, specific risk with mitigation.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you stay effective when a negotiation counterpart is being adversarial?",
+            "interviewerQuestion": "[Sharp interruption] Actually, no. [Tone turns pointed] That's not really answering what I need. [Sudden pivot] Let's try this instead: tell me the single biggest risk of hiring you.",
             "options": [
-                "I try not to take their behavior personally.",
-                "I refuse to let their tone dictate mine, and I keep steering the conversation back toward mutual interests rather than positional conflict.",
-                "I remain composed and avoid escalating the tension."
+                "That's a tough one to answer on the spot, I don't think there's really a significant risk, but I'll try to think of something if that's what you're looking for.",
+                "Fair question, and I'll be honest: the biggest risk is that I'm newer to this specific industry, so there'll be a ramp-up period, though my track record in adjacent work suggests that ramp-up would be faster than average.",
+                "I'm not really sure how to answer that honestly, I hadn't thought about it that way before."
             ],
             "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Actively steering the conversation toward mutual interests is more effective than simply not taking things personally or avoiding escalation.",
-            "explanation": "Actively steering the conversation back toward mutual interests takes deliberate control of the negotiation's direction, while simply not taking things personally or avoiding escalation alone doesn't provide that same proactive redirection.",
+            "hint": "Absorb the sharp pivot and give a genuinely honest, specific risk, with a mitigating factor, rather than denying any risk exists or admitting you're unprepared for the question.",
+            "explanation": "Absorbing the pivot and giving a genuinely honest, specific risk with a real mitigating factor shows composure and self-awareness under real pressure. Denying any risk exists sounds evasive and overconfident, and admitting you haven't thought about it fails to engage with a fair, if pointed, question.",
             "id": "ji_l170_q3",
             "interviewerReaction": [
-                "disappointed",
+                "skeptical",
                 "impressed",
                 "disappointed"
             ]

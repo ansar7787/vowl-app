@@ -1,637 +1,673 @@
 {
-    "gameType": "directIndirectSpeech",
-    "batchIndex": 8,
-    "levels": "71-80",
-    "quests": [
-        {
-            "id": "dis_l71_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She asked, 'What did you buy at the market?'",
-            "options": [
-                "She asked what did I buy at the market.",
-                "She asked what I had bought at the market.",
-                "She asked what I bought at the market."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "She asked what I had bought at the market.",
-            "sentence": "She asked, 'What did you buy at the market?'",
-            "hint": "Wh-questions use statement word order; watch how far back the tense shifts.",
-            "explanation": "Word order becomes statement order, and 'bought' (already past) shifts back further to 'had bought'.",
-            "grammarRule": "Reported Wh-Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l71_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I will present this data tomorrow.'",
-            "options": [
-                "He said that he would present that data the next day.",
-                "He said that he would present this data tomorrow.",
-                "He said that he will present that data the next day."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He said that he would present that data the next day.",
-            "sentence": "He said, 'I will present this data tomorrow.'",
-            "hint": "'Will', 'this', and 'tomorrow' all shift together here.",
-            "explanation": "'Will' shifts to 'would', 'this' shifts to 'that', and 'tomorrow' shifts to 'the next day'.",
-            "grammarRule": "Mixed/Complex Transformation",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l71_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The instructor told us, 'Wear your helmets.'",
-            "options": [
-                "The instructor told us wear our helmets.",
-                "The instructor told us to wear our helmets.",
-                "The instructor told us that we wear our helmets."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The instructor told us to wear our helmets.",
-            "sentence": "The instructor told us, 'Wear your helmets.'",
-            "hint": "A command shifts to 'told + people + to + verb', and 'your' shifts too.",
-            "explanation": "Commands are reported with 'told + object + to-infinitive'. 'Wear your helmets' becomes 'to wear our helmets'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l72_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He asked, 'Why isn't the app working?'",
-            "options": [
-                "He asked why the app wasn't working.",
-                "He asked why the app isn't working.",
-                "He asked why isn't the app working."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He asked why the app wasn't working.",
-            "sentence": "He asked, 'Why isn't the app working?'",
-            "hint": "Wh-questions use statement word order, and the tense shifts too.",
-            "explanation": "Word order becomes statement order, and 'isn't working' shifts to 'wasn't working'.",
-            "grammarRule": "Reported Wh-Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l72_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The chairperson said, 'We could hold the vote online.'",
-            "options": [
-                "The chairperson said that they can hold the vote online.",
-                "The chairperson said that we could hold the vote online.",
-                "The chairperson said that they could hold the vote online."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The chairperson said that they could hold the vote online.",
-            "sentence": "The chairperson said, 'We could hold the vote online.'",
-            "hint": "This modal is already in its 'reported speech' form.",
-            "explanation": "'Could' is already backshifted, so it stays the same; only the pronoun changes.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Pronouns updated"
-            ]
-        },
-        {
-            "id": "dis_l72_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: My parents said, 'We renovated the kitchen.'",
-            "options": [
-                "My parents said that they had renovated the kitchen.",
-                "My parents said that we had renovated the kitchen.",
-                "My parents said that they renovated the kitchen."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "My parents said that they had renovated the kitchen.",
-            "sentence": "My parents said, 'We renovated the kitchen.'",
-            "hint": "This one shifts on two fronts — the tense, and the pronoun referring to the speaker.",
-            "explanation": "'Renovated' shifts to 'had renovated', and 'we' shifts to 'they'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l73_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The doctor asked, 'How often do you exercise?'",
-            "options": [
-                "The doctor asked how often I exercise.",
-                "The doctor asked how often I exercised.",
-                "The doctor asked how often do I exercise."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The doctor asked how often I exercised.",
-            "sentence": "The doctor asked, 'How often do you exercise?'",
-            "hint": "Wh-questions use statement word order, and 'do' disappears.",
-            "explanation": "'Do' is dropped, word order becomes statement order, and 'exercise' shifts to 'exercised'.",
-            "grammarRule": "Reported Wh-Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l73_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The manager said, 'This sale ends tomorrow.'",
-            "options": [
-                "The manager said that this sale ended tomorrow.",
-                "The manager said that that sale ended the next day.",
-                "The manager said that that sale ends the next day."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The manager said that that sale ended the next day.",
-            "sentence": "The manager said, 'This sale ends tomorrow.'",
-            "hint": "'This' and 'tomorrow' both shift, along with the verb.",
-            "explanation": "'This' shifts to 'that', 'ends' shifts to 'ended', and 'tomorrow' shifts to 'the next day'.",
-            "grammarRule": "Time & Place Reference Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l73_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The park ranger warned hikers, 'Don't leave any trash here.'",
-            "options": [
-                "The park ranger warned hikers don't leave any trash there.",
-                "The park ranger warned hikers not to leave any trash here.",
-                "The park ranger warned hikers not to leave any trash there."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The park ranger warned hikers not to leave any trash there.",
-            "sentence": "The park ranger warned hikers, 'Don't leave any trash here.'",
-            "hint": "Negative commands shift to 'not to + verb', and 'here' shifts too.",
-            "explanation": "'Don't leave' becomes 'not to leave', and 'here' shifts to 'there'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l74_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She asked, 'What time does the office close?'",
-            "options": [
-                "She asked what time the office closes.",
-                "She asked what time does the office close.",
-                "She asked what time the office closed."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She asked what time the office closed.",
-            "sentence": "She asked, 'What time does the office close?'",
-            "hint": "Wh-questions use statement word order — no 'does', and the tense shifts.",
-            "explanation": "'Does' is dropped, word order becomes statement order, and 'closes' shifts to 'closed'.",
-            "grammarRule": "Reported Wh-Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l74_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The scientists said, 'We shall monitor the water quality.'",
-            "options": [
-                "The scientists said that they shall monitor the water quality.",
-                "The scientists said that they should monitor the water quality.",
-                "The scientists said that we should monitor the water quality."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The scientists said that they should monitor the water quality.",
-            "sentence": "The scientists said, 'We shall monitor the water quality.'",
-            "hint": "'Shall' shifts to 'should', and the pronoun shifts too.",
-            "explanation": "'Shall' shifts to 'should', and 'we' shifts to 'they'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l74_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I would rather fly direct.'",
-            "options": [
-                "He said that he will rather fly direct.",
-                "He said that he would rather fly direct.",
-                "He said that I would rather fly direct."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He said that he would rather fly direct.",
-            "sentence": "He said, 'I would rather fly direct.'",
-            "hint": "This modal is already in its 'reported speech' form.",
-            "explanation": "'Would' is already backshifted, so it stays the same; only the pronoun changes.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Pronouns updated"
-            ]
-        },
-        {
-            "id": "dis_l75_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He asked, 'Who designed this website?'",
-            "options": [
-                "He asked who had designed that website.",
-                "He asked who designed this website.",
-                "He asked who designed that website."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He asked who had designed that website.",
-            "sentence": "He asked, 'Who designed this website?'",
-            "hint": "'Who' as the subject keeps the word order — but watch the tense carefully.",
-            "explanation": "'Who' is the subject, so word order doesn't change, but 'designed' (already past) shifts back further to 'had designed', and 'this' shifts to 'that'.",
-            "grammarRule": "Reported Wh-Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l75_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I negotiated a better deal.'",
-            "options": [
-                "She said that she negotiated a better deal.",
-                "She said that she had negotiated a better deal.",
-                "She said that she has negotiated a better deal."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "She said that she had negotiated a better deal.",
-            "sentence": "She said, 'I negotiated a better deal.'",
-            "hint": "Since the direct speech was already in the past, this verb shifts an extra step to past perfect.",
-            "explanation": "'Negotiated' (past simple) shifts to 'had negotiated' (past perfect).",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l75_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The physiotherapist told him, 'Stretch every morning.'",
-            "options": [
-                "The physiotherapist told him to stretch every morning.",
-                "The physiotherapist told him stretch every morning.",
-                "The physiotherapist told him that he stretch every morning."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The physiotherapist told him to stretch every morning.",
-            "sentence": "The physiotherapist told him, 'Stretch every morning.'",
-            "hint": "A command shifts to 'told + person + to + verb'.",
-            "explanation": "Commands are reported with 'told + object + to-infinitive'. 'Stretch every morning' becomes 'to stretch every morning'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l76_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She asked, 'Where is the nearest pharmacy?'",
-            "options": [
-                "She asked where the nearest pharmacy was.",
-                "She asked where the nearest pharmacy is.",
-                "She asked where is the nearest pharmacy."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She asked where the nearest pharmacy was.",
-            "sentence": "She asked, 'Where is the nearest pharmacy?'",
-            "hint": "Wh-questions use statement word order, and the tense shifts too.",
-            "explanation": "Word order becomes statement order, and 'is' shifts to 'was'.",
-            "grammarRule": "Reported Wh-Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l76_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I will be here until tomorrow.'",
-            "options": [
-                "He said that he will be there until the next day.",
-                "He said that he would be here until tomorrow.",
-                "He said that he would be there until the next day."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "He said that he would be there until the next day.",
-            "sentence": "He said, 'I will be here until tomorrow.'",
-            "hint": "'Will', 'here', and 'tomorrow' all shift together here.",
-            "explanation": "'Will' shifts to 'would', 'here' shifts to 'there', and 'tomorrow' shifts to 'the next day'.",
-            "grammarRule": "Mixed/Complex Transformation",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l76_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The chef said, 'This dish should rest for ten minutes.'",
-            "options": [
-                "The chef said that that dish should rest for ten minutes.",
-                "The chef said that that dish shall rest for ten minutes.",
-                "The chef said that this dish should rest for ten minutes."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The chef said that that dish should rest for ten minutes.",
-            "sentence": "The chef said, 'This dish should rest for ten minutes.'",
-            "hint": "'Should' is already in its 'reported speech' form, but another word still shifts.",
-            "explanation": "'Should' stays the same since it's already backshifted, but 'this' shifts to 'that'.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l77_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He asked, 'Why did the flight get delayed?'",
-            "options": [
-                "He asked why did the flight get delayed.",
-                "He asked why the flight had gotten delayed.",
-                "He asked why the flight got delayed."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He asked why the flight had gotten delayed.",
-            "sentence": "He asked, 'Why did the flight get delayed?'",
-            "hint": "Wh-questions use statement word order; watch how far back the tense shifts.",
-            "explanation": "Word order becomes statement order, and 'got delayed' (already past) shifts back further to 'had gotten delayed'.",
-            "grammarRule": "Reported Wh-Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l77_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The safety officer warned staff, 'Don't use this exit during a drill.'",
-            "options": [
-                "The safety officer warned staff not to use this exit during a drill.",
-                "The safety officer warned staff don't use that exit during a drill.",
-                "The safety officer warned staff not to use that exit during a drill."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The safety officer warned staff not to use that exit during a drill.",
-            "sentence": "The safety officer warned staff, 'Don't use this exit during a drill.'",
-            "hint": "Negative commands shift to 'not to + verb', and 'this' shifts too.",
-            "explanation": "'Don't use' becomes 'not to use', and 'this' shifts to 'that'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l77_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The judges said, 'We shall announce the winner now.'",
-            "options": [
-                "The judges said that we should announce the winner now.",
-                "The judges said that they shall announce the winner then.",
-                "The judges said that they should announce the winner then."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The judges said that they should announce the winner then.",
-            "sentence": "The judges said, 'We shall announce the winner now.'",
-            "hint": "Both 'shall' and 'now' shift together here.",
-            "explanation": "'Shall' shifts to 'should', and 'now' shifts to 'then'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l78_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She asked, 'How much luggage can I bring?'",
-            "options": [
-                "She asked how much luggage she can bring.",
-                "She asked how much luggage she could bring.",
-                "She asked how much luggage can she bring."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "She asked how much luggage she could bring.",
-            "sentence": "She asked, 'How much luggage can I bring?'",
-            "hint": "Wh-questions use statement word order, and the modal shifts too.",
-            "explanation": "Word order becomes statement order, and 'can' shifts to 'could'.",
-            "grammarRule": "Reported Wh-Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l78_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I directed that short film.'",
-            "options": [
-                "She said that she has directed that film.",
-                "She said that she directed that film.",
-                "She said that she had directed that film."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She said that she had directed that film.",
-            "sentence": "She said, 'I directed that short film.'",
-            "hint": "The past simple verb shifts even further back, to past perfect.",
-            "explanation": "'Directed' (past simple) shifts to 'had directed' (past perfect).",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l78_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I must have left my wallet at home.'",
-            "options": [
-                "He said that he had to have left his wallet at home.",
-                "He said that he must have left his wallet at home.",
-                "He said that I must have left my wallet at home."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He said that he must have left his wallet at home.",
-            "sentence": "He said, 'I must have left my wallet at home.'",
-            "hint": "'Must have' for a guess about the past doesn't shift further — this use of 'must' is different from obligation.",
-            "explanation": "'Must have + past participle' expresses a deduction about the past and stays the same in reported speech; it does NOT become 'had to have'.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l79_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He asked, 'When does the store reopen?'",
-            "options": [
-                "He asked when does the store reopen.",
-                "He asked when the store reopened.",
-                "He asked when the store reopens."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He asked when the store reopened.",
-            "sentence": "He asked, 'When does the store reopen?'",
-            "hint": "Wh-questions use statement word order — no 'does', and the tense shifts.",
-            "explanation": "'Does' is dropped, word order becomes statement order, and 'reopens' shifts to 'reopened'.",
-            "grammarRule": "Reported Wh-Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l79_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I saw this design here last year.'",
-            "options": [
-                "He said that he had seen this design here last year.",
-                "He said that he had seen that design there the year before.",
-                "He said that he saw that design there the year before."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He said that he had seen that design there the year before.",
-            "sentence": "He said, 'I saw this design here last year.'",
-            "hint": "'This', 'here', and 'last year' all shift, and the tense goes back an extra step.",
-            "explanation": "'Saw' shifts to 'had seen', 'this' shifts to 'that', 'here' shifts to 'there', and 'last year' shifts to 'the year before'.",
-            "grammarRule": "Time & Place Reference Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l79_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The vet told the owner, 'Give one pill daily.'",
-            "options": [
-                "The vet told the owner give one pill daily.",
-                "The vet told the owner that he give one pill daily.",
-                "The vet told the owner to give one pill daily."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The vet told the owner to give one pill daily.",
-            "sentence": "The vet told the owner, 'Give one pill daily.'",
-            "hint": "A command shifts to 'told + person + to + verb'.",
-            "explanation": "Commands are reported with 'told + object + to-infinitive'. 'Give one pill daily' becomes 'to give one pill daily'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l80_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She asked, 'What have you learned so far?'",
-            "options": [
-                "She asked what I had learned so far.",
-                "She asked what I learned so far.",
-                "She asked what have I learned so far."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She asked what I had learned so far.",
-            "sentence": "She asked, 'What have you learned so far?'",
-            "hint": "Wh-questions use statement word order; present perfect shifts to past perfect.",
-            "explanation": "Word order becomes statement order, and 'have learned' shifts to 'had learned'.",
-            "grammarRule": "Reported Wh-Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l80_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: They said, 'We should double-check the numbers.'",
-            "options": [
-                "They said that they should double-check the numbers.",
-                "They said that we should double-check the numbers.",
-                "They said that they shall double-check the numbers."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "They said that they should double-check the numbers.",
-            "sentence": "They said, 'We should double-check the numbers.'",
-            "hint": "This modal is already in its 'reported speech' form.",
-            "explanation": "'Should' is already backshifted, so it stays the same; only the pronoun changes.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Pronouns updated"
-            ]
-        },
-        {
-            "id": "dis_l80_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I will finish this here tomorrow.'",
-            "options": [
-                "He said that he would finish that there the next day.",
-                "He said that he will finish that there the next day.",
-                "He said that he would finish this here tomorrow."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He said that he would finish that there the next day.",
-            "sentence": "He said, 'I will finish this here tomorrow.'",
-            "hint": "Four things shift together: the modal, 'this', 'here', and 'tomorrow'.",
-            "explanation": "'Will' shifts to 'would', 'this' shifts to 'that', 'here' shifts to 'there', and 'tomorrow' shifts to 'the next day'.",
-            "grammarRule": "Mixed/Complex Transformation",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        }
-    ]
+  "gameType": "directIndirectSpeech",
+  "batchIndex": 8,
+  "levels": "71-80",
+  "quests": [
+    {
+      "id": "dis_l71_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Elena said, \"I can't attend the meeting.\"",
+      "options": [
+        "Elena said that she couldn't attend the meeting.",
+        "Elena said that she didn't can attend the meeting.",
+        "Elena said that she can't attend the meeting."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Elena said that she couldn't attend the meeting.",
+      "sentence": "Elena said, \"I can't attend the meeting.\"",
+      "hint": "Negative modals shift too — 'can't' has a specific past form.",
+      "explanation": "'Can't' becomes 'couldn't'; modals never take 'did' or 'didn't' in front of them.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'can't' → 'couldn't'",
+        "'I' → 'she'"
+      ]
+    },
+    {
+      "id": "dis_l71_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The scientist said, \"This method can produce faster results.\"",
+      "options": [
+        "The scientist said that that method could produce faster results.",
+        "The scientist said that this method could produce faster results.",
+        "The scientist said that that method can produce faster results."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The scientist said that that method could produce faster results.",
+      "sentence": "The scientist said, \"This method can produce faster results.\"",
+      "hint": "Combine the modal backshift with the demonstrative change.",
+      "explanation": "'Can' becomes 'could', and 'this' becomes 'that'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'can' → 'could'",
+        "'this' → 'that'"
+      ]
+    },
+    {
+      "id": "dis_l71_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The witness said, \"I can identify the man in the photo.\"",
+      "options": [
+        "The witness said that he can identify the man in the photo.",
+        "The witness said that he could identified the man in the photo.",
+        "The witness said that he could identify the man in the photo."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The witness said that he could identify the man in the photo.",
+      "sentence": "The witness said, \"I can identify the man in the photo.\"",
+      "hint": "Remember to keep the base form of the verb after the modal.",
+      "explanation": "'Can' becomes 'could', and 'identify' stays in its base form, not 'identified'.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'can' → 'could'",
+        "'I' → 'he'"
+      ]
+    },
+    {
+      "id": "dis_l72_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The forecaster said, \"It may rain later this week.\"",
+      "options": [
+        "The forecaster said that it might rain later that week.",
+        "The forecaster said that it may rain later that week.",
+        "The forecaster said that it might rained later that week."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The forecaster said that it might rain later that week.",
+      "sentence": "The forecaster said, \"It may rain later this week.\"",
+      "hint": "Backshift the modal, adjust the time word, and keep the base verb form.",
+      "explanation": "'May' becomes 'might', and 'this week' becomes 'that week'; the verb stays as 'rain'.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'may' → 'might'",
+        "'this week' → 'that week'"
+      ]
+    },
+    {
+      "id": "dis_l72_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Diego said, \"I may not be able to attend.\"",
+      "options": [
+        "Diego said that he might not be able to attend.",
+        "Diego said that he may not be able to attend.",
+        "Diego said that he might not being able to attend."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Diego said that he might not be able to attend.",
+      "sentence": "Diego said, \"I may not be able to attend.\"",
+      "hint": "Keep 'not' in its position after the modal, and the verb form after 'be able to' unchanged.",
+      "explanation": "'May not' becomes 'might not', and 'I' becomes 'he'.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'may not' → 'might not'",
+        "'I' → 'he'"
+      ]
+    },
+    {
+      "id": "dis_l72_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The manager said, \"Sales may improve next quarter.\"",
+      "options": [
+        "The manager said that sales may improve the following quarter.",
+        "The manager said that sales might improve the following quarter.",
+        "The manager said that sales might improve next quarter."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The manager said that sales might improve the following quarter.",
+      "sentence": "The manager said, \"Sales may improve next quarter.\"",
+      "hint": "Combine the modal backshift with the time-word change.",
+      "explanation": "'May' becomes 'might', and 'next quarter' becomes 'the following quarter'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'may' → 'might'",
+        "'next quarter' → 'the following quarter'"
+      ]
+    },
+    {
+      "id": "dis_l73_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The CEO said, \"This company will not fail.\"",
+      "options": [
+        "The CEO said that that company would not fail.",
+        "The CEO said that that company will not fail.",
+        "The CEO said that this company would not fail."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The CEO said that that company would not fail.",
+      "sentence": "The CEO said, \"This company will not fail.\"",
+      "hint": "Two shifts happen together here: the demonstrative pronoun and the future modal.",
+      "explanation": "'Will not' becomes 'would not', and 'this' becomes 'that'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'will not' → 'would not'",
+        "'this' → 'that'"
+      ]
+    },
+    {
+      "id": "dis_l73_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Fatima said, \"I will definitely finish by Friday.\"",
+      "options": [
+        "Fatima said that she would definitely finish by Friday.",
+        "Fatima said that she would definitely finished by Friday.",
+        "Fatima said that she will definitely finish by Friday."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Fatima said that she would definitely finish by Friday.",
+      "sentence": "Fatima said, \"I will definitely finish by Friday.\"",
+      "hint": "Backshift the modal and update the pronoun; the base verb stays the same.",
+      "explanation": "'Will' becomes 'would', and 'I' becomes 'she'; the verb 'finish' stays unchanged.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'will' → 'would'",
+        "'I' → 'she'"
+      ]
+    },
+    {
+      "id": "dis_l73_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The airline said, \"Passengers will receive a full refund.\"",
+      "options": [
+        "The airline said that passengers will receive a full refund.",
+        "The airline said that passengers would receive a full refund.",
+        "The airline said that passengers would received a full refund."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The airline said that passengers would receive a full refund.",
+      "sentence": "The airline said, \"Passengers will receive a full refund.\"",
+      "hint": "No pronoun changes here — just backshift the modal.",
+      "explanation": "'Will' backshifts to 'would'; no pronoun or possessive needs to change.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'will' → 'would'"
+      ]
+    },
+    {
+      "id": "dis_l74_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "The manager said to an employee, \"You must complete this training by Friday.\" Report this from the employee's point of view.",
+      "options": [
+        "The manager said that I must complete that training by Friday.",
+        "The manager said that I had to complete that training by Friday.",
+        "The manager said that I have to complete that training by Friday."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The manager said that I had to complete that training by Friday.",
+      "sentence": "The manager said, \"You must complete this training by Friday.\"",
+      "hint": "This 'must' expresses a specific obligation, so it backshifts to 'had to'.",
+      "explanation": "'Must' (obligation for this occasion) becomes 'had to', 'you' becomes 'I', and 'this' becomes 'that'.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'must' → 'had to'",
+        "'you' → 'I'",
+        "'this' → 'that'"
+      ]
+    },
+    {
+      "id": "dis_l74_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Emeka said, \"She must be exhausted after that flight.\"",
+      "options": [
+        "Emeka said that she must be exhausted after that flight.",
+        "Emeka said that she must was exhausted after that flight.",
+        "Emeka said that she had to be exhausted after that flight."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Emeka said that she must be exhausted after that flight.",
+      "sentence": "Emeka said, \"She must be exhausted after that flight.\"",
+      "hint": "This 'must' expresses a logical conclusion, not an obligation — such modals of deduction usually stay the same.",
+      "explanation": "'Must' expressing certainty/deduction doesn't backshift to 'had to'; it stays as 'must' in reported speech.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'must' (deduction) stays unchanged"
+      ]
+    },
+    {
+      "id": "dis_l74_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The sign said, \"Visitors must wear a badge at all times.\"",
+      "options": [
+        "The sign said that visitors have to wear a badge at all times.",
+        "The sign said that visitors had to wear a badge at all times.",
+        "The sign said that visitors must wear a badge at all times."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The sign said that visitors had to wear a badge at all times.",
+      "sentence": "The sign said, \"Visitors must wear a badge at all times.\"",
+      "hint": "Compare this to the deduction example — this 'must' expresses a rule, so it does backshift.",
+      "explanation": "This 'must' expresses an obligation or rule, so it backshifts to 'had to', unlike a 'must' of deduction.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'must' → 'had to'"
+      ]
+    },
+    {
+      "id": "dis_l75_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The waiter asked, \"Shall I bring the menu?\"",
+      "options": [
+        "The waiter asked whether he shall bring the menu.",
+        "The waiter asked whether he should bring the menu.",
+        "The waiter asked whether he would bring the menu."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The waiter asked whether he should bring the menu.",
+      "sentence": "The waiter asked, \"Shall I bring the menu?\"",
+      "hint": "'Shall' in offers or suggestions usually becomes 'should' in reported speech.",
+      "explanation": "'Shall I...?' as an offer becomes 'should he', and 'I' becomes 'he'.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'shall' → 'should'",
+        "'I' → 'he'",
+        "question word order → statement word order"
+      ]
+    },
+    {
+      "id": "dis_l75_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Grace said, \"I shall return within the hour.\"",
+      "options": [
+        "Grace said that she would return within the hour.",
+        "Grace said that she shall return within the hour.",
+        "Grace said that she should return within the hour."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Grace said that she would return within the hour.",
+      "sentence": "Grace said, \"I shall return within the hour.\"",
+      "hint": "'Shall' used for future intention becomes 'would', not 'should'.",
+      "explanation": "'Shall' (future intention) becomes 'would', while 'should' would only be used for suggestions.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'shall' → 'would'",
+        "'I' → 'she'"
+      ]
+    },
+    {
+      "id": "dis_l75_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The teacher asked, \"Shall we begin the lesson?\"",
+      "options": [
+        "The teacher asked whether they should begin the lesson.",
+        "The teacher asked whether we should begin the lesson.",
+        "The teacher asked whether they would begin the lesson."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The teacher asked whether they should begin the lesson.",
+      "sentence": "The teacher asked, \"Shall we begin the lesson?\"",
+      "hint": "Combine the suggestion-modal change with the pronoun shift.",
+      "explanation": "'Shall we...?' becomes 'should they', matching the suggestion use of 'shall'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'shall' → 'should'",
+        "'we' → 'they'",
+        "question word order → statement word order"
+      ]
+    },
+    {
+      "id": "dis_l76_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "The advisor said to a client, \"You should diversify your investments.\" Report this from the client's point of view.",
+      "options": [
+        "The advisor said that I would diversify my investments.",
+        "The advisor said that I should diversify my investments.",
+        "The advisor said that I should have diversified my investments."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The advisor said that I should diversify my investments.",
+      "sentence": "The advisor said, \"You should diversify your investments.\"",
+      "hint": "'Should' already functions as a past-time-compatible modal — it usually stays the same in reported speech.",
+      "explanation": "'Should' does not backshift further; it remains 'should' even in reported speech, unlike 'will' or 'can'.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'should' stays unchanged",
+        "'you' → 'I'",
+        "'your' → 'my'"
+      ]
+    },
+    {
+      "id": "dis_l76_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The mechanic said, \"This part ought to last for years.\"",
+      "options": [
+        "The mechanic said that that part ought to last for years.",
+        "The mechanic said that that part had ought to last for years.",
+        "The mechanic said that this part ought to last for years."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The mechanic said that that part ought to last for years.",
+      "sentence": "The mechanic said, \"This part ought to last for years.\"",
+      "hint": "'Ought to' behaves like 'should' — it doesn't change to a different modal.",
+      "explanation": "'Ought to' remains unchanged; only the demonstrative 'this' becomes 'that'.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'ought to' stays unchanged",
+        "'this' → 'that'"
+      ]
+    },
+    {
+      "id": "dis_l76_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The teacher said, \"Students should ask questions if they are confused.\"",
+      "options": [
+        "The teacher said that students should ask questions if they were confused.",
+        "The teacher said that students should have asked questions if they are confused.",
+        "The teacher said that students would ask questions if they were confused."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The teacher said that students should ask questions if they were confused.",
+      "sentence": "The teacher said, \"Students should ask questions if they are confused.\"",
+      "hint": "'Should' stays the same, but check whether any other verb in the sentence still needs to backshift.",
+      "explanation": "'Should' remains unchanged, but 'are' backshifts to 'were' in the conditional clause.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'should' stays unchanged",
+        "'are' → 'were'"
+      ]
+    },
+    {
+      "id": "dis_l77_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Priya said, \"I could help you move on Saturday.\"",
+      "options": [
+        "Priya said that she could have helped me move on Saturday.",
+        "Priya said that she could help me move on Saturday.",
+        "Priya said that she can help me move on Saturday."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Priya said that she could help me move on Saturday.",
+      "sentence": "Priya said, \"I could help you move on Saturday.\"",
+      "hint": "'Could' is already a past-time modal form — it doesn't need to change any further.",
+      "explanation": "'Could' stays the same in reported speech since it's already a backshifted form; only the pronouns change.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'could' stays unchanged",
+        "'I' → 'she'",
+        "'you' → 'me'"
+      ]
+    },
+    {
+      "id": "dis_l77_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The waiter asked, \"Might I suggest the soup?\"",
+      "options": [
+        "The waiter asked would he might suggest the soup.",
+        "The waiter asked whether he may suggest the soup.",
+        "The waiter asked whether he might suggest the soup."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The waiter asked whether he might suggest the soup.",
+      "sentence": "The waiter asked, \"Might I suggest the soup?\"",
+      "hint": "'Might' is already a past-time form of 'may' — leave it as it is.",
+      "explanation": "'Might' stays unchanged; only the question order and pronoun shift.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'might' stays unchanged",
+        "'I' → 'he'",
+        "question word order → statement word order"
+      ]
+    },
+    {
+      "id": "dis_l77_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Omar said, \"I would love to visit Japan someday.\"",
+      "options": [
+        "Omar said that he had would love to visit Japan someday.",
+        "Omar said that he will love to visit Japan someday.",
+        "Omar said that he would love to visit Japan someday."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Omar said that he would love to visit Japan someday.",
+      "sentence": "Omar said, \"I would love to visit Japan someday.\"",
+      "hint": "'Would' is already the backshifted form of 'will' — it doesn't change again.",
+      "explanation": "'Would' remains the same; only the pronoun 'I' changes to 'he'.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'would' stays unchanged",
+        "'I' → 'he'"
+      ]
+    },
+    {
+      "id": "dis_l78_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The inspector said, \"This wiring must be replaced.\"",
+      "options": [
+        "The inspector said that that wiring had to be replaced.",
+        "The inspector said that that wiring should be replaced.",
+        "The inspector said that that wiring must be replaced."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The inspector said that that wiring had to be replaced.",
+      "sentence": "The inspector said, \"This wiring must be replaced.\"",
+      "hint": "This is a necessity based on inspection, not a mere suggestion — which modal expresses that?",
+      "explanation": "'Must' (necessity) backshifts to 'had to', and 'this' becomes 'that'.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'must' → 'had to'",
+        "'this' → 'that'"
+      ]
+    },
+    {
+      "id": "dis_l78_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Layla said, \"He must be the new director.\"",
+      "options": [
+        "Layla said that he must be the new director.",
+        "Layla said that he had to be the new director.",
+        "Layla said that he should be the new director."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Layla said that he must be the new director.",
+      "sentence": "Layla said, \"He must be the new director.\"",
+      "hint": "This is a guess based on evidence, not an obligation — recall the exception you learned earlier.",
+      "explanation": "This 'must' expresses deduction, so it stays as 'must' rather than becoming 'had to'.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'must' (deduction) stays unchanged"
+      ]
+    },
+    {
+      "id": "dis_l78_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "The trainer said to a client, \"You could try a lighter weight.\" Report this from the client's point of view.",
+      "options": [
+        "The trainer said that I can try a lighter weight.",
+        "The trainer said that I could try a lighter weight.",
+        "The trainer said that I should try a lighter weight."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The trainer said that I could try a lighter weight.",
+      "sentence": "The trainer said, \"You could try a lighter weight.\"",
+      "hint": "Recall that 'could' used for a suggestion doesn't need to backshift any further.",
+      "explanation": "'Could' stays unchanged since it's already a past-time modal form; only the pronoun changes.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'could' stays unchanged",
+        "'you' → 'I'"
+      ]
+    },
+    {
+      "id": "dis_l79_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The forecaster said, \"Temperatures will drop sharply tomorrow.\"",
+      "options": [
+        "The forecaster said that temperatures would drop sharply the next day.",
+        "The forecaster said that temperatures will drop sharply the next day.",
+        "The forecaster said that temperatures would drop sharply tomorrow."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The forecaster said that temperatures would drop sharply the next day.",
+      "sentence": "The forecaster said, \"Temperatures will drop sharply tomorrow.\"",
+      "hint": "Notice how the modal and the time expression both move back together.",
+      "explanation": "'Will' becomes 'would', and 'tomorrow' becomes 'the next day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'will' → 'would'",
+        "'tomorrow' → 'the next day'"
+      ]
+    },
+    {
+      "id": "dis_l79_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Hassan said, \"I might see you here next week.\"",
+      "options": [
+        "Hassan said that he might see me there the following week.",
+        "Hassan said that he might see me here next week.",
+        "Hassan said that he may see me there the following week."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Hassan said that he might see me there the following week.",
+      "sentence": "Hassan said, \"I might see you here next week.\"",
+      "hint": "Three things change here: the object pronoun, the place word, and the time word — the modal itself stays the same.",
+      "explanation": "'Might' stays the same, but 'you' becomes 'me', 'here' becomes 'there', and 'next week' becomes 'the following week'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'might' stays unchanged",
+        "'you' → 'me'",
+        "'here' → 'there'",
+        "'next week' → 'the following week'"
+      ]
+    },
+    {
+      "id": "dis_l79_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The manager said, \"We will need your feedback by tomorrow.\"",
+      "options": [
+        "The manager said that they would need your feedback by tomorrow.",
+        "The manager said that they would need my feedback by the next day.",
+        "The manager said that we will need my feedback by the next day."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The manager said that they would need my feedback by the next day.",
+      "sentence": "The manager said, \"We will need your feedback by tomorrow.\"",
+      "hint": "Four items shift together here: the pronoun, the possessive, the modal, and the time word.",
+      "explanation": "'We' becomes 'they', 'your' becomes 'my', 'will' becomes 'would', and 'tomorrow' becomes 'the next day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'we' → 'they'",
+        "'your' → 'my'",
+        "'will' → 'would'",
+        "'tomorrow' → 'the next day'"
+      ]
+    },
+    {
+      "id": "dis_l80_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The landlord said, \"Tenants must pay rent by the first of the month.\"",
+      "options": [
+        "The landlord said that tenants must pay rent by the first of the month.",
+        "The landlord said that tenants should pay rent by the first of the month.",
+        "The landlord said that tenants had to pay rent by the first of the month."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The landlord said that tenants had to pay rent by the first of the month.",
+      "sentence": "The landlord said, \"Tenants must pay rent by the first of the month.\"",
+      "hint": "This is a firm rule — recall how obligation-type 'must' backshifts.",
+      "explanation": "'Must' (obligation) becomes 'had to'.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'must' → 'had to'"
+      ]
+    },
+    {
+      "id": "dis_l80_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Elena said, \"That noise must be the neighbor's dog.\"",
+      "options": [
+        "Elena said that that noise must be the neighbor's dog.",
+        "Elena said that that noise had to be the neighbor's dog.",
+        "Elena said that this noise must be the neighbor's dog."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Elena said that that noise must be the neighbor's dog.",
+      "sentence": "Elena said, \"That noise must be the neighbor's dog.\"",
+      "hint": "This is a guess, not a rule — remember the exception.",
+      "explanation": "This 'must' expresses deduction, so it does not change to 'had to'.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'must' (deduction) stays unchanged"
+      ]
+    },
+    {
+      "id": "dis_l80_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The assistant said, \"I will confirm your reservation tomorrow.\"",
+      "options": [
+        "The assistant said that she would confirm your reservation tomorrow.",
+        "The assistant said that she will confirm my reservation the next day.",
+        "The assistant said that she would confirm my reservation the next day."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The assistant said that she would confirm my reservation the next day.",
+      "sentence": "The assistant said, \"I will confirm your reservation tomorrow.\"",
+      "hint": "This final review item combines the pronoun, the possessive, the modal, and the time word.",
+      "explanation": "'I' becomes 'she', 'your' becomes 'my', 'will' becomes 'would', and 'tomorrow' becomes 'the next day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'I' → 'she'",
+        "'your' → 'my'",
+        "'will' → 'would'",
+        "'tomorrow' → 'the next day'"
+      ]
+    }
+  ]
 }

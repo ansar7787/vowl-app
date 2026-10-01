@@ -1,637 +1,637 @@
 {
-    "gameType": "medicalConsult",
-    "batchIndex": 19,
-    "levels": "181-190",
-    "quests": [
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I can't seem to fall asleep before midnight most nights now, and I'm dragging by early afternoon every day, with my mood sinking lower as the weeks go on.\"",
-            "symptoms": [
-                "Insomnia",
-                "Brain Fog",
-                "Fatigue",
-                "Low Mood"
-            ],
-            "correctAnswer": "Insomnia, Fatigue, Low Mood",
-            "hint": "Three symptoms: trouble falling asleep, resulting tiredness, and an emotional shift.",
-            "explanation": "The patient describes Insomnia, resulting Fatigue, and a decline in Low Mood.",
-            "id": "mc_l181_q1",
-            "medicalVocab": [
-                "Insomnia, Fatigue, Low Mood",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"My husband tells me I've started snoring loudly this past year, and I wake up exhausted no matter how early I go to bed, with a dull headache most mornings.\"",
-            "symptoms": [
-                "Snoring",
-                "Fatigue",
-                "Insomnia",
-                "Headache"
-            ],
-            "correctAnswer": "Snoring, Fatigue, Headache",
-            "hint": "Three symptoms: a nighttime sound reported by someone else, exhaustion, and a morning headache.",
-            "explanation": "The patient reports Snoring noticed by their partner, resulting Fatigue, and a morning Headache.",
-            "id": "mc_l181_q2",
-            "medicalVocab": [
-                "Snoring, Fatigue, Headache",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"I've been sleeping ten or eleven hours most nights lately, and my mood has stayed low the whole time, with real trouble focusing on anything at work.\"",
-            "symptoms": [
-                "Fatigue",
-                "Oversleeping",
-                "Low Mood",
-                "Brain Fog"
-            ],
-            "correctAnswer": "Oversleeping, Low Mood, Brain Fog",
-            "hint": "Three symptoms: sleeping far more than usual, an emotional shift, and difficulty focusing.",
-            "explanation": "The patient describes Oversleeping, ongoing Low Mood, and resulting Brain Fog.",
-            "id": "mc_l181_q3",
-            "medicalVocab": [
-                "Oversleeping, Low Mood, Brain Fog",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"My gums have felt tender for a couple of weeks and bleed even when I floss gently, and I've noticed a lingering smell to my breath that brushing doesn't fix, with a dull ache in the tooth right behind it.\"",
-            "symptoms": [
-                "Bleeding Gums",
-                "Bad Breath",
-                "Toothache",
-                "Dry Mouth"
-            ],
-            "correctAnswer": "Bleeding Gums, Bad Breath, Toothache",
-            "hint": "Three symptoms: bleeding in the mouth, a smell, and pain in a specific tooth.",
-            "explanation": "The patient describes Bleeding Gums, Bad Breath, and a nearby Toothache.",
-            "id": "mc_l182_q1",
-            "medicalVocab": [
-                "Bleeding Gums, Bad Breath, Toothache",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The doctor asks about the symptoms, and the patient says: \"My mouth has stayed dry no matter how much water I drink, and swallowing certain foods has become uncomfortable, with my voice sounding different by the end of long conversations.\"",
-            "symptoms": [
-                "Dry Mouth",
-                "Difficulty Swallowing",
-                "Sore Throat",
-                "Hoarse Voice"
-            ],
-            "correctAnswer": "Dry Mouth, Difficulty Swallowing, Hoarse Voice",
-            "hint": "Three symptoms: dryness in the mouth, difficulty eating, and a voice change.",
-            "explanation": "The patient reports Dry Mouth, Difficulty Swallowing, and a resulting Hoarse Voice.",
-            "id": "mc_l182_q2",
-            "medicalVocab": [
-                "Dry Mouth, Difficulty Swallowing, Hoarse Voice",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The patient tells the nurse: \"My back tooth has ached deep for days now, and my jaw feels sore on that same side, with a dull headache settling in most afternoons.\"",
-            "symptoms": [
-                "Toothache",
-                "Earache",
-                "Jaw Pain",
-                "Headache"
-            ],
-            "correctAnswer": "Toothache, Jaw Pain, Headache",
-            "hint": "Three symptoms: pain in a specific tooth, jaw soreness, and a resulting headache.",
-            "explanation": "The patient describes a Toothache, Jaw Pain, and a resulting Headache.",
-            "id": "mc_l182_q3",
-            "medicalVocab": [
-                "Toothache, Jaw Pain, Headache",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I've had a painful sore inside my cheek for nearly a week, and eating anything textured has become genuinely difficult, with my appetite dropping off as a result.\"",
-            "symptoms": [
-                "Dry Mouth",
-                "Mouth Ulcer",
-                "Difficulty Swallowing",
-                "Loss of Appetite"
-            ],
-            "correctAnswer": "Mouth Ulcer, Difficulty Swallowing, Loss of Appetite",
-            "hint": "Three symptoms: a small wound in the mouth, difficulty eating, and reduced appetite.",
-            "explanation": "The patient reports a Mouth Ulcer, resulting Difficulty Swallowing, and Loss of Appetite.",
-            "id": "mc_l183_q1",
-            "medicalVocab": [
-                "Mouth Ulcer, Difficulty Swallowing, Loss of Appetite",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"My daughter's temperature spiked yesterday evening, and she keeps tugging at her ear, with barely any energy for her usual games today.\"",
-            "symptoms": [
-                "Fever",
-                "Earache",
-                "Fatigue",
-                "Sore Throat"
-            ],
-            "correctAnswer": "Fever, Earache, Fatigue",
-            "hint": "Three symptoms: temperature, a gesture pointing to the ear, and reduced energy.",
-            "explanation": "The parent describes a Fever, signs of an Earache, and resulting Fatigue.",
-            "id": "mc_l183_q2",
-            "medicalVocab": [
-                "Fever, Earache, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"My son's nose has run steadily for over a week now, and he's seemed low on energy the whole time, barely finishing half his usual meals.\"",
-            "symptoms": [
-                "Runny Nose",
-                "Sneezing",
-                "Fatigue",
-                "Loss of Appetite"
-            ],
-            "correctAnswer": "Runny Nose, Fatigue, Loss of Appetite",
-            "hint": "Three symptoms: nasal discharge, reduced energy, and eating less.",
-            "explanation": "The parent reports a Runny Nose, Fatigue, and Loss of Appetite.",
-            "id": "mc_l183_q3",
-            "medicalVocab": [
-                "Runny Nose, Fatigue, Loss of Appetite",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"My niece has broken out in a rash across her arms overnight, and she's been scratching at it constantly, with a slight fever that came on this morning.\"",
-            "symptoms": [
-                "Rash",
-                "Itching",
-                "Swelling",
-                "Fever"
-            ],
-            "correctAnswer": "Rash, Itching, Fever",
-            "hint": "Three symptoms: a visible rash, an itching feeling, and a temperature change.",
-            "explanation": "The family member reports a Rash, Itching, and a mild Fever.",
-            "id": "mc_l184_q1",
-            "medicalVocab": [
-                "Rash, Itching, Fever",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The doctor asks about the symptoms, and the patient says: \"I felt fine the whole ferry crossing until about halfway, and then the nausea hit hard, along with a headache that lingered well after we docked.\"",
-            "symptoms": [
-                "Dizziness",
-                "Motion Sickness",
-                "Nausea",
-                "Headache"
-            ],
-            "correctAnswer": "Motion Sickness, Nausea, Headache",
-            "hint": "Nausea specifically tied to being on the water has a more precise term than plain nausea.",
-            "explanation": "Nausea from the ferry's motion is Motion Sickness, alongside Nausea and a resulting Headache.",
-            "id": "mc_l184_q2",
-            "medicalVocab": [
-                "Motion Sickness, Nausea, Headache",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The patient tells the nurse: \"My shoulders got badly sunburned at the beach this weekend, and the skin has already started peeling, itching more each day since.\"",
-            "symptoms": [
-                "Sunburn",
-                "Skin Peeling",
-                "Itching",
-                "Rash"
-            ],
-            "correctAnswer": "Sunburn, Skin Peeling, Itching",
-            "hint": "Three symptoms: sun damage, skin coming away, and an itching feeling.",
-            "explanation": "The patient describes Sunburn, resulting Skin Peeling, and Itching.",
-            "id": "mc_l184_q3",
-            "medicalVocab": [
-                "Sunburn, Skin Peeling, Itching",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"My fingernails have started looking pale and brittle over the past month, and I've felt more tired than usual throughout, with my skin looking noticeably paler than normal.\"",
-            "symptoms": [
-                "Brittle Nails",
-                "Fatigue",
-                "Weakness",
-                "Paleness"
-            ],
-            "correctAnswer": "Brittle Nails, Fatigue, Paleness",
-            "hint": "Three symptoms: a change in the nails, overall tiredness, and skin appearance.",
-            "explanation": "The patient reports Brittle Nails, ongoing Fatigue, and Paleness.",
-            "id": "mc_l185_q1",
-            "medicalVocab": [
-                "Brittle Nails, Fatigue, Paleness",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I've noticed more hair coming out in the shower these past few weeks, and I've felt run down the whole time, reaching for a jumper indoors more than I used to.\"",
-            "symptoms": [
-                "Hair Loss",
-                "Scalp Itching",
-                "Fatigue",
-                "Chills"
-            ],
-            "correctAnswer": "Hair Loss, Fatigue, Chills",
-            "hint": "Three symptoms: a change in the hair, overall tiredness, and feeling cold.",
-            "explanation": "The patient describes Hair Loss, resulting Fatigue, and Chills.",
-            "id": "mc_l185_q2",
-            "medicalVocab": [
-                "Hair Loss, Fatigue, Chills",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"I've noticed I bruise from the lightest bump lately, and I've felt more tired than my usual baseline, with my skin looking a shade paler than normal too.\"",
-            "symptoms": [
-                "Bruise",
-                "Easy Bruising",
-                "Fatigue",
-                "Paleness"
-            ],
-            "correctAnswer": "Easy Bruising, Fatigue, Paleness",
-            "hint": "Bruising from very light contact is a pattern over time, more precise than a single bruise.",
-            "explanation": "A pattern of bruising easily is Easy Bruising, more precise than a single Bruise, alongside Fatigue and Paleness.",
-            "id": "mc_l185_q3",
-            "medicalVocab": [
-                "Easy Bruising, Fatigue, Paleness",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"My chest has made a whistling sound when I breathe out for days now, and I get properly out of breath climbing the stairs at home, leaving me pretty worn out by evening.\"",
-            "symptoms": [
-                "Wheezing",
-                "Shortness of Breath",
-                "Fatigue",
-                "Chest Pain"
-            ],
-            "correctAnswer": "Wheezing, Shortness of Breath, Fatigue",
-            "hint": "Three symptoms: a whistling breathing sound, breathlessness, and overall tiredness.",
-            "explanation": "The patient reports Wheezing, Shortness of Breath, and resulting Fatigue.",
-            "id": "mc_l186_q1",
-            "medicalVocab": [
-                "Wheezing, Shortness of Breath, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The doctor asks about the symptoms, and the patient says: \"My chest has felt tight most evenings after dinner, and I've felt queasy along with it, leaving me pretty drained by the time I get to bed.\"",
-            "symptoms": [
-                "Chest Pain",
-                "Heartburn",
-                "Nausea",
-                "Fatigue"
-            ],
-            "correctAnswer": "Chest Pain, Nausea, Fatigue",
-            "hint": "Three symptoms: chest tightness after meals, a queasy feeling, and overall tiredness.",
-            "explanation": "The patient describes Chest Pain, Nausea, and resulting Fatigue.",
-            "id": "mc_l186_q2",
-            "medicalVocab": [
-                "Chest Pain, Nausea, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The patient tells the nurse: \"My cough has lingered for nearly a month now, and it's been keeping me up most nights, leaving me pretty exhausted through each day since.\"",
-            "symptoms": [
-                "Persistent Cough",
-                "Insomnia",
-                "Fatigue",
-                "Wheezing"
-            ],
-            "correctAnswer": "Persistent Cough, Insomnia, Fatigue",
-            "hint": "Three symptoms: a long-lasting cough, its effect on sleep, and daytime tiredness.",
-            "explanation": "The patient reports a Persistent Cough, resulting Insomnia, and Fatigue.",
-            "id": "mc_l186_q3",
-            "medicalVocab": [
-                "Persistent Cough, Insomnia, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I get these waves of nausea a few times a week now, and the room tilts a little right along with it, leaving me pretty wiped out for the rest of the day.\"",
-            "symptoms": [
-                "Headache",
-                "Nausea",
-                "Dizziness",
-                "Fatigue"
-            ],
-            "correctAnswer": "Nausea, Dizziness, Fatigue",
-            "hint": "Three symptoms: feeling sick, unsteadiness, and resulting tiredness.",
-            "explanation": "The patient describes Nausea, Dizziness, and resulting Fatigue.",
-            "id": "mc_l187_q1",
-            "medicalVocab": [
-                "Nausea, Dizziness, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"My stomach has ached on and off for two days now, and I had a fever come on yesterday evening, leaving me completely drained since.\"",
-            "symptoms": [
-                "Stomach Ache",
-                "Fever",
-                "Nausea",
-                "Fatigue"
-            ],
-            "correctAnswer": "Stomach Ache, Fever, Fatigue",
-            "hint": "Three symptoms: stomach pain, temperature, and overall tiredness.",
-            "explanation": "The patient reports a Stomach Ache, Fever, and resulting Fatigue.",
-            "id": "mc_l187_q2",
-            "medicalVocab": [
-                "Stomach Ache, Fever, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"My wrist has felt sore for over a week now, stiff whenever I first wake up, with some visible puffiness building around the joint by midday.\"",
-            "symptoms": [
-                "Numbness",
-                "Wrist Pain",
-                "Joint Stiffness",
-                "Swelling"
-            ],
-            "correctAnswer": "Wrist Pain, Joint Stiffness, Swelling",
-            "hint": "Three symptoms: joint pain, morning stiffness, and midday puffiness.",
-            "explanation": "The patient describes Wrist Pain, Joint Stiffness, and Swelling.",
-            "id": "mc_l187_q3",
-            "medicalVocab": [
-                "Wrist Pain, Joint Stiffness, Swelling",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"My knee has ached for weeks now, and my lower back has grown sore from favoring it, leaving me pretty worn out from the constant discomfort.\"",
-            "symptoms": [
-                "Knee Pain",
-                "Back Pain",
-                "Swelling",
-                "Fatigue"
-            ],
-            "correctAnswer": "Knee Pain, Back Pain, Fatigue",
-            "hint": "Three symptoms: the original knee pain, resulting back pain, and overall tiredness.",
-            "explanation": "The patient reports Knee Pain, resulting Back Pain, and Fatigue.",
-            "id": "mc_l188_q1",
-            "medicalVocab": [
-                "Knee Pain, Back Pain, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The doctor asks about the symptoms, and the patient says: \"My hip has ached deep and steady for weeks now, and my lower back has grown sore right along with it, keeping me up on several nights.\"",
-            "symptoms": [
-                "Hip Pain",
-                "Back Pain",
-                "Insomnia",
-                "Leg Pain"
-            ],
-            "correctAnswer": "Hip Pain, Back Pain, Insomnia",
-            "hint": "Three symptoms: the hip itself, resulting back pain, and disrupted sleep.",
-            "explanation": "The patient describes Hip Pain, resulting Back Pain, and Insomnia.",
-            "id": "mc_l188_q2",
-            "medicalVocab": [
-                "Hip Pain, Back Pain, Insomnia",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The patient tells the nurse: \"My shoulders have ached for weeks after the move, and my mood has dipped from dealing with the constant discomfort, with sleep becoming genuinely difficult too.\"",
-            "symptoms": [
-                "Shoulder Pain",
-                "Back Pain",
-                "Low Mood",
-                "Insomnia"
-            ],
-            "correctAnswer": "Shoulder Pain, Low Mood, Insomnia",
-            "hint": "Three symptoms: shoulder pain, an emotional shift, and trouble sleeping.",
-            "explanation": "The patient reports Shoulder Pain, resulting Low Mood, and Insomnia.",
-            "id": "mc_l188_q3",
-            "medicalVocab": [
-                "Shoulder Pain, Low Mood, Insomnia",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"My face has felt heavy across my cheeks for over a week, and food has tasted duller than usual, leaving me pretty tired from the constant pressure.\"",
-            "symptoms": [
-                "Sinus Pressure",
-                "Loss of Smell",
-                "Fatigue",
-                "Headache"
-            ],
-            "correctAnswer": "Sinus Pressure, Loss of Smell, Fatigue",
-            "hint": "Three symptoms: facial pressure, a change in taste linked to smell, and overall tiredness.",
-            "explanation": "The patient describes Sinus Pressure, Loss of Smell affecting taste, and Fatigue.",
-            "id": "mc_l189_q1",
-            "medicalVocab": [
-                "Sinus Pressure, Loss of Smell, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"My hearing has felt muffled on one side for a couple of weeks now, and that ear feels blocked most of the time, leaving me pretty drained from straining to hear.\"",
-            "symptoms": [
-                "Ringing in the Ears",
-                "Hearing Loss",
-                "Ear Fullness",
-                "Fatigue"
-            ],
-            "correctAnswer": "Hearing Loss, Ear Fullness, Fatigue",
-            "hint": "Three symptoms: muffled hearing, a blocked feeling, and resulting tiredness.",
-            "explanation": "The patient reports Hearing Loss, Ear Fullness, and resulting Fatigue.",
-            "id": "mc_l189_q2",
-            "medicalVocab": [
-                "Hearing Loss, Ear Fullness, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"My throat has felt raw and sore for two days now, and there's a tender lump under my jaw, with a low fever that came on yesterday.\"",
-            "symptoms": [
-                "Sore Throat",
-                "Earache",
-                "Swollen Glands",
-                "Fever"
-            ],
-            "correctAnswer": "Sore Throat, Swollen Glands, Fever",
-            "hint": "Three symptoms: throat pain, a tender lump, and temperature.",
-            "explanation": "The patient describes a Sore Throat, Swollen Glands, and a low Fever.",
-            "id": "mc_l189_q3",
-            "medicalVocab": [
-                "Sore Throat, Swollen Glands, Fever",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"My skin has felt dry and itchy for weeks now, especially on my arms, leaving me pretty tired from the constant discomfort at night.\"",
-            "symptoms": [
-                "Dry Skin",
-                "Itching",
-                "Rash",
-                "Fatigue"
-            ],
-            "correctAnswer": "Dry Skin, Itching, Fatigue",
-            "hint": "Three symptoms: dry texture, an itching feeling, and resulting tiredness.",
-            "explanation": "The patient reports Dry Skin, Itching, and resulting Fatigue.",
-            "id": "mc_l190_q1",
-            "medicalVocab": [
-                "Dry Skin, Itching, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The doctor asks about the symptoms, and the patient says: \"My arms have broken out in a rash this week, and I've had a low fever come and go with it, leaving me pretty worn out the whole time.\"",
-            "symptoms": [
-                "Rash",
-                "Itching",
-                "Fever",
-                "Fatigue"
-            ],
-            "correctAnswer": "Rash, Fever, Fatigue",
-            "hint": "Three symptoms: a visible rash, temperature, and overall tiredness.",
-            "explanation": "The patient describes a Rash, an on-and-off Fever, and Fatigue.",
-            "id": "mc_l190_q2",
-            "medicalVocab": [
-                "Rash, Fever, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The patient tells the nurse: \"My energy has been at rock bottom for weeks now, and I've struggled to think clearly at work, lying awake most nights unable to properly switch off.\"",
-            "symptoms": [
-                "Fatigue",
-                "Brain Fog",
-                "Insomnia",
-                "Low Mood"
-            ],
-            "correctAnswer": "Fatigue, Brain Fog, Insomnia",
-            "hint": "Three symptoms: low energy, a focus problem, and trouble sleeping.",
-            "explanation": "The patient reports Fatigue, Brain Fog, and resulting Insomnia.",
-            "id": "mc_l190_q3",
-            "medicalVocab": [
-                "Fatigue, Brain Fog, Insomnia",
-                "Symptom",
-                "Patient"
-            ]
-        }
-    ]
+  "gameType": "medicalConsult",
+  "batchIndex": 19,
+  "levels": "181-190",
+  "quests": [
+    {
+      "instruction": "Select the statement that best summarizes the conversation so far.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient: \"It's this prickling, pins-and-needles feeling. I actually had some tests done for this a few months ago.\"\nClinician: \"How is this affecting your day-to-day life?\"\nPatient: \"I keep waking up because of it, so I'm not sleeping through the night. It's stopping me from doing almost anything today, far more than any previous episode.\"",
+      "symptoms": [
+        "The patient reports tingling, mentions tests done a few months ago, and says it is interfering with eating.",
+        "The patient reports tingling, mentions tests done a few months ago, and says it is interfering with sleep.",
+        "The patient reports tingling, mentions several medications taken together, and says it is interfering with sleep.",
+        "The patient reports tingling and mentions tests done a few months ago, but says it has not really changed what they can do day to day."
+      ],
+      "correctAnswer": "The patient reports tingling, mentions tests done a few months ago, and says it is interfering with sleep.",
+      "hint": "Test each summary on three points: the symptom, the background, and the activity affected.",
+      "explanation": "Only one summary matches all three things the patient actually said. The others swap in a different activity, a different background detail, or claim there is no impact, which the patient never said.",
+      "id": "mc_l181_q1",
+      "medicalVocab": [
+        "Tingling",
+        "Summary",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Select the best next question for the clinician to ask.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "[Same conversation]\nPatient: \"It's this prickling, pins-and-needles feeling. I actually had some tests done for this a few months ago.\"\nClinician: \"How is this affecting your day-to-day life?\"\nPatient: \"I keep waking up because of it, so I'm not sleeping through the night. It's stopping me from doing almost anything today, far more than any previous episode.\"",
+      "symptoms": [
+        "Do you know what those earlier test results showed?",
+        "Has this been affecting your daily activities?",
+        "Have you had any recent vaccinations?",
+        "Have you noticed anything else alongside this?"
+      ],
+      "correctAnswer": "Have you noticed anything else alongside this?",
+      "hint": "List what the dialogue has already established, then ask what is not yet known.",
+      "explanation": "Background and daily impact have already come up, so the most useful next question asks about associated. The other options repeat what the patient just said or wander off topic.",
+      "id": "mc_l181_q2",
+      "medicalVocab": [
+        "Tingling",
+        "Follow-up Question",
+        "Associated"
+      ]
+    },
+    {
+      "instruction": "Choose the most appropriate next step in this consultation.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "[Reviewing the conversation so far]\nPatient: \"It's this prickling, pins-and-needles feeling. I actually had some tests done for this a few months ago.\"\nClinician: \"How is this affecting your day-to-day life?\"\nPatient: \"I keep waking up because of it, so I'm not sleeping through the night. It's stopping me from doing almost anything today, far more than any previous episode.\"",
+      "symptoms": [
+        "Suggest the patient wait a few more weeks to see whether it settles down by itself.",
+        "Change the subject and return to routine questions about the patient's general health.",
+        "Reassure the patient that this is almost certainly nothing to worry about and move along.",
+        "Take this seriously, explain that it sounds different from before, and advise prompt assessment."
+      ],
+      "correctAnswer": "Take this seriously, explain that it sounds different from before, and advise prompt assessment.",
+      "hint": "Put the effect on daily life together with the patient's comment about how this differs from before.",
+      "explanation": "The patient describes a clear change from their usual pattern along with real disruption. The appropriate step is to encourage prompt evaluation, not to reassure, delay, or self-treat.",
+      "id": "mc_l181_q3",
+      "medicalVocab": [
+        "Tingling",
+        "Consultation",
+        "Next Step"
+      ]
+    },
+    {
+      "instruction": "Select the statement that best summarizes the conversation so far.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient: \"I notice my chest pounding even when I'm just sitting still. I already have an ongoing condition, and this feels connected to it.\"\nClinician: \"Is it stopping you from doing anything you'd usually do?\"\nPatient: \"Even getting dressed in the morning has become more difficult.\"",
+      "symptoms": [
+        "The patient reports palpitations and mentions an ongoing condition it may be connected to, but says it has not really changed what they can do day to day.",
+        "The patient reports palpitations, mentions an ongoing condition it may be connected to, and says it is interfering with everyday tasks.",
+        "The patient reports palpitations, mentions tests done a few months ago, and says it is interfering with everyday tasks.",
+        "The patient reports palpitations, mentions an ongoing condition it may be connected to, and says it is interfering with exercise."
+      ],
+      "correctAnswer": "The patient reports palpitations, mentions an ongoing condition it may be connected to, and says it is interfering with everyday tasks.",
+      "hint": "A correct summary gets all three elements right; check them one by one.",
+      "explanation": "Only one summary matches all three things the patient actually said. The others swap in a different activity, a different background detail, or claim there is no impact, which the patient never said.",
+      "id": "mc_l182_q1",
+      "medicalVocab": [
+        "Palpitations",
+        "Summary",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Select the best next question for the clinician to ask.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "[Same conversation]\nPatient: \"I notice my chest pounding even when I'm just sitting still. I already have an ongoing condition, and this feels connected to it.\"\nClinician: \"Is it stopping you from doing anything you'd usually do?\"\nPatient: \"Even getting dressed in the morning has become more difficult.\"",
+      "symptoms": [
+        "Have you had any recent vaccinations?",
+        "How well is that existing condition currently being managed?",
+        "Is there anything that seems to bring it on or make it worse?",
+        "Has this been affecting your daily activities?"
+      ],
+      "correctAnswer": "Is there anything that seems to bring it on or make it worse?",
+      "hint": "Some questions would only repeat the conversation. Which one would add new information?",
+      "explanation": "Background and daily impact have already come up, so the most useful next question asks about trigger. The other options repeat what the patient just said or wander off topic.",
+      "id": "mc_l182_q2",
+      "medicalVocab": [
+        "Palpitations",
+        "Follow-up Question",
+        "Trigger"
+      ]
+    },
+    {
+      "instruction": "Choose the most appropriate next step in this consultation.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "[Reviewing the conversation so far]\nPatient: \"I notice my chest pounding even when I'm just sitting still. I already have an ongoing condition, and this feels connected to it.\"\nClinician: \"Is it stopping you from doing anything you'd usually do?\"\nPatient: \"Even getting dressed in the morning has become more difficult.\"",
+      "symptoms": [
+        "End the conversation, since enough is already known to reach a decision today.",
+        "Tell the patient exactly which treatment to begin right away without asking more.",
+        "Reflect back what you have heard so far and ask one more clarifying question.",
+        "Offer a specific diagnosis based on this single conversation and explain what it means."
+      ],
+      "correctAnswer": "Reflect back what you have heard so far and ask one more clarifying question.",
+      "hint": "Some details are known, but the picture is still incomplete.",
+      "explanation": "Background and impact are known, but some details are still missing. Confirming what you have heard and gathering more is better than jumping to a conclusion, dismissing the concern, or ending early.",
+      "id": "mc_l182_q3",
+      "medicalVocab": [
+        "Palpitations",
+        "Consultation",
+        "Next Step"
+      ]
+    },
+    {
+      "instruction": "Select the statement that best summarizes the conversation so far.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient: \"There's a puffiness around both ankles that eases overnight. I wonder if this started around the time I began a new prescription.\"\nClinician: \"Tell me how it's been interfering with your routine.\"\nPatient: \"I've been limping a bit because it hurts to put full weight down.\"",
+      "symptoms": [
+        "The patient reports swollen ankles, mentions a possible link to a new prescription, and says it is interfering with sleep.",
+        "The patient reports swollen ankles, mentions a possible link to a new prescription, and says it is interfering with walking.",
+        "The patient reports swollen ankles, mentions a new prescription started two weeks ago, and says it is interfering with walking.",
+        "The patient reports swollen ankles and mentions a possible link to a new prescription, but says it has not really changed what they can do day to day."
+      ],
+      "correctAnswer": "The patient reports swollen ankles, mentions a possible link to a new prescription, and says it is interfering with walking.",
+      "hint": "Compare the background detail and the affected activity with the dialogue, not just the symptom.",
+      "explanation": "Only one summary matches all three things the patient actually said. The others swap in a different activity, a different background detail, or claim there is no impact, which the patient never said.",
+      "id": "mc_l183_q1",
+      "medicalVocab": [
+        "Swollen Ankles",
+        "Summary",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Select the best next question for the clinician to ask.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "[Same conversation]\nPatient: \"There's a puffiness around both ankles that eases overnight. I wonder if this started around the time I began a new prescription.\"\nClinician: \"Tell me how it's been interfering with your routine.\"\nPatient: \"I've been limping a bit because it hurts to put full weight down.\"",
+      "symptoms": [
+        "Have you mentioned this to the doctor or pharmacist who prescribed it?",
+        "Has this been affecting your daily activities?",
+        "How would you describe how bad it feels?",
+        "Have you had any recent vaccinations?"
+      ],
+      "correctAnswer": "How would you describe how bad it feels?",
+      "hint": "Find the gap in the story so far.",
+      "explanation": "Background and daily impact have already come up, so the most useful next question asks about severity. The other options repeat what the patient just said or wander off topic.",
+      "id": "mc_l183_q2",
+      "medicalVocab": [
+        "Swollen Ankles",
+        "Follow-up Question",
+        "Severity"
+      ]
+    },
+    {
+      "instruction": "Choose the most appropriate next step in this consultation.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "[Reviewing the conversation so far]\nPatient: \"There's a puffiness around both ankles that eases overnight. I wonder if this started around the time I began a new prescription.\"\nClinician: \"Tell me how it's been interfering with your routine.\"\nPatient: \"I've been limping a bit because it hurts to put full weight down.\"",
+      "symptoms": [
+        "Dismiss the concern as unlikely to be significant and move on to the paperwork.",
+        "Offer a specific diagnosis based on this single conversation and explain what it means.",
+        "Reflect back what you have heard so far and ask one more clarifying question.",
+        "Assure the patient that nothing further needs to be discussed at this visit."
+      ],
+      "correctAnswer": "Reflect back what you have heard so far and ask one more clarifying question.",
+      "hint": "Consider whether enough has been gathered to conclude anything responsibly.",
+      "explanation": "Background and impact are known, but some details are still missing. Confirming what you have heard and gathering more is better than jumping to a conclusion, dismissing the concern, or ending early.",
+      "id": "mc_l183_q3",
+      "medicalVocab": [
+        "Swollen Ankles",
+        "Consultation",
+        "Next Step"
+      ]
+    },
+    {
+      "instruction": "Select the statement that best summarizes the conversation so far.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient: \"There's this low-level worry sitting under everything I do. My mother had something similar when she was around my age.\"\nClinician: \"Has it changed what you're able to do lately?\"\nPatient: \"I keep waking up because of it, so I'm not sleeping through the night. Something about this feels different and more serious than my usual episodes.\"",
+      "symptoms": [
+        "The patient reports anxiety and mentions a family member who had something similar, but says it has not really changed what they can do day to day.",
+        "The patient reports anxiety, mentions a job with repetitive strain, and says it is interfering with sleep.",
+        "The patient reports anxiety, mentions a family member who had something similar, and says it is interfering with exercise.",
+        "The patient reports anxiety, mentions a family member who had something similar, and says it is interfering with sleep."
+      ],
+      "correctAnswer": "The patient reports anxiety, mentions a family member who had something similar, and says it is interfering with sleep.",
+      "hint": "Test each summary on three points: the symptom, the background, and the activity affected.",
+      "explanation": "Only one summary matches all three things the patient actually said. The others swap in a different activity, a different background detail, or claim there is no impact, which the patient never said.",
+      "id": "mc_l184_q1",
+      "medicalVocab": [
+        "Anxiety",
+        "Summary",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Select the best next question for the clinician to ask.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "[Same conversation]\nPatient: \"There's this low-level worry sitting under everything I do. My mother had something similar when she was around my age.\"\nClinician: \"Has it changed what you're able to do lately?\"\nPatient: \"I keep waking up because of it, so I'm not sleeping through the night. Something about this feels different and more serious than my usual episodes.\"",
+      "symptoms": [
+        "Have you had any recent vaccinations?",
+        "How would you describe how bad it feels?",
+        "Do you know how that was diagnosed or treated in your family member?",
+        "Has this been affecting your daily activities?"
+      ],
+      "correctAnswer": "How would you describe how bad it feels?",
+      "hint": "List what the dialogue has already established, then ask what is not yet known.",
+      "explanation": "Background and daily impact have already come up, so the most useful next question asks about severity. The other options repeat what the patient just said or wander off topic.",
+      "id": "mc_l184_q2",
+      "medicalVocab": [
+        "Anxiety",
+        "Follow-up Question",
+        "Severity"
+      ]
+    },
+    {
+      "instruction": "Choose the most appropriate next step in this consultation.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "[Reviewing the conversation so far]\nPatient: \"There's this low-level worry sitting under everything I do. My mother had something similar when she was around my age.\"\nClinician: \"Has it changed what you're able to do lately?\"\nPatient: \"I keep waking up because of it, so I'm not sleeping through the night. Something about this feels different and more serious than my usual episodes.\"",
+      "symptoms": [
+        "Tell the patient this is definitely the same as their usual episodes and needs no follow-up.",
+        "Change the subject and return to routine questions about the patient's general health.",
+        "Suggest the patient wait a few more weeks to see whether it settles down by itself.",
+        "Thank the patient for explaining, then recommend being seen promptly rather than waiting."
+      ],
+      "correctAnswer": "Thank the patient for explaining, then recommend being seen promptly rather than waiting.",
+      "hint": "Think about both the disruption and the change from the usual pattern.",
+      "explanation": "The patient describes a clear change from their usual pattern along with real disruption. The appropriate step is to encourage prompt evaluation, not to reassure, delay, or self-treat.",
+      "id": "mc_l184_q3",
+      "medicalVocab": [
+        "Anxiety",
+        "Consultation",
+        "Next Step"
+      ]
+    },
+    {
+      "instruction": "Select the statement that best summarizes the conversation so far.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient: \"There's this heaviness that follows me through most of the day. I actually had some tests done for this a few months ago.\"\nClinician: \"Has this been getting in the way of things you'd normally do without trouble?\"\nPatient: \"It's been hard to focus on anything at my desk for more than a few minutes.\"",
+      "symptoms": [
+        "The patient reports low mood, mentions tests done a few months ago, and says it is interfering with work and concentration.",
+        "The patient reports low mood, mentions tests done a few months ago, and says it is interfering with social activities.",
+        "The patient reports low mood, mentions several medications taken together, and says it is interfering with work and concentration.",
+        "The patient reports low mood and mentions tests done a few months ago, but says it has not really changed what they can do day to day."
+      ],
+      "correctAnswer": "The patient reports low mood, mentions tests done a few months ago, and says it is interfering with work and concentration.",
+      "hint": "A correct summary gets all three elements right; check them one by one.",
+      "explanation": "Only one summary matches all three things the patient actually said. The others swap in a different activity, a different background detail, or claim there is no impact, which the patient never said.",
+      "id": "mc_l185_q1",
+      "medicalVocab": [
+        "Low Mood",
+        "Summary",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Select the best next question for the clinician to ask.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "[Same conversation]\nPatient: \"There's this heaviness that follows me through most of the day. I actually had some tests done for this a few months ago.\"\nClinician: \"Has this been getting in the way of things you'd normally do without trouble?\"\nPatient: \"It's been hard to focus on anything at my desk for more than a few minutes.\"",
+      "symptoms": [
+        "How often has this been happening?",
+        "Have you had any recent vaccinations?",
+        "Do you know what those earlier test results showed?",
+        "Has this been affecting your daily activities?"
+      ],
+      "correctAnswer": "How often has this been happening?",
+      "hint": "Some questions would only repeat the conversation. Which one would add new information?",
+      "explanation": "Background and daily impact have already come up, so the most useful next question asks about frequency. The other options repeat what the patient just said or wander off topic.",
+      "id": "mc_l185_q2",
+      "medicalVocab": [
+        "Low Mood",
+        "Follow-up Question",
+        "Frequency"
+      ]
+    },
+    {
+      "instruction": "Choose the most appropriate next step in this consultation.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "[Reviewing the conversation so far]\nPatient: \"There's this heaviness that follows me through most of the day. I actually had some tests done for this a few months ago.\"\nClinician: \"Has this been getting in the way of things you'd normally do without trouble?\"\nPatient: \"It's been hard to focus on anything at my desk for more than a few minutes.\"",
+      "symptoms": [
+        "Confirm your understanding of the story so far and invite the patient to add anything missing.",
+        "Offer a specific diagnosis based on this single conversation and explain what it means.",
+        "Dismiss the concern as unlikely to be significant and move on to the paperwork.",
+        "Move on to a new topic without acknowledging anything the patient just said."
+      ],
+      "correctAnswer": "Confirm your understanding of the story so far and invite the patient to add anything missing.",
+      "hint": "Think about what a careful clinician does when the story is only partly told.",
+      "explanation": "Background and impact are known, but some details are still missing. Confirming what you have heard and gathering more is better than jumping to a conclusion, dismissing the concern, or ending early.",
+      "id": "mc_l185_q3",
+      "medicalVocab": [
+        "Low Mood",
+        "Consultation",
+        "Next Step"
+      ]
+    },
+    {
+      "instruction": "Select the statement that best summarizes the conversation so far.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient: \"It grabs without warning, usually after I've been on my feet all day. I twisted it awkwardly a few days before this began.\"\nClinician: \"How is this affecting your day-to-day life?\"\nPatient: \"Even simple chores around the house feel like too much right now.\"",
+      "symptoms": [
+        "The patient reports cramp, mentions a possible link to a new prescription, and says it is interfering with household chores.",
+        "The patient reports cramp, mentions an awkward twist shortly before it began, and says it is interfering with household chores.",
+        "The patient reports cramp and mentions an awkward twist shortly before it began, but says it has not really changed what they can do day to day.",
+        "The patient reports cramp, mentions an awkward twist shortly before it began, and says it is interfering with breathing during activity."
+      ],
+      "correctAnswer": "The patient reports cramp, mentions an awkward twist shortly before it began, and says it is interfering with household chores.",
+      "hint": "Compare the background detail and the affected activity with the dialogue, not just the symptom.",
+      "explanation": "Only one summary matches all three things the patient actually said. The others swap in a different activity, a different background detail, or claim there is no impact, which the patient never said.",
+      "id": "mc_l186_q1",
+      "medicalVocab": [
+        "Cramp",
+        "Summary",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Select the best next question for the clinician to ask.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "[Same conversation]\nPatient: \"It grabs without warning, usually after I've been on my feet all day. I twisted it awkwardly a few days before this began.\"\nClinician: \"How is this affecting your day-to-day life?\"\nPatient: \"Even simple chores around the house feel like too much right now.\"",
+      "symptoms": [
+        "Can you describe exactly what happened when it was injured?",
+        "Has this been affecting your daily activities?",
+        "Is there anything that seems to bring it on or make it worse?",
+        "Have you had any recent vaccinations?"
+      ],
+      "correctAnswer": "Is there anything that seems to bring it on or make it worse?",
+      "hint": "Find the gap in the story so far.",
+      "explanation": "Background and daily impact have already come up, so the most useful next question asks about trigger. The other options repeat what the patient just said or wander off topic.",
+      "id": "mc_l186_q2",
+      "medicalVocab": [
+        "Cramp",
+        "Follow-up Question",
+        "Trigger"
+      ]
+    },
+    {
+      "instruction": "Choose the most appropriate next step in this consultation.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "[Reviewing the conversation so far]\nPatient: \"It grabs without warning, usually after I've been on my feet all day. I twisted it awkwardly a few days before this began.\"\nClinician: \"How is this affecting your day-to-day life?\"\nPatient: \"Even simple chores around the house feel like too much right now.\"",
+      "symptoms": [
+        "Offer a specific diagnosis based on this single conversation and explain what it means.",
+        "Tell the patient exactly which treatment to begin right away without asking more.",
+        "End the conversation, since enough is already known to reach a decision today.",
+        "Confirm your understanding of the story so far and invite the patient to add anything missing."
+      ],
+      "correctAnswer": "Confirm your understanding of the story so far and invite the patient to add anything missing.",
+      "hint": "Some details are known, but the picture is still incomplete.",
+      "explanation": "Background and impact are known, but some details are still missing. Confirming what you have heard and gathering more is better than jumping to a conclusion, dismissing the concern, or ending early.",
+      "id": "mc_l186_q3",
+      "medicalVocab": [
+        "Cramp",
+        "Consultation",
+        "Next Step"
+      ]
+    },
+    {
+      "instruction": "Select the statement that best summarizes the conversation so far.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient: \"My grip gives out sooner than it used to, even on light tasks. I actually forgot to take my usual medication for a couple of days.\"\nClinician: \"Is it stopping you from doing anything you'd usually do?\"\nPatient: \"Even getting dressed in the morning has become more difficult. It's paired with something new I haven't had alongside it before.\"",
+      "symptoms": [
+        "The patient reports weakness, mentions a couple of days of missed medication, and says it is interfering with everyday tasks.",
+        "The patient reports weakness, mentions unusually high stress lately, and says it is interfering with everyday tasks.",
+        "The patient reports weakness, mentions a couple of days of missed medication, and says it is interfering with walking.",
+        "The patient reports weakness and mentions a couple of days of missed medication, but says it has not really changed what they can do day to day."
+      ],
+      "correctAnswer": "The patient reports weakness, mentions a couple of days of missed medication, and says it is interfering with everyday tasks.",
+      "hint": "Test each summary on three points: the symptom, the background, and the activity affected.",
+      "explanation": "Only one summary matches all three things the patient actually said. The others swap in a different activity, a different background detail, or claim there is no impact, which the patient never said.",
+      "id": "mc_l187_q1",
+      "medicalVocab": [
+        "Weakness",
+        "Summary",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Select the best next question for the clinician to ask.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "[Same conversation]\nPatient: \"My grip gives out sooner than it used to, even on light tasks. I actually forgot to take my usual medication for a couple of days.\"\nClinician: \"Is it stopping you from doing anything you'd usually do?\"\nPatient: \"Even getting dressed in the morning has become more difficult. It's paired with something new I haven't had alongside it before.\"",
+      "symptoms": [
+        "Has this been affecting your daily activities?",
+        "Is there anything that seems to bring it on or make it worse?",
+        "Have you noticed a difference on the days you miss a dose?",
+        "Have you had any recent dental work?"
+      ],
+      "correctAnswer": "Is there anything that seems to bring it on or make it worse?",
+      "hint": "List what the dialogue has already established, then ask what is not yet known.",
+      "explanation": "Background and daily impact have already come up, so the most useful next question asks about trigger. The other options repeat what the patient just said or wander off topic.",
+      "id": "mc_l187_q2",
+      "medicalVocab": [
+        "Weakness",
+        "Follow-up Question",
+        "Trigger"
+      ]
+    },
+    {
+      "instruction": "Choose the most appropriate next step in this consultation.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "[Reviewing the conversation so far]\nPatient: \"My grip gives out sooner than it used to, even on light tasks. I actually forgot to take my usual medication for a couple of days.\"\nClinician: \"Is it stopping you from doing anything you'd usually do?\"\nPatient: \"Even getting dressed in the morning has become more difficult. It's paired with something new I haven't had alongside it before.\"",
+      "symptoms": [
+        "Say you understand how disruptive this is and encourage timely in-person evaluation.",
+        "Reassure the patient that this is almost certainly nothing to worry about and move along.",
+        "Change the subject and return to routine questions about the patient's general health.",
+        "Tell the patient this is definitely the same as their usual episodes and needs no follow-up."
+      ],
+      "correctAnswer": "Say you understand how disruptive this is and encourage timely in-person evaluation.",
+      "hint": "Consider how much this is interfering and how different it feels from previous episodes.",
+      "explanation": "The patient describes a clear change from their usual pattern along with real disruption. The appropriate step is to encourage prompt evaluation, not to reassure, delay, or self-treat.",
+      "id": "mc_l187_q3",
+      "medicalVocab": [
+        "Weakness",
+        "Consultation",
+        "Next Step"
+      ]
+    },
+    {
+      "instruction": "Select the statement that best summarizes the conversation so far.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient: \"I force down a few bites and then just lose interest. I tried an over-the-counter remedy already, but it didn't help much.\"\nClinician: \"Tell me how it's been interfering with your routine.\"\nPatient: \"I keep waking up because of it, so I'm not sleeping through the night.\"",
+      "symptoms": [
+        "The patient reports loss of appetite, mentions an over-the-counter remedy that did not help, and says it is interfering with sleep.",
+        "The patient reports loss of appetite and mentions an over-the-counter remedy that did not help, but says it has not really changed what they can do day to day.",
+        "The patient reports loss of appetite, mentions a new prescription started two weeks ago, and says it is interfering with sleep.",
+        "The patient reports loss of appetite, mentions an over-the-counter remedy that did not help, and says it is interfering with exercise."
+      ],
+      "correctAnswer": "The patient reports loss of appetite, mentions an over-the-counter remedy that did not help, and says it is interfering with sleep.",
+      "hint": "A correct summary gets all three elements right; check them one by one.",
+      "explanation": "Only one summary matches all three things the patient actually said. The others swap in a different activity, a different background detail, or claim there is no impact, which the patient never said.",
+      "id": "mc_l188_q1",
+      "medicalVocab": [
+        "Loss of Appetite",
+        "Summary",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Select the best next question for the clinician to ask.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "[Same conversation]\nPatient: \"I force down a few bites and then just lose interest. I tried an over-the-counter remedy already, but it didn't help much.\"\nClinician: \"Tell me how it's been interfering with your routine.\"\nPatient: \"I keep waking up because of it, so I'm not sleeping through the night.\"",
+      "symptoms": [
+        "Has this been affecting your daily activities?",
+        "Have you noticed anything else alongside this?",
+        "What exactly did you try, and how long did you give it before stopping?",
+        "Do you smoke or use any tobacco products?"
+      ],
+      "correctAnswer": "Have you noticed anything else alongside this?",
+      "hint": "Some questions would only repeat the conversation. Which one would add new information?",
+      "explanation": "Background and daily impact have already come up, so the most useful next question asks about associated. The other options repeat what the patient just said or wander off topic.",
+      "id": "mc_l188_q2",
+      "medicalVocab": [
+        "Loss of Appetite",
+        "Follow-up Question",
+        "Associated"
+      ]
+    },
+    {
+      "instruction": "Choose the most appropriate next step in this consultation.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "[Reviewing the conversation so far]\nPatient: \"I force down a few bites and then just lose interest. I tried an over-the-counter remedy already, but it didn't help much.\"\nClinician: \"Tell me how it's been interfering with your routine.\"\nPatient: \"I keep waking up because of it, so I'm not sleeping through the night.\"",
+      "symptoms": [
+        "Assure the patient that nothing further needs to be discussed at this visit.",
+        "Move on to a new topic without acknowledging anything the patient just said.",
+        "Offer a specific diagnosis based on this single conversation and explain what it means.",
+        "Acknowledge what has been shared and continue gathering a few more relevant details before summarizing."
+      ],
+      "correctAnswer": "Acknowledge what has been shared and continue gathering a few more relevant details before summarizing.",
+      "hint": "Consider whether enough has been gathered to conclude anything responsibly.",
+      "explanation": "Background and impact are known, but some details are still missing. Confirming what you have heard and gathering more is better than jumping to a conclusion, dismissing the concern, or ending early.",
+      "id": "mc_l188_q3",
+      "medicalVocab": [
+        "Loss of Appetite",
+        "Consultation",
+        "Next Step"
+      ]
+    },
+    {
+      "instruction": "Select the statement that best summarizes the conversation so far.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient: \"It happens most nights now, regardless of the temperature. I've also been taking an herbal supplement alongside my usual routine.\"\nClinician: \"Has it changed what you're able to do lately?\"\nPatient: \"It's been hard to focus on anything at my desk for more than a few minutes.\"",
+      "symptoms": [
+        "The patient reports night sweats, mentions an herbal supplement taken alongside usual routine, and says it is interfering with household chores.",
+        "The patient reports night sweats and mentions an herbal supplement taken alongside usual routine, but says it has not really changed what they can do day to day.",
+        "The patient reports night sweats, mentions an herbal supplement taken alongside usual routine, and says it is interfering with work and concentration.",
+        "The patient reports night sweats, mentions regular medication for another condition, and says it is interfering with work and concentration."
+      ],
+      "correctAnswer": "The patient reports night sweats, mentions an herbal supplement taken alongside usual routine, and says it is interfering with work and concentration.",
+      "hint": "Compare the background detail and the affected activity with the dialogue, not just the symptom.",
+      "explanation": "Only one summary matches all three things the patient actually said. The others swap in a different activity, a different background detail, or claim there is no impact, which the patient never said.",
+      "id": "mc_l189_q1",
+      "medicalVocab": [
+        "Night Sweats",
+        "Summary",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Select the best next question for the clinician to ask.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "[Same conversation]\nPatient: \"It happens most nights now, regardless of the temperature. I've also been taking an herbal supplement alongside my usual routine.\"\nClinician: \"Has it changed what you're able to do lately?\"\nPatient: \"It's been hard to focus on anything at my desk for more than a few minutes.\"",
+      "symptoms": [
+        "Has this been affecting your daily activities?",
+        "Have you had any recent vaccinations?",
+        "How long have you been taking that supplement, and did anything change around when you started it?",
+        "How would you describe how bad it feels?"
+      ],
+      "correctAnswer": "How would you describe how bad it feels?",
+      "hint": "Find the gap in the story so far.",
+      "explanation": "Background and daily impact have already come up, so the most useful next question asks about severity. The other options repeat what the patient just said or wander off topic.",
+      "id": "mc_l189_q2",
+      "medicalVocab": [
+        "Night Sweats",
+        "Follow-up Question",
+        "Severity"
+      ]
+    },
+    {
+      "instruction": "Choose the most appropriate next step in this consultation.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "[Reviewing the conversation so far]\nPatient: \"It happens most nights now, regardless of the temperature. I've also been taking an herbal supplement alongside my usual routine.\"\nClinician: \"Has it changed what you're able to do lately?\"\nPatient: \"It's been hard to focus on anything at my desk for more than a few minutes.\"",
+      "symptoms": [
+        "Thank the patient, then keep asking about the details that are still missing.",
+        "Move on to a new topic without acknowledging anything the patient just said.",
+        "Assure the patient that nothing further needs to be discussed at this visit.",
+        "Dismiss the concern as unlikely to be significant and move on to the paperwork."
+      ],
+      "correctAnswer": "Thank the patient, then keep asking about the details that are still missing.",
+      "hint": "Think about what a careful clinician does when the story is only partly told.",
+      "explanation": "Background and impact are known, but some details are still missing. Confirming what you have heard and gathering more is better than jumping to a conclusion, dismissing the concern, or ending early.",
+      "id": "mc_l189_q3",
+      "medicalVocab": [
+        "Night Sweats",
+        "Consultation",
+        "Next Step"
+      ]
+    },
+    {
+      "instruction": "Select the statement that best summarizes the conversation so far.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient: \"There's this pressure right across my forehead that won't let up. My job involves a lot of repetitive movement, standing, or physical strain.\"\nClinician: \"Has this been getting in the way of things you'd normally do without trouble?\"\nPatient: \"Even getting dressed in the morning has become more difficult. It's spread to a new area since this morning and it wasn't like that before.\"",
+      "symptoms": [
+        "The patient reports headache, mentions a job with repetitive strain, and says it is interfering with exercise.",
+        "The patient reports headache, mentions an over-the-counter remedy that did not help, and says it is interfering with everyday tasks.",
+        "The patient reports headache, mentions a job with repetitive strain, and says it is interfering with everyday tasks.",
+        "The patient reports headache and mentions a job with repetitive strain, but says it has not really changed what they can do day to day."
+      ],
+      "correctAnswer": "The patient reports headache, mentions a job with repetitive strain, and says it is interfering with everyday tasks.",
+      "hint": "Test each summary on three points: the symptom, the background, and the activity affected.",
+      "explanation": "Only one summary matches all three things the patient actually said. The others swap in a different activity, a different background detail, or claim there is no impact, which the patient never said.",
+      "id": "mc_l190_q1",
+      "medicalVocab": [
+        "Headache",
+        "Summary",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Select the best next question for the clinician to ask.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "[Same conversation]\nPatient: \"There's this pressure right across my forehead that won't let up. My job involves a lot of repetitive movement, standing, or physical strain.\"\nClinician: \"Has this been getting in the way of things you'd normally do without trouble?\"\nPatient: \"Even getting dressed in the morning has become more difficult. It's spread to a new area since this morning and it wasn't like that before.\"",
+      "symptoms": [
+        "How often has this been happening?",
+        "Do you smoke or use any tobacco products?",
+        "Has this been affecting your daily activities?",
+        "How many hours a day does that kind of activity usually take?"
+      ],
+      "correctAnswer": "How often has this been happening?",
+      "hint": "List what the dialogue has already established, then ask what is not yet known.",
+      "explanation": "Background and daily impact have already come up, so the most useful next question asks about frequency. The other options repeat what the patient just said or wander off topic.",
+      "id": "mc_l190_q2",
+      "medicalVocab": [
+        "Headache",
+        "Follow-up Question",
+        "Frequency"
+      ]
+    },
+    {
+      "instruction": "Choose the most appropriate next step in this consultation.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "[Reviewing the conversation so far]\nPatient: \"There's this pressure right across my forehead that won't let up. My job involves a lot of repetitive movement, standing, or physical strain.\"\nClinician: \"Has this been getting in the way of things you'd normally do without trouble?\"\nPatient: \"Even getting dressed in the morning has become more difficult. It's spread to a new area since this morning and it wasn't like that before.\"",
+      "symptoms": [
+        "Suggest the patient wait a few more weeks to see whether it settles down by itself.",
+        "Say you understand how disruptive this is and encourage timely in-person evaluation.",
+        "Suggest the patient simply rest more and check back in a month if nothing has improved.",
+        "Recommend a specific over-the-counter treatment so the patient can manage it at home."
+      ],
+      "correctAnswer": "Say you understand how disruptive this is and encourage timely in-person evaluation.",
+      "hint": "Put the effect on daily life together with the patient's comment about how this differs from before.",
+      "explanation": "The patient describes a clear change from their usual pattern along with real disruption. The appropriate step is to encourage prompt evaluation, not to reassure, delay, or self-treat.",
+      "id": "mc_l190_q3",
+      "medicalVocab": [
+        "Headache",
+        "Consultation",
+        "Next Step"
+      ]
+    }
+  ]
 }

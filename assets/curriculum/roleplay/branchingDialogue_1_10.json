@@ -1,787 +1,787 @@
 {
-    "gameType": "branchingDialogue",
-    "batchIndex": 1,
-    "levels": "1-10",
-    "quests": [
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'Hello! I don't think we've met. What's your name?'",
-            "options": [
-                "I'm Alex. Pleased to meet you, Captain!",
-                "Yes, I completely agree.",
-                "I am fine, thank you very much."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "When asked for your name, give it and add a polite greeting.",
-            "explanation": "'I'm Alex. Pleased to meet you, Captain!' directly answers the question by giving a name and adds the natural greeting 'Pleased to meet you.' 'I am fine' answers 'How are you?' not 'What's your name?' 'Yes, I completely agree' makes no sense as an introduction.",
-            "id": "bd_l1_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'Good morning! How are you today?'",
-            "options": [
-                "My name is Jordan.",
-                "Yesterday was very busy for me.",
-                "I'm doing well, thanks. How about you?"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Respond to 'How are you?' with your current state and politely return the question.",
-            "explanation": "'I'm doing well, thanks. How about you?' is the standard, natural exchange for this greeting - answering and returning the question shows good social English. 'Yesterday was busy' answers a different type of question. 'My name is Jordan' answers 'What's your name?' not 'How are you?'",
-            "id": "bd_l1_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'Welcome to my kitchen! Are you hungry?'",
-            "options": [
-                "My name is Chef O-Ring.",
-                "Not really - I just had lunch, but it smells amazing in here!",
-                "Where exactly is the kitchen?"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "'Are you hungry?' is a direct yes/no question. Give an honest, natural answer.",
-            "explanation": "'Not really - I just had lunch, but it smells amazing!' is honest, natural, and adds a friendly compliment. 'My name is Chef O-Ring' answers a completely different question. 'Where exactly is the kitchen?' is absurd - you're already standing in it.",
-            "id": "bd_l1_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'Where are you from?'",
-            "options": [
-                "I am from Brazil, but I have lived here for five years.",
-                "The weather has been lovely this week.",
-                "I am very hungry right now."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "'Where are you from?' asks about your home country or city. Answer directly.",
-            "explanation": "'I am from Brazil, but I have lived here for five years' directly answers the question and adds useful context. 'I am very hungry' answers a completely different question. 'The weather has been lovely' ignores the question entirely.",
-            "id": "bd_l2_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'How much does this item cost?'",
-            "options": [
-                "It costs eighty dollars.",
-                "I purchased it last month.",
-                "It is very beautiful and unique."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "'How much does it cost?' asks for the price. State a specific amount and currency.",
-            "explanation": "'It costs eighty dollars' directly gives the price with the required information. 'It is very beautiful' describes the item but ignores the price question. 'I purchased it last month' gives irrelevant purchasing history.",
-            "id": "bd_l2_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'What time does our flight depart?'",
-            "options": [
-                "It departs at quarter past two in the afternoon.",
-                "I really enjoy travelling by air.",
-                "The flight is going to be very long."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "'What time...?' asks for a specific time. Use hours and minutes or expressions like 'quarter past'.",
-            "explanation": "'It departs at quarter past two in the afternoon' gives the precise time requested. 'The flight is going to be very long' describes duration, not departure time. 'I really enjoy travelling by air' shares a personal feeling but does not answer the question.",
-            "id": "bd_l2_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'Can you speak English?'",
-            "options": [
-                "Yes, I can speak English fairly well.",
-                "I speak it on Mondays.",
-                "English is a European language."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Answer 'Can you...?' questions with 'Yes, I can' or 'No, I can't', then add detail.",
-            "explanation": "'Yes, I can speak English fairly well' answers the yes/no question and gives an honest qualifier. 'I speak it on Mondays' confuses ability with a schedule. 'English is a European language' is a geographic fact, not an answer about your ability.",
-            "id": "bd_l3_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'Excuse me - is this seat taken?'",
-            "options": [
-                "The chair is a dark brown colour.",
-                "I do not know who took it.",
-                "No, it's free. Please go ahead and sit down."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "'Is this seat taken?' asks if a seat is occupied. Say whether it is free or not.",
-            "explanation": "'No, it's free. Please go ahead and sit down' correctly says the seat is available and invites the person to sit. 'I do not know who took it' misunderstands 'taken' as meaning stolen. 'The chair is dark brown' describes colour but completely ignores the question.",
-            "id": "bd_l3_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'Do you enjoy spicy food?'",
-            "options": [
-                "Food is normally prepared in a kitchen.",
-                "I had dinner at seven o'clock last night.",
-                "I love spicy food - the hotter, the better!"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "'Do you like/enjoy...?' asks about preferences. Give a direct, enthusiastic honest answer.",
-            "explanation": "'I love spicy food - the hotter, the better!' directly and vividly answers the preference question. 'Food is normally prepared in a kitchen' is an irrelevant fact. 'I had dinner at seven' talks about when you ate, not what type of food you enjoy.",
-            "id": "bd_l3_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'How old are you?'",
-            "options": [
-                "I was born in the spring.",
-                "I am tall with dark hair.",
-                "I am thirty-two years old."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "'How old are you?' asks for age. Give a specific number followed by 'years old'.",
-            "explanation": "'I am thirty-two years old' directly gives the age as required. 'I am tall with dark hair' describes physical appearance, not age. 'I was born in the spring' gives a season, which doesn't answer the age question.",
-            "id": "bd_l4_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I'm sorry, we're completely out of that item. Can I help you find something similar?'",
-            "options": [
-                "I disagree with your policy on this.",
-                "Of course - please show me what else you have.",
-                "No, the price was completely wrong anyway."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "When offered an alternative, accept graciously and move forward.",
-            "explanation": "'Of course - please show me what else you have' accepts the helpful offer graciously. 'The price was completely wrong anyway' addresses a different complaint and is unnecessarily rude. 'I disagree with your policy' is confrontational and irrelevant.",
-            "id": "bd_l4_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'Welcome aboard! Have you flown with us before?'",
-            "options": [
-                "The sky looks very clear and blue today.",
-                "I generally prefer travelling by train.",
-                "Yes, I flew with you last year on the summer route."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "'Have you...before?' uses the present perfect. Answer 'Yes, I have' or 'No, I haven't' and add detail.",
-            "explanation": "'Yes, I flew with you last year on the summer route' correctly answers and provides a specific detail. 'The sky looks very clear' makes a weather observation but doesn't answer the question. 'I generally prefer trains' expresses a preference but does not answer the yes/no question asked.",
-            "id": "bd_l4_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'Good night. I'll see you tomorrow morning.'",
-            "options": [
-                "I'm afraid I don't understand.",
-                "Good night, Captain! Sleep well.",
-                "Good morning to you too!"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "'Good night' is a farewell greeting. Respond with 'Good night' and a warm addition.",
-            "explanation": "'Good night, Captain! Sleep well' is natural, warm, and appropriate as a farewell. 'Good morning to you too!' uses completely the wrong time-of-day greeting. 'I'm afraid I don't understand' is inappropriate - 'Good night' is extremely basic English.",
-            "id": "bd_l5_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'Could you please close the door quietly on your way out?'",
-            "options": [
-                "Doors are typically made of wood.",
-                "Of course - I'll do that right now.",
-                "I already closed my bag, actually."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "When asked politely to do something, agree clearly and promptly.",
-            "explanation": "'Of course - I'll do that right now' accepts the polite request clearly and confirms it will be done. 'Doors are typically made of wood' is irrelevant. 'I already closed my bag' misunderstands 'door' for 'bag' and describes a different action.",
-            "id": "bd_l5_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'This soup needs more salt. Could you pass it to me?'",
-            "options": [
-                "Personally, I prefer sweet flavours to salty ones.",
-                "Salt is a white, crystalline substance.",
-                "Here you go!"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "When passing something to someone, say 'Here you go!' or 'Here it is!'",
-            "explanation": "'Here you go!' is the natural, friendly phrase used when handing something to someone. 'Personally, I prefer sweet flavours' shares a personal preference but does not pass the salt. 'Salt is a white, crystalline substance' defines salt but does nothing to help.",
-            "id": "bd_l5_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'Please take a seat. The doctor will be with you shortly.'",
-            "options": [
-                "I'm not waiting for anyone in particular.",
-                "Thank you. Approximately how long will the wait be?",
-                "I would actually prefer a different doctor."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Acknowledge the instruction and ask any practical, polite follow-up question.",
-            "explanation": "'Thank you. Approximately how long will the wait be?' politely acknowledges the instruction and asks a practical, reasonable question. 'I would prefer a different doctor' is a specific request that ignores the current instruction. 'I'm not waiting for anyone' misunderstands the context entirely.",
-            "id": "bd_l6_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'This product is on sale today - fifty percent off the regular price!'",
-            "options": [
-                "Oh, that's a fantastic deal! I'll take one, please.",
-                "Fifty percent of what amount, precisely?",
-                "What day of the week is today exactly?"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "React enthusiastically to a genuinely good deal and make a clear purchase decision.",
-            "explanation": "'Oh, that's a fantastic deal! I'll take one, please' shows natural enthusiasm and makes a decisive purchase. 'What day of the week is today?' is completely off-topic. 'Fifty percent of what amount?' is oddly confrontational given a clearly stated half-price sale.",
-            "id": "bd_l6_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'Please fasten your seatbelt. We are about to begin our takeoff.'",
-            "options": [
-                "Of course! Safety is always the priority.",
-                "Must I? It feels rather uncomfortable.",
-                "I actually prefer the window seat, to be honest."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Safety instructions should be met with immediate agreement and respect.",
-            "explanation": "'Of course! Safety is always the priority' shows immediate compliance and a positive attitude toward safety. 'Must I? It feels uncomfortable' sounds reluctant and rude about a safety requirement. 'I prefer the window seat' changes the subject instead of complying with the safety instruction.",
-            "id": "bd_l6_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I need your assistance. Are you available this afternoon?'",
-            "options": [
-                "This afternoon looks warm and sunny outside.",
-                "Help yourself to a cup of coffee.",
-                "Yes, I'm completely free. What do you need?"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "When asked about your availability, state whether you're free and offer to help.",
-            "explanation": "'Yes, I'm completely free. What do you need?' confirms availability and immediately opens the door to assist. 'This afternoon looks warm and sunny' talks about weather. 'Help yourself to coffee' misunderstands 'help' - the Captain is asking for your assistance, not refreshments.",
-            "id": "bd_l7_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'Tell me, what exactly did you observe last night?'",
-            "options": [
-                "Tonight I am planning to sleep very early.",
-                "I noticed a silver car parked outside the building all evening.",
-                "I can see very well, even without glasses."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "'What did you observe?' asks for specific past details. Provide concrete, useful information.",
-            "explanation": "'I noticed a silver car parked outside all evening' gives a specific, useful past observation with detail. 'Tonight I am planning to sleep early' talks about the future, not last night. 'I can see very well without glasses' discusses eyesight ability, not what was actually observed.",
-            "id": "bd_l7_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'Are you ready to order, or would you like a few more minutes?'",
-            "options": [
-                "I'll have the grilled chicken with roasted vegetables, please.",
-                "Oh, I actually already ate at home.",
-                "The menu certainly has a lot of beautiful colours."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "When a server asks if you're ready, either give your order or politely ask for more time.",
-            "explanation": "'I'll have the grilled chicken with roasted vegetables, please' places a clear, polite order. 'The menu has beautiful colours' makes an observation but does not order. 'I already ate at home' is a strange thing to say in a restaurant - it doesn't make sense in this context.",
-            "id": "bd_l7_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'When did your headache first start?'",
-            "options": [
-                "I sometimes take paracetamol for pain.",
-                "It started this morning at around nine o'clock.",
-                "I once had a headache some time ago."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "'When did it start?' asks for a specific time. Give the day and approximate time of day.",
-            "explanation": "'It started this morning at around nine o'clock' gives precise, clinically useful information. 'I once had a headache some time ago' is vague and unhelpful for diagnosis. 'I sometimes take paracetamol' describes treatment, not when the current problem began.",
-            "id": "bd_l8_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'How many units would you like to order?'",
-            "options": [
-                "I would like to order fifteen units, please.",
-                "These boxes are constructed from thick cardboard.",
-                "The boxes do look quite heavy, I must say."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "'How many?' asks for a specific quantity. Give a clear number.",
-            "explanation": "'I would like to order fifteen units, please' gives a specific quantity with polite phrasing. 'These boxes are made from thick cardboard' describes material, not quantity. 'The boxes look quite heavy' describes weight - neither answers the question.",
-            "id": "bd_l8_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'The weather conditions look quite rough today. Should we postpone the flight?'",
-            "options": [
-                "I don't particularly enjoy flying in rain.",
-                "Safety must always come before schedule. I agree we should wait.",
-                "The aircraft is large and very well-built."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "When asked for an opinion on a safety decision, give a clear recommendation with sound reasoning.",
-            "explanation": "'Safety must always come before schedule' gives a clear, well-reasoned recommendation to delay. 'I don't particularly enjoy flying in rain' is a personal preference, not a professional operational decision. 'The aircraft is well-built' doesn't directly address the specific safety question.",
-            "id": "bd_l8_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'Is everyone prepared to begin the briefing?'",
-            "options": [
-                "Briefings are generally held on Tuesday mornings.",
-                "I'm ready whenever you are, Captain.",
-                "The briefing room is located on the third floor."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "When asked if everyone is ready, confirm your own readiness respectfully.",
-            "explanation": "'I'm ready whenever you are, Captain' confirms readiness and shows respectful deference. 'The briefing room is on the third floor' states a location rather than confirming readiness. 'Briefings are generally on Tuesday mornings' discusses scheduling, not current readiness.",
-            "id": "bd_l9_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'Can you read out the serial number on this document for me?'",
-            "options": [
-                "I'm sorry, the print is quite small. I can make out the first four digits.",
-                "Serial numbers come in different formats.",
-                "I am an extremely fast reader."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Give the most honest and helpful answer based on what you can actually see.",
-            "explanation": "'I'm sorry, the print is quite small. I can make out the first four digits' is honest, explains the difficulty, and shares what IS readable. 'Serial numbers come in different formats' is irrelevant general knowledge. 'I am an extremely fast reader' talks about speed, not what you can see.",
-            "id": "bd_l9_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'We've run out of cream. What would you suggest I use instead?'",
-            "options": [
-                "Cream is a dairy product made from milk fat.",
-                "I had a pasta dish with cream sauce for lunch yesterday.",
-                "You could substitute coconut cream, or send someone to the shop quickly."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "When asked for practical help with a problem, offer specific, actionable solutions.",
-            "explanation": "'You could substitute coconut cream, or send someone to the shop quickly' gives two practical solutions. 'Cream is a dairy product' defines it but offers no solution. 'I had a pasta dish with cream sauce yesterday' is completely irrelevant.",
-            "id": "bd_l9_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'How are you feeling now that you've taken the medication?'",
-            "options": [
-                "I'll probably need to take some more later on.",
-                "Medication can be quite expensive nowadays.",
-                "I feel significantly better. The pain has almost completely gone."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "When a doctor asks about your health after treatment, give a specific, honest update.",
-            "explanation": "'I feel significantly better. The pain has almost completely gone' gives a clear, specific health update that helps the doctor evaluate the treatment. 'I'll probably need more later' is about future plans, not current state. 'Medication can be quite expensive' talks about cost, not your health.",
-            "id": "bd_l10_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'What is the absolute maximum you are willing to pay for this piece?'",
-            "options": [
-                "It is certainly a very rare piece indeed.",
-                "My ceiling is three hundred dollars - not a penny more.",
-                "What have other buyers paid for it?"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "State your maximum price clearly and firmly when asked during a negotiation.",
-            "explanation": "'My ceiling is three hundred dollars - not a penny more' states a clear, firm limit and signals finality. 'It is certainly a very rare piece' describes rarity but avoids stating a price. 'What have other buyers paid?' deflects the question instead of answering it.",
-            "id": "bd_l10_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'Runway is clear. You are free to take off at your discretion.'",
-            "options": [
-                "The weather today is absolutely perfect for flying.",
-                "Could you tell me the exact length of this runway?",
-                "Understood. Initiating takeoff procedure now."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "In professional contexts, confirm receipt of a clearance and state your immediate next action.",
-            "explanation": "'Understood. Initiating takeoff procedure now' is correct professional communication - it confirms the clearance and states the action being taken. 'The weather is perfect' is a comment at an inappropriate moment. 'How long is the runway?' asks for something a pilot should already know.",
-            "id": "bd_l10_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        }
-    ]
+  "gameType": "branchingDialogue",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Maria, a new coworker",
+      "scene": "It is your first day at a new job. Maria, who sits at the next desk, turns to you and says: 'Hi, I don't think we've met yet. What's your name?'",
+      "options": [
+        "Hi, I'm Alex. Nice to meet you, Maria.",
+        "Good afternoon. My name is Alex Turner, and it is a pleasure to make your acquaintance.",
+        "I'm doing okay, thanks, just getting used to the desk."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When someone asks your name, give it clearly and match the casual tone of the setting.",
+      "explanation": "Maria asked a simple, direct question, so a short, friendly answer with your name fits best. The very formal version answers correctly but sounds out of place for a first chat with a desk neighbour. The last option responds to 'how are you' instead of 'what's your name,' so it doesn't actually give Maria the information she asked for.",
+      "id": "bd_l1_q1",
+      "consequencePreviews": [
+        "Realistically, you introduce yourself clearly and the conversation gets off to a friendly start.",
+        "In this moment, maria gets your name, but the formal wording feels stiff for a casual desk introduction.",
+        "In this moment, maria still doesn't know your name, since you answered a different question than the one she asked."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a neighbour in your apartment building",
+      "scene": "You're getting your mail when a neighbour you've never spoken to says: 'Oh, hey — are you new here? I don't think I've seen you before.'",
+      "options": [
+        "Yes, I moved from three streets over because my old landlord kept raising the rent, and honestly the whole building had issues with the heating too, so it's a long story really.",
+        "Yes, looking back, that was more of a first reaction, so there might be a better way to handle it.",
+        "Yeah, I just moved in last week. I'm Sam, by the way."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "A one-word answer to a friendly opener can feel cold — add a small extra detail to keep the exchange natural.",
+      "explanation": "A short confirmation plus your name gives the neighbour just enough to continue the conversation naturally. Answering with only 'Yes' is technically correct but leaves the exchange feeling flat and closed. The long answer overshares personal details a new neighbour hasn't asked for, which can feel like too much for a first hallway greeting.",
+      "id": "bd_l1_q2",
+      "consequencePreviews": [
+        "You may notice that the neighbour gets more personal history than they were expecting from a first hallway chat.",
+        "In this moment, the neighbour learns almost nothing and the conversation has nowhere to go.",
+        "You confirm you're new, add your name, and open the door to further conversation."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "someone at a work networking event",
+      "scene": "You're at a work event, checking your phone because you're waiting for an important call, when someone taps your shoulder and says: 'Hi, I don't think we've officially met!'",
+      "options": [
+        "Sorry, I'm busy right now.",
+        "Hi, I'm Jordan — sorry, I'm just waiting on a call, but great to meet you.",
+        "Oh, hi! So how do you know people here? Are you with one of the sponsor companies, or did you come through a colleague, or—"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When you're genuinely busy, a brief, honest introduction is better than ignoring the person or fully engaging.",
+      "explanation": "Giving your name and a quick, honest reason for being distracted respects both your situation and the other person's effort to introduce themselves. Brushing them off with 'I'm busy' skips the introduction entirely and can seem unfriendly at a networking event. Diving into a long conversation ignores the time pressure you're actually under.",
+      "id": "bd_l1_q3",
+      "consequencePreviews": [
+        "As a result, the person walks away without an introduction, and the interaction feels dismissive.",
+        "Realistically, you introduce yourself and honestly explain your distraction without seeming rude.",
+        "In this moment, you launch into a full conversation, but you may miss the call you were actually waiting for."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a barista at your regular coffee shop",
+      "scene": "You walk in and the barista smiles and says: 'Morning! How's your day going so far?'",
+      "options": [
+        "I am in good health today, thank you for your concern.",
+        "Can I get a large flat white, please? Is there a better way to handle it?",
+        "Pretty good so far, thanks — how about you?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "A casual greeting usually expects a short, casual reply before you move on to your actual request.",
+      "explanation": "Matching the barista's casual, friendly tone and returning the question keeps the small talk natural. The overly formal reply answers politely but feels mismatched with the relaxed setting. Jumping straight to your order isn't rude exactly, but it skips over the social exchange the barista started.",
+      "id": "bd_l2_q1",
+      "consequencePreviews": [
+        "The barista gets an answer, but the wording sounds unusually formal for a quick coffee-shop chat.",
+        "As a result, you get your order started, but the barista's friendly question is left hanging.",
+        "Realistically, you return the small talk naturally and keep the friendly tone going."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a hotel receptionist",
+      "scene": "You arrive at your hotel to check in. The receptionist greets you with: 'Good afternoon, welcome! How are you today?'",
+      "options": [
+        "Good afternoon, I'm doing well, thank you. And you?",
+        "Not great, honestly — my flight was delayed three hours, then I lost my charger, and the taxi driver got lost twice.",
+        "Fine, I suppose, I hadn't really thought it through, so take it with a grain of salt."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "In a formal service greeting, a short, polite reply that returns the question fits the moment best.",
+      "explanation": "A brief, polite answer that reflects the question back matches the professional register a hotel greeting calls for. Unloading a list of travel problems turns a routine greeting into a complaint session before you've even reached the front desk. Answering with just 'Fine' is correct but sounds curt in a setting where a little warmth is expected.",
+      "id": "bd_l2_q2",
+      "consequencePreviews": [
+        "As a result, you match the receptionist's polite, professional tone and the check-in gets off to a smooth start.",
+        "In this moment, the receptionist now has to manage a stream of complaints before check-in has even started.",
+        "As a result, the exchange feels abrupt and doesn't return the receptionist's politeness."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker who looks stressed",
+      "scene": "You pass a coworker in the hallway. They look tired and say, 'Morning... how's it going,' in a flat voice, clearly rushing somewhere.",
+      "options": [
+        "Great, actually! Guess what happened to me this weekend—",
+        "Morning — going okay, thanks. You look swamped, hope your day gets easier.",
+        "Same here, it's been a rough week for me too. Yesterday my whole morning got thrown off because—"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When someone's tone and body language suggest they're stressed and in a hurry, keep your reply short and considerate.",
+      "explanation": "Answering briefly and acknowledging that they seem busy shows you've read the situation correctly, without slowing them down. Responding with enthusiastic news ignores the tired, rushed tone they're giving off. Turning the moment into your own complaint means neither person actually gets acknowledged, and it doesn't fit a quick hallway pass-by.",
+      "id": "bd_l2_q3",
+      "consequencePreviews": [
+        "Here, you launch into your own story, which doesn't match the tired, rushed tone your coworker is giving off.",
+        "Realistically, you answer briefly and show you've noticed their mood without holding them up.",
+        "In this moment, the brief hallway greeting turns into your own extended complaint instead of acknowledging your coworker."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a new neighbour",
+      "scene": "You're chatting with a neighbour for the first time. They ask: 'So, where are you from originally?'",
+      "options": [
+        "Somewhere far from here, in hindsight, I hadn't fully worked out how it'd play out.",
+        "I'm originally from Manchester, but I've lived here for about two years now.",
+        "Manchester — it's in the north-west of England, about 300 kilometres from London, with a population of around half a million, known mostly for its industrial history and football clubs."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "A simple factual question deserves a clear, specific answer — without turning it into a lecture.",
+      "explanation": "Naming the place and adding one relevant detail (how long you've lived here) gives a complete, natural answer without overloading the conversation. Saying 'somewhere far' avoids the question and can come across as evasive for such an ordinary topic. Reciting facts about the city turns a friendly question into an information dump that isn't what the neighbour was asking for.",
+      "id": "bd_l3_q1",
+      "consequencePreviews": [
+        "The neighbour learns almost nothing useful and may feel you're avoiding the question.",
+        "Here, you give a clear, complete answer that naturally invites more conversation.",
+        "You may notice that the neighbour gets far more detail than a casual first chat usually calls for."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a job interviewer",
+      "scene": "You're in a job interview. The interviewer asks: 'Can you tell me a bit about what you do currently?'",
+      "options": [
+        "Work, to be honest, I hadn't checked how that would actually land, so I could be wrong — and to be fair I only heard about this a few minutes ago myself.",
+        "Well, it's a long story — I actually started in a completely different field, then I took a break to travel, and after that I ended up in this role almost by accident, which is funny because—",
+        "I currently work as a marketing assistant, mainly handling social media campaigns and client reports."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "In an interview, keep answers relevant and specific to what the interviewer needs to know.",
+      "explanation": "A concise, relevant summary of your current role gives the interviewer exactly what they need to move the conversation forward. A one-word answer is far too vague for a professional setting where detail matters. The rambling life story, while friendly, buries the useful information and can make you seem unprepared for a focused interview.",
+      "id": "bd_l3_q2",
+      "consequencePreviews": [
+        "Here, the interviewer learns nothing useful and may doubt how seriously you're taking the interview.",
+        "The interviewer gets a rambling personal history instead of the clear professional summary they need.",
+        "As a result, you give a focused, relevant answer that directly supports the interview's purpose."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "someone you just met at a party",
+      "scene": "At a party, someone you met five minutes ago asks: 'So are you married? Do you have kids?'",
+      "options": [
+        "Ha, getting straight to the big questions! I'll just say I keep my personal life pretty private for now.",
+        "Yes, I'm married with two kids, my daughter is at Riverside Elementary, my son plays football on Saturdays.",
+        "That's really none of your business, I guess, I was going more on instinct than anything, though I'd want to think it over more."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "You can decline to answer a personal question without sounding cold, by keeping your tone light.",
+      "explanation": "A light, humorous deflection sets a boundary while keeping the mood friendly, which fits a casual party setting. The blunt refusal is a valid boundary but comes across as unnecessarily harsh for an innocent, if forward, question. Answering in full detail works against your own comfort if you weren't actually ready to share that information.",
+      "id": "bd_l3_q3",
+      "consequencePreviews": [
+        "You stay warm and light while making clear this isn't something you want to discuss yet.",
+        "In this moment, you share detailed personal information you weren't necessarily comfortable giving to someone you just met.",
+        "You protect your privacy, but the sharp tone may feel harsh for someone who was likely just making conversation."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a stranger in a crowded train aisle",
+      "scene": "You need to get past someone standing in a narrow train aisle so you can reach the door before your stop.",
+      "options": [
+        "I beg your pardon, might I request that you kindly permit me to pass?",
+        "Move, please.",
+        "Excuse me, could I just get past? This is my stop."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "A polite 'excuse me' plus a short reason is the natural way to ask a stranger to make space quickly.",
+      "explanation": "'Excuse me' softens the request, and naming your reason ('this is my stop') makes it clear and easy to act on fast. The overly formal version would work in a costume drama, not on a busy train, and takes longer to say. 'Move, please' gets the same result but skips the polite opener strangers generally expect from each other in public.",
+      "id": "bd_l4_q1",
+      "consequencePreviews": [
+        "You may notice that the person understands eventually, but the old-fashioned wording feels odd and slows things down.",
+        "In this moment, the person moves, but the blunt phrasing comes across as slightly rude for a crowded but ordinary situation.",
+        "Realistically, the person moves aside and you reach the door in time."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker who covered your shift",
+      "scene": "A coworker covered your shift last-minute when you had a family emergency. You see them the next day.",
+      "options": [
+        "Thanks again for covering yesterday — it really helped me out when I needed it most.",
+        "No big deal, thanks I guess.",
+        "I don't know how I'll ever repay you, you saved my entire life, I owe you everything, seriously anything you need, ever—"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Match the size of your thanks to the size of the favour, and mention specifically what it meant to you.",
+      "explanation": "Naming what the coworker did and how it helped shows genuine, well-calibrated appreciation. The casual 'no big deal' undersells a favour that clearly mattered to you. The extremely dramatic version overstates a shift swap in a way that can feel insincere or make the coworker uncomfortable.",
+      "id": "bd_l4_q2",
+      "consequencePreviews": [
+        "Realistically, your coworker feels genuinely appreciated for the specific favour they did.",
+        "Here, your thanks feels flat and doesn't match how significant the favour actually was.",
+        "The praise is so extreme that it feels awkward rather than sincere for a shift swap."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "your team at the start of a meeting",
+      "scene": "You arrive eight minutes late to a meeting because of unexpected traffic. Everyone looks up as you walk in.",
+      "options": [
+        "Sorry, sorry, sorry — you would not believe the traffic, there was an accident on the highway, then a detour, then I couldn't find parking, and on top of that my phone died so I couldn't even message anyone—",
+        "Sorry I'm late, traffic was bad. Please go ahead, I'll catch up.",
+        "So, where are we on the budget numbers?"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "A short apology plus a brief reason respects everyone's time better than a long excuse or no apology at all.",
+      "explanation": "A brief apology with one short reason acknowledges the group without eating further into the meeting. The long, detailed excuse actually wastes more time than the lateness itself. Skipping the apology entirely can come across as not valuing your colleagues' time, even if unintentional.",
+      "id": "bd_l4_q3",
+      "consequencePreviews": [
+        "Here, your long explanation takes up more meeting time than the eight minutes you missed.",
+        "Realistically, the team accepts your quick apology and the meeting continues smoothly.",
+        "You move things along, but skipping any acknowledgment of your lateness can seem inconsiderate to the group."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a clinic receptionist",
+      "scene": "You're registering at a clinic. The receptionist says: 'Could you spell your last name for me, please?'",
+      "options": [
+        "Bradley, in fairness, I was going more on instinct than anything.",
+        "Sure, it's B-R-A-D-L-E-Y, Bradley.",
+        "Why do you need that? I already told you my name."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When someone specifically asks you to spell a word, spell it letter by letter rather than just repeating it.",
+      "explanation": "Spelling the name letter by letter is exactly what was requested and prevents mistakes on official records. Simply saying the name again doesn't address why they asked — they likely didn't catch the spelling the first time. Questioning a routine administrative request adds friction where none is needed.",
+      "id": "bd_l5_q1",
+      "consequencePreviews": [
+        "Realistically, the receptionist may still mishear or misspell an unfamiliar name since you didn't actually spell it.",
+        "Here, the receptionist records your name correctly on the first try.",
+        "You create unnecessary friction over a completely routine request."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a colleague setting up a client call",
+      "scene": "A colleague is arranging a call and says: 'What's the best number to reach you on, in case the line drops?'",
+      "options": [
+        "555-2417 okaythanksbye.",
+        "Why would the line drop? Is there a problem with the call setup?",
+        "It's 555-2417 — I'll say it again: 555-2417, just in case."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "For important details like phone numbers, saying them clearly and repeating them once helps avoid mistakes.",
+      "explanation": "Giving the number clearly and repeating it shows you understand why it matters — being reachable if the connection fails. Rushing through the number risks it being misheard, which defeats the purpose of asking. Questioning the premise of the request sidesteps the actual, simple thing being asked of you.",
+      "id": "bd_l5_q2",
+      "consequencePreviews": [
+        "Here, the number is given so quickly that your colleague may not catch it correctly.",
+        "As a result, you raise an unrelated concern instead of simply providing the number that was asked for.",
+        "Your colleague gets a clear number they can rely on if something goes wrong."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a hotel check-in clerk",
+      "scene": "At check-in, the clerk looks at the screen and says, 'Alright, Mr. Jon Carter, here's your key,' but your name is John Carver, not Jon Carter.",
+      "options": [
+        "Actually, it's John Carver — close, but not quite!",
+        "Okay, thanks.",
+        "Wow, how do you even get a name that wrong? It's right there on my ID."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Correcting a small mistake about your own details is worth doing, even if the error seems minor, since it can matter later.",
+      "explanation": "A light, friendly correction fixes the error immediately without making it a big deal. Letting it pass means the wrong name may stay on your reservation, which can cause problems at checkout or with payment. Reacting with sharp criticism turns a small, ordinary mix-up into an unnecessarily tense moment.",
+      "id": "bd_l5_q3",
+      "consequencePreviews": [
+        "In this moment, the clerk corrects the booking details before any problems come up later.",
+        "Here, the mistake stays on your booking, which could cause issues later with payment or ID checks.",
+        "As a result, the clerk feels criticised for what was most likely a simple, harmless mistake."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "two friends at a gathering",
+      "scene": "You're at a gathering with your friend Priya. Your other friend Tom walks up, and Priya doesn't know him yet.",
+      "options": [
+        "Priya, Tom, I suppose, I was just going with my gut on that one, though I'd want to think it over more.",
+        "So Priya, I actually met Tom back in 2019 at a conference in Berlin, and we ended up on the same project for almost a year, which is a really funny story actually because—",
+        "Tom, this is Priya, my old university roommate. Priya, this is Tom, we work together."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "A good introduction gives both people a name and a short piece of context about how you know them.",
+      "explanation": "Naming both people and adding a short connection gives them an easy, natural way to start talking. Saying just the names technically introduces them but leaves an awkward silence with nothing to build on. Telling a long backstory about one person delays the actual introduction and puts Priya and Tom in an odd waiting position.",
+      "id": "bd_l6_q1",
+      "consequencePreviews": [
+        "As a result, they technically know each other's names, but with no context, the introduction feels abrupt.",
+        "You tell a long story about Tom while Priya and Tom stand there without a proper introduction.",
+        "As a result, both people now know each other's names and how you know them, and the conversation can flow naturally."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a stranger in a queue",
+      "scene": "You're waiting in a long queue at the post office. The person next to you sighs loudly.",
+      "options": [
+        "Do you live around here? What do you do for work?",
+        "This queue really isn't moving, is it? I've been here twenty minutes.",
+        "Typical. This always happens. Every single time I come here it's a disaster, the staff clearly don't care at all."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "With strangers, a light, shared observation about the situation is usually a safer opener than personal questions.",
+      "explanation": "Commenting on something you're both experiencing is a natural, low-risk way to start a conversation with a stranger. Jumping to personal questions can feel intrusive before any rapport has been built. Starting with a harsh complaint sets a negative tone that can make the other person want to disengage rather than chat.",
+      "id": "bd_l6_q2",
+      "consequencePreviews": [
+        "You may notice that the stranger may feel uncomfortable being asked personal questions this early in an unplanned chat.",
+        "In this moment, you start a light, shared conversation that helps the wait feel less tedious for both of you.",
+        "Your comment sets an unnecessarily negative, complaining tone right from the start."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "your manager and a new team member",
+      "scene": "You're introducing a new team member, Dana, to your manager for the first time in the office.",
+      "options": [
+        "This is Dana, our new data analyst — she started this week and she's already jumped into the Q3 report.",
+        "This is Dana. She's cool, we get along great already, she's honestly hilarious.",
+        "This is Dana, admittedly, I hadn't stopped to think it all the way through, so take it with a grain of salt — and I know that's not the most thought-out response, but it's where my head's at right now."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When introducing a colleague to someone senior, briefly mention their role so the introduction is professionally useful.",
+      "explanation": "Including Dana's role and a concrete detail about her work gives your manager useful, relevant information right away. The overly casual version focuses on personality rather than professional context, which is a mismatch for a first introduction to a manager. Giving only the name leaves your manager without the basic information they'd naturally want.",
+      "id": "bd_l6_q3",
+      "consequencePreviews": [
+        "Here, your manager immediately understands who Dana is and what she's contributing.",
+        "Here, your manager learns Dana's name but nothing about her role, which feels too casual for this first impression.",
+        "In this moment, your manager knows a name but has no idea what Dana's role or contribution is."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker",
+      "scene": "A coworker says: 'That presentation you gave this morning was really clear and well organised.'",
+      "options": [
+        "Oh, it was nothing, honestly it was pretty messy and I almost forgot half my slides.",
+        "I know, right? I'm probably the best presenter on this team.",
+        "Thanks, that means a lot — I put a lot of work into structuring it."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "A simple 'thank you' plus a small honest detail is usually the best way to accept a compliment.",
+      "explanation": "Thanking your coworker and briefly acknowledging your effort accepts the compliment without either dismissing it or overclaiming. Insisting the work was actually bad contradicts your coworker and can make them feel their opinion doesn't matter. Responding with obvious pride shifts the moment from gracious to self-congratulatory.",
+      "id": "bd_l7_q1",
+      "consequencePreviews": [
+        "As a result, your coworker's genuine compliment gets brushed aside, which can feel dismissive of their opinion.",
+        "Here, the compliment gets a response that sounds boastful rather than simply appreciative.",
+        "As a result, you accept the compliment graciously and it feels natural and warm."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a classmate",
+      "scene": "A classmate says: 'Wow, your English has really improved. It sounds so natural now.'",
+      "options": [
+        "Thank you! I've been practising a lot with podcasts, so that really helps to hear.",
+        "No, it's still really bad, I make mistakes all the time.",
+        "Yeah, it's gotten so much better, I used to be so bad at English, honestly embarrassingly bad, I remember one time in class I said something completely wrong and everyone laughed and I wanted to disappear—"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Accepting a compliment about your progress doesn't require detailed self-criticism — a short thanks works well.",
+      "explanation": "Thanking your classmate and adding one relatable detail keeps the exchange warm and natural. Denying the compliment outright can make the other person feel their observation wasn't welcome. Turning the moment into a long story about past embarrassment shifts the focus away from the compliment in an uncomfortable way.",
+      "id": "bd_l7_q2",
+      "consequencePreviews": [
+        "Realistically, you accept the compliment warmly and share something relatable about your progress.",
+        "In this moment, your classmate's kind observation is flatly rejected, which can feel awkward for them.",
+        "Realistically, a simple compliment turns into a long, uncomfortable story that overshadows the original moment."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "your manager, during a performance review",
+      "scene": "During your review, your manager says: 'Your work on the client project this quarter was excellent.' You know you also handled two other projects that got less recognition.",
+      "options": [
+        "Thanks, that's kind of you to say.",
+        "Thank you — I'm glad that landed well. I also want to mention the Renfield and Oaks accounts moved forward a lot this quarter too.",
+        "Thanks, though honestly I think my work across all three projects this quarter has been the strongest on the team, probably stronger than most people realise."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "In a review, you can accept praise and still mention other relevant work — just keep the tone factual, not boastful.",
+      "explanation": "Thanking your manager and factually mentioning your other projects makes sure your full contribution is recognised, without sounding like bragging. Simply saying thanks is polite but wastes a natural opening to advocate for yourself in a review. Claiming to be the strongest on the team oversteps into self-promotion that isn't backed by specifics, which can undercut your credibility.",
+      "id": "bd_l7_q3",
+      "consequencePreviews": [
+        "Here, you accept the compliment, but you miss a natural chance to mention your other solid work.",
+        "You accept the praise and use the moment to fairly highlight your other contributions.",
+        "As a result, your response comes across as overselling yourself rather than simply noting your contributions."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend in a noisy café",
+      "scene": "You're in a loud café and your friend says something, but the espresso machine drowns out half of it.",
+      "options": [
+        "Sorry, could you say that again? I couldn't hear you over the machine.",
+        "I would be most grateful if you could kindly repeat your previous statement.",
+        "Yeah, totally."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When you miss something because of noise, say so directly and ask for a repeat rather than guessing.",
+      "explanation": "Explaining that the noise caused the problem and asking for a repeat is quick, natural, and solves the issue directly. Just agreeing without hearing risks you committing to something you don't actually understand. The very formal phrasing would sound bizarre between friends at a casual café.",
+      "id": "bd_l8_q1",
+      "consequencePreviews": [
+        "In this moment, your friend repeats themselves and you both continue the conversation without confusion.",
+        "Here, your friend understands you, but the formal wording feels strange for a casual café chat.",
+        "Realistically, you risk agreeing to something you didn't actually hear, which could cause confusion later."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a classmate",
+      "scene": "A classmate uses a word you don't recognise while explaining an assignment: 'You just need to paraphrase this section.'",
+      "options": [
+        "Wait, stop, don't use words like that, just talk normally.",
+        "Okay, got it, if I'm honest, I wasn't considering every angle.",
+        "Sorry, what does 'paraphrase' mean exactly?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Naming the exact word you didn't understand is more useful than pretending to follow or reacting strongly.",
+      "explanation": "Asking specifically about the word that confused you lets your classmate clarify quickly and precisely. Pretending to understand avoids the awkward moment but risks getting the assignment wrong later. Reacting defensively to a normal academic word makes a simple mix-up feel unnecessarily tense.",
+      "id": "bd_l8_q2",
+      "consequencePreviews": [
+        "Realistically, your reaction sounds sharper than necessary for a simple, common misunderstanding.",
+        "In this moment, you may complete the assignment incorrectly since you never actually understood the instruction.",
+        "In this moment, your classmate explains the word and you both move forward with a shared understanding."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a delivery driver",
+      "scene": "A delivery driver calls you, but the signal is breaking up: 'Hi, I'm outside your building, but I can't find the... [unclear] ...could you...[unclear]?'",
+      "options": [
+        "Sure, no problem, see you soon!",
+        "Sorry, the line's breaking up — I only caught part of that. Which part couldn't you find?",
+        "This call quality is terrible, I can't understand anything you're saying."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "A broken call is easier to fix if you say exactly what you missed instead of just describing the bad connection.",
+      "explanation": "Naming what you missed and asking a direct follow-up gives the driver something specific to respond to. Agreeing without understanding risks a failed delivery, since you don't actually know what they needed from you. Complaining about the call quality alone doesn't move the conversation toward a solution.",
+      "id": "bd_l8_q3",
+      "consequencePreviews": [
+        "Realistically, you may miss important delivery details, which could lead to the package going to the wrong place.",
+        "Realistically, you identify the exact gap in understanding, so the driver can clarify and deliver successfully.",
+        "Here, you point out the problem but don't ask a specific question that would actually help solve it."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a new friend after coffee",
+      "scene": "You've just had a relaxed first coffee with someone you met recently, and it's time to head off in different directions.",
+      "options": [
+        "Okay, I have to go now.",
+        "I must take my leave of you now. Farewell.",
+        "This was really nice — we should do this again sometime. Take care!"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "A casual goodbye between new friends usually includes some warmth or a hint about seeing each other again.",
+      "explanation": "Mentioning that you enjoyed it and suggesting meeting again keeps the goodbye warm and open-ended, which suits a new, friendly connection. The overly formal farewell would suit a costume drama more than a coffee chat. The plain 'I have to go now' gets the job done but misses the chance to build on a pleasant first meeting.",
+      "id": "bd_l9_q1",
+      "consequencePreviews": [
+        "Here, the goodbye is functional but leaves out any warmth or interest in meeting again.",
+        "Realistically, the goodbye lands correctly, but the old-fashioned wording feels oddly formal for a casual coffee catch-up.",
+        "As a result, you leave on a warm note that naturally opens the door to meeting again."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a business client on a call",
+      "scene": "You're wrapping up a formal call with a client after discussing a contract.",
+      "options": [
+        "Thank you for your time today — I'll send the revised contract by Friday. Have a good afternoon.",
+        "Alright, catch you later, bye, I mean, I was just going with my gut on that one, so feel free to push back.",
+        "Okay, bye, thinking about it now, I wasn't considering every angle, so there might be a better way to handle it."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "A professional closing usually restates the next step and thanks the other person, in a matching tone.",
+      "explanation": "Thanking the client, confirming the next step, and using a polished but warm closing matches the professional context. 'Catch you later' is far too casual for a business relationship, even a friendly one. Simply saying 'bye' skips both the thanks and the follow-up, leaving the client unclear on what happens next.",
+      "id": "bd_l9_q2",
+      "consequencePreviews": [
+        "You may notice that the call ends professionally, with a clear next step and appropriate closing tone.",
+        "Here, the tone feels too casual for a formal business relationship and may seem unprofessional.",
+        "Here, the call ends abruptly, without confirming the next step or thanking the client for their time."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a host after dinner at their home",
+      "scene": "You've just finished a lovely dinner at a friend's home and it's time to leave.",
+      "options": [
+        "Right, I'm off, I suppose, I was just going with my gut on that one, but I'm not totally set on it.",
+        "Thank you so much for having me, dinner was wonderful. I'll see you soon!",
+        "Thank you so much, truly, this was one of the best evenings of my entire life, I don't think I've ever eaten food this good, you should honestly open a restaurant, I mean it, I could talk about this meal for another hour—"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Thanking a host specifically for the evening, without over-extending it, is the natural way to leave.",
+      "explanation": "Thanking your host directly for the meal and the invitation gives a warm, complete goodbye that matches the effort they put in. Leaving with no acknowledgment at all can make a host feel unappreciated after hosting you. The exaggerated, drawn-out praise starts to work against itself, since it delays the actual goodbye you're trying to make.",
+      "id": "bd_l9_q3",
+      "consequencePreviews": [
+        "Realistically, leaving without any thanks can make your host feel their effort wasn't fully appreciated.",
+        "Your host feels genuinely appreciated and the evening ends on a warm, complete note.",
+        "Here, the extended praise starts to feel more like delaying your exit than a genuine thank-you."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a barista",
+      "scene": "The barista hands you your coffee and says, 'Here you go, one flat white.'",
+      "options": [
+        "Thanks so much!",
+        "Finally, it's about time.",
+        "Thank you, that is very kind of you, I really appreciate you making this coffee for me today, it looks wonderful, thank you again."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "For small, everyday service moments, a short, natural 'thanks' is all that's needed.",
+      "explanation": "A brief, warm 'thanks so much' is the natural, well-calibrated response for a routine coffee handover. The long, elaborate thanks is far more than the small interaction calls for and can feel oddly intense. 'Finally, it's about time' turns a normal handover into an implied complaint, which is an odd note to end the exchange on if there was no unusual delay mentioned.",
+      "id": "bd_l10_q1",
+      "consequencePreviews": [
+        "As a result, you close the interaction politely, exactly as the moment calls for.",
+        "Here, your comment sounds like a complaint about waiting rather than a thank-you for the coffee.",
+        "You may notice that the lengthy thanks feels out of proportion for a routine coffee handover."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "an IT colleague",
+      "scene": "An IT colleague spends twenty minutes fixing a laptop issue that was stopping you from working.",
+      "options": [
+        "Thanks, I guess that's your job anyway.",
+        "Thanks a lot for sorting that out so quickly — I was starting to panic about the deadline.",
+        "You are honestly the greatest person I have ever met, an absolute hero, I don't know what I would do without you, you deserve a medal for this."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Specific thanks that mention what the help meant to you tend to land better than generic or extreme reactions.",
+      "explanation": "Thanking your colleague specifically for the speed and impact of their help shows genuine, proportionate appreciation. Dismissing it as 'just their job' undervalues the time they spent helping you personally. Wildly exaggerated praise, while friendly in intent, feels mismatched with a routine, if helpful, tech fix.",
+      "id": "bd_l10_q2",
+      "consequencePreviews": [
+        "In this moment, your comment undervalues the effort your colleague just made on your behalf.",
+        "Here, your colleague knows exactly what they helped with and feels their effort was noticed.",
+        "Here, the exaggerated praise feels disproportionate to a routine tech fix, which can come across as insincere."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "your manager",
+      "scene": "Your manager quietly adjusted your workload and checked in on you personally during a genuinely difficult week.",
+      "options": [
+        "I honestly don't know how to thank you enough, this week broke me completely and you saved me, I was seriously struggling with everything, not just work but my whole—",
+        "Thanks.",
+        "Thanks for looking out for me this week — I really appreciated the extra support."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "With a manager, sincere thanks can acknowledge real support without going into full personal detail.",
+      "explanation": "Thanking your manager specifically for the support strikes a genuine but professionally appropriate tone. A bare 'thanks' doesn't reflect how meaningful the gesture actually was, especially after a hard week. Sharing extensive personal struggles goes beyond what most workplace relationships call for, even with a supportive manager.",
+      "id": "bd_l10_q3",
+      "consequencePreviews": [
+        "In this moment, the response shares more emotional detail than typically fits a workplace relationship with a manager.",
+        "In this moment, the thanks is polite but doesn't reflect how meaningful the support actually was.",
+        "You express sincere thanks in a way that stays warm but professionally appropriate."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    }
+  ]
 }

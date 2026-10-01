@@ -1,307 +1,307 @@
 {
-    "gameType": "yesNoSpeaking",
-    "batchIndex": 13,
-    "levels": "121-130",
-    "quests": [
-        {
-            "id": "SPK_YESNOSPEAKING_L121_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The overall meaning is close either way. What matters is the key detail: \"finance\", as written.",
-            "explanation": "\"marketing\" replaced \"finance\" in the key detail. In longer, more complex sentences, that's exactly where changes tend to hide.",
-            "prompt": "The quarterly report was reviewed by the finance director yesterday afternoon.",
-            "sampleAnswer": "The quarterly report was reviewed by the marketing director yesterday afternoon.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L121_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Slow down and listen past the main clause -- the text reads \"submitted\" in the descriptive clause.",
-            "explanation": "This question tests your attention to the descriptive clause. Here it was \"submitted\", not \"rejected\" -- a small difference with a real effect on meaning.",
-            "prompt": "The employee who submitted the proposal received a promotion last week.",
-            "sampleAnswer": "The employee who rejected the proposal received a promotion last week.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L121_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Hold the whole sentence in mind, especially the time clause, which currently reads \"started\".",
-            "explanation": "Notice that only the time clause changed: \"started\" became \"ended\". Everything surrounding it was identical.",
-            "prompt": "By the time the meeting started, she had already finished her presentation.",
-            "sampleAnswer": "By the time the meeting ended, she had already finished her presentation.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L122_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This one rewards careful listening to the key detail -- the text has it as \"video\".",
-            "explanation": "The sentence structure is the same in both versions. The actual difference sits in the key detail: \"video\" versus \"photo\".",
-            "prompt": "This new laptop was designed specifically for professional video editors working remotely.",
-            "sampleAnswer": "This new laptop was designed specifically for professional photo editors working remotely.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L122_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This sentence has more than one part -- listen closely to the descriptive clause, currently \"fixed\".",
-            "explanation": "Both versions sound similar at a glance, but the descriptive clause tells the real story: \"fixed\", not \"removed\".",
-            "prompt": "The app that crashed yesterday afternoon has finally been fixed by the developers.",
-            "sampleAnswer": "The app that crashed yesterday afternoon has finally been removed by the developers.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L122_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The key detail is tucked inside the sentence. Focus on the descriptive clause: the text says \"Monday\".",
-            "explanation": "The two versions differ in just one place, the descriptive clause: \"Monday\" versus \"Friday\". The rest of the sentence stays identical.",
-            "prompt": "Customers who registered before Monday morning will receive early access to the app.",
-            "sampleAnswer": "Customers who registered before Friday morning will receive early access to the app.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L123_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Don't just catch the main idea -- listen for the key detail too, written here as \"twice\".",
-            "explanation": "\"once\" replaced \"twice\" in the key detail. In longer, more complex sentences, that's exactly where changes tend to hide.",
-            "prompt": "Recycling bins are collected twice a week in most city neighborhoods now.",
-            "sampleAnswer": "Recycling bins are collected once a week in most city neighborhoods now.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L123_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Longer sentences hide their changes in the details. Watch for the reported detail -- right now, \"banned\".",
-            "explanation": "This question tests your attention to the reported detail. Here it was \"banned\", not \"taxed\" -- a small difference with a real effect on meaning.",
-            "prompt": "The city announced that plastic bags would be banned starting next year.",
-            "sampleAnswer": "The city announced that plastic bags would be taxed starting next year.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L123_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The overall meaning is close either way. What matters is the descriptive clause: \"plastic\", as written.",
-            "explanation": "Notice that only the descriptive clause changed: \"plastic\" became \"glass\". Everything surrounding it was identical.",
-            "prompt": "Local volunteers who cleaned the river found tons of plastic waste.",
-            "sampleAnswer": "Local volunteers who cleaned the river found tons of glass waste.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L124_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Slow down and listen past the main clause -- the text reads \"year\" in the key detail.",
-            "explanation": "The sentence structure is the same in both versions. The actual difference sits in the key detail: \"year\" versus \"month\".",
-            "prompt": "The community clinic has treated over a thousand patients so far this year.",
-            "sampleAnswer": "The community clinic has treated over a thousand patients so far this month.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L124_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Hold the whole sentence in mind, especially the descriptive clause, which currently reads \"foods\".",
-            "explanation": "Both versions sound similar at a glance, but the descriptive clause tells the real story: \"foods\", not \"medications\".",
-            "prompt": "Doctors who specialize in seasonal allergies recommend avoiding certain foods during peak season.",
-            "sampleAnswer": "Doctors who specialize in seasonal allergies recommend avoiding certain medications during peak season.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L124_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This one rewards careful listening to the time clause -- the text has it as \"faded\".",
-            "explanation": "The two versions differ in just one place, the time clause: \"faded\" versus \"worsened\". The rest of the sentence stays identical.",
-            "prompt": "By the time she arrived at the hospital, the pain had already faded.",
-            "sampleAnswer": "By the time she arrived at the hospital, the pain had already worsened.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L125_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This sentence has more than one part -- listen closely to the key detail, currently \"praised\".",
-            "explanation": "\"criticized\" replaced \"praised\" in the key detail. In longer, more complex sentences, that's exactly where changes tend to hide.",
-            "prompt": "The documentary was widely praised for its honest portrayal of the crisis.",
-            "sampleAnswer": "The documentary was widely criticized for its honest portrayal of the crisis.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L125_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The key detail is tucked inside the sentence. Focus on the descriptive clause: the text says \"surprised\".",
-            "explanation": "This question tests your attention to the descriptive clause. Here it was \"surprised\", not \"disappointed\" -- a small difference with a real effect on meaning.",
-            "prompt": "Viewers who watched the live interview were genuinely surprised by his answers.",
-            "sampleAnswer": "Viewers who watched the live interview were genuinely disappointed by his answers.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L125_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Don't just catch the main idea -- listen for the reported detail too, written here as \"ignored\".",
-            "explanation": "Notice that only the reported detail changed: \"ignored\" became \"reported\". Everything surrounding it was identical.",
-            "prompt": "The article claimed that the company had knowingly ignored several safety warnings.",
-            "sampleAnswer": "The article claimed that the company had knowingly reported several safety warnings.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L126_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Longer sentences hide their changes in the details. Watch for the key detail -- right now, \"budget\".",
-            "explanation": "The sentence structure is the same in both versions. The actual difference sits in the key detail: \"budget\" versus \"timeline\".",
-            "prompt": "The proposal was ultimately rejected because it exceeded the approved budget.",
-            "sampleAnswer": "The proposal was ultimately rejected because it exceeded the approved timeline.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L126_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The overall meaning is close either way. What matters is the descriptive clause: \"impressed\", as written.",
-            "explanation": "Both versions sound similar at a glance, but the descriptive clause tells the real story: \"impressed\", not \"confused\".",
-            "prompt": "The intern who redesigned the company website impressed the entire senior team.",
-            "sampleAnswer": "The intern who redesigned the company website confused the entire senior team.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L126_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Slow down and listen past the main clause -- the text reads \"Thursday\" in the reported detail.",
-            "explanation": "The two versions differ in just one place, the reported detail: \"Thursday\" versus \"Tuesday\". The rest of the sentence stays identical.",
-            "prompt": "She mentioned earlier that the deadline had been moved to Thursday.",
-            "sampleAnswer": "She mentioned earlier that the deadline had been moved to Tuesday.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L127_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Hold the whole sentence in mind, especially the key detail, which currently reads \"canceled\".",
-            "explanation": "\"postponed\" replaced \"canceled\" in the key detail. In longer, more complex sentences, that's exactly where changes tend to hide.",
-            "prompt": "The guided tour was canceled due to unusually heavy snowfall overnight.",
-            "sampleAnswer": "The guided tour was postponed due to unusually heavy snowfall overnight.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L127_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This one rewards careful listening to the descriptive clause -- the text has it as \"meal\".",
-            "explanation": "This question tests your attention to the descriptive clause. Here it was \"meal\", not \"hotel\" -- a small difference with a real effect on meaning.",
-            "prompt": "Passengers whose connecting flights were delayed received a complimentary meal voucher.",
-            "sampleAnswer": "Passengers whose connecting flights were delayed received a complimentary hotel voucher.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L127_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This sentence has more than one part -- listen closely to the reported detail, currently \"upgraded\".",
-            "explanation": "Notice that only the reported detail changed: \"upgraded\" became \"reassigned\". Everything surrounding it was identical.",
-            "prompt": "The agent confirmed that our seats had been upgraded at no extra cost.",
-            "sampleAnswer": "The agent confirmed that our seats had been reassigned at no extra cost.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L128_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The key detail is tucked inside the sentence. Focus on the descriptive clause: the text says \"maintain a high average\".",
-            "explanation": "The sentence structure is the same in both versions. The actual difference sits in the descriptive clause: \"maintain a high average\" versus \"submit a research paper\".",
-            "prompt": "The scholarship is awarded each year to students who maintain a high average.",
-            "sampleAnswer": "The scholarship is awarded each year to students who submit a research paper.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L128_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Don't just catch the main idea -- listen for the key detail too, written here as \"available\".",
-            "explanation": "Both versions sound similar at a glance, but the key detail tells the real story: \"available\", not \"unavailable\".",
-            "prompt": "The lecture that was recorded yesterday afternoon is now available online.",
-            "sampleAnswer": "The lecture that was recorded yesterday afternoon is now unavailable online.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L128_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Longer sentences hide their changes in the details. Watch for the reported detail -- right now, \"extended\".",
-            "explanation": "The two versions differ in just one place, the reported detail: \"extended\" versus \"reduced\". The rest of the sentence stays identical.",
-            "prompt": "The dean announced this week that the library hours had been extended.",
-            "sampleAnswer": "The dean announced this week that the library hours had been reduced.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L129_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The overall meaning is close either way. What matters is the time clause: \"set\", as written.",
-            "explanation": "\"cleared\" replaced \"set\" in the time clause. In longer, more complex sentences, that's exactly where changes tend to hide.",
-            "prompt": "By the time the guests arrived, we had already set the whole table.",
-            "sampleAnswer": "By the time the guests arrived, we had already cleared the whole table.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L129_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Slow down and listen past the main clause -- the text reads \"visiting\" in the descriptive clause.",
-            "explanation": "This question tests your attention to the descriptive clause. Here it was \"visiting\", not \"moving back\" -- a small difference with a real effect on meaning.",
-            "prompt": "My cousin, who lives abroad most of the year, is visiting for the holidays.",
-            "sampleAnswer": "My cousin, who lives abroad most of the year, is moving back for the holidays.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L129_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Hold the whole sentence in mind, especially the reported detail, which currently reads \"hours\".",
-            "explanation": "Notice that only the reported detail changed: \"hours\" became \"days\". Everything surrounding it was identical.",
-            "prompt": "She said earlier that her flight had been delayed by two hours.",
-            "sampleAnswer": "She said earlier that her flight had been delayed by two days.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L130_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This one rewards careful listening to the key detail -- the text has it as \"days\".",
-            "explanation": "The sentence structure is the same in both versions. The actual difference sits in the key detail: \"days\" versus \"weeks\".",
-            "prompt": "The refund for the returned item was processed within three business days.",
-            "sampleAnswer": "The refund for the returned item was processed within three business weeks.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L130_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This sentence has more than one part -- listen closely to the descriptive clause, currently \"full refund\".",
-            "explanation": "Both versions sound similar at a glance, but the descriptive clause tells the real story: \"full refund\", not \"small discount\".",
-            "prompt": "Customers who complained the loudest online were offered a full refund.",
-            "sampleAnswer": "Customers who complained the loudest online were offered a small discount.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L130_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The key detail is tucked inside the sentence. Focus on the reported detail: the text says \"misled\".",
-            "explanation": "The two versions differ in just one place, the reported detail: \"misled\" versus \"confused\". The rest of the sentence stays identical.",
-            "prompt": "The company publicly admitted that the packaging had misled several buyers.",
-            "sampleAnswer": "The company publicly admitted that the packaging had confused several buyers.",
-            "followUpQuestion": "Why do you think that?"
-        }
-    ]
+  "gameType": "yesNoSpeaking",
+  "batchIndex": 13,
+  "levels": "121-130",
+  "quests": [
+    {
+      "id": "SPK_YESNOSPEAKING_L121_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The sentence starts with a negative subject. What follows from it?",
+      "explanation": "You heard exactly what was written. \"Nobody\" is negative by itself, so the verb that follows is positive: \"told\", not \"didn't tell\".",
+      "prompt": "Nobody told me the meeting was moved, so I went at the old time.",
+      "sampleAnswer": "Nobody told me the meeting was moved, so I went at the old time.",
+      "followUpQuestion": "Retell this in your own words, starting with \"I went at the old time because...\""
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L121_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "One pronoun at the end refers back to the people at the start.",
+      "explanation": "Them covers Sam and his sister, but him is only Sam. The sister would never receive the message.",
+      "prompt": "Sam and his sister were both away, so I left a message for them.",
+      "sampleAnswer": "Sam and his sister were both away, so I left a message for him.",
+      "followUpQuestion": "Who was the message for? Answer in a full sentence."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L121_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Two pairs of shoes are compared using words for near and far.",
+      "explanation": "This and these point to things nearby, and that and those to things farther away. Swapping them swaps which pair fits.",
+      "prompt": "Those shoes are too small for me, but these ones fit perfectly.",
+      "sampleAnswer": "These shoes are too small for me, but those ones fit perfectly.",
+      "followUpQuestion": "Compare the two pairs of shoes in one sentence."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L122_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "One person is left out of a group. Who?",
+      "explanation": "The two versions are the same. \"Everyone ... except\" names the single exception at the end.",
+      "prompt": "Everyone in the office has signed the card except for the new intern.",
+      "sampleAnswer": "Everyone in the office has signed the card except for the new intern.",
+      "followUpQuestion": "Say who didn't sign the card, then explain why that might be."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L122_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The end of the sentence has a possessive pronoun. Whose car is being repaired?",
+      "explanation": "Hers means the sister's car and mine means the speaker's. That is the whole reason the sister lent her car.",
+      "prompt": "My sister lent me her car because hers was in the garage.",
+      "sampleAnswer": "My sister lent me her car because mine was in the garage.",
+      "followUpQuestion": "Whose car was in the garage? Say it clearly, using a possessive word."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L122_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The speaker gives an option and then compares. Which pronoun is used?",
+      "explanation": "\"Either one\" means it doesn't matter which, and \"this one\" points to the exit that is close.",
+      "prompt": "There are two exits. You can use either one, but this one is closer.",
+      "sampleAnswer": "There are two exits. You can use either one, but this one is closer.",
+      "followUpQuestion": "Recommend one exit to a visitor and give a reason."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L123_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The pronoun at the end refers back to someone unknown.",
+      "explanation": "Him assumes the caller is a man, while them keeps the caller unknown. Native speakers usually say them when the person isn't known.",
+      "prompt": "If someone calls while I'm out, could you ask him to leave a number?",
+      "sampleAnswer": "If someone calls while I'm out, could you ask them to leave a number?",
+      "followUpQuestion": "Say what you would ask a colleague to do if someone calls for you."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L123_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Notice who is being invited: how many people, and whose office.",
+      "explanation": "\"The two of us\" is a natural way to say \"both of us\".",
+      "prompt": "The manager wants to see the two of us in her office after lunch.",
+      "sampleAnswer": "The manager wants to see the two of us in her office after lunch.",
+      "followUpQuestion": "Reply to the manager as if you were one of the two people."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L123_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "This includes a decision and a question to a friend.",
+      "explanation": "Nothing was altered in this one. \"Either of them\" means one or the other, and it is followed by a plural pronoun.",
+      "prompt": "I can't decide between these two jackets. Do you like either of them?",
+      "sampleAnswer": "I can't decide between these two jackets. Do you like either of them?",
+      "followUpQuestion": "Answer the question: which of the two would you choose, and why?"
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L124_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Who is being picked up? Focus on the pronoun after \"pick\".",
+      "explanation": "Us includes the speaker and you doesn't. If the speaker isn't being picked up, the story doesn't make sense.",
+      "prompt": "They said they'd pick you up at the airport, but we haven't seen them.",
+      "sampleAnswer": "They said they'd pick us up at the airport, but we haven't seen them.",
+      "followUpQuestion": "Explain in one sentence what went wrong with the pick-up."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L124_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Two sentences, one question and one explanation.",
+      "explanation": "They are identical. \"Someone\" and \"nobody\" refer to unknown people, and both take a singular verb.",
+      "prompt": "Whose bag is this? Someone left it on the train, and nobody has claimed it.",
+      "sampleAnswer": "Whose bag is this? Someone left it on the train, and nobody has claimed it.",
+      "followUpQuestion": "Say what happened to the bag, using someone and nobody."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L124_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A possessive word before \"new flat\" tells you who lives there.",
+      "explanation": "Our means the speaker's home, and your means the listener's. They would visit a different address.",
+      "prompt": "My parents are coming next month, and I'd like them to see our new flat.",
+      "sampleAnswer": "My parents are coming next month, and I'd like them to see your new flat.",
+      "followUpQuestion": "Say what you would show your visitors first in your own home."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L125_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A request that uses \"that\" and \"the one\". What is being pointed to?",
+      "explanation": "\"The one next to the printer\" identifies the folder among others.",
+      "prompt": "Could you pass me that folder on the desk, the one next to the printer?",
+      "sampleAnswer": "Could you pass me that folder on the desk, the one next to the printer?",
+      "followUpQuestion": "Ask for something on a desk, describing it so the listener knows which one."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L125_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "There's a lot of \"their\" and \"they\" in this sentence. Follow who owns what.",
+      "explanation": "\"Theirs\" replaces \"their dog\" and shows that the neighbours deny owning it.",
+      "prompt": "We asked our neighbours to keep their dog quiet, but they said it wasn't theirs.",
+      "sampleAnswer": "We asked our neighbours to keep their dog quiet, but they said it wasn't theirs.",
+      "followUpQuestion": "Say what the neighbours claimed, in your own words."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L125_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A phone call is promised. Whom will she call?",
+      "explanation": "Him is a man the speaker has not named, and her is the sister who was just mentioned. The promise is about a different person's phone call.",
+      "prompt": "She told her sister that she would call him back after the meeting.",
+      "sampleAnswer": "She told her sister that she would call her back after the meeting.",
+      "followUpQuestion": "Explain who will call whom, so there is no confusion."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L126_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The sentence opens with a negative subject that takes a singular verb.",
+      "explanation": "The recording follows the text word for word. \"Neither of\" is followed by a plural noun, but the verb \"likes\" is singular in careful English.",
+      "prompt": "Neither of my roommates likes cooking, so we usually order takeaway.",
+      "sampleAnswer": "Neither of my roommates likes cooking, so we usually order takeaway.",
+      "followUpQuestion": "Say what none of your friends or family enjoys doing, using neither or none."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L126_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A group is divided in two parts. How big is the first part?",
+      "explanation": "Most means the majority, and some is just a few. A teacher planning the next task would react differently.",
+      "prompt": "Most of the students finished early, but the others needed more time.",
+      "sampleAnswer": "Some of the students finished early, but the others needed more time.",
+      "followUpQuestion": "Describe how a group finished a task, using most and others."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L126_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A demonstrative word before \"party\" shows where the speaker is.",
+      "explanation": "This party means the one the speaker is at, and that party means one somewhere else. You hear whether they are there or not.",
+      "prompt": "I don't know anyone at that party except the host and his brother.",
+      "sampleAnswer": "I don't know anyone at this party except the host and his brother.",
+      "followUpQuestion": "Say who you would know at a party, and who you wouldn't."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L127_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A talk is required from each person. What will it be about?",
+      "explanation": "One version is about the firm and the other is about the speakers. A candidate would prepare completely different material.",
+      "prompt": "Each of the candidates has to give a short talk about the company.",
+      "sampleAnswer": "Each of the candidates has to give a short talk about themselves.",
+      "followUpQuestion": "Say what each candidate has to do, in your own words."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L127_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A person is not identified. Which pronoun helps to refer back?",
+      "explanation": "\"Which one\" is used when choosing from a known group, such as your colleagues.",
+      "prompt": "I lent my umbrella to a colleague, but I can't remember which one.",
+      "sampleAnswer": "I lent my umbrella to a colleague, but I can't remember which one.",
+      "followUpQuestion": "Say what you can't remember, and ask the listener to help."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L127_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Responsibility is passed from the speaker to another group.",
+      "explanation": "\"Theirs\" is a possessive pronoun that stands for \"their problem\".",
+      "prompt": "It's not my problem, it's theirs, and they should be the ones to fix it.",
+      "sampleAnswer": "It's not my problem, it's theirs, and they should be the ones to fix it.",
+      "followUpQuestion": "Say whose responsibility this is, and what should happen next."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L128_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "There are two printers. Which is which?",
+      "explanation": "This is a straight match. \"The other one\" refers to the one that has not been mentioned yet.",
+      "prompt": "One of the printers is broken, but the other one works fine.",
+      "sampleAnswer": "One of the printers is broken, but the other one works fine.",
+      "followUpQuestion": "Say which of the two printers you would use, and why."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L128_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A question offers two alternatives. Listen to the second one.",
+      "explanation": "Going alone and going with friends are different answers. The second half of the question is the part the speaker really wants to know.",
+      "prompt": "Did you go to the concert with your sister, or did you go alone?",
+      "sampleAnswer": "Did you go to the concert with your sister, or did you go with friends?",
+      "followUpQuestion": "Ask the same question about a different person."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L128_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "One detail identifies which car. It's a colour word at the end.",
+      "explanation": "Black and blue are easy to mix up in an announcement. Someone would walk to the wrong car.",
+      "prompt": "Somebody has left their lights on again, and I think it's the black car.",
+      "sampleAnswer": "Somebody has left their lights on again, and I think it's the blue car.",
+      "followUpQuestion": "Describe a car you saw, so others can identify it."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L129_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "An instruction includes an announcement to a group.",
+      "explanation": "\"Everybody\" behaves like a singular noun, but the meaning is plural.",
+      "prompt": "Please tell everybody that the class has moved to the room next door.",
+      "sampleAnswer": "Please tell everybody that the class has moved to the room next door.",
+      "followUpQuestion": "Pass the message on to a group, as if you were the teacher."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L129_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Two people are invited, then one is left out. Follow the numbers.",
+      "explanation": "\"Both of them\" and \"only one\" contrast two with one.",
+      "prompt": "I wanted to invite both of them, but only one could come.",
+      "sampleAnswer": "I wanted to invite both of them, but only one could come.",
+      "followUpQuestion": "Say how many people were invited and how many came."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L129_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Someone is blamed. Is it the speaker's colleague or the man himself?",
+      "explanation": "Himself is a reflexive pronoun for the same person, while other people means someone else. They describe opposite characters.",
+      "prompt": "He always blames himself when something goes wrong at work.",
+      "sampleAnswer": "He always blames other people when something goes wrong at work.",
+      "followUpQuestion": "Describe how someone reacts to a mistake, in your own words."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L130_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The request ends with a possessive pronoun. Whose phone?",
+      "explanation": "His and yours are two people. Asking a stranger for their phone can lead to an awkward moment.",
+      "prompt": "My phone is almost dead, so could I borrow his for a minute?",
+      "sampleAnswer": "My phone is almost dead, so could I borrow yours for a minute?",
+      "followUpQuestion": "Ask to borrow something, and make clear whose it is."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L130_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "This includes a negative subject and a pronoun that means the second person.",
+      "explanation": "Listening and reading agree here. \"The other one\" refers to the second person and \"neither of us\" means both are ignorant.",
+      "prompt": "Neither of us had any idea where the other one was parked.",
+      "sampleAnswer": "Neither of us had any idea where the other one was parked.",
+      "followUpQuestion": "Say what the two of you don't know, using neither."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L130_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Blame moves from one person to another. Listen to who ends up responsible.",
+      "explanation": "Hers and his are both possessive pronouns, and mixing them up could put the blame on the wrong colleague.",
+      "prompt": "Everyone thought the mistake was mine, but it turned out to be hers.",
+      "sampleAnswer": "Everyone thought the mistake was mine, but it turned out to be his.",
+      "followUpQuestion": "Say who made the mistake and who was blamed, in your own words."
+    }
+  ]
 }

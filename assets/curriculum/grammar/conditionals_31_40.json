@@ -1,577 +1,577 @@
 {
-    "gameType": "conditionals",
-    "batchIndex": 4,
-    "levels": "31-40",
-    "quests": [
-        {
-            "id": "cl_l31_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If you click on a suspicious link,",
-            "options": [
-                "your device gets infected.",
-                "your device would have gotten infected.",
-                "your device will get infected.",
-                "your device would get infected."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "your device will get infected.",
-            "hint": "Clicking suspicious links is a real risk - first conditional for a real cybersecurity danger.",
-            "explanation": "First conditional = real future risks. Clicking suspicious links is something people genuinely do. If you click (present simple), your device will get infected (will + infinitive - the real, likely consequence). Zero conditional ('gets infected') would also be valid as a universal digital fact, but 'will' emphasises this specific, real risk.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 0
-        },
-        {
-            "id": "cl_l31_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If you charge your phone overnight every night,",
-            "options": [
-                "the battery health degrades over time.",
-                "it would have degraded.",
-                "the battery health will degrade.",
-                "the battery health would degrade."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "the battery health will degrade.",
-            "hint": "Consistent overnight charging always affects battery health - a tech fact.",
-            "explanation": "Zero conditional = established tech facts. Consistently overcharging ALWAYS degrades battery health - a well-documented fact about lithium batteries. Both clauses: present simple. 'Will degrade' is a future prediction; for a universal tech rule, zero conditional is more accurate.",
-            "grammarRule": "Zero Conditional",
-            "conditionalType": 0
-        },
-        {
-            "id": "cl_l31_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If he had backed up his data before the update,",
-            "options": [
-                "he wouldn't have lost everything.",
-                "he doesn't lose everything.",
-                "he won't lose everything.",
-                "he wouldn't lose everything."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "he wouldn't have lost everything.",
-            "hint": "Past perfect = no backup was made - third conditional for a data loss regret.",
-            "explanation": "Third conditional = unreal past. He didn't back up before the update (past perfect = the missed precaution). If he had (imaginary), he wouldn't have lost everything (would not have + past participle - the prevented data disaster). The most important backup lesson expressed as a regret.",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l32_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she signs up for the newsletter,",
-            "options": [
-                "she receives a ten-percent discount.",
-                "she would have received a discount.",
-                "she would receive a discount.",
-                "she will receive a ten-percent discount."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "she will receive a ten-percent discount.",
-            "hint": "Signing up is a real, possible action - first conditional for the real offer.",
-            "explanation": "First conditional = real future offers. She could genuinely sign up right now. If she does (present simple), she will receive a ten-percent discount (will + infinitive - a real commercial offer). 'Receives a discount' (zero conditional) is also valid for a standing general offer. 'Will receive' emphasises this specific, current promotion.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 0
-        },
-        {
-            "id": "cl_l32_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the item is out of stock online,",
-            "options": [
-                "you could check the physical store.",
-                "you would have checked the physical store.",
-                "you check the physical store.",
-                "you would check the physical store."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "you could check the physical store.",
-            "hint": "Online stock can run out - first conditional with 'could' for the practical alternative.",
-            "explanation": "First conditional = real shopping scenarios. Online stock genuinely runs out. If it does (present simple), you could check the physical store (could + infinitive - a practical suggestion). 'Could' rather than 'will' suggests a recommendation rather than a certainty - the physical store might not have it either.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l32_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she had bought the coat in the sale,",
-            "options": [
-                "she would save fifty pounds.",
-                "she will save fifty pounds.",
-                "she would have saved fifty pounds.",
-                "she saves fifty pounds."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "she would have saved fifty pounds.",
-            "hint": "Past perfect 'had bought' = she didn't - third conditional for a shopping regret.",
-            "explanation": "Third conditional = unreal past. She didn't buy the coat in the sale (past perfect = the missed purchase). If she had (imaginary), she would have saved fifty pounds (would have + past participle - the missed financial saving). A very relatable shopping regret.",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l33_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If governments invest in renewable energy,",
-            "options": [
-                "carbon emissions would decrease.",
-                "carbon emissions would have decreased.",
-                "carbon emissions decrease.",
-                "carbon emissions will decrease."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "carbon emissions will decrease.",
-            "hint": "Government investment in renewables is a real policy choice - first conditional.",
-            "explanation": "First conditional = real future policy possibilities. Governments can genuinely choose to invest. If they do (present simple), carbon emissions will decrease (will + infinitive - the real expected environmental benefit). 'Would decrease' implies investment is just a fantasy - it's a real, available policy option.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l33_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the company reduces its prices,",
-            "options": [
-                "sales would improve.",
-                "sales would have improved.",
-                "sales improved.",
-                "sales will improve."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "sales will improve.",
-            "hint": "Price reduction is a real business decision - first conditional for the real commercial impact.",
-            "explanation": "First conditional = real business decisions. A price reduction is a genuine strategic option. If the company does it (present simple), sales will improve (will + infinitive - the real, expected commercial outcome). 'Would improve' implies a price cut is just imaginary.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l33_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she hadn't taken the graduate scheme in Singapore,",
-            "options": [
-                "she would never have developed such a strong professional network in Asia.",
-                "she never develops such a network.",
-                "she would never develop such a network.",
-                "she will never develop such a network."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "she would never have developed such a strong professional network in Asia.",
-            "hint": "Negative past perfect means she DID take the scheme - third conditional celebrating a past decision.",
-            "explanation": "Third conditional with a negative if-clause: she DID take the graduate scheme (negative past perfect = the reverse). If she hadn't (imaginary - she'd stayed local), she would never have developed such a strong network in Asia (would never have + past participle - the professional connections she would have missed).",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l34_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she passes her professional exam,",
-            "options": [
-                "her employer would promote her.",
-                "her employer would have promoted her.",
-                "her employer promotes her.",
-                "her employer will promote her."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "her employer will promote her.",
-            "hint": "Passing is a real, achievable goal - first conditional for the real career reward.",
-            "explanation": "First conditional = real future professional outcomes. Passing a professional exam is genuinely achievable. If she passes (present simple), her employer will promote her (will + infinitive - a real, expected career advancement). 'Would promote' implies passing is just a fantasy.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l34_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the government introduces a sugar tax,",
-            "options": [
-                "consumption of sugary drinks would fall.",
-                "consumption would have fallen.",
-                "consumption of sugary drinks falls.",
-                "consumption of sugary drinks will fall."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "consumption of sugary drinks will fall.",
-            "hint": "A sugar tax is a real policy possibility - first conditional for the real behaviour change.",
-            "explanation": "First conditional = real future policy decisions. Sugar taxes are genuinely being considered and introduced worldwide. If this government introduces one (present simple), consumption will fall (will + infinitive - the real expected public health outcome). A real-world policy scenario.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l34_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If he had chosen the apprenticeship over university,",
-            "options": [
-                "he would have entered the workforce earlier.",
-                "he enters the workforce earlier.",
-                "he would enter the workforce earlier.",
-                "he will enter the workforce earlier."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "he would have entered the workforce earlier.",
-            "hint": "Past perfect 'had chosen' = different path taken - third conditional for an education choice reflection.",
-            "explanation": "Third conditional = unreal past. He chose university (past perfect = the different, imaginary choice). If he had chosen the apprenticeship (imaginary), he would have entered the workforce earlier (would have + past participle - the different life outcome). An education path reflection.",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l35_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she applies for the community grant,",
-            "options": [
-                "she would receive funding.",
-                "she would have received funding.",
-                "she receives funding.",
-                "she will receive funding."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "she will receive funding.",
-            "hint": "Applying for the grant is a real action she can take - first conditional for the real outcome.",
-            "explanation": "First conditional = real future possibilities. She can genuinely apply for the grant. If she does (present simple), she will receive funding (will + infinitive - the real expected result if the application is successful). 'Would receive' implies applying is just imaginary.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l35_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If he had practised more consistently,",
-            "options": [
-                "he would be a much better guitarist now.",
-                "he would have been a much better guitarist.",
-                "he is a much better guitarist now.",
-                "he will be a much better guitarist."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "he would be a much better guitarist now.",
-            "hint": "Past perfect + present consequence - mixed conditional linking past habits to present skill.",
-            "explanation": "Mixed conditional: If + past perfect (unreal past habit), would + be (present consequence). He didn't practise consistently. If he had (imaginary past habit), he would be a much better guitarist NOW (would + infinitive - present skill level he'd have). Past practice → present ability.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l35_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the app has good reviews,",
-            "options": [
-                "more people would download it.",
-                "more people would have downloaded it.",
-                "more people downloaded it.",
-                "more people will download it."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "more people will download it.",
-            "hint": "Good reviews are a real possibility - first conditional for the real market outcome.",
-            "explanation": "First conditional = real future commercial scenarios. Apps can genuinely have good reviews. If this one does (present simple), more people will download it (will + infinitive - the real, expected market response). 'Would download' implies good reviews are just imaginary.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l36_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If they had followed the safety protocol,",
-            "options": [
-                "the accident would never have occurred.",
-                "the accident would never occur.",
-                "the accident never occurs.",
-                "the accident will never occur."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the accident would never have occurred.",
-            "hint": "Past perfect = protocol wasn't followed - third conditional for a safety failure analysis.",
-            "explanation": "Third conditional = unreal past. They didn't follow the safety protocol (past perfect = what they failed to do). If they had (imaginary), the accident would never have occurred (would never have + past participle - the prevented tragedy). Safety protocols exist for exactly this reason.",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l36_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she isn't promoted this year,",
-            "options": [
-                "she would look elsewhere.",
-                "she would have looked elsewhere.",
-                "she looks elsewhere.",
-                "she will look elsewhere."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "she will look elsewhere.",
-            "hint": "Not being promoted is a real future possibility - first conditional for the real response.",
-            "explanation": "First conditional = real future career scenarios. Not getting promoted is a genuine possibility. If it happens (present simple), she will look elsewhere (will + infinitive - the real, practical career response). 'Would look' implies the lack of promotion is just imaginary.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l36_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the report contains errors,",
-            "options": [
-                "it will need to be revised.",
-                "it would need to be revised.",
-                "it would have needed revision.",
-                "it needed to be revised."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "it will need to be revised.",
-            "hint": "Reports can contain errors - first conditional for the real quality correction requirement.",
-            "explanation": "First conditional = real quality control scenarios. Reports do sometimes contain errors. If this one does (present simple), it will need to be revised (will + infinitive - the real, standard correction process). 'Would need revision' implies errors are just imaginary - they're a real professional risk.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l37_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If children learn to code at school,",
-            "options": [
-                "they develop stronger problem-solving skills.",
-                "they would have developed stronger skills.",
-                "they will develop stronger problem-solving skills.",
-                "they would develop stronger skills."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "they develop stronger problem-solving skills.",
-            "hint": "Early coding education consistently improves logical thinking - zero or first conditional.",
-            "explanation": "Zero conditional = established educational facts. Learning to code ALWAYS develops problem-solving skills - a consistent, research-backed fact. Both clauses: present simple. 'Will develop' (1st conditional) works for a specific policy prediction; zero conditional expresses the general educational truth.",
-            "grammarRule": "Zero Conditional",
-            "conditionalType": 0
-        },
-        {
-            "id": "cl_l37_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she had not taken that risk,",
-            "options": [
-                "the startup would never have launched.",
-                "the startup never launches.",
-                "the startup would never launch.",
-                "the startup will never launch."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the startup would never have launched.",
-            "hint": "Negative past perfect = she DID take the risk - third conditional celebrating entrepreneurial courage.",
-            "explanation": "Third conditional with NEGATIVE if-clause: She DID take the risk (negative past perfect = the reverse). If she HADN'T (imaginary - she played it safe), the startup would never have launched (would never have + past participle - the missed entrepreneurial achievement). Celebrates brave past decisions.",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l37_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the interest rate rises next month,",
-            "options": [
-                "many homeowners will struggle.",
-                "many homeowners would struggle.",
-                "many homeowners would have struggled.",
-                "many homeowners struggle."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "many homeowners will struggle.",
-            "hint": "An interest rate rise is a real economic possibility - first conditional for the real financial impact.",
-            "explanation": "First conditional = real future economic events. Interest rates can and do rise. If this one rises (present simple - a real monetary policy possibility), many homeowners will struggle (will + infinitive - the real, expected financial impact on households).",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l38_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If he had asked for help sooner,",
-            "options": [
-                "the project is completed on time.",
-                "he would have completed the project on time.",
-                "he will complete the project on time.",
-                "he would complete the project on time."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "he would have completed the project on time.",
-            "hint": "Past perfect = didn't ask early enough - third conditional for a project management regret.",
-            "explanation": "Third conditional = unreal past. He didn't ask for help early enough (past perfect = the missed action). If he had (imaginary), he would have completed the project on time (would have + past participle - the prevented delay). Always ask for help before it's too late.",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l38_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she volunteers at the community garden,",
-            "options": [
-                "she would build local connections.",
-                "she would have built connections.",
-                "she will build local connections.",
-                "she builds local connections."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "she will build local connections.",
-            "hint": "Volunteering is a real, available option - first conditional for the real social benefit.",
-            "explanation": "First conditional = real, achievable future choices. Volunteering at the garden is genuinely possible. If she does (present simple), she will build local connections (will + infinitive - a real social benefit of community involvement). 'Would build' implies volunteering is just a fantasy.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l38_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the new policy is implemented,",
-            "options": [
-                "working conditions would have improved.",
-                "working conditions will improve.",
-                "working conditions improved.",
-                "working conditions would improve."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "working conditions will improve.",
-            "hint": "A new policy could genuinely be implemented - first conditional for the real workplace improvement.",
-            "explanation": "First conditional = real future policy outcomes. New workplace policies are genuinely implemented. If this one is (present simple - a real possibility), working conditions will improve (will + infinitive - the real, expected benefit). 'Would improve' implies the policy is just imaginary.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l39_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she had asked for clearer instructions at the start,",
-            "options": [
-                "she wouldn't have made so many revisions.",
-                "she doesn't make so many revisions.",
-                "she wouldn't make so many revisions.",
-                "she won't make so many revisions."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "she wouldn't have made so many revisions.",
-            "hint": "Past perfect = didn't clarify requirements - third conditional for a work process regret.",
-            "explanation": "Third conditional = unreal past. She didn't ask for clear instructions (past perfect = what she should have done). If she had (imaginary), she wouldn't have made so many revisions (would not have + past participle - the prevented rework). The value of clarifying requirements upfront.",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l39_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If he hadn't persisted through the setbacks,",
-            "options": [
-                "he would have given up.",
-                "he would give up.",
-                "he gave up.",
-                "he would not have achieved his goal."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "he would not have achieved his goal.",
-            "hint": "Negative past perfect = he DID persist - third conditional celebrating determination.",
-            "explanation": "Third conditional with NEGATIVE if-clause: He DID persist (negative past perfect = the reverse). If he HADN'T persisted (imaginary - he gave up), he would not have achieved his goal (would not have + past participle - the missed achievement). Celebrates resilience and persistence.",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l39_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the survey results are negative,",
-            "options": [
-                "the management would reconsider the plan.",
-                "the management would have reconsidered.",
-                "the management reconsidered.",
-                "the management will reconsider the plan."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "the management will reconsider the plan.",
-            "hint": "Negative survey results are a real possibility - first conditional for the real management response.",
-            "explanation": "First conditional = real future business decisions. Survey results could genuinely be negative. If they are (present simple), management will reconsider the plan (will + infinitive - the real, expected organisational response). 'Would reconsider' implies negative results are just imaginary.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l40_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she hadn't practised every day,",
-            "options": [
-                "she wouldn't perform so confidently now.",
-                "she doesn't perform so confidently.",
-                "she wouldn't have performed so confidently.",
-                "she won't perform so confidently."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "she wouldn't perform so confidently now.",
-            "hint": "Negative past perfect + present skill - mixed conditional linking past practice to present ability.",
-            "explanation": "Mixed conditional: If + past perfect negative, would + (present result). She DID practise every day (the negative past perfect = the reverse). If she HADN'T (imaginary), she wouldn't perform so confidently NOW (would not + infinitive - the present skill she'd lack). Past discipline → present confidence.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l40_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If they had merged earlier,",
-            "options": [
-                "they could have avoided the crisis.",
-                "they avoid the crisis.",
-                "they could avoid the crisis.",
-                "they will avoid the crisis."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "they could have avoided the crisis.",
-            "hint": "Past perfect = delayed merger - third conditional for a strategic business regret.",
-            "explanation": "Third conditional = unreal past. They didn't merge earlier (past perfect = the missed strategic decision). If they had (imaginary), they could have avoided the crisis (could have + past participle - the possible missed benefit). 'Could have' suggests it would have been likely but not certain.",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l40_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she shares her findings at the conference,",
-            "options": [
-                "she would gain wider recognition.",
-                "she would have gained wider recognition.",
-                "she gains wider recognition.",
-                "she will gain wider recognition."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "she will gain wider recognition.",
-            "hint": "Sharing findings is a real, achievable academic action - first conditional for the real benefit.",
-            "explanation": "First conditional = real future academic actions. She can genuinely present at the conference. If she does (present simple), she will gain wider recognition (will + infinitive - the real professional benefit of sharing research). 'Would gain' implies presenting is just a dream.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        }
-    ]
+  "gameType": "conditionals",
+  "batchIndex": 4,
+  "levels": "31-40",
+  "quests": [
+    {
+      "id": "cl_l31_q1",
+      "instruction": "PICK THE NATURAL RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you enable two-factor authentication,",
+      "options": [
+        "your account is much harder to hack.",
+        "your account will be much harder to hack.",
+        "your account would have been much harder to hack.",
+        "your account would be much harder to hack."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "your account will be much harder to hack.",
+      "hint": "A real, practical security outcome.",
+      "explanation": "This is a real, specific consequence of a genuine action you can take, so will + base verb is correct.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l31_q2",
+      "instruction": "LINK THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the software update fails halfway through,",
+      "options": [
+        "the system would become unstable.",
+        "the system may become unstable.",
+        "the system would have become unstable.",
+        "the system becomes unstable."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the system may become unstable.",
+      "hint": "A real but uncertain technical risk.",
+      "explanation": "'May' expresses a real, uncertain risk rather than a guaranteed outcome, fitting an unpredictable technical situation.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l31_q3",
+      "instruction": "SELECT THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you clear your browser cache,",
+      "options": [
+        "some saved passwords disappear too.",
+        "some saved passwords would have disappeared too.",
+        "some saved passwords would disappear too.",
+        "some saved passwords will disappear too."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "some saved passwords will disappear too.",
+      "hint": "A real, specific technical consequence.",
+      "explanation": "This is a real, specific and likely side effect of a genuine action, so will + base verb is correct.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l32_q1",
+      "instruction": "CHOOSE THE RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you reply to that email today,",
+      "options": [
+        "she would still have been able to catch the earlier flight.",
+        "she will still be able to catch the earlier flight.",
+        "she is still able to catch the earlier flight.",
+        "she would still be able to catch the earlier flight."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "she will still be able to catch the earlier flight.",
+      "hint": "A real, time-sensitive consequence tied to a genuine deadline.",
+      "explanation": "This describes a real, time-sensitive outcome depending on a genuine action today, so will + base verb is correct.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l32_q2",
+      "instruction": "COMPLETE THE LINK",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you mention the budget concerns now,",
+      "options": [
+        "the whole meeting would have turned tense.",
+        "the whole meeting turns tense.",
+        "the whole meeting could turn tense.",
+        "the whole meeting would turn tense."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the whole meeting could turn tense.",
+      "hint": "A real but uncertain social risk, expressed with 'could'.",
+      "explanation": "'Could' fits a real but uncertain interpersonal risk, softer than a definite 'will'.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l32_q3",
+      "instruction": "FIND THE RIGHT OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you don't reply within 24 hours,",
+      "options": [
+        "the offer would automatically expire.",
+        "the offer will automatically expire.",
+        "the offer automatically expires.",
+        "the offer would have automatically expired."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the offer will automatically expire.",
+      "hint": "A real, specific rule tied to a genuine offer.",
+      "explanation": "This is a real, specific and certain consequence of a genuine deadline, so will + base verb is correct.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l33_q1",
+      "instruction": "COMPLETE THE IDEA",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If grandma visits this weekend,",
+      "options": [
+        "we would have needed to cook a bigger dinner.",
+        "we need to cook a bigger dinner.",
+        "we would need to cook a bigger dinner.",
+        "we will need to cook a bigger dinner."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "we will need to cook a bigger dinner.",
+      "hint": "A real, practical consequence of a genuine family plan.",
+      "explanation": "This is a real, likely consequence of a genuine planned visit, so will + base verb is correct.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l33_q2",
+      "instruction": "MATCH THE OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the kids finish their chores early,",
+      "options": [
+        "they watch an extra episode tonight.",
+        "they would have watched an extra episode tonight.",
+        "they can watch an extra episode tonight.",
+        "they would watch an extra episode tonight."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "they can watch an extra episode tonight.",
+      "hint": "A real permission granted for a genuine achievement.",
+      "explanation": "'Can' expresses real permission resulting from a genuine condition, fitting a household rule naturally.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l33_q3",
+      "instruction": "FINISH THE CONDITIONAL",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If your brother forgets the tickets again,",
+      "options": [
+        "we would have missed the start of the show.",
+        "we miss the start of the show.",
+        "we might miss the start of the show.",
+        "we would miss the start of the show."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "we might miss the start of the show.",
+      "hint": "A real but uncertain risk, expressed with 'might'.",
+      "explanation": "'Might' fits a real but not certain risk, based on a genuine pattern of behavior.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l34_q1",
+      "instruction": "COMPLETE THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you return the shoes within thirty days,",
+      "options": [
+        "the store will give you a full refund.",
+        "the store would have given you a full refund.",
+        "the store would give you a full refund.",
+        "the store gives you a full refund."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the store will give you a full refund.",
+      "hint": "A real store policy applied to a genuine purchase.",
+      "explanation": "This describes a real store policy that applies to a genuine possible action, so will + base verb is correct.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l34_q2",
+      "instruction": "CONNECT THE CONDITION",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If this jacket is still in stock tomorrow,",
+      "options": [
+        "I definitely buy it.",
+        "I will definitely buy it.",
+        "I would definitely buy it.",
+        "I would have definitely bought it."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "I will definitely buy it.",
+      "hint": "A real, confident intention for a specific day.",
+      "explanation": "This is a confident, real intention about a specific day, so will + base verb is correct.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l34_q3",
+      "instruction": "PICK THE NATURAL RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you spend over fifty dollars today,",
+      "options": [
+        "you get free shipping on the order.",
+        "you would get free shipping on the order.",
+        "you would have gotten free shipping on the order.",
+        "you can get free shipping on the order."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "you can get free shipping on the order.",
+      "hint": "A real store offer expressed with 'can'.",
+      "explanation": "'Can' expresses real eligibility resulting from a genuine condition, fitting a store promotion naturally.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l35_q1",
+      "instruction": "LINK THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the design isn't finalized by Thursday,",
+      "options": [
+        "the printer wouldn't be able to deliver on time.",
+        "the printer wouldn't have been able to deliver on time.",
+        "the printer isn't able to deliver on time.",
+        "the printer won't be able to deliver on time."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the printer won't be able to deliver on time.",
+      "hint": "A real, negative consequence of a genuine project delay.",
+      "explanation": "This is a real, likely negative outcome tied to a genuine deadline, so won't + base verb is correct.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l35_q2",
+      "instruction": "SELECT THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you send the invoice today,",
+      "options": [
+        "the payment likely arrives before month's end.",
+        "the payment would likely arrive before month's end.",
+        "the payment will likely arrive before month's end.",
+        "the payment would have likely arrived before month's end."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the payment will likely arrive before month's end.",
+      "hint": "A real, likely business outcome, still expressed with 'will'.",
+      "explanation": "'Will' here still fits because the outcome is presented as the real, expected result, even with the hedge word 'likely'.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l35_q3",
+      "instruction": "CHOOSE THE RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the team misses this sprint deadline,",
+      "options": [
+        "the whole release schedule would have slipped.",
+        "the whole release schedule may slip.",
+        "the whole release schedule slips.",
+        "the whole release schedule would slip."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the whole release schedule may slip.",
+      "hint": "A real but uncertain project risk.",
+      "explanation": "'May' expresses a real, uncertain risk to the schedule, rather than a guaranteed outcome.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l36_q1",
+      "instruction": "COMPLETE THE LINK",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you cancel less than 24 hours before the appointment,",
+      "options": [
+        "you are charged a small fee.",
+        "you would have been charged a small fee.",
+        "you will be charged a small fee.",
+        "you would be charged a small fee."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "you will be charged a small fee.",
+      "hint": "A real clinic policy applied to a genuine booking.",
+      "explanation": "This describes a real policy that applies to a genuine possible action, so will + base verb is correct.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l36_q2",
+      "instruction": "FIND THE RIGHT OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the dentist is running late this afternoon,",
+      "options": [
+        "your appointment would have been pushed back.",
+        "your appointment would be pushed back.",
+        "your appointment is pushed back.",
+        "your appointment might be pushed back."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "your appointment might be pushed back.",
+      "hint": "A real but uncertain scheduling risk.",
+      "explanation": "'Might' fits a real but uncertain scheduling outcome, softer than a certain 'will'.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l36_q3",
+      "instruction": "COMPLETE THE IDEA",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you arrive fifteen minutes early,",
+      "options": [
+        "the receptionist would have usually fit you in sooner.",
+        "the receptionist would usually fit you in sooner.",
+        "the receptionist can usually fit you in sooner.",
+        "the receptionist usually fits you in sooner."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the receptionist can usually fit you in sooner.",
+      "hint": "A real possibility expressed with 'can', not a guarantee.",
+      "explanation": "'Can' expresses a real, often-possible outcome rather than a certainty, fitting a flexible real-world situation.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l37_q1",
+      "instruction": "MATCH THE OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If your connecting flight is within the same terminal,",
+      "options": [
+        "you wouldn't need to go through security again.",
+        "you won't need to go through security again.",
+        "you wouldn't have needed to go through security again.",
+        "you don't need to go through security again."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "you won't need to go through security again.",
+      "hint": "A real, specific travel consequence.",
+      "explanation": "This is a real, specific and likely outcome for a genuine trip, so won't + base verb is correct.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l37_q2",
+      "instruction": "FINISH THE CONDITIONAL",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the airline cancels this flight,",
+      "options": [
+        "passengers will be rebooked on the next available one.",
+        "passengers would have been rebooked on the next available one.",
+        "passengers would be rebooked on the next available one.",
+        "passengers are rebooked on the next available one."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "passengers will be rebooked on the next available one.",
+      "hint": "A real airline policy applied to a genuine possible event.",
+      "explanation": "This describes a real policy for a genuine possible situation, so will + base verb is correct.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l37_q3",
+      "instruction": "COMPLETE THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you pack light for this trip,",
+      "options": [
+        "you avoid checking a bag altogether.",
+        "you can avoid checking a bag altogether.",
+        "you would avoid checking a bag altogether.",
+        "you would have avoided checking a bag altogether."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "you can avoid checking a bag altogether.",
+      "hint": "A real possibility expressed with 'can'.",
+      "explanation": "'Can' expresses a real, achievable outcome resulting from a genuine choice, fitting practical travel advice.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l38_q1",
+      "instruction": "CONNECT THE CONDITION",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the client pushes back the launch again,",
+      "options": [
+        "the marketing team needs a new timeline.",
+        "the marketing team would have needed a new timeline.",
+        "the marketing team will need a new timeline.",
+        "the marketing team would need a new timeline."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the marketing team will need a new timeline.",
+      "hint": "A real, specific consequence for a genuine ongoing project.",
+      "explanation": "This is a real, likely consequence of a genuine possible delay, so will + base verb is correct.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l38_q2",
+      "instruction": "PICK THE NATURAL RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If two colleagues disagree about this approach,",
+      "options": [
+        "the project would stall for days.",
+        "the project stalls for days.",
+        "the project could stall for days.",
+        "the project would have stalled for days."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the project could stall for days.",
+      "hint": "A real but uncertain workplace risk.",
+      "explanation": "'Could' fits a real but uncertain risk, softer than the certainty of 'will'.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l38_q3",
+      "instruction": "LINK THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If everyone submits their section on time,",
+      "options": [
+        "the report would be ready before the review.",
+        "the report would have been ready before the review.",
+        "the report will be ready before the review.",
+        "the report is ready before the review."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the report will be ready before the review.",
+      "hint": "A real, achievable outcome for a genuine team deadline.",
+      "explanation": "This is a real, specific and confident outcome for a genuine team effort, so will + base verb is correct.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l39_q1",
+      "instruction": "SELECT THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you take that job offer in another city,",
+      "options": [
+        "you would have had to leave your current apartment.",
+        "you will have to leave your current apartment.",
+        "you have to leave your current apartment.",
+        "you would have to leave your current apartment."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "you will have to leave your current apartment.",
+      "hint": "A real, practical consequence of a genuine decision.",
+      "explanation": "This is a real, likely consequence of a genuine possible choice, so will + base verb is correct.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l39_q2",
+      "instruction": "CHOOSE THE RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you keep putting off the dentist visit,",
+      "options": [
+        "the small problem would have turned into a bigger one.",
+        "the small problem would turn into a bigger one.",
+        "the small problem might turn into a bigger one.",
+        "the small problem turns into a bigger one."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the small problem might turn into a bigger one.",
+      "hint": "A real but uncertain health risk over time.",
+      "explanation": "'Might' fits a real but uncertain risk that develops gradually, softer than a definite 'will'.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l39_q3",
+      "instruction": "COMPLETE THE LINK",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you start saving fifty dollars a month now,",
+      "options": [
+        "you will have a solid emergency fund by next year.",
+        "you would have a solid emergency fund by next year.",
+        "you have a solid emergency fund by next year.",
+        "you would have had a solid emergency fund by next year."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "you will have a solid emergency fund by next year.",
+      "hint": "A real, achievable financial goal based on a genuine plan.",
+      "explanation": "This is a real, confident prediction based on a genuine, realistic plan, so will + base verb is correct.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l40_q1",
+      "instruction": "FIND THE RIGHT OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the landlord doesn't fix the heating this week,",
+      "options": [
+        "the tenants would have filed a formal complaint.",
+        "the tenants would file a formal complaint.",
+        "the tenants file a formal complaint.",
+        "the tenants will file a formal complaint."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the tenants will file a formal complaint.",
+      "hint": "A real, specific consequence for a genuine ongoing issue.",
+      "explanation": "This is a real, likely response to a genuine unresolved problem, so will + base verb is correct.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l40_q2",
+      "instruction": "COMPLETE THE IDEA",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you back up your thesis to the cloud tonight,",
+      "options": [
+        "a laptop crash won't cost you months of work.",
+        "a laptop crash doesn't cost you months of work.",
+        "a laptop crash wouldn't cost you months of work.",
+        "a laptop crash wouldn't have cost you months of work."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "a laptop crash won't cost you months of work.",
+      "hint": "A real, protective consequence of a genuine precaution.",
+      "explanation": "This is a real, likely protective outcome resulting from a genuine action tonight, so won't + base verb is correct.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l40_q3",
+      "instruction": "MATCH THE OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the interview panel asks about your gap year,",
+      "options": [
+        "you would be ready to explain it honestly.",
+        "you are ready to explain it honestly.",
+        "you would have been ready to explain it honestly.",
+        "you should be ready to explain it honestly."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "you should be ready to explain it honestly.",
+      "hint": "Practical, real advice expressed with 'should'.",
+      "explanation": "'Should' gives real, practical advice about how to respond to a genuine likely situation, common in interview preparation.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    }
+  ]
 }

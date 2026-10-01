@@ -8,23 +8,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'she' as used in the sentence below?",
-            "targetWord": "she",
-            "sentence": "She opened the window to let in some fresh air.",
+            "question": "Which grammatical category best describes 'mine' here?",
+            "targetWord": "mine",
+            "sentence": "The blue jacket on the chair is mine, not Farah's.",
             "options": [
-                "Pronoun",
                 "Noun",
                 "Verb",
+                "Pronoun",
                 "Adjective"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "Pronoun",
-            "hint": "Pronouns replace nouns. Is 'she' standing in for a woman's name?",
-            "explanation": "'She' is a subject pronoun - it replaces a noun (a woman's name). Subject pronouns (I, you, he, she, we, they) act as the subject of a sentence.",
-            "grammarRule": "Pronouns",
+            "hint": "Focus on its role in this sentence only. Whose jacket is being identified?",
+            "explanation": "'Mine' is a possessive pronoun standing alone in place of 'my jacket' — it shows ownership without repeating the noun.",
+            "grammarRule": "Possessive pronoun standing alone as a predicate",
             "transformations": [
-                "noun form",
-                "verb form"
+                "subject form",
+                "possessive form"
             ]
         },
         {
@@ -32,23 +32,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'on' as used in the sentence below?",
-            "targetWord": "on",
-            "sentence": "The book is on the top shelf in the living room.",
+            "question": "What grammatical job does 'chair' do in this sentence?",
+            "targetWord": "chair",
+            "sentence": "Farah pulled up a chair and joined the discussion.",
             "options": [
+                "Noun",
+                "Adverb",
                 "Verb",
-                "Preposition",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Preposition",
-            "hint": "Prepositions show location. Does 'on' show the position of the book?",
-            "explanation": "'On' is a preposition - it shows the relationship between 'book' and 'shelf'. Location prepositions (on, in, under, above, beside) indicate where something is.",
-            "grammarRule": "Prepositions",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Ask how it connects to the words near it. What object did Farah pull up?",
+            "explanation": "'Chair' is a noun naming the object Farah moved — it functions as the direct object of 'pulled up'.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "plural form"
             ]
         },
         {
@@ -56,23 +56,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'but' as used in the sentence below?",
-            "targetWord": "but",
-            "sentence": "I wanted to go to the concert, but I had too much work.",
+            "question": "How is 'joined' functioning in this sentence?",
+            "targetWord": "joined",
+            "sentence": "Farah joined the discussion just as the topic shifted to budgets.",
             "options": [
-                "Noun",
                 "Verb",
-                "Conjunction",
-                "Adverb"
+                "Adverb",
+                "Adjective",
+                "Noun"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Conjunction",
-            "hint": "Conjunctions join clauses. Does 'but' connect two contrasting ideas?",
-            "explanation": "'But' is a coordinating conjunction - it joins two independent clauses expressing contrasting ideas. ('But' returns as a preposition in level 180 and as an adverb in level 181.)",
-            "grammarRule": "Conjunctions",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Verb",
+            "hint": "Let the sentence, not the spelling, decide. What action did Farah take?",
+            "explanation": "'Joined' is a verb describing Farah's action of entering the discussion.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -80,23 +80,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'he' as used in the sentence below?",
-            "targetWord": "he",
-            "sentence": "He forgot to bring his lunch box to school today.",
+            "question": "Which part of speech does 'Who' represent in this sentence?",
+            "targetWord": "Who",
+            "sentence": "Who left the porch light on all night?",
             "options": [
-                "Pronoun",
-                "Noun",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Noun",
+                "Pronoun"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Pronoun",
-            "hint": "Pronouns replace nouns. Is 'he' standing in for a man's name?",
-            "explanation": "'He' is a pronoun - it replaces a noun referring to a male person. It is a third-person singular subject pronoun.",
-            "grammarRule": "Pronouns",
+            "hint": "Look at what this word does in this exact sentence. What word is asking about the person who did this?",
+            "explanation": "'Who' is an interrogative pronoun asking about the unknown person responsible for leaving the light on — it functions as the subject of the question.",
+            "grammarRule": "Interrogative pronoun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "subject form",
+                "object form (whom)"
             ]
         },
         {
@@ -104,23 +104,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'in' as used in the sentence below?",
-            "targetWord": "in",
-            "sentence": "They met in a small café near the old train station.",
+            "question": "Which Part of Speech is represented by 'beyond' here?",
+            "targetWord": "beyond",
+            "sentence": "The trail continued beyond the old wooden bridge.",
             "options": [
-                "Noun",
                 "Verb",
                 "Preposition",
-                "Adjective"
+                "Adjective",
+                "Noun"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "Preposition",
-            "hint": "Prepositions show location. Does 'in' show where they met?",
-            "explanation": "'In' is a preposition - it indicates the location of the meeting. 'In' is used for enclosed spaces (in a café, in a room, in the city).",
-            "grammarRule": "Prepositions",
+            "hint": "Ask how it connects to the words near it. Where did the trail continue to?",
+            "explanation": "'Beyond' is a preposition introducing a phrase that shows where the trail kept going, past the bridge.",
+            "grammarRule": "Preposition introducing a location phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related adverb use"
             ]
         },
         {
@@ -128,23 +128,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'and' as used in the sentence below?",
-            "targetWord": "and",
-            "sentence": "She bought milk and eggs at the local supermarket.",
+            "question": "Which part of speech is 'wooden' as it is used here?",
+            "targetWord": "wooden",
+            "sentence": "The carpenter repaired the wooden railing on the porch.",
             "options": [
+                "Verb",
                 "Noun",
-                "Adjective",
                 "Adverb",
-                "Conjunction"
+                "Adjective"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Conjunction",
-            "hint": "Conjunctions join words. Does 'and' link two things that were bought?",
-            "explanation": "'And' is a coordinating conjunction - it joins two nouns ('milk' and 'eggs'). 'And' adds one thing to another and is the most common English conjunction.",
-            "grammarRule": "Conjunctions",
+            "correctAnswer": "Adjective",
+            "hint": "Look at what this word does in this exact sentence. What material describes the railing?",
+            "explanation": "'Wooden' is an adjective modifying 'railing', telling us what material it is made of.",
+            "grammarRule": "Attributive adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "related noun (wood)"
             ]
         },
         {
@@ -152,23 +152,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'we' as used in the sentence below?",
-            "targetWord": "we",
-            "sentence": "We decided to take the scenic route home along the coast.",
+            "question": "What role does 'up' play in this sentence?",
+            "targetWord": "up",
+            "sentence": "The kitten climbed up the bookshelf before anyone noticed.",
             "options": [
-                "Pronoun",
-                "Noun",
+                "Preposition",
                 "Verb",
-                "Adverb"
+                "Adverb",
+                "Noun"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Pronoun",
-            "hint": "Pronouns replace noun phrases. Does 'we' stand in for a group including the speaker?",
-            "explanation": "'We' is a pronoun - it replaces a noun phrase referring to a group that includes the speaker. It is a first-person plural subject pronoun.",
-            "grammarRule": "Pronouns",
+            "correctAnswer": "Preposition",
+            "hint": "When a word like 'up' is followed by an object, it usually introduces a phrase. What does 'up' introduce here?",
+            "explanation": "'Up' functions as a preposition here because it introduces the noun phrase 'the bookshelf,' showing the direction of the climb relative to that object.",
+            "grammarRule": "Preposition introducing a direction phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "adverb use"
             ]
         },
         {
@@ -176,23 +176,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'after' as used in the sentence below?",
-            "targetWord": "after",
-            "sentence": "She always goes for a walk after dinner to help her relax.",
+            "question": "Now what part of speech is 'up' in this sentence?",
+            "targetWord": "up",
+            "sentence": "The kitten looked up just as the door creaked open.",
             "options": [
                 "Noun",
-                "Verb",
-                "Preposition",
-                "Adjective"
+                "Adjective",
+                "Adverb",
+                "Verb"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Preposition",
-            "hint": "Prepositions show time relationships. Does 'after' show when the walk happens?",
-            "explanation": "'After' is a preposition - it shows a time relationship between the walk and dinner. Time prepositions (after, before, during, since) indicate timing.",
-            "grammarRule": "Prepositions",
+            "correctAnswer": "Adverb",
+            "hint": "When 'up' has no object after it, it usually modifies the verb instead. What does 'up' tell us here?",
+            "explanation": "Here 'up' is an adverb modifying 'looked' — there is no following noun phrase, so it simply describes the direction of the kitten's glance. Compare this with the earlier sentence, where 'up' introduced a phrase and acted as a preposition.",
+            "grammarRule": "Direction adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "adverb use"
             ]
         },
         {
@@ -200,23 +200,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'or' as used in the sentence below?",
-            "targetWord": "or",
-            "sentence": "Would you like tea or coffee with your breakfast today?",
+            "question": "The word 'creaked' is being used as which grammatical category?",
+            "targetWord": "creaked",
+            "sentence": "The old hinge creaked every time someone opened the gate.",
             "options": [
-                "Conjunction",
                 "Noun",
+                "Verb",
                 "Adverb",
-                "Preposition"
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Conjunction",
-            "hint": "Conjunctions present alternatives. Does 'or' offer a choice between two options?",
-            "explanation": "'Or' is a coordinating conjunction - it presents alternatives (tea or coffee). It is used in questions and statements offering a choice.",
-            "grammarRule": "Conjunctions",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Verb",
+            "hint": "Let the sentence, not the spelling, decide. What did the hinge do?",
+            "explanation": "'Creaked' is a verb describing the sound the hinge made each time the gate opened.",
+            "grammarRule": "Action verb describing a physical process",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -224,23 +224,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'they' as used in the sentence below?",
-            "targetWord": "they",
-            "sentence": "They arrived at the hotel just before the restaurant closed.",
+            "question": "What part of speech is 'yet' in this sentence?",
+            "targetWord": "yet",
+            "sentence": "The proposal was risky, yet the board approved it unanimously.",
             "options": [
-                "Pronoun",
+                "Verb",
+                "Conjunction",
                 "Noun",
-                "Adjective",
-                "Verb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Pronoun",
-            "hint": "Pronouns replace noun phrases. Does 'they' stand in for a group of people?",
-            "explanation": "'They' is a pronoun - it replaces a noun phrase referring to more than one person. It is a third-person plural subject pronoun.",
-            "grammarRule": "Pronouns",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Conjunction",
+            "hint": "Focus on its role in this sentence only. What word signals that surprise here?",
+            "explanation": "'Yet' is a coordinating conjunction joining two independent clauses that contrast — the risk of the proposal and the board's approval despite it.",
+            "grammarRule": "Coordinating conjunction showing contrast",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related conjunction (but)"
             ]
         },
         {
@@ -248,23 +248,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'near' as used in the sentence below?",
-            "targetWord": "near",
-            "sentence": "She sat near the window to make use of the natural light.",
+            "question": "What role does 'nor' play in this sentence?",
+            "targetWord": "nor",
+            "sentence": "Naledi hadn't finished the report, nor had she started the presentation.",
             "options": [
-                "Noun",
-                "Preposition",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Verb",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Preposition",
-            "hint": "Prepositions show proximity. Does 'near' show where she sat?",
-            "explanation": "'Near' is a preposition - it shows the proximity between 'she' and 'the window'. Proximity prepositions (near, beside, next to, opposite) indicate closeness.",
-            "grammarRule": "Prepositions",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Conjunction",
+            "hint": "This word pairs with a negative word earlier in the sentence to add a second negative idea. What links these two negatives?",
+            "explanation": "'Nor' is a coordinating conjunction that continues the negative idea from 'hadn't,' joining two things Naledi had not done.",
+            "grammarRule": "Coordinating conjunction continuing a negative statement",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related conjunction (or)"
             ]
         },
         {
@@ -272,23 +272,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'so' as used in the sentence below?",
-            "targetWord": "so",
-            "sentence": "It was getting very late, so they decided to call a taxi.",
+            "question": "Which category fits 'presentation' in this sentence?",
+            "targetWord": "presentation",
+            "sentence": "Naledi rehearsed her presentation twice before the client call.",
             "options": [
-                "Noun",
+                "Verb",
                 "Adverb",
-                "Preposition",
-                "Conjunction"
+                "Noun",
+                "Adjective"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Conjunction",
-            "hint": "Conjunctions show cause and result. Does 'so' link a reason and its consequence?",
-            "explanation": "'So' is a coordinating conjunction here - it shows a result. It links 'it was getting late' (cause) to 'they called a taxi' (effect).",
-            "grammarRule": "Conjunctions",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Noun",
+            "hint": "Ask how it connects to the words near it. What did Naledi rehearse?",
+            "explanation": "'Presentation' is a noun naming the talk Naledi prepared — it functions as the direct object of 'rehearsed'.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "plural form"
             ]
         },
         {
@@ -296,23 +296,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'them' as used in the sentence below?",
-            "targetWord": "them",
-            "sentence": "I handed them the invitations just before the party started.",
+            "question": "Identify the part of speech of 'Ugh' in this context.",
+            "targetWord": "Ugh",
+            "sentence": "\"Ugh, the printer is jammed again,\" Oliver muttered under his breath.",
             "options": [
-                "Pronoun",
                 "Noun",
                 "Verb",
-                "Adjective"
+                "Adjective",
+                "Interjection"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Pronoun",
-            "hint": "Object pronouns receive actions. Does 'them' stand in for the people who received the invitations?",
-            "explanation": "'Them' is an object pronoun - it replaces a noun phrase. Object pronouns (me, you, him, her, us, them) receive the action of the verb.",
-            "grammarRule": "Pronouns",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Interjection",
+            "hint": "Focus on its role in this sentence only. What word shows Oliver's frustration?",
+            "explanation": "'Ugh' is an interjection expressing annoyance — it stands grammatically separate from the statement that follows it.",
+            "grammarRule": "Interjection expressing frustration",
             "transformations": [
-                "noun form",
-                "verb form"
+                "interjection use",
+                "related exclamation"
             ]
         },
         {
@@ -320,23 +320,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'behind' as used in the sentence below?",
-            "targetWord": "behind",
-            "sentence": "The post office is right behind the supermarket on the high street.",
+            "question": "Which grammatical category best describes 'jammed' here?",
+            "targetWord": "jammed",
+            "sentence": "The hallway was narrow and jammed with boxes after the delivery.",
             "options": [
                 "Verb",
-                "Noun",
-                "Preposition",
-                "Adverb"
+                "Adjective",
+                "Adverb",
+                "Noun"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Preposition",
-            "hint": "Prepositions show position. Does 'behind' show where the post office is?",
-            "explanation": "'Behind' is a preposition - it shows the position of the post office in relation to the supermarket. It indicates that one object is at the back of another.",
-            "grammarRule": "Prepositions",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "Some words from verbs can describe a state or condition. What condition was the hallway in?",
+            "explanation": "'Jammed' functions here as an adjective describing the hallway's condition after the linking verb 'was' — paired with 'narrow', it describes a state rather than an ongoing action.",
+            "grammarRule": "Participial adjective following a linking verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb form",
+                "adjective form"
             ]
         },
         {
@@ -344,23 +344,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'because' as used in the sentence below?",
-            "targetWord": "because",
-            "sentence": "She stayed home because she had developed a bad cold.",
+            "question": "In this context, what part of speech is 'hardly'?",
+            "targetWord": "hardly",
+            "sentence": "Ms. Bright could hardly hear the announcement over the noise.",
             "options": [
                 "Noun",
                 "Adverb",
-                "Conjunction",
-                "Preposition"
+                "Adjective",
+                "Verb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Conjunction",
-            "hint": "Conjunctions can introduce reasons. Does 'because' explain WHY she stayed home?",
-            "explanation": "'Because' is a subordinating conjunction - it introduces a reason. It joins 'she stayed home' (main clause) to 'she had a bad cold' (reason clause).",
-            "grammarRule": "Conjunctions",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adverb",
+            "hint": "Think about the job it performs here. How well could Ms. Bright hear?",
+            "explanation": "'Hardly' is a degree adverb modifying the verb 'hear' — it shows that she was barely able to hear the announcement.",
+            "grammarRule": "Degree adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adverb use",
+                "related adjective"
             ]
         },
         {
@@ -368,23 +368,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'it' as used in the sentence below?",
-            "targetWord": "it",
-            "sentence": "It took three hours to drive to the coast in the summer traffic.",
+            "question": "Based on how it is used here, 'across' is a:",
+            "targetWord": "across",
+            "sentence": "After the delivery driver dropped off the package, she waved to him from across the street.",
             "options": [
+                "Preposition",
                 "Pronoun",
                 "Noun",
-                "Verb",
-                "Adjective"
+                "Verb"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Pronoun",
-            "hint": "Pronouns can be used as dummy subjects. Is 'it' referring to something specific, or filling the subject slot?",
-            "explanation": "'It' is a pronoun - here it is an impersonal subject pronoun used in time expressions ('it took', 'it is late', 'it rained').",
-            "grammarRule": "Pronouns",
+            "correctAnswer": "Preposition",
+            "hint": "Focus on its role in this sentence only. Where was he standing relative to her?",
+            "explanation": "'Across' is a preposition introducing the phrase that shows the spatial relationship between the two people — she was on the opposite side of the street from him.",
+            "grammarRule": "Preposition introducing a location phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related adverb use"
             ]
         },
         {
@@ -392,23 +392,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'through' as used in the sentence below?",
-            "targetWord": "through",
-            "sentence": "They walked through the park on their way to the station.",
+            "question": "Back in that same sentence, what kind of word is 'him'?",
+            "targetWord": "him",
+            "sentence": "After the delivery driver dropped off the package, she waved to him from across the street.",
             "options": [
-                "Noun",
+                "Preposition",
+                "Pronoun",
                 "Verb",
-                "Adverb",
-                "Preposition"
+                "Noun"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Preposition",
-            "hint": "Prepositions show movement. Does 'through' show the path they walked?",
-            "explanation": "'Through' is a preposition - it shows movement from one side of a space to the other. Movement prepositions (through, across, over, along) describe movement relative to a place.",
-            "grammarRule": "Prepositions",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "Ask how it connects to the words near it. Who did she wave to?",
+            "explanation": "'Him' is a personal pronoun functioning as the object of the preposition 'to' — it refers back to the delivery driver without repeating his role.",
+            "grammarRule": "Personal pronoun functioning as the object of a preposition",
             "transformations": [
-                "noun form",
-                "verb form"
+                "subject form",
+                "object form"
             ]
         },
         {
@@ -416,23 +416,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'yet' as used in the sentence below?",
-            "targetWord": "yet",
-            "sentence": "The exam was extremely difficult, yet she managed to pass.",
+            "question": "And what part of speech is 'waved' in that sentence?",
+            "targetWord": "waved",
+            "sentence": "After the delivery driver dropped off the package, she waved to him from across the street.",
             "options": [
                 "Noun",
-                "Conjunction",
-                "Adverb",
-                "Preposition"
+                "Adjective",
+                "Verb",
+                "Pronoun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Conjunction",
-            "hint": "Conjunctions connect contrasting ideas. Does 'yet' show a surprising contrast?",
-            "explanation": "'Yet' is a coordinating conjunction - it shows contrast or an unexpected result, similar to 'but'. It emphasises that the outcome is surprising given the circumstances.",
-            "grammarRule": "Conjunctions",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Verb",
+            "hint": "Notice what the word is attached to. What did she do to greet him?",
+            "explanation": "'Waved' is a verb describing her action of greeting the driver from a distance.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -440,23 +440,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'you' as used in the sentence below?",
-            "targetWord": "you",
-            "sentence": "Did you remember to turn off the oven before leaving the house?",
+            "question": "Classify 'those' as it appears in this sentence.",
+            "targetWord": "those",
+            "sentence": "Of all the samples on the table, those are the freshest.",
             "options": [
-                "Noun",
-                "Pronoun",
+                "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Pronoun"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Pronoun",
-            "hint": "Pronouns address the listener directly. Is 'you' replacing the name of the person being spoken to?",
-            "explanation": "'You' is a pronoun - it is the second-person pronoun used to address the listener. 'You' is the same in both singular and plural in modern English.",
-            "grammarRule": "Pronouns",
+            "hint": "Look at what this word does in this exact sentence. What is 'those' replacing?",
+            "explanation": "'Those' is a demonstrative pronoun referring back to a specific group of samples — it functions as the subject of the second clause.",
+            "grammarRule": "Demonstrative pronoun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form (that)",
+                "plural form"
             ]
         },
         {
@@ -464,23 +464,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'at' as used in the sentence below?",
-            "targetWord": "at",
-            "sentence": "They arranged to meet at the corner of Park Road at noon.",
+            "question": "What kind of word is 'freshly' in this sentence?",
+            "targetWord": "freshly",
+            "sentence": "Hana served the bread freshly baked from the oven.",
             "options": [
-                "Preposition",
-                "Noun",
+                "Adjective",
                 "Verb",
-                "Adjective"
+                "Adverb",
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Preposition",
-            "hint": "Prepositions show precise location. Does 'at' identify the exact meeting point?",
-            "explanation": "'At' is a preposition - it shows a precise location or point. 'At' is used for specific points (at the corner, at the door), while 'in' is used for enclosed spaces.",
-            "grammarRule": "Prepositions",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "Set aside what you know about this word in general. How recently was the bread baked?",
+            "explanation": "'Freshly' is a manner adverb modifying the participial adjective 'baked', describing how recently the bread came out of the oven.",
+            "grammarRule": "Manner adverb modifying a participial adjective",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "adverb form"
             ]
         },
         {
@@ -488,23 +488,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'although' as used in the sentence below?",
-            "targetWord": "although",
-            "sentence": "Although it was cold outside, they decided to have a picnic.",
+            "question": "How is 'oven' functioning in this sentence?",
+            "targetWord": "oven",
+            "sentence": "The oven overheated halfway through the baking class.",
             "options": [
                 "Noun",
+                "Adjective",
                 "Adverb",
-                "Preposition",
-                "Conjunction"
+                "Verb"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Conjunction",
-            "hint": "Conjunctions can introduce contrasting conditions. Does 'although' introduce something surprising about the context?",
-            "explanation": "'Although' is a subordinating conjunction of concession - it introduces a fact that makes the main clause surprising. It is interchangeable with 'even though' and 'though'.",
-            "grammarRule": "Conjunctions",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Ask how it connects to the words near it. What object overheated?",
+            "explanation": "'Oven' is a noun naming the appliance that overheated — it functions as the subject of the sentence.",
+            "grammarRule": "Common noun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "plural form"
             ]
         },
         {
@@ -512,23 +512,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'his' as used in the sentence below?",
-            "targetWord": "his",
-            "sentence": "He left his umbrella on the train completely by accident.",
+            "question": "In this context, what part of speech is 'along'?",
+            "targetWord": "along",
+            "sentence": "Dr. Chen walked along the corridor, checking each patient's chart.",
             "options": [
                 "Noun",
-                "Pronoun",
-                "Verb",
-                "Adjective"
+                "Preposition",
+                "Adjective",
+                "Verb"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adjective",
-            "hint": "'His' comes directly before a noun here. Does it replace a noun, or describe one?",
-            "explanation": "'His' is a possessive adjective here - it comes directly before 'umbrella' to show ownership, rather than standing alone in place of a noun. Compare: 'his umbrella' (possessive adjective, before a noun) vs. 'the umbrella is his' (possessive pronoun, standing alone).",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Preposition",
+            "hint": "Think about the job it performs here. Where did Dr. Chen walk?",
+            "explanation": "'Along' is a preposition introducing the phrase that shows the path Dr. Chen followed through the corridor.",
+            "grammarRule": "Preposition introducing a location phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related adverb use"
             ]
         },
         {
@@ -536,23 +536,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'between' as used in the sentence below?",
-            "targetWord": "between",
-            "sentence": "The narrow path ran between the two rows of tall oak trees.",
+            "question": "Looking at the same sentence, how is 'corridor' functioning?",
+            "targetWord": "corridor",
+            "sentence": "Dr. Chen walked along the corridor, checking each patient's chart.",
             "options": [
+                "Adjective",
                 "Noun",
-                "Adverb",
-                "Preposition",
-                "Conjunction"
+                "Verb",
+                "Adverb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Preposition",
-            "hint": "Prepositions show spatial relationships. Does 'between' show the position of the path?",
-            "explanation": "'Between' is a preposition - it shows a position in the middle of two things. Use 'between' for two things and 'among' for three or more.",
-            "grammarRule": "Prepositions",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Noun",
+            "hint": "Look at what this word does in this exact sentence. What place does 'along' refer to here?",
+            "explanation": "'Corridor' is a noun naming the hallway — it functions as the object of the preposition 'along' in this sentence.",
+            "grammarRule": "Common noun functioning as the object of a preposition",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "plural form"
             ]
         },
         {
@@ -560,23 +560,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'when' as used in the sentence below?",
-            "targetWord": "when",
-            "sentence": "We left the party when the music finally stopped.",
+            "question": "Which part of speech does 'urgent' represent in this sentence?",
+            "targetWord": "urgent",
+            "sentence": "Dr. Chen reviewed every urgent case before the shift ended.",
             "options": [
-                "Conjunction",
-                "Adverb",
                 "Noun",
-                "Preposition"
+                "Verb",
+                "Adjective",
+                "Adverb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Conjunction",
-            "hint": "Conjunctions can link time-based clauses. Does 'when' introduce the time at which an event happened?",
-            "explanation": "'When' is a subordinating conjunction of time - it introduces a time clause that tells us at what point the main action occurred.",
-            "grammarRule": "Conjunctions",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "Think about the job it performs here. What quality does 'urgent' give to the case?",
+            "explanation": "'Urgent' is an adjective modifying 'case', describing its priority level.",
+            "grammarRule": "Attributive adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "positive form",
+                "comparative form"
             ]
         },
         {
@@ -584,23 +584,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'her' as used in the sentence below?",
-            "targetWord": "her",
-            "sentence": "I gave her the keys and asked her to lock up when she left.",
+            "question": "Based on how it is used here, 'and' is a:",
+            "targetWord": "and",
+            "sentence": "The market sold spices, fabric, and handmade jewelry every Saturday.",
             "options": [
                 "Noun",
                 "Verb",
-                "Pronoun",
-                "Adjective"
+                "Adjective",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Pronoun",
-            "hint": "Object pronouns receive actions. Is 'her' standing in for a woman's name as the receiver of the keys?",
-            "explanation": "'Her' is an object pronoun - it is the object of the verb 'gave'. Object pronouns (me, you, him, her, us, them) receive the action or follow prepositions.",
-            "grammarRule": "Pronouns",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Conjunction",
+            "hint": "Ask how it connects to the words near it. What word joins 'handmade jewelry' to the rest of the list?",
+            "explanation": "'And' is a coordinating conjunction connecting the final item in the list of things the market sold.",
+            "grammarRule": "Coordinating conjunction connecting items in a list",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related conjunction (or)"
             ]
         },
         {
@@ -608,23 +608,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'above' as used in the sentence below?",
-            "targetWord": "above",
-            "sentence": "The plane flew above the clouds for most of the four-hour flight.",
+            "question": "And in that same sentence, what part of speech is 'handmade'?",
+            "targetWord": "handmade",
+            "sentence": "The market sold spices, fabric, and handmade jewelry every Saturday.",
             "options": [
+                "Adjective",
                 "Noun",
-                "Preposition",
-                "Adverb",
-                "Adjective"
+                "Conjunction",
+                "Verb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Preposition",
-            "hint": "Prepositions show vertical position. Does 'above' show where the plane was?",
-            "explanation": "'Above' is a preposition - it shows the plane was at a higher position than the clouds. Vertical prepositions (above, below, over, under) describe height relationships.",
-            "grammarRule": "Prepositions",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adjective",
+            "hint": "Think about the job it performs here. How was the jewelry made?",
+            "explanation": "'Handmade' is an adjective modifying 'jewelry', describing how it was produced rather than naming an action.",
+            "grammarRule": "Attributive adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "related noun (hand)"
             ]
         },
         {
@@ -632,23 +632,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'while' as used in the sentence below?",
-            "targetWord": "while",
-            "sentence": "She listened to a podcast while she prepared dinner for the family.",
+            "question": "Which grammatical category fits 'sold' in that same sentence?",
+            "targetWord": "sold",
+            "sentence": "The market sold spices, fabric, and handmade jewelry every Saturday.",
             "options": [
+                "Adjective",
                 "Noun",
                 "Adverb",
-                "Conjunction",
-                "Preposition"
+                "Verb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Conjunction",
-            "hint": "Conjunctions can show simultaneity. Does 'while' indicate that two things happened at the same time?",
-            "explanation": "'While' is a subordinating conjunction of time - it introduces a clause describing an action happening simultaneously with the main action.",
-            "grammarRule": "Conjunctions",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Verb",
+            "hint": "Notice what the word is attached to. What action does the market perform?",
+            "explanation": "'Sold' is a verb describing the market's regular action of selling goods to customers.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -656,23 +656,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'us' as used in the sentence below?",
-            "targetWord": "us",
-            "sentence": "The teacher gave us extra practice questions for the exam.",
+            "question": "How is 'near' functioning in this sentence?",
+            "targetWord": "near",
+            "sentence": "After the ferry docked, the tourists gathered near the entrance, and the guide counted them twice before leading everyone toward the old lighthouse.",
             "options": [
+                "Conjunction",
                 "Noun",
-                "Pronoun",
-                "Verb",
-                "Adjective"
+                "Preposition",
+                "Verb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Pronoun",
-            "hint": "Object pronouns replace group nouns. Is 'us' standing in for the speaker and others?",
-            "explanation": "'Us' is an object pronoun - it is the first-person plural object pronoun. It replaces a noun referring to the speaker and others, and is the object of 'gave'.",
-            "grammarRule": "Pronouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Preposition",
+            "hint": "Think about the job it performs here. Where did the tourists gather?",
+            "explanation": "'Near' is a preposition introducing the phrase that shows the tourists' position relative to the entrance.",
+            "grammarRule": "Preposition introducing a location phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related adverb use"
             ]
         },
         {
@@ -680,23 +680,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'beside' as used in the sentence below?",
-            "targetWord": "beside",
-            "sentence": "She sat beside her brother during the entire school concert.",
+            "question": "Now consider 'and' in that same sentence. What part of speech is it?",
+            "targetWord": "and",
+            "sentence": "After the ferry docked, the tourists gathered near the entrance, and the guide counted them twice before leading everyone toward the old lighthouse.",
             "options": [
-                "Preposition",
-                "Adverb",
-                "Adjective",
-                "Conjunction"
+                "Conjunction",
+                "Verb",
+                "Noun",
+                "Pronoun"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Preposition",
-            "hint": "Prepositions show position next to something. Does 'beside' tell us where she sat?",
-            "explanation": "'Beside' is a preposition - it means 'next to'. Do not confuse 'beside' (next to) with 'besides' (in addition to).",
-            "grammarRule": "Prepositions",
+            "correctAnswer": "Conjunction",
+            "hint": "Notice what the word is attached to. What word links these two actions?",
+            "explanation": "'And' is a coordinating conjunction joining the clause about the tourists gathering with the clause about the guide counting them.",
+            "grammarRule": "Coordinating conjunction joining two independent clauses",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related conjunction (but)"
             ]
         },
         {
@@ -704,23 +704,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'neither' as used in the sentence below?",
-            "targetWord": "neither",
-            "sentence": "Neither the sun nor the warmth returned for the rest of the week.",
+            "question": "In that same sentence, what part of speech is 'them'?",
+            "targetWord": "them",
+            "sentence": "After the ferry docked, the tourists gathered near the entrance, and the guide counted them twice before leading everyone toward the old lighthouse.",
             "options": [
+                "Verb",
+                "Pronoun",
                 "Noun",
-                "Adjective",
-                "Adverb",
-                "Conjunction"
+                "Preposition"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Conjunction",
-            "hint": "Conjunctions can join negative alternatives. Is 'neither' part of a pair that introduces two negative possibilities?",
-            "explanation": "'Neither' is a correlative conjunction - it is always paired with 'nor' to join two negative alternatives. 'Neither...nor' is the negative equivalent of 'both...and'.",
-            "grammarRule": "Conjunctions",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "Check the words directly around it for clues. Who did the guide count?",
+            "explanation": "'Them' is a personal pronoun referring back to 'the tourists' — it functions as the object of the verb 'counted' instead of repeating the noun.",
+            "grammarRule": "Personal pronoun functioning as the object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "subject form",
+                "object form"
             ]
         }
     ]

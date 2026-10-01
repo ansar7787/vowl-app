@@ -1,577 +1,577 @@
 {
-    "gameType": "prepositionChoice",
-    "batchIndex": 3,
-    "levels": "21-30",
-    "quests": [
-        {
-            "id": "pc_l21_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "We drove ___ the small town without stopping.",
-            "options": [
-                "along",
-                "past",
-                "through",
-                "across"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "through",
-            "hint": "Use this for movement that enters one side of a place and exits the other.",
-            "explanation": "'Through' describes movement that goes in one side of a place and out the other.",
-            "grammarRule": "Prepositions of Movement",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l21_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "The dog ran ___ the busy street without looking.",
-            "options": [
-                "across",
-                "along",
-                "past",
-                "through"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "across",
-            "hint": "Use this for movement from one side to the other.",
-            "explanation": "'Across' describes movement from one side of something to the other, like a street or field.",
-            "grammarRule": "Prepositions of Movement",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l21_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "The hikers walked ___ the narrow trail for hours.",
-            "options": [
-                "along",
-                "above",
-                "across",
-                "into"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "along",
-            "hint": "Use this for movement that follows the length of a path.",
-            "explanation": "'Along' describes movement that follows the length of something, like a trail, road, or river.",
-            "grammarRule": "Prepositions of Movement",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l22_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "The runners went ___ the park twice before finishing.",
-            "options": [
-                "across",
-                "along",
-                "around",
-                "into"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "around",
-            "hint": "Use this for movement in a circular path.",
-            "explanation": "'Around' describes movement that circles or surrounds something.",
-            "grammarRule": "Prepositions of Movement",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l22_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "She walked right ___ me without saying hello.",
-            "options": [
-                "toward",
-                "past",
-                "across",
-                "along"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "past",
-            "hint": "Use this for movement that goes beside something and keeps going.",
-            "explanation": "'Past' describes movement that goes beside someone or something and continues on.",
-            "grammarRule": "Prepositions of Movement",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l22_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "The ship sailed slowly ___ the harbor.",
-            "options": [
-                "along",
-                "past",
-                "across",
-                "toward"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "toward",
-            "hint": "Use this to show the direction of movement, not the arrival.",
-            "explanation": "'Toward' shows the direction of movement, without necessarily reaching the destination.",
-            "grammarRule": "Prepositions of Movement",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l23_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "He got ___ the car and locked the door.",
-            "options": [
-                "from",
-                "out of",
-                "off",
-                "down"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "out of",
-            "hint": "Use this for leaving the inside of a vehicle.",
-            "explanation": "'Out of' describes movement from inside something to outside, like a car or building.",
-            "grammarRule": "Prepositions of Movement",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l23_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "Please get ___ the grass; it's freshly planted.",
-            "options": [
-                "from",
-                "out of",
-                "off",
-                "down"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "off",
-            "hint": "Use this for movement away from a surface.",
-            "explanation": "'Off' describes movement away from a surface, the opposite of 'onto'.",
-            "grammarRule": "Prepositions of Movement",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l23_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "The climbers slowly made their way ___ the mountain.",
-            "options": [
-                "up",
-                "past",
-                "into",
-                "through"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "up",
-            "hint": "Use this for movement toward a higher point.",
-            "explanation": "'Up' describes movement toward a higher position, the opposite of 'down'.",
-            "grammarRule": "Prepositions of Movement",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l24_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "I have lived in this city ___ 2015.",
-            "options": [
-                "since",
-                "from",
-                "during",
-                "for"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "since",
-            "hint": "Use this with a fixed starting point, not a length of time.",
-            "explanation": "'Since' is followed by a specific point in time when something started: since 2015, since Monday.",
-            "grammarRule": "Prepositions of Time",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l24_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "She has worked at this company ___ six years.",
-            "options": [
-                "since",
-                "during",
-                "for",
-                "from"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "for",
-            "hint": "Use this with a length of time, not a starting point.",
-            "explanation": "'For' is followed by a duration or length of time: for six years, for two weeks.",
-            "grammarRule": "Prepositions of Time",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l24_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "The shop is closed ___ the holidays.",
-            "options": [
-                "within",
-                "during",
-                "for",
-                "since"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "during",
-            "hint": "Use this with a specific event or period, not a length of time.",
-            "explanation": "'During' is followed by a specific event or period: during the holidays, during the meeting.",
-            "grammarRule": "Prepositions of Time",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l25_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "Our picnic plans depend ___ the weather.",
-            "options": [
-                "at",
-                "from",
-                "of",
-                "on"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "on",
-            "hint": "Use this to show something relies on another factor.",
-            "explanation": "'Depend on' shows that one thing relies on or is decided by another.",
-            "grammarRule": "Dependent Prepositions: Verbs",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l25_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "I completely agree ___ your opinion on this matter.",
-            "options": [
-                "with",
-                "for",
-                "to",
-                "of"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "with",
-            "hint": "Use this when you share someone's opinion.",
-            "explanation": "'Agree with' is used when you share the same opinion as a person or idea.",
-            "grammarRule": "Dependent Prepositions: Verbs",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l25_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "She truly believes ___ hard work and honesty.",
-            "options": [
-                "on",
-                "in",
-                "at",
-                "of"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "in",
-            "hint": "Use this to show trust or confidence in something.",
-            "explanation": "'Believe in' shows trust or confidence in the value of something.",
-            "grammarRule": "Dependent Prepositions: Verbs",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l26_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "He never stops complaining ___ the noisy neighbors.",
-            "options": [
-                "about",
-                "of",
-                "for",
-                "from"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "about",
-            "hint": "Use this after this verb to introduce the topic of a grumble.",
-            "explanation": "'Complain about' introduces the topic or cause of a complaint.",
-            "grammarRule": "Dependent Prepositions: Verbs",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l26_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "I want to thank you ___ your generous help.",
-            "options": [
-                "to",
-                "for",
-                "of",
-                "about"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "for",
-            "hint": "Use this to introduce the reason for gratitude.",
-            "explanation": "'Thank someone for' introduces the specific reason you are grateful.",
-            "grammarRule": "Dependent Prepositions: Verbs",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l26_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "They congratulated her ___ passing the bar exam.",
-            "options": [
-                "at",
-                "about",
-                "on",
-                "for"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "on",
-            "hint": "Use this to introduce the achievement someone is praised for.",
-            "explanation": "'Congratulate someone on' introduces the specific achievement being celebrated.",
-            "grammarRule": "Dependent Prepositions: Verbs",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l27_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "My grandmother is very fond ___ old black-and-white films.",
-            "options": [
-                "for",
-                "about",
-                "with",
-                "of"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "of",
-            "hint": "Use this to describe a gentle liking for something.",
-            "explanation": "'Fond of' describes a gentle, lasting liking for someone or something.",
-            "grammarRule": "Dependent Prepositions: Adjectives",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l27_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "The coach was pleased ___ the team's effort.",
-            "options": [
-                "about",
-                "of",
-                "with",
-                "for"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "with",
-            "hint": "Use this to show satisfaction with a person or their performance.",
-            "explanation": "'Pleased with' shows satisfaction, often about a person's work or effort.",
-            "grammarRule": "Dependent Prepositions: Adjectives",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l27_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "He has always been keen ___ photography.",
-            "options": [
-                "at",
-                "with",
-                "on",
-                "for"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "on",
-            "hint": "Use this to describe strong personal interest in a hobby.",
-            "explanation": "'Keen on' describes strong enthusiasm or interest in an activity.",
-            "grammarRule": "Dependent Prepositions: Adjectives",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l28_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "We were all surprised ___ the sudden news.",
-            "options": [
-                "at",
-                "with",
-                "about",
-                "of"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "at",
-            "hint": "Use this for a strong reaction to something unexpected.",
-            "explanation": "'Surprised at' introduces the unexpected thing causing the reaction.",
-            "grammarRule": "Dependent Prepositions: Adjectives",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l28_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "The students were curious ___ the old abandoned building.",
-            "options": [
-                "for",
-                "at",
-                "of",
-                "about"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "about",
-            "hint": "Use this to show interest in learning more about something.",
-            "explanation": "'Curious about' shows a wish to know more about a topic.",
-            "grammarRule": "Dependent Prepositions: Adjectives",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l28_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "Is everyone ready ___ the exam tomorrow?",
-            "options": [
-                "at",
-                "for",
-                "of",
-                "to"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "for",
-            "hint": "Use this to describe being prepared for a future event.",
-            "explanation": "'Ready for' shows preparation for something coming up.",
-            "grammarRule": "Dependent Prepositions: Adjectives",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l29_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "After a year here, I'm finally used ___ the cold winters.",
-            "options": [
-                "of",
-                "for",
-                "with",
-                "to"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "to",
-            "hint": "Use this to describe something that no longer feels strange.",
-            "explanation": "'Used to' describes something familiar because of repeated experience.",
-            "grammarRule": "Dependent Prepositions: Adjectives",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l29_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "Our team finished the project two days ___ schedule.",
-            "options": [
-                "before of",
-                "in front",
-                "over",
-                "ahead of"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "ahead of",
-            "hint": "Use this fixed phrase to mean earlier than planned.",
-            "explanation": "'Ahead of schedule' is a fixed phrase meaning earlier than the planned time.",
-            "grammarRule": "Prepositions of Time",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l29_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "The small cafe was crowded ___ tourists all summer.",
-            "options": [
-                "from",
-                "by",
-                "of",
-                "with"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "with",
-            "hint": "Use this to describe a place full of people.",
-            "explanation": "'Crowded with' describes a place filled with a large number of people or things.",
-            "grammarRule": "Dependent Prepositions: Adjectives",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l30_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "We arrived ___ Tokyo after a long flight.",
-            "options": [
-                "in",
-                "on",
-                "to",
-                "at"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "in",
-            "hint": "Use this for larger places like cities and countries.",
-            "explanation": "'Arrive in' is used for cities and countries; 'arrive at' is used for smaller, specific points.",
-            "grammarRule": "Dependent Prepositions: Verbs",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l30_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "The train finally arrived ___ platform nine.",
-            "options": [
-                "to",
-                "on",
-                "at",
-                "in"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "at",
-            "hint": "Use this for a specific, smaller point.",
-            "explanation": "'Arrive at' is used for a specific point, such as a platform, gate, or building.",
-            "grammarRule": "Dependent Prepositions: Verbs",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l30_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "They are leaving ___ Rome early tomorrow morning.",
-            "options": [
-                "at",
-                "toward",
-                "for",
-                "to"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "for",
-            "hint": "Use this to name the destination of a departure.",
-            "explanation": "'Leave for' introduces the destination someone is setting off toward.",
-            "grammarRule": "Dependent Prepositions: Verbs",
-            "prepositionCategory": "Time/Place"
-        }
-    ]
+  "gameType": "prepositionChoice",
+  "batchIndex": 3,
+  "levels": "21-30",
+  "quests": [
+    {
+      "id": "pc_l21_q1",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "The meeting starts ___ 9:30 sharp.",
+      "options": [
+        "on",
+        "at",
+        "in",
+        "by"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "at",
+      "hint": "This word pairs with an exact point on the clock.",
+      "explanation": "'At' is used for precise clock times, treating them as a single fixed point.",
+      "grammarRule": "Prepositions of Time",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l21_q2",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "Her flight leaves ___ Thursday.",
+      "options": [
+        "on",
+        "at",
+        "in",
+        "after"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "on",
+      "hint": "Days of the week take a different word than clock times do.",
+      "explanation": "'On' is used with specific days, such as Thursday, unlike 'at', which is reserved for clock times.",
+      "grammarRule": "Prepositions of Time",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l21_q3",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "The festival takes place ___ July.",
+      "options": [
+        "on",
+        "at",
+        "in",
+        "since"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "in",
+      "hint": "Months and years need a broader word than days or exact times.",
+      "explanation": "'In' is used for longer periods like months and years, since a whole month can't be treated as one fixed point.",
+      "grammarRule": "Prepositions of Time",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l22_q1",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "Arrive ___ the doors open to get a good seat.",
+      "options": [
+        "until",
+        "by",
+        "during",
+        "before"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "before",
+      "hint": "Getting there needs to happen earlier than that event, not at the same time.",
+      "explanation": "'Before' places one event earlier in time than another — arriving must happen ahead of the doors opening.",
+      "grammarRule": "Prepositions of Time",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l22_q2",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "We'll grab coffee ___ the workshop ends.",
+      "options": [
+        "after",
+        "before",
+        "since",
+        "during"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "after",
+      "hint": "This is the opposite direction in time from the previous example.",
+      "explanation": "'After' places one event later than another — the coffee happens once the workshop is finished.",
+      "grammarRule": "Prepositions of Time",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l22_q3",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "Submit the form ___ Friday to avoid a late fee.",
+      "options": [
+        "after",
+        "before",
+        "until",
+        "since"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "before",
+      "hint": "The deadline is a day that hasn't arrived yet, not an ongoing state.",
+      "explanation": "'Before' shows the form must be submitted earlier than Friday, matching the same logic taught with the earlier example.",
+      "grammarRule": "Prepositions of Time",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l23_q1",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "She fell asleep ___ the movie.",
+      "options": [
+        "during",
+        "for",
+        "while",
+        "at"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "during",
+      "hint": "Name the event first, then this word slots in front of it, not a length of time.",
+      "explanation": "'During' is followed by a noun naming an event or period, like a movie. 'While' would need a full clause instead of a noun, which doesn't fit here.",
+      "grammarRule": "Prepositions of Time",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l23_q2",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "They've lived here ___ three years.",
+      "options": [
+        "since",
+        "for",
+        "during",
+        "in"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "for",
+      "hint": "This word is followed by a length of time, not a named event.",
+      "explanation": "'For' pairs with a quantity of time, such as three years, showing how long something has lasted.",
+      "grammarRule": "Prepositions of Time",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l23_q3",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "The store closes early ___ public holidays.",
+      "options": [
+        "for",
+        "since",
+        "at",
+        "during"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "during",
+      "hint": "Public holidays are treated as a named period here, not a number of days.",
+      "explanation": "'During' fits because 'public holidays' names a period rather than stating its length — 'for' would need a duration like 'for two days' instead.",
+      "grammarRule": "Contrast: during vs for",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l24_q1",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "I haven't seen him ___ last spring.",
+      "options": [
+        "for",
+        "during",
+        "since",
+        "from"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "since",
+      "hint": "Last spring is a starting point in the past, not a length of time.",
+      "explanation": "'Since' marks the starting point of a period that continues to now — last spring is when the gap began.",
+      "grammarRule": "Contrast: since vs for",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l24_q2",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "We've been waiting ___ almost an hour.",
+      "options": [
+        "for",
+        "since",
+        "during",
+        "within"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "for",
+      "hint": "An hour is a length of time, not a fixed starting point.",
+      "explanation": "'For' is used with a length of time, such as almost an hour, showing the duration of the wait.",
+      "grammarRule": "Contrast: since vs for",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l24_q3",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "She has worked at the hospital ___ 2015.",
+      "options": [
+        "for",
+        "from",
+        "within",
+        "since"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "since",
+      "hint": "A specific year works as a starting point here, just like 'last spring' earlier.",
+      "explanation": "'Since' fits because 2015 is treated as the starting point of an ongoing situation, matching the pattern from the first example in this level.",
+      "grammarRule": "Contrast: since vs for",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l25_q1",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "Please send the report ___ Friday, at the latest.",
+      "options": [
+        "by",
+        "until",
+        "before",
+        "for"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "by",
+      "hint": "Something needs to be finished no later than this point, not kept going up to it.",
+      "explanation": "'By' marks a deadline for completing an action — the phrase 'at the latest' is a strong clue that a single finished action is expected, not a continuous state.",
+      "grammarRule": "Contrast: by vs until",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l25_q2",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "The office stays open ___ 8 PM, so you can drop by anytime before then.",
+      "options": [
+        "by",
+        "before",
+        "since",
+        "until"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "until",
+      "hint": "This describes a state that continues right up to that time, not a task finished by then.",
+      "explanation": "'Until' shows a situation continuing up to a point in time — the office remains open the whole time, not just completed by 8 PM.",
+      "grammarRule": "Contrast: by vs until",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l25_q3",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "I'll be stuck in meetings ___ 3 o'clock, so let's talk after that.",
+      "options": [
+        "by",
+        "until",
+        "at",
+        "during"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "until",
+      "hint": "The meetings don't end early — they run all the way up to that hour.",
+      "explanation": "'Until' fits because the meetings continue right up to 3 o'clock, the same continuous idea taught with the office hours example.",
+      "grammarRule": "Contrast: by vs until",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l26_q1",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "Refunds are processed ___ five business days.",
+      "options": [
+        "during",
+        "for",
+        "within",
+        "by"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "within",
+      "hint": "This sets an outer limit that something must happen inside of.",
+      "explanation": "'Within' shows an action will happen inside a given time limit, such as five business days, rather than describing its exact length.",
+      "grammarRule": "Prepositions of Time",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l26_q2",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "The baby cried nonstop ___ the flight, from takeoff to landing.",
+      "options": [
+        "throughout",
+        "for",
+        "since",
+        "over"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "throughout",
+      "hint": "The clue about takeoff and landing shows the whole span was affected, start to finish.",
+      "explanation": "'Throughout' emphasizes that something continued across the entire period without a break, matching the 'takeoff to landing' detail.",
+      "grammarRule": "Prepositions of Time",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l26_q3",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "You can cancel the order ___ 24 hours of purchase.",
+      "options": [
+        "during",
+        "by",
+        "until",
+        "within"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "within",
+      "hint": "Like the refund example, this sets a limit for when the action can still happen.",
+      "explanation": "'Within' fits again here, marking 24 hours as the outer boundary for canceling the order.",
+      "grammarRule": "Prepositions of Time",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l27_q1",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "The store is open ___ 9 to 5 on weekdays.",
+      "options": [
+        "from",
+        "since",
+        "at",
+        "in"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "from",
+      "hint": "This word marks the starting point of the range, paired later with 'to'.",
+      "explanation": "'From' marks the beginning of a time range, working together with 'to' to show the full span of opening hours.",
+      "grammarRule": "Prepositions of Time",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l27_q2",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "The conference is scheduled ___ March 3rd.",
+      "options": [
+        "in",
+        "at",
+        "on",
+        "during"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "on",
+      "hint": "A specific date works like a specific day of the week.",
+      "explanation": "'On' is used for specific dates, just as it is for days of the week like Thursday.",
+      "grammarRule": "Prepositions of Time",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l27_q3",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "The sale continues ___ Friday, so there's still time to grab a discount.",
+      "options": [
+        "to",
+        "until",
+        "by",
+        "before"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "until",
+      "hint": "The sale is still running now and will keep going up to that day.",
+      "explanation": "'Until' shows an ongoing situation lasting up to a point — 'continues until' is standard, while 'continues by' or 'continues to' aren't natural phrasings here.",
+      "grammarRule": "Prepositions of Time",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l28_q1",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "The invoice must be paid ___ the end of the month.",
+      "options": [
+        "before",
+        "by",
+        "until",
+        "at"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "by",
+      "hint": "Financial deadlines like this one usually pair with the same word used for the report earlier.",
+      "explanation": "'By' is the standard word for financial and administrative deadlines, marking the latest acceptable point for payment.",
+      "grammarRule": "Prepositions of Time",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l28_q2",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "Please silence your phones ___ the presentation.",
+      "options": [
+        "while",
+        "for",
+        "since",
+        "during"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "during",
+      "hint": "Name the event, then this word goes in front of it.",
+      "explanation": "'During' takes a noun naming an event, like a presentation — 'while' would require a full clause instead.",
+      "grammarRule": "Prepositions of Time",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l28_q3",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "Ticket prices have risen ___ last year.",
+      "options": [
+        "since",
+        "for",
+        "from",
+        "at"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "since",
+      "hint": "Last year marks the point when the rise began, not its length.",
+      "explanation": "'Since' marks the starting point of an ongoing change — prices have kept rising from that point until now.",
+      "grammarRule": "Prepositions of Time",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l29_q1",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "I've known her ___ we were in college together.",
+      "options": [
+        "for",
+        "during",
+        "since",
+        "by"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "since",
+      "hint": "No length of time is given — only a moment when the friendship began.",
+      "explanation": "'Since' fits because the sentence names a starting event, not a duration; 'for' would require a stated length, like 'for ten years'.",
+      "grammarRule": "Contrast: since vs for",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l29_q2",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "Keep the leftovers refrigerated ___ they're eaten.",
+      "options": [
+        "by",
+        "until",
+        "for",
+        "at"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "until",
+      "hint": "This describes a state lasting up to an event, not a single deadline moment.",
+      "explanation": "'Until' shows the leftovers should stay refrigerated continuously up to the moment they're eaten; 'by' doesn't fit smoothly before a clause like this.",
+      "grammarRule": "Contrast: by vs until",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l29_q3",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "He was in a coma ___ two weeks after the accident.",
+      "options": [
+        "during",
+        "within",
+        "at",
+        "for"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "for",
+      "hint": "A specific length of time is stated here, not a named period.",
+      "explanation": "'For' is correct because 'two weeks' is a duration; 'during' would need a defined period like 'during his recovery' rather than a number of weeks.",
+      "grammarRule": "Contrast: during vs for",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l30_q1",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "By the time we finally boarded, we'd been standing in line ___ over three hours.",
+      "options": [
+        "for",
+        "since",
+        "within",
+        "at"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "for",
+      "hint": "A stretch of time is named, not a starting moment or a named event.",
+      "explanation": "'For' fits because 'over three hours' is a duration, describing how long the standing in line lasted.",
+      "grammarRule": "Prepositions of Time",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l30_q2",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "The museum offers free admission ___ the first Sunday of every month.",
+      "options": [
+        "in",
+        "on",
+        "during",
+        "since"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "on",
+      "hint": "This is a specific day, even though it's described in relation to the month.",
+      "explanation": "'On' is used because 'the first Sunday' still names a specific day, the same rule that applies to any day of the week.",
+      "grammarRule": "Prepositions of Time",
+      "prepositionCategory": "Time"
+    },
+    {
+      "id": "pc_l30_q3",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "Renovations will continue ___ the new wing opens next spring.",
+      "options": [
+        "by",
+        "since",
+        "until",
+        "during"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "until",
+      "hint": "The work keeps going all the way up to that future event.",
+      "explanation": "'Until' shows the renovations continuing right up to the opening — 'by' would wrongly suggest the renovations are the thing being completed at that point, not an ongoing process.",
+      "grammarRule": "Prepositions of Time",
+      "prepositionCategory": "Time"
+    }
+  ]
 }

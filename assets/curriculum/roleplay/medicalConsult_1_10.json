@@ -1,637 +1,637 @@
 {
-    "gameType": "medicalConsult",
-    "batchIndex": 1,
-    "levels": "1-10",
-    "quests": [
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My head really hurts,\" the patient says.",
-            "symptoms": [
-                "Stomach Ache",
-                "Sore Throat",
-                "Toothache",
-                "Headache"
-            ],
-            "correctAnswer": "Headache",
-            "hint": "Listen for which body part the patient names.",
-            "explanation": "'My head really hurts' describes pain in the head, so the correct term is Headache.",
-            "id": "mc_l1_q1",
-            "medicalVocab": [
-                "Migraine",
-                "Tension",
-                "Cranium"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My stomach has been hurting since lunch,\" the patient tells the doctor.",
-            "symptoms": [
-                "Headache",
-                "Stomach Ache",
-                "Backache",
-                "Sore Throat"
-            ],
-            "correctAnswer": "Stomach Ache",
-            "hint": "The patient names the body part that hurts.",
-            "explanation": "Pain in the stomach is called a Stomach Ache.",
-            "id": "mc_l1_q2",
-            "medicalVocab": [
-                "Abdomen",
-                "Digestion",
-                "Nausea"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"It hurts when I swallow.\"",
-            "symptoms": [
-                "Sore Throat",
-                "Earache",
-                "Headache",
-                "Toothache"
-            ],
-            "correctAnswer": "Sore Throat",
-            "hint": "Think about what part of the body is used for swallowing.",
-            "explanation": "Pain when swallowing usually means a Sore Throat.",
-            "id": "mc_l1_q3",
-            "medicalVocab": [
-                "Pharynx",
-                "Inflammation",
-                "Swallow"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"I have a fever and I feel very hot.\"",
-            "symptoms": [
-                "Chills",
-                "Rash",
-                "Fever",
-                "Cough"
-            ],
-            "correctAnswer": "Fever",
-            "hint": "The patient describes their body temperature.",
-            "explanation": "Feeling hot with a high body temperature is called a Fever.",
-            "id": "mc_l2_q1",
-            "medicalVocab": [
-                "Temperature",
-                "Thermometer",
-                "Chills"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I keep coughing all day.\"",
-            "symptoms": [
-                "Sneezing",
-                "Cough",
-                "Sore Throat",
-                "Fever"
-            ],
-            "correctAnswer": "Cough",
-            "hint": "The patient repeats the exact action they are doing.",
-            "explanation": "Repeated coughing is simply called a Cough.",
-            "id": "mc_l2_q2",
-            "medicalVocab": [
-                "Lungs",
-                "Respiratory",
-                "Phlegm"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My back hurts when I bend down,\" the patient says.",
-            "symptoms": [
-                "Headache",
-                "Stomach Ache",
-                "Back Pain",
-                "Sore Throat"
-            ],
-            "correctAnswer": "Back Pain",
-            "hint": "Which part of the body does the patient mention?",
-            "explanation": "Pain in the back is called Back Pain.",
-            "id": "mc_l2_q3",
-            "medicalVocab": [
-                "Spine",
-                "Lumbar",
-                "Posture"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The nurse writes down: \"Patient's ear has been hurting since yesterday.\"",
-            "symptoms": [
-                "Toothache",
-                "Headache",
-                "Sore Throat",
-                "Earache"
-            ],
-            "correctAnswer": "Earache",
-            "hint": "The patient names the exact body part.",
-            "explanation": "Pain in the ear is called an Earache.",
-            "id": "mc_l3_q1",
-            "medicalVocab": [
-                "Canal",
-                "Infection",
-                "Hearing"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"This tooth is really painful,\" the patient says.",
-            "symptoms": [
-                "Toothache",
-                "Earache",
-                "Sore Throat",
-                "Headache"
-            ],
-            "correctAnswer": "Toothache",
-            "hint": "The patient points to a specific tooth.",
-            "explanation": "Pain in a tooth is called a Toothache.",
-            "id": "mc_l3_q2",
-            "medicalVocab": [
-                "Dental",
-                "Cavity",
-                "Gums"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"I feel dizzy when I stand up.\"",
-            "symptoms": [
-                "Fever",
-                "Dizziness",
-                "Cough",
-                "Rash"
-            ],
-            "correctAnswer": "Dizziness",
-            "hint": "The patient describes how their head feels when they move.",
-            "explanation": "Feeling unsteady or like the room is spinning is called Dizziness.",
-            "id": "mc_l3_q3",
-            "medicalVocab": [
-                "Vertigo",
-                "Balance",
-                "Lightheaded"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I have red spots all over my arm,\" the patient tells the nurse.",
-            "symptoms": [
-                "Rash",
-                "Bruise",
-                "Fever",
-                "Swelling"
-            ],
-            "correctAnswer": "Rash",
-            "hint": "The patient describes what they see on their skin.",
-            "explanation": "Red spots or marks on the skin are called a Rash.",
-            "id": "mc_l4_q1",
-            "medicalVocab": [
-                "Dermatitis",
-                "Skin",
-                "Itch"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"My ankle is puffy and twice its normal size.\"",
-            "symptoms": [
-                "Rash",
-                "Bruise",
-                "Cramp",
-                "Swelling"
-            ],
-            "correctAnswer": "Swelling",
-            "hint": "The patient describes the size of the body part.",
-            "explanation": "A body part that looks bigger than normal is called Swelling.",
-            "id": "mc_l4_q2",
-            "medicalVocab": [
-                "Edema",
-                "Inflammation",
-                "Puffy"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I feel sick to my stomach and might throw up.\"",
-            "symptoms": [
-                "Fever",
-                "Cough",
-                "Nausea",
-                "Rash"
-            ],
-            "correctAnswer": "Nausea",
-            "hint": "The patient describes a feeling in their stomach before vomiting.",
-            "explanation": "Feeling like you might vomit is called Nausea.",
-            "id": "mc_l4_q3",
-            "medicalVocab": [
-                "Vomit",
-                "Stomach",
-                "Queasy"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My nose won't stop running,\" the patient says.",
-            "symptoms": [
-                "Sore Throat",
-                "Cough",
-                "Earache",
-                "Runny Nose"
-            ],
-            "correctAnswer": "Runny Nose",
-            "hint": "The patient describes liquid coming from their nose.",
-            "explanation": "A nose that keeps producing liquid is called a Runny Nose.",
-            "id": "mc_l5_q1",
-            "medicalVocab": [
-                "Congestion",
-                "Sinus",
-                "Mucus"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I'm so tired, even after a full night's sleep,\" the patient explains.",
-            "symptoms": [
-                "Fever",
-                "Dizziness",
-                "Fatigue",
-                "Rash"
-            ],
-            "correctAnswer": "Fatigue",
-            "hint": "The patient describes their energy level.",
-            "explanation": "Feeling very tired with low energy is called Fatigue.",
-            "id": "mc_l5_q2",
-            "medicalVocab": [
-                "Exhaustion",
-                "Tiredness",
-                "Lethargy"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"I fell and now my knee is black and blue.\"",
-            "symptoms": [
-                "Bruise",
-                "Rash",
-                "Swelling",
-                "Cut"
-            ],
-            "correctAnswer": "Bruise",
-            "hint": "The patient describes the color of their skin after an injury.",
-            "explanation": "A dark mark on the skin caused by an injury is called a Bruise.",
-            "id": "mc_l5_q3",
-            "medicalVocab": [
-                "Contusion",
-                "Discoloration",
-                "Impact"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I cut my finger on a knife.\"",
-            "symptoms": [
-                "Bruise",
-                "Cut",
-                "Burn",
-                "Rash"
-            ],
-            "correctAnswer": "Cut",
-            "hint": "The patient explains what caused the injury.",
-            "explanation": "A wound made by something sharp is called a Cut.",
-            "id": "mc_l6_q1",
-            "medicalVocab": [
-                "Laceration",
-                "Wound",
-                "Bleeding"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I touched the hot pan and now my hand hurts,\" the patient tells the doctor.",
-            "symptoms": [
-                "Cut",
-                "Rash",
-                "Burn",
-                "Bruise"
-            ],
-            "correctAnswer": "Burn",
-            "hint": "The patient explains what caused the injury.",
-            "explanation": "An injury caused by heat is called a Burn.",
-            "id": "mc_l6_q2",
-            "medicalVocab": [
-                "Blister",
-                "Scald",
-                "Heat"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"My leg cramped up in the middle of the night.\"",
-            "symptoms": [
-                "Cramp",
-                "Swelling",
-                "Bruise",
-                "Rash"
-            ],
-            "correctAnswer": "Cramp",
-            "hint": "The patient describes a sudden tightening feeling in a muscle.",
-            "explanation": "A sudden, tight muscle pain is called a Cramp.",
-            "id": "mc_l6_q3",
-            "medicalVocab": [
-                "Spasm",
-                "Muscle",
-                "Contraction"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I can't stop sneezing today,\" the patient says.",
-            "symptoms": [
-                "Coughing",
-                "Sneezing",
-                "Fever",
-                "Rash"
-            ],
-            "correctAnswer": "Sneezing",
-            "hint": "The patient repeats the exact action.",
-            "explanation": "Repeated sneezing is simply called Sneezing.",
-            "id": "mc_l7_q1",
-            "medicalVocab": [
-                "Allergy",
-                "Nasal",
-                "Reflex"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The nurse writes down: \"Patient reports red, itchy eyes.\"",
-            "symptoms": [
-                "Sore Throat",
-                "Rash",
-                "Earache",
-                "Itchy Eyes"
-            ],
-            "correctAnswer": "Itchy Eyes",
-            "hint": "The patient names the body part and how it feels.",
-            "explanation": "Eyes that are red and want to be scratched are described as Itchy Eyes.",
-            "id": "mc_l7_q2",
-            "medicalVocab": [
-                "Irritation",
-                "Redness",
-                "Allergy"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I have no appetite at all today,\" the patient says.",
-            "symptoms": [
-                "Nausea",
-                "Fatigue",
-                "Loss of Appetite",
-                "Fever"
-            ],
-            "correctAnswer": "Loss of Appetite",
-            "hint": "The patient describes not wanting to eat.",
-            "explanation": "Not wanting to eat is called Loss of Appetite.",
-            "id": "mc_l7_q3",
-            "medicalVocab": [
-                "Anorexia",
-                "Digestion",
-                "Fasting"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"My shoulder hurts when I lift my arm.\"",
-            "symptoms": [
-                "Back Pain",
-                "Headache",
-                "Knee Pain",
-                "Shoulder Pain"
-            ],
-            "correctAnswer": "Shoulder Pain",
-            "hint": "The patient names the joint that hurts.",
-            "explanation": "Pain in the shoulder is called Shoulder Pain.",
-            "id": "mc_l8_q1",
-            "medicalVocab": [
-                "Joint",
-                "Rotator Cuff",
-                "Mobility"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"My knee hurts every time I climb stairs.\"",
-            "symptoms": [
-                "Knee Pain",
-                "Shoulder Pain",
-                "Back Pain",
-                "Ankle Pain"
-            ],
-            "correctAnswer": "Knee Pain",
-            "hint": "The patient names the joint that hurts.",
-            "explanation": "Pain in the knee is called Knee Pain.",
-            "id": "mc_l8_q2",
-            "medicalVocab": [
-                "Joint",
-                "Ligament",
-                "Cartilage"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I have chills and I can't get warm,\" the patient tells the nurse.",
-            "symptoms": [
-                "Fever",
-                "Chills",
-                "Rash",
-                "Cough"
-            ],
-            "correctAnswer": "Chills",
-            "hint": "The patient describes feeling cold, not hot.",
-            "explanation": "Feeling cold and shivery, often with illness, is called Chills.",
-            "id": "mc_l8_q3",
-            "medicalVocab": [
-                "Shivering",
-                "Cold",
-                "Fever"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"I feel a sharp pain in my chest when I breathe deeply.\"",
-            "symptoms": [
-                "Back Pain",
-                "Stomach Ache",
-                "Shoulder Pain",
-                "Chest Pain"
-            ],
-            "correctAnswer": "Chest Pain",
-            "hint": "The patient names a specific area on their upper body.",
-            "explanation": "Pain in the chest area is called Chest Pain.",
-            "id": "mc_l9_q1",
-            "medicalVocab": [
-                "Heart",
-                "Lungs",
-                "Angina"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I can't hear very well out of my left ear,\" the patient says.",
-            "symptoms": [
-                "Earache",
-                "Hearing Loss",
-                "Dizziness",
-                "Headache"
-            ],
-            "correctAnswer": "Hearing Loss",
-            "hint": "The patient describes a change in a sense, not pain.",
-            "explanation": "Difficulty hearing is called Hearing Loss.",
-            "id": "mc_l9_q2",
-            "medicalVocab": [
-                "Deafness",
-                "Ear",
-                "Audiology"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"Everything looks blurry today,\" the patient says.",
-            "symptoms": [
-                "Dizziness",
-                "Headache",
-                "Blurred Vision",
-                "Itchy Eyes"
-            ],
-            "correctAnswer": "Blurred Vision",
-            "hint": "The patient describes a change in how things look.",
-            "explanation": "Difficulty seeing clearly is called Blurred Vision.",
-            "id": "mc_l9_q3",
-            "medicalVocab": [
-                "Sight",
-                "Focus",
-                "Optics"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"My throat feels scratchy and it hurts to swallow.\"",
-            "symptoms": [
-                "Sore Throat",
-                "Cough",
-                "Earache",
-                "Toothache"
-            ],
-            "correctAnswer": "Sore Throat",
-            "hint": "Think about what happens when we swallow food.",
-            "explanation": "A scratchy feeling and pain when swallowing describes a Sore Throat.",
-            "id": "mc_l10_q1",
-            "medicalVocab": [
-                "Pharynx",
-                "Inflammation",
-                "Swallow"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I woke up with my whole body aching.\"",
-            "symptoms": [
-                "Headache",
-                "Fatigue",
-                "Fever",
-                "Body Aches"
-            ],
-            "correctAnswer": "Body Aches",
-            "hint": "The patient says the pain is not in just one place.",
-            "explanation": "Pain across the whole body, not just one area, is called Body Aches.",
-            "id": "mc_l10_q2",
-            "medicalVocab": [
-                "Muscle",
-                "Joint",
-                "Systemic"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I feel short of breath after walking up one flight of stairs,\" the patient tells the doctor.",
-            "symptoms": [
-                "Chest Pain",
-                "Shortness of Breath",
-                "Fatigue",
-                "Cough"
-            ],
-            "correctAnswer": "Shortness of Breath",
-            "hint": "The patient describes difficulty with breathing, not pain.",
-            "explanation": "Difficulty breathing normally is called Shortness of Breath.",
-            "id": "mc_l10_q3",
-            "medicalVocab": [
-                "Dyspnea",
-                "Lungs",
-                "Oxygen"
-            ]
-        }
-    ]
+  "gameType": "medicalConsult",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "instruction": "Select the symptom that matches what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"I've got a really bad headache,\" the patient tells the doctor.",
+      "symptoms": [
+        "Headache",
+        "Stomach Ache",
+        "Constipation",
+        "Back Pain"
+      ],
+      "correctAnswer": "Headache",
+      "hint": "Listen for which body part or sensation the patient names first.",
+      "explanation": "“I've got a really bad headache” describes Headache: pain or pressure felt in the head. That is different from Constipation, which is infrequent or difficult bowel movements.",
+      "id": "mc_l1_q1",
+      "medicalVocab": [
+        "Headache",
+        "Migraine",
+        "Tension"
+      ]
+    },
+    {
+      "instruction": "Select the symptom that matches what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"My throat hurts a lot,\" the patient says.",
+      "symptoms": [
+        "Acid Reflux",
+        "Sore Throat",
+        "Numbness",
+        "Tingling"
+      ],
+      "correctAnswer": "Sore Throat",
+      "hint": "Notice the specific body part or sensation in the patient's own words.",
+      "explanation": "“My throat hurts a lot” describes Sore Throat: pain, scratchiness or rawness in the throat, often worse when swallowing. That is different from Tingling, which is a pins-and-needles or prickling sensation.",
+      "id": "mc_l1_q2",
+      "medicalVocab": [
+        "Sore Throat",
+        "Pharynx",
+        "Swallowing"
+      ]
+    },
+    {
+      "instruction": "Select the symptom that matches what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"I can't stop coughing,\" the patient says.",
+      "symptoms": [
+        "Fatigue",
+        "Swollen Ankles",
+        "Cough",
+        "Muscle Soreness"
+      ],
+      "correctAnswer": "Cough",
+      "hint": "What is the patient's main complaint in this sentence?",
+      "explanation": "“I can't stop coughing” describes Cough: the repeated reflex of forcing air out of the airways. That is different from Muscle Soreness, which is aching or tenderness in the muscles, often after unusual exertion.",
+      "id": "mc_l1_q3",
+      "medicalVocab": [
+        "Cough",
+        "Mucus",
+        "Phlegm"
+      ]
+    },
+    {
+      "instruction": "Choose the symptom the patient is describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"I feel really hot and shivery,\" the patient says.",
+      "symptoms": [
+        "Loss of Appetite",
+        "Joint Pain",
+        "Fever",
+        "Ringing in the Ears"
+      ],
+      "correctAnswer": "Fever",
+      "hint": "What single thing is the patient complaining about here?",
+      "explanation": "“I feel really hot and shivery” describes Fever: a raised body temperature, often with chills or sweating. That is different from Ringing in the Ears, which is hearing a sound such as ringing or buzzing with no outside source.",
+      "id": "mc_l2_q1",
+      "medicalVocab": [
+        "Fever",
+        "Temperature",
+        "Chills"
+      ]
+    },
+    {
+      "instruction": "Choose the symptom the patient is describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"My stomach has really been hurting,\" the patient tells the doctor.",
+      "symptoms": [
+        "Stomach Ache",
+        "Blurred Vision",
+        "Cough",
+        "Loss of Appetite"
+      ],
+      "correctAnswer": "Stomach Ache",
+      "hint": "Match the patient's everyday words to the symptom they describe.",
+      "explanation": "“My stomach has really been hurting” describes Stomach Ache: pain or cramping felt in the belly area. That is different from Cough, which is the repeated reflex of forcing air out of the airways.",
+      "id": "mc_l2_q2",
+      "medicalVocab": [
+        "Stomach Ache",
+        "Abdomen",
+        "Digestion"
+      ]
+    },
+    {
+      "instruction": "Choose the symptom the patient is describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"I feel like I'm going to be sick,\" the patient says.",
+      "symptoms": [
+        "Nausea",
+        "Acid Reflux",
+        "Cramp",
+        "Palpitations"
+      ],
+      "correctAnswer": "Nausea",
+      "hint": "Which part of the body, or which feeling, is the patient pointing to?",
+      "explanation": "“I feel like I'm going to be sick” describes Nausea: the queasy feeling of being about to vomit. That is different from Acid Reflux, which is a burning feeling as stomach contents rise toward the chest or throat.",
+      "id": "mc_l2_q3",
+      "medicalVocab": [
+        "Nausea",
+        "Queasy",
+        "Vomiting"
+      ]
+    },
+    {
+      "instruction": "Identify the symptom that fits the patient's words.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"My lower back is killing me,\" the patient says.",
+      "symptoms": [
+        "Back Pain",
+        "Swollen Glands",
+        "Earache",
+        "Muscle Soreness"
+      ],
+      "correctAnswer": "Back Pain",
+      "hint": "Think about which symptom a person would describe this way.",
+      "explanation": "“My lower back is killing me” describes Back Pain: pain felt along the spine or the muscles beside it. That is different from Muscle Soreness, which is aching or tenderness in the muscles, often after unusual exertion.",
+      "id": "mc_l3_q1",
+      "medicalVocab": [
+        "Back Pain",
+        "Lower Back",
+        "Spine"
+      ]
+    },
+    {
+      "instruction": "Identify the symptom that fits the patient's words.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"My knees have been aching,\" the patient says.",
+      "symptoms": [
+        "Numbness",
+        "Runny Nose",
+        "Sinus Congestion",
+        "Joint Pain"
+      ],
+      "correctAnswer": "Joint Pain",
+      "hint": "Think about what the patient is telling you hurts or feels wrong.",
+      "explanation": "“My knees have been aching” describes Joint Pain: aching or tenderness in a joint such as the knee, hip or finger. That is different from Sinus Congestion, which is a blocked, stuffed-up feeling in the nose and face.",
+      "id": "mc_l3_q2",
+      "medicalVocab": [
+        "Joint Pain",
+        "Joint Stiffness",
+        "Swelling"
+      ]
+    },
+    {
+      "instruction": "Identify the symptom that fits the patient's words.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"My muscles feel so sore,\" the patient tells the doctor.",
+      "symptoms": [
+        "Anxiety",
+        "Tingling",
+        "Chest Pain",
+        "Muscle Soreness"
+      ],
+      "correctAnswer": "Muscle Soreness",
+      "hint": "Start with the patient's key word, then check which symptom matches it best.",
+      "explanation": "“My muscles feel so sore” describes Muscle Soreness: aching or tenderness in the muscles, often after unusual exertion. That is different from Chest Pain, which is pain, pressure or tightness felt in the chest.",
+      "id": "mc_l3_q3",
+      "medicalVocab": [
+        "Muscle Soreness",
+        "Exertion",
+        "Tenderness"
+      ]
+    },
+    {
+      "instruction": "Select the symptom that matches what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"I feel exhausted,\" the patient says.",
+      "symptoms": [
+        "Swollen Glands",
+        "Fatigue",
+        "Earache",
+        "Skin Rash"
+      ],
+      "correctAnswer": "Fatigue",
+      "hint": "Listen for which body part or sensation the patient names first.",
+      "explanation": "“I feel exhausted” describes Fatigue: a deep tiredness or lack of energy that rest does not fix. That is different from Earache, which is pain felt inside or around the ear.",
+      "id": "mc_l4_q1",
+      "medicalVocab": [
+        "Fatigue",
+        "Exhaustion",
+        "Energy"
+      ]
+    },
+    {
+      "instruction": "Select the symptom that matches what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"I haven't been able to sleep at all this week,\" the patient says.",
+      "symptoms": [
+        "Ringing in the Ears",
+        "Blurred Vision",
+        "Insomnia",
+        "Runny Nose"
+      ],
+      "correctAnswer": "Insomnia",
+      "hint": "Notice the specific body part or sensation in the patient's own words.",
+      "explanation": "“I haven't been able to sleep at all this week” describes Insomnia: trouble falling asleep or staying asleep. That is different from Ringing in the Ears, which is hearing a sound such as ringing or buzzing with no outside source.",
+      "id": "mc_l4_q2",
+      "medicalVocab": [
+        "Insomnia",
+        "Sleep",
+        "Restlessness"
+      ]
+    },
+    {
+      "instruction": "Select the symptom that matches what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"I feel dizzy sometimes,\" the patient says.",
+      "symptoms": [
+        "Numbness",
+        "Cramp",
+        "Muscle Soreness",
+        "Dizziness"
+      ],
+      "correctAnswer": "Dizziness",
+      "hint": "What is the patient's main complaint in this sentence?",
+      "explanation": "“I feel dizzy sometimes” describes Dizziness: feeling lightheaded, unsteady or as if the room is spinning. That is different from Muscle Soreness, which is aching or tenderness in the muscles, often after unusual exertion.",
+      "id": "mc_l4_q3",
+      "medicalVocab": [
+        "Dizziness",
+        "Lightheadedness",
+        "Balance"
+      ]
+    },
+    {
+      "instruction": "Choose the symptom the patient is describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"I feel short of breath a lot lately,\" the patient tells the doctor.",
+      "symptoms": [
+        "Swollen Glands",
+        "Headache",
+        "Shortness of Breath",
+        "Anxiety"
+      ],
+      "correctAnswer": "Shortness of Breath",
+      "hint": "What single thing is the patient complaining about here?",
+      "explanation": "“I feel short of breath a lot lately” describes Shortness of Breath: feeling unable to get enough air. That is different from Swollen Glands, which is tender or enlarged lumps, often in the neck or under the jaw.",
+      "id": "mc_l5_q1",
+      "medicalVocab": [
+        "Shortness of Breath",
+        "Breathlessness",
+        "Exertion"
+      ]
+    },
+    {
+      "instruction": "Choose the symptom the patient is describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"I have a pain in my chest,\" the patient says.",
+      "symptoms": [
+        "Chest Pain",
+        "Weakness",
+        "Headache",
+        "Dizziness"
+      ],
+      "correctAnswer": "Chest Pain",
+      "hint": "Match the patient's everyday words to the symptom they describe.",
+      "explanation": "“I have a pain in my chest” describes Chest Pain: pain, pressure or tightness felt in the chest. That is different from Dizziness, which is feeling lightheaded, unsteady or as if the room is spinning.",
+      "id": "mc_l5_q2",
+      "medicalVocab": [
+        "Chest Pain",
+        "Pressure",
+        "Breastbone"
+      ]
+    },
+    {
+      "instruction": "Choose the symptom the patient is describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"There's a rash on my arm,\" the patient says.",
+      "symptoms": [
+        "Itching",
+        "Muscle Soreness",
+        "Skin Rash",
+        "Ringing in the Ears"
+      ],
+      "correctAnswer": "Skin Rash",
+      "hint": "Which part of the body, or which feeling, is the patient pointing to?",
+      "explanation": "“There's a rash on my arm” describes Skin Rash: a visible change in the skin such as redness, bumps or patches. That is different from Itching, which is an irritating skin sensation that makes you want to scratch.",
+      "id": "mc_l5_q3",
+      "medicalVocab": [
+        "Skin Rash",
+        "Redness",
+        "Irritation"
+      ]
+    },
+    {
+      "instruction": "Identify the symptom that fits the patient's words.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"My skin has been so itchy,\" the patient says.",
+      "symptoms": [
+        "Itching",
+        "Loss of Appetite",
+        "Ringing in the Ears",
+        "Anxiety"
+      ],
+      "correctAnswer": "Itching",
+      "hint": "Think about which symptom a person would describe this way.",
+      "explanation": "“My skin has been so itchy” describes Itching: an irritating skin sensation that makes you want to scratch. That is different from Loss of Appetite, which is not feeling like eating.",
+      "id": "mc_l6_q1",
+      "medicalVocab": [
+        "Itching",
+        "Irritation",
+        "Sensation"
+      ]
+    },
+    {
+      "instruction": "Identify the symptom that fits the patient's words.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"My ear really hurts,\" the patient says.",
+      "symptoms": [
+        "Dizziness",
+        "Ringing in the Ears",
+        "Runny Nose",
+        "Earache"
+      ],
+      "correctAnswer": "Earache",
+      "hint": "Think about what the patient is telling you hurts or feels wrong.",
+      "explanation": "“My ear really hurts” describes Earache: pain felt inside or around the ear. That is different from Runny Nose, which is clear or watery fluid draining from the nose.",
+      "id": "mc_l6_q2",
+      "medicalVocab": [
+        "Earache",
+        "Ear Canal",
+        "Pressure"
+      ]
+    },
+    {
+      "instruction": "Identify the symptom that fits the patient's words.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"There's a ringing in my ear that won't go away,\" the patient says.",
+      "symptoms": [
+        "Ringing in the Ears",
+        "Anxiety",
+        "Loss of Appetite",
+        "Numbness"
+      ],
+      "correctAnswer": "Ringing in the Ears",
+      "hint": "Start with the patient's key word, then check which symptom matches it best.",
+      "explanation": "“There's a ringing in my ear that won't go away” describes Ringing in the Ears: hearing a sound such as ringing or buzzing with no outside source. That is different from Loss of Appetite, which is not feeling like eating.",
+      "id": "mc_l6_q3",
+      "medicalVocab": [
+        "Ringing in the Ears",
+        "Tinnitus",
+        "Pitch"
+      ]
+    },
+    {
+      "instruction": "Select the symptom that matches what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"My vision has gone blurry,\" the patient says.",
+      "symptoms": [
+        "Dizziness",
+        "Blurred Vision",
+        "Cough",
+        "Nausea"
+      ],
+      "correctAnswer": "Blurred Vision",
+      "hint": "Listen for which body part or sensation the patient names first.",
+      "explanation": "“My vision has gone blurry” describes Blurred Vision: seeing things out of focus or unclear. That is different from Nausea, which is the queasy feeling of being about to vomit.",
+      "id": "mc_l7_q1",
+      "medicalVocab": [
+        "Blurred Vision",
+        "Focus",
+        "Eye Strain"
+      ]
+    },
+    {
+      "instruction": "Select the symptom that matches what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"My nose is completely blocked,\" the patient says.",
+      "symptoms": [
+        "Constipation",
+        "Swollen Ankles",
+        "Sinus Congestion",
+        "Palpitations"
+      ],
+      "correctAnswer": "Sinus Congestion",
+      "hint": "Notice the specific body part or sensation in the patient's own words.",
+      "explanation": "“My nose is completely blocked” describes Sinus Congestion: a blocked, stuffed-up feeling in the nose and face. That is different from Palpitations, which is being aware of a racing, pounding or fluttering heartbeat.",
+      "id": "mc_l7_q2",
+      "medicalVocab": [
+        "Sinus Congestion",
+        "Sinus Pressure",
+        "Blocked"
+      ]
+    },
+    {
+      "instruction": "Select the symptom that matches what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"My nose just won't stop dripping,\" the patient says.",
+      "symptoms": [
+        "Swollen Ankles",
+        "Runny Nose",
+        "Constipation",
+        "Swollen Glands"
+      ],
+      "correctAnswer": "Runny Nose",
+      "hint": "What is the patient's main complaint in this sentence?",
+      "explanation": "“My nose just won't stop dripping” describes Runny Nose: clear or watery fluid draining from the nose. That is different from Swollen Ankles, which is puffiness around the ankles from extra fluid.",
+      "id": "mc_l7_q3",
+      "medicalVocab": [
+        "Runny Nose",
+        "Nasal Discharge",
+        "Sneezing"
+      ]
+    },
+    {
+      "instruction": "Choose the symptom the patient is describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"The glands in my neck feel swollen,\" the patient says.",
+      "symptoms": [
+        "Muscle Soreness",
+        "Runny Nose",
+        "Acid Reflux",
+        "Swollen Glands"
+      ],
+      "correctAnswer": "Swollen Glands",
+      "hint": "What single thing is the patient complaining about here?",
+      "explanation": "“The glands in my neck feel swollen” describes Swollen Glands: tender or enlarged lumps, often in the neck or under the jaw. That is different from Acid Reflux, which is a burning feeling as stomach contents rise toward the chest or throat.",
+      "id": "mc_l8_q1",
+      "medicalVocab": [
+        "Swollen Glands",
+        "Lymph Nodes",
+        "Tenderness"
+      ]
+    },
+    {
+      "instruction": "Choose the symptom the patient is describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"I get this burning feeling in my chest,\" the patient says.",
+      "symptoms": [
+        "Runny Nose",
+        "Acid Reflux",
+        "Chest Pain",
+        "Diarrhea"
+      ],
+      "correctAnswer": "Acid Reflux",
+      "hint": "Match the patient's everyday words to the symptom they describe.",
+      "explanation": "“I get this burning feeling in my chest” describes Acid Reflux: a burning feeling as stomach contents rise toward the chest or throat. That is different from Chest Pain, which is pain, pressure or tightness felt in the chest.",
+      "id": "mc_l8_q2",
+      "medicalVocab": [
+        "Acid Reflux",
+        "Heartburn",
+        "Esophagus"
+      ]
+    },
+    {
+      "instruction": "Choose the symptom the patient is describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"My stomach feels so bloated,\" the patient says.",
+      "symptoms": [
+        "Earache",
+        "Insomnia",
+        "Bloating",
+        "Itching"
+      ],
+      "correctAnswer": "Bloating",
+      "hint": "Which part of the body, or which feeling, is the patient pointing to?",
+      "explanation": "“My stomach feels so bloated” describes Bloating: a tight, full, swollen feeling in the belly. That is different from Insomnia, which is trouble falling asleep or staying asleep.",
+      "id": "mc_l8_q3",
+      "medicalVocab": [
+        "Bloating",
+        "Fullness",
+        "Distension"
+      ]
+    },
+    {
+      "instruction": "Identify the symptom that fits the patient's words.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"I've had loose stools,\" the patient says.",
+      "symptoms": [
+        "Tingling",
+        "Diarrhea",
+        "Nausea",
+        "Itching"
+      ],
+      "correctAnswer": "Diarrhea",
+      "hint": "Think about which symptom a person would describe this way.",
+      "explanation": "“I've had loose stools” describes Diarrhea: frequent loose or watery stools. That is different from Tingling, which is a pins-and-needles or prickling sensation.",
+      "id": "mc_l9_q1",
+      "medicalVocab": [
+        "Diarrhea",
+        "Stools",
+        "Digestion"
+      ]
+    },
+    {
+      "instruction": "Identify the symptom that fits the patient's words.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"I haven't been able to go to the bathroom in days,\" the patient says.",
+      "symptoms": [
+        "Constipation",
+        "Low Mood",
+        "Numbness",
+        "Weakness"
+      ],
+      "correctAnswer": "Constipation",
+      "hint": "Think about what the patient is telling you hurts or feels wrong.",
+      "explanation": "“I haven't been able to go to the bathroom in days” describes Constipation: infrequent or difficult bowel movements. That is different from Low Mood, which is persistent sadness, flatness or loss of interest.",
+      "id": "mc_l9_q2",
+      "medicalVocab": [
+        "Constipation",
+        "Bowel",
+        "Digestion"
+      ]
+    },
+    {
+      "instruction": "Identify the symptom that fits the patient's words.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"My hand feels numb,\" the patient says.",
+      "symptoms": [
+        "Dizziness",
+        "Numbness",
+        "Night Sweats",
+        "Anxiety"
+      ],
+      "correctAnswer": "Numbness",
+      "hint": "Start with the patient's key word, then check which symptom matches it best.",
+      "explanation": "“My hand feels numb” describes Numbness: reduced or lost feeling in part of the body. That is different from Night Sweats, which is heavy sweating during sleep that soaks clothes or sheets.",
+      "id": "mc_l9_q3",
+      "medicalVocab": [
+        "Numbness",
+        "Sensation",
+        "Nerve"
+      ]
+    },
+    {
+      "instruction": "Select the symptom that matches what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"My arm has pins and needles,\" the patient says.",
+      "symptoms": [
+        "Night Sweats",
+        "Loss of Appetite",
+        "Skin Rash",
+        "Tingling"
+      ],
+      "correctAnswer": "Tingling",
+      "hint": "Listen for which body part or sensation the patient names first.",
+      "explanation": "“My arm has pins and needles” describes Tingling: a pins-and-needles or prickling sensation. That is different from Loss of Appetite, which is not feeling like eating.",
+      "id": "mc_l10_q1",
+      "medicalVocab": [
+        "Tingling",
+        "Pins and Needles",
+        "Nerve"
+      ]
+    },
+    {
+      "instruction": "Select the symptom that matches what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"My heart feels like it's racing,\" the patient says.",
+      "symptoms": [
+        "Joint Pain",
+        "Palpitations",
+        "Constipation",
+        "Loss of Appetite"
+      ],
+      "correctAnswer": "Palpitations",
+      "hint": "Notice the specific body part or sensation in the patient's own words.",
+      "explanation": "“My heart feels like it's racing” describes Palpitations: being aware of a racing, pounding or fluttering heartbeat. That is different from Loss of Appetite, which is not feeling like eating.",
+      "id": "mc_l10_q2",
+      "medicalVocab": [
+        "Palpitations",
+        "Heartbeat",
+        "Racing"
+      ]
+    },
+    {
+      "instruction": "Select the symptom that matches what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"My ankles are so puffy,\" the patient says.",
+      "symptoms": [
+        "Night Sweats",
+        "Tingling",
+        "Chest Pain",
+        "Swollen Ankles"
+      ],
+      "correctAnswer": "Swollen Ankles",
+      "hint": "What is the patient's main complaint in this sentence?",
+      "explanation": "“My ankles are so puffy” describes Swollen Ankles: puffiness around the ankles from extra fluid. That is different from Tingling, which is a pins-and-needles or prickling sensation.",
+      "id": "mc_l10_q3",
+      "medicalVocab": [
+        "Swollen Ankles",
+        "Swelling",
+        "Fluid"
+      ]
+    }
+  ]
 }

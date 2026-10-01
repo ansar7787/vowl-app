@@ -1,697 +1,697 @@
 {
-    "gameType": "travelDesk",
-    "batchIndex": 11,
-    "levels": "101-110",
-    "quests": [
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "My plans changed, so I need to get a refund on a torn banknote sooner than I expected.",
-            "itinerary": [
-                "Neighborhood Bank",
-                "Neighborhood Money Transfer Office",
-                "Neighborhood Notary Office",
-                "Neighborhood Currency Exchange"
-            ],
-            "options": [
-                "Bank",
-                "Money Transfer Office",
-                "Notary Office",
-                "Currency Exchange"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Focus on the verb in the request: the traveler needs to get a refund on a torn banknote.",
-            "explanation": "Bank is the answer, because everything in the request points to needing to get a refund on a torn banknote.",
-            "id": "td_l101_q1",
-            "travelDocuments": "ID Card"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I've been meaning to arrange care for the baby during a tour, but I'm not sure where to go.",
-            "itinerary": [
-                "Family Stroller Rental Counter",
-                "Family Kids' Club",
-                "Family Playroom",
-                "Family Babysitting Agency"
-            ],
-            "options": [
-                "Stroller Rental Counter",
-                "Kids' Club",
-                "Playroom",
-                "Babysitting Agency"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Rule out the options that don't fit someone trying to arrange care for the baby during a tour.",
-            "explanation": "Babysitting Agency is correct — the other options sound similar but won't actually let you arrange care for the baby during a tour.",
-            "id": "td_l101_q2",
-            "travelDocuments": "Passport"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "It occurred to me that I still need to find a specific spare part for a suitcase.",
-            "itinerary": [
-                "Marketplace Electronics Store",
-                "Marketplace Craft Store",
-                "Marketplace Luggage Shop",
-                "Marketplace Discount Store"
-            ],
-            "options": [
-                "Electronics Store",
-                "Craft Store",
-                "Luggage Shop",
-                "Discount Store"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Think practically: if you needed to find a specific spare part for a suitcase right now, where would you head?",
-            "explanation": "The best match is Luggage Shop; it's the one option truly built around helping people find a specific spare part for a suitcase.",
-            "id": "td_l101_q3",
-            "travelDocuments": "Boarding Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I mentioned to the front desk that I need to track down a specific regional spice blend — do you know where?",
-            "itinerary": [
-                "Gourmet Butcher Shop",
-                "Gourmet Seafood Market",
-                "Gourmet Deli",
-                "Gourmet Spice Market"
-            ],
-            "options": [
-                "Butcher Shop",
-                "Seafood Market",
-                "Deli",
-                "Spice Market"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "The other three options sound plausible, but only one is made for this: to track down a specific regional spice blend.",
-            "explanation": "Right — Spice Market is where this kind of request always leads, since you need to track down a specific regional spice blend.",
-            "id": "td_l102_q1",
-            "travelDocuments": "Hotel Reservation"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Now that I think of it, I really should dig deeper into some possible family roots here while I'm here.",
-            "itinerary": [
-                "Scholars' Local History Center",
-                "Scholars' Heritage Records Center",
-                "Scholars' Rare Book Shop",
-                "Scholars' Ethnographic Museum"
-            ],
-            "options": [
-                "Local History Center",
-                "Heritage Records Center",
-                "Rare Book Shop",
-                "Ethnographic Museum"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Watch for choices that sound related but serve a slightly different purpose than helping someone dig deeper into some possible family roots here.",
-            "explanation": "Heritage Records Center fits perfectly here, as it's set up for people who need to dig deeper into some possible family roots here.",
-            "id": "td_l102_q2",
-            "travelDocuments": "Train Ticket"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "There's one errand I keep putting off: I need to get last-minute copies made before a pitch.",
-            "itinerary": [
-                "Corporate Business Center",
-                "Corporate Printing & Copy Shop",
-                "Corporate Courier Office",
-                "Corporate Corporate Reception Desk"
-            ],
-            "options": [
-                "Business Center",
-                "Printing & Copy Shop",
-                "Courier Office",
-                "Corporate Reception Desk"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Consider the precise nature of the request, not just its general category, to work out where to get last-minute copies made before a pitch.",
-            "explanation": "The request points directly to the Printing & Copy Shop, since that's where you'd get last-minute copies made before a pitch.",
-            "id": "td_l102_q3",
-            "travelDocuments": "City Map"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "My plans changed, so I need to work out the fastest route between two flights sooner than I expected.",
-            "itinerary": [
-                "Wanderer's Transfer Desk",
-                "Wanderer's Departure Lounge",
-                "Wanderer's Arrival Hall",
-                "Wanderer's Boarding Gate"
-            ],
-            "options": [
-                "Transfer Desk",
-                "Departure Lounge",
-                "Arrival Hall",
-                "Boarding Gate"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Narrow it down by asking where, specifically, people go to work out the fastest route between two flights.",
-            "explanation": "Transfer Desk is the best fit — it exists specifically to help people work out the fastest route between two flights.",
-            "id": "td_l103_q1",
-            "travelDocuments": "ID Card"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I've been meaning to find a device that can translate on the spot, but I'm not sure where to go.",
-            "itinerary": [
-                "Digital Translation Device Counter",
-                "Digital Data Top-Up Counter",
-                "Digital SIM Card Kiosk",
-                "Digital Gadget Store"
-            ],
-            "options": [
-                "Translation Device Counter",
-                "Data Top-Up Counter",
-                "SIM Card Kiosk",
-                "Gadget Store"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Trust the specific wording of the request when deciding where someone would go to find a device that can translate on the spot.",
-            "explanation": "Of the four options, only Translation Device Counter is designed to let someone find a device that can translate on the spot.",
-            "id": "td_l103_q2",
-            "travelDocuments": "Passport"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "It occurred to me that I still need to figure out if travel insurance covers this.",
-            "itinerary": [
-                "Wellness Hospital",
-                "Wellness Urgent Care Center",
-                "Wellness Health Insurance Office",
-                "Wellness 24-Hour Pharmacy"
-            ],
-            "options": [
-                "Hospital",
-                "Urgent Care Center",
-                "Health Insurance Office",
-                "24-Hour Pharmacy"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Some options belong to the same general category, but only one is the exact place to figure out if travel insurance covers this.",
-            "explanation": "Health Insurance Office exists specifically for this — it's the place to figure out if travel insurance covers this.",
-            "id": "td_l103_q3",
-            "travelDocuments": "Boarding Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I mentioned to the front desk that I need to get tickets before the comedy show sells out — do you know where?",
-            "itinerary": [
-                "Spotlight Theater",
-                "Spotlight Jazz Club",
-                "Spotlight Comedy Club",
-                "Spotlight Karaoke Bar"
-            ],
-            "options": [
-                "Theater",
-                "Jazz Club",
-                "Comedy Club",
-                "Karaoke Bar"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Match the purpose, not just the wording — where does someone actually go to get tickets before the comedy show sells out?",
-            "explanation": "Comedy Club is the answer, because everything in the request points to needing to get tickets before the comedy show sells out.",
-            "id": "td_l104_q1",
-            "travelDocuments": "Train Ticket"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Now that I think of it, I really should find a phone that was turned in yesterday while I'm here.",
-            "itinerary": [
-                "Neighborhood Community Center",
-                "Neighborhood Notary Office",
-                "Neighborhood City Hall",
-                "Neighborhood Lost-and-Found Office"
-            ],
-            "options": [
-                "Community Center",
-                "Notary Office",
-                "City Hall",
-                "Lost-and-Found Office"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Not all four fit. Focus on the one place designed to let someone find a phone that was turned in yesterday.",
-            "explanation": "Lost-and-Found Office is correct — the other options sound similar but won't actually let you find a phone that was turned in yesterday.",
-            "id": "td_l104_q2",
-            "travelDocuments": "ID Card"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "There's one errand I keep putting off: I need to catch up with relatives while nearby.",
-            "itinerary": [
-                "Family Reunion Hall",
-                "Family Relative's Home",
-                "Family Wedding Planner's Office",
-                "Family Photo Studio"
-            ],
-            "options": [
-                "Reunion Hall",
-                "Relative's Home",
-                "Wedding Planner's Office",
-                "Photo Studio"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "One of these four exists specifically to help people catch up with relatives while nearby — look for it.",
-            "explanation": "The best match is Relative's Home; it's the one option truly built around helping people catch up with relatives while nearby.",
-            "id": "td_l104_q3",
-            "travelDocuments": "Travel Insurance"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "My plans changed, so I need to track down a very specific spare charger sooner than I expected.",
-            "itinerary": [
-                "Marketplace Luggage Shop",
-                "Marketplace Craft Store",
-                "Marketplace Discount Store",
-                "Marketplace Electronics Store"
-            ],
-            "options": [
-                "Luggage Shop",
-                "Craft Store",
-                "Discount Store",
-                "Electronics Store"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "The other three options sound plausible, but only one is made for this: to track down a very specific spare charger.",
-            "explanation": "Right — Electronics Store is where this kind of request always leads, since you need to track down a very specific spare charger.",
-            "id": "td_l105_q1",
-            "travelDocuments": "Travel Insurance"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I've been meaning to find a proper multi-course tasting experience, but I'm not sure where to go.",
-            "itinerary": [
-                "Gourmet Food Hall",
-                "Gourmet Buffet Hall",
-                "Gourmet Rooftop Restaurant",
-                "Gourmet Restaurant"
-            ],
-            "options": [
-                "Food Hall",
-                "Buffet Hall",
-                "Rooftop Restaurant",
-                "Restaurant"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Watch for choices that sound related but serve a slightly different purpose than helping someone find a proper multi-course tasting experience.",
-            "explanation": "Restaurant is correct because that's exactly where travelers go to find a proper multi-course tasting experience.",
-            "id": "td_l105_q2",
-            "travelDocuments": "Passport"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "It occurred to me that I still need to find a book out of print for decades.",
-            "itinerary": [
-                "Scholars' Local History Center",
-                "Scholars' Public Library",
-                "Scholars' Heritage Records Center",
-                "Scholars' Rare Book Shop"
-            ],
-            "options": [
-                "Local History Center",
-                "Public Library",
-                "Heritage Records Center",
-                "Rare Book Shop"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Consider the precise nature of the request, not just its general category, to work out where to find a book out of print for decades.",
-            "explanation": "Since the traveler wants to find a book out of print for decades, Rare Book Shop is the logical destination.",
-            "id": "td_l105_q3",
-            "travelDocuments": "Boarding Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I mentioned to the front desk that I need to find somewhere to make a confidential call — do you know where?",
-            "itinerary": [
-                "Corporate Meeting Room",
-                "Corporate Breakout Room",
-                "Corporate Video Call Booth",
-                "Corporate Private Office Suite"
-            ],
-            "options": [
-                "Meeting Room",
-                "Breakout Room",
-                "Video Call Booth",
-                "Private Office Suite"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Narrow it down by asking where, specifically, people go to find somewhere to make a confidential call.",
-            "explanation": "Travelers head to the Video Call Booth whenever they need to find somewhere to make a confidential call.",
-            "id": "td_l106_q1",
-            "travelDocuments": "Train Ticket"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Now that I think of it, I really should find the airport express train platform while I'm here.",
-            "itinerary": [
-                "Wanderer's Bus Terminal",
-                "Wanderer's Metro Station",
-                "Wanderer's Taxi Stand",
-                "Wanderer's Train Station"
-            ],
-            "options": [
-                "Bus Terminal",
-                "Metro Station",
-                "Taxi Stand",
-                "Train Station"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Trust the specific wording of the request when deciding where someone would go to find the airport express train platform.",
-            "explanation": "When someone needs to find the airport express train platform, Metro Station is the natural choice.",
-            "id": "td_l106_q2",
-            "travelDocuments": "Boarding Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "There's one errand I keep putting off: I need to get an international data plan sorted.",
-            "itinerary": [
-                "Digital Tech Support Center",
-                "Digital Translation Device Counter",
-                "Digital Data Top-Up Counter",
-                "Digital SIM Card Kiosk"
-            ],
-            "options": [
-                "Tech Support Center",
-                "Translation Device Counter",
-                "Data Top-Up Counter",
-                "SIM Card Kiosk"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Some options belong to the same general category, but only one is the exact place to get an international data plan sorted.",
-            "explanation": "The clearest match is Data Top-Up Counter, since that's exactly its purpose: to get an international data plan sorted.",
-            "id": "td_l106_q3",
-            "travelDocuments": "Boarding Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "My plans changed, so I need to get checked for a possible ear infection sooner than I expected.",
-            "itinerary": [
-                "Wellness Urgent Care Center",
-                "Wellness Hearing Clinic",
-                "Wellness Hospital",
-                "Wellness Eye Clinic"
-            ],
-            "options": [
-                "Urgent Care Center",
-                "Hearing Clinic",
-                "Hospital",
-                "Eye Clinic"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "The right answer is the place whose main job is to help people get checked for a possible ear infection.",
-            "explanation": "Hearing Clinic is the answer, because everything in the request points to needing to get checked for a possible ear infection.",
-            "id": "td_l107_q1",
-            "travelDocuments": "Museum Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I've been meaning to catch the opening night of a touring show, but I'm not sure where to go.",
-            "itinerary": [
-                "Spotlight Comedy Club",
-                "Spotlight Theater",
-                "Spotlight Concert Hall",
-                "Spotlight Cinema"
-            ],
-            "options": [
-                "Comedy Club",
-                "Theater",
-                "Concert Hall",
-                "Cinema"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Think practically: if you needed to catch the opening night of a touring show right now, where would you head?",
-            "explanation": "Theater is correct — the other options sound similar but won't actually let you catch the opening night of a touring show.",
-            "id": "td_l107_q2",
-            "travelDocuments": "Hotel Reservation"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "It occurred to me that I still need to get copies made of some travel documents.",
-            "itinerary": [
-                "Neighborhood Print Shop",
-                "Neighborhood Notary Office",
-                "Neighborhood Passport Photo Shop",
-                "Neighborhood Newsstand"
-            ],
-            "options": [
-                "Print Shop",
-                "Notary Office",
-                "Passport Photo Shop",
-                "Newsstand"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Not all four fit. Focus on the one place designed to let someone get copies made of some travel documents.",
-            "explanation": "The best match is Print Shop; it's the one option truly built around helping people get copies made of some travel documents.",
-            "id": "td_l107_q3",
-            "travelDocuments": "Travel Insurance"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I mentioned to the front desk that I need to organize a get-together for the extended family — do you know where?",
-            "itinerary": [
-                "Family Family Restaurant",
-                "Family Reunion Hall",
-                "Family Relative's Home",
-                "Family Wedding Planner's Office"
-            ],
-            "options": [
-                "Family Restaurant",
-                "Reunion Hall",
-                "Relative's Home",
-                "Wedding Planner's Office"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "The other three options sound plausible, but only one is made for this: to organize a get-together for the extended family.",
-            "explanation": "Right — Reunion Hall is where this kind of request always leads, since you need to organize a get-together for the extended family.",
-            "id": "td_l108_q1",
-            "travelDocuments": "Hotel Reservation"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Now that I think of it, I really should find a piece of local pottery to bring home while I'm here.",
-            "itinerary": [
-                "Marketplace Ceramics Shop",
-                "Marketplace Antique Shop",
-                "Marketplace Handicraft Market",
-                "Marketplace Flea Market"
-            ],
-            "options": [
-                "Ceramics Shop",
-                "Antique Shop",
-                "Handicraft Market",
-                "Flea Market"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Watch for choices that sound related but serve a slightly different purpose than helping someone find a piece of local pottery to bring home.",
-            "explanation": "This matches because Ceramics Shop is the standard place to find a piece of local pottery to bring home.",
-            "id": "td_l108_q2",
-            "travelDocuments": "Train Ticket"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "There's one errand I keep putting off: I need to bring home a box of local specialty sweets.",
-            "itinerary": [
-                "Gourmet Bakery",
-                "Gourmet Tea House",
-                "Gourmet Chocolate Shop",
-                "Gourmet Ice Cream Parlor"
-            ],
-            "options": [
-                "Bakery",
-                "Tea House",
-                "Chocolate Shop",
-                "Ice Cream Parlor"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Consider the precise nature of the request, not just its general category, to work out where to bring home a box of local specialty sweets.",
-            "explanation": "Chocolate Shop makes sense here because that's precisely where people go to bring home a box of local specialty sweets.",
-            "id": "td_l108_q3",
-            "travelDocuments": "Hotel Reservation"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "My plans changed, so I need to understand how an old building was actually used sooner than I expected.",
-            "itinerary": [
-                "Scholars' Local History Center",
-                "Scholars' Historic Monument",
-                "Scholars' War Memorial",
-                "Scholars' Cultural Center"
-            ],
-            "options": [
-                "Local History Center",
-                "Historic Monument",
-                "War Memorial",
-                "Cultural Center"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Narrow it down by asking where, specifically, people go to understand how an old building was actually used.",
-            "explanation": "Historic Monument is correct because that's exactly where travelers go to understand how an old building was actually used.",
-            "id": "td_l109_q1",
-            "travelDocuments": "Travel Insurance"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I've been meaning to rent office space for just the afternoon, but I'm not sure where to go.",
-            "itinerary": [
-                "Corporate Business Center",
-                "Corporate Coworking Space",
-                "Corporate Private Office Suite",
-                "Corporate Shared Office Lounge"
-            ],
-            "options": [
-                "Business Center",
-                "Coworking Space",
-                "Private Office Suite",
-                "Shared Office Lounge"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Trust the specific wording of the request when deciding where someone would go to rent office space for just the afternoon.",
-            "explanation": "Travelers head to the Private Office Suite whenever they need to rent office space for just the afternoon.",
-            "id": "td_l109_q2",
-            "travelDocuments": "Train Ticket"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "It occurred to me that I still need to get help after documents were questioned at the border.",
-            "itinerary": [
-                "Wanderer's Customs Office",
-                "Wanderer's Visa Office",
-                "Wanderer's Border Checkpoint",
-                "Wanderer's Embassy"
-            ],
-            "options": [
-                "Customs Office",
-                "Visa Office",
-                "Border Checkpoint",
-                "Embassy"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Some options belong to the same general category, but only one is the exact place to get help after documents were questioned at the border.",
-            "explanation": "Border Checkpoint fits perfectly here, as it's set up for people who need to get help after documents were questioned at the border.",
-            "id": "td_l109_q3",
-            "travelDocuments": "Boarding Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I mentioned to the front desk that I need to track down a very specific camera lens — do you know where?",
-            "itinerary": [
-                "Digital Photo Printing Kiosk",
-                "Digital Camera Rental Shop",
-                "Digital Gadget Store",
-                "Digital Drone Rental Counter"
-            ],
-            "options": [
-                "Photo Printing Kiosk",
-                "Camera Rental Shop",
-                "Gadget Store",
-                "Drone Rental Counter"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Ask yourself which of the four options is built for one specific purpose: to track down a very specific camera lens.",
-            "explanation": "Camera Rental Shop is the answer, because everything in the request points to needing to track down a very specific camera lens.",
-            "id": "td_l110_q1",
-            "travelDocuments": "City Map"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Now that I think of it, I really should get an X-ray on a sore wrist while I'm here.",
-            "itinerary": [
-                "Wellness Hospital",
-                "Wellness Urgent Care Center",
-                "Wellness Radiology Center",
-                "Wellness Sports Medicine Clinic"
-            ],
-            "options": [
-                "Hospital",
-                "Urgent Care Center",
-                "Radiology Center",
-                "Sports Medicine Clinic"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Picture exactly where a traveler would go to get an X-ray on a sore wrist.",
-            "explanation": "Radiology Center is correct — the other options sound similar but won't actually let you get an X-ray on a sore wrist.",
-            "id": "td_l110_q2",
-            "travelDocuments": "Museum Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "There's one errand I keep putting off: I need to see the aquarium's new exhibit.",
-            "itinerary": [
-                "Spotlight Aquarium",
-                "Spotlight Wildlife Safari Park",
-                "Spotlight Planetarium",
-                "Spotlight Water Park"
-            ],
-            "options": [
-                "Aquarium",
-                "Wildlife Safari Park",
-                "Planetarium",
-                "Water Park"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Focus on the verb in the request: the traveler needs to see the aquarium's new exhibit.",
-            "explanation": "The best match is Aquarium; it's the one option truly built around helping people see the aquarium's new exhibit.",
-            "id": "td_l110_q3",
-            "travelDocuments": "Hotel Reservation"
-        }
-    ]
+  "gameType": "travelDesk",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "instruction": "Choose the most useful next step.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I left my bag on the metro about twenty minutes ago. I'm fairly sure it was line 3.",
+      "itinerary": [
+        "City Centre Tourist Information Desk",
+        "City Centre Hotel Reception",
+        "City Centre Metro Lost Property Office",
+        "City Centre Taxi Company"
+      ],
+      "options": [
+        "Tourist Information Desk",
+        "Hotel Reception",
+        "Metro Lost Property Office",
+        "Taxi Company"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Report it to whoever runs the vehicle where you lost it. Speed matters.",
+      "explanation": "The metro operator's lost property office collects items found on its lines. Reporting quickly gives the best chance of getting it back.",
+      "id": "td_l101_q1",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Choose the most useful next step.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I dropped my wallet in a taxi. I've still got the receipt with the company's name on it.",
+      "itinerary": [
+        "City Centre Bank Branch",
+        "City Centre Hotel Reception",
+        "City Centre Airport Lost Property Office",
+        "City Centre Taxi Company Dispatch Office"
+      ],
+      "options": [
+        "Bank Branch",
+        "Hotel Reception",
+        "Airport Lost Property Office",
+        "Taxi Company Dispatch Office"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "The receipt tells you who to contact.",
+      "explanation": "The taxi company's dispatch office can contact the driver and check the vehicle. Airport lost property wouldn't have it.",
+      "id": "td_l101_q2",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Choose the most useful next step.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "My passport was stolen and I fly home in two days. I've already got the police report.",
+      "itinerary": [
+        "City Centre Consulate Emergency Passport Desk",
+        "City Centre Hotel Front Desk",
+        "City Centre Bank Branch",
+        "City Centre Airline Check-In Desk"
+      ],
+      "options": [
+        "Consulate Emergency Passport Desk",
+        "Hotel Front Desk",
+        "Bank Branch",
+        "Airline Check-In Desk"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "The police report was the first step. What's the second?",
+      "explanation": "Your consulate issues emergency travel documents once you've reported the theft. The airline can't board you without a valid document.",
+      "id": "td_l101_q3",
+      "travelDocuments": "Passport"
+    },
+    {
+      "instruction": "Where should the traveler go to fix this?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I've bought a train ticket for the wrong day. It's for tomorrow but I need to travel today.",
+      "itinerary": [
+        "Central Station Rail Ticket Office",
+        "Central Station Platform Guard",
+        "Central Station Station Cafe",
+        "Central Station Taxi Rank"
+      ],
+      "options": [
+        "Rail Ticket Office",
+        "Platform Guard",
+        "Station Cafe",
+        "Taxi Rank"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Only the seller of the ticket can change it.",
+      "explanation": "The ticket office can exchange the ticket, sometimes for a small fee. A platform guard can't change bookings.",
+      "id": "td_l102_q1",
+      "travelDocuments": "Train Ticket"
+    },
+    {
+      "instruction": "Which counter can solve the real problem?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "The airline has 'Jon' on my ticket, but my passport says 'John'. Will that be a problem?",
+      "itinerary": [
+        "Airport Immigration Control",
+        "Airport Hotel Shuttle Desk",
+        "Airport Airport Information Desk",
+        "Airport Airline Reservations Desk"
+      ],
+      "options": [
+        "Immigration Control",
+        "Hotel Shuttle Desk",
+        "Airport Information Desk",
+        "Airline Reservations Desk"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Fix the booking before you get to the border.",
+      "explanation": "The airline can correct a minor spelling error on your booking. Waiting until immigration risks being refused boarding.",
+      "id": "td_l102_q2",
+      "travelDocuments": "Passport"
+    },
+    {
+      "instruction": "Where should the traveler go to fix this?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I reserved a rental car for two adults, but now there are five of us.",
+      "itinerary": [
+        "Airport Ferry Ticket Office",
+        "Airport Car Rental Company Desk",
+        "Airport Taxi Rank",
+        "Airport Hotel Shuttle Desk"
+      ],
+      "options": [
+        "Ferry Ticket Office",
+        "Car Rental Company Desk",
+        "Taxi Rank",
+        "Hotel Shuttle Desk"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "The vehicle is the rental company's to change.",
+      "explanation": "The rental desk can swap the booking for a larger vehicle, if one is available. Ask before arriving.",
+      "id": "td_l102_q3",
+      "travelDocuments": "Passport"
+    },
+    {
+      "instruction": "Which place or service can answer the real question behind the request?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "The tourist website says the bus stops here, but there's nothing, just a wall.",
+      "itinerary": [
+        "Coach Route 12 Bus Operator Information Line",
+        "Coach Route 12 Currency Exchange",
+        "Coach Route 12 Ticket Office",
+        "Coach Route 12 Taxi Rank"
+      ],
+      "options": [
+        "Bus Operator Information Line",
+        "Currency Exchange",
+        "Ticket Office",
+        "Taxi Rank"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Contact the organisation that actually runs the route.",
+      "explanation": "The bus operator's information line knows the current stops. A website can be out of date.",
+      "id": "td_l103_q1",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Choose the best alternative.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "My guidebook says the restaurant opens on Mondays, but it's closed and we're hungry.",
+      "itinerary": [
+        "Hotel Lobby Taxi Rank",
+        "Hotel Lobby Lost Property Office",
+        "Hotel Lobby Restaurant Kitchen",
+        "Hotel Lobby Concierge Desk"
+      ],
+      "options": [
+        "Taxi Rank",
+        "Lost Property Office",
+        "Restaurant Kitchen",
+        "Concierge Desk"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "The plan has failed. Who can suggest another place?",
+      "explanation": "A concierge knows which restaurants are open right now and can recommend and book one.",
+      "id": "td_l103_q2",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Who should the traveler ask first?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "The hotel shuttle isn't at the stop the email described. Nobody's here and it's late.",
+      "itinerary": [
+        "Airport Exit Taxi Rank",
+        "Airport Exit Airport Information Desk",
+        "Airport Exit Tourist Office",
+        "Airport Exit Hotel Reception, by Phone"
+      ],
+      "options": [
+        "Taxi Rank",
+        "Airport Information Desk",
+        "Tourist Office",
+        "Hotel Reception, by Phone"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Contact the person who arranged the shuttle.",
+      "explanation": "Hotel reception knows where the shuttle really stops and can send it. Calling them is faster than guessing.",
+      "id": "td_l103_q3",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Choose the most useful next step.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "The train is ninety minutes late and I'll miss my connection to the coast.",
+      "itinerary": [
+        "Central Station Rail Customer Service Desk",
+        "Central Station Lost Property Office",
+        "Central Station Station Cafe",
+        "Central Station Car Rental Desk"
+      ],
+      "options": [
+        "Rail Customer Service Desk",
+        "Lost Property Office",
+        "Station Cafe",
+        "Car Rental Desk"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "You need help with a new route, and probably proof of the delay.",
+      "explanation": "Rail customer service can rebook you and note the delay on your ticket. The cafe and rental desk can't fix the connection.",
+      "id": "td_l104_q1",
+      "travelDocuments": "Train Ticket"
+    },
+    {
+      "instruction": "Where should the traveler go to fix this?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Our coach broke down on the motorway. We've been waiting for an hour.",
+      "itinerary": [
+        "Highway Police Station",
+        "Highway Taxi Rank",
+        "Highway Coach Company Emergency Line",
+        "Highway Nearest Hospital"
+      ],
+      "options": [
+        "Police Station",
+        "Taxi Rank",
+        "Coach Company Emergency Line",
+        "Nearest Hospital"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "The operator is responsible for getting passengers moving again.",
+      "explanation": "The coach company's emergency line can send a replacement. Police and hospitals aren't needed unless someone is hurt.",
+      "id": "td_l104_q2",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Choose the most useful next step.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "My flight was delayed, and now I'll miss the last ferry to my island.",
+      "itinerary": [
+        "Airport Baggage Claim",
+        "Airport Airport Taxi Rank",
+        "Airport Ferry Operator Customer Line",
+        "Airport Duty-Free Shop"
+      ],
+      "options": [
+        "Baggage Claim",
+        "Airport Taxi Rank",
+        "Ferry Operator Customer Line",
+        "Duty-Free Shop"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Look at what's at risk and who controls it.",
+      "explanation": "The ferry operator can advise about later crossings and hold or rebook your ticket. The other counters can't.",
+      "id": "td_l104_q3",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Which counter can solve the real problem?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I missed my connecting flight because the first one was late. Both flights were on the same ticket.",
+      "itinerary": [
+        "Transfer Hall Immigration Control",
+        "Transfer Hall Airline Rebooking Desk",
+        "Transfer Hall Duty-Free Shop",
+        "Transfer Hall Baggage Claim"
+      ],
+      "options": [
+        "Immigration Control",
+        "Airline Rebooking Desk",
+        "Duty-Free Shop",
+        "Baggage Claim"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "A single ticket means the airline is responsible for getting you there.",
+      "explanation": "With one booking, the airline must rebook you at no charge. Immigration isn't part of an ordinary connection.",
+      "id": "td_l105_q1",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Choose the best alternative.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I missed my connecting flight, but I booked the two flights separately with different airlines.",
+      "itinerary": [
+        "Airport New Ticket at the Airline Sales Desk",
+        "Airport Baggage Claim",
+        "Airport First Airline Rebooking Desk",
+        "Airport Immigration Control"
+      ],
+      "options": [
+        "New Ticket at the Airline Sales Desk",
+        "Baggage Claim",
+        "First Airline Rebooking Desk",
+        "Immigration Control"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Separate bookings don't protect each other.",
+      "explanation": "The second airline owes you nothing for a delay on another airline, so you'll need to buy a new ticket. The first airline can't rebook a flight it doesn't operate.",
+      "id": "td_l105_q2",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Which counter can solve the real problem?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I missed a prepaid tour by ten minutes because of traffic. Can I still go?",
+      "itinerary": [
+        "Old Town Ticket Kiosk",
+        "Old Town Tour Company Office",
+        "Old Town Hotel Concierge Desk",
+        "Old Town Taxi Rank"
+      ],
+      "options": [
+        "Ticket Kiosk",
+        "Tour Company Office",
+        "Hotel Concierge Desk",
+        "Taxi Rank"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "The tour operator decides whether to rebook.",
+      "explanation": "The tour company can offer a later tour or credit. The other places can't change the booking.",
+      "id": "td_l105_q3",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Choose the option that deals with the most urgent part first.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "My flight has been cancelled. The queue at the help desk is huge, and I don't know if I have a hotel voucher.",
+      "itinerary": [
+        "Departures Hall Taxi Rank",
+        "Departures Hall Currency Exchange",
+        "Departures Hall Security Control",
+        "Departures Hall Airline Rebooking Kiosk or App"
+      ],
+      "options": [
+        "Taxi Rank",
+        "Currency Exchange",
+        "Security Control",
+        "Airline Rebooking Kiosk or App"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Skip the queue if there's a faster way to reach the same people.",
+      "explanation": "The airline's kiosk or app can rebook you quickly and often includes hotel information. Waiting in the queue could cost you seats.",
+      "id": "td_l106_q1",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Where should the traveler go to fix this?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "The walking tour was cancelled because of the rain, and I've got a prepaid voucher.",
+      "itinerary": [
+        "Old Town Souvenir Shop",
+        "Old Town Weather Station",
+        "Old Town Tour Operator's Office",
+        "Old Town Cafe"
+      ],
+      "options": [
+        "Souvenir Shop",
+        "Weather Station",
+        "Tour Operator's Office",
+        "Cafe"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Who issued the voucher and can rebook it?",
+      "explanation": "The operator can offer another date or refund the voucher. Cafes and shops have no connection to it.",
+      "id": "td_l106_q2",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Which counter can solve the real problem?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "The concert was cancelled, and I bought my tickets from a resale site.",
+      "itinerary": [
+        "Concert Hall Venue Box Office",
+        "Concert Hall Cloakroom",
+        "Concert Hall Resale Site Customer Support",
+        "Concert Hall Tourist Office"
+      ],
+      "options": [
+        "Venue Box Office",
+        "Cloakroom",
+        "Resale Site Customer Support",
+        "Tourist Office"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Who sold you the ticket, and who holds your money?",
+      "explanation": "A resale site holds your payment and its policy applies. The venue's box office didn't sell you the ticket.",
+      "id": "td_l106_q3",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Which counter can solve the real problem?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "The hotel has charged my card twice for the same night.",
+      "itinerary": [
+        "Central Suites Police Station",
+        "Central Suites Booking App",
+        "Central Suites Bank Fraud Team",
+        "Central Suites Hotel Accounts Office"
+      ],
+      "options": [
+        "Police Station",
+        "Booking App",
+        "Bank Fraud Team",
+        "Hotel Accounts Office"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Start with the business that made the charge before escalating.",
+      "explanation": "The hotel's accounts office can check and refund a duplicate charge. A fraud team or police are for unauthorised transactions.",
+      "id": "td_l107_q1",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Choose the option that deals with the most urgent part first.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I've arrived and the hotel is boarded up. It's ten at night.",
+      "itinerary": [
+        "Old Town Police Station",
+        "Old Town Booking Platform Emergency Line",
+        "Old Town Airport Desk",
+        "Old Town Taxi Rank"
+      ],
+      "options": [
+        "Police Station",
+        "Booking Platform Emergency Line",
+        "Airport Desk",
+        "Taxi Rank"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "You need a bed tonight, and the platform holds your booking.",
+      "explanation": "The platform's emergency line can rebook you elsewhere. Waiting for the hotel to reopen wouldn't help.",
+      "id": "td_l107_q2",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Choose the most useful next step.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "At check-in we discovered that our reservation was for two adults, but we have a child too.",
+      "itinerary": [
+        "Grand Hotel Reservations Department, by Phone",
+        "Grand Hotel Restaurant",
+        "Grand Hotel Gym",
+        "Grand Hotel Spa Reception"
+      ],
+      "options": [
+        "Reservations Department, by Phone",
+        "Restaurant",
+        "Gym",
+        "Spa Reception"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "The occupancy is part of the booking record.",
+      "explanation": "The reservations department can add a child and confirm the room type and price. Other departments can't edit bookings.",
+      "id": "td_l107_q3",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Choose the most useful next step.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "The shop's terminal says 'card declined', though I know I've got money in the account.",
+      "itinerary": [
+        "Your Bank Currency Exchange",
+        "Your Bank Post Office",
+        "Your Bank Card Services Line",
+        "Your Bank Another Shop"
+      ],
+      "options": [
+        "Currency Exchange",
+        "Post Office",
+        "Card Services Line",
+        "Another Shop"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "A declined card is often a security block, not a lack of funds.",
+      "explanation": "Only your bank can see why the card was refused and lift the block.",
+      "id": "td_l108_q1",
+      "travelDocuments": "ID Card"
+    },
+    {
+      "instruction": "Where should the traveler go to fix this?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I paid for a tour online, but no confirmation ever arrived.",
+      "itinerary": [
+        "Tour Company Hotel Concierge",
+        "Tour Company Tourist Office",
+        "Tour Company Card Bank Hotline",
+        "Tour Company Customer Service"
+      ],
+      "options": [
+        "Hotel Concierge",
+        "Tourist Office",
+        "Card Bank Hotline",
+        "Customer Service"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Who took the payment and who can confirm the booking?",
+      "explanation": "The tour company can confirm your booking from the payment. A bank hotline is a later step if the company doesn't answer.",
+      "id": "td_l108_q2",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Which counter can solve the real problem?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "The shop charged me in euros, but I should have paid in pounds. I clicked 'pay in my home currency' by mistake.",
+      "itinerary": [
+        "Shop Bank Branch",
+        "Shop Cashier at the Till",
+        "Shop Currency Exchange",
+        "Shop Tourist Information"
+      ],
+      "options": [
+        "Bank Branch",
+        "Cashier at the Till",
+        "Currency Exchange",
+        "Tourist Information"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "The charge can be reversed before it settles, but only by the merchant.",
+      "explanation": "The cashier can cancel and reprocess the payment in the correct currency. Do it at once, before the day's transactions close.",
+      "id": "td_l108_q3",
+      "travelDocuments": "ID Card"
+    },
+    {
+      "instruction": "Choose the best alternative.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "The museum is closed today for a private event, and I've a pass but only one day left.",
+      "itinerary": [
+        "Museum Quarter Museum Cloakroom",
+        "Museum Quarter Airport Desk",
+        "Museum Quarter Tourist Information Centre",
+        "Museum Quarter Taxi Rank"
+      ],
+      "options": [
+        "Museum Cloakroom",
+        "Airport Desk",
+        "Tourist Information Centre",
+        "Taxi Rank"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Look for alternatives that your pass might also cover.",
+      "explanation": "Tourist information can suggest attractions you can still visit, and whether your pass works there.",
+      "id": "td_l109_q1",
+      "travelDocuments": "Museum Pass"
+    },
+    {
+      "instruction": "Choose the best alternative.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "We booked a table weeks ago, but the restaurant says it lost our reservation and is now full.",
+      "itinerary": [
+        "City Centre Bus Station",
+        "City Centre Ticket Office",
+        "City Centre Restaurant Manager",
+        "City Centre Tourist Information Desk"
+      ],
+      "options": [
+        "Bus Station",
+        "Ticket Office",
+        "Restaurant Manager",
+        "Tourist Information Desk"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "The manager is the person who can fix the restaurant's error.",
+      "explanation": "The manager can find you a table, offer a waiting list or suggest a nearby alternative. Others can't fix their mistake.",
+      "id": "td_l109_q2",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "What is the smartest place to start?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "The cable car is closed for high wind and we only have today.",
+      "itinerary": [
+        "Mountain Town Hotel Spa",
+        "Mountain Town Viewpoint Reachable by Local Bus",
+        "Mountain Town Ski Rental Shop",
+        "Mountain Town Cable Car Ticket Office"
+      ],
+      "options": [
+        "Hotel Spa",
+        "Viewpoint Reachable by Local Bus",
+        "Ski Rental Shop",
+        "Cable Car Ticket Office"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "The cable car is out, so find another way to get the view.",
+      "explanation": "A viewpoint on a local bus route gives you a similar experience without the cable car.",
+      "id": "td_l109_q3",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "What is the smartest place to start?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Our map app sent us to a closed building, and we're late for a guided tour.",
+      "itinerary": [
+        "Old Town Taxi Rank",
+        "Old Town Police Station",
+        "Old Town Nearest Cafe",
+        "Old Town Tour Operator's Office"
+      ],
+      "options": [
+        "Taxi Rank",
+        "Police Station",
+        "Nearest Cafe",
+        "Tour Operator's Office"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "The guide can tell you where to meet, but only if you contact them.",
+      "explanation": "The tour operator's number is on your voucher and can give you the exact meeting point. Guessing wastes more time.",
+      "id": "td_l110_q1",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Choose the best alternative.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "My friends' plans changed and they're arriving a day late, but our rental car starts tomorrow.",
+      "itinerary": [
+        "Airport Car Rental Desk",
+        "Airport Airline Desk",
+        "Airport Hotel Shuttle Desk",
+        "Airport Taxi Rank"
+      ],
+      "options": [
+        "Car Rental Desk",
+        "Airline Desk",
+        "Hotel Shuttle Desk",
+        "Taxi Rank"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "The pick-up date has to be changed with the company.",
+      "explanation": "The rental desk can delay the pick-up date, sometimes without charge if you tell them early.",
+      "id": "td_l110_q2",
+      "travelDocuments": "Passport"
+    },
+    {
+      "instruction": "What is the smartest place to start?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I've been walking for thirty minutes and I think I'm going the wrong way. The station is behind me.",
+      "itinerary": [
+        "Riverside Ticket Office",
+        "Riverside Tourist Information Kiosk",
+        "Riverside Hotel Concierge",
+        "Riverside Taxi Rank"
+      ],
+      "options": [
+        "Ticket Office",
+        "Tourist Information Kiosk",
+        "Hotel Concierge",
+        "Taxi Rank"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "You need a person who can quickly confirm the route.",
+      "explanation": "A tourist information kiosk can show your position on a map and give clear directions.",
+      "id": "td_l110_q3",
+      "travelDocuments": "City Map"
+    }
+  ]
 }

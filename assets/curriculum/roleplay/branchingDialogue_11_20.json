@@ -1,787 +1,787 @@
 {
-    "gameType": "branchingDialogue",
-    "batchIndex": 2,
-    "levels": "11-20",
-    "quests": [
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I need a coffee. Have you seen where the galley is?'",
-            "options": [
-                "Coffee is actually quite bad for your health.",
-                "It's at the end of the corridor, third door on the right.",
-                "I don't personally drink coffee myself."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "When someone asks for directions to a specific place, direct them there helpfully.",
-            "explanation": "'It's at the end of the corridor, third door on the right' directly answers with clear directions. 'I don't drink coffee myself' talks about your own habits. 'Coffee is bad for your health' is unsolicited advice that doesn't help the Captain find the galley.",
-            "id": "bd_l11_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'Thank you so much for your assistance today.'",
-            "options": [
-                "I am generally a very busy person.",
-                "Helping others is an important virtue in life.",
-                "You're welcome - happy to help anytime!"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Respond to 'Thank you' with 'You're welcome' and a friendly follow-up.",
-            "explanation": "'You're welcome - happy to help anytime!' is warm, natural, and invites future cooperation. 'I am generally a very busy person' is an odd, disconnected non-response to gratitude. 'Helping others is an important virtue' is philosophical, not a natural conversational reply.",
-            "id": "bd_l11_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I accidentally gave you the wrong dish. I am so sorry - let me bring the correct one right away.'",
-            "options": [
-                "That is completely and utterly unacceptable!",
-                "Not to worry - mistakes happen! I'll wait for the right one.",
-                "I actually ordered this particular dish yesterday too."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "When someone apologizes for a small, easily corrected mistake, respond with grace.",
-            "explanation": "'Not to worry - mistakes happen!' shows graciousness about a minor, easily resolved error. 'That is completely and utterly unacceptable!' is a dramatic overreaction to a simple mix-up. 'I ordered this yesterday too' is confusing and irrelevant.",
-            "id": "bd_l11_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'Have you eaten anything at all today?'",
-            "options": [
-                "Yes, I had a small bowl of porridge this morning.",
-                "I tend to do all my cooking at home.",
-                "Food is, of course, essential for maintaining good health."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "'Have you eaten today?' is a direct health question. Answer yes/no with specific details.",
-            "explanation": "'Yes, I had a small bowl of porridge this morning' directly answers the question and gives medically useful specific information. 'Food is essential for good health' is a general statement. 'I tend to cook at home' describes a habit, not what was eaten today.",
-            "id": "bd_l12_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'We're running a special sale this weekend. May I send you the full details?'",
-            "options": [
-                "Weekends tend to be very busy for me personally.",
-                "Yes please! What email address do you have on file for me?",
-                "I prefer to do my shopping in the morning hours."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "When offered useful information, accept it enthusiastically and confirm the practical details.",
-            "explanation": "'Yes please! What email address do you have on file?' accepts the offer and immediately takes a step to ensure you receive the information correctly. 'Weekends are very busy' doesn't answer whether you want the information. 'I prefer shopping in the morning' is irrelevant to the offer.",
-            "id": "bd_l12_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'Your boarding pass, please.'",
-            "options": [
-                "I checked in online - is a digital boarding pass acceptable?",
-                "Boarding the plane sounds like an excellent idea.",
-                "I actually lost my luggage on a previous trip once."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "When asked for a document, either present it or politely explain your situation.",
-            "explanation": "'I checked in online - is a digital boarding pass acceptable?' is clear, explains your situation, and asks a practical clarifying question. 'I lost my luggage on a previous trip' is a different problem entirely. 'Boarding sounds like an excellent idea' is a casual non-answer.",
-            "id": "bd_l12_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'Attention! We are running an emergency safety drill. Please follow all my instructions carefully.'",
-            "options": [
-                "I've participated in drills before - they're usually quite quick.",
-                "Understood, Captain. Ready and waiting for your instructions.",
-                "Are safety drills truly necessary, in your opinion?"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "When given a formal safety instruction, confirm you've understood and show readiness.",
-            "explanation": "'Understood, Captain. Ready and waiting for your instructions' confirms you heard the announcement and are prepared to act. 'I've done drills before' doesn't engage with the current one. 'Are drills truly necessary?' questions the Captain's authority unhelpfully.",
-            "id": "bd_l13_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I've found a new clue. Could you write it down while I describe it?'",
-            "options": [
-                "Writing is a very important form of communication.",
-                "I've written down many things for you already today.",
-                "Of course! I'm ready with my notepad - go ahead."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "When asked to do a specific task, confirm you are ready and equipped to do it.",
-            "explanation": "'Of course! I'm ready with my notepad - go ahead' confirms readiness and shows you have what you need. 'Writing is an important form of communication' is a platitude that doesn't help. 'I've written many things today' implies fatigue or reluctance.",
-            "id": "bd_l13_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'This dish is almost ready. Would you like to try it first and give me your honest opinion?'",
-            "options": [
-                "Yes, please! I'd love to try it and give you my thoughts.",
-                "I already had quite a large lunch today.",
-                "Cooking such a dish takes considerable time and skill."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "When offered a tasting opportunity, accept enthusiastically and show genuine interest.",
-            "explanation": "'Yes, please! I'd love to try it and give you my thoughts' accepts the invitation with enthusiasm and offers exactly what was asked - honest feedback. 'Cooking takes considerable time and skill' is a general observation. 'I already had quite a large lunch' might be relevant but 'No thank you, but it smells wonderful!' would be the polite decline.",
-            "id": "bd_l13_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'Are you currently allergic to any medications?'",
-            "options": [
-                "I'm not entirely certain - what medications are you considering?",
-                "I don't actually take medication very often at all.",
-                "Allergies have become extremely common in modern times."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Give the safest, most responsible answer for a medical context - honest and specific.",
-            "explanation": "'I'm not entirely certain - what medications are you considering?' is the safest response when unsure, opening a dialogue for the doctor to specify. 'I don't take medication often' doesn't address the allergy question. 'Allergies have become very common' is a statistic, not a personal medical answer.",
-            "id": "bd_l14_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'This price is completely firm - it is not negotiable. Take it or leave it.'",
-            "options": [
-                "Very well, I understand. In that case, I'll take it.",
-                "I'll come back with my final answer next week.",
-                "Everything is negotiable if you approach it correctly."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "When told a price is final, make a clear decision without arguing unnecessarily.",
-            "explanation": "'Very well, I understand. In that case, I'll take it' accepts the terms clearly and moves forward. 'Everything is negotiable if you approach it correctly' challenges the seller when they have been clear. 'I'll come back next week' delays when an immediate decision is expected.",
-            "id": "bd_l14_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'Your connecting flight departs in just forty minutes. It's going to be tight. Would you like some assistance?'",
-            "options": [
-                "I've managed tight connections before without any difficulty.",
-                "Forty minutes should probably be enough, shouldn't it?",
-                "Yes, please! Which gate is it and do I need to clear security again?"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "When time is short, accept help immediately and ask the two most critical questions.",
-            "explanation": "'Yes, please! Which gate and do I need to clear security again?' accepts help and asks the two most essential questions for making a connection. 'Forty minutes should be enough' is uncertain and doesn't move you forward. 'I've managed before' shows past experience but wastes precious time.",
-            "id": "bd_l14_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'What is your initial impression of our new crew member?'",
-            "options": [
-                "I honestly haven't had the opportunity to get to know them yet.",
-                "New arrivals can sometimes find it challenging to adapt.",
-                "They seem very eager and show real potential for growth."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "When asked for a professional impression, give a constructive, thoughtful observation.",
-            "explanation": "'They seem very eager and show real potential for growth' gives a genuine, positive professional observation. 'New arrivals can find it challenging' is vague and doesn't offer an opinion on this specific person. 'I haven't had the opportunity yet' avoids the question - even if true, a first impression could be shared.",
-            "id": "bd_l15_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I need this information to remain strictly confidential. Can I trust you with it?'",
-            "options": [
-                "That rather depends on what the information actually is.",
-                "Absolutely. You have my complete word on it.",
-                "Confidential information is, by definition, sensitive information."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Give a firm, clear commitment when asked if you can be trusted.",
-            "explanation": "'Absolutely. You have my complete word on it' gives an unconditional, clear commitment of trustworthiness. 'Confidential information is sensitive' just defines the term without committing. 'That depends on what it is' makes trust conditional, which undermines the commitment completely.",
-            "id": "bd_l15_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I'm afraid we've run out of the daily special. May I suggest something else from the menu instead?'",
-            "options": [
-                "What a shame - but yes, what would you recommend for me?",
-                "In that case, I'll simply have a glass of water.",
-                "How long exactly has the special been listed on the menu?"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "When your first choice is unavailable, accept the offer of a substitute graciously.",
-            "explanation": "'What a shame - but yes, what would you recommend?' expresses mild disappointment while opening up to alternatives. 'How long has it been on the menu?' is irrelevant to your current need. 'I'll simply have water' is an extreme reaction to a simple substitution offer.",
-            "id": "bd_l15_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'You need to rest completely for the next three days. No work, no physical exertion at all.'",
-            "options": [
-                "But I genuinely feel absolutely fine right now.",
-                "My job isn't particularly physical in nature anyway.",
-                "I understand completely. I'll follow your advice carefully."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Follow medical advice gracefully and confirm you understand the full instructions.",
-            "explanation": "'I understand completely. I'll follow your advice carefully' shows respect for the doctor's professional judgment. 'But I genuinely feel fine' challenges medical advice - how you feel doesn't override a clinical judgment. 'My job isn't particularly physical' argues around the instruction rather than following it.",
-            "id": "bd_l16_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'This is a genuine antique - it is over two hundred years old.'",
-            "options": [
-                "Very old objects are not necessarily always valuable, however.",
-                "Two hundred years does sound like rather a long time.",
-                "That's fascinating! Could you tell me more about its history and provenance?"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "When given an interesting fact about an item, show genuine curiosity and ask a relevant follow-up.",
-            "explanation": "'That's fascinating! Could you tell me more about its history and provenance?' shows real interest and moves the conversation forward. 'Very old objects are not necessarily valuable' is dismissive and challenges the seller's implication. 'Two hundred years does sound long' just restates the obvious without advancing the conversation.",
-            "id": "bd_l16_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'Visibility is very poor today due to dense fog. How would you like to proceed?'",
-            "options": [
-                "I do generally prefer clear weather conditions for flying.",
-                "Fog is actually quite common in coastal regions.",
-                "Let's review all applicable safety procedures before we make a final decision."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "When a safety concern is raised, suggest a careful, systematic approach before acting.",
-            "explanation": "'Let's review all applicable safety procedures before making a final decision' shows responsible, safety-first professional thinking. 'Fog is common in coastal regions' is a geographic observation that doesn't answer the question. 'I prefer clear weather' states a personal preference but doesn't address the operational decision.",
-            "id": "bd_l16_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'We appear to be off course. Do you have a bearing?'",
-            "options": [
-                "I used to be quite good at navigation at one point.",
-                "I'm not entirely certain, but according to my compass we should bear left - that appears to be north.",
-                "North is in the direction of the North Pole."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Give the most practical and helpful response based on available tools and current information.",
-            "explanation": "'I'm not entirely certain, but according to my compass we should bear left - that appears to be north' is honest about uncertainty but immediately uses available tools. 'North is in the direction of the North Pole' is a definition, not a helpful navigation aid. 'I used to be quite good at navigation' doesn't help the current situation.",
-            "id": "bd_l17_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'This document is marked classified. Why are you examining it?'",
-            "options": [
-                "Documents do need to be organised and catalogued properly.",
-                "I apologise - I wasn't aware it was classified. I'll stop immediately.",
-                "Classified files are genuinely very interesting to read."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "When caught doing something potentially wrong, apologize immediately and correct your behaviour.",
-            "explanation": "'I apologise - I wasn't aware it was classified. I'll stop immediately' takes responsibility, gives an explanation, and immediately corrects the behaviour. 'Documents need to be organized' is a deflection. 'Classified files are very interesting' would be dangerously inappropriate in a real security context.",
-            "id": "bd_l17_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I only have very ripe tomatoes today - they're ideal for making sauce, though.'",
-            "options": [
-                "I was actually hoping for firmer tomatoes to eat fresh.",
-                "Perfect - very ripe tomatoes make the best sauce. I'll take two kilograms.",
-                "Tomatoes do indeed come in many wonderful varieties."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "When a product's characteristics match a specific need perfectly, show knowledge and make a decisive purchase.",
-            "explanation": "'Very ripe tomatoes make the best sauce. I'll take two kilograms' demonstrates food knowledge, confirms the product is right for the purpose, and makes a clear purchase decision. 'Tomatoes come in many varieties' is general knowledge. 'I was hoping for firmer tomatoes' is a valid preference but doesn't engage with the seller's suggestion.",
-            "id": "bd_l17_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'Your test results have come back. Would you like me to explain them to you now?'",
-            "options": [
-                "Yes, please explain everything to me as clearly as you can.",
-                "How long did it actually take to process the results?",
-                "Medical tests are generally known to be quite stressful."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "When offered important information you need, accept clearly and show you're ready to listen.",
-            "explanation": "'Yes, please explain everything as clearly as you can' gives a clear yes and makes a specific, useful request for clarity. 'Medical tests are stressful' is a general statement. 'How long did the processing take?' asks a procedural question when what matters is the results themselves.",
-            "id": "bd_l18_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'We can offer a fifteen percent discount if you order in larger quantities.'",
-            "options": [
-                "Fifteen percent doesn't seem particularly generous, actually.",
-                "How large a quantity would be required to qualify for that discount?",
-                "Discounts are certainly beneficial for any business relationship."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "When an offer has conditions attached, ask for clarification about those conditions first.",
-            "explanation": "'How large a quantity would be required to qualify?' is the most practical first question - you need to know the condition before you can make a decision. 'Discounts are beneficial for business' is a vague agreement. 'Fifteen percent doesn't seem generous' jumps to negotiation before you even know the full terms.",
-            "id": "bd_l18_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'You are cleared to land on runway three. Winds are easterly at twelve knots.'",
-            "options": [
-                "What exactly does twelve knots mean in practical terms?",
-                "Easterly at twelve knots, runway three - understood. Beginning final approach.",
-                "Runway three is on the right side, is that correct?"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "In professional aviation contexts, always confirm receipt of instructions by repeating key details.",
-            "explanation": "'Easterly at twelve knots, runway three - understood. Beginning final approach' uses the standard professional practice of reading back key details and confirms the action. 'What exactly does twelve knots mean?' would be alarming from a pilot. 'Which side is runway three?' is something a pilot should always know.",
-            "id": "bd_l18_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'Your performance throughout this mission has been exemplary. Keep it up.'",
-            "options": [
-                "Thank you, Captain. I'll continue giving everything I have.",
-                "I'm well aware - it has been a great deal of hard work.",
-                "I was simply doing what any competent person would do."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Accept praise graciously with thanks and a forward-looking commitment.",
-            "explanation": "'Thank you, Captain. I'll continue giving everything I have' accepts the praise appropriately and makes a genuine commitment. 'I'm well aware - it has been hard work' sounds arrogant. 'I was simply doing what anyone would do' undersells the achievement and misses the social cue to accept praise with warmth.",
-            "id": "bd_l19_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I need to borrow your phone for just one minute. Is that alright with you?'",
-            "options": [
-                "Of course - go right ahead. Here it is.",
-                "What exactly do you need to use it for?",
-                "Mobile phones are considered very personal devices."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "When a trusted colleague asks to borrow something for a short time, lend it willingly.",
-            "explanation": "'Of course - go right ahead. Here it is' is generous and trusting, appropriate for a colleague. 'Mobile phones are very personal devices' implies reluctance without declining clearly. 'What exactly do you need it for?' questions a simple request and suggests unnecessary distrust.",
-            "id": "bd_l19_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'What is your absolute favourite dish on our entire menu?'",
-            "options": [
-                "Your menu does offer quite a large number of choices.",
-                "I generally enjoy food that is both tasty and filling.",
-                "I adore the wild mushroom risotto - the texture is always perfectly silky."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "When asked for a specific preference, give a specific, enthusiastic answer with a reason.",
-            "explanation": "'I adore the wild mushroom risotto - the texture is always perfectly silky' gives a specific, enthusiastic answer with a sensory reason. 'I generally enjoy tasty and filling food' is a vague non-answer. 'Your menu offers many choices' is an observation about quantity, not a personal preference.",
-            "id": "bd_l19_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'How has your quality of sleep been recently?'",
-            "options": [
-                "Sleep is widely known to be very important for overall health.",
-                "I sleep in quite a comfortable and well-furnished bedroom.",
-                "I've been sleeping well - roughly seven to eight hours each night."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "When asked about health habits, give specific, quantified information for the best medical value.",
-            "explanation": "'I've been sleeping well - roughly seven to eight hours each night' gives both a quality assessment and a specific quantity - both medically useful. 'Sleep is very important for health' is a general fact. 'I sleep in a comfortable bedroom' describes the environment, not the quality or duration.",
-            "id": "bd_l20_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I need this entire order delivered no later than Friday. Can you guarantee that?'",
-            "options": [
-                "Yes, absolutely - I'll have written confirmation to you within the hour.",
-                "Deliveries from us are generally reliably on time.",
-                "Friday does happen to come directly after Thursday."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "When asked to commit to a deadline, give a direct yes or no and immediately state your next step.",
-            "explanation": "'Yes, absolutely - I'll have written confirmation to you within the hour' commits clearly to the deadline and adds a professional follow-up step. 'Friday comes directly after Thursday' is a non-answer. 'Deliveries are generally on time' is vague and doesn't specifically commit to this particular Friday.",
-            "id": "bd_l20_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'Did you enjoy your journey with us today?'",
-            "options": [
-                "I actually booked this particular flight about three months ago.",
-                "Air travel is certainly considerably faster than travelling by road.",
-                "Yes - it was extremely smooth and comfortable. The crew were absolutely wonderful."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "When asked about your experience, give a genuine, specific response that the person will value.",
-            "explanation": "'Yes - it was extremely smooth and comfortable. The crew were absolutely wonderful' gives specific, enthusiastic feedback that any airline crew would value. 'Air travel is faster than road travel' makes a general comparison. 'I booked three months ago' gives irrelevant booking history.",
-            "id": "bd_l20_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        }
-    ]
+  "gameType": "branchingDialogue",
+  "batchIndex": 2,
+  "levels": "11-20",
+  "quests": [
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker at lunch",
+      "scene": "At lunch, a coworker asks: 'Do you prefer working from home or coming into the office?'",
+      "options": [
+        "I don't really have an opinion on that.",
+        "Working from home is objectively better for productivity according to several studies I've read on remote work efficiency.",
+        "Honestly, I prefer the office — I focus better when I'm away from home distractions."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When someone asks about your personal preference, share your own view with a short reason, not a general fact.",
+      "explanation": "Stating your actual preference and a personal reason answers the question directly and gives your coworker something to respond to. Saying you have no opinion can feel like a conversational dead end. Citing studies avoids saying what you personally think, which is what your coworker was actually curious about.",
+      "id": "bd_l11_q1",
+      "consequencePreviews": [
+        "Here, the conversation stalls a bit since there's nothing for your coworker to respond to.",
+        "As a result, you answer with general research instead of actually sharing your own preference, which wasn't what was asked.",
+        "As a result, you share a clear, honest preference that keeps the conversation flowing naturally."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend planning a weekend trip",
+      "scene": "A friend texts: 'For the weekend trip, would you rather stay in a cabin or a hotel?'",
+      "options": [
+        "I'd lean toward a cabin — it feels more relaxing and we'd have more space to hang out.",
+        "Whatever you want is fine, honestly, I wasn't considering every angle, so there might be a better way to handle it.",
+        "Cabins can have issues with plumbing and heating depending on the location and season."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "A useful answer to 'would you rather' names your preference clearly, even briefly, rather than deflecting.",
+      "explanation": "Naming your preference and a short reason gives your friend something concrete to plan around. 'Whatever you want' is polite but unhelpful when someone specifically asked for your input. Talking about general pros and cons in the abstract avoids actually answering the question that was asked.",
+      "id": "bd_l11_q2",
+      "consequencePreviews": [
+        "Realistically, your friend gets a clear preference along with the reasoning behind it, making planning easier.",
+        "As a result, your friend still doesn't know your actual preference, which makes planning harder for them.",
+        "As a result, you list general considerations instead of actually saying what you'd prefer for this trip."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "your partner discussing dinner plans",
+      "scene": "You and your partner have very different food moods tonight. They ask: 'Do you want to just decide, or should we figure this out together?'",
+      "options": [
+        "You just pick, I really don't mind either way.",
+        "Let's figure it out together — I'm in the mood for something spicy, what about you?",
+        "I want Thai food from that place on Fifth Street, the one with the green curry, not the other Thai place we went to last month, that one wasn't as good anyway."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When someone offers to decide together, share your genuine preference so the decision is actually shared.",
+      "explanation": "Agreeing to decide together and offering your own preference honours what your partner actually asked for. Deferring entirely avoids expressing your own wants, which isn't true collaboration. Jumping straight to a specific, detailed demand skips over the 'together' part your partner specifically proposed.",
+      "id": "bd_l11_q3",
+      "consequencePreviews": [
+        "Realistically, you avoid stating any preference, which puts the entire decision on your partner.",
+        "In this moment, you invite a real discussion and share your own preference, moving the decision forward together.",
+        "Here, you skip past discussing it together and jump straight to a specific demand, ignoring what they asked."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker",
+      "scene": "A coworker says: 'A few of us are grabbing drinks after work on Friday, want to come?'",
+      "options": [
+        "Sounds fun, count me in — what time are you all heading out?",
+        "Yes, I would very much enjoy accompanying you and the team for beverages following the conclusion of the workday.",
+        "Maybe, if I'm honest, I said that fairly quickly, so I could be wrong."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Accepting a casual invitation works best with an enthusiastic, casual reply and a useful follow-up question.",
+      "explanation": "A warm, casual acceptance plus a practical question shows genuine interest and helps you actually coordinate. 'Maybe' leaves your coworker without a clear answer to plan around. The very formal reply technically accepts but sounds strange for a relaxed, casual invite among coworkers.",
+      "id": "bd_l12_q1",
+      "consequencePreviews": [
+        "You accept warmly and ask a natural follow-up that helps you actually join smoothly.",
+        "As a result, you accept clearly, but the overly formal wording feels mismatched for a casual after-work invite.",
+        "Your coworker is left unsure whether to plan for you or not."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend inviting you to a concert",
+      "scene": "A friend says: 'I've got an extra ticket to a concert Saturday night, want to come?' You already have plans that evening.",
+      "options": [
+        "Saturday? Hmm, well.",
+        "No.",
+        "I wish I could, but I've already got plans Saturday. Thanks for thinking of me though!"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "A polite decline is clear about the 'no' while still showing appreciation for the invitation.",
+      "explanation": "Declining clearly while thanking your friend for the invite keeps things warm even though you're saying no. A flat 'no' answers honestly but skips any acknowledgment of the gesture. The long, uncertain hedging leaves your friend without a clear answer, making it harder for them to plan around you.",
+      "id": "bd_l12_q2",
+      "consequencePreviews": [
+        "You may notice that the vague, drawn-out response leaves your friend unsure whether to expect you or find someone else.",
+        "You may notice that the blunt refusal doesn't acknowledge the kind gesture of being invited.",
+        "You decline clearly and warmly, leaving the friendship on good terms."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "your manager",
+      "scene": "Your manager says: 'We're doing an optional team dinner Thursday evening. No pressure, but it'd be nice to see you there.' You'd rather not go, but you don't want it to look bad.",
+      "options": [
+        "I'll be there.",
+        "Thanks for the invite — I can't make Thursday, but I appreciate you including me.",
+        "No, team dinners really aren't my thing, I'd rather just go home after work honestly."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "You can decline an optional work event politely without pretending you'll attend or sounding dismissive.",
+      "explanation": "Thanking your manager and declining clearly protects your evening while still showing you value the invitation. Agreeing despite not wanting to go isn't sustainable and doesn't reflect how you actually feel. Bluntly dismissing team dinners as 'not your thing' can come across as more critical than the moment calls for, even though declining itself is completely fine.",
+      "id": "bd_l12_q3",
+      "consequencePreviews": [
+        "Realistically, you agree even though you didn't want to, which isn't sustainable and doesn't reflect your actual preference.",
+        "You decline respectfully while showing you value being included, protecting the relationship.",
+        "As a result, the blunt decline may come across as dismissive of the effort your manager put into the invite."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a classmate",
+      "scene": "A classmate asks: 'Are you free to study together this weekend?'",
+      "options": [
+        "Sure.",
+        "I'm generally free most weekends, it depends on a lot of things honestly.",
+        "Saturday afternoon works for me — want to meet at the library around two?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When agreeing to make plans, suggest a specific time or place to move things forward efficiently.",
+      "explanation": "Confirming a specific day, time, and place turns a vague plan into something your classmate can actually act on. The vague answer about being 'generally free' doesn't give any concrete information to plan around. A plain 'sure' agrees but leaves all the planning work for the other person.",
+      "id": "bd_l13_q1",
+      "consequencePreviews": [
+        "As a result, you agree, but without any details, your classmate still has to do all the work of planning.",
+        "In this moment, your classmate still doesn't have a concrete plan to work with.",
+        "As a result, you confirm availability and propose a specific plan, making it easy to agree on details."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a neighbour",
+      "scene": "A neighbour asks: 'Would you be able to water my plants while I'm away next week?'",
+      "options": [
+        "Of course — just let me know which days and how often they need water.",
+        "Sure, I guess.",
+        "I could probably do that, though I'm not totally sure about my schedule next week."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Accepting a favour confidently and asking a practical follow-up question makes you easy to rely on.",
+      "explanation": "A confident yes plus a practical question shows you're genuinely willing to help and sets up the favour to go smoothly. 'Sure, I guess' technically agrees but the hesitance could make your neighbour second-guess relying on you. Sharing your doubts and uncertainty may be honest, but it puts the burden back on your neighbour to reassure you instead of simply confirming your help.",
+      "id": "bd_l13_q2",
+      "consequencePreviews": [
+        "You agree helpfully and ask exactly what you need to know to do it properly.",
+        "Realistically, you agree, but the hesitant tone might make your neighbour unsure if you're really okay with it.",
+        "In this moment, the hesitation and self-doubt may leave your neighbour unsure whether they can actually rely on you."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who wants to borrow your car",
+      "scene": "A friend asks: 'Hey, could I borrow your car this weekend? Mine's in the shop.' You're generally happy to help, but you have an early appointment Sunday morning that you'll need the car for.",
+      "options": [
+        "Sure, no problem, take it whenever you need it.",
+        "Yeah, that's fine — just make sure it's back by 8am Sunday, I've got an appointment.",
+        "I don't know, cars are a big responsibility to lend out, what if something happens to it?"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When agreeing to a favour with one real condition, state that condition clearly instead of agreeing with no limits or worrying vaguely.",
+      "explanation": "Agreeing to help while clearly stating your one real condition avoids a scheduling conflict without over-complicating things. Agreeing with no conditions risks a real problem on Sunday that you knew about but didn't mention. Raising a vague worry about 'responsibility' doesn't communicate the actual, specific issue — your appointment — that your friend needs to know about.",
+      "id": "bd_l13_q3",
+      "consequencePreviews": [
+        "As a result, you agree without mentioning your Sunday appointment, which could cause a real problem later.",
+        "In this moment, you help your friend while being upfront about the one condition that matters, avoiding a conflict later.",
+        "You raise a vague worry instead of stating the actual, specific condition that matters to you."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend suggesting a restaurant",
+      "scene": "A friend says: 'Let's try that new Italian place tonight!' You had sushi last night and would rather have something different.",
+      "options": [
+        "Sure, sounds good, looking back, I was just going with my gut on that one, so let me know if that's off.",
+        "I actually had Italian-ish food yesterday — could we do sushi or something else instead?",
+        "No, I don't want Italian, to be honest, I hadn't really planned past that point, so take it with a grain of salt."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When you'd rather do something different, say so and offer an alternative to keep the plan moving.",
+      "explanation": "Sharing your reason and offering an alternative keeps the plan collaborative instead of just shutting the idea down. Going along with something you don't actually want avoids conflict but doesn't reflect your real preference. Saying no without any explanation or suggestion leaves your friend without a clear direction to go in next.",
+      "id": "bd_l14_q1",
+      "consequencePreviews": [
+        "Realistically, you agree even though you'd rather not, missing a chance to share your actual preference.",
+        "As a result, you express your preference honestly while still keeping the plan moving forward together.",
+        "Here, you state your preference but don't offer an alternative or explain, leaving your friend unsure what to suggest next."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a colleague suggesting a meeting time",
+      "scene": "A colleague suggests: 'Let's meet at 8am tomorrow to go over the proposal.' You know you won't be sharp that early and would do better a bit later.",
+      "options": [
+        "I'm not at my best that early — could we push it to 10am instead?",
+        "Okay, 8am works.",
+        "8am is really early, mornings are so difficult for me in general, I've never been a morning person, ever since university actually—"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When declining a suggested time, be direct about the issue and immediately offer a workable alternative.",
+      "explanation": "Explaining briefly and proposing a specific new time keeps the conversation efficient and solves the actual scheduling problem. Agreeing anyway ignores a real concern about how effective the meeting would be. A long explanation about your general habits doesn't actually solve the scheduling problem your colleague needs resolved.",
+      "id": "bd_l14_q2",
+      "consequencePreviews": [
+        "As a result, you honestly explain your preference and propose a concrete alternative that still meets the goal.",
+        "You agree despite knowing it's not a good time for you, which could affect the quality of the meeting.",
+        "You explain at length without actually proposing an alternative time, leaving the scheduling issue unresolved."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "your team leader assigning weekend work",
+      "scene": "Your team leader says: 'I know it's short notice, but could you come in this Saturday? We're behind on the launch.' You already have a family commitment that morning, but you could come in during the afternoon.",
+      "options": [
+        "Saturdays are really meant to be my personal time, I think it's important to maintain boundaries around that.",
+        "Sure, I'll be there.",
+        "I can't make Saturday morning — I have a family commitment — but I could come in from 1pm if that helps."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When you can't fully meet a request, be specific about what you can offer instead of a flat yes or a general objection.",
+      "explanation": "Stating your limit clearly and offering a specific alternative solves your team leader's real problem while respecting your commitment. Agreeing despite the conflict sets up a broken promise later, which is worse for everyone. Speaking in general terms about boundaries doesn't tell your team leader whether they can count on you at all this weekend.",
+      "id": "bd_l14_q3",
+      "consequencePreviews": [
+        "As a result, you raise a general principle instead of directly addressing whether you can help with the actual, urgent situation.",
+        "Here, you agree to something you can't actually do, which will likely cause a bigger problem later.",
+        "Here, you're upfront about your limit while still offering a real, workable solution to the actual problem."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend catching up over the phone",
+      "scene": "A friend calls and asks: 'So what have you been up to lately?'",
+      "options": [
+        "Been pretty busy with a new project at work, but I finally started running again too. What about you?",
+        "Not much, I guess, I hadn't really thought it through, so it's worth double-checking — and there's a decent chance I'd see it differently after sleeping on it.",
+        "Well, where do I even start — Monday I had this huge meeting that went really long, then Tuesday my car wouldn't start, then Wednesday..."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "A good catch-up answer shares a real update briefly, then turns the question back to the other person.",
+      "explanation": "Sharing something real and asking about your friend in return keeps the conversation balanced and engaging. 'Not much' is a common phrase but gives your friend nothing to build on. Recounting each day in detail can dominate the call, leaving little space for your friend to share their own news.",
+      "id": "bd_l15_q1",
+      "consequencePreviews": [
+        "Here, you share a real update and return the question, keeping the catch-up conversation balanced.",
+        "Your short answer gives your friend very little to respond to or ask about.",
+        "You may notice that the detailed day-by-day account takes over the conversation without leaving room for your friend to share too."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a distant relative at a family gathering",
+      "scene": "At a family gathering, a relative you don't see often asks: 'So, how's life treating you?'",
+      "options": [
+        "It's complicated.",
+        "Pretty good, thanks! Work's keeping me busy, and I just got back from a trip to Portugal.",
+        "Honestly, work has been a nightmare, my manager keeps changing priorities every week, and on top of that my apartment has this mold issue that the landlord won't deal with, and—"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "At casual gatherings, keep personal updates light and general unless the other person invites more detail.",
+      "explanation": "A light, positive update fits the casual, brief nature of small talk with extended family. 'It's complicated' is honest but can create an awkward moment the relative wasn't necessarily prepared for at a gathering. Listing detailed problems turns a quick social check-in into a heavier conversation than the moment usually calls for.",
+      "id": "bd_l15_q2",
+      "consequencePreviews": [
+        "Realistically, the vague, slightly heavy answer might invite awkward follow-up questions at a casual family gathering.",
+        "As a result, you give a warm, easy update that works well for a relative you don't know deeply.",
+        "You may notice that the detailed complaints may feel like too much for a brief, casual catch-up at a family event."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "an old friend you haven't spoken to in years",
+      "scene": "You unexpectedly run into an old friend you haven't spoken to in years. They ask: 'Wow, it's been forever — how have you been?'",
+      "options": [
+        "Good.",
+        "Oh my gosh, so much has happened, okay so first I moved to Chicago, then I met my partner, then we got a dog, then I changed jobs twice, then—",
+        "It really has! I've been good — moved cities, changed jobs. We should properly catch up sometime."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "For a big update after a long gap, a warm summary plus a suggestion to properly reconnect works better than either extreme.",
+      "explanation": "A warm, brief summary plus a suggestion to catch up properly respects both the emotional moment and the likely time constraints of a chance encounter. 'Good' undersells the significance of reconnecting after years apart. Trying to cover everything on the spot can overwhelm a conversation that's probably happening in a hallway or on a street corner, not over coffee.",
+      "id": "bd_l15_q3",
+      "consequencePreviews": [
+        "You may notice that the minimal answer doesn't match the emotional weight of an unexpected reunion after years apart.",
+        "Here, trying to cover years of updates on the spot overwhelms a chance encounter that likely has limited time.",
+        "In this moment, you give a warm, efficient summary and open the door to reconnecting properly later."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who wants to reschedule",
+      "scene": "A friend texts: 'Hey, something came up — can we move our dinner from tonight to tomorrow instead?'",
+      "options": [
+        "I guess so, even though I already planned my whole evening around tonight.",
+        "No worries, tomorrow works for me too — same time?",
+        "Sure, whenever, I mean, that was more of a first reaction."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When agreeing to reschedule, confirm a specific new time so both people have a clear plan.",
+      "explanation": "Accepting easily and confirming the time keeps the friendship relaxed and the plan clear. Mentioning your disrupted evening adds mild guilt to a normal, everyday reschedule. 'Whenever' is friendly but leaves the actual new time unconfirmed, which could cause confusion later.",
+      "id": "bd_l16_q1",
+      "consequencePreviews": [
+        "As a result, you agree, but the comment about your disrupted plans adds a note of friction to what should be an easy change.",
+        "As a result, you accept the change smoothly and confirm the new detail so the plan stays clear.",
+        "Realistically, you agree, but without confirming a time, there's still uncertainty about the actual new plan."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a client canceling a meeting",
+      "scene": "A client emails: 'I'm sorry, but I need to cancel our meeting tomorrow. Something urgent came up.'",
+      "options": [
+        "No problem at all — let me know a few times that work for you and we'll find a new slot.",
+        "Okay.",
+        "That's disappointing, we had that slot booked for a while."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When a client cancels for a real reason, respond graciously and make rescheduling simple for them.",
+      "explanation": "A gracious response plus a clear offer to reschedule protects the client relationship and moves things forward. Expressing disappointment focuses on your own inconvenience instead of accommodating a likely genuine emergency. A bare 'okay' is polite enough but doesn't help move the meeting toward being rebooked.",
+      "id": "bd_l16_q2",
+      "consequencePreviews": [
+        "In this moment, you respond graciously and make it easy for the client to reschedule, protecting the relationship.",
+        "You may notice that the one-word reply is professionally acceptable but misses a chance to make rescheduling easy for the client.",
+        "As a result, your reply focuses on your own inconvenience rather than accommodating a client's urgent situation."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker canceling on you for the second time",
+      "scene": "A coworker who's already rescheduled once messages: 'Sorry, I need to push our meeting again, something came up.' You still need this meeting to finish your part of a shared project on time.",
+      "options": [
+        "This is the second time you've cancelled — I need this meeting to happen, I suppose, I hadn't really planned past that point.",
+        "Sure, whenever works for you, looking back, I hadn't weighed all the details, so let me know if that's off.",
+        "No worries — but since we're on a deadline, could we lock in a time today that definitely works?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When repeated rescheduling threatens a deadline, stay understanding but push for a firm, specific new time.",
+      "explanation": "Staying easygoing while asking for a firm commitment addresses the real risk — the deadline — without sounding accusatory. Simply agreeing again doesn't protect your shared deadline from repeated delays. Directly calling out the pattern is honest, but the sharper tone may create unnecessary tension when a calmer request could get the same result.",
+      "id": "bd_l16_q3",
+      "consequencePreviews": [
+        "In this moment, pointing out the pattern directly may come across as more confrontational than necessary to solve the scheduling problem.",
+        "Here, you accommodate again without addressing the pattern, which risks the deadline being missed.",
+        "In this moment, you stay understanding while making clear the reschedule can't keep happening without a firm plan."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend suggesting a weekend hike",
+      "scene": "A friend says: 'Want to go hiking this weekend? There's a great trail near the lake.'",
+      "options": [
+        "That sounds great — what time were you thinking of heading out?",
+        "Hiking is a good form of cardiovascular exercise and is generally recommended for overall health.",
+        "Maybe, I'll see how I feel."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Accepting an invitation works best with genuine enthusiasm plus a question that helps finalize the plan.",
+      "explanation": "Accepting clearly and asking a practical follow-up shows real interest and helps the plan actually happen. Talking about hiking in general terms sidesteps actually responding to the invitation. 'I'll see how I feel' is honest but leaves your friend without anything solid to plan around.",
+      "id": "bd_l17_q1",
+      "consequencePreviews": [
+        "In this moment, you accept enthusiastically and move the plan forward with a practical question.",
+        "Realistically, you respond with a general fact about hiking instead of actually accepting or engaging with the invitation.",
+        "The noncommittal answer leaves your friend unsure whether to plan for you."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a classmate proposing a study group",
+      "scene": "A classmate suggests: 'A few of us are starting a weekly study group for the exam. Want to join?'",
+      "options": [
+        "Study groups aren't really my thing, I prefer studying alone, honestly, I was just going with my gut on that one.",
+        "Definitely, I could use the structure. When and where are you meeting?",
+        "I'll try to make it if I can."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "A clear yes or no, with a reason, is more useful to a group organiser than a vague maybe.",
+      "explanation": "Accepting clearly and asking for details shows genuine commitment and helps you actually join smoothly. Declining honestly is fine, but stating it so bluntly, with no softening, feels a little harsh for a friendly invite. 'I'll try to make it if I can' avoids a real commitment, leaving the organiser unsure how many people to plan for.",
+      "id": "bd_l17_q2",
+      "consequencePreviews": [
+        "In this moment, you decline honestly, but without any softening, it may come across as a bit blunt for a friendly invitation.",
+        "As a result, you accept with a clear reason and immediately ask for the practical details you need.",
+        "In this moment, the vague commitment leaves your classmate unsure whether to count on you or not."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker inviting you to co-lead a project",
+      "scene": "A coworker says: 'I want to pitch a new project idea to management, and I think it'd be stronger if we did it together. Interested?' You're excited about the idea, but you're already stretched thin this month.",
+      "options": [
+        "Yes, let's do it.",
+        "I don't think I can take on anything else right now.",
+        "I really like the idea — I'm just worried about bandwidth this month. Could we start planning it for next month instead?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When you're interested but overloaded, propose a timing adjustment instead of a flat yes or a flat no.",
+      "explanation": "Showing genuine interest and proposing a timing fix keeps the opportunity alive while being honest about your current capacity. Agreeing right away without mentioning your workload risks disappointing your coworker later when you can't deliver. Declining outright loses an opportunity you actually wanted, when a simple delay could have solved the real problem.",
+      "id": "bd_l17_q3",
+      "consequencePreviews": [
+        "As a result, you commit without mentioning your workload, which risks letting your coworker down later.",
+        "Here, you decline the opportunity entirely, even though you're actually interested and a delay could have worked.",
+        "You express genuine interest while being honest about timing, and you offer a way to still make it happen."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend texting about weekend plans",
+      "scene": "A friend texts: 'Movie night at my place Friday? Bringing snacks is optional but appreciated 😄'",
+      "options": [
+        "Okay, I will attend and contribute food items as suggested.",
+        "Maybe, depends on my energy levels honestly.",
+        "I'm in! I'll bring popcorn and that dip you liked last time."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Match your reply's tone to a casual, friendly text — warm and relaxed works better than very formal or very vague wording.",
+      "explanation": "A warm, specific reply matches the casual, friendly tone of the invite and shows genuine enthusiasm. The overly formal wording is technically clear but feels strange replying to a relaxed, emoji-filled message. The vague 'maybe' doesn't give your friend anything solid to plan around.",
+      "id": "bd_l18_q1",
+      "consequencePreviews": [
+        "In this moment, the stiff, overly formal wording feels out of place replying to a relaxed, emoji-filled text.",
+        "In this moment, the uncertain reply leaves your friend unsure whether to expect you or plan snacks around you.",
+        "As a result, you accept warmly and add a specific, thoughtful detail that shows genuine enthusiasm."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a work acquaintance you don't know well",
+      "scene": "A work acquaintance from another department messages: 'A few of us are getting lunch Thursday if you'd like to join — no pressure at all.'",
+      "options": [
+        "Yo, I'm down, count me in, I suppose, I hadn't weighed all the details, so there might be a better way to handle it.",
+        "That sounds nice, thank you for the invite — I'd love to join if there's still room.",
+        "I will attend the luncheon at the specified time, in hindsight, I hadn't really planned past that point."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "With someone you don't know well, aim for a friendly but slightly more polished tone than you'd use with close friends.",
+      "explanation": "A warm but slightly polished reply matches the friendly-but-not-close relationship with a work acquaintance. The very casual slang feels a bit too familiar for someone you're still getting to know professionally. The overly stiff, formal wording swings too far the other way for what was actually a relaxed, low-pressure invite.",
+      "id": "bd_l18_q2",
+      "consequencePreviews": [
+        "Realistically, the very casual wording feels a bit too familiar for someone you don't know well yet.",
+        "You accept warmly but with slightly more polish, matching the friendly-but-not-close relationship.",
+        "You may notice that the reply is oddly stiff and formal for what was actually a relaxed, low-pressure invite."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "your new manager, inviting the team informally",
+      "scene": "Your new manager, whom you're still getting to know, drops a casual note in the team chat: 'No agenda, just thought it'd be nice to grab coffee as a team Friday if people are free :)'",
+      "options": [
+        "That sounds great, thanks for setting it up — I'll be there.",
+        "Sounds good boss, wouldn't miss it for the world, if I'm honest, I hadn't checked how that would actually land.",
+        "Noted."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "With a new manager who's being informal, you can relax your tone slightly, but avoid going too far in either direction.",
+      "explanation": "A warm, appropriately professional acceptance respects both the friendly gesture and the fact that you're still building this relationship. Calling your manager 'boss' with exaggerated enthusiasm feels overly familiar this early on. 'Noted' is a tone meant for formal instructions, not a warm, informal invitation.",
+      "id": "bd_l18_q3",
+      "consequencePreviews": [
+        "Realistically, you accept in a tone that's warm but still appropriately professional for a new manager relationship.",
+        "You may notice that the exaggerated, overly familiar tone feels mismatched this early in a relationship with a new manager.",
+        "As a result, the reply is far too curt for a warm, informal invitation, even from a manager."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend asking about your weekend",
+      "scene": "A friend asks: 'Any big plans this weekend?'",
+      "options": [
+        "I have a very extensive itinerary that I've already outlined in detail for personal and household tasks.",
+        "Not really, just relaxing — maybe a walk if the weather's good. You?",
+        "Nothing."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Casual questions about your weekend invite a short, relaxed answer plus a question back to keep the chat going.",
+      "explanation": "A relaxed, honest answer plus a question back keeps a casual exchange feeling like a real conversation. The stiff, vague wording is an odd fit for a simple, friendly question. 'Nothing' is honest but shuts the conversation down rather than keeping it open.",
+      "id": "bd_l19_q1",
+      "consequencePreviews": [
+        "The oddly formal, vague wording doesn't fit a relaxed question between friends.",
+        "As a result, you share a light, honest answer and keep the conversation going by asking about them.",
+        "In this moment, the one-word answer ends the exchange rather than keeping the casual conversation going."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a taxi driver making conversation",
+      "scene": "During a ride, the taxi driver asks: 'So, you visiting, or do you live around here?'",
+      "options": [
+        "I would prefer not to disclose personal details to strangers, thank you.",
+        "Yeah.",
+        "I live here actually, just been out running errands all day."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Ordinary small talk with service workers usually calls for a relaxed, natural answer, not extreme caution or vagueness.",
+      "explanation": "A relaxed, specific answer fits the friendly, low-stakes nature of small talk during a ride. Treating an ordinary question with extreme formality and suspicion feels like an overreaction to friendly small talk. 'Yeah' technically answers something, but it's unclear which part of the driver's either/or question you're actually confirming.",
+      "id": "bd_l19_q2",
+      "consequencePreviews": [
+        "In this moment, the overly guarded, formal reply feels unnecessarily cold for ordinary small talk with a driver.",
+        "In this moment, the minimal answer doesn't actually clarify whether you're visiting or a local, which was the actual question.",
+        "You give a natural, friendly answer that keeps light conversation going for the ride."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "an elderly neighbour who tends to talk for a long time",
+      "scene": "Your elderly neighbour, who's known for long chats, stops you and asks about your week, but you're actually in a rush to catch a bus.",
+      "options": [
+        "It's been good, thanks! I'm actually rushing for the bus, but let's catch up properly soon.",
+        "Can't talk, sorry.",
+        "Oh, it's been quite a week actually, let me tell you about it..."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When you're truly short on time with a chatty person, a warm but brief answer plus a reason works better than either extreme.",
+      "explanation": "A brief, warm answer plus an honest reason respects both the neighbour's friendliness and your actual time constraint. Opening up to a full conversation ignores your genuine time pressure and risks missing your bus. A flat, reasonless 'can't talk' may come across as more dismissive than the moment calls for, especially with someone who's just being kind.",
+      "id": "bd_l19_q3",
+      "consequencePreviews": [
+        "Realistically, you answer warmly, explain your time limit honestly, and suggest a proper chat later.",
+        "As a result, the abrupt reply, with no warmth, may feel dismissive to a neighbour who's just being friendly.",
+        "As a result, you open the door to a long conversation despite genuinely not having time, risking missing your bus."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend organizing a group trip",
+      "scene": "A friend messages the group chat: 'Okay, mountains or beach for the trip? Need everyone's vote by tonight.'",
+      "options": [
+        "Either is fine with me, I mean, I hadn't really thought it through, though I'm open to changing my mind.",
+        "I'd vote beach, but honestly happy with whatever the group decides.",
+        "Mountains, definitely. I've been wanting to go hiking for months, and honestly the beach is overrated for a trip like this, we did that last year and it wasn't even that fun."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When a group needs a decision, giving a clear vote while staying open helps move things forward smoothly.",
+      "explanation": "Giving a real vote while staying open to the group's decision helps things move forward without creating pressure. 'Either is fine' avoids contributing an actual vote, which doesn't help when a decision genuinely needs to be made. Strongly pushing one option and criticizing the other can pressure the group instead of simply contributing your preference.",
+      "id": "bd_l20_q1",
+      "consequencePreviews": [
+        "As a result, your friend still doesn't get an actual vote to count, which doesn't help finalize the decision.",
+        "As a result, you give a clear vote while showing flexibility, which helps the group actually reach a decision.",
+        "In this moment, your strong opinion, paired with criticism of the other option, may pressure the group rather than simply contributing a vote."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "coworkers deciding on a project approach",
+      "scene": "In a casual planning chat, a coworker asks: 'Should we use the new software or stick with what we know for this project?'",
+      "options": [
+        "I'd lean toward the new software — it should save us time once we're past the learning curve.",
+        "I don't have a strong preference either way.",
+        "The new software has a steeper learning curve but offers more integrations, while the old system is more stable but lacks some newer features, so there are trade-offs either way to consider."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When your team needs a decision, share your actual opinion with a brief reason rather than only listing pros and cons.",
+      "explanation": "Sharing a clear opinion with a reason gives your team something concrete to actually decide on. Saying you have no preference doesn't move the decision forward at all. Listing the pros and cons neutrally is useful background, but it avoids stating what you personally think, which is what was actually asked.",
+      "id": "bd_l20_q2",
+      "consequencePreviews": [
+        "As a result, you share a clear opinion with reasoning, giving the team something concrete to discuss.",
+        "The team gets no real input from you to help make the decision.",
+        "As a result, you lay out both sides neutrally instead of actually sharing your own view, which was what was asked."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "your team leader gathering input before a client pitch",
+      "scene": "Your team leader says: 'Before I finalize the pitch, quick gut check — should we lead with the pricing or the results first?' Two other colleagues have already said 'pricing.'",
+      "options": [
+        "Results, obviously — leading with pricing is a pretty basic mistake in any pitch, to be honest.",
+        "Yeah, pricing works, I'll go with whatever everyone else thinks.",
+        "I'd actually lead with results — I think it makes the pricing feel more justified once they've seen the impact."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When your honest opinion differs from the group, share it clearly and respectfully rather than conforming or dismissing others.",
+      "explanation": "Sharing your genuine view, with reasoning, gives your team leader real, useful input rather than just an echo of what others said. Agreeing just to match the group hides your actual opinion, which defeats the purpose of a 'gut check.' Being right can still land poorly if it's delivered by dismissing your colleagues' input as a 'basic mistake.'",
+      "id": "bd_l20_q3",
+      "consequencePreviews": [
+        "As a result, your opinion is clear, but the dismissive tone toward the other suggestion may feel unnecessarily critical of your colleagues.",
+        "You agree with the group even though it's not your real opinion, which doesn't actually help your leader decide well.",
+        "As a result, you share your honest view, even though it differs from others, giving your leader a fuller picture."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    }
+  ]
 }

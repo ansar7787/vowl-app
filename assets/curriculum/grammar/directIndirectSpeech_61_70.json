@@ -1,637 +1,649 @@
 {
-    "gameType": "directIndirectSpeech",
-    "batchIndex": 7,
-    "levels": "61-70",
-    "quests": [
-        {
-            "id": "dis_l61_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He asked, 'Where do you live?'",
-            "options": [
-                "He asked where do I live.",
-                "He asked where I lived.",
-                "He asked where I live."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He asked where I lived.",
-            "sentence": "He asked, 'Where do you live?'",
-            "hint": "Wh-questions use statement word order, and the helper verb 'do' disappears.",
-            "explanation": "The wh-word stays, but the order becomes subject-then-verb, 'do' is dropped, and 'live' shifts to 'lived'.",
-            "grammarRule": "Reported Wh-Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l61_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'This park needs more benches.'",
-            "options": [
-                "She said that that park needed more benches.",
-                "She said that this park needed more benches.",
-                "She said that that park needs more benches."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said that that park needed more benches.",
-            "sentence": "She said, 'This park needs more benches.'",
-            "hint": "'This' shifts to 'that', and the tense shifts too.",
-            "explanation": "'This' shifts to 'that', and 'needs' shifts to 'needed'.",
-            "grammarRule": "Time & Place Reference Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l61_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I could finish by Friday.'",
-            "options": [
-                "She said that she can finish by Friday.",
-                "She said that she could finish by Friday.",
-                "She said that she had could finish by Friday."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "She said that she could finish by Friday.",
-            "sentence": "She said, 'I could finish by Friday.'",
-            "hint": "This modal is already in its 'reported speech' form — it doesn't shift any further.",
-            "explanation": "'Could' is already a backshifted modal, so it stays the same in reported speech; only the pronoun changes.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Pronouns updated"
-            ]
-        },
-        {
-            "id": "dis_l62_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She asked, 'What time does the meeting start?'",
-            "options": [
-                "She asked what time does the meeting start.",
-                "She asked what time the meeting started.",
-                "She asked what time the meeting starts."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "She asked what time the meeting started.",
-            "sentence": "She asked, 'What time does the meeting start?'",
-            "hint": "Wh-questions use statement word order — no 'does', and the tense shifts.",
-            "explanation": "'Does' is dropped, word order becomes statement order, and 'starts' shifts to 'started'.",
-            "grammarRule": "Reported Wh-Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l62_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The council said, 'We shall review the proposal.'",
-            "options": [
-                "The council said that they shall review the proposal.",
-                "The council said that we should review the proposal.",
-                "The council said that they should review the proposal."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The council said that they should review the proposal.",
-            "sentence": "The council said, 'We shall review the proposal.'",
-            "hint": "'Shall' shifts to 'should' in reported speech, and the pronoun shifts too.",
-            "explanation": "'Shall' shifts to 'should', and 'we' shifts to 'they'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l62_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I upgraded the system.'",
-            "options": [
-                "He said that he upgraded the system.",
-                "He said that he had upgraded the system.",
-                "He said that he has upgraded the system."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He said that he had upgraded the system.",
-            "sentence": "He said, 'I upgraded the system.'",
-            "hint": "The past simple verb shifts even further back, to past perfect.",
-            "explanation": "'Upgraded' (past simple) shifts to 'had upgraded' (past perfect).",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l63_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She asked, 'Why did the river flood?'",
-            "options": [
-                "She asked why the river flooded.",
-                "She asked why did the river flood.",
-                "She asked why the river had flooded."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She asked why the river had flooded.",
-            "sentence": "She asked, 'Why did the river flood?'",
-            "hint": "Wh-questions use statement word order, and 'did' disappears — but watch the tense carefully.",
-            "explanation": "'Did' is dropped, word order becomes statement order, and 'flooded' (already past) shifts back further to 'had flooded'.",
-            "grammarRule": "Reported Wh-Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l63_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I should see a doctor.'",
-            "options": [
-                "He said that I should see a doctor.",
-                "He said that he should see a doctor.",
-                "He said that he shall see a doctor."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He said that he should see a doctor.",
-            "sentence": "He said, 'I should see a doctor.'",
-            "hint": "This modal is already in its 'reported speech' form.",
-            "explanation": "'Should' is already backshifted, so it stays the same; only the pronoun changes.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Pronouns updated"
-            ]
-        },
-        {
-            "id": "dis_l63_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'This offer ends today.'",
-            "options": [
-                "He said that that offer ends that day.",
-                "He said that this offer ended today.",
-                "He said that that offer ended that day."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "He said that that offer ended that day.",
-            "sentence": "He said, 'This offer ends today.'",
-            "hint": "Both 'this' and 'today' shift, along with the verb.",
-            "explanation": "'This' shifts to 'that', 'ends' shifts to 'ended', and 'today' shifts to 'that day'.",
-            "grammarRule": "Time & Place Reference Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l64_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He asked, 'How does this app work?'",
-            "options": [
-                "He asked how that app worked.",
-                "He asked how does this app work.",
-                "He asked how this app works."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He asked how that app worked.",
-            "sentence": "He asked, 'How does this app work?'",
-            "hint": "Wh-questions use statement word order, 'does' disappears, and 'this' shifts too.",
-            "explanation": "'Does' is dropped, 'this' shifts to 'that', and 'works' shifts to 'worked'.",
-            "grammarRule": "Reported Wh-Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l64_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The team said, 'We shall present the results.'",
-            "options": [
-                "The team said that we should present the results.",
-                "The team said that they shall present the results.",
-                "The team said that they should present the results."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The team said that they should present the results.",
-            "sentence": "The team said, 'We shall present the results.'",
-            "hint": "'Shall' shifts to 'should', and the pronoun shifts too.",
-            "explanation": "'Shall' shifts to 'should', and 'we' shifts to 'they'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l64_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The ranger warned us, 'Don't light fires here.'",
-            "options": [
-                "The ranger warned us not to light fires there.",
-                "The ranger warned us not to light fires here.",
-                "The ranger warned us don't light fires there."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The ranger warned us not to light fires there.",
-            "sentence": "The ranger warned us, 'Don't light fires here.'",
-            "hint": "Negative commands shift to 'not to + verb', and 'here' shifts too.",
-            "explanation": "'Don't light' becomes 'not to light', and 'here' shifts to 'there'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l65_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She asked, 'When will the results be announced?'",
-            "options": [
-                "She asked when the results will be announced.",
-                "She asked when will the results be announced.",
-                "She asked when the results would be announced."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She asked when the results would be announced.",
-            "sentence": "She asked, 'When will the results be announced?'",
-            "hint": "Wh-questions use statement word order, and the modal shifts too.",
-            "explanation": "Word order becomes statement order, and 'will' shifts to 'would'.",
-            "grammarRule": "Reported Wh-Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l65_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I would love to visit Kyoto.'",
-            "options": [
-                "She said that she will love to visit Kyoto.",
-                "She said that I would love to visit Kyoto.",
-                "She said that she would love to visit Kyoto."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She said that she would love to visit Kyoto.",
-            "sentence": "She said, 'I would love to visit Kyoto.'",
-            "hint": "This modal is already in its 'reported speech' form.",
-            "explanation": "'Would' is already backshifted, so it stays the same; only the pronoun changes.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Pronouns updated"
-            ]
-        },
-        {
-            "id": "dis_l65_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I recovered quickly.'",
-            "options": [
-                "He said that he recovered quickly.",
-                "He said that he had recovered quickly.",
-                "He said that he has recovered quickly."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He said that he had recovered quickly.",
-            "sentence": "He said, 'I recovered quickly.'",
-            "hint": "This verb is already past simple, so in reported speech it moves one more step back.",
-            "explanation": "'Recovered' (past simple) shifts to 'had recovered' (past perfect).",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l66_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He asked, 'Which restaurant do you recommend?'",
-            "options": [
-                "He asked which restaurant do I recommend.",
-                "He asked which restaurant I recommended.",
-                "He asked which restaurant I recommend."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He asked which restaurant I recommended.",
-            "sentence": "He asked, 'Which restaurant do you recommend?'",
-            "hint": "Wh-questions use statement word order, and 'do' disappears.",
-            "explanation": "'Do' is dropped, word order becomes statement order, and 'recommend' shifts to 'recommended'.",
-            "grammarRule": "Reported Wh-Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l66_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I am watching this show tonight.'",
-            "options": [
-                "She said that she was watching this show tonight.",
-                "She said that she was watching that show that night.",
-                "She said that she is watching that show that night."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "She said that she was watching that show that night.",
-            "sentence": "She said, 'I am watching this show tonight.'",
-            "hint": "Both 'this' and 'tonight' shift, and the tense shifts too.",
-            "explanation": "'Am watching' shifts to 'was watching', 'this' shifts to 'that', and 'tonight' shifts to 'that night'.",
-            "grammarRule": "Time & Place Reference Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l66_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The organizer told us, 'Arrive early.'",
-            "options": [
-                "The organizer told us arrive early.",
-                "The organizer told us to arrive early.",
-                "The organizer told us that we arrive early."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The organizer told us to arrive early.",
-            "sentence": "The organizer told us, 'Arrive early.'",
-            "hint": "A command shifts to 'told + people + to + verb'.",
-            "explanation": "Commands are reported with 'told + object + to-infinitive'. 'Arrive early' becomes 'to arrive early'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l67_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She asked, 'Who is leading the project?'",
-            "options": [
-                "She asked who was leading the project.",
-                "She asked who leads the project.",
-                "She asked who is leading the project."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She asked who was leading the project.",
-            "sentence": "She asked, 'Who is leading the project?'",
-            "hint": "'Who' as the subject keeps the same word order — only the tense shifts.",
-            "explanation": "'Who' is the subject here, so word order doesn't change; only 'is leading' shifts to 'was leading'.",
-            "grammarRule": "Reported Wh-Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l67_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The committee said, 'We shall vote next week.'",
-            "options": [
-                "The committee said that they should vote the following week.",
-                "The committee said that they should vote next week.",
-                "The committee said that they shall vote the following week."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The committee said that they should vote the following week.",
-            "sentence": "The committee said, 'We shall vote next week.'",
-            "hint": "Both 'shall' and 'next week' shift together here.",
-            "explanation": "'Shall' shifts to 'should', and 'next week' shifts to 'the following week'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l67_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I might join the call late.'",
-            "options": [
-                "He said that he may join the call late.",
-                "He said that I might join the call late.",
-                "He said that he might join the call late."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "He said that he might join the call late.",
-            "sentence": "He said, 'I might join the call late.'",
-            "hint": "This modal is already in its 'reported speech' form.",
-            "explanation": "'Might' is already backshifted, so it stays the same; only the pronoun changes.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Pronouns updated"
-            ]
-        },
-        {
-            "id": "dis_l68_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He asked, 'How long have you had this pain?'",
-            "options": [
-                "He asked how long I had that pain.",
-                "He asked how long have I had this pain.",
-                "He asked how long I had had that pain."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "He asked how long I had had that pain.",
-            "sentence": "He asked, 'How long have you had this pain?'",
-            "hint": "Wh-questions use statement word order; present perfect shifts to past perfect ('had had').",
-            "explanation": "Word order becomes statement order, 'this' shifts to 'that', and 'have had' shifts to 'had had' (the past perfect of 'have').",
-            "grammarRule": "Reported Wh-Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l68_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: They said, 'We explored the old town.'",
-            "options": [
-                "They said that they explored the old town.",
-                "They said that they had explored the old town.",
-                "They said that we had explored the old town."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "They said that they had explored the old town.",
-            "sentence": "They said, 'We explored the old town.'",
-            "hint": "Two things move together in this one: the verb tense and the pronoun.",
-            "explanation": "'Explored' shifts to 'had explored', and 'we' shifts to 'they'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l68_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The IT team warned us, 'Don't click suspicious links.'",
-            "options": [
-                "The IT team warned us not to click suspicious links.",
-                "The IT team warned us to not click suspicious links.",
-                "The IT team warned us don't click suspicious links."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The IT team warned us not to click suspicious links.",
-            "sentence": "The IT team warned us, 'Don't click suspicious links.'",
-            "hint": "Negative commands shift to 'warned + people + not to + verb'.",
-            "explanation": "Negative commands use 'warned + object + not to + infinitive'. 'Don't click' becomes 'not to click'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l69_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She asked, 'What kind of music do you like?'",
-            "options": [
-                "She asked what kind of music I liked.",
-                "She asked what kind of music I like.",
-                "She asked what kind of music do I like."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She asked what kind of music I liked.",
-            "sentence": "She asked, 'What kind of music do you like?'",
-            "hint": "Wh-questions use statement word order, and 'do' disappears.",
-            "explanation": "'Do' is dropped, word order becomes statement order, and 'like' shifts to 'liked'.",
-            "grammarRule": "Reported Wh-Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l69_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I ought to apologize.'",
-            "options": [
-                "She said that she ought to apologized.",
-                "She said that I ought to apologize.",
-                "She said that she ought to apologize."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She said that she ought to apologize.",
-            "sentence": "She said, 'I ought to apologize.'",
-            "hint": "This modal is already in its 'reported speech' form.",
-            "explanation": "'Ought to' doesn't shift further in reported speech; only the pronoun changes.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Pronouns updated"
-            ]
-        },
-        {
-            "id": "dis_l69_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I am staying here until Sunday.'",
-            "options": [
-                "He said that he is staying there until Sunday.",
-                "He said that he was staying here until Sunday.",
-                "He said that he was staying there until Sunday."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "He said that he was staying there until Sunday.",
-            "sentence": "He said, 'I am staying here until Sunday.'",
-            "hint": "'Here' shifts to 'there', and the tense shifts too.",
-            "explanation": "'Here' shifts to 'there', and 'am staying' shifts to 'was staying'.",
-            "grammarRule": "Time & Place Reference Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l70_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He asked, 'Where did you park the car?'",
-            "options": [
-                "He asked where I parked the car.",
-                "He asked where did I park the car.",
-                "He asked where I had parked the car."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "He asked where I had parked the car.",
-            "sentence": "He asked, 'Where did you park the car?'",
-            "hint": "Wh-questions use statement word order; watch how far back the tense shifts.",
-            "explanation": "Word order becomes statement order, and 'parked' (already past) shifts back further to 'had parked'.",
-            "grammarRule": "Reported Wh-Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l70_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The board said, 'We shall announce the decision tomorrow.'",
-            "options": [
-                "The board said that they shall announce the decision the next day.",
-                "The board said that they should announce the decision tomorrow.",
-                "The board said that they should announce the decision the next day."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The board said that they should announce the decision the next day.",
-            "sentence": "The board said, 'We shall announce the decision tomorrow.'",
-            "hint": "Both 'shall' and 'tomorrow' shift together here.",
-            "explanation": "'Shall' shifts to 'should', and 'tomorrow' shifts to 'the next day'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l70_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: They said, 'We would rather wait.'",
-            "options": [
-                "They said that they will rather wait.",
-                "They said that they would rather wait.",
-                "They said that we would rather wait."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "They said that they would rather wait.",
-            "sentence": "They said, 'We would rather wait.'",
-            "hint": "This modal is already in its 'reported speech' form.",
-            "explanation": "'Would' is already backshifted, so it stays the same; only the pronoun changes.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Pronouns updated"
-            ]
-        }
-    ]
+  "gameType": "directIndirectSpeech",
+  "batchIndex": 7,
+  "levels": "61-70",
+  "quests": [
+    {
+      "id": "dis_l61_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Marcus said to Elena, \"I'll carry your bags.\"",
+      "options": [
+        "Marcus offered to carry her bags.",
+        "Marcus offered carrying her bags.",
+        "Marcus offered to carry your bags."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Marcus offered to carry her bags.",
+      "sentence": "Marcus said to Elena, \"I'll carry your bags.\"",
+      "hint": "'I'll do something for you' is a classic offer — use 'offered to' plus the base verb.",
+      "explanation": "'I'll carry your bags' becomes 'offered to carry her bags'; the possessive changes to match Elena.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'I'll carry' → 'offered to carry'",
+        "'your' → 'her'"
+      ]
+    },
+    {
+      "id": "dis_l61_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The waiter said, \"I can bring you some more bread.\"",
+      "options": [
+        "The waiter offered to bring some more bread.",
+        "The waiter offered bringing some more bread.",
+        "The waiter suggested to bring some more bread."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The waiter offered to bring some more bread.",
+      "sentence": "The waiter said, \"I can bring you some more bread.\"",
+      "hint": "'Suggested' isn't followed by 'to' + verb — 'offered to' is the correct pattern here.",
+      "explanation": "'I can bring you...' becomes 'offered to bring'; 'suggested' would require a different structure.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'I can bring' → 'offered to bring'"
+      ]
+    },
+    {
+      "id": "dis_l61_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Priya said to her neighbor, \"Do you want me to water your plants while you're away?\"",
+      "options": [
+        "Priya offered watering her neighbor's plants while she was away.",
+        "Priya offered to water her neighbor's plants while she was away.",
+        "Priya asked to water her neighbor's plants while she was away."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Priya offered to water her neighbor's plants while she was away.",
+      "sentence": "Priya said to her neighbor, \"Do you want me to water your plants while you're away?\"",
+      "hint": "'Do you want me to...?' is a polite way of offering — report it with 'offered to'.",
+      "explanation": "The offer 'Do you want me to water...?' becomes 'offered to water', and 'you're' becomes 'she was'.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'do you want me to water' → 'offered to water'",
+        "'you're' → 'she was'"
+      ]
+    },
+    {
+      "id": "dis_l62_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Layla said, \"Let's try the new restaurant downtown.\"",
+      "options": [
+        "Layla suggested trying the new restaurant downtown.",
+        "Layla suggested that try the new restaurant downtown.",
+        "Layla suggested to try the new restaurant downtown."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Layla suggested trying the new restaurant downtown.",
+      "sentence": "Layla said, \"Let's try the new restaurant downtown.\"",
+      "hint": "'Suggested' is followed by a gerund (-ing form), not 'to' + verb.",
+      "explanation": "'Let's try' becomes the gerund form 'suggested trying'; 'suggested to try' is a common but incorrect pattern.",
+      "grammarRule": "Gerund Structure",
+      "changesList": [
+        "'let's try' → 'suggested trying'"
+      ]
+    },
+    {
+      "id": "dis_l62_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The teacher said, \"Why don't we review the material together?\"",
+      "options": [
+        "The teacher suggested reviewing the material together.",
+        "The teacher offered reviewing the material together.",
+        "The teacher suggested to review the material together."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The teacher suggested reviewing the material together.",
+      "sentence": "The teacher said, \"Why don't we review the material together?\"",
+      "hint": "'Why don't we...?' is a common way to suggest something — use the gerund after 'suggested'.",
+      "explanation": "'Why don't we review...?' becomes 'suggested reviewing', following the gerund pattern.",
+      "grammarRule": "Gerund Structure",
+      "changesList": [
+        "'why don't we review' → 'suggested reviewing'"
+      ]
+    },
+    {
+      "id": "dis_l62_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Diego said, \"How about taking a break?\"",
+      "options": [
+        "Diego suggested take a break.",
+        "Diego suggested taking a break.",
+        "Diego suggested to take a break."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Diego suggested taking a break.",
+      "sentence": "Diego said, \"How about taking a break?\"",
+      "hint": "'How about...?' is another suggestion phrase reported the same way.",
+      "explanation": "'How about taking...?' becomes 'suggested taking', keeping the gerund form.",
+      "grammarRule": "Gerund Structure",
+      "changesList": [
+        "'how about taking' → 'suggested taking'"
+      ]
+    },
+    {
+      "id": "dis_l63_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The consultant said to Hassan, \"You should reduce your expenses.\"",
+      "options": [
+        "The consultant suggested that Hassan reduced his expenses.",
+        "The consultant suggested that Hassan reduces his expenses.",
+        "The consultant suggested that Hassan reduce his expenses."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The consultant suggested that Hassan reduce his expenses.",
+      "sentence": "The consultant said to Hassan, \"You should reduce your expenses.\"",
+      "hint": "After 'suggested that', use the base form of the verb, not the past or present simple form.",
+      "explanation": "This is the subjunctive pattern 'suggested that + subject + base verb', so 'reduce' stays unconjugated even with a third-person subject.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'should reduce' → 'reduce' (subjunctive)",
+        "'your' → 'his'"
+      ]
+    },
+    {
+      "id": "dis_l63_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The board said to the manager, \"You should submit the proposal by Monday.\"",
+      "options": [
+        "The board suggested that the manager submitted the proposal by Monday.",
+        "The board suggested that the manager submit the proposal by Monday.",
+        "The board suggested that the manager submits the proposal by Monday."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The board suggested that the manager submit the proposal by Monday.",
+      "sentence": "The board said to the manager, \"You should submit the proposal by Monday.\"",
+      "hint": "Same subjunctive rule applies here — don't add '-s' or '-ed' to the verb.",
+      "explanation": "'Submit' stays in its base form after 'suggested that', regardless of the subject.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'should submit' → 'submit' (subjunctive)"
+      ]
+    },
+    {
+      "id": "dis_l63_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The doctor said to the patient, \"You should see a specialist.\"",
+      "options": [
+        "The doctor suggested that the patient see a specialist.",
+        "The doctor suggested that the patient saw a specialist.",
+        "The doctor suggested that the patient sees a specialist."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The doctor suggested that the patient see a specialist.",
+      "sentence": "The doctor said to the patient, \"You should see a specialist.\"",
+      "hint": "Apply the subjunctive rule one more time: base verb after 'suggested that'.",
+      "explanation": "'See' remains unconjugated after 'suggested that the patient', following the subjunctive pattern.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'should see' → 'see' (subjunctive)"
+      ]
+    },
+    {
+      "id": "dis_l64_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Isabella said to Marcus, \"Would you like to come to my birthday party?\"",
+      "options": [
+        "Isabella asked Marcus to come to her birthday party.",
+        "Isabella invited Marcus coming to her birthday party.",
+        "Isabella invited Marcus to come to her birthday party."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Isabella invited Marcus to come to her birthday party.",
+      "sentence": "Isabella said to Marcus, \"Would you like to come to my birthday party?\"",
+      "hint": "A polite invitation like 'Would you like to...?' is best reported with 'invited...to'.",
+      "explanation": "'Would you like to come...?' becomes 'invited Marcus to come', and 'my' becomes 'her'.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'would you like to come' → 'invited...to come'",
+        "'my' → 'her'"
+      ]
+    },
+    {
+      "id": "dis_l64_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The company said to the candidates, \"Please join us for a final interview.\"",
+      "options": [
+        "The company told the candidates to join them for a final interview.",
+        "The company invited the candidates joining them for a final interview.",
+        "The company invited the candidates to join them for a final interview."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The company invited the candidates to join them for a final interview.",
+      "sentence": "The company said to the candidates, \"Please join us for a final interview.\"",
+      "hint": "Since this is a formal invitation, 'invited' fits better than a plain 'told'.",
+      "explanation": "'Please join us' becomes 'invited...to join them', matching the tone of an invitation.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'please join us' → 'invited...to join them'"
+      ]
+    },
+    {
+      "id": "dis_l64_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Grace said to her colleagues, \"Why don't you all come over for dinner on Saturday?\"",
+      "options": [
+        "Grace suggested her colleagues to come over for dinner on Saturday.",
+        "Grace invited her colleagues to come over for dinner on Saturday.",
+        "Grace invited her colleagues coming over for dinner on Saturday."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Grace invited her colleagues to come over for dinner on Saturday.",
+      "sentence": "Grace said to her colleagues, \"Why don't you all come over for dinner on Saturday?\"",
+      "hint": "'Why don't you...?' used to invite someone is reported with 'invited...to', not 'suggested'.",
+      "explanation": "'Why don't you all come...?' becomes 'invited...to come', since this functions as an invitation.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'why don't you come' → 'invited...to come'"
+      ]
+    },
+    {
+      "id": "dis_l65_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Hassan said to a friend, \"I will pay you back next week.\"",
+      "options": [
+        "Hassan promised paying her back the following week.",
+        "Hassan promised to pay you back next week.",
+        "Hassan promised to pay her back the following week."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Hassan promised to pay her back the following week.",
+      "sentence": "Hassan said, \"I will pay you back next week.\"",
+      "hint": "A firm commitment like 'I will...' is naturally reported with 'promised to'.",
+      "explanation": "'I will pay you back' becomes 'promised to pay her back', and 'next week' becomes 'the following week'.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'I will pay' → 'promised to pay'",
+        "'you' → 'her'",
+        "'next week' → 'the following week'"
+      ]
+    },
+    {
+      "id": "dis_l65_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The contractor said, \"I'll finish the renovation by June.\"",
+      "options": [
+        "The contractor promised finishing the renovation by June.",
+        "The contractor offered to finish the renovation by June.",
+        "The contractor promised to finish the renovation by June."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The contractor promised to finish the renovation by June.",
+      "sentence": "The contractor said, \"I'll finish the renovation by June.\"",
+      "hint": "This is a firm commitment, not a favor — 'promised' fits better than 'offered'.",
+      "explanation": "'I'll finish...' becomes 'promised to finish', reflecting the commitment in the original statement.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'I'll finish' → 'promised to finish'"
+      ]
+    },
+    {
+      "id": "dis_l65_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The children said, \"We won't make any noise.\"",
+      "options": [
+        "The children promised not to make any noise.",
+        "The children promised making any noise.",
+        "The children promised to not make any noise."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The children promised not to make any noise.",
+      "sentence": "The children said, \"We won't make any noise.\"",
+      "hint": "Keep 'not' directly before 'to' in this negative promise.",
+      "explanation": "'Won't make' becomes 'promised not to make', keeping the negative-infinitive pattern.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'won't make' → 'promised not to make'"
+      ]
+    },
+    {
+      "id": "dis_l66_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Ravi said, \"Okay, I will help you move this weekend.\"",
+      "options": [
+        "Ravi promised to help her move this weekend.",
+        "Ravi agreed helping her move that weekend.",
+        "Ravi agreed to help her move that weekend."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Ravi agreed to help her move that weekend.",
+      "sentence": "Ravi said, \"Okay, I will help you move this weekend.\"",
+      "hint": "Saying 'okay' to a request or plan usually becomes 'agreed to'.",
+      "explanation": "'Okay, I will help...' becomes 'agreed to help', and 'this weekend' becomes 'that weekend'.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'okay, I will help' → 'agreed to help'",
+        "'this weekend' → 'that weekend'"
+      ]
+    },
+    {
+      "id": "dis_l66_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The union said, \"We accept the new terms.\"",
+      "options": [
+        "The union agreed accepting the new terms.",
+        "The union offered to accept the new terms.",
+        "The union agreed to accept the new terms."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The union agreed to accept the new terms.",
+      "sentence": "The union said, \"We accept the new terms.\"",
+      "hint": "'We accept...' as a decision reached is best reported with 'agreed to'.",
+      "explanation": "'We accept the new terms' becomes 'agreed to accept the new terms'.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'we accept' → 'agreed to accept'"
+      ]
+    },
+    {
+      "id": "dis_l66_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Both companies said, \"We will merge our operations.\"",
+      "options": [
+        "Both companies agreed merging their operations.",
+        "Both companies agreed to merge their operations.",
+        "Both companies agreed to merge our operations."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Both companies agreed to merge their operations.",
+      "sentence": "Both companies said, \"We will merge our operations.\"",
+      "hint": "Update the possessive pronoun as well as the reporting verb pattern.",
+      "explanation": "'Our' becomes 'their', and 'we will merge' becomes 'agreed to merge'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'we will merge' → 'agreed to merge'",
+        "'our' → 'their'"
+      ]
+    },
+    {
+      "id": "dis_l67_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The employee said, \"I won't work on weekends.\"",
+      "options": [
+        "The employee refused working on weekends.",
+        "The employee promised not to work on weekends.",
+        "The employee refused to work on weekends."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The employee refused to work on weekends.",
+      "sentence": "The employee said, \"I won't work on weekends.\"",
+      "hint": "A firm rejection like 'I won't...' is reported with 'refused to'.",
+      "explanation": "'I won't work' becomes 'refused to work', capturing the firm rejection.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'won't work' → 'refused to work'"
+      ]
+    },
+    {
+      "id": "dis_l67_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The tenant said, \"I will not pay the extra fee.\"",
+      "options": [
+        "The tenant refused to pay the extra fee.",
+        "The tenant agreed to pay the extra fee.",
+        "The tenant refused paying the extra fee."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The tenant refused to pay the extra fee.",
+      "sentence": "The tenant said, \"I will not pay the extra fee.\"",
+      "hint": "This is a rejection, not an agreement — check the meaning before picking the reporting verb.",
+      "explanation": "'I will not pay' becomes 'refused to pay', matching the tenant's rejection.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'will not pay' → 'refused to pay'"
+      ]
+    },
+    {
+      "id": "dis_l67_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The witness said, \"I won't answer that question.\"",
+      "options": [
+        "The witness refused to answer that question.",
+        "The witness refused answering that question.",
+        "The witness refused to not answer that question."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The witness refused to answer that question.",
+      "sentence": "The witness said, \"I won't answer that question.\"",
+      "hint": "Keep the infinitive form 'to answer' — don't add an extra negative.",
+      "explanation": "'I won't answer' becomes 'refused to answer'; the refusal itself already carries the negative meaning.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'won't answer' → 'refused to answer'"
+      ]
+    },
+    {
+      "id": "dis_l68_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The manager said to an employee, \"I will cover your shift tomorrow.\"",
+      "options": [
+        "The manager suggested covering her shift the next day.",
+        "The manager promised to cover her shift the next day.",
+        "The manager offered to cover her shift the next day."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The manager offered to cover her shift the next day.",
+      "sentence": "The manager said, \"I will cover your shift tomorrow.\"",
+      "hint": "This is a spontaneous favor, not a firm long-term commitment — which reporting verb fits best?",
+      "explanation": "Offering to do something as a favor fits 'offered to', while 'promised' suggests a stronger, longer commitment.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'I will cover' → 'offered to cover'",
+        "'your' → 'her'",
+        "'tomorrow' → 'the next day'"
+      ]
+    },
+    {
+      "id": "dis_l68_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The board members said, \"We accept your resignation.\"",
+      "options": [
+        "The board members agreed to accept the resignation.",
+        "The board members suggested accepting the resignation.",
+        "The board members offered to accept the resignation."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The board members agreed to accept the resignation.",
+      "sentence": "The board members said, \"We accept your resignation.\"",
+      "hint": "This is a formal decision that was reached, not a favor or a suggestion.",
+      "explanation": "'We accept...' reflects a decision, matching the pattern 'agreed to accept'.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'we accept' → 'agreed to accept'"
+      ]
+    },
+    {
+      "id": "dis_l68_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The union leader said, \"We will not accept a pay cut.\"",
+      "options": [
+        "The union leader agreed to accept a pay cut.",
+        "The union leader suggested accepting a pay cut.",
+        "The union leader refused to accept a pay cut."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The union leader refused to accept a pay cut.",
+      "sentence": "The union leader said, \"We will not accept a pay cut.\"",
+      "hint": "This is a firm rejection, not an agreement or a suggestion.",
+      "explanation": "'We will not accept' becomes 'refused to accept', matching the firm rejection.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'will not accept' → 'refused to accept'"
+      ]
+    },
+    {
+      "id": "dis_l69_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "At the meeting, Sofia said, \"Let's postpone the launch.\" Convert to reported speech.",
+      "options": [
+        "Sofia suggested to postpone the launch.",
+        "Sofia offered to postpone the launch.",
+        "Sofia suggested postponing the launch."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Sofia suggested postponing the launch.",
+      "sentence": "Sofia said, \"Let's postpone the launch.\"",
+      "hint": "'Let's...' proposals use the gerund pattern after 'suggested'.",
+      "explanation": "'Let's postpone' becomes 'suggested postponing'; 'suggested to postpone' is a common learner error.",
+      "grammarRule": "Gerund Structure",
+      "changesList": [
+        "'let's postpone' → 'suggested postponing'"
+      ]
+    },
+    {
+      "id": "dis_l69_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Then Andres said, \"I'll handle the client communication.\" Convert to reported speech.",
+      "options": [
+        "Andres offered to handle the client communication.",
+        "Andres promised handling the client communication.",
+        "Andres suggested handling the client communication."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Andres offered to handle the client communication.",
+      "sentence": "Andres said, \"I'll handle the client communication.\"",
+      "hint": "This is a spontaneous offer to take on a task, not a suggestion for the group.",
+      "explanation": "'I'll handle...' becomes 'offered to handle', since Andres is volunteering, not proposing an idea to others.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'I'll handle' → 'offered to handle'"
+      ]
+    },
+    {
+      "id": "dis_l69_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Finally, the whole team said, \"We accept this new plan.\" Convert to reported speech.",
+      "options": [
+        "The whole team agreed accepting the new plan.",
+        "The whole team suggested accepting the new plan.",
+        "The whole team agreed to accept the new plan."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The whole team agreed to accept the new plan.",
+      "sentence": "The whole team said, \"We accept this new plan.\"",
+      "hint": "This final decision by the group fits the same pattern you practiced earlier for reaching agreement.",
+      "explanation": "'We accept this new plan' becomes 'agreed to accept the new plan'; 'this' becomes 'the' since it's now a shared reference.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'we accept this' → 'agreed to accept the'"
+      ]
+    },
+    {
+      "id": "dis_l70_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The host said, \"Why don't you stay for one more drink?\"",
+      "options": [
+        "The host suggested staying for one more drink.",
+        "The host suggested to stay for one more drink.",
+        "The host invited staying for one more drink."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The host suggested staying for one more drink.",
+      "sentence": "The host said, \"Why don't you stay for one more drink?\"",
+      "hint": "Recall the gerund pattern for 'suggested', not the infinitive.",
+      "explanation": "'Why don't you stay?' becomes 'suggested staying', following the gerund structure.",
+      "grammarRule": "Gerund Structure",
+      "changesList": [
+        "'why don't you stay' → 'suggested staying'"
+      ]
+    },
+    {
+      "id": "dis_l70_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Nadia said, \"I'll drive you to the airport tomorrow.\"",
+      "options": [
+        "Nadia offered to drive him to the airport the next day.",
+        "Nadia promised to drive him to the airport the next day.",
+        "Nadia offered to drive you to the airport tomorrow."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Nadia offered to drive him to the airport the next day.",
+      "sentence": "Nadia said, \"I'll drive you to the airport tomorrow.\"",
+      "hint": "Think about whether this is a spontaneous favor or a firm long-term commitment.",
+      "explanation": "'I'll drive you...' becomes 'offered to drive him', and 'tomorrow' becomes 'the next day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'I'll drive' → 'offered to drive'",
+        "'you' → 'him'",
+        "'tomorrow' → 'the next day'"
+      ]
+    },
+    {
+      "id": "dis_l70_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The committee said, \"We will not approve this budget.\"",
+      "options": [
+        "The committee refused approving the budget.",
+        "The committee refused to approve the budget.",
+        "The committee agreed to approve the budget."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The committee refused to approve the budget.",
+      "sentence": "The committee said, \"We will not approve this budget.\"",
+      "hint": "This final review question checks a firm rejection — which reporting verb captures that meaning?",
+      "explanation": "'We will not approve' becomes 'refused to approve', matching the committee's firm rejection.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'will not approve' → 'refused to approve'"
+      ]
+    }
+  ]
 }

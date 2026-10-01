@@ -8,23 +8,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'running' as used in the sentence below?",
-            "targetWord": "running",
-            "sentence": "The running debate about education reform has divided politicians and academics for decades.",
+            "question": "Which grammatical category best describes 'smoothly' here?",
+            "targetWord": "smoothly",
+            "sentence": "The negotiations proceeded smoothly despite early tension.",
             "options": [
-                "Noun",
-                "Adjective",
                 "Verb",
-                "Adverb"
+                "Adjective",
+                "Adverb",
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Adjective",
-            "hint": "Present participles can mean 'continuing'. What does 'running' tell us about the debate?",
-            "explanation": "'Running' is an adjective - it is a present participle used before 'debate' to mean ongoing. Compare: 'she is running a marathon' (verb) vs. 'a running debate' (adjective = continuing).",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "A common mistake is assuming any word that 'describes' something must be an adjective. Ask instead: does this word modify the noun 'negotiations' directly, or does it modify the verb 'proceeded'?",
+            "explanation": "'Smoothly' is an adverb, not an adjective, because it modifies the verb 'proceeded' — describing how the negotiations went — rather than directly describing the noun 'negotiations'. A learner might mistakenly call it an adjective simply because it feels descriptive, but function, not feeling, determines the part of speech.",
+            "grammarRule": "Manner adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "adverb form"
             ]
         },
         {
@@ -32,23 +32,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'discourse' as used in the sentence below?",
-            "targetWord": "discourse",
-            "sentence": "The academic discourse surrounding this complex issue spans several distinct disciplines.",
+            "question": "Now, how is 'smooth' functioning here?",
+            "targetWord": "smooth",
+            "sentence": "The smooth negotiations pleased both delegations.",
             "options": [
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Academic nouns name bodies of discussion. What does 'discourse' name here?",
-            "explanation": "'Discourse' is a noun - it names the body of language and debate around a topic. It follows 'The academic'.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "Now compare: this word sits directly before a noun. What does it describe?",
+            "explanation": "'Smooth' is an adjective here, modifying the noun 'negotiations' directly — contrast this with the adverb use in the previous sentence, where the same root word modified a verb instead.",
+            "grammarRule": "Attributive adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "adverb form"
             ]
         },
         {
@@ -56,23 +56,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'circumvent' as used in the sentence below?",
-            "targetWord": "circumvent",
-            "sentence": "Some organisations attempt to circumvent established regulations by exploiting technical loopholes.",
+            "question": "In this context, what part of speech is 'gracefully'?",
+            "targetWord": "gracefully",
+            "sentence": "The dancer moved gracefully across the stage.",
             "options": [
                 "Noun",
                 "Verb",
                 "Adjective",
                 "Adverb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe finding ways around rules. What do some organisations attempt to do?",
-            "explanation": "'Circumvent' is a verb - it follows 'to' as an infinitive. 'Circumvention' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adverb",
+            "hint": "Remember: a word that describes how an action is performed usually modifies the verb rather than describing the person directly.",
+            "explanation": "'Gracefully' is an adverb modifying the verb 'moved', describing the manner of the dancer's movement — not a direct description of the dancer as a person.",
+            "grammarRule": "Manner adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "adverb form"
             ]
         },
         {
@@ -80,23 +80,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'burning' as used in the sentence below?",
-            "targetWord": "burning",
-            "sentence": "The burning question in the debate was who should ultimately bear the cost of the reform.",
+            "question": "What role does 'believes' play in this sentence?",
+            "targetWord": "believes",
+            "sentence": "Maria believes every word of the apology.",
             "options": [
-                "Noun",
-                "Adjective",
                 "Verb",
-                "Adverb"
+                "Noun",
+                "Adverb",
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Adjective",
-            "hint": "Present participles can describe intensity or urgency. What does 'burning' tell us about the question?",
-            "explanation": "'Burning' is an adjective - it is a present participle used before 'question' to mean intensely important or urgent. Compare: 'wood is burning' (verb) vs. 'a burning question' (adjective = pressing).",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Verb",
+            "hint": "A common mistake is thinking words must show a visible action. Does 'believes' show something Maria does, even if you can't see it happening?",
+            "explanation": "'Believes' is a verb here, even though believing isn't a physical action you can observe — verbs can express mental states as well as visible actions.",
+            "grammarRule": "Stative verb expressing a mental state",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "-s form"
             ]
         },
         {
@@ -104,23 +104,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'rationale' as used in the sentence below?",
-            "targetWord": "rationale",
-            "sentence": "The committee was formally asked to provide a clear and transparent rationale for its decision.",
+            "question": "How is 'belief' functioning in this sentence?",
+            "targetWord": "belief",
+            "sentence": "Her belief in second chances never wavered.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Verb",
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Noun",
-            "hint": "Nouns name the reasons behind decisions. What does 'rationale' name?",
-            "explanation": "'Rationale' is a noun - it names the set of reasons or logical basis for a decision. It follows 'a clear', confirming it is a noun. Do not confuse 'rationale' (noun) with 'rational' (adjective).",
-            "grammarRule": "Nouns",
+            "hint": "Check the words directly around it for clues. What never wavered?",
+            "explanation": "'Belief' is a noun here, naming the conviction Maria held — it functions as the subject of the sentence.",
+            "grammarRule": "Common noun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "plural form"
             ]
         },
         {
@@ -128,23 +128,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'preclude' as used in the sentence below?",
-            "targetWord": "preclude",
-            "sentence": "An early commitment to one method may preclude consideration of better alternatives later.",
+            "question": "The word 'seems' is being used as which grammatical category?",
+            "targetWord": "seems",
+            "sentence": "The plan seems reasonable at first glance.",
             "options": [
-                "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "Verb",
-            "hint": "Formal verbs describe preventing something from being possible. What may early commitment do?",
-            "explanation": "'Preclude' is a verb - it follows the modal 'may'. 'Preclusion' is the noun form.",
-            "grammarRule": "Verbs",
+            "hint": "Remember: words don't have to show action. Does 'seems' connect the subject to a description, the way 'is' does?",
+            "explanation": "'Seems' is a linking verb here, connecting 'the plan' to the description 'reasonable' — like 'believes', it shows no physical action but is still a verb.",
+            "grammarRule": "Linking verb connecting the subject to a description",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "-s form"
             ]
         },
         {
@@ -152,23 +152,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'telling' as used in the sentence below?",
-            "targetWord": "telling",
-            "sentence": "The most telling evidence in the case was the series of emails uncovered during the search.",
+            "question": "What part of speech is 'spearhead' in this sentence?",
+            "targetWord": "spearhead",
+            "sentence": "The company will spearhead the new initiative.",
             "options": [
-                "Noun",
                 "Adjective",
                 "Verb",
+                "Noun",
                 "Adverb"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Adjective",
-            "hint": "Present participles can describe evidence that clearly reveals something. What does 'telling' tell us?",
-            "explanation": "'Telling' is an adjective - it is a present participle used before 'evidence' to mean it clearly reveals something important. Compare: 'he was telling the truth' (verb) vs. 'a telling sign' (adjective = revealing).",
-            "grammarRule": "Adjectives",
+            "correctAnswer": "Verb",
+            "hint": "A common mistake is assuming a word is always a noun because it usually names a thing. Here, does 'spearhead' name an object, or does it show what the company will do?",
+            "explanation": "'Spearhead' functions as a verb here, meaning to lead — even though the word usually names an object (the tip of a spear), context shows it describes an action here.",
+            "grammarRule": "Verb following the modal 'will'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "verb use"
             ]
         },
         {
@@ -176,23 +176,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'inference' as used in the sentence below?",
-            "targetWord": "inference",
-            "sentence": "Drawing a valid inference from incomplete and fragmentary data requires considerable skill.",
+            "question": "Now look at 'spearhead' here. What part of speech is it?",
+            "targetWord": "spearhead",
+            "sentence": "The spearhead of the ancient weapon was remarkably well-preserved.",
             "options": [
+                "Adverb",
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "Noun",
-            "hint": "Logical nouns name conclusions drawn from reasoning. What does 'inference' name?",
-            "explanation": "'Inference' is a noun - it names a conclusion reached through logical reasoning. It is the object of 'Drawing'. The suffix '-ence' forms nouns.",
-            "grammarRule": "Nouns",
+            "hint": "Now compare: what physical object is being described as well-preserved?",
+            "explanation": "'Spearhead' is a noun here, naming the physical object — the pointed tip of the weapon — contrast this with the verb use in the previous sentence.",
+            "grammarRule": "Common noun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "verb use"
             ]
         },
         {
@@ -200,23 +200,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'mandate' as used in the sentence below?",
-            "targetWord": "mandate",
-            "sentence": "The constitution does not explicitly mandate a specific procedure for resolving this type of dispute.",
+            "question": "In this sentence, 'panned' is functioning as a:",
+            "targetWord": "panned",
+            "sentence": "The critics panned the film relentlessly.",
             "options": [
-                "Noun",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "Verb",
-            "hint": "Formal verbs describe what rules officially require. What does the constitution not do?",
-            "explanation": "'Mandate' is a verb - it follows 'does not' as the main verb. Compare: 'a clear mandate' (noun = authority) vs. 'the law mandates action' (verb = requires). Stress: MAN-date (n) vs. man-DATE (v).",
-            "grammarRule": "Verbs",
+            "hint": "Again, don't assume this is a noun just because 'pan' can name a cooking object. What did the critics do to the film?",
+            "explanation": "'Panned' functions as a verb here, meaning to criticize harshly — a meaning that has nothing to do with the noun 'pan' used for cooking.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "verb use"
             ]
         },
         {
@@ -224,23 +224,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'striking' as used in the sentence below?",
-            "targetWord": "striking",
-            "sentence": "There was a truly striking resemblance between the two independently created architectural styles.",
+            "question": "What part of speech is 'in favor of' in this sentence?",
+            "targetWord": "in favor of",
+            "sentence": "The committee voted in favor of the proposal.",
             "options": [
                 "Noun",
-                "Adjective",
-                "Verb",
-                "Adverb"
+                "Conjunction",
+                "Preposition",
+                "Verb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Adjective",
-            "hint": "Present participles can describe something visually impressive. What does 'striking' tell us?",
-            "explanation": "'Striking' is an adjective - it is a present participle used before 'resemblance' to describe it as remarkably noticeable. Compare: 'workers are striking' (verb) vs. 'a striking resemblance' (adjective = remarkable).",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Preposition",
+            "hint": "A common mistake is thinking words only show physical location. Does this expression show a place, or does it show support for an idea?",
+            "explanation": "'In favor of' functions as a compound preposition here, introducing an abstract relationship — support for the proposal — rather than a physical location.",
+            "grammarRule": "Compound preposition introducing support for an idea",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related verb (support)"
             ]
         },
         {
@@ -248,23 +248,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'ambivalence' as used in the sentence below?",
-            "targetWord": "ambivalence",
-            "sentence": "Her ambivalence towards the new proposal was clear from her non-committal responses.",
+            "question": "What kind of word is 'Regarding' in this sentence?",
+            "targetWord": "Regarding",
+            "sentence": "Regarding your question, the policy hasn't changed.",
             "options": [
                 "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
+                "Conjunction",
+                "Preposition",
+                "Verb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Abstract nouns name states of mixed feelings. What does 'ambivalence' name?",
-            "explanation": "'Ambivalence' is a noun - it names the state of having simultaneous conflicting feelings. It follows 'Her'. The suffix '-ence' forms nouns.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Preposition",
+            "hint": "This word introduces a topic rather than a place. What topic does it introduce here?",
+            "explanation": "'Regarding' functions as a preposition here, introducing the topic being addressed — 'your question' — with no physical location involved.",
+            "grammarRule": "Preposition introducing a topic",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related verb (regard)"
             ]
         },
         {
@@ -272,23 +272,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'perpetrated' as used in the sentence below?",
-            "targetWord": "perpetrated",
-            "sentence": "The evidence presented was sufficient to prove that the accused had perpetrated the fraud.",
+            "question": "Which category fits 'policy' in this sentence?",
+            "targetWord": "policy",
+            "sentence": "Regarding your question, the policy hasn't changed.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Adverb",
+                "Verb"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Legal verbs describe committing an offence. What did the accused do to commit the fraud?",
-            "explanation": "'Perpetrated' is a verb - it's the past participle of 'perpetrate', following 'had' as part of the past perfect tense ('had perpetrated'). 'Perpetrator' and 'perpetration' are noun forms.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Noun",
+            "hint": "Let the sentence, not the spelling, decide. What hasn't changed?",
+            "explanation": "'Policy' is a noun here, naming the official rule that remains the same — it functions as the subject of the sentence.",
+            "grammarRule": "Common noun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "plural form"
             ]
         },
         {
@@ -296,23 +296,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'sobering' as used in the sentence below?",
-            "targetWord": "sobering",
-            "sentence": "The global statistics on food insecurity make for truly sobering reading.",
+            "question": "Identify the part of speech of 'however' in this context.",
+            "targetWord": "however",
+            "sentence": "The results were promising; however, further testing is required.",
             "options": [
-                "Noun",
-                "Adjective",
+                "Adverb",
                 "Verb",
-                "Adverb"
+                "Conjunction",
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Adjective",
-            "hint": "Present participles can describe things that cause serious reflection. What does 'sobering' describe?",
-            "explanation": "'Sobering' is an adjective - it is a present participle used before 'reading' to describe its serious, thought-provoking quality. Compare: 'the drink sobered him' (verb) vs. 'a sobering thought' (adjective).",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adverb",
+            "hint": "A common mistake is assuming any word that connects two related sentences must be a conjunction. This word actually needs a semicolon before it, and it can move around within its own clause — true conjunctions can't do that.",
+            "explanation": "'However' is a conjunctive adverb here, not a true conjunction — it shows a contrast between the two ideas but cannot join them all by itself the way 'but' can; that's why the sentence needs a semicolon.",
+            "grammarRule": "Conjunctive adverb showing contrast",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adverb use",
+                "related conjunction (but)"
             ]
         },
         {
@@ -320,23 +320,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'precipice' as used in the sentence below?",
-            "targetWord": "precipice",
-            "sentence": "The company stood on the very precipice of financial collapse before the emergency loan was secured.",
+            "question": "Now what part of speech is 'but' in this sentence?",
+            "targetWord": "but",
+            "sentence": "The results were promising, but further testing is required.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Noun",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns can be used metaphorically to describe dangerous situations. What does 'precipice' name here?",
-            "explanation": "'Precipice' is a noun - it is used metaphorically (literally: a cliff edge; figuratively: the edge of disaster). It follows 'the very'.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Conjunction",
+            "hint": "Now compare: this word joins the two clauses directly with just a comma. What kind of word can do that?",
+            "explanation": "'But' is a true coordinating conjunction here — unlike 'however', it can join two independent clauses on its own with only a comma.",
+            "grammarRule": "Coordinating conjunction joining two independent clauses",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related adverb (however)"
             ]
         },
         {
@@ -344,23 +344,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'arbitrate' as used in the sentence below?",
-            "targetWord": "arbitrate",
-            "sentence": "A neutral and respected third party was formally appointed to arbitrate in the long-running dispute.",
+            "question": "What role does 'therefore' play in this sentence?",
+            "targetWord": "therefore",
+            "sentence": "The bridge was closed; therefore, traffic was rerouted.",
             "options": [
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Legal verbs describe the formal resolution of disputes. What was the third party appointed to do?",
-            "explanation": "'Arbitrate' is a verb - it follows 'to' as an infinitive. 'Arbitration' and 'arbitrator' are noun forms.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "Like 'however' earlier in this file, this word shows a result but needs a semicolon before it rather than joining clauses on its own. What kind of word behaves this way?",
+            "explanation": "'Therefore' is a conjunctive adverb here, showing the result of the bridge closing — it behaves like 'however', requiring a semicolon rather than functioning as a true conjunction.",
+            "grammarRule": "Conjunctive adverb showing result",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adverb use",
+                "related conjunction (so)"
             ]
         },
         {
@@ -368,23 +368,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'sweeping' as used in the sentence below?",
-            "targetWord": "sweeping",
-            "sentence": "The government announced sweeping changes to the national healthcare system without prior warning.",
+            "question": "The word 'company's' is being used as which grammatical category?",
+            "targetWord": "company's",
+            "sentence": "The company's decision surprised everyone.",
             "options": [
+                "Adverb",
                 "Noun",
-                "Adjective",
                 "Verb",
-                "Adverb"
+                "Adjective"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Adjective",
-            "hint": "Present participles can describe comprehensive scale. What does 'sweeping' tell us?",
-            "explanation": "'Sweeping' is an adjective - it is a present participle used before 'changes' to describe their comprehensive nature. Compare: 'she is sweeping the floor' (verb) vs. 'sweeping changes' (adjective = far-reaching).",
-            "grammarRule": "Adjectives",
+            "correctAnswer": "Noun",
+            "hint": "A common mistake is assuming any word directly before a word must be an adjective. This word is still a word, just in its possessive form. What does it name?",
+            "explanation": "'Company's' is a noun in its possessive form here — it still names a thing (the company) even though it modifies 'decision'. Possessive nouns don't become adjectives just because they sit before another noun.",
+            "grammarRule": "Possessive noun functioning as a modifier",
             "transformations": [
-                "noun form",
-                "verb form"
+                "possessive form",
+                "plural form"
             ]
         },
         {
@@ -392,23 +392,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'disposition' as used in the sentence below?",
-            "targetWord": "disposition",
-            "sentence": "Her natural and cheerful disposition towards optimism helped her navigate very difficult circumstances.",
+            "question": "Next, what role does 'corporate' play in this sentence?",
+            "targetWord": "corporate",
+            "sentence": "The corporate decision surprised everyone.",
             "options": [
+                "Adverb",
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Abstract nouns name a person's natural temperament. What does 'disposition' name?",
-            "explanation": "'Disposition' is a noun - it names a person's natural tendency or temperament. It follows 'Her natural and cheerful'.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "Now compare: this word has no possessive ending and exists only to describe. What quality does it give the decision?",
+            "explanation": "'Corporate' is a true adjective here, describing the type of decision — contrast this with 'company's' in the previous sentence, which remained a noun despite modifying another noun.",
+            "grammarRule": "Attributive adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "related noun (corporation)"
             ]
         },
         {
@@ -416,23 +416,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'alienate' as used in the sentence below?",
-            "targetWord": "alienate",
-            "sentence": "Such extreme and divisive rhetoric is extremely likely to alienate the moderate voters before the election.",
+            "question": "Which part of speech is 'team's' as it is used here?",
+            "targetWord": "team's",
+            "sentence": "The team's strategy needed a complete overhaul.",
             "options": [
                 "Noun",
                 "Verb",
                 "Adjective",
                 "Adverb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Social and political verbs describe causing people to feel excluded. What might the rhetoric do?",
-            "explanation": "'Alienate' is a verb - it follows 'to' in 'likely to alienate'. 'Alienation' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Remember: a possessive form is still the same part of speech as its base word. What does 'team's' name, even though it modifies 'strategy'?",
+            "explanation": "'Team's' is a noun in its possessive form here, naming the group that owns the strategy — it remains a noun despite functioning like a modifier.",
+            "grammarRule": "Possessive noun functioning as a modifier",
             "transformations": [
-                "noun form",
-                "verb form"
+                "possessive form",
+                "plural form"
             ]
         },
         {
@@ -440,23 +440,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'unsettling' as used in the sentence below?",
-            "targetWord": "unsettling",
-            "sentence": "There was something deeply unsettling about the way the figures had been selectively presented.",
+            "question": "What grammatical job does 'Well' do in this sentence?",
+            "targetWord": "Well",
+            "sentence": "\"Well, I suppose we should get started,\" the host said.",
             "options": [
                 "Noun",
+                "Adverb",
                 "Adjective",
-                "Verb",
-                "Adverb"
+                "Interjection"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Adjective",
-            "hint": "Present participles describe the emotional effect of something. What does 'unsettling' describe?",
-            "explanation": "'Unsettling' is an adjective - it follows 'was' as a predicate adjective and describes the disturbing quality of the situation. Compare: 'the news unsettled her' (verb) vs. 'it was unsettling' (adjective).",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Interjection",
+            "hint": "A common mistake is assuming this word is always an adverb. Here it stands alone at the start, expressing hesitation rather than modifying anything. What role does it play?",
+            "explanation": "'Well' functions as an interjection here, expressing the host's hesitation before starting — it stands apart from the sentence grammar entirely.",
+            "grammarRule": "Interjection expressing hesitation",
             "transformations": [
-                "noun form",
-                "verb form"
+                "interjection use",
+                "adjective use"
             ]
         },
         {
@@ -464,23 +464,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'trajectory' as used in the sentence below?",
-            "targetWord": "trajectory",
-            "sentence": "If the current economic trajectory continues, the national deficit will be eliminated within five years.",
+            "question": "This time, what part of speech is 'well'?",
+            "targetWord": "well",
+            "sentence": "She hasn't been feeling well since Tuesday.",
             "options": [
-                "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Interjection"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Abstract nouns name paths or courses of development. What does 'trajectory' name?",
-            "explanation": "'Trajectory' is a noun - it names the course or path of development (originally: the curved path of a projectile; metaphorically: any trend). It follows 'the current economic'.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "Here 'well' describes a state of health after a linking verb, not how an action is performed. What is 'well' describing?",
+            "explanation": "'Well' functions as an adjective here, meaning healthy — it describes the subject's condition after the linking verb 'feeling', not the manner of an action. This is a common trap: 'well' is usually taught only as the adverb form of 'good', but it is also a true adjective meaning 'in good health'.",
+            "grammarRule": "Predicate adjective meaning 'in good health'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "adverb use"
             ]
         },
         {
@@ -488,23 +488,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'underpin' as used in the sentence below?",
-            "targetWord": "underpin",
-            "sentence": "Strong and verified evidence must underpin any claim that is made in a published research paper.",
+            "question": "Now, how is 'well' functioning here?",
+            "targetWord": "well",
+            "sentence": "He explained the process well enough for everyone to follow.",
             "options": [
+                "Adverb",
                 "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
+                "Interjection",
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe what provides the foundation for something. What must evidence do?",
-            "explanation": "'Underpin' is a verb - it follows the modal 'must'. 'Underpinning' is both a verbal noun and adjective form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adverb",
+            "hint": "Now compare: this word describes how the explaining was done, modifying a verb. What role does it play here?",
+            "explanation": "'Well' functions as an adverb here, modifying the verb 'explained' and describing the quality of his explanation — the genuine adverb use, contrasted with the adjective and interjection uses seen earlier in this file.",
+            "grammarRule": "Manner adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "adverb use"
             ]
         },
         {
@@ -512,23 +512,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'lingering' as used in the sentence below?",
-            "targetWord": "lingering",
-            "sentence": "A lingering sense of unease remained in the room even after the crisis had officially ended.",
+            "question": "How is 'better' functioning in this sentence?",
+            "targetWord": "better",
+            "sentence": "This laptop is better than my old one.",
             "options": [
                 "Noun",
-                "Adjective",
+                "Adverb",
                 "Verb",
-                "Adverb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Adjective",
-            "hint": "Present participles can describe something that continues longer than expected. What does 'lingering' describe?",
-            "explanation": "'Lingering' is an adjective - it is a present participle used before 'sense' to describe a feeling that persists. Compare: 'she was lingering in the corridor' (verb) vs. 'a lingering doubt' (adjective = one that persists).",
-            "grammarRule": "Adjectives",
+            "hint": "This comparative word follows a linking verb and compares the quality of two things directly. What is being compared?",
+            "explanation": "'Better' is an adjective here, comparing the quality of two laptops — it is the comparative form of 'good'.",
+            "grammarRule": "Predicate adjective in the comparative form",
             "transformations": [
-                "noun form",
-                "verb form"
+                "positive form (good)",
+                "comparative form"
             ]
         },
         {
@@ -536,23 +536,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'nuance' as used in the sentence below?",
-            "targetWord": "nuance",
-            "sentence": "The translator worked carefully to preserve every nuance of the original source text.",
+            "question": "This time, 'better' is functioning as a:",
+            "targetWord": "better",
+            "sentence": "She sings better than she used to.",
             "options": [
                 "Noun",
                 "Verb",
                 "Adjective",
                 "Adverb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Abstract nouns name subtle differences in meaning. What does 'nuance' name here?",
-            "explanation": "'Nuance' is a noun - it names a subtle distinction in meaning or tone. It follows 'every', confirming it is a noun. 'Nuanced' is its adjective form.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adverb",
+            "hint": "A common mistake is assuming 'better' is always an adjective. Here it modifies a verb instead of a noun. What does it describe?",
+            "explanation": "'Better' functions as an adverb here, modifying the verb 'sings' and comparing how well she performs — it is the comparative form of 'well', not 'good', in this context.",
+            "grammarRule": "Manner adverb in the comparative form",
             "transformations": [
-                "noun form",
-                "verb form"
+                "positive form (well)",
+                "comparative form"
             ]
         },
         {
@@ -560,23 +560,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'embody' as used in the sentence below?",
-            "targetWord": "embody",
-            "sentence": "The new constitution was specifically designed to embody the founding principles of democracy.",
+            "question": "Which grammatical category best describes 'worse' here?",
+            "targetWord": "worse",
+            "sentence": "The traffic got worse during the storm.",
             "options": [
-                "Noun",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Noun"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe representing something in concrete form. What was the constitution designed to do?",
-            "explanation": "'Embody' is a verb - it follows 'to' as an infinitive. 'Embodiment' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Adjective",
+            "hint": "This comparative word describes a condition after a linking verb. What condition did the traffic reach?",
+            "explanation": "'Worse' is an adjective here, describing the deteriorating condition of the traffic after the linking verb 'got' — the comparative form of 'bad'.",
+            "grammarRule": "Predicate adjective in the comparative form",
             "transformations": [
-                "noun form",
-                "verb form"
+                "positive form (bad)",
+                "comparative form"
             ]
         },
         {
@@ -584,23 +584,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'pressing' as used in the sentence below?",
-            "targetWord": "pressing",
-            "sentence": "The most pressing issue currently facing the administration is the rapidly growing housing crisis.",
+            "question": "Based on how it is used here, 'teacher' is a:",
+            "targetWord": "teacher",
+            "sentence": "Diego is a teacher at the local high school.",
             "options": [
-                "Noun",
-                "Adjective",
                 "Verb",
-                "Adverb"
+                "Adverb",
+                "Adjective",
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Adjective",
-            "hint": "Present participles can describe the urgency of issues. What does 'pressing' tell us?",
-            "explanation": "'Pressing' is an adjective - it is a present participle used before 'issue' to describe it as urgently requiring attention. Compare: 'she is pressing the shirt' (verb) vs. 'a pressing matter' (adjective = urgent).",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Noun",
+            "hint": "A common mistake is assuming any word after 'is' must be an adjective. Does 'teacher' describe a quality, or does it name Diego's role?",
+            "explanation": "'Teacher' is a noun here, naming Diego's profession — it functions as a subject complement renaming 'Diego', not describing a quality the way an adjective would.",
+            "grammarRule": "Predicate noun functioning as a subject complement",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "plural form"
             ]
         },
         {
@@ -608,23 +608,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'apparatus' as used in the sentence below?",
-            "targetWord": "apparatus",
-            "sentence": "The entire legal apparatus of the state was slow to respond to the new technological realities.",
+            "question": "Next, what role does 'patient' play in this sentence?",
+            "targetWord": "patient",
+            "sentence": "Diego is patient with his students.",
             "options": [
+                "Adjective",
                 "Noun",
                 "Verb",
-                "Adjective",
                 "Adverb"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Abstract nouns can name complex systems. What does 'apparatus' name metaphorically?",
-            "explanation": "'Apparatus' is a noun - it is used metaphorically to name the complex system of legal institutions (literally: a piece of equipment; metaphorically: any complex system).",
-            "grammarRule": "Nouns",
+            "correctAnswer": "Adjective",
+            "hint": "Now compare: does this word name a role, or does it describe a quality Diego has?",
+            "explanation": "'Patient' is an adjective here, describing a quality of Diego's character — contrast this with 'teacher' in the previous sentence, which named his role as a noun.",
+            "grammarRule": "Predicate adjective after a linking verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "positive form",
+                "comparative form"
             ]
         },
         {
@@ -632,23 +632,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'encapsulate' as used in the sentence below?",
-            "targetWord": "encapsulate",
-            "sentence": "This single carefully chosen sentence manages to encapsulate the entire philosophy of the movement.",
+            "question": "In this sentence, 'astronaut' is functioning as a:",
+            "targetWord": "astronaut",
+            "sentence": "The keynote speaker was a former astronaut.",
             "options": [
-                "Noun",
                 "Verb",
+                "Noun",
                 "Adjective",
                 "Adverb"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe expressing something complex in concise form. What does the sentence do?",
-            "explanation": "'Encapsulate' is a verb - it is the main verb of the sentence. 'Encapsulation' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Noun",
+            "hint": "Again, don't assume every word after 'was' is an adjective. Does 'astronaut' describe a quality, or does it name a profession?",
+            "explanation": "'Astronaut' is a noun here, naming the speaker's former profession — it functions as a subject complement renaming 'the keynote speaker'.",
+            "grammarRule": "Predicate noun functioning as a subject complement",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "plural form"
             ]
         },
         {
@@ -656,23 +656,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'enduring' as used in the sentence below?",
-            "targetWord": "enduring",
-            "sentence": "The treaty created an enduring framework for regional peace that successfully lasted over two centuries.",
+            "question": "Which part of speech does 'Well' represent in this sentence?",
+            "targetWord": "Well",
+            "sentence": "Well, the manager's decision, though surprising, proved better for morale than anyone expected, and productivity improved considerably.",
             "options": [
-                "Noun",
+                "Adverb",
                 "Adjective",
-                "Verb",
-                "Adverb"
+                "Noun",
+                "Interjection"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Adjective",
-            "hint": "Present participles can describe things that last a very long time. What does 'enduring' describe?",
-            "explanation": "'Enduring' is an adjective - it is a present participle used before 'framework' to describe its lasting quality. Compare: 'she is enduring hardship' (verb) vs. 'an enduring legacy' (adjective = lasting).",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Interjection",
+            "hint": "Remember from earlier in this file: this word can stand alone at the start of a sentence, expressing a pause rather than modifying anything. What role does it play here?",
+            "explanation": "'Well' functions as an interjection here, signaling a reflective pause before the main statement — just like at the start of the sentence in an earlier lesson.",
+            "grammarRule": "Interjection expressing a pause or reflection",
             "transformations": [
-                "noun form",
-                "verb form"
+                "interjection use",
+                "adjective use"
             ]
         },
         {
@@ -680,23 +680,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'abstraction' as used in the sentence below?",
-            "targetWord": "abstraction",
-            "sentence": "Philosophy often deals in abstraction, which can make it initially difficult for newcomers.",
+            "question": "Looking at the same sentence, how is 'manager's' functioning?",
+            "targetWord": "manager's",
+            "sentence": "Well, the manager's decision, though surprising, proved better for morale than anyone expected, and productivity improved considerably.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Noun",
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "Noun",
-            "hint": "Abstract nouns name the quality of being theoretical. What does 'abstraction' name here?",
-            "explanation": "'Abstraction' is a noun - it names the quality of considering something as a general concept. It follows 'in', confirming it is a noun (object of preposition). 'Abstract' is the adjective form.",
-            "grammarRule": "Nouns",
+            "hint": "Remember: a possessive form stays the same part of speech as its base word, even when it modifies another word. What does 'manager's' name here?",
+            "explanation": "'Manager's' is a noun in its possessive form, naming the person who made the decision — it remains a noun despite modifying 'decision', just like 'company's' and 'team's' earlier in this file.",
+            "grammarRule": "Possessive noun functioning as a modifier",
             "transformations": [
-                "noun form",
-                "verb form"
+                "possessive form",
+                "plural form"
             ]
         },
         {
@@ -704,23 +704,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'transcend' as used in the sentence below?",
-            "targetWord": "transcend",
-            "sentence": "Great and enduring art has the remarkable ability to transcend all cultural boundaries.",
+            "question": "Now consider 'better' in that same sentence. What part of speech is it?",
+            "targetWord": "better",
+            "sentence": "Well, the manager's decision, though surprising, proved better for morale than anyone expected, and productivity improved considerably.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
+                "Verb",
+                "Noun",
                 "Adverb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe going beyond normal limits. What can great art do?",
-            "explanation": "'Transcend' is a verb - it follows 'to' as an infinitive. 'Transcendence' and 'transcendental' are related noun and adjective forms.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adjective",
+            "hint": "Remember from earlier: this comparative word can describe a quality after a linking verb. What is being compared here?",
+            "explanation": "'Better' is an adjective here, comparing how the decision affected morale compared to expectations — following the linking verb 'proved', just like in an earlier lesson in this file.",
+            "grammarRule": "Predicate adjective in the comparative form",
             "transformations": [
-                "noun form",
-                "verb form"
+                "positive form (good)",
+                "comparative form"
             ]
         }
     ]

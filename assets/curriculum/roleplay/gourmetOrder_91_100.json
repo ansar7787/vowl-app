@@ -7,503 +7,503 @@
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Could you tell me more about the catch of the day? That sounds great — I'll have that, the roasted vegetables, and the lemon tart.",
+            "prompt": "To start, I'll have the shrimp cocktail, and for my main, the grilled swordfish.",
             "options": [
-                "Catch of the Day",
-                "Roasted Vegetables",
-                "Lemon Tart",
-                "Steamed Vegetables"
+                "Grilled Swordfish",
+                "Shrimp Cocktail",
+                "Crab Cocktail",
+                "Pan-Seared Tuna"
             ],
-            "correctAnswer": "Catch of the Day, Roasted Vegetables, Lemon Tart",
-            "hint": "The customer asks a question first, then confirms their choice based on the answer.",
-            "explanation": "‘Could you tell me more about…?’ is a useful way to ask for details before deciding. ‘Catch of the day’ refers to the freshest fish available that day, without naming a specific type.",
+            "correctAnswer": "Grilled Swordfish, Shrimp Cocktail",
+            "hint": "'To start' and 'for my main' clearly separate two courses.",
+            "explanation": "Marking each course explicitly is a clear, organized way to order a multi-course meal.",
             "id": "go_l91_q1",
             "menuItems": [
-                "Catch of the Day",
-                "Roasted Vegetables",
-                "Lemon Tart",
-                "Steamed Vegetables"
+                "Grilled Swordfish",
+                "Shrimp Cocktail",
+                "Crab Cocktail",
+                "Pan-Seared Tuna"
             ],
             "menuPrices": [
-                "$19.25",
-                "$4.50",
-                "$18.00",
-                "$13.75"
+                "$24.00",
+                "$12.00",
+                "$14.00",
+                "$26.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "This is a business lunch, so I'll keep it simple: the Caesar salad, the grilled chicken, and an iced tea.",
+            "prompt": "I'll begin with the French onion soup, and then I'll move on to the beef bourguignon.",
             "options": [
-                "Caesar Salad",
-                "Grilled Chicken",
-                "Iced Tea",
-                "Chicken Sandwich"
+                "Beef Bourguignon",
+                "French Onion Soup",
+                "Beef Stroganoff",
+                "Minestrone"
             ],
-            "correctAnswer": "Caesar Salad, Grilled Chicken, Iced Tea",
-            "hint": "The customer explains why they're choosing simple, familiar dishes.",
-            "explanation": "‘I’ll keep it simple’ often applies to business meals, where the focus is on conversation rather than adventurous eating.",
+            "correctAnswer": "Beef Bourguignon, French Onion Soup",
+            "hint": "'Begin with' and 'move on to' signal a sequence of two courses.",
+            "explanation": "'Begin with' and 'then move on to' are natural sequencing phrases for ordering a starter followed by a main course.",
             "id": "go_l91_q2",
             "menuItems": [
-                "Caesar Salad",
-                "Grilled Chicken",
-                "Iced Tea",
-                "Chicken Sandwich"
+                "Beef Bourguignon",
+                "French Onion Soup",
+                "Beef Stroganoff",
+                "Minestrone"
             ],
             "menuPrices": [
-                "$8.50",
-                "$16.50",
-                "$5.75",
-                "$12.50"
+                "$26.00",
+                "$7.00",
+                "$22.00",
+                "$6.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll have whatever you're having — so the burrata, the branzino, and the tiramisu, then?",
+            "prompt": "Server: Would you like to start with an appetizer? Customer: Yes, the calamari, please, and I already know I want the ribeye for my main.",
             "options": [
-                "Burrata",
-                "Branzino",
-                "Tiramisu",
-                "Panna Cotta"
+                "Ribeye",
+                "Fried Shrimp",
+                "Calamari",
+                "Filet Mignon"
             ],
-            "correctAnswer": "Burrata, Branzino, Tiramisu",
-            "hint": "The customer agrees to match someone else's order, then confirms the specific items.",
-            "explanation": "‘I’ll have whatever you’re having’ shows the customer trusts a dining companion's choice, then repeats it back to confirm.",
+            "correctAnswer": "Ribeye, Calamari",
+            "hint": "The server's question opens the door to a starter, and the customer adds a main course they'd already decided on.",
+            "explanation": "A customer can already know their main course while still responding to a question specifically about the starter - both pieces of information matter.",
             "id": "go_l91_q3",
             "menuItems": [
-                "Burrata",
-                "Branzino",
-                "Tiramisu",
-                "Panna Cotta"
+                "Ribeye",
+                "Fried Shrimp",
+                "Calamari",
+                "Filet Mignon"
             ],
             "menuPrices": [
-                "$11.25",
-                "$11.25",
-                "$12.50",
-                "$3.25"
+                "$28.00",
+                "$12.00",
+                "$11.00",
+                "$32.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Between the salmon and the halibut, I'll go with the salmon. Then the wild rice and the crème brûlée.",
+            "prompt": "For starters, the bruschetta; for my main, the pork chop; and could I get mashed potatoes as the side instead of the roasted potatoes?",
             "options": [
-                "Salmon",
-                "Wild Rice",
-                "Crème Brûlée",
-                "Halibut"
+                "Pork Chop",
+                "Mashed Potatoes",
+                "Roasted Potatoes",
+                "Bruschetta"
             ],
-            "correctAnswer": "Salmon, Wild Rice, Crème Brûlée",
-            "hint": "The customer compares two fish options before choosing one.",
-            "explanation": "‘Between X and Y, I’ll go with X’ is a natural way to show a decision after comparing two similar choices — only the chosen one should be selected.",
+            "correctAnswer": "Pork Chop, Mashed Potatoes, Bruschetta",
+            "hint": "Three courses are named, with a substitution applied to the side.",
+            "explanation": "This level adds a third course, a side, to the appetizer-and-main structure, along with a substitution within that side.",
             "id": "go_l92_q1",
             "menuItems": [
-                "Salmon",
-                "Wild Rice",
-                "Crème Brûlée",
-                "Halibut"
+                "Pork Chop",
+                "Mashed Potatoes",
+                "Roasted Potatoes",
+                "Bruschetta"
             ],
             "menuPrices": [
-                "$20.50",
-                "$15.25",
-                "$2.00",
-                "$5.75"
+                "$19.00",
+                "$3.00",
+                "$3.00",
+                "$7.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'm celebrating a promotion, so let's do the oysters, the filet mignon, and the chocolate soufflé.",
+            "prompt": "I'll start with the soup, then the grilled chicken, with a side of steamed green beans.",
             "options": [
-                "Oysters",
-                "Filet Mignon",
-                "Chocolate Soufflé",
-                "Chocolate Mousse"
+                "Grilled Chicken",
+                "Roasted Carrots",
+                "Soup",
+                "Steamed Green Beans"
             ],
-            "correctAnswer": "Oysters, Filet Mignon, Chocolate Soufflé",
-            "hint": "The occasion explains why the customer is ordering something special.",
-            "explanation": "Mentioning the reason for celebrating helps explain a more indulgent order, similar to earlier ‘splurge’ examples.",
+            "correctAnswer": "Grilled Chicken, Soup, Steamed Green Beans",
+            "hint": "A full three-course structure with no substitutions this time - just three named items in sequence.",
+            "explanation": "Not every three-course order involves a substitution - sometimes it's simply three items named clearly in a row.",
             "id": "go_l92_q2",
             "menuItems": [
-                "Oysters",
-                "Filet Mignon",
-                "Chocolate Soufflé",
-                "Chocolate Mousse"
+                "Grilled Chicken",
+                "Roasted Carrots",
+                "Soup",
+                "Steamed Green Beans"
             ],
             "menuPrices": [
-                "$21.75",
-                "$12.50",
-                "$12.50",
-                "$12.50"
+                "$14.00",
+                "$3.00",
+                "$5.00",
+                "$3.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "We have a flight to catch, so let's keep it quick — the soup, the club sandwich, and a coffee to go, please.",
+            "prompt": "Server: The pork loin comes with a choice of rice or potatoes. Customer: I'll take the rice, then, and I'll start with the Caesar salad.",
             "options": [
-                "Soup",
-                "Club Sandwich",
-                "Coffee",
-                "Salad"
+                "Pork Loin",
+                "Potatoes",
+                "Rice",
+                "Caesar Salad"
             ],
-            "correctAnswer": "Soup, Club Sandwich, Coffee",
-            "hint": "Time pressure explains why the customer wants a fast, simple order.",
-            "explanation": "‘We have a flight to catch’ explains the urgency, and ‘to go’ tells the staff the coffee should be prepared for travel.",
+            "correctAnswer": "Pork Loin, Rice, Caesar Salad",
+            "hint": "The side choice is embedded in a question-and-answer, while the starter is added separately.",
+            "explanation": "A side choice offered by the server, once answered, becomes as real a part of the order as the starter added around it.",
             "id": "go_l92_q3",
             "menuItems": [
-                "Soup",
-                "Club Sandwich",
-                "Coffee",
-                "Salad"
+                "Pork Loin",
+                "Potatoes",
+                "Rice",
+                "Caesar Salad"
             ],
             "menuPrices": [
-                "$5.75",
-                "$19.25",
-                "$6.00",
-                "$7.25"
+                "$18.00",
+                "$0.00",
+                "$0.00",
+                "$8.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll have the tasting portion of the risotto, then the veal, and the panna cotta to finish.",
+            "prompt": "I'll start with the mussels, have the seafood pasta as my main, and a glass of pinot grigio to drink.",
             "options": [
-                "Risotto",
-                "Veal",
-                "Panna Cotta",
-                "Tiramisu"
+                "Pinot Grigio",
+                "Mussels",
+                "Seafood Pasta",
+                "Sauvignon Blanc"
             ],
-            "correctAnswer": "Risotto, Veal, Panna Cotta",
-            "hint": "‘Tasting portion’ means a smaller serving size, but the item name stays the same.",
-            "explanation": "A ‘tasting portion’ is a smaller-than-normal serving, often available so guests can sample more dishes without ordering full plates of each.",
+            "correctAnswer": "Pinot Grigio, Mussels, Seafood Pasta",
+            "hint": "Three courses this time include a starter, a main, and a drink - no side mentioned.",
+            "explanation": "Not every full order includes a side - sometimes it's a starter, a main, and a drink, which is just as complete a three-part order.",
             "id": "go_l93_q1",
             "menuItems": [
-                "Risotto",
-                "Veal",
-                "Panna Cotta",
-                "Tiramisu"
+                "Pinot Grigio",
+                "Mussels",
+                "Seafood Pasta",
+                "Sauvignon Blanc"
             ],
             "menuPrices": [
-                "$6.00",
-                "$4.50",
-                "$3.25",
-                "$12.50"
+                "$9.00",
+                "$13.00",
+                "$22.00",
+                "$9.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Take your time — actually, I'll go with the beet salad, the pork chop, and the apple tart.",
+            "prompt": "For me, the goat cheese salad to start, the lamb shank for my main, and a glass of the house red.",
             "options": [
-                "Beet Salad",
-                "Pork Chop",
-                "Apple Tart",
-                "Pear Tart"
+                "House Red Wine",
+                "Goat Cheese Salad",
+                "House White Wine",
+                "Lamb Shank"
             ],
-            "correctAnswer": "Beet Salad, Pork Chop, Apple Tart",
-            "hint": "The customer pauses to think, encouraged by the server, before naming their final order.",
-            "explanation": "‘Take your time’ is something a server might say, and ‘actually, I’ll go with…’ shows the customer using that time to settle on an answer.",
+            "correctAnswer": "House Red Wine, Goat Cheese Salad, Lamb Shank",
+            "hint": "Three items span a starter, a main, and a specific drink choice.",
+            "explanation": "'The house red' is a specific, real drink choice, even without a brand name - it belongs in the order just like a named wine would.",
             "id": "go_l93_q2",
             "menuItems": [
-                "Beet Salad",
-                "Pork Chop",
-                "Apple Tart",
-                "Pear Tart"
+                "House Red Wine",
+                "Goat Cheese Salad",
+                "House White Wine",
+                "Lamb Shank"
             ],
             "menuPrices": [
-                "$7.25",
-                "$16.50",
-                "$11.25",
-                "$3.25"
+                "$8.00",
+                "$9.00",
+                "$8.00",
+                "$26.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "My colleague recommended this place. I'll have the burrata, the seafood pasta, and the affogato.",
+            "prompt": "I'll skip the starter today, actually, and just go with the steak and a glass of malbec.",
             "options": [
-                "Burrata",
-                "Seafood Pasta",
-                "Affogato",
-                "Tiramisu"
+                "Shrimp Cocktail",
+                "Malbec",
+                "Steak",
+                "Cabernet"
             ],
-            "correctAnswer": "Burrata, Seafood Pasta, Affogato",
-            "hint": "A recommendation from a colleague explains why the customer chose this restaurant.",
-            "explanation": "‘My colleague recommended this place’ gives context for the order without changing what needs to be selected — just the reason behind the visit.",
+            "correctAnswer": "Malbec, Steak",
+            "hint": "The customer explicitly declines a starter this time, leaving just two items.",
+            "explanation": "Not every order follows the full three-course pattern - explicitly skipping a course is just as valid, and only two real items remain here.",
             "id": "go_l93_q3",
             "menuItems": [
-                "Burrata",
-                "Seafood Pasta",
-                "Affogato",
+                "Shrimp Cocktail",
+                "Malbec",
+                "Steak",
+                "Cabernet"
+            ],
+            "menuPrices": [
+                "$12.00",
+                "$9.00",
+                "$24.00",
+                "$9.50"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "To start, the spring rolls; for my main, the orange chicken; and a side of fried rice, please.",
+            "options": [
+                "Fried Rice",
+                "Orange Chicken",
+                "Egg Rolls",
+                "Spring Rolls"
+            ],
+            "correctAnswer": "Fried Rice, Orange Chicken, Spring Rolls",
+            "hint": "Three courses are named in a row - a starter, a main, and a side.",
+            "explanation": "A three-course order is a common structure in sit-down restaurants; each item stays distinct even without a drink mentioned yet.",
+            "id": "go_l94_q1",
+            "menuItems": [
+                "Fried Rice",
+                "Orange Chicken",
+                "Egg Rolls",
+                "Spring Rolls"
+            ],
+            "menuPrices": [
+                "$3.00",
+                "$14.00",
+                "$6.00",
+                "$8.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "For my main, I'll have the orange chicken, with a side of fried rice, and a jasmine tea to drink.",
+            "options": [
+                "Jasmine Tea",
+                "Green Tea",
+                "Orange Chicken",
+                "Fried Rice"
+            ],
+            "correctAnswer": "Jasmine Tea, Orange Chicken, Fried Rice",
+            "hint": "This time, the order includes a main, a side, and a drink - no starter.",
+            "explanation": "Skipping a starter and instead including a drink still makes a complete three-part order - the exact combination of courses can vary.",
+            "id": "go_l94_q2",
+            "menuItems": [
+                "Jasmine Tea",
+                "Green Tea",
+                "Orange Chicken",
+                "Fried Rice"
+            ],
+            "menuPrices": [
+                "$3.00",
+                "$2.75",
+                "$14.00",
+                "$3.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the guest's final order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "We'll start with the spring rolls to share, then I'll have the orange chicken with fried rice, and a jasmine tea - actually, could you make that a green tea instead?",
+            "options": [
+                "Green Tea",
+                "Jasmine Tea",
+                "Orange Chicken",
+                "Spring Rolls"
+            ],
+            "correctAnswer": "Green Tea, Orange Chicken, Spring Rolls",
+            "hint": "A full four-part order appears here, but a last-second correction changes the drink, and the side isn't among today's options.",
+            "explanation": "This shows a complete, multi-part restaurant order unfolding naturally, including a genuine correction to the drink at the very end.",
+            "id": "go_l94_q3",
+            "menuItems": [
+                "Green Tea",
+                "Jasmine Tea",
+                "Orange Chicken",
+                "Spring Rolls"
+            ],
+            "menuPrices": [
+                "$2.75",
+                "$3.00",
+                "$14.00",
+                "$8.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "To start, we'll have the garlic bread; then, the fettuccine alfredo for me; and to finish, the tiramisu to share.",
+            "options": [
+                "Cheesecake",
+                "Garlic Bread",
+                "Fettuccine Alfredo",
+                "Tiramisu"
+            ],
+            "correctAnswer": "Garlic Bread, Fettuccine Alfredo, Tiramisu",
+            "hint": "'To start,' 'then,' and 'to finish' mark three clear stages of the meal.",
+            "explanation": "Sequencing words like these organize a full meal into clear stages, from appetizer to dessert.",
+            "id": "go_l95_q1",
+            "menuItems": [
+                "Cheesecake",
+                "Garlic Bread",
+                "Fettuccine Alfredo",
                 "Tiramisu"
             ],
             "menuPrices": [
-                "$11.25",
-                "$10.00",
-                "$17.75",
-                "$12.50"
+                "$7.50",
+                "$5.00",
+                "$13.00",
+                "$7.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "To celebrate closing the deal, let's order the champagne, the surf and turf, and the chocolate torte.",
+            "prompt": "First, the calamari; after that, the seafood risotto; and finally, just an espresso to close things out.",
             "options": [
-                "Champagne",
-                "Surf and Turf",
-                "Chocolate Torte",
-                "Chocolate Mousse"
+                "Cappuccino",
+                "Calamari",
+                "Espresso",
+                "Seafood Risotto"
             ],
-            "correctAnswer": "Champagne, Surf and Turf, Chocolate Torte",
-            "hint": "A successful business event is the reason for this celebratory order.",
-            "explanation": "‘Closing the deal’ is a business expression meaning an agreement was successfully completed — a natural reason to celebrate with a nicer meal.",
-            "id": "go_l94_q1",
-            "menuItems": [
-                "Champagne",
-                "Surf and Turf",
-                "Chocolate Torte",
-                "Chocolate Mousse"
-            ],
-            "menuPrices": [
-                "$14.00",
-                "$2.00",
-                "$14.00",
-                "$12.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Could you tell me more about the wild mushroom risotto? That sounds perfect — I'll have that, the burrata, and the panna cotta.",
-            "options": [
-                "Wild Mushroom Risotto",
-                "Burrata",
-                "Panna Cotta",
-                "Affogato"
-            ],
-            "correctAnswer": "Wild Mushroom Risotto, Burrata, Panna Cotta",
-            "hint": "A question about the main course comes before the full order is confirmed, out of order from the usual starter-first pattern.",
-            "explanation": "Customers don't always ask about dishes in the order they'll eat them — here, the main course question comes before naming the starter and dessert.",
-            "id": "go_l94_q2",
-            "menuItems": [
-                "Wild Mushroom Risotto",
-                "Burrata",
-                "Panna Cotta",
-                "Affogato"
-            ],
-            "menuPrices": [
-                "$12.50",
-                "$11.25",
-                "$3.25",
-                "$17.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "This is a business lunch, so I'll keep it simple: the soup, the grilled salmon, and a sparkling water.",
-            "options": [
-                "Soup",
-                "Grilled Salmon",
-                "Sparkling Water",
-                "Still Water"
-            ],
-            "correctAnswer": "Soup, Grilled Salmon, Sparkling Water",
-            "hint": "Once again, simplicity is chosen deliberately for a professional setting.",
-            "explanation": "Choosing simple, easy-to-eat dishes is common at business lunches, where neat presentation and easy conversation matter more than elaborate food.",
-            "id": "go_l94_q3",
-            "menuItems": [
-                "Soup",
-                "Grilled Salmon",
-                "Sparkling Water",
-                "Still Water"
-            ],
-            "menuPrices": [
-                "$5.75",
-                "$7.25",
-                "$4.50",
-                "$13.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Between the ribeye and the porterhouse, I'll go with the porterhouse. Then the creamed spinach and the cheesecake.",
-            "options": [
-                "Porterhouse",
-                "Creamed Spinach",
-                "Cheesecake",
-                "Ribeye"
-            ],
-            "correctAnswer": "Porterhouse, Creamed Spinach, Cheesecake",
-            "hint": "This time, the second option mentioned is the one the customer actually chooses.",
-            "explanation": "Whether the chosen item is named first or second in the comparison, the words ‘I’ll go with…’ always mark the true final decision.",
-            "id": "go_l95_q1",
-            "menuItems": [
-                "Porterhouse",
-                "Creamed Spinach",
-                "Cheesecake",
-                "Ribeye"
-            ],
-            "menuPrices": [
-                "$4.50",
-                "$21.75",
-                "$21.75",
-                "$20.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I'm celebrating a promotion, so let's do the caviar, the wagyu, and the crème brûlée.",
-            "options": [
-                "Caviar",
-                "Wagyu",
-                "Crème Brûlée",
-                "Panna Cotta"
-            ],
-            "correctAnswer": "Caviar, Wagyu, Crème Brûlée",
-            "hint": "A significant career achievement explains this especially indulgent order.",
-            "explanation": "The reason for celebrating can change from order to order, but the sentence pattern for expressing it stays useful and repeatable.",
+            "correctAnswer": "Calamari, Espresso, Seafood Risotto",
+            "hint": "'First,' 'after that,' and 'finally' organize the meal into stages, just with different sequencing words.",
+            "explanation": "English has many ways to sequence a meal - 'first... after that... finally' works exactly like 'to start... then... to finish.'",
             "id": "go_l95_q2",
             "menuItems": [
-                "Caviar",
-                "Wagyu",
-                "Crème Brûlée",
-                "Panna Cotta"
+                "Cappuccino",
+                "Calamari",
+                "Espresso",
+                "Seafood Risotto"
             ],
             "menuPrices": [
-                "$20.50",
-                "$7.25",
-                "$2.00",
-                "$3.25"
+                "$4.00",
+                "$11.00",
+                "$3.00",
+                "$19.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "We have a flight to catch, so let's keep it quick — the wrap, the fruit cup, and a bottled water, please.",
+            "prompt": "We'll begin with the bruschetta; then, is the salmon wild-caught or farmed? Wild-caught - perfect, I'll have that next, and we'll finish with the chocolate cake.",
             "options": [
-                "Wrap",
-                "Fruit Cup",
-                "Bottled Water",
-                "Sparkling Water"
+                "Cheesecake",
+                "Salmon",
+                "Bruschetta",
+                "Chocolate Cake"
             ],
-            "correctAnswer": "Wrap, Fruit Cup, Bottled Water",
-            "hint": "Once again, time pressure leads to a fast, simple order.",
-            "explanation": "‘Bottled water’ is easy to carry through an airport, unlike a drink that needs a glass — a practical detail for a traveler in a hurry.",
+            "correctAnswer": "Salmon, Bruschetta, Chocolate Cake",
+            "hint": "A question is inserted in the middle of an otherwise clear sequence - it doesn't break the structure, just adds a detail.",
+            "explanation": "Real conversations aren't always perfectly linear - a clarifying question can appear mid-sequence without breaking its overall structure.",
             "id": "go_l95_q3",
             "menuItems": [
-                "Wrap",
-                "Fruit Cup",
-                "Bottled Water",
-                "Sparkling Water"
+                "Cheesecake",
+                "Salmon",
+                "Bruschetta",
+                "Chocolate Cake"
             ],
             "menuPrices": [
-                "$12.50",
-                "$12.50",
-                "$9.75",
-                "$4.50"
+                "$7.50",
+                "$19.00",
+                "$7.00",
+                "$7.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll have the tasting portion of the duck, then the halibut, and the lemon tart to finish.",
+            "prompt": "To start, the calamari, extra crispy; for my main, the salmon, grilled not fried, no butter; and a sparkling water instead of my usual soda.",
             "options": [
-                "Duck",
-                "Halibut",
-                "Lemon Tart",
-                "Chocolate Tart"
+                "Soda",
+                "Salmon",
+                "Sparkling Water",
+                "Calamari"
             ],
-            "correctAnswer": "Duck, Halibut, Lemon Tart",
-            "hint": "This time, the tasting portion applies to the first course rather than a main.",
-            "explanation": "Ordering a tasting portion of an early course allows a guest to try something rich, like duck, without feeling too full for the rest of the meal.",
+            "correctAnswer": "Salmon, Sparkling Water, Calamari",
+            "hint": "Several modifiers attach to each of the three courses - notice each one, but count the actual items.",
+            "explanation": "This combines the unit's full-order structure with heavy modification on every course - three items, each shaped by its own details.",
             "id": "go_l96_q1",
             "menuItems": [
-                "Duck",
-                "Halibut",
-                "Lemon Tart",
-                "Chocolate Tart"
+                "Soda",
+                "Salmon",
+                "Sparkling Water",
+                "Calamari"
             ],
             "menuPrices": [
-                "$3.25",
-                "$5.75",
+                "$2.75",
                 "$18.00",
-                "$13.75"
+                "$3.00",
+                "$11.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Take your time — actually, I'll go with the calamari, the swordfish, and the coconut cream pie.",
+            "prompt": "I'll start with the soup, no croutons; then the chicken parmesan, extra sauce on the side; and a glass of chianti, please.",
             "options": [
-                "Calamari",
-                "Swordfish",
-                "Coconut Cream Pie",
-                "Key Lime Pie"
+                "Pinot Noir",
+                "Chianti",
+                "Soup",
+                "Chicken Parmesan"
             ],
-            "correctAnswer": "Calamari, Swordfish, Coconut Cream Pie",
-            "hint": "Another pause for thought comes before a final, confident order.",
-            "explanation": "This structure — an invitation to think, then a decision — is common whenever a customer needs a moment before choosing from a full menu.",
+            "correctAnswer": "Chianti, Soup, Chicken Parmesan",
+            "hint": "A removal, an addition, and a specific drink name all attach to three different courses.",
+            "explanation": "Different modifier types can appear on different courses within the very same full order.",
             "id": "go_l96_q2",
             "menuItems": [
-                "Calamari",
-                "Swordfish",
-                "Coconut Cream Pie",
-                "Key Lime Pie"
+                "Pinot Noir",
+                "Chianti",
+                "Soup",
+                "Chicken Parmesan"
             ],
             "menuPrices": [
-                "$12.50",
-                "$7.25",
-                "$7.25",
-                "$16.50"
+                "$9.00",
+                "$9.00",
+                "$5.00",
+                "$16.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "My colleague recommended this place. I'll have the shrimp bisque, the filet mignon, and the profiteroles.",
+            "prompt": "For the table, the nachos to share, loaded with extra jalapeños; then I'll have the fajitas, chicken not steak, no peppers; and a margarita, on the rocks.",
             "options": [
-                "Shrimp Bisque",
-                "Filet Mignon",
-                "Profiteroles",
-                "Éclair"
+                "Sangria",
+                "Margarita",
+                "Fajitas",
+                "Nachos"
             ],
-            "correctAnswer": "Shrimp Bisque, Filet Mignon, Profiteroles",
-            "hint": "The same recommendation phrase reappears, now attached to a different meal.",
-            "explanation": "Useful phrases like ‘my colleague recommended this place’ can be reused across many different situations and orders.",
+            "correctAnswer": "Margarita, Fajitas, Nachos",
+            "hint": "A shared starter and a heavily modified main, plus a specific drink preparation, make up this full order.",
+            "explanation": "'On the rocks' describes how the margarita is served, just one more modifier among several stacked across this full order.",
             "id": "go_l96_q3",
             "menuItems": [
-                "Shrimp Bisque",
-                "Filet Mignon",
-                "Profiteroles",
-                "Éclair"
+                "Sangria",
+                "Margarita",
+                "Fajitas",
+                "Nachos"
             ],
             "menuPrices": [
-                "$12.50",
-                "$12.50",
-                "$18.00",
+                "$8.00",
+                "$9.00",
+                "$16.00",
                 "$10.00"
             ]
         },
@@ -511,336 +511,336 @@
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "To celebrate closing the deal, let's order the oysters, the lobster, and the chocolate lava cake.",
+            "prompt": "Waiter: Are you ready to order, or do you need another minute? Customer: We're ready - I'll start with the shrimp cocktail, and the filet mignon for my main.",
             "options": [
-                "Oysters",
-                "Lobster",
-                "Chocolate Lava Cake",
-                "Chocolate Mousse"
+                "Shrimp Cocktail",
+                "Filet Mignon",
+                "Crab Cocktail",
+                "Ribeye"
             ],
-            "correctAnswer": "Oysters, Lobster, Chocolate Lava Cake",
-            "hint": "This celebratory order once again marks a successful business outcome.",
-            "explanation": "Repeating a useful structure with new vocabulary — like ‘lobster’ and ‘chocolate lava cake’ — helps reinforce the pattern while expanding menu knowledge.",
+            "correctAnswer": "Shrimp Cocktail, Filet Mignon",
+            "hint": "The waiter's opening question is answered before the actual order begins.",
+            "explanation": "A waiter often checks readiness before taking an order - the customer's answer to that check isn't part of the food order itself.",
             "id": "go_l97_q1",
             "menuItems": [
-                "Oysters",
-                "Lobster",
-                "Chocolate Lava Cake",
-                "Chocolate Mousse"
+                "Shrimp Cocktail",
+                "Filet Mignon",
+                "Crab Cocktail",
+                "Ribeye"
             ],
             "menuPrices": [
-                "$21.75",
-                "$7.25",
+                "$13.00",
+                "$32.00",
                 "$14.00",
-                "$12.50"
+                "$28.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Could you tell me more about the osso buco? That sounds wonderful — I'll have that, the burrata, and the tiramisu.",
+            "prompt": "Waiter: Can I get you started with any drinks while you look over the menu? Customer: Sure, I'll have an iced tea, and my husband will have a beer.",
             "options": [
-                "Osso Buco",
-                "Burrata",
-                "Tiramisu",
-                "Affogato"
+                "Iced Tea",
+                "Beer",
+                "Wine",
+                "Lemonade"
             ],
-            "correctAnswer": "Osso Buco, Burrata, Tiramisu",
-            "hint": "A question about an unfamiliar dish leads to a confident final order.",
-            "explanation": "‘Osso buco’ is a braised veal shank, a dish some diners might not recognize by name, making a clarifying question especially useful.",
+            "correctAnswer": "Iced Tea, Beer",
+            "hint": "Drinks are ordered first, before the food decision has even been made - track this initial, separate order.",
+            "explanation": "Drinks are often ordered before food, while customers are still deciding on their meal - a separate, earlier part of the interaction.",
             "id": "go_l97_q2",
             "menuItems": [
-                "Osso Buco",
-                "Burrata",
-                "Tiramisu",
-                "Affogato"
+                "Iced Tea",
+                "Beer",
+                "Wine",
+                "Lemonade"
             ],
             "menuPrices": [
-                "$11.25",
-                "$11.25",
-                "$12.50",
-                "$17.75"
+                "$3.00",
+                "$6.00",
+                "$8.00",
+                "$3.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "This is a business lunch, so I'll keep it simple: the salad, the turkey sandwich, and an unsweetened iced tea.",
+            "prompt": "Waiter: Our fish today is halibut, if you're interested. Customer: Actually, yes - I'll have that instead of the salmon I was considering, with a side of asparagus.",
             "options": [
-                "Salad",
-                "Turkey Sandwich",
-                "Unsweetened Iced Tea",
-                "Sweet Tea"
+                "Halibut",
+                "Salmon",
+                "Asparagus",
+                "Broccoli"
             ],
-            "correctAnswer": "Salad, Turkey Sandwich, Unsweetened Iced Tea",
-            "hint": "The now-familiar ‘keep it simple’ phrase appears again with new menu items.",
-            "explanation": "Business lunch orders often repeat similar patterns — simple food, easy drinks — no matter which specific restaurant is chosen.",
+            "correctAnswer": "Halibut, Asparagus",
+            "hint": "The waiter's suggestion changes the customer's mind about the main course entirely.",
+            "explanation": "A well-timed suggestion from a waiter can change a customer's mind completely - the final choice is what matters.",
             "id": "go_l97_q3",
             "menuItems": [
-                "Salad",
-                "Turkey Sandwich",
-                "Unsweetened Iced Tea",
-                "Sweet Tea"
+                "Halibut",
+                "Salmon",
+                "Asparagus",
+                "Broccoli"
             ],
             "menuPrices": [
-                "$7.25",
-                "$17.75",
-                "$12.50",
-                "$14.00"
+                "$24.00",
+                "$22.00",
+                "$4.00",
+                "$3.50"
             ]
         },
         {
-            "instruction": "Tap the items to fulfill the customer's order.",
+            "instruction": "Tap the items to fulfill the guest's final order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Between the halibut and the sea bass, I'll go with the sea bass. Then the risotto and the panna cotta.",
+            "prompt": "I'll have the New York strip - actually, wait, could I switch that to the filet? - with a loaded baked potato.",
             "options": [
-                "Sea Bass",
-                "Risotto",
-                "Panna Cotta",
-                "Halibut"
+                "Filet",
+                "New York Strip",
+                "Plain Baked Potato",
+                "Loaded Baked Potato"
             ],
-            "correctAnswer": "Sea Bass, Risotto, Panna Cotta",
-            "hint": "A comparison between two fish is resolved, followed by two more courses.",
-            "explanation": "This comparison structure works with any two similar menu items, always ending in one clear, selected choice.",
+            "correctAnswer": "Filet, Loaded Baked Potato",
+            "hint": "A mid-sentence correction changes the main course - trust the switched item, not the first one.",
+            "explanation": "'Actually, wait, could I switch that to...' is a clear, explicit correction - the originally named item should never be tapped once replaced.",
             "id": "go_l98_q1",
             "menuItems": [
-                "Sea Bass",
-                "Risotto",
-                "Panna Cotta",
-                "Halibut"
+                "Filet",
+                "New York Strip",
+                "Plain Baked Potato",
+                "Loaded Baked Potato"
             ],
             "menuPrices": [
-                "$10.00",
-                "$6.00",
-                "$3.25",
-                "$5.75"
+                "$34.00",
+                "$29.00",
+                "$3.00",
+                "$4.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the guest's final order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "For my side, I said the mashed potatoes, but could you actually change that to the mac and cheese? And I'll keep the steak as ordered.",
+            "options": [
+                "Steak",
+                "Rice Pilaf",
+                "Mac and Cheese",
+                "Mashed Potatoes"
+            ],
+            "correctAnswer": "Steak, Mac and Cheese",
+            "hint": "One part of the order is corrected while another part stays exactly the same.",
+            "explanation": "A correction to one course doesn't necessarily affect the rest of the order - here, the side changes, but the main course remains untouched.",
+            "id": "go_l98_q2",
+            "menuItems": [
+                "Steak",
+                "Rice Pilaf",
+                "Mac and Cheese",
+                "Mashed Potatoes"
+            ],
+            "menuPrices": [
+                "$26.00",
+                "$3.50",
+                "$4.00",
+                "$3.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the guest's final order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Waiter: Just to confirm, that's the chicken alfredo, not the shrimp alfredo, correct? Customer: Actually, you're right to check - I did mean the shrimp, sorry, with a Caesar salad.",
+            "options": [
+                "Shrimp Alfredo",
+                "Greek Salad",
+                "Chicken Alfredo",
+                "Caesar Salad"
+            ],
+            "correctAnswer": "Shrimp Alfredo, Caesar Salad",
+            "hint": "The waiter's confirmation attempt actually catches a mistake, which the customer then corrects.",
+            "explanation": "A waiter reading back an order can sometimes catch a mismatch between what was said and what was meant - the correction is the final, accurate order.",
+            "id": "go_l98_q3",
+            "menuItems": [
+                "Shrimp Alfredo",
+                "Greek Salad",
+                "Chicken Alfredo",
+                "Caesar Salad"
+            ],
+            "menuPrices": [
+                "$18.00",
+                "$4.50",
+                "$15.00",
+                "$4.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'm celebrating a promotion, so let's do the tuna tartare, the venison, and the dark chocolate mousse.",
+            "prompt": "I'll start with the soup, and have the roast chicken for my main. My wife will skip the starter and just have the salmon.",
             "options": [
-                "Tuna Tartare",
-                "Venison",
-                "Dark Chocolate Mousse",
-                "Chocolate Torte"
+                "Roast Chicken",
+                "Soup",
+                "Salmon",
+                "Grilled Vegetables"
             ],
-            "correctAnswer": "Tuna Tartare, Venison, Dark Chocolate Mousse",
-            "hint": "New vocabulary appears, but the celebratory sentence structure stays familiar.",
-            "explanation": "Recognizing a familiar sentence pattern makes it easier to understand new vocabulary within it, even words like ‘venison’ that may be unfamiliar.",
-            "id": "go_l98_q2",
+            "correctAnswer": "Roast Chicken, Soup, Salmon",
+            "hint": "Two people order different combinations - one has a starter and main, the other just a main.",
+            "explanation": "When two diners order together, one might follow the full starter-and-main pattern while the other simplifies to just one course.",
+            "id": "go_l99_q1",
             "menuItems": [
-                "Tuna Tartare",
-                "Venison",
-                "Dark Chocolate Mousse",
-                "Chocolate Torte"
+                "Roast Chicken",
+                "Soup",
+                "Salmon",
+                "Grilled Vegetables"
             ],
             "menuPrices": [
-                "$19.25",
-                "$2.00",
+                "$14.00",
+                "$5.00",
                 "$18.00",
+                "$4.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "For us, we'll share the calamari to start, then I'll have the lasagna and he'll have the veal marsala.",
+            "options": [
+                "Lasagna",
+                "Calamari",
+                "Chicken Marsala",
+                "Veal Marsala"
+            ],
+            "correctAnswer": "Lasagna, Calamari, Veal Marsala",
+            "hint": "One shared starter plus two different mains make three total items for two people.",
+            "explanation": "A shared starter combined with two separate main courses is a common structure for two diners eating together.",
+            "id": "go_l99_q2",
+            "menuItems": [
+                "Lasagna",
+                "Calamari",
+                "Chicken Marsala",
+                "Veal Marsala"
+            ],
+            "menuPrices": [
+                "$16.00",
+                "$11.00",
+                "$18.00",
+                "$22.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "I'll have the full three courses - soup, the duck, and the crème brûlée - but my friend just wants a light salad and nothing else.",
+            "options": [
+                "Duck",
+                "Crème Brûlée",
+                "Soup",
+                "Side Salad"
+            ],
+            "correctAnswer": "Duck, Crème Brûlée, Soup",
+            "hint": "One diner orders extensively while the other orders minimally - track both, but notice which items belong to which person.",
+            "explanation": "Two diners can have very different appetites within the same visit; the salad belongs to the second person, separate from these three items.",
+            "id": "go_l99_q3",
+            "menuItems": [
+                "Duck",
+                "Crème Brûlée",
+                "Soup",
+                "Side Salad"
+            ],
+            "menuPrices": [
+                "$26.00",
+                "$8.00",
+                "$6.00",
+                "$7.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "To start, we'll share the burrata; then I'll have the branzino, grilled, with the risotto instead of the vegetables; and my partner will have the ribeye, medium-rare, with the same risotto.",
+            "options": [
+                "Branzino",
+                "Ribeye",
+                "Vegetables",
+                "Burrata"
+            ],
+            "correctAnswer": "Branzino, Ribeye, Burrata",
+            "hint": "A shared starter, two different mains with their own modifiers, and one shared side make up this order - vegetables are declined for both.",
+            "explanation": "This level brings together nearly everything from the unit: a shared course, two personalized mains, and an explicitly declined default side.",
+            "id": "go_l100_q1",
+            "menuItems": [
+                "Branzino",
+                "Ribeye",
+                "Vegetables",
+                "Burrata"
+            ],
+            "menuPrices": [
+                "$26.00",
+                "$32.00",
+                "$4.00",
                 "$14.00"
             ]
         },
         {
-            "instruction": "Tap the items to fulfill the customer's order.",
+            "instruction": "Tap the items to fulfill the guest's final order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "We have a flight to catch, so let's keep it quick — the bagel, the yogurt, and an orange juice, please.",
+            "prompt": "Waiter: Ready to order? Customer: Yes - to start, the bruschetta; for my main, the swordfish, but could you actually make that the salmon instead? And a glass of sauvignon blanc.",
             "options": [
-                "Bagel",
-                "Yogurt",
-                "Orange Juice",
-                "Apple Juice"
-            ],
-            "correctAnswer": "Bagel, Yogurt, Orange Juice",
-            "hint": "A simple, portable breakfast order fits the time pressure of travel.",
-            "explanation": "Bagels and yogurt are easy to eat quickly, making them popular choices for travelers who need to catch a flight soon.",
-            "id": "go_l98_q3",
-            "menuItems": [
-                "Bagel",
-                "Yogurt",
-                "Orange Juice",
-                "Apple Juice"
-            ],
-            "menuPrices": [
-                "$17.75",
-                "$8.50",
-                "$20.50",
-                "$16.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I'll have the tasting portion of the foie gras, then the lamb rack, and the crème caramel to finish.",
-            "options": [
-                "Foie Gras",
-                "Lamb Rack",
-                "Crème Caramel",
-                "Panna Cotta"
-            ],
-            "correctAnswer": "Foie Gras, Lamb Rack, Crème Caramel",
-            "hint": "A rich, expensive starter is requested in a smaller portion.",
-            "explanation": "Foie gras is often rich and filling, so a tasting portion lets a guest enjoy it without overdoing the first course.",
-            "id": "go_l99_q1",
-            "menuItems": [
-                "Foie Gras",
-                "Lamb Rack",
-                "Crème Caramel",
-                "Panna Cotta"
-            ],
-            "menuPrices": [
-                "$10.00",
-                "$3.25",
-                "$6.00",
-                "$3.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Take your time — actually, I'll go with the endive salad, the veal chop, and the almond cake.",
-            "options": [
-                "Endive Salad",
-                "Veal Chop",
-                "Almond Cake",
-                "Olive Oil Cake"
-            ],
-            "correctAnswer": "Endive Salad, Veal Chop, Almond Cake",
-            "hint": "The familiar ‘take your time’ pause returns once more with new dishes.",
-            "explanation": "By now, this pattern should feel familiar: a pause for thought, followed by a confident final decision.",
-            "id": "go_l99_q2",
-            "menuItems": [
-                "Endive Salad",
-                "Veal Chop",
-                "Almond Cake",
-                "Olive Oil Cake"
-            ],
-            "menuPrices": [
-                "$20.50",
-                "$10.00",
-                "$21.75",
-                "$19.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "My colleague recommended this place. I'll have the crab cakes, the swordfish, and the key lime pie.",
-            "options": [
-                "Crab Cakes",
+                "Salmon",
                 "Swordfish",
-                "Key Lime Pie",
-                "Coconut Cream Pie"
+                "Bruschetta",
+                "Sauvignon Blanc"
             ],
-            "correctAnswer": "Crab Cakes, Swordfish, Key Lime Pie",
-            "hint": "The same trusted recommendation phrase appears again, tied to yet another meal.",
-            "explanation": "This phrase works equally well whether the recommendation is for a casual lunch spot or a special-occasion restaurant.",
-            "id": "go_l99_q3",
-            "menuItems": [
-                "Crab Cakes",
-                "Swordfish",
-                "Key Lime Pie",
-                "Coconut Cream Pie"
-            ],
-            "menuPrices": [
-                "$11.25",
-                "$7.25",
-                "$16.50",
-                "$7.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "To celebrate closing the deal, let's order the champagne, the wagyu steak, and the chocolate soufflé.",
-            "options": [
-                "Champagne",
-                "Wagyu Steak",
-                "Chocolate Soufflé",
-                "Chocolate Mousse"
-            ],
-            "correctAnswer": "Champagne, Wagyu Steak, Chocolate Soufflé",
-            "hint": "This final celebratory order in the set marks an especially significant achievement.",
-            "explanation": "‘Wagyu steak’ and ‘chocolate soufflé’ both represent higher-end menu choices, matching the importance of the occasion.",
-            "id": "go_l100_q1",
-            "menuItems": [
-                "Champagne",
-                "Wagyu Steak",
-                "Chocolate Soufflé",
-                "Chocolate Mousse"
-            ],
-            "menuPrices": [
-                "$14.00",
-                "$5.75",
-                "$12.50",
-                "$12.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Could you tell me more about the tasting menu? That sounds wonderful — I'll have that, paired with the wine flight, and I'll add the cheese course at the end.",
-            "options": [
-                "Tasting Menu",
-                "Wine Flight",
-                "Cheese Course",
-                "Chef's Recommendation"
-            ],
-            "correctAnswer": "Tasting Menu, Wine Flight, Cheese Course",
-            "hint": "This order introduces a full tasting menu experience, a concept that will appear more often at higher levels.",
-            "explanation": "A ‘tasting menu’ offers several small courses chosen by the chef, often paired with a ‘wine flight’ — a selection of small wine pours meant to complement each course.",
+            "correctAnswer": "Salmon, Bruschetta, Sauvignon Blanc",
+            "hint": "A waiter's opening question, a full course sequence, and a mid-sentence correction all appear together - track the corrected final choice.",
+            "explanation": "This mirrors a completely real dining exchange: a readiness check, a sequenced order, and a genuine correction, all combined naturally.",
             "id": "go_l100_q2",
             "menuItems": [
-                "Tasting Menu",
-                "Wine Flight",
-                "Cheese Course",
-                "Chef's Recommendation"
+                "Salmon",
+                "Swordfish",
+                "Bruschetta",
+                "Sauvignon Blanc"
             ],
             "menuPrices": [
-                "$11.25",
-                "$17.75",
-                "$14.00",
-                "$21.75"
+                "$22.00",
+                "$24.00",
+                "$7.00",
+                "$9.00"
             ]
         },
         {
-            "instruction": "Tap the items to fulfill the customer's order.",
+            "instruction": "Tap the items to fulfill the guest's final order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "This is a business lunch, so I'll keep it simple: the soup, the roasted chicken, and a sparkling water.",
+            "prompt": "For the table, we'll share the calamari; is the calamari fried in the same oil as the fish, by the way? Yes, but that's fine for us. I'll have the sea bass, no capers, and my husband will have the same but with capers, since he loves them.",
             "options": [
-                "Soup",
-                "Roasted Chicken",
-                "Sparkling Water",
-                "Still Water"
+                "Sea Bass without Capers",
+                "Swordfish",
+                "Sea Bass with Capers",
+                "Calamari"
             ],
-            "correctAnswer": "Soup, Roasted Chicken, Sparkling Water",
-            "hint": "A familiar, simple order returns to close out this set of levels.",
-            "explanation": "Ending on a comfortable, familiar structure — soup, a simple main, and water — reinforces the patterns learned throughout this tier before the vocabulary grows more advanced.",
+            "correctAnswer": "Sea Bass without Capers, Sea Bass with Capers, Calamari",
+            "hint": "A shared starter, a shared-equipment question that doesn't change the order, and the same main dish ordered two different ways for two people.",
+            "explanation": "This final level of the unit combines a shared course, an accepted answer to a kitchen-equipment question, and one dish split into two versions for two people.",
             "id": "go_l100_q3",
             "menuItems": [
-                "Soup",
-                "Roasted Chicken",
-                "Sparkling Water",
-                "Still Water"
+                "Sea Bass without Capers",
+                "Swordfish",
+                "Sea Bass with Capers",
+                "Calamari"
             ],
             "menuPrices": [
-                "$5.75",
-                "$11.25",
-                "$4.50",
-                "$13.75"
+                "$24.00",
+                "$26.00",
+                "$25.00",
+                "$11.00"
             ]
         }
     ]

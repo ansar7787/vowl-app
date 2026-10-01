@@ -1,577 +1,577 @@
 {
-    "gameType": "conditionals",
-    "batchIndex": 1,
-    "levels": "1-10",
-    "quests": [
-        {
-            "id": "cl_l1_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If you heat ice,",
-            "options": [
-                "it would have melted.",
-                "it will melt.",
-                "it melts.",
-                "it would melt."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "it melts.",
-            "hint": "Both clauses stay in present simple for a scientific fact - zero conditional.",
-            "explanation": "Zero conditional = always-true facts. Ice ALWAYS melts when heated - no exceptions. Structure: If + present simple, present simple. 'Will melt' is a future prediction (1st conditional); 'would melt' is hypothetical (2nd conditional). Universal laws of physics = zero conditional.",
-            "grammarRule": "Zero Conditional",
-            "conditionalType": 0
-        },
-        {
-            "id": "cl_l1_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If it rains this afternoon,",
-            "options": [
-                "we stayed home.",
-                "we stay home.",
-                "we would stay home.",
-                "we will stay home."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "we will stay home.",
-            "hint": "Rain this afternoon is a real future possibility - first conditional uses 'will' in the result.",
-            "explanation": "First conditional = real, possible futures. Rain this afternoon could genuinely happen. Structure: If + present simple, will + infinitive. 'Would stay' implies it's just a dream; 'stay' alone (zero conditional) is for universal facts not specific future plans. Use 'will stay' for a real future plan.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 0
-        },
-        {
-            "id": "cl_l1_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If you mix blue and yellow paint,",
-            "options": [
-                "you got green.",
-                "you get green.",
-                "you will get green.",
-                "you would get green."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "you get green.",
-            "hint": "Colour mixing is a physical fact - zero conditional with present simple in both clauses.",
-            "explanation": "Zero conditional = permanent truths. Blue + yellow ALWAYS = green. Both clauses: present simple. 'Will get green' sounds like a future prediction (1st conditional); 'would get green' is hypothetical (2nd conditional). Unchangeable colour facts = zero conditional.",
-            "grammarRule": "Zero Conditional",
-            "conditionalType": 0
-        },
-        {
-            "id": "cl_l2_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she passes her driving test,",
-            "options": [
-                "she will buy a car.",
-                "she buys a car.",
-                "she would buy a car.",
-                "she would have bought a car."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "she will buy a car.",
-            "hint": "Passing the test is a real, likely future event - first conditional with 'will'.",
-            "explanation": "First conditional = realistic future possibilities. Passing the test is genuinely possible. If she does (present simple), she will buy a car (will + infinitive = the real likely outcome). 'Would buy' makes it imaginary; 'would have bought' refers to the unreal past.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l2_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If we had booked the hotel earlier,",
-            "options": [
-                "we get a discount.",
-                "we would have gotten a discount.",
-                "we will get a discount.",
-                "we would get a discount."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "we would have gotten a discount.",
-            "hint": "Past perfect 'had booked' = we didn't book early - third conditional for an unreal past situation.",
-            "explanation": "Third conditional = impossible past. We didn't book early (we can't change that now). Structure: If + past perfect, would have + past participle. 'Would have gotten' = the discount we missed. 'Would get' is 2nd conditional (present imaginary); 'will get' is 1st (real future).",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l2_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If you exercise regularly,",
-            "options": [
-                "you would feel healthier.",
-                "you felt healthier.",
-                "you will feel healthier.",
-                "you would have felt healthier."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "you will feel healthier.",
-            "hint": "Regular exercise is a real, achievable choice - first conditional with 'will' for the real benefit.",
-            "explanation": "First conditional = real, achievable futures. Regular exercise is genuinely possible. If you do it (present simple), you will feel healthier (will + infinitive - a real future benefit). 'Would feel healthier' implies exercise is just an impossible dream.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l3_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If I had my own restaurant,",
-            "options": [
-                "I cooked every day.",
-                "I would cook every day.",
-                "I will cook every day.",
-                "I would have cooked every day."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "I would cook every day.",
-            "hint": "Having your own restaurant is an imaginary wish - second conditional with 'would'.",
-            "explanation": "Second conditional = imaginary present/future. The speaker doesn't have a restaurant (unreal wish). Structure: If + past simple, would + infinitive. 'Will cook' makes it a real plan; 'would have cooked' is 3rd conditional (past imaginary).",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 2
-        },
-        {
-            "id": "cl_l3_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If you leave butter in direct sunlight,",
-            "options": [
-                "it melted.",
-                "it would melt.",
-                "it melts.",
-                "it will melt."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "it melts.",
-            "hint": "Butter always melts in heat - a physical fact, not a prediction.",
-            "explanation": "Zero conditional = physical facts. Heat always melts butter - no exceptions. Both clauses: present simple. 'Will melt' is a future prediction (1st conditional); 'would melt' is hypothetical. Facts of physics = zero conditional.",
-            "grammarRule": "Zero Conditional",
-            "conditionalType": 0
-        },
-        {
-            "id": "cl_l3_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she finishes work early today,",
-            "options": [
-                "she would go to the gym.",
-                "she would have gone to the gym.",
-                "she goes to the gym.",
-                "she will go to the gym."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "she will go to the gym.",
-            "hint": "Finishing early today is a real possibility - use 'will' for the likely result.",
-            "explanation": "First conditional = real future possibilities. She might genuinely finish early. If she does (present simple), she will go to the gym (will + infinitive - a real plan). 'Would go' implies it's just a fantasy - not appropriate for a realistic daily plan.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l4_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If he knew the answer,",
-            "options": [
-                "he would tell us.",
-                "he tells us.",
-                "he will tell us.",
-                "he would have told us."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "he would tell us.",
-            "hint": "Past simple 'knew' in the if-clause signals imaginary present - second conditional.",
-            "explanation": "Second conditional = unreal present. 'Knew' (past simple) signals this is imaginary - he doesn't actually know. If he did (imaginary), he would tell us (would + infinitive). 'Would have told' is 3rd conditional (past imaginary), not present.",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 2
-        },
-        {
-            "id": "cl_l4_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the train is on time,",
-            "options": [
-                "we missed the meeting.",
-                "we will make it to the meeting.",
-                "we would make it to the meeting.",
-                "we would have made it to the meeting."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "we will make it to the meeting.",
-            "hint": "The train might really be on time - first conditional with 'will' for the real outcome.",
-            "explanation": "First conditional = real future possibilities. Trains can be on time - a genuine chance. If this one is (present simple), we will make it to the meeting (will + infinitive). 'Would make it' is imaginary; 'would have made it' is past imaginary.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l4_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she had taken the medicine,",
-            "options": [
-                "she would feel better.",
-                "she felt better.",
-                "she would have felt better.",
-                "she will feel better."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "she would have felt better.",
-            "hint": "Past perfect 'had taken' = she didn't take it - third conditional for a missed past action.",
-            "explanation": "Third conditional = unreal past. She didn't take the medicine (past perfect = what didn't happen). If she had (imaginary), she would have felt better (would have + past participle - the missed benefit). 'Would feel' is 2nd conditional (present imaginary).",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l5_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If you press the power button,",
-            "options": [
-                "the screen would have turned on.",
-                "the screen would turn on.",
-                "the screen will turn on.",
-                "the screen turns on."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "the screen turns on.",
-            "hint": "Pressing a button always produces the same automatic result - zero conditional.",
-            "explanation": "Zero conditional = automatic cause-and-effect. Pressing the power button ALWAYS starts the device. Both clauses: present simple. 'Will turn on' is a future prediction; 'would turn on' is hypothetical. Automatic device behaviour = zero conditional.",
-            "grammarRule": "Zero Conditional",
-            "conditionalType": 0
-        },
-        {
-            "id": "cl_l5_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If I could fly like a bird,",
-            "options": [
-                "I travel the world.",
-                "I will travel the world.",
-                "I would travel the world.",
-                "I would have traveled the world."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "I would travel the world.",
-            "hint": "Humans cannot fly - impossible fantasy requires second conditional with 'would'.",
-            "explanation": "Second conditional = impossible wishes. The modal 'could fly' signals pure fantasy. If this were real (imaginary), the speaker would travel the world (would + infinitive). 'Will travel' would make it a real plan - but flying is impossible for humans.",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 2
-        },
-        {
-            "id": "cl_l5_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If you send me the file,",
-            "options": [
-                "I will review it today.",
-                "I reviewed it today.",
-                "I would review it today.",
-                "I would have reviewed it today."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "I will review it today.",
-            "hint": "Sending a file is something you can really do - first conditional with 'will'.",
-            "explanation": "First conditional = real, possible future events. You can actually send the file. If you do (present simple), I will review it today (will + infinitive - a real, committed response). 'Would review' is for imaginary situations.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l6_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If they had read the instructions,",
-            "options": [
-                "they assemble it correctly.",
-                "they would have assembled it correctly.",
-                "they will assemble it correctly.",
-                "they would assemble it correctly."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "they would have assembled it correctly.",
-            "hint": "Past perfect 'had read' = they didn't read - third conditional for a missed past action.",
-            "explanation": "Third conditional = unreal past. They didn't read the instructions (past perfect = what didn't happen). If they had (imaginary), they would have assembled it correctly (would have + past participle - the missed outcome).",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l6_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the meeting runs over time,",
-            "options": [
-                "we would miss lunch.",
-                "we missed lunch.",
-                "we will miss lunch.",
-                "we would have missed lunch."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "we will miss lunch.",
-            "hint": "Meetings can really run over - first conditional warning about a real future risk.",
-            "explanation": "First conditional = real future consequences. Meetings do run late - a genuine risk. If this one does (present simple), we will miss lunch (will + infinitive - the real consequence). 'Would miss' implies it's imaginary; 'would have missed' is past imaginary.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l6_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If I lived closer to the city centre,",
-            "options": [
-                "I commute by bike.",
-                "I will commute by bike.",
-                "I would have commuted by bike.",
-                "I would commute by bike."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "I would commute by bike.",
-            "hint": "'Lived' is past simple - the speaker doesn't live close, so this is second conditional.",
-            "explanation": "Second conditional = imaginary present. The speaker doesn't live near the centre (past simple = imaginary). If they did (imaginary), they would commute by bike (would + infinitive). 'Would have commuted' is 3rd conditional (past imaginary).",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 2
-        },
-        {
-            "id": "cl_l7_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If you add salt to water,",
-            "options": [
-                "it boils at a higher temperature.",
-                "it would have boiled at a higher temperature.",
-                "it will boil at a higher temperature.",
-                "it would boil at a higher temperature."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "it boils at a higher temperature.",
-            "hint": "Salt raising water's boiling point is chemistry - zero conditional for a scientific fact.",
-            "explanation": "Zero conditional = scientific laws. Salt ALWAYS raises the boiling point - no exceptions. Both clauses: present simple. 'Will boil' is a future prediction; 'would boil' is hypothetical. A chemistry fact = zero conditional.",
-            "grammarRule": "Zero Conditional",
-            "conditionalType": 0
-        },
-        {
-            "id": "cl_l7_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If you call the restaurant ahead of time,",
-            "options": [
-                "they reserved a table.",
-                "they will reserve a table.",
-                "they would reserve a table.",
-                "they would have reserved a table."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "they will reserve a table.",
-            "hint": "Calling ahead is a real action you can take - first conditional for a practical real outcome.",
-            "explanation": "First conditional = real, possible future actions. You can actually call right now. If you do (present simple), they will reserve a table (will + infinitive - the expected outcome). 'Would reserve' is hypothetical; 'would have reserved' is past imaginary.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l7_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she had left five minutes earlier,",
-            "options": [
-                "she avoids the traffic.",
-                "she will avoid the traffic.",
-                "she would have avoided the traffic.",
-                "she would avoid the traffic."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "she would have avoided the traffic.",
-            "hint": "Past perfect 'had left' = she didn't leave earlier - third conditional for a missed past choice.",
-            "explanation": "Third conditional = unreal past. She didn't leave earlier (past perfect = the missed action). If she had (imaginary), she would have avoided the traffic (would have + past participle - the missed benefit). A common regret about timing.",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l8_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the weather is nice this weekend,",
-            "options": [
-                "we would go to the park.",
-                "we would have gone to the park.",
-                "we went to the park.",
-                "we will go to the park."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "we will go to the park.",
-            "hint": "Good weather this weekend is a genuine possibility - use 'will' for the real plan.",
-            "explanation": "First conditional = real future possibilities. Nice weather might actually happen. If it does (present simple), we will go to the park (will + infinitive - a real plan). 'Would go' implies nice weather is impossible or just a fantasy.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l8_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she were the team leader,",
-            "options": [
-                "she would change the schedule.",
-                "she changes the schedule.",
-                "she will change the schedule.",
-                "she would have changed the schedule."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "she would change the schedule.",
-            "hint": "'Were' is the subjunctive - signals imaginary present (she is not the team leader).",
-            "explanation": "Second conditional uses 'were' (subjunctive) for all persons to signal an unreal situation. She is not the team leader (imaginary). If she were (unreal - note: 'were' not 'was' in correct formal English), she would change the schedule (would + infinitive).",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 2
-        },
-        {
-            "id": "cl_l8_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If you don't water plants regularly,",
-            "options": [
-                "they would have died.",
-                "they die.",
-                "they will die.",
-                "they would die."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "they die.",
-            "hint": "Not watering plants always kills them - a permanent natural fact.",
-            "explanation": "Zero conditional = natural facts. Plants ALWAYS die without water - no exceptions. Both clauses: present simple. 'Will die' is a future prediction; zero conditional is for always-true facts regardless of future or past.",
-            "grammarRule": "Zero Conditional",
-            "conditionalType": 0
-        },
-        {
-            "id": "cl_l9_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If I had studied medicine,",
-            "options": [
-                "I would have become a doctor.",
-                "I become a doctor.",
-                "I will become a doctor.",
-                "I would become a doctor."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "I would have become a doctor.",
-            "hint": "Past perfect 'had studied' = different career path - third conditional for an unreal past life choice.",
-            "explanation": "Third conditional = imagining a different past. The speaker chose a different path. If they had studied medicine (imaginary past choice), they would have become a doctor (would have + past participle). Often reflects on life's 'what ifs'.",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l9_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the app crashes,",
-            "options": [
-                "your data would be lost.",
-                "your data will be lost.",
-                "your data would have been lost.",
-                "your data is lost."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "your data will be lost.",
-            "hint": "An app crashing is a real technical risk - first conditional warns about a real consequence.",
-            "explanation": "First conditional = real future risks. Apps can and do crash. If it does (present simple - a real risk), your data will be lost (will + infinitive - the real consequence). 'Would be lost' implies a crash is just imaginary.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l9_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If he had more confidence,",
-            "options": [
-                "he would have applied for the promotion.",
-                "he applies for the promotion.",
-                "he would apply for the promotion.",
-                "he will apply for the promotion."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "he would apply for the promotion.",
-            "hint": "He lacks confidence now - second conditional imagines an unreal present situation.",
-            "explanation": "Second conditional = imaginary present. He lacks confidence (past simple 'had' = unreal - not his current situation). If he had more (imaginary), he would apply (would + infinitive). Note: the past simple refers to the present, not the past.",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 2
-        },
-        {
-            "id": "cl_l10_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she applies for the scholarship,",
-            "options": [
-                "she would win it.",
-                "she would have won it.",
-                "she wins it.",
-                "she will probably win it."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "she will probably win it.",
-            "hint": "She could actually apply - this is a real, achievable future scenario.",
-            "explanation": "First conditional = real future possibilities. She can genuinely apply. If she does (present simple), she will probably win it (will + infinitive - a realistic prediction). 'Would win' makes it hypothetical, as if applying is just an unrealistic dream.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l10_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If we had gone to the concert,",
-            "options": [
-                "we would have had a great time.",
-                "we would have a great time.",
-                "we will have a great time.",
-                "we have a great time."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "we would have had a great time.",
-            "hint": "Past perfect 'had gone' = you didn't go - third conditional for a missed past experience.",
-            "explanation": "Third conditional = unreal past. We didn't go (past perfect = what didn't happen). If we had (imaginary), we would have had a great time (would have + past participle - the missed experience). Often expresses regret about missing something fun.",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l10_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If you apply for too many credit cards at once,",
-            "options": [
-                "your credit score would have dropped.",
-                "your credit score would drop.",
-                "your credit score drops.",
-                "your credit score will drop."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "your credit score drops.",
-            "hint": "Too many credit applications always hurts your score - an established financial fact.",
-            "explanation": "Zero conditional = established financial truths. Multiple applications ALWAYS lower your credit score - a fact of how credit bureaus work. Both clauses: present simple. 'Will drop' is a future prediction; for a universal financial rule, zero conditional is correct.",
-            "grammarRule": "Zero Conditional",
-            "conditionalType": 0
-        }
-    ]
+  "gameType": "conditionals",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "cl_l1_q1",
+      "instruction": "COMPLETE THE LINK",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you touch fire,",
+      "options": [
+        "you would burn yourself.",
+        "you will burn yourself.",
+        "you burn yourself.",
+        "you would have burned yourself."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "you burn yourself.",
+      "hint": "This is true every time, for everyone — use the zero conditional for a basic fact.",
+      "explanation": "Zero conditional: present simple + present simple, for things that are always true. Touching fire always causes a burn, so both 'touch' and 'burn yourself' stay in the present simple. 'Will burn' points to one future moment, and 'would burn' sounds imaginary — but this is simply a fact of life.",
+      "grammarRule": "Zero Conditional",
+      "conditionalType": 0
+    },
+    {
+      "id": "cl_l1_q2",
+      "instruction": "COMPLETE THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you don't eat for a long time,",
+      "options": [
+        "you would feel hungry.",
+        "you will feel hungry.",
+        "you would have felt hungry.",
+        "you feel hungry."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "you feel hungry.",
+      "hint": "A basic fact about how the body works, not a one-off prediction.",
+      "explanation": "This describes a general truth about the human body, true for anyone at any time, so the zero conditional fits: present simple in both parts. 'Will feel' would turn it into a single future event rather than a lasting fact.",
+      "grammarRule": "Zero Conditional",
+      "conditionalType": 0
+    },
+    {
+      "id": "cl_l1_q3",
+      "instruction": "CHOOSE THE RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If plants get no water,",
+      "options": [
+        "they will die.",
+        "they would have died.",
+        "they would die.",
+        "they die."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "they die.",
+      "hint": "True for plants in general, not one particular plant on one day.",
+      "explanation": "This is a general fact about plants, not a prediction about a specific plant, so present simple appears in both clauses: 'get' and 'die'.",
+      "grammarRule": "Zero Conditional",
+      "conditionalType": 0
+    },
+    {
+      "id": "cl_l2_q1",
+      "instruction": "SELECT THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If metal gets hot enough,",
+      "options": [
+        "it would expand.",
+        "it will expand.",
+        "it expands.",
+        "it would have expanded."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "it expands.",
+      "hint": "A property of metal in general — a scientific fact.",
+      "explanation": "This describes a physical property of metal that is always true, so the zero conditional (present simple + present simple) is correct: 'gets' and 'expands'.",
+      "grammarRule": "Zero Conditional",
+      "conditionalType": 0
+    },
+    {
+      "id": "cl_l2_q2",
+      "instruction": "FINISH THE CONDITIONAL",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you mix red and blue paint,",
+      "options": [
+        "you will get purple.",
+        "you would have gotten purple.",
+        "you get purple.",
+        "you would get purple."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "you get purple.",
+      "hint": "Mixing these two colors always gives the same result.",
+      "explanation": "Color mixing always produces the same outcome, so this is a zero conditional fact: 'mix' and 'get', both present simple, no exceptions.",
+      "grammarRule": "Zero Conditional",
+      "conditionalType": 0
+    },
+    {
+      "id": "cl_l2_q3",
+      "instruction": "PICK THE NATURAL RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the sun sets,",
+      "options": [
+        "the sky gets darker.",
+        "the sky would get darker.",
+        "the sky will get darker.",
+        "the sky would have gotten darker."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the sky gets darker.",
+      "hint": "This happens every single day — a repeating natural fact.",
+      "explanation": "This is a daily natural cycle, so both clauses stay in the present simple: 'sets' and 'gets'. 'Will get' would suggest just one particular evening.",
+      "grammarRule": "Zero Conditional",
+      "conditionalType": 0
+    },
+    {
+      "id": "cl_l3_q1",
+      "instruction": "FIND THE RIGHT OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If my alarm doesn't ring,",
+      "options": [
+        "I would wake up late.",
+        "I would have woken up late.",
+        "I wake up late.",
+        "I will wake up late."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "I wake up late.",
+      "hint": "This is what usually happens to you, not one specific morning.",
+      "explanation": "This describes the speaker's regular pattern — a personal general truth — so present simple works in both clauses: 'doesn't ring' and 'wake up'.",
+      "grammarRule": "Zero Conditional",
+      "conditionalType": 0
+    },
+    {
+      "id": "cl_l3_q2",
+      "instruction": "MATCH THE OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the shop is closed,",
+      "options": [
+        "customers would not be able to enter.",
+        "customers will not be able to enter.",
+        "customers would not have been able to enter.",
+        "customers cannot enter."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "customers cannot enter.",
+      "hint": "A simple rule, true every time the shop happens to be closed.",
+      "explanation": "This is a basic, always-true rule, so present simple is used in both parts: 'is' and 'cannot enter'.",
+      "grammarRule": "Zero Conditional",
+      "conditionalType": 0
+    },
+    {
+      "id": "cl_l3_q3",
+      "instruction": "LINK THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If a phone battery runs out,",
+      "options": [
+        "the phone would have turned off.",
+        "the phone would turn off.",
+        "the phone will turn off.",
+        "the phone turns off."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the phone turns off.",
+      "hint": "True for phones in general — a fact about how devices work.",
+      "explanation": "This is true for phones generally, any time the battery empties, so the zero conditional (present simple + present simple) is correct.",
+      "grammarRule": "Zero Conditional",
+      "conditionalType": 0
+    },
+    {
+      "id": "cl_l4_q1",
+      "instruction": "CONNECT THE CONDITION",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If sugar gets wet,",
+      "options": [
+        "it would have dissolved.",
+        "it will dissolve.",
+        "it dissolves.",
+        "it would dissolve."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "it dissolves.",
+      "hint": "A property of sugar that never changes.",
+      "explanation": "This is a stable physical fact about sugar, always true, so present simple appears in both clauses: 'gets' and 'dissolves'.",
+      "grammarRule": "Zero Conditional",
+      "conditionalType": 0
+    },
+    {
+      "id": "cl_l4_q2",
+      "instruction": "COMPLETE THE IDEA",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If bread is left out for several days,",
+      "options": [
+        "it would go moldy.",
+        "it would have gone moldy.",
+        "it will go moldy.",
+        "it goes moldy."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "it goes moldy.",
+      "hint": "This eventually happens to bread in general, not just once.",
+      "explanation": "This describes what generally happens to bread, not a single prediction, so the zero conditional fits: 'is left' and 'goes'.",
+      "grammarRule": "Zero Conditional",
+      "conditionalType": 0
+    },
+    {
+      "id": "cl_l4_q3",
+      "instruction": "COMPLETE THE LINK",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If milk is left out of the fridge overnight,",
+      "options": [
+        "it goes sour.",
+        "it will go sour.",
+        "it would have gone sour.",
+        "it would go sour."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "it goes sour.",
+      "hint": "A basic fact about how milk behaves without refrigeration.",
+      "explanation": "This is a general truth about milk, true whenever it isn't refrigerated, so present simple + present simple is correct.",
+      "grammarRule": "Zero Conditional",
+      "conditionalType": 0
+    },
+    {
+      "id": "cl_l5_q1",
+      "instruction": "COMPLETE THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If it rains tomorrow,",
+      "options": [
+        "I would have taken an umbrella.",
+        "I will take an umbrella.",
+        "I would take an umbrella.",
+        "I take an umbrella."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "I will take an umbrella.",
+      "hint": "This is about one specific day ahead, not a general rule — first conditional.",
+      "explanation": "This refers to a real, specific possibility tomorrow, so we use if + present simple, will + base verb. 'I take' would sound like a habit, and 'would take' would make it sound imaginary rather than a real plan.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l5_q2",
+      "instruction": "CHOOSE THE RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If I finish my homework early tonight,",
+      "options": [
+        "I watch a movie.",
+        "I would have watched a movie.",
+        "I would watch a movie.",
+        "I will watch a movie."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "I will watch a movie.",
+      "hint": "A real plan for tonight, depending on a real possibility.",
+      "explanation": "This is a genuine plan for tonight. The if-clause uses present simple ('finish') and the result uses will + base verb ('will watch') because it's a real, likely outcome.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l5_q3",
+      "instruction": "SELECT THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If we leave the house now,",
+      "options": [
+        "we arrive on time.",
+        "we would have arrived on time.",
+        "we will arrive on time.",
+        "we would arrive on time."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "we will arrive on time.",
+      "hint": "A real decision happening right now, with a real future result.",
+      "explanation": "Leaving now is a real, immediate possibility, and the result is a specific future consequence, so first conditional (present simple + will) is correct.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l6_q1",
+      "instruction": "FINISH THE CONDITIONAL",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you call me tonight,",
+      "options": [
+        "I would have answered.",
+        "I would answer.",
+        "I answer.",
+        "I will answer."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "I will answer.",
+      "hint": "A real promise about a genuine possibility.",
+      "explanation": "This is a real offer about a possible event tonight, so will + base verb expresses the genuine future result.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l6_q2",
+      "instruction": "PICK THE NATURAL RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the team wins this match,",
+      "options": [
+        "they will reach the final.",
+        "they reach the final.",
+        "they would reach the final.",
+        "they would have reached the final."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "they will reach the final.",
+      "hint": "A real, specific sports outcome tied to today's result.",
+      "explanation": "Winning this particular match is a real possibility, so the result uses will + base verb for the real consequence, not 'would', which would sound imaginary.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l6_q3",
+      "instruction": "FIND THE RIGHT OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If she studies this weekend,",
+      "options": [
+        "she will pass the test.",
+        "she would pass the test.",
+        "she would have passed the test.",
+        "she passes the test."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "she will pass the test.",
+      "hint": "A realistic, achievable plan for this weekend.",
+      "explanation": "This is a specific, realistic plan for the coming weekend, so first conditional (present simple + will) is correct.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l7_q1",
+      "instruction": "MATCH THE OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If I finish this report today,",
+      "options": [
+        "I will send it to my manager.",
+        "I would have sent it to my manager.",
+        "I would send it to my manager.",
+        "I send it to my manager."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "I will send it to my manager.",
+      "hint": "A specific, realistic workplace plan for today.",
+      "explanation": "This is a real, specific task planned for today, so will + base verb shows the genuine next step.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l7_q2",
+      "instruction": "LINK THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If our flight is delayed,",
+      "options": [
+        "we miss the connection.",
+        "we would have missed the connection.",
+        "we would miss the connection.",
+        "we will miss the connection."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "we will miss the connection.",
+      "hint": "A real risk for this specific upcoming trip.",
+      "explanation": "This describes a real, specific risk for one trip, so the first conditional (will + base verb) expresses the likely real consequence.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l7_q3",
+      "instruction": "CONNECT THE CONDITION",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you don't charge your phone tonight,",
+      "options": [
+        "it would turn off tomorrow.",
+        "it would have turned off tomorrow.",
+        "it will turn off tomorrow.",
+        "it turns off tomorrow."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "it will turn off tomorrow.",
+      "hint": "About one specific phone, on one specific day — not a general rule.",
+      "explanation": "This is about one phone on one day, so will + base verb signals a real future result rather than a general habitual truth.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l8_q1",
+      "instruction": "COMPLETE THE IDEA",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If water reaches 100 degrees Celsius,",
+      "options": [
+        "it would boil.",
+        "it boils.",
+        "it will boil.",
+        "it would have boiled."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "it boils.",
+      "hint": "A universal scientific fact, not about one particular pot of water.",
+      "explanation": "This is a general scientific law, always true, so the zero conditional (present simple + present simple) is correct, not 'will boil', which would point to one specific occasion.",
+      "grammarRule": "Zero Conditional",
+      "conditionalType": 0
+    },
+    {
+      "id": "cl_l8_q2",
+      "instruction": "COMPLETE THE LINK",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you press this red button,",
+      "options": [
+        "the machine starts.",
+        "the machine would have started.",
+        "the machine will start.",
+        "the machine would start."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the machine will start.",
+      "hint": "About this one specific machine right now, not machines in general.",
+      "explanation": "This refers to one specific machine and a real action you might take, so will + base verb is correct rather than the general present simple.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l8_q3",
+      "instruction": "COMPLETE THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the temperature drops below zero,",
+      "options": [
+        "water would have frozen.",
+        "water would freeze.",
+        "water will freeze.",
+        "water freezes."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "water freezes.",
+      "hint": "A general fact about temperature and water, true always.",
+      "explanation": "This is a universal physical fact, so both clauses use the present simple: 'drops' and 'freezes'.",
+      "grammarRule": "Zero Conditional",
+      "conditionalType": 0
+    },
+    {
+      "id": "cl_l9_q1",
+      "instruction": "CHOOSE THE RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you don't book your seats early,",
+      "options": [
+        "tickets sell out.",
+        "tickets would have sold out.",
+        "tickets will sell out.",
+        "tickets would sell out."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "tickets will sell out.",
+      "hint": "A real, practical warning about this specific event.",
+      "explanation": "This is a real warning tied to one upcoming event, so will + base verb expresses the likely real result.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l9_q2",
+      "instruction": "SELECT THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If I save enough money this year,",
+      "options": [
+        "I would have bought a new laptop.",
+        "I buy a new laptop.",
+        "I will buy a new laptop.",
+        "I would buy a new laptop."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "I will buy a new laptop.",
+      "hint": "A real, achievable personal goal for this year.",
+      "explanation": "This is a realistic personal plan tied to a genuine possibility this year, so first conditional (will + base verb) fits.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l9_q3",
+      "instruction": "FINISH THE CONDITIONAL",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If he arrives before nine,",
+      "options": [
+        "he will catch the early train.",
+        "he catches the early train.",
+        "he would catch the early train.",
+        "he would have caught the early train."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "he will catch the early train.",
+      "hint": "One specific morning, not a general daily habit.",
+      "explanation": "This describes one specific morning and a real possible outcome, so will + base verb is correct.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l10_q1",
+      "instruction": "PICK THE NATURAL RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you don't get enough sleep,",
+      "options": [
+        "you would feel tired the next day.",
+        "you feel tired the next day.",
+        "you would have felt tired the next day.",
+        "you will feel tired the next day."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "you feel tired the next day.",
+      "hint": "A general truth about sleep, true for everyone.",
+      "explanation": "This is a general truth about how the body works, so the zero conditional (present simple + present simple) is correct.",
+      "grammarRule": "Zero Conditional",
+      "conditionalType": 0
+    },
+    {
+      "id": "cl_l10_q2",
+      "instruction": "FIND THE RIGHT OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the weather improves tomorrow,",
+      "options": [
+        "we will go hiking.",
+        "we would have gone hiking.",
+        "we would go hiking.",
+        "we go hiking."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "we will go hiking.",
+      "hint": "A real, specific plan for tomorrow, depending on a real possibility.",
+      "explanation": "This is about one specific day and a real possible plan, so will + base verb correctly expresses the intended future action.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l10_q3",
+      "instruction": "MATCH THE OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If our guests arrive early,",
+      "options": [
+        "we will need more time to prepare.",
+        "we need more time to prepare.",
+        "we would need more time to prepare.",
+        "we would have needed more time to prepare."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "we will need more time to prepare.",
+      "hint": "A real possibility for this one occasion, not a general rule about guests.",
+      "explanation": "This refers to one specific event, so will + base verb expresses the real likely consequence, distinguishing it from a general habitual truth.",
+      "grammarRule": "First Conditional",
+      "conditionalType": 1
+    }
+  ]
 }

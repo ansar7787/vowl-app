@@ -5,543 +5,393 @@
     "quests": [
         {
             "id": "gq_l51_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ the bad weather, they enjoyed the trip.",
-            "options": [
-                "However",
-                "Even though",
-                "Although",
-                "Despite"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Despite",
-            "hint": "What follows - a noun phrase, or a full clause?",
-            "explanation": "'Despite + noun/noun phrase': Despite the bad weather. 'Although + clause (subject + verb)': Although the weather was bad. Never 'despite the weather was bad'. Prepositions need nouns, not clauses.",
-            "grammarRule": "Despite / Although"
+            "question": "This course is ___ than the last one.",
+            "options": ["more difficult", "difficulter", "most difficult", "difficultest"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "more difficult",
+            "hint": "This adjective has three syllables \u2014 too long to just add an ending.",
+            "explanation": "Longer adjectives (usually two or more syllables) form comparatives with 'more' instead of an ending: more difficult, more expensive. 'Difficulter' isn't a real word.",
+            "grammarRule": "Comparative Adjectives: Long Adjectives with More"
         },
         {
             "id": "gq_l51_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ she was tired, she kept on working.",
-            "options": [
-                "Despite",
-                "Although",
-                "In spite",
-                "Despite being"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Although",
-            "hint": "A full clause (subject + verb) follows - which word is correct?",
-            "explanation": "'Although + subject + verb': Although she was tired, she kept working. 'Despite' requires a noun or gerund: Despite being tired. 'However' connects two separate sentences.",
-            "grammarRule": "Despite / Although"
+            "question": "She is ___ than her sister; she smiles all day.",
+            "options": ["more happy", "most happy", "happier", "happyer"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "happier",
+            "hint": "This two-syllable adjective ends in -y, which changes before the ending.",
+            "explanation": "Two-syllable adjectives ending in -y still take '-er', changing y to i: happy \u2192 happier, easy \u2192 easier. They don't need 'more', unlike most other long adjectives.",
+            "grammarRule": "Comparative Adjectives: -y Adjectives"
         },
         {
             "id": "gq_l51_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "He failed the exam ___ studying every day.",
-            "options": [
-                "although",
-                "however",
-                "nevertheless",
-                "despite"
-            ],
+            "question": "\u2014 Which phone is better?\n\u2014 This one is ___ than that one, but it has more features.",
+            "options": ["expensiver", "most expensive", "expensivest", "more expensive"],
             "correctAnswerIndex": 3,
-            "correctAnswer": "despite",
-            "hint": "A gerund (-ing) follows - only one word accepts this.",
-            "explanation": "'Despite + gerund' or 'Despite + noun': despite studying every day. 'In spite of' also works. 'Although' must be followed by a subject and verb, not a gerund alone.",
-            "grammarRule": "Despite / Although"
+            "correctAnswer": "more expensive",
+            "hint": "Count the syllables in this adjective \u2014 it's too long for an ending.",
+            "explanation": "'Expensive' has three syllables, so it needs 'more' rather than an ending: more expensive. This follows the same rule as 'more difficult' from Question 1.",
+            "grammarRule": "Comparative Adjectives: Long Adjectives with More"
         },
         {
             "id": "gq_l52_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I wish I ___ taller. I can't reach the top shelf.",
-            "options": [
-                "will be",
-                "had been",
-                "am",
-                "was/were"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "was/were",
-            "hint": "Wishing about the present uses which tense after 'wish'?",
-            "explanation": "'Wish + past simple' expresses a wish about the present: I wish I was/were taller = I'm not tall enough right now. 'Were' is formally preferred, but 'was' is common in spoken English.",
-            "grammarRule": "Wish (Present)"
+            "question": "My cooking is ___ than it used to be; I've been practicing.",
+            "options": ["gooder", "better", "best", "more good"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "better",
+            "hint": "This very common adjective completely changes its form for comparisons.",
+            "explanation": "'Good' has an irregular comparative: better. There's no such word as 'gooder', and 'best' would be the superlative, used for comparing three or more things.",
+            "grammarRule": "Comparative Adjectives: Irregular Forms"
         },
         {
             "id": "gq_l52_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She wishes she ___ how to cook.",
-            "options": [
-                "would know",
-                "knew",
-                "knows",
-                "has known"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "knew",
-            "hint": "A present wish about something she lacks now.",
-            "explanation": "'Wish + past simple' for present wishes: She wishes she knew how to cook = she doesn't know now. 'Knows' is present tense - it doesn't work in wish sentences. Past simple after 'wish' = present meaning.",
-            "grammarRule": "Wish (Present)"
+            "question": "This year's harvest is ___ than last year's, sadly.",
+            "options": ["worse", "badder", "worst", "more bad"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "worse",
+            "hint": "'Bad' changes completely, just like 'good' did in the last question.",
+            "explanation": "'Bad' has the irregular comparative 'worse'. 'Badder' isn't a real word, and 'worst' is reserved for comparing three or more things.",
+            "grammarRule": "Comparative Adjectives: Irregular Forms"
         },
         {
             "id": "gq_l52_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I wish it ___ raining. The picnic is ruined.",
-            "options": [
-                "wouldn't be",
-                "wasn't",
-                "isn't",
-                "won't be"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "wasn't",
-            "hint": "The rain is happening right now - wish about the present.",
-            "explanation": "'Wish + past simple' for present situations: I wish it wasn't raining = it IS raining now. The past form 'wasn't' expresses an unreal present condition. 'Weren't' is also formally correct.",
-            "grammarRule": "Wish (Present)"
+            "question": "\u2014 How far is the station from here?\n\u2014 It's ___ than I thought \u2014 almost an hour's walk.",
+            "options": ["farer", "furthest", "more far", "further"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "further",
+            "hint": "This adjective also has its own special comparative form.",
+            "explanation": "'Far' has the irregular comparative 'further' (or 'farther'). 'Farer' isn't a word, and 'furthest' would only be used when comparing more than two things.",
+            "grammarRule": "Comparative Adjectives: Irregular Forms"
         },
         {
             "id": "gq_l53_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "By next month, she ___ her degree.",
-            "options": [
-                "will finish",
-                "will have finished",
-                "finishes",
-                "has finished"
-            ],
+            "question": "This is ___ restaurant in the whole town.",
+            "options": ["cheapest", "the cheapest", "more cheap", "cheaper"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "will have finished",
-            "hint": "'By next month' signals a future deadline.",
-            "explanation": "Future perfect: will have + past participle. Used for actions that will be completed before a specific future time. By next month, she will have finished her degree.",
-            "grammarRule": "Future Perfect"
+            "correctAnswer": "the cheapest",
+            "hint": "Superlatives almost always need one small word in front of them.",
+            "explanation": "Superlatives usually require 'the' before them: the cheapest. Leaving it out, as in plain 'cheapest', sounds incomplete in a full sentence like this.",
+            "grammarRule": "Superlative Adjectives: The + Superlative"
         },
         {
             "id": "gq_l53_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "By the time you arrive, I ___ dinner.",
-            "options": [
-                "will have cooked",
-                "will cook",
-                "cook",
-                "would cook"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "will have cooked",
-            "hint": "'By the time' + future event signals the future perfect.",
-            "explanation": "'By the time + simple present, will have + past participle': By the time you arrive, I will have cooked dinner. The cooking will be finished before you arrive.",
-            "grammarRule": "Future Perfect"
+            "question": "He is ___ student in the entire class.",
+            "options": ["taller", "tallest", "the tallest", "more tall"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "the tallest",
+            "hint": "This compares one person against everyone else in a whole group, not just two people.",
+            "explanation": "Comparing one person against an entire group calls for the superlative with 'the': the tallest student. 'Taller' would only compare two people directly.",
+            "grammarRule": "Superlative Adjectives: The + Superlative"
         },
         {
             "id": "gq_l53_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "He ___ for this company for 30 years by 2030.",
-            "options": [
-                "will work",
-                "worked",
-                "has worked",
-                "will have worked"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "will have worked",
-            "hint": "A future date (2030) with a duration (30 years) - which tense?",
-            "explanation": "Future perfect shows future completion: He will have worked for 30 years by 2030. This shows the completion of a long period before a stated future point.",
-            "grammarRule": "Future Perfect"
+            "question": "\u2014 Which day works best for the interview?\n\u2014 Friday is ___ day for me, out of the whole week.",
+            "options": ["the easiest", "easier", "most easy", "easiest"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "the easiest",
+            "hint": "'Out of the whole week' signals a comparison against many days, not just two.",
+            "explanation": "Comparing against the whole week needs the superlative with 'the': the easiest day. Since 'easy' ends in -y, its superlative changes to '-iest', not 'most easy'.",
+            "grammarRule": "Superlative Adjectives: -y Adjectives"
         },
         {
             "id": "gq_l54_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Please ___ the light when you leave the room.",
-            "options": [
-                "put on",
-                "take off",
-                "turn off",
-                "turn on"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "turn off",
-            "hint": "Which phrasal verb means to stop a light from working?",
-            "explanation": "'Turn off' = stop something (a light, machine, engine): Turn off the light. 'Turn on' = start. 'Put on' = wear (clothes). Phrasal verbs have idiomatic meanings different from their parts.",
-            "grammarRule": "Phrasal Verbs (Separable)"
+            "question": "This is ___ movie I've ever seen.",
+            "options": ["more interesting", "the most interesting", "the interestingest", "most interesting"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "the most interesting",
+            "hint": "This long adjective needs both 'the' and 'most' together.",
+            "explanation": "Long adjectives use 'the most' for the superlative: the most interesting. There's no ending like '-est' for long words such as 'interesting'.",
+            "grammarRule": "Superlative Adjectives: Long Adjectives with Most"
         },
         {
             "id": "gq_l54_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I need to ___ early tomorrow - my flight is at 5 am.",
-            "options": [
-                "wake out",
-                "stand up",
-                "get up",
-                "wake up"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "get up",
-            "hint": "Which phrasal verb means to get out of bed?",
-            "explanation": "'Get up' = to get out of bed or rise in the morning. 'Wake up' = to stop sleeping (not necessarily get out of bed). 'Stand up' = to rise from a sitting position. Get up is the right choice.",
-            "grammarRule": "Phrasal Verbs (Separable)"
+            "question": "This is ___ meal I've had all week.",
+            "options": ["the goodest", "better", "the more good", "the best"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "the best",
+            "hint": "Remember the irregular comparative from Level 52 \u2014 the superlative changes just as much.",
+            "explanation": "'Good' has the irregular superlative 'the best', following the same irregular family as 'better'. 'The goodest' isn't a real form.",
+            "grammarRule": "Superlative Adjectives: Irregular Forms"
         },
         {
             "id": "gq_l54_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Can you ___ the volume? I can't hear the TV.",
-            "options": [
-                "turn up",
-                "turn down",
-                "put up",
-                "take up"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "turn up",
-            "hint": "We need to make the volume louder.",
-            "explanation": "'Turn up' = increase (volume, heat, temperature). 'Turn down' = decrease. Phrasal verbs are often separable: Turn the volume up. Turn it up. But not 'Turn up it'.",
-            "grammarRule": "Phrasal Verbs (Separable)"
+            "question": "\u2014 Which mistake was worst?\n\u2014 Forgetting the tickets was ___ mistake of all.",
+            "options": ["the baddest", "worse", "the worst", "more bad"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "the worst",
+            "hint": "'Of all' signals a comparison against every possible mistake, not just two.",
+            "explanation": "'Bad' has the irregular superlative 'the worst'. 'Worse' would only compare two things, and 'the baddest' isn't standard English.",
+            "grammarRule": "Superlative Adjectives: Irregular Forms"
         },
         {
             "id": "gq_l55_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She studied hard ___ pass her exams.",
-            "options": [
-                "because",
-                "so that",
-                "in order to",
-                "for"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "in order to",
-            "hint": "Which connector of purpose is followed directly by a verb?",
-            "explanation": "Both 'to' and 'in order to' introduce purpose before a verb: She studied hard to pass / in order to pass. 'So that' must be followed by a subject and verb. 'In order to' is more formal.",
-            "grammarRule": "Purpose Clauses"
+            "question": "My brother is as tall ___ my father now.",
+            "options": ["as", "than", "like", "that"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "as",
+            "hint": "Equal comparisons use the same small word on both sides of the adjective.",
+            "explanation": "Equality comparisons follow the pattern 'as + adjective + as': as tall as. 'Than' is only used with comparatives like 'taller than', not with this equal pattern.",
+            "grammarRule": "Equality Comparisons: As...As"
         },
         {
             "id": "gq_l55_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "He whispered ___ wake the baby.",
-            "options": [
-                "in order to not",
-                "in order not to",
-                "for not to",
-                "so as to"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "in order not to",
-            "hint": "A formal way to express negative purpose - where does 'not' go?",
-            "explanation": "'In order not to + base verb' expresses negative purpose: He whispered in order not to wake the baby. Keep 'not' immediately after 'in order' and before 'to'. 'So as to' (without 'not') would reverse the meaning, and 'for not to' is not a real English structure.",
-            "grammarRule": "Purpose Clauses"
+            "question": "This test was ___ difficult as the last one.",
+            "options": ["so", "too", "as", "very"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "as",
+            "hint": "The second 'as' later in the sentence tells you what word belongs here too.",
+            "explanation": "The equality pattern needs 'as' at the start as well as before the second noun: as difficult as. Words like 'so' or 'very' don't complete this specific comparison structure.",
+            "grammarRule": "Equality Comparisons: As...As"
         },
         {
             "id": "gq_l55_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I'm saving money ___ I can buy a new laptop.",
-            "options": [
-                "to",
-                "for that",
-                "in order to",
-                "so that"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "so that",
-            "hint": "'So that' must be followed by a subject and a verb.",
-            "explanation": "'So that + subject + can/could/will/would + verb': I'm saving money so that I can buy a laptop. 'To' and 'in order to' are followed directly by a verb without a subject.",
-            "grammarRule": "Purpose Clauses"
+            "question": "\u2014 Is your car as fast as mine?\n\u2014 Yes, it's exactly ___ fast as yours.",
+            "options": ["so", "as", "too", "that"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "as",
+            "hint": "Match the same structure the question itself already used.",
+            "explanation": "The reply mirrors the question's own 'as fast as' structure: it's as fast as yours. This confirms the two things are considered equal.",
+            "grammarRule": "Equality Comparisons: As...As"
         },
         {
             "id": "gq_l56_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ have I seen such a beautiful painting.",
-            "options": [
-                "Rarely I",
-                "Never",
-                "Never I",
-                "Rarely"
-            ],
+            "question": "This book isn't ___ interesting as the movie.",
+            "options": ["more", "less", "so", "as"],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Rarely",
-            "hint": "Negative adverbials at the start cause subject-auxiliary inversion.",
-            "explanation": "'Never have I seen...' - when negative adverbs (never, rarely, seldom) start the sentence, the auxiliary and subject invert: Never have I, not Never I have. This is formal/emphatic style.",
-            "grammarRule": "Inversion (Negative Adverbials)"
+            "correctAnswer": "as",
+            "hint": "Even in the negative, this comparison keeps its usual two matching words.",
+            "explanation": "Negative equality still uses 'as...as', just with 'not' added before it: isn't as interesting as. This shows the book is below the movie in interest, without using a comparative form.",
+            "grammarRule": "Equality Comparisons: Not As...As"
         },
         {
             "id": "gq_l56_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Not only ___ he apologise, he brought flowers too.",
-            "options": [
-                "does he",
-                "did he",
-                "he did",
-                "he"
-            ],
+            "question": "This book is ___ interesting than the movie.",
+            "options": ["as", "less", "so", "most"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "did he",
-            "hint": "'Not only' at the start triggers inversion.",
-            "explanation": "After 'Not only' at the beginning, invert subject and auxiliary: 'Not only did he apologise...' The second clause uses 'but also': Not only did he apologise, but he also brought flowers.",
-            "grammarRule": "Inversion (Negative Adverbials)"
+            "correctAnswer": "less",
+            "hint": "This sentence uses 'than', a word that belongs to a different comparison pattern.",
+            "explanation": "'Than' signals a comparative structure, not an equality one, so 'less' fits here: less interesting than. This expresses the same basic idea as Question 1, but through a different grammatical pattern.",
+            "grammarRule": "Comparative Adjectives: Less + Adjective + Than"
         },
         {
             "id": "gq_l56_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Under no circumstances ___ open that door.",
-            "options": [
-                "should you",
-                "you",
-                "you should",
-                "you must"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "should you",
-            "hint": "'Under no circumstances' is a negative expression - inversion follows.",
-            "explanation": "Negative phrases like 'Under no circumstances', 'At no time', 'On no account' cause inversion: Under no circumstances should you open that door. The subject (you) comes after the auxiliary (should).",
-            "grammarRule": "Inversion (Negative Adverbials)"
+            "question": "\u2014 Is the sequel as good as the original?\n\u2014 Honestly, it's not ___ good as the first one.",
+            "options": ["so much", "too", "as", "very"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "as",
+            "hint": "The question already used the exact pattern this answer needs to echo.",
+            "explanation": "The reply keeps the same 'as...as' structure as the question, just adding 'not': it's not as good as. This directly answers whether the two things are equal.",
+            "grammarRule": "Equality Comparisons: Not As...As"
         },
         {
             "id": "gq_l57_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ that tea was first discovered in China.",
-            "options": [
-                "People say",
-                "They say that",
-                "It is said",
-                "It says"
-            ],
+            "question": "This coffee is ___ hot to drink right now.",
+            "options": ["very", "enough", "too", "so"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "It is said",
-            "hint": "Use the impersonal 'it' structure for general beliefs.",
-            "explanation": "'It is said that...' is a formal, impersonal structure used to report general beliefs without naming who believes it. Others: It is known that, It is thought that, It is believed that.",
-            "grammarRule": "Passive Reporting Structures"
+            "correctAnswer": "too",
+            "hint": "The phrase 'to drink' suggests this quality is causing a problem.",
+            "explanation": "'Too' shows an excessive amount that causes a negative result: too hot to drink. 'Very' would simply describe intensity without implying you can't actually drink it.",
+            "grammarRule": "Too + Adjective"
         },
         {
             "id": "gq_l57_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The Mediterranean diet ___ to be one of the healthiest in the world.",
-            "options": [
-                "says",
-                "it is said",
-                "is said",
-                "people claim it"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "is said",
-            "hint": "The subject (the diet) + passive reporting verb.",
-            "explanation": "'Subject + is said/thought/believed/known + to + infinitive': The Mediterranean diet is said to be one of the healthiest. This is the personal passive version of 'It is said that the diet is...'",
-            "grammarRule": "Passive Reporting Structures"
+            "question": "The coffee is ___ hot, but I can still drink it carefully.",
+            "options": ["too", "very", "enough", "so"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "very",
+            "hint": "Unlike the last question, drinking it is still possible here.",
+            "explanation": "'Very' simply intensifies the adjective without blocking the action, unlike 'too', which would suggest it's impossible to drink. The phrase 'but I can still drink it' confirms this.",
+            "grammarRule": "Very vs Too"
         },
         {
             "id": "gq_l57_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "It is widely ___ that exercise reduces stress.",
-            "options": [
-                "believed",
-                "believe",
-                "belief",
-                "believing"
-            ],
+            "question": "\u2014 Can we go hiking today?\n\u2014 No, it's ___ cold to enjoy it.",
+            "options": ["too", "very", "enough", "quite"],
             "correctAnswerIndex": 0,
-            "correctAnswer": "believed",
-            "hint": "After 'It is widely ___', which form is needed?",
-            "explanation": "'It is widely + past participle': It is widely believed that... It is widely known that... It is widely accepted that... These are passive structures for expressing shared knowledge.",
-            "grammarRule": "Passive Reporting Structures"
+            "correctAnswer": "too",
+            "hint": "The word 'No' hints that something is preventing this plan.",
+            "explanation": "'Too cold to enjoy it' explains exactly why the answer is 'No' \u2014 the cold creates a real obstacle. 'Very cold' alone wouldn't logically explain refusing the plan.",
+            "grammarRule": "Too + Adjective + To"
         },
         {
             "id": "gq_l58_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "MAKE THE SENTENCE WORK",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ the assignment, she switched off her laptop.",
-            "options": [
-                "To complete",
-                "Having completed",
-                "After completing",
-                "She completed"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Having completed",
-            "hint": "The assignment was completed first - which form shows this?",
-            "explanation": "'Having + past participle' is the perfect participle: Having completed the assignment, she switched off her laptop. It shows the first action is completed before the next. Both actions share the same subject.",
-            "grammarRule": "Participle Clauses (Time/Reason)"
+            "question": "Is the soup warm ___ to serve now?",
+            "options": ["enough", "too", "very", "so"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "enough",
+            "hint": "This word describes sufficiency, and it comes right after the adjective.",
+            "explanation": "'Enough' comes after an adjective to show sufficiency: warm enough. This is the opposite word order from 'too', which comes before the adjective.",
+            "grammarRule": "Enough: After Adjectives"
         },
         {
             "id": "gq_l58_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ from his chair, he greeted the guests.",
-            "options": [
-                "Having risen",
-                "Risen",
-                "Rising",
-                "To rise"
-            ],
+            "question": "We don't have ___ to finish this project today.",
+            "options": ["time enough", "very time", "enough time", "too time"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Rising",
-            "hint": "Both actions are nearly simultaneous.",
-            "explanation": "Present participle (-ing) in a participle clause means actions are simultaneous or the first leads immediately to the next: Rising from his chair, he greeted the guests.",
-            "grammarRule": "Participle Clauses (Time/Reason)"
+            "correctAnswer": "enough time",
+            "hint": "With a noun instead of an adjective, 'enough' switches to the opposite position.",
+            "explanation": "Before a noun, 'enough' comes first: enough time, enough money. This is different from its position with adjectives, as in 'warm enough' from the last question.",
+            "grammarRule": "Enough: Before Nouns"
         },
         {
             "id": "gq_l58_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ by the noise, the baby started to cry.",
-            "options": [
-                "To disturb",
-                "Disturbed",
-                "Disturbing",
-                "Having disturbed"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Disturbed",
-            "hint": "The baby was disturbed - this is a passive meaning.",
-            "explanation": "Past participle at the start of a clause gives a passive meaning: Disturbed by the noise = the baby was disturbed. Compare: Disturbing everyone (active, different meaning) vs Disturbed by noise (passive).",
-            "grammarRule": "Participle Clauses (Time/Reason)"
+            "question": "\u2014 Do you have enough money for the tickets?\n\u2014 Yes, I think I have just ___ .",
+            "options": ["too", "very", "so", "enough"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "enough",
+            "hint": "The answer confirms exactly what the question asked about.",
+            "explanation": "The reply echoes the question's own word: I have just enough. This means exactly the right amount \u2014 not more, not less.",
+            "grammarRule": "Enough: Sufficiency"
         },
         {
             "id": "gq_l59_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ Nile is the longest river in Africa.",
-            "options": [
-                "-",
-                "An",
-                "A",
-                "The"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "The",
-            "hint": "The Nile is the only river with this name - use 'the'.",
-            "explanation": "Use 'the' for things that are unique (only one exists): the sun, the moon, the Nile, the Eiffel Tower. Also for rivers, mountain ranges, and oceans. The Nile is a unique proper noun with a definite article.",
-            "grammarRule": "Definite and Zero Article"
+            "question": "\u2014 Which hotel is cheaper?\n\u2014 The one downtown is ___ than this one.",
+            "options": ["cheaper", "cheap", "cheapest", "more cheap"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "cheaper",
+            "hint": "Only two hotels are being compared here.",
+            "explanation": "Comparing exactly two things uses the comparative form: cheaper than. The superlative 'cheapest' would only fit if more than two hotels were being compared.",
+            "grammarRule": "Comparative Adjectives: Short Adjectives"
         },
         {
             "id": "gq_l59_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I bought a book and a hat. ___ book was expensive.",
-            "options": [
-                "A",
-                "-",
-                "An",
-                "The"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "-",
-            "hint": "Second mention of the book - it is now known and specific.",
-            "explanation": "Use 'the' when referring to something mentioned before: I bought a book... The book was expensive. First mention = 'a' (any one of many); subsequent mentions = 'the' (we know which one).",
-            "grammarRule": "Definite and Zero Article"
+            "question": "\u2014 Is this the best option?\n\u2014 Yes, it's ___ option we have.",
+            "options": ["better", "best", "more good", "the best"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "the best",
+            "hint": "This compares against every option available, not just one other choice.",
+            "explanation": "Comparing against all available options calls for the superlative with 'the': the best option. This mirrors the question, which already used 'the best'.",
+            "grammarRule": "Superlative Adjectives: Irregular Forms"
         },
         {
             "id": "gq_l59_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She plays ___ piano beautifully.",
-            "options": [
-                "-",
-                "the",
-                "a",
-                "an"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "the",
-            "hint": "Musical instruments use 'the' in English.",
-            "explanation": "Use 'the' before musical instruments: play the piano, play the guitar, play the violin. This is a fixed English expression. 'She plays piano' (no article) is increasingly accepted in informal American English, but 'the piano' remains standard.",
-            "grammarRule": "Definite and Zero Article"
+            "question": "\u2014 Is your new job as stressful as the old one?\n\u2014 Actually, it's not ___ stressful.",
+            "options": ["so much", "too", "very", "as"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "as",
+            "hint": "The question already gave you the exact comparison pattern to reuse.",
+            "explanation": "The reply reuses the question's 'as...as' pattern with 'not': it's not as stressful. This shows the new job is actually less stressful than the old one.",
+            "grammarRule": "Equality Comparisons: Not As...As"
         },
         {
             "id": "gq_l60_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I ___ like spicy food - I eat it every day!",
-            "options": [
-                "does",
-                "really do",
-                "am doing",
-                "do"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "do",
-            "hint": "Use emphatic 'do' to stress that something is truly the case.",
-            "explanation": "Emphatic 'do/does/did' in positive sentences stresses truth: I DO like spicy food! Used to contradict a previous doubt or to emphasise. 'I do like' = I genuinely like (despite what you may think).",
-            "grammarRule": "Emphatic Do/Does/Did"
+            "question": "This suitcase is ___ small for a two-week trip; I need something bigger.",
+            "options": ["enough", "very", "too", "so"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "too",
+            "hint": "The rest of the sentence explains a real problem this size is causing.",
+            "explanation": "'Too small' explains exactly why a bigger suitcase is needed \u2014 the current size causes a genuine problem, matching the pattern from Level 57.",
+            "grammarRule": "Too + Adjective"
         },
         {
             "id": "gq_l60_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She ___ try hard, but the results were disappointing.",
-            "options": [
-                "had",
-                "does",
-                "has",
-                "did"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "did",
-            "hint": "The emphasis is on the fact that she tried despite the outcome.",
-            "explanation": "'Did + base verb' adds emphasis in past tense: She did try hard = she genuinely tried. Used to acknowledge effort despite a contrasting result. 'Did' is the emphatic auxiliary here.",
-            "grammarRule": "Emphatic Do/Does/Did"
+            "question": "Do you have anything ___ expensive? My budget is limited.",
+            "options": ["fewer", "less", "least", "lesser"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "less",
+            "hint": "'Expensive' describes a quality, not something you can count individually.",
+            "explanation": "'Less' pairs with adjectives and uncountable ideas like price: less expensive. 'Fewer' would only be correct with countable nouns, like fewer items.",
+            "grammarRule": "Comparative Adjectives: Less + Adjective"
         },
         {
             "id": "gq_l60_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "He ___ come to the meeting after all.",
-            "options": [
-                "does",
-                "was",
-                "did",
-                "has"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "did",
-            "hint": "Contrary to expectation, he came - emphasise with 'did'.",
-            "explanation": "'Did + base verb' can express surprise or contradiction: He did come after all! (contrary to what we expected). Emphatic 'did' in past: did + base verb (not the past tense of the main verb).",
-            "grammarRule": "Emphatic Do/Does/Did"
+            "question": "\u2014 Is this the largest size you have?\n\u2014 Yes, it's ___ we carry.",
+            "options": ["the largest", "larger", "largest", "more large"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "the largest",
+            "hint": "This closes Stage 3 the same way it opened \u2014 with 'the' before a superlative.",
+            "explanation": "The answer confirms the superlative with 'the': the largest we carry, comparing this size against every size in stock. This wraps up the comparison, quantity, and sufficiency skills built across Levels 41 to 60.",
+            "grammarRule": "Superlative Adjectives: The + Superlative"
         }
     ]
 }

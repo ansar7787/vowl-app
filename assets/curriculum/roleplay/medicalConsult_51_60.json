@@ -1,637 +1,637 @@
 {
-    "gameType": "medicalConsult",
-    "batchIndex": 6,
-    "levels": "51-60",
-    "quests": [
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"My eyes are itchy and watery every time spring comes around.\"",
-            "symptoms": [
-                "Sneezing",
-                "Itchy Eyes",
-                "Watery Eyes",
-                "Stuffy Nose"
-            ],
-            "correctAnswer": "Itchy Eyes, Watery Eyes",
-            "hint": "Both symptoms the patient names affect the eyes specifically.",
-            "explanation": "The patient describes Itchy Eyes and Watery Eyes, both common seasonal allergy symptoms.",
-            "id": "mc_l51_q1",
-            "medicalVocab": [
-                "Itchy Eyes, Watery Eyes",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I twisted my wrist at work and now it's swollen and hard to move,\" the patient says.",
-            "symptoms": [
-                "Swelling",
-                "Numbness",
-                "Bruise",
-                "Wrist Pain"
-            ],
-            "correctAnswer": "Swelling, Wrist Pain",
-            "hint": "One symptom is about size, and the other is about the joint's location.",
-            "explanation": "After the twist, the patient reports Swelling and Wrist Pain.",
-            "id": "mc_l51_q2",
-            "medicalVocab": [
-                "Swelling, Wrist Pain",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"Ever since the flight landed, I've had a splitting headache and I feel exhausted,\" the patient tells the doctor.",
-            "symptoms": [
-                "Dizziness",
-                "Headache",
-                "Nausea",
-                "Fatigue"
-            ],
-            "correctAnswer": "Headache, Fatigue",
-            "hint": "One symptom is pain, and the other is about energy.",
-            "explanation": "The patient describes a Headache and Fatigue, both common after long travel.",
-            "id": "mc_l51_q3",
-            "medicalVocab": [
-                "Headache, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, a parent says: \"My son has had a fever and he keeps rubbing his ear.\"",
-            "symptoms": [
-                "Fever",
-                "Earache",
-                "Sore Throat",
-                "Headache"
-            ],
-            "correctAnswer": "Fever, Earache",
-            "hint": "One symptom is about temperature, and the other is a gesture pointing to the ear.",
-            "explanation": "The parent describes a Fever along with signs of an Earache.",
-            "id": "mc_l52_q1",
-            "medicalVocab": [
-                "Fever, Earache",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"Since I started the new medication, my mouth has been dry and I feel a bit dizzy.\"",
-            "symptoms": [
-                "Nausea",
-                "Fatigue",
-                "Dry Mouth",
-                "Dizziness"
-            ],
-            "correctAnswer": "Dry Mouth, Dizziness",
-            "hint": "One symptom is in the mouth, and the other affects balance.",
-            "explanation": "The patient links Dry Mouth and Dizziness to a new medication.",
-            "id": "mc_l52_q2",
-            "medicalVocab": [
-                "Dry Mouth, Dizziness",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, an elderly patient says: \"My joints feel stiff in the morning and my grip feels weak.\"",
-            "symptoms": [
-                "Joint Stiffness",
-                "Numbness",
-                "Weakness",
-                "Cramp"
-            ],
-            "correctAnswer": "Joint Stiffness, Weakness",
-            "hint": "One symptom is about movement, and the other is about strength.",
-            "explanation": "The patient reports Joint Stiffness along with Weakness in the grip.",
-            "id": "mc_l52_q3",
-            "medicalVocab": [
-                "Joint Stiffness, Weakness",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I chipped a tooth and now my jaw is sore too.\"",
-            "symptoms": [
-                "Toothache",
-                "Earache",
-                "Headache",
-                "Jaw Pain"
-            ],
-            "correctAnswer": "Toothache, Jaw Pain",
-            "hint": "One symptom is about the tooth, and the other is about the jaw.",
-            "explanation": "The patient describes a Toothache and Jaw Pain after chipping a tooth.",
-            "id": "mc_l53_q1",
-            "medicalVocab": [
-                "Toothache, Jaw Pain",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My skin broke out in a rash after I started that new soap, and it's really itchy,\" the patient says.",
-            "symptoms": [
-                "Hives",
-                "Rash",
-                "Itching",
-                "Dry Skin"
-            ],
-            "correctAnswer": "Rash, Itching",
-            "hint": "One symptom is visible on the skin, and the other is a feeling.",
-            "explanation": "The patient reports a Rash together with Itching, linked to the new soap.",
-            "id": "mc_l53_q2",
-            "medicalVocab": [
-                "Rash, Itching",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My stomach feels full and tight, and I haven't wanted to eat much,\" the patient tells the doctor.",
-            "symptoms": [
-                "Nausea",
-                "Bloating",
-                "Constipation",
-                "Loss of Appetite"
-            ],
-            "correctAnswer": "Bloating, Loss of Appetite",
-            "hint": "One symptom is about fullness, and the other is about not wanting to eat.",
-            "explanation": "The patient describes Bloating along with Loss of Appetite.",
-            "id": "mc_l53_q3",
-            "medicalVocab": [
-                "Bloating, Loss of Appetite",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"My lower back aches and I feel stiff whenever I bend over.\"",
-            "symptoms": [
-                "Back Pain",
-                "Joint Stiffness",
-                "Muscle Soreness",
-                "Cramp"
-            ],
-            "correctAnswer": "Back Pain, Joint Stiffness",
-            "hint": "One symptom is pain, and the other is about difficulty moving.",
-            "explanation": "The patient reports Back Pain along with Joint Stiffness when bending.",
-            "id": "mc_l54_q1",
-            "medicalVocab": [
-                "Back Pain, Joint Stiffness",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"My throat is scratchy and I've been sneezing nonstop since this morning.\"",
-            "symptoms": [
-                "Sore Throat",
-                "Cough",
-                "Sneezing",
-                "Runny Nose"
-            ],
-            "correctAnswer": "Sore Throat, Sneezing",
-            "hint": "One symptom is pain, and the other is a repeated action.",
-            "explanation": "The patient describes a Sore Throat and constant Sneezing.",
-            "id": "mc_l54_q2",
-            "medicalVocab": [
-                "Sore Throat, Sneezing",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My hands have been shaking a little, and my heart feels like it's racing after my coffee this morning,\" the patient says.",
-            "symptoms": [
-                "Numbness",
-                "Weakness",
-                "Trembling",
-                "Racing Heartbeat"
-            ],
-            "correctAnswer": "Trembling, Racing Heartbeat",
-            "hint": "One symptom is a shaking movement, and the other is about heartbeat speed.",
-            "explanation": "The patient reports Trembling hands and a Racing Heartbeat after coffee.",
-            "id": "mc_l54_q3",
-            "medicalVocab": [
-                "Trembling, Racing Heartbeat",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"My throat is dry and scratchy, and I've completely lost my voice.\"",
-            "symptoms": [
-                "Hoarse Voice",
-                "Sore Throat",
-                "Cough",
-                "Loss of Voice"
-            ],
-            "correctAnswer": "Sore Throat, Loss of Voice",
-            "hint": "The patient says the voice is completely gone, which is stronger than just sounding rough.",
-            "explanation": "The patient reports a Sore Throat and a complete Loss of Voice, not just a Hoarse Voice.",
-            "id": "mc_l55_q1",
-            "medicalVocab": [
-                "Sore Throat, Loss of Voice",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I get a burning pain in my stomach a couple of hours after eating, and I've been bloated too,\" the patient says.",
-            "symptoms": [
-                "Heartburn",
-                "Stomach Ache",
-                "Bloating",
-                "Nausea"
-            ],
-            "correctAnswer": "Heartburn, Bloating",
-            "hint": "The word 'burning' after eating points to a more precise term than general stomach pain.",
-            "explanation": "Burning pain after eating is Heartburn, more precise than a general Stomach Ache; Bloating is the second symptom.",
-            "id": "mc_l55_q2",
-            "medicalVocab": [
-                "Heartburn, Bloating",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My knees crack and hurt when I go up the stairs, and my ankles have been a bit swollen too,\" the patient tells the doctor.",
-            "symptoms": [
-                "Joint Stiffness",
-                "Knee Pain",
-                "Swelling",
-                "Cramp"
-            ],
-            "correctAnswer": "Knee Pain, Swelling",
-            "hint": "One symptom is about the knees, and the other is about the ankles.",
-            "explanation": "The patient reports Knee Pain and Swelling in the ankles.",
-            "id": "mc_l55_q3",
-            "medicalVocab": [
-                "Knee Pain, Swelling",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I've been coughing up thick mucus and my chest feels heavy.\"",
-            "symptoms": [
-                "Cough",
-                "Chest Pain",
-                "Shortness of Breath",
-                "Sore Throat"
-            ],
-            "correctAnswer": "Cough, Chest Pain",
-            "hint": "One symptom is a repeated action, and the other is a feeling in the chest.",
-            "explanation": "The patient describes a Cough along with Chest Pain.",
-            "id": "mc_l56_q1",
-            "medicalVocab": [
-                "Cough, Chest Pain",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"My child has a rash all over his tummy and keeps saying it itches.\"",
-            "symptoms": [
-                "Hives",
-                "Heat Rash",
-                "Rash",
-                "Itching"
-            ],
-            "correctAnswer": "Rash, Itching",
-            "hint": "One symptom is visible, and the other is what the child reports feeling.",
-            "explanation": "The parent describes a Rash along with Itching.",
-            "id": "mc_l56_q2",
-            "medicalVocab": [
-                "Rash, Itching",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"I feel dizzy when I stand up quickly, and I've been really pale lately.\"",
-            "symptoms": [
-                "Dizziness",
-                "Fatigue",
-                "Weakness",
-                "Paleness"
-            ],
-            "correctAnswer": "Dizziness, Paleness",
-            "hint": "One symptom is about balance, and the other is about appearance.",
-            "explanation": "The patient reports Dizziness along with Paleness.",
-            "id": "mc_l56_q3",
-            "medicalVocab": [
-                "Dizziness, Paleness",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"My eyes feel dry and gritty by the end of the workday, and I've had a dull headache too.\"",
-            "symptoms": [
-                "Dry Eyes",
-                "Blurred Vision",
-                "Headache",
-                "Light Sensitivity"
-            ],
-            "correctAnswer": "Dry Eyes, Headache",
-            "hint": "One symptom is about the eyes feeling dry, and the other is pain in the head.",
-            "explanation": "The patient describes Dry Eyes along with a dull Headache.",
-            "id": "mc_l57_q1",
-            "medicalVocab": [
-                "Dry Eyes, Headache",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've had a cough that brings up mucus, and I get short of breath climbing stairs,\" the patient says.",
-            "symptoms": [
-                "Chest Pain",
-                "Cough",
-                "Shortness of Breath",
-                "Wheezing"
-            ],
-            "correctAnswer": "Cough, Shortness of Breath",
-            "hint": "One symptom is a repeated action, and the other is difficulty during activity.",
-            "explanation": "The patient reports a Cough along with Shortness of Breath during activity.",
-            "id": "mc_l57_q2",
-            "medicalVocab": [
-                "Cough, Shortness of Breath",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My lower belly has been cramping, and I've felt bloated for two days,\" the patient tells the doctor.",
-            "symptoms": [
-                "Stomach Ache",
-                "Bloating",
-                "Nausea",
-                "Constipation"
-            ],
-            "correctAnswer": "Stomach Ache, Bloating",
-            "hint": "One symptom is cramping pain, and the other is about fullness.",
-            "explanation": "The patient describes a Stomach Ache along with Bloating.",
-            "id": "mc_l57_q3",
-            "medicalVocab": [
-                "Stomach Ache, Bloating",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"My throat is sore and swollen glands are making it hard to turn my head.\"",
-            "symptoms": [
-                "Stiff Neck",
-                "Earache",
-                "Sore Throat",
-                "Swollen Glands"
-            ],
-            "correctAnswer": "Sore Throat, Swollen Glands",
-            "hint": "One symptom is pain when swallowing, and the other is puffiness in the neck.",
-            "explanation": "The patient reports a Sore Throat and Swollen Glands.",
-            "id": "mc_l58_q1",
-            "medicalVocab": [
-                "Sore Throat, Swollen Glands",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"I've had heartburn most nights, and I've noticed I'm always thirsty.\"",
-            "symptoms": [
-                "Heartburn",
-                "Stomach Ache",
-                "Dry Mouth",
-                "Excessive Thirst"
-            ],
-            "correctAnswer": "Heartburn, Excessive Thirst",
-            "hint": "One symptom happens at night, and the other is a constant feeling.",
-            "explanation": "The patient describes Heartburn along with Excessive Thirst.",
-            "id": "mc_l58_q2",
-            "medicalVocab": [
-                "Heartburn, Excessive Thirst",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"My scalp itches and I've noticed more hair coming out when I shower.\"",
-            "symptoms": [
-                "Dry Skin",
-                "Scalp Itching",
-                "Rash",
-                "Hair Loss"
-            ],
-            "correctAnswer": "Scalp Itching, Hair Loss",
-            "hint": "One symptom is a feeling on the scalp, and the other is about hair.",
-            "explanation": "The patient reports Scalp Itching along with Hair Loss.",
-            "id": "mc_l58_q3",
-            "medicalVocab": [
-                "Scalp Itching, Hair Loss",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"My ears feel full and I've had a ringing sound since the concert.\"",
-            "symptoms": [
-                "Ear Fullness",
-                "Ringing in the Ears",
-                "Earache",
-                "Hearing Loss"
-            ],
-            "correctAnswer": "Ear Fullness, Ringing in the Ears",
-            "hint": "One symptom is about pressure, and the other is about a sound.",
-            "explanation": "The patient describes Ear Fullness and Ringing in the Ears after loud music.",
-            "id": "mc_l59_q1",
-            "medicalVocab": [
-                "Ear Fullness, Ringing in the Ears",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My fingers go numb and very cold whenever I'm outside in winter,\" the patient says.",
-            "symptoms": [
-                "Numbness",
-                "Pins and Needles",
-                "Weakness",
-                "Cold Hands and Feet"
-            ],
-            "correctAnswer": "Numbness, Cold Hands and Feet",
-            "hint": "One symptom is a loss of feeling, and the other is about temperature.",
-            "explanation": "The patient reports Numbness along with Cold Hands and Feet in cold weather.",
-            "id": "mc_l59_q2",
-            "medicalVocab": [
-                "Numbness, Cold Hands and Feet",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've had a persistent cough and I've started wheezing at night,\" the patient tells the doctor.",
-            "symptoms": [
-                "Persistent Cough",
-                "Shortness of Breath",
-                "Wheezing",
-                "Chest Pain"
-            ],
-            "correctAnswer": "Persistent Cough, Wheezing",
-            "hint": "One symptom is a long-lasting cough, and the other is a whistling sound.",
-            "explanation": "The patient describes a Persistent Cough along with Wheezing at night.",
-            "id": "mc_l59_q3",
-            "medicalVocab": [
-                "Persistent Cough, Wheezing",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"My stomach has been upset and I've had a low fever since yesterday.\"",
-            "symptoms": [
-                "Nausea",
-                "Chills",
-                "Stomach Ache",
-                "Fever"
-            ],
-            "correctAnswer": "Stomach Ache, Fever",
-            "hint": "One symptom is about the stomach, and the other is about temperature.",
-            "explanation": "The patient reports a Stomach Ache along with a low Fever.",
-            "id": "mc_l60_q1",
-            "medicalVocab": [
-                "Stomach Ache, Fever",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"I've felt dizzy and my vision blurs when I stand up too fast.\"",
-            "symptoms": [
-                "Headache",
-                "Dizziness",
-                "Fatigue",
-                "Blurred Vision"
-            ],
-            "correctAnswer": "Dizziness, Blurred Vision",
-            "hint": "One symptom is about balance, and the other is about sight.",
-            "explanation": "The patient describes Dizziness along with Blurred Vision when standing quickly.",
-            "id": "mc_l60_q2",
-            "medicalVocab": [
-                "Dizziness, Blurred Vision",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"My throat feels tight and I've been sneezing since the pollen count went up.\"",
-            "symptoms": [
-                "Sore Throat",
-                "Throat Tightness",
-                "Sneezing",
-                "Runny Nose"
-            ],
-            "correctAnswer": "Throat Tightness, Sneezing",
-            "hint": "One symptom is about tightness, and the other is a repeated action.",
-            "explanation": "The patient reports Throat Tightness and Sneezing linked to pollen.",
-            "id": "mc_l60_q3",
-            "medicalVocab": [
-                "Throat Tightness, Sneezing",
-                "Symptom",
-                "Patient"
-            ]
-        }
-    ]
+  "gameType": "medicalConsult",
+  "batchIndex": 6,
+  "levels": "51-60",
+  "quests": [
+    {
+      "instruction": "Select the follow-up question that would help most right now.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I've had to run to the bathroom all day. It's been happening two or three times a week. It seems worse after certain activities.\"",
+      "symptoms": [
+        "How often has this been happening?",
+        "How long does it usually last each time?",
+        "Have you had any recent vaccinations?",
+        "Is there anything that seems to bring it on or make it worse?"
+      ],
+      "correctAnswer": "How long does it usually last each time?",
+      "hint": "The patient has already told you how often it happens and what sets it off. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how often it happens and what sets it off, so the most useful next question asks about how long it lasts, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l51_q1",
+      "medicalVocab": [
+        "Diarrhea",
+        "Follow-up Question",
+        "Duration"
+      ]
+    },
+    {
+      "instruction": "Identify the best question to ask the patient next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I've had to run to the bathroom all day. It's been happening two or three times a week. It started a few days ago.\"",
+      "symptoms": [
+        "Do you smoke or use any tobacco products?",
+        "How often has this been happening?",
+        "Is there anything that seems to bring it on or make it worse?",
+        "When did you first notice this?"
+      ],
+      "correctAnswer": "Is there anything that seems to bring it on or make it worse?",
+      "hint": "The patient has already told you how often it happens and when it started. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how often it happens and when it started, so the most useful next question asks about what sets it off, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l51_q2",
+      "medicalVocab": [
+        "Diarrhea",
+        "Follow-up Question",
+        "Trigger"
+      ]
+    },
+    {
+      "instruction": "Choose the most useful follow-up question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I've had to run to the bathroom all day. I've also felt a bit more tired than usual alongside it. It started a few days ago.\"",
+      "symptoms": [
+        "Have you noticed anything else alongside this?",
+        "When did you first notice this?",
+        "Have you changed your diet recently?",
+        "Has this been affecting your daily activities?"
+      ],
+      "correctAnswer": "Has this been affecting your daily activities?",
+      "hint": "The patient has already told you other symptoms and when it started. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered other symptoms and when it started, so the most useful next question asks about the effect on daily life, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l51_q3",
+      "medicalVocab": [
+        "Diarrhea",
+        "Follow-up Question",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Identify the best question to ask the patient next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel constipated. Each time, it lasts about twenty minutes or so. It seems worse after certain activities.\"",
+      "symptoms": [
+        "When did you first notice this?",
+        "Have you had any recent dental work?",
+        "Is there anything that seems to bring it on or make it worse?",
+        "How long does it usually last each time?"
+      ],
+      "correctAnswer": "When did you first notice this?",
+      "hint": "The patient has already told you how long it lasts and what sets it off. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how long it lasts and what sets it off, so the most useful next question asks about when it started, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l52_q1",
+      "medicalVocab": [
+        "Constipation",
+        "Follow-up Question",
+        "Onset"
+      ]
+    },
+    {
+      "instruction": "Choose the most useful follow-up question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel constipated. It's been making it harder to concentrate at work. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "Do you have any pain when you urinate?",
+        "Has this been affecting your daily activities?",
+        "Have you noticed anything else alongside this?",
+        "How would you describe how bad it feels?"
+      ],
+      "correctAnswer": "Have you noticed anything else alongside this?",
+      "hint": "The patient has already told you the effect on daily life and how bad it feels. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered the effect on daily life and how bad it feels, so the most useful next question asks about other symptoms, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l52_q2",
+      "medicalVocab": [
+        "Constipation",
+        "Follow-up Question",
+        "Associated Symptoms"
+      ]
+    },
+    {
+      "instruction": "Select the follow-up question that would help most right now.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel constipated. I've also felt a bit more tired than usual alongside it. Each time, it lasts about twenty minutes or so.\"",
+      "symptoms": [
+        "Have you noticed anything else alongside this?",
+        "How long does it usually last each time?",
+        "Have you traveled outside the country recently?",
+        "When did you first notice this?"
+      ],
+      "correctAnswer": "When did you first notice this?",
+      "hint": "The patient has already told you other symptoms and how long it lasts. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered other symptoms and how long it lasts, so the most useful next question asks about when it started, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l52_q3",
+      "medicalVocab": [
+        "Constipation",
+        "Follow-up Question",
+        "Onset"
+      ]
+    },
+    {
+      "instruction": "Choose the most useful follow-up question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My hand feels numb. It's been making it harder to concentrate at work. It seems worse after certain activities.\"",
+      "symptoms": [
+        "Can you show me exactly where you feel it?",
+        "Has this been affecting your daily activities?",
+        "Have you had any recent vaccinations?",
+        "Is there anything that seems to bring it on or make it worse?"
+      ],
+      "correctAnswer": "Can you show me exactly where you feel it?",
+      "hint": "The patient has already told you the effect on daily life and what sets it off. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered the effect on daily life and what sets it off, so the most useful next question asks about where it is, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l53_q1",
+      "medicalVocab": [
+        "Numbness",
+        "Follow-up Question",
+        "Location"
+      ]
+    },
+    {
+      "instruction": "Select the follow-up question that would help most right now.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My hand feels numb. I've also felt a bit more tired than usual alongside it. Each time, it lasts about twenty minutes or so.\"",
+      "symptoms": [
+        "How long does it usually last each time?",
+        "Do you smoke or use any tobacco products?",
+        "Have you noticed anything else alongside this?",
+        "Has this been affecting your daily activities?"
+      ],
+      "correctAnswer": "Has this been affecting your daily activities?",
+      "hint": "The patient has already told you other symptoms and how long it lasts. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered other symptoms and how long it lasts, so the most useful next question asks about the effect on daily life, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l53_q2",
+      "medicalVocab": [
+        "Numbness",
+        "Follow-up Question",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Identify the best question to ask the patient next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My hand feels numb. Each time, it lasts about twenty minutes or so. It seems worse after certain activities.\"",
+      "symptoms": [
+        "When did you first notice this?",
+        "Have you changed your diet recently?",
+        "How long does it usually last each time?",
+        "Is there anything that seems to bring it on or make it worse?"
+      ],
+      "correctAnswer": "When did you first notice this?",
+      "hint": "The patient has already told you how long it lasts and what sets it off. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how long it lasts and what sets it off, so the most useful next question asks about when it started, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l53_q3",
+      "medicalVocab": [
+        "Numbness",
+        "Follow-up Question",
+        "Onset"
+      ]
+    },
+    {
+      "instruction": "Select the follow-up question that would help most right now.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My leg keeps tingling. It's been making it harder to concentrate at work. It started a few days ago.\"",
+      "symptoms": [
+        "When did you first notice this?",
+        "How would you describe how bad it feels?",
+        "Have you had any recent dental work?",
+        "Has this been affecting your daily activities?"
+      ],
+      "correctAnswer": "How would you describe how bad it feels?",
+      "hint": "The patient has already told you the effect on daily life and when it started. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered the effect on daily life and when it started, so the most useful next question asks about how bad it feels, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l54_q1",
+      "medicalVocab": [
+        "Tingling",
+        "Follow-up Question",
+        "Severity"
+      ]
+    },
+    {
+      "instruction": "Identify the best question to ask the patient next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My leg keeps tingling. It's fairly mild, more annoying than painful. It seems worse after certain activities.\"",
+      "symptoms": [
+        "Have you noticed anything else alongside this?",
+        "How would you describe how bad it feels?",
+        "Is there anything that seems to bring it on or make it worse?",
+        "Do you have any pain when you urinate?"
+      ],
+      "correctAnswer": "Have you noticed anything else alongside this?",
+      "hint": "The patient has already told you how bad it feels and what sets it off. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how bad it feels and what sets it off, so the most useful next question asks about other symptoms, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l54_q2",
+      "medicalVocab": [
+        "Tingling",
+        "Follow-up Question",
+        "Associated Symptoms"
+      ]
+    },
+    {
+      "instruction": "Choose the most useful follow-up question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My leg keeps tingling. It's been making it harder to concentrate at work. It seems worse after certain activities.\"",
+      "symptoms": [
+        "Have you traveled outside the country recently?",
+        "Is there anything that seems to bring it on or make it worse?",
+        "Can you show me exactly where you feel it?",
+        "Has this been affecting your daily activities?"
+      ],
+      "correctAnswer": "Can you show me exactly where you feel it?",
+      "hint": "The patient has already told you the effect on daily life and what sets it off. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered the effect on daily life and what sets it off, so the most useful next question asks about where it is, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l54_q3",
+      "medicalVocab": [
+        "Tingling",
+        "Follow-up Question",
+        "Location"
+      ]
+    },
+    {
+      "instruction": "Identify the best question to ask the patient next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My heart skips a beat sometimes. I've also felt a bit more tired than usual alongside it. It's been happening two or three times a week.\"",
+      "symptoms": [
+        "How often has this been happening?",
+        "Have you had any recent vaccinations?",
+        "How would you describe how bad it feels?",
+        "Have you noticed anything else alongside this?"
+      ],
+      "correctAnswer": "How would you describe how bad it feels?",
+      "hint": "The patient has already told you other symptoms and how often it happens. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered other symptoms and how often it happens, so the most useful next question asks about how bad it feels, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l55_q1",
+      "medicalVocab": [
+        "Palpitations",
+        "Follow-up Question",
+        "Severity"
+      ]
+    },
+    {
+      "instruction": "Choose the most useful follow-up question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My heart skips a beat sometimes. I've also felt a bit more tired than usual alongside it. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "Have you noticed anything else alongside this?",
+        "Do you smoke or use any tobacco products?",
+        "How would you describe how bad it feels?",
+        "Has this been affecting your daily activities?"
+      ],
+      "correctAnswer": "Has this been affecting your daily activities?",
+      "hint": "The patient has already told you other symptoms and how bad it feels. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered other symptoms and how bad it feels, so the most useful next question asks about the effect on daily life, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l55_q2",
+      "medicalVocab": [
+        "Palpitations",
+        "Follow-up Question",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Select the follow-up question that would help most right now.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My heart skips a beat sometimes. It's fairly mild, more annoying than painful. It seems worse after certain activities.\"",
+      "symptoms": [
+        "Have you changed your diet recently?",
+        "Is there anything that seems to bring it on or make it worse?",
+        "How long does it usually last each time?",
+        "How would you describe how bad it feels?"
+      ],
+      "correctAnswer": "How long does it usually last each time?",
+      "hint": "The patient has already told you how bad it feels and what sets it off. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how bad it feels and what sets it off, so the most useful next question asks about how long it lasts, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l55_q3",
+      "medicalVocab": [
+        "Palpitations",
+        "Follow-up Question",
+        "Duration"
+      ]
+    },
+    {
+      "instruction": "Choose the most useful follow-up question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My ankles are so puffy. It's been happening two or three times a week. It's been making it harder to concentrate at work.\"",
+      "symptoms": [
+        "When did you first notice this?",
+        "How often has this been happening?",
+        "Has this been affecting your daily activities?",
+        "Have you had any recent dental work?"
+      ],
+      "correctAnswer": "When did you first notice this?",
+      "hint": "The patient has already told you how often it happens and the effect on daily life. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how often it happens and the effect on daily life, so the most useful next question asks about when it started, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l56_q1",
+      "medicalVocab": [
+        "Swollen Ankles",
+        "Follow-up Question",
+        "Onset"
+      ]
+    },
+    {
+      "instruction": "Select the follow-up question that would help most right now.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My ankles are so puffy. I've also felt a bit more tired than usual alongside it. It's been happening two or three times a week.\"",
+      "symptoms": [
+        "How often has this been happening?",
+        "When did you first notice this?",
+        "Have you noticed anything else alongside this?",
+        "Do you have any pain when you urinate?"
+      ],
+      "correctAnswer": "When did you first notice this?",
+      "hint": "The patient has already told you other symptoms and how often it happens. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered other symptoms and how often it happens, so the most useful next question asks about when it started, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l56_q2",
+      "medicalVocab": [
+        "Swollen Ankles",
+        "Follow-up Question",
+        "Onset"
+      ]
+    },
+    {
+      "instruction": "Identify the best question to ask the patient next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My ankles are so puffy. It's fairly mild, more annoying than painful. It seems worse after certain activities.\"",
+      "symptoms": [
+        "How would you describe how bad it feels?",
+        "Is there anything that seems to bring it on or make it worse?",
+        "Have you noticed anything else alongside this?",
+        "Have you traveled outside the country recently?"
+      ],
+      "correctAnswer": "Have you noticed anything else alongside this?",
+      "hint": "The patient has already told you how bad it feels and what sets it off. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how bad it feels and what sets it off, so the most useful next question asks about other symptoms, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l56_q3",
+      "medicalVocab": [
+        "Swollen Ankles",
+        "Follow-up Question",
+        "Associated Symptoms"
+      ]
+    },
+    {
+      "instruction": "Select the follow-up question that would help most right now.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel anxious most of the time lately. I've also felt a bit more tired than usual alongside it. It seems worse after certain activities.\"",
+      "symptoms": [
+        "Is there anything that seems to bring it on or make it worse?",
+        "Have you noticed anything else alongside this?",
+        "How often has this been happening?",
+        "Have you had any recent vaccinations?"
+      ],
+      "correctAnswer": "How often has this been happening?",
+      "hint": "The patient has already told you other symptoms and what sets it off. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered other symptoms and what sets it off, so the most useful next question asks about how often it happens, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l57_q1",
+      "medicalVocab": [
+        "Anxiety",
+        "Follow-up Question",
+        "Frequency"
+      ]
+    },
+    {
+      "instruction": "Identify the best question to ask the patient next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel anxious most of the time lately. Each time, it lasts about twenty minutes or so. It started a few days ago.\"",
+      "symptoms": [
+        "Do you smoke or use any tobacco products?",
+        "How often has this been happening?",
+        "When did you first notice this?",
+        "How long does it usually last each time?"
+      ],
+      "correctAnswer": "How often has this been happening?",
+      "hint": "The patient has already told you how long it lasts and when it started. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how long it lasts and when it started, so the most useful next question asks about how often it happens, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l57_q2",
+      "medicalVocab": [
+        "Anxiety",
+        "Follow-up Question",
+        "Frequency"
+      ]
+    },
+    {
+      "instruction": "Choose the most useful follow-up question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel anxious most of the time lately. I've also felt a bit more tired than usual alongside it. Each time, it lasts about twenty minutes or so.\"",
+      "symptoms": [
+        "How long does it usually last each time?",
+        "Have you changed your diet recently?",
+        "Have you noticed anything else alongside this?",
+        "How would you describe how bad it feels?"
+      ],
+      "correctAnswer": "How would you describe how bad it feels?",
+      "hint": "The patient has already told you other symptoms and how long it lasts. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered other symptoms and how long it lasts, so the most useful next question asks about how bad it feels, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l57_q3",
+      "medicalVocab": [
+        "Anxiety",
+        "Follow-up Question",
+        "Severity"
+      ]
+    },
+    {
+      "instruction": "Identify the best question to ask the patient next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I just feel flat most days. It started a few days ago. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "How long does it usually last each time?",
+        "How would you describe how bad it feels?",
+        "When did you first notice this?",
+        "Have you had any recent dental work?"
+      ],
+      "correctAnswer": "How long does it usually last each time?",
+      "hint": "The patient has already told you when it started and how bad it feels. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered when it started and how bad it feels, so the most useful next question asks about how long it lasts, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l58_q1",
+      "medicalVocab": [
+        "Low Mood",
+        "Follow-up Question",
+        "Duration"
+      ]
+    },
+    {
+      "instruction": "Choose the most useful follow-up question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I just feel flat most days. It's been happening two or three times a week. It's been making it harder to concentrate at work.\"",
+      "symptoms": [
+        "How often has this been happening?",
+        "Do you have any pain when you urinate?",
+        "Has this been affecting your daily activities?",
+        "How would you describe how bad it feels?"
+      ],
+      "correctAnswer": "How would you describe how bad it feels?",
+      "hint": "The patient has already told you how often it happens and the effect on daily life. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how often it happens and the effect on daily life, so the most useful next question asks about how bad it feels, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l58_q2",
+      "medicalVocab": [
+        "Low Mood",
+        "Follow-up Question",
+        "Severity"
+      ]
+    },
+    {
+      "instruction": "Select the follow-up question that would help most right now.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I just feel flat most days. Each time, it lasts about twenty minutes or so. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "How would you describe how bad it feels?",
+        "How long does it usually last each time?",
+        "Has this been affecting your daily activities?",
+        "Have you traveled outside the country recently?"
+      ],
+      "correctAnswer": "Has this been affecting your daily activities?",
+      "hint": "The patient has already told you how long it lasts and how bad it feels. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how long it lasts and how bad it feels, so the most useful next question asks about the effect on daily life, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l58_q3",
+      "medicalVocab": [
+        "Low Mood",
+        "Follow-up Question",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Choose the most useful follow-up question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My calf just cramped up. It's mostly on one side. It started a few days ago.\"",
+      "symptoms": [
+        "Has this been affecting your daily activities?",
+        "Can you show me exactly where you feel it?",
+        "When did you first notice this?",
+        "Have you had any recent vaccinations?"
+      ],
+      "correctAnswer": "Has this been affecting your daily activities?",
+      "hint": "The patient has already told you where it is and when it started. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered where it is and when it started, so the most useful next question asks about the effect on daily life, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l59_q1",
+      "medicalVocab": [
+        "Cramp",
+        "Follow-up Question",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Select the follow-up question that would help most right now.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My calf just cramped up. Each time, it lasts about twenty minutes or so. It started a few days ago.\"",
+      "symptoms": [
+        "Do you smoke or use any tobacco products?",
+        "Has this been affecting your daily activities?",
+        "When did you first notice this?",
+        "How long does it usually last each time?"
+      ],
+      "correctAnswer": "Has this been affecting your daily activities?",
+      "hint": "The patient has already told you how long it lasts and when it started. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how long it lasts and when it started, so the most useful next question asks about the effect on daily life, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l59_q2",
+      "medicalVocab": [
+        "Cramp",
+        "Follow-up Question",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Identify the best question to ask the patient next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My calf just cramped up. It started a few days ago. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "When did you first notice this?",
+        "How often has this been happening?",
+        "How would you describe how bad it feels?",
+        "Have you changed your diet recently?"
+      ],
+      "correctAnswer": "How often has this been happening?",
+      "hint": "The patient has already told you when it started and how bad it feels. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered when it started and how bad it feels, so the most useful next question asks about how often it happens, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l59_q3",
+      "medicalVocab": [
+        "Cramp",
+        "Follow-up Question",
+        "Frequency"
+      ]
+    },
+    {
+      "instruction": "Select the follow-up question that would help most right now.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I have no strength in my legs. It's mostly on one side. It seems worse after certain activities.\"",
+      "symptoms": [
+        "Have you had any recent dental work?",
+        "Can you show me exactly where you feel it?",
+        "Is there anything that seems to bring it on or make it worse?",
+        "How often has this been happening?"
+      ],
+      "correctAnswer": "How often has this been happening?",
+      "hint": "The patient has already told you where it is and what sets it off. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered where it is and what sets it off, so the most useful next question asks about how often it happens, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l60_q1",
+      "medicalVocab": [
+        "Weakness",
+        "Follow-up Question",
+        "Frequency"
+      ]
+    },
+    {
+      "instruction": "Identify the best question to ask the patient next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I have no strength in my legs. It's been making it harder to concentrate at work. It's mostly on one side.\"",
+      "symptoms": [
+        "Do you have any pain when you urinate?",
+        "How often has this been happening?",
+        "Can you show me exactly where you feel it?",
+        "Has this been affecting your daily activities?"
+      ],
+      "correctAnswer": "How often has this been happening?",
+      "hint": "The patient has already told you the effect on daily life and where it is. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered the effect on daily life and where it is, so the most useful next question asks about how often it happens, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l60_q2",
+      "medicalVocab": [
+        "Weakness",
+        "Follow-up Question",
+        "Frequency"
+      ]
+    },
+    {
+      "instruction": "Choose the most useful follow-up question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I have no strength in my legs. Each time, it lasts about twenty minutes or so. It's been making it harder to concentrate at work.\"",
+      "symptoms": [
+        "Have you traveled outside the country recently?",
+        "How often has this been happening?",
+        "How long does it usually last each time?",
+        "Has this been affecting your daily activities?"
+      ],
+      "correctAnswer": "How often has this been happening?",
+      "hint": "The patient has already told you how long it lasts and the effect on daily life. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how long it lasts and the effect on daily life, so the most useful next question asks about how often it happens, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l60_q3",
+      "medicalVocab": [
+        "Weakness",
+        "Follow-up Question",
+        "Frequency"
+      ]
+    }
+  ]
 }

@@ -1,637 +1,658 @@
 {
-    "gameType": "directIndirectSpeech",
-    "batchIndex": 9,
-    "levels": "81-90",
-    "quests": [
-        {
-            "id": "dis_l81_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She asked, 'Have you finished the report?'",
-            "options": [
-                "She asked whether have I finished the report.",
-                "She asked whether I have finished the report.",
-                "She asked whether I had finished the report."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She asked whether I had finished the report.",
-            "sentence": "She asked, 'Have you finished the report?'",
-            "hint": "Yes/No questions can use 'whether', and the tense shifts too.",
-            "explanation": "'Whether' introduces the question, 'have' moves after the subject, and 'have finished' shifts to 'had finished'.",
-            "grammarRule": "Reported Yes/No Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l81_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I have been feeling tired.'",
-            "options": [
-                "She said that she had been feel tired.",
-                "She said that she has been feeling tired.",
-                "She said that she had been feeling tired."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She said that she had been feeling tired.",
-            "sentence": "She said, 'I have been feeling tired.'",
-            "hint": "Present perfect continuous shifts one step back to past perfect continuous.",
-            "explanation": "'Have been feeling' (present perfect continuous) shifts to 'had been feeling' (past perfect continuous).",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l81_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The teacher said, 'Water boils at 100 degrees Celsius.'",
-            "options": [
-                "The teacher said that water had boiled at 100 degrees Celsius.",
-                "The teacher said that water boils at 100 degrees Celsius.",
-                "The teacher said that water boiled at 100 degrees Celsius."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The teacher said that water boils at 100 degrees Celsius.",
-            "sentence": "The teacher said, 'Water boils at 100 degrees Celsius.'",
-            "hint": "This is a scientific fact that's still true — some statements don't need to shift tense at all.",
-            "explanation": "Universal truths and facts often stay in the present tense in reported speech, since they're still true now.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Tense shifted back"
-            ]
-        },
-        {
-            "id": "dis_l82_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The doctor asked, 'Are you allergic to anything?'",
-            "options": [
-                "The doctor asked if I am allergic to anything.",
-                "The doctor asked if I was allergic to anything.",
-                "The doctor asked am I allergic to anything."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The doctor asked if I was allergic to anything.",
-            "sentence": "The doctor asked, 'Are you allergic to anything?'",
-            "hint": "Yes/No questions use 'if', with statement word order.",
-            "explanation": "'If' introduces the question, word order becomes statement order, and 'are' shifts to 'was'.",
-            "grammarRule": "Reported Yes/No Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l82_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He insisted, 'I did nothing wrong.'",
-            "options": [
-                "He insisted that he had done nothing wrong.",
-                "He insisted that I had done nothing wrong.",
-                "He insisted that he did nothing wrong."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He insisted that he had done nothing wrong.",
-            "sentence": "He insisted, 'I did nothing wrong.'",
-            "hint": "Both the tense and the pronoun shift here; 'insisted' works like 'said' but shows strong conviction.",
-            "explanation": "'Did' (past simple) shifts to 'had done' (past perfect), and 'I' becomes 'he'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l82_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: They said, 'We have been working on this for months.'",
-            "options": [
-                "They said that they had been working on that for months.",
-                "They said that we had been working on this for months.",
-                "They said that they have been working on that for months."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "They said that they had been working on that for months.",
-            "sentence": "They said, 'We have been working on this for months.'",
-            "hint": "Both the tense and 'this' shift here.",
-            "explanation": "'Have been working' shifts to 'had been working', and 'this' shifts to 'that'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l83_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He denied, 'I broke the vase.'",
-            "options": [
-                "He denied that I had broken the vase.",
-                "He denied that he broke the vase.",
-                "He denied that he had broken the vase."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "He denied that he had broken the vase.",
-            "sentence": "He denied, 'I broke the vase.'",
-            "hint": "Both the tense and the pronoun shift; 'denied' reports someone rejecting a claim.",
-            "explanation": "'Broke' (past simple) shifts to 'had broken' (past perfect), and 'I' becomes 'he'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l83_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She asked, 'Is the flight delayed or on time?'",
-            "options": [
-                "She asked whether the flight was delayed or on time.",
-                "She asked whether the flight is delayed or on time.",
-                "She asked was the flight delayed or on time."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She asked whether the flight was delayed or on time.",
-            "sentence": "She asked, 'Is the flight delayed or on time?'",
-            "hint": "'Whether...or' reports a choice question, and the tense shifts too.",
-            "explanation": "'Whether' introduces the choice, word order becomes statement order, and 'is' shifts to 'was'.",
-            "grammarRule": "Reported Yes/No Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l83_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The guide said, 'Paris is the capital of France.'",
-            "options": [
-                "The guide said that Paris had been the capital of France.",
-                "The guide said that Paris was the capital of France.",
-                "The guide said that Paris is the capital of France."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The guide said that Paris is the capital of France.",
-            "sentence": "The guide said, 'Paris is the capital of France.'",
-            "hint": "This is a fact that's still true — it doesn't need to shift tense.",
-            "explanation": "Facts that remain true stay in the present tense in reported speech.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Tense shifted back"
-            ]
-        },
-        {
-            "id": "dis_l84_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She agreed, 'I will help with the presentation.'",
-            "options": [
-                "She agreed that she would help with the presentation.",
-                "She agreed that I would help with the presentation.",
-                "She agreed that she will help with the presentation."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She agreed that she would help with the presentation.",
-            "sentence": "She agreed, 'I will help with the presentation.'",
-            "hint": "Both the modal and the pronoun shift; 'agreed' shows she accepted something.",
-            "explanation": "'Will' shifts to 'would', and 'I' becomes 'she'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l84_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I have been binge-watching that show.'",
-            "options": [
-                "He said that he had been binge-watching that show.",
-                "He said that he had binge-watched that show.",
-                "He said that he has been binge-watching that show."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He said that he had been binge-watching that show.",
-            "sentence": "He said, 'I have been binge-watching that show.'",
-            "hint": "Present perfect continuous shifts to past perfect continuous, not to a different tense.",
-            "explanation": "'Have been binge-watching' shifts to 'had been binge-watching' — the continuous form is kept.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l84_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The advisor warned investors, 'Don't panic about the market.'",
-            "options": [
-                "The advisor warned investors to not panic about the market.",
-                "The advisor warned investors not to panic about the market.",
-                "The advisor warned investors don't panic about the market."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The advisor warned investors not to panic about the market.",
-            "sentence": "The advisor warned investors, 'Don't panic about the market.'",
-            "hint": "Negative commands shift to 'warned + people + not to + verb'.",
-            "explanation": "Negative commands use 'warned + object + not to + infinitive'. 'Don't panic' becomes 'not to panic'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l85_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She complained, 'The room is too cold.'",
-            "options": [
-                "She complained that the room had been too cold.",
-                "She complained that the room is too cold.",
-                "She complained that the room was too cold."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She complained that the room was too cold.",
-            "sentence": "She complained, 'The room is too cold.'",
-            "hint": "Shift the verb back in time; 'complained' reports someone expressing dissatisfaction.",
-            "explanation": "'Is' shifts to 'was' — a simple one-step backshift, even though the reporting verb shows a complaint.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l85_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The nurse asked, 'Have you eaten anything today?'",
-            "options": [
-                "The nurse asked had I eaten anything that day.",
-                "The nurse asked whether I had eaten anything that day.",
-                "The nurse asked whether I have eaten anything today."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The nurse asked whether I had eaten anything that day.",
-            "sentence": "The nurse asked, 'Have you eaten anything today?'",
-            "hint": "'Whether' reports the question, and 'today' shifts along with the tense.",
-            "explanation": "'Whether' introduces the question, statement word order is used, 'have eaten' shifts to 'had eaten', and 'today' shifts to 'that day'.",
-            "grammarRule": "Reported Yes/No Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l85_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The professor said, 'A triangle has three sides.'",
-            "options": [
-                "The professor said that a triangle has three sides.",
-                "The professor said that a triangle had three sides.",
-                "The professor said that a triangle would have three sides."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The professor said that a triangle has three sides.",
-            "sentence": "The professor said, 'A triangle has three sides.'",
-            "hint": "This is a mathematical fact that's always true — it doesn't need to shift tense.",
-            "explanation": "Facts that are always true stay in the present tense in reported speech.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Tense shifted back"
-            ]
-        },
-        {
-            "id": "dis_l86_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The CEO announced, 'Our profits have doubled.'",
-            "options": [
-                "The CEO announced that our profits had doubled.",
-                "The CEO announced that their profits have doubled.",
-                "The CEO announced that their profits had doubled."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The CEO announced that their profits had doubled.",
-            "sentence": "The CEO announced, 'Our profits have doubled.'",
-            "hint": "Both the tense and the possessive word shift here.",
-            "explanation": "'Have doubled' shifts to 'had doubled', and 'our' shifts to 'their'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l86_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I have been leading this team since March.'",
-            "options": [
-                "She said that she had been leading that team since March.",
-                "She said that she had led that team since March.",
-                "She said that she has been leading that team since March."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said that she had been leading that team since March.",
-            "sentence": "She said, 'I have been leading this team since March.'",
-            "hint": "Present perfect continuous shifts to past perfect continuous, and 'this' shifts too.",
-            "explanation": "'Have been leading' shifts to 'had been leading', and 'this' shifts to 'that'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l86_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The dietitian told him, 'Reduce your sugar intake.'",
-            "options": [
-                "The dietitian told him that he reduce his sugar intake.",
-                "The dietitian told him reduce his sugar intake.",
-                "The dietitian told him to reduce his sugar intake."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The dietitian told him to reduce his sugar intake.",
-            "sentence": "The dietitian told him, 'Reduce your sugar intake.'",
-            "hint": "A command shifts to 'told + person + to + verb', and 'your' shifts too.",
-            "explanation": "Commands are reported with 'told + object + to-infinitive'. 'Reduce your sugar intake' becomes 'to reduce his sugar intake'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l87_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The agent confirmed, 'Your seat is booked.'",
-            "options": [
-                "The agent confirmed that my seat was booked.",
-                "The agent confirmed that my seat is booked.",
-                "The agent confirmed that your seat was booked."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The agent confirmed that my seat was booked.",
-            "sentence": "The agent confirmed, 'Your seat is booked.'",
-            "hint": "'Your' shifts to match who is being spoken to, and the tense shifts too.",
-            "explanation": "'Your' shifts to 'my', and 'is' shifts to 'was'.",
-            "grammarRule": "Pronoun & Possessive Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l87_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The interviewer asked, 'Have you managed a team before?'",
-            "options": [
-                "The interviewer asked if I had managed a team before.",
-                "The interviewer asked have I managed a team before.",
-                "The interviewer asked if I have managed a team before."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The interviewer asked if I had managed a team before.",
-            "sentence": "The interviewer asked, 'Have you managed a team before?'",
-            "hint": "Yes/No questions use 'if', with statement word order.",
-            "explanation": "'If' introduces the question, word order becomes statement order, and 'have managed' shifts to 'had managed'.",
-            "grammarRule": "Reported Yes/No Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l87_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The instructor said, 'Ice melts at zero degrees Celsius.'",
-            "options": [
-                "The instructor said that ice melts at zero degrees Celsius.",
-                "The instructor said that ice had melted at zero degrees Celsius.",
-                "The instructor said that ice melted at zero degrees Celsius."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The instructor said that ice melts at zero degrees Celsius.",
-            "sentence": "The instructor said, 'Ice melts at zero degrees Celsius.'",
-            "hint": "This is a scientific fact that's still true — it doesn't need to shift tense.",
-            "explanation": "Facts that remain true stay in the present tense in reported speech.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Tense shifted back"
-            ]
-        },
-        {
-            "id": "dis_l88_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He admitted, 'I forgot the deadline.'",
-            "options": [
-                "He admitted that he had forgotten the deadline.",
-                "He admitted that I had forgotten the deadline.",
-                "He admitted that he forgot the deadline."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He admitted that he had forgotten the deadline.",
-            "sentence": "He admitted, 'I forgot the deadline.'",
-            "hint": "Both the tense and the pronoun shift; 'admitted' reports someone confessing something.",
-            "explanation": "'Forgot' (past simple) shifts to 'had forgotten' (past perfect), and 'I' becomes 'he'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l88_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: They said, 'We have been planning this trip for months.'",
-            "options": [
-                "They said that they have been planning that trip for months.",
-                "They said that we had been planning this trip for months.",
-                "They said that they had been planning that trip for months."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "They said that they had been planning that trip for months.",
-            "sentence": "They said, 'We have been planning this trip for months.'",
-            "hint": "Both the tense and 'this' shift here.",
-            "explanation": "'Have been planning' shifts to 'had been planning', and 'this' shifts to 'that'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l88_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: HR warned staff, 'Don't share confidential data.'",
-            "options": [
-                "HR warned staff to not share confidential data.",
-                "HR warned staff don't share confidential data.",
-                "HR warned staff not to share confidential data."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "HR warned staff not to share confidential data.",
-            "sentence": "HR warned staff, 'Don't share confidential data.'",
-            "hint": "Negative commands shift to 'warned + people + not to + verb'.",
-            "explanation": "Negative commands use 'warned + object + not to + infinitive'. 'Don't share' becomes 'not to share'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l89_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She suggested, 'You should drink more water.'",
-            "options": [
-                "She suggested that I drink more water.",
-                "She suggested that you should drink more water.",
-                "She suggested that I should drink more water."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She suggested that I should drink more water.",
-            "sentence": "She suggested, 'You should drink more water.'",
-            "hint": "'You' shifts to match who is being spoken to; 'suggested' introduces advice.",
-            "explanation": "'You' shifts to 'I', and 'should' — already a backshifted modal — stays the same.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l89_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He asked, 'Does the update fix the bug or not?'",
-            "options": [
-                "He asked did the update fix the bug or not.",
-                "He asked whether the update fixes the bug or not.",
-                "He asked whether the update fixed the bug or not."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "He asked whether the update fixed the bug or not.",
-            "sentence": "He asked, 'Does the update fix the bug or not?'",
-            "hint": "'Whether...or' reports a choice question, and the tense shifts too.",
-            "explanation": "'Whether' introduces the choice, 'does' is dropped, and 'fixes' shifts to 'fixed'.",
-            "grammarRule": "Reported Yes/No Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l89_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I have been learning the guitar.'",
-            "options": [
-                "He said that he had learned the guitar.",
-                "He said that he has been learning the guitar.",
-                "He said that he had been learning the guitar."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "He said that he had been learning the guitar.",
-            "sentence": "He said, 'I have been learning the guitar.'",
-            "hint": "Present perfect continuous shifts to past perfect continuous, not to a different tense.",
-            "explanation": "'Have been learning' shifts to 'had been learning' — the continuous form is kept.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l90_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The pilot said, 'Light travels faster than sound.'",
-            "options": [
-                "The pilot said that light travelled faster than sound.",
-                "The pilot said that light had traveled faster than sound.",
-                "The pilot said that light travels faster than sound."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The pilot said that light travels faster than sound.",
-            "sentence": "The pilot said, 'Light travels faster than sound.'",
-            "hint": "This is a scientific fact that's still true — it doesn't need to shift tense.",
-            "explanation": "Facts that remain true stay in the present tense in reported speech.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Tense shifted back"
-            ]
-        },
-        {
-            "id": "dis_l90_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She denied, 'I leaked the information.'",
-            "options": [
-                "She denied that she had leaked the information.",
-                "She denied that I had leaked the information.",
-                "She denied that she leaked the information."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She denied that she had leaked the information.",
-            "sentence": "She denied, 'I leaked the information.'",
-            "hint": "Notice both changes here: the backshifted tense and the adjusted pronoun.",
-            "explanation": "'Leaked' (past simple) shifts to 'had leaked' (past perfect), and 'I' becomes 'she'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l90_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The officer asked, 'Do you have any identification?'",
-            "options": [
-                "The officer asked if I had any identification.",
-                "The officer asked do I have any identification.",
-                "The officer asked if I have any identification."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The officer asked if I had any identification.",
-            "sentence": "The officer asked, 'Do you have any identification?'",
-            "hint": "Yes/No questions use 'if', and 'do' disappears.",
-            "explanation": "Yes/No questions use 'if'. The auxiliary 'do' is dropped, and 'have' shifts to 'had'.",
-            "grammarRule": "Reported Yes/No Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        }
-    ]
+  "gameType": "directIndirectSpeech",
+  "batchIndex": 9,
+  "levels": "81-90",
+  "quests": [
+    {
+      "id": "dis_l81_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The teacher said, \"The sun rises in the east.\"",
+      "options": [
+        "The teacher said that the sun rises in the east.",
+        "The teacher said that the sun had risen in the east.",
+        "The teacher said that the sun rose in the east."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The teacher said that the sun rises in the east.",
+      "sentence": "The teacher said, \"The sun rises in the east.\"",
+      "hint": "This is a universal truth that is always true — it usually keeps its original tense in reported speech.",
+      "explanation": "Because this is a scientific fact, 'rises' does not need to backshift to 'rose'.",
+      "grammarRule": "Universal Truth",
+      "changesList": [
+        "no tense change needed (universal truth)"
+      ]
+    },
+    {
+      "id": "dis_l81_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The professor said, \"Water boils at 100 degrees Celsius at sea level.\"",
+      "options": [
+        "The professor said that water had boiled at 100 degrees Celsius at sea level.",
+        "The professor said that water boiled at 100 degrees Celsius at sea level.",
+        "The professor said that water boils at 100 degrees Celsius at sea level."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The professor said that water boils at 100 degrees Celsius at sea level.",
+      "sentence": "The professor said, \"Water boils at 100 degrees Celsius at sea level.\"",
+      "hint": "Facts of physics don't change over time — they stay in the present tense even in reported speech.",
+      "explanation": "'Boils' remains unchanged because it states a permanent scientific fact.",
+      "grammarRule": "Universal Truth",
+      "changesList": [
+        "no tense change needed (scientific fact)"
+      ]
+    },
+    {
+      "id": "dis_l81_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Grace said, \"Paris is the capital of France.\"",
+      "options": [
+        "Grace said that Paris is the capital of France.",
+        "Grace said that Paris had been the capital of France.",
+        "Grace said that Paris was the capital of France."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Grace said that Paris is the capital of France.",
+      "sentence": "Grace said, \"Paris is the capital of France.\"",
+      "hint": "A stable, unchanging fact about the world doesn't need the tense to move back.",
+      "explanation": "'Is' stays unchanged since this fact remains true regardless of when it is reported.",
+      "grammarRule": "Universal Truth",
+      "changesList": [
+        "no tense change needed (permanent fact)"
+      ]
+    },
+    {
+      "id": "dis_l82_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Wei said, \"I go to the gym every morning.\" (Assume this is still his routine.)",
+      "options": [
+        "Wei said that he had gone to the gym every morning.",
+        "Wei said that he went to the gym every morning.",
+        "Wei said that he goes to the gym every morning."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Wei said that he goes to the gym every morning.",
+      "sentence": "Wei said, \"I go to the gym every morning.\"",
+      "hint": "If the habit is still true now, the present tense can be kept even though the pronoun still changes.",
+      "explanation": "Since the habit is still current, 'go' can stay in the present tense as 'goes'; only 'I' changes to 'he'.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'I' → 'he'",
+        "'go' stays present (ongoing habit)"
+      ]
+    },
+    {
+      "id": "dis_l82_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Sofia said, \"I used to smoke, but I don't anymore.\"",
+      "options": [
+        "Sofia said that she uses to smoke but doesn't anymore.",
+        "Sofia said that she used to smoke but doesn't anymore.",
+        "Sofia said that she used to smoke but didn't anymore."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Sofia said that she used to smoke but didn't anymore.",
+      "sentence": "Sofia said, \"I used to smoke, but I don't anymore.\"",
+      "hint": "'Used to' already describes a finished past habit and doesn't change, but the second clause still needs to backshift.",
+      "explanation": "'Used to smoke' stays the same, but 'don't' backshifts to 'didn't' since it's part of the ongoing report.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'used to smoke' stays unchanged",
+        "'don't' → 'didn't'"
+      ]
+    },
+    {
+      "id": "dis_l82_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Diego said, \"The store closes at 9 PM.\" (Assume this is still the store's schedule.)",
+      "options": [
+        "Diego said that the store closes at 9 PM.",
+        "Diego said that the store had closed at 9 PM.",
+        "Diego said that the store closed at 9 PM."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Diego said that the store closes at 9 PM.",
+      "sentence": "Diego said, \"The store closes at 9 PM.\"",
+      "hint": "If this is still the store's normal closing time, there's no need to move the tense back.",
+      "explanation": "Because this is a standing fact about the store's hours, 'closes' does not need to backshift.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "no tense change needed (still-true fact)"
+      ]
+    },
+    {
+      "id": "dis_l83_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech immediately after it was said: Layla said, \"I am starving.\"",
+      "options": [
+        "Layla said that she has starving.",
+        "Layla said that she was starving.",
+        "Layla said that she is starving."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Layla said that she is starving.",
+      "sentence": "Layla said, \"I am starving.\"",
+      "hint": "When you report something immediately, the present tense can often be kept to show it's still true right now.",
+      "explanation": "Because Layla's statement is being reported right away and still applies, 'am' can stay as 'is' rather than backshifting to 'was'.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'I' → 'she'",
+        "'am' → 'is' (present relevance retained)"
+      ]
+    },
+    {
+      "id": "dis_l83_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech immediately after it was said: Ravi said, \"I don't feel well.\"",
+      "options": [
+        "Ravi said that he hadn't felt well.",
+        "Ravi said that he doesn't feel well.",
+        "Ravi said that he didn't feel well."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Ravi said that he doesn't feel well.",
+      "sentence": "Ravi said, \"I don't feel well.\"",
+      "hint": "If you're reporting this immediately and it's still true, you can keep the present tense in the reported clause.",
+      "explanation": "Since Ravi's statement is still true at the moment of reporting, 'don't feel' can remain unchanged instead of backshifting to 'didn't feel'.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'I' → 'he'",
+        "'don't feel' stays present (still true now)"
+      ]
+    },
+    {
+      "id": "dis_l83_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech immediately after it was announced: The manager announced, \"The system is down.\"",
+      "options": [
+        "The manager announced that the system is down.",
+        "The manager announced that the system had been down.",
+        "The manager announced that the system was down."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The manager announced that the system is down.",
+      "sentence": "The manager announced, \"The system is down.\"",
+      "hint": "An announcement being reported right away, about a situation still happening, can keep its original tense.",
+      "explanation": "Since the system is still down at the moment of reporting, 'is' does not need to backshift to 'was'.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "no tense change needed (present relevance)"
+      ]
+    },
+    {
+      "id": "dis_l84_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "It is still the same day. Convert to reported speech: Fatima said, \"I have a doctor's appointment today.\"",
+      "options": [
+        "Fatima said that she has had a doctor's appointment today.",
+        "Fatima said that she had a doctor's appointment that day.",
+        "Fatima said that she has a doctor's appointment today."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Fatima said that she has a doctor's appointment today.",
+      "sentence": "Fatima said, \"I have a doctor's appointment today.\"",
+      "hint": "Since the appointment is still happening today, both the tense and the time word can stay the same.",
+      "explanation": "Because the situation is still current and being reported on the same day, 'have' and 'today' remain unchanged.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "no tense change needed (still today)",
+        "'I' → 'she'"
+      ]
+    },
+    {
+      "id": "dis_l84_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "It is now a week later. Convert to reported speech what Rafael said last Monday: \"I have an appointment with my accountant today.\"",
+      "options": [
+        "Rafael said that he had an appointment with his accountant that day.",
+        "Rafael said that he had an appointment with his accountant today.",
+        "Rafael said that he has an appointment with his accountant today."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Rafael said that he had an appointment with his accountant that day.",
+      "sentence": "Rafael said, \"I have an appointment with my accountant today.\"",
+      "hint": "Now that time has clearly passed, both the tense and the time word need to move back.",
+      "explanation": "Because the appointment is no longer current, 'have' backshifts to 'had', and 'today' becomes 'that day'.",
+      "grammarRule": "Time Expression Shift",
+      "changesList": [
+        "'have' → 'had'",
+        "'today' → 'that day'",
+        "'I' → 'he'"
+      ]
+    },
+    {
+      "id": "dis_l84_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The scientist said, \"Light travels faster than sound.\"",
+      "options": [
+        "The scientist said that light travels faster than sound.",
+        "The scientist said that light had traveled faster than sound.",
+        "The scientist said that light traveled faster than sound."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The scientist said that light travels faster than sound.",
+      "sentence": "The scientist said, \"Light travels faster than sound.\"",
+      "hint": "No matter when you report this, a scientific fact like this keeps its tense unchanged.",
+      "explanation": "Because this is a permanent scientific truth, the tense never needs to backshift, regardless of when it's reported.",
+      "grammarRule": "Universal Truth",
+      "changesList": [
+        "no tense change needed (universal truth)"
+      ]
+    },
+    {
+      "id": "dis_l85_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The geography teacher said, \"The Amazon River flows through Brazil.\"",
+      "options": [
+        "The geography teacher said that the Amazon River flowed through Brazil.",
+        "The geography teacher said that the Amazon River had flowed through Brazil.",
+        "The geography teacher said that the Amazon River flows through Brazil."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The geography teacher said that the Amazon River flows through Brazil.",
+      "sentence": "The geography teacher said, \"The Amazon River flows through Brazil.\"",
+      "hint": "A geographical fact that hasn't changed doesn't need the tense to move back.",
+      "explanation": "'Flows' remains unchanged because it describes a permanent geographical fact.",
+      "grammarRule": "Universal Truth",
+      "changesList": [
+        "no tense change needed (permanent fact)"
+      ]
+    },
+    {
+      "id": "dis_l85_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The guide said, \"Mount Everest is the tallest mountain in the world.\"",
+      "options": [
+        "The guide said that Mount Everest is the tallest mountain in the world.",
+        "The guide said that Mount Everest was the tallest mountain in the world.",
+        "The guide said that Mount Everest had been the tallest mountain in the world."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The guide said that Mount Everest is the tallest mountain in the world.",
+      "sentence": "The guide said, \"Mount Everest is the tallest mountain in the world.\"",
+      "hint": "This fact about the world hasn't changed, so there's no reason to shift the tense.",
+      "explanation": "'Is' remains unchanged because Mount Everest's status as the tallest mountain is still true.",
+      "grammarRule": "Universal Truth",
+      "changesList": [
+        "no tense change needed (permanent fact)"
+      ]
+    },
+    {
+      "id": "dis_l85_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The teacher said, \"The Earth revolves around the Sun once a year.\"",
+      "options": [
+        "The teacher said that the Earth revolved around the Sun once a year.",
+        "The teacher said that the Earth has revolved around the Sun once a year.",
+        "The teacher said that the Earth revolves around the Sun once a year."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The teacher said that the Earth revolves around the Sun once a year.",
+      "sentence": "The teacher said, \"The Earth revolves around the Sun once a year.\"",
+      "hint": "This astronomical fact remains true regardless of when it is reported.",
+      "explanation": "'Revolves' stays unchanged since this is a scientific fact that doesn't depend on the moment of speaking.",
+      "grammarRule": "Universal Truth",
+      "changesList": [
+        "no tense change needed (scientific fact)"
+      ]
+    },
+    {
+      "id": "dis_l86_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Isabella said, \"I practice yoga every day.\" (Assume this is still true.)",
+      "options": [
+        "Isabella said that she practiced yoga every day.",
+        "Isabella said that she had practiced yoga every day.",
+        "Isabella said that she practices yoga every day."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Isabella said that she practices yoga every day.",
+      "sentence": "Isabella said, \"I practice yoga every day.\"",
+      "hint": "If this habit is still part of her routine, the present tense can stay.",
+      "explanation": "Since the habit is still ongoing, 'practice' does not need to backshift to 'practiced'.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'I' → 'she'",
+        "'practice' stays present (ongoing habit)"
+      ]
+    },
+    {
+      "id": "dis_l86_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Kwame said, \"I used to play football on weekends.\"",
+      "options": [
+        "Kwame said that he used to play football on weekends.",
+        "Kwame said that he had used to play football on weekends.",
+        "Kwame said that he uses to play football on weekends."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Kwame said that he used to play football on weekends.",
+      "sentence": "Kwame said, \"I used to play football on weekends.\"",
+      "hint": "'Used to' already expresses a discontinued past habit and stays exactly the same in reported speech.",
+      "explanation": "'Used to play' remains unchanged, since it already indicates a habit that has stopped.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'used to play' stays unchanged",
+        "'I' → 'he'"
+      ]
+    },
+    {
+      "id": "dis_l86_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The company said, \"We always prioritize customer satisfaction.\" (Assume this is still their policy.)",
+      "options": [
+        "The company said that they always prioritize customer satisfaction.",
+        "The company said that we always prioritize customer satisfaction.",
+        "The company said that they always prioritized customer satisfaction."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The company said that they always prioritize customer satisfaction.",
+      "sentence": "The company said, \"We always prioritize customer satisfaction.\"",
+      "hint": "An ongoing company policy that's still in effect doesn't need the tense to move back.",
+      "explanation": "Since this is a continuing policy, 'prioritize' stays in the present tense; only 'we' becomes 'they'.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'we' → 'they'",
+        "'prioritize' stays present (ongoing policy)"
+      ]
+    },
+    {
+      "id": "dis_l87_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The handbook says, \"Employees must clock in by 9 AM.\"",
+      "options": [
+        "The handbook said that employees had to clock in by 9 AM.",
+        "The handbook says that employees must clock in by 9 AM.",
+        "The handbook says that employees had to clock in by 9 AM."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The handbook says that employees must clock in by 9 AM.",
+      "sentence": "The handbook says, \"Employees must clock in by 9 AM.\"",
+      "hint": "A rule that is still currently in force is usually reported with 'says', keeping the present tense.",
+      "explanation": "Since the rule is still active, both the reporting verb and 'must' stay in the present tense.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "no tense change needed (rule still in force)"
+      ]
+    },
+    {
+      "id": "dis_l87_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The law states, \"Drivers must wear seatbelts at all times.\"",
+      "options": [
+        "The law stated that drivers had to wear seatbelts at all times.",
+        "The law states that drivers had to wear seatbelts at all times.",
+        "The law states that drivers must wear seatbelts at all times."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The law states that drivers must wear seatbelts at all times.",
+      "sentence": "The law states, \"Drivers must wear seatbelts at all times.\"",
+      "hint": "A current law is best reported in the present tense, since it still applies.",
+      "explanation": "Because the law is still in effect, both 'states' and 'must' remain in the present tense.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "no tense change needed (current law)"
+      ]
+    },
+    {
+      "id": "dis_l87_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The contract says, \"Payment is due within 30 days.\"",
+      "options": [
+        "The contract says that payment is due within 30 days.",
+        "The contract said that payment was due within 30 days.",
+        "The contract says that payment was due within 30 days."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The contract says that payment is due within 30 days.",
+      "sentence": "The contract says, \"Payment is due within 30 days.\"",
+      "hint": "As long as the contract term is still active, keep everything in the present tense.",
+      "explanation": "Since this term of the contract is still in effect, 'says' and 'is' both stay in the present tense.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "no tense change needed (current contract term)"
+      ]
+    },
+    {
+      "id": "dis_l88_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Priya said, \"I am tired because I ran ten kilometers this morning.\"",
+      "options": [
+        "Priya said that she was tired because she ran ten kilometers that morning.",
+        "Priya said that she was tired because she had run ten kilometers that morning.",
+        "Priya said that she is tired because she had run ten kilometers that morning."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Priya said that she was tired because she had run ten kilometers that morning.",
+      "sentence": "Priya said, \"I am tired because I ran ten kilometers this morning.\"",
+      "hint": "Two different backshifts happen in one sentence: the main clause and the earlier reason both move one step back.",
+      "explanation": "'Am tired' becomes 'was tired', and 'ran' (completed earlier) becomes 'had run'; 'this morning' becomes 'that morning'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'am' → 'was'",
+        "'ran' → 'had run'",
+        "'this morning' → 'that morning'"
+      ]
+    },
+    {
+      "id": "dis_l88_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The engineer said, \"The bridge is safe because it was inspected last month.\"",
+      "options": [
+        "The engineer said that the bridge was safe because it was inspected last month.",
+        "The engineer said that the bridge was safe because it had been inspected the previous month.",
+        "The engineer said that the bridge is safe because it had been inspected the previous month."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The engineer said that the bridge was safe because it had been inspected the previous month.",
+      "sentence": "The engineer said, \"The bridge is safe because it was inspected last month.\"",
+      "hint": "Notice that both clauses need separate treatment — the current state and the earlier action.",
+      "explanation": "'Is safe' becomes 'was safe', 'was inspected' becomes 'had been inspected', and 'last month' becomes 'the previous month'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'is' → 'was'",
+        "'was inspected' → 'had been inspected'",
+        "'last month' → 'the previous month'"
+      ]
+    },
+    {
+      "id": "dis_l88_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The chef said, \"This soup tastes better because I added fresh herbs.\"",
+      "options": [
+        "The chef said that that soup tastes better because he had added fresh herbs.",
+        "The chef said that that soup tasted better because he added fresh herbs.",
+        "The chef said that that soup tasted better because he had added fresh herbs."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The chef said that that soup tasted better because he had added fresh herbs.",
+      "sentence": "The chef said, \"This soup tastes better because I added fresh herbs.\"",
+      "hint": "This isn't a universal truth, so both the opinion and the earlier action need to backshift.",
+      "explanation": "'Tastes' becomes 'tasted' since it's a personal opinion, not a fact, and 'added' becomes 'had added'; 'this' becomes 'that'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'tastes' → 'tasted'",
+        "'added' → 'had added'",
+        "'this' → 'that'"
+      ]
+    },
+    {
+      "id": "dis_l89_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: My colleague said, \"My hometown is very small.\"",
+      "options": [
+        "My colleague said that my hometown is very small.",
+        "My colleague said that her hometown is very small.",
+        "My colleague said that her hometown was very small."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "My colleague said that her hometown is very small.",
+      "sentence": "My colleague said, \"My hometown is very small.\"",
+      "hint": "This is a lasting fact about a place, so the tense can stay, but the possessive still changes.",
+      "explanation": "'My' becomes 'her', but 'is' stays unchanged since it's a lasting fact about her hometown.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'my' → 'her'",
+        "'is' stays present (lasting fact)"
+      ]
+    },
+    {
+      "id": "dis_l89_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The instructor said, \"I always start class with a warm-up.\"",
+      "options": [
+        "The instructor said that he always started class with a warm-up.",
+        "The instructor said that he always starts class with a warm-up.",
+        "The instructor said that I always start class with a warm-up."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The instructor said that he always starts class with a warm-up.",
+      "sentence": "The instructor said, \"I always start class with a warm-up.\"",
+      "hint": "An ongoing routine that's still part of the instructor's teaching doesn't need the tense to shift.",
+      "explanation": "'I' becomes 'he', but 'start' stays present since this is his continuing routine.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'I' → 'he'",
+        "'start' stays present (ongoing routine)"
+      ]
+    },
+    {
+      "id": "dis_l89_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Grace said, \"My office overlooks the harbor.\"",
+      "options": [
+        "Grace said that my office overlooks the harbor.",
+        "Grace said that her office overlooked the harbor.",
+        "Grace said that her office overlooks the harbor."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Grace said that her office overlooks the harbor.",
+      "sentence": "Grace said, \"My office overlooks the harbor.\"",
+      "hint": "As long as the fact about the office is still true, keep the tense as it is.",
+      "explanation": "'My' becomes 'her', and 'overlooks' stays unchanged because it describes a fact that hasn't changed.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'my' → 'her'",
+        "'overlooks' stays present (unchanged fact)"
+      ]
+    },
+    {
+      "id": "dis_l90_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The astronomer said, \"Stars produce their own light.\"",
+      "options": [
+        "The astronomer said that stars produce their own light.",
+        "The astronomer said that stars had produced their own light.",
+        "The astronomer said that stars produced their own light."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The astronomer said that stars produce their own light.",
+      "sentence": "The astronomer said, \"Stars produce their own light.\"",
+      "hint": "Recall the very first exception you learned: universal, scientific truths keep their tense.",
+      "explanation": "'Produce' remains unchanged because this is a universal scientific truth.",
+      "grammarRule": "Universal Truth",
+      "changesList": [
+        "no tense change needed (universal truth)"
+      ]
+    },
+    {
+      "id": "dis_l90_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Omar said, \"I still go jogging every evening.\"",
+      "options": [
+        "Omar said that he still goes jogging every evening.",
+        "Omar said that he still had gone jogging every evening.",
+        "Omar said that he still went jogging every evening."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Omar said that he still goes jogging every evening.",
+      "sentence": "Omar said, \"I still go jogging every evening.\"",
+      "hint": "Check whether this routine is still happening now before deciding on the tense.",
+      "explanation": "Since the habit continues, 'go' stays as 'goes'; only the pronoun changes.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'I' → 'he'",
+        "'go' stays present (ongoing habit)"
+      ]
+    },
+    {
+      "id": "dis_l90_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The notice on the door says, \"This office is closed for renovations.\"",
+      "options": [
+        "The notice on the door said that that office was closed for renovations.",
+        "The notice on the door says that that office is closed for renovations.",
+        "The notice on the door says that this office is closed for renovations."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The notice on the door says that that office is closed for renovations.",
+      "sentence": "The notice on the door says, \"This office is closed for renovations.\"",
+      "hint": "This final review item combines a still-current fact with a demonstrative change.",
+      "explanation": "Since the notice is still posted and current, 'says' and 'is' stay in the present tense, while 'this' becomes 'that' because we're referring to it from elsewhere.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'this' → 'that'",
+        "no tense change needed (still-current notice)"
+      ]
+    }
+  ]
 }

@@ -8,23 +8,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'bread' as used in the sentence below?",
-            "targetWord": "bread",
-            "sentence": "She bought fresh bread from the local bakery every morning.",
+            "question": "The word 'she' is being used as which grammatical category?",
+            "targetWord": "she",
+            "sentence": "Before the interview, she reviewed her notes one more time.",
             "options": [
-                "Noun",
                 "Verb",
+                "Pronoun",
                 "Adjective",
-                "Adverb"
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name foods. What food is named here?",
-            "explanation": "'Bread' is a noun - it names a food. Uncountable food nouns (bread, rice, milk, butter) name substances that cannot normally be counted individually.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "Pronouns replace nouns so we don't repeat a name. Who does 'she' stand in for here?",
+            "explanation": "'She' is a personal pronoun that replaces a specific person's name and functions as the subject of the sentence.",
+            "grammarRule": "Personal pronoun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "subject form",
+                "object form"
             ]
         },
         {
@@ -32,23 +32,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'clean' as used in the sentence below?",
-            "targetWord": "clean",
-            "sentence": "Please keep your hands clean before handling food.",
+            "question": "Which grammatical category best describes 'them' here?",
+            "targetWord": "them",
+            "sentence": "The manager thanked them for finishing the project early.",
             "options": [
-                "Noun",
+                "Pronoun",
+                "Adverb",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe the desired state of a noun. What does 'clean' tell us about 'hands'?",
-            "explanation": "'Clean' is an adjective - it describes the desired state of 'hands'. Predicate adjectives follow linking verbs ('keep ... clean').",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Pronoun",
+            "hint": "Pronouns can also replace nouns as the object of a verb. Who received the thanks?",
+            "explanation": "'Them' is a personal pronoun functioning as the object of 'thanked' — it stands in for the people being referred to instead of naming them directly.",
+            "grammarRule": "Personal pronoun functioning as the object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "subject form",
+                "object form"
             ]
         },
         {
@@ -56,23 +56,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'drives' as used in the sentence below?",
-            "targetWord": "drives",
-            "sentence": "He drives his children to school every weekday morning.",
+            "question": "What kind of word is 'renewed' in this sentence?",
+            "targetWord": "renewed",
+            "sentence": "Grandpa renewed his library card after it expired last spring.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Verb",
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "Verb",
-            "hint": "Verbs describe repeated actions. What does he do every morning?",
-            "explanation": "'Drives' is a verb - it describes a habitual action. Present simple verbs express routines that happen regularly.",
-            "grammarRule": "Verbs",
+            "hint": "Verbs show what someone does. What did Grandpa do to his library card?",
+            "explanation": "'Renewed' is a verb describing the action Grandpa took to extend the card's validity. Note that 'his' is a possessive form, but the target word here is the verb.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -80,23 +80,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'flower' as used in the sentence below?",
-            "targetWord": "flower",
-            "sentence": "She placed a bright flower in a small vase on her desk.",
+            "question": "What role does 'between' play in this sentence?",
+            "targetWord": "between",
+            "sentence": "The new café opened between the pharmacy and the bookstore.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Preposition",
+                "Verb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name natural objects. What natural object is named here?",
-            "explanation": "'Flower' is a noun - it names a natural object. Count nouns like 'flower' can be preceded by 'a' or 'one'.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Preposition",
+            "hint": "Prepositions often show location. Where exactly did the café open?",
+            "explanation": "'Between' is a preposition showing the café's position relative to two other places — it introduces the phrase 'between the pharmacy and the bookstore.'",
+            "grammarRule": "Preposition introducing a location phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related adverb use"
             ]
         },
         {
@@ -104,23 +104,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'dark' as used in the sentence below?",
-            "targetWord": "dark",
-            "sentence": "Dark clouds rolled in from the west before the storm.",
+            "question": "Classify 'shift' as it appears in this sentence.",
+            "targetWord": "shift",
+            "sentence": "Elena swapped her shift with a coworker so she could attend the recital.",
             "options": [
                 "Noun",
+                "Adverb",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe visual qualities. What does 'dark' tell us about the clouds?",
-            "explanation": "'Dark' is an adjective - it describes the colour or visual quality of 'clouds'. It answers 'what kind of clouds?'",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Nouns can name blocks of work time. What did Elena swap?",
+            "explanation": "'Shift' is a noun naming the block of work time Elena exchanged with a coworker — it functions as the direct object of 'swapped'.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "plural form"
             ]
         },
         {
@@ -128,23 +128,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'easily' as used in the sentence below?",
-            "targetWord": "easily",
-            "sentence": "She easily solved the maths problem in her head.",
+            "question": "Which Part of Speech is represented by 'during' here?",
+            "targetWord": "during",
+            "sentence": "During the storm, the power flickered but never fully went out.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Preposition",
+                "Noun",
+                "Verb"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adverb",
-            "hint": "Adverbs tell us HOW an action was done. How did she solve the problem?",
-            "explanation": "'Easily' is an adverb - it modifies the verb 'solved' and answers 'how did she solve it?'",
-            "grammarRule": "Adverbs",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Preposition",
+            "hint": "Some prepositions show when something happens. When did the power flicker?",
+            "explanation": "'During' is a preposition introducing a time phrase — it tells us when the flickering happened, relative to the storm.",
+            "grammarRule": "Preposition introducing a time phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related conjunction use"
             ]
         },
         {
@@ -152,23 +152,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'house' as used in the sentence below?",
-            "targetWord": "house",
-            "sentence": "The old house at the end of the lane had been empty for years.",
+            "question": "Which part of speech is 'but' as it is used here?",
+            "targetWord": "but",
+            "sentence": "Jamal wanted to leave early, but the traffic made that impossible.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Conjunction",
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name types of buildings. What building is named here?",
-            "explanation": "'House' is a noun - it names a type of building. Building nouns (house, flat, office, school) are concrete countable nouns.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Conjunction",
+            "hint": "Conjunctions connect two complete ideas. What word joins these two clauses?",
+            "explanation": "'But' is a coordinating conjunction linking two independent clauses that contrast with each other — Jamal's wish and the traffic reality.",
+            "grammarRule": "Coordinating conjunction joining two independent clauses",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related preposition use"
             ]
         },
         {
@@ -176,23 +176,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'jumped' as used in the sentence below?",
-            "targetWord": "jumped",
-            "sentence": "The cat jumped from the shelf and landed on the sofa.",
+            "question": "How is 'postponed' functioning in this sentence?",
+            "targetWord": "postponed",
+            "sentence": "The airline postponed the flight because of the fog.",
             "options": [
                 "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Verb"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Verb",
-            "hint": "Verbs describe physical movements. What physical action did the cat perform?",
-            "explanation": "'Jumped' is a verb - it describes a physical movement. Motion verbs (jumped, ran, flew, climbed) describe how someone moves.",
-            "grammarRule": "Verbs",
+            "hint": "Verbs show what an organization or person did. What did the airline do to the flight?",
+            "explanation": "'Postponed' is a verb describing the airline's action of delaying the flight.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -200,23 +200,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'sweet' as used in the sentence below?",
-            "targetWord": "sweet",
-            "sentence": "She added sweet honey to her morning porridge.",
+            "question": "Identify the part of speech of 'because' in this context.",
+            "targetWord": "because",
+            "sentence": "Ravi stayed home because he had a fever.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Conjunction",
+                "Adjective"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe taste. What does 'sweet' tell us about the honey?",
-            "explanation": "'Sweet' is an adjective - it describes the taste of 'honey'. Taste adjectives (sweet, bitter, sour, salty) describe how food tastes.",
-            "grammarRule": "Adjectives",
+            "correctAnswer": "Conjunction",
+            "hint": "Subordinating conjunctions explain a reason. Why did Ravi stay home?",
+            "explanation": "'Because' is a subordinating conjunction introducing the reason for Ravi staying home — it connects the reason clause to the main clause.",
+            "grammarRule": "Subordinating conjunction introducing a reason clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related preposition use"
             ]
         },
         {
@@ -224,23 +224,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'sun' as used in the sentence below?",
-            "targetWord": "sun",
-            "sentence": "The sun disappeared behind thick clouds just after noon.",
+            "question": "What part of speech is 'Wow' in this sentence?",
+            "targetWord": "Wow",
+            "sentence": "\"Wow, this view is incredible!\" Mia exclaimed at the summit.",
             "options": [
-                "Noun",
-                "Verb",
+                "Interjection",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Verb"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name natural phenomena. What is named here?",
-            "explanation": "'Sun' is a noun - it names a celestial body. Natural-world nouns (sun, moon, sky, sea) name aspects of the natural environment.",
-            "grammarRule": "Nouns",
+            "correctAnswer": "Interjection",
+            "hint": "Interjections express sudden emotion and often stand alone. What word shows Mia's excitement?",
+            "explanation": "'Wow' is an interjection expressing sudden surprise or admiration — it stands apart from the grammar of the rest of the sentence.",
+            "grammarRule": "Interjection expressing surprise",
             "transformations": [
-                "noun form",
-                "verb form"
+                "interjection use",
+                "related exclamation"
             ]
         },
         {
@@ -248,23 +248,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'sharp' as used in the sentence below?",
-            "targetWord": "sharp",
-            "sentence": "That knife has a very sharp blade, so use it with care.",
+            "question": "Which grammatical category best describes 'incredible' here?",
+            "targetWord": "incredible",
+            "sentence": "The chef prepared an incredible five-course meal for the anniversary.",
             "options": [
-                "Noun",
+                "Adverb",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Adjective"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Adjective",
-            "hint": "Adjectives describe physical properties. What property of the blade does 'sharp' describe?",
-            "explanation": "'Sharp' is an adjective - it describes a physical property of 'blade'. Physical-property adjectives (sharp, rough, smooth) describe object characteristics. ('Sharp' returns as an adverb in level 47.)",
-            "grammarRule": "Adjectives",
+            "hint": "Adjectives describe qualities of nouns. What quality does 'incredible' give the meal?",
+            "explanation": "'Incredible' is an adjective modifying 'meal', describing how impressive it was.",
+            "grammarRule": "Attributive adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "positive form",
+                "superlative form"
             ]
         },
         {
@@ -272,23 +272,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'heavily' as used in the sentence below?",
-            "targetWord": "heavily",
-            "sentence": "It rained heavily throughout the whole afternoon.",
+            "question": "What part of speech is 'Ouch' as used below?",
+            "targetWord": "Ouch",
+            "sentence": "\"Ouch! I just stubbed my toe on the table leg,\" Tomás groaned.",
             "options": [
-                "Noun",
+                "Interjection",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Adjective"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adverb",
-            "hint": "Adverbs tell us HOW INTENSELY an action occurs. How did it rain?",
-            "explanation": "'Heavily' is an adverb - it modifies the verb 'rained' and tells us the intensity. Degree adverbs (heavily, lightly, strongly) describe intensity.",
-            "grammarRule": "Adverbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Interjection",
+            "hint": "Interjections express sudden feelings like pain. What word shows Tomás's reaction?",
+            "explanation": "'Ouch' is an interjection expressing sudden pain — it is grammatically separate from the sentence that follows it.",
+            "grammarRule": "Interjection expressing pain or discomfort",
             "transformations": [
-                "noun form",
-                "verb form"
+                "interjection use",
+                "related exclamation"
             ]
         },
         {
@@ -296,23 +296,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'garden' as used in the sentence below?",
-            "targetWord": "garden",
-            "sentence": "They planted tomatoes in the garden at the start of spring.",
+            "question": "What role does 'it' play in this sentence?",
+            "targetWord": "it",
+            "sentence": "The printer jammed again, so Priya restarted it before the meeting.",
             "options": [
-                "Noun",
+                "Pronoun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Conjunction",
+                "Noun"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name outdoor places. What outdoor space is named here?",
-            "explanation": "'Garden' is a noun - it names an outdoor space. Location nouns (garden, park, field, yard) name specific areas of land.",
-            "grammarRule": "Nouns",
+            "correctAnswer": "Pronoun",
+            "hint": "Pronouns can refer back to something already mentioned. What does 'it' refer to?",
+            "explanation": "'It' is a personal pronoun referring back to 'the printer' — it functions as the object of 'restarted' rather than naming the printer again.",
+            "grammarRule": "Personal pronoun functioning as the object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "subject form",
+                "object form"
             ]
         },
         {
@@ -320,23 +320,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'wrote' as used in the sentence below?",
-            "targetWord": "wrote",
-            "sentence": "She wrote a long letter to her grandmother in the countryside.",
+            "question": "In the same sentence, how does 'before' function?",
+            "targetWord": "before",
+            "sentence": "The printer jammed again, so Priya restarted it before the meeting.",
             "options": [
-                "Noun",
+                "Conjunction",
+                "Preposition",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe communicative actions. What did she do?",
-            "explanation": "'Wrote' is a verb - it is the irregular past tense of 'write'. Irregular past-tense verbs (wrote, spoke, ran) must be memorised.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Preposition",
+            "hint": "Prepositions often show a time relationship. When did Priya restart the printer relative to the meeting?",
+            "explanation": "'Before' is a preposition introducing a time phrase, showing that the restart happened earlier than the meeting. Note that 'so' earlier in the sentence is the conjunction connecting the two clauses.",
+            "grammarRule": "Preposition introducing a time phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related conjunction use"
             ]
         },
         {
@@ -344,23 +344,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'noisy' as used in the sentence below?",
-            "targetWord": "noisy",
-            "sentence": "The noisy traffic outside kept her awake all night.",
+            "question": "Within that same sentence, 'so' is functioning as a:",
+            "targetWord": "so",
+            "sentence": "The printer jammed again, so Priya restarted it before the meeting.",
             "options": [
+                "Preposition",
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Conjunction"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe qualities perceived through the senses. What does 'noisy' tell us about the traffic?",
-            "explanation": "'Noisy' is an adjective - it describes the auditory quality of 'traffic'. Adjectives ending in '-y' (noisy, sunny, cloudy) often describe environmental conditions.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Conjunction",
+            "hint": "Coordinating conjunctions can show a result. What word connects the problem to Priya's reaction?",
+            "explanation": "'So' is a coordinating conjunction joining two independent clauses — it shows that Priya's restarting the printer was a result of it jamming.",
+            "grammarRule": "Coordinating conjunction joining two independent clauses",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related preposition use"
             ]
         },
         {
@@ -368,23 +368,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'rain' as used in the sentence below?",
-            "targetWord": "rain",
-            "sentence": "The rain started just as they arrived at the bus stop.",
+            "question": "Based on how it is used here, 'himself' is a:",
+            "targetWord": "himself",
+            "sentence": "Leo blamed himself for forgetting the tickets.",
             "options": [
                 "Noun",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Pronoun"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name weather phenomena. What weather event is named here?",
-            "explanation": "'Rain' is a noun - it names a weather phenomenon. Weather nouns (rain, snow, wind, fog) are often uncountable.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Pronoun",
+            "hint": "Reflexive pronouns refer back to the subject of the sentence. Who does 'himself' refer to?",
+            "explanation": "'Himself' is a reflexive pronoun referring back to the subject 'Leo' — it shows that the action of blaming was directed at himself.",
+            "grammarRule": "Reflexive pronoun referring back to the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "subject form",
+                "reflexive form"
             ]
         },
         {
@@ -392,23 +392,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'waited' as used in the sentence below?",
-            "targetWord": "waited",
-            "sentence": "He waited for over an hour before the doctor called his name.",
+            "question": "The word 'This' is being used as which grammatical category?",
+            "targetWord": "This",
+            "sentence": "This is the last invoice we need to approve today.",
             "options": [
-                "Noun",
-                "Verb",
+                "Pronoun",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Verb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe states as well as physical actions. What was he doing during that hour?",
-            "explanation": "'Waited' is a verb - it describes the state of waiting over a period. State verbs (waited, stayed, sat) describe ongoing conditions.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Pronoun",
+            "hint": "Demonstrative pronouns can stand alone in place of a noun. What is 'this' replacing here?",
+            "explanation": "'This' is a demonstrative pronoun standing in for a specific item already understood from context — it functions as the subject of the sentence.",
+            "grammarRule": "Demonstrative pronoun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "plural form (these)"
             ]
         },
         {
@@ -416,23 +416,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'patiently' as used in the sentence below?",
-            "targetWord": "patiently",
-            "sentence": "She patiently explained the recipe to her son step by step.",
+            "question": "What role does 'barely' play in this sentence?",
+            "targetWord": "barely",
+            "sentence": "The team barely finished the report before the deadline.",
             "options": [
-                "Noun",
                 "Verb",
+                "Noun",
                 "Adjective",
                 "Adverb"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "Adverb",
-            "hint": "Adverbs describe HOW an action is performed. How did she explain the recipe?",
-            "explanation": "'Patiently' is an adverb - it modifies the verb 'explained'. It is formed from the adjective 'patient' by adding '-ly'.",
-            "grammarRule": "Adverbs",
+            "hint": "Some adverbs show the degree to which something happened. How close did the team come to missing the deadline?",
+            "explanation": "'Barely' is a degree adverb modifying the verb 'finished' — it tells us how narrowly the team completed the report in time.",
+            "grammarRule": "Degree adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adverb use",
+                "related adjective"
             ]
         },
         {
@@ -440,23 +440,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'boy' as used in the sentence below?",
-            "targetWord": "boy",
-            "sentence": "The young boy helped the elderly woman carry her shopping bags.",
+            "question": "What kind of word is 'underneath' in this sentence?",
+            "targetWord": "underneath",
+            "sentence": "The cat curled up underneath the kitchen table all afternoon.",
             "options": [
-                "Noun",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Preposition",
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name people. Is 'boy' naming a person here?",
-            "explanation": "'Boy' is a noun - it names a person. Age-group nouns (boy, girl, man, woman, child) refer to people.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Preposition",
+            "hint": "Prepositions often show where something is positioned. Where did the cat curl up?",
+            "explanation": "'Underneath' is a preposition introducing the phrase that shows the cat's location relative to the table.",
+            "grammarRule": "Preposition introducing a location phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related adverb use"
             ]
         },
         {
@@ -464,23 +464,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'climbed' as used in the sentence below?",
-            "targetWord": "climbed",
-            "sentence": "He climbed the steep ladder to reach the roof for repairs.",
+            "question": "Which category fits 'deadline' in this sentence?",
+            "targetWord": "deadline",
+            "sentence": "Ms. Kapoor extended the deadline after several clients requested more time.",
             "options": [
-                "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe physical movement. What physical action did he perform?",
-            "explanation": "'Climbed' is a verb - it describes upward movement. Motion verbs (climbed, descended, crawled) describe how someone moves through space.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Noun",
+            "hint": "Nouns can name limits or dates. What did Ms. Kapoor extend?",
+            "explanation": "'Deadline' is a noun naming the time limit that was extended — it functions as the direct object of 'extended'.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "plural form"
             ]
         },
         {
@@ -488,23 +488,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'tasty' as used in the sentence below?",
-            "targetWord": "tasty",
-            "sentence": "She prepared a tasty three-course meal for her dinner guests.",
+            "question": "How is 'Despite' functioning in this sentence?",
+            "targetWord": "Despite",
+            "sentence": "Despite the heavy rain, the outdoor market stayed open until evening.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Preposition",
+                "Verb",
+                "Noun"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe the quality of food. What does 'tasty' tell us about the meal?",
-            "explanation": "'Tasty' is an adjective - it describes the quality of the noun 'meal'. Food-quality adjectives (tasty, delicious, bland) describe how food tastes.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Preposition",
+            "hint": "Some prepositions introduce a contrast. What condition did the market stay open in spite of?",
+            "explanation": "'Despite' is a preposition introducing a phrase that contrasts with the main clause — the market stayed open even though it was raining heavily.",
+            "grammarRule": "Preposition introducing a contrast phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related conjunction (although)"
             ]
         },
         {
@@ -512,23 +512,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'desk' as used in the sentence below?",
-            "targetWord": "desk",
-            "sentence": "Her desk was completely covered in books, notes, and folders.",
+            "question": "In this context, what part of speech is 'Although'?",
+            "targetWord": "Although",
+            "sentence": "Although the meeting ran late, everyone stayed focused until the end.",
             "options": [
+                "Conjunction",
                 "Noun",
                 "Verb",
-                "Adjective",
                 "Adverb"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name furniture. What piece of furniture is named here?",
-            "explanation": "'Desk' is a noun - it names a piece of furniture. Furniture nouns (desk, chair, table, sofa) are concrete countable nouns.",
-            "grammarRule": "Nouns",
+            "correctAnswer": "Conjunction",
+            "hint": "Subordinating conjunctions can introduce a contrast at the start of a sentence. What word sets up that contrast here?",
+            "explanation": "'Although' is a subordinating conjunction introducing a clause that contrasts with the main idea — the meeting ran late, yet people still stayed focused.",
+            "grammarRule": "Subordinating conjunction introducing a contrast clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related preposition (despite)"
             ]
         },
         {
@@ -536,23 +536,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'painted' as used in the sentence below?",
-            "targetWord": "painted",
-            "sentence": "The local artist painted a stunning mural on the side of the building.",
+            "question": "How is 'or' functioning in this sentence?",
+            "targetWord": "or",
+            "sentence": "You can pay online, or you can visit the counter in person.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Conjunction",
+                "Noun",
+                "Adjective"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe creative actions. What did the artist do?",
-            "explanation": "'Painted' is a verb - it describes an artistic action. Creative verbs (painted, drew, sculpted) describe acts of artistic creation.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Conjunction",
+            "hint": "Coordinating conjunctions can present a choice between two options. What word links these two possibilities?",
+            "explanation": "'Or' is a coordinating conjunction joining two independent clauses that present alternative options.",
+            "grammarRule": "Coordinating conjunction presenting alternatives",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related preposition use"
             ]
         },
         {
@@ -560,23 +560,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'neatly' as used in the sentence below?",
-            "targetWord": "neatly",
-            "sentence": "She neatly folded each item of clothing before putting it away.",
+            "question": "Classify 'nearly' as it appears in this sentence.",
+            "targetWord": "nearly",
+            "sentence": "The warehouse was nearly empty by the time the truck arrived.",
             "options": [
                 "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Verb"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "Adverb",
-            "hint": "Adverbs describe HOW an action is done. How did she fold the clothing?",
-            "explanation": "'Neatly' is an adverb - it modifies the verb 'folded'. It is formed from the adjective 'neat' by adding '-ly'.",
-            "grammarRule": "Adverbs",
+            "hint": "Some adverbs describe the degree of an adjective. How empty was the warehouse?",
+            "explanation": "'Nearly' is a degree adverb modifying the adjective 'empty' — it tells us the extent to which the warehouse lacked contents.",
+            "grammarRule": "Degree adverb modifying an adjective",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adverb use",
+                "related adjective"
             ]
         },
         {
@@ -584,23 +584,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'bicycle' as used in the sentence below?",
-            "targetWord": "bicycle",
-            "sentence": "She rides her bicycle to work on dry, sunny days.",
+            "question": "Which grammatical category best describes 'Alright' here?",
+            "targetWord": "Alright",
+            "sentence": "\"Alright, let's get started with the demo,\" Coach Diaz announced.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Interjection",
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name vehicles. What vehicle is named here?",
-            "explanation": "'Bicycle' is a noun - it names a vehicle. Transport nouns (bicycle, car, bus, train) name methods of travel.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Interjection",
+            "hint": "Interjections can signal that someone is ready to begin. What word shows Coach Diaz's readiness?",
+            "explanation": "'Alright' functions here as an interjection, standing apart from the sentence grammar to signal readiness before giving an instruction.",
+            "grammarRule": "Interjection signaling readiness or agreement",
             "transformations": [
-                "noun form",
-                "verb form"
+                "interjection use",
+                "related adjective use"
             ]
         },
         {
@@ -608,23 +608,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'shouted' as used in the sentence below?",
-            "targetWord": "shouted",
-            "sentence": "The coach shouted encouragement to the team from the sideline.",
+            "question": "Which part of speech does 'Everyone' represent in this sentence?",
+            "targetWord": "Everyone",
+            "sentence": "Everyone received a copy of the updated schedule.",
             "options": [
                 "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Pronoun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe communication actions. What did the coach do?",
-            "explanation": "'Shouted' is a verb - it describes a loud form of verbal communication. Communication verbs (shouted, whispered, announced) describe how someone speaks.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Pronoun",
+            "hint": "Some pronouns refer to people in general rather than a specific person. Who received the schedule?",
+            "explanation": "'Everyone' is an indefinite pronoun referring to all the people in the group — it functions as the subject of the sentence.",
+            "grammarRule": "Indefinite pronoun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular use",
+                "plural meaning"
             ]
         },
         {
@@ -632,23 +632,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'angry' as used in the sentence below?",
-            "targetWord": "angry",
-            "sentence": "He was angry when he discovered his car had been scratched.",
+            "question": "In this sentence, 'throughout' is functioning as a:",
+            "targetWord": "throughout",
+            "sentence": "The announcement played throughout the building every hour.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Preposition",
+                "Verb"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe emotions. What emotion does 'angry' describe?",
-            "explanation": "'Angry' is an adjective - it describes his emotional state. Emotion adjectives (angry, happy, sad, nervous) follow linking verbs like 'was'.",
-            "grammarRule": "Adjectives",
+            "correctAnswer": "Preposition",
+            "hint": "Some prepositions show that something covers an entire area. Where did the announcement play?",
+            "explanation": "'Throughout' is a preposition introducing a phrase that shows the announcement covered the whole building.",
+            "grammarRule": "Preposition introducing a location phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related adverb use"
             ]
         },
         {
@@ -656,23 +656,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'ball' as used in the sentence below?",
-            "targetWord": "ball",
-            "sentence": "The ball rolled off the table and bounced across the floor.",
+            "question": "Which part of speech is 'against' as it is used here?",
+            "targetWord": "against",
+            "sentence": "As soon as the storm passed, volunteers leaned the fallen signs against the fence and began the cleanup.",
             "options": [
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Preposition",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name sporting objects. What object is named here?",
-            "explanation": "'Ball' is a noun - it names a physical object. It can be preceded by 'the' or 'a', confirming it is a noun.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Preposition",
+            "hint": "Prepositions often show the position of an object after an action. Where did the volunteers place the signs?",
+            "explanation": "'Against' is a preposition introducing a phrase that shows where the volunteers positioned the fallen signs relative to the fence.",
+            "grammarRule": "Preposition introducing a location phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related adverb use"
             ]
         },
         {
@@ -680,23 +680,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'joyfully' as used in the sentence below?",
-            "targetWord": "joyfully",
-            "sentence": "The children joyfully splashed through the puddles after the storm.",
+            "question": "What grammatical job does 'and' do in this sentence?",
+            "targetWord": "and",
+            "sentence": "The volunteers worked quickly, and the storm damage was cleared before nightfall.",
             "options": [
                 "Noun",
+                "Conjunction",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Preposition"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adverb",
-            "hint": "Adverbs describe HOW an action is done. How did the children splash?",
-            "explanation": "'Joyfully' is an adverb - it modifies the verb 'splashed'. It is formed from the adjective 'joyful' by adding '-ly'.",
-            "grammarRule": "Adverbs",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Conjunction",
+            "hint": "Coordinating conjunctions can join two related independent clauses. What word connects these two ideas?",
+            "explanation": "'And' is a coordinating conjunction linking two independent clauses — the volunteers working quickly and the resulting cleanup.",
+            "grammarRule": "Coordinating conjunction joining two independent clauses",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related preposition use"
             ]
         },
         {
@@ -704,23 +704,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'broken' as used in the sentence below?",
-            "targetWord": "broken",
-            "sentence": "A broken chair sat unused in the corner of the storeroom.",
+            "question": "In this sentence, 'them' is functioning as a:",
+            "targetWord": "them",
+            "sentence": "Once the volunteers finished stacking the fallen signs, the neighbors thanked them warmly for their quick response.",
             "options": [
+                "Pronoun",
                 "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
+                "Preposition",
+                "Verb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Past participles often function as adjectives. What does 'broken' tell us about the chair?",
-            "explanation": "'Broken' is an adjective - it is a past participle used to describe the noun 'chair'. Compare: 'she broke the chair' (verb) vs. 'a broken chair' (adjective).",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Pronoun",
+            "hint": "Pronouns can replace nouns mentioned earlier as the object of a verb. Who did the neighbors thank?",
+            "explanation": "'Them' is a personal pronoun referring back to 'the volunteers' — it functions as the object of 'thanked' instead of repeating their name.",
+            "grammarRule": "Personal pronoun functioning as the object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "subject form",
+                "object form"
             ]
         }
     ]

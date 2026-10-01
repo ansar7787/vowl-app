@@ -4,633 +4,633 @@
     "levels": "31-40",
     "quests": [
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the strength that's explicitly matched to what this role actually needs.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle change at work?",
+            "interviewerQuestion": "Looking at this specific role, which of your strengths do you think matters most?",
             "options": [
-                "I don't love change, but I deal with it.",
-                "I try to stay flexible and look for the opportunity in new situations.",
-                "I usually resist change until I have no other choice."
+                "I'd say my strengths are pretty balanced across the board, so I don't think one stands out over the others for this role.",
+                "Probably my writing — this role is heavy on content, and that's the strength I'd lean on most day to day.",
+                "I'm not sure which one applies best here specifically."
             ],
             "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Framing change as an opportunity shows adaptability.",
-            "explanation": "Framing change as an opportunity, rather than a problem, shows strong adaptability, which employers highly value.",
+            "hint": "Pick one strength and explicitly connect it to what this role actually needs day to day.",
+            "explanation": "Explicitly matching a specific strength to the role's main demands shows you understand the job, not just yourself. A 'balanced across the board' answer avoids making a real choice, and admitting uncertainty about fit undercuts the whole answer.",
             "id": "ji_l31_q1",
             "interviewerReaction": [
-                "disappointed",
+                "neutral",
                 "impressed",
-                "disappointed"
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which strength is tied most directly to this specific role's demands?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you adjust when priorities shift suddenly?",
+            "interviewerQuestion": "Of everything you're good at, what would actually help you most in this operations role?",
             "options": [
-                "It usually throws off my whole day.",
-                "I try to stick to my original plan anyway.",
-                "I reassess my plan quickly and communicate any needed adjustments to my team."
+                "Honestly, most of my strengths would probably apply somewhat, so it's hard to point to just one that matters most.",
+                "I'm good with people, which helps in most jobs, and I've always been able to get along with all kinds of coworkers.",
+                "Staying calm when priorities shift suddenly — this role sounds like it involves a lot of that."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Quick reassessment and clear communication show strong adaptability.",
-            "explanation": "Quick reassessment paired with clear communication shows you can adapt without losing sight of your team's needs.",
+            "professionalismRating": 4,
+            "hint": "Choose the strength most directly tied to what this specific role demands.",
+            "explanation": "A strength tied directly to the role's specific demands, like handling shifting priorities, is far more convincing than a generally useful trait. Vague applicability to 'most jobs' doesn't show role-specific thinking.",
             "id": "ji_l31_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "uncertain",
+                "neutral",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names a specific skill matched to this role's core challenge.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a time you had to adapt to a big change at work.",
+            "interviewerQuestion": "Which of your skills do you think will matter most for this support role?",
             "options": [
-                "When our team switched software systems, I took the lead in learning it quickly and helping others.",
-                "I struggled a lot and it took me a long time to adjust.",
-                "I don't think I've experienced any major changes at work."
+                "I'd need to be in the role a bit to know which skill matters most.",
+                "Explaining technical things in simple terms — a lot of this role is probably translating jargon for confused customers.",
+                "I think I'm just generally a strong communicator, and people tell me I'm easy to talk to about pretty much anything, no matter who I'm dealing with."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "A specific story where you took initiative during change works well.",
-            "explanation": "A specific story where you took initiative during change proves your adaptability with real evidence.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Name the specific skill that matches this role's core challenge, not a broad label.",
+            "explanation": "Naming the specific skill that matches this role's core challenge shows real insight into the job. A broad label like 'strong communicator' is vaguer, and deferring the question entirely avoids showing insight now.",
             "id": "ji_l31_q3",
             "interviewerReaction": [
+                "uncertain",
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that meets the follow-up with a genuinely specific example.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How would you describe your work ethic?",
+            "interviewerQuestion": "That's a fairly common answer — can you give me something more specific about a weakness you've actually struggled with?",
             "options": [
-                "I do enough to get by.",
-                "I take pride in my work and always follow through on my commitments.",
-                "It depends on how I'm feeling that day."
+                "Fair enough — I used to avoid giving feedback to peers because I didn't want it to feel awkward, so I've been practicing doing it more directly and kindly.",
+                "I guess I'll just say I'm sometimes too much of a perfectionist.",
+                "I really did mean what I said, it's just hard to think of a better example on the spot, since it's more of a general tendency than a story."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Pride in your work and reliability are strong work-ethic traits.",
-            "explanation": "Pride in your work combined with reliability are strong, specific traits that reassure employers about your dependability.",
+            "hint": "When pushed for specifics, give a genuinely concrete, personal example rather than defending the first answer or reverting to a cliché.",
+            "explanation": "Responding to pushback with a genuinely specific, personal example shows real self-reflection under pressure. Defending the vague original answer avoids the request, and falling back on the classic 'perfectionist' answer feels like it's dodging the challenge rather than answering it.",
             "id": "ji_l32_q1",
             "interviewerReaction": [
-                "disappointed",
                 "impressed",
-                "disappointed"
+                "skeptical",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which answer gives a real consequence and what changed afterward?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What drives your work ethic?",
+            "interviewerQuestion": "A lot of candidates say something like that. What's a real example of when this weakness caused a problem?",
             "options": [
-                "I believe in doing quality work, even when no one is checking on me.",
-                "I work hardest when someone is watching.",
-                "I don't think about it much, I just work."
+                "I don't think it's ever actually caused a real problem, to be honest.",
+                "Once I pushed too hard on a soft 'maybe' from a client and it made them pull back, so now I check in about their comfort level instead of assuming interest.",
+                "It's hard to think of a specific time, but I know it's something I do, and I try to stay aware of it whenever it comes up at work."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Consistency, even without supervision, is a strong signal of work ethic.",
-            "explanation": "Consistency without needing supervision is a strong signal that you can be trusted to manage your own work.",
+            "hint": "A real consequence, with what you changed afterward, answers the follow-up directly.",
+            "explanation": "Describing a real consequence, and what changed as a result, directly answers a skeptical follow-up. Struggling to recall an example undercuts your credibility, and claiming it never caused a problem contradicts having named it as a weakness at all.",
             "id": "ji_l32_q2",
             "interviewerReaction": [
+                "skeptical",
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that gives a specific incident rather than a vague trend or a reframed strength.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you stay committed to a task even when it's boring?",
+            "interviewerQuestion": "I want a concrete example, not just a general trait. Can you walk me through one?",
             "options": [
-                "I usually rush through boring tasks to get them over with.",
-                "I tend to procrastinate on tasks I don't enjoy.",
-                "I remind myself how the task fits into the bigger picture and stay focused on finishing well."
+                "It's more of an ongoing thing than a single moment I can point to.",
+                "Okay — I suppose being too honest could be seen as a weakness sometimes.",
+                "Sure — I once let a project go too long without checking in with the team, and we ended up duplicating some work, so now I set a check-in every few days."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Connecting a task to the bigger picture helps maintain motivation.",
-            "explanation": "Connecting a task to the bigger picture is a mature strategy that helps maintain quality even on less exciting work.",
+            "hint": "A specific incident with a lasting fix answers a request for concreteness better than a vague trend or a flattering reframe.",
+            "explanation": "A specific incident paired with a lasting fix directly answers the request for concreteness. Saying it's an ongoing pattern avoids giving an example, and reframing honesty as a disguised weakness is a classic dodge that experienced interviewers usually notice.",
             "id": "ji_l32_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "uncertain",
+                "skeptical",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that frames the shift around what you want to build.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you like to spend your weekends?",
+            "interviewerQuestion": "You've mostly had temporary or seasonal roles before — why are you looking for something more permanent now?",
             "options": [
-                "I enjoy staying active, like going for runs, and catching up with friends.",
-                "I usually just stay in bed all weekend.",
-                "I'd rather not share details about my weekends."
+                "I guess I've just been going wherever the next opportunity was.",
+                "I've enjoyed the variety, but I'm ready to build real depth in one place and grow with a team over time.",
+                "Temporary work just doesn't pay as well, honestly, and the constant uncertainty about the next assignment gets old."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "A simple, positive answer about balance works well here.",
-            "explanation": "A simple, positive answer shows you maintain a healthy balance between work and personal life.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Frame the shift in terms of what you want to build, not just what you want to avoid.",
+            "explanation": "Framing the shift toward wanting to build depth and grow with a team gives a positive reason for permanence. Focusing only on pay is a narrower, less compelling reason, and describing it as drifting between opportunities doesn't show intentional direction.",
             "id": "ji_l33_q1",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain",
+                "pleased",
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which answer connects the change to genuine clarity about your direction?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What do you enjoy doing when you're not working?",
+            "interviewerQuestion": "What's changed that makes you want full-time, ongoing work now?",
             "options": [
-                "I don't really do anything productive outside of work.",
-                "That's not really relevant to this interview.",
-                "I like learning new things, so I've been taking an online course in my free time."
+                "I just need something steadier at this point in my life, and I'm tired of not knowing where my next paycheck is coming from each month.",
+                "Nothing in particular, it just seemed like time to try something different.",
+                "I've gotten a clearer sense of what I actually enjoy doing, and I'd like the chance to get really good at it in one place."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Mentioning ongoing learning shows initiative even outside of work.",
-            "explanation": "Mentioning ongoing learning outside of work shows initiative and curiosity that often carries over into your job performance.",
+            "professionalismRating": 4,
+            "hint": "Connect the change to genuine clarity about your direction, not just external necessity.",
+            "explanation": "Connecting the shift to genuine clarity about your direction shows intentional career thinking. Needing something steadier is a fair, honest reason but less compelling on its own, and having no real reason suggests less thought behind the change.",
             "id": "ji_l33_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "neutral",
+                "uncertain",
+                "pleased"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that highlights what you'll gain by staying in one place.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Do you have any activities that help you unwind?",
+            "interviewerQuestion": "Why leave contract work behind for a permanent position?",
             "options": [
-                "Not really, I mostly just feel tired all the time.",
-                "I enjoy gardening, it helps me relax and clear my mind after a busy week.",
-                "I usually just scroll on my phone for hours."
+                "I like the idea of really understanding one operation deeply instead of restarting from scratch every few months.",
+                "It wasn't really a big decision, this role just came up.",
+                "Contract work is fine, but benefits would obviously be nice, and having paid leave and a steady schedule matters to me."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "An activity that shows healthy stress management leaves a good impression.",
-            "explanation": "An activity that shows healthy stress management, like gardening, suggests you're good at maintaining balance.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Highlight what you'll gain by staying in one place, not just external benefits.",
+            "explanation": "Highlighting what you'll gain from depth in one place, like really understanding an operation, is a more compelling reason than benefits alone. Framing it as a decision you didn't really make suggests less intentionality.",
             "id": "ji_l33_q3",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "pleased",
+                "uncertain",
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer with an actual, checkable method, not just a positive-sounding claim.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle a heavy workload?",
+            "interviewerQuestion": "How do you make sure a team project stays on track?",
             "options": [
-                "I usually feel overwhelmed and struggle to keep up.",
-                "I break the work into manageable pieces and tackle the most important tasks first.",
-                "I just work extra hours until it's all done."
+                "I stay in close communication with the team throughout, and I make sure everyone feels comfortable raising any concerns.",
+                "I check in on specific milestones each week and flag early if something looks like it's slipping.",
+                "I trust that everyone will get their part done on time."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Breaking work into manageable pieces is a practical, sustainable strategy.",
-            "explanation": "Breaking work into manageable pieces is a practical, sustainable strategy rather than just relying on extra hours.",
+            "professionalismRating": 4,
+            "hint": "Both positive-sounding options aren't equal — look for the one with an actual, checkable method.",
+            "explanation": "A specific method with checkable milestones is stronger than a positive-sounding but vague claim about staying in communication. Simply trusting others to deliver isn't really a method at all.",
             "id": "ji_l34_q1",
             "interviewerReaction": [
-                "disappointed",
+                "neutral",
                 "impressed",
-                "disappointed"
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which answer actively confirms the outcome, rather than just intending to?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What do you do when you're given more work than you can handle alone?",
+            "interviewerQuestion": "How do you make sure customers leave a conversation satisfied?",
             "options": [
-                "I try to do it all myself, even if it means working late every night.",
-                "I usually just let some things slip.",
-                "I communicate with my manager about priorities and ask for support if needed."
+                "I usually just go by their tone to guess if they're happy.",
+                "I always try to be as helpful as I possibly can, and I go out of my way to make sure customers feel valued and never rushed.",
+                "Before ending the call, I ask directly if there's anything else they need, so nothing's left unresolved."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Communicating with your manager is a professional way to manage an overload.",
-            "explanation": "Communicating with your manager about an overload is professional, rather than silently struggling or letting tasks slip.",
+            "professionalismRating": 4,
+            "hint": "A specific final check is stronger than a general intention to be helpful.",
+            "explanation": "A specific final check, like directly asking if anything else is needed, actively confirms satisfaction. A general intention to be helpful sounds positive but is vague, and guessing by tone alone is unreliable.",
             "id": "ji_l34_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "concerned",
+                "neutral",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the concrete system over a general claim of being organized.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you avoid burnout during especially busy periods?",
+            "interviewerQuestion": "How do you keep multiple tasks from falling through the cracks?",
             "options": [
-                "I set realistic priorities and make sure to take short breaks to stay focused.",
-                "I just push through until the busy period is over.",
-                "I haven't really thought about how to avoid burnout."
+                "I try to stay really organized in general,. but honestly, I haven't really put that to the test.",
+                "I usually just remember what's most important, and the smaller things tend to get done when there's a quiet moment.",
+                "I keep a running list with deadlines and review it every morning to catch anything at risk."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "A specific self-care strategy shows long-term sustainability.",
-            "explanation": "A specific self-care strategy, like taking short breaks, shows you think about sustainable, long-term performance.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "A concrete system beats a general claim of being organized.",
+            "explanation": "A concrete system, like a reviewed running list, is a real method you can point to. Claiming general organization sounds good but isn't specific, and relying on memory for what's most important is the least reliable option.",
             "id": "ji_l34_q3",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "neutral",
+                "uncertain",
+                "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that balances following direction with the option to voice a differing idea.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What skills do you bring to this role?",
+            "interviewerQuestion": "How do you feel about taking direction from a supervisor, even on things you might do differently yourself?",
             "options": [
-                "I'm not totally sure what skills would be most useful here.",
-                "I bring strong problem-solving skills and experience working with customers.",
-                "I bring whatever skills you're looking for, I guess."
+                "I'm comfortable with it — if I have a different idea, I might mention it once, but I'll follow their direction either way.",
+                "I usually just do it their way without saying anything, even if I disagree.",
+                "It depends on whether I think their way is actually right."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Naming specific, relevant skills is much stronger than a vague answer.",
-            "explanation": "Naming specific, relevant skills gives the interviewer concrete evidence of what you'll contribute to the role.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Comfort with direction plus the option to voice an idea once is stronger than pure compliance or conditional obedience.",
+            "explanation": "Being comfortable following direction while still allowed to voice a differing idea shows both respect and healthy input. Silent compliance suppresses useful ideas, and conditional obedience based on your own judgment of what's 'right' can come across as difficult to manage.",
             "id": "ji_l35_q1",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "reassured",
+                "uncertain",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which response follows the instruction while still genuinely trying to understand it?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What unique skills make you a strong fit for this position?",
+            "interviewerQuestion": "What's your approach when a supervisor gives you an instruction that seems inefficient to you?",
             "options": [
-                "I don't think my skills are that unique, honestly.",
-                "I'm good at a lot of random things.",
-                "My background in data analysis lets me spot patterns that help teams make better decisions."
+                "I'll follow it, and if there's a good moment, I'll ask about the reasoning so I understand it better next time.",
+                "I'll just do it their way and not worry about understanding why.",
+                "I'd probably point out a better way before doing it, since I'd rather save everyone time than follow a slower method."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Connecting a specific skill to a real workplace benefit is very effective.",
-            "explanation": "Connecting a specific skill to a real workplace benefit shows you understand how your abilities translate into value.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Following the instruction while genuinely trying to understand it beats blind compliance or leading with a correction.",
+            "explanation": "Following the instruction while asking to understand the reasoning shows both respect and genuine curiosity. Blind compliance without curiosity limits your own learning, and leading with a correction before you fully understand the context can come across as presumptuous.",
             "id": "ji_l35_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "reassured",
+                "neutral",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that actively tracks current priorities rather than passively coping.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Which of your skills do you think will help you most in this job?",
+            "interviewerQuestion": "How do you handle it when your manager's priorities change frequently?",
             "options": [
-                "My attention to detail helps me catch errors before they become bigger problems.",
-                "I'm not sure which skills matter most for this job.",
-                "Probably all of them equally, I'd say."
+                "It can be frustrating, but I deal with it, and I try not to let it show when plans change at the last minute.",
+                "I usually just keep working on what I originally had, unless told otherwise, since that's what I was asked to do first.",
+                "I try to stay flexible and just make sure I always know what's currently most important to them."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Picking one skill and explaining its impact is clearer than listing many at once.",
-            "explanation": "Picking one skill and clearly explaining its impact is more memorable than vaguely listing many skills at once.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Actively tracking current priorities is stronger than passively tolerating change or defaulting to the original plan.",
+            "explanation": "Actively staying aligned with current priorities shows real adaptability. Tolerating frustration is honest but passive, and defaulting to the original plan risks working on something that's no longer the priority.",
             "id": "ji_l35_q3",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "neutral",
+                "concerned",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that addresses the specific behavior directly and privately.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you approach learning new skills?",
+            "interviewerQuestion": "What would you do if a coworker kept doing something you found unhelpful during shifts?",
             "options": [
-                "I usually just figure it out eventually, however long it takes.",
-                "I look for hands-on practice and ask questions when I need clarification.",
-                "I don't enjoy learning new things very much."
+                "I'd bring it up with them directly and privately, focusing on the specific behavior rather than making it personal.",
+                "I'd mention it to a manager first, before saying anything to them.",
+                "I'd probably just adjust around it instead of saying anything, since I don't want to create tension with someone I see daily."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "A proactive, hands-on approach to learning is a great trait to highlight.",
-            "explanation": "A proactive, hands-on approach shows you take ownership of your own learning rather than waiting for it to happen.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Addressing the specific behavior directly and privately, first, is usually the more respectful and direct approach.",
+            "explanation": "Addressing the specific behavior directly and privately respects the coworker and often resolves things faster. Working around the issue silently lets it continue, and going to a manager before speaking to the coworker can seem like skipping a step.",
             "id": "ji_l36_q1",
             "interviewerReaction": [
-                "disappointed",
                 "impressed",
-                "disappointed"
+                "uncertain",
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which approach focuses the disagreement on evidence rather than authority or persistence?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you had to quickly learn something new for work.",
+            "interviewerQuestion": "How would you handle a disagreement with a coworker about the best way to do something?",
             "options": [
-                "I usually struggle when I have to learn things quickly.",
-                "I haven't really had to learn anything new recently.",
-                "I taught myself a new software program in a week by following tutorials and practicing daily."
+                "I'd probably just defer to whoever has more experience, since they've likely seen the problem before and know what tends to work in practice.",
+                "I'd explain my reasoning, listen to theirs, and try to find whichever approach actually has the better evidence behind it.",
+                "I'd try to convince them my way is better."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "A specific example with a timeline shows real learning speed and effort.",
-            "explanation": "A specific example with a clear timeline shows real learning speed and the effort you put into mastering new skills.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Focus on comparing the reasoning and evidence behind each approach, not just authority or persistence.",
+            "explanation": "Comparing the actual reasoning behind each approach focuses the disagreement on what will work best. Deferring purely to experience can overlook a genuinely better idea, and simply trying to convince them prioritizes winning over finding the best answer.",
             "id": "ji_l36_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "neutral",
+                "impressed",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the most measured first step when something feels unfair.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you keep your skills up to date?",
+            "interviewerQuestion": "If a coworker publicly took credit for something you'd actually done, what would you do?",
             "options": [
-                "I regularly read industry articles and take courses to stay current in my field.",
-                "I don't really make an effort to update my skills.",
-                "I rely on my job to teach me whatever I need to know."
+                "I'd let it go, it's not worth the tension, and I'd rather be seen as easygoing than as someone who makes a fuss over one project.",
+                "I'd correct the record in front of others right away.",
+                "I'd talk to them privately first to understand what happened, before deciding if anything further needed to be said."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Ongoing, self-directed learning shows real commitment to growth.",
-            "explanation": "Ongoing, self-directed learning shows real commitment to growth, rather than relying only on what your job requires.",
+            "hint": "A private conversation first is usually more measured than public correction or letting it go entirely.",
+            "explanation": "A private conversation first allows for a reasonable explanation and avoids unnecessary conflict. Letting it go entirely can allow a pattern to continue, while correcting it publicly right away can escalate a situation that might have an innocent explanation.",
             "id": "ji_l36_q3",
             "interviewerReaction": [
-                "impressed",
                 "disappointed",
-                "disappointed"
+                "concerned",
+                "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that lets real urgency, not assumption, decide.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a time you helped a colleague.",
+            "interviewerQuestion": "What would you do if a customer needed help right when your manager asked you to do something else?",
             "options": [
-                "I don't really remember helping anyone specific.",
-                "A coworker was struggling with a new system, so I spent time walking them through it step by step.",
-                "I usually let people figure things out on their own."
+                "I'd quickly let my manager know I'm helping a customer first, unless they say it's more urgent.",
+                "I'd help the customer and deal with my manager's request after, since customers are the whole reason we're here.",
+                "I'd stop helping the customer immediately since it's my manager asking, and explain to the customer that something came up."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "A specific example of hands-on support works best here.",
-            "explanation": "A specific example of hands-on support proves your willingness to help, rather than just claiming to be helpful.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "A quick check-in lets the more urgent priority actually be identified, rather than assuming either one automatically wins.",
+            "explanation": "A quick check-in lets the truly more urgent task be identified in the moment. Assuming the customer always comes first, or the manager always comes first, skips a decision that should really depend on the situation.",
             "id": "ji_l37_q1",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "reassured",
+                "neutral",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which method compares actual urgency rather than order of arrival?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you supported a struggling teammate.",
+            "interviewerQuestion": "If two different people needed something from you urgently at the same time, how would you decide who to help first?",
             "options": [
-                "I usually stay focused on my own work and let others manage theirs.",
-                "I didn't really notice any teammates struggling.",
-                "I noticed a teammate falling behind, so I offered to split some tasks and helped them catch up."
+                "I'd probably help whoever asked first, since that seems like the fairest way and nobody can say I played favorites between coworkers.",
+                "I'd try to do a little bit for each person at the same time.",
+                "I'd briefly ask both what their actual deadline is, then start with whichever is genuinely more time-sensitive."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Noticing a problem and taking action shows genuine teamwork.",
-            "explanation": "Noticing a problem and taking action to help shows genuine teamwork, not just working alongside others.",
+            "professionalismRating": 4,
+            "hint": "Comparing actual urgency is more reliable than the order requests came in or trying to split attention.",
+            "explanation": "Briefly comparing actual urgency lets you prioritize based on real need, not just order of arrival. Helping whoever asked first can mean the truly urgent task waits, and splitting attention between both often means neither gets done well.",
             "id": "ji_l37_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "neutral",
+                "uncertain",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that acknowledges both sides before committing fully to either.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How have you supported a colleague's professional growth?",
+            "interviewerQuestion": "A patient at the desk needs help and your supervisor calls with an urgent request — what do you do?",
             "options": [
-                "I mentored a new team member by sharing tips and answering their questions during their first month.",
-                "I haven't really had the chance to mentor anyone.",
-                "I usually leave that kind of thing to managers."
+                "I'd quickly let the patient know I'll be right with them, take a moment to hear what my supervisor needs, then handle whichever is genuinely more urgent first.",
+                "I'd put the patient on hold indefinitely to deal with my supervisor.",
+                "I'd finish with the patient completely before answering my supervisor, since it's rude to walk away from someone mid-conversation."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Mentoring or actively sharing knowledge shows leadership potential.",
-            "explanation": "Mentoring or actively sharing knowledge shows leadership potential, even without an official leadership title.",
+            "hint": "A brief acknowledgment to both sides, followed by a real urgency check, works better than committing fully to one before even hearing the other.",
+            "explanation": "Briefly acknowledging both, then judging real urgency, respects both people while still prioritizing correctly. Fully finishing with the patient first risks ignoring something urgent, and leaving the patient waiting indefinitely is dismissive.",
             "id": "ji_l37_q3",
             "interviewerReaction": [
-                "impressed",
+                "reassured",
                 "disappointed",
-                "disappointed"
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that balances ambition with focus on the current role.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What do you expect from a manager?",
+            "interviewerQuestion": "Are you the type of person who wants to move up quickly?",
             "options": [
-                "I appreciate clear communication and regular feedback on my performance.",
-                "I don't really need much from a manager.",
-                "I expect them to leave me alone and not check in much."
+                "I'd like to grow over time, but I'm mainly focused on doing well in this role first and earning that next step.",
+                "Yes, I'd like to move up as fast as possible, ideally within the first year, since I'm not planning to stay in an entry-level position.",
+                "I haven't really thought about moving up, I'm just focused on getting hired."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Clear communication and feedback are reasonable, professional expectations.",
-            "explanation": "Clear communication and regular feedback are reasonable, professional expectations that support a healthy working relationship.",
+            "professionalismRating": 4,
+            "hint": "Balance genuine ambition with a clear focus on succeeding in the current role first.",
+            "explanation": "Balancing genuine ambition with a focus on earning growth through the current role shows patience and self-awareness. Wanting to move up as fast as possible can sound impatient, and having no interest in growth at all can raise questions about long-term engagement.",
             "id": "ji_l38_q1",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "pleased",
+                "uncertain",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which answer frames growth as something earned, not the main point of taking the job?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What kind of management style works best for you?",
+            "interviewerQuestion": "Do you see this as a long-term role or a stepping stone to something else?",
             "options": [
-                "I need someone to watch over everything I do.",
-                "I do well with a manager who sets clear goals but trusts me to find my own approach.",
-                "I don't really care what style my manager has."
+                "Honestly, it's probably a stepping stone toward something else, though I'd give it my full effort for as long as I'm here.",
+                "I see it as a genuine role I want to do well in, and if a growth opportunity comes from that later, I'd welcome it.",
+                "I try not to think too far ahead about that kind of thing."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "A balance of clear direction and trust is a strong, realistic answer.",
-            "explanation": "A balance of clear direction and trust shows you're both self-sufficient and open to guidance, which most managers appreciate.",
+            "professionalismRating": 4,
+            "hint": "Frame growth as something earned through doing well now, not as the main point of taking the job.",
+            "explanation": "Framing growth as something that follows from doing well now shows genuine commitment to the role itself. Calling it mainly a stepping stone can undercut trust in your investment, and avoiding the question entirely doesn't really answer it.",
             "id": "ji_l38_q2",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "concerned",
+                "pleased",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that pairs ambition with patience.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What qualities do you value most in a supervisor?",
+            "interviewerQuestion": "How ambitious would you say you are?",
             "options": [
-                "I haven't really thought about what I value in a supervisor.",
-                "I mostly just want a supervisor who doesn't ask too much of me.",
-                "I value a supervisor who gives honest feedback and supports my growth."
+                "Fairly ambitious, but I think that shows best through consistently doing good work, not by rushing the timeline.",
+                "Extremely — I don't plan on staying in one position for very long.",
+                "Not especially, I'm pretty content wherever I end up, and I don't need a big title or a lot of extra responsibility to feel like I'm doing well."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Honest feedback and support for growth are qualities that benefit any employee.",
-            "explanation": "Honest feedback and support for growth show you're focused on long-term development, not just an easy experience.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Pair genuine ambition with patience, rather than urgency or indifference.",
+            "explanation": "Pairing genuine ambition with patience shows drive without sounding restless. Emphasizing a short expected tenure can worry an employer investing in you, and claiming no ambition at all can undersell your motivation.",
             "id": "ji_l38_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "impressed",
+                "concerned",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that claims your specific contribution while still crediting the team.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle repetitive tasks?",
+            "interviewerQuestion": "Describe a result you're proud of that you couldn't have achieved alone.",
             "options": [
-                "I usually get bored and lose focus.",
-                "I try to avoid repetitive tasks whenever possible.",
-                "I find ways to stay focused and look for small improvements to make the process more efficient."
+                "It was really more of a team thing, I didn't do anything special.",
+                "Honestly, I did most of the important work on that one, and the rest of the team mostly helped with smaller pieces around the edges.",
+                "I led the layout planning for a group project that scored well, though a lot of that success came from how well the whole team pulled together."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Looking for small improvements shows initiative even in routine work.",
-            "explanation": "Looking for small improvements in routine work shows initiative, even in tasks that aren't especially exciting.",
+            "hint": "Claim your specific contribution clearly while still crediting the team, rather than overclaiming or disappearing into the group.",
+            "explanation": "Clearly naming your specific contribution while crediting the team balances confidence with humility. Overclaiming individual credit can seem self-centered, and disappearing entirely into 'the team' fails to actually answer what you contributed.",
             "id": "ji_l39_q1",
             "interviewerReaction": [
                 "disappointed",
-                "disappointed",
+                "concerned",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which answer names your specific role in a shared success, honestly?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What's your approach to tasks that don't change much day to day?",
+            "interviewerQuestion": "What's an achievement you're proud of, even if others were involved?",
             "options": [
-                "I stay consistent and take pride in doing routine work well and reliably.",
-                "I tend to rush through them without much care.",
-                "I try to get someone else to do them instead."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Consistency and pride in routine work show strong professionalism.",
-            "explanation": "Consistency and pride in routine work show strong professionalism, since every job includes some repetitive tasks.",
-            "id": "ji_l39_q2",
-            "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "How do you stay motivated doing the same task repeatedly?",
-            "options": [
-                "Honestly, it's hard for me to stay motivated on repetitive tasks.",
-                "I remind myself how the task supports the bigger goal and take satisfaction in doing it well.",
-                "I usually just try to get through it as fast as possible, quality aside."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Connecting a routine task to the bigger goal helps maintain quality and motivation.",
-            "explanation": "Connecting a routine task to the bigger goal helps maintain both motivation and quality, which employers notice over time.",
-            "id": "ji_l39_q3",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "What's your availability to start?",
-            "options": [
-                "I can start tomorrow, I don't need to give notice.",
-                "I'm not really sure when I'd be available.",
-                "I can start within two weeks, after giving proper notice at my current job."
+                "That was a team effort, so it wouldn't be fair to single myself out.",
+                "That deal really came down to my pitch, more than anything else, though my teammates handled some of the routine follow-up afterward.",
+                "I built the pitch strategy that helped us land a big client, working closely with two teammates who handled the follow-up."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Giving proper notice at a current job is seen as professional and respectful.",
-            "explanation": "Giving proper notice at a current job is seen as professional and respectful, and reassures employers about your integrity.",
-            "id": "ji_l40_q1",
+            "professionalismRating": 4,
+            "hint": "Name your specific role in a shared success clearly, without erasing yourself or minimizing others.",
+            "explanation": "Naming your specific role in a shared success gives a clear, honest picture of your contribution. Framing the whole result as mainly yours risks sounding self-centered, and refusing to name your role at all avoids answering the question.",
+            "id": "ji_l39_q2",
             "interviewerReaction": [
                 "disappointed",
-                "disappointed",
+                "concerned",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that describes your real contribution honestly.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How soon could you begin working with us?",
+            "interviewerQuestion": "Tell me about something you accomplished that you're proud of, working alongside others.",
             "options": [
-                "Whenever works, I don't really have a plan.",
-                "I'd need about two weeks to wrap up my current responsibilities properly.",
-                "Immediately, my current job doesn't matter to me."
+                "I basically kept the whole event from falling apart, because without me the volunteers would have been completely lost on the busiest afternoon.",
+                "I coordinated volunteer scheduling for an event that ran smoothly, which took real cooperation from a great group of volunteers.",
+                "I just helped out where I could, nothing worth highlighting really."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "A clear timeline that respects your current commitments sounds professional.",
-            "explanation": "A clear timeline that respects your current commitments shows professionalism and responsibility toward your current employer.",
-            "id": "ji_l40_q2",
+            "professionalismRating": 4,
+            "hint": "Describe your specific, real contribution honestly, without overstating your role or dismissing it entirely.",
+            "explanation": "Describing your specific, real contribution honestly gives an accurate, confident picture. Overstating your role by claiming you single-handedly saved the event risks sounding exaggerated, and dismissing your contribution entirely fails to answer the question with any substance.",
+            "id": "ji_l39_q3",
             "interviewerReaction": [
-                "disappointed",
+                "concerned",
                 "impressed",
                 "disappointed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that weaves a strength, a growth area, and a real motivation together.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Are you available to start right away?",
+            "interviewerQuestion": "Pulling everything together, tell me why you're a strong fit for this role, including anything I should know about your growth areas.",
             "options": [
-                "I could start within a couple of weeks, once I've properly transitioned my current role.",
-                "Yes, right away, no questions asked.",
-                "I haven't thought about timing yet."
+                "I think I'm a great fit overall, and I don't have any major concerns about myself.",
+                "My biggest strength is staying organized under pressure, I'm actively working on being more concise when I explain things, and I'm genuinely motivated by roles where I can see the direct impact of my work.",
+                "There's a lot to say, I'm not sure where to start with all of that."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 5,
+            "hint": "Weave a specific strength, an honest growth area, and a real motivation into one coherent answer.",
+            "explanation": "Weaving a specific strength, an honest growth area, and a genuine motivation into one coherent answer shows real self-awareness and preparation. Claiming no concerns at all sounds unrealistic, and being unable to organize your own answer undercuts the very organization you might be claiming as a strength.",
+            "id": "ji_l40_q1",
+            "interviewerReaction": [
+                "skeptical",
+                "impressed",
+                "unconvinced"
+            ]
+        },
+        {
+            "instruction": "Which answer covers all three parts specifically and fluidly?",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Give me the full picture — your key strength, something you're working on, and what really drives you in this kind of work.",
+            "options": [
+                "I build relationships quickly, which matters a lot in sales, I'm working on following up more consistently after the first conversation, and I'm driven by the challenge of turning a 'maybe' into a genuine yes.",
+                "That's a lot to cover at once, could we take it one part at a time?",
+                "I'm strong across the board, and I'm mainly just driven to succeed."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "A thoughtful, specific timeline is better than an extreme or vague answer.",
-            "explanation": "A thoughtful, specific timeline shows you take transitions seriously, which reflects well on your professionalism.",
-            "id": "ji_l40_q3",
+            "hint": "Answer all three parts in one flowing, specific answer rather than staying vague or asking to split it up.",
+            "explanation": "Answering all three parts specifically and fluidly shows you can organize a complex answer under a multi-part question, a real interview skill. A vague 'strong across the board' answer doesn't really engage with any of the three parts, and asking to split up a reasonable multi-part question can seem like avoiding it.",
+            "id": "ji_l40_q2",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain",
+                "neutral"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that gives a genuine, specific response to all three parts.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Before we move on, sum up in one answer why you'd succeed here, what might get in your way, and what keeps you going.",
+            "options": [
+                "That's three different questions, it's hard to answer them all together.",
+                "I succeed by staying reliable and detail-focused, what sometimes gets in my way is taking on too much at once, and what keeps me going is genuinely enjoying the problem-solving part of the work.",
+                "I'd succeed because I'm a hard worker, and honestly nothing really gets in my way."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 5,
+            "hint": "Give a real answer for each of the three parts, especially the one about what could get in your way.",
+            "explanation": "Giving a genuine, specific answer to all three parts, including a real limitation, shows both confidence and honest self-awareness. Claiming nothing gets in your way is unrealistic, and treating a multi-part question as unanswerable together is a missed chance to show you can structure a complex answer.",
+            "id": "ji_l40_q3",
+            "interviewerReaction": [
+                "uncertain",
+                "impressed",
+                "skeptical"
             ]
         }
     ]

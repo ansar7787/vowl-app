@@ -4,633 +4,633 @@
     "levels": "131-140",
     "quests": [
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that hits all three parts in order, briefly, with concrete detail.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you prioritize when everything feels urgent?",
+            "interviewerQuestion": "Real quick, three things: what was the biggest risk in that project, how did you manage it, and did it pay off?",
             "options": [
-                "I try to make quick progress on everything at once.",
-                "I identify which items have the most significant consequences if delayed, and I focus there first, even under pressure.",
-                "I ask my manager to help me determine the right order."
+                "The biggest risk was launching without full QA coverage. I mitigated it by rolling out to 10% of users first, and yes, it paid off, since we caught two bugs early with minimal impact.",
+                "It was risky, but it worked out okay.",
+                "There were a few risks involved in that project, and managing risk is something I generally take pretty seriously in everything I do, so I'd say overall it worked out reasonably well in the end."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Assessing real consequences of delay cuts through a false sense that everything is equally urgent, better than spreading effort or deferring the decision.",
-            "explanation": "Assessing the real consequences of delay reveals what's genuinely most urgent, while spreading effort across everything or deferring the decision to someone else doesn't provide that same clear-eyed prioritization.",
+            "hint": "Answer all three parts in order, briefly, with a concrete example for each.",
+            "explanation": "Hitting all three parts, risk, mitigation, outcome, briefly and in order handles a rapid multi-part question well. A general statement about taking risk seriously doesn't answer any of the three specifically, and 'it worked out okay' skips all the requested detail.",
             "id": "ji_l131_q1",
             "interviewerReaction": [
-                "disappointed",
                 "impressed",
-                "disappointed"
+                "uncertain",
+                "losing interest"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names the specific objection, tactic, and outcome, one after another.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you had to prioritize among several seemingly urgent tasks.",
+            "interviewerQuestion": "Three quick ones: what was your toughest objection last quarter, how did you handle it, and did you close that deal?",
             "options": [
-                "I worked through the tasks as quickly as I could, one after another.",
-                "I asked my team which tasks felt most pressing to them.",
-                "I evaluated which task would cause the most damage if left undone and tackled that first, then communicated a realistic plan for the rest."
+                "Price was the toughest objection. I reframed the conversation around total cost of ownership instead of upfront price, and yes, we closed that deal about three weeks later.",
+                "Objections come up pretty often in sales, and I've gotten used to handling a lot of different kinds over the years, so it's hard to pick just one as the toughest.",
+                "There was a tough one, and it worked out in the end. but that's just a guess on my part, honestly."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Evaluating potential consequences, then communicating a realistic plan, shows clearer judgment than working quickly through everything or polling for opinions.",
-            "explanation": "Evaluating potential consequences and communicating a realistic plan shows clear, decisive judgment, while working quickly through everything or polling for opinions doesn't provide that same grounded prioritization.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Give the specific objection, the specific tactic, and the specific outcome, one after another.",
+            "explanation": "Naming the specific objection, tactic, and outcome answers a demanding three-part question with real content. Generalizing about objections skips naming one specifically, and 'it worked out' doesn't confirm the actual close.",
             "id": "ji_l131_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "impressed",
+                "losing interest",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that gives the specific failure, fix, and time, each briefly.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you stay calm when multiple things demand immediate attention?",
+            "interviewerQuestion": "Quick succession: what broke, what was the fix, and how long did it take?",
             "options": [
-                "I take a moment to separate what's truly urgent from what only feels urgent, then act on the real priorities first.",
-                "I try to take a deep breath and tackle things one at a time.",
-                "I remind myself that things usually work out in the end."
+                "Something broke, and figuring out fixes for production issues is always a bit of a process, so it's hard to give an exact timeline for something like that.",
+                "There was an incident, and we fixed it eventually.",
+                "Our payment service went down due to a memory leak. The fix was a patched deployment, and it took about 40 minutes from detection to resolution."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Separating true urgency from perceived urgency is a more concrete strategy than general calming techniques or reassurance.",
-            "explanation": "Separating true urgency from what only feels urgent gives you a concrete strategy for staying focused, while general calming techniques or simple reassurance doesn't address the actual decision-making challenge.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Give the specific failure, the specific fix, and a specific time, each briefly.",
+            "explanation": "Naming the specific failure, fix, and resolution time answers exactly what a rapid three-part technical question is asking for. A vague description of the general process skips specifics, and 'we fixed it eventually' gives no timeline at all.",
             "id": "ji_l131_q3",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "losing interest",
+                "uncertain",
+                "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that corrects itself clearly and confidently.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you support a team through organizational change?",
+            "interviewerQuestion": "You mentioned the team was eight people, is that right?",
             "options": [
-                "I try to reassure the team that everything will be fine.",
-                "I focus on keeping the team's day-to-day work moving as usual.",
-                "I communicate transparently about what's changing and why, and I make space for the team to voice concerns and ask questions."
+                "I think I said eight, but I'm not totally sure that's accurate.",
+                "Actually, let me correct that, it was six people, not eight. My mistake, six is the right number.",
+                "Well, it might have been eight, or it could have been a different number, it's a little hard to remember the exact team size from a couple of years ago now."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Transparency plus genuine space for concerns supports a team through change better than reassurance alone or simply maintaining routine.",
-            "explanation": "Transparency combined with genuine space for concerns helps a team process real change, while reassurance alone or simply maintaining routine doesn't address the uncertainty people are actually experiencing.",
+            "hint": "Correcting yourself clearly and confidently is stronger than staying vague or doubting your own memory aloud without resolving it.",
+            "explanation": "A clear, confident correction resolves the discrepancy immediately and moves the conversation forward. Leaving the number uncertain between two options doesn't actually correct anything, and doubting your memory without landing on an answer leaves the question unresolved.",
             "id": "ji_l132_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "uncertain",
+                "reassured",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that acknowledges the inconsistency and gives one clear, corrected answer.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you led your team through a significant organizational change.",
+            "interviewerQuestion": "Wait, didn't you say earlier that project took six months? You just said a year.",
             "options": [
-                "I held regular open forums where the team could ask anything, which helped surface and address their real concerns early on.",
-                "I kept the team updated with clear, regular communications.",
-                "I focused on maintaining morale throughout the transition."
+                "Hmm, it might have been six months or it might have been a year, the exact timeline is a little fuzzy in my memory at this point.",
+                "Did I say that? I don't think I meant to say that, but I'm not sure which one is actually right.",
+                "You're right to catch that, sorry, it was actually closer to eight months. Let me be precise: eight months from kickoff to launch."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Creating space for two-way dialogue addresses concerns more directly than one-way communication or a general focus on morale.",
-            "explanation": "Creating space for two-way dialogue surfaces and addresses real concerns directly, while one-way communication or a general focus on morale doesn't provide that same active outlet for the team's actual questions.",
+            "hint": "Acknowledging the inconsistency and giving one clear, corrected answer is stronger than leaving both numbers on the table or expressing confusion.",
+            "explanation": "Acknowledging the mistake and committing to one clear, corrected number resolves the inconsistency cleanly. Leaving both numbers as possibilities doesn't actually fix anything, and expressing confusion about your own statement undermines credibility further.",
             "id": "ji_l132_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain",
+                "concerned",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response with a quick, confident correction stated clearly.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you help your team stay engaged during a period of uncertainty?",
+            "interviewerQuestion": "Go on, you were saying the client was based in Chicago?",
             "options": [
-                "I try to stay positive and encourage the team to do the same.",
-                "I focus the team on what remains within our control and celebrate small wins to maintain momentum despite the broader uncertainty.",
-                "I keep the team focused on their regular responsibilities."
+                "Sorry, quick correction, the client was actually based in Denver, not Chicago. Denver is right.",
+                "It might have been Chicago, or possibly somewhere else, I deal with a lot of different clients so the exact location sometimes blurs together.",
+                "I don't think I meant Chicago, but I'm blanking on the actual city right now."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Focusing on what's controllable and celebrating progress is more concrete than general positivity or simply maintaining routine.",
-            "explanation": "Focusing on what's within the team's control and celebrating small wins gives concrete footing during uncertainty, while general positivity or simply maintaining routine doesn't provide that same tangible sense of progress.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "A quick, confident correction with the right answer stated clearly is stronger than leaving the detail unresolved or admitting you can't recall it.",
+            "explanation": "A quick, confident correction, followed by clearly restating the right answer, keeps the conversation moving smoothly. Leaving the location as a vague possibility doesn't fix the error, and admitting you're blanking on a basic detail can undermine confidence in the rest of the story.",
             "id": "ji_l132_q3",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "reassured",
+                "uncertain",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that announces a clear structure upfront.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle disagreement with senior leadership?",
+            "interviewerQuestion": "Walk me through how you'd approach your first 90 days in this role.",
             "options": [
-                "I share my concerns and generally defer to their experience.",
-                "I present my perspective clearly with supporting reasoning, and once a final decision is made, I support it fully in front of my team.",
-                "I raise my concerns and continue advocating for my view afterward."
+                "I'd break it into three phases: the first month learning the systems and meeting the team, the second month taking on small owned tasks, and the third month proposing one improvement based on what I've learned.",
+                "I'd try to do a good job and make a strong first impression during that time. or at least that's my instinct here.",
+                "I'd probably just get started and figure things out as I go, learning what I need to learn and helping out wherever I can along the way."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Advocating clearly, then fully supporting the final decision publicly, reflects stronger leadership than deferring immediately or continuing to push after the fact.",
-            "explanation": "Advocating clearly and then fully supporting the final decision in front of your team shows both integrity and leadership, while deferring immediately or continuing to push after a decision is made doesn't reflect that same balance.",
+            "hint": "Announcing a clear structure, like phases, upfront makes a complex answer much easier to follow.",
+            "explanation": "Announcing a clear three-phase structure upfront makes a complex answer easy to follow and shows real planning. A loose 'figure it out as I go' answer has no structure to track, and 'make a strong impression' is a goal, not a plan.",
             "id": "ji_l133_q1",
             "interviewerReaction": [
-                "disappointed",
                 "impressed",
-                "disappointed"
+                "unconvinced",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names a clear, numbered structure upfront.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you disagreed with a decision made above you.",
+            "interviewerQuestion": "Why should we hire you? Take your time and structure your answer however you like.",
             "options": [
-                "I raised specific data-backed concerns in the discussion, and once leadership made their final call, I helped my team understand and execute it well.",
-                "I voiced my disagreement and made sure it was documented.",
-                "I accepted the decision since it wasn't ultimately my call to make."
+                "There are a lot of reasons, really, and it's hard to narrow it down to just a few, since I think I bring a lot of different things to the table overall.",
+                "I think I'd just be a good fit, honestly, for a bunch of different reasons. even though I haven't tested that assumption.",
+                "I'd point to three things: relevant experience in this exact type of work, a track record of finishing what I start, and genuine interest in the specific problems this role would have me solve."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Advocating with evidence, then actively helping execute the final decision, is stronger than documenting disagreement or simply accepting it passively.",
-            "explanation": "Advocating with evidence and then actively helping your team execute the final decision shows genuine leadership, while documenting disagreement or passively accepting the decision doesn't demonstrate that same constructive follow-through.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Naming a clear, numbered structure upfront makes a broad question much easier to answer well.",
+            "explanation": "Naming a clear, three-part structure upfront turns a broad, open question into an organized, memorable answer. Refusing to narrow it down avoids the point of the question, and a vague 'good fit' claim with no structure gives the interviewer nothing to hold onto.",
             "id": "ji_l133_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain",
+                "unconvinced",
+                "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer with a short, specific list of concrete techniques.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you maintain your team's trust when you have to implement a decision you disagreed with?",
+            "interviewerQuestion": "How do you manage stress at work? Feel free to organize your thoughts however works best.",
             "options": [
-                "I let the team know I raised concerns, but the decision has been made.",
-                "I implement the decision professionally without dwelling on it.",
-                "I explain the reasoning behind the decision honestly and focus the team on how we can execute it successfully together."
+                "Stress is just part of the job, and I've picked up different ways of dealing with it over the years, though it really depends on the specific situation.",
+                "Three things help me most: breaking big tasks into smaller pieces, a quick walk when I need to reset, and talking through blockers with a teammate instead of sitting with them alone.",
+                "I try to stay calm and just push through it when things get stressful. but I'm not fully confident saying that."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Explaining the reasoning and focusing on successful execution builds more trust than mentioning your dissent or simply implementing quietly.",
-            "explanation": "Explaining the reasoning honestly and focusing the team on successful execution builds trust through transparency, while mentioning your own dissent or simply implementing quietly without context doesn't provide that same clarity and confidence.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Naming a short, specific list of concrete techniques is stronger than a general statement about stress being part of the job.",
+            "explanation": "A short, specific list of concrete techniques gives a structured, memorable answer to an open question. A general statement about stress being part of the job doesn't actually answer how you manage it, and 'push through it' is vague and offers no real method.",
             "id": "ji_l133_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "uncertain",
+                "reassured",
+                "unconvinced"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that picks a side and gives one clear reason.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you coach a struggling employee?",
+            "interviewerQuestion": "Quick comparison: would you rather use a rigid process or a flexible one for a new team, and why?",
             "options": [
-                "I provide consistent feedback so they know where they stand.",
-                "I give them additional resources to help them improve.",
-                "I help them identify the specific skill or habit holding them back, then build a concrete plan with milestones we review together regularly."
+                "Flexible, early on, since a new team needs room to find what actually works before locking in a process that might not fit.",
+                "I don't have a strong preference either way, honestly, both have their pros and cons.",
+                "That really depends on a lot of different factors, like team size, project type, and company culture, so it's hard to give a simple answer without more context."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "A concrete, milestone-based plan built together is stronger coaching than feedback alone or simply providing resources.",
-            "explanation": "A concrete, milestone-based plan built collaboratively provides real structure for improvement, while feedback alone or simply providing resources doesn't offer that same active, ongoing coaching relationship.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Pick a side and give one clear reason, since the question explicitly asked for a comparison.",
+            "explanation": "Picking a side and giving one clear reason directly answers a comparison question. Listing all the factors that could matter avoids actually comparing, and having no preference doesn't answer the question that was asked.",
             "id": "ji_l134_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "impressed",
+                "uncertain",
+                "losing interest"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that chooses one option with a concise, concrete reason.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you coached someone through a significant improvement.",
+            "interviewerQuestion": "If you had to pick one channel to invest in more, social media or email, which would it be and why?",
             "options": [
-                "I gave them regular feedback until their performance improved.",
-                "I identified that their real struggle was with time management, not skill, so we built a specific system together that solved the actual problem.",
-                "I connected them with training resources relevant to their role."
+                "Email, for this stage, since it typically has a higher return per dollar spent and we already have a decent list to work with.",
+                "It really depends on the specific goals, the target audience, the budget available, and a bunch of other factors that would need to be considered case by case.",
+                "I could see arguments for either one, honestly, they both have real value."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Correctly diagnosing the real underlying issue leads to more effective coaching than general feedback or generic resources.",
-            "explanation": "Correctly diagnosing the real underlying issue, like time management rather than skill, leads to a solution that actually works, while general feedback or generic resources doesn't guarantee addressing the true root cause.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Choose one option and give a concise, concrete reason for the choice.",
+            "explanation": "Choosing one option and giving a concise, concrete reason directly answers a comparison question. Listing many factors avoids making an actual choice, and seeing value in both doesn't give the interviewer the direct comparison they asked for.",
             "id": "ji_l134_q2",
             "interviewerReaction": [
-                "disappointed",
                 "impressed",
-                "disappointed"
+                "losing interest",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the clear answer for the immediate situation, with a specific follow-up plan.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What's your approach to coaching someone who lacks confidence?",
+            "interviewerQuestion": "Would you choose to fix the root cause or patch the symptom under a tight deadline, and why?",
             "options": [
-                "I create low-risk opportunities for them to succeed early, then build on those wins to help their confidence grow naturally over time.",
-                "I offer plenty of encouragement and positive reinforcement.",
-                "I give them more responsibility to help them grow faster."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Creating structured early wins builds confidence more reliably than encouragement alone or simply adding more responsibility.",
-            "explanation": "Creating structured early wins builds genuine, lasting confidence through real success, while encouragement alone or adding more responsibility too quickly doesn't provide that same gradual, supportive path.",
-            "id": "ji_l134_q3",
-            "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "How do you communicate a decision you personally disagree with?",
-            "options": [
-                "I explain the decision as clearly and neutrally as I can.",
-                "I present the decision with full context and genuine confidence, focusing on the reasoning behind it rather than my personal opinion.",
-                "I let the team know it wasn't entirely my preference, but explain the reasoning."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Presenting with genuine confidence and focus on reasoning is stronger leadership than neutrality or revealing personal disagreement.",
-            "explanation": "Presenting a decision with genuine confidence and focus on its reasoning maintains team trust in leadership, while neutral delivery or revealing your own disagreement can undermine confidence in the decision, even unintentionally.",
-            "id": "ji_l135_q1",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you had to deliver a decision you didn't personally support.",
-            "options": [
-                "I focused entirely on explaining the reasoning and the path forward, without letting my personal view come through in how I presented it.",
-                "I was honest that it wasn't my first choice, but committed to supporting it.",
-                "I delivered it professionally and answered any questions that came up."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Fully separating your personal view from the delivery shows stronger leadership than acknowledging disagreement or simply staying professional.",
-            "explanation": "Fully separating your personal view from how you deliver a decision protects team confidence, while acknowledging your own disagreement or simply staying professional doesn't provide that same complete, unified message.",
-            "id": "ji_l135_q2",
-            "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "How do you maintain credibility when communicating an unpopular decision?",
-            "options": [
-                "I make sure to communicate the decision clearly and consistently.",
-                "I acknowledge that the decision might be difficult for some people.",
-                "I make sure I fully understand the reasoning myself first, so I can explain it with genuine conviction rather than just repeating it."
+                "That's a classic tradeoff in engineering, and there are strong arguments on both sides depending on the specific context and constraints involved.",
+                "I'd probably lean toward fixing it properly, though I can see why patching might make sense sometimes too.",
+                "Patch the symptom now to hit the deadline safely, but I'd schedule the root cause fix immediately after, so the patch doesn't become permanent by accident."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Understanding the reasoning deeply enough to explain it with genuine conviction builds more credibility than clarity or simple acknowledgment alone.",
-            "explanation": "Understanding the reasoning deeply enough to explain it with genuine conviction builds real credibility, while clear, consistent communication or simply acknowledging difficulty doesn't provide that same authentic depth.",
-            "id": "ji_l135_q3",
+            "hint": "Pick a clear answer for the immediate situation, with a specific follow-up plan, rather than describing both sides generally.",
+            "explanation": "Choosing the practical immediate answer, with a concrete follow-up plan to avoid it becoming permanent, directly answers the question with real judgment. Describing the general tradeoff avoids committing to an answer, and a soft lean toward the other option doesn't give a clear, confident choice.",
+            "id": "ji_l134_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "losing interest",
+                "uncertain",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that leads with the direct recommendation, then the supporting facts, given the stated time limit.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle a high-performing but difficult team member?",
+            "interviewerQuestion": "I've only got a few minutes, so give me the top-line view: is this project something you'd recommend we repeat?",
             "options": [
-                "I address the behavioral concerns directly and separately from their performance, making clear that both matter to their success on the team.",
-                "I focus on their results, since performance is what matters most.",
-                "I try to manage around their difficult behavior as much as possible."
+                "I think it went pretty well overall, so probably, yeah.",
+                "Yes, I'd recommend repeating it. It delivered a clear ROI within two quarters, and the main risk we hit the first time is now a known, manageable issue.",
+                "That's a great question, and there's definitely a lot to consider, including the initial costs, the timeline, the team's experience with it, and a few other factors that would be worth walking through."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 5,
+            "hint": "Give the direct recommendation first, then the one or two facts that support it, matching the stated time constraint.",
+            "explanation": "Leading with the direct recommendation, then backing it with concrete facts, respects an executive's stated time constraint. Listing many considerations before answering ignores the request for a top-line view, and a vague 'probably, yeah' doesn't give a confident, evidence-backed recommendation.",
+            "id": "ji_l135_q1",
+            "interviewerReaction": [
+                "unconvinced",
+                "impressed",
+                "losing interest"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that gives a direct yes/no first, then the specific downside and upside.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Bottom line for me: is this risk worth taking?",
+            "options": [
+                "I think it's probably fine, though there's always some uncertainty with these kinds of things.",
+                "Risk is always a bit of a balancing act, and there are compelling arguments on both sides that are worth walking through in more detail before deciding.",
+                "Yes, worth taking. The downside is limited to a small, recoverable budget loss, while the upside significantly expands our reach into a new segment."
+            ],
+            "correctAnswerIndex": 2,
+            "professionalismRating": 5,
+            "hint": "Give the direct yes/no first, then the specific downside and upside that justify it.",
+            "explanation": "A direct yes, backed by the specific downside and upside, respects the explicit request for a bottom line. Describing the general balancing act avoids giving an actual answer, and 'probably fine' doesn't quantify the risk in any useful way.",
+            "id": "ji_l135_q2",
+            "interviewerReaction": [
+                "unconvinced",
+                "losing interest",
+                "impressed"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that gives a direct status, a brief reason, and a next step, all in one line.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "One line: are we on track for the deadline or not?",
+            "options": [
+                "It's a bit of a complicated picture right now, since some parts are ahead of schedule while others are a bit behind, so it's hard to say in just one line.",
+                "Not currently, we're about a week behind, but a clear plan is already in motion to close that gap.",
+                "I think we're mostly okay, more or less."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 5,
+            "hint": "Give a direct status, a brief reason, and a next step, all in one line, as requested.",
+            "explanation": "Giving a direct status, the reason, and the next step in one line respects the explicit request for brevity. Describing the mixed picture in detail ignores the one-line constraint, and 'mostly okay, more or less' is vague and gives no actionable information.",
+            "id": "ji_l135_q3",
+            "interviewerReaction": [
+                "losing interest",
+                "reassured",
+                "unconvinced"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that names the specific trade-off and the specific reason it was worth it.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "So what was the actual trade-off you made, and why was it the right call?",
+            "options": [
+                "We traded a two-week delay for much better data accuracy, and it was the right call because the decisions built on that data would have been wrong otherwise.",
+                "We had to make a trade-off,. at least that's roughly how I'd think about it.",
+                "There were a lot of factors weighing on that decision, and honestly it was a pretty close call at the time between a few different options we considered."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Addressing behavior directly, alongside performance, is stronger leadership than focusing only on results or working around the issue.",
-            "explanation": "Addressing behavioral concerns directly alongside performance shows that both genuinely matter, while focusing only on results or working around the issue allows the difficult behavior to continue unaddressed.",
+            "professionalismRating": 4,
+            "hint": "Name the specific trade-off and the specific reason it was worth it.",
+            "explanation": "Naming the specific trade-off and the specific reason it was worth it directly answers a 'so what' question. Describing the decision as close without naming the actual trade-off avoids the question, and 'it worked out fine' doesn't explain the reasoning at all.",
             "id": "ji_l136_q1",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names the specific thing given up and the specific reason it mattered.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you managed a talented but challenging employee.",
+            "interviewerQuestion": "What did you give up to get that result, and was it worth it?",
             "options": [
-                "I gave them more autonomy since their results spoke for themselves.",
-                "I had a direct conversation about how their behavior was affecting the team, while also acknowledging and valuing their strong contributions.",
-                "I focused on minimizing the impact of their behavior on others."
+                "There were some trade-offs involved in getting to that result, as there usually are in most product decisions, but overall things turned out reasonably well.",
+                "We gave something up, I think, but it was worth it in the end. but I'd want to think about it more before committing to that.",
+                "We gave up a bit of visual polish to hit the launch date, and it was worth it because being first to market mattered more than perfect design in that specific case."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Directly addressing behavior while genuinely valuing contributions balances accountability and appreciation better than autonomy or damage control alone.",
-            "explanation": "Directly addressing behavior while genuinely valuing contributions balances accountability with appreciation, while giving more autonomy or just minimizing impact doesn't address the underlying behavioral issue directly.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Name the specific thing given up and the specific reason it was the right trade.",
+            "explanation": "Naming the specific trade, visual polish for speed, and the specific reason it mattered answers the question directly. A vague acknowledgment that trade-offs exist doesn't name what was actually given up, and 'something' isn't specific enough to be useful.",
             "id": "ji_l136_q2",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "uncertain",
+                "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names the specific cost and the specific priority that justified it.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you make sure talent doesn't excuse poor behavior on your team?",
+            "interviewerQuestion": "What was the cost of that decision, and why did you make it anyway?",
             "options": [
-                "I make sure their behavior doesn't negatively affect other team members.",
-                "I recognize their talent while gently encouraging better behavior.",
-                "I hold everyone, regardless of performance, to the same standards for how they treat their colleagues."
+                "It cost something, but I felt it was the right decision at the time. or that's the impression I have, anyway.",
+                "There was some cost involved, as there often is with decisions like that, but I think it balanced out reasonably well against the benefits overall.",
+                "The cost was slightly higher shipping fees for a few weeks, and I made that call anyway because avoiding stockouts during our peak season mattered more than the extra cost."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Applying consistent standards regardless of performance level is a stronger safeguard than damage control or gentle encouragement alone.",
-            "explanation": "Applying consistent standards regardless of performance level ensures fairness across the team, while focusing only on limiting the impact or gently encouraging change doesn't hold the same firm, equal standard for everyone.",
+            "professionalismRating": 4,
+            "hint": "Name the specific cost and the specific priority that justified accepting it.",
+            "explanation": "Naming the specific cost and the specific priority that justified it gives a complete, defensible answer. A vague sense of things 'balancing out' doesn't name the actual cost, and 'it cost something' is too unspecific to be useful.",
             "id": "ji_l136_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "uncertain",
+                "uncertain",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names exactly three, ranked, each tied to the role's demands.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you balance short-term results with long-term strategy?",
+            "interviewerQuestion": "Give me your top three strengths for this specific role, in order of importance.",
             "options": [
-                "I try to give appropriate attention to both short-term and long-term work.",
-                "I focus primarily on delivering strong short-term results.",
-                "I make sure short-term wins are chosen deliberately to also build toward our longer-term goals, rather than treating them as separate priorities."
+                "First, technical troubleshooting, since that's the daily core of the job. Second, clear written communication, for documenting fixes. Third, patience with frustrated users, which keeps interactions productive.",
+                "I have a lot of strengths that would probably apply here, like communication, technical skills, patience, adaptability, and a few others that come to mind.",
+                "I'm good at a few different things, I'd say, though it's hard to rank them in any particular order. or so it seems to me, anyway."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Deliberately connecting short-term wins to long-term goals is a more strategic approach than balancing attention or prioritizing short-term results.",
-            "explanation": "Deliberately connecting short-term wins to long-term goals shows real strategic thinking, while simply balancing attention between the two or prioritizing short-term results doesn't ensure they're actually working together.",
+            "hint": "Name exactly three, ranked, each tied to why it matters for this specific role.",
+            "explanation": "Naming exactly three, ranked, each tied to the role's actual demands, answers precisely what was asked. Listing more than three ignores the specific request, and refusing to rank avoids the 'in order of importance' part of the question.",
             "id": "ji_l137_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "impressed",
+                "uncertain",
+                "unconvinced"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that gives exactly three, ranked, with the most substantive reason first.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you had to balance immediate needs with a longer-term vision.",
+            "interviewerQuestion": "Give me three specific reasons you want this job, ranked from most to least important.",
             "options": [
-                "I chose a short-term solution that also laid the groundwork for our longer-term plan, so the immediate fix wasn't wasted effort later.",
-                "I addressed the immediate need first and revisited long-term plans afterward.",
-                "I made sure our long-term strategy wasn't disrupted by short-term pressures."
+                "There are a lot of reasons I'm interested, honestly, and it's hard to rank them since they all kind of matter to me in different ways.",
+                "Most important: the work itself matches what I'm best at. Second: the team's reputation for mentorship. Third: the flexible schedule, which is a nice bonus but not the deciding factor.",
+                "I want it for a few reasons, mainly that it seems like a good opportunity overall. though it's hard to know for sure without being in it."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Choosing a short-term solution that also builds toward long-term goals is more strategic than sequencing the two separately or simply protecting long-term plans.",
-            "explanation": "Choosing a short-term solution that also builds toward long-term goals maximizes the value of immediate effort, while sequencing the two separately or simply protecting long-term plans from disruption doesn't create that same compounding benefit.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Give exactly three, in the requested rank order, with the most substantive reason first.",
+            "explanation": "Giving exactly three reasons in ranked order, with the most substantive one first, directly answers the specific request. Refusing to rank avoids part of the question, and a single vague reason doesn't meet the request for three.",
             "id": "ji_l137_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain",
+                "pleased",
+                "unconvinced"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that gives exactly three, ranked, with a brief reason for each.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you avoid sacrificing long-term strategy for short-term wins?",
+            "interviewerQuestion": "Name three qualities you look for in a manager, in the order that matters most to you.",
             "options": [
-                "I keep our long-term strategy in mind when making decisions.",
-                "I regularly evaluate whether our short-term actions are actually building toward our long-term goals, not just producing quick results.",
-                "I make sure not to let short-term pressures dominate our planning."
+                "I just want a manager who's reasonably good at their job, I suppose. even if the specifics might vary quite a bit.",
+                "I look for a lot of things in a manager, like communication, support, trust, and a few other qualities that all seem important in their own way.",
+                "First, clear expectations, so I know what success looks like. Second, honest feedback, even when it's hard to hear. Third, respecting my time, which shows up in things like well-run meetings."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Regularly evaluating whether short-term actions build toward long-term goals is a more concrete practice than simply keeping strategy in mind or guarding against pressure.",
-            "explanation": "Regularly evaluating whether short-term actions truly build toward long-term goals is a concrete, ongoing practice, while simply keeping strategy in mind or guarding against pressure doesn't provide that same active check.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Give exactly three, ranked, with a brief reason for each.",
+            "explanation": "Giving exactly three, ranked, each with a brief reason, shows real self-awareness and answers the specific format requested. A longer unranked list ignores the request, and 'reasonably good at their job' is too vague to reveal anything about your actual priorities.",
             "id": "ji_l137_q3",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "unconvinced",
+                "uncertain",
+                "pleased"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that explicitly references the earlier point and connects it to a specific detail about this role.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle a team member who wants your job?",
+            "interviewerQuestion": "Earlier you mentioned you like solving ambiguous problems. How does that connect to why you want this specific role?",
             "options": [
-                "I make sure to stay focused on my own performance and responsibilities.",
-                "I keep an eye on the situation to make sure it doesn't become a problem.",
-                "I focus on developing their skills and giving them growth opportunities, since their ambition can be an asset if channeled well."
+                "Exactly, this role's biggest challenge, from what you described, is defining processes that don't exist yet, which is precisely the kind of ambiguity I find most engaging.",
+                "I'm not sure how those two things connect exactly, but I do enjoy problem-solving. even if I can't be fully certain about it.",
+                "I do like solving problems in general,. but plenty of people might disagree with me there."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Channeling their ambition into genuine development is a more constructive response than focusing on your own performance or simply monitoring the situation.",
-            "explanation": "Channeling their ambition into genuine development turns a potential tension into a constructive dynamic, while focusing only on your own performance or simply monitoring the situation doesn't proactively address it.",
+            "hint": "Explicitly reference the earlier point and connect it to a specific detail about this role.",
+            "explanation": "Explicitly connecting the earlier point to a specific detail about this exact role shows active listening and synthesis. A generic restatement about liking problems misses the specific connection asked for, and admitting you're not sure how they connect fails to answer the question at all.",
             "id": "ji_l138_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "impressed",
+                "unconvinced",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that draws an explicit, specific connection between the two named things.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you managed someone who was clearly ambitious for your role.",
+            "interviewerQuestion": "You mentioned earlier that you value direct feedback. We talked about our culture of radical candor here. How do those two things fit together?",
             "options": [
-                "I made sure to recognize their strong performance and potential.",
-                "I had an open conversation about their career goals and worked with them to build a real path toward greater responsibility.",
-                "I stayed professional and didn't let it change how I managed them."
+                "I hadn't really thought about how those two things connect until you just asked.",
+                "They fit really well, actually, since a culture that expects direct feedback is exactly the environment where I do my best work and grow the fastest.",
+                "I think feedback is important in any workplace, and most companies probably say something similar about wanting to be open and honest."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "An open conversation about their goals, paired with a real development path, is more proactive than general recognition or simply maintaining professionalism.",
-            "explanation": "An open conversation about their goals paired with a real development path proactively channels their ambition, while general recognition or simply maintaining professionalism doesn't give them the same concrete direction.",
+            "professionalismRating": 4,
+            "hint": "Draw an explicit, specific connection between the two things the interviewer named.",
+            "explanation": "Drawing an explicit, specific connection between the two named things shows genuine synthesis and listening. A generic comment about feedback being important everywhere misses the specific connection, and admitting you hadn't thought about it suggests you weren't tracking the conversation closely.",
             "id": "ji_l138_q2",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "pleased",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that draws the explicit connection between your past example and this role's specific demand.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you keep an ambitious team member engaged and motivated?",
+            "interviewerQuestion": "You described earlier a time you managed conflicting priorities well. This role has a lot of that. What does that tell you?",
             "options": [
-                "I give them meaningful stretch opportunities and make sure they understand what a path to advancement genuinely looks like.",
-                "I recognize their contributions regularly to keep them motivated.",
-                "I try to keep their workload varied and interesting."
+                "I think most roles involve some amount of juggling priorities, so it's probably something I'd need to get used to here as well.",
+                "It tells me this role plays directly to something I've already shown I can do well, which makes me confident I could handle that part of the job from day one.",
+                "That's a good point, I suppose, though I hadn't specifically connected those two things before now."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Meaningful stretch opportunities plus a clear advancement path address ambition more directly than recognition or varied work alone.",
-            "explanation": "Meaningful stretch opportunities combined with a clear advancement path directly address genuine ambition, while regular recognition or simply varying their workload doesn't provide that same concrete sense of progress.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Draw the explicit connection between your past example and this role's specific demand.",
+            "explanation": "Drawing the explicit connection between your own demonstrated skill and this role's specific demand shows real synthesis under a pointed question. A generic comment about most roles requiring this skill misses the personal connection, and admitting you hadn't made the connection suggests less active engagement with the conversation.",
             "id": "ji_l138_q3",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain",
+                "pleased",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that reduces the whole idea to one plain, concrete sentence.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you rebuild trust after a mistake?",
+            "interviewerQuestion": "Can you say that more simply? I got a bit lost.",
             "options": [
-                "I apologize sincerely and try to move forward.",
-                "I make sure to correct the mistake as quickly as possible.",
-                "I take full accountability, explain the concrete steps I'm taking to prevent it from happening again, and follow through consistently over time."
+                "Sorry, let me try again, so basically what happened was we identified an inefficiency in how the process was structured and then implemented a solution that addressed the underlying bottleneck in a more scalable way.",
+                "Sorry, um, it's kind of hard to simplify, but basically it's complicated.",
+                "Sure, simply put: we automated a task that used to take an hour, so now it takes a few seconds."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Full accountability plus consistent follow-through over time rebuilds trust more reliably than a sincere apology or a quick fix alone.",
-            "explanation": "Full accountability paired with consistent follow-through over time genuinely rebuilds trust, while a sincere apology or a quick fix alone doesn't provide that same sustained proof of change.",
+            "hint": "Reduce the whole answer to one plain, concrete sentence when asked to simplify.",
+            "explanation": "Reducing the whole idea to one plain, concrete sentence actually answers the request to simplify. Repeating a similarly complex explanation in different words doesn't simplify anything, and calling it 'complicated' without simplifying fails the request entirely.",
             "id": "ji_l139_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "losing interest",
+                "uncertain",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that boils the idea down to one short, plain sentence.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you had to rebuild trust with your team after a setback.",
+            "interviewerQuestion": "That went over my head a bit, could you simplify?",
             "options": [
-                "I was transparent about what went wrong, asked for their input on how to prevent it, and consistently delivered on the changes we agreed to.",
-                "I acknowledged the setback openly and apologized to the team.",
-                "I worked hard to demonstrate improvement in the following weeks."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Involving the team in the solution and following through consistently rebuilds trust more effectively than acknowledgment or effort alone.",
-            "explanation": "Involving the team in the solution and consistently following through on agreed changes rebuilds trust through shared ownership, while acknowledgment or general effort alone doesn't provide that same collaborative, sustained proof.",
-            "id": "ji_l139_q2",
-            "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "How do you demonstrate reliability after losing someone's confidence?",
-            "options": [
-                "I make an effort to communicate more transparently going forward.",
-                "I set small, clear commitments and consistently follow through on them, letting my actions rebuild the trust over time.",
-                "I try to be extra careful to avoid making the same mistake again."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Small, consistent commitments followed through over time rebuild trust more concretely than transparency alone or simply being more careful.",
-            "explanation": "Small, consistent commitments followed through over time provide concrete, repeated proof of reliability, while transparency alone or simply being more careful doesn't offer that same visible, incremental evidence.",
-            "id": "ji_l139_q3",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "How do you evaluate whether to escalate an issue?",
-            "options": [
-                "I consider whether the issue is beyond my authority to resolve and whether the potential impact justifies involving someone more senior.",
-                "I escalate when I feel like I've done everything I can on my own.",
-                "I try to resolve issues myself whenever possible before escalating."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Weighing authority and potential impact gives a clearer framework for escalation than a general sense of effort or a strong preference to avoid escalating.",
-            "explanation": "Weighing your authority to resolve the issue against its potential impact gives a clear, objective framework for escalation, while a general sense of having tried enough or a strong preference to avoid escalating doesn't provide that same reliable judgment.",
-            "id": "ji_l140_q1",
-            "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you decided to escalate a problem to leadership.",
-            "options": [
-                "I escalated it once I realized I couldn't solve it on my own.",
-                "I recognized the issue could affect a major client relationship, so I escalated it early with a clear summary and a recommended course of action.",
-                "I brought it to leadership's attention so they were aware of the situation."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Escalating early with a clear recommendation, based on real impact, is stronger judgment than escalating out of personal limitation or just for awareness.",
-            "explanation": "Escalating early with a clear summary and recommendation, based on genuine potential impact, shows strong judgment, while escalating only once you feel unable to solve it yourself or simply for general awareness doesn't reflect that same proactive thinking.",
-            "id": "ji_l140_q2",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "How do you decide when a problem is worth bringing to your manager's attention?",
-            "options": [
-                "I bring things up when I'm not confident about how to handle them.",
-                "I try to solve problems independently before involving my manager.",
-                "I think about whether the risk of not escalating outweighs the effort it takes for my manager to get involved, and act accordingly."
+                "Let me rephrase that slightly, so what I mean is we developed a proactive error detection mechanism that operates upstream in the workflow rather than being reactive to downstream issues.",
+                "Sorry, that's just kind of how it works, it's a bit technical to put more simply.",
+                "Of course, in short: I built a tool that flags mistakes before they go out, instead of after customers find them."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Weighing the risk of inaction against the cost of involvement is a clearer decision framework than confidence level or a general preference for independence.",
-            "explanation": "Weighing the risk of not escalating against the cost of involving your manager provides a clear, practical decision framework, while relying on confidence level or a general preference for independence doesn't offer that same objective judgment.",
+            "hint": "Boil the idea down to one short, plain sentence rather than rephrasing with different jargon.",
+            "explanation": "Boiling the idea down to one short, plain sentence actually simplifies it as requested. Rephrasing with different but equally technical language doesn't simplify anything, and claiming it can't be put more simply gives up on the request entirely.",
+            "id": "ji_l139_q2",
+            "interviewerReaction": [
+                "losing interest",
+                "uncertain",
+                "reassured"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that gives one short, plain sentence with no new jargon.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Could you break that down more simply for me?",
+            "options": [
+                "Let me put it another way, so what we did was optimize our customer acquisition funnel by refining our targeting parameters to focus on higher-intent segments of the audience.",
+                "Sure, basically: we spent less on ads but made more sales, by only targeting people who were already close to buying.",
+                "It's kind of hard to explain without the details, but it worked out well overall."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 5,
+            "hint": "Give one short, plain sentence capturing the core idea, without new jargon.",
+            "explanation": "One short, plain sentence with no new jargon genuinely simplifies the idea. Swapping one set of business jargon for another doesn't actually make it simpler, and saying it's hard to explain without the details avoids the request altogether.",
+            "id": "ji_l139_q3",
+            "interviewerReaction": [
+                "losing interest",
+                "reassured",
+                "uncertain"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that hits structure, number, and business meaning, briefly, in plain language.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "I'm short on time and not technical, so give me the structure, the number, and what it means for the business, all as briefly as you can.",
+            "options": [
+                "We made a process better and it helped the business somewhat.",
+                "Three quick points: we simplified a manual process, cut handling time by 35%, and that freed up enough staff hours to take on two more clients without hiring.",
+                "There's quite a bit to it, so let me start with the background on why the process needed changing in the first place, and then I'll get into what we actually did about it."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 5,
+            "hint": "Hit structure, number, and business meaning, briefly, in plain language, exactly as requested.",
+            "explanation": "Hitting structure, number, and business meaning briefly and in plain language satisfies every part of a genuinely demanding combined request. Starting with background ignores both the time limit and the technical-language request, and a vague summary skips the specific number and meaning that were explicitly asked for.",
+            "id": "ji_l140_q1",
+            "interviewerReaction": [
+                "unconvinced",
+                "impressed",
+                "losing interest"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that gives the before, after, number, and business reason, briefly and in order.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Quickly: compare the old way to the new way, give me a number, and tell me why a non-technical exec like me should care.",
+            "options": [
+                "Old way: manual review took two days. New way: automated review takes two hours. That matters to you because it means customers get answers same-day instead of waiting most of a week.",
+                "The new way is better and faster,. though I could easily be wrong about that.",
+                "That's a good question, and there's a fair bit of nuance to the comparison depending on which specific metrics you're most interested in looking at."
+            ],
+            "correctAnswerIndex": 0,
+            "professionalismRating": 5,
+            "hint": "Give the before, the after, the number, and the business reason, briefly and in that order.",
+            "explanation": "Giving the before, after, number, and business reason briefly and in order satisfies a demanding multi-part request completely. Deferring into nuance about metrics avoids giving the comparison at all, and 'better and faster' with no numbers doesn't meet the specific request.",
+            "id": "ji_l140_q2",
+            "interviewerReaction": [
+                "impressed",
+                "unconvinced",
+                "losing interest"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that gives the requested two-part structure, one number, and an explicit callback, in that order.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Last one, make it count: structure your answer in two parts, give me one number, and connect it back to what I said earlier about wanting faster decisions here.",
+            "options": [
+                "I made decisions happen faster,. though I can't point to anything concrete backing that up.",
+                "Two parts: first, I redesigned our approval workflow; second, that cut decision time from five days to one. Given what you mentioned about wanting faster decisions, that's exactly the kind of change I'd bring here.",
+                "There's a bit of a story behind that, starting with the original workflow and the problems it was causing, and then eventually how we got to a better version of it over time."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 5,
+            "hint": "Give exactly the two-part structure, the one number, and the explicit callback, in that order, as requested.",
+            "explanation": "Giving exactly the requested two-part structure, one number, and an explicit callback to the interviewer's own words satisfies every part of a highly demanding closing question. Telling the story ignores the structural request entirely, and a vague, unconnected claim misses the explicit callback that was specifically asked for.",
             "id": "ji_l140_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "unconvinced",
+                "impressed",
+                "losing interest"
             ]
         }
     ]

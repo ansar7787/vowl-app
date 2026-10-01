@@ -5,16 +5,16 @@
     "quests": [
         {
             "id": "ACC_INTONATIONMIMIC_L191_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend hands you tea while you're stressed about an exam.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The company is relocating to another country.",
-            "textToSpeak": "The company is relocating to another country.",
+            "word": "You'll be fine, you always are.",
+            "textToSpeak": "You'll be fine, you always are.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Slow, warm fall on 'are' — genuine reassurance",
+                "Fall-rise on 'are' — a hint of doubt"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Slow, warm fall on 'are' — genuine reassurance",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
@@ -22,527 +22,527 @@
                 1,
                 0
             ],
-            "hint": "Listen to the pitch on 'country.' Is this calm, factual news?",
-            "explanation": "This is a calm statement, so the pitch falls on 'country,' simply sharing the fact with no surprise.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Curious"
+            "hint": "The friend wants to calm you. Which ending shows that she believes it?",
+            "explanation": "A slow, warm fall shows that the speaker has no reservations. A fall-rise would suggest a quiet 'but'.",
+            "pitchRule": "💛 Real reassurance settles slowly and warmly.",
+            "emotionContext": "Reassuring"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L191_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "In a noisy workshop, your supervisor looks at the unfinished job and says this to no one in particular.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The company is relocating to another country?",
-            "textToSpeak": "The company is relocating to another country?",
+            "word": "Are we going to finish this today, or not?",
+            "textToSpeak": "Are we going to finish this today, or not?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Rising — genuine question about the schedule",
+                "Falling, sharp — impatient, not really a question"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
+            "correctAnswer": "Falling, sharp — impatient, not really a question",
             "correctAnswerIndex": 1,
             "intonationMap": [
+                3,
+                2,
                 1,
-                2,
-                2,
-                4
+                0
             ],
-            "hint": "Same words as before - listen again to the pitch on 'country.'",
-            "explanation": "The rising pitch on 'country' turns identical wording into a surprised, disbelieving reaction.",
-            "pitchRule": "📈 Pitch rises on a statement-shaped sentence to turn it into a surprised, disbelieving question.",
-            "emotionContext": "Excited"
+            "hint": "Look at who is speaking and why. Does the supervisor actually expect anyone to answer?",
+            "explanation": "A sharp fall shows that the speaker is making a point, not asking. A rise would ask sincerely.",
+            "pitchRule": "📉 A yes/no question can fall when it is really a complaint.",
+            "emotionContext": "Impatient"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L191_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "A new neighbor introduces herself, and you want to sound welcoming, not nosy.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Our flight leaves at midnight.",
-            "textToSpeak": "Our flight leaves at midnight.",
+            "word": "What brings you to this part of town?",
+            "textToSpeak": "What brings you to this part of town?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Firm fall — probing interview tone",
+                "Light rise — friendly interest"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Light rise — friendly interest",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
-                2,
                 1,
-                0
+                2,
+                2,
+                3
             ],
-            "hint": "Listen to the pitch on 'midnight.' Does this sound calm?",
-            "explanation": "This is a calm statement, so the pitch falls on 'midnight,' simply sharing a fact.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Doubtful"
+            "hint": "WH-questions usually fall. Which delivery makes this one friendly?",
+            "explanation": "A light rise softens the WH-question and shows casual interest. A fall would sound more like an interview.",
+            "pitchRule": "📈 A light rise can make a WH-question friendlier.",
+            "emotionContext": "Friendly"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L192_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "A stranger at the bus stop asks whether it is always this late.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "You turned down the job offer?",
-            "textToSpeak": "You turned down the job offer?",
+            "word": "Only on days that matter.",
+            "textToSpeak": "Only on days that matter.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Flat, slightly weary fall — dry humor",
+                "Warm, lifted rise — encouraging small talk"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Flat, slightly weary fall — dry humor",
+            "correctAnswerIndex": 0,
             "intonationMap": [
+                2,
                 1,
-                2,
-                2,
-                4
+                1,
+                0
             ],
-            "hint": "Listen to the pitch on 'offer.' Does the speaker sound calm, or shocked?",
-            "explanation": "The rising pitch on 'offer' shows disbelief, turning this into a surprised reaction.",
-            "pitchRule": "📈 Pitch rises on a statement-shaped sentence to turn it into a surprised, disbelieving question.",
-            "emotionContext": "Neutral"
+            "hint": "This is a joke, delivered without smiling. Which delivery sells it?",
+            "explanation": "A flat, weary fall makes the humor dry. A warm rise would sound encouraging.",
+            "pitchRule": "😏 Dry humor is flat and quick.",
+            "emotionContext": "Wry"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L192_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "Your manager thanks you for staying late, and you're tired but professional.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "You turned down the job offer.",
-            "textToSpeak": "You turned down the job offer.",
+            "word": "No problem, happy to help.",
+            "textToSpeak": "No problem, happy to help.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Bright, wide fall — genuinely happy",
+                "Level, even, quick — polite but flat"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Level, even, quick — polite but flat",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
                 2,
                 1,
                 0
             ],
-            "hint": "Same wording as before - listen again to the pitch on 'offer.'",
-            "explanation": "Spoken calmly, the pitch falls on 'offer,' showing the speaker is simply stating a fact.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Surprised"
+            "hint": "The words are enthusiastic; the situation isn't. Which delivery reflects both?",
+            "explanation": "A level, even delivery keeps the phrase polite but shows a lack of real enthusiasm. A wide fall would sound genuine.",
+            "pitchRule": "🤨 Formulaic phrases go flat when the feeling isn't there.",
+            "emotionContext": "Tired"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L192_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You've just heard that a deal fell through after months of work.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "He's retiring at thirty-five?",
-            "textToSpeak": "He's retiring at thirty-five?",
+            "word": "So all those months, for nothing?",
+            "textToSpeak": "So all those months, for nothing?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Rise on 'months', falling 'nothing' — bitter",
+                "Rising throughout — genuine question"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rise on 'months', falling 'nothing' — bitter",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
-                2,
-                2,
-                4
+                3,
+                4,
+                0
             ],
-            "hint": "Listen to the pitch on 'five.' Does this sound calm, or amazed?",
-            "explanation": "The rising pitch on 'five' shows astonishment at such an early retirement, turning this into a surprised reaction.",
-            "pitchRule": "📈 Pitch rises on a statement-shaped sentence to turn it into a surprised, disbelieving question.",
-            "emotionContext": "Determined"
+            "hint": "There are two clauses. Which one carries the bitterness?",
+            "explanation": "A rise on 'months' opens the complaint and a fall on 'nothing' delivers the bitter conclusion. A rise throughout would ask for information.",
+            "pitchRule": "🤨 A bitter rhetorical question ends on a fall.",
+            "emotionContext": "Bitter"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L193_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "Your sister asks whether you are coming to her recital. You are, and you tease her.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "She passed the bar exam on her first try.",
-            "textToSpeak": "She passed the bar exam on her first try.",
+            "word": "Oh, I guess I can pencil you in.",
+            "textToSpeak": "Oh, I guess I can pencil you in.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Lift on 'guess', playful fall — teasing",
+                "Flat fall — genuinely reluctant"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Lift on 'guess', playful fall — teasing",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
+                3,
                 1,
                 0
             ],
-            "hint": "Listen to the pitch on 'try.' Is this calm, factual news?",
-            "explanation": "This is a calm statement, so the pitch falls on 'try,' simply sharing impressive but calmly stated news.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Curious"
+            "hint": "The words sound reluctant, but the situation suggests otherwise. Which delivery agrees with the situation?",
+            "explanation": "A lift on 'guess' and a playful fall show that you are joking. A flat fall would sound sincerely reluctant.",
+            "pitchRule": "😏 Playful teasing uses lifts and a light fall.",
+            "emotionContext": "Playful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L193_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "An interviewer asks about your weaknesses.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "She passed the bar exam on her first try?",
-            "textToSpeak": "She passed the bar exam on her first try?",
+            "word": "I tend to take on too much, which I'm working on.",
+            "textToSpeak": "I tend to take on too much, which I'm working on.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Lift on 'much', lowered fall on 'on' — honest, humble",
+                "Bright rise on 'much', wide ending — proud boasting"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Lift on 'much', lowered fall on 'on' — honest, humble",
+            "correctAnswerIndex": 0,
             "intonationMap": [
+                2,
+                2,
                 1,
-                2,
-                2,
-                4
+                0
             ],
-            "hint": "Same words as before - listen again to the pitch on 'try.'",
-            "explanation": "The rising pitch on 'try' turns identical wording into an amazed, disbelieving reaction.",
-            "pitchRule": "📈 Pitch rises on a statement-shaped sentence to turn it into a surprised, disbelieving question.",
-            "emotionContext": "Excited"
+            "hint": "A weakness should sound sincere, not proud. Which delivery matches?",
+            "explanation": "A lift on 'much' opens the admission, and a lowered fall shows that you're serious about improving. A bright rise would sound like a boast.",
+            "pitchRule": "🤝 A humble admission lands low.",
+            "emotionContext": "Humble"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L193_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You overhear colleagues gossiping and want to change the subject gently.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The restaurant closed permanently last week.",
-            "textToSpeak": "The restaurant closed permanently last week.",
+            "word": "Anyway, how did the presentation go?",
+            "textToSpeak": "Anyway, how did the presentation go?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Fall on 'anyway', rise on 'go' — a yes/no question",
+                "Lift on 'anyway', fall on 'go' — smooth topic change"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Lift on 'anyway', fall on 'go' — smooth topic change",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
-                2,
+                3,
                 1,
                 0
             ],
-            "hint": "Listen to the pitch on 'week.' Does this sound calm?",
-            "explanation": "This is a calm statement, so the pitch falls on 'week,' simply sharing the news.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Doubtful"
+            "hint": "The phrase 'anyway' marks a shift. Which ending completes it?",
+            "explanation": "A lift on 'anyway' signals the switch, and a fall on 'go' asks an open question about the presentation. A rise would turn it into yes or no.",
+            "pitchRule": "↗️📉 A topic change lifts on its marker and falls on its question.",
+            "emotionContext": "Tactful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L194_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "You have to interrupt a colleague who is running over time.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "They found a cure for it?",
-            "textToSpeak": "They found a cure for it?",
+            "word": "Sorry, I'm going to have to stop you there.",
+            "textToSpeak": "Sorry, I'm going to have to stop you there.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Rise on 'there' — tentative",
+                "Fall on 'there' — polite but firm"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
+            "correctAnswer": "Fall on 'there' — polite but firm",
             "correctAnswerIndex": 1,
             "intonationMap": [
+                2,
+                3,
                 1,
-                2,
-                2,
-                4
+                0
             ],
-            "hint": "Listen to the pitch on 'it.' Does the speaker sound calm, or amazed?",
-            "explanation": "The rising pitch on 'it' shows astonishment, turning this into a surprised reaction rather than a calm statement.",
-            "pitchRule": "📈 Pitch rises on a statement-shaped sentence to turn it into a surprised, disbelieving question.",
-            "emotionContext": "Neutral"
+            "hint": "The apology is polite, but the action is not optional. Which ending shows that?",
+            "explanation": "A fall on 'there' keeps the politeness but makes the interruption firm. A rise would make it sound like a request.",
+            "pitchRule": "📉 A polite interruption still lands on a fall.",
+            "emotionContext": "Firm"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L194_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "Your friend is leaving her job to travel, and you're worried but supportive.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "They found a cure for it.",
-            "textToSpeak": "They found a cure for it.",
+            "word": "That's a big step. Are you sure you're ready?",
+            "textToSpeak": "That's a big step. Are you sure you're ready?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Level fall on 'step', soft rise on 'ready' — concerned support",
+                "Sharp fall on 'step', flat on 'ready' — disapproval"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Level fall on 'step', soft rise on 'ready' — concerned support",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
                 2,
-                1,
-                0
+                2,
+                3
             ],
-            "hint": "Same wording as before - listen again to the pitch on 'it.'",
-            "explanation": "Spoken calmly, the pitch falls on 'it,' showing the speaker is simply stating remarkable but calmly delivered news.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Surprised"
+            "hint": "There are two sentences, and the second is a question. Which delivery shows care?",
+            "explanation": "A soft rise on 'ready' shows that you want a real answer and care about it. A flat second sentence would sound like judgment.",
+            "pitchRule": "💛 Concern softens the closing question.",
+            "emotionContext": "Concerned"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L194_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend has done something generous for you.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "You've been awake for two days?",
-            "textToSpeak": "You've been awake for two days?",
+            "word": "I can't believe you did that for me.",
+            "textToSpeak": "I can't believe you did that for me.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Wide, warm fall — moved gratitude",
+                "Sharp rise — accusation"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Wide, warm fall — moved gratitude",
+            "correctAnswerIndex": 0,
             "intonationMap": [
+                3,
+                4,
                 1,
-                2,
-                2,
-                4
+                0
             ],
-            "hint": "Listen to the pitch on 'days.' Does this sound calm, or concerned and surprised?",
-            "explanation": "The rising pitch on 'days' shows concern and disbelief, turning this into a surprised reaction.",
-            "pitchRule": "📈 Pitch rises on a statement-shaped sentence to turn it into a surprised, disbelieving question.",
-            "emotionContext": "Determined"
+            "hint": "The words can express awe or anger. Which delivery fits the situation?",
+            "explanation": "A wide, warm fall shows that the speaker is touched. A sharp rise would sound accusing.",
+            "pitchRule": "😊 Gratitude is wide and warm.",
+            "emotionContext": "Moved"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L195_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "You're presenting quarterly numbers, and pause for effect between sentences.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This phone can translate languages instantly.",
-            "textToSpeak": "This phone can translate languages instantly.",
+            "word": "Revenue was up. Costs were down. And we still missed the target.",
+            "textToSpeak": "Revenue was up. Costs were down. And we still missed the target.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Three even, identical falls in a row — flat list",
+                "Two short falls, then a slower, lower fall — twist"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Two short falls, then a slower, lower fall — twist",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
                 2,
                 1,
                 0
             ],
-            "hint": "Listen to the pitch on 'instantly.' Is this calm, factual news?",
-            "explanation": "This is a calm statement, so the pitch falls on 'instantly,' simply describing a feature.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Curious"
+            "hint": "The last sentence changes the meaning of the first two. Which delivery prepares for the twist?",
+            "explanation": "Two short, bright falls set up the good news. A slower, lower last fall signals the twist.",
+            "pitchRule": "📉 A twist sits on a slower, lower fall.",
+            "emotionContext": "Rueful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L195_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "You're frustrated that a plan was delayed for weeks.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This phone can translate languages instantly?",
-            "textToSpeak": "This phone can translate languages instantly?",
+            "word": "If it were up to me, we'd have started weeks ago.",
+            "textToSpeak": "If it were up to me, we'd have started weeks ago.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Bright fall on 'ago', no stress on 'weeks' — cheerful",
+                "Lift on 'me', stress on 'weeks', fall on 'ago' — frustrated"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
+            "correctAnswer": "Lift on 'me', stress on 'weeks', fall on 'ago' — frustrated",
             "correctAnswerIndex": 1,
             "intonationMap": [
+                2,
+                4,
                 1,
-                2,
-                2,
-                4
+                0
             ],
-            "hint": "Same words as before - listen again to the pitch on 'instantly.'",
-            "explanation": "The rising pitch on 'instantly' turns identical wording into an impressed, disbelieving reaction.",
-            "pitchRule": "📈 Pitch rises on a statement-shaped sentence to turn it into a surprised, disbelieving question.",
-            "emotionContext": "Excited"
+            "hint": "The sentence has an unspoken complaint. Which word carries it?",
+            "explanation": "Stress on 'weeks' shows how long the delay felt. A bright fall would ignore the frustration.",
+            "pitchRule": "🤨 Frustration stresses the duration.",
+            "emotionContext": "Frustrated"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L195_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You're describing a risky idea to a colleague.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The whole team is working from home now.",
-            "textToSpeak": "The whole team is working from home now.",
+            "word": "I'm not saying it's impossible, just unlikely.",
+            "textToSpeak": "I'm not saying it's impossible, just unlikely.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Peaks on 'impossible' and 'unlikely' — contrast in degree",
+                "Peaks on 'saying' and 'just' — the framing wording"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Peaks on 'impossible' and 'unlikely' — contrast in degree",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
-                2,
                 1,
-                0
+                4,
+                1,
+                4
             ],
-            "hint": "Listen to the pitch on 'now.' Does this sound calm?",
-            "explanation": "This is a calm statement, so the pitch falls on 'now,' simply sharing the fact.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Doubtful"
+            "hint": "The speaker compares two degrees of difficulty. Which words carry the contrast?",
+            "explanation": "'Impossible' and 'unlikely' are the two degrees, so they take the peaks. 'Saying' and 'just' are framing words.",
+            "pitchRule": "🎯 Contrasted degrees carry the peaks.",
+            "emotionContext": "Measured"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L196_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend asks you to promise not to tell a secret, and you tease them.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Your grandmother climbed a mountain at eighty?",
-            "textToSpeak": "Your grandmother climbed a mountain at eighty?",
+            "word": "Have I ever told a secret?",
+            "textToSpeak": "Have I ever told a secret?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Rising, even — a genuine, serious question",
+                "Falling, light — playful rhetorical question"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
+            "correctAnswer": "Falling, light — playful rhetorical question",
             "correctAnswerIndex": 1,
             "intonationMap": [
+                2,
+                2,
                 1,
-                2,
-                2,
-                4
+                0
             ],
-            "hint": "Listen to the pitch on 'eighty.' Does the speaker sound calm, or amazed?",
-            "explanation": "The rising pitch on 'eighty' shows admiration and disbelief, turning this into a surprised reaction.",
-            "pitchRule": "📈 Pitch rises on a statement-shaped sentence to turn it into a surprised, disbelieving question.",
-            "emotionContext": "Neutral"
+            "hint": "The friend knows the answer. How seriously is the question meant?",
+            "explanation": "A light fall on 'secret' shows that the question is playful and that you expect 'no'. A rise would ask sincerely.",
+            "pitchRule": "😏 A light fall turns a yes/no question into a tease.",
+            "emotionContext": "Playful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L196_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A waiter offers you a drink.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Your grandmother climbed a mountain at eighty.",
-            "textToSpeak": "Your grandmother climbed a mountain at eighty.",
+            "word": "And for you, still or sparkling?",
+            "textToSpeak": "And for you, still or sparkling?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Rise on 'still', fall on 'sparkling' — choice",
+                "Rise on both words — open question, other drinks"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Rise on 'still', fall on 'sparkling' — choice",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
-                2,
+                1,
+                3,
                 1,
                 0
             ],
-            "hint": "Same wording as before - listen again to the pitch on 'eighty.'",
-            "explanation": "Spoken calmly, the pitch falls on 'eighty,' showing the speaker is simply stating an impressive but calmly delivered fact.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Surprised"
+            "hint": "Recall the pattern from choice questions. How do these two options end?",
+            "explanation": "Two named options use a rise on the first and a fall on the last. Both rising would not mark a choice.",
+            "pitchRule": "↗️📉 A waiter's two options follow the rise-fall pattern.",
+            "emotionContext": "Polite"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L196_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You comfort a friend after a breakup.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The show got renewed for ten more seasons?",
-            "textToSpeak": "The show got renewed for ten more seasons?",
+            "word": "You don't have to talk about it if you don't want to.",
+            "textToSpeak": "You don't have to talk about it if you don't want to.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Slow, low, gentle fall — permission and care",
+                "Bright, quick fall — cheerful, brisk reassurance"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Slow, low, gentle fall — permission and care",
+            "correctAnswerIndex": 0,
             "intonationMap": [
+                2,
                 1,
-                2,
-                2,
-                4
+                1,
+                0
             ],
-            "hint": "Listen to the pitch on 'seasons.' Does this sound calm, or shocked?",
-            "explanation": "The rising pitch on 'seasons' shows disbelief at the surprising number, turning this into a surprised reaction.",
-            "pitchRule": "📈 Pitch rises on a statement-shaped sentence to turn it into a surprised, disbelieving question.",
-            "emotionContext": "Determined"
+            "hint": "This is a gentle offer. Which delivery makes it feel safe?",
+            "explanation": "A slow, low fall shows care and gives space. A bright fall would sound cheerful and misplaced.",
+            "pitchRule": "💛 Care is slow, low and gentle.",
+            "emotionContext": "Gentle"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L197_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "Your friend says he sold his car to fund a trip to Iceland.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Scientists discovered a new species in the rainforest.",
-            "textToSpeak": "Scientists discovered a new species in the rainforest.",
+            "word": "You did what?",
+            "textToSpeak": "You did what?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Low fall on 'what' — angry disapproval",
+                "High rise on 'what' — stunned echo"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "High rise on 'what' — stunned echo",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
-                2,
                 1,
-                0
+                3,
+                4,
+                4
             ],
-            "hint": "Listen to the pitch on 'rainforest.' Is this calm, factual news?",
-            "explanation": "This is a calm statement, so the pitch falls on 'rainforest,' simply reporting the discovery.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Curious"
+            "hint": "The speaker heard exactly what was said. What is the question really expressing?",
+            "explanation": "A high rise on 'what' repeats the shocking news in disbelief. A low fall would sound angry.",
+            "pitchRule": "📈 A high rise on the WH-word signals disbelief.",
+            "emotionContext": "Stunned"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L197_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A manager has heard several complaints about an employee.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Scientists discovered a new species in the rainforest?",
-            "textToSpeak": "Scientists discovered a new species in the rainforest?",
+            "word": "I'll have a word with him.",
+            "textToSpeak": "I'll have a word with him.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Light, quick fall — casual",
+                "Level, firm fall — serious intent"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
+            "correctAnswer": "Level, firm fall — serious intent",
             "correctAnswerIndex": 1,
             "intonationMap": [
+                2,
+                2,
                 1,
-                2,
-                2,
-                4
+                0
             ],
-            "hint": "Same words as before - listen again to the pitch on 'rainforest.'",
-            "explanation": "The rising pitch on 'rainforest' turns identical wording into an amazed, disbelieving reaction.",
-            "pitchRule": "📈 Pitch rises on a statement-shaped sentence to turn it into a surprised, disbelieving question.",
-            "emotionContext": "Excited"
+            "hint": "The phrase can be casual or serious. Which delivery matches the situation?",
+            "explanation": "A level, firm fall shows that the manager takes it seriously. A light, quick fall would sound like a passing remark.",
+            "pitchRule": "📉 Serious intent uses a level, firm fall.",
+            "emotionContext": "Serious"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L197_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "Someone shows you the room they arranged, and it's not what you hoped for.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "He learned to play piano in three months.",
-            "textToSpeak": "He learned to play piano in three months.",
+            "word": "It's not exactly what I had in mind, but it'll do.",
+            "textToSpeak": "It's not exactly what I had in mind, but it'll do.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Bright fall on 'mind' and on 'do' — pleased approval",
+                "Lift on 'mind', low fall on 'do' — resigned acceptance"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Lift on 'mind', low fall on 'do' — resigned acceptance",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
                 2,
                 1,
                 0
             ],
-            "hint": "Listen to the pitch on 'months.' Does this sound calm?",
-            "explanation": "This is a calm statement, so the pitch falls on 'months,' simply sharing the fact.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Doubtful"
+            "hint": "There's a limit followed by an acceptance. Which delivery matches?",
+            "explanation": "A lift on 'mind' opens the reservation, and a low fall on 'do' shows resigned acceptance. A bright fall would sound pleased.",
+            "pitchRule": "📉 Resigned acceptance lands low.",
+            "emotionContext": "Resigned"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L198_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "You're leaving a voicemail for a client after a mistake on your side.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "You walked here all the way from downtown?",
-            "textToSpeak": "You walked here all the way from downtown?",
+            "word": "Hi Ms Lindqvist, it's Omar. I wanted to apologize personally for the delay.",
+            "textToSpeak": "Hi Ms Lindqvist, it's Omar. I wanted to apologize personally for the delay.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Slow, lowered fall on 'delay' — sincere apology",
+                "Bright, quick fall on 'delay' — routine apology"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Slow, lowered fall on 'delay' — sincere apology",
+            "correctAnswerIndex": 0,
             "intonationMap": [
+                2,
                 1,
-                2,
-                2,
-                4
+                1,
+                0
             ],
-            "hint": "Listen to the pitch on 'downtown.' Does the speaker sound calm, or amazed?",
-            "explanation": "The rising pitch on 'downtown' shows astonishment at the distance, turning this into a surprised reaction.",
-            "pitchRule": "📈 Pitch rises on a statement-shaped sentence to turn it into a surprised, disbelieving question.",
-            "emotionContext": "Neutral"
+            "hint": "The apology is the point. Which delivery makes it sincere?",
+            "explanation": "A slow, lowered fall shows that the apology is real. A bright, quick delivery would sound like a form letter.",
+            "pitchRule": "📉 A sincere apology is slower and lower.",
+            "emotionContext": "Apologetic"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L198_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A teenager says 'I'm fine' when they are clearly not.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "You walked here all the way from downtown.",
-            "textToSpeak": "You walked here all the way from downtown.",
+            "word": "You don't sound fine to me.",
+            "textToSpeak": "You don't sound fine to me.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Soft, low fall — caring observation",
+                "Sharp fall — accusation"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Soft, low fall — caring observation",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
@@ -550,178 +550,178 @@
                 1,
                 0
             ],
-            "hint": "Same wording as before - listen again to the pitch on 'downtown.'",
-            "explanation": "Spoken calmly, the pitch falls on 'downtown,' showing the speaker is simply stating a fact.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Surprised"
+            "hint": "You want to open a door, not confront. Which delivery is gentle?",
+            "explanation": "A soft, low fall makes the observation caring and invites conversation. A sharp fall would sound like an accusation.",
+            "pitchRule": "💛 Caring observations are soft and low.",
+            "emotionContext": "Caring"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L198_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You finish explaining a complicated process and want to check.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This recipe only needs three ingredients?",
-            "textToSpeak": "This recipe only needs three ingredients?",
+            "word": "Does that make more sense, or should I go through it again?",
+            "textToSpeak": "Does that make more sense, or should I go through it again?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Rise on 'sense', fall on 'again' — offering a choice",
+                "Rise on 'sense' and on 'again' — open question, one answer"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rise on 'sense', fall on 'again' — offering a choice",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
-                2,
-                2,
-                4
+                3,
+                1,
+                0
             ],
-            "hint": "Listen to the pitch on 'ingredients.' Does this sound calm, or pleasantly surprised?",
-            "explanation": "The rising pitch on 'ingredients' shows pleasant surprise at the simplicity, turning this into a questioning reaction.",
-            "pitchRule": "📈 Pitch rises on a statement-shaped sentence to turn it into a surprised, disbelieving question.",
-            "emotionContext": "Determined"
+            "hint": "There are two options in the sentence. Which ending offers them?",
+            "explanation": "A rise on 'sense' and a fall on 'again' mark the two options. Both rising would leave the question open.",
+            "pitchRule": "↗️📉 An offer of two choices follows the rise-fall pattern.",
+            "emotionContext": "Helpful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L199_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend describes a travel mishap and asks what you would have done.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The whole village lost power during the storm.",
-            "textToSpeak": "The whole village lost power during the storm.",
+            "word": "Honestly? I'd have taken the next flight home.",
+            "textToSpeak": "Honestly? I'd have taken the next flight home.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Fall on 'honestly', rise on 'home' — tentative",
+                "Rise on 'honestly', firm fall on 'home' — candid opinion"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rise on 'honestly', firm fall on 'home' — candid opinion",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
-                2,
+                1,
+                3,
                 1,
                 0
             ],
-            "hint": "Listen to the pitch on 'storm.' Is this calm, factual news?",
-            "explanation": "This is a calm statement, so the pitch falls on 'storm,' simply reporting the event.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Curious"
+            "hint": "The speaker is being direct. Which delivery shows confidence?",
+            "explanation": "A rise on 'honestly' draws attention, and a firm fall on 'home' delivers the opinion. A rise at the end would make it tentative.",
+            "pitchRule": "📉 A candid opinion ends with a firm fall.",
+            "emotionContext": "Candid"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L199_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "Someone compliments your talk and you deflect it modestly.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The whole village lost power during the storm?",
-            "textToSpeak": "The whole village lost power during the storm?",
+            "word": "Oh, that's kind, but the team did most of the work.",
+            "textToSpeak": "Oh, that's kind, but the team did most of the work.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Flat on 'kind' and on 'work' — dismissive reply",
+                "Warm lift on 'kind', fall on 'work' — modest deflection"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
+            "correctAnswer": "Warm lift on 'kind', fall on 'work' — modest deflection",
             "correctAnswerIndex": 1,
             "intonationMap": [
+                2,
+                3,
                 1,
-                2,
-                2,
-                4
+                0
             ],
-            "hint": "Same words as before - listen again to the pitch on 'storm.'",
-            "explanation": "The rising pitch on 'storm' turns identical wording into a concerned, surprised reaction.",
-            "pitchRule": "📈 Pitch rises on a statement-shaped sentence to turn it into a surprised, disbelieving question.",
-            "emotionContext": "Excited"
+            "hint": "The praise is kindly declined. Which delivery keeps things warm?",
+            "explanation": "A warm lift on 'kind' keeps the modesty polite, and a fall on 'work' shares the credit. A flat delivery would sound dismissive.",
+            "pitchRule": "🤝 Modesty is warm at the start and firm at the end.",
+            "emotionContext": "Modest"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L199_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "At a family dinner, your uncle repeats a rumor about your cousin.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Her startup just reached a million users.",
-            "textToSpeak": "Her startup just reached a million users.",
+            "word": "And where did you hear that?",
+            "textToSpeak": "And where did you hear that?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Low, flat fall — challenging",
+                "Bright fall — curious"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Low, flat fall — challenging",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
+                1,
                 1,
                 0
             ],
-            "hint": "Listen to the pitch on 'users.' Does this sound calm?",
-            "explanation": "This is a calm statement, so the pitch falls on 'users,' simply sharing impressive but calmly delivered news.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Doubtful"
+            "hint": "The question isn't neutral. Which delivery shows that?",
+            "explanation": "A low, flat fall makes the question a challenge to the source. A bright fall would sound curious.",
+            "pitchRule": "🤨 A flat, low fall can turn a WH-question into a challenge.",
+            "emotionContext": "Skeptical"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L200_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "A colleague hands you a resignation letter and says nothing else. You look up.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "You're really leaving tomorrow morning?",
-            "textToSpeak": "You're really leaving tomorrow morning?",
+            "word": "You're leaving?",
+            "textToSpeak": "You're leaving?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Low, slow rise — quiet shock",
+                "High, quick rise — excited surprise"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Low, slow rise — quiet shock",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
+                1,
                 2,
-                2,
-                4
+                3
             ],
-            "hint": "Listen to the pitch on 'morning.' Does the speaker sound calm, or a little emotional and surprised?",
-            "explanation": "The rising pitch on 'morning' shows surprise and emotion, turning this into a questioning reaction rather than a calm statement.",
-            "pitchRule": "📈 Pitch rises on a statement-shaped sentence to turn it into a surprised, disbelieving question.",
-            "emotionContext": "Neutral"
+            "hint": "The situation is emotional, but the sentence is short. Which delivery shows what you feel?",
+            "explanation": "A low, slow rise shows quiet shock, and the pace shows that you are absorbing it. A high, quick rise would sound excited.",
+            "pitchRule": "📈 Quiet shock is slow and low.",
+            "emotionContext": "Shocked"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L200_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "After a very long project, the team finally ships. You speak quietly to your manager.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "You're really leaving tomorrow morning.",
-            "textToSpeak": "You're really leaving tomorrow morning.",
+            "word": "We actually did it.",
+            "textToSpeak": "We actually did it.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
+                "Quick, narrow fall — routine report",
+                "Slow, wide fall on 'did it' — awed relief"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Slow, wide fall on 'did it' — awed relief",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                2,
+                4,
+                1,
+                0
+            ],
+            "hint": "The moment is emotional but quiet. Which delivery carries it?",
+            "explanation": "A slow, wide fall shows awe and relief. A quick, narrow fall would sound like a status update.",
+            "pitchRule": "😮‍💨 Awed relief is slow and wide.",
+            "emotionContext": "Relieved"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L200_Q3",
+            "instruction": "You must tell your team that a client is pulling out.",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "I've got some news, and it's not what we hoped for.",
+            "textToSpeak": "I've got some news, and it's not what we hoped for.",
+            "options": [
+                "Bright, quick fall on 'news' and 'for' — casual update",
+                "Lift on 'news', slow, lowered fall on 'for' — careful bad news"
+            ],
+            "correctAnswer": "Lift on 'news', slow, lowered fall on 'for' — careful bad news",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
                 2,
                 1,
                 0
             ],
-            "hint": "Same wording as before - listen again to the pitch on 'morning.'",
-            "explanation": "Spoken calmly, the pitch falls on 'morning,' showing the speaker is simply confirming a fact with no surprise.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Surprised"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L200_Q3",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "This is officially the final level?",
-            "textToSpeak": "This is officially the final level?",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Surprise/Disbelief Question)"
-            ],
-            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                1,
-                2,
-                2,
-                4
-            ],
-            "hint": "Listen to the pitch on 'level.' Does this sound like a calm statement, or a surprised, excited question?",
-            "explanation": "The rising pitch on 'level' turns this into a surprised, excited question - the same intonation skill you've now practiced across this entire course, from simple statements and questions all the way to subtle minimal pairs like this one.",
-            "pitchRule": "📈 Pitch rises on a statement-shaped sentence to turn it into a surprised, disbelieving question.",
-            "emotionContext": "Determined"
+            "hint": "The team needs to be prepared. Which delivery does that?",
+            "explanation": "A lift on 'news' prepares the listeners, and a slow, lowered fall on 'for' delivers the message gently. A bright delivery would clash with it.",
+            "pitchRule": "📉 Bad news is delivered slowly and low.",
+            "emotionContext": "Serious"
         }
     ]
 }

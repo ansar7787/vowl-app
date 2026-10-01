@@ -8,23 +8,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'documentary' as used in the sentence below?",
-            "targetWord": "documentary",
-            "sentence": "The documentary about climate change won several international awards.",
+            "question": "Which part of speech does 'who' represent in this sentence?",
+            "targetWord": "who",
+            "sentence": "The clerk who helped us was extremely patient.",
             "options": [
                 "Noun",
+                "Pronoun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Conjunction"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name types of films. What type of film does 'documentary' name?",
-            "explanation": "'Documentary' is a noun - it names a type of non-fiction film. It is the subject of the sentence, preceded by 'The'. 'Documentary' can also be an adjective ('documentary evidence'), but here it is a subject noun.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "Look at what this word does in this exact sentence. Who is the clause 'who helped us' describing?",
+            "explanation": "'Who' is a relative pronoun introducing a clause that describes 'the clerk' — even though it connects two ideas, it is a pronoun because it also stands in for 'the clerk' within its own clause.",
+            "grammarRule": "Relative pronoun introducing a descriptive clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "subject form",
+                "object form (whom)"
             ]
         },
         {
@@ -32,23 +32,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'enthusiastically' as used in the sentence below?",
-            "targetWord": "enthusiastically",
-            "sentence": "The audience enthusiastically applauded the performer at the end of the show.",
+            "question": "What role does 'which' play in this sentence?",
+            "targetWord": "which",
+            "sentence": "The report, which arrived late, contained several errors.",
             "options": [
-                "Noun",
+                "Pronoun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adverb",
-            "hint": "Adverbs modify verbs. How did the audience applaud?",
-            "explanation": "'Enthusiastically' is an adverb - it modifies the verb 'applauded' and tells us the manner of the applause.",
-            "grammarRule": "Adverbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Pronoun",
+            "hint": "Think about the job it performs here. What does the clause 'which arrived late' describe?",
+            "explanation": "'Which' is a relative pronoun introducing additional information about 'the report' — it functions as the subject within its own clause.",
+            "grammarRule": "Relative pronoun introducing a descriptive clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular use",
+                "plural use (whichever)"
             ]
         },
         {
@@ -56,23 +56,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'influence' as used in the sentence below?",
-            "targetWord": "influence",
-            "sentence": "Social media can greatly influence the way young people perceive themselves.",
+            "question": "Based on how it is used here, 'arrived' is a:",
+            "targetWord": "arrived",
+            "sentence": "The delivery arrived two hours behind schedule.",
             "options": [
-                "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "Verb",
-            "hint": "Verbs describe actions. Does 'influence' describe what social media does?",
-            "explanation": "'Influence' is a verb - it follows the modal 'can'. 'Influence' can also be a noun ('under the influence'), but here it follows 'can' as a verb.",
-            "grammarRule": "Verbs",
+            "hint": "Focus on its role in this sentence only. What did the delivery do?",
+            "explanation": "'Arrived' is a verb describing the delivery's action of reaching its destination, later than expected.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -80,23 +80,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'performance' as used in the sentence below?",
-            "targetWord": "performance",
-            "sentence": "The lead actor's performance left the entire audience completely speechless.",
+            "question": "The word 'that' is being used as which grammatical category?",
+            "targetWord": "that",
+            "sentence": "The laptop that Farah bought last week already needs repairs.",
             "options": [
+                "Conjunction",
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Pronoun"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name events and demonstrations of skill. What does 'performance' name?",
-            "explanation": "'Performance' is a noun - it names the act of performing. It follows the possessive 'actor's', confirming its noun function. The suffix '-ance' is a common noun-forming ending.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Pronoun",
+            "hint": "This word can introduce a descriptive clause about a thing just mentioned. What does the clause 'that Farah bought last week' describe?",
+            "explanation": "'That' is a relative pronoun introducing a clause describing 'the laptop' — it functions as the object of 'bought' within its own clause.",
+            "grammarRule": "Relative pronoun introducing a descriptive clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "relative use",
+                "demonstrative use"
             ]
         },
         {
@@ -104,23 +104,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'occasionally' as used in the sentence below?",
-            "targetWord": "occasionally",
-            "sentence": "She occasionally visits her old neighbourhood to have tea with former neighbours.",
+            "question": "Now, how is 'that' functioning here?",
+            "targetWord": "that",
+            "sentence": "That is the best solution we've heard so far.",
             "options": [
+                "Conjunction",
+                "Pronoun",
                 "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
+                "Verb"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adverb",
-            "hint": "Adverbs of frequency tell us HOW OFTEN something happens. How often does she visit?",
-            "explanation": "'Occasionally' is an adverb of frequency - it modifies the verb 'visits'. Frequency adverbs (occasionally, often, rarely, always) describe the regularity of an action.",
-            "grammarRule": "Adverbs",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "The same word can also stand alone in place of an idea already mentioned. What is 'that' replacing here?",
+            "explanation": "Here 'that' is a demonstrative pronoun functioning as the subject of the sentence, standing in for an idea already discussed — a different role from the relative pronoun use in the previous sentence.",
+            "grammarRule": "Demonstrative pronoun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "demonstrative use",
+                "relative use"
             ]
         },
         {
@@ -128,23 +128,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'release' as used in the sentence below?",
-            "targetWord": "release",
-            "sentence": "The studio plans to release the film in cinemas worldwide next spring.",
+            "question": "What kind of word is 'repairs' in this sentence?",
+            "targetWord": "repairs",
+            "sentence": "The repairs took longer than the mechanic expected.",
             "options": [
-                "Noun",
                 "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe planned actions. What does the studio plan to do?",
-            "explanation": "'Release' is a verb - it follows 'to' as an infinitive. 'Release' can be a noun ('the album's release'), but here it follows 'to' as an infinitive verb.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Noun",
+            "hint": "Check the words directly around it for clues. What took longer than expected?",
+            "explanation": "'Repairs' is a noun here, naming the fixing work that took time — it functions as the subject of the sentence.",
+            "grammarRule": "Common noun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "plural form"
             ]
         },
         {
@@ -152,23 +152,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'tradition' as used in the sentence below?",
-            "targetWord": "tradition",
-            "sentence": "Celebrating the new year with fireworks is a long-standing tradition in many cultures.",
+            "question": "Classify 'Either' as it appears in this sentence.",
+            "targetWord": "Either",
+            "sentence": "Either the manager or the assistant will approve the request.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Conjunction",
+                "Pronoun",
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name cultural practices. What does 'tradition' name here?",
-            "explanation": "'Tradition' is a noun - it names a cultural practice. It follows 'a long-standing', confirming it is a noun.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Conjunction",
+            "hint": "This word pairs with 'or' later in the sentence to present two possibilities. What role does it play here?",
+            "explanation": "'Either' functions as part of the correlative conjunction 'either...or', pairing with 'or' to present two alternative people who might approve the request.",
+            "grammarRule": "Correlative conjunction pairing with 'or'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related pronoun use"
             ]
         },
         {
@@ -176,23 +176,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'typically' as used in the sentence below?",
-            "targetWord": "typically",
-            "sentence": "Teenagers typically spend several hours each day on social media platforms.",
+            "question": "In this sentence, 'Neither' is functioning as a:",
+            "targetWord": "Neither",
+            "sentence": "Neither the printer nor the scanner was working this morning.",
             "options": [
+                "Conjunction",
                 "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Pronoun"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adverb",
-            "hint": "Adverbs describe how regularly something normally happens. What does 'typically' modify?",
-            "explanation": "'Typically' is an adverb - it modifies the verb 'spend' and indicates this is the usual or expected pattern.",
-            "grammarRule": "Adverbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Conjunction",
+            "hint": "This word pairs with 'nor' later in the sentence to reject two possibilities. What role does it play here?",
+            "explanation": "'Neither' functions as part of the correlative conjunction 'neither...nor', pairing with 'nor' to reject both the printer and the scanner as working.",
+            "grammarRule": "Correlative conjunction pairing with 'nor'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related pronoun use"
             ]
         },
         {
@@ -200,23 +200,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'respect' as used in the sentence below?",
-            "targetWord": "respect",
-            "sentence": "It is important to respect the customs and traditions of the countries you visit.",
+            "question": "What part of speech is 'punctual' in this sentence?",
+            "targetWord": "punctual",
+            "sentence": "Mr. Whitfield is famously punctual for every meeting.",
             "options": [
-                "Noun",
+                "Adverb",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe attitudes and behaviours. What is described as important?",
-            "explanation": "'Respect' is a verb - it appears in the infinitive ('to respect'). 'Respect' can be a noun ('show respect'), but here it follows 'to' as an infinitive verb.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "Set aside what you know about this word in general. What quality is Mr. Whitfield known for?",
+            "explanation": "'Punctual' is an adjective describing Mr. Whitfield's habit of being on time, following the linking verb 'is'.",
+            "grammarRule": "Predicate adjective after a linking verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "positive form",
+                "comparative form"
             ]
         },
         {
@@ -224,23 +224,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'critic' as used in the sentence below?",
-            "targetWord": "critic",
-            "sentence": "The film critic praised the director's bold and unconventional approach.",
+            "question": "How is 'Both' functioning in this sentence?",
+            "targetWord": "Both",
+            "sentence": "Both the coach and the players stayed late after practice.",
             "options": [
+                "Pronoun",
                 "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Conjunction"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name professional roles. What role does 'critic' name?",
-            "explanation": "'Critic' is a noun - it names a professional who evaluates cultural works. It follows 'The film', confirming its noun function.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Conjunction",
+            "hint": "This word pairs with 'and' later in the sentence to combine two subjects. What role does it play here?",
+            "explanation": "'Both' functions as part of the correlative conjunction 'both...and' here, pairing with 'and' to join the coach and the players as equal subjects.",
+            "grammarRule": "Correlative conjunction pairing with 'and'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related pronoun use"
             ]
         },
         {
@@ -248,23 +248,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'surprisingly' as used in the sentence below?",
-            "targetWord": "surprisingly",
-            "sentence": "The survey results were surprisingly positive across all demographic groups.",
+            "question": "In this context, what part of speech is 'but'?",
+            "targetWord": "but",
+            "sentence": "Not only did she finish early, but she also helped others.",
             "options": [
+                "Conjunction",
                 "Noun",
                 "Verb",
-                "Adjective",
                 "Adverb"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adverb",
-            "hint": "Adverbs can modify adjectives as well as verbs. What does 'surprisingly' modify here?",
-            "explanation": "'Surprisingly' is an adverb - it modifies the adjective 'positive'. Stance adverbs (surprisingly, remarkably, disappointingly) comment on the unexpected nature of what follows.",
-            "grammarRule": "Adverbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Conjunction",
+            "hint": "This word pairs with 'not only' earlier in the sentence to add a second surprising fact. What role does it play here?",
+            "explanation": "'But' functions as part of the correlative conjunction 'not only...but also' here, pairing with 'not only' to add the second fact about helping others.",
+            "grammarRule": "Correlative conjunction pairing with 'not only'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related conjunction (and)"
             ]
         },
         {
@@ -272,23 +272,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'represent' as used in the sentence below?",
-            "targetWord": "represent",
-            "sentence": "These paintings represent some of the most significant work of the entire movement.",
+            "question": "Which grammatical category best describes 'early' here?",
+            "targetWord": "early",
+            "sentence": "The bakery opens early on weekends to serve commuters.",
             "options": [
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs can describe symbolic functions. What do the paintings do?",
-            "explanation": "'Represent' is a verb - it is a present-tense verb with 'these paintings' as its subject. 'Representation' is its noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "Notice what the word is attached to. When does the bakery open?",
+            "explanation": "'Early' is a time adverb modifying the verb 'opens' — it tells us when the bakery starts serving customers.",
+            "grammarRule": "Time adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "adverb use"
             ]
         },
         {
@@ -296,23 +296,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'audience' as used in the sentence below?",
-            "targetWord": "audience",
-            "sentence": "The audience gave the orchestra a standing ovation at the end of the concert.",
+            "question": "What grammatical job does 'In spite of' do in this sentence?",
+            "targetWord": "In spite of",
+            "sentence": "In spite of the traffic, Ingrid arrived exactly on time.",
             "options": [
                 "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
+                "Preposition",
+                "Conjunction",
+                "Verb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Collective nouns name groups. What group does 'audience' name?",
-            "explanation": "'Audience' is a collective noun - it names a group of spectators or listeners. Collective nouns treat a group as a single entity.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Preposition",
+            "hint": "This expression introduces a contrast, similar to 'despite.' What condition did Ingrid overcome?",
+            "explanation": "'In spite of' functions as a compound preposition here, introducing a phrase that contrasts with the main clause — Ingrid arrived on time even though there was traffic.",
+            "grammarRule": "Compound preposition introducing a contrast phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related conjunction (although)"
             ]
         },
         {
@@ -320,23 +320,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'thoughtfully' as used in the sentence below?",
-            "targetWord": "thoughtfully",
-            "sentence": "She thoughtfully replied to every message she received from her readers.",
+            "question": "Which part of speech is 'reliable' as it is used here?",
+            "targetWord": "reliable",
+            "sentence": "Ingrid has always been a reliable colleague.",
             "options": [
                 "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Verb"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adverb",
-            "hint": "Adverbs describe HOW an action is performed. How did she reply?",
-            "explanation": "'Thoughtfully' is an adverb - it modifies the verb 'replied'. It is formed from the adjective 'thoughtful' + '-ly'.",
-            "grammarRule": "Adverbs",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "Focus on its role in this sentence only. What quality does 'reliable' give Ingrid?",
+            "explanation": "'Reliable' is an adjective describing Ingrid's dependable character, following the linking verb 'has been'.",
+            "grammarRule": "Predicate adjective after a linking verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "positive form",
+                "comparative form"
             ]
         },
         {
@@ -344,23 +344,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'publish' as used in the sentence below?",
-            "targetWord": "publish",
-            "sentence": "The editor decided to publish the controversial article despite the expected backlash.",
+            "question": "Which category fits 'exactly' in this sentence?",
+            "targetWord": "exactly",
+            "sentence": "The train departs exactly at noon every day.",
             "options": [
-                "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Media verbs describe editorial actions. What did the editor decide to do?",
-            "explanation": "'Publish' is a verb - it follows 'to' as an infinitive. 'Publication' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adverb",
+            "hint": "Check the words directly around it for clues. How precisely does the train depart at noon?",
+            "explanation": "'Exactly' is a degree adverb modifying the prepositional phrase 'at noon', emphasizing the precision of the departure time.",
+            "grammarRule": "Degree adverb modifying a phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "adverb use"
             ]
         },
         {
@@ -368,23 +368,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'exhibit' as used in the sentence below?",
-            "targetWord": "exhibit",
-            "sentence": "The museum opened a fascinating exhibit on the daily life of ancient Egyptians.",
+            "question": "Which part of speech does 'Anybody' represent in this sentence?",
+            "targetWord": "Anybody",
+            "sentence": "Anybody can join the community garden on weekends.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Pronoun",
+                "Noun",
+                "Verb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name cultural displays. What does 'exhibit' name here?",
-            "explanation": "'Exhibit' is a noun - it names a collection of objects displayed in a museum. It follows 'a fascinating', confirming it is a noun.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "Ask how it connects to the words near it. Who can join the garden?",
+            "explanation": "'Anybody' is an indefinite pronoun referring to any person in general — it functions as the subject of the sentence.",
+            "grammarRule": "Indefinite pronoun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular use",
+                "related pronoun (everybody)"
             ]
         },
         {
@@ -392,23 +392,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'consistently' as used in the sentence below?",
-            "targetWord": "consistently",
-            "sentence": "She consistently produced the highest quality results in the entire department.",
+            "question": "Identify the part of speech of 'Nothing' in this context.",
+            "targetWord": "Nothing",
+            "sentence": "Nothing seemed to calm the crying toddler.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Pronoun",
+                "Verb"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adverb",
-            "hint": "Adverbs describe how regularly something happens. How did she produce results?",
-            "explanation": "'Consistently' is an adverb - it modifies the verb 'produced' and tells us the results were of uniform quality over time.",
-            "grammarRule": "Adverbs",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Pronoun",
+            "hint": "Look at what this word does in this exact sentence. What failed to calm the toddler?",
+            "explanation": "'Nothing' is an indefinite pronoun referring to the absence of anything effective — it functions as the subject of the sentence.",
+            "grammarRule": "Indefinite pronoun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular use",
+                "related pronoun (something)"
             ]
         },
         {
@@ -416,9 +416,9 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'reveal' as used in the sentence below?",
-            "targetWord": "reveal",
-            "sentence": "The investigation began to reveal some deeply troubling patterns of misconduct.",
+            "question": "Identify the part of speech of 'soothed' in this context.",
+            "targetWord": "soothed",
+            "sentence": "A gentle lullaby finally soothed the crying toddler.",
             "options": [
                 "Noun",
                 "Verb",
@@ -427,12 +427,12 @@
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "Verb",
-            "hint": "Verbs describe uncovering information. What did the investigation start to do?",
-            "explanation": "'Reveal' is a verb - it follows the semi-modal 'began to'. 'Revelation' is its noun form.",
-            "grammarRule": "Verbs",
+            "hint": "Look at what this word does in this exact sentence. What did the lullaby do to the toddler?",
+            "explanation": "'Soothed' is a verb describing the lullaby's calming effect on the toddler.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -440,23 +440,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'partnership' as used in the sentence below?",
-            "targetWord": "partnership",
-            "sentence": "The partnership between the two companies proved highly profitable for both parties.",
+            "question": "Which grammatical category best describes 'Oh no' here?",
+            "targetWord": "Oh no",
+            "sentence": "\"Oh no, I forgot the client's file at home,\" Malik groaned.",
             "options": [
-                "Noun",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Interjection"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name professional relationships. What does 'partnership' name?",
-            "explanation": "'Partnership' is a noun - it names a formal relationship. The suffix '-ship' is a common noun-forming ending (partnership, friendship, leadership).",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Interjection",
+            "hint": "Focus on its role in this sentence only. What phrase shows Malik's reaction?",
+            "explanation": "'Oh no' functions as an interjection here, expressing Malik's dismay before he explains what happened.",
+            "grammarRule": "Interjection expressing dismay",
             "transformations": [
-                "noun form",
-                "verb form"
+                "interjection use",
+                "related exclamation"
             ]
         },
         {
@@ -464,23 +464,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'remarkably' as used in the sentence below?",
-            "targetWord": "remarkably",
-            "sentence": "She remained remarkably calm throughout the high-pressure press conference.",
+            "question": "Classify 'file' as it appears in this sentence.",
+            "targetWord": "file",
+            "sentence": "The file contained three years of tax records.",
             "options": [
                 "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Verb"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adverb",
-            "hint": "Adverbs can modify adjectives. What does 'remarkably' modify here?",
-            "explanation": "'Remarkably' is an adverb - it modifies the adjective 'calm' and suggests the calmness was noteworthy. Intensifying adverbs (remarkably, surprisingly) emphasise adjectives.",
-            "grammarRule": "Adverbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Set aside what you know about this word in general. What contained the tax records?",
+            "explanation": "'File' is a noun here, naming the document that held the records — it functions as the subject of the sentence.",
+            "grammarRule": "Common noun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "plural form"
             ]
         },
         {
@@ -488,23 +488,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'challenge' as used in the sentence below?",
-            "targetWord": "challenge",
-            "sentence": "New findings began to challenge some widely accepted assumptions in the field.",
+            "question": "What kind of word is 'on top of' in this sentence?",
+            "targetWord": "on top of",
+            "sentence": "The keys were sitting on top of the refrigerator the whole time.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Preposition",
+                "Verb",
+                "Noun"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs can describe intellectual actions. What do the new findings do?",
-            "explanation": "'Challenge' is a verb - it follows 'began to' and describes the action of questioning or disputing beliefs. 'Challenge' can be a noun, but here it follows 'to' as an infinitive verb.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Preposition",
+            "hint": "This expression shows the position of one thing above another. Where were the keys?",
+            "explanation": "'On top of' functions as a compound preposition here, introducing the phrase that shows the keys' position above the refrigerator.",
+            "grammarRule": "Compound preposition introducing a location phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related adverb use"
             ]
         },
         {
@@ -512,23 +512,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'coverage' as used in the sentence below?",
-            "targetWord": "coverage",
-            "sentence": "The live media coverage of the event attracted millions of viewers worldwide.",
+            "question": "Which part of speech is 'whose' as it is used here?",
+            "targetWord": "whose",
+            "sentence": "The scientist whose research won the award spoke at the conference.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Pronoun",
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name types of media activity. What does 'coverage' name here?",
-            "explanation": "'Coverage' is a noun - it names the reporting of an event by media. The suffix '-age' forms nouns (coverage, storage, usage). It is preceded by 'The live media'.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Pronoun",
+            "hint": "This word shows possession within a descriptive clause. Whose research won the award?",
+            "explanation": "'Whose' is a relative pronoun showing possession — it introduces a clause describing 'the scientist' by identifying whose research won the award.",
+            "grammarRule": "Relative pronoun showing possession in a descriptive clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "relative use",
+                "interrogative use"
             ]
         },
         {
@@ -536,23 +536,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'predominantly' as used in the sentence below?",
-            "targetWord": "predominantly",
-            "sentence": "The neighbourhood was predominantly residential with very few commercial properties.",
+            "question": "Based on how it is used here, 'Since' is a:",
+            "targetWord": "Since",
+            "sentence": "Since the results were promising, the team requested more funding.",
             "options": [
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Preposition",
+                "Conjunction"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Adverb",
-            "hint": "Adverbs can modify adjectives. What does 'predominantly' modify here?",
-            "explanation": "'Predominantly' is an adverb - it modifies the adjective 'residential' and means 'mostly' or 'mainly'.",
-            "grammarRule": "Adverbs",
+            "correctAnswer": "Conjunction",
+            "hint": "Focus on its role in this sentence only. Why did the team request more funding?",
+            "explanation": "'Since' functions as a subordinating conjunction here, meaning 'because' — it introduces the reason for the team's request.",
+            "grammarRule": "Subordinating conjunction introducing a reason clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "preposition use (time)"
             ]
         },
         {
@@ -560,23 +560,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'broadcast' as used in the sentence below?",
-            "targetWord": "broadcast",
-            "sentence": "The network will broadcast the match live to over fifty countries simultaneously.",
+            "question": "In this sentence, 'promising' is functioning as a:",
+            "targetWord": "promising",
+            "sentence": "The promising results convinced the board to continue the project.",
             "options": [
-                "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Noun"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Media verbs describe transmission actions. What will the network do?",
-            "explanation": "'Broadcast' is a verb - it follows the modal 'will'. Note: 'broadcast' is also its own past tense (not 'broadcasted').",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Adjective",
+            "hint": "Notice what the word is attached to. What quality do the results have?",
+            "explanation": "'Promising' is an adjective modifying 'results', describing their positive potential — though it comes from the verb 'promise', here it functions as a descriptive adjective.",
+            "grammarRule": "Participial adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb form",
+                "adjective form"
             ]
         },
         {
@@ -584,23 +584,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'episode' as used in the sentence below?",
-            "targetWord": "episode",
-            "sentence": "The final episode of the series attracted record-breaking viewing figures.",
+            "question": "In this context, what part of speech is 'who'?",
+            "targetWord": "who",
+            "sentence": "The intern who submitted the report before the deadline received praise from the entire department.",
             "options": [
+                "Pronoun",
+                "Preposition",
                 "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
+                "Verb"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name units of serialised media. What does 'episode' name?",
-            "explanation": "'Episode' is a noun - it names a single instalment of a series. It follows 'The final', confirming it is a noun.",
-            "grammarRule": "Nouns",
+            "correctAnswer": "Pronoun",
+            "hint": "Notice what the word is attached to. Which intern is being talked about?",
+            "explanation": "'Who' is a relative pronoun introducing the clause 'who submitted the report before the deadline', identifying which intern received praise.",
+            "grammarRule": "Relative pronoun introducing a descriptive clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "subject form",
+                "object form (whom)"
             ]
         },
         {
@@ -608,23 +608,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'genuinely' as used in the sentence below?",
-            "targetWord": "genuinely",
-            "sentence": "He was genuinely surprised when his colleagues organised a farewell party for him.",
+            "question": "Looking at the same sentence, how is 'before' functioning?",
+            "targetWord": "before",
+            "sentence": "The intern who submitted the report before the deadline received praise from the entire department.",
             "options": [
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Preposition",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adverb",
-            "hint": "Adverbs can modify adjectives to indicate sincerity. What does 'genuinely' modify here?",
-            "explanation": "'Genuinely' is an adverb - it modifies the adjective 'surprised', indicating his surprise was real and not performed.",
-            "grammarRule": "Adverbs",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Preposition",
+            "hint": "Think about the job it performs here. When did the intern submit the report?",
+            "explanation": "'Before' is a preposition introducing a time phrase within the relative clause, showing that the report was submitted ahead of the deadline.",
+            "grammarRule": "Preposition introducing a time phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related conjunction use"
             ]
         },
         {
@@ -632,23 +632,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'entertain' as used in the sentence below?",
-            "targetWord": "entertain",
-            "sentence": "The book is designed to entertain and educate young readers at the same time.",
+            "question": "And in that same sentence, what part of speech is 'received'?",
+            "targetWord": "received",
+            "sentence": "The intern who submitted the report before the deadline received praise from the entire department.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Verb",
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "Verb",
-            "hint": "Verbs describe the purpose of a creative work. What is the book designed to do?",
-            "explanation": "'Entertain' is a verb - it appears in the infinitive ('to entertain') and describes the book's intended purpose. It is paired with 'educate', confirming both are infinitive verbs.",
-            "grammarRule": "Verbs",
+            "hint": "Check the words directly around it for clues. What did the intern get?",
+            "explanation": "'Received' is a verb describing the main action of the sentence — the intern getting praise from the department.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -656,23 +656,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'narrative' as used in the sentence below?",
-            "targetWord": "narrative",
-            "sentence": "The narrative of the novel unfolds entirely over the course of a single day.",
+            "question": "Which part of speech does 'Either' represent in this sentence?",
+            "targetWord": "Either",
+            "sentence": "Either the supplier or the warehouse team, whichever responds first, must confirm the shipment that was delayed last week.",
             "options": [
-                "Noun",
-                "Verb",
+                "Conjunction",
                 "Adjective",
-                "Adverb"
+                "Pronoun",
+                "Noun"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Literary nouns name structural elements of texts. What does 'narrative' name?",
-            "explanation": "'Narrative' is a noun - it names the storyline of a literary work. It follows 'The', as the subject. 'Narrative' can be an adjective ('narrative technique'), but here it is clearly a noun.",
-            "grammarRule": "Nouns",
+            "correctAnswer": "Conjunction",
+            "hint": "This word pairs with 'or' to present two possible responders. What two options are being presented?",
+            "explanation": "'Either' functions as part of the correlative conjunction 'either...or', pairing with 'or' to present the supplier and the warehouse team as two possible options.",
+            "grammarRule": "Correlative conjunction pairing with 'or'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related pronoun use"
             ]
         },
         {
@@ -680,23 +680,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'deliberately' as used in the sentence below?",
-            "targetWord": "deliberately",
-            "sentence": "She deliberately avoided the topic whenever it came up in conversation.",
+            "question": "Which grammatical category fits 'whichever' in that same sentence?",
+            "targetWord": "whichever",
+            "sentence": "Either the supplier or the warehouse team, whichever responds first, must confirm the shipment that was delayed last week.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Conjunction",
+                "Noun",
+                "Pronoun"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Adverb",
-            "hint": "Adverbs can describe intentionality. How did she avoid the topic?",
-            "explanation": "'Deliberately' is an adverb - it modifies the verb 'avoided' and indicates the action was intentional, not accidental.",
-            "grammarRule": "Adverbs",
+            "correctAnswer": "Pronoun",
+            "hint": "Look at what this word does in this exact sentence. What is it doing here?",
+            "explanation": "'Whichever' is an indefinite relative pronoun referring to whichever of the two parties responds first — it stands in for that unspecified option.",
+            "grammarRule": "Indefinite relative pronoun referring to an unspecified option",
             "transformations": [
-                "noun form",
-                "verb form"
+                "relative use",
+                "related pronoun (whoever)"
             ]
         },
         {
@@ -704,23 +704,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'inspire' as used in the sentence below?",
-            "targetWord": "inspire",
-            "sentence": "Great teachers have the power to inspire their students long after they leave school.",
+            "question": "Back in that same sentence, what kind of word is 'delayed'?",
+            "targetWord": "delayed",
+            "sentence": "Either the supplier or the warehouse team, whichever responds first, must confirm the shipment that was delayed last week.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Adverb",
+                "Verb"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Verb",
-            "hint": "Verbs describe abstract effects. What can great teachers do?",
-            "explanation": "'Inspire' is a verb - it follows 'to' in the infinitive after 'the power'. 'Inspiration' is its noun form.",
-            "grammarRule": "Verbs",
+            "hint": "This word could describe a state or name a past action. Since it follows 'was' and refers to something that happened to the shipment, what is it doing here?",
+            "explanation": "'Delayed' functions as a verb here in the passive voice ('was delayed'), describing the action that happened to the shipment — contrast this with participial adjective uses like 'exhausted' or 'broken' from earlier lessons, which described a resulting state rather than an ongoing passive action.",
+            "grammarRule": "Verb in the passive voice",
             "transformations": [
-                "noun form",
-                "verb form"
+                "active voice",
+                "passive voice"
             ]
         }
     ]

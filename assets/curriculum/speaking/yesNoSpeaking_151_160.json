@@ -1,307 +1,307 @@
 {
-    "gameType": "yesNoSpeaking",
-    "batchIndex": 16,
-    "levels": "151-160",
-    "quests": [
-        {
-            "id": "SPK_YESNOSPEAKING_L151_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Hold the whole sentence in mind, especially the second half of the sentence, which currently reads \"Fifth\".",
-            "explanation": "\"Sixth\" replaced \"Fifth\" in the second half of the sentence. In longer, more complex sentences, that's exactly where changes tend to hide.",
-            "prompt": "Neighbors teamed up to clean out the abandoned lot on Fifth Street.",
-            "sampleAnswer": "Neighbors teamed up to clean out the abandoned lot on Sixth Street.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L151_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This one rewards careful listening to the second half of the sentence -- the text has it as \"new\".",
-            "explanation": "This question tests your attention to the second half of the sentence. Here it was \"new\", not \"old\" -- a small difference with a real effect on meaning.",
-            "prompt": "The town hall meeting ran long because residents kept bringing up new concerns.",
-            "sampleAnswer": "The town hall meeting ran long because residents kept bringing up old concerns.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L151_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This sentence has more than one part -- listen closely to the second half of the sentence, currently \"recycling\".",
-            "explanation": "Notice that only the second half of the sentence changed: \"recycling\" became \"parking\". Everything surrounding it was identical.",
-            "prompt": "The committee decided to phase in the new recycling rules gradually.",
-            "sampleAnswer": "The committee decided to phase in the new parking rules gradually.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L152_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "One small word can flip the whole meaning here. Focus on the linking word, written as \"began\".",
-            "explanation": "The real difference here is the linking word: \"began\" instead of \"ended\". At this level, small shifts like this change the whole meaning.",
-            "prompt": "IT asked everyone to log off before the scheduled maintenance began.",
-            "sampleAnswer": "IT asked everyone to log off before the scheduled maintenance ended.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L152_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Don't just catch the main idea -- listen for the two-word verb too, written here as \"up\".",
-            "explanation": "Both versions sound similar at a glance, but the two-word verb tells the real story: \"up\", not \"back\".",
-            "prompt": "The startup managed to scale up production without hiring more staff.",
-            "sampleAnswer": "The startup managed to scale back production without hiring more staff.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L152_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Longer sentences hide their changes in the details. Watch for the second half of the sentence -- right now, \"major\".",
-            "explanation": "The two versions differ in just one place, the second half of the sentence: \"major\" versus \"minor\". The rest of the sentence stays identical.",
-            "prompt": "Developers had to roll back the update once users reported major bugs.",
-            "sampleAnswer": "Developers had to roll back the update once users reported minor bugs.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L153_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Don't just listen for words -- listen for the logic in the linking word: \"on leave\".",
-            "explanation": "This pair tests your ear for the linking word. The sentence uses \"on leave\", not \"in training\" -- a subtle but meaningful difference.",
-            "prompt": "She had to fill in for her manager while he was on leave.",
-            "sampleAnswer": "She had to fill in for her manager while he was in training.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L153_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Slow down and listen past the main clause -- the text reads \"overtime\" in the second half of the sentence.",
-            "explanation": "This question tests your attention to the second half of the sentence. Here it was \"overtime\", not \"travel\" -- a small difference with a real effect on meaning.",
-            "prompt": "The department decided to cut back on overtime despite the tight deadline.",
-            "sampleAnswer": "The department decided to cut back on travel despite the tight deadline.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L153_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Hold the whole sentence in mind, especially the second half of the sentence, which currently reads \"both departments\".",
-            "explanation": "Notice that only the second half of the sentence changed: \"both departments\" became \"neither department\". Everything surrounding it was identical.",
-            "prompt": "He finally worked out a compromise that fully satisfied both departments.",
-            "sampleAnswer": "He finally worked out a compromise that fully satisfied neither department.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L154_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This one rewards careful listening to the second half of the sentence -- the text has it as \"anxiety\".",
-            "explanation": "The sentence structure is the same in both versions. The actual difference sits in the second half of the sentence: \"anxiety\" versus \"childhood\".",
-            "prompt": "The therapist encouraged him to open up about his anxiety gradually.",
-            "sampleAnswer": "The therapist encouraged him to open up about his childhood gradually.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L154_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This sentence has more than one part -- listen closely to the second half of the sentence, currently \"exercises\".",
-            "explanation": "Both versions sound similar at a glance, but the second half of the sentence tells the real story: \"exercises\", not \"medication\".",
-            "prompt": "Recovery slowed down once she stopped keeping up with her exercises.",
-            "sampleAnswer": "Recovery slowed down once she stopped keeping up with her medication.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L154_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This one is subtle. Pay close attention to the linking word -- the text has \"since\".",
-            "explanation": "This pair tests your ear for the linking word. The sentence uses \"since\", not \"although\" -- a subtle but meaningful difference.",
-            "prompt": "The hospital had to bring in extra staff since flu season started early.",
-            "sampleAnswer": "The hospital had to bring in extra staff although flu season started early.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L155_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Don't just catch the main idea -- listen for the second half of the sentence too, written here as \"passport\".",
-            "explanation": "\"visa\" replaced \"passport\" in the second half of the sentence. In longer, more complex sentences, that's exactly where changes tend to hide.",
-            "prompt": "We had to hold up our trip because of a passport issue.",
-            "sampleAnswer": "We had to hold up our trip because of a visa issue.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L155_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Longer sentences hide their changes in the details. Watch for the second half of the sentence -- right now, \"formal dinner nights\".",
-            "explanation": "This question tests your attention to the second half of the sentence. Here it was \"formal dinner nights\", not \"extra baggage fees\" -- a small difference with a real effect on meaning.",
-            "prompt": "The cruise line decided to do away with the formal dinner nights.",
-            "sampleAnswer": "The cruise line decided to do away with the extra baggage fees.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L155_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The overall meaning is close either way. What matters is the second half of the sentence: \"flooded\", as written.",
-            "explanation": "Notice that only the second half of the sentence changed: \"flooded\" became \"crowded\". Everything surrounding it was identical.",
-            "prompt": "Tourists were told to steer clear of the flooded mountain trails.",
-            "sampleAnswer": "Tourists were told to steer clear of the crowded mountain trails.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L156_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Slow down and listen past the main clause -- the text reads \"spring\" in the second half of the sentence.",
-            "explanation": "The sentence structure is the same in both versions. The actual difference sits in the second half of the sentence: \"spring\" versus \"winter\".",
-            "prompt": "The manufacturer decided to phase out plastic packaging by next spring.",
-            "sampleAnswer": "The manufacturer decided to phase out plastic packaging by next winter.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L156_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The meaning shifts depending on the linking word -- the text currently says \"improved\". Listen carefully.",
-            "explanation": "This pair tests your ear for the linking word. The sentence uses \"improved\", not \"worsened\" -- a subtle but meaningful difference.",
-            "prompt": "Reviews improved sharply once the brand cleaned up its supply chain.",
-            "sampleAnswer": "Reviews worsened sharply once the brand cleaned up its supply chain.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L156_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This one rewards careful listening to the second half of the sentence -- the text has it as \"misleading\".",
-            "explanation": "The two versions differ in just one place, the second half of the sentence: \"misleading\" versus \"missing\". The rest of the sentence stays identical.",
-            "prompt": "Shoppers were quick to point out the oddly misleading price tags.",
-            "sampleAnswer": "Shoppers were quick to point out the oddly missing price tags.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L157_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This sentence has more than one part -- listen closely to the second half of the sentence, currently \"job\".",
-            "explanation": "\"partner\" replaced \"job\" in the second half of the sentence. In longer, more complex sentences, that's exactly where changes tend to hide.",
-            "prompt": "My sister decided to move out once she found a stable job.",
-            "sampleAnswer": "My sister decided to move out once she found a stable partner.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L157_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Sentences at this level hinge on the linking word, currently \"because\", so listen with care.",
-            "explanation": "\"because\" and \"although\" look similar, but the linking word is exactly what this sentence was testing.",
-            "prompt": "The kids kept acting up because they were overtired from the trip.",
-            "sampleAnswer": "The kids kept acting up although they were overtired from the trip.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L157_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Don't just catch the main idea -- listen for the second half of the sentence too, written here as \"retire early\".",
-            "explanation": "Notice that only the second half of the sentence changed: \"retire early\" became \"work longer\". Everything surrounding it was identical.",
-            "prompt": "My father finally opened up about his plans to retire early.",
-            "sampleAnswer": "My father finally opened up about his plans to work longer.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L158_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Longer sentences hide their changes in the details. Watch for the second half of the sentence -- right now, \"draft\".",
-            "explanation": "The sentence structure is the same in both versions. The actual difference sits in the second half of the sentence: \"draft\" versus \"budget\".",
-            "prompt": "The professor agreed to look over the draft before the deadline.",
-            "sampleAnswer": "The professor agreed to look over the budget before the deadline.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L158_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This sentence is as much about logic as vocabulary. Listen for the linking word: \"improved\", as written.",
-            "explanation": "At this level, the challenge isn't new vocabulary -- it's catching the linking word, like the shift from \"improved\" to \"dropped\".",
-            "prompt": "Grades improved quite noticeably once the teacher cut down on homework.",
-            "sampleAnswer": "Grades dropped quite noticeably once the teacher cut down on homework.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L158_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Slow down and listen past the main clause -- the text reads \"do away with\" in the two-word verb.",
-            "explanation": "The two versions differ in just one place, the two-word verb: \"do away with\" versus \"bring back\". The rest of the sentence stays identical.",
-            "prompt": "The board decided to do away with the midyear exams altogether.",
-            "sampleAnswer": "The board decided to bring back the midyear exams altogether.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L159_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Hold the whole sentence in mind, especially the second half of the sentence, which currently reads \"both sides\".",
-            "explanation": "\"neither side\" replaced \"both sides\" in the second half of the sentence. In longer, more complex sentences, that's exactly where changes tend to hide.",
-            "prompt": "The negotiators finally worked out a deal that pleased both sides.",
-            "sampleAnswer": "The negotiators finally worked out a deal that pleased neither side.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L159_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This one is subtle. Pay close attention to the linking word -- the text has \"picked up\".",
-            "explanation": "Notice that the linking word shifted from \"picked up\" to \"slowed down\". Precise listening matters most in sentences like this.",
-            "prompt": "Production picked up again once the factory sorted out the delay.",
-            "sampleAnswer": "Production slowed down again once the factory sorted out the delay.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L159_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This sentence has more than one part -- listen closely to the second half of the sentence, currently \"grew any worse\".",
-            "explanation": "Notice that only the second half of the sentence changed: \"grew any worse\" became \"became public\". Everything surrounding it was identical.",
-            "prompt": "The CEO decided to step down before the scandal grew any worse.",
-            "sampleAnswer": "The CEO decided to step down before the scandal became public.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L160_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The key detail is tucked inside the sentence. Focus on the second half of the sentence: the text says \"highway\".",
-            "explanation": "The sentence structure is the same in both versions. The actual difference sits in the second half of the sentence: \"highway\" versus \"factory\".",
-            "prompt": "Residents banded together quickly to speak out against the proposed highway.",
-            "sampleAnswer": "Residents banded together quickly to speak out against the proposed factory.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L160_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The individual words are easy to hear; the linking word -- \"grew\" -- is the real challenge.",
-            "explanation": "The real difference here is the linking word: \"grew\" instead of \"faded\". At this level, small shifts like this change the whole meaning.",
-            "prompt": "Support for the project grew once organizers reached out to local businesses.",
-            "sampleAnswer": "Support for the project faded once organizers reached out to local businesses.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L160_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Longer sentences hide their changes in the details. Watch for the second half of the sentence -- right now, \"shelter\".",
-            "explanation": "The two versions differ in just one place, the second half of the sentence: \"shelter\" versus \"library\". The rest of the sentence stays identical.",
-            "prompt": "The council agreed to set aside extra funding for the shelter.",
-            "sampleAnswer": "The council agreed to set aside extra funding for the library.",
-            "followUpQuestion": "Why do you think that?"
-        }
-    ]
+  "gameType": "yesNoSpeaking",
+  "batchIndex": 16,
+  "levels": "151-160",
+  "quests": [
+    {
+      "id": "SPK_YESNOSPEAKING_L151_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Who is asking whom? Listen to the pronouns after \"if\".",
+      "explanation": "In one version the speaker offers to send the figures, and in the other the speaker is asking for them. A polite request can hide a role reversal.",
+      "prompt": "I was wondering if I could send you the updated figures by tomorrow afternoon.",
+      "sampleAnswer": "I was wondering if you could send me the updated figures by tomorrow afternoon.",
+      "followUpQuestion": "Ask a colleague for information, using a very polite phrase."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L151_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A very polite permission request. Listen to the verb after \"if\".",
+      "explanation": "You heard exactly what was written. \"Would you mind if I\" is followed by a past-tense verb even though the request is about the future.",
+      "prompt": "Would you mind if I took a look at the contract over the weekend?",
+      "sampleAnswer": "Would you mind if I took a look at the contract over the weekend?",
+      "followUpQuestion": "Ask permission to look at something, using Would you mind if."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L151_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "An interruption begins with an apology and ends with a plan.",
+      "explanation": "\"Just\" makes the request seem small, and \"clarify\" is a professional word for making something clear.",
+      "prompt": "I'm sorry to interrupt, but could I just clarify one point before we continue?",
+      "sampleAnswer": "I'm sorry to interrupt, but could I just clarify one point before we continue?",
+      "followUpQuestion": "Interrupt politely and ask for one point to be explained."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L152_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A customer service phrase has two parts joined by \"and\".",
+      "explanation": "The two-part structure of thanks plus apology is typical in written and spoken service English.",
+      "prompt": "Thank you for your patience, and I apologise for the inconvenience this has caused.",
+      "sampleAnswer": "Thank you for your patience, and I apologise for the inconvenience this has caused.",
+      "followUpQuestion": "Apologise to a customer and thank them for waiting."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L152_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A polite disagreement contains a modal verb near the end.",
+      "explanation": "Will sounds more direct and certain, while would sounds more hypothetical and polite. Only one small word separates them.",
+      "prompt": "I take your point, but I'm not sure that will work in practice.",
+      "sampleAnswer": "I take your point, but I'm not sure that would work in practice.",
+      "followUpQuestion": "Say you understand a suggestion but have doubts about it."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L152_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A suggestion with a condition at the start and a time at the end.",
+      "explanation": "Nothing was altered in this one. \"If it's convenient\" makes the suggestion more polite than just proposing a new time.",
+      "prompt": "If it's convenient, we could reschedule the call for the same time next week.",
+      "sampleAnswer": "If it's convenient, we could reschedule the call for the same time next week.",
+      "followUpQuestion": "Suggest a new time for a call, and check it's convenient."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L153_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A request includes a soft word before the verb.",
+      "explanation": "\"Possibly\" makes the request more tentative and is typical in customer contact.",
+      "prompt": "Could you possibly give me a few more details about the delivery charges?",
+      "sampleAnswer": "Could you possibly give me a few more details about the delivery charges?",
+      "followUpQuestion": "Ask a company to give you more information, in a very polite way."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L153_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Refusal, then a softening offer to look further.",
+      "explanation": "\"I'm afraid\" is a polite way to introduce bad news, and \"but I'll check\" reduces the disappointment.",
+      "prompt": "I'm afraid that's not something we can offer at the moment, but I'll check.",
+      "sampleAnswer": "I'm afraid that's not something we can offer at the moment, but I'll check.",
+      "followUpQuestion": "Refuse a request politely, and offer to look into another option."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L153_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Two solutions are offered. Listen to how much money is returned.",
+      "explanation": "Full and partial refunds are very different. A customer who hears the wrong one might expect more than they get.",
+      "prompt": "We'd be happy to arrange a replacement, or a partial refund if you prefer.",
+      "sampleAnswer": "We'd be happy to arrange a replacement, or a full refund if you prefer.",
+      "followUpQuestion": "Offer a customer a choice between two solutions."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L154_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A polite request comes with an explanation.",
+      "explanation": "The recording follows the text word for word. \"Rather\" is a British way to say \"quite\", and \"the line's\" is a contraction of \"the line is\".",
+      "prompt": "Would you mind repeating the last part? The line's rather bad.",
+      "sampleAnswer": "Would you mind repeating the last part? The line's rather bad.",
+      "followUpQuestion": "Ask someone to repeat because of a bad line."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L154_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A complaint is introduced gently. Focus on what hasn't happened to the invoice.",
+      "explanation": "Sent and paid lead to different follow-ups. Chasing payment is more delicate than chasing a missing document.",
+      "prompt": "I hate to be a nuisance, but the invoice still hasn't been sent.",
+      "sampleAnswer": "I hate to be a nuisance, but the invoice still hasn't been paid.",
+      "followUpQuestion": "Remind someone about an unpaid or missing invoice without sounding rude."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L154_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The opening phrase softens the claim. Then the auxiliary decides its truth.",
+      "explanation": "Hasn't and has are opposites. A person who mishears might miss a rescheduled meeting or go to a cancelled one.",
+      "prompt": "As far as I know, the meeting hasn't been moved to Thursday morning.",
+      "sampleAnswer": "As far as I know, the meeting has been moved to Thursday morning.",
+      "followUpQuestion": "Say what you know about a schedule, but admit you may be wrong."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L155_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A suggestion has a deadline. Which week?",
+      "explanation": "This week is much closer than next week. The listener would plan work at a different pace.",
+      "prompt": "I'd suggest we make a decision by the end of this week.",
+      "sampleAnswer": "I'd suggest we make a decision by the end of next week.",
+      "followUpQuestion": "Suggest a deadline to your team and give a reason."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L155_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A gentle correction of an earlier arrangement.",
+      "explanation": "\"I think\" and \"there's been a misunderstanding\" avoid blaming anybody directly.",
+      "prompt": "Sorry, I think there's been a misunderstanding about which date we agreed on.",
+      "sampleAnswer": "Sorry, I think there's been a misunderstanding about which date we agreed on.",
+      "followUpQuestion": "Politely say a mistake happened about a date."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L155_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A negotiation includes a discount and a condition. What must the customer do?",
+      "explanation": "Ordering and paying are two different steps in a purchase, and mishearing may cost the customer the discount.",
+      "prompt": "We can offer a ten percent discount if you pay before the end of the month.",
+      "sampleAnswer": "We can offer a ten percent discount if you order before the end of the month.",
+      "followUpQuestion": "Offer a discount and say what the customer must do to get it."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L156_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A phone call is transferred to a department. Which one?",
+      "explanation": "Sales and accounts deal with completely different questions. The caller would end up with the wrong person.",
+      "prompt": "Would you like me to put you through to my colleague in sales?",
+      "sampleAnswer": "Would you like me to put you through to my colleague in accounts?",
+      "followUpQuestion": "Transfer a call to another department, politely."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L156_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A promise to solve a problem for a group.",
+      "explanation": "\"Let me see if\" gives the speaker time and doesn't promise too much.",
+      "prompt": "Let me see if I can find a solution that works for everyone.",
+      "sampleAnswer": "Let me see if I can find a solution that works for everyone.",
+      "followUpQuestion": "Promise to find a solution, without promising too much."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L156_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Disagreement is softened, and then understanding is shown.",
+      "explanation": "This is a straight match. \"I can see where you're coming from\" shows you understand the other person's view.",
+      "prompt": "I'm not sure I completely agree, but I can see where you're coming from.",
+      "sampleAnswer": "I'm not sure I completely agree, but I can see where you're coming from.",
+      "followUpQuestion": "Say you see someone's point but disagree with part of it."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L157_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A polite request has a purpose and a moment.",
+      "explanation": "\"Go through\" means to review each point, and \"before\" fixes the timing.",
+      "prompt": "Could we possibly go through the agenda again before the client joins us?",
+      "sampleAnswer": "Could we possibly go through the agenda again before the client joins us?",
+      "followUpQuestion": "Ask to go through an agenda once more before a visitor arrives."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L157_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A form needs two actions. The second action is the one to check.",
+      "explanation": "Dating and initialling are different tasks. A rejected form may cost the customer a second visit.",
+      "prompt": "If you could sign here and date each page, that would be perfect.",
+      "sampleAnswer": "If you could sign here and initial each page, that would be perfect.",
+      "followUpQuestion": "Explain to someone how to sign and date a form correctly."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L157_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A thank-you phrase mentions how someone replied.",
+      "explanation": "Calling back and emailing back are different ways of replying: one by voice, the other in writing. It tells you how the person responded.",
+      "prompt": "Thank you for calling me back so quickly, I really appreciate it.",
+      "sampleAnswer": "Thank you for emailing me back so quickly, I really appreciate it.",
+      "followUpQuestion": "Thank someone for replying so fast, in a warm but professional way."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L158_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A compromise follows \"rather than\". Listen to which detail is being adjusted.",
+      "explanation": "Date and address are both details on an order, but one is about timing and the other about location.",
+      "prompt": "Rather than cancel the whole order, could we just change the delivery date?",
+      "sampleAnswer": "Rather than cancel the whole order, could we just change the delivery address?",
+      "followUpQuestion": "Suggest a small change to an order, instead of cancelling it."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L158_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A formal-sounding request includes a way to confirm.",
+      "explanation": "\"In writing\" means by email or letter, rather than by phone.",
+      "prompt": "I'd be grateful if you could confirm the booking in writing.",
+      "sampleAnswer": "I'd be grateful if you could confirm the booking in writing.",
+      "followUpQuestion": "Ask someone to confirm a booking in writing."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L158_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A concession is followed by a doubt.",
+      "explanation": "They're the same. \"Although\" softens the doubt, and \"I wonder whether\" is a gentle way to question.",
+      "prompt": "That's a fair point, although I wonder whether the timing is right.",
+      "sampleAnswer": "That's a fair point, although I wonder whether the timing is right.",
+      "followUpQuestion": "Accept a good point, and then raise a small doubt."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L159_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A polite correction contains two dates. Which one is right?",
+      "explanation": "The dates are the same words in a different order. The correction changes when you must finish.",
+      "prompt": "Actually, I think you'll find the deadline is the fifth, not the fifteenth.",
+      "sampleAnswer": "Actually, I think you'll find the deadline is the fifteenth, not the fifth.",
+      "followUpQuestion": "Correct a deadline politely in your own words."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L159_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A refusal with a reason. The reason is in the second half.",
+      "explanation": "Listening and reading agree here. \"At full capacity\" means no more work or customers can be taken.",
+      "prompt": "We'd love to help, but I'm afraid we're already at full capacity this week.",
+      "sampleAnswer": "We'd love to help, but I'm afraid we're already at full capacity this week.",
+      "followUpQuestion": "Say no to a request because you're too busy, kindly."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L159_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A caller asks for a person by department.",
+      "explanation": "Complaints and returns are handled by different teams, so the caller would need a different answer.",
+      "prompt": "Would it be possible to speak to someone in charge of complaints?",
+      "sampleAnswer": "Would it be possible to speak to someone in charge of returns?",
+      "followUpQuestion": "Ask to speak to the right department in a polite way."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L160_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Thanks are given for someone's time. Listen to what they explained.",
+      "explanation": "\"Appreciate\" is followed by the person and an -ing verb.",
+      "prompt": "I appreciate you taking the time to explain the process to me.",
+      "sampleAnswer": "I appreciate you taking the time to explain the process to me.",
+      "followUpQuestion": "Thank someone for taking time to explain something."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L160_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "After an apology, the request has a verb that shows how to repeat.",
+      "explanation": "Spelling asks for letters, and saying again asks for the sound. On the phone, they help in different ways.",
+      "prompt": "Sorry, I didn't catch that. Could you spell your surname for me?",
+      "sampleAnswer": "Sorry, I didn't catch that. Could you say your surname again for me?",
+      "followUpQuestion": "Ask someone to spell a word or a name on the phone."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L160_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A policy sentence has a condition with a verb about the booking.",
+      "explanation": "Cancelled and changed are different actions with different rules, and customers care about the exact wording.",
+      "prompt": "We'll have to charge you a small fee if the booking is cancelled within twenty-four hours.",
+      "sampleAnswer": "We'll have to charge you a small fee if the booking is changed within twenty-four hours.",
+      "followUpQuestion": "Explain a cancellation policy in your own words."
+    }
+  ]
 }

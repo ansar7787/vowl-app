@@ -4,633 +4,633 @@
     "levels": "121-130",
     "quests": [
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that leads with the direct yes/no before adding detail.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you delegate tasks effectively?",
+            "interviewerQuestion": "Can you tell me, in one sentence first, whether you've managed a budget before, and then explain?",
             "options": [
-                "I assign tasks based on who has the most available time.",
-                "I delegate the parts of my workload that I find less interesting.",
-                "I match tasks to each person's strengths and give clear context on the desired outcome, then step back and let them own it."
+                "Yes. I managed a $50,000 event budget last year, tracking spend weekly and coming in under budget by reallocating funds from an unused vendor line.",
+                "Well, budgets are something I've dealt with in a few different ways over the years, and it really depends on what you mean by managing one, since there are different levels of involvement, but generally speaking I'd say I have some experience with it.",
+                "Sort of, I guess, depending on how you define it."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Effective delegation matches strengths to tasks and grants real ownership, rather than just distributing based on availability or personal preference.",
-            "explanation": "Matching tasks to strengths and granting real ownership sets people up to succeed, while delegating purely by availability or personal preference doesn't consider what will actually produce the best outcome.",
+            "hint": "Answer the yes/no part first, then add the specific detail.",
+            "explanation": "Leading with a direct yes and a concrete example respects the format the interviewer asked for. Rambling around the definition delays the answer, and a vague 'sort of' doesn't actually answer the direct question asked.",
             "id": "ji_l121_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you delegated an important task successfully.",
-            "options": [
-                "I assigned the task clearly and made sure to review the final work carefully.",
-                "I gave a team member full ownership of a client deliverable, checked in only at key milestones, and let them present the final result themselves.",
-                "I delegated it but stayed closely involved throughout the process."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Genuine ownership, with check-ins only at key milestones, is stronger delegation than close involvement or reviewing only the end result.",
-            "explanation": "Giving genuine ownership with milestone check-ins builds real trust and growth, while reviewing only the final result or staying closely involved throughout doesn't extend the same level of true delegation.",
-            "id": "ji_l121_q2",
-            "interviewerReaction": [
-                "disappointed",
                 "impressed",
-                "disappointed"
+                "losing interest",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer with the direct yes/no first, then one strong supporting detail.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you decide what to delegate versus what to handle yourself?",
+            "interviewerQuestion": "Quick one first: have you worked with cloud infrastructure? Then tell me more.",
             "options": [
-                "I delegate tasks that offer growth opportunities for others and keep only what truly requires my specific expertise or judgment.",
-                "I delegate the more routine, lower-priority tasks.",
-                "I try to delegate as much as possible to reduce my own workload."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Delegating based on growth opportunity, not just routine or workload reduction, reflects more thoughtful leadership.",
-            "explanation": "Delegating based on growth opportunities develops your team intentionally, while delegating only routine tasks or delegating simply to reduce your own workload doesn't reflect that same developmental thinking.",
-            "id": "ji_l121_q3",
-            "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "How do you motivate an underperforming team member?",
-            "options": [
-                "I set clearer expectations so they understand what's required.",
-                "I offer encouragement and let them know I believe in them.",
-                "I have an honest conversation to understand what's behind the performance gap, then work with them on a specific plan to improve."
+                "That's an interesting question, because cloud infrastructure covers a lot of ground, everything from basic hosting to more complex container orchestration, and I've touched different parts of that spectrum at different points in my career, so it's a bit hard to give a simple yes or no.",
+                "A little, here and there.",
+                "Yes. I managed our team's migration to AWS last year, which cut our hosting costs by about 20%."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Understanding the root cause first leads to a more effective plan than jumping straight to expectations or encouragement alone.",
-            "explanation": "Understanding the root cause behind underperformance leads to a targeted, effective plan, while setting clearer expectations or offering encouragement alone doesn't address whatever is actually driving the gap.",
-            "id": "ji_l122_q1",
+            "hint": "Give the direct yes/no answer the question format asked for, then add one strong detail.",
+            "explanation": "A direct yes followed by one concrete, impressive detail respects the question's structure and gives real substance. Overexplaining the scope of 'cloud infrastructure' before answering delays the direct response, and 'a little, here and there' doesn't give the interviewer anything to work with.",
+            "id": "ji_l121_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "losing interest",
+                "uncertain",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that responds to the direct question first, then supports it with a number.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you helped a struggling team member turn their performance around.",
+            "interviewerQuestion": "Just to start, yes or no: have you closed deals over $100,000? Go from there.",
             "options": [
-                "I gave them consistent positive feedback to help build their confidence.",
-                "I discovered they were unclear on priorities, so I worked with them to set specific weekly goals and checked in regularly on progress.",
-                "I paired them with a stronger performer to learn from."
+                "So, deal size can really vary a lot depending on the client and the market segment, and I've worked across a range of deal sizes throughout my career, which makes it a little tricky to answer that in a simple yes or no way.",
+                "Yes. My largest deal last year was $180,000, closed after a three-month cycle with a healthcare client.",
+                "I believe so, yes, though I'd have to check my records to be sure of an exact number."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Identifying the specific root cause and building a targeted plan around it is stronger than general encouragement or pairing alone.",
-            "explanation": "Identifying the specific root cause and building a targeted plan with regular check-ins shows real leadership, while general positive feedback or pairing with a stronger performer doesn't directly address what was actually causing the struggle.",
-            "id": "ji_l122_q2",
+            "professionalismRating": 4,
+            "hint": "Answer the direct question first, then support it with a specific figure.",
+            "explanation": "A direct yes paired with a specific, real number gives exactly what was asked for. Deflecting into general commentary about deal size avoids answering directly, and hedging on your own numbers undercuts the confidence of an otherwise fine answer.",
+            "id": "ji_l121_q3",
             "interviewerReaction": [
-                "disappointed",
+                "losing interest",
                 "impressed",
-                "disappointed"
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that picks the single most important outcome given the time limit.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What's your approach when someone on your team isn't meeting expectations?",
+            "interviewerQuestion": "We only have two minutes left. Give me the most important thing about your last project.",
             "options": [
-                "I start with a direct, private conversation to understand the situation before deciding on next steps together.",
-                "I document the performance issues in case they need to be escalated.",
-                "I give them more detailed instructions to reduce ambiguity."
+                "It was a big project with a lot of moving parts, and overall I think it went pretty well.",
+                "There's a lot to say about that project, from the initial planning phase to the design iterations to the development challenges we ran into partway through, and honestly it's hard to pick just one most important thing given how much happened.",
+                "The most important thing is that we shipped a redesigned checkout flow that increased conversion by 15%, which was the core goal of the whole project."
+            ],
+            "correctAnswerIndex": 2,
+            "professionalismRating": 5,
+            "hint": "Pick the single most important outcome and lead with that, given the time constraint.",
+            "explanation": "Naming the single most important outcome respects the stated time constraint and gives real substance. Refusing to prioritize wastes the limited time available, and a vague summary doesn't actually answer what was asked.",
+            "id": "ji_l122_q1",
+            "interviewerReaction": [
+                "uncertain",
+                "losing interest",
+                "impressed"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that names the single biggest result in one sentence, as requested.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "In one sentence, what mattered most about that campaign?",
+            "options": [
+                "It went well overall and hit most of its goals.",
+                "The key result was a 40% increase in qualified leads, which directly came from retargeting a specific audience segment we'd previously ignored.",
+                "There were a few things that mattered, honestly, including the creative direction, the channel mix, the budget allocation, and the timing, all of which played a role in how things turned out overall."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Pick the single biggest result and state it in one sentence, as asked.",
+            "explanation": "Naming the single biggest, most specific result respects the one-sentence constraint. Listing multiple factors ignores the format entirely, and a vague 'went well' doesn't answer what mattered most.",
+            "id": "ji_l122_q2",
+            "interviewerReaction": [
+                "unconvinced",
+                "impressed",
+                "losing interest"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that names the single clearest result, matching the request for a headline.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Sorry to interrupt, but we're almost out of time. What's the headline from that initiative?",
+            "options": [
+                "The headline is that we cut order processing time by a third, which was the main problem the initiative was meant to solve.",
+                "That's hard to boil down to just one headline, since there were a lot of contributing factors and the initiative touched several different parts of the operation.",
+                "It was a good initiative overall,. but I'm not fully confident saying that."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "A direct, understanding-first conversation is a stronger starting point than documentation or simply adding more instructions.",
-            "explanation": "A direct, understanding-first conversation shows genuine leadership before jumping to formal steps, while documenting issues right away or simply adding more detailed instructions skips that important first step.",
+            "professionalismRating": 4,
+            "hint": "Name the single clearest result, matching the interruption's request for a headline.",
+            "explanation": "Giving the single clearest result, matching the exact word 'headline,' respects the interruption and gives real content. Resisting the need to pick one headline ignores the request, and a vague sense of people being happy isn't a headline at all.",
             "id": "ji_l122_q3",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "losing interest",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the everyday analogy that captures the value, not the mechanism.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle a direct report who resists feedback?",
+            "interviewerQuestion": "I'm not from a technical background, so can you explain what you actually built in a way I'd understand?",
             "options": [
-                "I try to understand what's behind their resistance and adjust how I deliver feedback so it lands more effectively.",
-                "I make sure to be very clear and direct so there's no room for misunderstanding.",
-                "I give them some space and revisit the feedback again later."
+                "Sure. Think of it like a filing system that used to take an employee an hour to sort through by hand. I built a tool that sorts it automatically in seconds, so people can spend their time on more useful work.",
+                "I built a microservices-based API layer that handled asynchronous data ingestion and normalized it against our schema before pushing it to the downstream reporting pipeline. using a fairly standard approach that most engineers on similarly scoped backend systems would probably recognize without much explanation.",
+                "It's a bit technical to explain simply, but basically it's a system that processes data."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Understanding the reason behind the resistance often matters more than simply being clearer or waiting.",
-            "explanation": "Understanding what's behind the resistance lets you adjust your approach meaningfully, while simply being clearer or giving space and revisiting later doesn't address the underlying reason feedback isn't landing.",
+            "hint": "Use an everyday analogy that captures the value, not the technical mechanism.",
+            "explanation": "An everyday analogy that captures the practical value respects the interviewer's stated background and actually communicates the point. Technical jargon ignores the request entirely, and a vague 'processes data' answer doesn't really explain anything.",
             "id": "ji_l123_q1",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain",
+                "unconvinced"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that describes the purpose of the work in plain terms.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time an employee pushed back on your feedback.",
+            "interviewerQuestion": "Finance isn't my area. Could you walk me through your day-to-day work in plain language?",
             "options": [
-                "I explained my reasoning again more thoroughly.",
-                "I asked them to share their perspective first, which helped me realize I needed to frame the feedback around specific outcomes rather than general impressions.",
-                "I gave them time to reflect on the feedback before discussing it further."
+                "It's mostly numbers and spreadsheets, hard to explain without getting into the details.",
+                "I handle variance analysis on our operating expenditures against forecasted budgets and reconcile discrepancies across departmental cost centers each month.",
+                "In simple terms, I help the company understand whether it's spending money wisely, by comparing what we planned to spend against what we actually spent, and flagging anything that looks off."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Asking for their perspective first often reveals what needs to change about how feedback is delivered.",
-            "explanation": "Asking for their perspective first can reveal exactly what needs to change about how feedback is framed, while simply explaining your reasoning again or giving time to reflect doesn't get at that same underlying insight.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Describe the purpose of the work in plain terms, not the technical process.",
+            "explanation": "Describing the purpose in plain, relatable terms respects the interviewer's stated background. Technical financial terminology ignores the request, and 'numbers and spreadsheets' doesn't actually explain what the work accomplishes.",
             "id": "ji_l123_q2",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "unconvinced",
+                "uncertain",
+                "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that translates the technical change into a business outcome.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you build a relationship where feedback is well received?",
+            "interviewerQuestion": "I'm on the business side, not engineering. What impact did your work actually have, in terms I'd care about?",
             "options": [
-                "I try to deliver feedback as constructively and kindly as possible.",
-                "I make sure to balance criticism with positive feedback too.",
-                "I make feedback a regular, two-way conversation, not just something that happens when there's a problem."
+                "The system I built reduced the time it took to process customer orders from two days to two hours, which meant we could take on significantly more orders without hiring additional staff.",
+                "I refactored our order processing pipeline to use event-driven architecture instead of polling, which reduced latency and improved throughput considerably across the system.",
+                "It made things faster and more efficient on the backend."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Making feedback a regular, ongoing conversation builds more trust than focusing only on how individual pieces of feedback are delivered.",
-            "explanation": "Making feedback a regular, two-way conversation builds ongoing trust, while focusing only on how kindly or how balanced individual feedback is delivered doesn't build that same consistent relationship.",
+            "hint": "Translate the technical change into a business outcome the audience explicitly said they care about.",
+            "explanation": "Translating the change directly into a business outcome, speed and capacity, respects exactly what the interviewer asked for. Technical architecture terms ignore the stated audience, and a vague 'faster and more efficient' doesn't quantify anything meaningful.",
             "id": "ji_l123_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "impressed",
+                "uncertain",
+                "unconvinced"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that connects a specific action to a measurable cost effect.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you build consensus across departments?",
+            "interviewerQuestion": "How does the work you do in HR actually matter to the company's bottom line?",
             "options": [
-                "I hold meetings with all relevant stakeholders to discuss the decision.",
-                "I try to accommodate each department's concerns as much as possible.",
-                "I identify shared goals across departments first, then frame decisions around that common ground rather than individual department interests."
+                "HR is important because it makes sure employees are happy and the workplace culture is positive, which is good for everyone in the long run.",
+                "I think HR just generally supports the business in a lot of different ways.",
+                "Reducing our new-hire turnover by improving onboarding directly cut recruitment costs, since replacing an employee typically costs several times their monthly salary in time and hiring fees."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Framing decisions around shared goals builds more genuine consensus than simply gathering input or trying to please everyone.",
-            "explanation": "Framing decisions around shared goals builds genuine, lasting consensus, while simply holding meetings or trying to accommodate every department's individual concerns doesn't necessarily unify people around a common purpose.",
+            "hint": "Connect a specific HR action to a measurable cost or revenue effect.",
+            "explanation": "Connecting a specific action to a measurable cost saved makes the business case concrete. A general claim about culture and happiness, while true, doesn't quantify anything, and a vague statement about general support says nothing specific at all.",
             "id": "ji_l124_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "neutral",
+                "unconvinced",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that ties a specific metric to a real business outcome.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you got multiple departments aligned on a decision.",
+            "interviewerQuestion": "Support often gets seen as a cost center. How would you make the case that your work adds real value?",
             "options": [
-                "I gathered feedback from each department before finalizing the decision.",
-                "I mapped out how the decision would benefit each department differently, which helped everyone see the shared value even from different angles.",
-                "I presented the decision clearly and answered everyone's questions."
+                "I think support is just as important as any other part of the business, honestly.",
+                "When I reduced average resolution time by 30%, our customer retention on flagged accounts improved measurably, since people who get fast help are far less likely to churn.",
+                "Support matters because customers need help, and if they don't get it, they'll be unhappy with the company overall. and unhappy customers are generally more likely to leave negative reviews or simply stop using the product altogether."
             ],
             "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Showing each department the shared value from their own angle is more effective than simply gathering feedback or presenting the plan.",
-            "explanation": "Showing each department the shared value from their own angle helps genuine alignment take root, while simply gathering feedback or presenting the decision clearly doesn't actively build that same shared understanding.",
+            "hint": "Tie a specific support metric to a business outcome like retention or revenue, not a general statement of importance.",
+            "explanation": "Tying a specific support metric to retention, a real business outcome, makes a concrete case. A general statement about unhappy customers doesn't quantify the value, and asserting importance without evidence doesn't actually make the case.",
             "id": "ji_l124_q2",
             "interviewerReaction": [
-                "disappointed",
+                "unconvinced",
                 "impressed",
-                "disappointed"
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that quantifies the improvement and connects it to a financial outcome.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle competing priorities between departments?",
+            "interviewerQuestion": "Training programs are often the first thing cut in a tight budget. How would you argue for their value?",
             "options": [
-                "I facilitate a direct conversation between the departments to surface the real trade-offs, then help them agree on a shared path forward.",
-                "I try to make a fair decision that balances both departments' needs.",
-                "I escalate the decision to leadership when priorities conflict."
+                "I think training programs are usually worth the investment in the long run.",
+                "After I redesigned our sales onboarding program, new hires reached full productivity a month faster on average, which directly translated into earlier revenue contribution per hire.",
+                "Training is valuable because it helps employees develop and grow, which makes them better at their jobs over time."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Facilitating a direct conversation to surface trade-offs builds more lasting alignment than making a unilateral call or escalating right away.",
-            "explanation": "Facilitating a direct conversation to surface real trade-offs helps departments reach genuine agreement, while making a unilateral decision or escalating immediately skips that important collaborative step.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Quantify the time or output improvement and connect it to a financial outcome.",
+            "explanation": "Quantifying the productivity timeline and connecting it to earlier revenue makes a specific, defensible case. A general statement about growth and development is true but not quantified, and a vague claim about being 'worth it' provides no evidence at all.",
             "id": "ji_l124_q3",
             "interviewerReaction": [
+                "unconvinced",
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that gives the number directly and briefly.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle ambiguity in a leadership role?",
+            "interviewerQuestion": "Can you put a number on the impact of that project?",
             "options": [
-                "I gather as much information as possible before making any decisions.",
-                "I make the best decision I can with the information available, communicate my reasoning clearly, and stay open to adjusting as more becomes clear.",
-                "I rely on my team's input to help guide decisions under uncertainty."
+                "Yes, it reduced processing errors by 25% over the following quarter.",
+                "It's a bit hard to put an exact number on it, since there were a lot of factors involved and the impact showed up in different ways across different parts of the team, but overall I'd say it was quite positive.",
+                "It made things noticeably better, though I don't have exact figures in front of me right now."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Deciding with clear reasoning, while staying open to change, shows stronger leadership under ambiguity than waiting for certainty or relying mainly on others.",
-            "explanation": "Deciding with clear reasoning while staying open to adjustment shows strong leadership under uncertainty, while waiting for full information or relying mainly on the team's input can delay necessary decisions.",
+            "hint": "Give the number directly and briefly when one is asked for.",
+            "explanation": "Giving a specific, brief number directly answers what was asked. Explaining why a number is hard to give avoids answering, and 'noticeably better' without a number doesn't satisfy the direct request.",
             "id": "ji_l125_q1",
             "interviewerReaction": [
-                "disappointed",
                 "impressed",
-                "disappointed"
+                "losing interest",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the one clear, specific number rather than explaining why numbers are complicated.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you had to lead your team through an unclear situation.",
+            "interviewerQuestion": "Any numbers you can share on that improvement?",
             "options": [
-                "I kept the team informed as new information became available.",
-                "I encouraged the team to stay flexible and patient during the uncertainty.",
-                "I set a clear short-term direction based on our best information, while being transparent that we'd adjust as the situation became clearer."
+                "Sure, we cut average checkout time by about 90 seconds per customer.",
+                "It got faster, though I couldn't tell you exactly how much.",
+                "There were definitely improvements across several different metrics, and it's a bit tricky to isolate just one number since a few different changes happened around the same time."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Setting clear direction despite uncertainty, with transparency about adjusting later, is stronger leadership than simply sharing updates or encouraging patience.",
-            "explanation": "Setting clear direction despite uncertainty, while being transparent about future adjustments, gives the team something concrete to work with, unlike simply sharing updates or encouraging patience without a clear plan.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Give one clear, specific number rather than explaining why numbers are complicated.",
+            "explanation": "One clear, specific number directly answers the request. Explaining the complexity of isolating a number avoids giving one, and admitting you can't say how much doesn't satisfy the question at all.",
             "id": "ji_l125_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "impressed",
+                "uncertain",
+                "losing interest"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that honors the stated time pressure with a brief, direct number.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you make decisions when there's no clear right answer?",
+            "interviewerQuestion": "We're short on time, just give me the number if you have one.",
             "options": [
-                "I weigh the trade-offs of the available options against our core priorities and commit to the one that best serves those priorities.",
-                "I consult with people I trust before making a final call.",
-                "I take time to consider the situation carefully before deciding."
+                "The number depends a bit on how you measure it, and there are a few different ways to calculate that particular metric depending on which data set you use.",
+                "18% fewer late shipments in the quarter after the change.",
+                "It improved a fair amount, I just don't have the specific figure memorized."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Honor the time pressure by giving the number briefly and directly.",
+            "explanation": "Giving the number briefly and directly honors the stated time pressure exactly. Explaining measurement methodology ignores the urgency, and admitting the number isn't memorized doesn't satisfy a direct request under time pressure.",
+            "id": "ji_l125_q3",
+            "interviewerReaction": [
+                "losing interest",
+                "impressed",
+                "uncertain"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that gives the concrete mechanism, not the attitude behind it.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "You said you improved team communication. How, specifically?",
+            "options": [
+                "I started a 15-minute daily standup and a shared doc for blockers, which cut the number of missed handoffs we were having by more than half.",
+                "Just through better habits overall, I think, nothing too specific comes to mind right now.",
+                "I focused on being more open and transparent with the team, and made sure everyone felt comfortable speaking up whenever they had something to share."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Weighing options against core priorities shows more decisive, principled leadership than general consultation or simply taking time.",
-            "explanation": "Weighing trade-offs against core priorities shows decisive, principled leadership, while general consultation or simply taking time to consider doesn't provide the same clear decision-making framework.",
-            "id": "ji_l125_q3",
+            "hint": "Give the concrete mechanism, not a description of the attitude behind it.",
+            "explanation": "Naming the concrete mechanism, a standup and a shared doc, answers exactly what 'how specifically' asked for. A description of attitude doesn't explain a method, and admitting nothing specific comes to mind fails the follow-up entirely.",
+            "id": "ji_l126_q1",
             "interviewerReaction": [
                 "impressed",
                 "disappointed",
-                "disappointed"
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names a specific, concrete process change.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you give difficult feedback to a peer?",
+            "interviewerQuestion": "You mentioned improving customer satisfaction scores. What did you actually change to do that?",
             "options": [
-                "I try to be as honest and direct as possible.",
-                "I wait for the right moment so it doesn't feel awkward.",
-                "I approach it privately, focus on specific behavior and its impact, and frame it as a shared goal of working better together."
+                "A few different things changed around that time, it's hard to point to one specific thing.",
+                "I introduced a follow-up call 48 hours after any complex resolution, which caught a few unresolved issues early and directly improved our satisfaction scores.",
+                "I really focused on empathy and making sure every customer felt heard and valued during our interactions."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Name the single concrete process change, not a general value or attitude.",
+            "explanation": "Naming a specific, concrete process change answers exactly what changed. A focus on empathy is a value, not a method, and being unable to point to a specific change fails to answer the follow-up.",
+            "id": "ji_l126_q2",
+            "interviewerReaction": [
+                "disappointed",
+                "impressed",
+                "uncertain"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that describes the specific technical mechanism.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "You said the system got more reliable. What did you specifically do to make that happen?",
+            "options": [
+                "A lot of small things added up over time, it's hard to point to one specific change that made the biggest difference. and honestly it's difficult to say for certain which particular change contributed the most to the overall improvement we saw.",
+                "We took reliability really seriously as a team and made it a priority across everything we built going forward.",
+                "I added automated health checks that restart a failing service within seconds instead of waiting for someone to notice manually, which cut our downtime incidents by more than half."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Framing feedback around specific behavior and a shared goal is more effective than general honesty or simply waiting for the right timing.",
-            "explanation": "Framing feedback around specific behavior and a shared goal makes it constructive and collaborative, while general honesty or simply waiting for a comfortable moment doesn't provide that same structure.",
-            "id": "ji_l126_q1",
-            "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you gave feedback to someone at the same level as you.",
-            "options": [
-                "I told a peer their approach to a shared project was causing delays, and I proposed a specific solution we could try together.",
-                "I mentioned my concerns and let them decide how to respond.",
-                "I brought it up carefully, since peer feedback can feel sensitive."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Naming a specific issue and proposing a solution together is stronger than a vague mention or simply being cautious.",
-            "explanation": "Naming a specific issue and proposing a solution together makes peer feedback constructive and actionable, while a vague mention or general caution doesn't move the conversation toward a real resolution.",
-            "id": "ji_l126_q2",
-            "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "How do you maintain a good relationship after giving critical feedback to a colleague?",
-            "options": [
-                "I try to soften the message with positive comments as well.",
-                "I follow up afterward to check in on how they're doing and reinforce that the feedback came from wanting to work well together.",
-                "I give them space afterward so they can process it on their own."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Following up afterward to reinforce shared intent maintains the relationship better than softening the message or giving space alone.",
-            "explanation": "Following up afterward to reinforce shared intent shows ongoing care for the relationship, while softening the initial message or simply giving space afterward doesn't provide that same active reassurance.",
+            "hint": "Describe the specific technical mechanism, not a general team priority.",
+            "explanation": "Describing the specific mechanism, automated health checks, directly answers what was actually done. A general statement about prioritizing reliability doesn't describe an action, and being unable to name a specific change fails the follow-up.",
             "id": "ji_l126_q3",
             "interviewerReaction": [
                 "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that offers two specific interpretations rather than guessing.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you manage a cross-functional project?",
+            "interviewerQuestion": "Tell me about a time you failed.",
             "options": [
-                "I establish clear shared goals early and set up regular touchpoints so each function stays aligned despite different priorities.",
-                "I coordinate closely with each team involved throughout the project.",
-                "I make sure each function understands their specific responsibilities."
+                "Happy to. Do you mean a specific project that didn't go as planned, or more of a personal misstep in how I handled a situation? I have a good example for either.",
+                "I'm not totally sure what you mean by that, so I'll just talk generally about a time things didn't go well.",
+                "There have been a few times, honestly, so I'll just pick one and hope it's the kind of thing you're looking for."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Establishing shared goals and regular touchpoints keeps alignment across differing priorities better than close coordination or clear responsibilities alone.",
-            "explanation": "Establishing shared goals with regular touchpoints keeps cross-functional alignment despite differing priorities, while close coordination or clearly defined responsibilities alone doesn't guarantee that same ongoing alignment.",
+            "hint": "A brief clarifying question, offering two specific options, resolves genuine ambiguity better than guessing or vaguely proceeding.",
+            "explanation": "Offering two specific interpretations and letting the interviewer pick shows sharp listening and resolves real ambiguity efficiently. Guessing and hoping it's what they meant risks answering the wrong question, and proceeding vaguely without addressing the ambiguity at all wastes the chance to give a focused answer.",
             "id": "ji_l127_q1",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "pleased",
+                "uncertain",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that names two specific, plausible interpretations.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you led a project involving several different teams.",
+            "interviewerQuestion": "How do you handle conflict?",
             "options": [
-                "I held regular meetings to keep everyone updated on progress.",
-                "I created a single shared roadmap that gave every team visibility into how their work connected to the overall goal.",
-                "I assigned clear owners for each part of the project."
+                "That's a pretty broad question, but I'll try my best to answer it as it is.",
+                "Do you mean conflict between team members I'm managing, or a disagreement I'm personally having with someone, like a peer or a manager? I can speak to either.",
+                "Conflict comes up in a lot of different ways, so I'll just talk broadly about how I generally approach it. since I think most people would probably interpret a question like that in a fairly similar, general way anyway."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "A shared roadmap that connects everyone's work to the overall goal builds stronger alignment than updates or ownership alone.",
-            "explanation": "A shared roadmap connecting everyone's work to the overall goal creates genuine, ongoing alignment, while regular updates or clearly assigned ownership alone doesn't provide that same unifying visibility.",
+            "professionalismRating": 4,
+            "hint": "Naming two specific, plausible interpretations resolves the ambiguity more efficiently than answering broadly.",
+            "explanation": "Naming two specific interpretations lets the interviewer direct you to what they actually want to know, saving time. Answering broadly risks missing the specific angle they're interested in, and acknowledging the question is broad without actually resolving it doesn't help either of you.",
             "id": "ji_l127_q2",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "pleased",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that clarifies the relevant timeframe before answering.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you keep a cross-functional team aligned when priorities differ?",
+            "interviewerQuestion": "What's an accomplishment you're proud of?",
             "options": [
-                "I try to find compromises that work reasonably well for each team.",
-                "I escalate conflicting priorities to leadership when necessary.",
-                "I regularly reconnect the work back to the shared outcome we're all accountable for, even when individual priorities pull in different directions."
+                "I could talk about a lot of different things, so I'll just go with whatever comes to mind first.",
+                "Are you interested in something from my most recent role specifically, or is an example from earlier in my career also useful here?",
+                "That's a big question, but I'll try to think of something reasonably relevant."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Repeatedly reconnecting work to a shared outcome keeps alignment stronger than compromise-seeking or frequent escalation.",
-            "explanation": "Repeatedly reconnecting the work to a shared, accountable outcome keeps genuine alignment intact, while seeking compromises or escalating priorities to leadership doesn't reinforce that same unifying focus.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Clarifying the timeframe the interviewer cares about focuses your answer more usefully than picking at random.",
+            "explanation": "Clarifying the relevant timeframe ensures your answer actually matches what the interviewer wants to hear about. Picking whatever comes to mind first risks answering with something less relevant, and vaguely aiming for 'reasonably relevant' doesn't resolve the actual ambiguity.",
             "id": "ji_l127_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "uncertain",
+                "pleased",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the one clean, final sentence that captures the point.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle two team members in conflict?",
+            "interviewerQuestion": "Sorry, we're a bit tight on time. Can you wrap that up?",
             "options": [
-                "I meet with each individually first to understand their perspective, then bring them together to work toward a resolution collaboratively.",
-                "I bring them together right away to talk through the issue.",
-                "I address the situation quickly to prevent it from escalating further."
+                "Of course. Bottom line: the project succeeded because we caught the scope issue early and adjusted before it became a bigger problem.",
+                "Right, sorry, let me just quickly cover the last two points I wanted to make, which were about the timeline and then also a bit about the stakeholder communication, and then I'll wrap it up properly.",
+                "Sure. Um, so basically, yeah, I think that's most of it, I guess."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Understanding each perspective individually first usually leads to a more productive joint conversation than jumping straight in.",
-            "explanation": "Understanding each perspective individually first gives you the context needed for a productive joint conversation, while jumping straight into a joint discussion or simply acting quickly doesn't provide that same preparation.",
+            "hint": "Give one clean, final sentence that captures the point, rather than squeezing in more content or trailing off.",
+            "explanation": "One clean final sentence respects the time request and still lands the point. Trying to fit in two more points ignores the request to wrap up, and trailing off without a real closing sentence leaves the answer unfinished.",
             "id": "ji_l128_q1",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "reassured",
+                "losing interest",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that states the single main point directly and briefly.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you mediated a conflict between two colleagues.",
+            "interviewerQuestion": "I want to make sure I follow, can you get to the main point?",
             "options": [
-                "I listened to both sides and helped them find a compromise.",
-                "I set clear expectations for how they should work together going forward.",
-                "I helped each person articulate what they actually needed from the situation, which revealed the conflict was really about unclear roles, not personalities."
+                "Sure, the main point is that customer feedback directly shaped the final design, more than any other single factor.",
+                "Right, so there were actually several factors that shaped the final design, and it's a bit hard to say which one was really the main one without getting into more detail about each.",
+                "The main point is, well, it's a bit complicated, but I'll try to simplify it."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Uncovering the real underlying issue is often more effective than compromise or simply setting new expectations.",
-            "explanation": "Uncovering the real underlying issue, like unclear roles, resolves the actual source of conflict, while compromise or simply setting new expectations may only address the surface-level disagreement.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "State the single main point directly and briefly, rather than reopening the complexity or stalling before answering.",
+            "explanation": "Stating the single main point directly and briefly answers the request immediately. Reopening the complexity avoids naming one main point, and stalling with 'it's a bit complicated' before answering delays the response without adding value.",
             "id": "ji_l128_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "reassured",
+                "losing interest",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the shortest true version, in a sentence or less.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What steps do you take to resolve tension between team members?",
+            "interviewerQuestion": "I think I've got the general idea, what's the short version?",
             "options": [
-                "I try to stay neutral and let them work it out between themselves.",
-                "I create a structured conversation where each person can share their view and we work together toward a concrete, mutually agreed solution.",
-                "I address the behavior that seems to be causing the most disruption."
+                "The short version is still a little involved, since there are really a couple of different pieces to it that are worth mentioning before I get to the actual outcome.",
+                "The short version is, it went pretty well overall, I think.",
+                "Short version: we shipped two weeks early and stayed under budget."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "A structured, facilitated conversation toward a concrete solution is stronger than staying neutral or addressing only the most visible behavior.",
-            "explanation": "A structured, facilitated conversation toward a concrete solution actively resolves tension, while staying neutral or addressing only the most visible behavior doesn't guarantee the underlying issue actually gets resolved.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Give the shortest true version you can, in a sentence or less if possible.",
+            "explanation": "A one-sentence, concrete short version respects the explicit request and still communicates something real. Calling the short version 'still involved' undercuts the ask entirely, and 'it went pretty well' is short but says nothing.",
             "id": "ji_l128_q3",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "losing interest",
+                "uncertain",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names one specific experience and connects it to this role's actual demands.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you set expectations for a new team?",
+            "interviewerQuestion": "Given everything on your resume, what's the one thing you think will matter most in this specific role?",
             "options": [
-                "I clearly define what success looks like, establish how we'll communicate, and invite input so expectations feel shared, not imposed.",
-                "I explain the team's goals and priorities clearly from the start.",
-                "I set clear rules so everyone understands what's expected of them."
+                "That's hard to say without knowing more about the day-to-day of the role first.",
+                "Probably my experience managing vendor relationships under tight timelines, since this role is heavily focused on coordinating external partners, which is exactly the muscle I've built over the last few years.",
+                "I think my overall experience is pretty well-rounded, so I'd expect most of it to be useful here in one way or another. but that's a rough guess more than anything solid."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Inviting input so expectations feel shared builds stronger buy-in than simply explaining goals or setting rules unilaterally.",
-            "explanation": "Inviting input so expectations feel shared builds genuine team buy-in, while simply explaining goals or setting rules unilaterally doesn't create that same sense of collective ownership.",
+            "hint": "Name one specific experience and explicitly connect it to this role's actual demands.",
+            "explanation": "Naming one specific experience and directly connecting it to this role's known demands shows targeted thinking. A general claim about being well-rounded doesn't prioritize anything, and deflecting the question because you'd need more detail ignores information you likely already have about the role.",
             "id": "ji_l129_q1",
             "interviewerReaction": [
+                "uncertain",
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names a specific skill and ties it to a known need of the role.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you established expectations for a newly formed team.",
+            "interviewerQuestion": "Of your marketing background, what translates most directly into what we need here?",
             "options": [
-                "I outlined clear expectations in our first team meeting.",
-                "I shared a written document covering roles and responsibilities.",
-                "I facilitated a session where the team collectively defined our working norms and success metrics together, which built strong early ownership."
+                "I've done a lot of different types of marketing work, so I think most of it would end up being relevant in some way or another.",
+                "I'd probably need to get into the role a bit before I could say for sure what translates best.",
+                "My experience running A/B tests to optimize email campaigns translates directly, since I understand this role is heavily focused on testing and iterating on messaging quickly."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "A collaborative session that builds shared ownership is stronger than simply outlining or documenting expectations.",
-            "explanation": "A collaborative session that builds shared ownership creates genuine early buy-in, while simply outlining expectations in a meeting or sharing a written document doesn't involve the team in the same active way.",
+            "professionalismRating": 4,
+            "hint": "Name a specific skill and connect it explicitly to a known demand of this exact role.",
+            "explanation": "Naming a specific skill and connecting it explicitly to a stated need of this role shows precise, relevant thinking. A vague claim about broad relevance doesn't prioritize anything specific, and deferring the answer until you're actually in the role avoids engaging with information already available.",
             "id": "ji_l129_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "neutral",
+                "uncertain",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer connecting a specific, named skill to a specific, stated challenge.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you make sure a new team starts off aligned?",
+            "interviewerQuestion": "What from your operations background do you think will be most valuable in this specific position?",
             "options": [
-                "I make sure roles and responsibilities are clearly assigned.",
-                "I make sure everyone understands not just what we're doing, but why it matters, and I check that this understanding is genuinely shared.",
-                "I hold a kickoff meeting to introduce the team's goals."
+                "I've picked up a lot of operational skills over the years, so I imagine several of them would come in handy in different ways.",
+                "I'd want to understand the role a bit more before saying which specific skill would be the most valuable one.",
+                "My experience building inventory forecasting models, since this role's biggest challenge, from what you've described, is exactly that kind of demand planning."
+            ],
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Connect a specific, named skill to a specific, stated challenge of the role.",
+            "explanation": "Connecting a specific, named skill directly to the stated challenge of the role shows precise, prepared thinking. A general claim about accumulated skills doesn't prioritize any one of them, and deferring until you understand the role more ignores what's already been described.",
+            "id": "ji_l129_q3",
+            "interviewerReaction": [
+                "neutral",
+                "uncertain",
+                "impressed"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that hits exactly the three requested parts, briefly, in order.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "In thirty seconds: what did you do, what was the impact in numbers, and why does that matter for this role specifically?",
+            "options": [
+                "I worked on improving our returns process and it went pretty well,. though that's really just my own read on it.",
+                "I redesigned our returns process, cutting processing time by 40%, which freed up staff hours that this role's team could redirect toward the higher-volume period you mentioned earlier.",
+                "So there's quite a lot to unpack there, starting with the initial problem we were facing, then the process of redesigning it, and then eventually the impact it had, which took a little while to fully show up in the numbers."
             ],
             "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Confirming shared understanding of purpose, not just tasks, builds stronger alignment than assigning roles or holding a single kickoff.",
-            "explanation": "Confirming a shared understanding of purpose, not just tasks, builds deeper alignment, while simply assigning roles or holding a single kickoff meeting doesn't guarantee that same lasting shared understanding.",
-            "id": "ji_l129_q3",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle a project with unclear ownership?",
-            "options": [
-                "I proactively clarify who owns which decisions and deliverables early on, rather than letting ambiguity slow the project down.",
-                "I take on ownership myself to make sure things move forward.",
-                "I wait for leadership to clarify who's responsible for what."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Proactively clarifying ownership addresses the root issue better than taking it on yourself or waiting for someone else to define it.",
-            "explanation": "Proactively clarifying ownership addresses the root issue directly, while taking on the ownership yourself or waiting for leadership to define it doesn't solve the underlying ambiguity for the whole team.",
+            "hint": "Hit exactly the three parts asked for, briefly, in order.",
+            "explanation": "Hitting the three parts asked for, action, number, relevance, briefly and in order, respects a genuinely demanding time constraint. Unpacking the full story ignores the thirty-second limit entirely, and a vague summary skips the specific number and specific relevance that were explicitly requested.",
             "id": "ji_l130_q1",
             "interviewerReaction": [
+                "unconvinced",
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "losing interest"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that gives the action, the number, and the relevance, concisely and in that order.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you stepped in when a project lacked clear leadership.",
+            "interviewerQuestion": "Give me the action, the number, and why it matters here, all in one breath if you can.",
             "options": [
-                "I took the lead informally to keep the project moving.",
-                "I raised the issue with my manager so it could be addressed.",
-                "I organized a quick discussion to explicitly define roles and decision rights, which gave the whole team the clarity we needed to move forward."
+                "I made some changes to how we followed up with leads, and it helped,. but I haven't really examined that closely.",
+                "There's a bit of a story behind that one, starting with why the follow-up process wasn't working well in the first place, and then how we eventually landed on the new cadence that ended up working better.",
+                "I restructured our follow-up cadence, which increased our close rate by 12%, and this role's stated focus on pipeline efficiency is exactly where that kind of change would apply."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Explicitly defining roles for the whole team resolves the ambiguity more sustainably than informally leading or simply escalating.",
-            "explanation": "Explicitly defining roles and decision rights for the whole team resolves the ambiguity sustainably, while informally taking the lead yourself or simply escalating to a manager doesn't create that same lasting clarity for everyone involved.",
+            "hint": "Give the action, the number, and the relevance, concisely and in that order.",
+            "explanation": "Giving the action, number, and relevance concisely and in order respects the explicit request for brevity. Telling the backstory ignores the 'one breath' framing, and a vague summary skips the specific number that was directly asked for.",
             "id": "ji_l130_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "unconvinced",
+                "losing interest",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that ties relevance to something the interviewer actually said.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What would you do if you noticed a project drifting due to unclear accountability?",
+            "interviewerQuestion": "One more like that: what was the change you made, the time or cost it saved, and the reason it's relevant to us here?",
             "options": [
-                "I'd try to keep things moving by making decisions where needed.",
-                "I'd raise the issue directly and propose a clear structure for decision-making before it caused further delays.",
-                "I'd flag my concerns to whoever seemed most responsible."
+                "That's a good question, and there's a fair bit of context behind it, starting with the testing process we had before and the problems it was causing for the team at the time.",
+                "I built something that made releases faster, and I'd guess that's probably relevant to what you're looking for here.",
+                "I built an automated testing pipeline that cut our release cycle from two weeks to three days, and since you mentioned wanting to ship faster, that's directly the kind of speed this role would need to deliver."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Proposing a clear structure addresses the systemic issue better than making ad hoc decisions or flagging concerns to an unclear owner.",
-            "explanation": "Proposing a clear decision-making structure addresses the systemic issue directly, while making ad hoc decisions yourself or flagging concerns to someone whose responsibility is itself unclear doesn't resolve the underlying accountability gap.",
+            "hint": "Answer all three parts specifically and briefly, connecting the last part to something the interviewer actually said.",
+            "explanation": "Answering all three parts specifically, and tying relevance to something the interviewer actually mentioned, shows real listening and structured communication under pressure. Giving context first ignores the request for speed, and a vague, guessed relevance misses the chance to connect to what was actually said.",
             "id": "ji_l130_q3",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "losing interest",
+                "unconvinced",
+                "impressed"
             ]
         }
     ]

@@ -1,637 +1,637 @@
 {
-    "gameType": "medicalConsult",
-    "batchIndex": 7,
-    "levels": "61-70",
-    "quests": [
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I've been feeling really run down, and my glands are up again.\"",
-            "symptoms": [
-                "Fever",
-                "Fatigue",
-                "Sore Throat",
-                "Swollen Glands"
-            ],
-            "correctAnswer": "Fatigue, Swollen Glands",
-            "hint": "'Run down' is an everyday way of describing low energy.",
-            "explanation": "'Run down' means Fatigue, and 'glands are up' means Swollen Glands.",
-            "id": "mc_l61_q1",
-            "medicalVocab": [
-                "Fatigue, Swollen Glands",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My stomach's been in knots all week, and I can't keep food down,\" the patient says.",
-            "symptoms": [
-                "Stomach Ache",
-                "Bloating",
-                "Nausea",
-                "Loss of Appetite"
-            ],
-            "correctAnswer": "Stomach Ache, Nausea",
-            "hint": "'In knots' describes discomfort; 'can't keep food down' describes feeling sick.",
-            "explanation": "'In knots' points to a Stomach Ache, and 'can't keep food down' points to Nausea.",
-            "id": "mc_l61_q2",
-            "medicalVocab": [
-                "Stomach Ache, Nausea",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My shoulder's been giving me trouble since I moved house, and my lower back hasn't been much better,\" the patient tells the doctor.",
-            "symptoms": [
-                "Shoulder Pain",
-                "Muscle Soreness",
-                "Joint Stiffness",
-                "Back Pain"
-            ],
-            "correctAnswer": "Shoulder Pain, Back Pain",
-            "hint": "The patient names two separate body areas affected by the move.",
-            "explanation": "The patient describes Shoulder Pain and Back Pain, both linked to moving heavy items.",
-            "id": "mc_l61_q3",
-            "medicalVocab": [
-                "Shoulder Pain, Back Pain",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I've been under the weather since Tuesday - stuffy, and my throat's killing me.\"",
-            "symptoms": [
-                "Cough",
-                "Fever",
-                "Stuffy Nose",
-                "Sore Throat"
-            ],
-            "correctAnswer": "Stuffy Nose, Sore Throat",
-            "hint": "'Under the weather' just means feeling unwell in general - look at the specific details after it.",
-            "explanation": "'Stuffy' points to a Stuffy Nose, and 'throat's killing me' points to a Sore Throat.",
-            "id": "mc_l62_q1",
-            "medicalVocab": [
-                "Stuffy Nose, Sore Throat",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"My knees have been giving out on me, and I've noticed some swelling too.\"",
-            "symptoms": [
-                "Knee Pain",
-                "Swelling",
-                "Joint Stiffness",
-                "Cramp"
-            ],
-            "correctAnswer": "Knee Pain, Swelling",
-            "hint": "'Giving out' describes trouble with the knees; the second symptom is stated plainly.",
-            "explanation": "'Giving out' suggests Knee Pain, and the patient separately names Swelling.",
-            "id": "mc_l62_q2",
-            "medicalVocab": [
-                "Knee Pain, Swelling",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, a nurse notes: \"Patient reports persistent fatigue and difficulty falling asleep despite feeling exhausted.\"",
-            "symptoms": [
-                "Weakness",
-                "Fatigue",
-                "Insomnia",
-                "Dizziness"
-            ],
-            "correctAnswer": "Fatigue, Insomnia",
-            "hint": "This clinical note names both a daytime and a nighttime symptom.",
-            "explanation": "The note describes Fatigue during the day and Insomnia at night.",
-            "id": "mc_l62_q3",
-            "medicalVocab": [
-                "Fatigue, Insomnia",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've been getting these splitting headaches with light bothering me, and I've felt sick to my stomach too,\" the patient says.",
-            "symptoms": [
-                "Migraine",
-                "Headache",
-                "Light Sensitivity",
-                "Nausea"
-            ],
-            "correctAnswer": "Migraine, Nausea",
-            "hint": "Severe headaches combined with light sensitivity usually have a more precise name than just 'headache.'",
-            "explanation": "Severe headaches with light sensitivity point to Migraine, a more precise term, plus the separate symptom Nausea.",
-            "id": "mc_l63_q1",
-            "medicalVocab": [
-                "Migraine, Nausea",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My ankle's been throbbing since the hike, and I can see it's turned a purplish color,\" the patient says.",
-            "symptoms": [
-                "Swelling",
-                "Ankle Pain",
-                "Cramp",
-                "Bruise"
-            ],
-            "correctAnswer": "Ankle Pain, Bruise",
-            "hint": "One symptom is pain, and the other is a color change on the skin.",
-            "explanation": "'Throbbing' since the hike is Ankle Pain, and the purple color is a Bruise.",
-            "id": "mc_l63_q2",
-            "medicalVocab": [
-                "Ankle Pain, Bruise",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've been getting winded doing things that never used to bother me, like walking the dog, and I've noticed my ankles puffing up in the evenings too,\" the patient tells the doctor.",
-            "symptoms": [
-                "Fatigue",
-                "Shortness of Breath",
-                "Swollen Ankles",
-                "Chest Pain"
-            ],
-            "correctAnswer": "Shortness of Breath, Swollen Ankles",
-            "hint": "One symptom is about breathing during activity, and the other is about the evenings.",
-            "explanation": "'Getting winded' is Shortness of Breath, and 'ankles puffing up' is Swollen Ankles.",
-            "id": "mc_l63_q3",
-            "medicalVocab": [
-                "Shortness of Breath, Swollen Ankles",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"My son's been off his food and complaining his tummy hurts.\"",
-            "symptoms": [
-                "Nausea",
-                "Bloating",
-                "Loss of Appetite",
-                "Stomach Ache"
-            ],
-            "correctAnswer": "Loss of Appetite, Stomach Ache",
-            "hint": "'Off his food' describes eating; 'tummy hurts' describes pain.",
-            "explanation": "'Off his food' means Loss of Appetite, and 'tummy hurts' means Stomach Ache.",
-            "id": "mc_l64_q1",
-            "medicalVocab": [
-                "Loss of Appetite, Stomach Ache",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"I've had this dull ache behind my eyes, and my face feels heavy around my cheeks.\"",
-            "symptoms": [
-                "Headache",
-                "Toothache",
-                "Sinus Pressure",
-                "Light Sensitivity"
-            ],
-            "correctAnswer": "Headache, Sinus Pressure",
-            "hint": "One symptom is behind the eyes, and the other is around the cheeks and nose.",
-            "explanation": "Aching behind the eyes is a Headache, and heaviness around the cheeks is Sinus Pressure.",
-            "id": "mc_l64_q2",
-            "medicalVocab": [
-                "Headache, Sinus Pressure",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My hands have felt clumsy lately, tingling on and off, and I've noticed I drop things more than I used to,\" the patient says.",
-            "symptoms": [
-                "Pins and Needles",
-                "Weakness",
-                "Numbness",
-                "Cramp"
-            ],
-            "correctAnswer": "Pins and Needles, Weakness",
-            "hint": "'Tingling' is a specific sensation; dropping things points to strength, not feeling.",
-            "explanation": "'Tingling on and off' is Pins and Needles, and dropping things points to Weakness.",
-            "id": "mc_l64_q3",
-            "medicalVocab": [
-                "Pins and Needles, Weakness",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I've been getting these hot flashes out of nowhere, and I can't sleep through the night anymore.\"",
-            "symptoms": [
-                "Night Sweats",
-                "Fatigue",
-                "Hot Flashes",
-                "Insomnia"
-            ],
-            "correctAnswer": "Hot Flashes, Insomnia",
-            "hint": "'Hot flashes' happen suddenly during the day, which is different from sweating at night.",
-            "explanation": "Sudden waves of heat are Hot Flashes, and trouble sleeping through the night is Insomnia.",
-            "id": "mc_l65_q1",
-            "medicalVocab": [
-                "Hot Flashes, Insomnia",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My lower back has been in spasms since I bent down to pick something up, and I've had a pounding headache ever since,\" the patient says.",
-            "symptoms": [
-                "Cramp",
-                "Back Pain",
-                "Muscle Soreness",
-                "Headache"
-            ],
-            "correctAnswer": "Back Pain, Headache",
-            "hint": "One symptom is in the back, and the other is in the head.",
-            "explanation": "The patient describes Back Pain from bending, along with a resulting Headache.",
-            "id": "mc_l65_q2",
-            "medicalVocab": [
-                "Back Pain, Headache",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I get this metallic taste before a migraine hits, and my hands go cold right before too,\" the patient tells the doctor.",
-            "symptoms": [
-                "Metallic Taste",
-                "Migraine",
-                "Cold Hands and Feet",
-                "Headache"
-            ],
-            "correctAnswer": "Migraine, Cold Hands and Feet",
-            "hint": "The taste and cold hands are both early warning signs before the main symptom.",
-            "explanation": "Migraine is the precise term for the headache itself; Cold Hands and Feet is the second, separate symptom.",
-            "id": "mc_l65_q3",
-            "medicalVocab": [
-                "Migraine, Cold Hands and Feet",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I've had this nagging cough for weeks, and now my chest wheezes when I breathe out.\"",
-            "symptoms": [
-                "Persistent Cough",
-                "Shortness of Breath",
-                "Chest Pain",
-                "Wheezing"
-            ],
-            "correctAnswer": "Persistent Cough, Wheezing",
-            "hint": "One symptom has lasted weeks, and the other is a specific sound while breathing.",
-            "explanation": "A 'nagging' cough for weeks is a Persistent Cough, and the whistling sound is Wheezing.",
-            "id": "mc_l66_q1",
-            "medicalVocab": [
-                "Persistent Cough, Wheezing",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"My mood's been low and I've had zero energy, even for things I usually enjoy.\"",
-            "symptoms": [
-                "Low Mood",
-                "Fatigue",
-                "Insomnia",
-                "Weakness"
-            ],
-            "correctAnswer": "Low Mood, Fatigue",
-            "hint": "One symptom is emotional, and the other is about physical energy.",
-            "explanation": "The patient describes Low Mood and Fatigue, both common and worth mentioning to a doctor.",
-            "id": "mc_l66_q2",
-            "medicalVocab": [
-                "Low Mood, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"I've had this tickle in my throat that turns into coughing fits.\"",
-            "symptoms": [
-                "Sore Throat",
-                "Hoarse Voice",
-                "Cough",
-                "Chest Pain"
-            ],
-            "correctAnswer": "Sore Throat, Cough",
-            "hint": "One symptom is the tickle itself, and the other is what it leads to.",
-            "explanation": "The 'tickle' points to a Sore Throat, and the fits point to Cough.",
-            "id": "mc_l66_q3",
-            "medicalVocab": [
-                "Sore Throat, Cough",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've had a stiff neck since sleeping wrong, and my shoulder's been really achy too,\" the patient says.",
-            "symptoms": [
-                "Neck Pain",
-                "Stiff Neck",
-                "Shoulder Pain",
-                "Muscle Soreness"
-            ],
-            "correctAnswer": "Stiff Neck, Shoulder Pain",
-            "hint": "One symptom affects the neck's movement, and the other affects the shoulder.",
-            "explanation": "A Stiff Neck from sleeping wrong is paired here with separate Shoulder Pain.",
-            "id": "mc_l67_q1",
-            "medicalVocab": [
-                "Stiff Neck, Shoulder Pain",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've felt off-balance all week, and sounds seem too loud all of a sudden,\" the patient says.",
-            "symptoms": [
-                "Vertigo",
-                "Dizziness",
-                "Ringing in the Ears",
-                "Sensitivity to Sound"
-            ],
-            "correctAnswer": "Dizziness, Sensitivity to Sound",
-            "hint": "One symptom is about balance in general, and the other is a reaction to noise.",
-            "explanation": "Feeling 'off-balance' is Dizziness, and sounds feeling too loud is Sensitivity to Sound.",
-            "id": "mc_l67_q2",
-            "medicalVocab": [
-                "Dizziness, Sensitivity to Sound",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My appetite's been all over the place, and I've had this metallic taste lingering,\" the patient tells the doctor.",
-            "symptoms": [
-                "Loss of Appetite",
-                "Nausea",
-                "Dry Mouth",
-                "Metallic Taste"
-            ],
-            "correctAnswer": "Loss of Appetite, Metallic Taste",
-            "hint": "One symptom is about eating, and the other is a specific taste.",
-            "explanation": "An unpredictable appetite points to Loss of Appetite, and the lingering taste is a Metallic Taste.",
-            "id": "mc_l67_q3",
-            "medicalVocab": [
-                "Loss of Appetite, Metallic Taste",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I've been queasy most mornings, and I've had no appetite for breakfast at all.\"",
-            "symptoms": [
-                "Nausea",
-                "Bloating",
-                "Loss of Appetite",
-                "Fatigue"
-            ],
-            "correctAnswer": "Nausea, Loss of Appetite",
-            "hint": "'Queasy' describes feeling sick, and the second symptom is about not wanting to eat.",
-            "explanation": "'Queasy' means Nausea, and no interest in breakfast is Loss of Appetite.",
-            "id": "mc_l68_q1",
-            "medicalVocab": [
-                "Nausea, Loss of Appetite",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"My fingers have been swelling, and I've felt unusually thirsty all week.\"",
-            "symptoms": [
-                "Weakness",
-                "Numbness",
-                "Swelling",
-                "Excessive Thirst"
-            ],
-            "correctAnswer": "Swelling, Excessive Thirst",
-            "hint": "One symptom is visible in the hands, and the other is a constant feeling.",
-            "explanation": "Fingers swelling is Swelling, and feeling unusually thirsty is Excessive Thirst.",
-            "id": "mc_l68_q2",
-            "medicalVocab": [
-                "Swelling, Excessive Thirst",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"My throat's been dry no matter how much water I drink, and I've had to pee constantly.\"",
-            "symptoms": [
-                "Dry Mouth",
-                "Frequent Urination",
-                "Excessive Thirst",
-                "Fatigue"
-            ],
-            "correctAnswer": "Dry Mouth, Frequent Urination",
-            "hint": "The dryness happens despite drinking water, so thirst itself isn't the named symptom here.",
-            "explanation": "A dry throat despite drinking is Dry Mouth, and needing the bathroom often is Frequent Urination.",
-            "id": "mc_l68_q3",
-            "medicalVocab": [
-                "Dry Mouth, Frequent Urination",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My eyelid's got this painful little lump, and my eye's been watering nonstop because of it,\" the patient says.",
-            "symptoms": [
-                "Stye",
-                "Puffy Eyes",
-                "Watery Eyes",
-                "Itchy Eyes"
-            ],
-            "correctAnswer": "Stye, Watery Eyes",
-            "hint": "One symptom is the lump itself, and the other is what it's causing.",
-            "explanation": "A small, painful lump on the eyelid is a Stye, which is causing the separate symptom Watery Eyes.",
-            "id": "mc_l69_q1",
-            "medicalVocab": [
-                "Stye, Watery Eyes",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've been getting these episodes where my heart pounds out of nowhere, and I feel a bit breathless,\" the patient says.",
-            "symptoms": [
-                "Racing Heartbeat",
-                "Chest Pain",
-                "Heart Palpitations",
-                "Shortness of Breath"
-            ],
-            "correctAnswer": "Heart Palpitations, Shortness of Breath",
-            "hint": "'Pounds' describes an irregular, strong feeling, which is more precise than simply 'fast.'",
-            "explanation": "A heart that 'pounds' unexpectedly is best described as Heart Palpitations, plus Shortness of Breath.",
-            "id": "mc_l69_q2",
-            "medicalVocab": [
-                "Heart Palpitations, Shortness of Breath",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My skin's been peeling on my hands, and they sting like crazy in the cold,\" the patient tells the doctor.",
-            "symptoms": [
-                "Dry Skin",
-                "Skin Peeling",
-                "Chapped Hands",
-                "Cracked Skin"
-            ],
-            "correctAnswer": "Skin Peeling, Chapped Hands",
-            "hint": "One symptom is skin coming off, and the other is the sting from cold weather.",
-            "explanation": "Peeling skin is Skin Peeling, and stinging in the cold points to Chapped Hands.",
-            "id": "mc_l69_q3",
-            "medicalVocab": [
-                "Skin Peeling, Chapped Hands",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've had this cough that just won't quit, and my ribs ache from all the coughing,\" the patient tells the doctor.",
-            "symptoms": [
-                "Persistent Cough",
-                "Chest Pain",
-                "Wheezing",
-                "Shortness of Breath"
-            ],
-            "correctAnswer": "Persistent Cough, Chest Pain",
-            "hint": "One symptom has lasted a long time, and the other is a result of all that coughing.",
-            "explanation": "A cough that 'won't quit' is a Persistent Cough, and the ache from coughing is Chest Pain.",
-            "id": "mc_l70_q1",
-            "medicalVocab": [
-                "Persistent Cough, Chest Pain",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"My gums have been bleeding more, and I've noticed bruises I can't explain.\"",
-            "symptoms": [
-                "Toothache",
-                "Bleeding Gums",
-                "Swelling",
-                "Easy Bruising"
-            ],
-            "correctAnswer": "Bleeding Gums, Easy Bruising",
-            "hint": "One symptom is in the mouth, and the other is unexplained marks on the skin.",
-            "explanation": "Bleeding while brushing is Bleeding Gums, and unexplained marks point to Easy Bruising.",
-            "id": "mc_l70_q2",
-            "medicalVocab": [
-                "Bleeding Gums, Easy Bruising",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"I've been forgetful and foggy-headed, and I'm running on empty even after eight hours of sleep.\"",
-            "symptoms": [
-                "Brain Fog",
-                "Insomnia",
-                "Dizziness",
-                "Fatigue"
-            ],
-            "correctAnswer": "Brain Fog, Fatigue",
-            "hint": "One symptom is about thinking clearly, and the other is about energy despite enough sleep.",
-            "explanation": "'Foggy-headed' is Brain Fog, and 'running on empty' despite sleep is Fatigue.",
-            "id": "mc_l70_q3",
-            "medicalVocab": [
-                "Brain Fog, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        }
-    ]
+  "gameType": "medicalConsult",
+  "batchIndex": 7,
+  "levels": "61-70",
+  "quests": [
+    {
+      "instruction": "Choose the term that best describes the pattern the patient is reporting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"The glands in my neck feel swollen. It's happening almost every single day now.\"",
+      "symptoms": [
+        "Intermittent",
+        "Frequent",
+        "Constant",
+        "Occasional"
+      ],
+      "correctAnswer": "Frequent",
+      "hint": "Ignore the symptom name for a moment and listen for words about intensity, frequency or change over time.",
+      "explanation": "The phrase “It's happening almost every single day now” points to “Frequent,” not “Occasional” or the other options, which describe entirely different kinds of patterns.",
+      "id": "mc_l61_q1",
+      "medicalVocab": [
+        "Swollen Glands",
+        "Frequent",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "Select the description that best fits what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I've got a lump on the side of my neck. It's actually been getting a little better day by day.\"",
+      "symptoms": [
+        "Improving",
+        "Sharp",
+        "Sudden",
+        "Worsening"
+      ],
+      "correctAnswer": "Improving",
+      "hint": "Which phrase tells you about the pattern rather than the problem itself?",
+      "explanation": "The phrase “It's actually been getting a little better day by day” points to “Improving,” not “Worsening” or the other options, which describe entirely different kinds of patterns.",
+      "id": "mc_l61_q2",
+      "medicalVocab": [
+        "Swollen Glands",
+        "Improving",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "The patient mentions two different patterns. Select the term that describes the response.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I noticed a puffiness on one side of my neck. It doesn't change much whether I rest or keep moving. It's there all the time, at the same steady level.\"",
+      "symptoms": [
+        "Intermittent",
+        "Constant",
+        "Unaffected by Rest",
+        "Relieved by Rest"
+      ],
+      "correctAnswer": "Unaffected by Rest",
+      "hint": "Two patterns are mentioned, but only the first added sentence answers this question.",
+      "explanation": "The first added sentence (“It doesn't change much whether I rest or keep moving”) describes Unaffected by Rest, while the second sentence describes a separate pattern (Constant/Intermittent) that the question isn't asking about.",
+      "id": "mc_l61_q3",
+      "medicalVocab": [
+        "Swollen Glands",
+        "Unaffected by Rest",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "Choose the term that best describes the pattern the patient is reporting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I get this burning feeling in my chest. It's actually been getting a little better day by day.\"",
+      "symptoms": [
+        "Worsening",
+        "Constant",
+        "Improving",
+        "Worse in the Evening"
+      ],
+      "correctAnswer": "Improving",
+      "hint": "Look at how the patient describes the symptom's behaviour, not what the symptom is.",
+      "explanation": "The phrase “It's actually been getting a little better day by day” points to “Improving,” not “Worsening” or the other options, which describe entirely different kinds of patterns.",
+      "id": "mc_l62_q1",
+      "medicalVocab": [
+        "Acid Reflux",
+        "Improving",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "Select the description that best fits what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I've had heartburn all week. It's happening almost every single day now.\"",
+      "symptoms": [
+        "Frequent",
+        "Worse in the Morning",
+        "Occasional",
+        "Mild"
+      ],
+      "correctAnswer": "Frequent",
+      "hint": "The clue is in the descriptive words: how strong, how regular, how changing.",
+      "explanation": "The phrase “It's happening almost every single day now” points to “Frequent,” not “Occasional” or the other options, which describe entirely different kinds of patterns.",
+      "id": "mc_l62_q2",
+      "medicalVocab": [
+        "Acid Reflux",
+        "Frequent",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "The patient mentions two different patterns. Select the term that describes the severity.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I get this sour taste at the back of my mouth some evenings. It's more of a nagging discomfort than anything unbearable. It only happens once in a while, maybe once a week.\"",
+      "symptoms": [
+        "Occasional",
+        "Mild",
+        "Frequent",
+        "Severe"
+      ],
+      "correctAnswer": "Mild",
+      "hint": "Read both added sentences, then decide which one the question is really about.",
+      "explanation": "The first added sentence (“It's more of a nagging discomfort than anything unbearable”) describes Mild, while the second sentence describes a separate pattern (Occasional/Frequent) that the question isn't asking about.",
+      "id": "mc_l62_q3",
+      "medicalVocab": [
+        "Acid Reflux",
+        "Mild",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "Choose the term that best describes the pattern the patient is reporting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My stomach feels so bloated. It doesn't change much whether I rest or keep moving.\"",
+      "symptoms": [
+        "Unaffected by Rest",
+        "Worsening",
+        "Relieved by Rest",
+        "Occasional"
+      ],
+      "correctAnswer": "Unaffected by Rest",
+      "hint": "Ignore the symptom name for a moment and listen for words about intensity, frequency or change over time.",
+      "explanation": "The phrase “It doesn't change much whether I rest or keep moving” points to “Unaffected by Rest,” not “Relieved by Rest” or the other options, which describe entirely different kinds of patterns.",
+      "id": "mc_l63_q1",
+      "medicalVocab": [
+        "Bloating",
+        "Unaffected by Rest",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "Select the description that best fits what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel puffed up after every meal. It only seems to happen after certain activities.\"",
+      "symptoms": [
+        "Worse in the Evening",
+        "Unprovoked",
+        "Worse in the Morning",
+        "Triggered by Activity"
+      ],
+      "correctAnswer": "Triggered by Activity",
+      "hint": "Which phrase tells you about the pattern rather than the problem itself?",
+      "explanation": "The phrase “It only seems to happen after certain activities” points to “Triggered by Activity,” not “Unprovoked” or the other options, which describe entirely different kinds of patterns.",
+      "id": "mc_l63_q2",
+      "medicalVocab": [
+        "Bloating",
+        "Triggered by Activity",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "The patient mentions two different patterns. Select the term that describes the pattern.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"There's this heavy fullness that builds through the afternoon. It comes and goes throughout the day. It's actually been getting a little better day by day.\"",
+      "symptoms": [
+        "Worsening",
+        "Intermittent",
+        "Constant",
+        "Improving"
+      ],
+      "correctAnswer": "Intermittent",
+      "hint": "One added sentence is the target; the other is a distraction from a different pattern.",
+      "explanation": "The first added sentence (“It comes and goes throughout the day”) describes Intermittent, while the second sentence describes a separate pattern (Improving/Worsening) that the question isn't asking about.",
+      "id": "mc_l63_q3",
+      "medicalVocab": [
+        "Bloating",
+        "Intermittent",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "Choose the term that best describes the pattern the patient is reporting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I've had loose stools. It's there all the time, at the same steady level.\"",
+      "symptoms": [
+        "Spreading",
+        "Intermittent",
+        "Constant",
+        "Unprovoked"
+      ],
+      "correctAnswer": "Constant",
+      "hint": "Look at how the patient describes the symptom's behaviour, not what the symptom is.",
+      "explanation": "The phrase “It's there all the time, at the same steady level” points to “Constant,” not “Intermittent” or the other options, which describe entirely different kinds of patterns.",
+      "id": "mc_l64_q1",
+      "medicalVocab": [
+        "Diarrhea",
+        "Constant",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "Select the description that best fits what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I've had to run to the bathroom all day. It builds up as the day goes on and peaks by evening.\"",
+      "symptoms": [
+        "Worse in the Evening",
+        "Gradual",
+        "Improving",
+        "Worse in the Morning"
+      ],
+      "correctAnswer": "Worse in the Evening",
+      "hint": "The clue is in the descriptive words: how strong, how regular, how changing.",
+      "explanation": "The phrase “It builds up as the day goes on and peaks by evening” points to “Worse in the Evening,” not “Worse in the Morning” or the other options, which describe entirely different kinds of patterns.",
+      "id": "mc_l64_q2",
+      "medicalVocab": [
+        "Diarrhea",
+        "Worse in the Evening",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "The patient mentions two different patterns. Select the term that describes the response.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"It's been happening several times a day. It eases noticeably whenever I sit down and rest. It's worst first thing when I wake up.\"",
+      "symptoms": [
+        "Worse in the Evening",
+        "Unaffected by Rest",
+        "Relieved by Rest",
+        "Worse in the Morning"
+      ],
+      "correctAnswer": "Relieved by Rest",
+      "hint": "Be careful to answer about the first pattern, not the one that follows it.",
+      "explanation": "The first added sentence (“It eases noticeably whenever I sit down and rest”) describes Relieved by Rest, while the second sentence describes a separate pattern (Worse in the Morning/Worse in the Evening) that the question isn't asking about.",
+      "id": "mc_l64_q3",
+      "medicalVocab": [
+        "Diarrhea",
+        "Relieved by Rest",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "Choose the term that best describes the pattern the patient is reporting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I haven't been able to go to the bathroom in days. It's so intense I can barely focus on anything else.\"",
+      "symptoms": [
+        "Triggered by Activity",
+        "Mild",
+        "Spreading",
+        "Severe"
+      ],
+      "correctAnswer": "Severe",
+      "hint": "Ignore the symptom name for a moment and listen for words about intensity, frequency or change over time.",
+      "explanation": "The phrase “It's so intense I can barely focus on anything else” points to “Severe,” not “Mild” or the other options, which describe entirely different kinds of patterns.",
+      "id": "mc_l65_q1",
+      "medicalVocab": [
+        "Constipation",
+        "Severe",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "Select the description that best fits what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I've been really backed up. It eases noticeably whenever I sit down and rest.\"",
+      "symptoms": [
+        "Worsening",
+        "Unaffected by Rest",
+        "Relieved by Rest",
+        "Sudden"
+      ],
+      "correctAnswer": "Relieved by Rest",
+      "hint": "Which phrase tells you about the pattern rather than the problem itself?",
+      "explanation": "The phrase “It eases noticeably whenever I sit down and rest” points to “Relieved by Rest,” not “Unaffected by Rest” or the other options, which describe entirely different kinds of patterns.",
+      "id": "mc_l65_q2",
+      "medicalVocab": [
+        "Constipation",
+        "Relieved by Rest",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "The patient mentions two different patterns. Select the term that describes the trend.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel full and heavy in my lower stomach most of the time. It's been getting steadily worse each day. It came on all at once, out of nowhere.\"",
+      "symptoms": [
+        "Worsening",
+        "Sudden",
+        "Improving",
+        "Gradual"
+      ],
+      "correctAnswer": "Worsening",
+      "hint": "Two patterns are mentioned, but only the first added sentence answers this question.",
+      "explanation": "The first added sentence (“It's been getting steadily worse each day”) describes Worsening, while the second sentence describes a separate pattern (Sudden/Gradual) that the question isn't asking about.",
+      "id": "mc_l65_q3",
+      "medicalVocab": [
+        "Constipation",
+        "Worsening",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "Choose the term that best describes the pattern the patient is reporting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My hand feels numb. It eases noticeably whenever I sit down and rest.\"",
+      "symptoms": [
+        "Unaffected by Rest",
+        "Intermittent",
+        "Relieved by Rest",
+        "Worse in the Evening"
+      ],
+      "correctAnswer": "Relieved by Rest",
+      "hint": "Look at how the patient describes the symptom's behaviour, not what the symptom is.",
+      "explanation": "The phrase “It eases noticeably whenever I sit down and rest” points to “Relieved by Rest,” not “Unaffected by Rest” or the other options, which describe entirely different kinds of patterns.",
+      "id": "mc_l66_q1",
+      "medicalVocab": [
+        "Numbness",
+        "Relieved by Rest",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "Select the description that best fits what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I can't feel my fingers properly. It comes and goes throughout the day.\"",
+      "symptoms": [
+        "Unaffected by Rest",
+        "Intermittent",
+        "Constant",
+        "Sudden"
+      ],
+      "correctAnswer": "Intermittent",
+      "hint": "The clue is in the descriptive words: how strong, how regular, how changing.",
+      "explanation": "The phrase “It comes and goes throughout the day” points to “Intermittent,” not “Constant” or the other options, which describe entirely different kinds of patterns.",
+      "id": "mc_l66_q2",
+      "medicalVocab": [
+        "Numbness",
+        "Intermittent",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "The patient mentions two different patterns. Select the term that describes the trend.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My fingertips feel dulled, like touching things through a glove. It's actually been getting a little better day by day. It only happens once in a while, maybe once a week.\"",
+      "symptoms": [
+        "Occasional",
+        "Frequent",
+        "Worsening",
+        "Improving"
+      ],
+      "correctAnswer": "Improving",
+      "hint": "Read both added sentences, then decide which one the question is really about.",
+      "explanation": "The first added sentence (“It's actually been getting a little better day by day”) describes Improving, while the second sentence describes a separate pattern (Occasional/Frequent) that the question isn't asking about.",
+      "id": "mc_l66_q3",
+      "medicalVocab": [
+        "Numbness",
+        "Improving",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "Choose the term that best describes the pattern the patient is reporting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My arm has pins and needles. It builds up as the day goes on and peaks by evening.\"",
+      "symptoms": [
+        "Sudden",
+        "Gradual",
+        "Worse in the Evening",
+        "Worse in the Morning"
+      ],
+      "correctAnswer": "Worse in the Evening",
+      "hint": "Ignore the symptom name for a moment and listen for words about intensity, frequency or change over time.",
+      "explanation": "The phrase “It builds up as the day goes on and peaks by evening” points to “Worse in the Evening,” not “Worse in the Morning” or the other options, which describe entirely different kinds of patterns.",
+      "id": "mc_l67_q1",
+      "medicalVocab": [
+        "Tingling",
+        "Worse in the Evening",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "Select the description that best fits what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My leg keeps tingling. It stays in exactly one spot and doesn't move.\"",
+      "symptoms": [
+        "Unprovoked",
+        "Localized",
+        "Unaffected by Rest",
+        "Spreading"
+      ],
+      "correctAnswer": "Localized",
+      "hint": "Which phrase tells you about the pattern rather than the problem itself?",
+      "explanation": "The phrase “It stays in exactly one spot and doesn't move” points to “Localized,” not “Spreading” or the other options, which describe entirely different kinds of patterns.",
+      "id": "mc_l67_q2",
+      "medicalVocab": [
+        "Tingling",
+        "Localized",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "The patient mentions two different patterns. Select the term that describes the onset speed.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"There's a tingling that travels from my wrist down into my fingers. It crept up slowly over the past couple of weeks. It eases noticeably whenever I sit down and rest.\"",
+      "symptoms": [
+        "Sudden",
+        "Gradual",
+        "Relieved by Rest",
+        "Unaffected by Rest"
+      ],
+      "correctAnswer": "Gradual",
+      "hint": "One added sentence is the target; the other is a distraction from a different pattern.",
+      "explanation": "The first added sentence (“It crept up slowly over the past couple of weeks”) describes Gradual, while the second sentence describes a separate pattern (Relieved by Rest/Unaffected by Rest) that the question isn't asking about.",
+      "id": "mc_l67_q3",
+      "medicalVocab": [
+        "Tingling",
+        "Gradual",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "Choose the term that best describes the pattern the patient is reporting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My heart feels like it's racing. It only seems to happen after certain activities.\"",
+      "symptoms": [
+        "Triggered by Activity",
+        "Gradual",
+        "Unprovoked",
+        "Intermittent"
+      ],
+      "correctAnswer": "Triggered by Activity",
+      "hint": "Look at how the patient describes the symptom's behaviour, not what the symptom is.",
+      "explanation": "The phrase “It only seems to happen after certain activities” points to “Triggered by Activity,” not “Unprovoked” or the other options, which describe entirely different kinds of patterns.",
+      "id": "mc_l68_q1",
+      "medicalVocab": [
+        "Palpitations",
+        "Triggered by Activity",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "Select the description that best fits what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I can feel my heart pounding. It's happening almost every single day now.\"",
+      "symptoms": [
+        "Frequent",
+        "Unprovoked",
+        "Occasional",
+        "Localized"
+      ],
+      "correctAnswer": "Frequent",
+      "hint": "The clue is in the descriptive words: how strong, how regular, how changing.",
+      "explanation": "The phrase “It's happening almost every single day now” points to “Frequent,” not “Occasional” or the other options, which describe entirely different kinds of patterns.",
+      "id": "mc_l68_q2",
+      "medicalVocab": [
+        "Palpitations",
+        "Frequent",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "The patient mentions two different patterns. Select the term that describes the response.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My pulse races for no clear reason and then settles. It eases noticeably whenever I sit down and rest. It only happens once in a while, maybe once a week.\"",
+      "symptoms": [
+        "Occasional",
+        "Unaffected by Rest",
+        "Frequent",
+        "Relieved by Rest"
+      ],
+      "correctAnswer": "Relieved by Rest",
+      "hint": "Be careful to answer about the first pattern, not the one that follows it.",
+      "explanation": "The first added sentence (“It eases noticeably whenever I sit down and rest”) describes Relieved by Rest, while the second sentence describes a separate pattern (Occasional/Frequent) that the question isn't asking about.",
+      "id": "mc_l68_q3",
+      "medicalVocab": [
+        "Palpitations",
+        "Relieved by Rest",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "Choose the term that best describes the pattern the patient is reporting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My ankles are so puffy. It's so intense I can barely focus on anything else.\"",
+      "symptoms": [
+        "Occasional",
+        "Severe",
+        "Mild",
+        "Localized"
+      ],
+      "correctAnswer": "Severe",
+      "hint": "Ignore the symptom name for a moment and listen for words about intensity, frequency or change over time.",
+      "explanation": "The phrase “It's so intense I can barely focus on anything else” points to “Severe,” not “Mild” or the other options, which describe entirely different kinds of patterns.",
+      "id": "mc_l69_q1",
+      "medicalVocab": [
+        "Swollen Ankles",
+        "Severe",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "Select the description that best fits what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My feet have swollen up. It only happens once in a while, maybe once a week.\"",
+      "symptoms": [
+        "Sudden",
+        "Frequent",
+        "Constant",
+        "Occasional"
+      ],
+      "correctAnswer": "Occasional",
+      "hint": "Which phrase tells you about the pattern rather than the problem itself?",
+      "explanation": "The phrase “It only happens once in a while, maybe once a week” points to “Occasional,” not “Frequent” or the other options, which describe entirely different kinds of patterns.",
+      "id": "mc_l69_q2",
+      "medicalVocab": [
+        "Swollen Ankles",
+        "Occasional",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "The patient mentions two different patterns. Select the term that describes the timeofday.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"There's a puffiness around both ankles that eases overnight. It builds up as the day goes on and peaks by evening. It's there all the time, at the same steady level.\"",
+      "symptoms": [
+        "Intermittent",
+        "Constant",
+        "Worse in the Morning",
+        "Worse in the Evening"
+      ],
+      "correctAnswer": "Worse in the Evening",
+      "hint": "Two patterns are mentioned, but only the first added sentence answers this question.",
+      "explanation": "The first added sentence (“It builds up as the day goes on and peaks by evening”) describes Worse in the Evening, while the second sentence describes a separate pattern (Constant/Intermittent) that the question isn't asking about.",
+      "id": "mc_l69_q3",
+      "medicalVocab": [
+        "Swollen Ankles",
+        "Worse in the Evening",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "Choose the term that best describes the pattern the patient is reporting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I've been feeling really on edge. It eases noticeably whenever I sit down and rest.\"",
+      "symptoms": [
+        "Unaffected by Rest",
+        "Worse in the Evening",
+        "Severe",
+        "Relieved by Rest"
+      ],
+      "correctAnswer": "Relieved by Rest",
+      "hint": "Look at how the patient describes the symptom's behaviour, not what the symptom is.",
+      "explanation": "The phrase “It eases noticeably whenever I sit down and rest” points to “Relieved by Rest,” not “Unaffected by Rest” or the other options, which describe entirely different kinds of patterns.",
+      "id": "mc_l70_q1",
+      "medicalVocab": [
+        "Anxiety",
+        "Relieved by Rest",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "Select the description that best fits what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel anxious most of the time lately. It's so intense I can barely focus on anything else.\"",
+      "symptoms": [
+        "Unprovoked",
+        "Severe",
+        "Occasional",
+        "Mild"
+      ],
+      "correctAnswer": "Severe",
+      "hint": "The clue is in the descriptive words: how strong, how regular, how changing.",
+      "explanation": "The phrase “It's so intense I can barely focus on anything else” points to “Severe,” not “Mild” or the other options, which describe entirely different kinds of patterns.",
+      "id": "mc_l70_q2",
+      "medicalVocab": [
+        "Anxiety",
+        "Severe",
+        "Pattern"
+      ]
+    },
+    {
+      "instruction": "The patient mentions two different patterns. Select the term that describes the provocation.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel keyed up and restless without any clear reason. It only seems to happen after certain activities. It eases noticeably whenever I sit down and rest.\"",
+      "symptoms": [
+        "Triggered by Activity",
+        "Relieved by Rest",
+        "Unaffected by Rest",
+        "Unprovoked"
+      ],
+      "correctAnswer": "Triggered by Activity",
+      "hint": "Read both added sentences, then decide which one the question is really about.",
+      "explanation": "The first added sentence (“It only seems to happen after certain activities”) describes Triggered by Activity, while the second sentence describes a separate pattern (Relieved by Rest/Unaffected by Rest) that the question isn't asking about.",
+      "id": "mc_l70_q3",
+      "medicalVocab": [
+        "Anxiety",
+        "Triggered by Activity",
+        "Pattern"
+      ]
+    }
+  ]
 }

@@ -1,787 +1,787 @@
 {
-    "gameType": "branchingDialogue",
-    "batchIndex": 17,
-    "levels": "161-170",
-    "quests": [
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I've been asked to negotiate a treaty with a party that has violated previous agreements. How do you design a treaty that accounts for the likelihood of future non-compliance?'",
-            "options": [
-                "Design for verification, not trust - sequence the exchange so neither side finishes before the other's verified, and build automatic consequences into the text itself, not threats needing a new negotiation.",
-                "The treaty should include clear dispute resolution procedures agreed by both parties in advance.",
-                "Negotiate for strong enforcement mechanisms and international oversight."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Design around verification and sequencing, not trust or generic enforcement language.",
-            "explanation": "Naming verification, sequencing, and automatic consequences addresses the specific problem of designing for likely non-compliance. 'Negotiate for strong enforcement and international oversight' is the conventional approach without these specific mechanisms. 'Include clear dispute resolution procedures' addresses disagreement, not anticipated non-compliance.",
-            "id": "bd_l161_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I want to understand what separates the most effective covert operations from the most disastrous ones. What is the pattern?'",
-            "options": [
-                "The difference usually comes down to the skill and experience of the people involved.",
-                "Effective operations have better planning, intelligence, and execution than disastrous ones.",
-                "It's assumption density - disastrous operations stack untested assumptions that cascade when one fails, while effective ones minimise assumptions and test each independently before depending on it."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name the specific pattern - assumption density - not general planning quality.",
-            "explanation": "Naming assumption density, with the cascade mechanism and a testing discipline, identifies the precise pattern. 'Better planning, intelligence, and execution' is tautological - it restates that effective operations are effective. 'Comes down to skill and experience' doesn't identify any specific pattern at all.",
-            "id": "bd_l161_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I've been asked to advise on the design of a food system for a city that wants to dramatically reduce its carbon footprint without reducing food quality or access. Where do you start?'",
-            "options": [
-                "Start with supply chain waste, not diet - half of all food produced is lost before reaching the table, and fixing storage and distribution moves faster than changing what people eat.",
-                "Start by mapping the city's current food system to understand where the carbon footprint is concentrated.",
-                "Focus on promoting locally grown produce to reduce transportation emissions across the food system."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name the specific, counter-intuitive starting point and the evidence behind it.",
-            "explanation": "Naming waste reduction specifically, with the striking statistic, gives a concrete, evidence-based starting point. 'Map the current food system first' is a reasonable second step, not the starting point itself. 'Promote locally grown produce' is a common but lower-impact intervention compared to waste reduction.",
-            "id": "bd_l161_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I've been asked to chair an inquiry into a serious failure in a health system. The political pressure is to produce findings quickly. How do you manage this?'",
-            "options": [
-                "I'd state publicly what a credible inquiry actually needs and what cutting that time costs, then deliver interim findings that are genuinely solid rather than dressed up to look complete.",
-                "Negotiate a reasonable extension with the relevant authorities before the inquiry formally begins.",
-                "Prioritise the most important questions and focus the inquiry on those to meet the timeline."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Manage the pressure publicly and explicitly, rather than compressing scope or negotiating quietly.",
-            "explanation": "Stating the real requirements publicly, and delivering genuinely credible interim findings, names the specific risk of a rushed inquiry needing later correction. 'Prioritise the most important questions to meet the timeline' risks incomplete or misleading findings. 'Negotiate an extension before starting' avoids the public accountability this situation requires.",
-            "id": "bd_l162_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I've built a successful business over twenty years and I'm being asked to mentor a first-generation entrepreneur from a background very different from mine. What specific awareness do you need?'",
-            "options": [
-                "Be sensitive to cultural differences and be open to learning from their different perspective.",
-                "Focus on the practical business skills that apply regardless of anyone's background or starting point.",
-                "I'd get honest about the structural advantages I've normalised - capital, networks, vocabulary - and offer my account of the barriers I never faced that they actually will."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name specific structural advantages and offer honesty about unfaced barriers, not general sensitivity.",
-            "explanation": "Naming specific structural advantages, and offering honest awareness of unfaced barriers, is the deeper self-awareness this situation calls for. 'Be sensitive to cultural differences and open to learning' is important but misses the structural self-awareness that matters most. 'Focus on skills that apply regardless of background' denies that the starting points genuinely differ.",
-            "id": "bd_l162_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I've been asked to advise on the human factors considerations for the first human missions to Mars. What is genuinely different about this context?'",
-            "options": [
-                "Three things are genuinely new - a communication delay too long for real-time Earth advice, no possibility of rescue at all, and years, not months, of isolation affecting judgment at unprecedented scale.",
-                "Crew selection and psychological screening will need to be far more rigorous than for previous missions.",
-                "The main human factors considerations are the same as for any long-duration space mission but at a larger scale."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name specific qualitative differences, not just scale or screening rigour.",
-            "explanation": "Naming the three specific qualitative differences identifies what's genuinely, not just quantitatively, new about this context. 'The same as any long-duration mission but larger' misses the qualitative differences the question asks about. 'Screening will need to be more rigorous' addresses selection, not what's different about the mission itself.",
-            "id": "bd_l162_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I want to understand what makes some military cultures genuinely self-correcting and others unable to learn from their mistakes. What is the mechanism?'",
-            "options": [
-                "It depends mainly on how much resources are invested in training and professional development.",
-                "Self-correcting military cultures have strong leadership, clear accountability structures, and effective after-action review processes.",
-                "It's whether the culture rewards discovering a mistake or punishes it - punish it, and problems go invisible until catastrophic; reward it, and they surface while still fixable."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name the specific mechanism - reward versus punishment of discovery - not general traits.",
-            "explanation": "Naming the specific reward-versus-punishment mechanism, with a diagnostic test, identifies the actual driver of self-correction. 'Strong leadership, clear accountability, and after-action review' describes what self-correcting cultures do without naming the mechanism. 'Depends on training and development resources' doesn't identify a mechanism at all.",
-            "id": "bd_l163_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I've been asked to write the ethical guidelines for a new signals intelligence capability that doesn't exist yet. What principles must be established before the capability is deployed?'",
-            "options": [
-                "Four things before deployment - real purpose limits, judicial sign-off for use against our own citizens, a sunset clause forcing regular reauthorisation, and independent audits with access to how it's actually used.",
-                "Establish clear legal authorities, oversight mechanisms, and protocols for authorisation.",
-                "Consult with civil liberties experts and technology specialists throughout the development process."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name four specific, non-negotiable principles, not general categories.",
-            "explanation": "Naming four specific principles, each with a concrete mechanism, gives real substance beyond general categories. 'Clear legal authorities, oversight mechanisms, and authorisation protocols' names the right categories without the specific principles within each. 'Consult experts throughout development' describes a process, not the principles that process should establish.",
-            "id": "bd_l163_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I've spent my career in haute cuisine. I'm being asked whether I regret that I spent so little time understanding ordinary food - the food people actually eat every day. How do you answer honestly?'",
-            "options": [
-                "Honestly, yes - the real food questions, what people can afford, what a family actually returns to, are ones haute cuisine avoids because the answers are inconvenient, and I chose craft over impact.",
-                "There is still time to apply those skills to more accessible cooking in the years ahead.",
-                "It is not a regret - haute cuisine has pushed the boundaries of what cooking can be."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Give a direct, honest yes with specific reasoning, not a defence or a deflection to the future.",
-            "explanation": "Answering yes directly, with specific reasoning about the questions avoided, is genuine honesty rather than justification. 'It is not a regret - haute cuisine pushes boundaries' is a defence rather than an honest answer to the question asked. 'There's still time to apply those skills later' deflects the question about the past into a promise about the future.",
-            "id": "bd_l163_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I want to understand what the most honest account of the limits of evidence-based medicine actually is. What can it tell us and what can't it?'",
-            "options": [
-                "Evidence-based medicine provides the best available evidence but must be integrated with clinical judgment.",
-                "It's brilliant at average effects across populations and genuinely limited on this one patient in front of you - trials remove individual variation, and that patient is the variation.",
-                "The main limitation is that clinical trials don't always reflect real-world patient populations."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name the specific, structural reason for the limit, not just that judgment is also needed.",
-            "explanation": "Naming the structural reason - trials remove exactly the variation the individual patient represents - identifies the specific nature of the limit. 'Must be integrated with clinical judgment' is correct but doesn't explain why that integration is structurally necessary. 'Trials don't always reflect real-world populations' names a different, narrower limitation about trial design.",
-            "id": "bd_l164_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I've been offered the opportunity to testify before a legislative committee on an economic policy I know well. What are the most important disciplines for giving genuinely useful expert testimony?'",
-            "options": [
-                "Present your expert knowledge clearly, anticipate likely questions, and prepare comprehensive answers.",
-                "Be more specific about what's uncertain than what you're confident of, separate what the evidence shows from what your values recommend, and answer the actual question, not the one you wish they'd asked.",
-                "Focus on delivering a confident, authoritative account of your area of expertise."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name specific disciplines about uncertainty and framing, not general preparation advice.",
-            "explanation": "Naming these three specific disciplines addresses what actually distinguishes useful testimony from advocacy disguised as expertise. 'Present knowledge clearly, anticipate questions, prepare comprehensive answers' is good general preparation without these specific disciplines. 'Deliver a confident, authoritative account' risks exactly the overconfidence this answer warns against.",
-            "id": "bd_l164_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I've been asked to give a lecture to engineering students about what makes aviation accident investigation uniquely valuable as a methodology for understanding complex system failure. What do you say?'",
-            "options": [
-                "Every investigation is treated with the same seriousness regardless of the scale of the incident.",
-                "Aviation accident investigation is the gold standard because of its rigour, thoroughness, and systematic approach.",
-                "Investigations always get funded to completion, the flight recorders give ground truth that stops rationalisation, and findings go public and directly shape future systems - most industries have none of that."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name the specific structural features unique to aviation investigation, not general rigour.",
-            "explanation": "Naming completion funding, physical ground truth, and the public feedback loop identifies the specific structural features that make this methodology unique. 'The gold standard because of rigour, thoroughness, and systematic approach' describes good investigation generally without the unique features. 'Every investigation treated with equal seriousness' is not actually distinctive to aviation and doesn't address the question.",
-            "id": "bd_l164_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I've been asked to advise on whether to pursue a military option that has a high probability of success but that would create significant long-term instability in the region. How do you think about this?'",
-            "options": [
-                "Weigh the probability of success against the estimated cost of long-term regional instability.",
-                "The real question is who actually bears that instability - usually not the decision-makers but the people living there - and that transfer of cost has to be made explicit, not left implicit.",
-                "Consult with regional experts to better understand the likely consequences before deciding."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name the specific ethical question about who bears the cost, not a cost-benefit weighing.",
-            "explanation": "Naming who bears the cost, and demanding that transfer be explicit, identifies the specific ethical structure at stake. 'Weigh probability of success against the cost of instability' is what a cost-benefit analysis does, without addressing whose cost it is. 'Consult regional experts to understand consequences' is a useful step but doesn't name the ethical question itself.",
-            "id": "bd_l165_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I want to understand why some intelligence failures produce lasting institutional learning and others are repeated. What determines which?'",
-            "options": [
-                "It depends on whether senior leadership takes the failure seriously enough to act on it.",
-                "It's whether the investigation reaches the root cause or stops at the comfortable proximate one - proximate fixes patch the one failure, root causes change what the next failure needs.",
-                "The quality of the post-failure analysis determines whether learning is lasting or superficial."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name the specific distinction - root versus proximate cause - not a restatement of the conclusion.",
-            "explanation": "Naming the root-versus-proximate distinction identifies the precise mechanism that determines lasting learning. 'The quality of the analysis determines whether learning is lasting' restates the conclusion without naming the mechanism. 'Depends on whether leadership takes it seriously enough' names a condition, not the analytical mechanism itself.",
-            "id": "bd_l165_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I've been asked to think about what the history of cuisine can teach about human civilisation more broadly. What do you say?'",
-            "options": [
-                "Studying culinary history reveals how trade and migration have shaped every regional cuisine.",
-                "The history of cuisine shows how food connects people across cultures and human civilisation.",
-                "Cuisine is survival technology and social signalling at once - what feels most naturally cultural is often precisely adapted to conditions that no longer exist, making it a more honest archive than official history."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name the specific dual function of cuisine and why it's a more honest historical record.",
-            "explanation": "Naming the dual function, plus the specific reason cuisine is a more honest archive, gives genuine insight beyond a general celebration. 'Shows how food connects people across cultures' is a pleasant but general observation. 'Reveals how trade and migration shaped regional cuisine' names one true influence without the deeper insight about honesty as historical evidence.",
-            "id": "bd_l165_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I've been asked to lead the design of a healthcare system for a newly independent country. What is the most important foundational decision to get right?'",
-            "options": [
-                "The financing model - specifically whether it pools risk across everyone or lets it be segmented by income - shapes every later decision and is by far the hardest one to undo.",
-                "The most important foundational decision is establishing clear governance and accountability structures.",
-                "Start by assessing the country's current health outcomes and available medical infrastructure."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name the specific foundational decision and explain why it's hardest to reverse.",
-            "explanation": "Naming the financing model specifically, and explaining why it's hardest to reverse, identifies the actual highest-leverage decision. 'Establishing clear governance and accountability structures' is important but is a second-order decision shaped by financing. 'Assess current health outcomes and infrastructure' is a useful early step, not the foundational decision itself.",
-            "id": "bd_l166_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I want to understand what makes some business leaders genuinely good at learning from competitors and others unable to. What is the specific capability?'",
-            "options": [
-                "Being open to learning from competitors and having the humility to acknowledge their successes.",
-                "Regularly benchmark your performance against your closest competitors across key business metrics.",
-                "It's the ability to break a competitor's success into its actual causes instead of one story - 'better product' teaches nothing, but 'this specific practice in this part of the business' can be adapted."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name the specific cognitive capability - disaggregation - not an attitude or a practice.",
-            "explanation": "Naming disaggregation as the specific capability, with a concrete example, identifies exactly what separates genuine learning from mere observation. 'Being open to learning and having humility' describes an attitude, not the capability itself. 'Regularly benchmark performance across metrics' is a practice that doesn't require or produce this specific capability.",
-            "id": "bd_l166_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I want to understand what flying teaches about the relationship between rules and judgment that applies more broadly. What is the essential insight?'",
-            "options": [
-                "Rules provide the framework within which good judgment operates, and judgment fills the gaps.",
-                "Rules are written for the situations their authors could imagine - judgment is for the ones they couldn't. Applying a rule mechanically outside its territory satisfies the rule while defeating its purpose.",
-                "Experienced pilots eventually develop the instinct to know when a rule doesn't quite fit."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name the precise relationship and the specific failure mode of mechanical rule-following.",
-            "explanation": "Naming the precise relationship, including how mechanical application can defeat a rule's purpose, gives the essential insight. 'Rules provide the framework and judgment fills the gaps' is true but doesn't identify this essential, more specific insight. 'Experienced pilots develop the instinct' describes an outcome without explaining the underlying insight.",
-            "id": "bd_l166_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I've been asked to advise on the design of a long-term deterrence strategy. What is the most important thing to get right that is most commonly got wrong?'",
-            "options": [
-                "Deterrence strategies must be credible, proportionate, and clearly communicated to the adversary.",
-                "The common mistake is calculating deterrence from our own side instead of the adversary's actual cost-benefit maths - the gap between what we think deters and what really does is where it fails.",
-                "The most important factor is maintaining a visible and consistent military presence in the region."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name the specific perspective error, not general deterrence requirements.",
-            "explanation": "Naming the specific perspective error - calculating from your own side rather than the adversary's - identifies the most common source of deterrence failure. 'Must be credible, proportionate, and clearly communicated' describes requirements for deterrence generally, not the commonly got wrong thing. 'Maintaining a visible, consistent military presence' names one tactic, not the underlying error.",
-            "id": "bd_l167_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I've been asked to advise on the ethics of using deception in operations against genuinely harmful actors. What is the honest ethical account?'",
-            "options": [
-                "It's defensible only under real conditions - serious, verifiable harm, genuine necessity, proportionality, and minimum scope - but the real danger is institutions defining a target as harmful when they aren't.",
-                "Deception against harmful actors is ethically justified when it prevents serious harm to innocent people.",
-                "The ethics depend heavily on the specific operational context and the authorisation process used."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name specific conditions and the institutional risk that complicates them.",
-            "explanation": "Naming specific conditions, plus the institutional risk of self-serving target definition, gives the complete, honest ethical account. 'Justified when it prevents serious harm to innocent people' is correct but misses the complicating institutional risk. 'Depends on the specific context and authorisation process' is too vague to be an honest ethical account.",
-            "id": "bd_l167_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I've been asked to write a culinary history of my home region. What are the most important methodological choices?'",
-            "options": [
-                "Research primary sources thoroughly, consult food historians, and conduct extensive interviews with practitioners.",
-                "Focus on documenting the signature dishes and techniques most associated with the region.",
-                "Whose memory you collect matters - professional chefs tell a different story than home cooks and market vendors - and skipping what's been lost isn't honest about what survived, or why."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name specific methodological choices that determine honesty, not general research process.",
-            "explanation": "Naming whose memory is collected, and the deliberate inclusion of what's been lost, identifies the specific choices that determine whether a history is honest. 'Research primary sources, consult historians, interview practitioners' is good process advice without these specific methodological choices. 'Document the signature dishes and techniques' risks the idealised, unchanging version this answer warns against.",
-            "id": "bd_l167_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I've been asked to advise on whether medicine is moving in the right direction. What is the honest answer?'",
-            "options": [
-                "Medicine is moving in the right direction overall thanks to technology and evidence-based practice.",
-                "Yes and no, and they're not separable - astonishing progress on the biology, real loss in the relationship with the person who's ill, as protocol and paperwork crowd out clinical judgment.",
-                "It has improved significantly, though rising costs remain a serious ongoing concern."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Give the honest, inseparable dual answer, not a single overall verdict.",
-            "explanation": "Holding both directions as genuinely inseparable is the honest account this question asks for. 'Moving in the right direction overall thanks to technology' is the optimistic partial account. 'Improved significantly, though costs remain a concern' names a different issue - cost - not the relationship with the patient.",
-            "id": "bd_l168_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I want to understand what the best investors see that others don't when evaluating a business. What is the specific perceptual capacity?'",
-            "options": [
-                "Successful investors typically have deep industry expertise and extensive professional networks.",
-                "The real skill is telling what's genuinely hard to replicate from what's just circumstantially lucky right now - ask whether the business would still win if the environment changed significantly.",
-                "The best investors see the long-term potential of a business before the market does."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name the specific perceptual capacity and give a concrete test.",
-            "explanation": "Naming the specific capacity, with a concrete test, identifies exactly what distinguishes consistently good investors. 'See the long-term potential before the market does' is a general description without the specific capacity. 'Deep industry expertise and professional networks' describes resources, not the perceptual capacity itself.",
-            "id": "bd_l168_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I want to understand what aviation has taught me about the nature of mastery that applies to any discipline. What is it?'",
-            "options": [
-                "True mastery comes from thousands of hours of experience across a wide range of conditions.",
-                "Mastery isn't a state, it's a practice - staying at the edge of your competence, not its comfortable centre. The most dangerous pilots aren't beginners, they're experienced ones who stopped expecting surprises.",
-                "Aviation has taught me that mastery requires continuous learning, rigorous practice, and strong discipline."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name the paradox of mastery and the specific hazard indicator.",
-            "explanation": "Naming the paradox, and the specific hazard of experienced pilots who've stopped expecting surprises, gives the essential insight this question asks for. 'Requires continuous learning, rigorous practice, and discipline' describes mastery behaviours without the essential nature. 'Comes from thousands of hours of experience' actually names the risk factor this answer warns against.",
-            "id": "bd_l168_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I've been asked to give the closing address at the academy that trained me forty years ago. What do I say that is genuinely worth saying?'",
-            "options": [
-                "Say what only forty years lets you say - not what the academy taught that worked, but what it never taught that you had to learn the hard way, and how to learn it faster.",
-                "Tell a memorable story from your own time at the academy that shaped your career.",
-                "Share what you've learned over a long career about leadership and service, and inspire the class."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Say something only this specific perspective allows, not a generic inspirational address.",
-            "explanation": "Naming what only forty years of perspective allows - the unteachable gaps - uses this unique platform for something only this speaker can say. 'Share what you've learned about leadership and inspire the class' is what every closing address attempts. 'Tell a memorable story from your own time there' is a pleasant anecdote, not the unique perspective being asked for.",
-            "id": "bd_l169_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'What is the most important thing you've learned about the difference between loyalty and complicity, and how do you know when one becomes the other?'",
-            "options": [
-                "The line is usually clear once you actually witness the harm firsthand.",
-                "Loyalty becomes complicity when it requires you to act against your own ethical principles.",
-                "It becomes complicity the moment you keep supporting something you know is causing harm you wouldn't have signed up for at the start - ask honestly if you'd still make that same first commitment."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Give a specific, testable diagnostic, not a general marker or an assumption of clarity.",
-            "explanation": "Giving a specific, testable diagnostic - would you still make the same first commitment - offers a concrete way to check yourself. 'Requires you to act against your own principles' is one true marker but not the full diagnostic test. 'The line is clear once you witness harm firsthand' assumes a clarity this question specifically challenges.",
-            "id": "bd_l169_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I've been asked to reflect on what cooking has taught me about the nature of time. What is the honest answer?'",
-            "options": [
-                "Time isn't something you manage in cooking, it's something you participate in - patience means recognising when something's actually ready, not when you want it to be, and lost time never comes back.",
-                "Cooking has taught me about the importance of timing, precision, and the relationship between process and outcome.",
-                "You learn quickly that rushing a dish almost always shows in the final result."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Give the specific, honest insight about time and irreversible loss, not a general statement.",
-            "explanation": "Naming participation over management, and the specific irreversibility of lost time, gives genuine insight beyond a general statement. 'Taught me about timing, precision, and the relationship between process and outcome' describes what cooking requires without this specific insight. 'Rushing a dish shows in the final result' is a practical observation, not the deeper reflection on time itself.",
-            "id": "bd_l169_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'After a long career in medicine, what is the single most important thing you believe about the nature of healing that differs from what medicine officially teaches?'",
-            "options": [
-                "Medicine has the capacity to heal the body through scientific understanding and therapeutic interventions.",
-                "Healing is what the body and person do - medicine's real job is removing what's blocking that and creating the conditions for it. That changes what success should even look like.",
-                "The relationship between doctor and patient matters just as much as the treatment itself."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Reframe medicine's actual role and name the practical implication for what success looks like.",
-            "explanation": "Reframing medicine's role, with the specific implication for defining success, precisely challenges the official teaching as asked. 'Medicine has the capacity to heal through scientific understanding' is the official position this question asks to be challenged. 'The doctor-patient relationship matters as much as treatment' is a related but different point about relationship, not this specific reframing.",
-            "id": "bd_l170_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I want to understand what the most important business books get wrong about what actually determines business outcomes. What is the honest critique?'",
-            "options": [
-                "Most business books oversimplify complex business realities and don't capture the full picture.",
-                "Business books are often written by consultants with limited direct operating experience.",
-                "They work backwards from success without checking the failures who did the exact same thing - that's survivor bias, and it's rarely tested against what the failures did differently."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name the specific methodological flaw - survivor bias - not a general critique.",
-            "explanation": "Naming survivor bias specifically, with the missing test that would correct it, identifies the precise methodological flaw. 'Oversimplify complex realities and don't capture the full picture' is a general critique without identifying the specific flaw. 'Written by consultants with limited operating experience' is a different critique about authorship, not methodology.",
-            "id": "bd_l170_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'What is the most important question you ask yourself before a flight that you didn't ask in your first years of flying?'",
-            "options": [
-                "The most important question I now ask is whether I'm fully prepared and any risks are addressed.",
-                "I ask myself whether I've had enough rest to be at my sharpest for the flight.",
-                "Early on you ask what you know - weather, aircraft status, route. What I learned to ask later, and now consider the most important question, is what I don't know yet."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name the specific shift toward unknown factors, not a variation on known-factor checks.",
-            "explanation": "Naming the specific shift from confirming known factors to actively searching for unknown ones identifies the precise, more valuable question. 'Whether I'm fully prepared and risks are addressed' is a variation on the known-factors check this answer moves beyond. 'Whether I've had enough rest' checks one specific known factor, not the broader shift being described.",
-            "id": "bd_l170_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        }
-    ]
+  "gameType": "branchingDialogue",
+  "batchIndex": 17,
+  "levels": "161-170",
+  "quests": [
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a professor you've never met",
+      "scene": "You're emailing a professor at another university to ask if she'd be willing to read a draft of your paper.",
+      "options": [
+        "Hi Anna, hope you're well! Can you have a look at my paper and tell me what you think? Cheers, if I'm honest, it wasn't a fully considered answer, so I could be wrong — and I know that's not the most thought-out response, but it's where my head's at right now.",
+        "Dear Professor Almeida, I'm a master's student at Leeds working on urban heat islands. I've read your 2022 paper closely and would be grateful if you could spare time to comment on a short draft. I fully understand if your schedule doesn't allow it.",
+        "To whom it may concern, I am writing to request that you review my attached manuscript at your earliest possible convenience, in hindsight, that was more of a first reaction, so it's worth double-checking — and I'm honestly still working out how I feel about the whole thing."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "With a senior stranger, be respectful, show why you chose them and make it easy to say no.",
+      "explanation": "Register is only part of it: naming her paper shows you didn't mass-mail, and the polite exit protects her freedom. First names assume closeness, and stiff formality without personal detail reads as a template.",
+      "id": "bd_l161_q1",
+      "consequencePreviews": [
+        "As a result, the casual first-name tone assumes a familiarity you haven't earned with a stranger.",
+        "You may notice that the tone is respectful, specific about why you're writing and gives her an easy way to decline.",
+        "In this moment, it's formal but impersonal and sounds like a demand, with no sign you know her work."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "your childhood friend",
+      "scene": "You haven't seen an old friend in years. She texts: 'Guess who's in town this weekend!!'",
+      "options": [
+        "Nice. I might be free, will let you know.",
+        "How delightful to hear from you. I would be pleased to arrange a meeting during the weekend.",
+        "No way!! Yes, I'm free Saturday, let's get proper food and catch up on everything."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Match the warmth and energy of a close friend's message, not just its topic.",
+      "explanation": "She sent exclamation marks and excitement. Answering in kind with a plan shows you share it. A formal reply creates distance and a lukewarm one signals low interest.",
+      "id": "bd_l161_q2",
+      "consequencePreviews": [
+        "Realistically, the flat, noncommittal reply doesn't match her excitement and may feel cold.",
+        "Realistically, the formal phrasing feels oddly distant between old friends.",
+        "Realistically, the warm, informal reply matches her energy and makes a concrete plan."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a customer at a high-end restaurant",
+      "scene": "The waiter has brought a dish that's colder than it should be. The restaurant is formal and expensive, and you'd like it replaced.",
+      "options": [
+        "Excuse me, I'm sorry to trouble you. I think this may have been waiting a little while, as it's not as warm as I'd expect. Would it be possible to have it warmed or replaced?",
+        "Oh, it's fine, thanks. I'm sure the kitchen is very busy tonight, if I'm being honest, I hadn't stopped to think it all the way through, so it's worth double-checking — and I know that's not the most thought-out response, but it's where my head's at right now.",
+        "This is cold. Take it back and bring me a proper one, in hindsight, I hadn't stopped to think it all the way through, so feel free to push back — and a lot depends on details I haven't really looked into yet."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "In formal service settings, stay polite and indirect but still state exactly what you want.",
+      "explanation": "A cushioned but clear request gets a better result than a command or silence. The waiter can respond gracefully, and you keep both your dignity and your meal.",
+      "id": "bd_l161_q3",
+      "consequencePreviews": [
+        "Realistically, the tone is polite and measured and matches the setting while stating a clear request.",
+        "Here, you avoid an easy, reasonable request and end up with food you don't want.",
+        "You may notice that the blunt order is out of keeping with the setting and puts the waiter on the defensive."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "your manager's manager",
+      "scene": "You bump into a senior executive in the lift. She asks, 'How's the new project going?' You have about thirty seconds.",
+      "options": [
+        "Oh, you know, up and down. There's a lot going on, so it's a bit hard to explain quickly.",
+        "Going well, thank you. We've finished the first phase on time, and the main challenge now is supplier delivery. I'd be glad to send you a brief update if that would be useful.",
+        "Great, honestly! The team is amazing, the client loves us, and I've been working so hard, it's been a really exciting time, let me tell you about the supplier issue."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "With senior people and little time, give a short, clear status and offer more instead of unloading everything.",
+      "explanation": "A senior executive wants signal, not story. A brief status with one challenge and an offer of more shows judgment. Vagueness looks unprepared, and rambling ignores the setting.",
+      "id": "bd_l162_q1",
+      "consequencePreviews": [
+        "In this moment, the vague answer wastes a rare chance to make a clear impression.",
+        "In this moment, you give a concise, confident summary and offer more without taking her time.",
+        "You may notice that the rambling answer overruns the thirty seconds and buries the useful point."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a teenage cousin",
+      "scene": "Your teenage cousin asks in a family chat, 'Can u help me w my cv? no idea what to write lol.'",
+      "options": [
+        "Sure! Send me what you've got and I'll help you make it look good. Do you have any jobs or volunteering yet? Even small stuff counts.",
+        "I would be happy to assist you in preparing a professional curriculum vitae. Kindly forward the relevant details, honestly, I hadn't really thought it through.",
+        "You should really learn to write properly before applying for jobs."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Match the informal tone of family and give practical help, not corrections nobody asked for.",
+      "explanation": "She wants help, not a style review. A friendly, practical answer makes her comfortable asking again. Formality feels cold, and criticism discourages her.",
+      "id": "bd_l162_q2",
+      "consequencePreviews": [
+        "In this moment, you keep the tone light and friendly while giving practical help.",
+        "Realistically, the formal reply is stiff for a family chat and may make her feel awkward for asking.",
+        "The criticism about her texting style turns a request for help into a lecture."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a client's assistant",
+      "scene": "You're trying to arrange a call with an important client through his assistant, who is known to be protective of his time.",
+      "options": [
+        "I need to speak to Mr Okafor directly. It's urgent, so please put me through, to be fair, I hadn't fully worked out how it'd play out, so there might be a better way to handle it — and I'm honestly still working out how I feel about the whole thing.",
+        "Hi, sorry to bother you, I know you're so busy, and I hate to ask, but if it's not too much trouble, whenever suits, no rush at all, actually, I wasn't considering every angle, so I could be wrong.",
+        "Hello Marta, thanks for helping with this. I only need twenty minutes to agree the next steps. Do you have a slot next week that would suit Mr Okafor, and I'll fit around it?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Respect gatekeepers as partners: be brief, specific and flexible.",
+      "explanation": "Assistants decide whose requests are easy to grant. A named, short, flexible request helps her say yes. Pressure invites resistance, and excessive hedging gives her nothing to schedule.",
+      "id": "bd_l162_q3",
+      "consequencePreviews": [
+        "You may notice that ignoring the gatekeeper's role and claiming urgency usually makes her less helpful.",
+        "As a result, over-apologising with no clear request makes it easy for her to postpone.",
+        "Realistically, you treat the assistant as a key partner, keep the ask small and defer to the client's schedule."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a colleague who is your senior in age and rank",
+      "scene": "You disagree with a technical point raised by an older, more senior colleague in a meeting.",
+      "options": [
+        "That's not correct. The newer version doesn't work like that at all.",
+        "That's a helpful angle, thank you. I wonder whether the newer version changes the picture, because I saw a difference in the tests last week. Could we check that together?",
+        "Yes, absolutely, that's a good point. We'll go with that."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "With a senior colleague, raise disagreement as a question or shared check rather than a correction.",
+      "explanation": "You keep the technical point alive without challenging his authority. A joint check lets him update his view without losing face. Blunt correction risks conflict, and false agreement risks a wrong decision.",
+      "id": "bd_l163_q1",
+      "consequencePreviews": [
+        "As a result, a direct correction in public risks embarrassing him and starting a status contest.",
+        "Here, you disagree by asking for a check, which respects his standing while getting the fact examined.",
+        "As a result, deferring to rank lets a possible error stand."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a junior new to the team",
+      "scene": "A junior colleague has made a small mistake in a report. You're older and more experienced, and you want to correct it kindly.",
+      "options": [
+        "This is wrong. Please be more careful next time, because clients would notice this, in hindsight, it wasn't a fully considered answer, but that could easily change — and I haven't really run it past anyone else yet.",
+        "It's fine! Don't worry about it. I'll just quietly fix it myself later.",
+        "Nearly there. One thing I'd change is the total on page two, since it doesn't include the returns. It's an easy one to miss. Would you like me to show you where to find that figure?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When correcting someone junior, be specific, kind and offer to teach.",
+      "explanation": "Juniors learn when errors are named clearly and treated as normal. Specificity plus help builds skill. Sternness breeds fear, and covering up removes the learning.",
+      "id": "bd_l163_q2",
+      "consequencePreviews": [
+        "The stern tone makes a small error feel serious and can erode confidence.",
+        "In this moment, silent fixing spares awkwardness but means the junior never learns.",
+        "As a result, you correct specifically, normalise the mistake and offer help without talking down."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a visiting delegation from another culture",
+      "scene": "You're hosting a business delegation who are more formal and hierarchical than your own team. You're unsure how to greet the most senior person.",
+      "options": [
+        "Welcome, Dr Tanaka. It's an honour to host you. Please let me know if there's anything that would make your visit more comfortable.",
+        "Hello. Which one of you is in charge? Does that seem right to you? Honestly, that was more of a first reaction — and I haven't really run it past anyone else yet.",
+        "Hey, great to meet you! Call me Sam, and feel free to just call me whatever you like, admittedly, I hadn't fully worked out how it'd play out."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "With guests whose customs you don't know, start slightly more formal and let them signal if they'd like less.",
+      "explanation": "Formal courtesy is easy to relax later, but informality is hard to undo. Using a title and offering help shows respect. Assuming casual manners or asking who's in charge risks offence.",
+      "id": "bd_l163_q3",
+      "consequencePreviews": [
+        "Here, you use a title, express respect and offer help, which is a safe, courteous default.",
+        "Realistically, the direct question may seem abrupt and can embarrass the group.",
+        "In this moment, the casual style may feel presumptuous to guests who expect a more formal approach."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who's teasing you",
+      "scene": "A close friend jokes about your terrible sense of direction in front of others. You know it's affectionate, but you're a bit tired of it.",
+      "options": [
+        "That's not funny. Stop making fun of me in front of everybody, actually, I hadn't weighed all the details, so it's worth double-checking.",
+        "Yeah, haha, I'm hopeless. Please go ahead and tell them about last time too, admittedly, I said that fairly quickly, but that could easily change.",
+        "Ha, fair enough. Though the joke's had a good run, so could we retire it? I'd rather not be the map jokes person all night."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Answer affectionate teasing you're tired of with humour plus a light, clear limit.",
+      "explanation": "A friend needs to know the joke has worn thin, but not that they've done something terrible. Humour with a request keeps the friendship warm. Harshness escalates, and encouraging it worsens the problem.",
+      "id": "bd_l164_q1",
+      "consequencePreviews": [
+        "You may notice that the sharp reaction overstates the offence and may embarrass your friend.",
+        "You may notice that playing along invites more of what you want to stop.",
+        "Here, you accept the humour and set a light, clear limit within a friendly frame."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a stranger on a train",
+      "scene": "A stranger on a train starts asking lots of personal questions about your salary and relationship. You'd rather not answer, but you don't want to be rude.",
+      "options": [
+        "That's none of your business. I don't discuss personal things with strangers, to be honest, I hadn't fully worked out how it'd play out.",
+        "Ha, I tend to keep those private. Where are you headed today? Anything good planned?",
+        "Well, I earn about forty thousand, and I'm single. Anything else you'd like to know? Does that seem right to you?"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Decline a nosy question lightly and redirect the conversation.",
+      "explanation": "Most nosy strangers respond well to a smiling redirect. It protects your privacy without hostility. Bluntness is harsh, and answering everything betrays your own comfort.",
+      "id": "bd_l164_q2",
+      "consequencePreviews": [
+        "Here, the blunt refusal ends the exchange sourly and may be more than the situation needs.",
+        "As a result, you decline lightly and steer to a neutral topic, staying friendly.",
+        "Realistically, you give up private information because it felt rude to refuse."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a host at a formal dinner",
+      "scene": "At a formal dinner, the host serves a dish containing an ingredient you're allergic to. Guests are watching and the host is proud of the dish.",
+      "options": [
+        "This looks wonderful, and I'm so sorry to be difficult. I have an allergy to shellfish, so I'm afraid I'll have to pass on this one. The bread and salad look lovely, though.",
+        "I can't eat that. It'll make me ill. Is there anything else? Is that the right way to look at it? Honestly, I was just going with my gut on that one — and I know that's not the most thought-out response, but it's where my head's at right now.",
+        "I'm sure I'll be fine with a little. It would be rude not to try it, to be fair, I hadn't weighed all the details, though I'm open to changing my mind — and I know that's not the most thought-out response, but it's where my head's at right now."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Health comes before politeness; refuse warmly and briefly, and appreciate what you can.",
+      "explanation": "A short medical reason is universally understood. Appreciation for the rest softens the refusal. Bluntness hurts the host, and eating it puts your health at risk.",
+      "id": "bd_l164_q3",
+      "consequencePreviews": [
+        "Here, you are honest about the health reason, appreciative and low-drama, which protects you and the host's feelings.",
+        "As a result, the safety message is clear but the abruptness may embarrass a proud host.",
+        "Here, risking an allergic reaction for politeness is unsafe and unnecessary."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a job applicant writing to a recruiter",
+      "scene": "You've had no reply to your application for two weeks and want to follow up with the recruiter.",
+      "options": [
+        "Dear Ms Lindqvist, I applied for the analyst role on the 3rd and remain very interested. Could you let me know whether the position is still open, or whether there is anything further I should send?",
+        "Hi, I still haven't heard anything. Why haven't you replied to my application?",
+        "Dear recruiter, I'm sorry to disturb you, I understand you must be extremely busy, and I wouldn't dream of chasing, but perhaps if it's possible you might consider replying at some point."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "A good follow-up is polite, dated and asks a question she can answer in one line.",
+      "explanation": "Naming the role and date helps her find you, and a direct question is easy to answer. Blame closes doors, while grovelling makes the message hard to act on.",
+      "id": "bd_l165_q1",
+      "consequencePreviews": [
+        "The follow-up is polite, specific and gives her something clear to answer.",
+        "The complaint puts her on the defensive and reduces your chances.",
+        "Realistically, the excessive apology buries the question and sounds unsure of yourself."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who lost a parent",
+      "scene": "A friend's father has died. You want to send a message, and you're not sure what tone to use.",
+      "options": [
+        "So sorry to hear that. He's in a better place now, and everything happens for a reason.",
+        "Sorry. Let me know if you need anything. Are we still on for the football on Sunday? Is there a better way to handle it? Honestly, it wasn't a fully considered answer.",
+        "I'm so sorry about your dad. I'm thinking of you. You don't need to reply, but if you'd like company or help with anything, I'm here."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "In condolences, be simple and sincere, avoid clichés and offer without demanding a reply.",
+      "explanation": "Grieving people rarely want explanations. A short, sincere message with a concrete offer is the best comfort. Clichés can hurt and mixing in plans undercuts the message.",
+      "id": "bd_l165_q2",
+      "consequencePreviews": [
+        "Clichés can feel dismissive and may clash with his beliefs.",
+        "Here, bringing up ordinary plans in the same message can seem insensitive.",
+        "Here, the message is warm and simple and puts no pressure on him to respond."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a colleague you don't know well, in a group chat",
+      "scene": "In a big work chat, a colleague you barely know posts a joke that could be read as mocking a coworker. You'd like to say something without starting a scene.",
+      "options": [
+        "That's offensive and you should apologise to everyone right now.",
+        "I'm not sure that one's landing well for everyone. Maybe we can leave it there?",
+        "Haha, good one. Anyone got the meeting link?"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "In public channels, raise concerns briefly and without accusation, offering a way to let it drop.",
+      "explanation": "A short neutral comment signals the norm and gives the colleague a chance to back off. Public demands provoke defensiveness, and joining in makes the situation worse.",
+      "id": "bd_l165_q3",
+      "consequencePreviews": [
+        "You may notice that a public demand escalates something that may have been careless rather than malicious.",
+        "Here, you raise a concern briefly and neutrally, which is proportionate for a public channel.",
+        "Playing along silently supports the joke and leaves the coworker exposed."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a hotel manager",
+      "scene": "You're writing a formal complaint email after a bad stay: noisy construction, no warning, and a rude reception clerk.",
+      "options": [
+        "Your hotel was a disgrace. The staff were rude, the noise was awful, and I'll be telling everyone never to stay there, admittedly, I wasn't considering every angle, though I'd want to think it over more — and I probably should have asked a few more questions before saying anything.",
+        "Dear Mr Hale, I stayed with you from 12 to 15 May. Construction noise began at 7am each day without prior notice, and my request for a quieter room was declined by the front desk. I'd appreciate your response and a suitable resolution.",
+        "Dear manager, I had a slightly disappointing stay, but it isn't a big problem, and I don't want to cause any trouble for anyone, I guess, I wasn't considering every angle, so it's worth double-checking — and I probably should have asked a few more questions before saying anything."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "A formal complaint works best when it's factual, specific and clear about the outcome you want.",
+      "explanation": "Dates, causes and a request give the manager a case to handle. Insults get a defensive template reply, and modesty gets nothing at all.",
+      "id": "bd_l166_q1",
+      "consequencePreviews": [
+        "You may notice that anger and threats give him nothing to act on and make him defensive.",
+        "Realistically, the email is factual, specific and states what you expect, which is more likely to get results.",
+        "Realistically, playing down the issue almost guarantees no action."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who is going through a divorce",
+      "scene": "A friend tells you she's divorcing. You've met her husband and liked him, and she looks upset.",
+      "options": [
+        "That sounds really painful. I'm here, whatever you need. Do you want to talk it through, or would some distraction help more right now?",
+        "Well, at least you'll be free now and can start a new chapter.",
+        "Really? But you two seemed so happy! What did he do?"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When someone shares bad news, respond to their feelings first and let them steer.",
+      "explanation": "She needs support, not questions or spin. Offering a choice respects her state. Interrogation and premature positivity both ignore how she feels.",
+      "id": "bd_l166_q2",
+      "consequencePreviews": [
+        "You are supportive and let her choose what she needs, without judging either person.",
+        "As a result, silver linings offered too quickly can minimise how painful this is.",
+        "Here, the surprise and demand for details can feel like an interrogation."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a mixed audience at a wedding",
+      "scene": "You're the best man giving a toast. The audience includes the groom's grandparents, colleagues and old friends.",
+      "options": [
+        "Um, so, I'm not really good at speeches, so yeah, I hope you have a nice life together, thinking about it now, I hadn't stopped to think it all the way through, but that could easily change.",
+        "Tom's had more girlfriends than I can count, and I remember the night in Prague, when, to be honest, I hadn't weighed all the details, so feel free to push back — and honestly the whole situation caught me a bit off guard.",
+        "I've known Tom since we were eleven. He was always the friend who turned up when it mattered, and he's found someone who makes him even better. To Tom and Priya!"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "For a mixed audience, choose humour and stories that everyone can enjoy.",
+      "explanation": "A shared, warm story fits every guest. Risqué anecdotes suit only some listeners, and a low-effort toast doesn't honour the couple.",
+      "id": "bd_l166_q3",
+      "consequencePreviews": [
+        "You may notice that the awkward, generic toast wastes an opportunity to say something meaningful.",
+        "Realistically, edgy stories designed for old friends may embarrass the grandparents and the bride.",
+        "Here, the toast is warm, personal and suitable for every generation in the room."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a receptionist at a medical clinic",
+      "scene": "You need an urgent appointment and are speaking to a busy receptionist over the phone, in a formal but friendly setting.",
+      "options": [
+        "Hi there, sorry, I probably shouldn't bother you, it's most likely nothing, but I've been feeling a bit off, maybe?",
+        "I need to see a doctor immediately. Get me an appointment right now.",
+        "Good morning. I've had chest tightness since last night and I'd like to be seen today, if at all possible. Could you tell me what's available?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When it's urgent, state the concrete symptom and timing politely.",
+      "explanation": "Receptionists prioritise by symptoms. Naming chest tightness and timing moves you up appropriately. Understatement hides urgency, and commanding tone doesn't inform her.",
+      "id": "bd_l167_q1",
+      "consequencePreviews": [
+        "You may notice that downplaying the symptom may lead her to treat it as non-urgent.",
+        "The demand is clear on urgency but not on the symptom, and it may make her less cooperative.",
+        "Here, you state the symptom and urgency clearly and politely, which helps her triage."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend's grandmother",
+      "scene": "You meet your friend's grandmother for the first time. She says she's pleased you could come, and offers you a large second helping of food you're already full from.",
+      "options": [
+        "It's delicious, thank you so much. I couldn't manage another whole plate, but I'd love a small piece to take home if that's all right.",
+        "No, thank you, I'm full.",
+        "Oh yes please, I'd love more, honestly, it wasn't a fully considered answer, so feel free to push back — and I probably should have asked a few more questions before saying anything."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When a host offers food as a gesture of care, decline gently and accept a smaller token.",
+      "explanation": "Food is often a way to show warmth, so a compliment plus a small take-home meets that need. A bare refusal stings, and forcing it down harms you.",
+      "id": "bd_l167_q2",
+      "consequencePreviews": [
+        "Realistically, you thank her and decline gently while accepting something that honours her generosity.",
+        "The plain refusal is honest but may seem cold to someone who is expressing care through food.",
+        "As a result, accepting more than you can eat is generous but uncomfortable and unsustainable."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a customer speaking to a call-centre agent in a different country",
+      "scene": "You're on the phone with a support agent whose accent you find hard to follow. You've asked him to repeat twice and don't want to seem impatient.",
+      "options": [
+        "I can't understand your accent. Can you put someone else on? Is that the right way to look at it? Honestly, I hadn't really thought it through.",
+        "Sorry, the line's a bit unclear on my end. Could I ask you to spell that reference number one letter at a time?",
+        "Yes, yes, I see. Okay, thank you."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When you can't follow someone, ask for a specific format such as spelling or writing it down, and avoid blaming their speech.",
+      "explanation": "Requests like spelling solve the problem without shaming him. Personal remarks about accent are demeaning, and faking comprehension breaks the process later.",
+      "id": "bd_l167_q3",
+      "consequencePreviews": [
+        "As a result, blaming his accent is hurtful and unnecessary when a simple format request would work.",
+        "You place the difficulty on the line and ask for a specific format, which avoids embarrassment.",
+        "As a result, pretending to understand risks a wrong number and more trouble later."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a junior employee replying to the CEO's all-staff email",
+      "scene": "The CEO's email asks for staff suggestions on cutting costs. You have a sensible idea about travel policy, and you're several levels below her.",
+      "options": [
+        "Thank you for inviting suggestions. One idea: we could set a default of video calls for meetings under two hours, which might reduce travel costs noticeably. Happy to pull together some figures if that would be helpful.",
+        "Sorry to bother you, I'm just a junior, and I'm sure others have far better ideas, so please ignore this if it's not useful, if I'm being honest, I hadn't weighed all the details, so let me know if that's off — and to be fair I only heard about this a few minutes ago myself.",
+        "Hey, great idea to ask! Honestly, the travel policy is a mess and you should just cut it, if I'm being honest, I hadn't stopped to think it all the way through, so let me know if that's off — and a lot depends on details I haven't really looked into yet."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When writing upwards, be respectful and specific and offer to help, without belittling yourself.",
+      "explanation": "A concrete idea with an offer of figures shows initiative. Casual bluntness may offend, and self-deprecation hides the value of your idea.",
+      "id": "bd_l168_q1",
+      "consequencePreviews": [
+        "As a result, you're respectful, concrete and offer support, which makes it easy for her office to take seriously.",
+        "Realistically, the self-deprecation weakens a good idea and gives her a reason to skip it.",
+        "As a result, the casual tone and blunt verdict may not suit a message to the CEO."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "your teenage daughter",
+      "scene": "Your daughter comes home late without calling, and you were worried. You're angry, but you want to have a productive conversation.",
+      "options": [
+        "It's fine, don't worry about it. Teenagers will be teenagers, I guess, I hadn't really thought it through, so take it with a grain of salt — and a lot depends on details I haven't really looked into yet.",
+        "You're grounded for a month. I can't believe how irresponsible you are.",
+        "I was really worried when I didn't hear from you. Can you tell me what happened, and then we'll agree on how you'll let me know next time?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "With a teenager, express your feeling, ask for their side and agree on a way forward.",
+      "explanation": "She's more likely to keep communicating if she isn't attacked. Her account plus a shared rule builds trust. Harsh punishment and shrugging both fail to fix the behaviour.",
+      "id": "bd_l168_q2",
+      "consequencePreviews": [
+        "Ignoring the issue teaches her that worry doesn't matter and that no rule exists.",
+        "You may notice that an immediate punishment and insult shuts down the conversation and encourages hiding.",
+        "As a result, you name your feeling, ask for her account and move toward a plan."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a board member at a formal AGM",
+      "scene": "During a formal AGM, you want to challenge the chair's proposal to change the constitution, and you're speaking in front of two hundred members.",
+      "options": [
+        "This proposal is a power grab, and everyone in this room should see through it.",
+        "Madam Chair, I'd like to speak to the proposal. While I support the intent, clause four would remove members' right to call a special meeting, and I'd ask that this be reconsidered or amended.",
+        "Um, I have a small question, if that's okay, but it's probably nothing, please ignore me, in hindsight, I hadn't stopped to think it all the way through, so take it with a grain of salt — and to be fair I only heard about this a few minutes ago myself."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "In formal meetings, use the correct address, focus on the clause, and state your request clearly.",
+      "explanation": "Procedure and precision give your objection weight. Accusing motives makes it personal, and self-dismissal loses the room.",
+      "id": "bd_l168_q3",
+      "consequencePreviews": [
+        "The accusation is inflammatory and invites a defensive response instead of a vote on the substance.",
+        "Here, you follow the formal form of address and challenge the clause, not the person.",
+        "In this moment, undermining your own point makes it easy for the room to move on."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend in the middle of an argument with her sister",
+      "scene": "A friend is complaining loudly about her sister, and asks you whether the sister is being unreasonable. You've met the sister and like both of them.",
+      "options": [
+        "It sounds like you were really hurt by that. I don't know all the details, so I don't want to judge her, but what would help you feel better about it?",
+        "Yes, she's totally unreasonable, I've always thought she was selfish, honestly, I was going more on instinct than anything, so take it with a grain of salt.",
+        "I'm sure your sister didn't mean it. You're probably overreacting."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When someone complains about a relative, validate feelings without judging the other person.",
+      "explanation": "Validation helps her calm down, and neutrality protects both relationships. Agreeing harshly can return to bite you, and minimising her hurt pushes her away.",
+      "id": "bd_l169_q1",
+      "consequencePreviews": [
+        "In this moment, you support your friend's feelings without taking sides against someone you also like.",
+        "Piling on may feel good briefly but can backfire when they reconcile.",
+        "Here, dismissing her feelings will make her feel unheard."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a client in a different time zone",
+      "scene": "You need to tell an important overseas client that a deliverable will be two days late. The client tends to be direct and does not like excuses.",
+      "options": [
+        "I'm terribly sorry, there have been so many problems lately, I feel awful, and I really hope you can forgive us, we'll do everything we can.",
+        "The report will reach you on Thursday, two days later than planned, because the data supplier was delayed. I've prepared a summary of key findings that I can send today so you can start.",
+        "Things have moved a bit, and we'll get it to you as soon as we can, to be honest, that was more of a first reaction, but that could easily change — and to be fair I only heard about this a few minutes ago myself."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "With a direct client, lead with the new date and a short reason, then offer a workaround.",
+      "explanation": "A direct client values clarity above cushioning. The date, cause and interim summary let him plan. Over-apologising and vagueness both cost trust.",
+      "id": "bd_l169_q2",
+      "consequencePreviews": [
+        "As a result, the long apology hides the date and irritates a client who wants directness.",
+        "You give the new date, a short reason and a workaround, which suits a direct client.",
+        "The vagueness gives no date and looks evasive."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a shy new neighbour",
+      "scene": "A new neighbour looks nervous and rarely speaks. You'd like to make her feel welcome without overwhelming her.",
+      "options": [
+        "Welcome! You must come to our barbecue on Saturday, and you have to meet everyone on the street, it will be so much fun, I suppose, I wasn't considering every angle.",
+        "Oh, I see you moved in. Let me know if the noise from our dog bothers you, to be honest, I said that fairly quickly, so let me know if that's off — and a lot depends on details I haven't really looked into yet.",
+        "Hi, I'm Jo from number twelve. No need to chat, I just wanted to say hello and that if you ever need a hand or a tip on the neighbourhood, I'm around."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "With a shy person, offer warmth and availability without pressure.",
+      "explanation": "A low-pressure hello signals friendliness and leaves her control. An overwhelming invitation may make her retreat, and a dog-noise opener starts with a problem.",
+      "id": "bd_l169_q3",
+      "consequencePreviews": [
+        "As a result, the enthusiastic invitation may overwhelm someone who is shy and new.",
+        "You may notice that leading with a possible complaint about your own dog is awkward and not very welcoming.",
+        "As a result, you are warm and undemanding, which lets a shy person respond at her own pace."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a group of executives on a video call",
+      "scene": "You're the youngest on a call with senior executives, and the conversation is moving toward a decision that you believe rests on a wrong number.",
+      "options": [
+        "That number is wrong. You're all about to make a mistake.",
+        "I think there might possibly be something slightly off, but I'm probably wrong, and I don't want to interrupt.",
+        "May I raise a quick point about the figure on slide six? I get 4.2 million from the source data, not 5.1, and I'd like to make sure we're all working from the same number before we decide."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When you're junior and right, ask to raise it, be specific about the discrepancy and frame it as shared accuracy.",
+      "explanation": "Permission, evidence and a shared goal make a correction easy to accept. Bluntness triggers defence, and apologetic vagueness gets overlooked.",
+      "id": "bd_l170_q1",
+      "consequencePreviews": [
+        "In this moment, the blunt statement in front of seniors can cause defensiveness even though you're right.",
+        "In this moment, the hedging is so heavy that the group may ignore it.",
+        "Realistically, you ask permission, name the exact discrepancy and frame it around a shared goal."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a mourner at a funeral",
+      "scene": "At a funeral, you meet the widow of a colleague you didn't know well, and you're unsure what to say.",
+      "options": [
+        "He's in a better place now. It was his time, and you'll get through it.",
+        "I'm so sorry for your loss. I worked with Daniel, and I always remember how kind he was to new starters.",
+        "Sorry, I didn't really know him. I just came because everyone from the office was coming, I suppose, it wasn't a fully considered answer."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "At a funeral, offer sympathy and a brief, kind memory rather than explanations.",
+      "explanation": "A specific kind memory is a gift to the bereaved. Certainties about the afterlife can jar, and emphasising that you barely knew him centres you.",
+      "id": "bd_l170_q2",
+      "consequencePreviews": [
+        "Here, confident statements about loss may clash with her beliefs or feelings.",
+        "As a result, your words are simple, sincere and include a real memory, which comforts without intruding.",
+        "Realistically, the honest admission sounds like an excuse and offers her nothing."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "an audience of your peers and your ex-manager at a leaving party",
+      "scene": "At your own leaving party, you're asked to say a few words. Your ex-manager, who treated you poorly, is present, and your peers are watching.",
+      "options": [
+        "Thank you all. I'm grateful for the friends I've made here and for what I've learned, including from the tougher moments. I'll miss this team and wish you all the best.",
+        "It's been a mixed experience, and some people made it harder than it needed to be, as you may know.",
+        "It's been absolutely wonderful, the best job I've ever had, and everyone here has been perfect to me."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "On formal social occasions, be gracious and truthful without airing grievances or inventing praise.",
+      "explanation": "A measured, honest thank-you preserves your dignity and leaves the door open. A public dig damages your reputation, and exaggerated praise is not credible.",
+      "id": "bd_l170_q3",
+      "consequencePreviews": [
+        "The speech is gracious and dignified without denying that things were hard.",
+        "In this moment, the pointed remark creates an uncomfortable scene and casts you in an unflattering light.",
+        "The gushing praise is untrue and may ring hollow to those who know better."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    }
+  ]
 }

@@ -5,512 +5,512 @@
     "quests": [
         {
             "id": "sva_l191_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The coherence of the arguments presented across the three papers ___ remarkable.",
-            "hint": "'The coherence' is the singular head noun - the long modifier is descriptive only.",
-            "explanation": "'The coherence' is the singular head noun. The entire phrase 'of the arguments presented across the three papers' is a modifier. 'The coherence is remarkable'.",
+            "question": "The advisory board that reviews these applications ___ its recommendations by the end of the month.",
+            "hint": "'That reviews these applications' describes the board - the true subject is still one singular body.",
+            "explanation": "'The advisory board' is a singular collective noun; 'applications' inside the relative clause is just a distractor. The verb takes -s: 'submits'.",
             "options": [
-                "is",
-                "are"
+                "submit",
+                "submits"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "submits",
+            "grammarRule": "Collective noun stays singular, even with a relative clause containing a plural noun",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l191_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The inconsistencies found across the three papers ___ remarkable.",
-            "hint": "'The inconsistencies' is the plural head noun - the modifier doesn't change that.",
-            "explanation": "'The inconsistencies' is the plural head noun. 'The inconsistencies found across the three papers are remarkable' - plural verb.",
+            "question": "A majority of the committee members who attended the hearing ___ undecided.",
+            "hint": "'A majority of' agrees with the noun that follows 'of' - check whether that noun is countable and plural.",
+            "explanation": "'Committee members' is countable and plural, so 'a majority of the committee members' takes a plural verb: 'remain'.",
+            "options": [
+                "remains",
+                "remain"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "remain",
+            "grammarRule": "Quantity expression + plural countable noun takes a plural verb",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l191_q3",
+            "instruction": "FIND THE CORRECT AGREEMENT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The panel overseeing these decisions, along with two outside consultants, ___ holding its final session next week.",
+            "hint": "Ask whether 'along with' adds a second subject or just extra detail.",
+            "explanation": "'The panel' is a singular collective noun; 'along with two outside consultants' is extra detail. The verb is 'is'.",
             "options": [
                 "is",
                 "are"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l191_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The sheer volume of complaints received from customers ___ staggering.",
-            "hint": "'The sheer volume' is the singular head noun - all other words are modifiers.",
-            "explanation": "'The sheer volume' is the singular head noun. The phrases 'of complaints' and 'received from customers' are modifiers. 'The sheer volume was staggering'.",
-            "options": [
-                "was",
-                "were"
-            ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "is",
+            "grammarRule": "'Along with' does not change the number of the original subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l192_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The sheer number of complaints received from customers ___ staggering.",
-            "hint": "'The sheer number' is singular - 'the number of' is always singular.",
-            "explanation": "'The sheer number of complaints' is singular - 'the number of' is always singular. 'The sheer number was staggering'.",
+            "question": "Each of the theories proposed by researchers in this field ___ its own limitations.",
+            "hint": "Which word is the subject: 'each', or something in the description after it?",
+            "explanation": "'Each of the theories' is singular; 'proposed by researchers in this field' is just extra detail. The verb takes -s: 'has'.",
             "options": [
-                "were",
-                "was"
+                "has",
+                "have"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "has",
+            "grammarRule": "'Each of' + plural noun phrase still takes a singular verb, even with a long descriptive phrase",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l192_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "A vast array of factors ___ contributed to the outcome.",
-            "hint": "Like 'a number of' and 'a variety of', 'an array of' takes its number from the plural noun that follows.",
-            "explanation": "'An array of' functions like 'a number of' and 'a variety of' - it takes a plural verb when followed by a plural noun. 'A vast array of factors have contributed' is correct.",
+            "question": "Every conclusion drawn from the data collected across multiple trials ___ careful scrutiny.",
+            "hint": "Ask what 'every' does to its noun, then set the long description aside.",
+            "explanation": "'Every conclusion' is singular; the phrase about data and trials is extra detail. The verb takes -s: 'requires'.",
             "options": [
-                "has",
-                "have"
+                "require",
+                "requires"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "have",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "requires",
+            "grammarRule": "'Every' + singular noun takes a singular verb, even with a long descriptive phrase",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l192_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Each of the skills listed in the job posting ___ essential for success in this role.",
-            "hint": "'Each of' is always singular, no matter how many items follow.",
-            "explanation": "'Each of' is always singular, even when followed by a plural noun. 'Each of the skills is essential' - not 'are'.",
+            "question": "Neither of the models tested in this round of experiments ___ fully accurate.",
+            "hint": "Think about how 'neither of' behaves, whatever description follows.",
+            "explanation": "'Neither of the models' is singular; 'tested in this round of experiments' is extra detail. The verb takes -s: 'seems'.",
             "options": [
-                "is",
-                "are"
+                "seem",
+                "seems"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "seems",
+            "grammarRule": "'Neither of' + plural noun phrase still takes a singular verb, even with a long descriptive phrase",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l193_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The growing sophistication of these analytical tools ___ transformed research practice.",
-            "hint": "'The growing sophistication' is the singular head noun - the modifier is long but irrelevant to agreement.",
-            "explanation": "'The growing sophistication' is the singular head noun. 'Of these analytical tools' is a prepositional modifier. 'The growing sophistication has transformed research practice'.",
+            "question": "Either the mayor, a longtime advocate for public transit, or the city council ___ expected to announce its new funding plan.",
+            "hint": "With 'either...or', check the noun closest to the verb - the appositive on the first noun doesn't matter.",
+            "explanation": "The noun closer to the verb is 'the city council', a singular collective noun, so the verb is 'is', regardless of the appositive describing the mayor.",
             "options": [
-                "has",
-                "have"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "is",
+            "grammarRule": "Correlative conjunction agreement follows the noun closer to the verb, even with an appositive attached to the other noun",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l193_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The growing sophistication and power of these analytical tools ___ transformed research practice.",
-            "hint": "Adding a second quality joined by 'and' changes the subject from singular to plural.",
-            "explanation": "Now 'the growing sophistication and power' is a compound subject: two qualities joined by 'and' create a plural subject. 'The growing sophistication and power have transformed research practice'.",
+            "question": "Not only the residents of the flooded neighborhoods but also the local government ___ demanding immediate action from its state partners.",
+            "hint": "Apply the same proximity rule here, ignoring the prepositional phrase on the first noun.",
+            "explanation": "The noun closer to the verb is 'the local government', a singular collective noun, so the verb is 'is'.",
             "options": [
-                "has",
-                "have"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "have",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "Correlative conjunction agreement follows the noun closer to the verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l193_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The breadth and depth of knowledge required for this qualification ___ considerable.",
-            "hint": "Two separate qualities ('breadth' and 'depth') joined by 'and' - how many subjects?",
-            "explanation": "'The breadth and depth of knowledge required' joins two qualities with 'and', creating a plural compound subject. 'The breadth and depth are considerable' - plural verb required.",
+            "question": "Neither the witnesses, several of whom saw the incident, nor the officer ___ certain about the exact time.",
+            "hint": "Even with an embedded clause describing the witnesses, the noun closest to the verb still decides the agreement.",
+            "explanation": "The noun closer to the verb is 'the officer', which is singular, so the verb is 'is'.",
             "options": [
-                "are",
-                "is"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "is",
+            "grammarRule": "Correlative conjunction agreement follows the noun closer to the verb, even with an embedded phrase attached to the other noun",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l194_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The breadth of knowledge required for this qualification ___ considerable.",
-            "hint": "'The breadth of knowledge' is singular - 'breadth' is the head noun.",
-            "explanation": "Without the compound, 'the breadth of knowledge required' has a singular head noun ('breadth'). 'The breadth of knowledge is considerable' - singular verb.",
+            "question": "The board, along with the shareholders who raised concerns last quarter, ___ scheduled to cast its vote on the proposal.",
+            "hint": "The shareholders and their relative clause are extra detail - the true subject is still the singular board.",
+            "explanation": "'The board' is a singular collective noun; 'along with the shareholders who raised concerns last quarter' is extra detail. The verb is 'is'.",
             "options": [
-                "are",
-                "is"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "'Along with' does not change the number of the original subject, even with a relative clause inside it",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l194_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The proportion of income spent on housing ___ risen sharply in major cities.",
-            "hint": "'The proportion of income' - 'income' is uncountable, so the verb is singular.",
-            "explanation": "'Income' is uncountable. When 'the proportion of' precedes an uncountable noun, the verb is singular. 'The proportion of income has risen sharply'.",
+            "question": "This policy, together with the amendments that were added last year, ___ under review by legal counsel.",
+            "hint": "Ask whether 'together with' and the clause after it can change the main subject.",
+            "explanation": "'This policy' is singular; 'together with the amendments that were added last year' is extra detail. The verb takes -s: 'remains'.",
             "options": [
-                "has",
-                "have"
+                "remain",
+                "remains"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "remains",
+            "grammarRule": "'Together with' does not change the number of the original subject, even with a relative clause inside it",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l194_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The proportion of incomes spent on housing ___ risen sharply in major cities.",
-            "hint": "'The proportion of incomes' - 'incomes' is countable and plural, so the verb is plural.",
-            "explanation": "'Incomes' is a countable plural noun. When 'the proportion of' precedes a countable plural noun, the verb is plural. 'The proportion of incomes have risen sharply'.",
+            "question": "The agency responsible for these permits, accompanied by two independent auditors, ___ conducting a full review.",
+            "hint": "The auditors mentioned after 'accompanied by' don't add a second subject.",
+            "explanation": "'The agency' is singular; 'accompanied by two independent auditors' is extra detail. The verb is 'is'.",
             "options": [
-                "has",
-                "have"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "have",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "'Accompanied by' does not change the number of the original subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l195_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The pattern of results that ___ emerged from the first phase of the study is clear.",
-            "hint": "Inside the relative clause, 'that' refers to 'results' (plural) - but 'pattern' controls the main verb.",
-            "explanation": "Inside the relative clause 'that has emerged', 'that' refers to 'results' (plural). However, in formal usage 'the pattern of results that has emerged' treats 'pattern' as the governing noun, making the relative clause verb singular.",
+            "question": "Balancing a full-time job and two young children ___ more energy than she ever expected.",
+            "hint": "Decide whether this gerund phrase names one activity or two.",
+            "explanation": "'Balancing a full-time job and two young children' is a gerund phrase and is singular. The verb takes -s: 'requires'.",
             "options": [
-                "has",
-                "have"
+                "require",
+                "requires"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "requires",
+            "grammarRule": "Gerund phrase stays singular, even when it contains a compound object",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l195_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The pattern of results that ___ emerged suggests a correlation.",
-            "hint": "Inside the relative clause, 'that' refers to 'results' (plural) - verb agrees with the plural antecedent.",
-            "explanation": "Here, 'that' clearly refers to 'results' (plural), so the verb inside the relative clause is 'have': 'the pattern of results that have emerged'. The main verb 'suggests' agrees with 'the pattern' (singular).",
+            "question": "To manage both the budget and the schedule for this event ___ no easy task.",
+            "hint": "Decide whether this infinitive phrase names one task or two.",
+            "explanation": "'To manage both the budget and the schedule' is an infinitive phrase and is singular. The verb is 'is'.",
             "options": [
-                "has",
-                "have"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "have",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "Infinitive phrase stays singular, even when it contains a compound object",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l195_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Such evidence as ___ been gathered so far points in one direction.",
-            "hint": "In 'such [noun] as has/have', the verb agrees with the noun ('evidence' is uncountable).",
-            "explanation": "In the 'such [noun] as' construction, the verb agrees with the noun. 'Evidence' is uncountable and singular: 'such evidence as has been gathered'. Compare with 'such data as have been collected'.",
+            "question": "Juggling multiple deadlines, several of which overlap this week, ___ a serious challenge for the new intern.",
+            "hint": "Set the embedded phrase aside and identify the type of subject that remains.",
+            "explanation": "'Juggling multiple deadlines' is a gerund phrase and is singular. The verb takes -s: 'poses'.",
             "options": [
-                "has",
-                "have"
+                "pose",
+                "poses"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "poses",
+            "grammarRule": "Gerund phrase stays singular, even with an embedded descriptive phrase",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l196_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CORRECT SENTENCE",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Such data as ___ been collected so far points in one direction.",
-            "hint": "In 'such [noun] as have/has', the verb agrees with the noun ('data' is plural in formal usage).",
-            "explanation": "In the 'such [noun] as' construction, the verb agrees with the noun. 'Data' in formal scientific usage is plural: 'such data as have been collected'. The main verb 'points' agrees with the 'such data' unit.",
+            "question": "Which sentence has correct subject-verb agreement?",
+            "hint": "Recall which word is the real subject in an 'each of' phrase.",
+            "explanation": "'Each of the proposals' is singular, so the correct verb is 'is', not 'are'.",
             "options": [
-                "has",
-                "have"
+                "Each of the proposals submitted by the finalists is under review.",
+                "Each of the proposals submitted by the finalists are under review."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "have",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Each of the proposals submitted by the finalists is under review.",
+            "grammarRule": "'Each of' + plural noun phrase still takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l196_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CORRECT SENTENCE",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The team, each member of whom ___ received specialist training, is highly effective.",
-            "hint": "Inside the relative clause, 'each member' is singular - 'each' always takes a singular verb.",
-            "explanation": "Inside the relative clause 'each member of whom has received specialist training', the subject is 'each member'. 'Each' always takes a singular verb: 'each member has received'.",
+            "question": "Which version is grammatically correct?",
+            "hint": "'Along with' never creates a true compound subject - check the original subject alone.",
+            "explanation": "'The committee' is singular, so the correct verb is 'is', not 'are'.",
             "options": [
-                "has",
-                "have"
+                "The committee, along with several outside advisors, are finalizing its report.",
+                "The committee, along with several outside advisors, is finalizing its report."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The committee, along with several outside advisors, is finalizing its report.",
+            "grammarRule": "'Along with' does not change the number of the original subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l196_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CORRECT SENTENCE",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The team, all members of whom ___ received specialist training, is highly effective.",
-            "hint": "Inside the relative clause, 'all members' is plural - plural verb inside the clause.",
-            "explanation": "Inside the relative clause, 'all members of whom have received specialist training', the subject is 'all members', which is plural. The verb inside the clause is 'have'.",
+            "question": "Which sentence has correct subject-verb agreement?",
+            "hint": "With 'neither...nor', check which noun sits closest to the verb.",
+            "explanation": "The noun closer to the verb is 'the reviewer', which is singular, so the correct verb is 'is', not 'are'.",
             "options": [
-                "has",
-                "have"
+                "Neither the researchers who conducted the study nor the reviewer is convinced by the results.",
+                "Neither the researchers who conducted the study nor the reviewer are convinced by the results."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "have",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Neither the researchers who conducted the study nor the reviewer is convinced by the results.",
+            "grammarRule": "'Neither...nor' agreement follows the noun closer to the verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l197_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CORRECT SENTENCE",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The degree to which individual cognitive styles ___ accounted for in these models varies widely.",
-            "hint": "Inside the embedded clause, 'individual cognitive styles' is plural.",
-            "explanation": "Inside the embedded clause 'to which individual cognitive styles are accounted for', the subject is 'individual cognitive styles', which is plural. The verb inside is 'are'.",
+            "question": "Which version is grammatically correct?",
+            "hint": "Ask whether the sentence is about the applicants or the count of them.",
+            "explanation": "'The number of applicants' is singular, so the correct verb is 'has', not 'have'.",
             "options": [
-                "are",
-                "is"
+                "The number of applicants who meet all the requirements has increased this year.",
+                "The number of applicants who meet all the requirements have increased this year."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "The number of applicants who meet all the requirements has increased this year.",
+            "grammarRule": "'The number of' + plural noun takes a singular verb, even with a relative clause attached",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l197_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CORRECT SENTENCE",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The degree to which individual cognitive style ___ accounted for in these models varies widely.",
-            "hint": "Inside the embedded clause, 'individual cognitive style' (without 's') is singular.",
-            "explanation": "Inside the embedded clause, the subject is 'individual cognitive style' (singular). The verb inside is 'is': 'to which individual cognitive style is accounted for'.",
+            "question": "Which sentence has correct subject-verb agreement?",
+            "hint": "Set the parenthetical about pressure aside and identify the type of subject.",
+            "explanation": "'Learning to manage a team' is a gerund phrase and is singular, so the correct verb is 'requires', not 'require'.",
             "options": [
-                "are",
-                "is"
+                "Learning to manage a team, especially under pressure, require real patience.",
+                "Learning to manage a team, especially under pressure, requires real patience."
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "Learning to manage a team, especially under pressure, requires real patience.",
+            "grammarRule": "Gerund phrase stays singular, even with an interrupting phrase",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l197_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CORRECT SENTENCE",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The interconnectedness of all the elements that ___ part of this system is what makes it robust.",
-            "hint": "Inside the relative clause, 'that' refers to 'all the elements' (plural).",
-            "explanation": "Inside the relative clause 'that form part of this system', 'that' refers to 'all the elements', which is plural. The verb inside is 'form'. The main verb 'is' agrees with 'the interconnectedness' (singular).",
+            "question": "Which version is grammatically correct?",
+            "hint": "With 'either...or', check which noun is closest to the verb - here, a relative clause is attached to it too.",
+            "explanation": "The noun closer to the verb is 'the manager', which is singular, so the correct verb is 'is', not 'are' - the relative clause 'overseeing this project' doesn't change that.",
             "options": [
-                "form",
-                "forms"
+                "Either the interns or the manager overseeing this project are responsible for the delay.",
+                "Either the interns or the manager overseeing this project is responsible for the delay."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "form",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Either the interns or the manager overseeing this project is responsible for the delay.",
+            "grammarRule": "Correlative conjunction agreement follows the noun closer to the verb, even with a descriptive phrase attached to it",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l198_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The extent to which all of these factors ___ interact is not yet fully understood.",
-            "hint": "Inside the embedded clause, 'all of these factors' is plural - plural auxiliary.",
-            "explanation": "Inside the embedded clause 'to which all of these factors are said to interact', the subject is 'all of these factors', which is plural. The verb phrase inside is 'are said to'.",
-            "options": [
-                "is said to",
-                "are said to"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are said to",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l198_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The extent to which this factor ___ thought to contribute is not yet fully understood.",
-            "hint": "Inside the embedded clause, 'this factor' is singular.",
-            "explanation": "Inside the embedded clause 'to which this factor is thought to contribute', the subject is 'this factor', which is singular. The verb inside is 'is'.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l198_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Whatever disagreements ___ between the two camps, both agree on the need for action.",
-            "hint": "Inside the 'whatever' clause, 'disagreements' is plural - verb agrees with it.",
-            "explanation": "Inside the 'whatever' clause, the subject is 'disagreements', which is plural. 'Whatever disagreements exist between the two camps' - plural verb inside the concessive clause.",
-            "options": [
-                "exists",
-                "exist"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "exist",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l199_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The accumulation of decades of research on this topic ___ a compelling case for reform.",
-            "hint": "'The accumulation' is the singular head noun - the long modifier doesn't change that.",
-            "explanation": "'The accumulation' is the singular head noun. 'Of decades of research on this topic' is a long prepositional modifier. 'The accumulation makes a compelling case for reform'.",
-            "options": [
-                "makes",
-                "make"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "makes",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l199_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Decades of accumulated research on this topic ___ a compelling case for reform.",
-            "hint": "'Decades' is the plural head noun - 'of accumulated research' is a modifier.",
-            "explanation": "Now 'decades' is the plural head noun. 'Decades of accumulated research make a compelling case' - plural subject, plural verb.",
-            "options": [
-                "makes",
-                "make"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "make",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l199_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "What the studies collectively reveal about long-term outcomes ___ more complex than initially thought.",
-            "hint": "The 'what' clause is the singular noun-clause subject - the main verb agrees with it.",
-            "explanation": "The subject 'what the studies collectively reveal about long-term outcomes' is a singular noun clause. The main verb agrees with this singular subject: 'is more complex than initially thought'.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l200_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The sheer diversity of approaches that ___ been taken to address this problem reflects the field's creativity.",
-            "hint": "Inside the relative clause, 'that' refers to 'approaches' (plural).",
-            "explanation": "Inside the relative clause 'that have been taken to address this problem', 'that' refers to 'approaches', which is plural. The verb inside is 'have'. The main verb 'reflects' agrees with 'the sheer diversity' (singular).",
-            "options": [
-                "has",
-                "have"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "have",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l200_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The interconnected nature of the problems that ___ emerged suggests a systemic failure.",
-            "hint": "Inside the relative clause, 'that' refers to 'the problems' (plural).",
-            "explanation": "Inside the relative clause 'that have emerged', 'that' refers to 'the problems', which is plural. The verb inside is 'have'. The main verb 'suggests' agrees with 'the interconnected nature' (singular).",
+            "question": "Each of the moons orbiting this planet ___ a distinct atmosphere.",
+            "hint": "Which word is the real subject: 'each' or 'the moons'?",
+            "explanation": "'Each of the moons' is singular, so the verb takes -s: 'has'.",
             "options": [
                 "have",
                 "has"
             ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "has",
+            "grammarRule": "'Each of' + plural noun phrase still takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l198_q2",
+            "instruction": "FIND THE CORRECT AGREEMENT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The images captured by the telescope, along with readings from two other observatories, ___ still being processed.",
+            "hint": "The readings from other observatories mentioned after 'along with' don't change the true plural subject.",
+            "explanation": "'The images' is plural; 'along with readings from two other observatories' is extra detail. The verb is 'are'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are",
+            "grammarRule": "'Along with' does not change the number of the original subject",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l198_q3",
+            "instruction": "FIND THE CORRECT AGREEMENT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Neither the astronomers who discovered this comet nor the observatory director ___ certain about its exact trajectory.",
+            "hint": "With 'neither...nor', focus on the noun closest to the verb, even with a relative clause on the other noun.",
+            "explanation": "The noun closer to the verb is 'the observatory director', which is singular, so the verb is 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "have",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "is",
+            "grammarRule": "Correlative conjunction agreement follows the noun closer to the verb, even with a relative clause attached to the other noun",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l199_q1",
+            "instruction": "FIND THE CORRECT AGREEMENT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Each of the recipes featured in this cookbook ___ locally sourced ingredients.",
+            "hint": "Ask which word controls the verb in an 'each of' phrase.",
+            "explanation": "'Each of the recipes' is singular, so the verb takes -s: 'uses'.",
+            "options": [
+                "use",
+                "uses"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "uses",
+            "grammarRule": "'Each of' + plural noun phrase still takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l199_q2",
+            "instruction": "FIND THE CORRECT AGREEMENT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The head chef, along with two sous-chefs who trained in Paris, ___ preparing tonight's special menu.",
+            "hint": "The sous-chefs and their relative clause are extra detail - the true subject is still the singular head chef.",
+            "explanation": "'The head chef' is singular; 'along with two sous-chefs who trained in Paris' is extra detail. The verb is 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "'Along with' does not change the number of the original subject, even with a relative clause inside it",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l199_q3",
+            "instruction": "FIND THE CORRECT AGREEMENT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Neither the appetizers listed on the menu nor the dessert ___ included in the fixed-price package.",
+            "hint": "Look at the last noun in the pair before the blank and check its number.",
+            "explanation": "The noun closer to the verb is 'the dessert', which is singular, so the verb is 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "Correlative conjunction agreement follows the noun closer to the verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l200_q1",
+            "instruction": "FIND THE CORRECT AGREEMENT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The selection committee, responsible for reviewing every application that arrives before the deadline, ___ its final decision by June.",
+            "hint": "Bring together everything you've learned: what is the real subject, and what is only extra description?",
+            "explanation": "'The selection committee' is a singular collective noun; the parenthetical phrase and the relative clause are both extra detail. The verb takes -s: 'announces'.",
+            "options": [
+                "announce",
+                "announces"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "announces",
+            "grammarRule": "Collective noun stays singular, even through multiple layers of descriptive and relative-clause detail",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l200_q2",
+            "instruction": "FIND THE CORRECT AGREEMENT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Neither the volunteers coordinating logistics nor the director overseeing the whole festival ___ a moment to rest this week.",
+            "hint": "With 'neither...nor', the noun closest to the verb decides the agreement, even with participial phrases attached to both nouns.",
+            "explanation": "The noun closer to the verb is 'the director', which is singular, so the verb takes -s: 'has'.",
+            "options": [
+                "have",
+                "has"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "has",
+            "grammarRule": "Correlative conjunction agreement follows the noun closer to the verb, even with descriptive phrases attached to both nouns",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l200_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Not until all the evidence ___ carefully examined and independently verified will a conclusion be possible.",
-            "hint": "Inside the 'not until' clause, 'all the evidence' is uncountable and singular.",
-            "explanation": "Inside the 'not until' clause, the subject is 'all the evidence'. 'Evidence' is uncountable and singular. 'Not until all the evidence has been carefully examined' - singular auxiliary.",
+            "question": "Everyone who has followed this journey from the very beginning ___ how far the team has come.",
+            "hint": "One last check: how does 'everyone' behave, however the relative clause describes them?",
+            "explanation": "'Everyone' is singular; 'who has followed this journey from the very beginning' is extra detail. The verb takes -s: 'knows'.",
             "options": [
-                "have been",
-                "has been"
+                "knows",
+                "know"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "has been",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "knows",
+            "grammarRule": "'Everyone' / 'everybody' takes a singular verb, even with a relative clause attached",
             "subjectType": "Singular"
         }
     ]

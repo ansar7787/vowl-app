@@ -5,543 +5,393 @@
     "quests": [
         {
             "id": "gq_l121_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The failure ___ the project was attributed to poor planning.",
-            "options": [
-                "for",
-                "from",
-                "in",
-                "of"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "of",
-            "hint": "'Failure of' - which preposition links failure to its subject?",
-            "explanation": "'Failure of + noun' is the standard structure: the failure of the project. Compare: success of, completion of, abandonment of. The nominalization takes 'of' to introduce what failed.",
-            "grammarRule": "Formal Prepositional Phrases"
+            "question": "The woman ___ lives next door is a doctor.",
+            "options": ["who", "which", "whose", "where"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "who",
+            "hint": "This relative pronoun refers back to a person.",
+            "explanation": "'Who' introduces a relative clause describing a person: the woman who lives next door. 'Which' would only be used for things, not people.",
+            "grammarRule": "Relative Clauses: Who"
         },
         {
             "id": "gq_l121_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Her views were ___ odds with those of her colleagues.",
-            "options": [
-                "in",
-                "on",
-                "at",
-                "out of"
-            ],
+            "question": "The book ___ is on the table belongs to me.",
+            "options": ["who", "whose", "which", "when"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "at",
-            "hint": "Which prepositional phrase means 'in conflict with'?",
-            "explanation": "'At odds with' = in disagreement or conflict with: Her views were at odds with her colleagues. Other 'at' phrases: at stake, at risk, at liberty to, at the mercy of, at fault.",
-            "grammarRule": "Formal Prepositional Phrases"
+            "correctAnswer": "which",
+            "hint": "This relative pronoun refers back to a thing, not a person.",
+            "explanation": "'Which' introduces a relative clause describing a thing: the book which is on the table. 'Who' would only fit if the sentence were describing a person.",
+            "grammarRule": "Relative Clauses: Which"
         },
         {
             "id": "gq_l121_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The company acted ___ bad faith during the negotiations.",
-            "options": [
-                "in",
-                "on",
-                "with",
-                "for"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "in",
-            "hint": "Which preposition begins this formal phrase about behaviour?",
-            "explanation": "'In bad faith' = without honest intentions: The company acted in bad faith. Compare: in good faith (with honest intentions). These are fixed formal prepositional phrases common in legal and business contexts.",
-            "grammarRule": "Formal Prepositional Phrases"
+            "question": "\u2014 Which laptop do you want?\n\u2014 The one ___ has more storage.",
+            "options": ["who", "whose", "where", "that"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "that",
+            "hint": "This relative pronoun can refer to things, and works well in defining clauses like this one.",
+            "explanation": "'That' can replace 'which' in defining relative clauses about things: the one that has more storage. 'Who' would only fit a person, not a laptop.",
+            "grammarRule": "Relative Clauses: That"
         },
         {
             "id": "gq_l122_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The board demanded that the CEO ___ down immediately.",
-            "options": [
-                "steps",
-                "step",
-                "will step",
-                "stepped"
-            ],
+            "question": "That's the man ___ car was stolen last night.",
+            "options": ["who", "whose", "which", "where"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "step",
-            "hint": "After 'demanded that', which verb form is used for every subject?",
-            "explanation": "The mandative subjunctive uses the base form of the verb after verbs like demand, insist, and recommend: The board demanded that the CEO step down. No '-s', even for third person singular. 'Steps' and 'stepped' are common in everyday speech but non-standard in formal English here.",
-            "grammarRule": "Subjunctive Mood (Verb Forms)"
+            "correctAnswer": "whose",
+            "hint": "This relative pronoun shows possession, connecting the man to his car.",
+            "explanation": "'Whose' shows possession in a relative clause: the man whose car was stolen. This is different from 'who', which would refer to the man himself as the subject.",
+            "grammarRule": "Relative Clauses: Whose"
         },
         {
             "id": "gq_l122_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She ___ having made the original error in the accounts.",
-            "options": [
-                "wanted",
-                "refused",
-                "insisted",
-                "denied"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "denied",
-            "hint": "Which verb means 'to say it was not true'?",
-            "explanation": "'Deny + gerund' = say something is not true: She denied having made the error. 'Admit to' = accept guilt. 'Refuse' = decline to do something. 'Insist on' = demand firmly. Each takes a different structure.",
-            "grammarRule": "Subjunctive Mood (Verb Forms)"
+            "question": "This is the restaurant ___ we had our first date.",
+            "options": ["where", "when", "which", "whose"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "where",
+            "hint": "This relative pronoun refers to a place.",
+            "explanation": "'Where' introduces a relative clause about a place: the restaurant where we had our first date.",
+            "grammarRule": "Relative Clauses: Where"
         },
         {
             "id": "gq_l122_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Despite clear evidence to the contrary, he continued to ___ that the situation was under control.",
-            "options": [
-                "caution",
-                "maintain",
-                "warn",
-                "point out"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "maintain",
-            "hint": "Which verb means 'to keep asserting something is true, especially against doubt'?",
-            "explanation": "'Maintain that' means to keep asserting a claim, especially when it's being challenged: He maintained that the situation was under control, despite evidence otherwise. 'Warn,' 'point out,' and 'caution' all involve alerting someone to a fact or danger - the opposite of stubbornly defending a claim.",
-            "grammarRule": "Subjunctive Mood (Verb Forms)"
+            "question": "\u2014 Do you remember the day ___ we met?\n\u2014 Of course, it was raining.",
+            "options": ["where", "which", "whose", "when"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "when",
+            "hint": "This relative pronoun refers to a time.",
+            "explanation": "'When' introduces a relative clause about a time: the day when we met. This contrasts with 'where', which is used for places instead.",
+            "grammarRule": "Relative Clauses: When"
         },
         {
             "id": "gq_l123_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I'd be interested to learn ___ the policy is likely to change.",
-            "options": [
-                "if",
-                "whether",
-                "that whether",
-                "that if"
-            ],
+            "question": "My brother, ___ lives in Canada, is visiting next month.",
+            "options": ["that", "who", "which", "whose"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "whether",
-            "hint": "Which word introduces an embedded yes/no question?",
-            "explanation": "'Whether' (not 'if') introduces an embedded yes/no question as the subject or object of a verb: I'd be interested to learn whether the policy is likely to change. 'If' can also be used here informally but 'whether' is more formal.",
-            "grammarRule": "Embedded Questions: Whether/If"
+            "correctAnswer": "who",
+            "hint": "The commas signal extra information about one specific person, not essential identifying information.",
+            "explanation": "This is a non-defining clause, adding extra information set off by commas. 'That' cannot be used in non-defining clauses; only 'who' fits here for a person.",
+            "grammarRule": "Non-Defining Relative Clauses"
         },
         {
             "id": "gq_l123_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Could you clarify ___ the submission deadline falls?",
-            "options": [
-                "when",
-                "where",
-                "that",
-                "which"
-            ],
+            "question": "Students ___ arrive late will not be admitted.",
+            "options": ["who", "where", "which", "whose"],
             "correctAnswerIndex": 0,
-            "correctAnswer": "when",
-            "hint": "The question asks about a time - which word fits?",
-            "explanation": "'When' introduces an embedded question about time: Could you clarify when the deadline falls? Embedded questions use statement word order: when the deadline falls (not when does the deadline fall).",
-            "grammarRule": "Embedded Questions: Whether/If"
+            "correctAnswer": "who",
+            "hint": "No commas here \u2014 this information is essential to identify which students are meant.",
+            "explanation": "This is a defining clause with no commas, since it's essential for identifying exactly which students: students who arrive late.",
+            "grammarRule": "Defining Relative Clauses"
         },
         {
             "id": "gq_l123_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The committee questioned ___ the evidence was sufficient.",
-            "options": [
-                "if",
-                "that",
-                "whether",
-                "what"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "whether",
-            "hint": "An embedded yes/no question in a more formal context.",
-            "explanation": "'Whether' (formal) or 'if' (informal) introduce embedded yes/no questions: The committee questioned whether the evidence was sufficient. 'Whether' is preferred in formal written English here.",
-            "grammarRule": "Embedded Questions: Whether/If"
+            "question": "Which sentence correctly uses a non-defining relative clause?",
+            "options": ["My sister that lives in Spain called me.", "My sister, who lives in Spain, called me.", "My sister who lives in Spain, called me.", "My sister, that lives in Spain called me."],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "My sister, who lives in Spain, called me.",
+            "hint": "Non-defining clauses need commas on both sides, and never use 'that'.",
+            "explanation": "A non-defining clause needs commas on both sides and uses 'who' rather than 'that': My sister, who lives in Spain, called me. The other options are missing a comma or incorrectly use 'that'.",
+            "grammarRule": "Non-Defining Relative Clauses"
         },
         {
             "id": "gq_l124_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ it may seem, the simplest explanation is often correct.",
-            "options": [
-                "Seemingly",
-                "Simple as",
-                "Whatever",
-                "Simple however"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Simple as",
-            "hint": "An inverted concessive structure - formal and literary.",
-            "explanation": "'Adjective + as + subject + verb' = although: Simple as it may seem, the simplest explanation is often correct. This formal concessive structure inverts the normal word order for emphasis.",
-            "grammarRule": "Concessive Structures"
+            "question": "'The book that I borrowed from you was fantastic.' Which version is also correct?",
+            "options": ["The book I borrowed from you was fantastic.", "The book borrowed I from you was fantastic.", "The book that borrowed I from you was fantastic.", "The I borrowed book from you was fantastic."],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The book I borrowed from you was fantastic.",
+            "hint": "When the relative pronoun is the object of the clause, it can often be left out entirely.",
+            "explanation": "When the relative pronoun is the object of its clause (I borrowed the book, not the book borrowed something), it can be dropped: the book I borrowed. The word order of the rest of the sentence stays the same.",
+            "grammarRule": "Relative Clauses: Omitting the Object Pronoun"
         },
         {
             "id": "gq_l124_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The new law, ___ controversial, has broad support.",
-            "options": [
-                "while",
-                "if",
-                "as if",
-                "when"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "An embedded concessive within a relative clause.",
-            "explanation": "'While + adjective' in a parenthetical clause means 'although it is': The new law, while controversial, has broad support = Although the law is controversial. This is concise and formal.",
-            "grammarRule": "Concessive Structures"
+            "question": "Which sentence is correct?",
+            "options": ["The man lives next door is friendly.", "The man who lives next door is friendly.", "The man which lives next door is friendly.", "The man, lives next door, is friendly."],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The man who lives next door is friendly.",
+            "hint": "Unlike Question 1, here the relative pronoun is the subject of its own clause \u2014 can it still be dropped?",
+            "explanation": "When the relative pronoun is the subject of its clause (the man lives, not something happens to the man), it cannot be omitted: the man who lives next door. Dropping it, as in the first option, creates an incomplete, ungrammatical sentence.",
+            "grammarRule": "Relative Clauses: Subject Pronoun Cannot Be Omitted"
         },
         {
             "id": "gq_l124_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ a disappointing outcome, the team should be proud of their effort.",
-            "options": [
-                "Even though",
-                "Although",
-                "While",
-                "Despite"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Despite",
-            "hint": "This word is followed directly by a noun phrase, not a clause with a subject and verb.",
-            "explanation": "'Despite + noun phrase': Despite a disappointing outcome, the team should be proud. 'Although,' 'even though,' and 'while' must be followed by a full clause with a subject and verb: Although the outcome was disappointing, the team should be proud.",
-            "grammarRule": "Concessive Structures"
+            "question": "\u2014 Where's the shirt ___ you bought yesterday?\n\u2014 It's in the closet.",
+            "options": ["that", "who", "whose", "where"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "that",
+            "hint": "This relative pronoun could actually be dropped here, but it's also correct to keep it.",
+            "explanation": "'That' fits this object relative clause about a thing: the shirt that you bought. As practiced in Question 1, this word could also be omitted entirely without changing the meaning.",
+            "grammarRule": "Relative Clauses: That"
         },
         {
             "id": "gq_l125_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Critics ___ that the survey's sample size was too small to be considered reliable.",
-            "options": [
-                "revealed",
-                "found",
-                "contended",
-                "showed"
-            ],
+            "question": "He passed the exam, ___ made his parents very proud.",
+            "options": ["whose", "who", "which", "where"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "contended",
-            "hint": "Which verb best fits critics making an argument, rather than simply reporting a neutral fact?",
-            "explanation": "'Contend' means to argue or assert a position, often a disputed one: Critics contended that the sample size was too small. 'Reveal,' 'show,' and 'find' all suggest a neutral, established fact rather than a contested claim.",
-            "grammarRule": "Nominalisation / Reporting Verbs"
+            "correctAnswer": "which",
+            "hint": "This word refers back to the entire idea of passing the exam, not to a single noun.",
+            "explanation": "'Which' can refer to a whole preceding clause or idea, not just one noun: passed the exam, which made them proud (the whole event made them proud).",
+            "grammarRule": "Relative Clauses: Which Referring to a Clause"
         },
         {
             "id": "gq_l125_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The ___ between the two groups was statistically significant.",
-            "options": [
-                "difference",
-                "differently",
-                "differentiate",
-                "different"
-            ],
+            "question": "She apologized, ___ surprised everyone.",
+            "options": ["which", "whose", "where", "who"],
             "correctAnswerIndex": 0,
-            "correctAnswer": "difference",
-            "hint": "After 'The', which noun form is needed?",
-            "explanation": "'The difference between' is the correct noun phrase: The difference between the two groups. Noun forms: differ → difference, vary → variation, compare → comparison. The preposition 'between' follows 'difference'.",
-            "grammarRule": "Nominalisation / Reporting Verbs"
+            "correctAnswer": "which",
+            "hint": "The surprise comes from the whole act of apologizing, not from one specific noun.",
+            "explanation": "Again, 'which' refers to the entire preceding action: she apologized, which surprised everyone, matching the pattern from Question 1.",
+            "grammarRule": "Relative Clauses: Which Referring to a Clause"
         },
         {
             "id": "gq_l125_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Further research is required to ___ the findings.",
-            "options": [
-                "validity",
-                "validation",
-                "valid",
-                "validate"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "validate",
-            "hint": "After 'to' (infinitive marker), which form is needed?",
-            "explanation": "After 'to', use the base verb: to validate. Other academic verbs: to confirm, to verify, to replicate, to examine, to challenge. 'Validation' is a noun - wrong after 'to'.",
-            "grammarRule": "Nominalisation / Reporting Verbs"
+            "question": "\u2014 He forgot my birthday, ___ really hurt my feelings.\n\u2014 That's not okay.",
+            "options": ["whose", "which", "who", "where"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "which",
+            "hint": "The hurt feelings come from the whole situation of forgetting, not one single noun.",
+            "explanation": "'Which' again refers to the entire event described before it: forgot my birthday, which hurt my feelings, continuing the pattern from Questions 1 and 2.",
+            "grammarRule": "Relative Clauses: Which Referring to a Clause"
         },
         {
             "id": "gq_l126_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which sentence is most appropriate in an academic essay?",
-            "options": [
-                "Exercise is like, really good for you.",
-                "Everyone knows exercise is totally great.",
-                "Studies have shown that exercise has many benefits.",
-                "Exercise has many benefits and stuff like that."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Studies have shown that exercise has many benefits.",
-            "hint": "Academic essays use formal, evidence-based language.",
-            "explanation": "Academic writing requires: formal vocabulary (shown, benefits), evidence-based claims (studies have shown), and no informal language (like, stuff, totally, everyone knows). Option A is correct academic style.",
-            "grammarRule": "Academic Writing Style"
+            "question": "The house ___ we grew up in has been sold.",
+            "options": ["whose", "where", "who", "that"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "that",
+            "hint": "The sentence already ends in 'in', so the relative pronoun for a place would be redundant here.",
+            "explanation": "Since the sentence already has 'in' at the end, 'that' fits: the house that we grew up in. Using 'where' would be redundant, since 'where' already implies location on its own.",
+            "grammarRule": "Relative Clauses: That vs Where"
         },
         {
             "id": "gq_l126_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which sentence shows the best critical evaluation style?",
-            "options": [
-                "I think this study is wrong.",
-                "This is a great study with no problems.",
-                "The study is completely right about everything.",
-                "While the study provides useful data, its methodology has limitations."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "While the study provides useful data, its methodology has limitations.",
-            "hint": "Critical writing acknowledges both strengths and limitations.",
-            "explanation": "Critical academic writing evaluates fairly: While the study provides useful data, its methodology has limitations. This balances positive and critical assessment. Avoid over-praising or dismissing without nuance.",
-            "grammarRule": "Academic Writing Style"
+            "question": "The man ___ helped us was very kind.",
+            "options": ["which", "whose", "who", "where"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "who",
+            "hint": "This relative pronoun refers to a person, acting as the subject of its clause.",
+            "explanation": "'Who' fits this subject relative clause about a person: the man who helped us. Since it's the subject, it also cannot be omitted, as reviewed in Level 124.",
+            "grammarRule": "Relative Clauses: Who"
         },
         {
             "id": "gq_l126_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which best demonstrates an academic transition to a counterargument?",
-            "options": [
-                "But some people think differently.",
-                "However, critics argue that this interpretation overlooks key evidence.",
-                "Some people say the opposite.",
-                "OK but on the other hand though..."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "However, critics argue that this interpretation overlooks key evidence.",
-            "hint": "Which transition is formal and introduces a scholarly counterargument?",
-            "explanation": "Academic counterarguments use formal transitions and specific language: However, critics argue that this interpretation overlooks key evidence. Introduce the opposing view, attribute it to critics/scholars, and be specific about what is overlooked.",
-            "grammarRule": "Academic Writing Style"
+            "question": "\u2014 Is that the restaurant ___ you proposed to her?\n\u2014 Yes, it's really special to us.",
+            "options": ["which", "that", "where", "who"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "where",
+            "hint": "This relative pronoun refers to a place, with no extra preposition needed here.",
+            "explanation": "'Where' fits this place-based relative clause, and no extra 'in' is needed after it: the restaurant where you proposed.",
+            "grammarRule": "Relative Clauses: Where"
         },
         {
             "id": "gq_l127_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'I know she is honest, and so ___ her colleagues.'",
-            "options": [
-                "do",
-                "is",
-                "be",
-                "are"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "are",
-            "hint": "'So + auxiliary + subject' - which auxiliary matches 'are honest'?",
-            "explanation": "'So + auxiliary + subject': Her colleagues are honest → So are her colleagues. Match the auxiliary from the original: are honest → are. 'So are her colleagues' = her colleagues are also honest.",
-            "grammarRule": "Ellipsis (So Am I / Neither Do I)"
+            "question": "I think ___ she is right about this.",
+            "options": ["that", "which", "who", "what"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "that",
+            "hint": "This word introduces the whole idea being thought, functioning as the object of 'think'.",
+            "explanation": "'That' introduces a noun clause acting as the object of verbs like 'think': think that she is right. This whole clause acts like a single noun, the object of thinking.",
+            "grammarRule": "Noun Clauses: That"
         },
         {
             "id": "gq_l127_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'He doesn't speak French. Neither ___ his wife.'",
-            "options": [
-                "is",
-                "does",
-                "do",
-                "speaks"
-            ],
+            "question": "He said ___ he would call later.",
+            "options": ["which", "that", "who", "what"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "does",
-            "hint": "'Neither + auxiliary + subject' - which auxiliary matches 'doesn't'?",
-            "explanation": "'Neither + auxiliary + subject': He doesn't speak French → Neither does his wife. Match the auxiliary: doesn't → does (third person singular). 'Does' is the positive auxiliary matching the negative 'doesn't'.",
-            "grammarRule": "Ellipsis (So Am I / Neither Do I)"
+            "correctAnswer": "that",
+            "hint": "This introduces the content of what was said.",
+            "explanation": "'That' introduces the reported content after 'said': said that he would call. This is the same noun-clause pattern practiced in Question 1.",
+            "grammarRule": "Noun Clauses: That"
         },
         {
             "id": "gq_l127_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'You should have called. You really ___.'",
-            "options": [
-                "would have",
-                "should",
-                "should have",
-                "had"
-            ],
+            "question": "\u2014 Do you believe him?\n\u2014 I believe ___ he's telling the truth.",
+            "options": ["who", "which", "that", "what"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "should have",
-            "hint": "Ellipsis after auxiliary - the main verb is omitted.",
-            "explanation": "'You should have [called]' - in a short clause, the main verb is omitted but understood. 'You really should have [called].' This is ellipsis: the past participle 'called' is understood and therefore dropped.",
-            "grammarRule": "Ellipsis (So Am I / Neither Do I)"
+            "correctAnswer": "that",
+            "hint": "This introduces the content of what is believed.",
+            "explanation": "'That' introduces the belief itself as a noun clause: believe that he's telling the truth, continuing the same pattern from this level.",
+            "grammarRule": "Noun Clauses: That"
         },
         {
             "id": "gq_l128_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The experiment produced remarkable results. ___ findings changed the field.",
-            "options": [
-                "This",
-                "These",
-                "Its",
-                "Those"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "These",
-            "hint": "Which pronoun refers back to 'remarkable results'?",
-            "explanation": "'These findings' refers back to 'remarkable results' using a near demonstrative. 'These' = plural, near (just mentioned). 'Those' = plural, far (mentioned earlier or distant). 'These findings' is the natural cohesive choice.",
-            "grammarRule": "Cohesion: Demonstrative Reference"
+            "question": "I don't know ___ she lives now.",
+            "options": ["what", "that", "which", "where"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "where",
+            "hint": "This introduces an indirect question about a place.",
+            "explanation": "'Where' introduces an indirect question as a noun clause: don't know where she lives. Notice the word order stays statement-like (she lives), not question order (does she live).",
+            "grammarRule": "Noun Clauses: Indirect Questions with Where"
         },
         {
             "id": "gq_l128_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Several theories have been proposed. ___ remains entirely convincing.",
-            "options": [
-                "Nothing",
-                "No one",
-                "None",
-                "Any"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "None",
-            "hint": "Which quantifier means 'not one of the theories'?",
-            "explanation": "'None' = not one of a group: None of them remains convincing. 'None remains' (singular) or 'None remain' (plural) - both are used. 'No one' is for people. 'Any' would be used in a negative sentence.",
-            "grammarRule": "Cohesion: Demonstrative Reference"
+            "question": "Can you tell me ___ the store closes?",
+            "options": ["that", "when", "which", "who"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "when",
+            "hint": "This introduces an indirect question about time.",
+            "explanation": "'When' introduces an indirect time question: tell me when the store closes. Again, the word order stays as a statement (the store closes), not inverted like a direct question.",
+            "grammarRule": "Noun Clauses: Indirect Questions with When"
         },
         {
             "id": "gq_l128_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The results confirmed our hypothesis. ___ was a significant breakthrough.",
-            "options": [
-                "That",
-                "The result",
-                "This",
-                "It"
-            ],
+            "question": "\u2014 Do you know ___ this belongs to?\n\u2014 No idea.",
+            "options": ["what", "that", "which", "who"],
             "correctAnswerIndex": 3,
-            "correctAnswer": "It",
-            "hint": "Which pronoun refers back to the entire previous sentence?",
-            "explanation": "'This' can refer to an entire idea or situation just mentioned: This was a significant breakthrough = the fact that the results confirmed our hypothesis. 'It' can also work but 'This' is more emphatic.",
-            "grammarRule": "Cohesion: Demonstrative Reference"
+            "correctAnswer": "who",
+            "hint": "This introduces an indirect question about a person.",
+            "explanation": "'Who' introduces an indirect question about a person: know who this belongs to, matching the same statement word order practiced in Questions 1 and 2.",
+            "grammarRule": "Noun Clauses: Indirect Questions with Who"
         },
         {
             "id": "gq_l129_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The extent ___ the intervention succeeded is debatable.",
-            "options": [
-                "that",
-                "by which",
-                "to which",
-                "in which"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "to which",
-            "hint": "Which relative structure fits 'the extent ___'?",
-            "explanation": "'The extent to which' = how much: The extent to which the intervention succeeded is debatable. This is a key academic phrase. 'To which' is the correct formal relative structure here.",
-            "grammarRule": "Academic Fixed Phrases"
+            "question": "I wonder ___ or not it will rain tomorrow.",
+            "options": ["that", "if", "which", "whether"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "whether",
+            "hint": "One of these two similar words fits comfortably before 'or not'; the other one sounds unnatural here.",
+            "explanation": "'Whether' pairs naturally with 'or not': whether or not it rains. 'If or not' isn't standard English, even though 'if' alone can sometimes replace 'whether' in simpler sentences.",
+            "grammarRule": "Noun Clauses: Whether Or Not"
         },
         {
             "id": "gq_l129_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Economists continue to ___ the true causes of the conflict.",
-            "options": [
-                "discuss about",
-                "debate",
-                "debate about",
-                "argue about"
-            ],
+            "question": "She asked ___ I wanted to join her or stay home.",
+            "options": ["if", "whether", "that", "which"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "debate",
-            "hint": "As a verb, this word takes a direct object with no preposition at all.",
-            "explanation": "'Debate' as a verb takes a direct object with no preposition: economists debate the causes (never 'debate about the causes'). Compare 'discuss', which also needs no preposition - 'discuss about' is a very common learner error. 'Argue about' does correctly use a preposition, but changes the register.",
-            "grammarRule": "Academic Fixed Phrases"
+            "correctAnswer": "whether",
+            "hint": "Two clear alternatives are presented, a classic signal for this particular word.",
+            "explanation": "'Whether' fits naturally when presenting two clear alternatives: whether to join or stay home. This works the same way as 'whether or not' from Question 1.",
+            "grammarRule": "Noun Clauses: Whether"
         },
         {
             "id": "gq_l129_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The ___ of the treaty was a turning point in the negotiations.",
-            "options": [
-                "sign",
-                "signatory",
-                "signed",
-                "signing"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "signing",
-            "hint": "After 'The', which noun form of 'sign' is needed?",
-            "explanation": "'The signing of the treaty' - the gerund 'signing' functions as a noun here. Compare: the opening of Parliament, the passing of the law, the ending of the conflict. Gerunds often function as abstract nouns.",
-            "grammarRule": "Academic Fixed Phrases"
+            "question": "\u2014 Did you decide?\n\u2014 I wasn't sure ___ to accept the job offer.",
+            "options": ["that", "which", "whether", "if"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "whether",
+            "hint": "This word comes directly before 'to' plus a verb \u2014 only one of these options can do that.",
+            "explanation": "Before 'to' + a verb, only 'whether' works: whether to accept. 'If to accept' isn't grammatical English, unlike 'whether to accept'.",
+            "grammarRule": "Noun Clauses: Whether To"
         },
         {
             "id": "gq_l130_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The committee's ___ for stricter oversight was unanimous.",
-            "options": [
-                "requirement",
-                "required",
-                "require",
-                "requiring"
-            ],
+            "question": "I need to find out ___ the meeting starts.",
+            "options": ["when", "who", "that", "which"],
             "correctAnswerIndex": 0,
-            "correctAnswer": "requirement",
-            "hint": "After the possessive 'committee's', a noun is needed.",
-            "explanation": "'Requirement' is the noun form: the committee's requirement for stricter oversight. Compare: require → requirement, propose → proposal, recommend → recommendation. A possessive noun like 'committee's' must be followed by a noun, not a verb form.",
-            "grammarRule": "Nominalisation / Subjunctive Passive"
+            "correctAnswer": "when",
+            "hint": "This introduces an indirect question about time, reviewed from Level 128.",
+            "explanation": "'When' introduces this indirect time question: find out when it starts, reviewing the pattern from Level 128.",
+            "grammarRule": "Noun Clauses: Indirect Questions with When"
         },
         {
             "id": "gq_l130_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "It is ___ that the policy will need revision.",
-            "options": [
-                "likely",
-                "likelier",
-                "likelihood",
-                "likeliness"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "likely",
-            "hint": "After 'It is', which form is needed?",
-            "explanation": "'It is + adjective + that': It is likely that the policy will need revision. 'Likely' is the adjective. Compare: It is possible that..., It is certain that..., It is clear that... Use adjectives after 'It is'.",
-            "grammarRule": "Nominalisation / Subjunctive Passive"
+            "question": "The colleague ___ recommended this book was right; it's excellent.",
+            "options": ["whose", "which", "where", "who"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "who",
+            "hint": "This relative pronoun refers to a person acting as the subject of the clause.",
+            "explanation": "'Who' fits this subject relative clause about a colleague: the colleague who recommended it, reviewing the relative clause skills from earlier in this stage.",
+            "grammarRule": "Relative Clauses: Who"
         },
         {
             "id": "gq_l130_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The government's failure to act ___ in widespread public discontent.",
-            "options": [
-                "resulted from",
-                "resulted in",
-                "led to",
-                "caused to"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "resulted in",
-            "hint": "Which phrase shows the failure caused the discontent?",
-            "explanation": "'Result in + noun' = have as a consequence: failure to act resulted in widespread public discontent. Compare: 'Result from' = be caused by (opposite direction): The discontent resulted from the failure to act.",
-            "grammarRule": "Nominalisation / Subjunctive Passive"
+            "question": "\u2014 Do you know ___ to submit the application?\n\u2014 I think it's due Friday.",
+            "options": ["that", "if", "whether", "which"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "whether",
+            "hint": "This word comes directly before 'to' plus a verb \u2014 recall the fixed pattern from Level 129.",
+            "explanation": "Before 'to submit', only 'whether' works, exactly as practiced in Level 129, wrapping up this opening block of Stage 7 that combined relative clauses and noun clauses.",
+            "grammarRule": "Noun Clauses: Whether To"
         }
     ]
 }

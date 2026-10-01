@@ -4,633 +4,633 @@
     "levels": "101-110",
     "quests": [
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the explanation that's honest about the reason and shows you stayed engaged.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you hit the ground running in a new role?",
+            "interviewerQuestion": "I notice a six-month gap in your work history last year. Can you tell me about that?",
             "options": [
-                "I take my time to get oriented before trying to move too fast.",
-                "I jump straight into tasks and figure things out along the way.",
-                "I review any available materials beforehand and come prepared with specific questions to get up to speed quickly."
+                "There's not much to say about it, it was just a personal thing I'd rather not go into detail about, but I'm ready to work now. and I'd rather not get into more of the personal side of it, though obviously I'm here now and focused on the work ahead.",
+                "I took that time to care for a family member who needed support after a surgery. Once things stabilized, I started applying again, and I kept my skills sharp with a couple of online courses during that period.",
+                "I was actually looking for work that whole time, but I just wasn't finding anything that felt right for me, so it took a while."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "'Hit the ground running' means starting quickly and effectively — preparation is what makes that possible.",
-            "explanation": "'Hit the ground running' means to start performing effectively right away. Preparing beforehand, rather than taking time to settle in or diving in unprepared, is what actually makes a fast, effective start possible.",
+            "hint": "A brief, honest reason paired with something you did during the gap is stronger than vagueness or an unconvincing explanation.",
+            "explanation": "Naming the real reason and showing you stayed engaged reassures the interviewer without oversharing. Declining to explain at all invites more suspicion than the gap probably deserves, and a vague 'still looking' story without specifics can sound evasive.",
             "id": "ji_l101_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "uncertain",
+                "reassured",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names what you actually did with the time.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What do you do to make sure you can hit the ground running on day one?",
+            "interviewerQuestion": "You graduated over a year ago. What have you been doing since then?",
             "options": [
-                "I trust that the onboarding process will get me ready.",
-                "I ask my new manager in advance what the first few priorities will be, so I can prepare accordingly.",
-                "I plan to observe closely during my first week before taking real action."
+                "I've mostly just been relaxing and figuring out what I want to do next, since the job market has been pretty rough.",
+                "Honestly, it's been a bit of a slow year, and I don't have a great explanation for why it's taken this long to find something. and I don't think there's a particularly clear pattern to point to, since each week during that stretch felt a bit different from the last.",
+                "I spent the first few months traveling, which I'd saved for during school, and then I took on some freelance writing projects while I looked for a full-time role that fit."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Proactively learning priorities in advance is what enables a genuinely fast start.",
-            "explanation": "Asking about priorities in advance lets you prepare meaningfully, while trusting onboarding alone or planning to only observe doesn't match the speed implied by 'hitting the ground running.'",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Naming what you actually did with the time, even if it wasn't a full-time job, gives the gap real substance.",
+            "explanation": "Describing specific activities, including some paid work, shows the time wasn't idle even without a full-time job. Framing it purely as relaxing suggests low urgency, and admitting you don't have an explanation undermines confidence in the rest of your answer.",
             "id": "ji_l101_q2",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "concerned",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer with a brief factual reason plus reassurance about current readiness.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you hit the ground running on a new project.",
+            "interviewerQuestion": "There's a year-long gap in your resume. Would you mind explaining it?",
             "options": [
-                "I studied the project background over the weekend so I could contribute meaningfully in my very first meeting.",
-                "I got up to speed within the first couple of weeks.",
-                "I asked a lot of questions during my first meeting to understand the project."
+                "It was a difficult year for me, and I don't really like talking about it, but I'm hoping to just move past it and focus on the job.",
+                "I was dealing with a health issue that needed time to recover from properly. I'm fully back now, and I used some of that time to stay current by reading up on developments in the field.",
+                "I'd rather not get into personal details about that, but I can assure you it's not something that would affect my work going forward. though I wouldn't stake much on that being right."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "The strongest example shows genuine speed — contributing meaningfully right away, not just getting oriented quickly.",
-            "explanation": "Contributing meaningfully in your very first meeting shows real speed, while getting up to speed over weeks or simply asking questions in the first meeting doesn't demonstrate the same immediate impact.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "A brief, factual explanation followed by reassurance about your current readiness works better than declining to explain or dwelling on difficulty.",
+            "explanation": "A brief, honest explanation plus a note on current readiness answers the question directly without oversharing personal medical detail. Declining to explain at all can create more curiosity than the gap itself, and dwelling on how hard it was shifts focus away from your readiness now.",
             "id": "ji_l101_q3",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "sympathetic",
+                "reassured",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that's factual about the issue and frames your decision around what you're seeking.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a time you had to wear many hats at work.",
+            "interviewerQuestion": "What led you to leave your previous employer?",
             "options": [
-                "I've taken on a few extra tasks here and there when needed.",
-                "I generally prefer to focus on one clear role rather than juggling many.",
-                "At a small company, I managed customer support, basic bookkeeping, and marketing all at once, learning to switch between very different tasks."
+                "My manager's expectations kept shifting without clear communication, which made it hard to do consistently good work. I decided it was time to find a role with clearer direction and more room to grow.",
+                "My manager was honestly a nightmare to work for, always changing his mind and never explaining anything properly, which made the whole job miserable.",
+                "It just wasn't really working out for me there, for a bunch of reasons I'd rather not get into right now. but I'd want to think about it more before committing to that."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "'Wearing many hats' means handling several very different roles or responsibilities at once — the stronger answer shows real range.",
-            "explanation": "'Wearing many hats' means juggling several different roles or responsibilities. Managing genuinely different functions, like support, finance, and marketing, shows real range, more than occasional extra tasks or a preference for a single focus.",
+            "hint": "Describing the situation factually and framing your decision around what you're seeking, rather than what you disliked, usually lands better.",
+            "explanation": "Naming the real issue factually, then pivoting to what you're seeking, is honest without sounding bitter. Venting about the manager, even if true, can raise concerns about how you'd describe this job later, and vague reluctance to explain avoids the question entirely.",
             "id": "ji_l102_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "reassured",
+                "concerned",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the factual, unemotional explanation of a layoff.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a role where you had to take on very different types of responsibilities.",
+            "interviewerQuestion": "What was behind your departure from your previous company?",
             "options": [
-                "As the only admin at a growing startup, I handled scheduling, vendor relationships, and office logistics simultaneously.",
-                "My role mostly stayed within one clear set of responsibilities.",
-                "I occasionally helped out with tasks slightly outside my main role."
+                "The company went through a round of layoffs due to a broader restructuring, and my position was one of several eliminated. It wasn't performance-related, and I've stayed in touch with a few former colleagues there.",
+                "I got let go along with some other people, but I'd rather not go into the details of exactly how that all went down. or so it seems to me, anyway.",
+                "The company let a bunch of people go, mine included, which was honestly a pretty messy and unfair process from what I could see."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Handling several genuinely distinct responsibilities at once is the clearest example of 'wearing many hats.'",
-            "explanation": "Handling several genuinely distinct responsibilities, like scheduling, vendor relations, and logistics, at the same time is a clear example of wearing many hats, unlike staying within one role or occasionally helping out.",
+            "hint": "A factual, unemotional explanation of a layoff, with a note that it wasn't performance-related, reassures more than a complaint or vagueness.",
+            "explanation": "Explaining a layoff factually and clarifying it wasn't performance-related directly addresses the interviewer's likely concern. Criticizing the process, even fairly, adds unnecessary negativity, and vagueness about how it went down can make a normal layoff sound more concerning than it was.",
             "id": "ji_l102_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "reassured",
+                "uncertain",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that frames a growth mismatch factually.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How comfortable are you wearing many hats in a fast-paced environment?",
+            "interviewerQuestion": "What prompted you to start looking for a new role?",
             "options": [
-                "I can manage it, though I generally prefer more focused responsibilities.",
-                "I enjoy it — shifting between different types of work keeps me engaged and helps me understand the business more broadly.",
-                "I'm comfortable with it as long as the expectations are clearly defined."
+                "I just felt like I needed a change of scenery, without any particular reason driving it. and I don't think it's especially useful to dig too deeply into the exact reasoning behind wanting a change at that point.",
+                "Honestly, I felt really undervalued and underpaid for what I was doing, and it got frustrating watching newer hires get better treatment.",
+                "I'd taken on significantly more responsibility over two years without a corresponding change in role or compensation, and I felt it was time to find a position that better matched where I'd grown."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Genuine enthusiasm for varied responsibilities fits the spirit of 'wearing many hats' more than a conditional comfort level.",
-            "explanation": "Genuine enthusiasm for varied responsibilities matches the spirit of a fast-paced, multi-role environment, while a preference for focus or conditional comfort suggests less natural fit for that kind of role.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Framing the mismatch between your growth and your role, factually, is stronger than venting about feeling undervalued or giving no reason at all.",
+            "explanation": "Describing the factual mismatch between your growing responsibilities and your role shows a legitimate, professional reason to move on. Venting about feeling undervalued, even if accurate, risks sounding like a complaint, and having no real reason can make the move seem impulsive.",
             "id": "ji_l102_q3",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "concerned",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that connects a transferable skill directly to the new role.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you think on your feet under pressure?",
+            "interviewerQuestion": "You spent five years teaching before applying for this corporate training role. What's behind that change?",
             "options": [
-                "I stay calm, quickly weigh the most important factors, and make a confident decision even with incomplete information.",
-                "I try to slow down and gather as much information as I can before deciding.",
-                "I usually rely on past experience to guide quick decisions."
+                "Teaching just wasn't working out for me anymore, the pay and the stress weren't worth it, so I started looking at other options.",
+                "I'm not entirely sure yet if this is the right move, but I figured I'd try something different and see how it goes. though I recognize that might not hold up.",
+                "Teaching taught me how to break down complex material for different audiences, which is exactly what this role needs. I wanted to apply those same skills in a corporate setting with different resources and a different pace."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "'Think on your feet' means responding quickly and effectively in the moment — speed and confidence both matter.",
-            "explanation": "'Thinking on your feet' means making sound decisions quickly, even without complete information. Slowing down to gather more information doesn't fit that pace, while relying only on past experience misses the adaptability the phrase implies.",
+            "hint": "Connecting a transferable skill from your old field to the new role is much stronger than only explaining why you left the old one.",
+            "explanation": "Naming a specific transferable skill and connecting it directly to the new role shows a purposeful pivot. Focusing only on dissatisfaction with teaching doesn't explain why this field specifically, and expressing uncertainty about the move undermines confidence in your own decision.",
             "id": "ji_l103_q1",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain",
+                "concerned",
+                "pleased"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer with a concrete origin story and real preparation behind it.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you had to think on your feet during a meeting.",
+            "interviewerQuestion": "This is a pretty significant shift from accounting to design work. Walk me through that.",
             "options": [
-                "I told the client I'd need to follow up with an answer later.",
-                "I took a moment to think it through carefully before responding.",
-                "When a client asked an unexpected question, I quickly organized my thoughts and gave a clear, confident answer on the spot."
+                "I started designing internal tools for my accounting team as a side project, discovered I loved that work more than the numbers, and spent the last year building a portfolio and taking design courses to make the switch seriously.",
+                "I just got bored with accounting after a while and wanted to try something more creative for a change. though I'm genuinely unsure how it would actually play out.",
+                "I've always liked design, so I figured now was as good a time as any to just go for it."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Responding confidently in the moment is the essence of 'thinking on your feet' — deferring or pausing too long shifts away from that.",
-            "explanation": "Responding confidently in the moment shows real quick thinking, while deferring to follow up later or pausing too long shifts away from the immediacy the phrase describes.",
+            "hint": "A concrete story of how the interest developed, with real preparation behind it, is far more convincing than boredom or a vague sense of timing.",
+            "explanation": "A specific origin story plus real preparation, like a portfolio and courses, shows this is a serious, considered move. Boredom alone doesn't explain why design specifically, and 'as good a time as any' suggests the decision wasn't carefully thought through.",
             "id": "ji_l103_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "impressed",
+                "uncertain",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names specific, matching tasks rather than general traits.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle unexpected questions during a presentation?",
+            "interviewerQuestion": "How do you see your military background translating into this logistics role?",
             "options": [
-                "I acknowledge the question and promise to address it after the presentation.",
-                "I stay composed, quickly connect the question to what I already know, and respond clearly without losing momentum.",
-                "I try to buy a little time by asking a clarifying question first."
+                "I'm looking for something a bit more predictable after the military, and this seemed like a reasonably stable option. even if I can't be fully certain about it.",
+                "Coordinating supply chains and managing tight schedules under pressure was a big part of my role in the service, and those same skills, prioritizing, planning, and staying calm under constraints, apply directly here.",
+                "The military gave me a lot of discipline and structure, which I think would make me a solid employee in pretty much any role."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Responding clearly without breaking momentum best captures 'thinking on your feet.'",
-            "explanation": "Responding clearly without losing momentum shows genuine quick thinking, while deferring the question or stalling for time doesn't demonstrate the same in-the-moment composure.",
+            "professionalismRating": 4,
+            "hint": "Naming specific, transferable tasks is stronger than general traits like discipline, or framing the move around wanting stability alone.",
+            "explanation": "Naming specific, matching tasks from your military role shows direct relevance to this job. General traits like discipline apply to almost any role and don't show specific fit, and seeking stability alone doesn't explain your interest in logistics specifically.",
             "id": "ji_l103_q3",
             "interviewerReaction": [
-                "disappointed",
+                "uncertain",
                 "impressed",
-                "disappointed"
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that acknowledges the gap and points to specific above-level responsibilities.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a time you raised the bar for your team.",
+            "interviewerQuestion": "This role usually looks for three years of experience, and you have about one. How do you address that?",
             "options": [
-                "I tried to consistently do my own work at a high standard.",
-                "I introduced a new quality checklist that pushed our team's average output to a noticeably higher standard.",
-                "I encouraged the team to keep doing good work."
+                "You're right that I have less time in the field than typical, but in that year I took on responsibilities usually given to more senior people, including leading a small project end to end. I'd welcome the chance to show that in practice.",
+                "I think experience is a bit overrated as a measure of whether someone can do the job well. but I haven't really examined that closely.",
+                "I know I don't have as much experience as you might be looking for, but I'm a really fast learner and I pick things up quickly."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "'Raise the bar' means setting a new, higher standard for a group, not just for yourself.",
-            "explanation": "'Raise the bar' means setting a new, higher standard that affects the whole group. A personal standard or general encouragement doesn't create the same lasting, measurable shift the phrase describes.",
+            "hint": "Acknowledging the gap honestly while pointing to specific, above-level responsibilities is stronger than a general claim or dismissing the requirement.",
+            "explanation": "Acknowledging the gap honestly while citing specific above-level work shows real substance behind a shorter resume. A general claim about learning quickly isn't backed by evidence, and dismissing the value of experience altogether can come across as defensive rather than confident.",
             "id": "ji_l104_q1",
             "interviewerReaction": [
-                "disappointed",
                 "impressed",
-                "disappointed"
+                "skeptical",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names the specific transferable skills that carry over.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you pushed your team to raise the bar on quality.",
+            "interviewerQuestion": "This position typically wants industry-specific background, which you don't have yet. Talk me through why that's not a dealbreaker.",
             "options": [
-                "I shared examples of exceptional past work and set a new benchmark that the whole team worked toward together.",
-                "I gave feedback whenever I noticed work that wasn't quite up to standard.",
-                "I made sure my own work always met a high standard."
+                "I don't think industry experience really matters that much, since the core skills are pretty much the same everywhere you go.",
+                "I understand the concern, and honestly I'm not entirely sure how quickly I'd be able to pick up the industry-specific parts of the role. or at least that's my instinct here.",
+                "It's a fair concern, and I don't have industry-specific experience yet, but the core skills this role needs, client communication and project coordination, are things I've done for years in a different industry."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Setting a new, shared benchmark for the group is the clearest way to 'raise the bar.'",
-            "explanation": "Setting a new, shared benchmark that the whole team works toward truly raises the bar, while individual feedback or a personal standard doesn't shift the group's overall standard in the same way.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Naming the specific transferable skills that do carry over is stronger than dismissing the concern or amplifying it.",
+            "explanation": "Acknowledging the real gap while naming specific transferable skills gives the interviewer something concrete to weigh. Dismissing the concern entirely sounds overconfident, and expressing your own doubt about ramping up gives the interviewer a reason to share that doubt.",
             "id": "ji_l104_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "skeptical",
+                "concerned",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer with specific, checkable proof of self-directed work.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you raise the bar without discouraging your team?",
+            "interviewerQuestion": "There's no formal degree in this area on your resume. What do you have to show instead?",
             "options": [
-                "I try to lead by example so the team naturally follows.",
-                "I explain clearly why the higher standard matters.",
-                "I set the new standard collaboratively and celebrate early progress, so the higher bar feels achievable, not punishing."
+                "I know it's a gap, and I'm honestly a little unsure how much it will hold me back in practice. though it's a fairly rough sense of things on my part.",
+                "I've built three real projects on my own, one of which is used by a small local business, and I've kept learning through free courses and community projects specifically to close that gap.",
+                "I don't think a degree really matters much these days, since plenty of the best people in this field are self-taught anyway."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Making the new standard feel achievable and collaborative is key to raising the bar without discouraging people.",
-            "explanation": "Setting the standard collaboratively and celebrating progress keeps a higher bar motivating rather than discouraging, while leading by example alone or simply explaining the reasoning doesn't offer the same built-in encouragement.",
+            "hint": "Specific, checkable proof of self-directed work is stronger than dismissing the credential or expressing uncertainty about your own standing.",
+            "explanation": "Pointing to specific, real projects gives tangible proof that closes the credibility gap a missing degree creates. Dismissing the value of a degree altogether can sound defensive, and voicing your own uncertainty invites the interviewer to share it.",
             "id": "ji_l104_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "uncertain",
+                "impressed",
+                "skeptical"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the honest account paired with genuine reflection.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you help move the needle on a project?",
+            "interviewerQuestion": "I understand your last role ended in a termination. Can you tell me what happened?",
             "options": [
-                "I try to stay consistently productive throughout the project.",
-                "I focus my energy on the few actions most likely to create meaningful, measurable progress, rather than spreading effort thin.",
-                "I contribute wherever I see an opportunity to help."
+                "I was let go after struggling to meet some targets in a role that, looking back, wasn't the best fit for my strengths. I've reflected on what I'd do differently, and I've been intentional about making sure this role plays to what I'm actually good at.",
+                "I'd rather not go into the details of that, if that's okay. It wasn't a great experience. though someone else might see it differently.",
+                "It wasn't really my fault, honestly. The targets they set were unrealistic and nobody on the team was hitting them."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "'Move the needle' means making a real, measurable difference — focus on high-impact actions is what achieves that.",
-            "explanation": "'Move the needle' means making a meaningful, measurable difference. Focusing on the highest-impact actions achieves that more directly than staying generally productive or contributing wherever an opportunity appears.",
+            "hint": "An honest account paired with genuine reflection is stronger than blaming the situation or declining to explain.",
+            "explanation": "Being honest about the outcome while showing real reflection on fit and future intention demonstrates accountability. Blaming unrealistic targets deflects responsibility, and refusing to discuss it at all leaves the interviewer with only their imagination.",
             "id": "ji_l105_q1",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "reassured",
+                "concerned",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the specific, honest account of the mistake and the habit it produced.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time your work really moved the needle for your team.",
+            "interviewerQuestion": "You mentioned your last job ended abruptly. What led to that?",
             "options": [
-                "I identified the single biggest source of customer complaints and fixed it, which measurably improved our satisfaction scores.",
-                "I contributed consistently to several ongoing team initiatives.",
-                "I completed my assigned tasks reliably and on time."
+                "Something happened that led to me leaving, but I'd prefer to keep the details private if that's alright. and I generally think it's more professional to keep details like that to myself unless there's a specific reason to share them.",
+                "I made an error that had real consequences for a client relationship, and after that the company decided to let me go. It was a hard lesson, but I've since built habits, like double-checking client-facing work, that I didn't have in place before.",
+                "Honestly, I think it was a bit of an overreaction on their part for one mistake, even if it was a fairly significant one."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "A specific, measurable improvement tied to one key issue is the clearest example of moving the needle.",
-            "explanation": "Fixing the single biggest source of complaints and measurably improving satisfaction is a clear example of moving the needle, unlike general consistent contribution or simply completing assigned tasks.",
+            "hint": "A specific, honest account of the mistake and the resulting habit change is stronger than minimizing the company's decision or withholding the story entirely.",
+            "explanation": "Naming the actual mistake and the habit it produced shows real accountability and growth. Suggesting the company overreacted deflects from your own role in it, and declining to explain leaves an unanswered question hanging over the interview.",
             "id": "ji_l105_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain",
+                "reassured",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the factual account that includes your own part in the mismatch.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you identify what will actually move the needle versus busywork?",
+            "interviewerQuestion": "What brought your time at your last company to a close?",
             "options": [
-                "I prioritize tasks based on urgency and deadlines.",
-                "I try to stay focused on my main responsibilities.",
-                "I ask what outcome truly matters most, then work backward to find the few actions that would meaningfully affect it."
+                "Things changed there, and it just didn't work out in the end, for reasons that are a bit complicated to get into.",
+                "The company shifted its focus in a direction that didn't align well with my role or skill set, and after a few months of trying to adjust, we agreed it wasn't the right long-term fit and I moved on.",
+                "The company changed direction in a way that honestly didn't make a lot of sense to me, and I don't think they handled the transition very well. though it's only a loose impression, really."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Working backward from the outcome that matters most is the clearest way to distinguish true impact from busywork.",
-            "explanation": "Working backward from the outcome that matters most directly targets real impact, while prioritizing by urgency or simply staying focused on assigned duties doesn't guarantee you're working on what truly moves the needle.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "A factual account that includes your own part in the mismatch is stronger than criticizing the company's decisions or offering vague complexity.",
+            "explanation": "A factual account that includes your own adjustment attempt shows balance rather than one-sided blame. Criticizing the company's direction risks sounding negative about a former employer, and calling it 'complicated' without detail leaves the interviewer without a real answer.",
             "id": "ji_l105_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "uncertain",
+                "reassured",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names what you learned and why this role is different.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a time you had to read the room during a meeting.",
+            "interviewerQuestion": "I see three different roles in the last three years. Can you help me understand that pattern?",
             "options": [
-                "I noticed the team seemed hesitant about a proposal, so I paused to invite honest feedback before pushing forward.",
-                "I made sure to present my ideas clearly and confidently.",
-                "I asked directly whether everyone agreed with the plan."
+                "I know it looks like a lot of moves, but each of them made sense to me for different reasons at the time. or that's the impression I have, anyway.",
+                "Yeah, it's been a bit of a whirlwind few years, but that's just how the job market has been for a lot of people lately.",
+                "Looking back, two of those moves were genuinely about finding the right fit, and I learned something specific from each one about what I actually want in a role, which is part of why I'm confident this position is a strong match."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "'Read the room' means picking up on the group's mood or reactions, often without them saying it outright.",
-            "explanation": "'Reading the room' means noticing unspoken cues, like hesitation, and responding to them. Simply presenting confidently or asking a direct yes-or-no question doesn't show that same sensitivity to what wasn't being said.",
+            "hint": "Naming what you learned from each move and why this role is different is stronger than blaming the market or a vague defense of your reasoning.",
+            "explanation": "Naming a specific lesson from the pattern, and connecting it to genuine confidence in this fit, turns the pattern into a story of learning rather than instability. Blaming the market avoids any personal reflection, and a vague defense without specifics doesn't actually address the interviewer's real concern.",
             "id": "ji_l106_q1",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain",
+                "uncertain",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that clarifies the intentional nature of contract work and your current goal.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you read the room when presenting a new idea?",
+            "interviewerQuestion": "Your resume shows several short stints. Were those all full-time permanent roles?",
             "options": [
-                "I pause occasionally to check if there are any questions.",
-                "I watch for body language and tone, and I adjust my approach if I sense confusion or resistance forming.",
-                "I try to explain my idea as clearly as possible from the start."
+                "Most of those were fixed-term contracts I took on purpose, which suited me at the time, but I'm specifically looking for a permanent role now because I want to build something longer-term.",
+                "They were all pretty short, yeah, but that's just been the nature of the jobs I could find recently. even though that's a bit of a hunch on my end.",
+                "Some of them were contracts and some weren't, it's honestly a little hard to explain all of it quickly."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Watching for subtle nonverbal cues and adjusting in response is the essence of 'reading the room.'",
-            "explanation": "Watching for subtle cues like body language and adjusting your approach shows genuine room-reading, while pausing for questions or focusing only on clarity doesn't capture that same responsiveness to unspoken signals.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Clarifying the intentional nature of contract work, and your current goal, resolves the concern more directly than a passive explanation.",
+            "explanation": "Clarifying that the short stints were intentional contracts, paired with a clear statement of your current goal, directly resolves the concern behind the question. A passive explanation about job availability doesn't clarify the actual nature of those roles, and admitting it's hard to explain leaves the confusion unresolved.",
             "id": "ji_l106_q2",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "reassured",
+                "uncertain",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names the specific external cause and what you now do differently.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you sensed tension in a meeting and adjusted accordingly.",
+            "interviewerQuestion": "You've had several jobs in a short time. What's the story there?",
             "options": [
-                "I kept the meeting moving to stay on schedule.",
-                "I addressed the tension directly by asking what was wrong.",
-                "I noticed the energy shift when a topic came up, so I slowed down and gave people space to share concerns before continuing."
+                "It hasn't really been my fault, the companies I worked for just kept having problems that weren't related to me at all.",
+                "Two of those companies went through layoffs or shut down entirely, which wasn't something I could control, but I've learned from that to ask more pointed questions about a company's stability during interviews now.",
+                "It's been an unlucky few years, honestly, and I'm hoping this next role finally sticks. but that's just a guess on my part, honestly."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Slowing down in response to a sensed shift shows the subtlety involved in truly reading a room.",
-            "explanation": "Slowing down and creating space in response to a sensed shift shows real sensitivity to the room, while pushing forward on schedule or asking bluntly what's wrong doesn't reflect that same subtle awareness.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Naming the specific external cause and what you now do differently is stronger than simply asserting it wasn't your fault or expressing hope.",
+            "explanation": "Naming the specific external causes, and a concrete change in how you now evaluate companies, shows real learning from a difficult pattern. Simply asserting it wasn't your fault without further reflection sounds defensive, and hoping this one sticks doesn't reassure the interviewer of anything specific.",
             "id": "ji_l106_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "uncertain",
+                "reassured",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names what you learned and what you're now seeking.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle being thrown into the deep end at work?",
+            "interviewerQuestion": "What was the work environment like at your last company?",
             "options": [
-                "It's stressful, but I usually find a way to manage.",
-                "I focus on the most urgent priorities first and ask targeted questions to get up to speed as efficiently as possible.",
-                "I prefer a more gradual introduction to new responsibilities."
+                "It was fine, I don't really have much to say about it either way. and I generally prefer not to spend much time analyzing past workplaces once I've already moved on from them.",
+                "Honestly, it was pretty toxic. People were constantly stressed out and management didn't seem to care much about anyone's wellbeing.",
+                "It was a high-pressure environment with a lot of last-minute changes, which taught me a lot about staying organized under stress, but it also made me realize I work best somewhere with a bit more stability and clearer communication."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "'Thrown into the deep end' means being placed in a challenging situation with little preparation — the strongest answer shows a clear strategy for handling that.",
-            "explanation": "'Thrown into the deep end' means facing a difficult situation with little preparation. Having a clear strategy, like prioritizing and asking targeted questions, shows real capability, more than a general comment about managing or a preference for gradual onboarding.",
+            "hint": "Naming what you learned and what you're now seeking is stronger than a harsh description or a flat non-answer.",
+            "explanation": "Describing the environment factually, then framing what you learned and now seek, gives useful information without sounding like a complaint. A harsh description, even if accurate, can make an interviewer wonder how you'd describe this company later, and a flat non-answer avoids a question that deserves a real response.",
             "id": "ji_l107_q1",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "concerned",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that frames a real difficulty in terms of what you learned.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you were thrown into the deep end with little preparation.",
+            "interviewerQuestion": "Tell me about your relationship with your previous manager.",
             "options": [
-                "I was asked to lead a client call with almost no notice, so I quickly reviewed the account history and focused on asking good questions.",
-                "It was overwhelming at first, but things worked out okay.",
-                "I asked for a bit more time to prepare before jumping in."
+                "We had different communication styles, which took some adjusting to, but I learned to ask more direct questions upfront to reduce misunderstandings, a habit that's served me well since.",
+                "My manager was honestly difficult to work for, pretty unpredictable, and it made the job a lot harder than it needed to be.",
+                "It was okay, I guess, nothing really worth going into detail about."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "A specific strategy for handling the sudden challenge shows more capability than a general comment or a request for more preparation time.",
-            "explanation": "Quickly reviewing key information and focusing on good questions shows real capability under sudden pressure, while a general comment about things working out or requesting more time doesn't demonstrate the same readiness.",
+            "hint": "Framing a real difficulty in terms of what you learned is stronger than a direct criticism or a dismissive non-answer.",
+            "explanation": "Framing the difficulty around a lesson learned turns a real challenge into evidence of growth. Direct criticism of a specific manager can raise concerns about your discretion, and a dismissive non-answer avoids giving the interviewer any real insight.",
             "id": "ji_l107_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "reassured",
+                "concerned",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names a specific cultural mismatch and what you actually need.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you perform when given a challenge with no ramp-up time?",
+            "interviewerQuestion": "Why do you think that workplace wasn't the right fit for you?",
             "options": [
-                "I do my best, even though it takes me a bit to feel fully confident.",
-                "I lean on more experienced colleagues to help guide me.",
-                "I identify what I absolutely need to know first, get that information quickly, and start contributing right away."
+                "I just didn't really click with the culture there, for reasons I can't fully explain. even if I haven't fully thought it through.",
+                "The culture there prioritized long hours over results, and I do my best work when I can focus on outcomes rather than time spent at a desk, so it became clear it wasn't the right match for how I work best.",
+                "The culture was honestly a bit backwards, still stuck in an old-school mindset that didn't make much sense to me."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Quickly identifying and acquiring only the essential information is the fastest path to contributing under pressure.",
-            "explanation": "Quickly identifying and acquiring only essential information gets you contributing fast, while needing time to feel confident or leaning heavily on others doesn't show the same immediate self-sufficiency.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Naming a specific cultural mismatch and what you actually need is stronger than criticizing the culture or leaving the reason vague.",
+            "explanation": "Naming the specific mismatch, and what kind of environment actually suits you, gives a clear, professional answer. Calling the culture backwards is a judgment that could reflect poorly on your tact, and an unexplained lack of connection doesn't tell the interviewer anything useful.",
             "id": "ji_l107_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "uncertain",
+                "reassured",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that pairs genuine enthusiasm with a specific example of staying engaged.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a time you had to connect the dots on limited information.",
+            "interviewerQuestion": "You took a few years away from the workforce to care for family. How are you feeling about returning now?",
             "options": [
-                "I gathered as much additional information as I could before drawing conclusions.",
-                "I asked a manager to help clarify what was going on.",
-                "I noticed similar complaints coming from different departments and pieced them together to identify a shared root cause."
+                "I'm genuinely ready and excited to be back. I stayed connected to the field through some reading and a short course last year, and I'm looking forward to applying that alongside my prior experience.",
+                "I think I'll be fine, there's really not much to worry about on that front. but I'm not fully confident saying that.",
+                "It's going to be an adjustment for sure, and I'm a little nervous about how much has probably changed while I was away. though I'll admit I'm not entirely sure that's the right call."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "'Connect the dots' means noticing a pattern or relationship between separate pieces of information — the strongest answer shows you spotting that link yourself.",
-            "explanation": "'Connecting the dots' means spotting a pattern across separate pieces of information yourself. Gathering more information first or asking someone else to clarify doesn't show that same independent pattern recognition.",
+            "hint": "Pairing genuine enthusiasm with a specific example of staying engaged is stronger than expressing nervousness or brushing off the question.",
+            "explanation": "Expressing genuine readiness backed by a specific way you stayed engaged reassures the interviewer concretely. Voicing nervousness, while honest, can raise doubt, and a brush-off without any specifics doesn't actually address the real question being asked.",
             "id": "ji_l108_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "reassured",
+                "uncertain",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that confidently confirms readiness with a specific supporting detail.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you noticed a pattern others had missed.",
+            "interviewerQuestion": "It looks like you took some time away from work for health reasons. How are things now, and how do you feel about jumping back in?",
             "options": [
-                "I mentioned a possible pattern I'd noticed to see if others agreed.",
-                "I realized that a recurring technical issue always followed the same type of update, which helped us finally fix the root cause.",
-                "I flagged the recurring issue so it could be investigated further."
+                "Things are mostly better now, though I'm honestly still not sure exactly how things will go once I'm back in a full routine. but I imagine it'll take at least a little time to fully adjust back into a consistent day-to-day schedule again.",
+                "I'm doing well now and fully able to take on a full workload. I used part of that time to keep my skills current, and I'm looking forward to putting that back into practice.",
+                "I'd rather not discuss the health details, but I can say I'm ready to work now."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Identifying the actual pattern and its cause yourself is stronger than simply flagging or mentioning a possibility.",
-            "explanation": "Identifying the pattern and its actual cause yourself demonstrates real analytical connection, while simply mentioning a possibility or flagging an issue for others to investigate shows less of that independent insight.",
+            "professionalismRating": 4,
+            "hint": "Confidently confirming current readiness, with a specific detail about staying engaged, works better than expressing uncertainty or offering only a bare assurance.",
+            "explanation": "Confidently confirming your current readiness, backed by something specific you did during the break, gives real reassurance. Expressing uncertainty about your own routine undercuts confidence, and a bare assurance without any supporting detail leaves the interviewer with only your word.",
             "id": "ji_l108_q2",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "concerned",
+                "reassured",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names specific transferable skills gained from the time away.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you approach a problem when the information available feels incomplete?",
+            "interviewerQuestion": "You took a couple of years to work on a personal project. What brings you back to this kind of role now?",
             "options": [
-                "I look for relationships between the pieces I do have and form a reasonable hypothesis to test further.",
-                "I try to collect more data before forming any conclusions.",
-                "I ask colleagues if they have additional context that might help."
+                "It's just time for a change again, I think, though I don't have a specific reason beyond that.",
+                "The project didn't really pan out the way I hoped, so I figured it was time to get back to something more traditional.",
+                "I learned a lot managing that project independently, including skills like budgeting and vendor coordination that I think apply directly here, and I'm ready to bring that experience into a team setting again."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Forming a testable hypothesis from existing information shows the analytical thinking behind 'connecting the dots.'",
-            "explanation": "Forming a testable hypothesis from the information you already have shows real analytical thinking, while waiting for more data or relying on others for context doesn't demonstrate that same proactive pattern-finding.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Naming specific transferable skills gained from the time away is stronger than framing the return as a fallback or offering no real reason.",
+            "explanation": "Naming specific skills gained during the project, and connecting them to this role, turns the time away into an asset rather than a gap to explain. Framing it as a fallback after the project didn't work out sounds like settling, and having no specific reason for the timing makes the return feel arbitrary.",
             "id": "ji_l108_q3",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain",
+                "uncertain",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer with a specific, genuine reason for wanting less scope.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you manage up with a busy manager?",
+            "interviewerQuestion": "Your background looks more senior than this role typically calls for. Why are you interested in it?",
             "options": [
-                "I keep updates concise, flag only what truly needs their input, and come prepared with recommendations, not just questions.",
-                "I try to schedule regular meetings to keep them informed.",
-                "I send detailed updates so they have full visibility into my work."
+                "I'm specifically looking to step back from heavy management responsibilities and get closer to hands-on work again, which is exactly what this role offers, and I don't need the title to feel engaged in what I'm doing.",
+                "I know it might look like a step down, but honestly I just need a job right now and this one seemed available. but that's a rough guess more than anything solid.",
+                "I'm not entirely sure it's the perfect fit either, but I figured it was worth applying anyway to see what happens."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "'Manage up' means proactively supporting your manager's time and priorities — brevity and coming with recommendations helps busy managers most.",
-            "explanation": "'Managing up' means making your manager's job easier by being concise and solution-oriented. Detailed updates or frequent meetings can actually add to a busy manager's workload rather than easing it.",
+            "hint": "A specific, genuine reason for wanting less scope is stronger than framing it as settling for available work or expressing your own doubt.",
+            "explanation": "Naming a specific, genuine reason for wanting a different kind of role addresses the real concern behind the question directly. Framing it as just needing any job raises doubts about whether you'd stay engaged, and voicing your own uncertainty about fit invites the interviewer to share that doubt.",
             "id": "ji_l109_q1",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "reassured",
+                "concerned",
+                "skeptical"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer with a clear, specific reason for genuinely preferring individual work.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you effectively managed up with a busy executive.",
+            "interviewerQuestion": "You were a manager in your last role. Are you sure you'd be satisfied going back to an individual contributor position?",
             "options": [
-                "I made sure to always be available whenever they had questions for me.",
-                "I checked in periodically to make sure I was on the right track.",
-                "I learned to summarize key decisions in a few bullet points, which let them approve things quickly without a long back-and-forth."
+                "I think so, though there's always a chance I might miss having a team to lead after being used to that kind of role.",
+                "I'm willing to give it a try and see how it feels, even if I'm not fully certain going in. but plenty of people might disagree with me there.",
+                "Yes, genuinely. I realized during my time managing that I missed doing the hands-on work myself, and this role lets me focus on exactly that, which I find more energizing than overseeing others' work."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Making decisions easy and fast for a busy leader is the essence of managing up effectively.",
-            "explanation": "Summarizing key decisions concisely makes approvals fast and easy for a busy leader, while general availability or periodic check-ins doesn't reduce their workload in the same targeted way.",
+            "hint": "A clear, specific reason for genuinely preferring individual work is stronger than hedging about missing management or framing it as an experiment.",
+            "explanation": "A clear, specific reason for preferring hands-on work, backed by real reflection, directly answers the interviewer's concern. Hedging about possibly missing management plants a seed of doubt, and framing it as something you're 'willing to try' suggests less certainty than the role requires.",
             "id": "ji_l109_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "uncertain",
+                "skeptical",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer with a specific, positive reason for choosing this exact work.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you build trust with a manager who has limited time for you?",
+            "interviewerQuestion": "This role doesn't typically require a graduate degree. What made you apply despite that?",
             "options": [
-                "I try not to take up too much of their time unless it's necessary.",
-                "I make the most of the time we do have by coming prepared with clear updates and specific asks.",
-                "I send written updates so they can review things on their own schedule."
+                "I haven't been able to find anything in my exact field, so I figured this was worth a shot in the meantime.",
+                "I'm honestly not sure the degree matters that much anyway, so I didn't think it would be an issue either way. and I don't think a missing credential like that should really factor much into how a candidate gets evaluated for a role like this.",
+                "The subject matter of this role is exactly what I want to work in day to day, and I care more about doing meaningful work in this specific area than about a role matching my degree level on paper."
+            ],
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "A specific, positive reason for choosing this exact work is stronger than framing it as a fallback or dismissing the relevance of your own credential.",
+            "explanation": "A specific, positive reason for choosing this exact work shows genuine interest rather than settling. Framing it as a fallback while you look elsewhere raises doubts about your commitment, and dismissing your own credential's relevance doesn't actually answer why you want this particular role.",
+            "id": "ji_l109_q3",
+            "interviewerReaction": [
+                "concerned",
+                "uncertain",
+                "reassured"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that ties the gap and the career change into one coherent, deliberate story.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "So to recap: there's a year-long gap in your history, and you're also making a fairly significant career change. Can you tie that together for me?",
+            "options": [
+                "Yeah, it's been a bit of an unusual year, with the gap and now trying something different, but I think it'll all work out in the end.",
+                "During that year I stepped back to think seriously about direction after realizing my old field wasn't a long-term fit, used part of the time to take courses in this new area, and I'm applying now with a clear, considered reason for the switch rather than a rushed decision.",
+                "I know it looks like a lot at once, the gap and the change, but I promise I have good reasons for all of it, even if they're hard to summarize quickly."
             ],
             "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Making limited time count with clear, prepared updates builds trust faster than minimizing contact or relying on written updates alone.",
-            "explanation": "Making limited time count with clear, prepared updates and specific asks builds trust efficiently, while minimizing contact or relying only on written updates doesn't create the same quality interaction.",
-            "id": "ji_l109_q3",
+            "hint": "The strongest answer ties the gap and the change into one coherent, deliberate story, rather than treating them as two separate loose ends.",
+            "explanation": "Weaving the gap and the pivot into one deliberate, coherent story turns two potential concerns into a single considered decision. A vague optimism about it working out doesn't actually explain anything, and promising good reasons without stating them leaves the interviewer without the substance they asked for.",
+            "id": "ji_l110_q1",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "reassured",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that addresses both concerns specifically and connects them into one story.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a time you had to pivot your approach.",
+            "interviewerQuestion": "You mentioned your last role ended in a layoff, and you're also newer to this specific field. How do you want me to think about both of those things together?",
             "options": [
-                "When our original marketing strategy underperformed, I quickly shifted focus to a different channel that ended up working much better.",
-                "I made a few small adjustments along the way to improve results.",
-                "I stuck with the original plan a bit longer to see if it would improve."
+                "I know it's not the strongest combination on paper, but I promise both things have reasonable explanations behind them.",
+                "I understand it might raise some questions, but I'd rather just let my interview speak for itself rather than over-explain everything. though it's hard to know for sure without being in it.",
+                "The layoff wasn't performance-related, it affected a whole team during a restructuring, and it actually gave me the push to move toward this field, where I've since built real, specific experience through a project I can walk you through."
+            ],
+            "correctAnswerIndex": 2,
+            "professionalismRating": 5,
+            "hint": "Addressing both concerns specifically and connecting them into one story is stronger than a general reassurance or declining to address them directly.",
+            "explanation": "Addressing the layoff and the field change specifically, and connecting them causally, turns two separate concerns into one coherent explanation. A vague promise of 'reasonable explanations' doesn't provide any actual substance, and declining to address the concerns directly leaves the interviewer to fill in the blanks themselves.",
+            "id": "ji_l110_q2",
+            "interviewerReaction": [
+                "uncertain",
+                "uncertain",
+                "reassured"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that accepts the junior level as appropriate while naming a transferable strength.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "You're both changing fields and coming in at a more junior level than your years of experience would suggest. Tell me how you think about that combination.",
+            "options": [
+                "I've deliberately chosen to treat the field change as starting fresh, which means the junior level is appropriate for where I actually am in this specific area, even though I bring a strong foundation of transferable skills, like project management, that I expect to grow into more senior work here fairly quickly.",
+                "It's a bit of a strange position to be in, honestly, and I don't have a perfectly clean way to explain it. though I can't point to anything concrete backing that up.",
+                "I know it's an unusual combination, but I think my overall experience should count for something even if the field itself is new to me."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "'Pivot' means making a significant change in direction, not just a minor adjustment.",
-            "explanation": "'Pivoting' means making a real, significant change in direction, unlike small adjustments or persisting longer with an underperforming plan.",
-            "id": "ji_l110_q1",
-            "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you had to pivot quickly in response to new information.",
-            "options": [
-                "I adjusted our messaging slightly to differentiate us a bit more.",
-                "When we learned a competitor had launched a similar product, I completely reworked our positioning within a week.",
-                "I monitored the situation closely before deciding whether to change anything."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "A complete, timely rework in response to new information is a strong example of a real pivot.",
-            "explanation": "A complete, timely rework of your approach shows a genuine pivot, while a slight adjustment or a cautious wait-and-see approach doesn't reflect the same decisive shift in direction.",
-            "id": "ji_l110_q2",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "How do you know when it's time to pivot rather than push through?",
-            "options": [
-                "I try to give any approach enough time before considering a change.",
-                "I ask for other people's opinions on whether to change direction.",
-                "When the data clearly shows the current approach isn't working despite reasonable effort, I look for a fundamentally different path."
-            ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Letting clear data guide a decisive shift is stronger than simply waiting longer or deferring the decision to others.",
-            "explanation": "Letting clear data guide a decisive shift in direction shows sound judgment, while giving more time by default or relying mainly on others' opinions doesn't show the same independent, data-driven decision-making.",
+            "hint": "The strongest answer accepts the junior level as appropriate to the real starting point in the new field, while still naming the transferable strength you bring.",
+            "explanation": "Accepting the junior level as appropriate to a genuine fresh start, while naming a specific transferable strength, resolves the apparent contradiction clearly. Arguing that overall experience 'should count for something' pushes back against the level being offered, and admitting there's no clean explanation leaves the core question unanswered.",
             "id": "ji_l110_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "reassured",
+                "uncertain",
+                "uncertain"
             ]
         }
     ]

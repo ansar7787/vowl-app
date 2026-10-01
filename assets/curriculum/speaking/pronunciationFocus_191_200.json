@@ -6,391 +6,451 @@
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L191_Q1",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Drop your pitch on 'Anyway' to reset the topic.",
-            "explanation": "Let your pitch reset lower on 'Anyway' — that drop signals you're deliberately changing the subject.",
-            "textToSpeak": "Anyway, let's talk about something completely different.",
-            "targetPhoneme": "topic-shift pitch",
-            "phoneticHint": "'Anyway' lands low and clear, then pitch lifts back up for the new topic.",
+            "instruction": "Read the sentence aloud as a balanced opinion.",
+            "hint": "'On the one hand' and 'on the other' set up a contrast: each takes a rise on 'hand' and 'other', and 'flexibility' and 'difficult' take the peaks.",
+            "explanation": "Balanced opinions need two matched chunks. Rise at the end of the first chunk to signal there's more, then fall at the end of the second. 'collaboration' stresses RA.",
+            "textToSpeak": "On the one hand, remote work offers flexibility; on the other, it can make collaboration surprisingly difficult.",
+            "targetPhoneme": "nuanced opinion: balanced contrast",
+            "phoneticHint": "[ɒn ðə ˈwʌn ˈhænd rɪˈmoʊt ˈwɜːrk ˈɒfərz ˌfleksəˈbɪləti] | [ɒn ði ˈʌðər ɪt kən ˈmeɪk kəˌlæbəˈreɪʃən sərˈpraɪzɪŋli ˈdɪfɪkəlt].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Falling at the end of the first chunk",
+                "Stressing 'COLlaboration' on the first syllable",
+                "Saying 'difficult' with three full syllables"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L191_Q2",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Let 'Anyway' land with a lower pitch to signal the topic shift.",
-            "explanation": "'Anyway' works like a pitch reset button — drop down, then move confidently into the new topic.",
-            "textToSpeak": "Anyway, moving on to the next chapter now.",
-            "targetPhoneme": "topic-shift pitch",
-            "phoneticHint": "'Anyway' drops in pitch first, then the new topic lifts back up.",
+            "instruction": "Read the sentence aloud as a careful opinion.",
+            "hint": "'wouldn't say' is quick; 'exactly' stresses ZACT; 'potential' stresses TEN; 'deserve' stresses SERVE.",
+            "explanation": "A hedged opinion starts softly, with a fall-rise on 'exactly', then states the real view firmly: 'the potential risks deserve more attention'.",
+            "textToSpeak": "I wouldn't say it's a bad idea, exactly, but I do think the potential risks deserve more attention.",
+            "targetPhoneme": "nuanced opinion: hedging",
+            "phoneticHint": "[aɪ ˈwʊdnt ˈseɪ ɪts ə ˈbæd aɪˈdɪə ɪgˈzæktli] fall-rise | [bət aɪ ˈduː ˈθɪŋk ðə pəˈtenʃəl ˈrɪsks dɪˈzɜːrv ˈmɔːr əˈtenʃən].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Putting the main stress on 'ly' in 'exactly'",
+                "Saying 'potential' with stress on 'PO'",
+                "Dropping the final [s] of 'risks'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L191_Q3",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "'Anyway' should drop in pitch, resetting for the new subject.",
-            "explanation": "Mark the topic change with a lower pitch on 'Anyway', then continue smoothly into what's next.",
-            "textToSpeak": "Anyway, let's move on to the budget discussion.",
-            "targetPhoneme": "topic-shift pitch",
-            "phoneticHint": "Pitch falls on 'Anyway', then rises again for what follows.",
+            "instruction": "Read the sentence aloud as a formal opinion.",
+            "hint": "'to some extent' is a softener, 'however' stresses EV, and 'thoroughly' starts with [θ] and has [ʌ] in the middle.",
+            "explanation": "A formal opinion with contrast: a rise on 'proposal', a pause at 'however', then the argument. 'consequences' stresses CON, 'examined' stresses AM.",
+            "textToSpeak": "To some extent, I agree with the proposal; however, I'd argue that its long-term consequences haven't been thoroughly examined.",
+            "targetPhoneme": "nuanced opinion: formal concession",
+            "phoneticHint": "[tə ˈsʌm ɪkˈstent aɪ əˈgriː wɪð ðə prəˈpoʊzəl] | [haʊˈevər aɪd ˈɑːrgjuː ðət ɪts ˈlɒŋtɜːrm ˈkɒnsɪkwənsɪz ˈhævnt bɪn ˈθʌrəli ɪgˈzæmɪnd].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'HOWever' on the first syllable",
+                "Saying 'thoroughly' with [oʊ], as 'thorowly'",
+                "Saying 'examined' as 'examine-ed'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L192_Q1",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Mark the topic change with a lower pitch on 'Anyway'.",
-            "explanation": "This word needs a clear pitch shift — it signals 'let's move on' before you introduce the new subject.",
-            "textToSpeak": "Anyway, let's talk about our plans for tomorrow.",
-            "targetPhoneme": "topic-shift pitch",
-            "phoneticHint": "'Anyway' lands low, resetting before the pitch climbs for the new topic.",
+            "instruction": "Read the sentence aloud as an offer in a negotiation.",
+            "hint": "'increase' as a verb stresses CREASE, 'provided' stresses VID, 'guarantee' stresses TEE, and 'within two' links.",
+            "explanation": "A conditional offer: the main clause is friendly, the condition is firm. Rise on 'order', fall on 'weeks'.",
+            "textToSpeak": "We'd be willing to increase the order, provided you can guarantee delivery within two weeks.",
+            "targetPhoneme": "negotiating: conditional offer",
+            "phoneticHint": "[wiːd bi ˈwɪlɪŋ tʊ ɪnˈkriːs ði ˈɔːrdər] | [prəˈvaɪdɪd ju kən ˌgærənˈtiː dɪˈlɪvəri wɪðˈɪn ˈtuː ˈwiːks].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'INcrease' as a verb",
+                "Stressing 'GUArantee' on the first syllable",
+                "Dropping the [d] in 'provided'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L192_Q2",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Reset your pitch downward on 'Anyway' before the new topic.",
-            "explanation": "Drop your pitch on 'Anyway' to close the previous topic, then pick back up for the new one.",
-            "textToSpeak": "Anyway, let's talk about the holiday plans instead.",
-            "targetPhoneme": "topic-shift pitch",
-            "phoneticHint": "Drop on 'Anyway', then let your pitch recover for the new subject.",
+            "instruction": "Read the sentence aloud as a polite counter-offer.",
+            "hint": "'budgeted' ends in [ɪd], 'prepared' stresses PARED, and 'somewhere in the middle' links.",
+            "explanation": "Pushing back politely: a fall-rise on 'budgeted' signals 'but', then a gentle request. Keep 'would you be prepared to' quick.",
+            "textToSpeak": "That's a little higher than we'd budgeted for; would you be prepared to meet us somewhere in the middle?",
+            "targetPhoneme": "negotiating: counter-offer",
+            "phoneticHint": "[ðæts ə ˈlɪtəl ˈhaɪər ðən wiːd ˈbʌdʒɪtɪd fɔːr] | [wʊdʒə bi prɪˈpeərd tə ˈmiːt əs ˈsʌmweər ɪn ðə ˈmɪdəl].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Saying 'budgeted' as 'budget-d'",
+                "Stressing 'PREpared' on the first syllable",
+                "Not linking 'somewhere in'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L192_Q3",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Let 'Anyway' fall in pitch — your signal for changing subjects.",
-            "explanation": "'Anyway' resets the conversation's pitch — use it to clearly separate old topic from new.",
-            "textToSpeak": "Anyway, let's check out the other department now.",
-            "targetPhoneme": "topic-shift pitch",
-            "phoneticHint": "'Anyway' dips in pitch, then the sentence lifts back up after it.",
+            "instruction": "Read the sentence aloud as a negotiation question.",
+            "hint": "'commit' stresses MIT, 'three-year' has [θr], 'discount' as a noun stresses DIS, and 'fifteen' stresses TEEN.",
+            "explanation": "A bargaining question: the 'if' clause rises, the main clause falls. Numbers carry the peaks: THREE-YEAR, fifTEEN perCENT.",
+            "textToSpeak": "If we commit to a three-year contract, would it be reasonable to expect a discount of around fifteen percent?",
+            "targetPhoneme": "negotiating: asking for a discount",
+            "phoneticHint": "[ɪf wi kəˈmɪt tʊ ə ˈθriː jɪr ˈkɒntrækt] | [wʊd ɪt bi ˈriːzənəbəl tʊ ɪkˈspekt ə ˈdɪskaʊnt əv əˈraʊnd fɪfˈtiːn pərˈsent].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'COMmit' on the first syllable",
+                "Saying 'three-year' as 'tree-year'",
+                "Stressing 'disCOUNT' as a noun"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L193_Q1",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Drop your voice on 'Anyway' to close out the old topic.",
-            "explanation": "Let 'Anyway' land with a lower, decisive pitch — it's your signal that you're changing direction.",
-            "textToSpeak": "Anyway, let's order dessert before we leave.",
-            "targetPhoneme": "topic-shift pitch",
-            "phoneticHint": "Pitch falls low on 'Anyway', then climbs again into the new topic.",
+            "instruction": "Read the sentence aloud as the opening of a pitch.",
+            "hint": "'imagine' stresses MAJ, 'energy' stresses EN, 'technology' stresses NOL, and 'possible' stresses POSS.",
+            "explanation": "A pitch opens with a vision: slow pace on 'imagine a world', rising pitch on 'energy', and a firm fall on 'possible'.",
+            "textToSpeak": "Imagine a world where every household could generate its own clean energy; that's exactly what our technology makes possible.",
+            "targetPhoneme": "pitching: a vision",
+            "phoneticHint": "[ɪˈmædʒɪn ə ˈwɜːrld weər ˈevri ˈhaʊshoʊld kʊd ˈdʒenəreɪt ɪts ˈoʊn ˈkliːn ˈenərdʒi] | [ðæts ɪgˈzæktli wɒt aʊər tekˈnɒlədʒi ˈmeɪks ˈpɒsəbəl].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'IMagine' on the first syllable",
+                "Stressing 'TECHnology' on the first syllable",
+                "Dropping the [d] in 'world'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L193_Q2",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "'Anyway' needs a lower, resetting pitch here.",
-            "explanation": "This discourse marker needs its own pitch contour, distinct from the sentence that follows it.",
-            "textToSpeak": "Anyway, let's move on to the next feature.",
-            "targetPhoneme": "topic-shift pitch",
-            "phoneticHint": "'Anyway' resets low, then the following topic rises back up.",
+            "instruction": "Read the sentence aloud as a persuasive claim.",
+            "hint": "'don't just' sets up a list: SAVE money, SAVE time, reDUCE waste, GAIN control.",
+            "explanation": "A persuasive list: rise on each item and fall on 'data'. 'control' stresses TROL, 'complete' stresses PLETE.",
+            "textToSpeak": "Our customers don't just save money; they save time, reduce waste, and gain complete control over their data.",
+            "targetPhoneme": "pitching: a persuasive list",
+            "phoneticHint": "[aʊər ˈkʌstəmərz ˈdoʊnt dʒʌst ˈseɪv ˈmʌni] | [ðeɪ ˈseɪv ˈtaɪm rɪˈdjuːs ˈweɪst] | [ənd ˈgeɪn kəmˈpliːt kənˈtroʊl ˈoʊvər ðeər ˈdeɪtə].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Ending every item with a full fall",
+                "Stressing 'REduce' on the first syllable",
+                "Saying 'control' with stress on the first syllable"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L193_Q3",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Signal the shift with a pitch drop on 'Anyway'.",
-            "explanation": "Give 'Anyway' a clear downward pitch shift — it tells the listener a topic change is coming.",
-            "textToSpeak": "Anyway, let's talk about your exercise routine now.",
-            "targetPhoneme": "topic-shift pitch",
-            "phoneticHint": "Drop your pitch on 'Anyway', then lift it for the new subject.",
+            "instruction": "Read the sentence aloud as a reassuring pitch.",
+            "hint": "'leap of faith' reduces 'of'; 'thoroughly' and 'results' carry the evidence.",
+            "explanation": "Reassurance: slow down on 'tested this thoroughly', then finish with a confident fall on 'themselves'. 'speak for themselves' links as 'speak-fə-themselves'.",
+            "textToSpeak": "We're not asking you to take a leap of faith; we've tested this thoroughly, and the results speak for themselves.",
+            "targetPhoneme": "pitching: reassurance",
+            "phoneticHint": "[wɪər ˈnɒt ˈæskɪŋ ju tə ˈteɪk ə ˈliːp əv ˈfeɪθ] | [wiːv ˈtestɪd ðɪs ˈθʌrəli] | [ənd ðə rɪˈzʌlts ˈspiːk fə ðəmˈselvz].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Saying 'of' with a full [ɒv]",
+                "Replacing the final [θ] of 'faith' with [f]",
+                "Stressing 'THEMselves' on the first syllable"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L194_Q1",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Let 'Anyway' land low, then lift back up for what's next.",
-            "explanation": "Reset your pitch on 'Anyway', almost like starting a fresh thought, before moving to the new subject.",
-            "textToSpeak": "Anyway, let's talk about the next episode now.",
-            "targetPhoneme": "topic-shift pitch",
-            "phoneticHint": "'Anyway' lands low and clear, then the new topic pitch climbs back.",
+            "instruction": "Read the sentence aloud as constructive feedback.",
+            "hint": "'value' stresses VAL, 'honest' has a silent h, 'structure' has [str] and [tʃ], and 'evidence' stresses EV.",
+            "explanation": "Feedback starts with appreciation (warm, wide pitch) and moves to the message (steady, clear). Pause after 'honest' before the content.",
+            "textToSpeak": "I really value your work, which is why I want to be honest: the report needs a clearer structure and stronger evidence.",
+            "targetPhoneme": "difficult feedback: giving it",
+            "phoneticHint": "[aɪ ˈrɪəli ˈvæljuː jɔːr ˈwɜːrk wɪtʃ ɪz ˈwaɪ aɪ ˈwɒnt tə bi ˈɒnɪst] | [ðə rɪˈpɔːrt ˈniːdz ə ˈklɪərər ˈstrʌktʃər ənd ˈstrɒŋgər ˈevɪdəns].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Sounding the h at the start of 'honest'",
+                "Saying 'structure' with [tj]",
+                "Dropping the [g] in 'stronger'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L194_Q2",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Pause genuinely after 'I think...' before continuing.",
-            "explanation": "Pause genuinely after 'I think' — that gap shows you're actually forming the thought as you speak.",
-            "textToSpeak": "I think... we should probably leave a bit earlier.",
-            "targetPhoneme": "hesitation pacing",
-            "phoneticHint": "Hold real silence at the '...' — don't rush into the rest of the sentence.",
+            "instruction": "Read the sentence aloud as a gracious reply to criticism.",
+            "hint": "'candid' stresses CAN, 'realised' ends in [zd], 'confusing' stresses FEW, and 'definitely' has four syllables.",
+            "explanation": "Receiving feedback gracefully: warm thanks, honest admission, firm commitment. 'definitely' is DEF-i-nit-ly, with a clear [f].",
+            "textToSpeak": "Thanks for being so candid; I hadn't realised how confusing the instructions were, and I'll definitely revise them.",
+            "targetPhoneme": "difficult feedback: receiving it",
+            "phoneticHint": "[ˈθæŋks fə ˈbiːɪŋ soʊ ˈkændɪd] | [aɪ ˈhædnt ˈriːəlaɪzd haʊ kənˈfjuːzɪŋ ðə ɪnˈstrʌkʃənz wɜːr] | [ənd aɪl ˈdefɪnətli rɪˈvaɪz ðəm].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Saying 'realised' as 'realise-ed'",
+                "Dropping the [f] in 'definitely'",
+                "Stressing 'CONfusing' on the first syllable"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L194_Q3",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Let a real pause follow 'I think...' before you continue.",
-            "explanation": "Let the silence after 'I think' feel real — don't rush through it, let it show genuine consideration.",
-            "textToSpeak": "I think... the essay needs a stronger conclusion.",
-            "targetPhoneme": "hesitation pacing",
-            "phoneticHint": "Let the '...' be a real pause, not a rushed transition.",
+            "instruction": "Read the sentence aloud as tactful feedback.",
+            "hint": "'strengths' ends in [ŋθs], 'communicate' stresses MU, and 'effectively' stresses FEC.",
+            "explanation": "A soft correction: a fall-rise on 'weak', then the true reason. 'strengths' needs time; 'effectively' has four syllables.",
+            "textToSpeak": "It's not that the idea is weak; it's just that the presentation didn't communicate its strengths effectively.",
+            "targetPhoneme": "difficult feedback: softening",
+            "phoneticHint": "[ɪts ˈnɒt ðət ði aɪˈdɪə ɪz ˈwiːk] | [ɪts dʒʌst ðət ðə ˌprezənˈteɪʃən ˈdɪdnt kəˈmjuːnɪkeɪt ɪts ˈstreŋθs ɪˈfektɪvli].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Dropping the [θ] in 'strengths'",
+                "Stressing 'COMmunicate' on the first syllable",
+                "Stressing 'EFfectively' on the first syllable"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L195_Q1",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Hold a genuine beat of silence after 'I think...'.",
-            "explanation": "This isn't a scripted pause — hold it naturally, as if you're actually still deciding what to say.",
-            "textToSpeak": "I think... we should reconsider the entire timeline.",
-            "targetPhoneme": "hesitation pacing",
-            "phoneticHint": "Give the '...' genuine silence before the sentence continues.",
+            "instruction": "Read the sentence aloud as a thinking-aloud answer.",
+            "hint": "Fillers 'um' and 'well' are short and low; the content words 'depends', 'works' and 'doesn't' carry the stress.",
+            "explanation": "Natural speech includes hesitation. Make fillers quick and low-pitched so they don't hide the message. Fall on 'depends', rise on 'works', fall on 'doesn't'.",
+            "textToSpeak": "Well, um, I suppose it depends, really; I mean, in some situations it works, and in others, well, it doesn't.",
+            "targetPhoneme": "spontaneous speech: fillers and hedges",
+            "phoneticHint": "[ˈwel ˈʌm aɪ səˈpoʊz ɪt dɪˈpendz ˈrɪəli] | [aɪ ˈmiːn ɪn səm ˌsɪtʃuˈeɪʃənz ɪt ˈwɜːrks] | [ənd ɪn ˈʌðərz ˈwel ɪt ˈdʌzənt].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing the fillers as strongly as the content words",
+                "Using the same pitch on every clause",
+                "Dropping the [z] in 'doesn't'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L195_Q2",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Don't rush past 'I think...' — pause naturally before continuing.",
-            "explanation": "Slow down and pause after 'I think' — the hesitation itself communicates thoughtful uncertainty.",
-            "textToSpeak": "I think... we should book a different hotel instead.",
-            "targetPhoneme": "hesitation pacing",
-            "phoneticHint": "Don't skip past the '...' — hold it as an authentic pause.",
+            "instruction": "Read the sentence aloud as a spontaneous restart.",
+            "hint": "A repair: 'actually' signals a restart; the new version carries the stress: MAIN, ISsue, LACK, OWNership.",
+            "explanation": "A self-repair has a short pause and a lower pitch on the filler, then a fresh start with a higher pitch. 'actually' is AK-shu-a-li.",
+            "textToSpeak": "Sorry, what I meant to say was... actually, let me start again: the main issue is the lack of clear ownership.",
+            "targetPhoneme": "spontaneous speech: self-repair",
+            "phoneticHint": "[ˈsɒri wɒt aɪ ˈment tə ˈseɪ wəz] | [ˈæktʃuəli let mi ˈstɑːrt əˈgen] | [ðə ˈmeɪn ˈɪʃuː ɪz ðə ˈlæk əv ˈklɪr ˈoʊnərʃɪp].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Saying 'actually' with stress on the second syllable",
+                "Rushing through the pause",
+                "Stressing 'ownership' on the second part"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L195_Q3",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Give 'I think...' a real pause, as if still forming the thought.",
-            "explanation": "Give yourself a real beat of silence after 'I think' before continuing — that's the natural pacing of hesitation.",
-            "textToSpeak": "I think... we should invite everyone this time.",
-            "targetPhoneme": "hesitation pacing",
-            "phoneticHint": "The '...' marks real hesitation — let it breathe before continuing.",
+            "instruction": "Read the sentence aloud as an informal analogy.",
+            "hint": "'you know' and 'kind of' are quick; 'hard to explain', 'riding a bike' and 'never forget' carry the peaks.",
+            "explanation": "An analogy: start casually, then slow slightly for the comparison. 'a bit like riding a bike' links; 'once you get it' is a quick condition.",
+            "textToSpeak": "You know, it's kind of hard to explain, but basically it's a bit like riding a bike; once you get it, you never forget.",
+            "targetPhoneme": "spontaneous speech: analogy",
+            "phoneticHint": "[jə ˈnoʊ ɪts ˈkaɪndə ˈhɑːrd tʊ ɪkˈspleɪn] | [bət ˈbeɪsɪkli ɪts ə ˈbɪt ˈlaɪk ˈraɪdɪŋ ə ˈbaɪk] | [wʌns jə ˈget ɪt ju ˈnevər fərˈget].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'you know' and 'kind of' strongly",
+                "Saying 'riding a' with a gap",
+                "Falling at the end of 'it', so the sentence seems finished"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L196_Q1",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Let the silence after 'I think...' feel unrehearsed and natural.",
-            "explanation": "The pause here isn't empty — it's doing work, showing you're weighing your words carefully.",
-            "textToSpeak": "I think... I'll go with the other color instead.",
-            "targetPhoneme": "hesitation pacing",
-            "phoneticHint": "Hold the pause at '...' naturally, without rushing forward.",
+            "instruction": "Read the sentence aloud in a video meeting.",
+            "hint": "'mute' has [mj]; 'could you' becomes 'couldja'; 'can't' keeps a strong vowel; 'moment' stresses MO.",
+            "explanation": "Virtual-meeting phrases are quick and light. 'you're on mute' falls, 'could you try again' rises; 'can't hear' stresses the negative.",
+            "textToSpeak": "Sorry, you're on mute; could you try again? We can't hear you at the moment.",
+            "targetPhoneme": "video meetings: audio problems",
+            "phoneticHint": "[ˈsɒri jʊr ɒn ˈmjuːt] | [kʊdʒə ˈtraɪ əˈgen] | [wi ˈkænt ˈhɪr ju ət ðə ˈmoʊmənt].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Saying 'mute' without the [j]",
+                "Weakening 'can't' to a schwa, so it sounds like 'can'",
+                "Falling on 'again'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L196_Q2",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Pause after 'I think...' — let it sound like genuine hesitation.",
-            "explanation": "Let 'I think' trail off naturally into a brief silence before the rest of the sentence continues.",
-            "textToSpeak": "I think... this dish needs a bit more seasoning.",
-            "targetPhoneme": "hesitation pacing",
-            "phoneticHint": "Let '...' sit as genuine silence before the thought continues.",
+            "instruction": "Read the sentence aloud as a presenter checking a screen share.",
+            "hint": "'everyone' has three beats, 'screen' starts with [skr], and 'sharing' has [ʃ].",
+            "explanation": "A check, then a backup plan. Rise on 'screen', fall on 'window'. 'different' is two or three beats: DIF-rent.",
+            "textToSpeak": "Can everyone see my screen? If not, I'll stop sharing and try again in a different window.",
+            "targetPhoneme": "video meetings: screen sharing",
+            "phoneticHint": "[kən ˈevriwʌn ˈsiː maɪ ˈskriːn] rising | [ɪf ˈnɒt aɪl ˈstɒp ˈʃeərɪŋ ənd ˈtraɪ əˈgen ɪn ə ˈdɪfrənt ˈwɪndoʊ] falling.",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Dropping the [k] in 'screen', as 'sreen'",
+                "Saying 'different' as 'dif-fer-ent' with three full beats",
+                "Falling on 'screen'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L196_Q3",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Hold back a moment after 'I think...' before the rest follows.",
-            "explanation": "This hesitation should sound unrehearsed — pause as if the thought is still forming in real time.",
-            "textToSpeak": "I think... the update caused this problem somehow.",
-            "targetPhoneme": "hesitation pacing",
-            "phoneticHint": "The '...' deserves real time — don't hurry through it.",
+            "instruction": "Read the sentence aloud as a polite interruption.",
+            "hint": "'interrupt' stresses RUPT, 'connection' stresses NEC, and 'cutting out' links.",
+            "explanation": "Interrupting politely: a quick, soft opener, the problem, then the request with a rise. 'last part of' links as 'last-par-tuv'.",
+            "textToSpeak": "Sorry to interrupt, but the connection keeps cutting out; could you please repeat the last part of what you said?",
+            "targetPhoneme": "video meetings: polite interruption",
+            "phoneticHint": "[ˈsɒri tʊ ˌɪntəˈrʌpt] | [bət ðə kəˈnekʃən ˈkiːps ˈkʌtɪŋ ˈaʊt] | [kʊdʒə ˈpliːz rɪˈpiːt ðə ˈlæst ˈpɑːrt əv wɒt ju ˈsed].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'INterrupt' on the first syllable",
+                "Pausing between 'cutting' and 'out'",
+                "Stressing 'please' too strongly"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L197_Q1",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Let 'I think...' trail into a real, natural pause.",
-            "explanation": "Don't rush past the pause — it's what makes this sound like genuine, in-the-moment thinking.",
-            "textToSpeak": "I think... I should rest for a few more days.",
-            "targetPhoneme": "hesitation pacing",
-            "phoneticHint": "Give '...' an authentic pause before the rest of the sentence.",
+            "instruction": "Read the sentence aloud as the start of a tense story.",
+            "hint": "'nearly midnight' sets the scene; 'phone rang' and 'almost didn't answer' carry peaks; 'something told me' is a quick aside.",
+            "explanation": "A story needs a slower start: low pitch, steady rhythm, then a fall-rise on 'answer' before the twist. 'answer' has a silent w.",
+            "textToSpeak": "It was nearly midnight when the phone rang; I almost didn't answer, but something told me I should.",
+            "targetPhoneme": "storytelling: the tense opening",
+            "phoneticHint": "[ɪt wəz ˈnɪrli ˈmɪdnaɪt wen ðə ˈfoʊn ˈræŋ] | [aɪ ˈɔːlmoʊst ˈdɪdnt ˈænsər] | [bət ˈsʌmθɪŋ ˈtoʊld mi aɪ ˈʃʊd].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Sounding the w at the start of 'answer', as 'wan-sir'",
+                "Stressing 'almost' on the second syllable",
+                "Rising on 'should', which sounds like a question"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L197_Q2",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Give yourself a genuine beat of silence after 'I think...'.",
-            "explanation": "Hold the silence after 'I think' just a beat longer than feels comfortable — that's real hesitation.",
-            "textToSpeak": "I think... that ending could have been stronger.",
-            "targetPhoneme": "hesitation pacing",
-            "phoneticHint": "Hold real silence at '...' — let the hesitation feel genuine.",
+            "instruction": "Read the sentence aloud as a story with a sudden problem.",
+            "hint": "'We'd been driving' is quick; 'out of nowhere' takes a dramatic pause; 'terrible noise' falls.",
+            "explanation": "Build suspense: steady pace, a pause after 'when', a quick 'out of nowhere' with rising pitch, and a firm fall on 'noise'.",
+            "textToSpeak": "We'd been driving for hours through the mountains when, out of nowhere, the engine started making a terrible noise.",
+            "targetPhoneme": "storytelling: building suspense",
+            "phoneticHint": "[wiːd bɪn ˈdraɪvɪŋ fər ˈaʊərz θruː ðə ˈmaʊntənz ˈwen] | [ˈaʊt əv ˈnoʊwer] | [ði ˈendʒɪn ˈstɑːrtɪd ˈmeɪkɪŋ ə ˈterəbəl ˈnɔɪz].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Saying 'mountains' with a full [ɪ] in the last syllable",
+                "Not pausing after 'when'",
+                "Stressing 'terRIble' on the second syllable"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L197_Q3",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Bring rhythm, stress, and intonation together across both clauses.",
-            "explanation": "This sentence combines everything: steady rhythm, stress on key words, and a smooth pitch contour throughout.",
-            "textToSpeak": "By the time I finally got home, everyone had already gone to sleep.",
-            "targetPhoneme": "full prosody mastery",
-            "phoneticHint": "Stress 'finally', 'home', 'already', and 'sleep'; keep the whole sentence flowing as one.",
+            "instruction": "Read the sentence aloud as the happy turn in a story.",
+            "hint": "'just as we were about to give up' is a fast build; 'stranger appeared' takes a peak; 'lantern' and 'smile' end the sentence.",
+            "explanation": "A rescue moment: speed up on the build, then slow and warm on the arrival. 'appeared' stresses PEARED; 'lantern' has [nt] and a weak ending.",
+            "textToSpeak": "And then, just as we were about to give up, a stranger appeared at the door with a lantern and a warm smile.",
+            "targetPhoneme": "storytelling: the turning point",
+            "phoneticHint": "[ənd ˈðen dʒʌst əz wi wər əˈbaʊt tə ˈgɪv ˈʌp] | [ə ˈstreɪndʒər əˈpɪərd ət ðə ˈdɔːr] | [wɪð ə ˈlæntərn ənd ə ˈwɔːrm ˈsmaɪl].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'APpeared' on the first syllable",
+                "Saying 'stranger' with a hard [g]",
+                "Dropping the [t] in 'lantern'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L198_Q1",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Combine steady rhythm, clear stress, and smooth intonation here.",
-            "explanation": "Bring together rhythm, stress, and intonation here — this complex sentence needs all three working as one.",
-            "textToSpeak": "By the time the bell rang, I had already finished every question.",
-            "targetPhoneme": "full prosody mastery",
-            "phoneticHint": "Stress 'bell', 'rang', 'already', and 'finished'; keep the whole sentence flowing as one.",
+            "instruction": "Read the sentence aloud as the main message of a talk.",
+            "hint": "'conclusion' stresses CLU, 'evidence' stresses EV, 'suggests' stresses JESTS, and 'investment' stresses VEST.",
+            "explanation": "A conclusion states the main claim slowly and firmly. 'strongly suggests' takes the peaks; 'many times over' falls.",
+            "textToSpeak": "In conclusion, the evidence strongly suggests that early investment pays for itself many times over.",
+            "targetPhoneme": "presentation ending: main message",
+            "phoneticHint": "[ɪn kənˈkluːʒən] | [ði ˈevɪdəns ˈstrɒŋli səˈdʒests ðət ˈɜːrli ɪnˈvestmənt ˈpeɪz fər ɪtˈself ˈmeni ˈtaɪmz ˈoʊvər].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'CONclusion' on the first syllable",
+                "Saying 'suggests' with a hard [g]",
+                "Dropping the [ts] in 'suggests'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L198_Q2",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "This sentence needs rhythm, stress, and intonation working as one.",
-            "explanation": "Keep the rhythm steady, stress the key content words, and let your pitch flow naturally across both clauses.",
-            "textToSpeak": "By the time the meeting ended, we had already solved the main problem.",
-            "targetPhoneme": "full prosody mastery",
-            "phoneticHint": "Stress 'meeting', 'ended', 'already', and 'solved'; keep the whole sentence flowing as one.",
+            "instruction": "Read the sentence aloud as a call to action.",
+            "hint": "'approve' stresses PROVE, 'appoint' stresses POINT, and 'launch date' has stress on LAUNCH.",
+            "explanation": "A call to action: a question with a rise, then three numbered steps. Each step gets a rise; the last falls.",
+            "textToSpeak": "So, what do we need to do next? First, approve the budget; second, appoint a project lead; and third, set a launch date.",
+            "targetPhoneme": "presentation ending: call to action",
+            "phoneticHint": "[soʊ ˈwɒt də wi ˈniːd tə ˈduː ˈnekst] | [ˈfɜːrst əˈpruːv ðə ˈbʌdʒɪt] | [ˈsekənd əˈpɔɪnt ə ˈprɒdʒekt ˈliːd] | [ənd ˈθɜːrd ˈset ə ˈlɔːntʃ ˈdeɪt].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'APprove' on the first syllable",
+                "Ending every step with a full fall",
+                "Saying 'third' with [t] at the start"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L198_Q3",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Blend rhythm, stress, and pitch smoothly across both clauses.",
-            "explanation": "This is full-sentence prosody: even rhythm, clear stress, and connected intonation from start to finish.",
-            "textToSpeak": "By the time we reached the hotel, the sun had already set completely.",
-            "targetPhoneme": "full prosody mastery",
-            "phoneticHint": "Stress 'hotel', 'sun', 'already', and 'set'; keep the whole sentence flowing as one.",
+            "instruction": "Read the sentence aloud as the end of a presentation.",
+            "hint": "'delighted' stresses LIGHT, 'questions' has [stʃ], and 'might have' reduces to 'might-uv'.",
+            "explanation": "A closing: a firm fall on 'end', then a friendly invitation. 'questions' is KWES-chunz.",
+            "textToSpeak": "That brings me to the end; I'd be delighted to take any questions you might have.",
+            "targetPhoneme": "presentation ending: inviting questions",
+            "phoneticHint": "[ðæt ˈbrɪŋz mi tə ði ˈend] | [aɪd bi dɪˈlaɪtɪd tə ˈteɪk ˈeni ˈkwestʃənz ju ˈmaɪt əv].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Saying 'questions' with [ʃ], as 'quesshuns'",
+                "Stressing 'DElighted' on the first syllable",
+                "Saying 'have' as [hæv] in 'might have'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L199_Q1",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Bring together even rhythm and clear stress across the whole sentence.",
-            "explanation": "Treat the two halves of this sentence as one flowing unit, with stress guiding the listener through the timeline.",
-            "textToSpeak": "By the time everyone arrived, dinner had already been completely prepared.",
-            "targetPhoneme": "full prosody mastery",
-            "phoneticHint": "Stress 'everyone', 'arrived', 'already', and 'prepared'; keep the whole sentence flowing as one.",
+            "instruction": "Read the sentence aloud as a conference announcement.",
+            "hint": "'sixth' ends in [ksθ], 'sustainable' stresses TAIN, 'infrastructure' has [str], 'governments' has [rnm], and 'strengthen' has [ŋθ].",
+            "explanation": "Six challenges in one sentence: take a breath before 'sixth', give each long word one clear stress, and chunk after 'infrastructure'.",
+            "textToSpeak": "The sixth annual conference on sustainable infrastructure will examine how governments can strengthen supply chains.",
+            "targetPhoneme": "mastery: clusters and long words",
+            "phoneticHint": "[ðə ˈsɪksθ ˈænjuəl ˈkɒnfərəns ɒn səˈsteɪnəbəl ˈɪnfrəstrʌktʃər] | [wɪl ɪgˈzæmɪn haʊ ˈgʌvərnmənts kən ˈstreŋθən səˈplaɪ ˈtʃeɪnz].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Dropping the [θ] in 'sixth' or 'strengthen'",
+                "Stressing 'inFRAstructure' on the second syllable",
+                "Dropping the [n] in 'governments'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L199_Q2",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Let rhythm, stress, and intonation flow together through both clauses.",
-            "explanation": "Combine steady rhythm with clear stress on 'already' and the key verb to bring out the completed-action meaning.",
-            "textToSpeak": "By the time I reached the counter, the sale had already ended.",
-            "targetPhoneme": "full prosody mastery",
-            "phoneticHint": "Stress 'counter', 'sale', 'already', and 'ended'; keep the whole sentence flowing as one.",
+            "instruction": "Read the sentence aloud as a project report.",
+            "hint": "'although' stresses THOUGH, 'technicians' stresses NISH, 'installation' stresses LAY, and 'documented' stresses DOC.",
+            "explanation": "A contrast sentence: a fall-rise on 'demanding', then a three-part result. 'technicians' has [ʃ], 'installation' has [ʃ], and 'thoroughly' has [θ].",
+            "textToSpeak": "Although the timetable was demanding, the technicians finished the installation early, and the outcomes were thoroughly documented.",
+            "targetPhoneme": "mastery: contrast and professional vocabulary",
+            "phoneticHint": "[ɔːlˈðoʊ ðə ˈtaɪmteɪbəl wəz dɪˈmændɪŋ] | [ðə tekˈnɪʃənz ˈfɪnɪʃt ði ˌɪnstəˈleɪʃən ˈɜːrli] | [ənd ði ˈaʊtkʌmz wər ˈθʌrəli ˈdɒkjumentɪd].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Saying 'technicians' with [s] instead of [ʃ]",
+                "Stressing 'INstallation' on the first syllable",
+                "Adding a third syllable to 'finished'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L199_Q3",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "This sentence tests rhythm, stress, and intonation all at once.",
-            "explanation": "Let your intonation connect both clauses smoothly, while your rhythm and stress carry the sentence's structure.",
-            "textToSpeak": "By the time the food arrived, we had already finished our drinks.",
-            "targetPhoneme": "full prosody mastery",
-            "phoneticHint": "Stress 'food', 'arrived', 'already', and 'finished'; keep the whole sentence flowing as one.",
+            "instruction": "Read the sentence aloud as survey results.",
+            "hint": "'three-fifths' has [θr] and [fθs], 'thirty-eight' has two beats, 'thought' has [θ], and 'worthwhile' has [rθw].",
+            "explanation": "Statistics plus contrast: slow on the numbers, a fall-rise on 'worthwhile', then the contrast. 'though' ends in [oʊ].",
+            "textToSpeak": "Roughly three-fifths of the thirty-eight participants thought the training was worthwhile, though several mentioned the tight deadlines.",
+            "targetPhoneme": "mastery: numbers and [θ] sounds",
+            "phoneticHint": "[ˈrʌfli ˈθriː ˈfɪfθs əv ðə ˈθɜːrti ˈeɪt pɑːrˈtɪsɪpənts] | [ˈθɔːt ðə ˈtreɪnɪŋ wəz wɜːrθˈwaɪl] | [ðoʊ ˈsevrəl ˈmenʃənd ðə ˈtaɪt ˈdedlaɪnz].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Saying 'fifths' as 'fifs'",
+                "Saying 'worthwhile' without the [θ]",
+                "Stressing 'PARticipants' on the first syllable"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L200_Q1",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Combine steady timing with clear stress across both halves.",
-            "explanation": "This sentence tests everything at once — rhythm, stress, and intonation all need to work together here.",
-            "textToSpeak": "By the time I restarted the laptop, the update had already finished.",
-            "targetPhoneme": "full prosody mastery",
-            "phoneticHint": "Stress 'restarted', 'laptop', 'already', and 'finished'; keep the whole sentence flowing as one.",
+            "instruction": "Read the sentence aloud as a personal reflection.",
+            "hint": "'honestly' has a silent h, 'genuinely' stresses JEN, 'pronunciation' is pro-NUN-see-AY-shun, and 'isn't perfect' links.",
+            "explanation": "A reflective speech: a warm start, a fall-rise on 'perfect' to signal 'but', then a confident fall on 'matters'. 'pronunciation' has [ʌ] in the second syllable, not [aʊ].",
+            "textToSpeak": "Honestly, when I look back at how far I've come, I'm genuinely proud; my pronunciation isn't perfect, but people understand me clearly, and that's what matters.",
+            "targetPhoneme": "final mastery: reflection",
+            "phoneticHint": "[ˈɒnɪstli wen aɪ ˈlʊk ˈbæk ət ˈhaʊ ˈfɑːr aɪv ˈkʌm] | [aɪm ˈdʒenjuɪnli ˈpraʊd] | [maɪ prəˌnʌnsiˈeɪʃən ˈɪzənt ˈpɜːrfɪkt] | [bət ˈpiːpəl ˌʌndərˈstænd mi ˈklɪrli] | [ənd ðæts wɒt ˈmætərz].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Saying 'pronunciation' as 'pro-NOUN-ciation' with [aʊ]",
+                "Sounding an [h] at the start of 'honestly'",
+                "Dropping the [t] in 'perfect'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L200_Q2",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Bring your full prosody skills together across this whole sentence.",
-            "explanation": "Bring your full prosody toolkit here: even timing, clear stress, and a natural pitch contour across the whole sentence.",
-            "textToSpeak": "By the time I saw the doctor, the pain had mostly disappeared.",
-            "targetPhoneme": "full prosody mastery",
-            "phoneticHint": "Stress 'doctor', 'pain', 'mostly', and 'disappeared'; keep the whole sentence flowing as one.",
+            "instruction": "Read the sentence aloud as a surprised reflection.",
+            "hint": "'If you'd told me' and 'I'd be' contract; 'negotiating' has [ʃ]; 'international' stresses NA; 'wouldn't have' shrinks.",
+            "explanation": "A long sentence needs chunking: 'If you'd told me a year ago' | 'that I'd be negotiating contracts and presenting to international clients in English' | 'I wouldn't have believed you'.",
+            "textToSpeak": "If you'd told me a year ago that I'd be negotiating contracts and presenting to international clients in English, I wouldn't have believed you.",
+            "targetPhoneme": "final mastery: long conditional",
+            "phoneticHint": "[ɪf juːd ˈtoʊld mi ə ˈjɪr əˈgoʊ] | [ðət aɪd bi nɪˈgoʊʃieɪtɪŋ ˈkɒntrækts ənd prɪˈzentɪŋ tʊ ˌɪntərˈnæʃənəl ˈklaɪənts ɪn ˈɪŋglɪʃ] | [aɪ ˈwʊdnt əv bɪˈliːvd ju].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'INternational' on the first syllable",
+                "Saying 'negotiating' with [s] instead of [ʃ]",
+                "Saying 'wouldn't have' with a full [hæv]"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L200_Q3",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Let stress and intonation connect smoothly across both clauses.",
-            "explanation": "Let stress and intonation work together to highlight that one thing had already happened before the other.",
-            "textToSpeak": "By the time we found our seats, the show had already begun.",
-            "targetPhoneme": "full prosody mastery",
-            "phoneticHint": "Stress 'seats', 'show', 'already', and 'begun'; keep the whole sentence flowing as one.",
+            "instruction": "Read the sentence aloud as a closing promise to yourself.",
+            "hint": "'whatever' stresses EV, 'challenges' ends in [ɪz], 'confident' stresses CON, 'listen' has a silent t, and 'practising' stresses PRAC.",
+            "explanation": "A confident closing: three parallel actions, each with a peak (LISTen, SPEAK, PRACtise), and a final fall on 'day'. 'every' has two beats.",
+            "textToSpeak": "Whatever challenges come next, I'm confident I can handle them: I'll listen carefully, speak clearly, and keep practising every single day.",
+            "targetPhoneme": "final mastery: closing promise",
+            "phoneticHint": "[wɒtˈevər ˈtʃælɪndʒɪz ˈkʌm ˈnekst] | [aɪm ˈkɒnfɪdənt aɪ kən ˈhændəl ðəm] | [aɪl ˈlɪsən ˈkeərfəli] | [ˈspiːk ˈklɪrli] | [ənd ˈkiːp ˈpræktɪsɪŋ ˈevri ˈsɪŋgəl ˈdeɪ].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Sounding the t in 'listen'",
+                "Making 'every' three even beats, 'ev-er-y'",
+                "Stressing 'conFIDent' on the second syllable"
             ]
         }
     ]

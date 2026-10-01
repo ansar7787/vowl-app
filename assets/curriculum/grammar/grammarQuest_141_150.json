@@ -5,543 +5,393 @@
     "quests": [
         {
             "id": "gq_l141_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The sudden ___ of the project caused widespread concern.",
-            "options": [
-                "abandon",
-                "abandoned",
-                "abandoning",
-                "abandonment"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "abandonment",
-            "hint": "Which noun form of 'abandon' is used in formal writing?",
-            "explanation": "'Abandonment' is the noun: the abandonment of the project. Nominalisation: abandon → abandonment, achieve → achievement, develop → development, assess → assessment. These abstract nouns are central to formal prose.",
-            "grammarRule": "Word Formation (Nominalisation)"
+            "question": "English ___ spoken in many countries.",
+            "options": ["are", "was", "is", "be"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "is",
+            "hint": "The focus here is on the language being spoken, not on who speaks it.",
+            "explanation": "Passive voice (is/are + past participle) shifts focus to the receiver of the action: English is spoken. 'English' is singular, so it takes 'is'.",
+            "grammarRule": "Passive Voice: Present Simple"
         },
         {
             "id": "gq_l141_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "His ___ to cooperate with investigators is puzzling.",
-            "options": [
-                "refusing",
-                "refusal",
-                "refuses",
-                "refused"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "refusal",
-            "hint": "Which noun form of 'refuse' fits after the possessive 'His'?",
-            "explanation": "'Refusal' is the noun: His refusal to cooperate. Verb → noun: refuse → refusal, arrive → arrival, propose → proposal, approve → approval, deny → denial, betray → betrayal. Note the varied suffix patterns.",
-            "grammarRule": "Word Formation (Nominalisation)"
+            "question": "These cars ___ made in Japan.",
+            "options": ["are", "is", "was", "were"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "are",
+            "hint": "The subject 'these cars' is plural.",
+            "explanation": "Plural subjects take 'are' in present simple passive: cars are made. The focus is on where the cars come from, not who makes them.",
+            "grammarRule": "Passive Voice: Present Simple"
         },
         {
             "id": "gq_l141_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The ___ of tensions in the region has alarmed world leaders.",
-            "options": [
-                "escalated",
-                "escalating",
-                "escalation",
-                "escalate"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "escalation",
-            "hint": "Which noun describes a rapid, dangerous increase?",
-            "explanation": "'Escalation' (noun): the escalation of tensions. Nominalisation allows complex ideas to be expressed as noun phrases that function as subjects: The escalation has alarmed leaders. Verb: escalate → escalation.",
-            "grammarRule": "Word Formation (Nominalisation)"
+            "question": "\u2014 How is this bread made?\n\u2014 It ___ baked fresh every morning.",
+            "options": ["are", "was", "were", "is"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "is",
+            "hint": "This describes a regular routine happening now, in general.",
+            "explanation": "'Is baked' describes a regular routine in present simple passive: it is baked every morning, matching the question's own tense.",
+            "grammarRule": "Passive Voice: Present Simple"
         },
         {
             "id": "gq_l142_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The evidence ___ carefully before any conclusions are drawn.",
-            "options": [
-                "should be examining",
-                "should be examined",
-                "should have examined",
-                "should examine"
-            ],
+            "question": "The letter ___ sent yesterday.",
+            "options": ["is", "was", "are", "were"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "should be examined",
-            "hint": "Who examines the evidence? That is unimportant - use passive.",
-            "explanation": "Passive of modal: 'should be examined': The evidence should be examined carefully. The passive focuses on the evidence (object), not on who examines it. Modal passive: modal + be + past participle.",
-            "grammarRule": "Modal Passive Voice"
+            "correctAnswer": "was",
+            "hint": "'Yesterday' places this action in the past, and the subject is singular.",
+            "explanation": "Past simple passive uses 'was' for singular subjects: the letter was sent yesterday. 'Is' would wrongly place this in the present.",
+            "grammarRule": "Passive Voice: Past Simple"
         },
         {
             "id": "gq_l142_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "By next year, the drug ___ on over 10,000 patients.",
-            "options": [
-                "will be testing",
-                "will have been tested",
-                "has been tested",
-                "will test"
-            ],
+            "question": "The windows ___ broken during the storm.",
+            "options": ["was", "were", "is", "are"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "will have been tested",
-            "hint": "Future perfect passive - what is the correct form?",
-            "explanation": "Future perfect passive: 'will have been + past participle': The drug will have been tested on 10,000 patients by next year. This combines future perfect (completion before a future point) with passive voice.",
-            "grammarRule": "Modal Passive Voice"
+            "correctAnswer": "were",
+            "hint": "The subject 'windows' is plural, and the storm is in the past.",
+            "explanation": "Plural subjects take 'were' in past simple passive: windows were broken. This matches the past time reference 'during the storm'.",
+            "grammarRule": "Passive Voice: Past Simple"
         },
         {
             "id": "gq_l142_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The policy ___ for years before it was finally implemented.",
-            "options": [
-                "had debated",
-                "was debated",
-                "has been debated",
-                "had been debated"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "had been debated",
-            "hint": "Years of debate happened before implementation - two layers of past.",
-            "explanation": "Past perfect passive: 'had been + past participle': The policy had been debated for years before it was implemented. Past perfect passive = passive action completed before another past event.",
-            "grammarRule": "Modal Passive Voice"
+            "question": "\u2014 Who painted this?\n\u2014 It ___ painted by a famous artist.",
+            "options": ["was", "is", "are", "were"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "was",
+            "hint": "The painting happened at some point in the past.",
+            "explanation": "'Was painted' places the action in the past, appropriate for describing an existing painting's history.",
+            "grammarRule": "Passive Voice: Past Simple"
         },
         {
             "id": "gq_l143_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The situation is ___ - we need to address it immediately.",
-            "options": [
-                "going badly to worse",
-                "going from bad to worse",
-                "getting worse and more worse",
-                "bad to more bad"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "going from bad to worse",
-            "hint": "Which idiomatic phrase describes a deteriorating situation?",
-            "explanation": "'Go from bad to worse' is a fixed idiom: The situation is going from bad to worse. Idioms cannot be altered - 'going badly to worse' and other variations are incorrect. The wording must be exact.",
-            "grammarRule": "Business/Formal Idioms"
+            "question": "The road ___ being repaired right now.",
+            "options": ["are", "were", "was", "is"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "is",
+            "hint": "'Right now' signals an action in progress, and the subject is singular.",
+            "explanation": "Present continuous passive (is/are + being + past participle) describes an action happening now: the road is being repaired.",
+            "grammarRule": "Passive Voice: Present Continuous"
         },
         {
             "id": "gq_l143_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She ___ to make the project succeed - she worked 80-hour weeks.",
-            "options": [
-                "made all the stops",
-                "pulled out all the stops",
-                "threw all the stops",
-                "pushed all the stops"
-            ],
+            "question": "New houses ___ being built in this area.",
+            "options": ["is", "are", "was", "were"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "pulled out all the stops",
-            "hint": "Which idiom means 'used every possible effort'?",
-            "explanation": "'Pull out all the stops' = use every possible means to achieve something. From organ pipe terminology: pulling out all stops creates maximum sound. Fixed collocation: 'pull', not make/throw/push.",
-            "grammarRule": "Business/Formal Idioms"
+            "correctAnswer": "are",
+            "hint": "The subject 'houses' is plural, and this is ongoing right now.",
+            "explanation": "Plural subjects take 'are' in present continuous passive: houses are being built, an ongoing process happening currently.",
+            "grammarRule": "Passive Voice: Present Continuous"
         },
         {
             "id": "gq_l143_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Don't ___ - tell me what you really think.",
-            "options": [
-                "walk around the bush",
-                "beat around the bush",
-                "circle the bush",
-                "go around the bush"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "beat around the bush",
-            "hint": "Which idiom means 'avoid getting to the point'?",
-            "explanation": "'Beat around the bush' = avoid saying something directly: Don't beat around the bush. Fixed phrase - only 'beat' works here. Equivalent: stop being evasive, get to the point. The idiom is always 'beat', never walk/go/circle.",
-            "grammarRule": "Business/Formal Idioms"
+            "question": "\u2014 Why is it so noisy outside?\n\u2014 The bridge ___ being fixed.",
+            "options": ["is", "were", "was", "are"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "hint": "The noise suggests something is happening at this very moment.",
+            "explanation": "The ongoing noise points to present continuous passive: is being fixed right now, matching the pattern from Question 1.",
+            "grammarRule": "Passive Voice: Present Continuous"
         },
         {
             "id": "gq_l144_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which sentence best begins an analytical essay paragraph?",
-            "options": [
-                "I will now talk about the main reason.",
-                "One significant factor contributing to this is the rise of digital media.",
-                "OK so the main thing is digital media is important.",
-                "First of all, there are many reasons."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "One significant factor contributing to this is the rise of digital media.",
-            "hint": "Good paragraph openers introduce the main point specifically.",
-            "explanation": "Strong topic sentences are specific, formal, and third-person. 'One significant factor...is the rise of digital media' is specific and analytical. Avoid vague openers (there are many reasons), first person (I will), and informal language.",
-            "grammarRule": "Academic Essay Structure"
+            "question": "The report ___ been finished.",
+            "options": ["have", "had", "has", "was"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "has",
+            "hint": "This connects a completed action to the present, and the subject is singular.",
+            "explanation": "Present perfect passive (has/have + been + past participle) connects a completed action to now: the report has been finished.",
+            "grammarRule": "Passive Voice: Present Perfect"
         },
         {
             "id": "gq_l144_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which transition correctly adds an example to support a point?",
-            "options": [
-                "In contrast,",
-                "Nevertheless,",
-                "For instance,",
-                "Even so,"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "For instance,",
-            "hint": "We need a phrase to introduce a specific example.",
-            "explanation": "'For instance' (or 'For example') introduces examples: For instance, the number of mobile users has tripled. 'Even so' and 'Nevertheless' show contrast. 'In contrast' introduces an opposing point.",
-            "grammarRule": "Academic Essay Structure"
+            "question": "All the tickets ___ been sold.",
+            "options": ["has", "had", "was", "have"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "have",
+            "hint": "The subject 'tickets' is plural.",
+            "explanation": "Plural subjects take 'have' in present perfect passive: tickets have been sold, a result relevant right now.",
+            "grammarRule": "Passive Voice: Present Perfect"
         },
         {
             "id": "gq_l144_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which phrase best introduces a counterargument in an essay?",
-            "options": [
-                "Some argue that",
-                "Furthermore,",
-                "As a result,",
-                "In addition,"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Some argue that",
-            "hint": "We are about to present an opposing view.",
-            "explanation": "'Some argue that' introduces a counterargument: Some argue that social media has benefits. Other counterargument phrases: Opponents claim that..., Critics of this view suggest..., Others contend that...",
-            "grammarRule": "Academic Essay Structure"
+            "question": "\u2014 Is the package here yet?\n\u2014 Yes, it ___ been delivered.",
+            "options": ["had", "have", "has", "was"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "has",
+            "hint": "The question word 'yet' is a classic signal for this present-focused tense.",
+            "explanation": "'Yet' commonly pairs with present perfect: has been delivered, connecting the delivery to the present moment, matching Question 1.",
+            "grammarRule": "Passive Voice: Present Perfect"
         },
         {
             "id": "gq_l145_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Water ___ at 100 degrees Celsius at sea level.",
-            "options": [
-                "boils",
-                "has boiled",
-                "is boiling",
-                "would boil"
-            ],
+            "question": "This form must ___ completed in black ink.",
+            "options": ["be", "is", "been", "being"],
             "correctAnswerIndex": 0,
-            "correctAnswer": "boils",
-            "hint": "A scientific fact - which conditional expresses general truths?",
-            "explanation": "Zero conditional: present simple, present simple (or without if): Water boils at 100 degrees Celsius. Zero conditional expresses scientific facts, general truths, and laws of nature. Always true regardless of time.",
-            "grammarRule": "Conditionals (Mixed Review)"
+            "correctAnswer": "be",
+            "hint": "After a modal like 'must', the verb needs its base form.",
+            "explanation": "Modals combine with passive voice as 'modal + be + past participle': must be completed. After any modal, the verb stays in its base form, so 'be' fits, not 'is' or 'being'.",
+            "grammarRule": "Passive Voice: Modals"
         },
         {
             "id": "gq_l145_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "If she ___ more carefully, she wouldn't make so many errors.",
-            "options": [
-                "checks",
-                "had checked",
-                "checked",
-                "would check"
-            ],
+            "question": "The task can ___ finished by Friday.",
+            "options": ["is", "been", "be", "being"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "checked",
-            "hint": "An unreal present situation - which conditional?",
-            "explanation": "Second conditional (unreal present): if + past simple, would + base verb: If she checked more carefully, she wouldn't make errors. She doesn't check carefully now - this is an imaginary scenario.",
-            "grammarRule": "Conditionals (Mixed Review)"
+            "correctAnswer": "be",
+            "hint": "The same base-form rule after modals applies here too.",
+            "explanation": "'Can' also needs 'be' before the past participle: can be finished, following the same modal passive pattern from Question 1.",
+            "grammarRule": "Passive Voice: Modals"
         },
         {
             "id": "gq_l145_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Had he ___ his contacts, he might have found a job more easily.",
-            "options": [
-                "uses",
-                "used",
-                "use",
-                "been using"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "used",
-            "hint": "Third conditional inversion - which form follows 'Had he'?",
-            "explanation": "Third conditional with inversion: Had + subject + past participle: Had he used his contacts = If he had used his contacts. The past participle follows the subject in inverted conditionals. Main clause: might have found.",
-            "grammarRule": "Conditionals (Mixed Review)"
+            "question": "\u2014 When will the decision be made?\n\u2014 It should ___ made by next week.",
+            "options": ["is", "been", "being", "be"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "be",
+            "hint": "'Should' is a modal, so this follows the same rule as Questions 1 and 2.",
+            "explanation": "'Should' also requires 'be' before the past participle: should be made, continuing the same modal passive pattern throughout this level.",
+            "grammarRule": "Passive Voice: Modals"
         },
         {
             "id": "gq_l146_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which sentence correctly uses the semicolon?",
-            "options": [
-                "She studied hard; because she passed.",
-                "She studied; hard and passed.",
-                "She studied hard; she passed the exam.",
-                "She studied hard; and passed the exam."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She studied hard; she passed the exam.",
-            "hint": "Semicolons join two independent clauses.",
-            "explanation": "Semicolons join two independent clauses: She studied hard; she passed the exam. Do NOT use a semicolon before coordinating conjunctions (and, but, because). Each clause around a semicolon must stand alone.",
-            "grammarRule": "Punctuation: Semicolon/Dash/Comma"
+            "question": "My car ___ last night, and I have no idea who did it.",
+            "options": ["stole", "was stolen", "stealing", "steals"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "was stolen",
+            "hint": "The person responsible is completely unknown here.",
+            "explanation": "Passive voice fits perfectly when the agent is unknown: my car was stolen, and I don't know who did it. Active voice would require naming who stole it.",
+            "grammarRule": "Active vs Passive: Unknown Agent"
         },
         {
             "id": "gq_l146_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which sentence correctly uses the dash for emphasis?",
-            "options": [
-                "She had one - goal to succeed.",
-                "She had - one goal to succeed.",
-                "She had one goal - to succeed.",
-                "She - had one goal to succeed."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She had one goal - to succeed.",
-            "hint": "Dashes introduce an explanation, addition, or emphasis.",
-            "explanation": "An em dash introduces an explanation or emphasis: She had one goal - to succeed. The dash works like a colon or parenthetical. Do not split noun phrases or verb phrases with a dash. 'She had - one goal' is incorrect.",
-            "grammarRule": "Punctuation: Semicolon/Dash/Comma"
+            "question": "The chef ___ this dish personally, using his grandmother's recipe.",
+            "options": ["prepared", "was prepared", "is prepared", "preparing"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "prepared",
+            "hint": "The chef, the person doing the action, is the clear focus and star of this sentence.",
+            "explanation": "Active voice fits when the agent (the chef) is important and known: the chef prepared this dish. This contrasts with Question 1, where the agent was unknown.",
+            "grammarRule": "Active vs Passive: Known Agent"
         },
         {
             "id": "gq_l146_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which sentence correctly uses the comma after a fronted clause?",
-            "options": [
-                "While, she was tired she kept going.",
-                "While she was tired she, kept going.",
-                "While she was tired she kept going.",
-                "While she was tired, she kept going."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "While she was tired, she kept going.",
-            "hint": "A fronted adverbial clause is followed by a comma.",
-            "explanation": "When an adverbial clause comes before the main clause, use a comma: While she was tired, she kept going. This comma separates the adverbial clause from the main clause. No comma when the adverbial clause comes after: She kept going while she was tired.",
-            "grammarRule": "Punctuation: Semicolon/Dash/Comma"
+            "question": "\u2014 Who broke the vase?\n\u2014 It's not clear; it ___ somehow.",
+            "options": ["broke", "breaking", "was broken", "breaks"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "was broken",
+            "hint": "Nobody knows who is responsible, just like the stolen car in Question 1.",
+            "explanation": "Since the responsible person is unclear, passive voice fits: it was broken somehow, focusing on the vase rather than an unknown culprit.",
+            "grammarRule": "Active vs Passive: Unknown Agent"
         },
         {
             "id": "gq_l147_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "If they had invested earlier, they ___ profited enormously.",
-            "options": [
-                "should have",
-                "could have",
-                "might",
-                "would"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "could have",
-            "hint": "Past ability + unreal past condition.",
-            "explanation": "'Could have + past participle' expresses a past possibility or ability that did not materialise: If they had invested earlier, they could have profited enormously. 'Might have' = a possibility. 'Would have' = the expected result.",
-            "grammarRule": "Conditionals (Mixed Review)"
+            "question": "The novel was written ___ a famous author.",
+            "options": ["from", "with", "of", "by"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "by",
+            "hint": "This preposition introduces the person who performed the action in a passive sentence.",
+            "explanation": "'By' introduces the agent in passive voice when it's worth mentioning: written by a famous author.",
+            "grammarRule": "Passive Voice: By + Agent"
         },
         {
             "id": "gq_l147_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "If she had listened to the advice, things ___ turned out differently.",
-            "options": [
-                "can have",
-                "might have",
-                "should have",
-                "could"
-            ],
+            "question": "Which sentence correctly omits the agent because it's unknown or unimportant?",
+            "options": ["The window was broken by someone.", "The window was broken.", "The window broke by wind.", "Someone the window was broken."],
             "correctAnswerIndex": 1,
-            "correctAnswer": "might have",
-            "hint": "Speculating about a possible past outcome.",
-            "explanation": "'Might have + past participle' = a possible past result of an unreal condition: things might have turned out differently. 'Would have' is more certain of the result. 'Might have' shows speculation.",
-            "grammarRule": "Conditionals (Mixed Review)"
+            "correctAnswer": "The window was broken.",
+            "hint": "When the agent doesn't matter, the 'by' phrase is often dropped entirely.",
+            "explanation": "When the agent is unknown or unimportant, passive voice simply drops the 'by' phrase entirely: the window was broken. Saying 'by someone' is grammatically fine but unnecessary here.",
+            "grammarRule": "Passive Voice: Omitting the Agent"
         },
         {
             "id": "gq_l147_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "You ___ been more careful - I warned you about this.",
-            "options": [
-                "shall have",
-                "ought have",
-                "would have",
-                "should have"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "should have",
-            "hint": "This expresses regret or criticism about a past action.",
-            "explanation": "'Should have + past participle' = past obligation not met or criticism: You should have been more careful. 'Ought to have' is similar. 'Would have' is for unreal results, not criticism. 'Shall have' is not used this way.",
-            "grammarRule": "Conditionals (Mixed Review)"
+            "question": "\u2014 Who fixed your computer?\n\u2014 It was fixed ___ a technician from the shop.",
+            "options": ["by", "from", "with", "at"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "by",
+            "hint": "Since the question specifically asks 'who', naming the agent here makes sense.",
+            "explanation": "Since the question asks specifically who did it, mentioning the agent with 'by' is appropriate: fixed by a technician.",
+            "grammarRule": "Passive Voice: By + Agent"
         },
         {
             "id": "gq_l148_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Not until she saw the evidence ___ the truth.",
-            "options": [
-                "she did accept",
-                "accepted she",
-                "did she accept",
-                "she accepted"
-            ],
+            "question": "The new bridge ___ completed next year.",
+            "options": ["is", "was", "will be", "has been"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "did she accept",
-            "hint": "'Not until' at the beginning causes subject-auxiliary inversion.",
-            "explanation": "'Not until + time/clause + auxiliary + subject + verb': Not until she saw the evidence did she accept the truth. Negative adverbials at the start invert the sentence. Not until, Never, Rarely, Hardly, Scarcely all trigger this.",
-            "grammarRule": "Inversion (Negative Adverbials)"
+            "correctAnswer": "will be",
+            "hint": "'Next year' points to a future event, not something already finished.",
+            "explanation": "Future passive (will be + past participle) describes future events: the bridge will be completed next year.",
+            "grammarRule": "Passive Voice: Future"
         },
         {
             "id": "gq_l148_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Scarcely ___ he sat down when the phone rang.",
-            "options": [
-                "did",
-                "had had",
-                "was",
-                "had"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "had",
-            "hint": "'Scarcely had + subject + past participle + when...'",
-            "explanation": "'Scarcely had + subject + past participle + when/before': Scarcely had he sat down when the phone rang. He had barely sat down before the phone rang. 'Hardly had' and 'No sooner had...than' follow similar patterns.",
-            "grammarRule": "Inversion (Negative Adverbials)"
+            "question": "The results ___ announced next Monday.",
+            "options": ["will", "will be", "is being", "was"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "will be",
+            "hint": "'Next Monday' signals another future event.",
+            "explanation": "'Will be announced' fits this future event, matching the pattern from Question 1: will be announced next Monday.",
+            "grammarRule": "Passive Voice: Future"
         },
         {
             "id": "gq_l148_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Little ___ they know what challenges lay ahead.",
-            "options": [
-                "have",
-                "did",
-                "do",
-                "will"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "do",
-            "hint": "'Little' used for emphasis about unawareness - which tense?",
-            "explanation": "'Little do they know' = they are largely unaware (present). 'Little' at the start causes inversion: Little do they know (present), Little did they know (past). This is an idiomatic expression of unawareness or ignorance of a situation.",
-            "grammarRule": "Inversion (Negative Adverbials)"
+            "question": "\u2014 When will we hear back?\n\u2014 You ___ notified by email.",
+            "options": ["are", "were", "have been", "will be"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "will be",
+            "hint": "The question about the future signals what tense the answer should use.",
+            "explanation": "The future question 'when will we hear back' calls for future passive in the answer: you will be notified, matching Questions 1 and 2.",
+            "grammarRule": "Passive Voice: Future"
         },
         {
             "id": "gq_l149_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She was disappointed, ___ unsurprising given the circumstances.",
-            "options": [
-                "which was",
-                "if",
-                "that was",
-                "what was"
-            ],
+            "question": "This building ___ built in 1990.",
+            "options": ["was", "is", "has been", "will be"],
             "correctAnswerIndex": 0,
-            "correctAnswer": "which was",
-            "hint": "A non-defining relative clause commenting on the whole situation.",
-            "explanation": "'Which was unsurprising' is a non-defining relative clause commenting on the whole preceding idea: She was disappointed, which was unsurprising. 'Which' can refer to an entire clause, not just a noun. 'That' cannot be used in non-defining relative clauses.",
-            "grammarRule": "Formal Sentence Connectors"
+            "correctAnswer": "was",
+            "hint": "'1990' is a specific finished point in the past.",
+            "explanation": "A specific past year calls for past simple passive: was built in 1990, reviewing the pattern from Level 142.",
+            "grammarRule": "Passive Voice: Past Simple"
         },
         {
             "id": "gq_l149_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The findings suggest that ___ further research is needed.",
-            "options": [
-                "substantial",
-                "considerably",
-                "Significant more",
-                "significant"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "substantial",
-            "hint": "Which adjective formally means 'large in amount'?",
-            "explanation": "'Substantial' = large in size or amount (formal): substantial further research. 'Significant' implies importance rather than quantity. 'Considerably' is an adverb, not an adjective. 'Substantial research' is the natural collocation.",
-            "grammarRule": "Formal Sentence Connectors"
+            "question": "The email ___ already been sent.",
+            "options": ["had", "has", "have", "was"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "has",
+            "hint": "'Already' signals a result connected to the present moment.",
+            "explanation": "'Already' pairs with present perfect passive: has already been sent, reviewing the pattern from Level 144.",
+            "grammarRule": "Passive Voice: Present Perfect"
         },
         {
             "id": "gq_l149_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ the risk of oversimplification, the main point is this:",
-            "options": [
-                "With",
-                "At",
-                "To",
-                "For"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "At",
-            "hint": "Which preposition begins the phrase '___ the risk of'?",
-            "explanation": "'At the risk of + gerund' = acknowledging a possible criticism: At the risk of oversimplification, the main point is... This formal phrase acknowledges that what follows may be overly simple. 'With the risk of' is less idiomatic.",
-            "grammarRule": "Formal Sentence Connectors"
+            "question": "\u2014 Is dinner ready?\n\u2014 Almost, it ___ being prepared now.",
+            "options": ["was", "has", "is", "will"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "is",
+            "hint": "'Now' signals an action in progress at this exact moment.",
+            "explanation": "'Now' calls for present continuous passive: is being prepared, reviewing the pattern from Level 143.",
+            "grammarRule": "Passive Voice: Present Continuous"
         },
         {
             "id": "gq_l150_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Such ___ the complexity of the issue that a simple solution is impossible.",
-            "options": [
-                "has been",
-                "was",
-                "is",
-                "had been"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "is",
-            "hint": "Inverted 'such is' structure for emphasis.",
-            "explanation": "'Such is/was + noun phrase + that' is an emphatic, formal structure: Such is the complexity of the issue that a simple solution is impossible. The present 'is' is used here as a general present truth.",
-            "grammarRule": "Inversion / Concessive Structures"
+            "question": "Visitors ___ requested to sign in at the front desk.",
+            "options": ["was", "is", "were", "are"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "are",
+            "hint": "This is a general, standing rule for a plural group of people.",
+            "explanation": "This is a general present-tense rule, and 'visitors' is plural, so 'are requested' fits: a very common wording for official notices.",
+            "grammarRule": "Passive Voice: Present Simple"
         },
         {
             "id": "gq_l150_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "His contributions, ___ considerable, have been somewhat overlooked.",
-            "options": [
-                "though",
-                "though they are",
-                "though being",
-                "though considerable"
-            ],
+            "question": "Local school ___ awarded a grant for new technology.",
+            "options": ["is", "are", "were", "was"],
             "correctAnswerIndex": 3,
-            "correctAnswer": "though considerable",
-            "hint": "An embedded parenthetical concessive - which is most natural?",
-            "explanation": "'Though + adjective' in parenthetical clauses (ellipsis of 'though they are'): His contributions, though considerable, have been overlooked. This concise form is common in formal written English.",
-            "grammarRule": "Inversion / Concessive Structures"
+            "correctAnswer": "was",
+            "hint": "News headlines usually report a completed past event.",
+            "explanation": "News reports typically describe completed events in past simple passive: was awarded a grant, a common structure in headlines and articles.",
+            "grammarRule": "Passive Voice: Past Simple"
         },
         {
             "id": "gq_l150_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She agreed to the terms, ___ some reservations.",
-            "options": [
-                "expressed",
-                "while expressed",
-                "with expressing",
-                "having expressed"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "having expressed",
-            "hint": "A participial clause indicating what happened before the agreement.",
-            "explanation": "'Having + past participle' as a participial clause: She agreed to the terms, having expressed some reservations = she first expressed reservations, then agreed. The perfect participle shows the first completed action.",
-            "grammarRule": "Inversion / Concessive Structures"
+            "question": "\u2014 Has the new policy been announced?\n\u2014 Yes, it ___ announced this morning.",
+            "options": ["is", "was", "has", "will"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "was",
+            "hint": "'This morning' is a specific finished time, even though the question used present perfect.",
+            "explanation": "Even though the question used present perfect, the specific time 'this morning' calls for past simple in the answer: was announced this morning, closing out Stage 8's opening block on passive voice.",
+            "grammarRule": "Passive Voice: Past Simple"
         }
     ]
 }

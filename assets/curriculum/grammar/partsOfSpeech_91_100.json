@@ -8,23 +8,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'significant' as used in the sentence below?",
-            "targetWord": "significant",
-            "sentence": "The discovery of penicillin was a truly significant turning point in medical history.",
+            "question": "Based on how it is used here, 'prescription' is a:",
+            "targetWord": "prescription",
+            "sentence": "The pharmacist double-checked the prescription before handing it over.",
             "options": [
+                "Adverb",
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives evaluate the importance of things. What does 'significant' tell us about the turning point?",
-            "explanation": "'Significant' is an adjective - it describes the importance of 'turning point'. It follows 'a truly', and the suffix '-ant' is a common adjective-forming ending.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Noun",
+            "hint": "Focus on its role in this sentence only. What did the pharmacist check?",
+            "explanation": "'Prescription' is a noun here, naming the document the pharmacist verified — it functions as the direct object of 'checked'.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "plural form"
             ]
         },
         {
@@ -32,23 +32,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'contribution' as used in the sentence below?",
-            "targetWord": "contribution",
-            "sentence": "Her lifelong contribution to the field of genetics earned her a Nobel Prize.",
+            "question": "What grammatical job does 'lively' do in this sentence?",
+            "targetWord": "lively",
+            "sentence": "The therapy dog kept the waiting room lively during the long afternoon.",
             "options": [
-                "Noun",
                 "Verb",
+                "Noun",
                 "Adjective",
                 "Adverb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Abstract nouns name achievements. What does 'contribution' name here?",
-            "explanation": "'Contribution' is a noun - it names the sum of her work. It is preceded by 'Her lifelong'. The suffix '-tion' forms nouns from verbs (contribute → contribution).",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "Remember that '-ly' words are not automatically adverbs. What quality does 'lively' give the waiting room?",
+            "explanation": "'Lively' is an adjective here, describing the atmosphere of the waiting room — like 'friendly' and 'lonely' from earlier lessons, it is formed with '-ly' but functions as an adjective.",
+            "grammarRule": "Object complement adjective describing the direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "comparative form"
             ]
         },
         {
@@ -56,23 +56,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'acknowledge' as used in the sentence below?",
-            "targetWord": "acknowledge",
-            "sentence": "It is always important to acknowledge the work of those who came before you.",
+            "question": "In this sentence, 'Since' is functioning as a:",
+            "targetWord": "Since",
+            "sentence": "Since the surgery, she has needed regular check-ups.",
             "options": [
-                "Noun",
+                "Preposition",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe respectful intellectual actions. What is important?",
-            "explanation": "'Acknowledge' is a verb - it appears in the infinitive ('to acknowledge'). 'Acknowledgement' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Preposition",
+            "hint": "Pay attention to what kind of phrase follows this word. What noun phrase follows 'since' here?",
+            "explanation": "'Since' is a preposition here, introducing the noun phrase 'the surgery' rather than a full clause.",
+            "grammarRule": "Preposition introducing a starting point in time",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "conjunction use"
             ]
         },
         {
@@ -80,23 +80,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'controversial' as used in the sentence below?",
-            "targetWord": "controversial",
-            "sentence": "The politician made a controversial statement that immediately divided public opinion.",
+            "question": "Which part of speech does 'discount' represent in this sentence?",
+            "targetWord": "discount",
+            "sentence": "Customers received a discount for paying in cash.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Adverb",
+                "Noun"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe the effect of statements on public discourse. What does 'controversial' describe?",
-            "explanation": "'Controversial' is an adjective - it describes the noun 'statement', indicating it caused strong disagreement. The suffix '-al' is a common adjective-forming ending.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Noun",
+            "hint": "Let the sentence, not the spelling, decide. What did customers receive?",
+            "explanation": "'Discount' is a noun here, naming the price reduction customers received — it functions as the direct object of 'received'.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "verb use"
             ]
         },
         {
@@ -104,23 +104,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'investigation' as used in the sentence below?",
-            "targetWord": "investigation",
-            "sentence": "A formal investigation was launched into the company's financial accounting practices.",
+            "question": "Now, how is 'discount' functioning here?",
+            "targetWord": "discount",
+            "sentence": "Retailers often discount seasonal items in January.",
             "options": [
                 "Noun",
-                "Verb",
                 "Adjective",
+                "Verb",
                 "Adverb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Abstract nouns name formal processes. What does 'investigation' name?",
-            "explanation": "'Investigation' is a noun - it names a formal inquiry. It follows 'A formal'. The suffix '-tion' shows it is a nominalised form of 'investigate'.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Verb",
+            "hint": "The same word can also name the action of reducing a price. What do retailers do to seasonal items?",
+            "explanation": "'Discount' functions as a verb here, meaning to reduce the price — contrast this with the earlier noun use naming the reduction itself.",
+            "grammarRule": "Action verb in present tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb use",
+                "noun use"
             ]
         },
         {
@@ -128,23 +128,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'dispute' as used in the sentence below?",
-            "targetWord": "dispute",
-            "sentence": "The lawyer's role was to dispute every single claim in the original report.",
+            "question": "Which part of speech is 'considerably' as it is used here?",
+            "targetWord": "considerably",
+            "sentence": "Interest rates rose considerably last year.",
             "options": [
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Legal verbs describe challenging actions. What was the lawyer's role?",
-            "explanation": "'Dispute' is a verb - it appears in the infinitive ('to dispute'). 'Dispute' can be a noun ('a legal dispute'), but here it follows 'to' as an infinitive verb.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "Focus on its role in this sentence only. By how much did interest rates rise?",
+            "explanation": "'Considerably' is a degree adverb modifying the verb 'rose', showing the size of the increase.",
+            "grammarRule": "Degree adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "adverb form"
             ]
         },
         {
@@ -152,23 +152,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'extensive' as used in the sentence below?",
-            "targetWord": "extensive",
-            "sentence": "The project required extensive research across multiple national and academic databases.",
+            "question": "Which grammatical category best describes 'update' here?",
+            "targetWord": "update",
+            "sentence": "The developers pushed a critical update overnight.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Adverb",
+                "Adjective"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe the scale of activities. What does 'extensive' tell us about the research?",
-            "explanation": "'Extensive' is an adjective - it describes the scale of 'research', meaning wide-ranging. The suffix '-ive' is a common adjective-forming ending.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Noun",
+            "hint": "Check the words directly around it for clues. What did the developers push?",
+            "explanation": "'Update' is a noun here, naming the software improvement — it functions as the direct object of 'pushed'.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "verb use"
             ]
         },
         {
@@ -176,23 +176,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'legislation' as used in the sentence below?",
-            "targetWord": "legislation",
-            "sentence": "New environmental legislation was introduced to protect consumers from hidden charges.",
+            "question": "This time, 'update' is functioning as a:",
+            "targetWord": "update",
+            "sentence": "IT will update the software before Monday.",
             "options": [
                 "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Verb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Legal nouns name formal laws. What does 'legislation' name?",
-            "explanation": "'Legislation' is a noun - it names a body of laws. It is preceded by 'New environmental'. The suffix '-tion' shows nominalisation.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Verb",
+            "hint": "The same word can also name the action of improving software. What will IT do to the software?",
+            "explanation": "'Update' functions as a verb here, meaning to improve or refresh — contrast this with the earlier noun use naming the improvement itself.",
+            "grammarRule": "Verb following the modal 'will'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb use",
+                "noun use"
             ]
         },
         {
@@ -200,23 +200,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'enforced' as used in the sentence below?",
-            "targetWord": "enforced",
-            "sentence": "Local authorities are responsible for ensuring that all planning rules are properly enforced.",
+            "question": "How is 'itself' functioning in this sentence?",
+            "targetWord": "itself",
+            "sentence": "The app crashed by itself twice this week.",
             "options": [
                 "Noun",
-                "Verb",
+                "Pronoun",
                 "Adjective",
-                "Adverb"
+                "Verb"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Legal verbs describe the application of rules. What action do authorities carry out?",
-            "explanation": "'Enforced' is a verb - it's the past participle of 'enforce' used in passive form ('are properly enforced'). 'Enforcement' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Pronoun",
+            "hint": "Let the sentence, not the spelling, decide. What does 'itself' refer to here?",
+            "explanation": "'Itself' is a reflexive pronoun referring back to 'the app' — it shows that the crash happened without any external cause.",
+            "grammarRule": "Reflexive pronoun referring back to the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "subject form",
+                "reflexive form"
             ]
         },
         {
@@ -224,23 +224,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'fundamental' as used in the sentence below?",
-            "targetWord": "fundamental",
-            "sentence": "Mutual trust is absolutely fundamental to the success of any long-term business partnership.",
+            "question": "The word 'As' is being used as which grammatical category?",
+            "targetWord": "As",
+            "sentence": "As the plane taxied, passengers stowed their bags.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Preposition",
+                "Noun",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe essential nature. What does 'fundamental' tell us about trust's role?",
-            "explanation": "'Fundamental' is an adjective - it follows 'is' as a predicate adjective and means essential. It is modified by 'absolutely'.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Conjunction",
+            "hint": "This word introduces a clause showing two things happening at the same time. What clause follows it?",
+            "explanation": "'As' functions as a subordinating conjunction here, meaning 'while' — it introduces the clause 'the plane taxied' to show simultaneous actions.",
+            "grammarRule": "Subordinating conjunction introducing a time clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "preposition use"
             ]
         },
         {
@@ -248,23 +248,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'authority' as used in the sentence below?",
-            "targetWord": "authority",
-            "sentence": "The inspector was given full authority to halt construction work immediately.",
+            "question": "Identify the part of speech of 'airport' in this context.",
+            "targetWord": "airport",
+            "sentence": "The airport shuttle arrives every fifteen minutes.",
             "options": [
+                "Adjective",
                 "Noun",
                 "Verb",
-                "Adjective",
                 "Adverb"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Abstract nouns name power and rights. What does 'authority' name?",
-            "explanation": "'Authority' is a noun - it names the power or right to make decisions. It follows 'full'. The suffix '-ity' forms abstract nouns.",
-            "grammarRule": "Nouns",
+            "correctAnswer": "Adjective",
+            "hint": "Remember the pattern where one noun modifies another. What kind of shuttle is being described?",
+            "explanation": "'Airport' functions as an adjective here, modifying 'shuttle' to specify which shuttle service is meant.",
+            "grammarRule": "Noun functioning as an adjective modifying another noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "adjective use"
             ]
         },
         {
@@ -272,23 +272,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'justify' as used in the sentence below?",
-            "targetWord": "justify",
-            "sentence": "She found it very difficult to justify the high cost of the new equipment to the board.",
+            "question": "What part of speech is 'boarded' in this sentence?",
+            "targetWord": "boarded",
+            "sentence": "Weary travelers boarded the red-eye flight just after midnight.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Noun",
+                "Verb"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Verb",
-            "hint": "Verbs describe giving valid reasons. What did she find difficult?",
-            "explanation": "'Justify' is a verb - it follows 'to' as an infinitive. 'Justification' is the noun form.",
-            "grammarRule": "Verbs",
+            "hint": "Check the words directly around it for clues. What action did they take?",
+            "explanation": "'Boarded' is a verb describing the travelers' action of getting onto the flight.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -296,23 +296,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'inevitable' as used in the sentence below?",
-            "targetWord": "inevitable",
-            "sentence": "Given the quality gap between the two teams, their defeat felt almost inevitable.",
+            "question": "What role does 'that' play in this sentence?",
+            "targetWord": "that",
+            "sentence": "The jacket that she wanted was already sold out.",
             "options": [
+                "Pronoun",
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Conjunction"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives can predict outcomes. What does 'inevitable' tell us about the defeat?",
-            "explanation": "'Inevitable' is an adjective - it follows 'felt' as a predicate adjective, meaning it was certain to happen. The prefix 'in-' negates 'evitable' (avoidable).",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Pronoun",
+            "hint": "This word introduces a clause describing a specific item just mentioned. What does the clause 'that she wanted' describe?",
+            "explanation": "'That' is a relative pronoun introducing a clause describing 'the jacket' — it functions as the object of 'wanted' within its own clause.",
+            "grammarRule": "Relative pronoun introducing a descriptive clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "relative use",
+                "demonstrative use"
             ]
         },
         {
@@ -320,23 +320,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'consequences' as used in the sentence below?",
-            "targetWord": "consequences",
-            "sentence": "Failing to act on the evidence now will have serious consequences for future generations.",
+            "question": "Which category fits 'Either' in this sentence?",
+            "targetWord": "Either",
+            "sentence": "Either the medium or the large size should fit you.",
             "options": [
-                "Noun",
-                "Verb",
+                "Conjunction",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Pronoun"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Abstract nouns name results or outcomes. What does 'consequences' name here?",
-            "explanation": "'Consequences' is a noun (the plural form of 'consequence') - it names the results of an action. It follows 'serious'. The suffix '-ence' forms nouns.",
-            "grammarRule": "Nouns",
+            "correctAnswer": "Conjunction",
+            "hint": "This word pairs with 'or' later in the sentence. What two options are being presented?",
+            "explanation": "'Either' functions as part of the correlative conjunction 'either...or', pairing with 'or' to present two possible sizes.",
+            "grammarRule": "Correlative conjunction pairing with 'or'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related pronoun use"
             ]
         },
         {
@@ -344,23 +344,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'anticipate' as used in the sentence below?",
-            "targetWord": "anticipate",
-            "sentence": "We completely failed to anticipate how rapidly the situation on the ground would change.",
+            "question": "What kind of word is 'affordable' in this sentence?",
+            "targetWord": "affordable",
+            "sentence": "The boutique specializes in affordable, handmade jewelry.",
             "options": [
-                "Noun",
+                "Adverb",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe forward-thinking cognitive actions. What did we fail to do?",
-            "explanation": "'Anticipate' is a verb - it follows 'to' as an infinitive. 'Anticipation' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "Ask how it connects to the words near it. What quality does 'affordable' give the jewelry?",
+            "explanation": "'Affordable' is an adjective modifying 'jewelry', describing its reasonable price.",
+            "grammarRule": "Attributive adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "positive form",
+                "comparative form"
             ]
         },
         {
@@ -368,23 +368,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'rational' as used in the sentence below?",
-            "targetWord": "rational",
-            "sentence": "She worked hard to remain calm and make a rational decision under intense pressure.",
+            "question": "Classify 'graduate' as it appears in this sentence.",
+            "targetWord": "graduate",
+            "sentence": "Every graduate received a certificate at the ceremony.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
+                "Verb",
+                "Noun",
                 "Adverb"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe the quality of decisions. What does 'rational' tell us?",
-            "explanation": "'Rational' is an adjective - it modifies the noun 'decision', indicating it was based on reason rather than emotion.",
-            "grammarRule": "Adjectives",
+            "correctAnswer": "Noun",
+            "hint": "Look at what this word does in this exact sentence. Who received a certificate?",
+            "explanation": "'Graduate' is a noun here, naming the person who completed their studies — it functions as the subject of the sentence.",
+            "grammarRule": "Common noun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "verb use"
             ]
         },
         {
@@ -392,23 +392,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'innovation' as used in the sentence below?",
-            "targetWord": "innovation",
-            "sentence": "Continuous innovation is essential for any company that wants to remain globally competitive.",
+            "question": "Now what part of speech is 'graduate' in this sentence?",
+            "targetWord": "graduate",
+            "sentence": "Most students graduate within four years.",
             "options": [
-                "Noun",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Noun"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Business nouns name processes of development. What does 'innovation' name?",
-            "explanation": "'Innovation' is a noun - it names the process of developing new ideas. It is the subject, preceded by 'Continuous'. The suffix '-tion' shows nominalisation from 'innovate'.",
-            "grammarRule": "Nouns",
+            "correctAnswer": "Verb",
+            "hint": "The same word can also name the action of completing a program. What do most students do within four years?",
+            "explanation": "'Graduate' functions as a verb here, meaning to complete a program of study — contrast this with the earlier noun use naming the person.",
+            "grammarRule": "Action verb in present tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb use",
+                "noun use"
             ]
         },
         {
@@ -416,23 +416,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'restrict' as used in the sentence below?",
-            "targetWord": "restrict",
-            "sentence": "The new regulations will significantly restrict the commercial use of single-use plastics.",
+            "question": "In this context, what part of speech is 'Bravo'?",
+            "targetWord": "Bravo",
+            "sentence": "\"Bravo, that was a wonderful performance!\" the principal exclaimed.",
             "options": [
                 "Noun",
-                "Verb",
+                "Interjection",
                 "Adjective",
-                "Adverb"
+                "Verb"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Regulatory verbs describe the limiting effects of rules. What will the regulations do?",
-            "explanation": "'Restrict' is a verb - it follows the modal 'will'. 'Restriction' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Interjection",
+            "hint": "Let the sentence, not the spelling, decide. What word shows the principal's praise?",
+            "explanation": "'Bravo' functions as an interjection here, expressing enthusiastic approval of the performance.",
+            "grammarRule": "Interjection expressing approval",
             "transformations": [
-                "noun form",
-                "verb form"
+                "interjection use",
+                "related exclamation"
             ]
         },
         {
@@ -440,23 +440,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'ethical' as used in the sentence below?",
-            "targetWord": "ethical",
-            "sentence": "All companies have an ethical responsibility to treat their employees with fairness and dignity.",
+            "question": "What role does 'in charge of' play in this sentence?",
+            "targetWord": "in charge of",
+            "sentence": "Ms. Okafor is in charge of the recycling program this year.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Conjunction",
+                "Preposition"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives can describe obligations rooted in moral principles. What type of responsibility is described?",
-            "explanation": "'Ethical' is an adjective - it modifies the noun 'responsibility', indicating it is rooted in moral principles.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Preposition",
+            "hint": "This expression shows responsibility for something. What is Ms. Okafor responsible for?",
+            "explanation": "'In charge of' functions as a compound preposition here, introducing the phrase that shows what Ms. Okafor is responsible for.",
+            "grammarRule": "Compound preposition introducing responsibility",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related verb (oversee)"
             ]
         },
         {
@@ -464,23 +464,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'framework' as used in the sentence below?",
-            "targetWord": "framework",
-            "sentence": "The report proposed a new regulatory framework for the transparent management of digital data.",
+            "question": "Classify 'These' as it appears in this sentence.",
+            "targetWord": "These",
+            "sentence": "These regulations apply to every business in the district.",
             "options": [
                 "Noun",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Pronoun"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Abstract nouns name structural systems. What does 'framework' name?",
-            "explanation": "'Framework' is a noun - it names a structural system of rules. It follows 'a new regulatory', confirming it is a noun.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "This word modifies the noun right next to it. What noun does 'these' describe?",
+            "explanation": "'These' functions as an adjective here, modifying 'regulations' directly, rather than standing alone as a pronoun.",
+            "grammarRule": "Demonstrative adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "pronoun use"
             ]
         },
         {
@@ -488,23 +488,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'comply' as used in the sentence below?",
-            "targetWord": "comply",
-            "sentence": "All businesses operating in the EU must fully comply with the new data protection standards.",
+            "question": "How is 'regulations' functioning in this sentence?",
+            "targetWord": "regulations",
+            "sentence": "The regulations changed twice within a single year.",
             "options": [
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Legal verbs describe required actions. What must all businesses do?",
-            "explanation": "'Comply' is a verb - it follows the modal 'must'. 'Compliance' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Notice what the word is attached to. What changed twice within a year?",
+            "explanation": "'Regulations' is a noun here, naming the official rules that changed — it functions as the subject of the sentence.",
+            "grammarRule": "Common noun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "plural form"
             ]
         },
         {
@@ -512,23 +512,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'systematic' as used in the sentence below?",
-            "targetWord": "systematic",
-            "sentence": "The investigative team used a systematic approach to identify the root cause of the problem.",
+            "question": "Which part of speech does 'leisurely' represent in this sentence?",
+            "targetWord": "leisurely",
+            "sentence": "They enjoyed a leisurely breakfast on Sunday morning.",
             "options": [
-                "Noun",
+                "Adverb",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Adjective"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Adjective",
-            "hint": "Adjectives describe methodological qualities. What does 'systematic' tell us about the approach?",
-            "explanation": "'Systematic' is an adjective - it modifies the noun 'approach', meaning it followed a planned and ordered method.",
-            "grammarRule": "Adjectives",
+            "hint": "Remember that '-ly' words are not automatically adverbs. What quality does 'leisurely' give the breakfast?",
+            "explanation": "'Leisurely' is an adjective here, modifying 'breakfast' and describing its relaxed pace.",
+            "grammarRule": "Attributive adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "adverb use"
             ]
         },
         {
@@ -536,23 +536,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'perspective' as used in the sentence below?",
-            "targetWord": "perspective",
-            "sentence": "Reading literature from other cultures helps broaden your perspective on the wider world.",
+            "question": "Now look at 'leisurely' here. What part of speech is it?",
+            "targetWord": "leisurely",
+            "sentence": "They strolled leisurely along the riverside path.",
             "options": [
-                "Noun",
                 "Verb",
+                "Noun",
                 "Adjective",
                 "Adverb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Abstract nouns name viewpoints. What does 'perspective' name?",
-            "explanation": "'Perspective' is a noun - it names a particular way of viewing the world. It is preceded by 'your', confirming it is a noun.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adverb",
+            "hint": "This is one of the rare '-ly' words that can describe an action rather than just a noun. How did they stroll?",
+            "explanation": "'Leisurely' functions as an adverb here, modifying the verb 'strolled' and describing the relaxed manner of their walk — unlike most '-ly' words, this one can be either an adjective or an adverb depending on context.",
+            "grammarRule": "Manner adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "adverb use"
             ]
         },
         {
@@ -560,23 +560,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'interpret' as used in the sentence below?",
-            "targetWord": "interpret",
-            "sentence": "Different cultures may interpret the same gesture or body language in very different ways.",
+            "question": "The word 'strolled' is being used as which grammatical category?",
+            "targetWord": "strolled",
+            "sentence": "Grandpa strolled through the garden every evening.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Adverb",
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "Verb",
-            "hint": "Cognitive verbs describe making sense of things. What may different cultures do differently?",
-            "explanation": "'Interpret' is a verb - it is a present-tense verb with the modal 'may'. 'Interpretation' is the noun form.",
-            "grammarRule": "Verbs",
+            "hint": "Ask how it connects to the words near it. What action did he take?",
+            "explanation": "'Strolled' is a verb describing Grandpa's relaxed walking action through the garden.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -584,23 +584,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'complex' as used in the sentence below?",
-            "targetWord": "complex",
-            "sentence": "The relationship between diet and mental health is far more complex than once thought.",
+            "question": "Which category fits 'Since' in this sentence?",
+            "targetWord": "Since",
+            "sentence": "Since the coach benched their star player, the team has struggled, but everyone hopes that the streak will end soon.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Conjunction",
+                "Preposition",
+                "Noun"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe the level of intricacy. What does 'complex' describe here?",
-            "explanation": "'Complex' is an adjective - it follows the comparative structure 'more complex than' and describes the noun 'relationship'. 'Complexity' is the noun form.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Conjunction",
+            "hint": "This word introduces a clause explaining why the team has struggled. What clause follows it?",
+            "explanation": "'Since' functions as a subordinating conjunction here, meaning 'because' — it introduces the clause 'the coach benched their star player' to explain the team's struggles.",
+            "grammarRule": "Subordinating conjunction introducing a reason clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "preposition use"
             ]
         },
         {
@@ -608,23 +608,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'hypothesis' as used in the sentence below?",
-            "targetWord": "hypothesis",
-            "sentence": "The scientist tested her hypothesis over an intensive period of eighteen months.",
+            "question": "In that same sentence, what part of speech is 'struggled'?",
+            "targetWord": "struggled",
+            "sentence": "Since the coach benched their star player, the team has struggled, but everyone hopes that the streak will end soon.",
             "options": [
+                "Adverb",
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Scientific nouns name proposals made before testing. What does 'hypothesis' name?",
-            "explanation": "'Hypothesis' is a noun - it names a proposed explanation tested through experiment. It is preceded by 'her', confirming it is a noun.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Verb",
+            "hint": "Let the sentence, not the spelling, decide. What has the team been doing?",
+            "explanation": "'Struggled' is a verb describing the team's difficulty performing well since losing their star player.",
+            "grammarRule": "Action verb in present perfect",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-participle form"
             ]
         },
         {
@@ -632,23 +632,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'imply' as used in the sentence below?",
-            "targetWord": "imply",
-            "sentence": "What you deliberately choose not to say can sometimes imply more than what you actually say.",
+            "question": "Now consider 'that' in that same sentence. What part of speech is it?",
+            "targetWord": "that",
+            "sentence": "Since the coach benched their star player, the team has struggled, but everyone hopes that the streak will end soon.",
             "options": [
+                "Pronoun",
+                "Conjunction",
                 "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe indirect communication. What can deliberate omission sometimes do?",
-            "explanation": "'Imply' is a verb - it follows the modal 'can'. 'Implication' is the noun form. Communication verbs (imply, suggest, indicate, convey) describe indirect meaning.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Conjunction",
+            "hint": "This word can also introduce a clause that names what someone hopes, rather than describing a noun or standing alone. What does everyone hope?",
+            "explanation": "'That' functions as a subordinating conjunction here, introducing the noun clause 'the streak will end soon' as the content of what everyone hopes — a different role from its relative pronoun use (as in 'the jacket that she wanted') or its demonstrative pronoun and adjective uses seen earlier in this course.",
+            "grammarRule": "Subordinating conjunction introducing a noun clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "relative pronoun use"
             ]
         },
         {
@@ -656,23 +656,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'comprehensive' as used in the sentence below?",
-            "targetWord": "comprehensive",
-            "sentence": "The review produced a comprehensive report on the long-term causes of the financial crisis.",
+            "question": "What part of speech is 'Although' in this sentence?",
+            "targetWord": "Although",
+            "sentence": "Although the clinic's morning schedule looked light, the receptionist warned that things could change quickly since two doctors were already running late.",
             "options": [
+                "Preposition",
                 "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
+                "Conjunction",
+                "Verb"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe the scope of documents. What does 'comprehensive' tell us about the report?",
-            "explanation": "'Comprehensive' is an adjective - it modifies the noun 'report', meaning it covers all aspects thoroughly.",
-            "grammarRule": "Adjectives",
+            "correctAnswer": "Conjunction",
+            "hint": "This word introduces a clause that contrasts with what comes later. What contrast does it set up?",
+            "explanation": "'Although' is a subordinating conjunction introducing a clause that contrasts with the rest of the sentence — the schedule looked manageable, yet things could still change.",
+            "grammarRule": "Subordinating conjunction introducing a contrast clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related preposition (despite)"
             ]
         },
         {
@@ -680,23 +680,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'phenomenon' as used in the sentence below?",
-            "targetWord": "phenomenon",
-            "sentence": "Climate change is no longer a distant threat but a very real and present phenomenon.",
+            "question": "Back in that same sentence, what kind of word is 'light'?",
+            "targetWord": "light",
+            "sentence": "Although the clinic's morning schedule looked light, the receptionist warned that things could change quickly since two doctors were already running late.",
             "options": [
-                "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Academic nouns name observable events. What does 'phenomenon' name?",
-            "explanation": "'Phenomenon' is a noun - its plural is 'phenomena' (a common error is to use 'phenomena' as singular). It follows 'a very real and present', confirming it is a noun.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "Remember this word can name a thing, describe a thing, or show an action, depending on context, from an earlier lesson. What quality does it give the schedule here?",
+            "explanation": "'Light' functions as an adjective here, describing the schedule as easy or not heavily booked — contrast this with its noun use ('switched off the light') and verb use ('to light the fire') from an earlier lesson in this course.",
+            "grammarRule": "Predicate adjective after a linking verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "noun use"
             ]
         },
         {
@@ -704,23 +704,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'derive' as used in the sentence below?",
-            "targetWord": "derive",
-            "sentence": "Many common English words derive directly from Latin and ancient Greek roots.",
+            "question": "In the same sentence, what role does 'late' play?",
+            "targetWord": "late",
+            "sentence": "Although the clinic's morning schedule looked light, the receptionist warned that things could change quickly since two doctors were already running late.",
             "options": [
-                "Noun",
                 "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Noun"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Linguistic verbs describe the origin of language. What do English words do?",
-            "explanation": "'Derive' is a verb - it is in the present tense. 'Derivation' is the noun form. Linguistic verbs (derive, originate, evolve, borrow) describe how language develops.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Adverb",
+            "hint": "This word describes the timing of the doctors' arrival, not a quality of the doctors themselves. What is happening with the doctors' schedule?",
+            "explanation": "'Late' functions as an adverb here, combining with 'running' to describe the doctors falling behind schedule — contrast this with its adjective use ('the late bus') from an earlier lesson.",
+            "grammarRule": "Time adverb modifying a verb phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "adverb use"
             ]
         }
     ]

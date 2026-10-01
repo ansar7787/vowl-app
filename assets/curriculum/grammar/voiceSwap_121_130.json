@@ -8,8 +8,8 @@
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "This aging public infrastructure needs to be completely upgraded before the harsh winter arrives.",
-            "sentence": "This aging public infrastructure needs to be completely upgraded before the harsh winter arrives.",
+            "question": "My colleague and I finished the report two days early.",
+            "sentence": "My colleague and I finished the report two days early.",
             "options": [
                 "Active",
                 "Passive"
@@ -17,39 +17,39 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Look at the main, finite verb needs, not the infinitive that follows it.",
-            "explanation": "This is active voice: the main verb needs is active, even though it is followed by the passive infinitive to be upgraded. In passive, the core idea would flip to: This aging public infrastructure will be completely upgraded before the harsh winter arrives.",
-            "grammarRule": "Passive Infinitives Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer right before finished, noticing the subject pronoun I, not me.",
+            "explanation": "My colleague and I is the doer of finished, using the subject pronoun I since it performs the action. In passive voice, this same idea shifts I into the object pronoun me: The report was finished two days early by my colleague and me.",
+            "grammarRule": "Active with Pronoun (Subject Case)",
+            "activeVoice": "My colleague and I finished the report two days early.",
+            "passiveVoice": "The report was finished two days early by my colleague and me."
         },
         {
             "id": "vs_l121_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The outdated banking software deserves to be fully replaced before serious problems eventually occur.",
-            "sentence": "The outdated banking software deserves to be fully replaced before serious problems eventually occur.",
+            "question": "The award was presented to us at last year's ceremony.",
+            "sentence": "The award was presented to us at last year's ceremony.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Look at the main, finite verb deserves, not the infinitive that follows it.",
-            "explanation": "This is active voice: the main verb deserves is active, even though it is followed by the passive infinitive to be replaced. In passive, the core idea would flip to: The outdated banking software will be fully replaced before serious problems eventually occur.",
-            "grammarRule": "Passive Infinitives Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Notice the object pronoun us here, not we. Ask who received the award, not who gave it.",
+            "explanation": "Us (receiver, as the object of to) is used because it follows the preposition to in this passive structure - the presenters remain unnamed. Switching to active voice requires flipping us back into the subject pronoun we: They presented the award to us at last year's ceremony.",
+            "grammarRule": "Passive with Pronoun (Object Case)",
+            "activeVoice": "They presented the award to us at last year's ceremony.",
+            "passiveVoice": "The award was presented to us at last year's ceremony."
         },
         {
             "id": "vs_l121_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Being thoroughly renovated took nearly six months for the entire historic building.",
-            "sentence": "Being thoroughly renovated took nearly six months for the entire historic building.",
+            "question": "We were given very little warning before the office closed for renovations.",
+            "sentence": "We were given very little warning before the office closed for renovations.",
             "options": [
                 "Active",
                 "Passive"
@@ -57,39 +57,39 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look at the very first words: a passive gerund phrase (being renovated) functions as the subject here.",
-            "explanation": "This is passive voice: being thoroughly renovated is a passive gerund phrase acting as the subject of the sentence. In active, this would flip to: Renovating the entire historic building thoroughly took nearly six months.",
-            "grammarRule": "Passive Gerund (Subject)",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "We here is the subject, but check whether we performed the giving or received it.",
+            "explanation": "We (receiver) were given - even though we is a subject pronoun, it doesn't mean the sentence is active; the subject can still be the receiver of an action in passive voice. No one is named as responsible. Active form: They gave us very little warning before the office closed for renovations.",
+            "grammarRule": "Passive with Pronoun (Subject Receiver)",
+            "activeVoice": "They gave us very little warning before the office closed for renovations.",
+            "passiveVoice": "We were given very little warning before the office closed for renovations."
         },
         {
             "id": "vs_l122_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The old downtown warehouse got demolished last week to make room for new apartments.",
-            "sentence": "The old downtown warehouse got demolished last week to make room for new apartments.",
+            "question": "The board eventually promoted him to senior partner after years of strong performance.",
+            "sentence": "The board eventually promoted him to senior partner after years of strong performance.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for got plus a past participle (demolished). This is a get-passive, equivalent to was demolished.",
-            "explanation": "This is passive voice: the warehouse (receiver) got demolished, a get-passive equivalent to was demolished. In active, this would flip to: Crews demolished the old downtown warehouse last week to make room for new apartments.",
-            "grammarRule": "Get-Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer right before promoted, noticing the object pronoun him, not he.",
+            "explanation": "The board is the doer of promoted, with him as the object pronoun since he receives the action here. Flipping to passive moves him into subject position, where it becomes he: He was eventually promoted to senior partner after years of strong performance.",
+            "grammarRule": "Active with Pronoun (Object Case)",
+            "activeVoice": "The board eventually promoted him to senior partner after years of strong performance.",
+            "passiveVoice": "He was eventually promoted to senior partner after years of strong performance by the board."
         },
         {
             "id": "vs_l122_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Her ambitious funding proposal got rejected during the final round of committee review.",
-            "sentence": "Her ambitious funding proposal got rejected during the final round of committee review.",
+            "question": "She was warned twice about the missing paperwork before the deadline passed.",
+            "sentence": "She was warned twice about the missing paperwork before the deadline passed.",
             "options": [
                 "Active",
                 "Passive"
@@ -97,19 +97,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for got plus a past participle (rejected). This is a get-passive, equivalent to was rejected.",
-            "explanation": "This is passive voice: her proposal (receiver) got rejected, a get-passive equivalent to was rejected. In active, this would flip to: The committee rejected her ambitious funding proposal during the final round of review.",
-            "grammarRule": "Get-Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Notice the subject pronoun she here. Ask whether she performed the warning or received it.",
+            "explanation": "She (receiver) was warned - even as the subject, she receives the action rather than performing it, which is exactly what makes this passive. No one is named as the one who warned her. Active form: They warned her twice about the missing paperwork before the deadline passed.",
+            "grammarRule": "Passive with Pronoun (Subject Receiver)",
+            "activeVoice": "They warned her twice about the missing paperwork before the deadline passed.",
+            "passiveVoice": "She was warned twice about the missing paperwork before the deadline passed."
         },
         {
             "id": "vs_l122_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The growing company promoted her to senior manager after just two impressive years.",
-            "sentence": "The growing company promoted her to senior manager after just two impressive years.",
+            "question": "The interviewer asked her several unexpected questions about her previous job.",
+            "sentence": "The interviewer asked her several unexpected questions about her previous job.",
             "options": [
                 "Active",
                 "Passive"
@@ -117,19 +117,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before promoted.",
-            "explanation": "This is active voice: the company (the doer) performed the action promoted directly on her. In passive, this would flip to: She got promoted to senior manager after just two impressive years at the growing company.",
-            "grammarRule": "Get-Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer right before asked, noticing the object pronoun her.",
+            "explanation": "The interviewer is the doer of asked, with her as the object pronoun. Passive version moves her into subject position as she: She was asked several unexpected questions about her previous job by the interviewer.",
+            "grammarRule": "Active with Pronoun (Object Case)",
+            "activeVoice": "The interviewer asked her several unexpected questions about her previous job.",
+            "passiveVoice": "She was asked several unexpected questions about her previous job by the interviewer."
         },
         {
             "id": "vs_l123_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "She still seemed genuinely exhausted after working through the long overnight hospital shift.",
-            "sentence": "She still seemed genuinely exhausted after working through the long overnight hospital shift.",
+            "question": "The landlord evicted them without following the proper legal process.",
+            "sentence": "The landlord evicted them without following the proper legal process.",
             "options": [
                 "Active",
                 "Passive"
@@ -137,79 +137,79 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Try inserting 'very' before exhausted. If it fits naturally, this is likely a predicate adjective, not true passive voice.",
-            "explanation": "This is active voice: seemed is a linking verb, and exhausted is a predicate adjective describing her state, not a true passive participle. There is no true passive counterpart here, since no agent is performing an action on her.",
-            "grammarRule": "Voice Ambiguity (Adjective vs Passive)",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer right before evicted, noticing the object pronoun them.",
+            "explanation": "The landlord is the doer of evicted, with them as the object pronoun. Passive version moves them into subject position as they: They were evicted without the proper legal process being followed.",
+            "grammarRule": "Active with Pronoun (Object Case)",
+            "activeVoice": "The landlord evicted them without following the proper legal process.",
+            "passiveVoice": "They were evicted without the proper legal process being followed by the landlord."
         },
         {
             "id": "vs_l123_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "He honestly looked completely surprised when he finally opened the beautifully wrapped gift.",
-            "sentence": "He honestly looked completely surprised when he finally opened the beautifully wrapped gift.",
+            "question": "They were misinformed about the actual cost of the repairs.",
+            "sentence": "They were misinformed about the actual cost of the repairs.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Try inserting 'very' before surprised. Linking verbs like looked, seemed, and felt signal an adjective, not passive voice.",
-            "explanation": "This is active voice: looked is a linking verb, and surprised functions as a predicate adjective describing his reaction, not a true passive participle here.",
-            "grammarRule": "Voice Ambiguity (Adjective vs Passive)",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "They here is the subject, but check whether they performed the informing or received it.",
+            "explanation": "They (receiver) were misinformed - even as the subject pronoun, they receives the action rather than performing it. No one is named as responsible. Active form: Someone misinformed them about the actual cost of the repairs.",
+            "grammarRule": "Passive with Pronoun (Subject Receiver)",
+            "activeVoice": "Someone misinformed them about the actual cost of the repairs.",
+            "passiveVoice": "They were misinformed about the actual cost of the repairs."
         },
         {
             "id": "vs_l123_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The beautifully wrapped birthday gift was carefully chosen by his thoughtful younger sister.",
-            "sentence": "The beautifully wrapped birthday gift was carefully chosen by his thoughtful younger sister.",
+            "question": "The single error affects every calculation that follows it in the spreadsheet.",
+            "sentence": "The single error affects every calculation that follows it in the spreadsheet.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus a past participle (chosen), followed by by naming who performed the action.",
-            "explanation": "This is genuinely passive voice: the gift (receiver) was chosen by his sister, the agent named after by. Unlike the adjective trap above, was here functions as the true passive auxiliary. In active, this would flip to: His thoughtful younger sister carefully chose the beautifully wrapped birthday gift.",
-            "grammarRule": "Voice Ambiguity (Adjective vs Passive)",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Check subject-verb agreement here: the single error, singular, takes affects, not affect. Find the doer right before it.",
+            "explanation": "The single error is the doer of affects, correctly matched in number since a singular subject takes a singular present-tense verb. Passive version: Every calculation that follows it in the spreadsheet is affected by the single error.",
+            "grammarRule": "Active with Subject-Verb Agreement",
+            "activeVoice": "The single error affects every calculation that follows it in the spreadsheet.",
+            "passiveVoice": "Every calculation that follows it in the spreadsheet is affected by the single error."
         },
         {
             "id": "vs_l124_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Being recognized internationally for her groundbreaking research completely transformed her entire academic career.",
-            "sentence": "Being recognized internationally for her groundbreaking research completely transformed her entire academic career.",
+            "question": "One mistake in the code caused several other functions to fail.",
+            "sentence": "One mistake in the code caused several other functions to fail.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look at the very first words: a passive gerund phrase (being recognized) functions as the subject here.",
-            "explanation": "This is passive voice: being recognized internationally for her groundbreaking research is a passive gerund phrase acting as the subject of the sentence. In active, this would flip to: Recognizing her groundbreaking research internationally completely transformed her entire academic career.",
-            "grammarRule": "Passive Gerund (Subject)",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Notice that one mistake is singular, but several other functions is plural. Find the doer right before caused.",
+            "explanation": "One mistake is the singular doer of caused, even though its effect touches several other functions, a plural object - the verb agrees with the subject, not the object. Passive version, keeping the same relationship: Several other functions were caused to fail by one mistake in the code.",
+            "grammarRule": "Active with Singular Subject, Plural Object",
+            "activeVoice": "One mistake in the code caused several other functions to fail.",
+            "passiveVoice": "Several other functions were caused to fail by one mistake in the code."
         },
         {
             "id": "vs_l124_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "This ancient artistic tradition truly deserves to be carefully preserved for future generations.",
-            "sentence": "This ancient artistic tradition truly deserves to be carefully preserved for future generations.",
+            "question": "Several minor errors were traced back to a single faulty sensor.",
+            "sentence": "Several minor errors were traced back to a single faulty sensor.",
             "options": [
                 "Active",
                 "Passive"
@@ -217,19 +217,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Although deserves is active, ask which element the whole sentence emphasizes: the tradition receiving preservation.",
-            "explanation": "This entry is best read as passive in focus: the tradition (receiver) deserves to be preserved, with the passive infinitive expressing the needed action. In active, this would flip to: Future generations deserve to carefully preserve this ancient artistic tradition.",
-            "grammarRule": "Passive Infinitives Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Notice that several minor errors is plural, but a single faulty sensor is singular. Look for were plus a past participle, agreeing with the plural subject.",
+            "explanation": "Several minor errors (receiver, plural) were traced - the passive verb were agrees with the plural subject, even though the agent, a single faulty sensor, is singular. Active form: A single faulty sensor caused several minor errors, which were traced back to it (more directly: Someone traced several minor errors back to a single faulty sensor).",
+            "grammarRule": "Passive with Plural Subject, Singular Agent",
+            "activeVoice": "Someone traced several minor errors back to a single faulty sensor.",
+            "passiveVoice": "Several minor errors were traced back to a single faulty sensor."
         },
         {
             "id": "vs_l124_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "This entire museum wing urgently requires major renovation before the grand reopening event.",
-            "sentence": "This entire museum wing urgently requires major renovation before the grand reopening event.",
+            "question": "The manager, not the two assistants, approved the final budget.",
+            "sentence": "The manager, not the two assistants, approved the final budget.",
             "options": [
                 "Active",
                 "Passive"
@@ -237,19 +237,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before requires.",
-            "explanation": "This is active voice: this museum wing (the doer of requires) is the grammatical subject, actively requiring renovation. In passive, this would flip to: Major renovation is urgently required for this entire museum wing before the grand reopening event.",
-            "grammarRule": "Passive Infinitives Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Check agreement carefully: the manager is singular, so the verb approved must match that, not the two assistants. Find the doer right before approved.",
+            "explanation": "The manager is the singular doer of approved - the phrase not the two assistants is simply clarifying who did not do the approving, without changing subject-verb agreement. Passive version: The final budget was approved by the manager, not the two assistants.",
+            "grammarRule": "Active with Singular Subject Clarified",
+            "activeVoice": "The manager, not the two assistants, approved the final budget.",
+            "passiveVoice": "The final budget was approved by the manager, not the two assistants."
         },
         {
             "id": "vs_l125_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The board finally approved the ambitious merger after several weeks of tense negotiation.",
-            "sentence": "The board finally approved the ambitious merger after several weeks of tense negotiation.",
+            "question": "The coach criticized the referee after the controversial call.",
+            "sentence": "The coach criticized the referee after the controversial call.",
             "options": [
                 "Active",
                 "Passive"
@@ -257,59 +257,59 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before approved.",
-            "explanation": "This is active voice: the board (the doer) performed the action approved directly on the merger. In passive, this would flip to: The ambitious merger finally got approved after several weeks of tense negotiation.",
-            "grammarRule": "Get-Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer right before criticized - who is doing the criticizing, and who receives it?",
+            "explanation": "The coach is the doer of criticized, acting on the referee, the receiver. A common learner mistake would be reversing these roles in the passive version - the correct passive keeps the same relationship: The referee was criticized by the coach after the controversial call, not The coach was criticized by the referee.",
+            "grammarRule": "Active with Meaning Preservation",
+            "activeVoice": "The coach criticized the referee after the controversial call.",
+            "passiveVoice": "The referee was criticized by the coach after the controversial call."
         },
         {
             "id": "vs_l125_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Doctors eventually diagnosed the rare genetic condition after several months of extensive testing.",
-            "sentence": "Doctors eventually diagnosed the rare genetic condition after several months of extensive testing.",
+            "question": "The tenant was sued by the landlord over unpaid rent.",
+            "sentence": "The tenant was sued by the landlord over unpaid rent.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Who performs the action diagnosed? Look right before the verb.",
-            "explanation": "This is active voice: doctors (the doer) performed the action diagnosed directly on the condition. In passive, this would flip to: The rare genetic condition eventually got diagnosed after several months of extensive testing.",
-            "grammarRule": "Get-Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Find the receiver and the doer carefully - who took legal action, and who faced it?",
+            "explanation": "The tenant (receiver) was sued - the landlord is the one who took action, named correctly after by. A meaning-changing error would flip these roles: The landlord was sued by the tenant would describe a completely different situation. Active form: The landlord sued the tenant over unpaid rent.",
+            "grammarRule": "Passive with Meaning Preservation",
+            "activeVoice": "The landlord sued the tenant over unpaid rent.",
+            "passiveVoice": "The tenant was sued by the landlord over unpaid rent."
         },
         {
             "id": "vs_l125_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "His badly outdated laptop finally got replaced with a much faster new model.",
-            "sentence": "His badly outdated laptop finally got replaced with a much faster new model.",
+            "question": "The customer thanked the barista for remembering her usual order.",
+            "sentence": "The customer thanked the barista for remembering her usual order.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for got plus a past participle (replaced). This is a get-passive, equivalent to was replaced.",
-            "explanation": "This is passive voice: his laptop (receiver) got replaced, a get-passive equivalent to was replaced. In active, this would flip to: The company finally replaced his badly outdated laptop with a much faster new model.",
-            "grammarRule": "Get-Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer right before thanked - who is expressing thanks, and who receives it?",
+            "explanation": "The customer is the doer of thanked, acting toward the barista, the receiver. Reversing these roles in passive voice would change the meaning entirely - the correct version keeps them in place: The barista was thanked by the customer for remembering her usual order.",
+            "grammarRule": "Active with Meaning Preservation",
+            "activeVoice": "The customer thanked the barista for remembering her usual order.",
+            "passiveVoice": "The barista was thanked by the customer for remembering her usual order."
         },
         {
             "id": "vs_l126_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The senior manager clearly appeared visibly annoyed during the entire lengthy budget meeting.",
-            "sentence": "The senior manager clearly appeared visibly annoyed during the entire lengthy budget meeting.",
+            "question": "After the accident, the driver blamed himself for not checking his mirrors.",
+            "sentence": "After the accident, the driver blamed himself for not checking his mirrors.",
             "options": [
                 "Active",
                 "Passive"
@@ -317,19 +317,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Try inserting 'very' before annoyed. Linking verbs like appeared signal an adjective, not passive voice.",
-            "explanation": "This is active voice: appeared is a linking verb, and annoyed functions as a predicate adjective describing the manager's mood, not a true passive participle.",
-            "grammarRule": "Voice Ambiguity (Adjective vs Passive)",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Notice himself refers back to the driver, the same person. Find the doer right before blamed.",
+            "explanation": "The driver is the doer of blamed, with himself as a reflexive object referring back to the same person - reflexive verbs like this rarely appear in natural passive voice, since it would sound odd to say He was blamed by himself. Active voice is simply the natural choice here.",
+            "grammarRule": "Active with Reflexive Object (No Natural Passive)",
+            "activeVoice": "After the accident, the driver blamed himself for not checking his mirrors.",
+            "passiveVoice": "No natural passive form exists here; reflexive constructions like this typically stay active."
         },
         {
             "id": "vs_l126_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The entire lengthy budget meeting was rescheduled twice due to unexpected scheduling conflicts.",
-            "sentence": "The entire lengthy budget meeting was rescheduled twice due to unexpected scheduling conflicts.",
+            "question": "The witnesses were questioned separately so their stories couldn't influence each other.",
+            "sentence": "The witnesses were questioned separately so their stories couldn't influence each other.",
             "options": [
                 "Active",
                 "Passive"
@@ -337,39 +337,39 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus a past participle (rescheduled). The subject receives the action here.",
-            "explanation": "This is genuinely passive voice: the meeting (receiver) was rescheduled, but no specific scheduler is named. In active, this would flip to: Staff rescheduled the entire lengthy budget meeting twice due to unexpected scheduling conflicts.",
-            "grammarRule": "Voice Ambiguity (Adjective vs Passive)",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "The witnesses is the subject here - check whether they performed the questioning or received it.",
+            "explanation": "The witnesses (receiver) were questioned - the pronoun their later in the sentence correctly refers back to the witnesses, keeping the reference clear across both clauses. No specific detective is named. Active form: Detectives questioned the witnesses separately so their stories couldn't influence each other.",
+            "grammarRule": "Passive with Pronoun Reference",
+            "activeVoice": "Detectives questioned the witnesses separately so their stories couldn't influence each other.",
+            "passiveVoice": "The witnesses were questioned separately so their stories couldn't influence each other."
         },
         {
             "id": "vs_l126_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The inspiring closing speech was written by the company founder the night before.",
-            "sentence": "The inspiring closing speech was written by the company founder the night before.",
+            "question": "The two rival companies eventually agreed to merge their operations.",
+            "sentence": "The two rival companies eventually agreed to merge their operations.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus a past participle (written), followed by by naming who performed the action.",
-            "explanation": "This is genuinely passive voice: the speech (receiver) was written by the founder, the agent named after by. In active, this would flip to: The company founder wrote the inspiring closing speech the night before.",
-            "grammarRule": "Voice Ambiguity (Adjective vs Passive)",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Notice their refers back to the two rival companies, correctly plural. Find the doer right before agreed.",
+            "explanation": "The two rival companies is the doer of agreed, with their correctly matching in number since it refers back to a plural subject. This kind of reciprocal agreement rarely takes a natural passive form, since agree to merge describes a mutual action rather than one performed on a clear receiver.",
+            "grammarRule": "Active with Plural Pronoun Reference (No Natural Passive)",
+            "activeVoice": "The two rival companies eventually agreed to merge their operations.",
+            "passiveVoice": "No natural passive form exists here; mutual or reciprocal actions like this typically stay active."
         },
         {
             "id": "vs_l127_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "This entire network infrastructure needs to be significantly upgraded before the busy holiday season.",
-            "sentence": "This entire network infrastructure needs to be significantly upgraded before the busy holiday season.",
+            "question": "The teacher returned their essays with detailed comments in the margins.",
+            "sentence": "The teacher returned their essays with detailed comments in the margins.",
             "options": [
                 "Active",
                 "Passive"
@@ -377,59 +377,59 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "The finite verb needs stays active here, even with a passive infinitive tagging along.",
-            "explanation": "This is active voice: the main verb needs is active, even though it is followed by the passive infinitive to be upgraded. In passive, the core idea would flip to: This entire network infrastructure will be significantly upgraded before the busy holiday season.",
-            "grammarRule": "Passive Infinitives Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Notice their refers to the students, implied by context, not to the teacher. Find the doer right before returned.",
+            "explanation": "The teacher is the doer of returned, with their essays as the object - their refers to the students who own the essays, not to the teacher. Passive version, keeping that same reference clear: Their essays were returned with detailed comments in the margins by the teacher.",
+            "grammarRule": "Active with Possessive Pronoun Reference",
+            "activeVoice": "The teacher returned their essays with detailed comments in the margins.",
+            "passiveVoice": "Their essays were returned with detailed comments in the margins by the teacher."
         },
         {
             "id": "vs_l127_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "This outdated security protocol deserves to be immediately replaced across the whole company.",
-            "sentence": "This outdated security protocol deserves to be immediately replaced across the whole company.",
+            "question": "His proposal was rejected by the committee after a lengthy debate.",
+            "sentence": "His proposal was rejected by the committee after a lengthy debate.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "The finite verb deserves stays active here, even with a passive infinitive tagging along.",
-            "explanation": "This is active voice: the main verb deserves is active, even though it is followed by the passive infinitive to be replaced. In passive, the core idea would flip to: This outdated security protocol will be immediately replaced across the whole company.",
-            "grammarRule": "Passive Infinitives Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "His here refers to a specific person mentioned earlier or understood from context. Look for was plus a past participle.",
+            "explanation": "His proposal (receiver) was rejected - his correctly shows ownership of the proposal, distinct from the committee, which performs the rejecting. Active form: The committee rejected his proposal after a lengthy debate.",
+            "grammarRule": "Passive with Possessive Pronoun",
+            "activeVoice": "The committee rejected his proposal after a lengthy debate.",
+            "passiveVoice": "His proposal was rejected by the committee after a lengthy debate."
         },
         {
             "id": "vs_l127_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Being constantly monitored for performance issues greatly helped the entire team catch problems early.",
-            "sentence": "Being constantly monitored for performance issues greatly helped the entire team catch problems early.",
+            "question": "Her manager praised her initiative during the team meeting.",
+            "sentence": "Her manager praised her initiative during the team meeting.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look at the very first words: a passive gerund phrase (being monitored) functions as the subject here.",
-            "explanation": "This is passive voice: being constantly monitored for performance issues is a passive gerund phrase acting as the subject. In active, this would flip to: Constantly monitoring performance issues greatly helped the entire team catch problems early.",
-            "grammarRule": "Passive Gerund (Subject)",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Notice both her (possessive) and her (object) appear here, but only one is the true grammatical object. Find the doer right before praised.",
+            "explanation": "Her manager is the doer of praised, with her initiative as the object - the first her shows possession (whose initiative), while initiative itself is what receives the praise. Passive version: Her initiative was praised by her manager during the team meeting.",
+            "grammarRule": "Active with Possessive and Object Pronoun",
+            "activeVoice": "Her manager praised her initiative during the team meeting.",
+            "passiveVoice": "Her initiative was praised by her manager during the team meeting."
         },
         {
             "id": "vs_l128_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The entire outdoor festival got cancelled due to the sudden severe storm warning.",
-            "sentence": "The entire outdoor festival got cancelled due to the sudden severe storm warning.",
+            "question": "The prize was shared equally between him and her after the tie.",
+            "sentence": "The prize was shared equally between him and her after the tie.",
             "options": [
                 "Active",
                 "Passive"
@@ -437,19 +437,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for got plus a past participle (cancelled). This is a get-passive, equivalent to was cancelled.",
-            "explanation": "This is passive voice: the festival (receiver) got cancelled, a get-passive equivalent to was cancelled. In active, this would flip to: Organizers cancelled the entire outdoor festival due to the sudden severe storm warning.",
-            "grammarRule": "Get-Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Notice both pronouns here are object pronouns, him and her, correctly following the preposition between. Look for was plus a past participle.",
+            "explanation": "The prize (receiver) was shared - between takes object pronouns, so him and her are correct here; a common learner error would be writing he and she instead, which would be ungrammatical after a preposition. Active form: The judges shared the prize equally between him and her after the tie.",
+            "grammarRule": "Passive with Pronoun Case After Preposition",
+            "activeVoice": "The judges shared the prize equally between him and her after the tie.",
+            "passiveVoice": "The prize was shared equally between him and her after the tie."
         },
         {
             "id": "vs_l128_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Her truly innovative design finally got selected for the prestigious international design award.",
-            "sentence": "Her truly innovative design finally got selected for the prestigious international design award.",
+            "question": "He and I were both interviewed for the same position last week.",
+            "sentence": "He and I were both interviewed for the same position last week.",
             "options": [
                 "Active",
                 "Passive"
@@ -457,19 +457,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for got plus a past participle (selected). This is a get-passive, equivalent to was selected.",
-            "explanation": "This is passive voice: her design (receiver) got selected, a get-passive equivalent to was selected. In active, this would flip to: The judges finally selected her truly innovative design for the prestigious international design award.",
-            "grammarRule": "Get-Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Notice both pronouns here are subject pronouns, he and I, correctly used since they are the subject. Look for were plus a past participle.",
+            "explanation": "He and I (receiver, as subject pronouns) were interviewed - even though he and I sit in subject position, they still receive the action, which is what makes this passive despite using subject-case pronouns; a common error would be swapping in him and me here since the sentence feels like it should take object pronouns. Active form: Someone interviewed him and me for the same position last week.",
+            "grammarRule": "Passive with Subject Pronoun as Receiver",
+            "activeVoice": "Someone interviewed him and me for the same position last week.",
+            "passiveVoice": "He and I were both interviewed for the same position last week."
         },
         {
             "id": "vs_l128_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The entire judging committee finally selected her innovative design for the top award.",
-            "sentence": "The entire judging committee finally selected her innovative design for the top award.",
+            "question": "The manager gave my colleague and me conflicting instructions on the same project.",
+            "sentence": "The manager gave my colleague and me conflicting instructions on the same project.",
             "options": [
                 "Active",
                 "Passive"
@@ -477,99 +477,79 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before selected.",
-            "explanation": "This is active voice: the judging committee (the doer) performed the action selected directly on her design. In passive, this would flip to: Her innovative design finally got selected by the entire judging committee for the top award.",
-            "grammarRule": "Get-Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Notice my colleague and me uses the object pronoun me, correctly, since it follows the verb gave. Find the doer right before gave.",
+            "explanation": "The manager is the doer of gave, with my colleague and me as the two-part indirect object - me is correct here since it functions as an object, not a subject; a common error would be writing my colleague and I instead. Passive version: My colleague and I were given conflicting instructions on the same project by the manager.",
+            "grammarRule": "Active with Pronoun Case (Indirect Object)",
+            "activeVoice": "The manager gave my colleague and me conflicting instructions on the same project.",
+            "passiveVoice": "My colleague and I were given conflicting instructions on the same project by the manager."
         },
         {
             "id": "vs_l129_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "This entire legal document needs to be reviewed before either party signs it.",
-            "sentence": "This entire legal document needs to be reviewed before either party signs it.",
+            "question": "They should have been told about the schedule change days in advance.",
+            "sentence": "They should have been told about the schedule change days in advance.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Check the tense-carrying verb needs first; it is not itself passive.",
-            "explanation": "This is active voice: the main verb needs is active, even though it is followed by the passive infinitive to be reviewed. In passive, the core idea would flip to: This entire legal document will be reviewed before either party signs it.",
-            "grammarRule": "Passive Infinitives Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "They here is the subject, but check whether they performed the telling or received it.",
+            "explanation": "They (receiver) should have been told - even as a subject pronoun, they receives the action in this modal perfect passive, with no specific department named. Active form: Someone should have told them about the schedule change days in advance.",
+            "grammarRule": "Perfect Modal Passive with Pronoun",
+            "activeVoice": "Someone should have told them about the schedule change days in advance.",
+            "passiveVoice": "They should have been told about the schedule change days in advance."
         },
         {
             "id": "vs_l129_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Her rare chronic condition finally got diagnosed after years of confusing medical symptoms.",
-            "sentence": "Her rare chronic condition finally got diagnosed after years of confusing medical symptoms.",
+            "question": "He and his brother have run this small hardware store for over twenty years.",
+            "sentence": "He and his brother have run this small hardware store for over twenty years.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for got plus a past participle (diagnosed). This is a get-passive, equivalent to was diagnosed.",
-            "explanation": "This is passive voice: her condition (receiver) got diagnosed, a get-passive equivalent to was diagnosed. In active, this would flip to: A specialist finally diagnosed her rare chronic condition after years of confusing medical symptoms.",
-            "grammarRule": "Get-Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Notice he and his brother is a compound subject, correctly plural for the verb have run. Find the doer right before have run.",
+            "explanation": "He and his brother is the doer of have run, a compound subject taking the plural verb form have, present perfect active. This kind of long-term personal ownership rarely takes a natural passive form, since it would feel unnatural to say This small hardware store has been run by him and his brother for over twenty years - though technically grammatical, active voice suits this context better.",
+            "grammarRule": "Active with Compound Subject",
+            "activeVoice": "He and his brother have run this small hardware store for over twenty years.",
+            "passiveVoice": "This small hardware store has been run by him and his brother for over twenty years."
         },
         {
             "id": "vs_l129_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The entire audience grew visibly restless during the unnecessarily long technical conference presentation.",
-            "sentence": "The entire audience grew visibly restless during the unnecessarily long technical conference presentation.",
+            "question": "Neither the manager nor the assistants were informed about the last-minute change.",
+            "sentence": "Neither the manager nor the assistants were informed about the last-minute change.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Try inserting 'very' before restless. Linking verbs like grew signal an adjective, not passive voice.",
-            "explanation": "This is active voice: grew functions here as a linking verb, and restless is a predicate adjective describing the audience's state, not a true passive participle.",
-            "grammarRule": "Voice Ambiguity (Adjective vs Passive)",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Check agreement here: neither...nor usually agrees with the noun closest to the verb, assistants, hence were. Look for were plus a past participle.",
+            "explanation": "Neither the manager nor the assistants (receiver) were informed - the verb agrees with assistants, the noun closest to it, following the neither...nor agreement rule, even though manager is singular. No one is named as responsible. Active form: Someone informed neither the manager nor the assistants about the last-minute change.",
+            "grammarRule": "Passive with Neither/Nor Agreement",
+            "activeVoice": "Someone informed neither the manager nor the assistants about the last-minute change.",
+            "passiveVoice": "Neither the manager nor the assistants were informed about the last-minute change."
         },
         {
             "id": "vs_l130_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Being thoroughly tested for safety took nearly a full year for the new vehicle.",
-            "sentence": "Being thoroughly tested for safety took nearly a full year for the new vehicle.",
-            "options": [
-                "Active",
-                "Passive"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look at the very first words: a passive gerund phrase (being tested) functions as the subject here.",
-            "explanation": "This checkpoint reviews passive voice: being thoroughly tested for safety is a passive gerund phrase acting as the subject. In active, this would flip to: Thoroughly testing the new vehicle for safety took nearly a full year.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
-        },
-        {
-            "id": "vs_l130_q2",
-            "instruction": "FLIP THE VOICE TRANSMUTER",
-            "subtype": "voiceSwap",
-            "interactionType": "choice",
-            "question": "The exhausted new intern still looked completely overwhelmed by the enormous daily workload.",
-            "sentence": "The exhausted new intern still looked completely overwhelmed by the enormous daily workload.",
+            "question": "This checkpoint reviews pronouns and agreement: The director thanked the entire crew and me personally after the final show.",
+            "sentence": "This checkpoint reviews pronouns and agreement: The director thanked the entire crew and me personally after the final show.",
             "options": [
                 "Active",
                 "Passive"
@@ -577,19 +557,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Try inserting 'very' before overwhelmed. Linking verbs like looked signal an adjective, not passive voice, even with by attached.",
-            "explanation": "This checkpoint reviews active voice: looked is a linking verb, and overwhelmed is a predicate adjective here, not a true passive participle, despite the by phrase.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer right before thanked, noticing the object pronoun me.",
+            "explanation": "This checkpoint reviews active voice with a compound object: the director is the doer of thanked, with the entire crew and me as the object, correctly using me rather than I since it follows the verb. Passive version: The entire crew and I were thanked personally by the director after the final show.",
+            "grammarRule": "Active with Pronoun Case (Compound Object)",
+            "activeVoice": "The director thanked the entire crew and me personally after the final show.",
+            "passiveVoice": "The entire crew and I were thanked personally by the director after the final show."
         },
         {
-            "id": "vs_l130_q3",
+            "id": "vs_l130_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The whole engineering department finally got completely reorganized after the sudden leadership change.",
-            "sentence": "The whole engineering department finally got completely reorganized after the sudden leadership change.",
+            "question": "This checkpoint reviews pronouns and agreement: She and her assistant were never officially notified of the delay.",
+            "sentence": "This checkpoint reviews pronouns and agreement: She and her assistant were never officially notified of the delay.",
             "options": [
                 "Active",
                 "Passive"
@@ -597,11 +577,31 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for got plus a past participle (reorganized). This is a get-passive, equivalent to was reorganized.",
-            "explanation": "This checkpoint reviews passive voice: the department (receiver) got reorganized, a get-passive equivalent to was reorganized. In active, this would flip to: New leadership finally reorganized the whole engineering department after the sudden change.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "She and her assistant is the subject here - check whether they performed the notifying or received it.",
+            "explanation": "This checkpoint reviews passive voice with a compound subject: she and her assistant (receiver) were notified, correctly using subject pronouns even though they receive the action. No one is named as responsible. Active form: Nobody ever officially notified her and her assistant of the delay.",
+            "grammarRule": "Passive with Pronoun Case (Compound Subject)",
+            "activeVoice": "Nobody ever officially notified her and her assistant of the delay.",
+            "passiveVoice": "She and her assistant were never officially notified of the delay."
+        },
+        {
+            "id": "vs_l130_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "This checkpoint reviews pronouns and agreement: Neither the parents nor the teacher was aware of the field trip cancellation.",
+            "sentence": "This checkpoint reviews pronouns and agreement: Neither the parents nor the teacher was aware of the field trip cancellation.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Check agreement here: neither...nor usually agrees with the noun closest to the verb, teacher, hence was, not were. Confirm this is active by checking whether anything is being done to the subject.",
+            "explanation": "This checkpoint reviews subject-verb agreement in active voice: the verb was agrees with teacher, the noun closest to it, even though parents is plural - and since aware describes a state rather than an action done to the subject, this sentence has no passive equivalent at all.",
+            "grammarRule": "Active with Neither/Nor Agreement (No Passive Possible)",
+            "activeVoice": "Neither the parents nor the teacher was aware of the field trip cancellation.",
+            "passiveVoice": "No passive form exists - aware describes a state, not an action performed on an object."
         }
     ]
 }

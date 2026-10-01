@@ -5,513 +5,513 @@
     "quests": [
         {
             "id": "sva_l171_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "What ___ consistently been shown to be true is that context matters enormously.",
-            "hint": "This noun clause beginning with 'what' functions as a single, singular subject.",
-            "explanation": "The subject is the noun clause 'what has consistently been shown to be true', which is treated as singular. The auxiliary is 'has': 'what has consistently been shown'.",
+            "question": "The cashier and the assistant, both new to the company, ___ extra training this week.",
+            "hint": "Two people joined by 'and' form a plural subject, no matter what the parenthetical says about them.",
+            "explanation": "'The cashier and the assistant' is a compound subject joined by 'and', so it's plural; 'both new to the company' is just extra detail. The verb stays in the base form: 'need'.",
             "options": [
-                "has",
-                "have"
+                "need",
+                "needs"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswer": "need",
+            "grammarRule": "Compound subject joined by 'and' stays plural, even with an interrupting phrase",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l171_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The arguments that ___ been made in favour of this approach are compelling.",
-            "hint": "Inside the relative clause, 'that' refers to 'the arguments' (plural).",
-            "explanation": "'That' refers to 'the arguments', which is plural. The auxiliary inside the relative clause is 'have': 'that have been made'.",
+            "question": "The chef and the sous-chef in this kitchen ___ every dish before it's served.",
+            "hint": "The phrase 'in this kitchen' describes where the two people work - it doesn't change their number.",
+            "explanation": "'The chef and the sous-chef' is a compound subject, so it's plural. The verb stays in the base form: 'taste'.",
             "options": [
-                "has",
-                "have"
+                "tastes",
+                "taste"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "have",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswer": "taste",
+            "grammarRule": "Compound subject joined by 'and' stays plural, even with an interrupting phrase",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l171_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The argument that ___ been made in favour of this approach is compelling.",
-            "hint": "Inside the relative clause, 'that' refers to 'the argument' (singular).",
-            "explanation": "'That' refers to 'the argument', which is singular. The auxiliary inside the relative clause is 'has': 'that has been made in favour of this approach'.",
+            "question": "My uncle and his business partner, despite years of experience, ___ still learning new strategies.",
+            "hint": "Set the aside about experience to one side and look at how the subject is built.",
+            "explanation": "'My uncle and his business partner' is a compound subject, so it's plural. The verb is 'are'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are",
+            "grammarRule": "Compound subject joined by 'and' stays plural, even with an interrupting phrase",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l172_q1",
+            "instruction": "SPOT THE DISTRACTOR",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Each of the employees who joined this year ___ a mentor assigned to them.",
+            "hint": "Which word controls the verb: 'each', or the group described by the relative clause?",
+            "explanation": "'Each of the employees' is singular, and 'who joined this year' just adds detail about them. The verb takes -s: 'has'.",
             "options": [
                 "has",
                 "have"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l172_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The policies that ___ implemented over the past decade have yielded mixed results.",
-            "hint": "Inside the relative clause, 'that' refers to 'the policies' (plural).",
-            "explanation": "'That' refers to 'the policies', which is plural. The verb inside the relative clause is 'were': 'that were implemented over the past decade'.",
-            "options": [
-                "was",
-                "were"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "grammarRule": "Distributive subject stays singular, even with a relative clause containing a plural noun",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l172_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE DISTRACTOR",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The policy that ___ implemented over the past decade has yielded mixed results.",
-            "hint": "Inside the relative clause, 'that' refers to 'the policy' (singular).",
-            "explanation": "'That' refers to 'the policy', which is singular. The verb inside the relative clause is 'was': 'that was implemented over the past decade'.",
+            "question": "Every applicant who submits a late form ___ an automatic rejection.",
+            "hint": "Ask what 'every' does to the noun it modifies, then set the relative clause aside.",
+            "explanation": "'Every applicant' is singular; 'who submits a late form' just adds a condition. The verb takes -s: 'receives'.",
             "options": [
-                "was",
-                "were"
+                "receive",
+                "receives"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "receives",
+            "grammarRule": "Distributive subject stays singular, even with a relative clause containing a plural noun",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l172_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE DISTRACTOR",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The manner in which the decisions ___ made has been widely criticised.",
-            "hint": "Inside the relative clause, 'which' refers to 'the decisions' (plural).",
-            "explanation": "Inside the relative clause 'in which the decisions were made', 'which' refers to 'the decisions', which is plural. The verb inside is 'were'.",
+            "question": "Neither of the candidates who interviewed yesterday ___ fully prepared.",
+            "hint": "Think about how 'neither of' behaves, then set the relative clause aside.",
+            "explanation": "'Neither of the candidates' is singular; 'who interviewed yesterday' is extra detail. The verb takes -s: 'seems'.",
             "options": [
-                "was",
-                "were"
+                "seem",
+                "seems"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "seems",
+            "grammarRule": "Distributive subject stays singular, even with a relative clause containing a plural noun",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l173_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE DISTRACTOR",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The manner in which the decision ___ made has been widely criticised.",
-            "hint": "Inside the relative clause, 'which' refers to 'the decision' (singular).",
-            "explanation": "Inside the relative clause, 'which' refers to 'the decision', which is singular. The verb inside is 'was': 'in which the decision was made'.",
+            "question": "Everyone in the meeting room ___ the same opinion about the proposal.",
+            "hint": "Look at the pronoun itself and set aside the phrase describing where they are.",
+            "explanation": "'Everyone' is singular; 'in the meeting room' is just extra detail. The verb takes -s: 'shares'.",
             "options": [
-                "was",
-                "were"
+                "shares",
+                "share"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "shares",
+            "grammarRule": "Indefinite pronoun stays singular, even with a prepositional phrase containing a plural noun",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l173_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE DISTRACTOR",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The resources that ___ allocated to this project proved insufficient.",
-            "hint": "Inside the relative clause, 'that' refers to 'the resources' (plural).",
-            "explanation": "'That' refers to 'the resources', which is plural. The verb inside the relative clause is 'were': 'that were allocated to this project'.",
+            "question": "Something about her explanation ___ confusing to the class.",
+            "hint": "Identify the pronoun, then decide whether the phrase after it can affect the verb.",
+            "explanation": "'Something' is singular; 'about her explanation' is extra detail. The verb takes -s: 'seems'.",
             "options": [
-                "was",
-                "were"
+                "seem",
+                "seems"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "seems",
+            "grammarRule": "Indefinite pronoun stays singular, even with a prepositional phrase containing a plural noun",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l173_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE DISTRACTOR",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The resource that ___ allocated to this project proved insufficient.",
-            "hint": "Inside the relative clause, 'that' refers to 'the resource' (singular).",
-            "explanation": "'That' refers to 'the resource', which is singular. The verb inside the relative clause is 'was': 'that was allocated to this project'.",
-            "options": [
-                "was",
-                "were"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l174_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "What remains most striking about these results ___ the consistency across all groups.",
-            "hint": "The 'what' clause is the subject - singular; the main verb agrees with it.",
-            "explanation": "'What remains most striking about these results' is a singular noun clause acting as the subject. The main verb 'is' agrees with this singular subject, not with 'the consistency'.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l174_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "What remain most striking about these results ___ the inconsistencies across groups.",
-            "hint": "The 'what' clause here is followed by a plural complement - the linking verb can agree with the complement.",
-            "explanation": "When a 'what' clause is followed by a plural complement in a linking-verb sentence, the verb can agree with the complement: 'what remain most striking are the inconsistencies'. This is the 'inverse agreement' pattern.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l174_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The degree to which these findings ___ generalisable remains to be determined.",
-            "hint": "Inside the embedded 'to which' clause, 'these findings' is plural.",
-            "explanation": "Inside the embedded clause 'to which these findings are generalisable', the subject is 'these findings', which is plural. The verb inside is 'are'.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l175_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Much of what the critics ___ said about the film has been proven wrong.",
-            "hint": "Inside the embedded 'what' clause, the subject is 'the critics' (plural).",
-            "explanation": "Inside the embedded clause 'what the critics have said about the film', the subject is 'the critics', which is plural. The auxiliary is 'have'.",
-            "options": [
-                "have",
-                "has"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "have",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l175_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Little of what the critic ___ said about the film has been proven wrong.",
-            "hint": "Inside the embedded 'what' clause, the subject is 'the critic' (singular).",
-            "explanation": "Inside the embedded clause, the subject is 'the critic', which is singular. The auxiliary is 'has': 'what the critic has said about the film'.",
+            "question": "Nobody among the applicants ___ the required certification.",
+            "hint": "Ignore 'among the applicants' for a moment - what does 'nobody' require?",
+            "explanation": "'Nobody' is singular; 'among the applicants' is extra detail. The verb takes -s: 'has'.",
             "options": [
                 "have",
                 "has"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "Indefinite pronoun stays singular, even with a prepositional phrase containing a plural noun",
             "subjectType": "Singular"
         },
         {
-            "id": "sva_l175_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "id": "sva_l174_q1",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The rate at which new species ___ being discovered has accelerated.",
-            "hint": "Inside the relative clause, 'which' refers to 'new species' (plural).",
-            "explanation": "Inside the relative clause 'at which new species are being discovered', 'which' refers to 'new species', which is plural. The verb inside is 'are'.",
+            "question": "Nearly half of the committee's annual budget ___ to consulting fees.",
+            "hint": "Which noun does the quantity phrase actually describe: the committee, or its budget?",
+            "explanation": "'Nearly half of' agrees with the noun after 'of' - 'budget', which is singular - so the verb takes -s: 'goes'. The possessive 'committee's' doesn't control the verb.",
+            "options": [
+                "goes",
+                "go"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "goes",
+            "grammarRule": "Quantity expression agrees with the head noun after 'of', even inside a possessive phrase",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l174_q2",
+            "instruction": "FIND THE CORRECT AGREEMENT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Most of the team's equipment ___ replacing soon.",
+            "hint": "Look for the head noun after 'of' - is it countable or uncountable?",
+            "explanation": "'Equipment' is uncountable, so 'most of the team's equipment' takes a singular verb: 'needs'.",
+            "options": [
+                "needs",
+                "need"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "needs",
+            "grammarRule": "Quantity expression agrees with the head noun after 'of', even inside a possessive phrase",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l174_q3",
+            "instruction": "FIND THE CORRECT AGREEMENT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "A large percentage of the audience's feedback ___ the venue's poor acoustics.",
+            "hint": "Ask what the percentage is a percentage of: the audience, or its feedback?",
+            "explanation": "'Feedback' is uncountable, so 'a large percentage of the audience's feedback' takes a singular verb: 'mentions'.",
+            "options": [
+                "mentions",
+                "mention"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "mentions",
+            "grammarRule": "Quantity expression agrees with the head noun after 'of', even inside a possessive phrase",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l175_q1",
+            "instruction": "COMPLETE THE SENTENCE",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "There ___ two managers and three assistants working on this project.",
+            "hint": "Treat everything after 'there' as one subject and think about what it contains.",
+            "explanation": "'Two managers and three assistants' is a plural compound subject, so the sentence uses 'there are'.",
             "options": [
                 "are",
                 "is"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "grammarRule": "'There' + 'are' when the subject that follows is a compound or plural subject",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l175_q2",
+            "instruction": "COMPLETE THE SENTENCE",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "There ___ many teachers and volunteers helping at the event.",
+            "hint": "Both groups mentioned after 'there' are plural, so the verb must be too.",
+            "explanation": "'Many teachers and volunteers' is plural, so the sentence uses 'there are'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are",
+            "grammarRule": "'There' + 'are' when the subject that follows is a compound or plural subject",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l175_q3",
+            "instruction": "COMPLETE THE SENTENCE",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "There ___ several doctors and nurses on call tonight.",
+            "hint": "Look at both nouns joined by 'and' and decide what the combined subject is.",
+            "explanation": "'Several doctors and nurses' is plural, so the sentence uses 'there are'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are",
+            "grammarRule": "'There' + 'are' when the subject that follows is a compound or plural subject",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l176_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CONTRAST",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The rate at which the new species ___ being classified has accelerated.",
-            "hint": "Inside the relative clause, 'which' refers to 'the new species' (singular - one specific species).",
-            "explanation": "Here 'the new species' refers to one specific species (singular). Inside the relative clause, 'which' refers to this singular species: 'at which the new species is being classified'.",
+            "question": "Either the officer who reviews applications or the recruiter ___ available to meet today.",
+            "hint": "With 'either...or', check the noun closest to the verb - the relative clause on the other noun doesn't matter.",
+            "explanation": "The noun closer to the verb is 'the recruiter', which is singular, so the verb is 'is', regardless of the relative clause attached to 'the officer'.",
             "options": [
-                "are",
-                "is"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "Correlative conjunction agreement follows the noun closer to the verb, even with a relative clause attached to the other noun",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l176_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CONTRAST",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The speed at which information ___ now transmitted has transformed global communication.",
-            "hint": "Inside the relative clause, 'which' refers to 'information' (uncountable, singular).",
-            "explanation": "'Information' is uncountable and singular. Inside the relative clause, 'which' refers to 'information': 'at which information is now transmitted'.",
+            "question": "Neither the students who missed the exam nor the teacher ___ aware of the makeup schedule.",
+            "hint": "Apply the same proximity rule here - focus on the noun right before the verb.",
+            "explanation": "The noun closer to the verb is 'the teacher', which is singular, so the verb is 'is'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "Correlative conjunction agreement follows the noun closer to the verb, even with a relative clause attached to the other noun",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l176_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CONTRAST",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The speed at which data packets ___ transmitted has increased exponentially.",
-            "hint": "Inside the relative clause, 'which' refers to 'data packets' (plural).",
-            "explanation": "'Data packets' is plural. Inside the relative clause, 'which' refers to 'data packets': 'at which data packets are transmitted'.",
+            "question": "Not only the interns who joined last month but also the senior staff ___ required to complete this training.",
+            "hint": "Find the noun that sits closest to the verb and check its number.",
+            "explanation": "The noun closer to the verb is 'the senior staff', which is plural, so the verb is 'are'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "grammarRule": "Correlative conjunction agreement follows the noun closer to the verb, even with a relative clause attached to the other noun",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l177_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Embedded within the text ___ a series of allusions that most readers miss.",
-            "hint": "The real subject is 'a series of allusions' - 'series' takes a singular verb.",
-            "explanation": "The sentence is inverted: 'embedded within the text' precedes the verb. The real subject is 'a series of allusions'. 'A series' is singular: 'embedded within the text is a series'.",
+            "question": "Learning a new skill, especially later in life, ___ real dedication.",
+            "hint": "Set the comment aside: what is the real subject, and how does that type of subject behave?",
+            "explanation": "'Learning a new skill' is a gerund phrase and is singular. The verb takes -s: 'requires'.",
             "options": [
-                "is",
-                "are"
+                "require",
+                "requires"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "requires",
+            "grammarRule": "Gerund/infinitive subject stays singular, even with an interrupting phrase",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l177_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Embedded within the text ___ dozens of allusions that most readers miss.",
-            "hint": "The real subject is 'dozens of allusions' (plural).",
-            "explanation": "The real subject is 'dozens of allusions', which is plural. In this inverted sentence, 'embedded within the text are dozens of allusions'.",
+            "question": "To finish this marathon, despite the brutal heat, ___ a remarkable achievement.",
+            "hint": "The phrase about the heat doesn't change the number of the infinitive subject.",
+            "explanation": "'To finish this marathon' is an infinitive phrase and is singular. The verb is 'is'.",
             "options": [
                 "is",
                 "are"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "Gerund/infinitive subject stays singular, even with an interrupting phrase",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l177_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Fundamental to the entire argument ___ the assumption that people act rationally.",
-            "hint": "The real subject is 'the assumption' (singular) in this inverted sentence.",
-            "explanation": "In this inverted sentence, the real subject is 'the assumption that people act rationally', which is singular. 'Fundamental to the entire argument is the assumption'.",
+            "question": "Managing a remote team, with members spread across time zones, ___ excellent communication skills.",
+            "hint": "Set the phrase about time zones aside and identify the type of subject that remains.",
+            "explanation": "'Managing a remote team' is a gerund phrase and is singular. The verb takes -s: 'demands'.",
             "options": [
-                "is",
-                "are"
+                "demand",
+                "demands"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "demands",
+            "grammarRule": "Gerund/infinitive subject stays singular, even with an interrupting phrase",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l178_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB FORM",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Fundamental to the entire argument ___ the assumptions about human rationality.",
-            "hint": "The real subject is 'the assumptions' (plural) in this inverted sentence.",
-            "explanation": "The real subject is 'the assumptions about human rationality', which is plural. 'Fundamental to the entire argument are the assumptions' - plural verb for a plural subject.",
+            "question": "The foreman who oversees these projects can ___ any conflicts that arise.",
+            "hint": "No matter how the subject is described, the verb after 'can' never takes -s.",
+            "explanation": "After 'can', the main verb stays in its base form: 'resolve', not 'resolves'.",
             "options": [
-                "is",
-                "are"
+                "resolve",
+                "resolves"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "resolve",
+            "grammarRule": "The verb after a modal stays in its base form, regardless of any intervening phrase or subject type",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l178_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB FORM",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The framework within which these decisions ___ made needs to be rethought.",
-            "hint": "Inside the relative clause, 'which' refers to 'these decisions' (plural).",
-            "explanation": "Inside the relative clause 'within which these decisions are made', 'which' refers to 'these decisions', which is plural. The verb inside is 'are'.",
+            "question": "The teams working on this release should ___ their progress by Friday.",
+            "hint": "The descriptive phrase before 'should' doesn't change how the following verb behaves.",
+            "explanation": "After 'should', the main verb stays in its base form: 'report', not 'reports'.",
             "options": [
-                "are",
-                "is"
+                "report",
+                "reports"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswer": "report",
+            "grammarRule": "The verb after a modal stays in its base form, regardless of any intervening phrase or subject type",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l178_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB FORM",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The framework within which this decision ___ made needs to be rethought.",
-            "hint": "Inside the relative clause, 'which' refers to 'this decision' (singular).",
-            "explanation": "Inside the relative clause 'within which this decision is made', 'which' refers to 'this decision', which is singular. The verb inside is 'is'.",
+            "question": "Neither the interns nor the manager will ___ available next week.",
+            "hint": "Even with a correlative conjunction, the verb after 'will' always stays in its base form.",
+            "explanation": "After 'will', the main verb stays in its base form: 'be', not 'is' or 'are'.",
             "options": [
-                "are",
+                "be",
                 "is"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "be",
+            "grammarRule": "The verb after a modal stays in its base form, regardless of any intervening phrase or subject type",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l179_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The institution, together with all of its affiliated organisations, ___ required to comply.",
-            "hint": "The main subject is 'the institution' (singular) - 'together with' is parenthetical.",
-            "explanation": "'Together with all of its affiliated organisations' is a parenthetical addition. The main subject is 'the institution', which is singular: 'is required to comply'.",
+            "question": "A number of committee members ___ requested a delay in the vote.",
+            "hint": "'A number of' means 'several' - treat the whole phrase as plural.",
+            "explanation": "'A number of committee members' means 'several committee members', so the verb is 'have'.",
             "options": [
-                "is",
-                "are"
+                "has",
+                "have"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "have",
+            "grammarRule": "'A number of' + plural noun takes a plural verb",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l179_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The institutions, together with all of their affiliated organisations, ___ required to comply.",
-            "hint": "The main subject is 'the institutions' (plural) - 'together with' is parenthetical.",
-            "explanation": "'Together with all of their affiliated organisations' is parenthetical. The main subject is 'the institutions', which is plural: 'are required to comply'.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l179_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The evidence on which these conclusions ___ based has been questioned.",
-            "hint": "Inside the relative clause, 'which' refers to 'these conclusions' (plural).",
-            "explanation": "Inside the relative clause 'on which these conclusions are based', 'which' refers to 'these conclusions', which is plural. The verb inside is 'are'.",
+            "question": "The majority of the staff's suggestions ___ practical.",
+            "hint": "Find the head noun after 'of' - is it countable and plural?",
+            "explanation": "'Suggestions' is countable and plural, so 'the majority of the staff's suggestions' takes a plural verb: 'are'.",
             "options": [
                 "are",
                 "is"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "grammarRule": "Quantity expression agrees with the head noun after 'of', even inside a possessive phrase",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l179_q3",
+            "instruction": "FIND THE CORRECT AGREEMENT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Only a fraction of the theater's income ___ from ticket sales.",
+            "hint": "Is 'income' countable, or one whole amount?",
+            "explanation": "'Income' is uncountable, so 'only a fraction of the theater's income' takes a singular verb: 'comes'.",
+            "options": [
+                "come",
+                "comes"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "comes",
+            "grammarRule": "Quantity expression agrees with the head noun after 'of', even inside a possessive phrase",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l180_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The evidence on which this conclusion ___ based has been questioned.",
-            "hint": "Inside the relative clause, 'which' refers to 'this conclusion' (singular).",
-            "explanation": "Inside the relative clause 'on which this conclusion is based', 'which' refers to 'this conclusion', which is singular. The verb inside is 'is'.",
+            "question": "Each of the managers who lead these teams, along with their assistants, ___ a detailed report every month.",
+            "hint": "Combine what you know: which word is the real subject, and what do the extra phrases only add?",
+            "explanation": "'Each of the managers' is singular; both the relative clause and 'along with their assistants' are extra detail. The verb takes -s: 'submits'.",
             "options": [
-                "are",
-                "is"
+                "submit",
+                "submits"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "submits",
+            "grammarRule": "Distributive subject stays singular, even with a relative clause and an 'along with' phrase attached",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l180_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Not until the full investigation ___ concluded will the findings be released.",
-            "hint": "Inside the 'not until' clause, 'the full investigation' is singular.",
-            "explanation": "Inside the 'not until' clause, the subject is 'the full investigation', which is singular. 'Not until the full investigation is concluded' - singular verb.",
+            "question": "Neither the volunteers organizing the event nor the coordinator ___ aware of the last-minute changes.",
+            "hint": "Apply the correlative proximity rule one more time, ignoring the descriptive phrase on the other noun.",
+            "explanation": "'The coordinator' is the noun nearest the verb and is singular; the descriptive phrase on 'the volunteers' doesn't matter. The verb is 'is'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "Correlative conjunction agreement follows the noun closer to the verb, even with a descriptive phrase attached to the other noun",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l180_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Not until the full investigations ___ concluded will the findings be released.",
-            "hint": "Inside the 'not until' clause, 'the full investigations' is plural.",
-            "explanation": "Inside the 'not until' clause, the subject is 'the full investigations', which is plural. 'Not until the full investigations are concluded' - plural verb.",
+            "question": "There ___ a number of small issues that the team identified during testing.",
+            "hint": "Ask whether 'a number of' points to a single count or to several items.",
+            "explanation": "'A number of small issues' is plural, so the sentence uses 'there are'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "grammarRule": "'There' + 'are' when the subject that follows is a compound or plural subject",
+            "subjectType": "Plural"
         }
     ]
 }

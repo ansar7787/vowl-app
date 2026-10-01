@@ -8,23 +8,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'swimming' as used in the sentence below?",
-            "targetWord": "swimming",
-            "sentence": "Swimming is widely regarded as one of the best forms of low-impact exercise.",
+            "question": "Which grammatical category best describes 'hard' here?",
+            "targetWord": "hard",
+            "sentence": "The exam was hard for most of the students.",
             "options": [
                 "Noun",
                 "Verb",
                 "Adjective",
                 "Adverb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "When an '-ing' word is the subject of the sentence, what part of speech is it?",
-            "explanation": "'Swimming' is a noun (a gerund) - it is an '-ing' verb form used as the subject. A gerund functions exactly like a noun. Ask: what is widely regarded? 'Swimming' - it names the activity as a concept.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "Ask how it connects to the words near it. What quality does 'hard' give the exam?",
+            "explanation": "'Hard' is an adjective here, describing the difficulty of the exam after the linking verb 'was'.",
+            "grammarRule": "Predicate adjective after a linking verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "adverb use"
             ]
         },
         {
@@ -32,23 +32,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'thorough' as used in the sentence below?",
-            "targetWord": "thorough",
-            "sentence": "The inspector carried out a thorough examination of the entire set of premises.",
+            "question": "Now what part of speech is 'hard' in this sentence?",
+            "targetWord": "hard",
+            "sentence": "The students studied hard for the exam.",
             "options": [
-                "Noun",
+                "Adverb",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe the quality of a process. What does 'thorough' tell us about the examination?",
-            "explanation": "'Thorough' is an adjective - it describes the quality of 'examination', meaning comprehensive and complete.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adverb",
+            "hint": "The same word can also describe how an action was performed. How did the students study?",
+            "explanation": "'Hard' functions as an adverb here, modifying the verb 'studied' and describing the intensity of their effort — notice it keeps the same spelling as its adjective form.",
+            "grammarRule": "Manner adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "adverb use"
             ]
         },
         {
@@ -56,23 +56,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'submitted' as used in the sentence below?",
-            "targetWord": "submitted",
-            "sentence": "All applications must be submitted before the stated deadline on Friday afternoon.",
+            "question": "Based on how it is used here, 'exam' is a:",
+            "targetWord": "exam",
+            "sentence": "The exam covered three months of material.",
             "options": [
-                "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs express obligations. What must be done with the applications?",
-            "explanation": "'Submitted' is a verb - it's the past participle of 'submit' used in a passive construction ('must be submitted'). 'Submission' is its noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Noun",
+            "hint": "Ask how it connects to the words near it. What covered three months of material?",
+            "explanation": "'Exam' is a noun here, naming the test that covered the material — it functions as the subject of the sentence.",
+            "grammarRule": "Common noun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "plural form"
             ]
         },
         {
@@ -80,23 +80,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'planning' as used in the sentence below?",
-            "targetWord": "planning",
-            "sentence": "Careful planning is absolutely essential before starting any large construction project.",
+            "question": "What part of speech is 'late' in this sentence?",
+            "targetWord": "late",
+            "sentence": "The late bus made everyone miss the connection.",
             "options": [
                 "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Verb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Gerunds function as nouns. Is 'planning' the subject of this sentence?",
-            "explanation": "'Planning' is a noun (a gerund) - it is the subject of the sentence. The adjective 'Careful' modifies it, which proves it is functioning as a noun (adjectives modify nouns).",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "Set aside what you know about this word in general. What quality does 'late' give the bus?",
+            "explanation": "'Late' is an adjective here, modifying 'bus' and describing that it arrived behind schedule.",
+            "grammarRule": "Attributive adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "adverb use"
             ]
         },
         {
@@ -104,23 +104,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'efficient' as used in the sentence below?",
-            "targetWord": "efficient",
-            "sentence": "Working from home can be more efficient if you have a dedicated workspace.",
+            "question": "This time, what part of speech is 'late'?",
+            "targetWord": "late",
+            "sentence": "The bus arrived late and everyone missed the connection.",
             "options": [
-                "Noun",
                 "Verb",
                 "Adjective",
+                "Noun",
                 "Adverb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe operational qualities. What does 'efficient' describe here?",
-            "explanation": "'Efficient' is an adjective - it follows the linking verb 'be' as a predicate adjective. It is in comparative form ('more efficient') because it is being compared.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adverb",
+            "hint": "The same word can also describe how an action happened in time. When did the bus arrive?",
+            "explanation": "'Late' functions as an adverb here, modifying the verb 'arrived' — like 'hard,' it keeps the same spelling in both its adjective and adverb forms.",
+            "grammarRule": "Time adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "adverb use"
             ]
         },
         {
@@ -128,23 +128,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'negotiate' as used in the sentence below?",
-            "targetWord": "negotiate",
-            "sentence": "She was exceptionally skilled at her ability to negotiate difficult contracts.",
+            "question": "Which part of speech is 'missed' as it is used here?",
+            "targetWord": "missed",
+            "sentence": "Everyone missed the connecting train by two minutes.",
             "options": [
-                "Noun",
                 "Verb",
                 "Adjective",
+                "Noun",
                 "Adverb"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "Verb",
-            "hint": "Verbs follow 'to' in infinitive form. Is 'negotiate' the action she performs?",
-            "explanation": "'Negotiate' is a verb - it appears in the infinitive form ('to negotiate'). 'Negotiation' is the noun form.",
-            "grammarRule": "Verbs",
+            "hint": "Look at what this word does in this exact sentence. What did everyone fail to catch?",
+            "explanation": "'Missed' is a verb describing the action of failing to catch the train in time.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -152,23 +152,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'writing' as used in the sentence below?",
-            "targetWord": "writing",
-            "sentence": "Good writing requires constant practice and a genuine willingness to accept feedback.",
+            "question": "How is 'early' functioning in this sentence?",
+            "targetWord": "early",
+            "sentence": "The early train is usually less crowded.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
+                "Verb",
+                "Noun",
                 "Adverb"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Gerunds name activities or skills. Is 'writing' the subject of this sentence?",
-            "explanation": "'Writing' is a noun (a gerund) - it is the subject and refers to the skill of writing as a concept. The adjective 'Good' modifies it, confirming it is a noun.",
-            "grammarRule": "Nouns",
+            "correctAnswer": "Adjective",
+            "hint": "Ask how it connects to the words near it. What quality does 'early' give the train?",
+            "explanation": "'Early' is an adjective here, modifying 'train' and describing when it runs relative to other trains.",
+            "grammarRule": "Attributive adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "adverb use"
             ]
         },
         {
@@ -176,23 +176,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'ambitious' as used in the sentence below?",
-            "targetWord": "ambitious",
-            "sentence": "She always set ambitious targets that would challenge even the most experienced team.",
+            "question": "Now look at 'early' here. What part of speech is it?",
+            "targetWord": "early",
+            "sentence": "The train left early today, catching several passengers off guard.",
             "options": [
                 "Noun",
+                "Adverb",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe the nature of goals. What kind of targets did she set?",
-            "explanation": "'Ambitious' is an adjective - it describes the noun 'targets', indicating they were challenging and aspirational.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adverb",
+            "hint": "The same word can also describe when an action happened. When did the train leave?",
+            "explanation": "'Early' functions as an adverb here, modifying the verb 'left' — contrast this with the earlier sentence, where 'early' described the noun 'train' directly.",
+            "grammarRule": "Time adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "adverb use"
             ]
         },
         {
@@ -200,23 +200,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'implement' as used in the sentence below?",
-            "targetWord": "implement",
-            "sentence": "The board voted to implement the new policy beginning on the first of January.",
+            "question": "What role does 'aboard' play in this sentence?",
+            "targetWord": "aboard",
+            "sentence": "Passengers were already aboard the train when the doors closed.",
             "options": [
-                "Noun",
-                "Verb",
+                "Preposition",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Verb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Business verbs describe actions taken by organisations. What did the board vote to do?",
-            "explanation": "'Implement' is a verb - it appears in the infinitive ('to implement'). 'Implementation' is its noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Preposition",
+            "hint": "Focus on its role in this sentence only. Where were the passengers?",
+            "explanation": "'Aboard' is a preposition here, introducing the phrase that shows the passengers' location inside the train.",
+            "grammarRule": "Preposition introducing a location phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related adverb use"
             ]
         },
         {
@@ -224,23 +224,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'networking' as used in the sentence below?",
-            "targetWord": "networking",
-            "sentence": "Networking at professional events helped her discover her next career opportunity.",
+            "question": "The word 'high' is being used as which grammatical category?",
+            "targetWord": "high",
+            "sentence": "The shelf was too high for the child to reach.",
             "options": [
-                "Noun",
                 "Verb",
                 "Adjective",
+                "Noun",
                 "Adverb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Gerunds name professional activities. Is 'Networking' the subject of this sentence?",
-            "explanation": "'Networking' is a noun (a gerund) - it is the subject of the sentence, naming the activity of building professional connections.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "Ask how it connects to the words near it. What quality does 'high' give the shelf?",
+            "explanation": "'High' is an adjective here, describing the shelf's height after the linking verb 'was'.",
+            "grammarRule": "Predicate adjective after a linking verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "adverb use"
             ]
         },
         {
@@ -248,23 +248,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'reliable' as used in the sentence below?",
-            "targetWord": "reliable",
-            "sentence": "A reliable internet connection is now considered essential for working remotely.",
+            "question": "This time, 'high' is functioning as a:",
+            "targetWord": "high",
+            "sentence": "The kite flew high above the trees.",
             "options": [
                 "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Verb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe essential qualities of services. What does 'reliable' tell us?",
-            "explanation": "'Reliable' is an adjective - it describes the quality of 'internet connection' (consistent, dependable).",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adverb",
+            "hint": "The same word can also describe how far up an action reaches. How did the kite fly?",
+            "explanation": "'High' functions as an adverb here, modifying the verb 'flew' and describing the altitude of the flight — it keeps the same spelling as its adjective form.",
+            "grammarRule": "Manner adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "adverb use"
             ]
         },
         {
@@ -272,23 +272,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'collaborate' as used in the sentence below?",
-            "targetWord": "collaborate",
-            "sentence": "Teams that collaborate effectively consistently tend to produce stronger outcomes.",
+            "question": "What grammatical job does 'though' do in this sentence?",
+            "targetWord": "though",
+            "sentence": "The hike was exhausting, though the view made it worthwhile.",
             "options": [
+                "Conjunction",
+                "Preposition",
                 "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
+                "Verb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe workplace behaviours. What do effective teams do?",
-            "explanation": "'Collaborate' is a verb - it is the main verb of the relative clause 'that collaborate effectively'. 'Collaboration' is its noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Conjunction",
+            "hint": "Focus on its role in this sentence only. What word signals that contrast here?",
+            "explanation": "'Though' is a subordinating conjunction introducing a clause that contrasts with the main idea — the hike was tiring, yet the view made it worth it.",
+            "grammarRule": "Subordinating conjunction introducing a contrast clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related conjunction (although)"
             ]
         },
         {
@@ -296,23 +296,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'reading' as used in the sentence below?",
-            "targetWord": "reading",
-            "sentence": "Reading widely is widely considered the most effective way to expand your vocabulary.",
+            "question": "Identify the part of speech of 'This' in this context.",
+            "targetWord": "This",
+            "sentence": "This is exactly what the team needed.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Pronoun",
+                "Noun",
+                "Verb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Gerunds name beneficial activities. Is 'Reading' the subject here?",
-            "explanation": "'Reading' is a noun (a gerund) - it is the subject of the sentence. The adverb 'widely' modifies 'considered', not 'Reading'. The first 'widely' modifies 'Reading' as an adjunct, confirming its nominal role.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "Let the sentence, not the spelling, decide. What is 'this' replacing here?",
+            "explanation": "'This' is a demonstrative pronoun functioning as the subject of the sentence, standing in for something already understood from context.",
+            "grammarRule": "Demonstrative pronoun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "pronoun use",
+                "adjective use"
             ]
         },
         {
@@ -320,23 +320,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'confidential' as used in the sentence below?",
-            "targetWord": "confidential",
-            "sentence": "All information shared during the briefing was strictly confidential and not for release.",
+            "question": "Now, which category describes 'This' in this sentence?",
+            "targetWord": "This",
+            "sentence": "This laptop has been running slowly all week.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Noun",
+                "Pronoun"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "Adjective",
-            "hint": "Adjectives describe the status of information. What does 'confidential' tell us?",
-            "explanation": "'Confidential' is an adjective - it follows the linking verb 'was' as a predicate adjective. The adverb 'strictly' modifies it, confirming it is an adjective.",
-            "grammarRule": "Adjectives",
+            "hint": "The same word can also modify a noun directly instead of standing alone. What noun does 'this' describe here?",
+            "explanation": "'This' functions as an adjective here, modifying the noun 'laptop' directly — contrast this with the earlier sentence, where 'this' stood alone as the subject.",
+            "grammarRule": "Demonstrative adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "pronoun use"
             ]
         },
         {
@@ -344,23 +344,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'evaluate' as used in the sentence below?",
-            "targetWord": "evaluate",
-            "sentence": "Managers are required to evaluate employee performance on a regular and structured basis.",
+            "question": "In this context, what part of speech is 'laptop'?",
+            "targetWord": "laptop",
+            "sentence": "The laptop overheated during the video call.",
             "options": [
-                "Noun",
                 "Verb",
+                "Noun",
                 "Adjective",
                 "Adverb"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Management verbs describe assessment actions. What are managers required to do?",
-            "explanation": "'Evaluate' is a verb - it appears in the infinitive ('to evaluate'). 'Evaluation' is its noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Noun",
+            "hint": "Notice what the word is attached to. What overheated during the call?",
+            "explanation": "'Laptop' is a noun here, naming the device that overheated — it functions as the subject of the sentence.",
+            "grammarRule": "Common noun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "plural form"
             ]
         },
         {
@@ -368,23 +368,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'leading' as used in the sentence below?",
-            "targetWord": "leading",
-            "sentence": "She was appointed to a leading role in the company's new project management division.",
+            "question": "Which grammatical category best describes 'those' here?",
+            "targetWord": "those",
+            "sentence": "Of everything on display, those sold out first.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Noun",
+                "Pronoun"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Present participles can function as adjectives before nouns. What does 'leading' tell us about the role?",
-            "explanation": "'Leading' is an adjective - it is a present participle used before 'role', meaning senior or most prominent. Compare: 'she is leading the team' (verb) vs. 'a leading role' (adjective).",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Pronoun",
+            "hint": "Ask how it connects to the words near it. What is 'those' replacing here?",
+            "explanation": "'Those' is a demonstrative pronoun functioning as the subject, standing in for a specific group of items already mentioned.",
+            "grammarRule": "Demonstrative pronoun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "pronoun use",
+                "adjective use"
             ]
         },
         {
@@ -392,23 +392,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'deadline' as used in the sentence below?",
-            "targetWord": "deadline",
-            "sentence": "The project deadline was moved forward due to unexpected changes in client requirements.",
+            "question": "This time, what part of speech is 'those'?",
+            "targetWord": "those",
+            "sentence": "Those shoes look perfect for the hike.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Pronoun",
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Workplace nouns name time-related requirements. What does 'deadline' name?",
-            "explanation": "'Deadline' is a noun - it names the time by which a task must be completed. It is preceded by 'The project', functioning as the subject. 'Deadline' is always a noun.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "The same word can also modify a noun directly. What noun does 'those' describe here?",
+            "explanation": "'Those' functions as an adjective here, modifying the noun 'shoes' directly — contrast this with the earlier sentence, where 'those' stood alone as the subject.",
+            "grammarRule": "Demonstrative adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "pronoun use"
             ]
         },
         {
@@ -416,23 +416,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'coordinate' as used in the sentence below?",
-            "targetWord": "coordinate",
-            "sentence": "It was her responsibility to coordinate the schedules of the entire regional sales team.",
+            "question": "In this sentence, 'look' is functioning as a:",
+            "targetWord": "look",
+            "sentence": "The hikers look forward to the summit view every year.",
             "options": [
+                "Adverb",
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "Verb",
-            "hint": "Management verbs describe organising actions. What was her professional responsibility?",
-            "explanation": "'Coordinate' is a verb - it appears in the infinitive ('to coordinate'). 'Coordination' is its noun form.",
-            "grammarRule": "Verbs",
+            "hint": "Think about the job it performs here. What do they look forward to?",
+            "explanation": "'Look' is a verb here, describing the hikers' anticipation of the summit view.",
+            "grammarRule": "Action verb in present tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "-s form"
             ]
         },
         {
@@ -440,23 +440,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'demanding' as used in the sentence below?",
-            "targetWord": "demanding",
-            "sentence": "The job turned out to be far more demanding than she had expected when she first applied.",
+            "question": "Which part of speech is 'kitchen' as it is used here?",
+            "targetWord": "kitchen",
+            "sentence": "Grandma polished the kitchen table until it gleamed.",
             "options": [
-                "Noun",
                 "Verb",
                 "Adjective",
+                "Noun",
                 "Adverb"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "Adjective",
-            "hint": "Present participles used as adjectives describe characteristics. What does 'demanding' tell us about the job?",
-            "explanation": "'Demanding' is an adjective - it follows the linking verb 'be' as a predicate adjective. Compare: 'the role demands a lot' (verb) vs. 'a demanding role' (adjective).",
-            "grammarRule": "Adjectives",
+            "hint": "Notice what the word is attached to. What kind of table is being described?",
+            "explanation": "'Kitchen' functions as an adjective here, modifying 'table' to specify which table Grandma polished — even though 'kitchen' is usually a noun, as it was back in an earlier lesson.",
+            "grammarRule": "Noun functioning as an adjective modifying another noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "adjective use"
             ]
         },
         {
@@ -464,23 +464,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'proposal' as used in the sentence below?",
-            "targetWord": "proposal",
-            "sentence": "She stayed late every evening to finish the proposal before the crucial board presentation.",
+            "question": "Based on how it is used here, 'stone' is a:",
+            "targetWord": "stone",
+            "sentence": "The stone bridge has stood there for two centuries.",
             "options": [
-                "Noun",
+                "Adverb",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Workplace nouns name documents and plans. What does 'proposal' name?",
-            "explanation": "'Proposal' is a noun - it names a formal document presenting a plan. It is preceded by 'the', confirming it is a noun. The suffix '-al' forms nouns (proposal, arrival, refusal).",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "The same pattern applies here. What material describes the bridge?",
+            "explanation": "'Stone' functions as an adjective here, modifying 'bridge' to describe what material it is made from — this is the same noun-as-adjective pattern seen with 'kitchen'.",
+            "grammarRule": "Noun functioning as an adjective modifying another noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "adjective use"
             ]
         },
         {
@@ -488,23 +488,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'delegate' as used in the sentence below?",
-            "targetWord": "delegate",
-            "sentence": "A skilled manager knows exactly when to delegate tasks to capable team members.",
+            "question": "Which part of speech does 'carefully' represent in this sentence?",
+            "targetWord": "carefully",
+            "sentence": "The conservators carefully restored the stone bridge last year.",
             "options": [
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Management verbs describe distributing work. What does a skilled manager know when to do?",
-            "explanation": "'Delegate' is a verb - it appears in the infinitive ('to delegate'). 'Delegation' is its noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "Look at what this word does in this exact sentence. How did the conservators restore the bridge?",
+            "explanation": "'Carefully' is a manner adverb modifying the verb 'restored', describing how the conservators approached the work.",
+            "grammarRule": "Manner adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "adverb form"
             ]
         },
         {
@@ -512,23 +512,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'rewarding' as used in the sentence below?",
-            "targetWord": "rewarding",
-            "sentence": "Teaching can be an exhausting but ultimately deeply rewarding career choice.",
+            "question": "What part of speech is 'paper' in this sentence?",
+            "targetWord": "paper",
+            "sentence": "She grabbed a paper cup from the dispenser.",
             "options": [
-                "Noun",
+                "Adverb",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Adjective"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Adjective",
-            "hint": "Present participles used as adjectives describe what an experience gives back. What does 'rewarding' describe?",
-            "explanation": "'Rewarding' is an adjective - it is a present participle used before 'career choice'. Compare: 'the job rewards effort' (verb) vs. 'a rewarding job' (adjective).",
-            "grammarRule": "Adjectives",
+            "hint": "Remember the pattern where one noun modifies another. What material describes the cup?",
+            "explanation": "'Paper' functions as an adjective here, modifying 'cup' to describe what material it is made from.",
+            "grammarRule": "Noun functioning as an adjective modifying another noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "adjective use"
             ]
         },
         {
@@ -536,23 +536,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'résumé' as used in the sentence below?",
-            "targetWord": "résumé",
-            "sentence": "She spent the entire weekend updating her résumé before applying for new positions.",
+            "question": "Next, what role does 'paper' play in this sentence?",
+            "targetWord": "paper",
+            "sentence": "The recycling bin was full of paper by Friday.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Noun",
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "Noun",
-            "hint": "Workplace nouns name professional documents. What does 'résumé' name?",
-            "explanation": "'Résumé' is a noun - it names a document summarising a person's qualifications. Also called a 'CV' in British English. It is preceded by 'her', confirming it is a noun.",
-            "grammarRule": "Nouns",
+            "hint": "The same word can also stand alone as a regular word. What filled the recycling bin?",
+            "explanation": "'Paper' is a noun here, naming the material that filled the bin — contrast this with the earlier sentence, where 'paper' modified 'cup' as an adjective.",
+            "grammarRule": "Common noun functioning as the object of a preposition",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "adjective use"
             ]
         },
         {
@@ -560,23 +560,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'allocate' as used in the sentence below?",
-            "targetWord": "allocate",
-            "sentence": "The committee had to allocate the limited annual budget across several competing departments.",
+            "question": "Which category fits 'Everybody' in this sentence?",
+            "targetWord": "Everybody",
+            "sentence": "Everybody appreciated the fresh coffee in the break room.",
             "options": [
-                "Noun",
+                "Pronoun",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Management verbs describe distributing resources. What did the committee have to do?",
-            "explanation": "'Allocate' is a verb - it follows 'to' as an infinitive. 'Allocation' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Pronoun",
+            "hint": "Ask how it connects to the words near it. Who appreciated the coffee?",
+            "explanation": "'Everybody' is an indefinite pronoun referring to the whole group of people — it functions as the subject of the sentence.",
+            "grammarRule": "Indefinite pronoun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular use",
+                "related pronoun (everyone)"
             ]
         },
         {
@@ -584,23 +584,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'challenging' as used in the sentence below?",
-            "targetWord": "challenging",
-            "sentence": "The course content was extremely challenging but helped students build real-world skills.",
+            "question": "Classify 'late' as it appears in this sentence.",
+            "targetWord": "late",
+            "sentence": "Working late, Naledi finally fixed the paper jam in the office printer, and that quick repair saved the entire morning meeting.",
             "options": [
                 "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Verb"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Present participles can describe the degree of difficulty. What does 'challenging' describe?",
-            "explanation": "'Challenging' is an adjective - it follows 'was' as a predicate adjective. Compare: 'the course challenged students' (verb) vs. 'the course was challenging' (adjective).",
-            "grammarRule": "Adjectives",
+            "correctAnswer": "Adverb",
+            "hint": "This word from earlier in the file can describe timing of an action. When was Naledi working?",
+            "explanation": "'Late' functions as an adverb here, modifying 'working' and describing when Naledi was still at work — the same word appeared earlier in this file as an adjective describing a noun directly.",
+            "grammarRule": "Time adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "adverb use"
             ]
         },
         {
@@ -608,23 +608,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'curriculum' as used in the sentence below?",
-            "targetWord": "curriculum",
-            "sentence": "The school redesigned its curriculum to focus more on critical thinking and problem-solving.",
+            "question": "Staying with that sentence, which category describes 'paper'?",
+            "targetWord": "paper",
+            "sentence": "Working late, Naledi finally fixed the paper jam in the office printer, and that quick repair saved the entire morning meeting.",
             "options": [
-                "Noun",
                 "Verb",
+                "Pronoun",
                 "Adjective",
-                "Adverb"
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Educational nouns name structured plans of study. What does 'curriculum' name?",
-            "explanation": "'Curriculum' is a noun - it names the subjects and content taught in an educational programme. It is preceded by 'its', confirming it is a noun.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "Remember the pattern where one noun modifies another from earlier. What kind of jam is being described?",
+            "explanation": "'Paper' functions as an adjective here, modifying 'jam' to describe what caused the printer problem — the same noun-as-adjective pattern seen with 'kitchen' and 'stone' earlier in this file.",
+            "grammarRule": "Noun functioning as an adjective modifying another noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "adjective use"
             ]
         },
         {
@@ -632,23 +632,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'assess' as used in the sentence below?",
-            "targetWord": "assess",
-            "sentence": "Teachers use a wide variety of methods to assess students' understanding of material.",
+            "question": "Back in that same sentence, what kind of word is 'that'?",
+            "targetWord": "that",
+            "sentence": "Working late, Naledi finally fixed the paper jam in the office printer, and that quick repair saved the entire morning meeting.",
             "options": [
-                "Noun",
+                "Pronoun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Educational verbs describe evaluation activities. What do teachers use methods to do?",
-            "explanation": "'Assess' is a verb - it follows 'to' as an infinitive. 'Assessment' is its noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "This word modifies the noun right next to it instead of standing alone. What noun does 'that' describe here?",
+            "explanation": "'That' functions as an adjective here, modifying 'repair' directly — contrast this with its pronoun use when it stands alone, as seen with 'this' and 'those' earlier in this file.",
+            "grammarRule": "Demonstrative adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "pronoun use"
             ]
         },
         {
@@ -656,23 +656,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'inspiring' as used in the sentence below?",
-            "targetWord": "inspiring",
-            "sentence": "Her remarkable story was so inspiring that it was turned into a bestselling memoir.",
+            "question": "What kind of word is 'This' in this sentence?",
+            "targetWord": "This",
+            "sentence": "This clinic keeps a strict morning schedule, but the reception desk still opens late because of yesterday's staffing shortage.",
             "options": [
-                "Noun",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Pronoun",
+                "Noun"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "Adjective",
-            "hint": "Present participles describe the emotional effect of something. What does 'inspiring' describe?",
-            "explanation": "'Inspiring' is an adjective - it follows the linking verb 'was' as a predicate adjective. Compare: 'her story inspired many' (verb) vs. 'her story was inspiring' (adjective).",
-            "grammarRule": "Adjectives",
+            "hint": "This word modifies the noun right next to it. What place does 'this' describe?",
+            "explanation": "'This' functions as an adjective here, modifying 'clinic' directly — just like 'those' and 'that' modified nouns earlier in this file.",
+            "grammarRule": "Demonstrative adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "pronoun use"
             ]
         },
         {
@@ -680,23 +680,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'certification' as used in the sentence below?",
-            "targetWord": "certification",
-            "sentence": "She completed an industry-recognised certification to improve her career prospects.",
+            "question": "Within that same sentence, 'morning' is functioning as a:",
+            "targetWord": "morning",
+            "sentence": "This clinic keeps a strict morning schedule, but the reception desk still opens late because of yesterday's staffing shortage.",
             "options": [
+                "Adverb",
                 "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Verb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Professional nouns name qualifications. What does 'certification' name?",
-            "explanation": "'Certification' is a noun - it names a formal qualification. It is preceded by 'an', confirming it is a noun. The suffix '-tion' forms nouns (certify → certification).",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "Remember the pattern where one noun modifies another. What kind of schedule is being described?",
+            "explanation": "'Morning' functions as an adjective here, modifying 'schedule' to describe which part of the day it applies to — the same pattern as 'kitchen table' and 'paper jam' from earlier in this file.",
+            "grammarRule": "Noun functioning as an adjective modifying another noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "adjective use"
             ]
         },
         {
@@ -704,23 +704,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'demonstrate' as used in the sentence below?",
-            "targetWord": "demonstrate",
-            "sentence": "The practical experiment was designed to demonstrate how pressure affects the boiling point.",
+            "question": "Looking at the same sentence, how is 'late' functioning?",
+            "targetWord": "late",
+            "sentence": "This clinic keeps a strict morning schedule, but the reception desk still opens late because of yesterday's staffing shortage.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Noun",
+                "Verb"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Scientific and educational verbs describe explanatory actions. What was the experiment designed to do?",
-            "explanation": "'Demonstrate' is a verb - it follows 'to' as an infinitive. 'Demonstration' is its noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Adverb",
+            "hint": "This word describes when the desk opens, not a quality of the desk itself. When does the desk open?",
+            "explanation": "'Late' functions as an adverb here, modifying the verb 'opens' — contrast this with its adjective use earlier in this file, where it modified a noun directly.",
+            "grammarRule": "Time adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "adverb use"
             ]
         }
     ]

@@ -4,633 +4,633 @@
     "levels": "111-120",
     "quests": [
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that names your specific error instead of defending the external explanation.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you keep all the plates spinning when managing multiple projects?",
+            "interviewerQuestion": "You've described that as a big failure, but it sounds like external factors caused most of it. What did YOU actually get wrong?",
             "options": [
-                "I build in regular check-ins for each project and use a shared system to track what needs attention before anything gets dropped.",
-                "I try to give a little time to each project throughout the day.",
-                "I focus most on whichever project seems closest to a deadline."
+                "I think external factors really were the main issue, though I understand if that's hard to fully separate from my own role in it. even if I can't be fully certain about it.",
+                "I probably could have done a few things differently, though it's hard to pin down exactly what without overthinking it too much. or that's the impression I have, anyway.",
+                "Fair push. I underestimated how much buy-in I needed from other teams before launching, and I moved forward without securing that properly. That's on me, and it's the specific thing I now do differently."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "'Keep all the plates spinning' means maintaining several things at once without letting any fall — a tracking system prevents that from happening.",
-            "explanation": "'Keeping all the plates spinning' means maintaining multiple responsibilities without letting any fail. A tracking system with regular check-ins prevents that, while spreading time thinly or focusing only on the nearest deadline risks letting something else fall.",
+            "hint": "When pushed, naming your specific error is stronger than defending the external explanation or staying vague.",
+            "explanation": "Naming your specific error, even under pressure, shows real accountability. Continuing to lean on external factors when pushed suggests you haven't actually reflected on your own part, and vague uncertainty about what went wrong doesn't answer the direct challenge.",
             "id": "ji_l111_q1",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "skeptical",
+                "unconvinced",
+                "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that accepts the challenge and names a specific personal factor.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you successfully kept several responsibilities moving at once.",
+            "interviewerQuestion": "You blamed the market for missing your target last year. Isn't that just an excuse?",
             "options": [
-                "I stayed in close contact with each project's stakeholders.",
-                "I prioritized the projects that felt most urgent each day.",
-                "I created a weekly dashboard that showed the status of each project, so nothing slipped through the cracks even during a busy stretch."
+                "It's fair to challenge that. The market was tougher, but looking back, I also leaned too heavily on a few large accounts instead of building a wider pipeline, and that's the part I've since changed.",
+                "I don't think it's really an excuse, the market genuinely was difficult for everyone on the team that year.",
+                "Maybe it was partly an excuse, I'm not entirely sure how much of it was really within my control. and I don't think there's a lot of value in going back over exactly which parts were within my control versus outside of it at this point. even though that's a bit of a hunch on my end."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "A visible system that tracks every project's status is the clearest way to keep multiple things moving without dropping any.",
-            "explanation": "A visible dashboard tracking every project's status is a concrete system for preventing anything from slipping, while staying in contact or prioritizing by urgency doesn't provide the same complete overview.",
+            "hint": "Accepting the challenge and naming a specific personal factor is stronger than defending the original explanation or expressing uncertainty about your own role.",
+            "explanation": "Accepting the pushback and naming a specific behavior you've since changed shows genuine self-examination. Defending the market explanation when directly challenged suggests resistance to feedback, and vague uncertainty about your own role doesn't give the interviewer anything concrete.",
             "id": "ji_l111_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "impressed",
+                "skeptical",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that fully agrees and names the specific new habit.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you avoid dropping a plate when you're managing too much at once?",
+            "interviewerQuestion": "You said the project timeline slipped because of unclear requirements from the client. Shouldn't a good project manager have caught that earlier?",
             "options": [
-                "I try to stay calm and keep working through everything steadily.",
-                "I regularly reassess what's most at risk of falling behind and shift my attention there before it becomes a real problem.",
-                "I ask for help when things start to feel like too much."
+                "I hear what you're saying, and it's possible I could have caught it earlier, though it's hard to say for sure in hindsight.",
+                "It's a fair point, though in this particular case the client was pretty resistant to giving more detail no matter how much we pushed.",
+                "You're right, and honestly that's the real lesson. I should have pushed harder for a detailed sign-off before we started, and I now build that step into every project regardless of how confident the client seems."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Proactively identifying what's at risk before it becomes a problem is the key skill behind not dropping any plates.",
-            "explanation": "Proactively identifying what's most at risk and addressing it early prevents real problems, while staying calm alone or only asking for help once things feel overwhelming reacts later than ideal.",
+            "hint": "Agreeing fully and naming the specific new habit is stronger than partially defending the situation or hedging on hindsight.",
+            "explanation": "Fully agreeing and naming a specific new habit shows the criticism actually landed and changed your practice. Partially defending the client's resistance softens the accountability, and hedging on hindsight avoids committing to what you'd do differently.",
             "id": "ji_l111_q3",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "skeptical",
+                "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that reframes the premise with a real, specific reason.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a time you turned a quick win into lasting impact.",
+            "interviewerQuestion": "You're further along in your career than this, yet you're at a fairly junior level. What's holding you back?",
             "options": [
-                "After a small process fix saved our team time, I documented it and rolled it out company-wide, turning a one-off win into a permanent improvement.",
-                "I found a quick fix that helped our team save some time.",
-                "I look for small wins whenever I can to build momentum."
+                "I don't think anything's really holding me back, I just haven't had the right opportunities come my way yet. even though I haven't tested that assumption.",
+                "Honestly, a career change a few years ago meant starting over in a new area, so my level here reflects real experience in this specific field, not a lack of ambition. I think that's a fair trade for building expertise I actually care about.",
+                "That's a tough question, and I'm honestly not sure I have a great answer for it. though it's only a loose impression, really."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "A 'quick win' becomes lasting impact when it's scaled or made permanent, not just enjoyed once.",
-            "explanation": "Documenting and scaling a quick win into a company-wide, permanent improvement is what creates lasting impact, unlike a one-off fix or a general habit of looking for small wins.",
+            "hint": "Reframing the premise with a real, specific reason is stronger than blaming missed opportunities or admitting you don't have an answer.",
+            "explanation": "Directly reframing the premise with a real, specific reason answers the challenge head-on. Blaming missed opportunities avoids taking any ownership of the path, and admitting you don't have an answer leaves the tough question completely unaddressed.",
             "id": "ji_l112_q1",
             "interviewerReaction": [
+                "uncertain",
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response with specific, checkable evidence, not just asserted confidence.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a small success that led to a bigger change.",
+            "interviewerQuestion": "Frankly, I'm not sure you're strong enough for this role. Convince me otherwise.",
             "options": [
-                "A small change I made improved things noticeably at the time.",
-                "A minor tweak I made to our onboarding email had such a strong response that we redesigned our entire onboarding process around it.",
-                "I've had a few small wins that felt encouraging along the way."
+                "I understand the concern, but I really do think I'm a strong fit here, and I'd hope that comes through over time.",
+                "I'm not sure how to respond to that directly, but I can say I've always tried my best in every role I've had.",
+                "That's a fair thing to want proven rather than just claimed. In my last role I handled a similar scope of work independently, including a project that saved the team real time, and I'd be glad to walk through the specifics."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "The strongest answer shows a small success directly triggering a larger, lasting change.",
-            "explanation": "A small success directly triggering a larger, lasting redesign shows real lasting impact, while a noticeable improvement or a general sense of encouragement doesn't demonstrate that same scaled-up result.",
+            "hint": "Responding with specific, checkable evidence is stronger than asserting confidence or offering a general statement about effort.",
+            "explanation": "Offering specific, checkable evidence directly answers a blunt challenge with substance. Simply asserting confidence without evidence doesn't actually respond to the challenge, and a general statement about effort says nothing about capability.",
             "id": "ji_l112_q2",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "unconvinced",
+                "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that points to a specific, comparable track record.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you build on early momentum from a small success?",
+            "interviewerQuestion": "You seem quite young for the level of responsibility this role carries. Why should that not concern me?",
             "options": [
-                "I use the early success to motivate the team to keep working hard.",
-                "I make sure to recognize and celebrate the win with the team.",
-                "I analyze exactly why the small win worked, then look for ways to apply that same insight more broadly."
+                "It's a fair question to ask directly. I've already managed a project with a similar scope and budget in my current role, and I'd point to that track record rather than my age as the more relevant measure here.",
+                "I don't think age should really matter at all, since plenty of young people are perfectly capable of handling serious responsibility.",
+                "I understand the concern, and I guess I'd just have to prove it over time once I'm actually in the role. though it's hard to know for sure without being in it."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Analyzing why something worked, then applying that insight broadly, is what turns a quick win into something lasting.",
-            "explanation": "Analyzing why a small win worked and applying that insight more broadly is what creates lasting change, while motivating the team or simply celebrating the win doesn't extend the impact in the same concrete way.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Pointing to a specific, comparable track record is stronger than a general statement about age not mattering or deferring proof to later.",
+            "explanation": "Pointing to a specific, comparable track record directly answers the concern with evidence now, not later. A general statement about age not mattering doesn't address the specific doubt, and deferring proof until after being hired doesn't help you get the offer.",
             "id": "ji_l112_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "reassured",
+                "uncertain",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that describes the outcome fairly, even though it wasn't in your favor.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you approach getting buy-in from a skeptical team?",
+            "interviewerQuestion": "I understand you were passed over for a promotion at your current company. What happened, and why look elsewhere now?",
             "options": [
-                "I explain the benefits of my proposal as clearly as I can.",
-                "I give the team time to get used to the idea gradually.",
-                "I listen to their specific concerns first, then address those directly with evidence and a chance to ask questions."
+                "I applied for a senior role and another internal candidate with slightly more tenure got it, which was a fair call given the criteria. It did make me realize I want to grow somewhere with clearer paths for the specific skills I bring, which is part of why I'm here.",
+                "Honestly, I think I was more qualified, but the decision came down to office politics more than anything else.",
+                "It didn't go my way, and I'd rather not get too deep into the specifics of how that whole process went. but that's just a guess on my part, honestly."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "'Buy-in' means genuine agreement and support, which usually requires addressing specific concerns, not just explaining benefits.",
-            "explanation": "'Buy-in' means real, willing support, which comes from addressing specific concerns directly. A general explanation of benefits or simply waiting for people to adjust doesn't engage with the actual source of skepticism.",
+            "hint": "Describing the outcome fairly, even if it wasn't in your favor, is stronger than suggesting unfairness or declining to explain.",
+            "explanation": "Describing the decision fairly, and connecting it to a genuine reason for looking elsewhere, shows maturity about a disappointing outcome. Suggesting the process was political, even if partly true, risks sounding bitter, and declining to explain avoids a fair question.",
             "id": "ji_l113_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "reassured",
+                "concerned",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that shows you sought specific feedback and acted on it.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you won over a skeptical audience.",
+            "interviewerQuestion": "You mentioned you were up for a promotion that ultimately went to an external hire. How did you handle that?",
             "options": [
-                "I invited their toughest questions upfront and answered each one honestly, which built real credibility before I even made my main pitch.",
-                "I prepared a strong, well-researched presentation to make my case.",
-                "I focused on the parts of my idea that were hardest to argue with."
+                "It was frustrating, honestly, since I felt like I'd already been doing a lot of that role's responsibilities unofficially for a while. though I wouldn't stake much on that being right.",
+                "I handled it fine, there's not really much more to say about it beyond that. and I don't think there's really much more useful detail to add beyond that when it comes to describing how I responded to it.",
+                "It was a disappointing outcome, but I asked my manager directly what I could work on for next time, and I've been applying that feedback since, including here, where I think the fit is even stronger."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Directly inviting and addressing tough questions builds more genuine buy-in than a strong presentation alone.",
-            "explanation": "Directly inviting and honestly answering tough questions builds real credibility with a skeptical audience, more than a strong presentation or focusing only on the easiest points to defend.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Seeking specific feedback and acting on it is stronger than dwelling on frustration or giving a bare, minimal answer.",
+            "explanation": "Seeking specific feedback and showing you applied it turns a setback into evidence of growth. Dwelling on frustration, even understandably, can sound like lingering resentment, and a bare 'I handled it fine' doesn't show the interviewer anything about how you actually responded.",
             "id": "ji_l113_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "concerned",
+                "uncertain",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names the specific feedback from each attempt and the growth that followed.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle resistance when introducing a new idea to your team?",
+            "interviewerQuestion": "It looks like you were considered for advancement more than once without success. What do you make of that pattern?",
             "options": [
-                "I try to build support gradually by starting with the team members most open to change.",
-                "I acknowledge the resistance openly and ask what would need to be true for them to feel comfortable moving forward.",
-                "I present as much data as possible to make a convincing case."
+                "Honestly, it started to feel like the company just wasn't going to promote me no matter what I did, which was part of why I began looking elsewhere.",
+                "I'm not entirely sure why it didn't happen, since I never got a completely clear answer each time. though that's really just my own read on it.",
+                "Each time, I got specific feedback about a particular gap, communication the first time, then strategic thinking the second, and I've worked deliberately on both. I see this move as the chance to apply that growth somewhere new."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Directly asking what would resolve someone's hesitation often gets to buy-in faster than gradual persuasion or more data alone.",
-            "explanation": "Directly asking what would resolve their hesitation shows respect for the resistance and often uncovers the real issue, while gradual persuasion or presenting more data doesn't directly address what's actually holding people back.",
+            "hint": "Naming the specific feedback received each time and what you did with it is stronger than assuming bias or admitting confusion about the reasons.",
+            "explanation": "Naming specific feedback from each attempt, and real action taken on it, turns a repeated pattern into a growth story. Assuming the company simply wouldn't promote you regardless of effort sounds like giving up, and admitting you never understood why leaves the pattern unexplained.",
             "id": "ji_l113_q3",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "concerned",
+                "uncertain",
+                "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names one real, minor thing and frames it constructively.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a time you had to cut through the noise to get something done.",
+            "interviewerQuestion": "If we called your previous manager, is there anything they might say that would surprise us?",
             "options": [
-                "I tried to respond to as many requests as I reasonably could.",
-                "I asked my manager to help sort through the many requests.",
-                "With dozens of competing requests coming in, I identified the two that would have the biggest impact and focused there first."
+                "I don't think there'd be anything surprising at all, I always left a good impression everywhere I've worked. at least that's roughly how I'd think about it.",
+                "They'd probably mention that I pushed back on a deadline once when I thought the scope wasn't realistic, which led to a good conversation about planning. Otherwise, I think they'd describe my work pretty consistently with what I've told you.",
+                "I'm honestly not sure what they'd say, we didn't always see eye to eye on everything."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "'Cut through the noise' means focusing on what truly matters despite distraction — identifying the highest-impact items is how that happens.",
-            "explanation": "'Cutting through the noise' means identifying what truly matters among many distractions. Focusing on the highest-impact items achieves that, while trying to respond to everything or deferring the sorting to someone else doesn't show that same clarity.",
+            "hint": "Naming one real, minor thing and framing it constructively is stronger than claiming a spotless record or leaving the question open-ended.",
+            "explanation": "Naming a real, minor thing and how it resolved well shows honesty and reduces the chance of surprise. Claiming a perfectly spotless record can sound unrealistic, and leaving the answer open-ended when you clearly have something in mind invites more suspicion than the actual issue likely deserves.",
             "id": "ji_l114_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "skeptical",
+                "reassured",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that provides a workable path to verification.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you stay focused when there are too many competing demands?",
+            "interviewerQuestion": "I notice one of your references is from a company that's no longer operating. How should we think about that?",
             "options": [
-                "I regularly step back to ask which one or two things would matter most if nothing else got done.",
-                "I try to organize everything into a clear list so nothing gets missed.",
-                "I work through requests roughly in the order they come in."
+                "I'm not totally sure how to help with that, since I don't have another way to verify that part of my history. though I could easily be wrong about that.",
+                "That company did close, so I guess there's not a lot that can really be done to confirm what I've said about that role. but that's admittedly a bit of a simplification.",
+                "That manager is still reachable directly, even though the company closed, and I've included his current contact information. I'm also happy to provide another reference from around that same period if it would help."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Regularly identifying the one or two things that matter most is the clearest way to cut through competing demands.",
-            "explanation": "Regularly identifying the one or two things that matter most shows real focus, while simply organizing everything into a list or working in order of arrival doesn't filter out what's actually less important.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Providing a workable path to verification is stronger than expressing uncertainty or treating the situation as unverifiable.",
+            "explanation": "Providing a direct way to still reach that reference, plus a backup option, solves the actual problem. Expressing uncertainty about how to help leaves the interviewer without a path forward, and treating the period as unverifiable understates options that likely still exist.",
             "id": "ji_l114_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "concerned",
+                "uncertain",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that proactively discloses a real, relevant issue with context.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you had to filter out distractions to focus on what mattered.",
+            "interviewerQuestion": "Is there anything in your work history that a reference check might raise that we should discuss now instead of finding out later?",
             "options": [
-                "I tried to address issues as they came up throughout the launch.",
-                "During a chaotic product launch, I ignored the minor issues being raised and focused entirely on the one bug that could have broken the launch.",
-                "I asked the team to help flag which issues seemed most urgent."
+                "Yes, actually. My performance dipped for a period after a family situation a couple of years ago, and a former manager might mention that. I've since built better systems for staying on top of things even during difficult personal periods.",
+                "I'd rather let the reference speak for itself rather than guessing at what they might say ahead of time.",
+                "I can't think of anything specific, though it's always possible someone remembers something differently than I do."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Deliberately ignoring minor issues to protect focus on the one critical thing shows the clearest example of cutting through noise.",
-            "explanation": "Deliberately ignoring minor issues to protect focus on the one critical risk shows real clarity under pressure, while addressing issues as they arise or relying on the team to flag urgency doesn't show that same decisive filtering.",
+            "hint": "Proactively disclosing a real, relevant issue with context is stronger than a vague hedge or declining to address the question at all.",
+            "explanation": "Proactively disclosing a real issue, with honest context and a genuine improvement, turns a potential surprise into a handled topic. A vague hedge about differing memories doesn't actually address anything specific, and declining to engage with a direct, reasonable question can look evasive.",
             "id": "ji_l114_q3",
             "interviewerReaction": [
-                "disappointed",
                 "impressed",
-                "disappointed"
+                "concerned",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the honest account of the mismatch that shows subsequent growth.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle being asked to do more with less?",
+            "interviewerQuestion": "Your last role apparently ended before probation was up. Can you walk me through what happened?",
             "options": [
-                "I focus on the highest-impact work and look for smarter, more efficient ways to get the same results with fewer resources.",
-                "I try to work extra hours to make up for the reduced resources.",
-                "I let stakeholders know what may need to be scaled back."
+                "The company's expectations during probation were honestly pretty unreasonable for someone still learning the role.",
+                "The role turned out to need a level of technical depth I didn't have yet, and we agreed together that it wasn't the right match this early on. I've since built up that specific skill set, partly because of that experience, and it's a strong match for what this role requires.",
+                "It didn't work out during the trial period, and I'd rather not go into much more detail than that. though I'm genuinely unsure how it would actually play out."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "'Do more with less' means finding smarter, more efficient approaches, not just working harder or accepting reduced output.",
-            "explanation": "'Doing more with less' means finding smarter, more efficient approaches to maintain output despite fewer resources. Working extra hours isn't sustainable, and simply scaling back expectations doesn't reflect that same creative problem-solving.",
+            "hint": "An honest account of the mismatch, with evidence of subsequent growth, is stronger than criticizing the company's expectations or giving a minimal answer.",
+            "explanation": "Honestly naming the mismatch and showing concrete growth since then turns a difficult outcome into a credible improvement story. Criticizing the company's expectations shifts blame away from a fair account, and a minimal answer leaves the interviewer without the reassurance a direct question like this deserves.",
             "id": "ji_l115_q1",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "concerned",
+                "reassured",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the fair, mutual account paired with a concrete change in your own process.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time your team had to do more with less.",
+            "interviewerQuestion": "Your employment history shows a role that ended after just a few weeks. Can you walk me through that?",
             "options": [
-                "We all worked harder to keep up with the same workload.",
-                "When our budget was cut, I automated a manual process, which let us maintain our output with fewer people involved.",
-                "We adjusted our targets to reflect the reduced resources."
+                "The company basically misled me about what the job actually involved, so it really wasn't a good use of anyone's time from the start.",
+                "It became clear early on that the day-to-day work wasn't what had been described during hiring, and both sides agreed it made sense to part ways quickly rather than drag it out. I made sure to ask much more detailed questions about daily responsibilities in interviews since then.",
+                "That one just didn't work out, honestly, and it's a bit of an awkward one to explain in much detail. though it's a fairly rough sense of things on my part."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Finding a genuine efficiency gain, like automation, is the clearest example of truly doing more with less.",
-            "explanation": "Finding a genuine efficiency gain like automation lets you maintain output with fewer resources, while simply working harder or lowering targets doesn't achieve the same sustainable result.",
+            "professionalismRating": 4,
+            "hint": "A fair, mutual account of the mismatch, plus a concrete change in your own interview process, is stronger than one-sided blame or an awkward non-answer.",
+            "explanation": "A fair account of a mutual decision, paired with a specific change in how you now vet roles, shows maturity and learning. Framing it as being misled puts all the blame on the company, and calling it 'awkward' without real content avoids answering a fair question.",
             "id": "ji_l115_q2",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "concerned",
+                "reassured",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the honest account of your own readiness at the time, paired with confidence now.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you maintain quality when resources are tight?",
+            "interviewerQuestion": "You mentioned a short-term role that ended quickly. What was behind that?",
             "options": [
-                "I try to be extra careful and thorough despite the limited resources.",
-                "I communicate clearly about what's realistic given the constraints.",
-                "I focus resources on the parts of the work that matter most and streamline or simplify everything else."
+                "I took the role while still recovering from a difficult personal period and realized partway through that I wasn't actually ready for the demands of it yet. I'm in a much better place now, which is part of why I feel confident applying for something at this level again.",
+                "It ended quickly, and I don't think there's a lot more useful detail I can really add to that.",
+                "That one honestly wasn't handled very well on the company's end, and a lot of it came down to poor onboarding more than anything else. but that's a rough guess more than anything solid."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Strategically focusing resources where they matter most is the clearest way to protect quality under tight constraints.",
-            "explanation": "Strategically focusing resources on what matters most protects quality where it counts, while general extra care or simply communicating constraints doesn't create the same targeted, efficient outcome.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "An honest account of your own readiness at the time, plus confidence about the present, is stronger than shifting blame to onboarding or giving a bare non-answer.",
+            "explanation": "Being honest about your own readiness at the time, paired with genuine confidence now, directly and credibly answers the question. Blaming onboarding shifts responsibility away from your own account, and a bare non-answer doesn't give the interviewer the reassurance the question is really asking for.",
             "id": "ji_l115_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "reassured",
+                "uncertain",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that redirects confidently to your commitment and qualifications.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a time you went out on a limb at work.",
+            "interviewerQuestion": "Do you have any plans that might take you away from full commitment to this role in the near future, like starting a family?",
             "options": [
-                "I shared a suggestion that I thought could improve our results.",
-                "I supported a new idea that a colleague proposed to leadership.",
-                "I recommended a bold new strategy to leadership that wasn't universally supported at first, and it ended up significantly improving our results."
+                "That feels like a pretty personal question to be asking in an interview, and I'm not really comfortable answering it. though I'll admit I'm not entirely sure that's the right call.",
+                "No, I don't have any plans like that right now, though I suppose things could always change down the road for anyone. but I wouldn't swear to that.",
+                "I'm fully committed to building my career right now, and I'd rather focus our conversation on what I bring to this specific role, since that's really what matters most for how I'd perform here."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "'Go out on a limb' means taking a real personal risk by supporting or proposing something uncertain — the strongest answer shows genuine risk and a clear outcome.",
-            "explanation": "'Going out on a limb' means taking a genuine personal risk on something uncertain. Proposing a bold strategy despite pushback shows that risk clearly, while a general suggestion or supporting someone else's idea doesn't carry the same personal exposure.",
+            "hint": "Redirecting confidently to your commitment and qualifications is usually stronger than answering the personal question directly or calling out the question itself.",
+            "explanation": "Redirecting confidently to your commitment and relevant qualifications handles the question gracefully without engaging its personal substance. Answering the personal question directly, even briefly, treats it as fair to ask, and calling out the question, while understandable, can create unnecessary tension in the room.",
             "id": "ji_l116_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "wary",
+                "uncertain",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that redirects to the substance of your experience.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you took a stand on something unpopular.",
+            "interviewerQuestion": "You mention quite a lot of experience for your resume. Can I ask how old you are, just so I understand your background better?",
             "options": [
-                "I raised some concerns about a plan during a discussion.",
-                "I pushed back on a widely supported plan because I believed it had a serious flaw, and my concerns turned out to be valid.",
-                "I agreed with the majority after hearing everyone's reasoning."
+                "I don't mind sharing, I'm in my mid-fifties, though I don't think it should really factor into anything here.",
+                "I'd prefer not to answer that, and honestly I'm a little surprised it was asked.",
+                "I'd rather keep the focus on the experience itself, which I'm happy to go into more detail on, since that's really what's relevant to how I'd perform in this role."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Standing firm on an unpopular position, despite disagreement, is the clearest example of going out on a limb.",
-            "explanation": "Standing firm on an unpopular position despite disagreement shows real conviction, while simply raising concerns in discussion or ultimately agreeing with the majority doesn't carry the same risk.",
+            "hint": "Redirecting to the substance of your experience is usually stronger than answering directly or expressing surprise at the question.",
+            "explanation": "Redirecting to the relevant substance, your actual experience, keeps the conversation on solid, appropriate ground. Answering directly normalizes a question that isn't relevant to the role, and expressing surprise, while understandable, can create an uncomfortable moment without actually redirecting anywhere useful.",
             "id": "ji_l116_q2",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "wary",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that affirms your capability for the role's demands and invites a concrete follow-up.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How comfortable are you taking a risk that others might not support?",
+            "interviewerQuestion": "I noticed a gap that seemed to involve health issues. Is there anything about your health I should be aware of that might affect the role?",
             "options": [
-                "I'm willing to take that risk when I believe strongly in the value of an idea, as long as I've thought it through carefully.",
-                "I'm fairly cautious and prefer to have support before taking action.",
-                "I'm open to it, though I usually look for some validation first."
+                "I'm fully able to perform everything this role requires, and I'd be glad to discuss the specific demands of the job if there's a particular concern behind the question.",
+                "It's a bit of a personal area, but I can say things are generally fine now, without going into much more than that. though someone else might see it differently.",
+                "I'd rather not get into any details about that, since I think health is a pretty private topic that shouldn't come up in an interview. even if I haven't fully thought it through."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Genuine willingness to act on strong conviction, after careful thought, best reflects being comfortable going out on a limb.",
-            "explanation": "Genuine willingness to act on strong, well-considered conviction reflects real comfort with taking a risk, while preferring support first or needing validation shows more hesitation than the phrase implies.",
+            "professionalismRating": 4,
+            "hint": "Affirming your capability for the specific role's demands, and inviting a concrete follow-up, is usually stronger than declining broadly or giving a vague reassurance.",
+            "explanation": "Affirming your capability for the role's actual demands, and inviting a specific follow-up, directly addresses the real underlying question in an appropriate way. Declining broadly avoids engaging with a legitimate concern about job demands, and a vague reassurance doesn't actually confirm your capability for anything specific.",
             "id": "ji_l116_q3",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "reassured",
+                "uncertain",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names a specific, considered trade-off.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you build a seat at the table in your organization?",
+            "interviewerQuestion": "This role pays less than what you were earning before. Why would you consider that?",
             "options": [
-                "I try to attend as many important meetings as I can.",
-                "I consistently bring valuable insights and well-prepared perspectives to discussions, which earns trust and an invitation to bigger conversations over time.",
-                "I speak up whenever I have an opinion on a topic."
+                "I hadn't really thought too much about the pay difference until you brought it up just now. even if the specifics might vary quite a bit.",
+                "My previous role paid well, but the day-to-day work wasn't a strong match for what I actually enjoy doing. I've thought carefully about the trade-off, and this role's focus is worth more to me right now than the difference in pay.",
+                "Money isn't really that important to me, so the pay difference doesn't bother me much either way."
             ],
             "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "'A seat at the table' means being included in important decisions — that's earned through consistently valuable contributions, not just attendance or speaking up.",
-            "explanation": "'A seat at the table' means being genuinely included in important decisions, which is earned through consistently valuable contributions. Simply attending meetings or speaking up doesn't guarantee that same level of trust and inclusion.",
+            "hint": "Naming a specific, considered trade-off is stronger than dismissing the importance of money or admitting you hadn't thought it through.",
+            "explanation": "Naming a specific, deliberate trade-off shows the decision was thought through, not impulsive. Dismissing the importance of money can sound unrealistic, and admitting you hadn't considered the pay difference raises doubts about how carefully you've thought about the move.",
             "id": "ji_l117_q1",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "concerned",
+                "reassured",
+                "skeptical"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer with a considered, specific trade-off between pay and sustainability.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you earned influence in decisions beyond your usual role.",
+            "interviewerQuestion": "You're moving from a much higher-paying role to this one. Help me understand the thinking there.",
             "options": [
-                "I built a track record of accurate insights on a specific topic, which led leadership to start including me in related strategic discussions.",
-                "I asked to be included in a few important meetings.",
-                "I shared my opinions whenever relevant topics came up."
+                "I'm honestly still getting used to the idea of the pay cut myself, so I don't have a perfectly clean answer for that yet.",
+                "That role paid well, but the hours and pressure weren't sustainable long-term for me, and I've done the math on what I actually need versus what I was earning. This trade-off makes sense for the kind of life and work I want going forward.",
+                "The old job just burned me out completely, so pretty much anything with less pressure would have looked appealing by comparison."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "A track record that leads others to actively include you shows real earned influence, more than simply requesting inclusion.",
-            "explanation": "A track record that leads others to proactively include you in strategic discussions shows real earned influence, while requesting inclusion or sharing opinions when relevant doesn't demonstrate that same level of established trust.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "A considered, specific trade-off is stronger than framing the move as an escape from burnout or admitting you're still processing the decision.",
+            "explanation": "A considered, specific trade-off between pay and sustainability shows a deliberate decision. Framing it purely as an escape from burnout suggests any lower-pressure job would do, not this one specifically, and admitting you're still processing the decision raises doubt about your commitment to it.",
             "id": "ji_l117_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain",
+                "reassured",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the confident answer backed by real financial planning.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you position yourself to be included in bigger decisions?",
+            "interviewerQuestion": "Given your background, this salary is a significant step down. Are you sure about that?",
             "options": [
-                "I make sure leadership is aware of my interest in taking on more.",
-                "I look for opportunities to contribute ideas in larger meetings.",
-                "I focus on delivering consistent, high-quality work in my current role, which naturally builds the credibility needed for bigger conversations."
-            ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Building credibility through consistent quality work is the most reliable path to earning inclusion in bigger decisions.",
-            "explanation": "Building credibility through consistent, high-quality work naturally earns bigger opportunities, while simply expressing interest or looking for chances to contribute doesn't build the same foundational trust.",
-            "id": "ji_l117_q3",
-            "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Describe how you stay ahead of the curve in your field.",
-            "options": [
-                "I regularly follow industry trends and experiment with new tools early, so I'm often already familiar with changes before they become mainstream.",
-                "I try to keep up with new developments as they come out.",
-                "I take courses periodically to keep my skills current."
+                "Yes, genuinely. I'm treating this as an investment in building real expertise in a new field, and I've planned my finances around that for the time it'll take to grow back up in this new direction.",
+                "I've thought about it, though I won't pretend the pay cut doesn't concern me at least a little. but I'd want to think about it more before committing to that.",
+                "I know it's a step down, but I figure it'll work itself out over time once I've been in the field a while. but plenty of people might disagree with me there."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "'Ahead of the curve' means being early to trends, not just staying current with them once they've already arrived.",
-            "explanation": "'Ahead of the curve' means being early to new developments, before they become mainstream. Keeping up as things come out or taking periodic courses shows staying current, but not necessarily being early.",
-            "id": "ji_l118_q1",
+            "professionalismRating": 4,
+            "hint": "A confident, planned answer is stronger than a vague hope it'll work out or an admission of lingering concern.",
+            "explanation": "A confident answer backed by real financial planning shows the decision was made deliberately, not hopefully. Assuming it'll 'work itself out' isn't a plan, and admitting lingering concern about the pay cut can make the interviewer wonder about your long-term commitment to the switch.",
+            "id": "ji_l117_q3",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "reassured",
+                "concerned",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that pairs genuine personal readiness with real professional research.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you anticipated a change in your industry before others did.",
+            "interviewerQuestion": "What's driving your decision to relocate for this role?",
             "options": [
-                "I adapted quickly once a new trend started gaining attention.",
-                "I noticed an emerging trend early and began building relevant skills months before it became a widely discussed topic in our field.",
-                "I kept an eye on industry news to stay informed of changes."
+                "Some personal things happened that made me want to leave where I currently live, so this seemed like good timing to make a change.",
+                "I'm not entirely sure yet, honestly, I just felt like it was probably time for something different.",
+                "I'm ready for a change of scenery after several years in one place, and I've specifically researched this city and industry to make sure the move makes sense professionally, not just personally."
+            ],
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Pairing a genuine personal readiness with real professional research is stronger than vague personal references or an unclear sense of timing.",
+            "explanation": "Pairing genuine personal readiness with real professional research shows the move is considered on both fronts. Vague references to personal things invites questions without answering them, and an unclear sense of timing doesn't reassure the interviewer that this is a deliberate, well-thought-out decision.",
+            "id": "ji_l118_q1",
+            "interviewerReaction": [
+                "uncertain",
+                "uncertain",
+                "reassured"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that clearly names both the personal reason and the career fit.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "I see you're relocating from quite far away. What's behind that?",
+            "options": [
+                "It's kind of a long story, but basically I just needed a change for personal reasons. or that's at least what comes to mind right now.",
+                "I want to be closer to family as they get older, and I made sure this move includes strong professional opportunities like this one, so it works well for both parts of my life.",
+                "Family stuff, mostly, it's a bit complicated, but the move is happening either way regardless of what comes of this interview. though I can't point to anything concrete backing that up."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "A clear, professional framing of both the personal reason and the career fit is stronger than a vague or overly casual explanation.",
+            "explanation": "Clearly naming both the personal reason and the career fit shows the move is genuinely considered, not just incidental to this interview. Calling it complicated without detail invites curiosity without resolving it, and a vague 'personal reasons' answer doesn't give the interviewer anything real to work with.",
+            "id": "ji_l118_q2",
+            "interviewerReaction": [
+                "uncertain",
+                "reassured",
+                "uncertain"
+            ]
+        },
+        {
+            "instruction": "Choose the answer with real preparation and research tied specifically to this role.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "You don't have any existing connections in this city. How confident are you that this move will work out?",
+            "options": [
+                "I'm hoping it'll work out, since I've heard good things about the area from a few people online.",
+                "Very confident. I've researched the cost of living and the job market here thoroughly, and this role specifically is a big part of why the move makes sense, not something I'm figuring out after arriving.",
+                "I haven't really thought that far ahead, I figured I'd sort out the details once I actually got here."
             ],
             "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Acting on a trend before it becomes widely discussed is what truly means being ahead of the curve.",
-            "explanation": "Acting on a trend before it becomes widely discussed shows genuine early anticipation, while adapting quickly once it gains attention or simply staying informed doesn't demonstrate that same head start.",
-            "id": "ji_l118_q2",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "How do you make sure your skills don't become outdated?",
-            "options": [
-                "I make continuous learning a regular part of my routine.",
-                "I pay attention to what skills employers are looking for.",
-                "I actively seek out emerging tools and ideas before they're in high demand, so I'm prepared well ahead of time."
-            ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Actively seeking out emerging tools before they're in demand shows a proactive edge beyond general continuous learning.",
-            "explanation": "Actively seeking out emerging tools before they're in high demand shows a proactive edge, while general continuous learning or watching employer demand reflects staying current rather than being genuinely ahead.",
+            "hint": "Real preparation and research tied specifically to this role is stronger than general hope or an admission of no real plan.",
+            "explanation": "Real, specific preparation tied to this exact role shows the move was planned around the opportunity, not the other way around. General hope based on secondhand impressions is thin reassurance, and admitting there's no real plan raises real doubt about whether the move, and by extension the job, will actually work out.",
             "id": "ji_l118_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "uncertain",
+                "reassured",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that points back to specific evidence already discussed.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle a project that feels like a moving target?",
+            "interviewerQuestion": "I'll be honest, we were expecting someone with a bit more experience for this role. How do you want to respond to that?",
             "options": [
-                "I build in regular checkpoints to realign on the current goal, since staying flexible matters more than clinging to an outdated plan.",
-                "I try to stick to the original plan as closely as I can.",
-                "I do my best to adapt whenever changes come up."
+                "I appreciate you being direct about that. I'd point to the specific project I mentioned earlier, where I handled a similar scope independently, as evidence that the experience I do have is deeper than the years alone might suggest.",
+                "That's disappointing to hear, but I think if you look past the years on paper, I'm confident I could handle the role just fine. or so it seems to me, anyway.",
+                "I understand, and I guess that's a fair point. I'm not entirely sure what else I can say to that."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "'A moving target' means goals or requirements that keep shifting — regular realignment checkpoints handle that better than sticking to an old plan or just reacting.",
-            "explanation": "'A moving target' describes goals that keep shifting. Building in regular checkpoints to realign proactively handles that better than sticking to an outdated plan or only reacting to changes as they happen.",
+            "hint": "Responding with a specific piece of evidence already discussed is stronger than a general reassurance or accepting the concern without response.",
+            "explanation": "Pointing back to specific evidence already on the table directly answers the concern with something concrete. A general reassurance of confidence doesn't add anything new, and accepting the concern without offering anything further leaves it standing unchallenged.",
             "id": "ji_l119_q1",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that asks for the specific concern to address it directly.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time a project's goals kept changing.",
+            "interviewerQuestion": "Based on what you've told me, I'm not convinced your technical skills are quite where we need them. What would you say to that?",
             "options": [
-                "It was challenging, but the team adapted as changes came in.",
-                "I tried to stay flexible and roll with whatever came up.",
-                "I set up biweekly alignment meetings so the whole team could adjust together as the goals evolved, rather than working off outdated information."
+                "I think my technical skills are actually pretty solid, and I'm a little surprised that's the impression I've given so far. but honestly, I haven't really put that to the test.",
+                "That's fair, I suppose. Technical skills have never really been my strongest area, if I'm honest. or at least that's my instinct here.",
+                "That's useful to know directly. Could you tell me more specifically which area concerns you? I'd like the chance to address it directly rather than guess at what might be missing."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "A structured system for staying aligned as goals evolve shows more control than a general comment about adapting.",
-            "explanation": "A structured system like regular alignment meetings keeps the whole team working from current information, while a general comment about adapting or rolling with changes doesn't show that same proactive structure.",
+            "hint": "Asking for the specific concern to address it directly is stronger than defending your skills broadly or agreeing with a vague concession.",
+            "explanation": "Asking for the specific concern gives you the chance to actually respond to it rather than guessing. Defending your skills broadly without addressing the specific doubt doesn't resolve anything, and a vague concession about a whole skill area being weak concedes more than the question actually asked.",
             "id": "ji_l119_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "unconvinced",
+                "concerned",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that asks directly for the specific concern behind the impression.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you stay productive when project requirements keep shifting?",
+            "interviewerQuestion": "Honestly, I'm getting the sense you might not be the right cultural fit here. Can you respond to that?",
             "options": [
-                "I try to complete as much work as I can before the next change happens.",
-                "I confirm the current priorities frequently and avoid investing too much effort into anything likely to change soon.",
-                "I focus on the parts of the project that seem most stable."
+                "I think I'd actually fit in quite well here, and I'm not sure what's giving you that impression so far.",
+                "I'd genuinely like to understand what's giving you that impression, since I want to address the actual concern rather than just reassure you generally. What specifically feels like it might not fit?",
+                "That's a little concerning to hear, and I'm not really sure how to respond to something like that on the spot."
             ],
             "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Frequently confirming current priorities protects your effort better than rushing to finish work or guessing what seems stable.",
-            "explanation": "Frequently confirming current priorities protects your effort from being wasted, while rushing to finish work before the next change or guessing at what seems stable doesn't offer the same reliable protection.",
+            "hint": "Asking directly for the specific concern behind the impression is stronger than defending yourself in general terms or admitting you're unsure how to respond.",
+            "explanation": "Asking directly for the specific concern shows composure and a genuine desire to address it rather than just react. A general defense doesn't engage with whatever specifically prompted the comment, and admitting you don't know how to respond leaves a serious concern completely unaddressed.",
             "id": "ji_l119_q3",
             "interviewerReaction": [
-                "disappointed",
+                "uncertain",
                 "impressed",
-                "disappointed"
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that takes each concern in turn with a specific, real answer.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a time you had to course correct mid-project.",
+            "interviewerQuestion": "Let's be direct: you have a gap in your resume, your last major project failed, and frankly I'm not sure this role is the right level for you. Take those one at a time and convince me.",
             "options": [
-                "I made some adjustments partway through to try to improve things.",
-                "I noticed some issues but decided to finish the original plan first.",
-                "Halfway through, I realized our approach wasn't delivering the results we needed, so I proposed a revised plan and got the team aligned quickly."
-            ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "'Course correct' means making a deliberate, timely change in direction — the strongest answer shows recognizing the issue and acting on it quickly.",
-            "explanation": "'Course correcting' means deliberately changing direction once you realize the current path isn't working. Proposing a revised plan and realigning the team quickly shows that clearly, while vague adjustments or finishing an ineffective plan first doesn't show the same timely decisiveness.",
-            "id": "ji_l120_q1",
-            "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you had to change direction partway through a project.",
-            "options": [
-                "When early results showed our approach wasn't working, I paused the team, reassessed our strategy, and relaunched with meaningful changes.",
-                "I made a few tweaks along the way as issues came up.",
-                "I let the team know the current approach might need to change soon."
+                "Fair enough, one at a time. The gap was deliberate, I used it to reskill after realizing my old path wasn't right for me. The project failed because I didn't secure buy-in early enough, a mistake I don't repeat now. And on level, I'd point to the specific work I've done since that gap, which matches what this role actually needs, more than the resume timeline alone suggests.",
+                "That's a pretty tough combination to respond to all at once, and I'm honestly not sure where to start with everything you've raised. but I haven't really examined that closely.",
+                "I understand the concerns,. but I'm not fully confident saying that."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Pausing to reassess and relaunch with real changes is a much stronger example of course correcting than small tweaks or simply flagging a possible future change.",
-            "explanation": "Pausing to reassess and relaunching with meaningful changes shows a genuine, deliberate course correction, unlike small ongoing tweaks or simply mentioning that change might be needed later.",
-            "id": "ji_l120_q2",
+            "hint": "The strongest answer takes each concern in turn with a specific, real answer, rather than asking for more time or promising explanations without giving them.",
+            "explanation": "Addressing all three concerns directly and specifically, in order, shows real composure and substance under a genuinely difficult combined challenge. Promising reasonable explanations without giving them leaves the interviewer no better informed, and admitting you don't know where to start fails the exact test this question is designed to pose.",
+            "id": "ji_l120_q1",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "skeptical",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that gives a real, specific answer to each of the three concerns immediately.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you know when it's time to course correct rather than stay the course?",
+            "interviewerQuestion": "You were let go from your last role, you're overqualified for this position, and you're relocating with no local ties. That's three real question marks. Address them.",
             "options": [
-                "I try to give the current plan a fair chance before making changes.",
-                "When the evidence clearly shows the current direction won't achieve the goal, I act quickly rather than waiting for more certainty.",
-                "I check in with the team to see how they feel about the direction."
+                "Those are all fair points,. though I recognize that might not hold up.",
+                "I'll take them in order. I was let go after a role that wasn't the right fit for my strengths, and I've since made sure to vet fit more carefully, including with this role. I'm intentionally stepping back from management to get closer to hands-on work, which this role offers directly. And the move is planned around this specific opportunity, with real research behind it, not something I'm figuring out after arriving.",
+                "That's a lot to respond to at once,. at least that's roughly how I'd think about it."
             ],
             "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Acting quickly once evidence is clear shows stronger judgment than waiting for more certainty or relying mainly on how the team feels.",
-            "explanation": "Acting quickly once the evidence is clear shows strong, timely judgment, while waiting for more certainty or relying mainly on how the team feels doesn't reflect the same decisive course correction.",
+            "hint": "The strongest answer gives a real, specific answer to each concern immediately, rather than asking for time or offering a vague promise to address them later.",
+            "explanation": "Giving a specific, real answer to each of the three concerns immediately shows genuine preparation and composure. Asking for more time to address them later avoids the actual test of the moment, and a vague promise to explain 'over time' doesn't give the interviewer anything to evaluate right now.",
+            "id": "ji_l120_q2",
+            "interviewerReaction": [
+                "uncertain",
+                "impressed",
+                "skeptical"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that names three specific, concrete pieces of evidence together.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "So you're changing careers, taking a real pay cut, and you don't have direct experience in this field. Honestly, why should I believe this is going to work?",
+            "options": [
+                "I'd point to three things together: I've built real projects in this new area on my own time, I've planned my finances around the transition deliberately rather than hoping it works out, and I've chosen this field specifically because of skills from my old career that transfer directly, like project coordination. Those three things, taken together, are why I believe this will work.",
+                "I know it's a lot of change at once, and I don't have a perfect answer, but I really do want to make this work.",
+                "I understand the concerns, and honestly I think passion and hard work usually make up for most of those kinds of gaps over time. but I wouldn't swear to that."
+            ],
+            "correctAnswerIndex": 0,
+            "professionalismRating": 5,
+            "hint": "The strongest answer names three specific, concrete pieces of evidence together, rather than relying on a general appeal to passion or hope.",
+            "explanation": "Naming three specific, concrete pieces of evidence together builds a real case rather than a hopeful one. Appealing to passion and hard work in general doesn't address any of the three specific concerns raised, and admitting you don't have a perfect answer, while honest, doesn't give the interviewer the substance this direct challenge is asking for.",
             "id": "ji_l120_q3",
             "interviewerReaction": [
-                "disappointed",
                 "impressed",
-                "disappointed"
+                "uncertain",
+                "skeptical"
             ]
         }
     ]

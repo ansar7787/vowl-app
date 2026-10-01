@@ -5,512 +5,512 @@
     "quests": [
         {
             "id": "sva_l131_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "One of the most striking aspects of the report ___ the lack of transparency.",
-            "hint": "The subject is 'one' (singular) - 'of the most striking aspects' is a modifier.",
-            "explanation": "The subject is 'one', which is always singular. 'Of the most striking aspects of the report' is a modifier. 'One of the most striking aspects is the lack of transparency'.",
+            "question": "Either the caretaker or the assistant ___ responsible for locking up.",
+            "hint": "With 'either...or', check the noun that's closest to the blank.",
+            "explanation": "In 'either...or' sentences, the verb agrees with the noun nearest to it - here, 'the assistant', which is singular. The verb is 'is'.",
             "options": [
-                "is",
-                "are"
+                "are",
+                "is"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "'Either...or' agreement follows the noun closer to the verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l131_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Some of the most striking aspects of the report ___ the lack of transparency.",
-            "hint": "The subject is 'some of the most striking aspects' (plural) - verb agrees with 'aspects'.",
-            "explanation": "'Some of the most striking aspects' is the subject. 'Aspects' is plural, so the verb is 'are'. Contrast with 'one of the aspects is'.",
+            "question": "Either my brother or my sister ___ picking me up from the airport.",
+            "hint": "Look at the second name in the pair, not the first, to decide the verb.",
+            "explanation": "The noun closer to the verb is 'my sister', which is singular. The verb is 'is'.",
             "options": [
                 "is",
                 "are"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "'Either...or' agreement follows the noun closer to the verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l131_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The growth of both domestic and international markets ___ accelerating.",
-            "hint": "The subject is 'the growth' (singular) - all other words are modifiers.",
-            "explanation": "'The growth' is the singular subject. 'Of both domestic and international markets' is a prepositional modifier. 'The growth is accelerating'.",
+            "question": "Either the printer or the scanner ___ broken.",
+            "hint": "The noun right before the verb is what matters in an 'either...or' sentence.",
+            "explanation": "The noun closer to the verb is 'the scanner', which is singular. The verb is 'is'.",
             "options": [
-                "is",
-                "are"
+                "are",
+                "is"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "'Either...or' agreement follows the noun closer to the verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l132_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CONTRAST",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "What struck most observers ___ the scale of the response.",
-            "hint": "A clause beginning with 'what' acts as a single noun when it is the subject.",
-            "explanation": "The subject 'what struck most observers' is a noun clause acting as a singular unit. 'What struck most observers was the scale of the response'.",
+            "question": "Either the manager or the employees ___ responsible for this decision.",
+            "hint": "This time, the second option is plural - see how that changes the verb.",
+            "explanation": "The noun closer to the verb is 'the employees', which is plural, so the verb is 'are', even though 'the manager' (singular) comes first.",
             "options": [
-                "were",
-                "was"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswer": "are",
+            "grammarRule": "'Either...or' agreement follows the noun closer to the verb, even when the two nouns differ in number",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l132_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CONTRAST",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "What struck most observers ___ the speed and scale of the response.",
-            "hint": "The subject is the 'what' clause - a singular noun clause - not the complement after the verb.",
-            "explanation": "Even when the complement ('the speed and scale') is plural, the subject 'what struck most observers' is still a singular noun clause. 'What struck observers was the speed and scale'.",
+            "question": "Either the students or the teacher ___ mistaken about the schedule.",
+            "hint": "Compare this to the last question - here the second option is singular instead.",
+            "explanation": "The noun closer to the verb is 'the teacher', which is singular, so the verb is 'is', even though 'the students' (plural) comes first.",
             "options": [
-                "was",
-                "were"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "is",
+            "grammarRule": "'Either...or' agreement follows the noun closer to the verb, even when the two nouns differ in number",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l132_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CONTRAST",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The findings, none of which ___ unexpected, have been published.",
-            "hint": "'None of which' points back to 'the findings' - how many findings were there?",
-            "explanation": "'None of which' refers to 'the findings', which is plural. The verb inside the relative clause must also be plural: 'none of which were unexpected'.",
+            "question": "Either the coaches or the player ___ going to speak to the press.",
+            "hint": "Focus on 'the player', not 'the coaches', since it's the noun right before the verb.",
+            "explanation": "The noun closer to the verb is 'the player', which is singular, so the verb is 'is'.",
             "options": [
-                "was",
-                "were"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "'Either...or' agreement follows the noun closer to the verb, even when the two nouns differ in number",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l133_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CONTRAST",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The proposals, several of which ___ rejected, are being revised.",
-            "hint": "'Several of which' refers back to 'the proposals' - plural or singular?",
-            "explanation": "'Several of which' refers to 'the proposals', which is plural. The verb inside the relative clause matches the plural: 'several of which were rejected'.",
+            "question": "Neither the coach nor the players ___ happy with the result.",
+            "hint": "Just like 'either...or', 'neither...nor' agrees with the noun right before the verb.",
+            "explanation": "The noun closer to the verb is 'the players', which is plural, so the verb is 'are'.",
             "options": [
-                "were",
-                "was"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are",
+            "grammarRule": "'Neither...nor' agreement follows the noun closer to the verb",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l133_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CONTRAST",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The applicants, one of whom ___ offered the position, are waiting.",
-            "hint": "'One of whom' refers to one singular person - verb inside clause is singular.",
-            "explanation": "'One of whom' refers to a single person from the group of applicants. The verb inside the relative clause is 'was': 'one of whom was offered the position'.",
+            "question": "Neither the players nor the coach ___ happy with the result.",
+            "hint": "Notice the order has been reversed from the last question - check how that changes the verb.",
+            "explanation": "The noun closer to the verb is now 'the coach', which is singular, so the verb is 'is'.",
             "options": [
-                "were",
-                "was"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "'Neither...nor' agreement follows the noun closer to the verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l133_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CONTRAST",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The students, most of whom ___ from abroad, adjusted quickly.",
-            "hint": "'Most of whom' refers to 'the students' (plural) - verb inside clause agrees.",
-            "explanation": "'Most of whom' refers to 'the students', which is plural. The verb inside the relative clause is 'were': 'most of whom were from abroad'.",
+            "question": "Neither the parents nor the child ___ aware of the mistake.",
+            "hint": "Check the second noun in the pair, since it's the one right before the verb.",
+            "explanation": "The noun closer to the verb is 'the child', which is singular, so the verb is 'is'.",
             "options": [
-                "were",
-                "was"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "is",
+            "grammarRule": "'Neither...nor' agreement follows the noun closer to the verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l134_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Neither the report nor the analysis ___ been peer-reviewed.",
-            "hint": "The nearer subject is 'the analysis' - what is its number?",
-            "explanation": "The verb agrees with the subject nearest to it. 'The analysis' is singular, so 'has been peer-reviewed' is correct. The report comes first but the analysis is closer to the verb.",
-            "options": [
-                "have",
-                "has"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l134_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Neither the analysis nor the reports ___ been peer-reviewed.",
-            "hint": "The subject immediately before the verb gap is 'the reports' - singular or plural?",
-            "explanation": "The subject nearest to the verb is 'the reports', which is plural. With 'neither…nor', the verb agrees with this nearer subject: 'have been peer-reviewed'.",
-            "options": [
-                "have",
-                "has"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "have",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l134_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Both the approach and the methodology ___ thoroughly evaluated.",
-            "hint": "When you see 'both…and', the resulting compound subject always needs a plural verb.",
-            "explanation": "'Both…and' combines two items into a plural compound subject. 'Both the approach and the methodology were thoroughly evaluated' - plural verb is required.",
-            "options": [
-                "was",
-                "were"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l135_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The way the new systems interact with existing infrastructure ___ under review.",
-            "hint": "The subject is 'the way' (singular) - the embedded clause is a modifier.",
-            "explanation": "'The way' is the singular subject; 'the new systems interact with existing infrastructure' is a clause that modifies 'the way'. 'The way is under review'.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l135_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The ways in which new systems interact with existing infrastructure ___ under review.",
-            "hint": "The subject is 'the ways' (plural) - the prepositional phrase is a modifier.",
-            "explanation": "'The ways' is the plural subject; 'in which new systems interact with existing infrastructure' is a modifier. 'The ways are under review'.",
+            "question": "Neither the president nor the board members ___ available for comment.",
+            "hint": "The second noun here is plural - let that decide the verb.",
+            "explanation": "The noun closer to the verb is 'the board members', which is plural, so the verb is 'are'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "grammarRule": "'Neither...nor' agreement follows the noun closer to the verb",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l134_q2",
+            "instruction": "CHOOSE THE CORRECT VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Neither the recipe nor the ingredients ___ easy to find.",
+            "hint": "'Ingredients' is right before the verb - match the verb to that.",
+            "explanation": "The noun closer to the verb is 'the ingredients', which is plural, so the verb is 'are'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are",
+            "grammarRule": "'Neither...nor' agreement follows the noun closer to the verb",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l134_q3",
+            "instruction": "CHOOSE THE CORRECT VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Neither the teacher nor the students ___ ready for the fire drill.",
+            "hint": "'Students' comes right before the verb here - use that to decide the agreement.",
+            "explanation": "The noun closer to the verb is 'the students', which is plural, so the verb is 'are'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are",
+            "grammarRule": "'Neither...nor' agreement follows the noun closer to the verb",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l135_q1",
+            "instruction": "SPOT THE CONTRAST",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Not only the owner but also the employees ___ invited to the celebration.",
+            "hint": "'Not only...but also' behaves just like 'either...or' - check the noun closest to the verb.",
+            "explanation": "The noun closer to the verb is 'the employees', which is plural, so the verb is 'are'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are",
+            "grammarRule": "'Not only...but also' agreement follows the noun closer to the verb",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l135_q2",
+            "instruction": "SPOT THE CONTRAST",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Not only the players but also the coach ___ frustrated with the loss.",
+            "hint": "This time, the noun right before the verb is singular.",
+            "explanation": "The noun closer to the verb is 'the coach', which is singular, so the verb is 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "'Not only...but also' agreement follows the noun closer to the verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l135_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CONTRAST",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The significance of these findings ___ yet to be fully understood.",
-            "hint": "'The significance' is singular - 'of these findings' is a modifier.",
-            "explanation": "'The significance' is the singular subject; 'of these findings' modifies it. 'The significance is yet to be fully understood'.",
+            "question": "Not only the recipe but also the cooking method ___ important for this dish.",
+            "hint": "Check the second item in the pair, since it's the one right before the verb.",
+            "explanation": "The noun closer to the verb is 'the cooking method', which is singular, so the verb is 'is'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "'Not only...but also' agreement follows the noun closer to the verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l136_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Each of the documents submitted for review ___ been carefully scrutinised.",
-            "hint": "'Each of' is always singular - even with a plural noun following it.",
-            "explanation": "'Each of' is always singular, regardless of the noun that follows. 'Each of the documents has been scrutinised' - not 'have'.",
+            "question": "The editor, as well as her assistants, ___ attending the conference.",
+            "hint": "'As well as' just adds extra information - it doesn't create a true compound subject like 'and' does.",
+            "explanation": "The original subject is 'the editor', which is singular; 'as well as her assistants' is just added detail. The verb is 'is'.",
             "options": [
-                "have",
-                "has"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "'As well as' does not change the number of the original subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l136_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "All of the documents submitted for review ___ been carefully scrutinised.",
-            "hint": "'All of' with a plural countable noun takes a plural verb.",
-            "explanation": "'All of the documents' takes a plural verb because 'documents' is countable and plural. 'All of the documents have been scrutinised'.",
-            "options": [
-                "have",
-                "has"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "have",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l136_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Either the senior researcher or the junior researchers ___ responsible for this.",
-            "hint": "The subject immediately before the blank is 'the junior researchers' - singular or plural?",
-            "explanation": "The nearest subject to the verb is 'the junior researchers', which is plural. With 'either…or', the verb agrees with this nearer subject: 'are responsible'.",
+            "question": "The students, as well as their teacher, ___ excited about the field trip.",
+            "hint": "The phrase after 'as well as' doesn't change how many students there are.",
+            "explanation": "The original subject is 'the students', which is plural. The verb is 'are'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "grammarRule": "'As well as' does not change the number of the original subject",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l136_q3",
+            "instruction": "FIND THE REAL SUBJECT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "This recipe, as well as several others in the book, ___ easy to follow.",
+            "hint": "Focus on the original subject before the comma, not the phrase after 'as well as'.",
+            "explanation": "The original subject is 'this recipe', which is singular. The verb is 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "'As well as' does not change the number of the original subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l137_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Either the junior researchers or the senior researcher ___ responsible for this.",
-            "hint": "The subject immediately before the blank is 'the senior researcher' - singular or plural?",
-            "explanation": "The nearest subject to the verb is 'the senior researcher', which is singular. With 'either…or', the verb agrees with this nearer subject: 'is responsible'.",
+            "question": "The CEO, together with several board members, ___ reviewing the proposal.",
+            "hint": "'Together with' works just like 'as well as' - it doesn't add a second subject.",
+            "explanation": "The original subject is 'the CEO', which is singular; 'together with several board members' is extra detail. The verb is 'is'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "'Together with' / 'along with' do not change the number of the original subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l137_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The decision, together with its rationale, ___ communicated to all stakeholders.",
-            "hint": "The main subject is 'the decision' (singular) - 'together with its rationale' is parenthetical.",
-            "explanation": "'Together with its rationale' is a parenthetical addition. The main subject is 'the decision', which is singular: 'was communicated to all stakeholders'.",
+            "question": "The players, along with their coach, ___ heading to the airport tonight.",
+            "hint": "'Along with' behaves the same way - check the original subject before the comma.",
+            "explanation": "The original subject is 'the players', which is plural. The verb is 'are'.",
             "options": [
-                "were",
-                "was"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswer": "are",
+            "grammarRule": "'Together with' / 'along with' do not change the number of the original subject",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l137_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The decisions, together with their rationale, ___ communicated to all stakeholders.",
-            "hint": "The main subject is 'the decisions' (plural) - 'together with their rationale' is parenthetical.",
-            "explanation": "'Together with their rationale' is parenthetical. The main subject is 'the decisions', which is plural: 'were communicated to all stakeholders'.",
+            "question": "This document, together with several attachments, ___ ready to be sent.",
+            "hint": "The attachments mentioned after 'together with' don't change the number of the main subject.",
+            "explanation": "The original subject is 'this document', which is singular. The verb is 'is'.",
             "options": [
-                "were",
-                "was"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "is",
+            "grammarRule": "'Together with' / 'along with' do not change the number of the original subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l138_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "To succeed in a competitive market ___ the primary goal of every new business.",
-            "hint": "An infinitive phrase starting with 'to' acts as a single subject - singular or plural?",
-            "explanation": "An infinitive phrase ('to succeed in a competitive market') acting as subject is always treated as singular. 'To succeed is the primary goal' - not 'are the primary goal'.",
+            "question": "The bride, accompanied by her parents, ___ into the ceremony hall.",
+            "hint": "'Accompanied by' introduces extra detail, just like 'as well as' and 'together with'.",
+            "explanation": "The original subject is 'the bride', which is singular; 'accompanied by her parents' is extra detail. The verb takes -s: 'walks'.",
             "options": [
-                "are",
-                "is"
+                "walk",
+                "walks"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "walks",
+            "grammarRule": "'Accompanied by' / 'including' do not change the number of the original subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l138_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Achieving consistent results across all departments ___ the company's main challenge.",
-            "hint": "The subject here is an activity (a gerund phrase) - how do gerund subjects behave?",
-            "explanation": "A gerund phrase functioning as the subject is always treated as a single unit. 'Achieving consistent results across all departments is the company's main challenge'.",
+            "question": "The whole family, including the grandparents, ___ attending the reunion this year.",
+            "hint": "'Including' works the same way - the original subject decides the verb.",
+            "explanation": "The original subject is 'the whole family', a singular collective noun; 'including the grandparents' is extra detail. The verb is 'is'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "'Accompanied by' / 'including' do not change the number of the original subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l138_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The ability of individuals to adapt quickly ___ what distinguishes high performers.",
-            "hint": "The subject is 'the ability' (singular) - all other words are modifiers.",
-            "explanation": "'The ability' is the singular subject. 'Of individuals to adapt quickly' is a modifier telling us what kind of ability. 'The ability is what distinguishes high performers'.",
+            "question": "The tour group, accompanied by two guides, ___ the museum every Tuesday.",
+            "hint": "The guides mentioned after 'accompanied by' don't change the number of the main subject.",
+            "explanation": "The original subject is 'the tour group', which is singular. The verb takes -s: 'visits'.",
             "options": [
-                "are",
-                "is"
+                "visit",
+                "visits"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "visits",
+            "grammarRule": "'Accompanied by' / 'including' do not change the number of the original subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l139_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CONTRAST",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The combination of skills and experience she brings ___ unique.",
-            "hint": "The subject is 'the combination' (singular) - 'of skills and experience' is a modifier.",
-            "explanation": "'The combination' is the singular subject; 'of skills and experience she brings' is a modifier. 'The combination is unique'.",
+            "question": "Either the volunteers or the coordinator ___ responsible for setting up the event.",
+            "hint": "This sentence uses 'either...or' - remember, the noun closest to the verb decides.",
+            "explanation": "The noun closer to the verb is 'the coordinator', which is singular, so the verb is 'is'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "'Either...or' agreement follows the noun closer to the verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l139_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CONTRAST",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The skills and experience she brings ___ unique.",
-            "hint": "'Skills and experience' joined by 'and' form a plural compound subject.",
-            "explanation": "Now 'skills and experience' is the compound subject joined by 'and', making it plural. 'The skills and experience she brings are unique'.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l139_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The rate at which these changes ___ occurring has accelerated.",
-            "hint": "Inside the relative clause, 'which' refers to 'these changes' (plural).",
-            "explanation": "'Which' refers to 'these changes', which is plural. The verb inside the relative clause is 'are': 'at which these changes are occurring'.",
+            "question": "The coordinator, as well as the volunteers, ___ responsible for setting up the event.",
+            "hint": "This sentence uses 'as well as' instead - the rule is different here. Check the original subject, not the nearest noun.",
+            "explanation": "Unlike 'either...or', 'as well as' doesn't shift agreement to the nearest noun. The original subject is 'the coordinator', which is singular, so the verb is 'is'.",
             "options": [
                 "are",
                 "is"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l140_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The pace at which new technologies ___ being developed is extraordinary.",
-            "hint": "Inside the relative clause, 'which' refers to 'new technologies' (plural).",
-            "explanation": "'Which' in the relative clause refers to 'new technologies', which is plural. The verb inside the clause is 'are': 'at which new technologies are being developed'.",
-            "options": [
-                "is",
-                "are"
-            ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "is",
+            "grammarRule": "'As well as' does not change the number of the original subject",
             "subjectType": "Singular"
         },
         {
-            "id": "sva_l140_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "id": "sva_l139_q3",
+            "instruction": "SPOT THE CONTRAST",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The speed at which the new technology ___ being adopted is extraordinary.",
-            "hint": "Inside the relative clause, 'which' refers to 'the new technology' (singular).",
-            "explanation": "'Which' refers to 'the new technology', which is singular. The verb inside the relative clause is 'is': 'at which the new technology is being adopted'.",
+            "question": "Neither the interns nor the manager ___ aware of the schedule change.",
+            "hint": "This sentence uses 'neither...nor' - apply the proximity rule one more time.",
+            "explanation": "The noun closer to the verb is 'the manager', which is singular, so the verb is 'is'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "'Neither...nor' agreement follows the noun closer to the verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l140_q1",
+            "instruction": "FIND THE CORRECT AGREEMENT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Either the actors or the director ___ making the final decision on this scene.",
+            "hint": "Bring back the 'either...or' rule: check the noun right before the verb.",
+            "explanation": "The noun closer to the verb is 'the director', which is singular, so the verb is 'is'.",
+            "options": [
+                "are",
+                "is"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "is",
+            "grammarRule": "'Either...or' agreement follows the noun closer to the verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l140_q2",
+            "instruction": "FIND THE CORRECT AGREEMENT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The director, along with the actors, ___ making the final decision on this scene.",
+            "hint": "This sentence uses 'along with' - remember, that phrase doesn't shift the agreement.",
+            "explanation": "The original subject is 'the director', which is singular; 'along with the actors' is extra detail. The verb is 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "'Together with' / 'along with' do not change the number of the original subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l140_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The vast majority of the work involved in this project ___ been completed.",
-            "hint": "The subject is 'the vast majority of the work' - 'work' is uncountable, so the verb is singular.",
-            "explanation": "'Work' is uncountable. When 'the majority of' is followed by an uncountable noun, the verb is singular: 'the vast majority of the work has been completed'.",
+            "question": "Neither the reviewers nor the editor ___ satisfied with the final draft.",
+            "hint": "As a final check, apply the 'neither...nor' proximity rule one more time.",
+            "explanation": "The noun closer to the verb is 'the editor', which is singular, so the verb is 'is'.",
             "options": [
-                "have",
-                "has"
+                "are",
+                "is"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "is",
+            "grammarRule": "'Neither...nor' agreement follows the noun closer to the verb",
             "subjectType": "Singular"
         }
     ]

@@ -8,8 +8,8 @@
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Historians have long believed that this particular ancient manuscript significantly influenced early Renaissance philosophical thought.",
-            "sentence": "Historians have long believed that this particular ancient manuscript significantly influenced early Renaissance philosophical thought.",
+            "question": "The prison board released the prisoner after he served two-thirds of his sentence.",
+            "sentence": "The prison board released the prisoner after he served two-thirds of his sentence.",
             "options": [
                 "Active",
                 "Passive"
@@ -17,59 +17,59 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before have believed.",
-            "explanation": "This is active voice: historians (the doer) have performed the action believed directly, introducing the reported clause. In passive, this would flip to: It has long been believed that this particular ancient manuscript significantly influenced early Renaissance philosophical thought.",
-            "grammarRule": "Impersonal It-Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer right before released.",
+            "explanation": "The prison board is the doer of released, and naming it explicitly in active voice adds a bit more formal precision than the more common agentless passive version. Passive form: The prisoner was released after serving two-thirds of his sentence.",
+            "grammarRule": "Voice Choice - Active with Named Agent",
+            "activeVoice": "The prison board released the prisoner after he served two-thirds of his sentence.",
+            "passiveVoice": "The prisoner was released after serving two-thirds of his sentence."
         },
         {
             "id": "vs_l161_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Legal experts today cannot deny that the controversial ruling fundamentally altered constitutional interpretation for decades afterward.",
-            "sentence": "Legal experts today cannot deny that the controversial ruling fundamentally altered constitutional interpretation for decades afterward.",
+            "question": "The baby was born at 3 AM after a long night at the hospital.",
+            "sentence": "The baby was born at 3 AM after a long night at the hospital.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Who performs the action cannot deny? Look right before the verb.",
-            "explanation": "This is active voice: legal experts (the doer) cannot perform the action deny, introducing the reported clause. In passive, this would flip to: It cannot be denied that the controversial ruling fundamentally altered constitutional interpretation for decades afterward.",
-            "grammarRule": "Impersonal It-Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Think about whether naming an agent even makes sense for this particular event.",
+            "explanation": "The baby (receiver) was born - this passive has no natural active equivalent with a human agent, since born describes an event rather than an action performed by a specific doer in ordinary usage. This is one of the few passive-only expressions in English.",
+            "grammarRule": "Voice Choice - No Natural Active Agent",
+            "activeVoice": "The baby was born at 3 AM after a long night at the hospital.",
+            "passiveVoice": "No natural active form exists here; born functions as a passive-only expression in ordinary usage."
         },
         {
             "id": "vs_l161_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "It has long been believed that this particular ancient manuscript significantly influenced early Renaissance philosophical thought.",
-            "sentence": "It has long been believed that this particular ancient manuscript significantly influenced early Renaissance philosophical thought.",
+            "question": "The mail carrier delivers packages to this street every afternoon.",
+            "sentence": "The mail carrier delivers packages to this street every afternoon.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for it has been plus a past participle (believed) plus that, an impersonal passive pattern.",
-            "explanation": "This is passive voice: it functions as a placeholder subject, with has long been believed plus that reporting the claim impersonally. In active, this would flip to: Historians have long believed that this particular ancient manuscript significantly influenced early Renaissance philosophical thought.",
-            "grammarRule": "Impersonal It-Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Here the doer is specific and worth naming. Find the doer right before delivers.",
+            "explanation": "The mail carrier is the doer of delivers, and active voice is natural here since identifying exactly who performs the delivery is useful information, unlike a case where the agent is obvious or interchangeable. Passive version: Packages are delivered to this street every afternoon by the mail carrier.",
+            "grammarRule": "Voice Choice - Agent Worth Naming",
+            "activeVoice": "The mail carrier delivers packages to this street every afternoon.",
+            "passiveVoice": "Packages are delivered to this street every afternoon by the mail carrier."
         },
         {
             "id": "vs_l162_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The ambitious peace treaty was ultimately negotiated by a broad coalition of international diplomats and regional leaders.",
-            "sentence": "The ambitious peace treaty was ultimately negotiated by a broad coalition of international diplomats and regional leaders.",
+            "question": "The vaccine was developed by a small team working in unusually difficult conditions.",
+            "sentence": "The vaccine was developed by a small team working in unusually difficult conditions.",
             "options": [
                 "Active",
                 "Passive"
@@ -77,19 +77,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus a past participle (negotiated), followed by a long, complex by phrase naming several agents.",
-            "explanation": "This is passive voice: the treaty (receiver) was negotiated by a broad coalition of diplomats and leaders, a complex multi-part agent named after by. In active, this would flip to: A broad coalition of international diplomats and regional leaders ultimately negotiated the ambitious peace treaty.",
-            "grammarRule": "Complex Agent Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Here the agent, though placed after by, is actually the most interesting part of the sentence. Look for was plus a past participle.",
+            "explanation": "The vaccine (receiver) was developed - even though this is passive, the agent, a small team working in unusually difficult conditions, is named because it's the whole point of the sentence, showing that passive voice can still highlight an agent when placed in the by-phrase for effect. Active form: A small team working in unusually difficult conditions developed the vaccine.",
+            "grammarRule": "Voice Choice - Agent Named for Emphasis",
+            "activeVoice": "A small team working in unusually difficult conditions developed the vaccine.",
+            "passiveVoice": "The vaccine was developed by a small team working in unusually difficult conditions."
         },
         {
             "id": "vs_l162_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The comprehensive climate agreement was jointly drafted by elected representatives from over one hundred participating nations.",
-            "sentence": "The comprehensive climate agreement was jointly drafted by elected representatives from over one hundred participating nations.",
+            "question": "The novel was translated by the author's own granddaughter, decades after his death.",
+            "sentence": "The novel was translated by the author's own granddaughter, decades after his death.",
             "options": [
                 "Active",
                 "Passive"
@@ -97,19 +97,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus a past participle (drafted), followed by a long, complex by phrase naming the agent.",
-            "explanation": "This is passive voice: the agreement (receiver) was jointly drafted by representatives from over a hundred nations, a complex agent named after by. In active, this would flip to: Elected representatives from over one hundred participating nations jointly drafted the comprehensive climate agreement.",
-            "grammarRule": "Complex Agent Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Here again the agent is surprising and worth mentioning. Look for was plus a past participle.",
+            "explanation": "The novel (receiver) was translated - the agent, the author's own granddaughter, is deliberately named because the surprising family connection is exactly what makes the sentence noteworthy. Active form: The author's own granddaughter translated the novel decades after his death.",
+            "grammarRule": "Voice Choice - Agent Named for Emphasis",
+            "activeVoice": "The author's own granddaughter translated the novel decades after his death.",
+            "passiveVoice": "The novel was translated by the author's own granddaughter, decades after his death."
         },
         {
             "id": "vs_l162_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "A broad coalition of international diplomats and regional leaders ultimately negotiated the entire ambitious peace treaty.",
-            "sentence": "A broad coalition of international diplomats and regional leaders ultimately negotiated the entire ambitious peace treaty.",
+            "question": "A single volunteer organized the entire fundraiser in less than a week.",
+            "sentence": "A single volunteer organized the entire fundraiser in less than a week.",
             "options": [
                 "Active",
                 "Passive"
@@ -117,19 +117,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before negotiated. Notice the subject itself is a long, complex phrase.",
-            "explanation": "This is active voice: a broad coalition of diplomats and leaders (the doer, a complex subject) performed the action negotiated directly on the treaty. In passive, this would flip to: The entire ambitious peace treaty was ultimately negotiated by a broad coalition of international diplomats and regional leaders.",
-            "grammarRule": "Complex Agent Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "The individual effort here is worth crediting directly. Find the doer right before organized.",
+            "explanation": "A single volunteer is the doer of organized, and active voice highlights this impressive individual effort directly - passive voice, The entire fundraiser was organized by a single volunteer in less than a week, also works and keeps the same emphasis since the agent is still named.",
+            "grammarRule": "Voice Choice - Active with Notable Agent",
+            "activeVoice": "A single volunteer organized the entire fundraiser in less than a week.",
+            "passiveVoice": "The entire fundraiser was organized by a single volunteer in less than a week."
         },
         {
             "id": "vs_l163_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The professor who had reviewed the controversial thesis eventually recommended significant revisions to the committee.",
-            "sentence": "The professor who had reviewed the controversial thesis eventually recommended significant revisions to the committee.",
+            "question": "A baker bakes this bread fresh every single morning.",
+            "sentence": "A baker bakes this bread fresh every single morning.",
             "options": [
                 "Active",
                 "Passive"
@@ -137,39 +137,39 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Look at the main clause: the professor recommended revisions. The relative clause who had reviewed describes the professor further.",
-            "explanation": "The main clause is active: the professor (the doer) recommended revisions directly. The embedded relative clause who had reviewed the thesis simply identifies which professor, without changing the main clause voice.",
-            "grammarRule": "Embedded Clause Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "The baker's identity is fairly predictable here. Find the doer right before bakes.",
+            "explanation": "A baker is the doer of bakes, and while active voice works, notice how naming the obvious doer here feels slightly less natural than simply saying This bread is baked fresh every single morning - the more common passive version leaves the predictable agent out entirely.",
+            "grammarRule": "Voice Choice - Active with Predictable Agent",
+            "activeVoice": "A baker bakes this bread fresh every single morning.",
+            "passiveVoice": "This bread is baked fresh every single morning."
         },
         {
             "id": "vs_l163_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The journalist whose earlier investigation exposed the scandal later received a prestigious international journalism award.",
-            "sentence": "The journalist whose earlier investigation exposed the scandal later received a prestigious international journalism award.",
+            "question": "Taxes must be filed by April fifteenth every year.",
+            "sentence": "Taxes must be filed by April fifteenth every year.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Look at the main clause: the journalist received an award. The relative clause whose investigation exposed describes the journalist further.",
-            "explanation": "The main clause is active: the journalist (the doer, in the sense of receiving) received an award directly. The embedded relative clause whose earlier investigation exposed the scandal simply identifies which journalist.",
-            "grammarRule": "Embedded Clause Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Adding an agent here, like by each taxpayer, would state the obvious. Look for must be plus a past participle.",
+            "explanation": "Taxes (receiver) must be filed - naming the agent, each taxpayer, would be unnecessary since it's implied by context; the by fifteenth phrase here refers to a deadline, not an agent. Active form: Each taxpayer must file taxes by April fifteenth every year.",
+            "grammarRule": "Voice Choice - By-Phrase Is Deadline, Not Agent",
+            "activeVoice": "Each taxpayer must file taxes by April fifteenth every year.",
+            "passiveVoice": "Taxes must be filed by April fifteenth every year."
         },
         {
             "id": "vs_l163_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Significant revisions to the entire thesis were eventually recommended by the professor who had reviewed it.",
-            "sentence": "Significant revisions to the entire thesis were eventually recommended by the professor who had reviewed it.",
+            "question": "This medication should be taken twice daily with food.",
+            "sentence": "This medication should be taken twice daily with food.",
             "options": [
                 "Active",
                 "Passive"
@@ -177,19 +177,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look at the main clause: revisions were recommended. Notice the subject receives the action in the main clause here.",
-            "explanation": "The main clause is passive: significant revisions (receiver) were recommended by the professor, the agent named after by. The embedded relative clause who had reviewed it simply identifies which professor.",
-            "grammarRule": "Embedded Clause Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Naming a patient as the implied agent here would be redundant. Look for should be plus a past participle.",
+            "explanation": "This medication (receiver) should be taken - the implied agent, the patient, is left out since instructions like this are naturally addressed to whoever is reading them. Active form: You should take this medication twice daily with food.",
+            "grammarRule": "Voice Choice - Agent Implied by Context",
+            "activeVoice": "You should take this medication twice daily with food.",
+            "passiveVoice": "This medication should be taken twice daily with food."
         },
         {
             "id": "vs_l164_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The evidence was carefully gathered and thoroughly analyzed before being finally presented to the international tribunal.",
-            "sentence": "The evidence was carefully gathered and thoroughly analyzed before being finally presented to the international tribunal.",
+            "question": "The letter arrived this morning, and it was opened almost immediately by my roommate.",
+            "sentence": "The letter arrived this morning, and it was opened almost immediately by my roommate.",
             "options": [
                 "Active",
                 "Passive"
@@ -197,19 +197,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus two coordinated past participles (gathered, analyzed), showing a sequence of passive actions.",
-            "explanation": "This is passive voice: the evidence (receiver) was gathered and analyzed, two coordinated passive verbs sharing the same subject. In active, this would flip to: Investigators carefully gathered and thoroughly analyzed the evidence before finally presenting it to the international tribunal.",
-            "grammarRule": "Sequential Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "The letter is the ongoing topic here. Check whether it stays as the subject in the second clause.",
+            "explanation": "The letter (referred to as it, receiver) was opened - keeping it as the subject continues the topic smoothly from the first clause, rather than abruptly introducing my roommate as a new subject mid-sentence. Active form: The letter arrived this morning, and my roommate opened it almost immediately.",
+            "grammarRule": "Voice Choice - Topic Continuity",
+            "activeVoice": "The letter arrived this morning, and my roommate opened it almost immediately.",
+            "passiveVoice": "The letter arrived this morning, and it was opened almost immediately by my roommate."
         },
         {
             "id": "vs_l164_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The proposal was drafted and reviewed before being ultimately approved within a remarkably short period of time.",
-            "sentence": "The proposal was drafted and reviewed before being ultimately approved within a remarkably short period of time.",
+            "question": "The award ceremony began at seven, and the winners were announced an hour later.",
+            "sentence": "The award ceremony began at seven, and the winners were announced an hour later.",
             "options": [
                 "Active",
                 "Passive"
@@ -217,19 +217,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus multiple coordinated past participles (drafted, reviewed, approved), showing a sequence of passive actions.",
-            "explanation": "This is passive voice: the proposal (receiver) was drafted, reviewed, and approved, three coordinated passive verbs sharing the same subject. In active, this would flip to: The committee drafted, reviewed, and ultimately approved the proposal within a remarkably short period of time.",
-            "grammarRule": "Sequential Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "The ceremony and its schedule is the ongoing topic here. Check whether that focus continues into the second clause.",
+            "explanation": "The winners (receiver) were announced - passive voice keeps the sentence's focus on the event's timeline rather than shifting attention to whoever made the announcement, which would be a less relevant detail here. Active form: The award ceremony began at seven, and the host announced the winners an hour later.",
+            "grammarRule": "Voice Choice - Topic Continuity",
+            "activeVoice": "The award ceremony began at seven, and the host announced the winners an hour later.",
+            "passiveVoice": "The award ceremony began at seven, and the winners were announced an hour later."
         },
         {
             "id": "vs_l164_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The committee drafted the entire proposal and reviewed it carefully before ultimately approving it within days.",
-            "sentence": "The committee drafted the entire proposal and reviewed it carefully before ultimately approving it within days.",
+            "question": "My neighbor planted a row of sunflowers along the fence this spring.",
+            "sentence": "My neighbor planted a row of sunflowers along the fence this spring.",
             "options": [
                 "Active",
                 "Passive"
@@ -237,59 +237,59 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before drafted and reviewed. Notice these active verbs share the same subject.",
-            "explanation": "This is active voice: the committee (the doer) drafted, reviewed, and approved the proposal, three coordinated active verbs. In passive, this would flip to: The entire proposal was drafted and carefully reviewed before ultimately being approved by the committee within days.",
-            "grammarRule": "Sequential Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "This introduces new information about the neighbor's action. Find the doer right before planted.",
+            "explanation": "My neighbor is the doer of planted, and active voice fits naturally here since there's no earlier topic that needs to be continued into this sentence - it simply introduces new information directly.",
+            "grammarRule": "Voice Choice - Active Preferred (New Information)",
+            "activeVoice": "My neighbor planted a row of sunflowers along the fence this spring.",
+            "passiveVoice": "A row of sunflowers was planted along the fence by my neighbor this spring."
         },
         {
             "id": "vs_l165_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Economists today widely agree that the unprecedented policy shift will reshape global trade relationships for generations.",
-            "sentence": "Economists today widely agree that the unprecedented policy shift will reshape global trade relationships for generations.",
+            "question": "The suspect was arrested near the border late last night.",
+            "sentence": "The suspect was arrested near the border late last night.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before agree.",
-            "explanation": "This is active voice: economists (the doer) agree, introducing the reported clause about the policy shift. In passive, this would flip to: It is widely agreed that the unprecedented policy shift will reshape global trade relationships for generations.",
-            "grammarRule": "Impersonal It-Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Although no agent is named, think about who would realistically perform this action.",
+            "explanation": "The suspect (receiver) was arrested - even without a named agent, the doer is easily inferred from context to be the police, so the sentence doesn't need to spell it out. Active form: Police arrested the suspect near the border late last night.",
+            "grammarRule": "Voice Choice - Agent Recoverable from Context",
+            "activeVoice": "Police arrested the suspect near the border late last night.",
+            "passiveVoice": "The suspect was arrested near the border late last night."
         },
         {
             "id": "vs_l165_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Critics increasingly argue that the streaming platform has fundamentally transformed how modern audiences consume entertainment content.",
-            "sentence": "Critics increasingly argue that the streaming platform has fundamentally transformed how modern audiences consume entertainment content.",
+            "question": "The patient was sedated before the procedure began.",
+            "sentence": "The patient was sedated before the procedure began.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Who performs the action argue? Look right before the verb.",
-            "explanation": "This is active voice: critics (the doer) argue, introducing the reported clause about the streaming platform. In passive, this would flip to: It is increasingly argued that the streaming platform has fundamentally transformed how modern audiences consume entertainment content.",
-            "grammarRule": "Impersonal It-Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Although no agent is named, think about who would realistically perform this medical action.",
+            "explanation": "The patient (receiver) was sedated - the doer, presumably an anesthesiologist or nurse, is easily inferred from the medical context, so naming them explicitly isn't necessary. Active form: An anesthesiologist sedated the patient before the procedure began.",
+            "grammarRule": "Voice Choice - Agent Recoverable from Context",
+            "activeVoice": "An anesthesiologist sedated the patient before the procedure began.",
+            "passiveVoice": "The patient was sedated before the procedure began."
         },
         {
             "id": "vs_l165_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "It is widely agreed that the unprecedented policy shift will reshape global trade relationships for generations.",
-            "sentence": "It is widely agreed that the unprecedented policy shift will reshape global trade relationships for generations.",
+            "question": "The unidentified object was tracked for several hours before it disappeared from radar.",
+            "sentence": "The unidentified object was tracked for several hours before it disappeared from radar.",
             "options": [
                 "Active",
                 "Passive"
@@ -297,79 +297,79 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for it is plus a past participle (agreed) plus that, an impersonal passive pattern.",
-            "explanation": "This is passive voice: it functions as a placeholder subject, with is widely agreed plus that reporting the consensus impersonally. In active, this would flip to: Economists widely agree that the unprecedented policy shift will reshape global trade relationships for generations.",
-            "grammarRule": "Impersonal It-Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "The agent here is left out, but not because it's obvious - rather because it's genuinely uncertain who or what was doing the tracking's follow-up analysis. Look for was plus a past participle.",
+            "explanation": "The unidentified object (receiver) was tracked - unlike the previous two examples, the agent here, presumably military radar operators, is somewhat recoverable but less certain, showing that agent omission can range from fully obvious to only partially inferable. Active form: Radar operators tracked the unidentified object for several hours before it disappeared from radar.",
+            "grammarRule": "Voice Choice - Agent Partially Recoverable",
+            "activeVoice": "Radar operators tracked the unidentified object for several hours before it disappeared from radar.",
+            "passiveVoice": "The unidentified object was tracked for several hours before it disappeared from radar."
         },
         {
             "id": "vs_l166_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The renowned research facility was jointly funded by three major pharmaceutical companies and two universities.",
-            "sentence": "The renowned research facility was jointly funded by three major pharmaceutical companies and two universities.",
+            "question": "The manager seemed satisfied with the quarterly results.",
+            "sentence": "The manager seemed satisfied with the quarterly results.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus a past participle (funded), followed by a long, complex by phrase naming several agents.",
-            "explanation": "This is passive voice: the facility (receiver) was jointly funded by three companies and two universities, a complex agent named after by. In active, this would flip to: Three major pharmaceutical companies and two universities jointly funded the renowned research facility.",
-            "grammarRule": "Complex Agent Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Check whether satisfied describes an action done to the manager, or simply his state of mind.",
+            "explanation": "Satisfied here functions as an adjective describing the manager's state, not a passive verb showing an action performed on him - no one is 'satisfying' him as an event. This sentence counts as active in structure, similar to seemed happy or seemed tired. A true passive with this verb: The manager was satisfied by the surprisingly strong results (an action causing the feeling).",
+            "grammarRule": "Active with Adjective (Not Passive)",
+            "activeVoice": "The manager seemed satisfied with the quarterly results.",
+            "passiveVoice": "The manager was satisfied by the surprisingly strong results."
         },
         {
             "id": "vs_l166_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The ambitious space mission was carefully planned by a joint international team of engineers and astronauts.",
-            "sentence": "The ambitious space mission was carefully planned by a joint international team of engineers and astronauts.",
+            "question": "The room was crowded, loud, and impossible to navigate.",
+            "sentence": "The room was crowded, loud, and impossible to navigate.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus a past participle (planned), followed by a long, complex by phrase naming the agent.",
-            "explanation": "This is passive voice: the mission (receiver) was carefully planned by a joint team, a complex agent named after by. In active, this would flip to: A joint international team of engineers and astronauts carefully planned the ambitious space mission.",
-            "grammarRule": "Complex Agent Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Check whether crowded describes an action done to the room, or simply its state, especially alongside loud, another clear adjective.",
+            "explanation": "Crowded here is grouped with loud, both clearly adjectives describing the room's condition, not actions done to it - this confirms crowded is functioning as a description of state, not a passive verb. This sentence structure is active despite containing was.",
+            "grammarRule": "Active with Adjective (Not Passive)",
+            "activeVoice": "The room was crowded, loud, and impossible to navigate.",
+            "passiveVoice": "No natural passive rewording applies here; crowded functions as a descriptive adjective, not part of a passive verb."
         },
         {
             "id": "vs_l166_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Three major pharmaceutical companies and two leading universities jointly funded the entire renowned research facility.",
-            "sentence": "Three major pharmaceutical companies and two leading universities jointly funded the entire renowned research facility.",
+            "question": "The window was shattered by the force of the explosion.",
+            "sentence": "The window was shattered by the force of the explosion.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before funded. Notice the subject itself is a long, complex phrase.",
-            "explanation": "This is active voice: three companies and two universities (the doer, a complex subject) performed the action funded directly on the facility. In passive, this would flip to: The entire renowned research facility was jointly funded by three major pharmaceutical companies and two leading universities.",
-            "grammarRule": "Complex Agent Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Compare this with a simple description of state - here, an actual event happened to the window. Look for was plus a past participle showing that event.",
+            "explanation": "The window (receiver) was shattered - unlike a state adjective, shattered here describes a real event caused by something, the force of the explosion, making this a genuine passive rather than a description of appearance. Active form: The force of the explosion shattered the window.",
+            "grammarRule": "Simple Past Passive",
+            "activeVoice": "The force of the explosion shattered the window.",
+            "passiveVoice": "The window was shattered by the force of the explosion."
         },
         {
             "id": "vs_l167_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The elderly scientist whose earlier findings had been widely disputed eventually received full public vindication.",
-            "sentence": "The elderly scientist whose earlier findings had been widely disputed eventually received full public vindication.",
+            "question": "Looters may have removed several artifacts from the site sometime before archaeologists arrived.",
+            "sentence": "Looters may have removed several artifacts from the site sometime before archaeologists arrived.",
             "options": [
                 "Active",
                 "Passive"
@@ -377,59 +377,59 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Look at the main clause: the scientist received vindication. The relative clause whose findings had been disputed describes the scientist further.",
-            "explanation": "The main clause is active: the scientist (the doer, in the sense of receiving) received vindication directly. The embedded relative clause whose earlier findings had been widely disputed is itself passive, but it simply identifies which scientist.",
-            "grammarRule": "Embedded Clause Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer right before may have removed, even though looters is only a guess.",
+            "explanation": "Looters is the doer of may have removed, an active guess about who is responsible - notice how naming even an uncertain agent still requires active voice, unlike the vaguer passive alternative that leaves the question open entirely: Several artifacts were removed from the site sometime before archaeologists arrived.",
+            "grammarRule": "Voice Choice - Active with Guessed Agent",
+            "activeVoice": "Looters may have removed several artifacts from the site sometime before archaeologists arrived.",
+            "passiveVoice": "Several artifacts were removed from the site sometime before archaeologists arrived."
         },
         {
             "id": "vs_l167_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The architect whose original design had been heavily criticized ultimately won several prestigious industry awards.",
-            "sentence": "The architect whose original design had been heavily criticized ultimately won several prestigious industry awards.",
+            "question": "The rare orchid was first classified in a small botanical journal in 1894.",
+            "sentence": "The rare orchid was first classified in a small botanical journal in 1894.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Look at the main clause: the architect won awards. The relative clause whose design had been criticized describes the architect further.",
-            "explanation": "The main clause is active: the architect (the doer) won several awards directly. The embedded relative clause whose original design had been heavily criticized is itself passive, but it simply identifies which architect.",
-            "grammarRule": "Embedded Clause Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "The exact person who classified it doesn't matter much here - the classification itself is the point. Look for was plus a past participle.",
+            "explanation": "The rare orchid (receiver) was classified - the specific botanist's name is irrelevant to the sentence's purpose, which is simply to note when the classification happened. Active form: A botanist first classified the rare orchid in a small botanical journal in 1894.",
+            "grammarRule": "Voice Choice - Agent Irrelevant",
+            "activeVoice": "A botanist first classified the rare orchid in a small botanical journal in 1894.",
+            "passiveVoice": "The rare orchid was first classified in a small botanical journal in 1894."
         },
         {
             "id": "vs_l167_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Full public vindication was eventually received by the elderly scientist whose earlier findings had been disputed.",
-            "sentence": "Full public vindication was eventually received by the elderly scientist whose earlier findings had been disputed.",
+            "question": "A prominent scientist first classified this species in 1894, sparking decades of further research.",
+            "sentence": "A prominent scientist first classified this species in 1894, sparking decades of further research.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look at the main clause: vindication was received. Notice the subject receives the action in the main clause here.",
-            "explanation": "The main clause is passive: full public vindication (receiver) was received by the scientist, the agent named after by. The embedded relative clause whose findings had been disputed simply identifies which scientist.",
-            "grammarRule": "Embedded Clause Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Here the person's prominence and its effect afterward are the point. Find the doer right before classified.",
+            "explanation": "A prominent scientist is the doer of classified, and active voice suits this version since the sentence is specifically crediting a notable person and connecting their work to later research - passive voice would weaken that connection.",
+            "grammarRule": "Voice Choice - Active Preferred (Agent Matters)",
+            "activeVoice": "A prominent scientist first classified this species in 1894, sparking decades of further research.",
+            "passiveVoice": "This species was first classified by a prominent scientist in 1894, sparking decades of further research."
         },
         {
             "id": "vs_l168_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The lengthy report was compiled and later submitted to the board without any significant objections raised.",
-            "sentence": "The lengthy report was compiled and later submitted to the board without any significant objections raised.",
+            "question": "The bridge is expected to be reopened sometime next month.",
+            "sentence": "The bridge is expected to be reopened sometime next month.",
             "options": [
                 "Active",
                 "Passive"
@@ -437,39 +437,39 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus two coordinated past participles (compiled, submitted), showing a sequence of passive actions.",
-            "explanation": "This is passive voice: the report (receiver) was compiled and submitted, two coordinated passive verbs sharing the same subject. In active, this would flip to: The team compiled the lengthy report and later submitted it to the board without any significant objections raised.",
-            "grammarRule": "Sequential Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "The construction crew's identity doesn't matter here - only the timeline does. Look for to be plus a past participle.",
+            "explanation": "The bridge (receiver) is expected to be reopened - the agent, presumably a construction crew, is omitted since the sentence's real content is the timeline, not who's doing the work. Active form: Officials expect crews to reopen the bridge sometime next month.",
+            "grammarRule": "Voice Choice - Agent Omitted (Irrelevant)",
+            "activeVoice": "Officials expect crews to reopen the bridge sometime next month.",
+            "passiveVoice": "The bridge is expected to be reopened sometime next month."
         },
         {
             "id": "vs_l168_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The controversial theory was tested repeatedly and eventually accepted by the entire scientific research community.",
-            "sentence": "The controversial theory was tested repeatedly and eventually accepted by the entire scientific research community.",
+            "question": "Search teams still haven't found the missing hiker despite an extensive search.",
+            "sentence": "Search teams still haven't found the missing hiker despite an extensive search.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus two coordinated past participles (tested, accepted), showing a sequence of passive actions.",
-            "explanation": "This is passive voice: the theory (receiver) was tested and accepted, two coordinated passive verbs sharing the same subject. In active, this would flip to: The entire scientific research community tested the controversial theory repeatedly and eventually accepted it.",
-            "grammarRule": "Sequential Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer right before haven't found.",
+            "explanation": "Search teams is the doer of haven't found, negative present perfect active - naming the teams directly here feels slightly redundant given extensive search, which is exactly why the agentless passive version is often preferred: The missing hiker still hasn't been found despite an extensive search.",
+            "grammarRule": "Voice Choice - Active (Somewhat Redundant Agent)",
+            "activeVoice": "Search teams still haven't found the missing hiker despite an extensive search.",
+            "passiveVoice": "The missing hiker still hasn't been found despite an extensive search."
         },
         {
             "id": "vs_l168_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The research team compiled the lengthy report and later submitted it to the board without objection.",
-            "sentence": "The research team compiled the lengthy report and later submitted it to the board without objection.",
+            "question": "A dedicated team of volunteers has kept this shelter running for over a decade.",
+            "sentence": "A dedicated team of volunteers has kept this shelter running for over a decade.",
             "options": [
                 "Active",
                 "Passive"
@@ -477,39 +477,39 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before compiled and submitted. Notice these active verbs share the same subject.",
-            "explanation": "This is active voice: the research team (the doer) compiled and submitted the report, two coordinated active verbs. In passive, this would flip to: The lengthy report was compiled by the research team and later submitted to the board without objection.",
-            "grammarRule": "Sequential Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "The volunteers' long-term commitment is exactly what the sentence wants to highlight. Find the doer right before has kept.",
+            "explanation": "A dedicated team of volunteers is the doer of has kept, and active voice is the natural choice since crediting their sustained effort is the whole purpose of the sentence - passive voice would shift focus away from exactly what deserves recognition.",
+            "grammarRule": "Voice Choice - Active Preferred (Credit)",
+            "activeVoice": "A dedicated team of volunteers has kept this shelter running for over a decade.",
+            "passiveVoice": "This shelter has been kept running for over a decade by a dedicated team of volunteers."
         },
         {
             "id": "vs_l169_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Sociologists today increasingly believe that social media has fundamentally reshaped how younger generations form relationships.",
-            "sentence": "Sociologists today increasingly believe that social media has fundamentally reshaped how younger generations form relationships.",
+            "question": "The old fence finally got repaired after years of complaints.",
+            "sentence": "The old fence finally got repaired after years of complaints.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before believe.",
-            "explanation": "This is active voice: sociologists (the doer) believe, introducing the reported clause about social media. In passive, this would flip to: It is increasingly believed today that social media has fundamentally reshaped how younger generations form relationships.",
-            "grammarRule": "Impersonal It-Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "The fence can't repair itself. Look for got plus a past participle - another way to form the passive besides be.",
+            "explanation": "The old fence (receiver) got repaired - the get-passive, common in informal speech, works the same way as a be-passive here, with no repairer named. Active form: Someone finally repaired the old fence after years of complaints.",
+            "grammarRule": "Get-Passive",
+            "activeVoice": "Someone finally repaired the old fence after years of complaints.",
+            "passiveVoice": "The old fence finally got repaired after years of complaints."
         },
         {
             "id": "vs_l169_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "It is increasingly believed today that social media has fundamentally reshaped how younger generations form relationships.",
-            "sentence": "It is increasingly believed today that social media has fundamentally reshaped how younger generations form relationships.",
+            "question": "My cousin got promoted to regional manager last spring.",
+            "sentence": "My cousin got promoted to regional manager last spring.",
             "options": [
                 "Active",
                 "Passive"
@@ -517,19 +517,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for it is plus a past participle (believed) plus that, an impersonal passive pattern.",
-            "explanation": "This is passive voice: it functions as a placeholder subject, with is increasingly believed plus that reporting the claim impersonally. In active, this would flip to: Sociologists today increasingly believe that social media has fundamentally reshaped how younger generations form relationships.",
-            "grammarRule": "Impersonal It-Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "My cousin isn't promoting anyone else here - it's happening to them. Look for got plus a past participle.",
+            "explanation": "My cousin (receiver) got promoted - another get-passive, with the company left unnamed. Active form: The company promoted my cousin to regional manager last spring.",
+            "grammarRule": "Get-Passive",
+            "activeVoice": "The company promoted my cousin to regional manager last spring.",
+            "passiveVoice": "My cousin got promoted to regional manager last spring."
         },
         {
             "id": "vs_l169_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The private foundation whose generous grant supported the research ultimately received widespread public recognition today.",
-            "sentence": "The private foundation whose generous grant supported the research ultimately received widespread public recognition today.",
+            "question": "The children got tired after playing outside all afternoon.",
+            "sentence": "The children got tired after playing outside all afternoon.",
             "options": [
                 "Active",
                 "Passive"
@@ -537,19 +537,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Look at the main clause: the foundation received recognition. The relative clause whose grant supported the research describes the foundation further.",
-            "explanation": "The main clause is active: the foundation (the doer, in the sense of receiving) received recognition directly. The embedded relative clause whose generous grant supported the research simply identifies which foundation.",
-            "grammarRule": "Embedded Clause Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Check carefully: does tired describe an action done to the children, or simply how they ended up feeling?",
+            "explanation": "Got tired here describes a change of state the children experienced themselves, similar to became tired, rather than an action performed on them by someone else - this is not a true get-passive despite the surface resemblance. This sentence counts as active in structure.",
+            "grammarRule": "Active with Get + Adjective (Not Passive)",
+            "activeVoice": "The children got tired after playing outside all afternoon.",
+            "passiveVoice": "No passive form applies here; got tired describes a change of state, not an action performed by an agent."
         },
         {
             "id": "vs_l170_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "It has long been argued that the controversial policy disproportionately affected the poorest communities nationwide.",
-            "sentence": "It has long been argued that the controversial policy disproportionately affected the poorest communities nationwide.",
+            "question": "This checkpoint reviews subtle meaning: The stray dog was finally adopted after spending months at the shelter.",
+            "sentence": "This checkpoint reviews subtle meaning: The stray dog was finally adopted after spending months at the shelter.",
             "options": [
                 "Active",
                 "Passive"
@@ -557,39 +557,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for it has been plus a past participle (argued) plus that, an impersonal passive pattern.",
-            "explanation": "This checkpoint reviews passive voice: it functions as a placeholder subject, with has long been argued plus that reporting the claim impersonally. In active, this would flip to: Critics have long argued that the controversial policy disproportionately affected the poorest communities nationwide.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "The adopting family isn't the point here - the dog's story is. Look for was plus a past participle.",
+            "explanation": "This checkpoint reviews agent omission for focus: the stray dog (receiver) was adopted, with the specific family left unnamed since the sentence centers on the dog's long wait, not on who ultimately adopted it. Active form: A family finally adopted the stray dog after it spent months at the shelter.",
+            "grammarRule": "Voice Choice - Agent Omitted (Focus)",
+            "activeVoice": "A family finally adopted the stray dog after it spent months at the shelter.",
+            "passiveVoice": "The stray dog was finally adopted after spending months at the shelter."
         },
         {
             "id": "vs_l170_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The historic trade agreement was carefully drafted by elected representatives from dozens of participating nations.",
-            "sentence": "The historic trade agreement was carefully drafted by elected representatives from dozens of participating nations.",
-            "options": [
-                "Active",
-                "Passive"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "The agreement itself cannot draft anything. Look at who is named right after by.",
-            "explanation": "This checkpoint reviews passive voice: the agreement (receiver) was drafted by representatives from dozens of nations, a complex agent named after by. In active, this would flip to: Elected representatives from dozens of participating nations carefully drafted the historic trade agreement.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
-        },
-        {
-            "id": "vs_l170_q3",
-            "instruction": "FLIP THE VOICE TRANSMUTER",
-            "subtype": "voiceSwap",
-            "interactionType": "choice",
-            "question": "The panel reviewed the lengthy submission and eventually approved it without any further changes required.",
-            "sentence": "The panel reviewed the lengthy submission and eventually approved it without any further changes required.",
+            "question": "This checkpoint reviews subtle meaning: A retired teacher single-handedly restored the town's only historic theater.",
+            "sentence": "This checkpoint reviews subtle meaning: A retired teacher single-handedly restored the town's only historic theater.",
             "options": [
                 "Active",
                 "Passive"
@@ -597,11 +577,31 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before reviewed and approved, then decide the voice.",
-            "explanation": "This checkpoint reviews active voice: the panel (the doer) reviewed and approved the submission, two coordinated active verbs. In passive, this would flip to: The lengthy submission was reviewed by the panel and eventually approved without any further changes required.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "This individual's remarkable effort is the whole point here. Find the doer right before restored.",
+            "explanation": "This checkpoint reviews active voice chosen to credit an agent: a retired teacher is the doer of restored, and naming this person directly is essential to the sentence's meaning - passive voice would weaken the credit being given.",
+            "grammarRule": "Voice Choice - Active Preferred (Credit)",
+            "activeVoice": "A retired teacher single-handedly restored the town's only historic theater.",
+            "passiveVoice": "The town's only historic theater was single-handedly restored by a retired teacher."
+        },
+        {
+            "id": "vs_l170_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "This checkpoint reviews subtle meaning: The cause of the outage still hasn't been determined by engineers.",
+            "sentence": "This checkpoint reviews subtle meaning: The cause of the outage still hasn't been determined by engineers.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "The engineers are named here, but the real focus is the unresolved mystery of the cause. Look for hasn't been plus a past participle.",
+            "explanation": "This checkpoint reviews passive voice with a named-but-secondary agent: the cause of the outage (receiver) hasn't been determined, and even though engineers are named, the sentence's focus remains on the unresolved cause itself. Active form: Engineers still haven't determined the cause of the outage.",
+            "grammarRule": "Voice Choice - Passive with Focus on Receiver",
+            "activeVoice": "Engineers still haven't determined the cause of the outage.",
+            "passiveVoice": "The cause of the outage still hasn't been determined by engineers."
         }
     ]
 }

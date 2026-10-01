@@ -1,787 +1,787 @@
 {
-    "gameType": "branchingDialogue",
-    "batchIndex": 13,
-    "levels": "121-130",
-    "quests": [
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I need to manage a situation where two senior team members have fundamentally incompatible visions for our next mission. What's your approach?'",
-            "options": [
-                "Facilitate a meeting where both visions are debated and allow the stronger argument to prevail.",
-                "I'd have them each document their vision in writing, then judge it against clear criteria - feasibility, resources, and risk - not seniority.",
-                "Incompatible visions between senior team members require decisive and fair leadership to resolve."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Separate the visions from the people, using explicit written criteria.",
-            "explanation": "Written submissions judged against explicit criteria remove personality and seniority from the decision. 'Facilitate a debate and let the stronger argument prevail' lets political capital affect the outcome. 'Requires decisive and fair leadership' is a general statement.",
-            "id": "bd_l121_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I've been asked to debrief a foreign intelligence officer who is defecting. What is your primary objective in the first meeting?'",
-            "options": [
-                "First debriefs with defectors are critical for establishing the terms of the intelligence relationship.",
-                "Your primary objective is to assess the credibility and value of the intelligence they carry.",
-                "The first meeting isn't really about collecting intelligence - it's about trust. The real intelligence only comes once they trust you."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Prioritise trust over extraction in this first meeting.",
-            "explanation": "Naming trust, not extraction, as the actual objective is the psychologically sophisticated and correct answer. 'Assess the credibility and value of the intelligence' treats the meeting as extraction, which undermines the trust needed. 'Critical for establishing the terms of the relationship' is a general statement.",
-            "id": "bd_l121_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I'm being asked to create a dish that represents our national cuisine for a major international event. What is the right approach to this responsibility?'",
-            "options": [
-                "Create the dish that best showcases the technical achievements and creative possibilities of the cuisine.",
-                "It's not about the most technically impressive version - it's representing the living culture honestly, so I'd talk to home cooks, not just chefs.",
-                "Representing a national cuisine at an international event carries significant cultural responsibility."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Prioritise honest cultural representation over technical showmanship, and consult beyond professional kitchens.",
-            "explanation": "Choosing honest cultural representation, and consulting home cooks over chefs alone, reflects real cultural responsibility. 'Showcase technical achievements' centres the chef's own skill over the culture. 'Carries significant cultural responsibility' is a general statement.",
-            "id": "bd_l121_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I need to inform a research team that significant funding has been cut and several positions will be eliminated. How do you do this with integrity?'",
-            "options": [
-                "Communicate the news clearly to the whole team at once so everyone has the same information at the same time.",
-                "I'd tell people individually first, be completely clear about what's certain versus not, and give them real agency over their own next steps.",
-                "Communicating significant funding cuts and position eliminations requires both honesty and compassion."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Prioritise individual dignity over procedural equality when delivering hard news.",
-            "explanation": "Individual conversations, clarity about certainty, and real agency respect each person's dignity in a hard moment. 'Tell the whole team at once' privileges procedural fairness over individual dignity. 'Requires both honesty and compassion' is a general statement.",
-            "id": "bd_l122_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'A government regulation is about to change in a way that would make our primary product illegal in our main market. What is the strategic response?'",
-            "options": [
-                "Regulatory changes that affect core products require urgent strategic reassessment.",
-                "Begin the product adaptation immediately to ensure you have a compliant product before the regulation takes effect.",
-                "I'd engage in the regulatory process while it's still open, adapt the product in parallel, and map alternative markets in case the home one closes."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Pursue several tracks at once, including regulatory engagement, not just product adaptation alone.",
-            "explanation": "Running regulatory engagement, adaptation, and market alternatives in parallel is a complete strategic response. 'Begin product adaptation immediately' is one useful track but skips regulatory engagement, often the highest-value move. 'Require urgent strategic reassessment' is a general statement.",
-            "id": "bd_l122_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I'm designing a new pilot wellness programme for our airline that specifically addresses the occupational health challenges unique to aviation. What must it include?'",
-            "options": [
-                "It needs specific circadian management for trans-meridian flying, mental health support that accounts for licence fears, and real support for the abrupt end-of-career transition.",
-                "Follow established standard operating procedures and consult the relevant technical documentation before proceeding.",
-                "Include regular health screenings, fatigue management education, and access to psychological support services."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name aviation-specific challenges, not generic occupational health elements.",
-            "explanation": "Naming genuinely aviation-specific challenges - licence fear, circadian disruption, and abrupt retirement - designs for this profession specifically. 'Health screenings and fatigue education' are generic occupational health elements, not aviation-specific design. 'Follow SOPs and technical documentation' doesn't address wellness design at all.",
-            "id": "bd_l122_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I need to assess whether to trust a new intelligence partner whose methods we haven't verified. What's your framework?'",
-            "options": [
-                "Request a formal vetting process through official channels before sharing any sensitive information.",
-                "I'd verify one piece of their intelligence independently, check the methodology against their claimed access, and start with low-stakes sharing to test their discipline.",
-                "Assessing the trustworthiness of a new intelligence partner requires systematic verification."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Give specific, staged verification steps, not just a formal process request.",
-            "explanation": "Naming specific, staged steps - verification, methodology, and a low-stakes test - gives a real framework. 'Request a formal vetting process' is one appropriate step, not a full framework. 'Requires systematic verification' is a general statement.",
-            "id": "bd_l123_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I've discovered that an operation I was running has inadvertently caused harm to an innocent party. What is my obligation?'",
-            "options": [
-                "Follow established operational protocols and consult with your handler before taking any significant action.",
-                "Report the incident immediately and cooperate fully with any formal investigation.",
-                "I'd report the harm immediately and completely, help with remediation even at cost to the operation, and document it fully to prevent it happening again."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Cover reporting, remediation, and documentation together, not just reporting alone.",
-            "explanation": "Covering reporting, active remediation, and documentation together addresses the full obligation, not just one part of it. 'Report immediately and cooperate with investigation' is one true obligation but misses remediation and documentation. 'Follow protocols and consult your handler' is a general statement.",
-            "id": "bd_l123_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I'm advising a government committee on food policy that affects millions of people's access to nutritious food. How do you ensure your culinary expertise is applied appropriately?'",
-            "options": [
-                "I'd be specific about where my expertise actually applies - flavour and technique, not supply chains - and actively bring in the expertise I lack.",
-                "Bring your practical experience of food quality and nutrition to complement the scientific and economic perspectives.",
-                "Culinary expertise has an important role in food policy advisory work alongside other disciplines."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name the specific boundaries of your expertise, not just its general value.",
-            "explanation": "Naming specific boundaries - what a chef knows and doesn't - identifies the real risk of well-meaning but impractical advice. 'Bring your practical experience to complement other perspectives' doesn't address the limits of that expertise. 'Has an important role alongside other disciplines' is a general statement.",
-            "id": "bd_l123_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I've been asked to speak publicly about a health topic where I have strong personal views that go beyond what the current evidence supports. How do you manage the boundary?'",
-            "options": [
-                "Conduct a thorough review of the relevant literature and consult with specialist colleagues before proceeding.",
-                "Share your evidence-based views and decline to comment on anything that goes beyond the current evidence.",
-                "I'd separate the two explicitly every time - here's what the evidence shows, and here's my personal view beyond it - never blend them."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Separate evidence from personal view explicitly, rather than avoiding personal views entirely.",
-            "explanation": "Explicit, repeated separation lets you share genuine views honestly without borrowing false authority from the evidence. 'Decline to comment beyond current evidence' draws too complete a boundary rather than allowing clearly-labelled personal views. 'Conduct a thorough review and consult colleagues' is process advice, not the actual discipline needed.",
-            "id": "bd_l124_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I've been approached by a private equity firm interested in buying a majority stake in my business. What are the most important things to understand before any negotiation begins?'",
-            "options": [
-                "Conduct thorough due diligence, obtain professional legal advice, and negotiate from a well-prepared position.",
-                "Understand the full financial terms including the valuation, equity structure, and management incentive arrangements.",
-                "I'd want to understand their investment thesis, their track record with businesses like mine, and exactly what control I'd keep over major decisions."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Look beyond the financial terms to thesis, track record, and control.",
-            "explanation": "Understanding thesis, track record, and retained control covers what actually determines the outcome of private equity deals. 'Understand the financial terms' addresses only one dimension of what matters. 'Conduct due diligence and negotiate well-prepared' is sound but generic process advice.",
-            "id": "bd_l124_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I've observed a safety reporting system that I believe is not working because crew are afraid to use it. What is the most important intervention?'",
-            "options": [
-                "Conduct an anonymous survey to understand why crew are reluctant to use the reporting system.",
-                "The real fix isn't the system itself - it's one visible example of a report leading to real change and the reporter being thanked, not punished.",
-                "Follow the applicable emergency checklist and apply standard operating procedures as trained."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Demonstrate a visible positive outcome rather than improving the system itself.",
-            "explanation": "One genuine, visible positive response does more for reporting culture than any system redesign. 'Conduct an anonymous survey' is a useful diagnostic, but not the most important intervention. 'Follow the emergency checklist' doesn't address the reporting culture problem at all.",
-            "id": "bd_l124_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'We've been operating under a set of assumptions for six months that have just been revealed as incorrect. How do you rebuild strategic clarity?'",
-            "options": [
-                "Apply established doctrine and best practices, consulting with relevant specialists as appropriate before acting.",
-                "First, I'd diagnose exactly which decisions were actually built on the wrong assumption, then rebuild from first principles rather than just patching the old picture.",
-                "Conduct a thorough strategic review and consult with all relevant stakeholders before rebuilding the strategy."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Diagnose scope precisely, then rebuild from scratch rather than correcting the old picture.",
-            "explanation": "Diagnosing exact scope, then rebuilding from first principles rather than patching, avoids repeating the same bias that caused the original error. 'Conduct a thorough review and consult stakeholders' is the standard process without these specific insights. 'Apply established doctrine' is a general statement.",
-            "id": "bd_l125_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I need to provide intelligence analysis on a country where my personal cultural background and history create both deeper insight and potential bias. How do you manage this?'",
-            "options": [
-                "It's not a problem to solve, it's something to manage openly - I'd flag where my background helps, and have it reviewed by someone who doesn't share it.",
-                "Recuse yourself from analysis of a country where you have personal cultural history to ensure objectivity.",
-                "Gather additional intelligence through established channels and conduct a rigorous analytical review before proceeding."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Manage insider knowledge transparently rather than removing yourself from the analysis.",
-            "explanation": "Managing the asset and the liability transparently, rather than removing both through recusal, preserves valuable insight while controlling for bias. 'Recuse yourself to ensure objectivity' removes the asset along with the liability. 'Gather additional intelligence and conduct rigorous review' doesn't address the specific bias risk at all.",
-            "id": "bd_l125_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'A journalist has contacted me asking for a comment on a competitor's food safety incident. What is the right response?'",
-            "options": [
-                "This is an opportunity to contrast your own safety standards with the competitor's practices.",
-                "Food safety incidents in the industry create complex communication situations for other operators.",
-                "No comment on their specific situation - but if there's a genuine systemic issue, I'd speak to that generally, without naming or attacking them."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Distinguish between commenting on the competitor and commenting on a genuine systemic issue.",
-            "explanation": "Declining comment on the competitor while allowing a genuine systemic point serves the public interest without opportunism. 'Contrast your own standards with the competitor's practices' weaponises their misfortune for commercial gain. 'Create complex communication situations' is a general statement.",
-            "id": "bd_l125_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I've been asked to lead an inquiry into a major clinical failure in my own department. Is this appropriate, and how do you manage the conflict?'",
-            "options": [
-                "Complete the inquiry as instructed and submit your findings through the normal reporting channels.",
-                "It depends on one thing - can I genuinely be independent here? If not, I'd step back and participate rather than lead, with external review either way.",
-                "Decline the role to avoid any appearance of conflict of interest and recommend an independent external inquiry."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Test for genuine independence rather than declining automatically or accepting without safeguards.",
-            "explanation": "Testing for genuine independence, with external review regardless of the outcome, avoids both an unchecked conflict and an unnecessarily cautious refusal. 'Decline automatically to avoid any appearance of conflict' is too cautious when insider knowledge can be genuinely valuable with the right safeguards. 'Follow established guidelines' is a general statement.",
-            "id": "bd_l126_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'My business has grown rapidly and some of the informal processes that worked when we were smaller are creating risks now. How do you professionalise without losing the agility that drove the growth?'",
-            "options": [
-                "I'd formalise decision rights, not every process - start with the highest-risk decisions, and leave the low-stakes ones informal.",
-                "Introduce formal processes systematically across all areas of the business to create consistency.",
-                "Gather comprehensive information, consult with relevant advisers, and apply a structured decision-making framework."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Distinguish formalising decision rights from formalising every process.",
-            "explanation": "Formalising decision rights rather than every process adds accountability without sacrificing the agility that drove growth. 'Introduce formal processes systematically across all areas' is precisely what removes that agility. 'Gather information and apply a structured framework' is a general statement.",
-            "id": "bd_l126_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I'm leading the development of a human factors training programme that will be mandatory for all crew. What design principles distinguish excellent from adequate human factors training?'",
-            "options": [
-                "Brief the crew thoroughly, assign clear responsibilities, and ensure all crew resource management principles are applied.",
-                "Include the key human factors concepts such as situational awareness, CRM, and threat and error management.",
-                "I'd train on our own incident data specifically, use active simulation over case studies, and assess whether people can actually apply it under pressure."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Give design principles that distinguish excellent training, not just its content.",
-            "explanation": "Naming design principles - own data, active simulation, and applied assessment - distinguishes excellent from merely adequate training. 'Include key concepts like situational awareness and CRM' describes content, not the design that makes training effective. 'Brief thoroughly and assign responsibilities' is a general statement about crew management, not training design.",
-            "id": "bd_l126_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I need to lead a team that is widely considered to have failed in its last major mission. What is the most important thing to get right in the first month?'",
-            "options": [
-                "I'd spend the first month listening to the people who were actually there, not the outside narrative - you can't lead from someone else's version.",
-                "Establish new standards and goals to quickly move the team beyond the previous failure and toward future success.",
-                "Ensure the team has clear objectives and hold regular briefings to maintain alignment and accountability."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Understand what actually happened before setting new direction.",
-            "explanation": "Listening first, rather than accepting the external narrative, builds the genuine understanding leadership requires here. 'Establish new standards to move beyond the failure' is a reasonable second step that can't work well without this first one. 'Ensure clear objectives and regular briefings' is a general statement.",
-            "id": "bd_l127_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I need to build a case that is circumstantial but compelling. What makes circumstantial evidence persuasive?'",
-            "options": [
-                "Present the circumstantial evidence comprehensively and let its accumulation speak for itself.",
-                "It's persuasive through density, independence across sources, and a story that holds together - the real test is how unlikely it would be for all of it to align by chance.",
-                "Follow established operational security protocols and consult with your senior officer before proceeding."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Give the specific qualities that make circumstantial evidence compelling, not just presentation strategy.",
-            "explanation": "Naming density, independence, and coherence, plus a precise test, gives real analytical substance. 'Present the evidence and let it speak for itself' is a presentation strategy, not an analytical framework. 'Follow security protocols and consult a senior officer' is a general statement.",
-            "id": "bd_l127_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I want to create a dish specifically in response to a criticism that my cuisine lacks emotional resonance. How do you approach this?'",
-            "options": [
-                "Trying too hard for universal resonance usually backfires - I'd cook from one specific memory of my own, and let that specificity land honestly.",
-                "Create a dish inspired by a universal human experience such as homecoming, comfort, or celebration.",
-                "Design a menu that showcases seasonal ingredients and highlights the restaurant's culinary strengths."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Recommend specificity over universality when aiming for genuine emotional resonance.",
-            "explanation": "Choosing specific personal truth over designed universality is the counter-intuitive but real path to emotional resonance. 'Inspired by a universal experience like homecoming or comfort' is exactly the universality approach that tends to fail. 'Showcase seasonal ingredients and culinary strengths' doesn't address emotional resonance at all.",
-            "id": "bd_l127_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I'm being asked to testify before parliament on the resource allocation implications of a new treatment. I have clinical expertise but not health economics expertise. How do you manage this?'",
-            "options": [
-                "Answer every question to the best of your ability, since declining to comment could look evasive.",
-                "I'd state clearly at the start what I can and can't speak to, and recommend the committee also hear from a health economist.",
-                "Prepare thoroughly on the health economics aspects to ensure you can answer all likely questions."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "State the boundary of your expertise explicitly, rather than trying to cover the gap.",
-            "explanation": "Stating the boundary explicitly, and pointing to the right additional expert, protects credibility and serves the committee better. 'Prepare thoroughly on health economics' pushes beyond your genuine expertise rather than managing its boundary honestly. 'Follow clinical guidelines and document decisions' doesn't address this specific situation.",
-            "id": "bd_l128_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I've discovered that a supplier I depend on has been using child labour in part of their supply chain. What is my obligation?'",
-            "options": [
-                "I'd stop purchasing from that part of the chain immediately, work with the supplier on real remediation, and report it to our industry body.",
-                "Immediately terminate the relationship with the supplier and find an alternative.",
-                "Apply sound commercial judgment and consult with relevant professional advisers before making any significant decision."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Balance stopping purchases with supporting remediation, rather than cutting ties outright.",
-            "explanation": "Stopping the specific purchases while supporting remediation avoids abandoning the very workers the response is meant to protect. 'Immediately terminate the relationship' can harm the workers involved more than a responsible, engaged exit would. 'Apply sound judgment and consult advisers' is a general statement.",
-            "id": "bd_l128_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'An aircraft I've been flying for years is being retired from the fleet. I've been asked to give the final flight. What do you reflect on in that moment?'",
-            "options": [
-                "Focus on the practical checklist for taking an aircraft out of active service.",
-                "Reflect on how much aviation has changed during your career and what this aircraft represented in that evolution.",
-                "I'd think about the specific times this aircraft actually made the difference - not the routine flights, but the ones where it mattered."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Reflect on specific meaningful moments, not a broad career overview.",
-            "explanation": "Naming specific meaningful moments with this aircraft gives an honest, personal reflection rather than an abstract one. 'Reflect on how much aviation has changed' is a broader, more impersonal reflection that misses this specific relationship. 'Follow SOPs and technical documentation' doesn't address the reflective question at all.",
-            "id": "bd_l128_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'We have a window of four hours to act on intelligence that has a seventy percent confidence level and is time-critical. The cost of inaction is potentially high. What is your decision framework?'",
-            "options": [
-                "Consult with your senior advisers and gather all available intelligence before making any final determination.",
-                "I'd weigh the probability, the cost of acting if it's wrong, the cost of waiting if it's right, and how reversible the action actually is.",
-                "Act immediately given the time constraint - waiting four hours risks losing the opportunity entirely."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Weigh multiple variables together rather than treating the decision as binary.",
-            "explanation": "Weighing probability, both costs, and reversibility together avoids treating this as a simple binary choice. 'Act immediately given the time constraint' skips any use of the available time to increase confidence. 'Consult advisers and gather all intelligence' is a general statement.",
-            "id": "bd_l129_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I've been asked to run an operation that I believe will succeed but that requires compromising a value I hold very seriously. Is there a principled framework for this decision?'",
-            "options": [
-                "First, is this a real principle or just a preference - only the former justifies refusing. And is it the value itself, or just how I usually express it?",
-                "Discuss the ethical concern with your superior before the operation and get explicit authorisation to proceed.",
-                "Weigh the operational value of the mission against the personal cost of proceeding."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Apply specific, testable distinctions rather than deferring the decision upward.",
-            "explanation": "Applying specific tests - principle versus preference, value versus expression - gives real criteria for the decision. 'Discuss with your superior and get authorisation' shifts responsibility rather than working through the decision. 'Follow protocols and consult your handler' is a general statement.",
-            "id": "bd_l129_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I want to write a serious academic paper on the cultural history of a cuisine that isn't my own. What are the responsibilities this creates?'",
-            "options": [
-                "Conduct thorough research drawing on the best academic and culinary sources available on this cuisine.",
-                "Apply your culinary expertise and professional judgment, consulting with trusted colleagues as appropriate.",
-                "I'd need real access - learning directly from people inside that tradition, genuine collaboration with practitioners, and total honesty about what I don't know."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name specific responsibilities - access, collaboration, honesty - beyond academic research alone.",
-            "explanation": "Naming access, collaboration, and honest attribution reflects what genuine cross-cultural scholarship actually requires. 'Conduct thorough research from academic sources' misses that academic sources alone aren't the same as access to practitioners. 'Apply your expertise and consult colleagues' doesn't address the specific responsibilities involved.",
-            "id": "bd_l129_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I'm leading a clinical trial that has produced unexpected results that don't fit the hypothesis. How do you handle this scientifically and professionally?'",
-            "options": [
-                "The unexpected result is the important one - I'd publish it with exactly the same rigour, and resist any pressure to delay or reframe it.",
-                "Present the results as originally hypothesised, noting the unexpected finding as a limitation.",
-                "Conduct additional analysis to determine whether the unexpected results can be explained or reconciled with the hypothesis."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Treat the unexpected result as valuable, and resist pressure to explain it away.",
-            "explanation": "Publishing the unexpected result with full rigour, and resisting reframing pressure, is the honest scientific standard. 'Conduct additional analysis to explain or reconcile it' can become exactly the kind of result-management this standard warns against. 'Follow established guidelines' is a general statement.",
-            "id": "bd_l130_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I need to make a strategic acquisition that my board is divided on. I believe it is the right decision. How do you proceed?'",
-            "options": [
-                "I'd present the strongest case on both sides honestly, then check whether I actually have the authority to proceed with a divided board at all.",
-                "Delay the decision until the board reaches a clearer consensus one way or another.",
-                "Present the acquisition case with emphasis on your own conviction and the strategic opportunity to build support."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Combine intellectual honesty with a genuine governance check.",
-            "explanation": "Presenting both sides honestly, then checking actual authority, combines intellectual honesty with the real governance question at stake. 'Emphasise your own conviction to build support' is advocacy rather than honest presentation. 'Gather information and apply a framework' is a general statement.",
-            "id": "bd_l130_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I'm designing a long-haul operational planning system that should reduce crew fatigue while maintaining commercial efficiency. What are the most important design parameters?'",
-            "options": [
-                "Optimise crew scheduling to ensure all crew members receive the maximum permitted rest between duties.",
-                "Ensure the system fully complies with all current regulatory duty hour requirements.",
-                "I'd model actual fatigue, not just duty hours, design for eastbound versus westbound differently, and let crew flag fatigue without any consequence."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Go beyond duty-hour compliance to model real fatigue and encourage honest reporting.",
-            "explanation": "Modelling actual fatigue, direction-specific design, and consequence-free reporting go well beyond simple duty-hour compliance. 'Optimise scheduling for maximum permitted rest' describes the regulatory minimum, not genuine fatigue design. 'Brief the crew and apply CRM principles' is a general statement unrelated to system design.",
-            "id": "bd_l130_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        }
-    ]
+  "gameType": "branchingDialogue",
+  "batchIndex": 13,
+  "levels": "121-130",
+  "quests": [
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a manager opening a team meeting",
+      "scene": "Your manager says: 'Before we start, does anyone have updates that are time-sensitive?' You have a client issue that genuinely needs to be flagged before the meeting's main agenda.",
+      "options": [
+        "I have something, but it can probably wait, I guess, I said that fairly quickly, so let me know if that's off — and I'm honestly still working out how I feel about the whole thing.",
+        "Yes, quickly — the Bellweather account has a shipment issue that needs a decision today, so it might be worth a few minutes before we move to the main agenda.",
+        "So, about the Bellweather account, there's been this whole situation with the shipment, it started on Tuesday when the carrier said—"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When flagging something time-sensitive at the start of a meeting, state its urgency and a brief summary, saving details for when it's actually addressed.",
+      "explanation": "Stating the urgency briefly, with just enough detail, respects the meeting's structure while making sure something genuinely important gets addressed. Downplaying it as something that 'can wait,' when it can't, risks it being missed entirely. Launching into a detailed account right away doesn't fit the format of a quick opening check for time-sensitive items.",
+      "id": "bd_l121_q1",
+      "consequencePreviews": [
+        "Here, if it's actually time-sensitive, saying it can wait undersells the urgency and may mean it gets missed today.",
+        "You flag the genuinely urgent item clearly and briefly, respecting the meeting's structure while getting it addressed.",
+        "In this moment, launching straight into a detailed story, without first flagging the urgency briefly, doesn't respect the meeting's structure."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a colleague opening a project kickoff call",
+      "scene": "At the start of a kickoff call, a colleague asks: 'Does everyone have what they need before we dive in?' You're missing access to a shared folder that's referenced throughout the plan.",
+      "options": [
+        "Actually yes, quick thing — I don't have access to the shared folder yet, could someone add me before we get too deep into it?",
+        "I think I'm okay for now.",
+        "I don't have access to a lot of things actually, there've been some IT issues on my end generally this week."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When checked on readiness at the start of a meeting, name the specific practical blocker clearly, rather than downplaying it or being vague.",
+      "explanation": "Naming the specific blocker clearly gets it fixed quickly, before it causes confusion later in the call. Saying you're okay, when you're not, means the real issue surfaces at a worse, more disruptive moment. A vague comment about general IT issues doesn't specify the one concrete thing that actually needs fixing right now.",
+      "id": "bd_l121_q2",
+      "consequencePreviews": [
+        "As a result, you flag the practical blocker clearly and specifically, so it can be fixed before it slows things down later.",
+        "You may notice that saying you're okay, when you actually have a real access issue, means the problem likely surfaces later at a worse time.",
+        "Here, the vague, broader complaint doesn't specify the one concrete thing you actually need fixed right now."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a senior leader opening an all-hands meeting for questions",
+      "scene": "A senior leader says: 'Before we move to the main presentation, are there any urgent questions?' You have a question about a recent policy change that's causing real confusion on your team, but you're aware time is limited and many people are waiting.",
+      "options": [
+        "I have a question, but I don't want to take up everyone's time, looking back, I hadn't really planned past that point, though I'd want to think it over more — and I probably should have asked a few more questions before saying anything.",
+        "So about the new expense policy, my whole team's been really confused, there was this one situation with a hotel booking where someone submitted—",
+        "Just one — there's been some confusion on my team about how the new expense policy applies to travel, could that be clarified briefly, even if it's just pointing us to documentation?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "In a large meeting with limited time, ask genuinely useful questions concisely, rather than deferring them entirely or telling a long story.",
+      "explanation": "Asking the question concisely, and noting it affects your whole team, respects the group's time while still getting something genuinely useful addressed. Deferring the question entirely, out of politeness, means real confusion may continue for your whole team unnecessarily. Telling a detailed story, in a large meeting with limited time, doesn't respect the format or the other people waiting to move forward.",
+      "id": "bd_l121_q3",
+      "consequencePreviews": [
+        "Deferring a genuinely useful question means real confusion on your team may continue unaddressed, when a brief answer might have solved it for many people.",
+        "Here, launching into a detailed story, in a large meeting with limited time, doesn't respect the format or the many other people waiting.",
+        "In this moment, you raise a genuinely useful question concisely, respecting the group's time while still getting something real addressed."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a colleague requesting an update in a shared project channel",
+      "scene": "A colleague posts in the project channel: 'Can everyone post a quick status update by end of day?' Your part is on track, but you're blocked on one piece waiting for design assets.",
+      "options": [
+        "On track overall — one thing: I'm blocked on the checkout flow until design assets come through, hoping to get those by Thursday.",
+        "It's been a pretty hectic week honestly, lots going on, I'll try to give a fuller update soon.",
+        "Good progress, I suppose, I hadn't really planned past that point, so feel free to push back — and I probably should have asked a few more questions before saying anything."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "A useful status update names what's on track and specifically flags any real blockers, rather than being vague.",
+      "explanation": "Naming what's on track and specifically flagging the blocker gives the team exactly what they need to potentially help. A vague 'good progress' doesn't surface the blocker that might benefit from the team's attention. A general comment about a hectic week doesn't give the actual project status that was asked for.",
+      "id": "bd_l122_q1",
+      "consequencePreviews": [
+        "You give a clear, useful status update that flags the one real blocker specifically.",
+        "As a result, the vague, personal update doesn't give the team the specific project status they actually asked for.",
+        "In this moment, the vague update doesn't flag the blocker, which the team might need to know about to help unblock you."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a project manager asking for a risk assessment before a client demo",
+      "scene": "A project manager asks: 'Any risks we should flag before tomorrow's demo?' You've noticed a bug that only appears in a specific, less common workflow.",
+      "options": [
+        "I think we're good, I suppose, that was more of a first reaction, so take it with a grain of salt — and I know that's not the most thought-out response, but it's where my head's at right now.",
+        "One thing — there's a bug in the bulk-edit workflow specifically, but it doesn't affect the main flow we're planning to demo. Wanted to flag it just in case it comes up.",
+        "There have been a lot of bugs honestly, the whole codebase has been pretty unstable lately."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When reporting risks before a specific event, name the exact issue and its actual scope, rather than staying silent or generalizing.",
+      "explanation": "Naming the exact bug and its limited scope gives the project manager precise, useful information to make a good call. Saying things are 'good,' while knowing about a real bug, risks an unpleasant surprise during the actual demo. A vague, broad complaint about instability doesn't give the specific, relevant risk that actually matters for tomorrow.",
+      "id": "bd_l122_q2",
+      "consequencePreviews": [
+        "Realistically, not mentioning the known bug, even a limited one, risks it surfacing unexpectedly during the actual demo.",
+        "In this moment, you clearly report the specific, limited risk, which lets the project manager make an informed call about the demo.",
+        "The vague, broad complaint doesn't give the project manager the specific, relevant risk they need to know about for tomorrow."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a VP asking department heads for a candid assessment before a board presentation",
+      "scene": "A VP says: 'I need an honest read before I present to the board tomorrow — are we actually on track for the Q3 targets, or should I set different expectations?' Your honest assessment is that you're likely to miss the target by a meaningful margin.",
+      "options": [
+        "We're working hard to hit the targets, honestly, I hadn't checked how that would actually land, so I could be wrong — and I know that's not the most thought-out response, but it's where my head's at right now.",
+        "I think we'll probably be okay, it's hard to say for sure though, thinking about it now, I hadn't really thought it through, so feel free to push back — and I know that's not the most thought-out response, but it's where my head's at right now.",
+        "Honestly, I think we're going to fall short, probably by around 12-15%, mainly due to the supply delays we discussed last month. I think it's better the board hears that now than finds out later."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When someone senior explicitly asks for candor before a high-stakes decision, give a specific, honest assessment, even if the news isn't good.",
+      "explanation": "Giving a specific, honest number and the reason behind it respects the VP's explicit request for candor and lets them prepare properly for the board. A vague reassurance doesn't give the VP the honest information they specifically asked for, which could backfire badly at the board meeting. Softening a fairly clear assessment into uncertain language undersells information the VP genuinely needs to prepare well.",
+      "id": "bd_l122_q3",
+      "consequencePreviews": [
+        "The vague reassurance doesn't give the VP the honest, specific information they explicitly asked for before a high-stakes presentation.",
+        "Here, the soft, uncertain answer undersells a fairly clear, honest assessment that the VP specifically needs to prepare for the board.",
+        "As a result, you give an honest, specific, well-reasoned assessment that respects the VP's explicit request for candor before a high-stakes presentation."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a manager giving you critical, specific feedback in a one-on-one",
+      "scene": "Your manager says: 'Your last few reports have had some accuracy issues that clients have noticed. I need this to improve.'",
+      "options": [
+        "Understood, thanks.",
+        "Thank you for telling me directly — can you point to a specific example? I want to understand exactly where it's going wrong so I can actually fix it.",
+        "I didn't realize that was happening, I've been really swamped and it's been hard to double-check everything carefully."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When receiving critical feedback, accept it professionally first and ask for specifics, rather than responding minimally or leading with an explanation.",
+      "explanation": "Accepting the feedback and asking for a specific example shows genuine professionalism and sets you up to actually improve. A bare 'okay' doesn't get you the specific information you'd need to actually fix the problem. Leading with an explanation about being busy, before acknowledging the feedback, risks sounding defensive rather than receptive to genuinely improving.",
+      "id": "bd_l123_q1",
+      "consequencePreviews": [
+        "In this moment, the minimal response doesn't get you the specific information you'd need to actually address the issue.",
+        "As a result, you accept the feedback professionally and ask for the specific information you need to genuinely improve.",
+        "Realistically, leading with an explanation, before acknowledging the feedback itself, may come across as defensive rather than receptive."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a client giving critical feedback on a delivered project",
+      "scene": "A client emails: 'We're disappointed with the final deliverable — it doesn't match what we discussed in the kickoff meeting.'",
+      "options": [
+        "Thank you for the direct feedback — could we set up a call to go through the specific gaps? I want to understand exactly where it diverged so we can fix it properly.",
+        "We did our best based on our understanding of the requirements, if I'm honest, it wasn't a fully considered answer, so I could be wrong — and there's a decent chance I'd see it differently after sleeping on it.",
+        "I'm very sorry, I feel terrible about this, we'll do absolutely anything to make this right, I promise we'll fix everything immediately."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When receiving critical client feedback, accept it professionally and propose a concrete next step, rather than being defensive or over-apologizing.",
+      "explanation": "Accepting the feedback and proposing a concrete call moves toward actually solving the client's concern professionally. Defending your team's effort, before addressing the actual gap, can come across as prioritizing justification over the client's real concern. Over-apologizing emotionally, without a concrete next step, doesn't actually move toward fixing the specific issue the client raised.",
+      "id": "bd_l123_q2",
+      "consequencePreviews": [
+        "As a result, you accept the feedback professionally and propose a concrete next step to actually address the client's concerns.",
+        "The defensive framing focuses on justifying the outcome rather than actually addressing the client's concerns.",
+        "Here, the excessive, emotional apology doesn't propose a concrete, professional next step to actually address the specific gaps."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a board member giving you pointed, public criticism during a presentation",
+      "scene": "During a board presentation, a board member says pointedly, in front of the room: 'Frankly, I don't think this strategy addresses our core problem at all.'",
+      "options": [
+        "I think it does address the core problem, if you look at slide twelve.",
+        "I understand your concern, and we'll definitely take another look at everything.",
+        "That's fair to raise — could you help me understand which part of the core problem you feel isn't addressed? I want to make sure I'm responding to the actual concern."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When receiving pointed, public criticism from someone senior, stay composed and ask for the specific concern before responding, rather than immediately defending or vaguely agreeing.",
+      "explanation": "Staying composed and asking for the specific concern shows genuine professionalism under public pressure and sets up a much more useful response. Immediately defending the strategy, before understanding the specific concern, risks looking dismissive of pointed, senior-level feedback in front of the room. A vague, conciliatory response doesn't actually engage with the criticism, which could look evasive rather than genuinely responsive.",
+      "id": "bd_l123_q3",
+      "consequencePreviews": [
+        "As a result, jumping to defend the strategy, without first understanding their specific concern, may come across as dismissive of pointed, senior-level feedback.",
+        "Here, the vague, conciliatory response doesn't actually engage with the specific criticism or move the conversation forward productively.",
+        "As a result, you stay composed and professional under public pressure, asking for the specificity needed to actually respond well."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a team member you're delegating a task to for the first time",
+      "scene": "You're assigning a new team member their first significant task: 'I need the vendor comparison spreadsheet done by Friday.' You want to be clear without micromanaging.",
+      "options": [
+        "Just do the vendor comparison thing, you know, whenever you get to it, in hindsight, I hadn't stopped to think it all the way through, though I'd want to think it over more.",
+        "I need this done exactly like this: first pull the pricing data, then sort by category, then format each column like this, then add conditional formatting for anything over budget, then—",
+        "I need the vendor comparison spreadsheet by Friday — happy to walk through the format if useful, but otherwise, take whatever approach makes sense to you."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Good delegation gives a clear deadline and expectation while trusting the person with the details of how to actually do it.",
+      "explanation": "Giving a clear deadline and offering optional guidance, while trusting their approach, is effective delegation that respects their capability. A vague, casual deadline may leave them unsure how seriously to treat the task. Overly detailed, step-by-step instructions can come across as micromanaging someone who's capable of figuring out their own approach.",
+      "id": "bd_l124_q1",
+      "consequencePreviews": [
+        "The vague deadline and casual framing may leave the team member unsure how seriously to prioritize the task.",
+        "As a result, the highly detailed, step-by-step instructions may come across as micromanaging someone capable of figuring out their own approach.",
+        "You give a clear deadline and expectation while genuinely trusting them with the approach."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a junior colleague you're delegating a client-facing task to for the first time",
+      "scene": "You're delegating your first client call to a junior colleague: 'I'd like you to lead Thursday's check-in call with Meridian Corp.' You want to support them without undermining their ownership of it.",
+      "options": [
+        "Go ahead and just handle the Meridian thing on your own then, in fairness, I hadn't stopped to think it all the way through, though I'm open to changing my mind — and I'm honestly still working out how I feel about the whole thing.",
+        "I'd like you to lead Thursday's Meridian check-in — I'll be on the call for support, but it's yours to run. Let me know if you want to prep anything together beforehand.",
+        "I'll be on the call too, and I'll jump in if you miss anything or need help with the client's questions, if I'm being honest, I hadn't really thought it through, but that could easily change."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Delegating a first-time task well means clearly handing over ownership while offering genuine, optional support, rather than being vague or planning to take over.",
+      "explanation": "Clearly handing over ownership, while offering optional prep support, builds genuine confidence for a first significant task. Being vague, with no support offered, may leave someone genuinely unprepared for an important first client call. Planning to jump in during the call itself risks undermining their ownership of the task, even with good intentions.",
+      "id": "bd_l124_q2",
+      "consequencePreviews": [
+        "In this moment, the vague framing and complete lack of support may leave a junior colleague feeling unprepared for their first client call.",
+        "In this moment, you clearly hand over ownership while offering genuine, optional support, which builds their confidence appropriately.",
+        "In this moment, planning to jump in during the call may undermine their ownership of the task rather than genuinely supporting their growth."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a manager delegating a high-stakes task to someone who has previously struggled with a similar assignment",
+      "scene": "You're assigning the quarterly board report to a team member who struggled with a similar report last quarter, but you believe they've grown since then and deserve the chance.",
+      "options": [
+        "I'd like you to take the lead on this quarter's board report — I know last time was tough, but I've seen real growth since then. Let's check in midway through so I can help course-correct early if needed, rather than only at the end.",
+        "I need you to handle the board report again this quarter, I guess, I hadn't really thought it through, so feel free to push back — and I haven't really run it past anyone else yet, and to be fair I only heard about this a few minutes ago myself.",
+        "I'll have someone else review your report thoroughly before it goes out this time, just to be safe, I suppose, that was more of a first reaction, so let me know if that's off — and I haven't really run it past anyone else yet, and a lot depends on details I haven't really looked into yet."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When handing an important task to someone who once found similar work difficult, name the improvement you've noticed and set up a mid-point check-in, rather than assigning it silently or hovering over them from day one.",
+      "explanation": "Acknowledging the previous struggle and their growth, while building in a genuine mid-point checkpoint, sets them up for success without undermining the trust you're extending. Assigning the task with no acknowledgment risks repeating the same difficulty without any added support this time. Planning close review from the outset may undercut the very growth and trust you're trying to recognize, even though the underlying instinct to help is reasonable.",
+      "id": "bd_l124_q3",
+      "consequencePreviews": [
+        "As a result, you give a genuine vote of confidence while building in a supportive checkpoint that protects against a repeat of the earlier struggle.",
+        "Here, the bare assignment, without any acknowledgment of the previous struggle or added support, may set them up for the same difficulty again.",
+        "Planning close oversight from the start may undermine the genuine trust and growth you're actually trying to recognize."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker who consistently interrupts you in meetings",
+      "scene": "A coworker has interrupted you mid-sentence in team meetings several times this month, most recently again today.",
+      "options": [
+        "You keep cutting me off, it's really frustrating, to be honest, I hadn't really planned past that point.",
+        "As I was saying, I suppose, that was more of a first reaction, so feel free to push back — and I probably should have asked a few more questions before saying anything.",
+        "Hey, could I finish that thought? I had one more point I wanted to add before we move on."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Asserting yourself after being interrupted works best with a calm, direct, in-the-moment request to finish your point.",
+      "explanation": "Calmly and directly asking to finish your point is an effective, low-drama way to assert yourself in the moment. Simply resuming without acknowledgment may not clearly signal that you were actually interrupted. Directly calling out the pattern in the meeting itself may create more tension than the situation needs, when a lighter, in-the-moment request would work just as well.",
+      "id": "bd_l125_q1",
+      "consequencePreviews": [
+        "Here, calling out the pattern directly, in the meeting itself, may create more tension than necessary for something that could be handled lightly in the moment.",
+        "Here, simply resuming without acknowledging the interruption may not effectively signal that you'd like to actually finish your point.",
+        "As a result, you assert yourself calmly and specifically in the moment, without turning it into a bigger confrontation."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a client who talks over you during calls",
+      "scene": "A client has a habit of talking over you during calls, including cutting you off again just now while you were explaining a technical point.",
+      "options": [
+        "Sorry, just to finish that last point — the update should also resolve the loading issue you mentioned.",
+        "You keep interrupting me, could you let me finish my sentences?",
+        "Sure, go ahead."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "With a client, politely reclaiming the floor to finish an important point often works better than yielding entirely or directly calling out the interruption.",
+      "explanation": "Politely but firmly finishing your point protects important information from getting lost, without escalating the interruption into a bigger issue. Simply yielding to the interruption risks the client missing genuinely important technical information. Directly calling out the pattern, while understandable, may feel more confrontational than necessary for maintaining a smooth client relationship.",
+      "id": "bd_l125_q2",
+      "consequencePreviews": [
+        "In this moment, you politely but firmly reclaim the floor to finish an important point, without making the interruption a bigger issue than it needs to be.",
+        "In this moment, the direct callout, while understandable, may feel more confrontational than necessary for a client relationship.",
+        "Letting the interruption go without finishing your point means the client might miss important technical information."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a senior executive who consistently talks over more junior team members, including you, in cross-functional meetings",
+      "scene": "In a cross-functional meeting, a senior executive has cut off you and two junior colleagues multiple times today, again interrupting you mid-explanation of a technical constraint that matters for the decision at hand.",
+      "options": [
+        "Sorry, go ahead.",
+        "I want to make sure this constraint is clear before we move forward, since it affects the timeline significantly — could I finish that point?",
+        "With respect, you've interrupted several of us today, it would help if we could all finish our points, if I'm being honest, I hadn't fully worked out how it'd play out."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When interrupted by someone senior on a point that matters for the group's decision, calmly and confidently ask to finish, tying it to the shared goal, rather than deferring or calling out the broader pattern in the moment.",
+      "explanation": "Calmly tying your point to its importance for the group's decision makes it easy for even a senior executive to accept the request to finish. Deferring again, on something that genuinely matters for the decision, risks the group missing important information. Calling out the broader pattern in front of everyone is a bigger confrontation than the immediate moment calls for, when a focused, specific request could achieve the same practical result.",
+      "id": "bd_l125_q3",
+      "consequencePreviews": [
+        "Here, deferring again, especially on a point that genuinely affects the group's decision, risks an important technical constraint being missed entirely.",
+        "As a result, you calmly assert the importance of your point, tying it to the group's shared goal, which makes it easy to accept even from someone senior.",
+        "As a result, calling out the pattern directly, in front of the group, may be a bigger confrontation than the moment calls for when a focused, in-the-moment request could achieve the same result."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a manager who wants a quick verbal decision on something you'd rather think over",
+      "scene": "Your manager says: 'I need to know right now, are you in for the Prague trip or not?' You'd genuinely like a day to check your calendar and think it through properly.",
+      "options": [
+        "Sure, I'm in, I guess.",
+        "I don't really like being put on the spot like this, if I'm honest, I hadn't checked how that would actually land, so I could be wrong — and I know that's not the most thought-out response, but it's where my head's at right now.",
+        "I want to give you a real answer, not a rushed one — could I confirm by tomorrow morning? I just need to check a couple of things first."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When pressured for an immediate decision you're not ready to make, ask for a specific, short amount of time rather than agreeing under pressure or commenting on the pressure itself.",
+      "explanation": "Asking for a specific, short amount of time, with a clear commitment to follow up, is a professional, reasonable response to being pressured. Agreeing under pressure risks committing to something you haven't actually confirmed you can do. Commenting on feeling put on the spot doesn't actually get you the time you need to make a good decision.",
+      "id": "bd_l126_q1",
+      "consequencePreviews": [
+        "Here, agreeing under pressure, without actually checking your calendar, risks committing to something that might not actually work.",
+        "In this moment, the comment focuses on how the request made you feel rather than simply asking for the reasonable time you need.",
+        "As a result, you respectfully ask for the time you genuinely need, while being clear you'll follow through with an answer soon."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a salesperson pushing for a verbal commitment on the spot",
+      "scene": "A salesperson says: 'I can only hold this price if you commit right now, verbally, on this call.' You'd like to review the terms in writing before agreeing to anything.",
+      "options": [
+        "Okay, I commit then.",
+        "I'd like to move forward, but I'll need to see the terms in writing first before I can actually commit — could you send those over today?",
+        "I don't like being pressured to decide on the spot like this, in fairness, I was just going with my gut on that one, but I'm not totally set on it."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When pressured for a verbal commitment, ask specifically for what you need (like written terms) before agreeing, rather than complying or only commenting on the pressure.",
+      "explanation": "Asking specifically for written terms before committing protects you while still showing genuine interest in moving forward. Verbally committing without seeing the terms risks agreeing to something you haven't actually reviewed. Commenting on the pressure alone doesn't get you the specific thing you actually need to feel comfortable committing.",
+      "id": "bd_l126_q2",
+      "consequencePreviews": [
+        "In this moment, verbally committing without reviewing the actual terms risks agreeing to something you haven't actually seen in writing.",
+        "You express genuine interest while holding a reasonable boundary about reviewing terms before committing.",
+        "As a result, the comment expresses discomfort with the pressure but doesn't clearly ask for the specific thing you actually need — the terms in writing."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a CEO asking you, in front of the leadership team, to commit publicly to an aggressive deadline you're not confident about",
+      "scene": "In a leadership meeting, the CEO says: 'Can you commit to the team right now that this will ship by the 15th?' You believe the 15th is possible but genuinely risky given some unresolved dependencies.",
+      "options": [
+        "I want to give the team a number I'm confident in — I think the 15th is possible, but there are a couple of dependencies I need to confirm first. Can I follow up with a firm date by end of day?",
+        "Yes, the 15th, we'll make it happen, if I'm honest, I hadn't checked how that would actually land, but that could easily change — and a lot depends on details I haven't really looked into yet, and I'm honestly still working out how I feel about the whole thing.",
+        "I'd rather not commit to a specific date on the spot like this."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When pressured for a public commitment you're not fully confident in, explain the genuine reason for hesitation and propose a specific, short follow-up, rather than committing under pressure or declining to engage at all.",
+      "explanation": "Explaining the genuine reason for hesitation, while proposing a specific, quick follow-up, protects the team from an unconfirmed public commitment while still being responsive to the CEO. Committing publicly to a date you're not confident in risks a highly visible problem if it turns out not to be achievable. Declining to engage at all, in a leadership meeting, may come across as evasive rather than as the professionally cautious response it actually is.",
+      "id": "bd_l126_q3",
+      "consequencePreviews": [
+        "You stay composed under public pressure and protect the team from an unconfirmed commitment, while still being genuinely responsive.",
+        "Committing publicly to a date you're not actually confident in risks a very visible, difficult situation if it turns out not to be achievable.",
+        "As a result, declining to give any information, in front of leadership, may seem evasive rather than professionally cautious about an honest, specific concern."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker asking you to cover for a mistake they made",
+      "scene": "A coworker asks: 'Could you just tell the client the delay was on the shipping company's end? It wasn't really, it was my scheduling mistake, but it'd be easier.'",
+      "options": [
+        "I get wanting to avoid a tough conversation, but I'm not comfortable telling the client something that isn't accurate — how about we tell them honestly and focus on the fix instead?",
+        "Sure, I'll tell them that.",
+        "No, I'm not going to lie to the client for you, I mean, I was just going with my gut on that one, so let me know if that's off — and I haven't really run it past anyone else yet, and to be fair I only heard about this a few minutes ago myself."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When asked to misrepresent something to protect someone else's mistake, decline honestly while offering a constructive alternative.",
+      "explanation": "Declining honestly, while offering a genuinely constructive alternative, protects your integrity and still supports your coworker through a difficult moment. Agreeing to misrepresent the situation creates real risk if the truth surfaces later, beyond just being dishonest. A blunt refusal, without offering any alternative, doesn't help your coworker figure out a better way to actually handle their real situation.",
+      "id": "bd_l127_q1",
+      "consequencePreviews": [
+        "Here, you decline to misrepresent the situation while offering a constructive, honest way forward that still supports your coworker.",
+        "Realistically, agreeing to misrepresent the situation to the client creates a real risk if the truth comes out later, and it isn't honest.",
+        "Realistically, the blunt refusal is honest but doesn't offer any constructive way forward for your coworker's real, if awkward, situation."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a manager asking you to present unverified numbers as final in a client report",
+      "scene": "Your manager says: 'Just put the projected numbers in as final for the client report, we don't have time to verify them properly before the deadline.'",
+      "options": [
+        "I don't think we should do that, it doesn't feel right, if I'm being honest, that was more of a first reaction, so it's worth double-checking — and there's a decent chance I'd see it differently after sleeping on it.",
+        "Sure, I'll put them in as final.",
+        "I'm worried about presenting unverified numbers as final, especially to a client — could we label them as projected for now, and follow up with verified figures once we have them?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When asked to present unverified information as final, raise the concern specifically and propose a solution that addresses both the deadline and the accuracy issue.",
+      "explanation": "Raising the specific concern and proposing a labeling solution addresses both the real deadline pressure and the legitimate worry about accuracy. Simply complying risks presenting the client with numbers that could turn out to be wrong, which reflects on both you and your manager. A vague objection, without a proposed solution, doesn't help solve the actual, practical problem your manager is facing.",
+      "id": "bd_l127_q2",
+      "consequencePreviews": [
+        "In this moment, the vague objection doesn't propose the practical alternative that could actually solve both the deadline pressure and the accuracy concern.",
+        "Here, presenting unverified numbers as final could create real problems if they turn out to be inaccurate, which the client would reasonably expect to be flagged.",
+        "Realistically, you raise your genuine concern honestly while proposing a solution that meets the deadline without misrepresenting the data."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a senior partner asking you to omit a material risk from a client-facing report, framing it as 'not material enough to mention'",
+      "scene": "A senior partner says: 'Let's leave the currency exposure risk out of the client report, it's probably not material enough to worry them over.' Based on your own analysis, you genuinely believe this risk is significant enough that the client would want to know.",
+      "options": [
+        "Sure, I'll leave it out of the report, I mean, it wasn't a fully considered answer, so let me know if that's off — and honestly the whole situation caught me a bit off guard, and there's a decent chance I'd see it differently after sleeping on it.",
+        "I hear that it might seem minor, but based on my analysis, I think this could actually be significant given the client's specific exposure — could we at least flag it briefly, even if we frame it as low-probability?",
+        "I don't think we should leave that out, that doesn't seem right to me, if I'm being honest, I wasn't considering every angle, though I'm open to changing my mind — and I probably should have asked a few more questions before saying anything."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When you have a genuine, well-reasoned professional disagreement with someone senior about client-facing accuracy, state your specific reasoning clearly and propose a workable middle ground.",
+      "explanation": "Stating your specific professional reasoning, and proposing a workable middle ground, respectfully stands by your genuine assessment without simply overriding the partner's judgment. Complying without raising your concern risks a real problem later if the omitted risk turns out to matter, which reflects on your own professional judgment too. A vague objection, without specific reasoning, doesn't give the partner anything concrete to actually reconsider.",
+      "id": "bd_l127_q3",
+      "consequencePreviews": [
+        "In this moment, omitting a risk you genuinely believe is material could create serious professional and ethical problems if it later proves significant.",
+        "Realistically, you respectfully but clearly stand by your professional assessment, proposing a solution that respects both the partner's judgment and your own genuine concern.",
+        "The vague objection doesn't clearly state your specific professional reasoning or propose a solution the partner could actually work with."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a colleague who takes credit in a way that's ambiguous, possibly unintentional",
+      "scene": "In a meeting, a colleague says: 'I've been working on improving our onboarding process,' referring to something you both worked on together, with you doing the bulk of the actual redesign.",
+      "options": [
+        "Right, admittedly, I hadn't fully worked out how it'd play out, so there might be a better way to handle it — and to be fair I only heard about this a few minutes ago myself.",
+        "Actually, I did most of that work, not just 'we.', thinking about it now, I hadn't weighed all the details, so feel free to push back.",
+        "Yeah, we've been working on it together — I've mainly focused on the redesign side, and Priya's handled the documentation piece."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When your contribution is understated, possibly unintentionally, calmly adding the accurate detail is often better than staying silent or reacting sharply.",
+      "explanation": "Calmly adding the accurate detail corrects the record without assuming bad intent, which fits a situation that might just be imprecise phrasing. Staying silent lets an inaccurate impression stand, which could affect how your contribution is perceived over time. Reacting sharply assumes the worst about your colleague's intent, when a calmer correction would achieve the same accurate outcome.",
+      "id": "bd_l128_q1",
+      "consequencePreviews": [
+        "You may notice that staying silent lets an inaccurate impression about your contribution stand uncorrected.",
+        "You may notice that the pointed correction may come across as more confrontational than necessary for what might just be an imprecise, unintentional phrasing.",
+        "You calmly add your own contribution to the record, in a way that corrects the impression without accusing anyone of anything."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker whose email summary slightly overstates their role on a shared deliverable",
+      "scene": "A coworker sends a team-wide email: 'I finished the client onboarding guide,' though you actually wrote half of it and they edited it.",
+      "options": [
+        "Okay, thanks for the update.",
+        "Nice work getting that finalized! I'll just add — I drafted the first half and Sam edited it into its final form, in case anyone has questions about specific sections.",
+        "That's not really accurate, I wrote half of that myself, to be fair, I hadn't checked how that would actually land, so I could be wrong — and to be fair I only heard about this a few minutes ago myself."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When a summary understates your role, adding the accurate detail warmly, alongside acknowledging their contribution, works better than staying silent or correcting them sharply in public.",
+      "explanation": "Acknowledging their contribution while warmly adding your own creates an accurate record without turning it into a public confrontation. Simply thanking them for the update lets your own real contribution go unacknowledged to the team. A direct, corrective reply, sent to the whole team, may feel more confrontational than necessary for what's likely just an imprecise summary.",
+      "id": "bd_l128_q2",
+      "consequencePreviews": [
+        "In this moment, letting the slightly overstated summary stand means your own contribution goes unacknowledged to the wider team.",
+        "Realistically, you acknowledge their genuine contribution while accurately noting your own, in a friendly, non-confrontational way.",
+        "Realistically, the direct correction, sent to the whole team, may feel like more of a public confrontation than the situation actually calls for."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a manager who presents a strategy to the executive team as their own, when it was substantially developed by you and your peer over several months",
+      "scene": "In an executive presentation, your manager says: 'I developed this go-to-market strategy after analyzing the market landscape,' when in reality, you and a peer did the bulk of the analysis and strategy development together with your manager over several months of collaborative work.",
+      "options": [
+        "This has genuinely been a great collaborative effort — Priya and I did a lot of the market analysis and strategy modeling alongside you over the past few months, and it's exciting to see it land so well with the executive team.",
+        "Great presentation.",
+        "Actually, Priya and I did most of the actual work on this, not just you."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When a manager overstates their individual role on collaborative work in front of senior leadership, assert the collaborative reality gracefully and factually, rather than staying silent or confronting them pointedly in public.",
+      "explanation": "Asserting the collaborative reality gracefully, while genuinely celebrating the positive outcome, corrects the record factually without creating unnecessary conflict in front of executives. Staying completely silent, especially in this visible a setting, lets an inaccurate impression stand that could affect how your contributions are seen going forward. A pointed, public correction of your manager, even if the underlying point is fair, risks creating real tension in a high-stakes setting where a calmer approach could achieve the same correction.",
+      "id": "bd_l128_q3",
+      "consequencePreviews": [
+        "In this moment, you calmly assert the collaborative reality in a way that's factual and gracious, without directly confronting your manager in front of executives.",
+        "You may notice that staying silent, especially in front of executives, lets an inaccurate impression about the collaborative effort go completely uncorrected.",
+        "As a result, the pointed, public correction of your manager in front of executives is likely to create real tension, even though the underlying point about collaboration is fair."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker asking you to review something with a very tight, somewhat unreasonable turnaround",
+      "scene": "A coworker says: 'Could you review this 40-page report in the next hour? I know it's a lot, but I really need it before my 3pm.' It's currently 2:00pm.",
+      "options": [
+        "An hour's not enough time to properly review 40 pages — I could do a focused pass on the executive summary and key sections by 3, would that help for your meeting?",
+        "Sure, I'll try to get through it.",
+        "That's really not enough time for a review like that."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When a deadline is genuinely unrealistic for the full task, propose a scoped-down version that's still genuinely useful within the time available.",
+      "explanation": "Being honest about the real time constraint, while proposing a scoped, useful alternative, actually helps your coworker within what's realistically possible. Agreeing to the full review risks a rushed job that could miss something important in a document going into a real meeting. Simply saying there's not enough time, without an alternative, doesn't help your coworker with their actual, immediate need.",
+      "id": "bd_l129_q1",
+      "consequencePreviews": [
+        "As a result, you're honest about the real constraint while offering a genuinely useful, scoped alternative that still helps within the time available.",
+        "As a result, agreeing to an unrealistic timeframe risks a rushed, low-quality review that might miss something important.",
+        "Here, the pushback is honest but doesn't offer any alternative that could still genuinely help your coworker before their meeting."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a client asking for a major feature addition with an unreasonable timeline",
+      "scene": "A client says: 'We need this new integration built and live by next week.' Based on your team's estimation, this realistically takes at least a month.",
+      "options": [
+        "We'll see what we can do.",
+        "That timeline just isn't realistic for something like this.",
+        "I want to be straight with you — based on our estimates, this realistically needs about a month to build properly. Could we look at a phased rollout, with a basic version live sooner?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When a client's timeline is genuinely unrealistic, be honest about the real estimate and propose a phased or partial alternative.",
+      "explanation": "Being honest about the real timeline, while proposing a phased alternative, gives the client an accurate picture and a genuine path forward. A vague 'we'll see' doesn't give the client the honest information they need to actually plan around. Flatly saying the timeline isn't realistic, without an alternative, leaves the client without any path forward, even though your underlying assessment is accurate.",
+      "id": "bd_l129_q2",
+      "consequencePreviews": [
+        "Here, the vague, non-committal answer doesn't give the client an honest picture of the real timeline they're actually working with.",
+        "Realistically, the direct pushback is accurate but doesn't offer the client any alternative path forward that could still meet part of their need.",
+        "Realistically, you're honest about the real timeline while proposing a practical, phased solution that could still meet some of the client's urgency."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a hospital administrator asking a clinical team to implement a significant new protocol within an unreasonably short timeframe, citing regulatory pressure",
+      "scene": "An administrator says: 'Regulatory requires this new protocol live in 48 hours, no exceptions.' Your team believes proper staff training alone requires at least a week to do safely, given the protocol affects patient safety procedures.",
+      "options": [
+        "We'll do our best to get everyone trained in time.",
+        "I understand the regulatory pressure, and patient safety matters here too — 48 hours isn't enough for proper training on something this significant. Could we get an extension, or implement a partial, clearly-flagged version while full training completes?",
+        "48 hours just isn't enough time for something like this."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When a deadline collides with a genuine risk to people's wellbeing, honestly acknowledge the outside forces driving the timeline while proposing an option that treats both the urgency and the risk as real.",
+      "explanation": "Acknowledging the regulatory pressure honestly, while proposing a solution that protects patient safety, takes both real constraints seriously rather than picking one over the other. Agreeing to the full timeline risks a genuinely dangerous, rushed implementation of something affecting patient safety. Simply pushing back on the timeline, without an alternative, doesn't help the administrator navigate the genuine regulatory pressure they're also facing.",
+      "id": "bd_l129_q3",
+      "consequencePreviews": [
+        "In this moment, agreeing to an unrealistic timeline for something involving patient safety risks a genuinely dangerous rushed implementation.",
+        "As a result, you acknowledge the real regulatory pressure while being honest about a genuine patient-safety risk, and you propose a solution that takes both seriously.",
+        "Realistically, the direct pushback is accurate but doesn't propose an alternative that could still meet the genuine regulatory pressure your administrator is facing."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "your manager during your first performance review, asking for self-assessment",
+      "scene": "Your manager asks: 'How would you rate your own performance this quarter, and why?' You've had solid results but also know a couple of areas where you could have done better.",
+      "options": [
+        "I think I did pretty well, thinking about it now, I hadn't stopped to think it all the way through, so there might be a better way to handle it — and I know that's not the most thought-out response, but it's where my head's at right now.",
+        "Honestly, I don't think I did that well this quarter, there's a lot I could have done better, admittedly, I said that fairly quickly, though I'm open to changing my mind — and to be fair I only heard about this a few minutes ago myself.",
+        "Overall I'd say strong — I hit all my main targets and the Denholm project went really well. One area I'd like to grow in is delegating more, I noticed I held onto some tasks longer than necessary."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "A strong self-assessment names specific real strengths and a specific, genuine area for growth, rather than being vague or overly self-critical.",
+      "explanation": "Naming specific real strengths and one genuine area for growth gives your manager an honest, useful, and balanced self-assessment. A vague 'pretty well' doesn't give your manager the specific detail that makes a review actually useful. Being overly self-critical, when your results were genuinely solid, undersells your real performance and isn't an accurate reflection either.",
+      "id": "bd_l130_q1",
+      "consequencePreviews": [
+        "In this moment, the vague self-assessment doesn't give your manager the specific detail that makes a self-review genuinely useful.",
+        "Here, the overly self-critical framing undersells real, solid results, which isn't an accurate or useful self-assessment either.",
+        "You give a balanced, honest self-assessment that highlights real strengths and a genuine, specific area for growth."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a client asking for your honest self-assessment of a project you led",
+      "scene": "A client asks: 'How do you think the project went, looking back?' The project succeeded overall, though there was one significant delay that frustrated the client at the time.",
+      "options": [
+        "I think it went really well overall.",
+        "Overall I think it was a success — we hit the key goals. I do think the mid-project delay was a real miss on our part, and I've already put a process in place to catch that kind of thing earlier next time.",
+        "Honestly, there were some real problems, especially with that delay."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "A candid look back on a finished piece of work with a client names what actually went well and what genuinely fell short, along with the concrete fix already underway.",
+      "explanation": "Naming the overall success, owning the specific issue honestly, and mentioning a concrete fix gives the client a balanced, trustworthy assessment. Only mentioning the success risks seeming like you're avoiding a real issue the client clearly remembers. Focusing mainly on the problem undersells the project's genuine overall success, which isn't a fully accurate picture either.",
+      "id": "bd_l130_q2",
+      "consequencePreviews": [
+        "Realistically, not acknowledging the delay, which genuinely frustrated the client, may come across as avoiding a real issue they clearly remember.",
+        "Realistically, you give an honest, balanced assessment that owns the real issue while fairly recognizing the overall success.",
+        "Focusing mainly on the problem undersells the project's genuine overall success, which isn't a fully accurate picture either."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a hiring committee asking you to honestly assess your own readiness for a significant promotion",
+      "scene": "A hiring committee member asks: 'Be honest with us — where do you think you still have gaps for a role at this level?' This is a high-stakes moment where you want to be honest without undermining your own case.",
+      "options": [
+        "Honestly, I think my technical leadership is strong, but I'm still building depth in cross-functional influence at the exec level — it's something I've been actively working on, for example through the cross-team initiative I led last quarter.",
+        "I think I'm ready for this role in every way.",
+        "Honestly, there are quite a few areas I'm still not confident in."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "For a high-stakes self-assessment, honest specificity about a real gap, paired with evidence of active growth, tends to be more persuasive than claiming no gaps or being vaguely self-doubting.",
+      "explanation": "Naming a specific, genuine gap alongside concrete evidence of active growth shows exactly the kind of self-awareness the committee is looking for, which strengthens rather than weakens your case. Claiming complete readiness with no gaps may actually come across as lacking self-awareness, which many committees specifically watch for. Being vaguely self-critical, without specifics or evidence of growth, undermines your case without giving the committee anything useful to actually evaluate.",
+      "id": "bd_l130_q3",
+      "consequencePreviews": [
+        "Realistically, you give a genuinely honest, specific answer that shows self-awareness while demonstrating active growth, which strengthens rather than undermines your case.",
+        "Claiming no gaps at all, for a significant promotion, may come across as lacking the self-awareness the committee is specifically testing for.",
+        "Realistically, the vague, overly self-doubting answer undermines your case without giving the committee any specific, useful information about genuine growth."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    }
+  ]
 }

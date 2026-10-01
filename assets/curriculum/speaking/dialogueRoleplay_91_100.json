@@ -6,661 +6,661 @@
         {
             "id": "SPK_DIALOGUEROLEPLAY_L91_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and say you'll text them right away.",
-            "explanation": "'As soon as I know' promises a quick update the moment things become clear.",
-            "partnerDialogue": "Could you let me know if your plans change?",
-            "sampleAnswer": "Of course, I'll text you as soon as I know.",
+            "instruction": "Confirm a corrected detail.",
+            "hint": "The speaker changed the day mid-sentence. Check only what matters.",
+            "explanation": "If a speaker corrects themselves, confirm the final version rather than asking for everything again.",
+            "partnerDialogue": "So we need the figures by Thursday, no wait, Wednesday, for the Berlin call.",
+            "sampleAnswer": "Let me confirm: Wednesday, not Thursday. For Berlin?",
             "acceptedSynonyms": [
-                "text you as soon as i know",
-                "of course, i'll let you know",
-                "i'll message you right away",
-                "sure, i'll update you immediately"
+                "let me confirm: wednesday, not thursday. for berlin",
+                "sorry, did you say wednesday? and that's for the berlin call",
+                "just to be sure: wednesday morning, and it's for the berlin call",
+                "just to be sure, wednesday, for the berlin call"
             ],
-            "correctAnswer": "Of course, I'll text you as soon as I know.",
             "smartReplies": [
-                "Of course, I'll text you as soon as I know.",
-                "Sure, I'll message you the moment I know.",
-                "Of course, I'll update you right away."
+                "Let me confirm: Wednesday, not Thursday. For Berlin?",
+                "Sorry, did you say Wednesday? And that's for the Berlin call?",
+                "Just to be sure: Wednesday morning, and it's for the Berlin call?"
             ],
+            "correctAnswer": "Let me confirm: Wednesday, not Thursday. For Berlin?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L91_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say that would help, and explain why.",
-            "explanation": "'Actually help' shows the news is genuinely good for you, not just politely accepted.",
-            "partnerDialogue": "It looks like the deadline might get pushed back.",
-            "sampleAnswer": "That would actually help, I'm still finishing my draft.",
+            "instruction": "Ask which thing they mean.",
+            "hint": "A technical instruction is vague. Find out what is missing.",
+            "explanation": "Ask the smallest possible question to identify the missing piece. It shows you were listening.",
+            "partnerDialogue": "You'll need to run the script before you merge, otherwise it breaks.",
+            "sampleAnswer": "I'm not sure I follow. Which script, and where do I find it?",
             "acceptedSynonyms": [
-                "still finishing my draft",
-                "that would help, i'm not done",
-                "good, i need more time",
-                "that works, my draft isn't finished"
+                "i'm not sure i follow. which script, and where do i find it",
+                "which script do you mean? the one in the main folder",
+                "could you tell me which script that is? i'm not sure i've used it",
+                "i am not sure i follow. which script, and where do i find it"
             ],
-            "correctAnswer": "That would actually help, I'm still finishing my draft.",
             "smartReplies": [
-                "That would actually help, I'm still finishing my draft.",
-                "That would help — my draft isn't done yet.",
-                "Actually, yes, I could use the extra time."
+                "I'm not sure I follow. Which script, and where do I find it?",
+                "Which script do you mean? The one in the main folder?",
+                "Could you tell me which script that is? I'm not sure I've used it."
             ],
+            "correctAnswer": "I'm not sure I follow. Which script, and where do I find it?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L91_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and say you'll forward it immediately.",
-            "explanation": "'Right away' reassures someone their request will be handled without delay.",
-            "partnerDialogue": "Could you loop me in on that email thread?",
-            "sampleAnswer": "Sure, I'll forward it to you right away.",
+            "instruction": "Admit you can't remember.",
+            "hint": "Someone refers to an earlier agreement you don't recall.",
+            "explanation": "Admitting you don't remember is better than guessing wrong. Add a reason to show it matters.",
+            "partnerDialogue": "Yeah, so just do the thing we talked about last time.",
+            "sampleAnswer": "Remind me, please? I want to be sure I do the right one.",
             "acceptedSynonyms": [
-                "forward it right away",
-                "sure, sending it now",
-                "i'll forward it immediately",
-                "forwarding it to you now"
+                "remind me, please? i want to be sure i do the right one",
+                "could you remind me what we agreed? i don't want to get it wrong",
+                "which thing was that? i'd rather check than guess"
             ],
-            "correctAnswer": "Sure, I'll forward it to you right away.",
             "smartReplies": [
-                "Sure, I'll forward it to you right away.",
-                "I'll forward it right now.",
-                "Sure, sending it your way immediately."
+                "Could you remind me what we agreed? I don't want to get it wrong.",
+                "Remind me, please? I want to be sure I do the right one.",
+                "Which thing was that? I'd rather check than guess."
             ],
+            "correctAnswer": "Remind me, please? I want to be sure I do the right one.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L92_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and reassure them you've got it covered.",
-            "explanation": "'I've got them covered' is a natural, confident way to accept responsibility for a favor.",
-            "partnerDialogue": "Would you mind keeping an eye on the bags for a minute?",
-            "sampleAnswer": "Sure, go ahead, I've got them covered.",
+            "instruction": "Give personal data.",
+            "hint": "Give the birth date aloud in a natural way.",
+            "explanation": "In speech, dates are said as \"the fourth of March\" or \"March fourth\", followed by the year in two parts.",
+            "partnerDialogue": "I need to verify your identity. Can you confirm your date of birth?",
+            "sampleAnswer": "Yes, the fourth of March, ninety-two.",
             "acceptedSynonyms": [
-                "i've got them covered",
-                "sure, go ahead",
-                "no problem, i'll watch them",
-                "go on, i've got this"
+                "yes, the fourth of march, ninety-two",
+                "sure. march fourth, nineteen ninety-two",
+                "of course. it's the fourth of march, nineteen ninety-two",
+                "the fourth of march, nineteen ninety-two"
             ],
-            "correctAnswer": "Sure, go ahead, I've got them covered.",
             "smartReplies": [
-                "Sure, go ahead, I've got them covered.",
-                "Go ahead, I'll keep an eye on them.",
-                "No problem, I've got the bags."
+                "Sure. March fourth, nineteen ninety-two.",
+                "Of course. It's the fourth of March, nineteen ninety-two.",
+                "Yes, the fourth of March, ninety-two."
             ],
+            "correctAnswer": "Yes, the fourth of March, ninety-two.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L92_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and say how often you'll call.",
-            "explanation": "'Every evening' turns a vague promise into a specific, reliable commitment.",
-            "partnerDialogue": "Could you check in on Mom while I'm traveling?",
-            "sampleAnswer": "Of course, I'll call her every evening.",
+            "instruction": "Confirm a code.",
+            "hint": "Read a code back to make sure it's correct.",
+            "explanation": "Reading a code back is standard practice when the cost of a mistake is high.",
+            "partnerDialogue": "Your reference number is A-7-3-9-Q. Have you got that?",
+            "sampleAnswer": "Just a moment. Okay, go ahead.",
             "acceptedSynonyms": [
-                "call her every evening",
-                "of course, nightly calls",
-                "i'll check in each evening",
-                "sure, every evening i'll call"
+                "just a moment. okay, go ahead",
+                "one second, i need a pen. could you say it again slowly",
+                "let me read it back: a, seven, three, nine, q. is that right",
+                "let me read it back"
             ],
-            "correctAnswer": "Of course, I'll call her every evening.",
             "smartReplies": [
-                "Of course, I'll call her every evening.",
-                "Of course — I'll ring her each evening.",
-                "Sure, I'll check in on her nightly."
+                "One second, I need a pen. Could you say it again slowly?",
+                "Just a moment. Okay, go ahead.",
+                "Let me read it back: A, seven, three, nine, Q. Is that right?"
             ],
+            "correctAnswer": "Just a moment. Okay, go ahead.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L92_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and explain how you'll contact them.",
-            "explanation": "Explaining the method, taking their number, makes the promise feel concrete and trustworthy.",
-            "partnerDialogue": "Would you be able to let me know when this comes back in stock?",
-            "sampleAnswer": "Of course, I'll take your number and call you.",
+            "instruction": "End a call properly.",
+            "hint": "Close the call with thanks and no more requests.",
+            "explanation": "Clear endings such as \"That covers it\" tell the agent you're satisfied.",
+            "partnerDialogue": "Is there anything else I can help you with today?",
+            "sampleAnswer": "That's all, thank you. You've been very helpful.",
             "acceptedSynonyms": [
-                "take your number and call",
-                "of course, i'll call you",
-                "i'll get your number",
-                "sure, i'll phone you then"
+                "that's all, thank you. you've been very helpful",
+                "no, i think that covers it. have a good day",
+                "no, that's everything. thanks for your patience",
+                "that is all, thank you. you've been very helpful"
             ],
-            "correctAnswer": "Of course, I'll take your number and call you.",
             "smartReplies": [
-                "Of course, I'll take your number and call you.",
-                "Sure, I'll grab your number and call.",
-                "Of course, let me take your number first."
+                "No, I think that covers it. Have a good day.",
+                "No, that's everything. Thanks for your patience.",
+                "That's all, thank you. You've been very helpful."
             ],
+            "correctAnswer": "That's all, thank you. You've been very helpful.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L93_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and say you'll bring it immediately.",
-            "explanation": "'Right out' is a natural, quick way a server confirms fast service.",
-            "partnerDialogue": "Could you bring us some more bread while we wait?",
-            "sampleAnswer": "Of course, I'll bring it right out.",
+            "instruction": "Accept hospitality.",
+            "hint": "The host invites you to relax. Answer warmly and compliment.",
+            "explanation": "Accept a generous host gratefully and add a specific compliment.",
+            "partnerDialogue": "Please, don't stand on ceremony. Make yourself at home.",
+            "sampleAnswer": "Thanks, I will. It's really cozy here.",
             "acceptedSynonyms": [
-                "bring it right out",
-                "of course, right away",
-                "i'll get that now",
-                "coming right up"
+                "thanks, i will. it's really cozy here",
+                "that's very kind. your place is lovely, by the way",
+                "that's kind of you. i'll try not to get in the way",
+                "that's very kind",
+                "thanks, i will. it is really cozy here"
             ],
-            "correctAnswer": "Of course, I'll bring it right out.",
             "smartReplies": [
-                "Of course, I'll bring it right out.",
-                "Coming right up.",
-                "Sure, I'll bring some out now."
+                "That's very kind. Your place is lovely, by the way.",
+                "That's kind of you. I'll try not to get in the way!",
+                "Thanks, I will. It's really cozy here."
             ],
+            "correctAnswer": "Thanks, I will. It's really cozy here.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L93_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and say you'll send it once found.",
-            "explanation": "'As soon as I locate it' honestly sets expectations without overpromising a specific time.",
-            "partnerDialogue": "Is there any way you could forward me the link once you find it?",
-            "sampleAnswer": "Sure, I'll send it as soon as I locate it.",
+            "instruction": "Accept a difference politely.",
+            "hint": "Show you're flexible about a late dinner.",
+            "explanation": "When visiting, adapt rather than ask for change. Say it as a positive choice.",
+            "partnerDialogue": "I hope you don't mind. We eat quite late here.",
+            "sampleAnswer": "Not at all. I'm happy to fit in with you.",
             "acceptedSynonyms": [
-                "send it once i locate it",
-                "sure, as soon as i find it",
-                "i'll forward it when i find it",
-                "sending it the moment i locate it"
+                "not at all. i'm happy to fit in with you",
+                "no problem. i'll have a snack beforehand",
+                "that's fine. i'm flexible. what time do you usually eat",
+                "not at all, i'm happy to fit in with you",
+                "not at all. i am happy to fit in with you"
             ],
-            "correctAnswer": "Sure, I'll send it as soon as I locate it.",
             "smartReplies": [
-                "Sure, I'll send it as soon as I locate it.",
-                "I'll forward it the moment I find it.",
-                "Sure, as soon as I track it down."
+                "No problem. I'll have a snack beforehand.",
+                "That's fine. I'm flexible. What time do you usually eat?",
+                "Not at all. I'm happy to fit in with you."
             ],
+            "correctAnswer": "Not at all. I'm happy to fit in with you.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L93_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and ask for a moment.",
-            "explanation": "'Just a moment' politely buys a small amount of time while still agreeing readily.",
-            "partnerDialogue": "Could you fill out this form before we begin?",
-            "sampleAnswer": "Of course, give me just a moment.",
+            "instruction": "Give in gracefully.",
+            "hint": "Accept a second helping with a light joke.",
+            "explanation": "\"Just a little\" is the polite way to accept more food you were hesitating about.",
+            "partnerDialogue": "You must have another helping. I insist.",
+            "sampleAnswer": "Just a little, then. It's so good I can't say no.",
             "acceptedSynonyms": [
-                "give me just a moment",
-                "of course, one moment",
-                "sure, just a second",
-                "one moment, please"
+                "just a little, then. it's so good i can't say no",
+                "well, if i must. it's delicious",
+                "okay, a small one. i really shouldn't, but it's wonderful",
+                "just a little, then. it is so good i cannot say no"
             ],
-            "correctAnswer": "Of course, give me just a moment.",
             "smartReplies": [
-                "Of course, give me just a moment.",
-                "Sure, one moment please.",
-                "Of course, just a second."
+                "Well, if I must. It's delicious.",
+                "Okay, a small one. I really shouldn't, but it's wonderful.",
+                "Just a little, then. It's so good I can't say no."
             ],
+            "correctAnswer": "Just a little, then. It's so good I can't say no.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L94_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Recommend a specific podcast genre.",
-            "explanation": "Naming a specific genre, true crime, gives a far more useful recommendation than a vague 'sure'.",
-            "partnerDialogue": "Would you mind recommending a podcast for a long drive?",
-            "sampleAnswer": "Sure, I know a great true crime series.",
+            "instruction": "Offer a considered opinion.",
+            "hint": "Support the idea and add a condition.",
+            "explanation": "In meetings, \"I like X, but I'd want Y\" is both supportive and useful.",
+            "partnerDialogue": "Any thoughts on the new schedule?",
+            "sampleAnswer": "I like the flexibility, but I'd want core hours so we can still meet.",
             "acceptedSynonyms": [
-                "a great true crime series",
-                "know a good true crime one",
-                "try a true crime podcast",
-                "i've got a great one, true crime"
+                "i like the flexibility, but i'd want core hours so we can still meet",
+                "it looks workable, though friday afternoons may be tricky for clients",
+                "mostly positive. i'd add a review after a month",
+                "i like the flexibility, but i would want core hours so we can still meet"
             ],
-            "correctAnswer": "Sure, I know a great true crime series.",
             "smartReplies": [
-                "Sure, I know a great true crime series.",
-                "I've got a great true crime podcast for you.",
-                "Sure, try this true crime series."
+                "It looks workable, though Friday afternoons may be tricky for clients.",
+                "Mostly positive. I'd add a review after a month.",
+                "I like the flexibility, but I'd want core hours so we can still meet."
             ],
+            "correctAnswer": "I like the flexibility, but I'd want core hours so we can still meet.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L94_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Accept, and suggest a specific day.",
-            "explanation": "Suggesting a specific day, Thursday, turns a vague invitation into a real plan.",
-            "partnerDialogue": "I was wondering if you'd like to grab coffee sometime.",
-            "sampleAnswer": "I'd love that, how about this Thursday?",
+            "instruction": "Agree partly.",
+            "hint": "Show partial agreement and mention a check.",
+            "explanation": "\"In principle\" means you agree with the idea but not yet with every detail.",
+            "partnerDialogue": "Do you agree with Maya's suggestion?",
+            "sampleAnswer": "I do, though I'd change one thing. Can I explain?",
             "acceptedSynonyms": [
-                "how about thursday",
-                "i'd love that, thursday works",
-                "yes, let's do thursday",
-                "sure, thursday sounds good"
+                "i do, though i'd change one thing. can i explain",
+                "in principle, yes. i'd just want to check the cost first",
+                "partly. i'd go with her first idea, not the second",
+                "i do, though i would change one thing. can i explain"
             ],
-            "correctAnswer": "I'd love that, how about this Thursday?",
             "smartReplies": [
-                "I'd love that, how about this Thursday?",
-                "I'd love to — is Thursday good?",
-                "Sure, how about Thursday?"
+                "In principle, yes. I'd just want to check the cost first.",
+                "Partly. I'd go with her first idea, not the second.",
+                "I do, though I'd change one thing. Can I explain?"
             ],
+            "correctAnswer": "I do, though I'd change one thing. Can I explain?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L94_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree warmly, and say you'd be glad.",
-            "explanation": "'We'd be glad to have you' is a warm, welcoming way to accept someone into a group.",
-            "partnerDialogue": "Would you mind if I joined your study group?",
-            "sampleAnswer": "Not at all, we'd be glad to have you.",
+            "instruction": "Ask a useful closing question.",
+            "hint": "Ask something that clarifies responsibility.",
+            "explanation": "The best last question is one that prevents confusion afterwards.",
+            "partnerDialogue": "Does anyone have questions before we finish?",
+            "sampleAnswer": "Just one: are we meeting again next week?",
             "acceptedSynonyms": [
-                "we'd be glad to have you",
-                "not at all, join us",
-                "sure, we'd love that",
-                "of course, glad to have you"
+                "just one: are we meeting again next week",
+                "yes, when's the next deadline exactly",
+                "one quick question: who's responsible for the follow-up email",
+                "one quick question, who's responsible for the follow-up email"
             ],
-            "correctAnswer": "Not at all, we'd be glad to have you.",
             "smartReplies": [
-                "Not at all, we'd be glad to have you.",
-                "Not at all — join us, please.",
-                "Sure, we'd love to have you."
+                "Yes, when's the next deadline exactly?",
+                "Just one: are we meeting again next week?",
+                "One quick question: who's responsible for the follow-up email?"
             ],
+            "correctAnswer": "Just one: are we meeting again next week?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L95_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Accept gratefully.",
-            "explanation": "'A huge help' shows real gratitude for a generous offer, not just polite acceptance.",
-            "partnerDialogue": "Would it help if I took over the client calls this week?",
-            "sampleAnswer": "That would be a huge help, thank you.",
+            "instruction": "Stress a serious allergy.",
+            "hint": "Confirm the order but stress the seriousness.",
+            "explanation": "If it's a medical matter, tell staff clearly. It's okay to sound firm.",
+            "partnerDialogue": "Just to double-check: no nuts and no dairy for you, is that right?",
+            "sampleAnswer": "Correct. Please tell the chef it's a real allergy.",
             "acceptedSynonyms": [
-                "that would be a huge help",
-                "yes, thank you so much",
-                "that'd help a lot, thanks",
-                "absolutely, i'd appreciate that"
+                "correct. please tell the chef it's a real allergy",
+                "that's it. the nuts are a real allergy, so please be careful",
+                "yes, that's right. the nuts are serious, though. i'm allergic",
+                "yes, that's right, the nuts are serious",
+                "correct. please tell the chef it is a real allergy"
             ],
-            "correctAnswer": "That would be a huge help, thank you.",
             "smartReplies": [
-                "That would be a huge help, thank you.",
-                "That would help so much, thank you.",
-                "Yes, that'd be a big help, thanks."
+                "Correct. Please tell the chef it's a real allergy.",
+                "That's it. The nuts are a real allergy, so please be careful.",
+                "Yes, that's right. The nuts are serious, though. I'm allergic."
             ],
+            "correctAnswer": "Correct. Please tell the chef it's a real allergy.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L95_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Choose public transport, with two reasons.",
-            "explanation": "Giving two reasons, cheaper and easier, makes a preference feel well-justified.",
-            "partnerDialogue": "Would you prefer to rent a car or use public transport?",
-            "sampleAnswer": "I'd say public transport, it's cheaper and easier here.",
+            "instruction": "Accept a compromise.",
+            "hint": "Accept the sandwich and add a requirement.",
+            "explanation": "Accept the offer, then add your condition in the same breath.",
+            "partnerDialogue": "I'm afraid the kitchen has closed, but I can offer you a sandwich.",
+            "sampleAnswer": "That would be great. Do you have a veggie one?",
             "acceptedSynonyms": [
-                "cheaper and easier here",
-                "public transport, it's easier",
-                "i'd go with transport, cheaper",
-                "public transit, simpler here"
+                "that would be great. do you have a veggie one",
+                "perfect, thank you. could it be vegetarian",
+                "a sandwich is fine, thanks. anything vegetarian"
             ],
-            "correctAnswer": "I'd say public transport, it's cheaper and easier here.",
             "smartReplies": [
-                "I'd say public transport, it's cheaper and easier here.",
-                "Public transport — cheaper and simpler here.",
-                "I'd go with public transport, honestly."
+                "Perfect, thank you. Could it be vegetarian?",
+                "A sandwich is fine, thanks. Anything vegetarian?",
+                "That would be great. Do you have a veggie one?"
             ],
+            "correctAnswer": "That would be great. Do you have a veggie one?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L95_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree warmly using a common idiom.",
-            "explanation": "'The more the merrier' is a common, friendly idiom for welcoming extra guests.",
-            "partnerDialogue": "Would it be alright if I brought a friend to the gathering?",
-            "sampleAnswer": "Of course, the more the merrier.",
+            "instruction": "Settle the bill.",
+            "hint": "Suggest how to pay in a practical way.",
+            "explanation": "\"Let's just...\" is casual and decisive, which is what people want when the meal is over.",
+            "partnerDialogue": "Would you like to split the bill or pay together?",
+            "sampleAnswer": "Let's just split it. It's easier.",
             "acceptedSynonyms": [
-                "the more the merrier",
-                "of course, bring them along",
-                "sure, more the merrier",
-                "absolutely, feel free to bring someone"
+                "let's just split it. it's easier",
+                "separate, please. we had quite different meals",
+                "let's split it evenly. i'll pay now",
+                "let's split it evenly",
+                "let's just split it. it is easier"
             ],
-            "correctAnswer": "Of course, the more the merrier.",
             "smartReplies": [
-                "Of course, the more the merrier.",
-                "Of course, bring them along!",
-                "Sure, the more the merrier!"
+                "Separate, please. We had quite different meals.",
+                "Let's just split it. It's easier.",
+                "Let's split it evenly. I'll pay now."
             ],
+            "correctAnswer": "Let's just split it. It's easier.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L96_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Give the standard delivery timeframe.",
-            "explanation": "A specific timeframe, two to three days, answers the question more usefully than a plain yes.",
-            "partnerDialogue": "Is it possible to get this delivered by Friday?",
-            "sampleAnswer": "Yes, standard delivery usually takes two to three days.",
+            "instruction": "Describe an error accurately.",
+            "hint": "Report what the screen says and what your bank says.",
+            "explanation": "Contradictions between systems are the most useful details for support staff.",
+            "partnerDialogue": "What error message are you seeing?",
+            "sampleAnswer": "\"Payment failed.\" But my account has been charged.",
             "acceptedSynonyms": [
-                "two to three days",
-                "usually two to three days",
-                "standard delivery takes a few days",
-                "typically arrives in two or three days"
+                "\"payment failed.\" but my account has been charged",
+                "it says \"payment failed\", but my bank shows the money was taken",
+                "it says the payment didn't go through, yet i was charged",
+                "it says payment failed, but my bank shows the money was taken"
             ],
-            "correctAnswer": "Yes, standard delivery usually takes two to three days.",
             "smartReplies": [
-                "Yes, standard delivery usually takes two to three days.",
-                "Standard delivery usually takes two to three days.",
-                "Yes, typically two to three days."
+                "It says \"payment failed\", but my bank shows the money was taken.",
+                "It says the payment didn't go through, yet I was charged.",
+                "\"Payment failed.\" But my account has been charged."
             ],
+            "correctAnswer": "\"Payment failed.\" But my account has been charged.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L96_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree enthusiastically, and say you'll tell the kitchen.",
-            "explanation": "'I'll let the kitchen know' shows a clear, concrete next step, not just agreement.",
-            "partnerDialogue": "Would it be possible to make this dish less salty?",
-            "sampleAnswer": "Absolutely, I'll let the kitchen know.",
+            "instruction": "Answer honestly about a gap.",
+            "hint": "Admit you're unsure about backups.",
+            "explanation": "Admit when you don't know. Support staff can only help if they get the truth.",
+            "partnerDialogue": "When did you last back up your files?",
+            "sampleAnswer": "I'm not sure. Probably a few weeks ago. Is that a problem?",
             "acceptedSynonyms": [
-                "let the kitchen know",
-                "absolutely, telling the kitchen",
-                "of course, i'll pass that along",
-                "sure, notifying the kitchen now"
+                "i'm not sure. probably a few weeks ago. is that a problem",
+                "honestly, i can't remember. maybe last month",
+                "i don't think i ever did. can we still fix it",
+                "i am not sure. probably a few weeks ago. is that a problem"
             ],
-            "correctAnswer": "Absolutely, I'll let the kitchen know.",
             "smartReplies": [
-                "Absolutely, I'll let the kitchen know.",
-                "Of course, I'll tell the kitchen.",
-                "Absolutely, I'll pass that along now."
+                "Honestly, I can't remember. Maybe last month?",
+                "I'm not sure. Probably a few weeks ago. Is that a problem?",
+                "I don't think I ever did. Can we still fix it?"
             ],
+            "correctAnswer": "I'm not sure. Probably a few weeks ago. Is that a problem?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L96_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say maybe, and encourage trying it.",
-            "explanation": "'Worth a try' encourages action even without a guaranteed outcome.",
-            "partnerDialogue": "Do you think reinstalling the application would help?",
-            "sampleAnswer": "That could fix it, it's worth a try.",
+            "instruction": "Handle a transfer.",
+            "hint": "Ask for a direct number or a note on your case.",
+            "explanation": "Asking for a direct number or a handover note is a sensible way to avoid repeating everything.",
+            "partnerDialogue": "I need to transfer you to another department. Is that okay?",
+            "sampleAnswer": "Okay. Will I have to explain everything again?",
             "acceptedSynonyms": [
-                "worth a try",
-                "that could fix it",
-                "might work, let's try",
-                "possibly, give it a shot"
+                "okay. will i have to explain everything again",
+                "fine, but please tell them the problem, so i don't have to repeat it",
+                "alright, but could you give me a direct number in case we're cut off",
+                "alright, but could you give me a direct number"
             ],
-            "correctAnswer": "That could fix it, it's worth a try.",
             "smartReplies": [
-                "That could fix it, it's worth a try.",
-                "It might help — worth a shot.",
-                "Could work, let's give it a try."
+                "Okay. Will I have to explain everything again?",
+                "Fine, but please tell them the problem, so I don't have to repeat it.",
+                "Alright, but could you give me a direct number in case we're cut off?"
             ],
+            "correctAnswer": "Okay. Will I have to explain everything again?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L97_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree warmly, and say they've earned it.",
-            "explanation": "'You've earned it' turns simple permission into a genuine, encouraging compliment.",
-            "partnerDialogue": "Would it be alright if I took a short break?",
-            "sampleAnswer": "Of course, you've earned it.",
+            "instruction": "Give an honest update.",
+            "hint": "Answer positively but admit the small difficulty.",
+            "explanation": "A mix of good and difficult (\"still get lost\") sounds honest without complaining.",
+            "partnerDialogue": "How was your first week? Did you settle in?",
+            "sampleAnswer": "Better than I expected. Everyone's been helpful, though I still get lost in the building.",
             "acceptedSynonyms": [
-                "you've earned it",
-                "of course, go ahead",
-                "sure, you deserve it",
-                "absolutely, take your time"
+                "better than i expected. everyone's been helpful, though i still get lost in the building",
+                "pretty good. a bit overwhelming, but people are friendly",
+                "busy, but good. i'm still learning the systems"
             ],
-            "correctAnswer": "Of course, you've earned it.",
             "smartReplies": [
-                "Of course, you've earned it.",
-                "Of course — go ahead, you've earned it.",
-                "Sure, you deserve the break."
+                "Pretty good. A bit overwhelming, but people are friendly.",
+                "Better than I expected. Everyone's been helpful, though I still get lost in the building.",
+                "Busy, but good. I'm still learning the systems."
             ],
+            "correctAnswer": "Better than I expected. Everyone's been helpful, though I still get lost in the building.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L97_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and explain why: the documentary was intense.",
-            "explanation": "Giving a reason, the documentary was intense, makes the agreement feel genuine, not just polite.",
-            "partnerDialogue": "Is it okay if we watched something lighter tonight?",
-            "sampleAnswer": "Of course, that documentary was pretty intense.",
+            "instruction": "Explain quietness.",
+            "hint": "Explain that you're listening first and will speak later.",
+            "explanation": "Explain a behavior in a positive way: you listen first, then contribute.",
+            "partnerDialogue": "You've been quiet in the meetings. Is everything okay?",
+            "sampleAnswer": "Yes, I'm listening carefully first. I'll contribute more soon.",
             "acceptedSynonyms": [
-                "that documentary was intense",
-                "of course, it was heavy",
-                "sure, that one was a lot",
-                "yes, something lighter sounds good"
+                "yes, i'm listening carefully first. i'll contribute more soon",
+                "it's just that i'm still learning. i'll speak up more once i feel sure",
+                "i'm fine. i like to understand the context before i comment",
+                "yes, i am listening carefully first. i will contribute more soon"
             ],
-            "correctAnswer": "Of course, that documentary was pretty intense.",
             "smartReplies": [
-                "Of course, that documentary was pretty intense.",
-                "Sure, that documentary was a lot.",
-                "Of course — something lighter sounds good."
+                "It's just that I'm still learning. I'll speak up more once I feel sure.",
+                "Yes, I'm listening carefully first. I'll contribute more soon.",
+                "I'm fine. I like to understand the context before I comment."
             ],
+            "correctAnswer": "Yes, I'm listening carefully first. I'll contribute more soon.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L97_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Accept the offer, and name a specific task.",
-            "explanation": "Naming a specific task, groceries, makes an offer to help genuinely useful rather than wasted.",
-            "partnerDialogue": "Is there anything I can do to help you out today?",
-            "sampleAnswer": "Actually, could you pick up the groceries for me?",
+            "instruction": "Ask a manager for support.",
+            "hint": "Admit the workload is heavy and ask to review priorities.",
+            "explanation": "Raising workload as a request to discuss priorities, not as a complaint, is more likely to get help.",
+            "partnerDialogue": "I noticed you stayed late again. Is the workload too much?",
+            "sampleAnswer": "A bit, yes. I'd appreciate help deciding what can wait.",
             "acceptedSynonyms": [
-                "pick up the groceries",
-                "actually, the groceries would help",
-                "yes, grab groceries for me",
-                "could you get groceries"
+                "a bit, yes. i'd appreciate help deciding what can wait",
+                "it's been heavy this month, honestly. could we go through my priorities",
+                "it has been. can we talk about what's realistic",
+                "it's been heavy this month, could we go through my priorities",
+                "a bit, yes. i would appreciate help deciding what can wait"
             ],
-            "correctAnswer": "Actually, could you pick up the groceries for me?",
             "smartReplies": [
-                "Actually, could you pick up the groceries for me?",
-                "Could you pick up the groceries for me?",
-                "Actually, the groceries would really help."
+                "It's been heavy this month, honestly. Could we go through my priorities?",
+                "It has been. Can we talk about what's realistic?",
+                "A bit, yes. I'd appreciate help deciding what can wait."
             ],
+            "correctAnswer": "A bit, yes. I'd appreciate help deciding what can wait.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L98_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and say when you'll review it.",
-            "explanation": "Giving a specific time, tonight, makes the promise to help feel concrete and reliable.",
-            "partnerDialogue": "I was hoping you could review my essay before I submit it.",
-            "sampleAnswer": "Sure, send it over and I'll take a look tonight.",
+            "instruction": "Encourage without pressure.",
+            "hint": "Suggest trying once, with an easy way out.",
+            "explanation": "A low-risk offer (\"just once\") persuades better than pushing.",
+            "partnerDialogue": "I don't think I want to go to the gym.",
+            "sampleAnswer": "Give it one go. I'll buy you a smoothie afterwards.",
             "acceptedSynonyms": [
-                "take a look tonight",
-                "sure, send it, i'll review tonight",
-                "i'll check it tonight",
-                "send it over, i'll read it tonight"
+                "give it one go. i'll buy you a smoothie afterwards",
+                "come on, just try one class. if you hate it, we'll leave",
+                "how about trying it once? you might enjoy it more than you think",
+                "give it one go. i will buy you a smoothie afterwards"
             ],
-            "correctAnswer": "Sure, send it over and I'll take a look tonight.",
             "smartReplies": [
-                "Sure, send it over and I'll take a look tonight.",
-                "Send it over, I'll review it tonight.",
-                "Sure, I'll read through it tonight."
+                "Give it one go. I'll buy you a smoothie afterwards.",
+                "Come on, just try one class. If you hate it, we'll leave.",
+                "How about trying it once? You might enjoy it more than you think."
             ],
+            "correctAnswer": "Give it one go. I'll buy you a smoothie afterwards.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L98_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Offer to help, if needed.",
-            "explanation": "'Happy to jump in' is an enthusiastic, ready way to offer help before being formally asked.",
-            "partnerDialogue": "I might need an extra pair of hands on this project.",
-            "sampleAnswer": "I'm happy to jump in if you need me.",
+            "instruction": "Give reasons for a recommendation.",
+            "hint": "Recommend the bank with a real, specific benefit.",
+            "explanation": "A specific example, like a saved amount, is more persuasive than \"It's better\".",
+            "partnerDialogue": "Why should I switch to your bank?",
+            "sampleAnswer": "They have no monthly fee, and switching took me ten minutes.",
             "acceptedSynonyms": [
-                "happy to jump in",
-                "let me know, i'll help",
-                "i can jump in if needed",
-                "just say the word, i'll help"
+                "they have no monthly fee, and switching took me ten minutes",
+                "honestly, the customer service. they solved my problem in five minutes",
+                "mainly the fees. i saved a lot, and their app is easy to use"
             ],
-            "correctAnswer": "I'm happy to jump in if you need me.",
             "smartReplies": [
-                "I'm happy to jump in if you need me.",
-                "Happy to help out if you need me.",
-                "Just say the word, I'll jump in."
+                "Honestly, the customer service. They solved my problem in five minutes.",
+                "Mainly the fees. I saved a lot, and their app is easy to use.",
+                "They have no monthly fee, and switching took me ten minutes."
             ],
+            "correctAnswer": "They have no monthly fee, and switching took me ten minutes.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L98_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Support the idea, and mention informing the hotel.",
-            "explanation": "'Just let the hotel know' is practical, useful advice for making the plan actually happen.",
-            "partnerDialogue": "I'm thinking of extending my stay by a couple of days.",
-            "sampleAnswer": "That's not a problem, just let the hotel know.",
+            "instruction": "Address a concern.",
+            "hint": "Acknowledge the worry and propose a limit.",
+            "explanation": "Acknowledge the concern (\"I understand\") and then propose a limit to reduce the risk.",
+            "partnerDialogue": "I'm not sure a group trip is a good idea.",
+            "sampleAnswer": "It could be fun. If we plan carefully, nobody will be stressed.",
             "acceptedSynonyms": [
-                "let the hotel know",
-                "not a problem, tell the hotel",
-                "sure, just inform the hotel",
-                "fine, notify the hotel"
+                "it could be fun. if we plan carefully, nobody will be stressed",
+                "i understand, but it's cheaper and we can share the driving. shall we set a budget first",
+                "fair. we could keep it short, just a weekend",
+                "i understand, but it's cheaper and we can share the driving"
             ],
-            "correctAnswer": "That's not a problem, just let the hotel know.",
             "smartReplies": [
-                "That's not a problem, just let the hotel know.",
-                "No problem at all — just tell the hotel.",
-                "That's fine, simply inform the hotel."
+                "I understand, but it's cheaper and we can share the driving. Shall we set a budget first?",
+                "It could be fun. If we plan carefully, nobody will be stressed.",
+                "Fair. We could keep it short, just a weekend."
             ],
+            "correctAnswer": "It could be fun. If we plan carefully, nobody will be stressed.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L99_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Reassure them, and offer to save a seat.",
-            "explanation": "'We'll save you a seat' is a warm, practical way to reassure someone about running late.",
-            "partnerDialogue": "I might be a bit late to the reunion this year.",
-            "sampleAnswer": "That's fine, we'll save you a seat.",
+            "instruction": "Apologize professionally.",
+            "hint": "Own the mistake and fix it immediately.",
+            "explanation": "A complete workplace apology has three parts: admission, action, and prevention.",
+            "partnerDialogue": "You forgot to send me the file. I needed it this morning.",
+            "sampleAnswer": "I'm sorry, that's my mistake. It's on its way to you.",
             "acceptedSynonyms": [
-                "we'll save you a seat",
-                "that's fine, seat's saved",
-                "no worries, we'll hold a spot",
-                "fine, i'll save your seat"
+                "i'm sorry, that's my mistake. it's on its way to you",
+                "that's my fault. i've just sent it. can you still use it today",
+                "you're right, and i apologize. i'm sending it now and will double-check next time",
+                "i am sorry, that is my mistake. it is on its way to you"
             ],
-            "correctAnswer": "That's fine, we'll save you a seat.",
             "smartReplies": [
-                "That's fine, we'll save you a seat.",
-                "No worries, we'll hold a seat for you.",
-                "That's fine — we'll save your spot."
+                "That's my fault. I've just sent it. Can you still use it today?",
+                "I'm sorry, that's my mistake. It's on its way to you.",
+                "You're right, and I apologize. I'm sending it now and will double-check next time."
             ],
+            "correctAnswer": "I'm sorry, that's my mistake. It's on its way to you.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L99_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and reassure them there's no rush.",
-            "explanation": "'Take all the time you need' is a warm, patient way to support someone's decision-making process.",
-            "partnerDialogue": "There's a chance I'll come back later with my partner to decide together.",
-            "sampleAnswer": "Of course, take all the time you need.",
+            "instruction": "Repair a friendship.",
+            "hint": "Apologize honestly and offer a concrete plan.",
+            "explanation": "Personal apologies work better with a real reason and a specific plan for putting things right.",
+            "partnerDialogue": "You've cancelled on me three times this month.",
+            "sampleAnswer": "You're right. I haven't been fair to you. Let me make it up to you.",
             "acceptedSynonyms": [
-                "take all the time you need",
-                "of course, no rush",
-                "sure, come back anytime",
-                "absolutely, whenever works"
+                "you're right. i haven't been fair to you. let me make it up to you",
+                "i know, and i'm sorry. i've been swamped, but i should have told you earlier",
+                "i feel bad about that. can we fix a date now",
+                "you are right. i have not been fair to you. let me make it up to you"
             ],
-            "correctAnswer": "Of course, take all the time you need.",
             "smartReplies": [
-                "Of course, take all the time you need.",
-                "Of course, no rush at all.",
-                "Sure, come back whenever you're ready."
+                "I know, and I'm sorry. I've been swamped, but I should have told you earlier.",
+                "I feel bad about that. Can we fix a date now?",
+                "You're right. I haven't been fair to you. Let me make it up to you."
             ],
+            "correctAnswer": "You're right. I haven't been fair to you. Let me make it up to you.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L99_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and say you'll check with the chef.",
-            "explanation": "Naming a specific step, asking the chef, shows the request is being taken seriously.",
-            "partnerDialogue": "I might be allergic to shellfish, could you check the ingredients?",
-            "sampleAnswer": "Of course, let me ask the chef to confirm.",
+            "instruction": "Accept generosity but insist.",
+            "hint": "Thank them but offer to replace the broken glass.",
+            "explanation": "Polite people insist once on paying for damage. Don't argue for too long.",
+            "partnerDialogue": "Don't worry about the glass. It's only a cheap one.",
+            "sampleAnswer": "Thanks, that's kind. But please let me replace it.",
             "acceptedSynonyms": [
-                "ask the chef to confirm",
-                "of course, checking with the chef",
-                "sure, i'll ask the kitchen",
-                "let me confirm with the chef"
+                "thanks, that's kind. but please let me replace it",
+                "that's generous, but i insist on paying for it",
+                "i appreciate that, but i'd feel better if i bought you a new one",
+                "thanks, that's kind, but please let me replace it",
+                "thanks, that is kind. but please let me replace it"
             ],
-            "correctAnswer": "Of course, let me ask the chef to confirm.",
             "smartReplies": [
-                "Of course, let me ask the chef to confirm.",
-                "Sure, I'll check with the chef.",
-                "Of course, let me confirm the ingredients."
+                "That's generous, but I insist on paying for it.",
+                "Thanks, that's kind. But please let me replace it.",
+                "I appreciate that, but I'd feel better if I bought you a new one."
             ],
+            "correctAnswer": "Thanks, that's kind. But please let me replace it.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L100_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Offer a spare charger to borrow.",
-            "explanation": "Offering a specific, immediate solution, a spare charger, is more helpful than just sympathizing.",
-            "partnerDialogue": "I think I need a new charger, mine stopped working.",
-            "sampleAnswer": "I have a spare one you can borrow.",
+            "instruction": "Reply casually.",
+            "hint": "A close friend asks about later. Keep it relaxed.",
+            "explanation": "With friends, short natural phrases beat full formal sentences.",
+            "partnerDialogue": "Hey, what's up? You free later?",
+            "sampleAnswer": "Should be, after six. Got something in mind?",
             "acceptedSynonyms": [
-                "a spare one you can borrow",
-                "i have an extra one",
-                "you can borrow my spare",
-                "here, borrow my spare charger"
+                "should be, after six. got something in mind",
+                "yeah, probably after six. what's up",
+                "i think so. after six, anyway. why"
             ],
-            "correctAnswer": "I have a spare one you can borrow.",
             "smartReplies": [
-                "I have a spare one you can borrow.",
-                "I've got an extra one — you can borrow it.",
-                "Here, you can borrow my spare."
+                "Yeah, probably after six. What's up?",
+                "Should be, after six. Got something in mind?",
+                "I think so. After six, anyway. Why?"
             ],
+            "correctAnswer": "Should be, after six. Got something in mind?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L100_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Support the idea, and mention what you've heard.",
-            "explanation": "Sharing something you've heard adds a genuine, informed reason to support their decision.",
-            "partnerDialogue": "I might switch to a different gym, this one's too crowded.",
-            "sampleAnswer": "That makes sense, I've heard the new one's quieter.",
+            "instruction": "Reply to a manager respectfully.",
+            "hint": "Respond to your manager's invitation with polite readiness.",
+            "explanation": "With a manager, be polite and prepared. Offering to bring notes shows professionalism.",
+            "partnerDialogue": "Have you got a moment? Come on in.",
+            "sampleAnswer": "Certainly. Shall I bring anything?",
             "acceptedSynonyms": [
-                "heard the new one's quieter",
-                "makes sense, it's quieter there",
-                "that tracks, less crowded there",
-                "good call, i've heard it's calmer"
+                "certainly. shall i bring anything",
+                "sure. let me just grab my notes",
+                "of course. is this a good time, or should i come back",
+                "of course"
             ],
-            "correctAnswer": "That makes sense, I've heard the new one's quieter.",
             "smartReplies": [
-                "That makes sense, I've heard the new one's quieter.",
-                "That tracks — I've heard it's much calmer there.",
-                "Makes sense, I've heard good things about it."
+                "Sure. Let me just grab my notes.",
+                "Of course. Is this a good time, or should I come back?",
+                "Certainly. Shall I bring anything?"
             ],
+            "correctAnswer": "Certainly. Shall I bring anything?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L100_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Encourage them, and say the team needs them.",
-            "explanation": "'Our team could really use you' makes the invitation feel personal and genuinely wanted.",
-            "partnerDialogue": "I'm considering joining the trivia night if you're going.",
-            "sampleAnswer": "You should, our team could really use you.",
+            "instruction": "Help a stranger with uncertain information.",
+            "hint": "Answer a stranger honestly without sounding too sure.",
+            "explanation": "If you're not sure, say \"I believe\" or \"I think\" and tell them where to check.",
+            "partnerDialogue": "Sorry, could you tell me if this train stops at Central Station?",
+            "sampleAnswer": "I believe so, but the sign above the door will confirm it.",
             "acceptedSynonyms": [
-                "team could really use you",
-                "you should, we need you",
-                "definitely, join our team",
-                "yes, we could use the help"
+                "i believe so, but the sign above the door will confirm it",
+                "i think it does. i'd check the display over there",
+                "yes, it's the third stop from here, i think"
             ],
-            "correctAnswer": "You should, our team could really use you.",
             "smartReplies": [
-                "You should, our team could really use you.",
-                "Definitely — we could really use you.",
-                "Yes, join us, we need the help!"
+                "I believe so, but the sign above the door will confirm it.",
+                "I think it does. I'd check the display over there.",
+                "Yes, it's the third stop from here, I think."
             ],
+            "correctAnswer": "I believe so, but the sign above the door will confirm it.",
             "emotionTag": "Neutral"
         }
     ]

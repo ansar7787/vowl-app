@@ -1,307 +1,307 @@
 {
-    "gameType": "yesNoSpeaking",
-    "batchIndex": 20,
-    "levels": "191-200",
-    "quests": [
-        {
-            "id": "SPK_YESNOSPEAKING_L191_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "At this level, listen for the phrase after the opening -- the text says \"acknowledged\", and the rest won't help you.",
-            "explanation": "Only the phrase after the opening changed: \"acknowledged\" became \"denied\". This kind of precision is what separates advanced from expert-level listening.",
-            "prompt": "Only recently has the company publicly acknowledged the scale of the data breach.",
-            "sampleAnswer": "Only recently has the company publicly denied the scale of the data breach.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L191_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This is a fine distinction. Focus entirely on the two similar words, written here as \"effect\".",
-            "explanation": "\"effect\" versus \"affect\" is a small but meaningful distinction in the two similar words. Catching it takes real attention.",
-            "prompt": "The update's effect on performance was noticeably smaller than engineers had hoped.",
-            "sampleAnswer": "The update's affect on performance was noticeably smaller than engineers had hoped.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L191_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Everything else is a strong match here except the modal verb -- currently \"would rather\" -- that's the real test.",
-            "explanation": "At the expert level, most of the sentence is a strong match. The real test was the modal verb: \"would rather\" versus \"had better\".",
-            "prompt": "The board would rather delay the announcement than risk any further panic.",
-            "sampleAnswer": "The board had better delay the announcement than risk any further panic.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L192_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Confident, native-level listening means catching the phrase after the opening, here \"an international\", even when it's subtle.",
-            "explanation": "\"an international\" and \"a controversial\" are easy to confuse, but they mean different things. This question rewards catching the phrase after the opening precisely.",
-            "prompt": "Nowhere else has the annual festival drawn such an international crowd this large.",
-            "sampleAnswer": "Nowhere else has the annual festival drawn such a controversial crowd this large.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L192_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The whole sentence hinges on the two similar words: \"influential\", as written. Listen with full attention.",
-            "explanation": "The sentence uses \"influential\", not \"controversial\" -- a pair that trips up even confident speakers.",
-            "prompt": "The museum's latest retrospective celebrates the artist's most influential decade of work.",
-            "sampleAnswer": "The museum's latest retrospective celebrates the artist's most controversial decade of work.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L192_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This one rewards precision. Zero in on the modal verb -- the text reads \"would rather\".",
-            "explanation": "Only the modal verb changed: \"would rather\" became \"had better\". This kind of precision is what separates advanced from expert-level listening.",
-            "prompt": "The board would rather proceed slowly than rush the delicate renovation work.",
-            "sampleAnswer": "The board had better proceed slowly than rush the delicate renovation work.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L193_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Nearly everything matches. The real difference lives in the phrase after the opening, currently \"confirm\".",
-            "explanation": "\"confirm\" versus \"deny\" is a small but meaningful distinction in the phrase after the opening. Catching it takes real attention.",
-            "prompt": "At no point did the ambassador publicly confirm the terms of the agreement.",
-            "sampleAnswer": "At no point did the ambassador publicly deny the terms of the agreement.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L193_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "At this level, listen for the two similar words -- the text says \"principal\", and the rest won't help you.",
-            "explanation": "At the expert level, most of the sentence is a strong match. The real test was the two similar words: \"principal\" versus \"principle\".",
-            "prompt": "The new treaty's principal objective was to reduce cross-border tension quickly.",
-            "sampleAnswer": "The new treaty's principle objective was to reduce cross-border tension quickly.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L193_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This is a fine distinction. Focus entirely on the modal verb, written here as \"would rather\".",
-            "explanation": "\"would rather\" and \"had better\" are easy to confuse, but they mean different things. This question rewards catching the modal verb precisely.",
-            "prompt": "Diplomats would rather negotiate quietly behind closed doors than escalate the dispute publicly.",
-            "sampleAnswer": "Diplomats had better negotiate quietly behind closed doors than escalate the dispute publicly.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L194_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Everything else is a strong match here except the phrase after the opening -- currently \"overturn\" -- that's the real test.",
-            "explanation": "The sentence uses \"overturn\", not \"confirm\" -- a pair that trips up even confident speakers.",
-            "prompt": "Rarely does a single study overturn decades of established scientific theory so quickly.",
-            "sampleAnswer": "Rarely does a single study confirm decades of established scientific theory so quickly.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L194_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Confident, native-level listening means catching the two similar words, here \"continuous\", even when it's subtle.",
-            "explanation": "Only the two similar words changed: \"continuous\" became \"continual\". This kind of precision is what separates advanced from expert-level listening.",
-            "prompt": "The lab's continuous overnight monitoring caught the strange anomaly within minutes.",
-            "sampleAnswer": "The lab's continual overnight monitoring caught the strange anomaly within minutes.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L194_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The whole sentence hinges on the modal verb: \"should\", as written. Listen with full attention.",
-            "explanation": "\"should\" versus \"might\" is a small but meaningful distinction in the modal verb. Catching it takes real attention.",
-            "prompt": "The reviewers should have flagged the inconsistency during the very first round.",
-            "sampleAnswer": "The reviewers might have flagged the inconsistency during the very first round.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L195_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This one rewards precision. Zero in on the phrase after the opening -- the text reads \"suspended\".",
-            "explanation": "At the expert level, most of the sentence is a strong match. The real test was the phrase after the opening: \"suspended\" versus \"resumed\".",
-            "prompt": "So severe was the turbulence that the crew suspended cabin service completely.",
-            "sampleAnswer": "So severe was the turbulence that the crew resumed cabin service completely.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L195_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Nearly everything matches. The real difference lives in the two similar words, currently \"effect\".",
-            "explanation": "\"effect\" and \"affect\" are easy to confuse, but they mean different things. This question rewards catching the two similar words precisely.",
-            "prompt": "The regional airline's effect on local tourism has been studied quite extensively.",
-            "sampleAnswer": "The regional airline's affect on local tourism has been studied quite extensively.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L195_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "At this level, listen for the modal verb -- the text says \"would rather\", and the rest won't help you.",
-            "explanation": "The sentence uses \"would rather\", not \"had better\" -- a pair that trips up even confident speakers.",
-            "prompt": "Travelers would rather face long delays than board a poorly maintained aircraft.",
-            "sampleAnswer": "Travelers had better face long delays than board a poorly maintained aircraft.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L196_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This is a fine distinction. Focus entirely on the phrase after the opening, written here as \"fallen\".",
-            "explanation": "Only the phrase after the opening changed: \"fallen\" became \"risen\". This kind of precision is what separates advanced from expert-level listening.",
-            "prompt": "Not since the last recession has consumer confidence fallen quite so sharply.",
-            "sampleAnswer": "Not since the last recession has consumer confidence risen quite so sharply.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L196_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Everything else is a strong match here except the two similar words -- currently \"economic\" -- that's the real test.",
-            "explanation": "\"economic\" versus \"economical\" is a small but meaningful distinction in the two similar words. Catching it takes real attention.",
-            "prompt": "The economic case for the proposed merger was stronger than analysts expected.",
-            "sampleAnswer": "The economical case for the proposed merger was stronger than analysts expected.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L196_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Confident, native-level listening means catching the modal verb, here \"should\", even when it's subtle.",
-            "explanation": "At the expert level, most of the sentence is a strong match. The real test was the modal verb: \"should\" versus \"must\".",
-            "prompt": "Executives should have anticipated the downturn given the clear early warning signs.",
-            "sampleAnswer": "Executives must have anticipated the downturn given the clear early warning signs.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L197_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The whole sentence hinges on the phrase after the opening: \"identity\", as written. Listen with full attention.",
-            "explanation": "\"identity\" and \"motive\" are easy to confuse, but they mean different things. This question rewards catching the phrase after the opening precisely.",
-            "prompt": "Only in the final chapter does the author finally reveal the narrator's true identity.",
-            "sampleAnswer": "Only in the final chapter does the author finally reveal the narrator's true motive.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L197_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This one rewards precision. Zero in on the two similar words -- the text reads \"principal\".",
-            "explanation": "The sentence uses \"principal\", not \"principle\" -- a pair that trips up even confident speakers.",
-            "prompt": "The professor's principal criticism of the essay concerned its noticeably weak conclusion.",
-            "sampleAnswer": "The professor's principle criticism of the essay concerned its noticeably weak conclusion.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L197_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Nearly everything matches. The real difference lives in the modal verb, currently \"would rather\".",
-            "explanation": "Only the modal verb changed: \"would rather\" became \"had better\". This kind of precision is what separates advanced from expert-level listening.",
-            "prompt": "The author would rather leave the ending open than tie it up too neatly.",
-            "sampleAnswer": "The author had better leave the ending open than tie it up too neatly.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L198_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "At this level, listen for the phrase after the opening -- the text says \"closer to\", and the rest won't help you.",
-            "explanation": "\"closer to\" versus \"further from\" is a small but meaningful distinction in the phrase after the opening. Catching it takes real attention.",
-            "prompt": "Never has the coalition been closer to signing a binding international agreement.",
-            "sampleAnswer": "Never has the coalition been further from signing a binding international agreement.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L198_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This is a fine distinction. Focus entirely on the two similar words, written here as \"effect\".",
-            "explanation": "At the expert level, most of the sentence is a strong match. The real test was the two similar words: \"effect\" versus \"affect\".",
-            "prompt": "The published report's effect on public opinion was immediate and lasting.",
-            "sampleAnswer": "The published report's affect on public opinion was immediate and lasting.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L198_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Everything else is a strong match here except the modal verb -- currently \"should\" -- that's the real test.",
-            "explanation": "\"should\" and \"could\" are easy to confuse, but they mean different things. This question rewards catching the modal verb precisely.",
-            "prompt": "Negotiators should have compromised much earlier instead of stalling for months.",
-            "sampleAnswer": "Negotiators could have compromised much earlier instead of stalling for months.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L199_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Confident, native-level listening means catching the phrase after the opening, here \"launch\", even when it's subtle.",
-            "explanation": "The sentence uses \"launch\", not \"remove\" -- a pair that trips up even confident speakers.",
-            "prompt": "So quietly did the company launch the new feature that few users noticed at first.",
-            "sampleAnswer": "So quietly did the company remove the new feature that few users noticed at first.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L199_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The whole sentence hinges on the two similar words: \"once-stationary\", as written. Listen with full attention.",
-            "explanation": "Only the two similar words changed: \"once-stationary\" became \"once-stationery\". This kind of precision is what separates advanced from expert-level listening.",
-            "prompt": "The startup's once-stationary business model finally began to shift last year.",
-            "sampleAnswer": "The startup's once-stationery business model finally began to shift last year.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L199_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This one rewards precision. Zero in on the modal verb -- the text reads \"would rather\".",
-            "explanation": "\"would rather\" versus \"had better\" is a small but meaningful distinction in the modal verb. Catching it takes real attention.",
-            "prompt": "The founders would rather stay privately funded than rush into a public IPO.",
-            "sampleAnswer": "The founders had better stay privately funded than rush into a public IPO.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L200_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Nearly everything matches. The real difference lives in the phrase after the opening, currently \"clear\".",
-            "explanation": "At the expert level, most of the sentence is a strong match. The real test was the phrase after the opening: \"clear\" versus \"questionable\".",
-            "prompt": "Not until the final results came in did the true scale of the shift become clear.",
-            "sampleAnswer": "Not until the final results came in did the true scale of the shift become questionable.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L200_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "At this level, listen for the two similar words -- the text says \"principal\", and the rest won't help you.",
-            "explanation": "\"principal\" and \"principle\" are easy to confuse, but they mean different things. This question rewards catching the two similar words precisely.",
-            "prompt": "The full committee's principal concern was long-term sustainability over short-term profit margins.",
-            "sampleAnswer": "The full committee's principle concern was long-term sustainability over short-term profit margins.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L200_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This is a fine distinction. Focus entirely on the modal verb, written here as \"would rather\".",
-            "explanation": "The sentence uses \"would rather\", not \"had better\" -- a pair that trips up even confident speakers.",
-            "prompt": "Future generations would rather inherit a cautious plan than an overly ambitious one.",
-            "sampleAnswer": "Future generations had better inherit a cautious plan than an overly ambitious one.",
-            "followUpQuestion": "Why do you think that?"
-        }
-    ]
+  "gameType": "yesNoSpeaking",
+  "batchIndex": 20,
+  "levels": "191-200",
+  "quests": [
+    {
+      "id": "SPK_YESNOSPEAKING_L191_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A customer agent reassures a caller. Listen to when the action will happen.",
+      "explanation": "Right away and first thing tomorrow are very different promises. An upset customer would react to the delay.",
+      "prompt": "I understand that you're frustrated, and I'd be glad to look into it for you right away.",
+      "sampleAnswer": "I understand that you're frustrated, and I'd be glad to look into it for you first thing tomorrow.",
+      "followUpQuestion": "Calm an unhappy customer and promise something clear."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L191_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A problem leads to a decision under consideration. What is being considered?",
+      "explanation": "Cancelling and moving indoors are opposite solutions. Only one keeps the event going.",
+      "prompt": "We've had several complaints about the noise from the courtyard, so we're considering cancelling the event.",
+      "sampleAnswer": "We've had several complaints about the noise from the courtyard, so we're considering moving the event indoors.",
+      "followUpQuestion": "Suggest a solution to a noise problem for an event."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L191_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A regret is expressed lightly with \"probably\".",
+      "explanation": "You heard exactly what was written. \"Probably\" softens the regret, and the past perfect in the if-clause shows the situation was different.",
+      "prompt": "If I'd realised how much paperwork was involved, I probably wouldn't have volunteered to lead the project.",
+      "sampleAnswer": "If I'd realised how much paperwork was involved, I probably wouldn't have volunteered to lead the project.",
+      "followUpQuestion": "Say what you might not have done if you'd known more."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L192_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A request includes a reason using \"since\".",
+      "explanation": "The audio agrees with the text. \"Since\" here means \"because\", and \"pushed back\" means moved to a later time.",
+      "prompt": "Would it be alright if we pushed the meeting back by an hour, since the client's running late?",
+      "sampleAnswer": "Would it be alright if we pushed the meeting back by an hour, since the client's running late?",
+      "followUpQuestion": "Ask to move a meeting and explain why."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L192_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A promise carries a condition. What kind of condition?",
+      "explanation": "\"Provided that\" makes the promise depend on the materials, and \"even if\" removes the risk. The owner would trust one promise more than the other.",
+      "prompt": "The contractor has promised to finish the repairs by Friday, even if the materials arrive late.",
+      "sampleAnswer": "The contractor has promised to finish the repairs by Friday, provided that the materials arrive on time.",
+      "followUpQuestion": "Explain a promise and the condition it depends on."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L192_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The speaker admits uncertainty twice in one sentence.",
+      "explanation": "\"Fairly sure\" and \"can't say for certain\" prepare the listener for a possible mistake.",
+      "prompt": "I can't say for certain, but I'm fairly sure that the shop closes earlier on Sundays.",
+      "sampleAnswer": "I can't say for certain, but I'm fairly sure that the shop closes earlier on Sundays.",
+      "followUpQuestion": "Answer a question you're only fairly sure about."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L193_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The sentence stresses how busy she is with a last example.",
+      "explanation": "A holiday and the gym are both things she cannot do, but the final example shows how extreme the problem is.",
+      "prompt": "She's been so busy lately that she hardly has time to eat lunch, let alone go on holiday.",
+      "sampleAnswer": "She's been so busy lately that she hardly has time to eat lunch, let alone go to the gym.",
+      "followUpQuestion": "Describe someone who is extremely busy, in your own words."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L193_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "There is a surprise. What is the cause?",
+      "explanation": "\"Supposed to be\" shows the rule, and \"so many\" shows how much it was broken.",
+      "prompt": "The report was supposed to be confidential, so I'm surprised that so many people seem to know about it.",
+      "sampleAnswer": "The report was supposed to be confidential, so I'm surprised that so many people seem to know about it.",
+      "followUpQuestion": "Say what surprised you about how news spreads."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L193_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A support agent offers step-by-step help. Which step comes second?",
+      "explanation": "A replacement and an engineer are different solutions with a different wait for the customer.",
+      "prompt": "You could try restarting the router first, and if that doesn't work, I'll send a replacement.",
+      "sampleAnswer": "You could try restarting the router first, and if that doesn't work, I'll send an engineer.",
+      "followUpQuestion": "Give step-by-step help for a technical problem."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L194_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A rule applies to every option. Listen to the last phrase.",
+      "explanation": "Nothing was altered in this one. \"Well in advance\" means much earlier than necessary.",
+      "prompt": "Whichever option we choose, we need to make sure the customers are informed well in advance.",
+      "sampleAnswer": "Whichever option we choose, we need to make sure the customers are informed well in advance.",
+      "followUpQuestion": "Say what you must do whichever option you pick."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L194_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A regret with \"wish\" is followed by a reason.",
+      "explanation": "\"I wish I'd\" plus a past participle expresses regret about the past.",
+      "prompt": "I wish I'd taken more notes during the training, because I've already forgotten half of it.",
+      "sampleAnswer": "I wish I'd taken more notes during the training, because I've already forgotten half of it.",
+      "followUpQuestion": "Say what you wish you had done differently at some point."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L194_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A comparison shows a choice between two actions. What is the first one?",
+      "explanation": "Cancel ends the launch and postpone only delays it. A team would have to communicate very differently.",
+      "prompt": "Given the circumstances, I think it would be wiser to cancel the launch than to rush it.",
+      "sampleAnswer": "Given the circumstances, I think it would be wiser to postpone the launch than to rush it.",
+      "followUpQuestion": "Explain a choice between cancelling and postponing."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L195_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A comparison ends with an amount word. Notice how big it sounds.",
+      "explanation": "Slightly and far show different levels of success. One is modest praise, the other is strong praise.",
+      "prompt": "Despite having very little experience in negotiation, she handled the meeting slightly better than anyone expected.",
+      "sampleAnswer": "Despite having very little experience in negotiation, she handled the meeting far better than anyone expected.",
+      "followUpQuestion": "Praise someone who did better than expected."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L195_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "An apology explains a delay. What was the reason?",
+      "explanation": "\"Tied up\" means very busy, and \"well after\" adds that it was much later than six.",
+      "prompt": "I'd have called you sooner, but I was tied up with a client until well after six.",
+      "sampleAnswer": "I'd have called you sooner, but I was tied up with a client until well after six.",
+      "followUpQuestion": "Apologise for not calling sooner and give the reason."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L195_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A polite objection has two parts. Listen for what the speaker is worried about.",
+      "explanation": "The recording follows the text word for word. \"In principle\" means in theory, and \"given\" connects the doubt to the budget.",
+      "prompt": "It's a good idea in principle, but I'm not sure it's realistic given our current budget.",
+      "sampleAnswer": "It's a good idea in principle, but I'm not sure it's realistic given our current budget.",
+      "followUpQuestion": "Express doubt about an idea, politely, using in principle."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L196_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A question compares two groups of customers. Which group is the second one?",
+      "explanation": "New customers and customers outside the region are completely different groups. A wrong answer would confuse the fee.",
+      "prompt": "Could you clarify whether the fee applies to all customers or only to new customers?",
+      "sampleAnswer": "Could you clarify whether the fee applies to all customers or only to those outside the region?",
+      "followUpQuestion": "Ask for clarification about who a price applies to."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L196_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Listen to the time expression and the verb forms together.",
+      "explanation": "One version looks back and the other looks forward. Both tenses and the time expression carry the change.",
+      "prompt": "By the time the auditors arrived last week, all of the accounts had been checked twice.",
+      "sampleAnswer": "By the time the auditors arrive next week, all of the accounts will have been checked twice.",
+      "followUpQuestion": "Say what had been done before an inspection, and what you will do before a future visit."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L196_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A surprising fact is stated with a limit near the end.",
+      "explanation": "\"Only applies to\" narrows the offer, which is an important detail in customer information.",
+      "prompt": "Not many people realise that the offer only applies to bookings made through the official website.",
+      "sampleAnswer": "Not many people realise that the offer only applies to bookings made through the official website.",
+      "followUpQuestion": "Explain a condition on an offer to a customer."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L197_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The review contains a positive and a negative point. What is the negative one?",
+      "explanation": "Acting and story are separate aspects of a film. A viewer deciding what to watch would care about which was weak.",
+      "prompt": "The critics all agreed that the film was visually stunning, although the acting was rather disappointing.",
+      "sampleAnswer": "The critics all agreed that the film was visually stunning, although the story was rather disappointing.",
+      "followUpQuestion": "Give a short review of a film or a book, with one weak point."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L197_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A negative statement is followed by a smaller suggestion.",
+      "explanation": "\"Just that\" introduces the limited proposal after the denial.",
+      "prompt": "I'm not suggesting we abandon the plan altogether, just that we take a closer look at the costs.",
+      "sampleAnswer": "I'm not suggesting we abandon the plan altogether, just that we take a closer look at the costs.",
+      "followUpQuestion": "Suggest a small change rather than abandoning a plan."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L197_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The condition at the start names who must act. Listen for how many people.",
+      "explanation": "This is a straight match. \"As long as\" makes the plan depend on everyone, so one late form could cause trouble.",
+      "prompt": "As long as everyone submits their forms before the deadline, we should be able to process them all.",
+      "sampleAnswer": "As long as everyone submits their forms before the deadline, we should be able to process them all.",
+      "followUpQuestion": "Say what needs to happen for a plan to work."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L198_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A polite but firm sentence sets a limit.",
+      "explanation": "\"I appreciate that\" shows understanding, and \"but\" introduces the firm request.",
+      "prompt": "I appreciate that you're busy, but I'd really like to resolve this before the end of the week.",
+      "sampleAnswer": "I appreciate that you're busy, but I'd really like to resolve this before the end of the week.",
+      "followUpQuestion": "Politely ask for something to be done by the end of the week."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L198_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The first words show the speaker's feeling.",
+      "explanation": "Worried and surprised express different reactions to the same events. It changes the emotional tone.",
+      "prompt": "What worried me most was how quickly the whole situation got out of hand once people started talking.",
+      "sampleAnswer": "What surprised me most was how quickly the whole situation got out of hand once people started talking.",
+      "followUpQuestion": "Say how you felt about something that changed quickly."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L198_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A polite option is offered. When could it happen?",
+      "explanation": "Later today and later this week give a different timeline. Someone who wants to talk today would decline the second.",
+      "prompt": "If you'd rather discuss this in private, we could easily arrange a separate meeting for later this week.",
+      "sampleAnswer": "If you'd rather discuss this in private, we could easily arrange a separate meeting for later today.",
+      "followUpQuestion": "Offer a private conversation and say when it could happen."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L199_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A notice has a firm deadline. What happens afterwards?",
+      "explanation": "The two endings are opposites. Someone hearing the first might wait, but the second means an absolute deadline.",
+      "prompt": "Please note that the offer expires at midnight, and extensions may be granted after that.",
+      "sampleAnswer": "Please note that the offer expires at midnight, and no extensions will be granted after that.",
+      "followUpQuestion": "Explain a strict deadline in your own words."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L199_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A realisation happens after an observation.",
+      "explanation": "\"Hadn't realised\" places the lack of awareness before the moment of seeing.",
+      "prompt": "I hadn't realised how much the project meant to you until I saw how hard you were working.",
+      "sampleAnswer": "I hadn't realised how much the project meant to you until I saw how hard you were working.",
+      "followUpQuestion": "Say what you didn't realise until later."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L199_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A plan depends on a response. What will they do without?",
+      "explanation": "Input and approval differ: one is advice, and the other is permission. Working without permission carries more risk.",
+      "prompt": "Unless we hear from them by tomorrow morning, we'll have to go ahead without their input.",
+      "sampleAnswer": "Unless we hear from them by tomorrow morning, we'll have to go ahead without their approval.",
+      "followUpQuestion": "Say what you'd do if you didn't hear back from someone."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L200_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A reflection uses two conditional-like structures.",
+      "explanation": "Listening and reading agree here. \"Could have avoided\" and \"if we'd communicated\" together describe an unreal past.",
+      "prompt": "Looking back, I think we could have avoided most of these problems if we'd communicated more clearly from the start.",
+      "sampleAnswer": "Looking back, I think we could have avoided most of these problems if we'd communicated more clearly from the start.",
+      "followUpQuestion": "Reflect on a project and what could have gone better."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L200_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A thank-you ends the sentence. Who benefited?",
+      "explanation": "For me and for the team mean a personal thank-you or a professional one. The difference shapes the whole message.",
+      "prompt": "Whatever happens next, I want you to know that I'm grateful for everything you've done for me.",
+      "sampleAnswer": "Whatever happens next, I want you to know that I'm grateful for everything you've done for the team.",
+      "followUpQuestion": "Thank someone who helped you a lot, in a few sentences."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L200_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A closing remark contrasts effort and result.",
+      "explanation": "\"Worth the effort\" is a natural way to say that the work was justified.",
+      "prompt": "It's been a long journey, but I think we can all agree that the result was worth the effort.",
+      "sampleAnswer": "It's been a long journey, but I think we can all agree that the result was worth the effort.",
+      "followUpQuestion": "Sum up what you have gained from this course in your own words."
+    }
+  ]
 }

@@ -1,307 +1,307 @@
 {
-    "gameType": "yesNoSpeaking",
-    "batchIndex": 4,
-    "levels": "31-40",
-    "quests": [
-        {
-            "id": "SPK_YESNOSPEAKING_L31_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Keep the rest in mind, but the detail worth checking is the subject: the text reads \"colleague\".",
-            "explanation": "Only one thing changed here: \"colleague\" became \"brother\". Small swaps like this are common in natural speech, so it pays to listen the whole way through.",
-            "prompt": "My colleague fixed the printer before lunch.",
-            "sampleAnswer": "My brother fixed the printer before lunch.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L31_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "If something doesn't match, the difference is most likely in the subject, written here as \"The technician\".",
-            "explanation": "\"The technician\" and \"Her assistant\" were the two options here. Catching the difference just takes attention to the subject.",
-            "prompt": "The technician fixed the printer before lunch.",
-            "sampleAnswer": "Her assistant fixed the printer before lunch.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L31_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Everything else matches -- just listen closely for the object. Right now the text says \"printer\".",
-            "explanation": "Notice that \"scanner\" replaced \"printer\". The rest of the sentence stayed exactly the same -- only the object changed.",
-            "prompt": "The intern fixed the printer before lunch.",
-            "sampleAnswer": "The intern fixed the scanner before lunch.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L32_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The detail that might change is the subject: the text says \"pilot\". Focus your ear there.",
-            "explanation": "This pair differs only in the subject: \"pilot\" versus \"captain\". Training your ear to catch details like this is a core listening skill.",
-            "prompt": "The pilot announced a short delay before takeoff.",
-            "sampleAnswer": "The captain announced a short delay before takeoff.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L32_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Listen the whole way through, but pay special attention to the subject -- written here as \"The flight attendant\".",
-            "explanation": "The difference comes down to one detail: is it \"The flight attendant\" or \"Her co-pilot\"? Everything else matches word for word.",
-            "prompt": "The flight attendant announced a short delay before takeoff.",
-            "sampleAnswer": "Her co-pilot announced a short delay before takeoff.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L32_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Today's key listening target is the object, currently \"short delay\" in the text.",
-            "explanation": "The sentence is about \"short delay\", not \"gate change\". Everything else matches exactly.",
-            "prompt": "The airline staff announced a short delay before takeoff.",
-            "sampleAnswer": "The airline staff announced a gate change before takeoff.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L33_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The rest of the sentence is fixed. What could differ is the subject -- shown here as \"My boss\".",
-            "explanation": "Only one thing changed here: \"My boss\" became \"The director\". Small swaps like this are common in natural speech, so it pays to listen the whole way through.",
-            "prompt": "My boss approved the budget for next month.",
-            "sampleAnswer": "The director approved the budget for next month.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L33_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Train your ear on the subject. The text says \"The finance team\" -- that's usually where small changes hide.",
-            "explanation": "\"The finance team\" and \"Her manager\" were the two options here. Catching the difference just takes attention to the subject.",
-            "prompt": "The finance team approved the budget for next month.",
-            "sampleAnswer": "Her manager approved the budget for next month.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L33_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Keep the rest in mind, but the detail worth checking is the object: the text reads \"budget\".",
-            "explanation": "Notice that \"proposal\" replaced \"budget\". The rest of the sentence stayed exactly the same -- only the object changed.",
-            "prompt": "The board approved the budget for next month.",
-            "sampleAnswer": "The board approved the proposal for next month.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L34_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "If something doesn't match, the difference is most likely in the subject, written here as \"clerk\".",
-            "explanation": "This pair differs only in the subject: \"clerk\" versus \"shop assistant\". Training your ear to catch details like this is a core listening skill.",
-            "prompt": "The clerk wrapped the gift in blue paper.",
-            "sampleAnswer": "The shop assistant wrapped the gift in blue paper.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L34_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Everything else matches -- just listen closely for the subject. Right now the text says \"My sister\".",
-            "explanation": "The difference comes down to one detail: is it \"My sister\" or \"Her mother\"? Everything else matches word for word.",
-            "prompt": "My sister wrapped the gift in blue paper.",
-            "sampleAnswer": "Her mother wrapped the gift in blue paper.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L34_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The detail that might change is the object: the text says \"gift\". Focus your ear there.",
-            "explanation": "The sentence is about \"gift\", not \"vase\". Everything else matches exactly.",
-            "prompt": "The cashier wrapped the gift in blue paper.",
-            "sampleAnswer": "The cashier wrapped the vase in blue paper.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L35_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Listen the whole way through, but pay special attention to the subject -- written here as \"The librarian\".",
-            "explanation": "Only one thing changed here: \"The librarian\" became \"My teacher\". Small swaps like this are common in natural speech, so it pays to listen the whole way through.",
-            "prompt": "The librarian renewed the borrowed book for two weeks.",
-            "sampleAnswer": "My teacher renewed the borrowed book for two weeks.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L35_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Today's key listening target is the subject, currently \"The assistant\" in the text.",
-            "explanation": "\"The assistant\" and \"Her classmate\" were the two options here. Catching the difference just takes attention to the subject.",
-            "prompt": "The assistant renewed the borrowed book for two weeks.",
-            "sampleAnswer": "Her classmate renewed the borrowed book for two weeks.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L35_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The rest of the sentence is fixed. What could differ is the object -- shown here as \"borrowed book\".",
-            "explanation": "Notice that \"library membership\" replaced \"borrowed book\". The rest of the sentence stayed exactly the same -- only the object changed.",
-            "prompt": "The volunteer renewed the borrowed book for two weeks.",
-            "sampleAnswer": "The volunteer renewed the library membership for two weeks.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L36_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Train your ear on the subject. The text says \"neighbor\" -- that's usually where small changes hide.",
-            "explanation": "This pair differs only in the subject: \"neighbor\" versus \"father\". Training your ear to catch details like this is a core listening skill.",
-            "prompt": "My neighbor painted the fence bright green.",
-            "sampleAnswer": "My father painted the fence bright green.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L36_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Keep the rest in mind, but the detail worth checking is the subject: the text reads \"The contractor\".",
-            "explanation": "The difference comes down to one detail: is it \"The contractor\" or \"Her husband\"? Everything else matches word for word.",
-            "prompt": "The contractor painted the fence bright green.",
-            "sampleAnswer": "Her husband painted the fence bright green.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L36_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "If something doesn't match, the difference is most likely in the object, written here as \"fence\".",
-            "explanation": "The sentence is about \"fence\", not \"mailbox\". Everything else matches exactly.",
-            "prompt": "The new tenant painted the fence bright green.",
-            "sampleAnswer": "The new tenant painted the mailbox bright green.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L37_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Everything else matches -- just listen closely for the subject. Right now the text says \"The baker\".",
-            "explanation": "Only one thing changed here: \"The baker\" became \"My mother\". Small swaps like this are common in natural speech, so it pays to listen the whole way through.",
-            "prompt": "The baker decorated the cake with strawberries.",
-            "sampleAnswer": "My mother decorated the cake with strawberries.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L37_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The detail that might change is the subject: the text says \"The chef\". Focus your ear there.",
-            "explanation": "\"The chef\" and \"Her sister\" were the two options here. Catching the difference just takes attention to the subject.",
-            "prompt": "The chef decorated the cake with strawberries.",
-            "sampleAnswer": "Her sister decorated the cake with strawberries.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L37_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Listen the whole way through, but pay special attention to the object -- written here as \"cake\".",
-            "explanation": "Notice that \"cupcakes\" replaced \"cake\". The rest of the sentence stayed exactly the same -- only the object changed.",
-            "prompt": "The pastry chef decorated the cake with strawberries.",
-            "sampleAnswer": "The pastry chef decorated the cupcakes with strawberries.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L38_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Today's key listening target is the subject, currently \"friend\" in the text.",
-            "explanation": "This pair differs only in the subject: \"friend\" versus \"brother\". Training your ear to catch details like this is a core listening skill.",
-            "prompt": "My friend recorded the concert on video.",
-            "sampleAnswer": "My brother recorded the concert on video.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L38_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The rest of the sentence is fixed. What could differ is the subject -- shown here as \"The fan\".",
-            "explanation": "The difference comes down to one detail: is it \"The fan\" or \"Her roommate\"? Everything else matches word for word.",
-            "prompt": "The fan recorded the concert on video.",
-            "sampleAnswer": "Her roommate recorded the concert on video.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L38_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Train your ear on the object. The text says \"concert\" -- that's usually where small changes hide.",
-            "explanation": "The sentence is about \"concert\", not \"interview\". Everything else matches exactly.",
-            "prompt": "The reporter recorded the concert on video.",
-            "sampleAnswer": "The reporter recorded the interview on video.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L39_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Keep the rest in mind, but the detail worth checking is the subject: the text reads \"trainer\".",
-            "explanation": "Only one thing changed here: \"trainer\" became \"coach\". Small swaps like this are common in natural speech, so it pays to listen the whole way through.",
-            "prompt": "The trainer adjusted the patient's posture during the workout.",
-            "sampleAnswer": "The coach adjusted the patient's posture during the workout.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L39_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "If something doesn't match, the difference is most likely in the subject, written here as \"My physiotherapist\".",
-            "explanation": "\"My physiotherapist\" and \"Her instructor\" were the two options here. Catching the difference just takes attention to the subject.",
-            "prompt": "My physiotherapist adjusted the patient's posture during the workout.",
-            "sampleAnswer": "Her instructor adjusted the patient's posture during the workout.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L39_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Everything else matches -- just listen closely for the object. Right now the text says \"posture\".",
-            "explanation": "Notice that \"grip\" replaced \"posture\". The rest of the sentence stayed exactly the same -- only the object changed.",
-            "prompt": "The yoga teacher adjusted the patient's posture during the workout.",
-            "sampleAnswer": "The yoga teacher adjusted the patient's grip during the workout.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L40_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The detail that might change is the subject: the text says \"grandfather\". Focus your ear there.",
-            "explanation": "This pair differs only in the subject: \"grandfather\" versus \"father\". Training your ear to catch details like this is a core listening skill.",
-            "prompt": "My grandfather planted a tree in the garden.",
-            "sampleAnswer": "My father planted a tree in the garden.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L40_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Listen the whole way through, but pay special attention to the subject -- written here as \"Our neighbor\".",
-            "explanation": "The difference comes down to one detail: is it \"Our neighbor\" or \"Her uncle\"? Everything else matches word for word.",
-            "prompt": "Our neighbor planted a tree in the garden.",
-            "sampleAnswer": "Her uncle planted a tree in the garden.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L40_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Today's key listening target is the object, currently \"tree\" in the text.",
-            "explanation": "The sentence is about \"tree\", not \"rose bush\". Everything else matches exactly.",
-            "prompt": "The new homeowner planted a tree in the garden.",
-            "sampleAnswer": "The new homeowner planted a rose bush in the garden.",
-            "followUpQuestion": "Why do you think that?"
-        }
-    ]
+  "gameType": "yesNoSpeaking",
+  "batchIndex": 4,
+  "levels": "31-40",
+  "quests": [
+    {
+      "id": "SPK_YESNOSPEAKING_L31_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The question begins with a helping verb. Does it look at today or at the past?",
+      "explanation": "\"Does\" asks about the present situation and \"did\" asks about an earlier one. The rest of the question is identical, so the helper does all the work.",
+      "prompt": "Does your landlord live in the building?",
+      "sampleAnswer": "Did your landlord live in the building?",
+      "followUpQuestion": "Ask a question about where someone lives, using Does."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L31_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Listen closely to the modal near the start. Is it permission or a ban?",
+      "explanation": "No difference between text and audio. \"Can't\" is a short, clear way of saying something is not allowed.",
+      "prompt": "You can't park here after six in the evening.",
+      "sampleAnswer": "You can't park here after six in the evening.",
+      "followUpQuestion": "What is something you can't do at your school or workplace?"
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L31_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A tiny word before \"be\" says whether she's coming.",
+      "explanation": "\"Won't\" is the negative of \"will\", and only a small change in sound separates them. Missing it makes you tell your friends the wrong news.",
+      "prompt": "She won't be at the party on Saturday.",
+      "sampleAnswer": "She will be at the party on Saturday.",
+      "followUpQuestion": "Tell a friend that you won't be somewhere."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L32_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A piece of advice sits in the middle. Which helping verb is it?",
+      "explanation": "The audio follows the text exactly. \"Should\" is the everyday word for a good suggestion.",
+      "prompt": "We should ask the teacher before we start.",
+      "sampleAnswer": "We should ask the teacher before we start.",
+      "followUpQuestion": "Give one piece of advice to a new student."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L32_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "One action was already happening when another began.",
+      "explanation": "The sentences agree. \"Were playing\" describes the ongoing action, and \"started\" is the event that interrupted it.",
+      "prompt": "The children were playing outside when it started raining.",
+      "sampleAnswer": "The children were playing outside when it started raining.",
+      "followUpQuestion": "Say what you were doing when the last phone call came."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L32_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Two clothing words appear. Notice which one comes first.",
+      "explanation": "Nothing new was added, only swapped around. The order decides what the speaker wants and what the speaker doesn't.",
+      "prompt": "I'm looking for a jacket, not a coat.",
+      "sampleAnswer": "I'm looking for a coat, not a jacket.",
+      "followUpQuestion": "Say which you prefer: a jacket or a coat."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L33_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A very short word comes before the noun. Notice which one it is.",
+      "explanation": "\"An accident\" is news to the listener. \"The accident\" suggests both people already know which one.",
+      "prompt": "I saw an accident on my way home.",
+      "sampleAnswer": "I saw the accident on my way home.",
+      "followUpQuestion": "Tell a short piece of news, using a or an."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L33_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The question asks about a past moment. Listen for the form of \"be\".",
+      "explanation": "It's the same question. \"Were you\" is used with \"you\", and \"went out\" describes the power failing.",
+      "prompt": "Where were you when the power went out?",
+      "sampleAnswer": "Where were you when the power went out?",
+      "followUpQuestion": "Answer the question: where were you last night at nine?"
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L33_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Check whether the sentence is telling you about an ability or a lack of one.",
+      "explanation": "\"Can\" and \"can't\" sound alike in fast speech. The final syllable and the stress reveal which one you heard.",
+      "prompt": "They can speak three languages very well.",
+      "sampleAnswer": "They can't speak three languages very well.",
+      "followUpQuestion": "Say one language, or skill, you can do well."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L34_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "There is a cause and a result here. Find both.",
+      "explanation": "The two lines are the same. \"So\" links the reason (no car) with what follows (taking taxis).",
+      "prompt": "He doesn't have a car, so he takes taxis.",
+      "sampleAnswer": "He doesn't have a car, so he takes taxis.",
+      "followUpQuestion": "Complete the sentence: I don't have ..., so I ..."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L34_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "This is a real question with two parts joined by \"or\".",
+      "explanation": "You heard exactly what was written. Asking permission with \"can I\" is polite and natural on a train, in a cafe or at a cinema.",
+      "prompt": "Is this seat taken, or can I sit here?",
+      "sampleAnswer": "Is this seat taken, or can I sit here?",
+      "followUpQuestion": "How would you ask to sit next to someone?"
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L34_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A helping verb in the middle sets how strong the advice is.",
+      "explanation": "\"Should\" is a recommendation. \"Must\" is close to a rule. The speaker sounds much more serious with one of them.",
+      "prompt": "You should drink plenty of water when you exercise.",
+      "sampleAnswer": "You must drink plenty of water when you exercise.",
+      "followUpQuestion": "Give someone advice about doing sport."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L35_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The pronoun comes right after the verb. Who gets the keys?",
+      "explanation": "\"Them\" points to a group and \"her\" to one woman. If you mishear it, the keys go to the wrong person.",
+      "prompt": "Give them the keys before you leave.",
+      "sampleAnswer": "Give her the keys before you leave.",
+      "followUpQuestion": "Repeat the instruction, and say who gets the keys."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L35_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The action word comes early. When is it happening?",
+      "explanation": "\"Were arguing\" tells us the argument took place earlier. \"Are arguing\" means it's going on right now.",
+      "prompt": "The neighbours were arguing about the parking space.",
+      "sampleAnswer": "The neighbours are arguing about the parking space.",
+      "followUpQuestion": "Describe something noisy that was happening near you."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L35_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Track the negative and the time word together.",
+      "explanation": "Audio and text agree. \"Didn't see ... until\" means the message was noticed only at that time.",
+      "prompt": "I didn't see your message until this morning.",
+      "sampleAnswer": "I didn't see your message until this morning.",
+      "followUpQuestion": "Explain why you replied late to a message."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L36_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "This sentence starts with \"There\" and includes a negative.",
+      "explanation": "No change. \"There aren't any\" is the standard way to say something is absent when it's plural.",
+      "prompt": "There aren't any clean cups in the cupboard.",
+      "sampleAnswer": "There aren't any clean cups in the cupboard.",
+      "followUpQuestion": "Say there isn't something in your kitchen."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L36_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A small place word sits before the noun. That is your target.",
+      "explanation": "Outside and inside describe opposite areas. Anyone who goes to the wrong one will miss him.",
+      "prompt": "He's waiting for you outside the station.",
+      "sampleAnswer": "He's waiting for you inside the station.",
+      "followUpQuestion": "Tell a friend where you're waiting for them."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L36_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The request ends with a length of time.",
+      "explanation": "Minutes and hours are very different favours. A quick top-up is a smaller request than lending it for hours.",
+      "prompt": "Can I use your charger for a few minutes?",
+      "sampleAnswer": "Can I use your charger for a few hours?",
+      "followUpQuestion": "Ask to borrow something and say for how long."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L37_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A question to a driver. Listen to the place at the end.",
+      "explanation": "The same question. Since the subject is \"this bus\", English uses \"does\" and the base verb \"go\".",
+      "prompt": "Does this bus go to the hospital?",
+      "sampleAnswer": "Does this bus go to the hospital?",
+      "followUpQuestion": "How would you ask which bus goes to the airport?"
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L37_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Is the task required or not? One short word decides.",
+      "explanation": "\"Have to\" means it's necessary. \"Don't have to\" removes the obligation, so the speaker feels a lot more relaxed.",
+      "prompt": "I have to finish this report tonight.",
+      "sampleAnswer": "I don't have to finish this report tonight.",
+      "followUpQuestion": "Name something you have to do this week."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L37_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "This is a rule, and the rule is negative.",
+      "explanation": "Same sentence on both sides. \"Not allowed to\" is stronger than \"shouldn't\" because it describes an actual rule.",
+      "prompt": "You're not allowed to use your phone in the exam.",
+      "sampleAnswer": "You're not allowed to use your phone in the exam.",
+      "followUpQuestion": "Say one rule at a place you visit."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L38_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Something interrupts the cooking. Which sound is it?",
+      "explanation": "A phone ringing and a doorbell ringing both interrupt dinner, but they mean different things: someone calling from far away, or someone arriving at the door.",
+      "prompt": "She was cooking dinner when the phone rang.",
+      "sampleAnswer": "She was cooking dinner when the doorbell rang.",
+      "followUpQuestion": "Say what interrupted you the last time you were busy."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L38_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A polite offer. Watch for the word that means \"one more\".",
+      "explanation": "The offer is identical in speech and text. \"Another\" shows the person already had some.",
+      "prompt": "Would you like another slice of cake?",
+      "sampleAnswer": "Would you like another slice of cake?",
+      "followUpQuestion": "Offer someone something to eat or drink."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L38_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Two clauses, joined by \"and\". Follow the pronoun at the end.",
+      "explanation": "It's exactly what you read. The pronoun \"them\" replaces \"keys\", which is why it is plural.",
+      "prompt": "I've lost my keys, and I can't find them.",
+      "sampleAnswer": "I've lost my keys, and I can't find them.",
+      "followUpQuestion": "What would you say if you lost something important?"
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L39_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A clock time closes the sentence. Is there anything after the hour?",
+      "explanation": "Ten thirty is half an hour later than ten. That extra word gives you an extra half hour.",
+      "prompt": "The meeting doesn't start until ten thirty.",
+      "sampleAnswer": "The meeting doesn't start until ten.",
+      "followUpQuestion": "Say the time of the next meeting or class you have."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L39_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The first word chooses a time. Which one did you hear?",
+      "explanation": "\"Will you be\" asks about the future and \"were you\" asks about the past. A small change gives a totally different question.",
+      "prompt": "Will you be home late again tonight?",
+      "sampleAnswer": "Were you home late again tonight?",
+      "followUpQuestion": "Answer for yourself: will you be home late tonight?"
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L39_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "This is a set of directions. Listen for the order and the side.",
+      "explanation": "The sentence is the same. \"Second\" is an ordinal number, and \"next to\" gives a landmark.",
+      "prompt": "It's the second door on the left, next to the lift.",
+      "sampleAnswer": "It's the second door on the left, next to the lift.",
+      "followUpQuestion": "Explain where a room is in a building you know."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L40_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "English often puts the negative early, before the opinion.",
+      "explanation": "Saying \"I don't think\" is more natural in English than \"I think she doesn't\".",
+      "prompt": "I don't think she knows about the change.",
+      "sampleAnswer": "I don't think she knows about the change.",
+      "followUpQuestion": "Say what you don't think about something in the news."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L40_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A yes or no question. The word \"still\" matters.",
+      "explanation": "Both are the same. \"Still\" checks whether something available earlier is available now.",
+      "prompt": "Are they still selling tickets at the door?",
+      "sampleAnswer": "Are they still selling tickets at the door?",
+      "followUpQuestion": "Ask if tickets are still available."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L40_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "One little word before \"bag\" says who owns it.",
+      "explanation": "Your and my point to different people. The warning is about a different bag.",
+      "prompt": "You shouldn't leave your bag on the floor.",
+      "sampleAnswer": "You shouldn't leave my bag on the floor.",
+      "followUpQuestion": "Say whose bag it is, in a complete sentence."
+    }
+  ]
 }

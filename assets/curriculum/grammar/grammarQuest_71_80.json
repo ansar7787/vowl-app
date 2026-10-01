@@ -5,543 +5,393 @@
     "quests": [
         {
             "id": "gq_l71_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She is very good ___ dealing with difficult customers.",
-            "options": [
-                "in",
-                "on",
-                "at",
-                "for"
-            ],
+            "question": "I like tea ___ coffee; both wake me up.",
+            "options": ["but", "and", "or", "so"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "on",
-            "hint": "'Good' is always followed by which preposition for a skill?",
-            "explanation": "'Good at' is the correct collocation: good at maths, good at dealing with people. Compare: bad at, terrible at, excellent at. These are fixed collocations with prepositions.",
-            "grammarRule": "Verb + Preposition Collocations"
+            "correctAnswer": "and",
+            "hint": "Both drinks are being liked equally here \u2014 nothing contrasts.",
+            "explanation": "'And' simply adds one idea to another with no contrast: tea and coffee. 'But' would be needed if the sentence suddenly disliked one of them.",
+            "grammarRule": "Coordinating Conjunctions: And"
         },
         {
             "id": "gq_l71_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "He was accused ___ stealing money from the company.",
-            "options": [
-                "about",
-                "for",
-                "of",
-                "with"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "of",
-            "hint": "'Accuse' takes which preposition?",
-            "explanation": "'Accuse someone OF something': He was accused of stealing. Other patterns: charged with, convicted of, suspected of, blamed for. These prepositions are fixed and must be memorised.",
-            "grammarRule": "Verb + Preposition Collocations"
+            "question": "I like tea, ___ I don't like coffee at all.",
+            "options": ["but", "or", "and", "so"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "but",
+            "hint": "The second half of the sentence goes against the first half.",
+            "explanation": "'But' introduces a contrast between two ideas: I like tea, but I don't like coffee. 'And' would only work if both halves agreed with each other.",
+            "grammarRule": "Coordinating Conjunctions: But"
         },
         {
             "id": "gq_l71_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She congratulated him ___ winning the award.",
-            "options": [
-                "with",
-                "on",
-                "for",
-                "about"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "on",
-            "hint": "Which preposition follows 'congratulate'?",
-            "explanation": "'Congratulate someone ON something': She congratulated him on winning the award. Similar fixed prepositions: insist on, rely on, focus on, comment on, depend on.",
-            "grammarRule": "Verb + Preposition Collocations"
+            "question": "\u2014 Did you enjoy the trip?\n\u2014 Yes, ___ it was very tiring by the end.",
+            "options": ["or", "and", "so", "but"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "but",
+            "hint": "Enjoying something and being tired by it are two slightly opposing ideas.",
+            "explanation": "'But' connects the positive 'enjoyed it' with the less positive 'tiring', showing a contrast within the same experience.",
+            "grammarRule": "Coordinating Conjunctions: But"
         },
         {
             "id": "gq_l72_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She is a ___ woman - everyone respects her.",
-            "options": [
-                "well-knowing",
-                "well-known",
-                "well known",
-                "known-well"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "well-known",
-            "hint": "Compound adjectives before a noun are hyphenated.",
-            "explanation": "Compound adjectives before nouns are hyphenated: a well-known woman. The same compound after a verb is not hyphenated: She is well known. Other examples: hard-working, long-term, up-to-date, full-time.",
-            "grammarRule": "Compound Adjectives"
+            "question": "Would you like tea ___ coffee?",
+            "options": ["and", "but", "or", "so"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "or",
+            "hint": "This question offers a choice between two options.",
+            "explanation": "'Or' presents a choice between alternatives: tea or coffee. 'And' would instead suggest offering both together.",
+            "grammarRule": "Coordinating Conjunctions: Or"
         },
         {
             "id": "gq_l72_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "It was a ___ trip - we visited five countries.",
-            "options": [
-                "two week",
-                "two weeks",
-                "two-weeks",
-                "two-week"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "two-week",
-            "hint": "Number + time period modifying a noun - what's the form?",
-            "explanation": "Number + noun compound adjectives: hyphenate and use the singular noun: a two-week trip, a three-hour meeting, a five-star hotel. Never 'two-weeks' (no plural in compound adjectives before nouns).",
-            "grammarRule": "Compound Adjectives"
+            "question": "It was raining heavily, ___ we stayed inside all afternoon.",
+            "options": ["and", "so", "but", "or"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "so",
+            "hint": "The second half is the direct result of the first half.",
+            "explanation": "'So' introduces a result or consequence: it rained, so we stayed inside. The staying inside directly happened because of the rain.",
+            "grammarRule": "Coordinating Conjunctions: So"
         },
         {
             "id": "gq_l72_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The company has a ___ policy on environmental issues.",
-            "options": [
-                "upto-date",
-                "up to dated",
-                "up-to-date",
-                "up to date"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "up-to-date",
-            "hint": "Three-word compound adjective before a noun - hyphenated.",
-            "explanation": "Three-word compound adjectives before nouns are hyphenated: an up-to-date policy, a state-of-the-art facility, an out-of-date passport. After a verb: The policy is up to date (no hyphens).",
-            "grammarRule": "Compound Adjectives"
+            "question": "\u2014 Should I call you or text you?\n\u2014 Call me, ___ text me, either is fine.",
+            "options": ["and", "but", "so", "or"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "or",
+            "hint": "The reply offers two equally acceptable options, just like the question did.",
+            "explanation": "'Or' shows that both options are acceptable alternatives, matching the choice already offered in the question.",
+            "grammarRule": "Coordinating Conjunctions: Or"
         },
         {
             "id": "gq_l73_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The results ___ suggest a link between diet and mood.",
-            "options": [
-                "certainly",
-                "definitely",
-                "might",
-                "obviously"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "might",
-            "hint": "Hedging softens the certainty of a claim.",
-            "explanation": "Hedging language expresses caution or uncertainty: might, may, could, seem to, appear to, tend to, possibly, perhaps. 'The results might suggest...' is more cautious than 'The results prove...'",
-            "grammarRule": "Hedging Language (Modals)"
+            "question": "I stayed home ___ I was feeling sick.",
+            "options": ["because", "so", "although", "but"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "because",
+            "hint": "The second half explains the reason for the first half.",
+            "explanation": "'Because' introduces the reason behind an action: stayed home because I was sick. The sickness is the cause, and staying home is the effect.",
+            "grammarRule": "Subordinating Conjunctions: Because"
         },
         {
             "id": "gq_l73_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "There ___ to be a connection between stress and illness.",
-            "options": [
-                "is seeming",
-                "seems",
-                "seem",
-                "has seemed"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "seems",
-            "hint": "Which form hedges the statement?",
-            "explanation": "'Seem + to + infinitive' is a common hedging pattern: There seems to be a connection. It softens certainty. Other hedging verbs: appear, tend, happen to. 'Seem' is not normally used in continuous form.",
-            "grammarRule": "Hedging Language (Modals)"
+            "question": "I was feeling sick, ___ I stayed home.",
+            "options": ["because", "although", "so", "but"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "so",
+            "hint": "Notice the order has flipped from the last question \u2014 the cause now comes first.",
+            "explanation": "When the cause comes first, 'so' introduces the result: was sick, so stayed home. This expresses the same relationship as Question 1, just in reverse order.",
+            "grammarRule": "Coordinating Conjunctions: So"
         },
         {
             "id": "gq_l73_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The data ___ indicate that productivity has fallen.",
-            "options": [
-                "prove",
-                "are certain to",
-                "would appear to",
-                "definitely"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "would appear to",
-            "hint": "Choose the phrase that best hedges this academic claim.",
-            "explanation": "'Would appear to' is a highly hedged phrase: The data would appear to indicate... It suggests the data points in a direction without claiming certainty. Appropriate in cautious academic writing.",
-            "grammarRule": "Hedging Language (Modals)"
+            "question": "\u2014 Why didn't you come to the meeting?\n\u2014 ___ I had a family emergency.",
+            "options": ["So", "Because", "Although", "But"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Because",
+            "hint": "The question asked 'why', which calls for a reason.",
+            "explanation": "A question starting with 'why' expects a reason in return, which 'because' introduces directly: Because I had an emergency.",
+            "grammarRule": "Subordinating Conjunctions: Because"
         },
         {
             "id": "gq_l74_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I wish I ___ that embarrassing thing yesterday.",
-            "options": [
-                "said",
-                "didn't say",
-                "wouldn't say",
-                "hadn't said"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "hadn't said",
-            "hint": "Wishing about a past event - which form after 'wish'?",
-            "explanation": "'Wish + had/hadn't + past participle' expresses regret about the past: I wish I hadn't said that. Compare: wish + past simple (present wish): I wish I were taller. Wish + past perfect = past regret.",
-            "grammarRule": "Wish (Past) / Would Rather"
+            "question": "___ it was raining, we went for a walk anyway.",
+            "options": ["Although", "But", "So", "Because"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Although",
+            "hint": "The second half happens despite the first half, not because of it.",
+            "explanation": "'Although' introduces an unexpected contrast: although it rained, we still walked. 'But' could express a similar idea, but not at the very start of a sentence like this.",
+            "grammarRule": "Subordinating Conjunctions: Although"
         },
         {
             "id": "gq_l74_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "FIX THE GRAMMAR",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She wishes she ___ the opportunity to study abroad.",
-            "options": [
-                "has taken",
-                "would take",
-                "took",
-                "had taken"
-            ],
+            "question": "Which sentence is correct?",
+            "options": ["Although it was raining, but we went for a walk.", "It was raining, but although we went for a walk.", "We went for a walk, so although it was raining.", "Although it was raining, we went for a walk."],
             "correctAnswerIndex": 3,
-            "correctAnswer": "had taken",
-            "hint": "She didn't take the opportunity - a past regret.",
-            "explanation": "'Wish + had + past participle' for past regrets: She wishes she had taken the opportunity = she didn't take it, and she regrets it now. 'Wishes' (present tense) means she still feels this way.",
-            "grammarRule": "Wish (Past) / Would Rather"
+            "correctAnswer": "Although it was raining, we went for a walk.",
+            "hint": "A sentence usually needs only one connecting word for a single contrast, not two together.",
+            "explanation": "'Although' and 'but' both express contrast, so using them together in one sentence is redundant and incorrect. Only one is needed: Although it was raining, we went for a walk.",
+            "grammarRule": "Subordinating Conjunctions: Although vs But"
         },
         {
             "id": "gq_l74_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I'd rather you ___ called before you came over.",
-            "options": [
-                "didn't",
-                "would have",
-                "had",
-                "have"
-            ],
+            "question": "\u2014 The movie was long.\n\u2014 Yeah, ___ it was really long, I enjoyed every minute.",
+            "options": ["so", "because", "although", "but"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "had",
-            "hint": "'I'd rather + someone + ...' about the past.",
-            "explanation": "'Would rather + subject + past perfect' expresses a preference about a past action: I'd rather you had called = I would have preferred you to call first. It refers to a past action that the speaker wished had been different.",
-            "grammarRule": "Wish (Past) / Would Rather"
+            "correctAnswer": "although",
+            "hint": "Enjoying it despite the length is a contrast, and this word can start the sentence.",
+            "explanation": "'Although' fits here because it can begin the clause and express the same kind of contrast 'but' would in the middle of a sentence.",
+            "grammarRule": "Subordinating Conjunctions: Although"
         },
         {
             "id": "gq_l75_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "In formal writing, which sentence is most appropriate?",
-            "options": [
-                "I wanna talk about this issue.",
-                "Let's talk about this, yeah?",
-                "I'd like to discuss this matter.",
-                "Can we chat about this thing?"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "I'd like to discuss this matter.",
-            "hint": "Formal writing avoids contractions, slang, and vague words.",
-            "explanation": "Formal writing uses precise vocabulary and full forms: I would like to discuss this matter. Avoid: contractions (wanna, gonna), vague words (thing, stuff), and informal phrases (yeah, chat, OK so).",
-            "grammarRule": "Formal Register in Writing"
+            "question": "___ I get home, I'll call you right away.",
+            "options": ["If", "When", "Although", "Since"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "When",
+            "hint": "Getting home is certain here \u2014 it's just a matter of time.",
+            "explanation": "'When' is used for events that are certain to happen, focusing on timing: when I get home. 'If' would suggest doubt about whether it will happen at all.",
+            "grammarRule": "When vs If: Certainty"
         },
         {
             "id": "gq_l75_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which sentence uses the most formal preposition structure?",
-            "options": [
-                "To whom did you give it?",
-                "Who'd you give it to?",
-                "Who did you give it to?",
-                "You gave it to who?"
-            ],
+            "question": "___ it rains tomorrow, we'll cancel the picnic.",
+            "options": ["If", "Although", "When", "Since"],
             "correctAnswerIndex": 0,
-            "correctAnswer": "To whom did you give it?",
-            "hint": "Formal English avoids ending sentences with prepositions.",
-            "explanation": "In formal English, prepositions come before 'whom': To whom did you give it? (formal). Informal: Who did you give it to? 'Whom' is used as an object; 'who' is a subject pronoun.",
-            "grammarRule": "Formal Register in Writing"
+            "correctAnswer": "If",
+            "hint": "Tomorrow's weather isn't certain \u2014 this is a real possibility, not a sure thing.",
+            "explanation": "'If' introduces an uncertain condition: if it rains. This contrasts with 'when', which the last question used for something already expected to happen.",
+            "grammarRule": "When vs If: Uncertainty"
         },
         {
             "id": "gq_l75_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which is the most appropriate opening for a formal letter?",
-            "options": [
-                "Dear friend,",
-                "To whom it may concern,",
-                "Hi there,",
-                "Hey,"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "To whom it may concern,",
-            "hint": "Formal letters use specific salutation forms.",
-            "explanation": "'To Whom It May Concern' is used when the recipient's name is unknown. Other formal openings: Dear Mr Smith, Dear Sir/Madam. Informal: Hi, Hey, Dear friend. These are not appropriate in professional correspondence.",
-            "grammarRule": "Formal Register in Writing"
+            "question": "\u2014 Are you sure you'll pass the exam?\n\u2014 I'm not sure, but ___ I do, I'll celebrate!",
+            "options": ["when", "although", "because", "if"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "if",
+            "hint": "The words 'not sure' show this outcome isn't guaranteed.",
+            "explanation": "Since the speaker admits uncertainty ('not sure'), the condition needs 'if': if I do, I'll celebrate. 'When' would wrongly suggest passing is already certain.",
+            "grammarRule": "When vs If: Uncertainty"
         },
         {
             "id": "gq_l76_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ I try, I can never solve this puzzle.",
-            "options": [
-                "However hardly",
-                "However hard",
-                "How hard",
-                "However"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "However hard",
-            "hint": "'However + adjective/adverb' forms a concessive clause.",
-            "explanation": "'However + adjective/adverb + subject + verb': However hard I try = no matter how hard I try. 'However' here is not a discourse connector - it means 'no matter how'. It must be followed immediately by an adjective or adverb.",
-            "grammarRule": "Concessive Clauses"
+            "question": "___ she was cooking, he set the table.",
+            "options": ["When", "Because", "While", "Although"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "While",
+            "hint": "Both actions were happening at the same time.",
+            "explanation": "'While' connects two actions happening simultaneously: while she cooked, he set the table. 'Because' would wrongly suggest one action caused the other.",
+            "grammarRule": "While: Simultaneous Actions"
         },
         {
             "id": "gq_l76_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ she apologises, I will never forgive her.",
-            "options": [
-                "If even",
-                "Even though",
-                "Even if",
-                "Even"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Even if",
-            "hint": "We're talking about a hypothetical future scenario.",
-            "explanation": "'Even if' introduces a hypothetical condition: Even if she apologises (maybe she will, maybe not). 'Even though' is for real situations: Even though she apologised (she did apologise). The distinction matters.",
-            "grammarRule": "Concessive Clauses"
+            "question": "___ my brother loves sports, I prefer reading.",
+            "options": ["While", "When", "Because", "If"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "While",
+            "hint": "This isn't about timing here \u2014 it's comparing two different preferences.",
+            "explanation": "'While' can also mean 'whereas', highlighting a contrast between two people or ideas: while he loves sports, I prefer reading. This is a different use from the simultaneous-action meaning in Question 1.",
+            "grammarRule": "While: Contrast"
         },
         {
             "id": "gq_l76_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ happens, stay calm.",
-            "options": [
-                "However",
-                "Whenever",
-                "Whatever",
-                "Whichever"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Whatever",
-            "hint": "The blank refers to any possible event or situation.",
-            "explanation": "'Whatever happens' = no matter what happens. 'Whatever' refers to any possible event or thing. Compare: Whoever comes (person), Wherever you go (place), Whenever it occurs (time), Whichever you choose (choice from options).",
-            "grammarRule": "Concessive Clauses"
+            "question": "\u2014 What were you doing when I called?\n\u2014 I was studying ___ my roommate was watching TV.",
+            "options": ["when", "while", "because", "although"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "while",
+            "hint": "Two actions were happening at the exact same time, like Question 1.",
+            "explanation": "This describes two simultaneous actions, so 'while' fits: studying while someone else watched TV, echoing the pattern from Question 1.",
+            "grammarRule": "While: Simultaneous Actions"
         },
         {
             "id": "gq_l77_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She ___ a strong impression on the interviewers.",
-            "options": [
-                "made",
-                "gave",
-                "created",
-                "did"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "made",
-            "hint": "Which verb collocates with 'impression'?",
-            "explanation": "'Make an impression' is the correct collocation: She made a strong impression. Collocations are fixed word partnerships. Other 'make' collocations: make a decision, make progress, make an effort, make a suggestion.",
-            "grammarRule": "Verb + Noun Collocations"
+            "question": "I won't go to the party ___ you come with me.",
+            "options": ["if", "although", "because", "unless"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "unless",
+            "hint": "This means 'only if you don't come' \u2014 a negative condition.",
+            "explanation": "'Unless' means 'except if' or 'only if not': won't go unless you come, meaning I'll go only on the condition that you come too.",
+            "grammarRule": "Unless: Negative Condition"
         },
         {
             "id": "gq_l77_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "He ___ a great deal of time preparing for the presentation.",
-            "options": [
-                "spent",
-                "did",
-                "used",
-                "wasted"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "spent",
-            "hint": "Which verb collocates with 'a great deal of time'?",
-            "explanation": "'Spend time' is the correct collocation: He spent a great deal of time preparing. Other 'spend' collocations: spend money, spend energy. 'Waste time' means to use time inefficiently or badly.",
-            "grammarRule": "Verb + Noun Collocations"
+            "question": "'Unless you hurry, you'll miss the bus' means the same as: 'If you ___ hurry, you'll miss the bus.'",
+            "options": ["do", "will", "don't", "won't"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "don't",
+            "hint": "'Unless' already carries a hidden negative meaning inside it.",
+            "explanation": "'Unless' is equivalent to 'if...not': unless you hurry means if you don't hurry. This is a useful way to check your understanding of 'unless' by rewriting it with 'if'.",
+            "grammarRule": "Unless vs If Not"
         },
         {
             "id": "gq_l77_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The medicine ___ immediate effect.",
-            "options": [
-                "made",
-                "took",
-                "did",
-                "had"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "had",
-            "hint": "Which verb collocates with 'effect'?",
-            "explanation": "'Have an effect' is the correct collocation: The medicine had immediate effect. Also: take effect (= start working). 'Make an effect' is not standard English. Collocations must be learnt as fixed phrases.",
-            "grammarRule": "Verb + Noun Collocations"
+            "question": "\u2014 Will you help me move this weekend?\n\u2014 Sure, ___ something urgent comes up.",
+            "options": ["unless", "if", "although", "because"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "unless",
+            "hint": "The plan is a 'yes', but with one possible exception.",
+            "explanation": "'Unless' sets up the one exception that could cancel the plan: I'll help unless something urgent comes up, meaning the plan stands except in that one case.",
+            "grammarRule": "Unless: Negative Condition"
         },
         {
             "id": "gq_l78_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "FIX THE GRAMMAR",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Marie Curie, ___, won two Nobel Prizes.",
-            "options": [
-                "a famous scientist",
-                "who being a famous scientist",
-                "famous scientist",
-                "the famous scientist she was"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "a famous scientist",
-            "hint": "An appositive renames or describes the noun before it.",
-            "explanation": "An appositive is a noun phrase placed next to another noun to identify it: Marie Curie, a famous scientist, won two Nobel Prizes. It is set off by commas. No relative pronoun needed.",
-            "grammarRule": "Appositive Phrases"
+            "question": "Which sentence uses punctuation correctly?",
+            "options": ["Because it was late we went home.", "Because it was late, we went home.", "Because, it was late we went home.", "Because it was late; we went home."],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Because it was late, we went home.",
+            "hint": "When the reason comes first, it usually needs a comma right before the main statement.",
+            "explanation": "When a subordinate clause like 'because it was late' starts the sentence, a comma separates it from the main clause: Because it was late, we went home.",
+            "grammarRule": "Sentence Connection: Comma with Subordinate Clauses"
         },
         {
             "id": "gq_l78_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The CEO, ___, announced the restructuring plan.",
-            "options": [
-                "that is a visionary leader",
-                "a visionary leader",
-                "who he is a visionary leader",
-                "being a visionary leader"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "a visionary leader",
-            "hint": "Which phrase correctly renames 'the CEO'?",
-            "explanation": "'A visionary leader' is a simple noun phrase appositive: The CEO, a visionary leader, announced the plan. Appositives immediately follow the noun they describe and are enclosed in commas.",
-            "grammarRule": "Appositive Phrases"
+            "question": "Which sentence uses punctuation correctly?",
+            "options": ["We went home because it was late.", "We went home, because it was late.", "We went home because, it was late.", "We, went home because it was late."],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "We went home because it was late.",
+            "hint": "This time the main statement comes first \u2014 does the rule from the last question still apply the same way?",
+            "explanation": "When the main clause comes first, no comma is needed before 'because': We went home because it was late. The comma rule from Question 1 only applies when the subordinate clause starts the sentence.",
+            "grammarRule": "Sentence Connection: Comma with Subordinate Clauses"
         },
         {
             "id": "gq_l78_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The Amazon, ___, flows through nine countries.",
-            "options": [
-                "the world's longest river",
-                "which is world's longest river",
-                "world's longest river",
-                "being the world longest river"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the world's longest river",
-            "hint": "The appositive identifies the Amazon - include the article.",
-            "explanation": "'The world's longest river' is the correct appositive: The Amazon, the world's longest river, flows through nine countries. Note the possessive: world's. The article 'the' is required before the superlative.",
-            "grammarRule": "Appositive Phrases"
+            "question": "Which version is correctly punctuated?",
+            "options": ["Although he was tired he kept working.", "Although, he was tired he kept working.", "Although he was tired, he kept working.", "Although he was tired he, kept working."],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Although he was tired, he kept working.",
+            "hint": "'Although' starts this sentence, so the same comma rule from Question 1 applies here too.",
+            "explanation": "Since the sentence begins with the subordinate clause 'although he was tired', a comma is needed before the main clause: Although he was tired, he kept working.",
+            "grammarRule": "Sentence Connection: Comma with Subordinate Clauses"
         },
         {
             "id": "gq_l79_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The new treatment ___ to reduce cancer rates.",
-            "options": [
-                "is claimed to",
-                "was claimed to be",
-                "has been claimed",
-                "is claimed"
-            ],
+            "question": "I wanted to go out, ___ it was raining, so I stayed in.",
+            "options": ["and", "so", "because", "but"],
             "correctAnswerIndex": 3,
-            "correctAnswer": "is claimed",
-            "hint": "Focus on the general claim - impersonal passive with infinitive.",
-            "explanation": "'Is claimed to + infinitive' is a formal passive pattern: The treatment is claimed to reduce cancer rates. Others: is thought to, is believed to, is said to, is reported to, is known to.",
-            "grammarRule": "Passive Voice (Mixed Tenses)"
+            "correctAnswer": "but",
+            "hint": "This connects a wish with something that got in its way.",
+            "explanation": "'But' shows the contrast between wanting to go out and the rain stopping that plan, right before 'so' introduces the final result.",
+            "grammarRule": "Coordinating Conjunctions: But"
         },
         {
             "id": "gq_l79_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Significant progress ___ made in cancer research last year.",
-            "options": [
-                "is",
-                "was",
-                "has",
-                "has been"
-            ],
+            "question": "She studied hard ___ she wanted to pass the exam.",
+            "options": ["although", "because", "so", "but"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "was",
-            "hint": "'Last year' points to a specific past time - which tense?",
-            "explanation": "Simple past passive: was + past participle. Significant progress was made last year. 'Last year' signals simple past. 'Has been made' would be wrong because you can't use present perfect with a specific past time.",
-            "grammarRule": "Passive Voice (Mixed Tenses)"
+            "correctAnswer": "because",
+            "hint": "Wanting to pass is the motivation behind the studying.",
+            "explanation": "'Because' introduces the reason for studying hard: studied because she wanted to pass, matching the reason-and-result pattern from Level 73.",
+            "grammarRule": "Subordinating Conjunctions: Because"
         },
         {
             "id": "gq_l79_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The policy ___ reviewed at the next annual meeting.",
-            "options": [
-                "is going to be",
-                "is going being",
-                "will being",
-                "will be"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "will be",
-            "hint": "Future passive with 'will' - what's the correct form?",
-            "explanation": "Future passive: will be + past participle: The policy will be reviewed. Not 'will being' - passive always uses a past participle after 'be'. 'Is going to be reviewed' is also correct.",
-            "grammarRule": "Passive Voice (Mixed Tenses)"
+            "question": "\u2014 Are you coming to the party?\n\u2014 I'd love to, ___ I have to work that night.",
+            "options": ["and", "so", "but", "unless"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "but",
+            "hint": "Wanting to come and being unable to are two opposing ideas.",
+            "explanation": "'But' contrasts the wish to attend with the obstacle preventing it: I'd love to, but I have to work. This is a very common everyday pattern for declining politely.",
+            "grammarRule": "Coordinating Conjunctions: But"
         },
         {
             "id": "gq_l80_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The ___ of social media on mental health is widely debated.",
-            "options": [
-                "effective",
-                "affection",
-                "effect",
-                "affect"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "effect",
-            "hint": "'Affect' is usually a verb; 'effect' is usually a noun.",
-            "explanation": "'Effect' (noun) = a result or impact: the effect on mental health. 'Affect' (verb) = to influence: Social media affects mental health. A useful memory aid: RAVEN - Remember Affect is a Verb, Effect is a Noun.",
-            "grammarRule": "Word Formation (Noun/Verb/Adjective)"
+            "question": "Thank you for your message. ___ I understand your concerns, I believe we can resolve this quickly.",
+            "options": ["Because", "So", "And", "Although"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Although",
+            "hint": "This professional message acknowledges a concern before offering reassurance despite it.",
+            "explanation": "'Although' softens the message by acknowledging the concern before turning to a positive outcome: although I understand your concerns, we can resolve this. This kind of polite contrast is common in professional writing.",
+            "grammarRule": "Subordinating Conjunctions: Although"
         },
         {
             "id": "gq_l80_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The study ___ that stress levels are rising among teenagers.",
-            "options": [
-                "implies",
-                "implication",
-                "infers",
-                "inferences"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "implies",
-            "hint": "The subject is 'the study' - which verb means to suggest indirectly?",
-            "explanation": "'Imply' = to suggest something indirectly (used with non-person subjects: studies, data, evidence): The study implies... 'Infer' = to draw a conclusion from evidence (used with people): We can infer from the study that...",
-            "grammarRule": "Word Formation (Noun/Verb/Adjective)"
+            "question": "I'll send the invoice today ___ you can process payment by Friday.",
+            "options": ["although", "because", "but", "so"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "so",
+            "hint": "Sending the invoice is meant to lead directly to being able to pay by Friday.",
+            "explanation": "'So' connects the action (sending the invoice) with its intended result (payment by Friday), a common structure in workplace messages.",
+            "grammarRule": "Coordinating Conjunctions: So"
         },
         {
             "id": "gq_l80_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The two groups showed ___ results, making comparison difficult.",
-            "options": [
-                "comparative",
-                "comparably",
-                "incomparable",
-                "comparable"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "incomparable",
-            "hint": "Which adjective means 'too different in kind to be measured against each other'?",
-            "explanation": "'Incomparable' means too different to be usefully measured against each other: incomparable results make comparison difficult. Contrast 'comparable' (similar enough to compare - the opposite idea) and 'comparative' (relating to the method of comparing, not a quality of the results themselves).",
-            "grammarRule": "Word Formation (Noun/Verb/Adjective)"
+            "question": "\u2014 Can we reschedule the call?\n\u2014 Of course! I'm flexible ___ something urgent comes up.",
+            "options": ["if", "unless", "although", "because"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "unless",
+            "hint": "This closes Stage 4 the same way Level 77 practiced this exact exception structure.",
+            "explanation": "'Unless' sets the one possible exception to being flexible, exactly as practiced in Level 77: flexible unless something urgent comes up. This wraps up the full run of conjunctions covered across Levels 71 to 80.",
+            "grammarRule": "Unless: Negative Condition"
         }
     ]
 }

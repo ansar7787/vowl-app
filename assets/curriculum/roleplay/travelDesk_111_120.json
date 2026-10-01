@@ -1,697 +1,697 @@
 {
-    "gameType": "travelDesk",
-    "batchIndex": 12,
-    "levels": "111-120",
-    "quests": [
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "My plans changed, so I need to get a signature officially witnessed sooner than I expected.",
-            "itinerary": [
-                "Neighborhood Bank",
-                "Neighborhood City Hall",
-                "Neighborhood Notary Office",
-                "Neighborhood Print Shop"
-            ],
-            "options": [
-                "Bank",
-                "City Hall",
-                "Notary Office",
-                "Print Shop"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "The other three options sound plausible, but only one is made for this: to get a signature officially witnessed.",
-            "explanation": "Right — Notary Office is where this kind of request always leads, since you need to get a signature officially witnessed.",
-            "id": "td_l111_q1",
-            "travelDocuments": "Travel Insurance"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I've been meaning to finalize plans for a destination wedding, but I'm not sure where to go.",
-            "itinerary": [
-                "Family Relative's Home",
-                "Family Photo Studio",
-                "Family Wedding Planner's Office",
-                "Family Reunion Hall"
-            ],
-            "options": [
-                "Relative's Home",
-                "Photo Studio",
-                "Wedding Planner's Office",
-                "Reunion Hall"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Watch for choices that sound related but serve a slightly different purpose than helping someone finalize plans for a destination wedding.",
-            "explanation": "The clearest match is Wedding Planner's Office, since that's exactly its purpose: to finalize plans for a destination wedding.",
-            "id": "td_l111_q2",
-            "travelDocuments": "Travel Insurance"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "It occurred to me that I still need to track down a discontinued perfume.",
-            "itinerary": [
-                "Marketplace Jewelry Shop",
-                "Marketplace Department Store",
-                "Marketplace Boutique",
-                "Marketplace Perfume Shop"
-            ],
-            "options": [
-                "Jewelry Shop",
-                "Department Store",
-                "Boutique",
-                "Perfume Shop"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Consider the precise nature of the request, not just its general category, to work out where to track down a discontinued perfume.",
-            "explanation": "The request points directly to the Perfume Shop, since that's where you'd track down a discontinued perfume.",
-            "id": "td_l111_q3",
-            "travelDocuments": "Museum Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I mentioned to the front desk that I need to track down the lunch spot locals actually use — do you know where?",
-            "itinerary": [
-                "Gourmet Food Court",
-                "Gourmet Food Hall",
-                "Gourmet Deli",
-                "Gourmet Food Truck"
-            ],
-            "options": [
-                "Food Court",
-                "Food Hall",
-                "Deli",
-                "Food Truck"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Narrow it down by asking where, specifically, people go to track down the lunch spot locals actually use.",
-            "explanation": "Food Truck is the best fit — it exists specifically to help people track down the lunch spot locals actually use.",
-            "id": "td_l112_q1",
-            "travelDocuments": "Hotel Reservation"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Now that I think of it, I really should watch artisans dye and weave fabric by hand while I'm here.",
-            "itinerary": [
-                "Scholars' Calligraphy Workshop",
-                "Scholars' Pottery Workshop",
-                "Scholars' Textile Weaving Workshop",
-                "Scholars' Traditional Music Workshop"
-            ],
-            "options": [
-                "Calligraphy Workshop",
-                "Pottery Workshop",
-                "Textile Weaving Workshop",
-                "Traditional Music Workshop"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Trust the specific wording of the request when deciding where someone would go to watch artisans dye and weave fabric by hand.",
-            "explanation": "Textile Weaving Workshop exists specifically for this — it's the place to watch artisans dye and weave fabric by hand.",
-            "id": "td_l112_q2",
-            "travelDocuments": "Museum Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "There's one errand I keep putting off: I need to check in for a badge at the industry summit.",
-            "itinerary": [
-                "Corporate Corporate Reception Desk",
-                "Corporate Convention Center",
-                "Corporate Registration Desk",
-                "Corporate Trade Show Hall"
-            ],
-            "options": [
-                "Corporate Reception Desk",
-                "Convention Center",
-                "Registration Desk",
-                "Trade Show Hall"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Some options belong to the same general category, but only one is the exact place to check in for a badge at the industry summit.",
-            "explanation": "When someone needs to check in for a badge at the industry summit, Registration Desk is the natural choice.",
-            "id": "td_l112_q3",
-            "travelDocuments": "Boarding Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "My plans changed, so I need to sort out an extension on a visa sooner than I expected.",
-            "itinerary": [
-                "Wanderer's Visa Office",
-                "Wanderer's Embassy",
-                "Wanderer's Border Checkpoint",
-                "Wanderer's Customs Office"
-            ],
-            "options": [
-                "Visa Office",
-                "Embassy",
-                "Border Checkpoint",
-                "Customs Office"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Look past any similar-sounding options — only one place truly lets you sort out an extension on a visa.",
-            "explanation": "Visa Office is the answer, because everything in the request points to needing to sort out an extension on a visa.",
-            "id": "td_l113_q1",
-            "travelDocuments": "Boarding Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I've been meaning to get a whole album of trip photos printed before leaving, but I'm not sure where to go.",
-            "itinerary": [
-                "Digital 3D Printing Studio",
-                "Digital Photo Printing Kiosk",
-                "Digital Gadget Store",
-                "Digital Camera Rental Shop"
-            ],
-            "options": [
-                "3D Printing Studio",
-                "Photo Printing Kiosk",
-                "Gadget Store",
-                "Camera Rental Shop"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Read the request closely: the key detail is that this person needs to get a whole album of trip photos printed before leaving.",
-            "explanation": "Photo Printing Kiosk is correct — the other options sound similar but won't actually let you get a whole album of trip photos printed before leaving.",
-            "id": "td_l113_q2",
-            "travelDocuments": "Train Ticket"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "It occurred to me that I still need to get professional advice on eating well while traveling.",
-            "itinerary": [
-                "Wellness Wellness Spa",
-                "Wellness Health Insurance Office",
-                "Wellness Nutrition Clinic",
-                "Wellness Wellness Retreat"
-            ],
-            "options": [
-                "Wellness Spa",
-                "Health Insurance Office",
-                "Nutrition Clinic",
-                "Wellness Retreat"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Think about which kind of place specializes in helping people get professional advice on eating well while traveling.",
-            "explanation": "The best match is Nutrition Clinic; it's the one option truly built around helping people get professional advice on eating well while traveling.",
-            "id": "td_l113_q3",
-            "travelDocuments": "Travel Insurance"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I mentioned to the front desk that I need to watch acrobats perform under the big top — do you know where?",
-            "itinerary": [
-                "Spotlight Music Festival Grounds",
-                "Spotlight Amusement Park",
-                "Spotlight Circus Tent",
-                "Spotlight Wildlife Safari Park"
-            ],
-            "options": [
-                "Music Festival Grounds",
-                "Amusement Park",
-                "Circus Tent",
-                "Wildlife Safari Park"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "The other three options sound plausible, but only one is made for this: to watch acrobats perform under the big top.",
-            "explanation": "Right — Circus Tent is where this kind of request always leads, since you need to watch acrobats perform under the big top.",
-            "id": "td_l114_q1",
-            "travelDocuments": "City Map"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Now that I think of it, I really should join an evening class with the locals while I'm here.",
-            "itinerary": [
-                "Neighborhood Newsstand",
-                "Neighborhood City Hall",
-                "Neighborhood Notary Office",
-                "Neighborhood Community Center"
-            ],
-            "options": [
-                "Newsstand",
-                "City Hall",
-                "Notary Office",
-                "Community Center"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Watch for choices that sound related but serve a slightly different purpose than helping someone join an evening class with the locals.",
-            "explanation": "Of the four options, only Community Center is designed to let someone join an evening class with the locals.",
-            "id": "td_l114_q2",
-            "travelDocuments": "Travel Insurance"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "There's one errand I keep putting off: I need to keep the kids busy on a rainy afternoon.",
-            "itinerary": [
-                "Family Children's Museum",
-                "Family Kids' Club",
-                "Family Playroom",
-                "Family Trampoline Park"
-            ],
-            "options": [
-                "Children's Museum",
-                "Kids' Club",
-                "Playroom",
-                "Trampoline Park"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Consider the precise nature of the request, not just its general category, to work out where to keep the kids busy on a rainy afternoon.",
-            "explanation": "Since the traveler wants to keep the kids busy on a rainy afternoon, Playroom is the logical destination.",
-            "id": "td_l114_q3",
-            "travelDocuments": "City Map"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "My plans changed, so I need to find a tailor-made silk scarf sooner than I expected.",
-            "itinerary": [
-                "Marketplace Textile Shop",
-                "Marketplace Boutique",
-                "Marketplace Leather Goods Shop",
-                "Marketplace Ceramics Shop"
-            ],
-            "options": [
-                "Textile Shop",
-                "Boutique",
-                "Leather Goods Shop",
-                "Ceramics Shop"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Narrow it down by asking where, specifically, people go to find a tailor-made silk scarf.",
-            "explanation": "Textile Shop makes sense here because that's precisely where people go to find a tailor-made silk scarf.",
-            "id": "td_l115_q1",
-            "travelDocuments": "Boarding Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I've been meaning to book a private tasting at a small vineyard, but I'm not sure where to go.",
-            "itinerary": [
-                "Gourmet Brewery",
-                "Gourmet Wine Cellar",
-                "Gourmet Coffee Roastery",
-                "Gourmet Vineyard Tour"
-            ],
-            "options": [
-                "Brewery",
-                "Wine Cellar",
-                "Coffee Roastery",
-                "Vineyard Tour"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Trust the specific wording of the request when deciding where someone would go to book a private tasting at a small vineyard.",
-            "explanation": "This matches because Vineyard Tour is the standard place to book a private tasting at a small vineyard.",
-            "id": "td_l115_q2",
-            "travelDocuments": "Travel Insurance"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "It occurred to me that I still need to sit in on a lecture at the local university.",
-            "itinerary": [
-                "Scholars' Language Exchange Café",
-                "Scholars' University Campus Tour",
-                "Scholars' Heritage Walking Tour Office",
-                "Scholars' Cultural Center"
-            ],
-            "options": [
-                "Language Exchange Café",
-                "University Campus Tour",
-                "Heritage Walking Tour Office",
-                "Cultural Center"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Some options belong to the same general category, but only one is the exact place to sit in on a lecture at the local university.",
-            "explanation": "The clearest match is University Campus Tour, since that's exactly its purpose: to sit in on a lecture at the local university.",
-            "id": "td_l115_q3",
-            "travelDocuments": "ID Card"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I mentioned to the front desk that I need to hear a specialist speak on market trends — do you know where?",
-            "itinerary": [
-                "Corporate Seminar Hall",
-                "Corporate Trade Show Hall",
-                "Corporate Convention Center",
-                "Corporate Boardroom"
-            ],
-            "options": [
-                "Seminar Hall",
-                "Trade Show Hall",
-                "Convention Center",
-                "Boardroom"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Rule out the options that don't fit someone trying to hear a specialist speak on market trends.",
-            "explanation": "Seminar Hall is the answer, because everything in the request points to needing to hear a specialist speak on market trends.",
-            "id": "td_l116_q1",
-            "travelDocuments": "Museum Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Now that I think of it, I really should get a same-day appointment for a missing document while I'm here.",
-            "itinerary": [
-                "Wanderer's Embassy",
-                "Wanderer's Visa Office",
-                "Wanderer's Border Checkpoint",
-                "Wanderer's Customs Office"
-            ],
-            "options": [
-                "Embassy",
-                "Visa Office",
-                "Border Checkpoint",
-                "Customs Office"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "One of these four exists specifically to help people get a same-day appointment for a missing document — look for it.",
-            "explanation": "Embassy is correct — the other options sound similar but won't actually let you get a same-day appointment for a missing document.",
-            "id": "td_l116_q2",
-            "travelDocuments": "Boarding Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "There's one errand I keep putting off: I need to find the local gamers' hangout.",
-            "itinerary": [
-                "Digital Gaming Lounge",
-                "Digital Media Streaming Lounge",
-                "Digital VR Experience Center",
-                "Digital Tech Expo Hall"
-            ],
-            "options": [
-                "Gaming Lounge",
-                "Media Streaming Lounge",
-                "VR Experience Center",
-                "Tech Expo Hall"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Match the purpose, not just the wording — where does someone actually go to find the local gamers' hangout?",
-            "explanation": "The best match is Gaming Lounge; it's the one option truly built around helping people find the local gamers' hangout.",
-            "id": "td_l116_q3",
-            "travelDocuments": "City Map"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "My plans changed, so I need to find medicine outside normal pharmacy hours sooner than I expected.",
-            "itinerary": [
-                "Wellness Pharmacy",
-                "Wellness 24-Hour Pharmacy",
-                "Wellness Urgent Care Center",
-                "Wellness Emergency Room"
-            ],
-            "options": [
-                "Pharmacy",
-                "24-Hour Pharmacy",
-                "Urgent Care Center",
-                "Emergency Room"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "The other three options sound plausible, but only one is made for this: to find medicine outside normal pharmacy hours.",
-            "explanation": "Right — 24-Hour Pharmacy is where this kind of request always leads, since you need to find medicine outside normal pharmacy hours.",
-            "id": "td_l117_q1",
-            "travelDocuments": "Boarding Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I've been meaning to catch the headline act at the festival, but I'm not sure where to go.",
-            "itinerary": [
-                "Spotlight Concert Hall",
-                "Spotlight Music Festival Grounds",
-                "Spotlight Circus Tent",
-                "Spotlight Jazz Club"
-            ],
-            "options": [
-                "Concert Hall",
-                "Music Festival Grounds",
-                "Circus Tent",
-                "Jazz Club"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Watch for choices that sound related but serve a slightly different purpose than helping someone catch the headline act at the festival.",
-            "explanation": "Music Festival Grounds fits perfectly here, as it's set up for people who need to catch the headline act at the festival.",
-            "id": "td_l117_q2",
-            "travelDocuments": "Museum Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "It occurred to me that I still need to get sandals resoled before more walking.",
-            "itinerary": [
-                "Neighborhood Shoe Repair Shop",
-                "Neighborhood Tailor Shop",
-                "Neighborhood Watch Repair Shop",
-                "Neighborhood Dry Cleaner"
-            ],
-            "options": [
-                "Shoe Repair Shop",
-                "Tailor Shop",
-                "Watch Repair Shop",
-                "Dry Cleaner"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Consider the precise nature of the request, not just its general category, to work out where to get sandals resoled before more walking.",
-            "explanation": "Shoe Repair Shop is correct because that's exactly where travelers go to get sandals resoled before more walking.",
-            "id": "td_l117_q3",
-            "travelDocuments": "Museum Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I mentioned to the front desk that I need to let the children learn something hands-on — do you know where?",
-            "itinerary": [
-                "Family Puppet Show Theater",
-                "Family Trampoline Park",
-                "Family Children's Museum",
-                "Family Playroom"
-            ],
-            "options": [
-                "Puppet Show Theater",
-                "Trampoline Park",
-                "Children's Museum",
-                "Playroom"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Narrow it down by asking where, specifically, people go to let the children learn something hands-on.",
-            "explanation": "Since the traveler wants to let the children learn something hands-on, Children's Museum is the logical destination.",
-            "id": "td_l118_q1",
-            "travelDocuments": "Museum Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Now that I think of it, I really should bargain for a good price at the night stalls while I'm here.",
-            "itinerary": [
-                "Marketplace Discount Store",
-                "Marketplace Night Market",
-                "Marketplace Flea Market",
-                "Marketplace Outlet Store"
-            ],
-            "options": [
-                "Discount Store",
-                "Night Market",
-                "Flea Market",
-                "Outlet Store"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Trust the specific wording of the request when deciding where someone would go to bargain for a good price at the night stalls.",
-            "explanation": "The request points directly to the Night Market, since that's where you'd bargain for a good price at the night stalls.",
-            "id": "td_l118_q2",
-            "travelDocuments": "ID Card"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "There's one errand I keep putting off: I need to watch the chefs prepare everything fresh.",
-            "itinerary": [
-                "Gourmet Pizzeria",
-                "Gourmet Sushi Bar",
-                "Gourmet Noodle Shop",
-                "Gourmet Seafood Market"
-            ],
-            "options": [
-                "Pizzeria",
-                "Sushi Bar",
-                "Noodle Shop",
-                "Seafood Market"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Some options belong to the same general category, but only one is the exact place to watch the chefs prepare everything fresh.",
-            "explanation": "Travelers head to the Sushi Bar whenever they need to watch the chefs prepare everything fresh.",
-            "id": "td_l118_q3",
-            "travelDocuments": "City Map"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "My plans changed, so I need to trade language lessons with a local student sooner than I expected.",
-            "itinerary": [
-                "Scholars' Traditional Music Workshop",
-                "Scholars' Language Exchange Café",
-                "Scholars' Cultural Center",
-                "Scholars' University Campus Tour"
-            ],
-            "options": [
-                "Traditional Music Workshop",
-                "Language Exchange Café",
-                "Cultural Center",
-                "University Campus Tour"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Focus on the verb in the request: the traveler needs to trade language lessons with a local student.",
-            "explanation": "Language Exchange Café is the answer, because everything in the request points to needing to trade language lessons with a local student.",
-            "id": "td_l119_q1",
-            "travelDocuments": "Hotel Reservation"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I've been meaning to get a document couriered to head office overnight, but I'm not sure where to go.",
-            "itinerary": [
-                "Corporate Corporate Reception Desk",
-                "Corporate Printing & Copy Shop",
-                "Corporate Business Center",
-                "Corporate Courier Office"
-            ],
-            "options": [
-                "Corporate Reception Desk",
-                "Printing & Copy Shop",
-                "Business Center",
-                "Courier Office"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Think practically: if you needed to get a document couriered to head office overnight right now, where would you head?",
-            "explanation": "Courier Office is correct — the other options sound similar but won't actually let you get a document couriered to head office overnight.",
-            "id": "td_l119_q2",
-            "travelDocuments": "ID Card"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "It occurred to me that I still need to find a place to leave bags before a late checkout.",
-            "itinerary": [
-                "Wanderer's Baggage Claim",
-                "Wanderer's Hotel Lobby",
-                "Wanderer's Luggage Storage",
-                "Wanderer's Arrival Hall"
-            ],
-            "options": [
-                "Baggage Claim",
-                "Hotel Lobby",
-                "Luggage Storage",
-                "Arrival Hall"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Read the request closely: the key detail is that this person needs to find a place to leave bags before a late checkout.",
-            "explanation": "The best match is Luggage Storage; it's the one option truly built around helping people find a place to leave bags before a late checkout.",
-            "id": "td_l119_q3",
-            "travelDocuments": "ID Card"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I mentioned to the front desk that I need to get a laptop battery issue diagnosed — do you know where?",
-            "itinerary": [
-                "Digital Tech Support Center",
-                "Digital Gadget Store",
-                "Digital Repair Shop",
-                "Digital IT Help Desk"
-            ],
-            "options": [
-                "Tech Support Center",
-                "Gadget Store",
-                "Repair Shop",
-                "IT Help Desk"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "The other three options sound plausible, but only one is made for this: to get a laptop battery issue diagnosed.",
-            "explanation": "Right — Repair Shop is where this kind of request always leads, since you need to get a laptop battery issue diagnosed.",
-            "id": "td_l120_q1",
-            "travelDocuments": "Museum Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Now that I think of it, I really should talk through some travel anxiety with a professional while I'm here.",
-            "itinerary": [
-                "Wellness Mental Health Clinic",
-                "Wellness Wellness Spa",
-                "Wellness Wellness Retreat",
-                "Wellness Acupuncture Clinic"
-            ],
-            "options": [
-                "Mental Health Clinic",
-                "Wellness Spa",
-                "Wellness Retreat",
-                "Acupuncture Clinic"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Watch for choices that sound related but serve a slightly different purpose than helping someone talk through some travel anxiety with a professional.",
-            "explanation": "When someone needs to talk through some travel anxiety with a professional, Mental Health Clinic is the natural choice.",
-            "id": "td_l120_q2",
-            "travelDocuments": "Train Ticket"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "There's one errand I keep putting off: I need to challenge some friends to a game night.",
-            "itinerary": [
-                "Spotlight Arcade",
-                "Spotlight Karaoke Bar",
-                "Spotlight Board Game Cafe",
-                "Spotlight Bowling Alley"
-            ],
-            "options": [
-                "Arcade",
-                "Karaoke Bar",
-                "Board Game Cafe",
-                "Bowling Alley"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Consider the precise nature of the request, not just its general category, to work out where to challenge some friends to a game night.",
-            "explanation": "Board Game Cafe exists specifically for this — it's the place to challenge some friends to a game night.",
-            "id": "td_l120_q3",
-            "travelDocuments": "Hotel Reservation"
-        }
-    ]
+  "gameType": "travelDesk",
+  "batchIndex": 12,
+  "levels": "111-120",
+  "quests": [
+    {
+      "instruction": "Choose the most useful next step.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I've run out of my heart tablets. I have my doctor's letter from home, but no local prescription.",
+      "itinerary": [
+        "Health Quarter Walk-In Medical Clinic",
+        "Health Quarter Pharmacy Counter",
+        "Health Quarter Hotel Front Desk",
+        "Health Quarter Emergency Room"
+      ],
+      "options": [
+        "Walk-In Medical Clinic",
+        "Pharmacy Counter",
+        "Hotel Front Desk",
+        "Emergency Room"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "A pharmacy can only sell what a local doctor prescribes. Who can write the prescription?",
+      "explanation": "A walk-in clinic can read your letter and issue a local prescription. A pharmacy usually can't dispense without one.",
+      "id": "td_l111_q1",
+      "travelDocuments": "Travel Insurance"
+    },
+    {
+      "instruction": "Choose the option that deals with the most urgent part first.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "A dog bit my leg. I've washed it and the bleeding is slight, but I'm worried about rabies.",
+      "itinerary": [
+        "City Hospital Pharmacy",
+        "City Hospital Vaccination Kiosk",
+        "City Hospital Emergency Department",
+        "City Hospital Hotel Front Desk"
+      ],
+      "options": [
+        "Pharmacy",
+        "Vaccination Kiosk",
+        "Emergency Department",
+        "Hotel Front Desk"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Animal bites can carry infections that need to be treated quickly.",
+      "explanation": "An emergency department can clean the wound and start rabies treatment if necessary. A pharmacy can't provide injections.",
+      "id": "td_l111_q2",
+      "travelDocuments": "Travel Insurance"
+    },
+    {
+      "instruction": "What is the smartest place to start?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "My insurance says to phone them before seeking treatment unless it's an emergency. I've got a sore, blocked ear.",
+      "itinerary": [
+        "Insurance Company Pharmacy Counter",
+        "Insurance Company 24-Hour Assistance Hotline",
+        "Insurance Company Hospital Emergency Room",
+        "Insurance Company Walk-In Clinic"
+      ],
+      "options": [
+        "Pharmacy Counter",
+        "24-Hour Assistance Hotline",
+        "Hospital Emergency Room",
+        "Walk-In Clinic"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Read the conditions: this isn't an emergency, and the policy sets the order of steps.",
+      "explanation": "The assistance hotline will direct you to an approved clinic and confirm coverage. Going straight to a clinic might risk your claim.",
+      "id": "td_l111_q3",
+      "travelDocuments": "Travel Insurance"
+    },
+    {
+      "instruction": "Choose the most useful next step.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I've lost my rail pass, but I've got the receipt and the pass number in an email.",
+      "itinerary": [
+        "Central Station Station Lost Property Office",
+        "Central Station Hotel Reception",
+        "Central Station Rail Customer Service Desk",
+        "Central Station Police Station"
+      ],
+      "options": [
+        "Station Lost Property Office",
+        "Hotel Reception",
+        "Rail Customer Service Desk",
+        "Police Station"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "You have proof of purchase. Who can issue a replacement?",
+      "explanation": "Customer service can replace a pass when you have the number and receipt. Lost property only holds found items.",
+      "id": "td_l112_q1",
+      "travelDocuments": "Train Ticket"
+    },
+    {
+      "instruction": "Which counter can solve the real problem?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I've got a valid visa, but the check-in agent can't find it in the system and won't let me board.",
+      "itinerary": [
+        "Departures Hall Consulate",
+        "Departures Hall Duty-Free Shop",
+        "Departures Hall Hotel Shuttle Desk",
+        "Departures Hall Airline Supervisor Desk"
+      ],
+      "options": [
+        "Consulate",
+        "Duty-Free Shop",
+        "Hotel Shuttle Desk",
+        "Airline Supervisor Desk"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "The problem is in the airline's system, not in your paperwork.",
+      "explanation": "A supervisor can verify the visa by other means and override the check. Show the approval letter.",
+      "id": "td_l112_q2",
+      "travelDocuments": "Passport"
+    },
+    {
+      "instruction": "Who should the traveler ask first?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I lost my hotel confirmation, my phone's dead and I can't remember the address.",
+      "itinerary": [
+        "City Centre Police Station",
+        "City Centre Internet Cafe",
+        "City Centre Bank Branch",
+        "City Centre Tourist Information Desk"
+      ],
+      "options": [
+        "Police Station",
+        "Internet Cafe",
+        "Bank Branch",
+        "Tourist Information Desk"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "The information is in your email. How can you get to it?",
+      "explanation": "An internet cafe lets you log into your email and read the confirmation. Tourist information can't know your hotel.",
+      "id": "td_l112_q3",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Which counter can solve the real problem?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "My suitcase arrived, but one of the wheels is broken. I'm still in the arrivals hall.",
+      "itinerary": [
+        "Arrivals Hall Police Post",
+        "Arrivals Hall Hotel Shuttle Desk",
+        "Arrivals Hall Luggage Repair Shop",
+        "Arrivals Hall Airline Baggage Service Desk"
+      ],
+      "options": [
+        "Police Post",
+        "Hotel Shuttle Desk",
+        "Luggage Repair Shop",
+        "Airline Baggage Service Desk"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Damage should be reported before you leave the airport.",
+      "explanation": "The baggage service desk can record the damage and start a claim. After you leave, it's much harder to prove.",
+      "id": "td_l113_q1",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Who should the traveler ask first?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "My bag is delayed by two days and I need clothes for a meeting. How do I get any costs back?",
+      "itinerary": [
+        "Arrivals Hall Clothing Shop",
+        "Arrivals Hall Baggage Service Desk, for the Report Reference",
+        "Arrivals Hall Currency Exchange",
+        "Arrivals Hall Hotel Front Desk"
+      ],
+      "options": [
+        "Clothing Shop",
+        "Baggage Service Desk, for the Report Reference",
+        "Currency Exchange",
+        "Hotel Front Desk"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "You'll need proof of the delay before spending money.",
+      "explanation": "The baggage desk gives a report reference, which the airline needs to reimburse essential items. Keep the receipts too.",
+      "id": "td_l113_q2",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Choose the option that deals with the most urgent part first.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I found my bag opened and my camera has gone missing.",
+      "itinerary": [
+        "Arrivals Hall Airport Police Office",
+        "Arrivals Hall Hotel Reception",
+        "Arrivals Hall Duty-Free Shop",
+        "Arrivals Hall Baggage Claim Staff"
+      ],
+      "options": [
+        "Airport Police Office",
+        "Hotel Reception",
+        "Duty-Free Shop",
+        "Baggage Claim Staff"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "A theft needs an official report, not just a complaint.",
+      "explanation": "The airport police can take a formal report, which your insurer will require. Baggage staff can only log the incident.",
+      "id": "td_l113_q3",
+      "travelDocuments": "Travel Insurance"
+    },
+    {
+      "instruction": "Which place or service can answer the real question behind the request?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "An inspector fined me for not validating my ticket, but I did have a valid one.",
+      "itinerary": [
+        "Metro Network Police Station",
+        "Metro Network Transit Customer Service Office",
+        "Metro Network Ticket Machine",
+        "Metro Network Taxi Rank"
+      ],
+      "options": [
+        "Police Station",
+        "Transit Customer Service Office",
+        "Ticket Machine",
+        "Taxi Rank"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Fines are disputed through the operator's own process.",
+      "explanation": "The transit customer service office handles appeals. Show your ticket and explain what happened.",
+      "id": "td_l114_q1",
+      "travelDocuments": "Train Ticket"
+    },
+    {
+      "instruction": "What is the smartest place to start?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I'm two euros short for the bus, I've got no cash, and the driver only takes coins.",
+      "itinerary": [
+        "Bus Stop Tourist Information",
+        "Bus Stop Card-Accepting Ticket Machine",
+        "Bus Stop Taxi Rank",
+        "Bus Stop Hotel Reception"
+      ],
+      "options": [
+        "Tourist Information",
+        "Card-Accepting Ticket Machine",
+        "Taxi Rank",
+        "Hotel Reception"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Which nearby option accepts a card?",
+      "explanation": "A ticket machine that takes cards solves the payment without walking far. The others don't sell bus tickets.",
+      "id": "td_l114_q2",
+      "travelDocuments": "Train Ticket"
+    },
+    {
+      "instruction": "Choose the most useful next step.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I'm on the wrong train, 60 kilometres away, with a ticket for a different route.",
+      "itinerary": [
+        "Train Conductor",
+        "Train Police Station",
+        "Train Airline Desk",
+        "Train Taxi Rank"
+      ],
+      "options": [
+        "Conductor",
+        "Police Station",
+        "Airline Desk",
+        "Taxi Rank"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "You're still on the train. Who is on board and can help?",
+      "explanation": "The conductor can tell you where to change and how to adjust your ticket. Do it before you get off.",
+      "id": "td_l114_q3",
+      "travelDocuments": "Train Ticket"
+    },
+    {
+      "instruction": "Who should the traveler ask first?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "The pharmacist speaks no English and I can't explain my symptoms.",
+      "itinerary": [
+        "Hotel Lobby Post Office",
+        "Hotel Lobby Taxi Rank",
+        "Hotel Lobby Currency Exchange",
+        "Hotel Lobby Concierge Desk, for a Phone Interpreter"
+      ],
+      "options": [
+        "Post Office",
+        "Taxi Rank",
+        "Currency Exchange",
+        "Concierge Desk, for a Phone Interpreter"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "You need someone who can translate live and knows local services.",
+      "explanation": "A concierge can help by phone or come along to interpret. Correct medical information matters for your safety.",
+      "id": "td_l115_q1",
+      "travelDocuments": "Travel Insurance"
+    },
+    {
+      "instruction": "Choose the option that deals with the most urgent part first.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I need to file a police report, but I don't speak the language.",
+      "itinerary": [
+        "City Centre Tourist Police Desk",
+        "City Centre Taxi Rank",
+        "City Centre Souvenir Shop",
+        "City Centre Hotel Gym"
+      ],
+      "options": [
+        "Tourist Police Desk",
+        "Taxi Rank",
+        "Souvenir Shop",
+        "Hotel Gym"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Some police units are trained to help visitors.",
+      "explanation": "A tourist police desk usually has staff who speak foreign languages. A regular station might not.",
+      "id": "td_l115_q2",
+      "travelDocuments": "Travel Insurance"
+    },
+    {
+      "instruction": "Choose the most useful next step.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "The doctor gave me a leaflet in another language, and I need to be sure of the dose.",
+      "itinerary": [
+        "Health Quarter Souvenir Shop",
+        "Health Quarter Bank",
+        "Health Quarter Hotel Gym",
+        "Health Quarter Pharmacist"
+      ],
+      "options": [
+        "Souvenir Shop",
+        "Bank",
+        "Hotel Gym",
+        "Pharmacist"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Ask the person trained to explain medicines, not someone who happens to speak English.",
+      "explanation": "A pharmacist can explain the dose and confirm it's right. Guessing is unsafe.",
+      "id": "td_l115_q3",
+      "travelDocuments": "Travel Insurance"
+    },
+    {
+      "instruction": "Which option is the safest practical choice?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "A man tied a 'free' bracelet on my wrist and is now demanding money.",
+      "itinerary": [
+        "City Centre Bank Branch",
+        "City Centre Souvenir Shop",
+        "City Centre Tourist Police Post",
+        "City Centre Hotel Reception"
+      ],
+      "options": [
+        "Bank Branch",
+        "Souvenir Shop",
+        "Tourist Police Post",
+        "Hotel Reception"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Once you've walked away, what's the useful report?",
+      "explanation": "The tourist police can record scam attempts and warn others. Souvenir shops and banks can't act on it.",
+      "id": "td_l116_q1",
+      "travelDocuments": "Travel Insurance"
+    },
+    {
+      "instruction": "Which option is the safest practical choice?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "The taxi driver claims the meter is broken and demands eighty euros for a short ride.",
+      "itinerary": [
+        "Station Ticket Office",
+        "Station Bus Stop",
+        "Station Police Station",
+        "Station Official Taxi Rank Supervisor"
+      ],
+      "options": [
+        "Ticket Office",
+        "Bus Stop",
+        "Police Station",
+        "Official Taxi Rank Supervisor"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "The rank exists to control drivers and fares.",
+      "explanation": "The rank supervisor can find another driver or settle the fare. Don't pay an unreasonable amount without a receipt.",
+      "id": "td_l116_q2",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Choose the option that deals with the most urgent part first.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "My phone has been snatched, and my boarding pass was on it. My flight is in three hours.",
+      "itinerary": [
+        "Airport Bank Branch",
+        "Airport Airline Check-In Desk",
+        "Airport Phone Shop",
+        "Airport Police Station"
+      ],
+      "options": [
+        "Bank Branch",
+        "Airline Check-In Desk",
+        "Phone Shop",
+        "Police Station"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Time is the main pressure. Which task can't wait?",
+      "explanation": "The airline can reissue your boarding pass in minutes. The police report and phone are still needed, but they come second.",
+      "id": "td_l116_q3",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "What is the smartest place to start?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Storms have cancelled ferries for two days, and I've a flight home in three.",
+      "itinerary": [
+        "Island Harbour Hotel Spa",
+        "Island Harbour Ferry Ticket Office",
+        "Island Harbour Bank Branch",
+        "Island Harbour Regional Airline Desk"
+      ],
+      "options": [
+        "Hotel Spa",
+        "Ferry Ticket Office",
+        "Bank Branch",
+        "Regional Airline Desk"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "The main route is gone. Which alternative gets you to the mainland?",
+      "explanation": "A regional flight from the island avoids the ferries. The ferry office can't run boats in the storm.",
+      "id": "td_l117_q1",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Who should the traveler ask first?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Snow has closed the mountain pass, and our coach is stuck at a village hotel.",
+      "itinerary": [
+        "Village Coach Company Emergency Line",
+        "Village Ticket Machine",
+        "Village Bank Branch",
+        "Village Hotel Restaurant"
+      ],
+      "options": [
+        "Coach Company Emergency Line",
+        "Ticket Machine",
+        "Bank Branch",
+        "Hotel Restaurant"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "The operator is responsible for stranded passengers.",
+      "explanation": "The coach company can confirm accommodation and rebooking. The hotel restaurant can't change the trip.",
+      "id": "td_l117_q2",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Which place or service can answer the real question behind the request?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "A volcano's ash cloud has grounded flights, and my visa expires in four days.",
+      "itinerary": [
+        "City Centre Airline Reservations Desk",
+        "City Centre Bank Branch",
+        "City Centre Immigration Office",
+        "City Centre Hotel Reception"
+      ],
+      "options": [
+        "Airline Reservations Desk",
+        "Bank Branch",
+        "Immigration Office",
+        "Hotel Reception"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "The bigger legal risk is the visa, not the flight.",
+      "explanation": "The immigration office can extend a visa when travel is disrupted. Rebooking the flight doesn't solve the visa problem.",
+      "id": "td_l117_q3",
+      "travelDocuments": "Passport"
+    },
+    {
+      "instruction": "Choose the option that deals with the most urgent part first.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I've missed my flight, and I've prepaid a hotel at the destination for tonight.",
+      "itinerary": [
+        "Departures Hall Airline Rebooking Desk",
+        "Departures Hall Bank Branch",
+        "Departures Hall Taxi Rank",
+        "Departures Hall Hotel at the Destination"
+      ],
+      "options": [
+        "Airline Rebooking Desk",
+        "Bank Branch",
+        "Taxi Rank",
+        "Hotel at the Destination"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Which action has the earliest deadline and affects everything else?",
+      "explanation": "Rebooking the flight determines when you'll arrive, so it comes first. The hotel can be adjusted afterwards.",
+      "id": "td_l118_q1",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Choose the option that deals with the most urgent part first.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "My wallet was stolen with my cards and cash, and my flight is tomorrow.",
+      "itinerary": [
+        "City Centre Bank's 24-Hour Card Line",
+        "City Centre Consulate",
+        "City Centre Police Station",
+        "City Centre Airline Desk"
+      ],
+      "options": [
+        "Bank's 24-Hour Card Line",
+        "Consulate",
+        "Police Station",
+        "Airline Desk"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Money can still be taken. What stops that at once?",
+      "explanation": "Blocking the cards stops further losses immediately. The police report and other steps can follow.",
+      "id": "td_l118_q2",
+      "travelDocuments": "ID Card"
+    },
+    {
+      "instruction": "Choose the option that deals with the most urgent part first.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I feel dizzy and my chest hurts, and my train leaves in ten minutes.",
+      "itinerary": [
+        "Central Station Rail Customer Service",
+        "Central Station Ticket Office",
+        "Central Station Emergency Medical Services",
+        "Central Station Station Cafe"
+      ],
+      "options": [
+        "Rail Customer Service",
+        "Ticket Office",
+        "Emergency Medical Services",
+        "Station Cafe"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Health is more urgent than any timetable.",
+      "explanation": "Chest pain and dizziness need emergency medical care straight away. The train can be rebooked later.",
+      "id": "td_l118_q3",
+      "travelDocuments": "Travel Insurance"
+    },
+    {
+      "instruction": "Where should the traveler go to fix this?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I bought a jacket yesterday, and the seam is torn. I leave tomorrow morning.",
+      "itinerary": [
+        "Fashion Avenue Bank Branch",
+        "Fashion Avenue Tailor",
+        "Fashion Avenue Tourist Information",
+        "Fashion Avenue Shop Customer Service Desk"
+      ],
+      "options": [
+        "Bank Branch",
+        "Tailor",
+        "Tourist Information",
+        "Shop Customer Service Desk"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "The seller is responsible for faulty goods.",
+      "explanation": "Customer service can exchange or refund faulty goods, and it takes less time than a repair.",
+      "id": "td_l119_q1",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Who should the traveler ask first?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I'd like to return a purchase, but I've no receipt. I paid by card.",
+      "itinerary": [
+        "Department Store Cafe",
+        "Department Store Security Office",
+        "Department Store Customer Service Desk",
+        "Department Store Tax-Refund Counter"
+      ],
+      "options": [
+        "Cafe",
+        "Security Office",
+        "Customer Service Desk",
+        "Tax-Refund Counter"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Bring evidence of the purchase, even if it isn't a receipt.",
+      "explanation": "Customer service can look up the sale with your card statement. Security and the cafe can't process returns.",
+      "id": "td_l119_q2",
+      "travelDocuments": "ID Card"
+    },
+    {
+      "instruction": "Which counter can solve the real problem?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "They want to charge me extra for a bag that fits in the cabin size checker at the gate.",
+      "itinerary": [
+        "Boarding Gate Duty-Free Shop",
+        "Boarding Gate Airline Gate Supervisor",
+        "Boarding Gate Baggage Claim",
+        "Boarding Gate Check-In Desk"
+      ],
+      "options": [
+        "Duty-Free Shop",
+        "Airline Gate Supervisor",
+        "Baggage Claim",
+        "Check-In Desk"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "You need someone with authority at the gate, before boarding closes.",
+      "explanation": "The gate supervisor can overrule the agent after checking your bag. Going back to check-in would lose time.",
+      "id": "td_l119_q3",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Which place or service can answer the real question behind the request?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I left my camera in a restaurant last night. I can't remember the name, but I paid by card.",
+      "itinerary": [
+        "Your Bank Transaction History",
+        "Your Bank Hotel Concierge",
+        "Your Bank Airport Lost Property",
+        "Your Bank Tourist Office"
+      ],
+      "options": [
+        "Transaction History",
+        "Hotel Concierge",
+        "Airport Lost Property",
+        "Tourist Office"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Which record would tell you the restaurant's name?",
+      "explanation": "Your card transaction history shows the restaurant and the time, which lets you call and ask.",
+      "id": "td_l120_q1",
+      "travelDocuments": "ID Card"
+    },
+    {
+      "instruction": "Which counter can solve the real problem?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I've been booked into a hotel with the right name but in the wrong city. Both belong to the same chain.",
+      "itinerary": [
+        "Hotel Chain Front Desk in the Wrong City",
+        "Hotel Chain Airline Desk",
+        "Hotel Chain Customer Service Line",
+        "Hotel Chain Taxi Rank"
+      ],
+      "options": [
+        "Front Desk in the Wrong City",
+        "Airline Desk",
+        "Customer Service Line",
+        "Taxi Rank"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Only a central office can change a booking across locations.",
+      "explanation": "The chain's customer service can transfer the booking to the right city. The wrong hotel can't do it.",
+      "id": "td_l120_q2",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Choose the option that deals with the most urgent part first.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I've lost my phone and bag at the station, and I'm alone in a strange city.",
+      "itinerary": [
+        "Central Station Taxi Rank",
+        "Central Station Ticket Machine",
+        "Central Station Station Cafe",
+        "Central Station Station Staff Office"
+      ],
+      "options": [
+        "Taxi Rank",
+        "Ticket Machine",
+        "Station Cafe",
+        "Station Staff Office"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Find a safe, staffed place where you can get help at once.",
+      "explanation": "The station staff office can help with lost items, phone calls and safety. It's the calmest first step.",
+      "id": "td_l120_q3",
+      "travelDocuments": "City Map"
+    }
+  ]
 }

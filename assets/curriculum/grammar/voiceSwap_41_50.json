@@ -8,8 +8,8 @@
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "My parents have recently renovated their entire family house.",
-            "sentence": "My parents have recently renovated their entire family house.",
+            "question": "My parents haven't renovated the kitchen yet.",
+            "sentence": "My parents haven't renovated the kitchen yet.",
             "options": [
                 "Active",
                 "Passive"
@@ -17,59 +17,59 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before have renovated. Who did the renovating?",
-            "explanation": "This is active voice: my parents (the doer) have performed the action renovated directly on the house. In passive, this would flip to: Their entire family house has recently been renovated by my parents.",
-            "grammarRule": "Present Perfect Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer right before haven't renovated.",
+            "explanation": "My parents is the doer of haven't renovated, negative present perfect active. Passive version: The kitchen hasn't been renovated yet by my parents.",
+            "grammarRule": "Present Perfect Active (Negative)",
+            "activeVoice": "My parents haven't renovated the kitchen yet.",
+            "passiveVoice": "The kitchen hasn't been renovated yet by my parents."
         },
         {
             "id": "vs_l41_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "My older sister has already finished all her homework.",
-            "sentence": "My older sister has already finished all her homework.",
+            "question": "The invitations weren't sent out until the last minute.",
+            "sentence": "The invitations weren't sent out until the last minute.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Who performs the action has finished? Look right before the verb.",
-            "explanation": "This is active voice: my sister (the doer) has performed the action finished directly on her homework. In passive, this would flip to: All her homework has already been finished by my sister.",
-            "grammarRule": "Present Perfect Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Invitations can't send themselves. Look for weren't plus a past participle.",
+            "explanation": "The invitations (receiver) weren't sent - negative simple past passive: was/were + not + past participle, with no sender named. Active form: The host didn't send the invitations out until the last minute.",
+            "grammarRule": "Simple Past Passive (Negative)",
+            "activeVoice": "The host didn't send the invitations out until the last minute.",
+            "passiveVoice": "The invitations weren't sent out until the last minute."
         },
         {
             "id": "vs_l41_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The old bridge has been closed for urgent repairs.",
-            "sentence": "The old bridge has been closed for urgent repairs.",
+            "question": "This printer doesn't support wireless connections.",
+            "sentence": "This printer doesn't support wireless connections.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for has been plus a past participle (closed). The subject receives the action here.",
-            "explanation": "This is passive voice: the bridge (receiver) has been closed, but no closer is named directly. In active, this would flip to: Workers have closed the old bridge for urgent repairs.",
-            "grammarRule": "Present Perfect Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer right before doesn't support, and check whether support needs a passive equivalent here.",
+            "explanation": "This printer is the doer of doesn't support, negative simple present active. Passive version: Wireless connections aren't supported by this printer.",
+            "grammarRule": "Simple Present Active (Negative)",
+            "activeVoice": "This printer doesn't support wireless connections.",
+            "passiveVoice": "Wireless connections aren't supported by this printer."
         },
         {
             "id": "vs_l42_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The final contract has been signed by both parties.",
-            "sentence": "The final contract has been signed by both parties.",
+            "question": "The elevator isn't being used while the inspection is underway.",
+            "sentence": "The elevator isn't being used while the inspection is underway.",
             "options": [
                 "Active",
                 "Passive"
@@ -77,59 +77,59 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for has been plus a past participle (signed), followed by by naming who does the action.",
-            "explanation": "This is passive voice: the contract (receiver) has been signed by both parties, the agent named after by. In active, this would flip to: Both parties have signed the final contract.",
-            "grammarRule": "Present Perfect Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "An elevator can't use itself. Look for isn't being plus a past participle.",
+            "explanation": "The elevator (receiver) isn't being used - negative present continuous passive: is/are + not + being + past participle, with no user named. Active form: No one is using the elevator while the inspection is underway.",
+            "grammarRule": "Present Continuous Passive (Negative)",
+            "activeVoice": "No one is using the elevator while the inspection is underway.",
+            "passiveVoice": "The elevator isn't being used while the inspection is underway."
         },
         {
             "id": "vs_l42_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Several new symptoms have been reported by many patients.",
-            "sentence": "Several new symptoms have been reported by many patients.",
+            "question": "The technicians hadn't calibrated the machine before the shift started.",
+            "sentence": "The technicians hadn't calibrated the machine before the shift started.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for have been plus a past participle (reported), followed by by naming who does the action.",
-            "explanation": "This is passive voice: several symptoms (receiver) have been reported by many patients, the agent named after by. In active, this would flip to: Many patients have reported several new symptoms.",
-            "grammarRule": "Present Perfect Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer right before hadn't calibrated.",
+            "explanation": "The technicians is the doer of hadn't calibrated, negative past perfect active. Passive version: The machine hadn't been calibrated before the shift started.",
+            "grammarRule": "Past Perfect Active (Negative)",
+            "activeVoice": "The technicians hadn't calibrated the machine before the shift started.",
+            "passiveVoice": "The machine hadn't been calibrated before the shift started."
         },
         {
             "id": "vs_l42_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The lead surgeon has successfully completed the entire operation.",
-            "sentence": "The lead surgeon has successfully completed the entire operation.",
+            "question": "The refund hasn't been processed despite three phone calls.",
+            "sentence": "The refund hasn't been processed despite three phone calls.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before has completed.",
-            "explanation": "This is active voice: the surgeon (the doer) has performed the action completed directly on the operation. In passive, this would flip to: The entire operation has been successfully completed by the lead surgeon.",
-            "grammarRule": "Present Perfect Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "A refund doesn't process itself. Look for hasn't been plus a past participle.",
+            "explanation": "The refund (receiver) hasn't been processed - negative present perfect passive, with no clerk or department named. Active form: The company hasn't processed the refund despite three phone calls.",
+            "grammarRule": "Present Perfect Passive (Negative)",
+            "activeVoice": "The company hasn't processed the refund despite three phone calls.",
+            "passiveVoice": "The refund hasn't been processed despite three phone calls."
         },
         {
             "id": "vs_l43_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "We are going to renovate our old family cabin next month.",
-            "sentence": "We are going to renovate our old family cabin next month.",
+            "question": "Did the plumber fix the leaking pipe under the sink?",
+            "sentence": "Did the plumber fix the leaking pipe under the sink?",
             "options": [
                 "Active",
                 "Passive"
@@ -137,59 +137,59 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before are going to renovate.",
-            "explanation": "This is active voice: we (the doer) are going to perform the action renovate directly on the cabin. In passive, this would flip to: Our old family cabin is going to be renovated by us next month.",
-            "grammarRule": "Future (going to) Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "In questions, the doer often follows the auxiliary. Ask who would be doing the fixing, if the answer is yes.",
+            "explanation": "The plumber is the doer of fix here - did simply signals a past-tense question, and the doer still sits before the main verb. Passive version: Was the leaking pipe under the sink fixed by the plumber?",
+            "grammarRule": "Simple Past Active Question",
+            "activeVoice": "Did the plumber fix the leaking pipe under the sink?",
+            "passiveVoice": "Was the leaking pipe under the sink fixed by the plumber?"
         },
         {
             "id": "vs_l43_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The airline will announce new flight schedules very soon.",
-            "sentence": "The airline will announce new flight schedules very soon.",
+            "question": "Was the parcel delivered to the correct address this time?",
+            "sentence": "Was the parcel delivered to the correct address this time?",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Who performs the action will announce? Look right before the verb.",
-            "explanation": "This is active voice: the airline (the doer) will perform the action announce directly on new flight schedules. In passive, this would flip to: New flight schedules will be announced very soon by the airline.",
-            "grammarRule": "Future Simple Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "The parcel can't deliver itself. Look for was plus a past participle, even with the subject and verb swapped for a question.",
+            "explanation": "The parcel (receiver) was delivered - in passive questions, was/were still pairs with a past participle, just with was moved before the subject. No courier is named. Active form: Did the courier deliver the parcel to the correct address this time?",
+            "grammarRule": "Simple Past Passive Question",
+            "activeVoice": "Did the courier deliver the parcel to the correct address this time?",
+            "passiveVoice": "Was the parcel delivered to the correct address this time?"
         },
         {
             "id": "vs_l43_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The new bridge will be completed by next year.",
-            "sentence": "The new bridge will be completed by next year.",
+            "question": "Has the landlord approved the new lease terms yet?",
+            "sentence": "Has the landlord approved the new lease terms yet?",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for will be plus a past participle (completed). The subject receives the action here.",
-            "explanation": "This is passive voice: the bridge (receiver) will be completed, but no builder is named directly. In active, this would flip to: Engineers will complete the new bridge by next year.",
-            "grammarRule": "Future Simple Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Look for has before the subject - who would be approving, if the answer is yes?",
+            "explanation": "The landlord is the doer of approved here, with has simply inverted to the front to form a present perfect question. Passive version: Have the new lease terms been approved by the landlord yet?",
+            "grammarRule": "Present Perfect Active Question",
+            "activeVoice": "Has the landlord approved the new lease terms yet?",
+            "passiveVoice": "Have the new lease terms been approved by the landlord yet?"
         },
         {
             "id": "vs_l44_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The fully updated software will be released next month.",
-            "sentence": "The fully updated software will be released next month.",
+            "question": "Have the new lease terms been approved by the landlord yet?",
+            "sentence": "Have the new lease terms been approved by the landlord yet?",
             "options": [
                 "Active",
                 "Passive"
@@ -197,19 +197,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for will be plus a past participle (released). The subject receives the action here.",
-            "explanation": "This is passive voice: the software (receiver) will be released, but no releaser is named directly. In active, this would flip to: The company will release the fully updated software next month.",
-            "grammarRule": "Future Simple Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "The lease terms can't approve themselves. Look for been plus a past participle after have.",
+            "explanation": "The new lease terms (receiver) have been approved - present perfect passive question: have/has + subject + been + past participle. The landlord appears as the named agent. Active form: Has the landlord approved the new lease terms yet?",
+            "grammarRule": "Present Perfect Passive Question",
+            "activeVoice": "Has the landlord approved the new lease terms yet?",
+            "passiveVoice": "Have the new lease terms been approved by the landlord yet?"
         },
         {
             "id": "vs_l44_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The final proposal is going to be presented tomorrow.",
-            "sentence": "The final proposal is going to be presented tomorrow.",
+            "question": "Can this warranty be extended for an additional year?",
+            "sentence": "Can this warranty be extended for an additional year?",
             "options": [
                 "Active",
                 "Passive"
@@ -217,39 +217,39 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for is going to be plus a past participle (presented). The subject receives the action here.",
-            "explanation": "This is passive voice: the proposal (receiver) is going to be presented, but no presenter is named directly. In active, this would flip to: The team is going to present the final proposal tomorrow.",
-            "grammarRule": "Future (going to) Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "A warranty can't extend itself. Look for can plus be plus a past participle.",
+            "explanation": "This warranty (receiver) can be extended - modal passive question: can + subject + be + past participle, with no company named. Active form: Can the company extend this warranty for an additional year?",
+            "grammarRule": "Modal Verbs Passive Question",
+            "activeVoice": "Can the company extend this warranty for an additional year?",
+            "passiveVoice": "Can this warranty be extended for an additional year?"
         },
         {
             "id": "vs_l44_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The IT department will upgrade all office computers soon.",
-            "sentence": "The IT department will upgrade all office computers soon.",
+            "question": "Should the meeting be rescheduled given the sudden storm warning?",
+            "sentence": "Should the meeting be rescheduled given the sudden storm warning?",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before will upgrade.",
-            "explanation": "This is active voice: the IT department (the doer) will perform the action upgrade directly on all office computers. In passive, this would flip to: All office computers will be upgraded soon by the IT department.",
-            "grammarRule": "Future Simple Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "A meeting doesn't reschedule itself. Look for should plus be plus a past participle.",
+            "explanation": "The meeting (receiver) should be rescheduled - modal passive question, should + subject + be + past participle, with no organizer named. Active form: Should the organizer reschedule the meeting given the sudden storm warning?",
+            "grammarRule": "Modal Verbs Passive Question",
+            "activeVoice": "Should the organizer reschedule the meeting given the sudden storm warning?",
+            "passiveVoice": "Should the meeting be rescheduled given the sudden storm warning?"
         },
         {
             "id": "vs_l45_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The director has finally cast a new lead actor.",
-            "sentence": "The director has finally cast a new lead actor.",
+            "question": "Who reviewed the final draft before it was sent out?",
+            "sentence": "Who reviewed the final draft before it was sent out?",
             "options": [
                 "Active",
                 "Passive"
@@ -257,59 +257,59 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Who performs the action has cast? Look right before the verb.",
-            "explanation": "This is active voice: the director (the doer) has performed the action cast directly on a new lead actor. In passive, this would flip to: A new lead actor has finally been cast by the director.",
-            "grammarRule": "Present Perfect Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "This question asks about the doer directly - who is asking for the subject of an active sentence.",
+            "explanation": "This who-question asks for the doer itself, so it's naturally active: someone reviewed the final draft. Passive version, focusing on the draft instead: By whom was the final draft reviewed before it was sent out?",
+            "grammarRule": "Wh-Question Active (Subject Question)",
+            "activeVoice": "Who reviewed the final draft before it was sent out?",
+            "passiveVoice": "By whom was the final draft reviewed before it was sent out?"
         },
         {
             "id": "vs_l45_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The chef has created a brand new dessert menu.",
-            "sentence": "The chef has created a brand new dessert menu.",
+            "question": "What time was the package picked up from the warehouse?",
+            "sentence": "What time was the package picked up from the warehouse?",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before has created.",
-            "explanation": "This is active voice: the chef (the doer) has performed the action created directly on a new dessert menu. In passive, this would flip to: A brand new dessert menu has been created by the chef.",
-            "grammarRule": "Present Perfect Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "The package doesn't pick itself up. Look for was plus a past participle inside the question.",
+            "explanation": "The package (receiver) was picked up - passive wh-question, with was moved before the subject and no courier named. Active form: What time did someone pick up the package from the warehouse?",
+            "grammarRule": "Wh-Question Passive",
+            "activeVoice": "What time did someone pick up the package from the warehouse?",
+            "passiveVoice": "What time was the package picked up from the warehouse?"
         },
         {
             "id": "vs_l45_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The new album has been streamed millions of times.",
-            "sentence": "The new album has been streamed millions of times.",
+            "question": "Which department handles complaints about billing errors?",
+            "sentence": "Which department handles complaints about billing errors?",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for has been plus a past participle (streamed). The subject receives the action here.",
-            "explanation": "This is passive voice: the album (receiver) has been streamed, but the streamer is described only generally. In active, this would flip to: Millions of listeners have streamed the new album.",
-            "grammarRule": "Present Perfect Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Which department is the doer here - find the verb it performs.",
+            "explanation": "Which department is the doer of handles, an active wh-question asking about who performs the action. Passive version: Which department are complaints about billing errors handled by?",
+            "grammarRule": "Wh-Question Active",
+            "activeVoice": "Which department handles complaints about billing errors?",
+            "passiveVoice": "Complaints about billing errors are handled by which department?"
         },
         {
             "id": "vs_l46_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "A cure will eventually be found for this disease.",
-            "sentence": "A cure will eventually be found for this disease.",
+            "question": "Why wasn't the fire alarm tested last month as scheduled?",
+            "sentence": "Why wasn't the fire alarm tested last month as scheduled?",
             "options": [
                 "Active",
                 "Passive"
@@ -317,39 +317,39 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for will be plus a past participle (found). The subject receives the action here.",
-            "explanation": "This is passive voice: a cure (receiver) will eventually be found, but no finder is named directly. In active, this would flip to: Scientists will eventually find a cure for this disease.",
-            "grammarRule": "Future Simple Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "A fire alarm can't test itself. Look for wasn't plus a past participle.",
+            "explanation": "The fire alarm (receiver) wasn't tested - negative passive wh-question: wasn't + subject + past participle, with no technician named. Active form: Why didn't the technician test the fire alarm last month as scheduled?",
+            "grammarRule": "Simple Past Passive Question (Negative)",
+            "activeVoice": "Why didn't the technician test the fire alarm last month as scheduled?",
+            "passiveVoice": "Why wasn't the fire alarm tested last month as scheduled?"
         },
         {
             "id": "vs_l46_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The vaccine is going to be tested in three countries.",
-            "sentence": "The vaccine is going to be tested in three countries.",
+            "question": "Why hasn't anyone answered the front desk phone all morning?",
+            "sentence": "Why hasn't anyone answered the front desk phone all morning?",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for is going to be plus a past participle (tested). The subject receives the action here.",
-            "explanation": "This is passive voice: the vaccine (receiver) is going to be tested, but no tester is named directly. In active, this would flip to: Researchers are going to test the vaccine in three countries.",
-            "grammarRule": "Future (going to) Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer right before answered, even though it's the vague word anyone.",
+            "explanation": "Anyone is the doer of answered, so despite being vague, this is still an active-voice question. Passive version: Why hasn't the front desk phone been answered all morning?",
+            "grammarRule": "Present Perfect Active Question (Negative)",
+            "activeVoice": "Why hasn't anyone answered the front desk phone all morning?",
+            "passiveVoice": "Why hasn't the front desk phone been answered all morning?"
         },
         {
             "id": "vs_l46_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The city is going to build a new health center.",
-            "sentence": "The city is going to build a new health center.",
+            "question": "How much has the company invested in renewable energy so far?",
+            "sentence": "How much has the company invested in renewable energy so far?",
             "options": [
                 "Active",
                 "Passive"
@@ -357,39 +357,39 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before is going to build.",
-            "explanation": "This is active voice: the city (the doer) is going to perform the action build directly on a new health center. In passive, this would flip to: A new health center is going to be built by the city.",
-            "grammarRule": "Future (going to) Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer right before has invested.",
+            "explanation": "The company is the doer of has invested, present perfect active question. Passive version: How much has been invested in renewable energy by the company so far?",
+            "grammarRule": "Present Perfect Active Question",
+            "activeVoice": "How much has the company invested in renewable energy so far?",
+            "passiveVoice": "How much has been invested in renewable energy by the company so far?"
         },
         {
             "id": "vs_l47_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The skilled tailor has altered the wedding dress perfectly.",
-            "sentence": "The skilled tailor has altered the wedding dress perfectly.",
+            "question": "Isn't the software supposed to be updated automatically?",
+            "sentence": "Isn't the software supposed to be updated automatically?",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Who performs the action has altered? Look right before the verb.",
-            "explanation": "This is active voice: the tailor (the doer) has performed the action altered directly on the wedding dress. In passive, this would flip to: The wedding dress has been perfectly altered by the skilled tailor.",
-            "grammarRule": "Present Perfect Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Software doesn't update itself. Look for the passive infinitive to be updated inside the question.",
+            "explanation": "The software (receiver) is supposed to be updated - a passive infinitive, to be + past participle, embedded in a negative question. No specific updater is named. Active form: Isn't the system supposed to update the software automatically?",
+            "grammarRule": "Passive Infinitives Passive",
+            "activeVoice": "Isn't the system supposed to update the software automatically?",
+            "passiveVoice": "Isn't the software supposed to be updated automatically?"
         },
         {
             "id": "vs_l47_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The school has installed new computers in every classroom.",
-            "sentence": "The school has installed new computers in every classroom.",
+            "question": "Doesn't the warranty cover accidental damage as well?",
+            "sentence": "Doesn't the warranty cover accidental damage as well?",
             "options": [
                 "Active",
                 "Passive"
@@ -397,19 +397,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before has installed.",
-            "explanation": "This is active voice: the school (the doer) has performed the action installed directly on new computers. In passive, this would flip to: New computers have been installed in every classroom by the school.",
-            "grammarRule": "Present Perfect Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer right before cover.",
+            "explanation": "The warranty is the doer of cover, a negative present-tense active question. Passive version: Isn't accidental damage covered by the warranty as well?",
+            "grammarRule": "Simple Present Active Question (Negative)",
+            "activeVoice": "Doesn't the warranty cover accidental damage as well?",
+            "passiveVoice": "Isn't accidental damage covered by the warranty as well?"
         },
         {
             "id": "vs_l47_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The order has been shipped to the wrong warehouse.",
-            "sentence": "The order has been shipped to the wrong warehouse.",
+            "question": "Wasn't the budget supposed to be approved before the project began?",
+            "sentence": "Wasn't the budget supposed to be approved before the project began?",
             "options": [
                 "Active",
                 "Passive"
@@ -417,39 +417,39 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for has been plus a past participle (shipped). The subject receives the action here.",
-            "explanation": "This is passive voice: the order (receiver) has been shipped, but no shipper is named directly. In active, this would flip to: The supplier has shipped the order to the wrong warehouse.",
-            "grammarRule": "Present Perfect Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "A budget doesn't approve itself. Look for the passive infinitive to be approved.",
+            "explanation": "The budget (receiver) is supposed to be approved - another passive infinitive inside a negative question, with no approver named. Active form: Wasn't the board supposed to approve the budget before the project began?",
+            "grammarRule": "Passive Infinitives Passive",
+            "activeVoice": "Wasn't the board supposed to approve the budget before the project began?",
+            "passiveVoice": "Wasn't the budget supposed to be approved before the project began?"
         },
         {
             "id": "vs_l48_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The tour will be guided by a local expert.",
-            "sentence": "The tour will be guided by a local expert.",
+            "question": "The company doesn't disclose salary ranges in job postings.",
+            "sentence": "The company doesn't disclose salary ranges in job postings.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for will be plus a past participle (guided), followed by by naming who does the action.",
-            "explanation": "This is passive voice: the tour (receiver) will be guided by a local expert, the agent named after by. In active, this would flip to: A local expert will guide the tour.",
-            "grammarRule": "Future Simple Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer right before doesn't disclose.",
+            "explanation": "The company is the doer of doesn't disclose, negative simple present active. Passive version: Salary ranges aren't disclosed in job postings by the company.",
+            "grammarRule": "Simple Present Active (Negative)",
+            "activeVoice": "The company doesn't disclose salary ranges in job postings.",
+            "passiveVoice": "Salary ranges aren't disclosed in job postings by the company."
         },
         {
             "id": "vs_l48_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The sequel is going to be released next summer.",
-            "sentence": "The sequel is going to be released next summer.",
+            "question": "Why weren't the customers informed about the price increase in advance?",
+            "sentence": "Why weren't the customers informed about the price increase in advance?",
             "options": [
                 "Active",
                 "Passive"
@@ -457,39 +457,39 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for is going to be plus a past participle (released). The subject receives the action here.",
-            "explanation": "This is passive voice: the sequel (receiver) is going to be released, but no releaser is named directly. In active, this would flip to: The studio is going to release the sequel next summer.",
-            "grammarRule": "Future (going to) Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Customers don't inform themselves. Look for weren't plus a past participle.",
+            "explanation": "The customers (receiver) weren't informed - negative passive wh-question, with no specific department named. Active form: Why didn't the company inform the customers about the price increase in advance?",
+            "grammarRule": "Simple Past Passive Question (Negative)",
+            "activeVoice": "Why didn't the company inform the customers about the price increase in advance?",
+            "passiveVoice": "Why weren't the customers informed about the price increase in advance?"
         },
         {
             "id": "vs_l48_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The airline will upgrade her seat for free tomorrow.",
-            "sentence": "The airline will upgrade her seat for free tomorrow.",
+            "question": "Has the missing luggage been located yet?",
+            "sentence": "Has the missing luggage been located yet?",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Who will carry out the upgrade? Look right before the verb.",
-            "explanation": "This is active voice: the airline (the doer) will perform the action upgrade directly on her seat. In passive, this would flip to: Her seat will be upgraded for free by the airline tomorrow.",
-            "grammarRule": "Future Simple Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Luggage doesn't locate itself. Look for been plus a past participle after has.",
+            "explanation": "The missing luggage (receiver) has been located - present perfect passive question, with no specific staff member named. Active form: Has the airline located the missing luggage yet?",
+            "grammarRule": "Present Perfect Passive Question",
+            "activeVoice": "Has the airline located the missing luggage yet?",
+            "passiveVoice": "Has the missing luggage been located yet?"
         },
         {
             "id": "vs_l49_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The whole team has achieved outstanding results this quarter.",
-            "sentence": "The whole team has achieved outstanding results this quarter.",
+            "question": "What caused the sudden drop in attendance this semester?",
+            "sentence": "What caused the sudden drop in attendance this semester?",
             "options": [
                 "Active",
                 "Passive"
@@ -497,19 +497,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Who performs the action has achieved? Look right before the verb.",
-            "explanation": "This is active voice: the team (the doer) has performed the action achieved directly on outstanding results. In passive, this would flip to: Outstanding results have been achieved this quarter by the whole team.",
-            "grammarRule": "Present Perfect Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "What is asking for the doer itself here, not for a receiver. Check what performs caused.",
+            "explanation": "What is the doer of caused - this looks like it could be passive because the cause is unknown, but grammatically the question asks what did the causing, making it active. Passive version would need a known effect as subject: Was the sudden drop in attendance caused by a single factor?",
+            "grammarRule": "Wh-Question Active (Subject Question)",
+            "activeVoice": "What caused the sudden drop in attendance this semester?",
+            "passiveVoice": "Was the sudden drop in attendance caused by a single factor this semester?"
         },
         {
             "id": "vs_l49_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "A new regional manager will be appointed next week.",
-            "sentence": "A new regional manager will be appointed next week.",
+            "question": "Who was blamed for the delayed shipment?",
+            "sentence": "Who was blamed for the delayed shipment?",
             "options": [
                 "Active",
                 "Passive"
@@ -517,19 +517,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for will be plus a past participle (appointed). The subject receives the action here.",
-            "explanation": "This is passive voice: a new manager (receiver) will be appointed, but no appointer is named directly. In active, this would flip to: The board will appoint a new regional manager next week.",
-            "grammarRule": "Future Simple Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Someone received the blame here rather than giving it. Look for was plus a past participle even though the question word is who.",
+            "explanation": "Even though the question starts with who, the true subject, an unnamed person, receives the action was blamed, making this passive - who here asks about the agent, revealed in a possible by-phrase. Active form: Who did they blame for the delayed shipment?",
+            "grammarRule": "Wh-Question Passive",
+            "activeVoice": "Who did they blame for the delayed shipment?",
+            "passiveVoice": "Who was blamed for the delayed shipment?"
         },
         {
             "id": "vs_l49_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "My father has taught me many valuable life lessons.",
-            "sentence": "My father has taught me many valuable life lessons.",
+            "question": "Which supplier delivers the freshest produce to this restaurant?",
+            "sentence": "Which supplier delivers the freshest produce to this restaurant?",
             "options": [
                 "Active",
                 "Passive"
@@ -537,19 +537,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before has taught.",
-            "explanation": "This is active voice: my father (the doer) has performed the action taught directly, with me and lessons as objects. In passive, this would flip to: Many valuable life lessons have been taught to me by my father.",
-            "grammarRule": "Present Perfect Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Which supplier is the doer here - check what action it performs.",
+            "explanation": "Which supplier is the doer of delivers, an active wh-question, not a passive one, even though delivers relates to receiving goods. Passive version: Which supplier is the freshest produce delivered by?",
+            "grammarRule": "Wh-Question Active",
+            "activeVoice": "Which supplier delivers the freshest produce to this restaurant?",
+            "passiveVoice": "The freshest produce is delivered to this restaurant by which supplier."
         },
         {
             "id": "vs_l50_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The annual festival has been postponed until next spring.",
-            "sentence": "The annual festival has been postponed until next spring.",
+            "question": "This checkpoint reviews negatives and questions: Hasn't the new policy been explained to the entire staff yet?",
+            "sentence": "This checkpoint reviews negatives and questions: Hasn't the new policy been explained to the entire staff yet?",
             "options": [
                 "Active",
                 "Passive"
@@ -557,39 +557,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for has been plus a past participle (postponed). The subject receives the action here.",
-            "explanation": "This checkpoint reviews passive voice: the festival (receiver) has been postponed, but no organizer is named directly. In active, this would flip to: Organizers have postponed the annual festival until next spring.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "A policy doesn't explain itself. Look for been plus a past participle after hasn't.",
+            "explanation": "This checkpoint reviews negative passive questions: the new policy (receiver) has been explained, with no specific manager named. Active form: Hasn't management explained the new policy to the entire staff yet?",
+            "grammarRule": "Present Perfect Passive Question (Negative)",
+            "activeVoice": "Hasn't management explained the new policy to the entire staff yet?",
+            "passiveVoice": "Hasn't the new policy been explained to the entire staff yet?"
         },
         {
             "id": "vs_l50_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The final decision will be announced later this afternoon.",
-            "sentence": "The final decision will be announced later this afternoon.",
-            "options": [
-                "Active",
-                "Passive"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for will be plus a past participle (announced). The subject receives the action here.",
-            "explanation": "This checkpoint reviews passive voice: the decision (receiver) will be announced, but no announcer is named directly. In active, this would flip to: The judges will announce the final decision later this afternoon.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
-        },
-        {
-            "id": "vs_l50_q3",
-            "instruction": "FLIP THE VOICE TRANSMUTER",
-            "subtype": "voiceSwap",
-            "interactionType": "choice",
-            "question": "The company has recently opened three new international offices.",
-            "sentence": "The company has recently opened three new international offices.",
+            "question": "This checkpoint reviews negatives and questions: The vendor doesn't accept returns after fourteen days.",
+            "sentence": "This checkpoint reviews negatives and questions: The vendor doesn't accept returns after fourteen days.",
             "options": [
                 "Active",
                 "Passive"
@@ -597,11 +577,31 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before has opened, then decide the voice.",
-            "explanation": "This checkpoint reviews active voice: the company (the doer) has performed the action opened directly on three new offices. In passive, this would flip to: Three new international offices have recently been opened by the company.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer right before doesn't accept.",
+            "explanation": "This checkpoint reviews negative active statements: the vendor is the doer of doesn't accept. Passive version: Returns aren't accepted by the vendor after fourteen days.",
+            "grammarRule": "Simple Present Active (Negative)",
+            "activeVoice": "The vendor doesn't accept returns after fourteen days.",
+            "passiveVoice": "Returns aren't accepted by the vendor after fourteen days."
+        },
+        {
+            "id": "vs_l50_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "This checkpoint reviews negatives and questions: Why hasn't the invoice been paid despite two reminders?",
+            "sentence": "This checkpoint reviews negatives and questions: Why hasn't the invoice been paid despite two reminders?",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "An invoice doesn't pay itself. Look for been plus a past participle after hasn't.",
+            "explanation": "This checkpoint reviews negative passive wh-questions: the invoice (receiver) has been paid, with no specific client named. Active form: Why hasn't the client paid the invoice despite two reminders?",
+            "grammarRule": "Present Perfect Passive Question (Negative)",
+            "activeVoice": "Why hasn't the client paid the invoice despite two reminders?",
+            "passiveVoice": "Why hasn't the invoice been paid despite two reminders?"
         }
     ]
 }

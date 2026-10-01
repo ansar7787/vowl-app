@@ -6,480 +6,480 @@
         {
             "id": "SPK_SITUATIONSPEAKING_L161_Q1",
             "interactionType": "narrator",
-            "hint": "Deliver an authoritative expert opinion: 'Based on the totality of evidence available, my professional assessment is that…'",
-            "explanation": "'Based on the totality of evidence' signals comprehensive consideration rather than selective data. 'Professional assessment' distinguishes an expert judgment from a personal opinion - important in formal expert contexts.",
-            "situationText": "A government committee has asked for your expert professional opinion on a complex scientific matter.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "intervention is safe and effective for the target population",
+            "hint": "Bundle every requirement into one clear list, in order of importance. Helpers can only filter for what you tell them.",
+            "explanation": "When you have several constraints, giving them together lets the other person search once, not repeatedly. Numbers such as a price limit make the criteria measurable.",
+            "situationText": "Your team of nine is having a farewell dinner next week. Two people are vegetarian, everyone is coming by train, and the budget is tight. You ask the hotel concierge for ideas. You'd like to keep it under twenty euros per person.",
+            "sampleAnswer": "We need a place near the station with vegetarian options, under twenty euros a head. Could you suggest a couple?",
+            "correctAnswer": "We're looking for a restaurant near the station with vegetarian dishes, for under twenty euros per person. Could you suggest a couple?",
             "acceptedSynonyms": [
-                "intervention is safe and effective for the target population",
-                "totality of the evidence",
-                "professional assessment",
-                "expert testimony"
+                "Could you recommend somewhere close to the station? It needs vegetarian choices and should cost under twenty euros each.",
+                "I need a group dinner spot near the train station, with vegetarian food and a budget of twenty euros a head. Any ideas?",
+                "We're looking for a restaurant near the station with vegetarian dishes, for under twenty euros per person. Could you suggest a couple?",
+                "Do you know any restaurants near the station that cater for vegetarians and don't cost more than twenty euros per person?"
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L161_Q2",
             "interactionType": "narrator",
-            "hint": "Qualify an expert position precisely: 'This conclusion holds within the parameters studied. Beyond those parameters, I would exercise caution.'",
-            "explanation": "'Holds within the parameters studied' is precise, responsible expert language. 'I would exercise caution beyond those parameters' shows intellectual honesty about the boundaries of your expert knowledge.",
-            "situationText": "You are giving expert testimony and a lawyer is pushing you to generalize your findings more broadly.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "strongly caution against extrapolation beyond those parameters",
+            "hint": "State non-negotiable requirements first (accessibility, timing), then ask what's available. It saves time for both sides.",
+            "explanation": "Accessibility needs should be presented as basic conditions, not optional extras. Listing the requirements in one sentence lets the venue answer whether they fit.",
+            "situationText": "You're organizing a company talk for forty people on a weekday evening. One attendee uses a wheelchair, and the speaker needs a projector. You phone a venue.",
+            "sampleAnswer": "We're planning an evening event for forty guests. The room needs a projector and full wheelchair access. What can you offer?",
+            "correctAnswer": "We need a room for forty people on a weekday evening. It must have a projector and be step-free for a wheelchair user. What do you have available?",
             "acceptedSynonyms": [
-                "strongly caution against extrapolation beyond those parameters",
-                "holds firmly within the parameters studied",
-                "further empirical evidence needed",
-                "qualified expert position"
+                "We need a room for forty people on a weekday evening. It must have a projector and be step-free for a wheelchair user. What do you have available?",
+                "Could you tell me what rooms you have for forty people on a weekday evening? They must have a projector and wheelchair access.",
+                "I'm looking for a step-free room that seats forty, with a projector, on a weekday evening. Is anything available?",
+                "We're planning an evening event for forty guests. The room needs a projector and full wheelchair access. What can you offer?"
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L161_Q3",
             "interactionType": "narrator",
-            "hint": "Acknowledge the limits of expertise: 'That question falls outside my specific area of expertise, but I can direct you to colleagues who are better placed to answer it.'",
-            "explanation": "'Outside my specific area of expertise' is a confident, honest boundary statement. Offering to direct someone to the right expert shows professional integrity and a commitment to accuracy over appearing omniscient.",
-            "situationText": "An interviewer asks you a question that lies just outside your specific area of specialized expertise.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "that question falls just outside my specific area of expertise",
+            "hint": "Give the fixed limits (arrival time, departure time, budget), then ask for possibilities. Let the agent search within them.",
+            "explanation": "Stating what is fixed and what is flexible helps the agent find real options quickly. Announcing your budget at the beginning avoids wasting time on flights you can't afford.",
+            "situationText": "You must be in Lisbon for a meeting on Friday at noon. You can't leave work before Thursday evening, and your budget is about 300 euros. You call a travel agent.",
+            "sampleAnswer": "I need to arrive before noon on Friday, but I can't leave before Thursday evening, and my budget is around 300 euros. What options are there?",
+            "correctAnswer": "I have to arrive before noon on Friday, but I can't leave until Thursday evening, and I want to spend around 300 euros. What are my options?",
             "acceptedSynonyms": [
-                "that question falls just outside my specific area of expertise",
-                "would not want to speculate",
-                "direct you to colleagues",
-                "acknowledging limits of expertise"
+                "What flights could work? I can't depart before Thursday evening, I must land before noon on Friday, and my budget is about 300 euros.",
+                "I'm looking for a trip that gets me there before noon on Friday, leaving Thursday night at the earliest, for around 300 euros.",
+                "I have to arrive before noon on Friday, but I can't leave until Thursday evening, and I want to spend around 300 euros. What are my options?",
+                "Could you check what's available? Thursday evening is the earliest I can leave, and I have to be there before noon on Friday, within 300 euros."
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L162_Q1",
             "interactionType": "narrator",
-            "hint": "Propose a policy: 'I am proposing that we introduce a graduated carbon tax, phased in over five years, beginning at twenty dollars per tonne.'",
-            "explanation": "A strong English policy proposal is specific about mechanism, timeline, and starting point. Vague proposals ('we should do something about carbon') invite challenge; specific ones ('graduated tax, phased over five years') demonstrate serious preparation.",
-            "situationText": "You are presenting a policy proposal to a legislative committee on environmental taxation.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "graduated carbon tax phased in over five years beginning at twenty dollars",
+            "hint": "Mention a change as soon as you know. Open with 'One change' so the listener adjusts before they hear the details.",
+            "explanation": "Introducing an update with a signal phrase ('One change') prepares the listener. Asking whether it's still possible respects the fact that the restaurant may be full.",
+            "situationText": "You're on the phone booking a table for four when a friend messages that two more people are coming. The host is still on the line.",
+            "sampleAnswer": "Sorry, one change: two more people are joining us, so it's six, not four. Is that still possible?",
+            "correctAnswer": "Sorry, one change. Two more people are joining, so we'll be six instead of four. Is that still possible?",
             "acceptedSynonyms": [
-                "graduated carbon tax phased in over five years beginning at twenty dollars",
-                "revenues ringfenced for clean energy",
-                "proposing a policy",
-                "specific policy proposal"
+                "Sorry, one change. Two more people are joining, so we'll be six instead of four. Is that still possible?",
+                "I've just heard that two more friends are coming. Could we make it a table for six?",
+                "Sorry to interrupt, but the number has changed. There'll be six of us, not four. Would that be all right?",
+                "Actually, we're going to be six, not four. Do you have space for that?"
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L162_Q2",
             "interactionType": "narrator",
-            "hint": "Analyse a policy: 'This policy addresses the symptom effectively while leaving the underlying structural cause largely untouched.'",
-            "explanation": "'Addresses the symptom while leaving the structural cause untouched' is a sophisticated analytical critique. It distinguishes between surface effectiveness and deeper systemic inadequacy - a hallmark of advanced policy analysis.",
-            "situationText": "A policy review asks you to evaluate the effectiveness of an existing government housing policy.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "addresses the symptom while leaving the structural cause untouched",
+            "hint": "If you get new information mid-journey, redirect politely and give the reason. It helps the driver to trust the change.",
+            "explanation": "Explaining why you need a different entrance ('the south one is closed') shows that the change isn't arbitrary. It also helps the driver adjust his route.",
+            "situationText": "You're in a taxi heading to a conference center when your colleague texts that the south entrance is closed for the day.",
+            "sampleAnswer": "Actually, could we go to the north entrance instead? My colleague just told me the south one is closed.",
+            "correctAnswer": "Actually, could we go to the north entrance instead? A colleague says the south one is closed.",
             "acceptedSynonyms": [
-                "addresses the symptom while leaving the structural cause untouched",
-                "insufficient supply unchanged",
-                "planning reform required",
-                "analysing a policy"
+                "Sorry, could you change the destination to the north entrance? I've just found out that the south entrance is shut.",
+                "I've had a message saying the south entrance is closed. Would you mind taking me to the north one?",
+                "Actually, could we go to the north entrance instead? A colleague says the south one is closed.",
+                "Excuse me, there's a change. Please drop me at the north entrance, as the south is closed."
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L162_Q3",
             "interactionType": "narrator",
-            "hint": "Critique a proposed policy: 'The policy is well-intentioned, but the evidence base supporting it is surprisingly thin and the distributional effects are concerning.'",
-            "explanation": "'Well-intentioned but…' concedes the positive motivation before a substantive critique - showing intellectual fairness. 'Surprisingly thin evidence base' and 'concerning distributional effects' are two distinct, precise lines of critique.",
-            "situationText": "An academic policy forum asks you to critically evaluate a recently announced government social policy.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "evidence base is surprisingly thin and distributional effects are concerning",
+            "hint": "If details change mid-call, ask the other person to pause while you check. Guessing causes bigger problems.",
+            "explanation": "Asking someone to hold on while you check is better than giving wrong information. A polite request for a short pause protects both accuracy and courtesy.",
+            "situationText": "You're giving a delivery driver your address on the phone when a message arrives saying the event venue changed. You need to check the new address.",
+            "sampleAnswer": "Sorry, there's been a change of location. Can you give me a minute to confirm the new address?",
+            "correctAnswer": "I've just been told the venue has changed. Could you hold on while I check the new address?",
             "acceptedSynonyms": [
-                "evidence base is surprisingly thin and distributional effects are concerning",
-                "well-intentioned but",
-                "lowest income deciles underexplored",
-                "critiquing a proposed policy"
+                "I've just been told the venue has changed. Could you hold on while I check the new address?",
+                "Sorry, there's been a change of location. Can you give me a minute to confirm the new address?",
+                "Hold on, please. I've just received a message about a new venue, and I want to be sure of the address.",
+                "One moment, please. The venue has moved, and I need to look up the new address before I tell you."
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L163_Q1",
             "interactionType": "narrator",
-            "hint": "Make the scientific case for climate action: 'The evidence shows we have a rapidly closing window to avoid the most catastrophic impacts.'",
-            "explanation": "'Rapidly closing window' is a precise and urgent phrase for describing the narrowing timeframe for climate action. 'Most catastrophic impacts' refers to the IPCC's scenarios for temperature rises above 1.5 degrees Celsius.",
-            "situationText": "A parliamentary select committee has invited you to make the scientific case for urgent climate action.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "rapidly closing window to avoid the most catastrophic impacts",
+            "hint": "When the plan fails, propose a specific workaround and ask the person with authority. Don't only report the problem.",
+            "explanation": "Suggesting a swap in the schedule ('the panel discussion first') shows that you've thought about the effect on the audience. Presenting it as a question lets the organizer decide quickly.",
+            "situationText": "You're helping run a conference. The keynote speaker is stuck in traffic and will arrive forty minutes late. You approach the organizer.",
+            "sampleAnswer": "Our main speaker is stuck in traffic. Could we swap the schedule so the panel discussion goes first?",
+            "correctAnswer": "Our keynote speaker is stuck in traffic. Could we change the order so the panel discussion goes first?",
             "acceptedSynonyms": [
-                "rapidly closing window to avoid the most catastrophic impacts",
-                "every year of delay narrows options",
-                "making the scientific case",
-                "climate urgency argument"
+                "The keynote speaker is running late. Would it work to start with the panel discussion?",
+                "Our keynote speaker is stuck in traffic. Could we change the order so the panel discussion goes first?",
+                "He's caught in traffic and will be forty minutes late. Shall we move the panel discussion up?",
+                "Since our main speaker will be late, could we bring the panel forward?"
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L163_Q2",
             "interactionType": "narrator",
-            "hint": "Avoid a false choice: 'I don't think it's an either/or question - we need both moving together.'",
-            "explanation": "Reframing a forced-choice debate as a false dichotomy is a sophisticated rhetorical move. It shows you can see past an oversimplified either/or framing to a more accurate, nuanced reality, without dodging the question.",
-            "situationText": "An international climate summit is debating whether government regulation or business innovation will do more to drive the energy transition.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "need both moving together",
+            "hint": "Give the caterer the exact shortfall and a time frame. Precision speeds up a solution.",
+            "explanation": "An exact number (ten) and a deadline (an hour) let the caterer estimate what's possible. A vague 'we need more food' would lead to more questions.",
+            "situationText": "Lunch has arrived for an event of a hundred, but you counted and there are ten fewer vegetarian meals than ordered. You phone the caterer.",
+            "sampleAnswer": "We're short of vegetarian meals by ten. Is there any way you can bring extra within an hour?",
+            "correctAnswer": "We're ten vegetarian meals short. Is there any way you could bring extra ones within the hour?",
             "acceptedSynonyms": [
-                "need both moving together",
-                "not really an either or question",
-                "government sets direction business delivers scale",
-                "avoiding a false dichotomy"
+                "The delivery is missing ten vegetarian meals. Could you get them to us in the next hour?",
+                "We received ten too few vegetarian lunches. Can you send some more within an hour?",
+                "Ten vegetarian meals are missing from our order. How quickly could you deliver replacements?",
+                "We're ten vegetarian meals short. Is there any way you could bring extra ones within the hour?"
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L163_Q3",
             "interactionType": "narrator",
-            "hint": "Argue for systemic environmental change: 'The transition to a low-carbon economy is not just an environmental imperative but an economic opportunity of historic scale.'",
-            "explanation": "'Not just an environmental imperative but an economic opportunity' reframes the climate transition from a cost or sacrifice to a strategic economic opportunity - a highly effective rhetorical and substantive move in policy advocacy.",
-            "situationText": "A business leadership forum is debating whether the green transition is an economic burden or opportunity.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "not just an environmental imperative but an economic opportunity of historic scale",
+            "hint": "Propose a nearby alternative and a plan for returning. Practical solutions keep people calm.",
+            "explanation": "Suggesting a nearby room and a fixed return plan keeps the event moving. Offering a temporary solution ('until it's fixed') shows flexibility.",
+            "situationText": "During a training session in a hall, the power suddenly goes out. The room next door has windows and daylight.",
+            "sampleAnswer": "The power is out in the hall. Could we move the session to the room next door until it's fixed?",
+            "correctAnswer": "The power has gone out in this hall. Could we move the session to the room next door until it's fixed?",
             "acceptedSynonyms": [
-                "not just an environmental imperative but an economic opportunity of historic scale",
-                "jobs technology and competitive advantage",
-                "green transition as opportunity",
-                "reframing the green transition"
+                "Since the electricity is off, could we use the room next door for now? It has natural light.",
+                "The power has gone out in this hall. Could we move the session to the room next door until it's fixed?",
+                "Would it be possible to relocate the session to the neighboring room until the power comes back?",
+                "There's no power here. May we continue next door until the problem is repaired?"
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L164_Q1",
             "interactionType": "narrator",
-            "hint": "Distinguish equity from equality: 'Equality means giving everyone the same thing. Equity means giving people what they specifically need to achieve the same outcome.'",
-            "explanation": "Defining equity and equality precisely is essential in social justice discourse. 'Giving everyone the same thing' versus 'giving people what they need to achieve the same outcome' captures the crucial distinction clearly and memorably.",
-            "situationText": "A social policy seminar asks you to explain clearly the difference between equity and equality.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "equity means giving people what they specifically need to achieve the same outcome",
+            "hint": "Give each side something. A schedule ('this at dinner, that later') is a concrete way to include both.",
+            "explanation": "Splitting the evening into segments lets each person feel heard. Suggesting it with 'maybe we could' keeps the tone light, which matters at social events.",
+            "situationText": "You're hosting a party. Your friends Sara and Tom each want to control the music, and they disagree about the style.",
+            "sampleAnswer": "I'd like to keep everyone happy. Maybe we could play Sara's music at dinner and Tom's playlist later?",
+            "correctAnswer": "I'd like everyone to be happy. Maybe we could use Sara's music during dinner and Tom's playlist afterwards?",
             "acceptedSynonyms": [
-                "equity means giving people what they specifically need to achieve the same outcome",
-                "equality means giving everyone the same thing",
-                "different starting positions",
-                "equity versus equality"
+                "I'd like everyone to be happy. Maybe we could use Sara's music during dinner and Tom's playlist afterwards?",
+                "What if we use Sara's playlist while we eat and Tom's for the rest of the evening?",
+                "How about splitting it? Sara's music at dinner, and Tom's later on.",
+                "We could take turns. Sara chooses for dinner and Tom chooses afterwards."
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L164_Q2",
             "interactionType": "narrator",
-            "hint": "Resist a false binary: 'I think the honest answer is both matter, and pretending otherwise oversimplifies a complex picture.'",
-            "explanation": "When a debate forces a choice between two real factors, naming that both matter isn't a cop-out - it's often the most intellectually honest position. This lets you sound balanced without sounding evasive.",
-            "situationText": "An academic panel is debating how much of an individual's economic outcome is shaped by personal choices versus circumstances beyond their control.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "both matter and pretending otherwise oversimplifies",
+            "hint": "When two families expect you, show that you value both and propose a split with dates.",
+            "explanation": "Starting with 'I'd love to see both families' shows that you care about each side. A concrete split (Christmas Eve and Boxing Day) is easier to accept than 'we'll see'.",
+            "situationText": "Both your parents and your partner's parents want you to spend Christmas Eve with them. You and your partner are talking to one set of parents.",
+            "sampleAnswer": "I'd love to see both families. Could we spend Christmas Eve with yours and Boxing Day with my partner's?",
+            "correctAnswer": "We'd love to see both families. Could we spend Christmas Eve with you and Boxing Day with my partner's family?",
             "acceptedSynonyms": [
-                "both matter and pretending otherwise oversimplifies",
-                "individual effort and circumstances beyond control",
-                "genuinely complex picture",
-                "resisting a false binary"
+                "We want to spend time with everyone. What if we join you on Christmas Eve and go to my partner's family on Boxing Day?",
+                "We'd like to divide the holiday fairly: Christmas Eve here, and Boxing Day with my partner's parents. Would that be all right?",
+                "We'd love to see both families. Could we spend Christmas Eve with you and Boxing Day with my partner's family?",
+                "It's important to us to see both families, so we're thinking of Christmas Eve with you and the day after with the other side."
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L164_Q3",
             "interactionType": "narrator",
-            "hint": "Combine short-term and long-term solutions: 'We need both individual support now, and structural reform to address why the gap exists.'",
-            "explanation": "'We need both X and Y' is a strong way to answer 'what should we do' without oversimplifying a genuinely layered problem. It shows you can hold a short-term fix and a long-term cause in mind at the same time.",
-            "situationText": "A social policy conference asks for your recommendations for meaningfully reducing educational inequality.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "need both individual support and structural reform",
+            "hint": "Manage a shared resource by naming the clash and proposing a fair split. Don't decide who is more important.",
+            "explanation": "Stating the facts ('you both need the room at two') doesn't favor anyone. A small time shift as a suggestion lets the colleagues decide themselves.",
+            "situationText": "Two colleagues are arguing because both booked the same meeting room for two o'clock. You're the office coordinator.",
+            "sampleAnswer": "The room is double-booked. Would one of you be able to shift by an hour?",
+            "correctAnswer": "It looks as if you both need the room at two. Would it work if one of you took it at two and the other at three?",
             "acceptedSynonyms": [
-                "need both individual support and structural reform",
-                "neither alone will be enough",
-                "short-term and long-term solutions",
-                "layered problems need layered solutions"
+                "It looks as if you both need the room at two. Would it work if one of you took it at two and the other at three?",
+                "You've both booked it for two. Could one of you move to three, so that you can both use it?",
+                "Since there's a clash, could we split the time? One at two and the other at three?",
+                "The room is double-booked. Would one of you be able to shift by an hour?"
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L165_Q1",
             "interactionType": "narrator",
-            "hint": "Analyse economics analytically: 'The monetary policy response was appropriate given the inflationary environment, though it carried significant distributional costs.'",
-            "explanation": "'Appropriate given the inflationary environment' places the policy in its specific economic context. 'Distributional costs' refers to unequal impacts across income groups - a sophisticated economic analysis point.",
-            "situationText": "An economics panel asks you to evaluate the central bank's monetary policy response to recent inflation.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "significant distributional costs particularly for mortgage holders",
+            "hint": "Vague words ('soon') need a number. Ask the person to translate the word into a date.",
+            "explanation": "Asking 'do you mean this week or next month?' offers two very different options, which makes the answer more specific. Explaining that you need to plan gives a fair reason for asking.",
+            "situationText": "Your landlord says he'll fix your broken heater 'soon'. You've heard this twice before and need to arrange your week.",
+            "sampleAnswer": "When you say 'soon', do you mean this week or next month? I need to know so that I can plan.",
+            "correctAnswer": "When you say 'soon', do you mean this week or next month? I need to plan around it.",
             "acceptedSynonyms": [
-                "significant distributional costs particularly for mortgage holders",
-                "appropriate given the inflationary environment",
-                "monetary policy response",
-                "evaluating economic policy"
+                "Could you give me an actual date? 'Soon' could mean anything, and I have to arrange my time.",
+                "When you say 'soon', do you mean this week or next month? I need to plan around it.",
+                "Can you be more specific about when someone will come? This week, or later?",
+                "What does 'soon' mean exactly? I'd like to plan my week, so a date would help."
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L165_Q2",
             "interactionType": "narrator",
-            "hint": "Apply economic theory: 'Classical economic theory would predict that wage increases lead to inflation, but recent empirical evidence complicates that picture considerably.'",
-            "explanation": "'Classical theory would predict… but recent evidence complicates that' is a sophisticated academic structure for showing you know both the theory and its empirical limitations - a mark of genuine analytical maturity.",
-            "situationText": "Your economics seminar asks you to apply economic theory to recent labour market data and explain any discrepancies.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "classical theory would predict but recent evidence complicates that picture",
+            "hint": "Ask the person to slow down and explain line by line when a charge is unclear. It's a reasonable request.",
+            "explanation": "Going through the charges 'line by line' breaks a confusing explanation into parts. Saying that you're 'still not sure' shows persistence without accusing the other person of being unclear.",
+            "situationText": "The bank has explained a fee on your account twice, but you still can't follow the explanation. The advisor is starting to sound impatient.",
+            "sampleAnswer": "I'm still not sure I understand the charge. Could you go through it line by line?",
+            "correctAnswer": "I'm still not sure I understand this charge. Could you take me through it line by line?",
             "acceptedSynonyms": [
-                "classical theory would predict but recent evidence complicates that picture",
-                "wage increases and significant inflation",
-                "structural changes in price-setting",
-                "applying economic theory to data"
+                "Sorry, I'm still confused about the fee. Would you mind explaining each item separately?",
+                "Could we go through the statement item by item? I don't fully understand the charge yet.",
+                "I want to be sure I understand. Could you explain each line of the fee one at a time?",
+                "I'm still not sure I understand this charge. Could you take me through it line by line?"
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L165_Q3",
             "interactionType": "narrator",
-            "hint": "Make an economic prediction with appropriate caveats: 'Our modelling suggests output will grow by two percent next year, assuming stable energy prices and no major external shocks.'",
-            "explanation": "'Our modelling suggests… assuming…' is the standard structure for economic forecasting - it gives a specific prediction while immediately identifying the key assumptions on which that prediction depends. Both are essential for responsible forecasting.",
-            "situationText": "A financial conference asks you to give your economic growth projection for the coming year.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "two percent assuming stable energy prices and no major external shocks",
+            "hint": "When you keep going in circles, restate the problem precisely and check that it's understood. The precision breaks the loop.",
+            "explanation": "Rebuilding the description from the start ('the bedroom heating, not the boiler') removes the confusion that caused the repeated misunderstandings. Asking 'Is that clear?' confirms it's fixed.",
+            "situationText": "You've called the housing office twice about your heating, and both times they sent someone to look at the boiler. The real problem is the radiator in your bedroom.",
+            "sampleAnswer": "Let me make sure we're talking about the same thing. The problem is the radiator in my bedroom, not the boiler. Is that clear?",
+            "correctAnswer": "Let me make sure we're on the same page. My problem is the radiator in the bedroom, not the boiler. Is that clear?",
             "acceptedSynonyms": [
-                "two percent assuming stable energy prices and no major external shocks",
-                "significant assumptions",
-                "our modelling suggests",
-                "economic growth projection"
+                "I think there's been some confusion. The issue is only the bedroom radiator, and the boiler is fine. Could you confirm that?",
+                "Let me make sure we're on the same page. My problem is the radiator in the bedroom, not the boiler. Is that clear?",
+                "To be clear, the boiler works well. It's the radiator in my bedroom that doesn't heat. Does that make sense?",
+                "Let me explain again, because we seem to be talking about different things. The radiator in the bedroom is broken, not the boiler."
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L166_Q1",
             "interactionType": "narrator",
-            "hint": "Discuss hypothesis formation: 'A robust hypothesis must be specific, falsifiable, and grounded in the existing theoretical literature.'",
-            "explanation": "'Specific, falsifiable, and grounded in the literature' are the three key criteria for a good scientific hypothesis. Being able to articulate these criteria clearly is a fundamental scientific literacy and communication skill.",
-            "situationText": "A research methods class asks you to explain what makes a genuinely good scientific hypothesis.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "specific falsifiable and grounded in the existing theoretical literature",
+            "hint": "Give context in one or two sentences, using 'that's why' to link cause and effect. It explains the pressure without long stories.",
+            "explanation": "Background helps newcomers understand why decisions are made. 'That's why' connects the fixed deadline to its cause, so they don't have to ask.",
+            "situationText": "A new colleague asks why your team is so stressed about the June deadline. You want to explain briefly.",
+            "sampleAnswer": "Some background: we're replacing our booking system, and the old one gets switched off in June. That's why the deadline can't move.",
+            "correctAnswer": "Some background: we're upgrading our booking system, and the old one will be switched off in June. That's why the deadline is fixed.",
             "acceptedSynonyms": [
-                "specific falsifiable and grounded in the existing theoretical literature",
-                "could in principle be proven wrong",
-                "not testable science without these",
-                "what makes a good scientific hypothesis"
+                "Let me explain. The old booking system shuts down in June, and we have to replace it before that. So the date can't change.",
+                "The reason is that we're moving to a new booking system, and the old one stops working in June. That's why we can't extend the deadline.",
+                "It's because of the system change. The old booking system will end in June, so we have a fixed deadline.",
+                "Some background: we're upgrading our booking system, and the old one will be switched off in June. That's why the deadline is fixed."
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L166_Q2",
             "interactionType": "narrator",
-            "hint": "Evaluate research evidence: 'The study's findings are compelling, but the small sample size and self-reporting methodology warrant caution about generalizability.'",
-            "explanation": "'Compelling but… sample size… self-reporting… generalizability' are four key research evaluation concepts. Being able to apply these critical criteria to a specific study marks advanced research literacy in English.",
-            "situationText": "Your research methods professor asks you to critically evaluate the strength of evidence from a published study.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "compelling but sample size and self-reporting warrant caution",
+            "hint": "Calling for someone else needs who, what, and why now. Mentioning that she lives alone tells them how urgent it is.",
+            "explanation": "Giving the relationship, the symptom, and the reason for urgency ('lives alone') helps the receptionist judge how quickly to respond. It's what an experienced caller does.",
+            "situationText": "You're phoning your mother's clinic. She has been dizzy for a week, lives alone, and refuses to call herself.",
+            "sampleAnswer": "I look after my elderly mother, and she's had dizziness for a week. I'm calling because she lives alone.",
+            "correctAnswer": "I'm calling about my elderly mother. She's been dizzy for a week, and she lives on her own.",
             "acceptedSynonyms": [
-                "compelling but sample size and self-reporting warrant caution",
-                "not fully generalizable to other populations",
-                "compelling findings but",
-                "evaluating research evidence"
+                "I'm phoning for my mother. She's had dizzy spells for a week, and she lives alone, so I'm worried.",
+                "I'm calling about my elderly mother. She's been dizzy for a week, and she lives on her own.",
+                "My mother has felt dizzy for the past week. She lives by herself, which is why I'm calling for her.",
+                "I'm her carer. My mother has been dizzy for seven days and she's alone at home. Could she be seen soon?"
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L166_Q3",
             "interactionType": "narrator",
-            "hint": "Discuss the replication crisis: 'The replication crisis reveals that the scientific method's self-correcting mechanism depends entirely on researchers actually attempting replication - which happens too rarely.'",
-            "explanation": "'Replication crisis', 'self-correcting mechanism', and 'replication' are key science communication terms. This sophisticated observation - that a theoretical protection requires a practical action that rarely happens - shows nuanced understanding.",
-            "situationText": "A philosophy of science seminar is discussing the implications of the scientific replication crisis for how we trust research.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "self-correcting mechanism depends on researchers actually attempting replication",
+            "hint": "When explaining local rules to a visitor, use simple steps and the consequence. Sequence words help.",
+            "explanation": "A rule is easier to remember with the consequence ('otherwise you can get fined'). Using 'first' and 'then' turns instructions into a mini-process.",
+            "situationText": "A friend from abroad is going to park in your town for the first time. In your town, you must buy a ticket at a machine and show it on the dashboard.",
+            "sampleAnswer": "In this town, you have to buy a ticket at the machine and put it on your dashboard. Otherwise you can get fined.",
+            "correctAnswer": "Here, you buy a parking ticket from the machine and put it on the dashboard. Otherwise, you can be fined.",
             "acceptedSynonyms": [
-                "self-correcting mechanism depends on researchers actually attempting replication",
-                "happens far too rarely",
-                "current incentive structures",
-                "the replication crisis"
+                "You need to get a ticket from the parking machine and leave it visible on the dashboard, or you might get a fine.",
+                "First, pay at the machine. Then put the ticket on your dashboard. If you don't, you could be fined.",
+                "Parking isn't free here. Buy a ticket at the machine and display it, or you'll risk a fine.",
+                "Here, you buy a parking ticket from the machine and put it on the dashboard. Otherwise, you can be fined."
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L167_Q1",
             "interactionType": "narrator",
-            "hint": "Use Socratic questioning: 'If we accept that premise, then we must also accept X - and if we accept X, do we not also have to accept Y?'",
-            "explanation": "The Socratic method works by following an argument to its logical conclusions and then testing whether those conclusions are acceptable. 'If we accept… then we must also accept' is the fundamental move of Socratic philosophical dialogue.",
-            "situationText": "You are facilitating a Socratic seminar discussion on a fundamental ethical question with your philosophy class.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "if we accept that all lives have equal value then our obligations are larger",
+            "hint": "Offer a second option and a third when the first fails. It shows you're flexible.",
+            "explanation": "Offering two alternatives (another day, an earlier time) increases the chance that the restaurant can accommodate you. Chaining options with 'or' keeps the request short.",
+            "situationText": "You want to reserve a table on Friday evening, but the restaurant says it's full. You'd be happy with another day or an early meal. You could come on Thursday, or on Friday at five.",
+            "sampleAnswer": "If Friday is full, would Thursday work? Or could we come earlier, around five?",
+            "correctAnswer": "If Friday is fully booked, would Thursday work? Or could we come earlier, at about five?",
             "acceptedSynonyms": [
-                "if we accept that all lives have equal value then our obligations are larger",
-                "can we consistently hold both",
-                "Socratic if we accept then we must",
-                "Socratic questioning technique"
+                "Could we try Thursday instead? Alternatively, we could come on Friday at five.",
+                "If Friday's not possible, what about Thursday? We could also arrive early on Friday.",
+                "If Friday is fully booked, would Thursday work? Or could we come earlier, at about five?",
+                "Do you have space on Thursday? If not, Friday at five would also suit us."
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L167_Q2",
             "interactionType": "narrator",
-            "hint": "Evaluate logical validity: 'The argument is valid in form - the conclusion does follow from the premises - but the first premise is empirically false.'",
-            "explanation": "'Valid in form' means the logical structure is correct: if the premises were true, the conclusion would follow. 'The premise is empirically false' means the structure is sound but the content is wrong - a crucial philosophical distinction.",
-            "situationText": "A logic class asks you to evaluate whether an argument is both valid in form and sound in its content.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "valid in form but the first premise is empirically false",
+            "hint": "Suggest a cheaper trial when the budget is refused. A time-limited test is easy to accept.",
+            "explanation": "Proposing a low-risk trial ('three months') turns a refusal into a next step. It also gives the manager evidence for a future decision.",
+            "situationText": "Your manager says there's no budget for the new software you'd like. You've seen a free version that has limited features. You'd suggest a three-month trial.",
+            "sampleAnswer": "Would you agree to a three-month trial of the free version? We could review the results afterwards.",
+            "correctAnswer": "As we can't afford new software, could we try the free version for three months and see how it goes?",
             "acceptedSynonyms": [
-                "valid in form but the first premise is empirically false",
-                "conclusion follows necessarily from premises",
-                "fails on soundness despite valid form",
-                "evaluating logical validity"
+                "As we can't afford new software, could we try the free version for three months and see how it goes?",
+                "Would you agree to a three-month trial of the free version? We could review the results afterwards.",
+                "If the budget isn't there, how about testing the free version for three months first?",
+                "Could we use the free edition for a trial period of three months, and then decide whether to buy?"
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L167_Q3",
             "interactionType": "narrator",
-            "hint": "State a position and defend it: 'My position is that…, and here is the strongest reason I hold it.'",
-            "explanation": "Taking a clear position and then defending it with your single strongest reason is more persuasive than listing five weak ones. On a genuinely unsettled question, the quality of your reasoning matters more than which side you land on.",
-            "situationText": "A technology ethics panel asks you to state and defend your position on whether companies should be allowed to use AI to screen job candidates.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "should be allowed but tightly regulated",
+            "hint": "If the timeline doesn't fit, ask for a referral. Your goal is still to get the job done.",
+            "explanation": "Asking for a recommendation keeps the contractor helpful, even when he can't do the work himself. Naming the date shows why the timing matters.",
+            "situationText": "A contractor says he can't start your roof repair until March, but you need it done before the winter rains in January.",
+            "sampleAnswer": "If you can't come before March, could you recommend someone who can do it earlier?",
+            "correctAnswer": "If you can't start before March, could you recommend someone who can do it sooner?",
             "acceptedSynonyms": [
-                "should be allowed but tightly regulated",
-                "reduce human bias but must be audited",
-                "strongest reason I hold this position",
-                "defending an ethical position"
+                "I need the roof repaired before January. Do you know anyone else who could take it on sooner?",
+                "Since March is too late for me, could you suggest another contractor who has time earlier?",
+                "If you can't start before March, could you recommend someone who can do it sooner?",
+                "Is there someone you'd recommend who could start earlier than March?"
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L168_Q1",
             "interactionType": "narrator",
-            "hint": "Analyse technique precisely: 'What builds the tension here isn't the dialogue at all - it's the silence and the pacing.'",
-            "explanation": "Naming a specific technique, like pacing or silence, is far more convincing than a vague reaction such as 'it felt tense.' Specific analysis is what separates genuine critique from a simple opinion.",
-            "situationText": "A film discussion group asks you to explain how a director builds tension using pacing and silence rather than dialogue.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "silence and pacing build the tension not the dialogue",
+            "hint": "Acknowledge the doubt, lower the risk, and invite a small step. Persuasion works when the first step is easy.",
+            "explanation": "Recognizing the doubt ('I know you're doubtful') shows respect. A free first session reduces risk, and 'come once' asks for very little.",
+            "situationText": "Your friend is hesitant about trying a dance class because she thinks she has no rhythm. The first session is free.",
+            "sampleAnswer": "I know you're doubtful, but the first session is free. Why don't you come once and see how you feel?",
+            "correctAnswer": "I know you're not sure, but the first class is free. Why not come once and see how you feel?",
             "acceptedSynonyms": [
-                "silence and pacing build the tension not the dialogue",
-                "camera lingers a beat too long",
-                "audience does the emotional work",
-                "analysing film technique"
+                "I know you're not sure, but the first class is free. Why not come once and see how you feel?",
+                "It costs nothing to try. Come to the first session, and if you don't like it, you can stop.",
+                "I understand your worry, but you don't have to commit. Try one free class and decide afterwards.",
+                "I get that you're hesitant. The first lesson is free, so you've got nothing to lose."
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L168_Q2",
             "interactionType": "narrator",
-            "hint": "Read between the lines: 'Reading between the lines, I think what they're actually telling us is…'",
-            "explanation": "'Reading between the lines' means interpreting the real message behind polite or indirect wording. This is an essential professional skill in workplace cultures where direct criticism is often softened.",
-            "situationText": "A colleague asks you to help interpret a vaguely worded email from a client that seems to be hinting at a bigger problem.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "reading between the lines",
+            "hint": "Address the objection first, then show the benefit in numbers. Persuading a manager needs evidence.",
+            "explanation": "Beginning with the cost concern shows you've listened. Quantifying the benefit ('two hours a week') gives your manager something concrete to weigh.",
+            "situationText": "Your manager worries that a new scheduling tool costs too much. You calculate that it would save the team about two hours a week.",
+            "sampleAnswer": "I understand the concern about cost. However, this would save us about two hours a week, which would pay for itself in a few months.",
+            "correctAnswer": "I understand the concern about cost, but the tool would save us about two hours a week, so it would pay for itself within a few months.",
             "acceptedSynonyms": [
-                "reading between the lines",
-                "lost confidence in the project",
-                "not really about the deadline",
-                "interpreting indirect communication"
+                "Cost is a fair concern. That said, we'd save roughly two hours a week, which would cover the price in a few months.",
+                "I see why the price worries you. On the other hand, the time savings, around two hours weekly, would repay it in a few months.",
+                "I understand the concern about cost, but the tool would save us about two hours a week, so it would pay for itself within a few months.",
+                "You're right to think about cost. Even so, two hours saved each week would make it worthwhile within a few months."
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L168_Q3",
             "interactionType": "narrator",
-            "hint": "Identify the real appeal: 'On the surface this ad is about the product, but the actual appeal being made is to…'",
-            "explanation": "Distinguishing the surface subject of an ad from its underlying emotional appeal is core to advertising literacy. Naming what appeal is really being made shows you can see past the obvious pitch.",
-            "situationText": "Your marketing team is reviewing a competitor's advertisement and discussing what emotional appeal it is really making.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "actual appeal being made is to status and belonging",
+            "hint": "Reduce the landlord's risk to persuade him. Offer guarantees and describe the animal calmly.",
+            "explanation": "Landlords worry about damage. Offering a deposit and a written agreement directly answers that worry, and facts about the cat's behavior reassure.",
+            "situationText": "You'd like your landlord to allow you to keep a cat in your rented flat. He is reluctant because of possible damage.",
+            "sampleAnswer": "I'd be happy to pay a deposit and sign an agreement to cover any damage. The cat is very quiet and stays indoors.",
+            "correctAnswer": "I'd be glad to pay an extra deposit and sign an agreement covering any damage. The cat is quiet and stays indoors.",
             "acceptedSynonyms": [
-                "actual appeal being made is to status and belonging",
-                "surface subject versus underlying appeal",
-                "psychological appeal the ad is making",
-                "advertising literacy analysis"
+                "I'd be glad to pay an extra deposit and sign an agreement covering any damage. The cat is quiet and stays indoors.",
+                "To reassure you, I'd pay a pet deposit and sign a written agreement. My cat is calm and lives indoors.",
+                "I understand your concern about damage. I'd put down an additional deposit and agree to repair anything. She's a very quiet indoor cat.",
+                "What if I paid a deposit and signed an agreement to cover any damage? The cat is quiet and never goes outside."
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L169_Q1",
             "interactionType": "narrator",
-            "hint": "Analyse normalization: 'Once everyone around you treats something as normal, it stops registering as a choice at all.'",
-            "explanation": "'Stops registering as a choice' captures how gradual normalization works - each small step feels reasonable in context, even when the cumulative pattern would shock an outsider. It's a genuinely useful way to think about organizational culture.",
-            "situationText": "A business ethics class is discussing how a company's culture can normalize practices that would seem clearly wrong to an outsider.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "stops registering as a choice at all",
+            "hint": "Give a fair reason for a lower price and propose a specific number. Precision sounds serious.",
+            "explanation": "Pointing out a genuine issue ('tires will need replacing') supports your offer. A specific figure is easier for the seller to accept or counter than 'a bit less'.",
+            "situationText": "A private seller wants 7,000 for a used car. It runs well, but you noticed the tires are old and will need replacing soon. You'd offer 6,500.",
+            "sampleAnswer": "The car's in good condition, but the tires will need replacing soon. Would you accept 6,500 instead of 7,000?",
+            "correctAnswer": "The car's in good shape, but the tires will need replacing soon. Would you take 6,500 instead of 7,000?",
             "acceptedSynonyms": [
-                "stops registering as a choice at all",
-                "gradual normalization",
-                "none of them would have agreed to it on day one",
-                "how culture shapes behaviour"
+                "I like the car, but I'd have to replace the tires quite soon. Would you consider 6,500?",
+                "The car's in good shape, but the tires will need replacing soon. Would you take 6,500 instead of 7,000?",
+                "It looks good, apart from the worn tires. Could we agree on 6,500 rather than 7,000?",
+                "Given the cost of new tires, I could offer 6,500. Would that work for you?"
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L169_Q2",
             "interactionType": "narrator",
-            "hint": "Name the incentive problem: 'The people making the decision aren't the ones who bear the cost if it fails - that's the real issue.'",
-            "explanation": "Misaligned incentives, where the person deciding doesn't feel the consequences of a bad decision, explain a huge amount of organizational dysfunction. Naming the incentive, not just the bad decision, is the sharper analysis.",
-            "situationText": "Your management seminar is discussing why some companies keep investing in a failing project long after the warning signs are obvious.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "people making the decision are not the ones who bear the cost",
+            "hint": "In a negotiation, link your discount to the client's commitment. Offer something that has value for both sides.",
+            "explanation": "Offering a lower rate for guaranteed hours makes the discount fair for you. Conditional proposals are the basis of most professional negotiations.",
+            "situationText": "A company wants to hire you as a freelancer. Your usual rate is 50 an hour. They say they'd like a lower price, but they'd give you regular work. You'd offer 45 an hour for at least twenty hours a month.",
+            "sampleAnswer": "My rate for this kind of project is 50 an hour. If you can commit to at least twenty hours a month, I could offer 45.",
+            "correctAnswer": "My rate for this type of work is 50 an hour. If you can commit to at least twenty hours a month, I could do 45.",
             "acceptedSynonyms": [
-                "people making the decision are not the ones who bear the cost",
-                "misaligned incentives",
-                "admitting it was wrong feels riskier",
-                "why organizations keep funding failure"
+                "I usually charge 50 an hour. For a guaranteed twenty hours a month, I could lower it to 45.",
+                "My standard rate is 50 per hour, but I could go down to 45 if you can guarantee twenty hours monthly.",
+                "I'd be willing to reduce my 50 an hour rate to 45 in return for a regular commitment of at least twenty hours a month.",
+                "My rate for this type of work is 50 an hour. If you can commit to at least twenty hours a month, I could do 45."
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L169_Q3",
             "interactionType": "narrator",
-            "hint": "Describe gradual erosion: 'It's rarely one bad decision - it's usually death by a thousand small compromises.'",
-            "explanation": "'Death by a thousand small compromises' captures how decline is often gradual and cumulative rather than sudden. It's a vivid, memorable way to describe a slow, hard-to-pinpoint deterioration in a team, relationship, or organization.",
-            "situationText": "A colleague asks how a healthy team culture can slowly turn toxic without anyone ever making one single obvious bad decision.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "death by a thousand small compromises",
+            "hint": "Offer stability as a benefit to the other party. Then ask for a specific price.",
+            "explanation": "A longer lease has real value for a landlord, who avoids empty months. Stating your offer as a benefit makes the discount request feel like a fair exchange.",
+            "situationText": "You're negotiating your rent. The landlord asks 950 a month. You'd sign for two years, which would give him stable income. You'd propose 900 a month.",
+            "sampleAnswer": "I'd like to sign for two years, which is more stable for you. Could we agree on a rent of 900 instead of 950?",
+            "correctAnswer": "I'd like to sign for two years, which gives you more security. Could we agree on 900 a month instead of 950?",
             "acceptedSynonyms": [
-                "death by a thousand small compromises",
-                "someone lets one thing slide",
-                "gradual erosion of culture",
-                "how decline happens slowly"
+                "I'm prepared to commit for two years. In return, would you consider 900 rather than 950?",
+                "I'd like to sign for two years, which gives you more security. Could we agree on 900 a month instead of 950?",
+                "A two-year lease means no empty months for you. Could you reduce the rent to 900?",
+                "I'd stay for two years, so you'd have a reliable tenant. Would 900 a month be possible?"
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L170_Q1",
             "interactionType": "narrator",
-            "hint": "Connect disciplines: 'What economics and psychology both reveal, from entirely different methodologies, is that human decision-making is fundamentally non-rational in systematic and predictable ways.'",
-            "explanation": "'From entirely different methodologies' highlights that two disciplines arrive at the same conclusion independently - which is stronger evidence than one discipline alone. This cross-disciplinary synthesis is a hallmark of advanced academic thinking.",
-            "situationText": "An interdisciplinary symposium asks you to identify an insight that two or more academic disciplines share.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "human decision-making is fundamentally and systematically non-rational",
+            "hint": "As a mediator, give each person an equal turn and a rule. State the process, not your opinion.",
+            "explanation": "Neutral mediators explain the process first ('without interrupting'). This gives each person confidence that they'll be heard and lowers the tension.",
+            "situationText": "Two of your friends have not spoken for a week after an argument, and they've both asked you to help. You meet them together.",
+            "sampleAnswer": "I'd like each of you to explain how you see it, without interrupting. Then we'll look for a solution together.",
+            "correctAnswer": "I'd like each of you to explain your side without interrupting. Then we can look for a solution together.",
             "acceptedSynonyms": [
-                "human decision-making is fundamentally and systematically non-rational",
-                "from entirely different methodological starting points",
-                "highly predictable and exploitable",
-                "interdisciplinary insight"
+                "Let's take turns. Each of you can say how you saw things, and no one interrupts. After that we'll find a way forward.",
+                "First, I'd like to hear from each of you, one at a time. Then we can see what would help.",
+                "We'll start with each of you telling your story without being interrupted, and then work out a solution.",
+                "I'd like each of you to explain your side without interrupting. Then we can look for a solution together."
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L170_Q2",
             "interactionType": "narrator",
-            "hint": "Propose a cross-domain solution: 'The most effective intervention here will need to draw on insights from both behavioural science and public policy design simultaneously.'",
-            "explanation": "'Draw on insights from both' explicitly frames a solution as requiring multiple disciplinary inputs. 'Simultaneously' signals the need for genuine integration rather than sequential application of separate fields.",
-            "situationText": "A complex urban planning challenge is being discussed and no single discipline has a sufficient answer.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "draw simultaneously on insights from both behavioural science and public policy",
+            "hint": "Reframe a personal conflict as a practical issue. Describe the pattern, not the person.",
+            "explanation": "Shifting from 'lazy' to 'dishes left overnight' turns an attack on character into a behavior that can change. Ending with a suggestion of a rule gives both roommates a way forward.",
+            "situationText": "Your two roommates are accusing each other of being lazy and messy. You've noticed that the real problem is dishes left in the sink overnight.",
+            "sampleAnswer": "It sounds like the main issue is dishes being left overnight, not that either of you is lazy. Could we agree on a rule?",
+            "correctAnswer": "It sounds as if the real issue is dishes left overnight, not that either of you is lazy. Could we agree on a simple rule?",
             "acceptedSynonyms": [
-                "draw simultaneously on insights from both behavioural science and public policy",
-                "neither field alone has an adequate answer",
-                "best solutions require interdisciplinary thinking",
-                "cross-domain solution"
+                "I think the problem is the dishes sitting there overnight. Could we agree that they get washed before bed?",
+                "It sounds as if the real issue is dishes left overnight, not that either of you is lazy. Could we agree on a simple rule?",
+                "This seems to be about one habit, not about who's lazy. What if we set a rule about the sink?",
+                "Let's focus on the sink. Would a rule about washing up before bed work for both of you?"
             ],
             "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L170_Q3",
             "interactionType": "narrator",
-            "hint": "Synthesize competing ideas: 'Each proposal gets something right that the others miss - the strongest path forward probably combines all three.'",
-            "explanation": "'Each gets something right that the others miss' avoids picking a false winner among genuinely different ideas. It signals you've taken every proposal seriously rather than simply backing your favourite.",
-            "situationText": "Your leadership team has three genuinely different proposals for solving the same problem, and you've been asked to find a way forward.",
-            "sampleAnswer": "Here is a sample response you could use.",
-            "correctAnswer": "each proposal gets something right that the others miss",
+            "hint": "Show you care about both people while refusing to take sides. Ask what each person needs.",
+            "explanation": "Saying you value both people makes it possible for them to trust you. Asking about needs moves the conversation from blame to solutions.",
+            "situationText": "Two colleagues who work together barely speak anymore, and both complain to you about each other. You decide to talk to them together.",
+            "sampleAnswer": "I don't want to take sides, but I care about both of you. Let's look at what each of you needs to work together comfortably.",
+            "correctAnswer": "I don't want to take sides, because I care about both of you. Let's talk about what each of you needs to work together comfortably.",
             "acceptedSynonyms": [
-                "each proposal gets something right that the others miss",
-                "strongest path forward combines all three",
-                "taken every proposal seriously",
-                "synthesizing competing ideas"
+                "I'm not here to judge. I just want to help you both. What does each of you need in order to work well together?",
+                "I value you both, so I won't pick a side. Could each of you say what would make the working relationship easier?",
+                "I'd like to help without taking sides. What would each of you need for this to work?",
+                "I don't want to take sides, because I care about both of you. Let's talk about what each of you needs to work together comfortably."
             ],
             "instruction": "Respond to the situation."
         }

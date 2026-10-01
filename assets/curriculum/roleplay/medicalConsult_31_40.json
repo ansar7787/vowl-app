@@ -1,637 +1,637 @@
 {
-    "gameType": "medicalConsult",
-    "batchIndex": 4,
-    "levels": "31-40",
-    "quests": [
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"The room feels like it's spinning even when I'm sitting still.\"",
-            "symptoms": [
-                "Dizziness",
-                "Vertigo",
-                "Nausea",
-                "Headache"
-            ],
-            "correctAnswer": "Vertigo",
-            "hint": "The patient describes actual spinning, which is more specific than general dizziness.",
-            "explanation": "A false sense that the room is spinning is called Vertigo, a specific type of Dizziness.",
-            "id": "mc_l31_q1",
-            "medicalVocab": [
-                "Vertigo",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"After the picnic, my stomach started cramping and I couldn't stop being sick,\" the patient says.",
-            "symptoms": [
-                "Stomach Ache",
-                "Nausea",
-                "Diarrhea",
-                "Food Poisoning"
-            ],
-            "correctAnswer": "Food Poisoning",
-            "hint": "Look at the cause and the sudden timing, not just the stomach symptom alone.",
-            "explanation": "Sudden stomach illness linked to eating something is called Food Poisoning.",
-            "id": "mc_l31_q2",
-            "medicalVocab": [
-                "Food Poisoning",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My eye has been red, itchy, and a bit crusty this morning,\" the patient tells the doctor.",
-            "symptoms": [
-                "Itchy Eyes",
-                "Watery Eyes",
-                "Pink Eye",
-                "Puffy Eyes"
-            ],
-            "correctAnswer": "Pink Eye",
-            "hint": "Three details together - red, itchy, and crusty - point to one specific condition.",
-            "explanation": "Redness with itching and crusting is the classic description of Pink Eye.",
-            "id": "mc_l31_q3",
-            "medicalVocab": [
-                "Pink Eye",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"Between my toes, the skin is peeling and it itches like crazy.\"",
-            "symptoms": [
-                "Dry Skin",
-                "Athlete's Foot",
-                "Itching",
-                "Skin Peeling"
-            ],
-            "correctAnswer": "Athlete's Foot",
-            "hint": "The exact location - between the toes - is the key clue.",
-            "explanation": "Itchy, peeling skin specifically between the toes is called Athlete's Foot.",
-            "id": "mc_l32_q1",
-            "medicalVocab": [
-                "Athlete's Foot",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"This headache is so bad I have to lie down in a dark room.\"",
-            "symptoms": [
-                "Headache",
-                "Light Sensitivity",
-                "Dizziness",
-                "Migraine"
-            ],
-            "correctAnswer": "Migraine",
-            "hint": "The severity and the need for darkness point to something stronger than an ordinary headache.",
-            "explanation": "A severe headache that forces someone to avoid light is usually called a Migraine.",
-            "id": "mc_l32_q2",
-            "medicalVocab": [
-                "Migraine",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"Pain shoots down the back of my leg whenever I sit for too long,\" the patient says.",
-            "symptoms": [
-                "Sciatica",
-                "Leg Pain",
-                "Back Pain",
-                "Numbness"
-            ],
-            "correctAnswer": "Sciatica",
-            "hint": "The pain travels from one area down the leg - that pattern has its own name.",
-            "explanation": "Shooting pain that runs down the leg, often from sitting, is called Sciatica.",
-            "id": "mc_l32_q3",
-            "medicalVocab": [
-                "Sciatica",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"My elbow has been sore ever since I started playing tennis again.\"",
-            "symptoms": [
-                "Joint Stiffness",
-                "Wrist Pain",
-                "Tennis Elbow",
-                "Muscle Soreness"
-            ],
-            "correctAnswer": "Tennis Elbow",
-            "hint": "The patient names both the body part and the activity that caused it.",
-            "explanation": "Elbow pain linked to repeated arm movement, like in tennis, is called Tennis Elbow.",
-            "id": "mc_l33_q1",
-            "medicalVocab": [
-                "Tennis Elbow",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My fingers feel numb, especially after typing for a while,\" the patient says.",
-            "symptoms": [
-                "Wrist Pain",
-                "Numbness in Fingers",
-                "Cramp",
-                "Weakness"
-            ],
-            "correctAnswer": "Numbness in Fingers",
-            "hint": "The patient names the exact body part that has lost feeling.",
-            "explanation": "A loss of feeling in the fingers, often from repeated movement, is called Numbness in Fingers.",
-            "id": "mc_l33_q2",
-            "medicalVocab": [
-                "Numbness in Fingers",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I woke up and I couldn't turn my neck without sharp pain,\" the patient tells the doctor.",
-            "symptoms": [
-                "Stiff Neck",
-                "Shoulder Pain",
-                "Headache",
-                "Neck Pain"
-            ],
-            "correctAnswer": "Neck Pain",
-            "hint": "The patient describes sharp pain, which is different from simple stiffness.",
-            "explanation": "Sharp pain in the neck is called Neck Pain, distinct from a Stiff Neck, which is mainly about difficulty moving.",
-            "id": "mc_l33_q3",
-            "medicalVocab": [
-                "Neck Pain",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"My shin has been hurting along the bone since I started running again.\"",
-            "symptoms": [
-                "Shin Splints",
-                "Leg Pain",
-                "Muscle Soreness",
-                "Cramp"
-            ],
-            "correctAnswer": "Shin Splints",
-            "hint": "The patient names the exact bone area and the activity that caused it.",
-            "explanation": "Pain along the shin bone, common in new runners, is called Shin Splints.",
-            "id": "mc_l34_q1",
-            "medicalVocab": [
-                "Shin Splints",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"There's a painful red bump right on my eyelid.\"",
-            "symptoms": [
-                "Puffy Eyes",
-                "Stye",
-                "Itchy Eyes",
-                "Watery Eyes"
-            ],
-            "correctAnswer": "Stye",
-            "hint": "The patient describes one specific bump, not the whole eye area.",
-            "explanation": "A small, painful red bump on the eyelid is called a Stye.",
-            "id": "mc_l34_q2",
-            "medicalVocab": [
-                "Stye",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My hands turn pale and freezing cold whenever the temperature drops,\" the patient says.",
-            "symptoms": [
-                "Numbness",
-                "Chills",
-                "Cold Hands and Feet",
-                "Swelling"
-            ],
-            "correctAnswer": "Cold Hands and Feet",
-            "hint": "The patient describes their hands' temperature and color, not the whole body.",
-            "explanation": "Hands that turn cold and pale in cold weather fit the term Cold Hands and Feet.",
-            "id": "mc_l34_q3",
-            "medicalVocab": [
-                "Cold Hands and Feet",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I got a mild allergic rash after trying a new lotion.\"",
-            "symptoms": [
-                "Allergic Reaction",
-                "Rash",
-                "Heat Rash",
-                "Sunburn"
-            ],
-            "correctAnswer": "Allergic Reaction",
-            "hint": "The patient names the cause directly - listen for that word.",
-            "explanation": "When a rash is clearly linked to a triggering product, it is described as an Allergic Reaction.",
-            "id": "mc_l35_q1",
-            "medicalVocab": [
-                "Allergic Reaction",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My whole body broke out in itchy welts after I ate shellfish,\" the patient says.",
-            "symptoms": [
-                "Rash",
-                "Allergic Reaction",
-                "Itching",
-                "Hives"
-            ],
-            "correctAnswer": "Hives",
-            "hint": "The specific word 'welts' describes a particular type of raised skin mark.",
-            "explanation": "Raised, itchy welts on the skin, often from food, are specifically called Hives.",
-            "id": "mc_l35_q2",
-            "medicalVocab": [
-                "Hives",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My throat feels a little tight when I have bad allergies in the spring,\" the patient tells the doctor.",
-            "symptoms": [
-                "Throat Tightness",
-                "Sore Throat",
-                "Hoarse Voice",
-                "Sinus Pressure"
-            ],
-            "correctAnswer": "Throat Tightness",
-            "hint": "The patient describes tightness, not pain when swallowing.",
-            "explanation": "A tight feeling in the throat, separate from pain, is called Throat Tightness.",
-            "id": "mc_l35_q3",
-            "medicalVocab": [
-                "Throat Tightness",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"My skin gets these raised, itchy bumps whenever I'm stressed.\"",
-            "symptoms": [
-                "Rash",
-                "Itching",
-                "Allergic Reaction",
-                "Hives"
-            ],
-            "correctAnswer": "Hives",
-            "hint": "The patient describes raised bumps, which is more specific than a flat rash.",
-            "explanation": "Raised, itchy bumps on the skin are called Hives, even when stress is the trigger.",
-            "id": "mc_l36_q1",
-            "medicalVocab": [
-                "Hives",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"My eyes have dark circles under them and look tired all the time.\"",
-            "symptoms": [
-                "Puffy Eyes",
-                "Dark Circles",
-                "Fatigue",
-                "Watery Eyes"
-            ],
-            "correctAnswer": "Dark Circles",
-            "hint": "The patient describes color under the eyes, not swelling or wetness.",
-            "explanation": "Darkened skin under the eyes is called Dark Circles.",
-            "id": "mc_l36_q2",
-            "medicalVocab": [
-                "Dark Circles",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"My voice disappeared completely this morning.\"",
-            "symptoms": [
-                "Hoarse Voice",
-                "Sore Throat",
-                "Loss of Voice",
-                "Cough"
-            ],
-            "correctAnswer": "Loss of Voice",
-            "hint": "The patient says the voice is gone completely, not just rough-sounding.",
-            "explanation": "A voice that disappears entirely is called Loss of Voice, more severe than a Hoarse Voice.",
-            "id": "mc_l36_q3",
-            "medicalVocab": [
-                "Loss of Voice",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"My lower back has been stiff and sore since I moved those boxes.\"",
-            "symptoms": [
-                "Back Pain",
-                "Muscle Soreness",
-                "Joint Stiffness",
-                "Cramp"
-            ],
-            "correctAnswer": "Back Pain",
-            "hint": "The patient names the exact area affected: the back.",
-            "explanation": "Soreness and stiffness in the back after lifting is described as Back Pain.",
-            "id": "mc_l37_q1",
-            "medicalVocab": [
-                "Spine",
-                "Lumbar",
-                "Posture"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I feel a strange fluttering in my chest every so often,\" the patient says.",
-            "symptoms": [
-                "Racing Heartbeat",
-                "Heart Palpitations",
-                "Chest Pain",
-                "Shortness of Breath"
-            ],
-            "correctAnswer": "Heart Palpitations",
-            "hint": "The word 'fluttering' describes an irregular feeling, not simply a fast one.",
-            "explanation": "An irregular, fluttering feeling in the chest is called Heart Palpitations.",
-            "id": "mc_l37_q2",
-            "medicalVocab": [
-                "Heart Palpitations",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My throat feels like something is stuck in it, but nothing is there,\" the patient tells the doctor.",
-            "symptoms": [
-                "Sore Throat",
-                "Difficulty Swallowing",
-                "Throat Tightness",
-                "Lump in Throat"
-            ],
-            "correctAnswer": "Lump in Throat",
-            "hint": "The patient describes a sensation of something being there, not pain or difficulty.",
-            "explanation": "The sensation of a lump in the throat, with nothing actually there, is called Lump in Throat.",
-            "id": "mc_l37_q3",
-            "medicalVocab": [
-                "Lump in Throat",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"It's hard to swallow food lately, like it gets stuck.\"",
-            "symptoms": [
-                "Sore Throat",
-                "Lump in Throat",
-                "Difficulty Swallowing",
-                "Dry Mouth"
-            ],
-            "correctAnswer": "Difficulty Swallowing",
-            "hint": "The patient describes trouble with the act of swallowing itself.",
-            "explanation": "Trouble getting food down when swallowing is called Difficulty Swallowing.",
-            "id": "mc_l38_q1",
-            "medicalVocab": [
-                "Difficulty Swallowing",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"My face looks pale and I feel washed out.\"",
-            "symptoms": [
-                "Paleness",
-                "Fatigue",
-                "Weakness",
-                "Dizziness"
-            ],
-            "correctAnswer": "Paleness",
-            "hint": "The patient describes their appearance, not their energy or strength.",
-            "explanation": "Skin that looks unusually light or washed out is called Paleness.",
-            "id": "mc_l38_q2",
-            "medicalVocab": [
-                "Paleness",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"I get a metallic taste in my mouth sometimes.\"",
-            "symptoms": [
-                "Dry Mouth",
-                "Metallic Taste",
-                "Bad Breath",
-                "Nausea"
-            ],
-            "correctAnswer": "Metallic Taste",
-            "hint": "The patient describes a specific taste, not dryness or smell.",
-            "explanation": "An unusual metal-like taste in the mouth is called a Metallic Taste.",
-            "id": "mc_l38_q3",
-            "medicalVocab": [
-                "Metallic Taste",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"My fingernails have started looking pale and brittle.\"",
-            "symptoms": [
-                "Dry Skin",
-                "Numbness",
-                "Ingrown Nail",
-                "Brittle Nails"
-            ],
-            "correctAnswer": "Brittle Nails",
-            "hint": "The patient describes the nails themselves, not the skin or fingers.",
-            "explanation": "Nails that break or chip easily are called Brittle Nails.",
-            "id": "mc_l39_q1",
-            "medicalVocab": [
-                "Brittle Nails",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I get out of breath just walking to the mailbox now,\" the patient says.",
-            "symptoms": [
-                "Fatigue",
-                "Chest Pain",
-                "Shortness of Breath",
-                "Weakness"
-            ],
-            "correctAnswer": "Shortness of Breath",
-            "hint": "The patient describes breathing difficulty during a small amount of activity.",
-            "explanation": "Getting out of breath during light activity is called Shortness of Breath.",
-            "id": "mc_l39_q2",
-            "medicalVocab": [
-                "Dyspnea",
-                "Lungs",
-                "Oxygen"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My skin bruises so easily lately, even from a light bump,\" the patient tells the doctor.",
-            "symptoms": [
-                "Bruise",
-                "Swelling",
-                "Rash",
-                "Easy Bruising"
-            ],
-            "correctAnswer": "Easy Bruising",
-            "hint": "The patient describes a pattern over time, not one single mark.",
-            "explanation": "A tendency to bruise from very light contact is called Easy Bruising.",
-            "id": "mc_l39_q3",
-            "medicalVocab": [
-                "Easy Bruising",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"My feet swell up by the end of a long day at work.\"",
-            "symptoms": [
-                "Swollen Ankles",
-                "Swollen Feet",
-                "Leg Pain",
-                "Cramp"
-            ],
-            "correctAnswer": "Swollen Feet",
-            "hint": "The patient names the feet specifically, not the ankles.",
-            "explanation": "Feet that puff up, especially after standing, are called Swollen Feet.",
-            "id": "mc_l40_q1",
-            "medicalVocab": [
-                "Swollen Feet",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"I feel thirsty all the time, no matter how much I drink.\"",
-            "symptoms": [
-                "Excessive Thirst",
-                "Dry Mouth",
-                "Fatigue",
-                "Weakness"
-            ],
-            "correctAnswer": "Excessive Thirst",
-            "hint": "The patient describes constant thirst, not just a dry feeling.",
-            "explanation": "Feeling thirsty far more than usual, even after drinking, is called Excessive Thirst.",
-            "id": "mc_l40_q2",
-            "medicalVocab": [
-                "Excessive Thirst",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the symptom that best matches what the patient says.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"I need to use the bathroom much more often than usual.\"",
-            "symptoms": [
-                "Bloating",
-                "Excessive Thirst",
-                "Frequent Urination",
-                "Fatigue"
-            ],
-            "correctAnswer": "Frequent Urination",
-            "hint": "The patient describes how often they need the bathroom.",
-            "explanation": "Needing to urinate much more often than usual is called Frequent Urination.",
-            "id": "mc_l40_q3",
-            "medicalVocab": [
-                "Frequent Urination",
-                "Symptom",
-                "Patient"
-            ]
-        }
-    ]
+  "gameType": "medicalConsult",
+  "batchIndex": 4,
+  "levels": "31-40",
+  "quests": [
+    {
+      "instruction": "Select the symptom that best fits this natural description.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"Swallowing food feels like scraping my throat raw.\"",
+      "symptoms": [
+        "Hoarse Voice",
+        "Sore Throat",
+        "Runny Nose",
+        "Swollen Glands"
+      ],
+      "correctAnswer": "Sore Throat",
+      "hint": "Turn the patient's own image into the symptom name a clinician would use.",
+      "explanation": "There is no medical term in “Swallowing food feels like scraping my throat raw,” but the meaning matches Sore Throat: pain, scratchiness or rawness in the throat, often worse when swallowing. Compare Swollen Glands, which is tender or enlarged lumps, often in the neck or under the jaw.",
+      "id": "mc_l31_q1",
+      "medicalVocab": [
+        "Sore Throat",
+        "Pharynx",
+        "Swallowing"
+      ]
+    },
+    {
+      "instruction": "Identify the symptom behind the patient's everyday wording.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"There's this dry, tickly feeling in my throat that sets off a coughing fit.\"",
+      "symptoms": [
+        "Cough",
+        "Shortness of Breath",
+        "Sore Throat",
+        "Wheezing"
+      ],
+      "correctAnswer": "Cough",
+      "hint": "Consider what the patient is really saying between the lines.",
+      "explanation": "There is no medical term in “There's this dry, tickly feeling in my throat that sets off a coughing fit,” but the meaning matches Cough: the repeated reflex of forcing air out of the airways. Compare Shortness of Breath, which is feeling unable to get enough air.",
+      "id": "mc_l31_q2",
+      "medicalVocab": [
+        "Cough",
+        "Mucus",
+        "Phlegm"
+      ]
+    },
+    {
+      "instruction": "Choose what the patient is really describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"I keep swinging between feeling boiling hot and then freezing cold.\"",
+      "symptoms": [
+        "Fatigue",
+        "Nausea",
+        "Fever",
+        "Night Sweats"
+      ],
+      "correctAnswer": "Fever",
+      "hint": "Ask yourself which symptom would make someone say exactly this.",
+      "explanation": "There is no medical term in “I keep swinging between feeling boiling hot and then freezing cold,” but the meaning matches Fever: a raised body temperature, often with chills or sweating. Compare Fatigue, which is a deep tiredness or lack of energy that rest does not fix.",
+      "id": "mc_l31_q3",
+      "medicalVocab": [
+        "Fever",
+        "Temperature",
+        "Chills"
+      ]
+    },
+    {
+      "instruction": "Identify the symptom behind the patient's everyday wording.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"There's this gnawing ache right in the middle of my stomach.\"",
+      "symptoms": [
+        "Nausea",
+        "Stomach Ache",
+        "Bloating",
+        "Side Pain"
+      ],
+      "correctAnswer": "Stomach Ache",
+      "hint": "Look at the overall picture instead of matching a single word.",
+      "explanation": "There is no medical term in “There's this gnawing ache right in the middle of my stomach,” but the meaning matches Stomach Ache: pain or cramping felt in the belly area. Compare Nausea, which is the queasy feeling of being about to vomit.",
+      "id": "mc_l32_q1",
+      "medicalVocab": [
+        "Stomach Ache",
+        "Abdomen",
+        "Digestion"
+      ]
+    },
+    {
+      "instruction": "Choose what the patient is really describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"There's this queasy wave that hits me whenever I stand up too fast.\"",
+      "symptoms": [
+        "Nausea",
+        "Bloating",
+        "Dizziness",
+        "Stomach Ache"
+      ],
+      "correctAnswer": "Nausea",
+      "hint": "Translate the everyday description into the symptom it points to.",
+      "explanation": "There is no medical term in “There's this queasy wave that hits me whenever I stand up too fast,” but the meaning matches Nausea: the queasy feeling of being about to vomit. Compare Stomach Ache, which is pain or cramping felt in the belly area.",
+      "id": "mc_l32_q2",
+      "medicalVocab": [
+        "Nausea",
+        "Queasy",
+        "Vomiting"
+      ]
+    },
+    {
+      "instruction": "Select the symptom that best fits this natural description.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"There's a twinge low in my back sometimes.\"",
+      "symptoms": [
+        "Side Pain",
+        "Back Pain",
+        "Numbness",
+        "Joint Pain"
+      ],
+      "correctAnswer": "Back Pain",
+      "hint": "Think about what experience produces this description.",
+      "explanation": "There is no medical term in “There's a twinge low in my back sometimes,” but the meaning matches Back Pain: pain felt along the spine or the muscles beside it. Compare Joint Pain, which is aching or tenderness in a joint such as the knee, hip or finger.",
+      "id": "mc_l32_q3",
+      "medicalVocab": [
+        "Back Pain",
+        "Lower Back",
+        "Spine"
+      ]
+    },
+    {
+      "instruction": "Choose what the patient is really describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"My knuckles feel swollen and sore after staying still for a while.\"",
+      "symptoms": [
+        "Swelling",
+        "Muscle Soreness",
+        "Joint Pain",
+        "Cramp"
+      ],
+      "correctAnswer": "Joint Pain",
+      "hint": "Picture what the patient is experiencing rather than hunting for a keyword.",
+      "explanation": "There is no medical term in “My knuckles feel swollen and sore after staying still for a while,” but the meaning matches Joint Pain: aching or tenderness in a joint such as the knee, hip or finger. Compare Muscle Soreness, which is aching or tenderness in the muscles, often after unusual exertion.",
+      "id": "mc_l33_q1",
+      "medicalVocab": [
+        "Joint Pain",
+        "Joint Stiffness",
+        "Swelling"
+      ]
+    },
+    {
+      "instruction": "Select the symptom that best fits this natural description.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"My calves feel tight and tender whenever I press on them.\"",
+      "symptoms": [
+        "Cramp",
+        "Joint Pain",
+        "Joint Stiffness",
+        "Muscle Soreness"
+      ],
+      "correctAnswer": "Muscle Soreness",
+      "hint": "No medical word is used here, so imagine the sensation being described.",
+      "explanation": "There is no medical term in “My calves feel tight and tender whenever I press on them,” but the meaning matches Muscle Soreness: aching or tenderness in the muscles, often after unusual exertion. Compare Joint Pain, which is aching or tenderness in a joint such as the knee, hip or finger.",
+      "id": "mc_l33_q2",
+      "medicalVocab": [
+        "Muscle Soreness",
+        "Exertion",
+        "Tenderness"
+      ]
+    },
+    {
+      "instruction": "Identify the symptom behind the patient's everyday wording.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"Even small tasks leave me feeling completely run down.\"",
+      "symptoms": [
+        "Fatigue",
+        "Body Aches",
+        "Brain Fog",
+        "Low Mood"
+      ],
+      "correctAnswer": "Fatigue",
+      "hint": "The whole description matters more than any one word in it.",
+      "explanation": "There is no medical term in “Even small tasks leave me feeling completely run down,” but the meaning matches Fatigue: a deep tiredness or lack of energy that rest does not fix. Compare Low Mood, which is persistent sadness, flatness or loss of interest.",
+      "id": "mc_l33_q3",
+      "medicalVocab": [
+        "Fatigue",
+        "Exhaustion",
+        "Energy"
+      ]
+    },
+    {
+      "instruction": "Select the symptom that best fits this natural description.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"I keep watching the clock tick by, hour after hour.\"",
+      "symptoms": [
+        "Headache",
+        "Anxiety",
+        "Insomnia",
+        "Fatigue"
+      ],
+      "correctAnswer": "Insomnia",
+      "hint": "Turn the patient's own image into the symptom name a clinician would use.",
+      "explanation": "There is no medical term in “I keep watching the clock tick by, hour after hour,” but the meaning matches Insomnia: trouble falling asleep or staying asleep. Compare Fatigue, which is a deep tiredness or lack of energy that rest does not fix.",
+      "id": "mc_l34_q1",
+      "medicalVocab": [
+        "Insomnia",
+        "Sleep",
+        "Restlessness"
+      ]
+    },
+    {
+      "instruction": "Identify the symptom behind the patient's everyday wording.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"I get this swimming feeling in my head if I turn quickly.\"",
+      "symptoms": [
+        "Blurred Vision",
+        "Dizziness",
+        "Nausea",
+        "Weakness"
+      ],
+      "correctAnswer": "Dizziness",
+      "hint": "Consider what the patient is really saying between the lines.",
+      "explanation": "There is no medical term in “I get this swimming feeling in my head if I turn quickly,” but the meaning matches Dizziness: feeling lightheaded, unsteady or as if the room is spinning. Compare Nausea, which is the queasy feeling of being about to vomit.",
+      "id": "mc_l34_q2",
+      "medicalVocab": [
+        "Dizziness",
+        "Lightheadedness",
+        "Balance"
+      ]
+    },
+    {
+      "instruction": "Choose what the patient is really describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"I have to stop halfway up the stairs just to catch my breath.\"",
+      "symptoms": [
+        "Fatigue",
+        "Dizziness",
+        "Shortness of Breath",
+        "Cough"
+      ],
+      "correctAnswer": "Shortness of Breath",
+      "hint": "Ask yourself which symptom would make someone say exactly this.",
+      "explanation": "There is no medical term in “I have to stop halfway up the stairs just to catch my breath,” but the meaning matches Shortness of Breath: feeling unable to get enough air. Compare Cough, which is the repeated reflex of forcing air out of the airways.",
+      "id": "mc_l34_q3",
+      "medicalVocab": [
+        "Shortness of Breath",
+        "Breathlessness",
+        "Exertion"
+      ]
+    },
+    {
+      "instruction": "Identify the symptom behind the patient's everyday wording.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"It's a tight, squeezing feeling under my breastbone.\"",
+      "symptoms": [
+        "Cough",
+        "Heartburn",
+        "Back Pain",
+        "Chest Pain"
+      ],
+      "correctAnswer": "Chest Pain",
+      "hint": "Look at the overall picture instead of matching a single word.",
+      "explanation": "There is no medical term in “It's a tight, squeezing feeling under my breastbone,” but the meaning matches Chest Pain: pain, pressure or tightness felt in the chest. Compare Back Pain, which is pain felt along the spine or the muscles beside it.",
+      "id": "mc_l35_q1",
+      "medicalVocab": [
+        "Chest Pain",
+        "Pressure",
+        "Breastbone"
+      ]
+    },
+    {
+      "instruction": "Choose what the patient is really describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"My skin looks blotchy and slightly raised in a few spots.\"",
+      "symptoms": [
+        "Skin Rash",
+        "Itching",
+        "Dry Skin",
+        "Swelling"
+      ],
+      "correctAnswer": "Skin Rash",
+      "hint": "Translate the everyday description into the symptom it points to.",
+      "explanation": "There is no medical term in “My skin looks blotchy and slightly raised in a few spots,” but the meaning matches Skin Rash: a visible change in the skin such as redness, bumps or patches. Compare Itching, which is an irritating skin sensation that makes you want to scratch.",
+      "id": "mc_l35_q2",
+      "medicalVocab": [
+        "Skin Rash",
+        "Redness",
+        "Irritation"
+      ]
+    },
+    {
+      "instruction": "Select the symptom that best fits this natural description.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"I keep scratching without even thinking about it.\"",
+      "symptoms": [
+        "Itching",
+        "Redness",
+        "Skin Rash",
+        "Bruising"
+      ],
+      "correctAnswer": "Itching",
+      "hint": "Think about what experience produces this description.",
+      "explanation": "There is no medical term in “I keep scratching without even thinking about it,” but the meaning matches Itching: an irritating skin sensation that makes you want to scratch. Compare Skin Rash, which is a visible change in the skin such as redness, bumps or patches.",
+      "id": "mc_l35_q3",
+      "medicalVocab": [
+        "Itching",
+        "Irritation",
+        "Sensation"
+      ]
+    },
+    {
+      "instruction": "Choose what the patient is really describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"It feels blocked and sore, especially when I chew.\"",
+      "symptoms": [
+        "Ear Fullness",
+        "Hearing Loss",
+        "Swollen Glands",
+        "Earache"
+      ],
+      "correctAnswer": "Earache",
+      "hint": "Picture what the patient is experiencing rather than hunting for a keyword.",
+      "explanation": "There is no medical term in “It feels blocked and sore, especially when I chew,” but the meaning matches Earache: pain felt inside or around the ear. Compare Swollen Glands, which is tender or enlarged lumps, often in the neck or under the jaw.",
+      "id": "mc_l36_q1",
+      "medicalVocab": [
+        "Earache",
+        "Ear Canal",
+        "Pressure"
+      ]
+    },
+    {
+      "instruction": "Select the symptom that best fits this natural description.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"I hear a low buzzing that seems to come from inside my head.\"",
+      "symptoms": [
+        "Ringing in the Ears",
+        "Earache",
+        "Vertigo",
+        "Headache"
+      ],
+      "correctAnswer": "Ringing in the Ears",
+      "hint": "No medical word is used here, so imagine the sensation being described.",
+      "explanation": "There is no medical term in “I hear a low buzzing that seems to come from inside my head,” but the meaning matches Ringing in the Ears: hearing a sound such as ringing or buzzing with no outside source. Compare Earache, which is pain felt inside or around the ear.",
+      "id": "mc_l36_q2",
+      "medicalVocab": [
+        "Ringing in the Ears",
+        "Tinnitus",
+        "Pitch"
+      ]
+    },
+    {
+      "instruction": "Identify the symptom behind the patient's everyday wording.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"Everything looks slightly doubled if I stare too long.\"",
+      "symptoms": [
+        "Light Sensitivity",
+        "Dizziness",
+        "Eye Strain",
+        "Blurred Vision"
+      ],
+      "correctAnswer": "Blurred Vision",
+      "hint": "The whole description matters more than any one word in it.",
+      "explanation": "There is no medical term in “Everything looks slightly doubled if I stare too long,” but the meaning matches Blurred Vision: seeing things out of focus or unclear. Compare Dizziness, which is feeling lightheaded, unsteady or as if the room is spinning.",
+      "id": "mc_l36_q3",
+      "medicalVocab": [
+        "Blurred Vision",
+        "Focus",
+        "Eye Strain"
+      ]
+    },
+    {
+      "instruction": "Select the symptom that best fits this natural description.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"I have to breathe through my mouth because my nose is so stuffed.\"",
+      "symptoms": [
+        "Headache",
+        "Sinus Pressure",
+        "Swollen Glands",
+        "Sinus Congestion"
+      ],
+      "correctAnswer": "Sinus Congestion",
+      "hint": "Turn the patient's own image into the symptom name a clinician would use.",
+      "explanation": "There is no medical term in “I have to breathe through my mouth because my nose is so stuffed,” but the meaning matches Sinus Congestion: a blocked, stuffed-up feeling in the nose and face. Compare Swollen Glands, which is tender or enlarged lumps, often in the neck or under the jaw.",
+      "id": "mc_l37_q1",
+      "medicalVocab": [
+        "Sinus Congestion",
+        "Sinus Pressure",
+        "Blocked"
+      ]
+    },
+    {
+      "instruction": "Identify the symptom behind the patient's everyday wording.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"There's this drip that won't let up.\"",
+      "symptoms": [
+        "Runny Nose",
+        "Cough",
+        "Sneezing",
+        "Sore Throat"
+      ],
+      "correctAnswer": "Runny Nose",
+      "hint": "Consider what the patient is really saying between the lines.",
+      "explanation": "There is no medical term in “There's this drip that won't let up,” but the meaning matches Runny Nose: clear or watery fluid draining from the nose. Compare Sore Throat, which is pain, scratchiness or rawness in the throat, often worse when swallowing.",
+      "id": "mc_l37_q2",
+      "medicalVocab": [
+        "Runny Nose",
+        "Nasal Discharge",
+        "Sneezing"
+      ]
+    },
+    {
+      "instruction": "Choose what the patient is really describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"It hurts a bit when I turn my neck or swallow.\"",
+      "symptoms": [
+        "Fever",
+        "Neck Pain",
+        "Sore Throat",
+        "Swollen Glands"
+      ],
+      "correctAnswer": "Swollen Glands",
+      "hint": "Ask yourself which symptom would make someone say exactly this.",
+      "explanation": "There is no medical term in “It hurts a bit when I turn my neck or swallow,” but the meaning matches Swollen Glands: tender or enlarged lumps, often in the neck or under the jaw. Compare Fever, which is a raised body temperature, often with chills or sweating.",
+      "id": "mc_l37_q3",
+      "medicalVocab": [
+        "Swollen Glands",
+        "Lymph Nodes",
+        "Tenderness"
+      ]
+    },
+    {
+      "instruction": "Identify the symptom behind the patient's everyday wording.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"It gets worse whenever I lie down soon after a meal.\"",
+      "symptoms": [
+        "Bloating",
+        "Nausea",
+        "Stomach Ache",
+        "Acid Reflux"
+      ],
+      "correctAnswer": "Acid Reflux",
+      "hint": "Look at the overall picture instead of matching a single word.",
+      "explanation": "There is no medical term in “It gets worse whenever I lie down soon after a meal,” but the meaning matches Acid Reflux: a burning feeling as stomach contents rise toward the chest or throat. Compare Bloating, which is a tight, full, swollen feeling in the belly.",
+      "id": "mc_l38_q1",
+      "medicalVocab": [
+        "Acid Reflux",
+        "Heartburn",
+        "Esophagus"
+      ]
+    },
+    {
+      "instruction": "Choose what the patient is really describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"I feel puffed up and uncomfortable even after a small meal.\"",
+      "symptoms": [
+        "Nausea",
+        "Bloating",
+        "Heartburn",
+        "Stomach Ache"
+      ],
+      "correctAnswer": "Bloating",
+      "hint": "Translate the everyday description into the symptom it points to.",
+      "explanation": "There is no medical term in “I feel puffed up and uncomfortable even after a small meal,” but the meaning matches Bloating: a tight, full, swollen feeling in the belly. Compare Nausea, which is the queasy feeling of being about to vomit.",
+      "id": "mc_l38_q2",
+      "medicalVocab": [
+        "Bloating",
+        "Fullness",
+        "Distension"
+      ]
+    },
+    {
+      "instruction": "Select the symptom that best fits this natural description.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"I get cramping right before I need to rush to the bathroom.\"",
+      "symptoms": [
+        "Constipation",
+        "Loss of Appetite",
+        "Diarrhea",
+        "Fever"
+      ],
+      "correctAnswer": "Diarrhea",
+      "hint": "Think about what experience produces this description.",
+      "explanation": "There is no medical term in “I get cramping right before I need to rush to the bathroom,” but the meaning matches Diarrhea: frequent loose or watery stools. Compare Loss of Appetite, which is not feeling like eating.",
+      "id": "mc_l38_q3",
+      "medicalVocab": [
+        "Diarrhea",
+        "Stools",
+        "Digestion"
+      ]
+    },
+    {
+      "instruction": "Choose what the patient is really describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"When I do go, it's difficult and uncomfortable.\"",
+      "symptoms": [
+        "Cramp",
+        "Constipation",
+        "Side Pain",
+        "Bloating"
+      ],
+      "correctAnswer": "Constipation",
+      "hint": "Picture what the patient is experiencing rather than hunting for a keyword.",
+      "explanation": "There is no medical term in “When I do go, it's difficult and uncomfortable,” but the meaning matches Constipation: infrequent or difficult bowel movements. Compare Cramp, which is a sudden, painful tightening of a muscle.",
+      "id": "mc_l39_q1",
+      "medicalVocab": [
+        "Constipation",
+        "Bowel",
+        "Digestion"
+      ]
+    },
+    {
+      "instruction": "Select the symptom that best fits this natural description.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"There's a patch on my leg where I barely feel anything at all.\"",
+      "symptoms": [
+        "Back Pain",
+        "Numbness",
+        "Weakness",
+        "Tingling"
+      ],
+      "correctAnswer": "Numbness",
+      "hint": "No medical word is used here, so imagine the sensation being described.",
+      "explanation": "There is no medical term in “There's a patch on my leg where I barely feel anything at all,” but the meaning matches Numbness: reduced or lost feeling in part of the body. Compare Tingling, which is a pins-and-needles or prickling sensation.",
+      "id": "mc_l39_q2",
+      "medicalVocab": [
+        "Numbness",
+        "Sensation",
+        "Nerve"
+      ]
+    },
+    {
+      "instruction": "Identify the symptom behind the patient's everyday wording.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"My fingertips buzz faintly whenever I've been typing for a while.\"",
+      "symptoms": [
+        "Muscle Soreness",
+        "Weakness",
+        "Tingling",
+        "Cramp"
+      ],
+      "correctAnswer": "Tingling",
+      "hint": "The whole description matters more than any one word in it.",
+      "explanation": "There is no medical term in “My fingertips buzz faintly whenever I've been typing for a while,” but the meaning matches Tingling: a pins-and-needles or prickling sensation. Compare Muscle Soreness, which is aching or tenderness in the muscles, often after unusual exertion.",
+      "id": "mc_l39_q3",
+      "medicalVocab": [
+        "Tingling",
+        "Pins and Needles",
+        "Nerve"
+      ]
+    },
+    {
+      "instruction": "Select the symptom that best fits this natural description.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"I notice my chest pounding even when I'm just sitting still.\"",
+      "symptoms": [
+        "Shortness of Breath",
+        "Palpitations",
+        "Chest Pain",
+        "Sweating"
+      ],
+      "correctAnswer": "Palpitations",
+      "hint": "Turn the patient's own image into the symptom name a clinician would use.",
+      "explanation": "There is no medical term in “I notice my chest pounding even when I'm just sitting still,” but the meaning matches Palpitations: being aware of a racing, pounding or fluttering heartbeat. Compare Shortness of Breath, which is feeling unable to get enough air.",
+      "id": "mc_l40_q1",
+      "medicalVocab": [
+        "Palpitations",
+        "Heartbeat",
+        "Racing"
+      ]
+    },
+    {
+      "instruction": "Identify the symptom behind the patient's everyday wording.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"My shoes have started feeling noticeably tighter than usual.\"",
+      "symptoms": [
+        "Back Pain",
+        "Fatigue",
+        "Leg Pain",
+        "Swollen Ankles"
+      ],
+      "correctAnswer": "Swollen Ankles",
+      "hint": "Consider what the patient is really saying between the lines.",
+      "explanation": "There is no medical term in “My shoes have started feeling noticeably tighter than usual,” but the meaning matches Swollen Ankles: puffiness around the ankles from extra fluid. Compare Back Pain, which is pain felt along the spine or the muscles beside it.",
+      "id": "mc_l40_q2",
+      "medicalVocab": [
+        "Swollen Ankles",
+        "Swelling",
+        "Fluid"
+      ]
+    },
+    {
+      "instruction": "Choose what the patient is really describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "\"My chest tightens and my thoughts race whenever I think about work.\"",
+      "symptoms": [
+        "Insomnia",
+        "Low Mood",
+        "Anxiety",
+        "Racing Heartbeat"
+      ],
+      "correctAnswer": "Anxiety",
+      "hint": "Ask yourself which symptom would make someone say exactly this.",
+      "explanation": "There is no medical term in “My chest tightens and my thoughts race whenever I think about work,” but the meaning matches Anxiety: ongoing worry, tension or feeling on edge. Compare Insomnia, which is trouble falling asleep or staying asleep.",
+      "id": "mc_l40_q3",
+      "medicalVocab": [
+        "Anxiety",
+        "Worry",
+        "Restlessness"
+      ]
+    }
+  ]
 }

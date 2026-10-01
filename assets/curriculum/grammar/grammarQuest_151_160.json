@@ -5,543 +5,393 @@
     "quests": [
         {
             "id": "gq_l151_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The study ___ a number of key limitations that should be considered.",
-            "options": [
-                "displays",
-                "possesses",
-                "acknowledges",
-                "exhibits"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "acknowledges",
-            "hint": "Which verb means to formally recognise and disclose limitations?",
-            "explanation": "'Acknowledge' = formally recognise: The study acknowledges a number of limitations. This is important in academic writing - researchers must acknowledge what their study cannot conclude. Compare: 'exhibits/displays' imply showing something outwardly.",
-            "grammarRule": "Academic Comparison Verbs"
+            "question": "___ is my favorite hobby.",
+            "options": ["Swim", "Swimming", "To swim", "Swims"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Swimming",
+            "hint": "This word acts as the subject of the sentence, like a noun.",
+            "explanation": "A gerund (-ing form) can act as the subject of a sentence, functioning like a noun: Swimming is my favorite hobby. 'Swim' alone can't be a subject on its own.",
+            "grammarRule": "Gerunds: As Subject"
         },
         {
             "id": "gq_l151_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "These findings ___ sharply with those reported by earlier researchers, raising questions about replicability.",
-            "options": [
-                "contrast",
-                "correspond",
-                "match",
-                "align"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "contrast",
-            "hint": "The findings raise doubts about replicability - do they agree or disagree with earlier work?",
-            "explanation": "'Contrast with' fits results that disagree: these findings contrast sharply with earlier research, raising doubts about replicability. 'Match,' 'correspond,' and 'align' all mean the findings agree with earlier work, which wouldn't raise any concerns.",
-            "grammarRule": "Academic Comparison Verbs"
+            "question": "She's interested in ___ a new language.",
+            "options": ["learn", "to learn", "learns", "learning"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "learning",
+            "hint": "Verbs after a preposition like 'in' take a special form.",
+            "explanation": "Verbs following a preposition always take the gerund form: interested in learning. 'To learn' cannot follow a preposition this way.",
+            "grammarRule": "Gerunds: After Prepositions"
         },
         {
             "id": "gq_l151_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The experiment ___ under strictly controlled conditions, according to the methodology section.",
-            "options": [
-                "conducted",
-                "has conducted",
-                "was conducted",
-                "is conducting"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "was conducted",
-            "hint": "The experiment doesn't act by itself - which voice is needed?",
-            "explanation": "Passive voice is required because the experiment is the object of the action, not the doer: the experiment was conducted under controlled conditions. 'Conducted' alone, 'has conducted', and 'is conducting' would all need an agent doing the conducting (e.g. 'the team has conducted the experiment').",
-            "grammarRule": "Academic Comparison Verbs"
+            "question": "\u2014 What do you do for fun?\n\u2014 I'm really into ___ photos.",
+            "options": ["taking", "take", "to take", "takes"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "taking",
+            "hint": "'Into' works like a preposition here too.",
+            "explanation": "'Into' functions as a preposition, so the following verb takes the gerund form: into taking photos, following the same rule from Question 2.",
+            "grammarRule": "Gerunds: After Prepositions"
         },
         {
             "id": "gq_l152_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The data ___ to a clear conclusion about the causes.",
-            "options": [
-                "point",
-                "suggest",
-                "points",
-                "lead"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "point",
-            "hint": "'The data' - singular or plural verb in formal academic writing?",
-            "explanation": "In formal academic writing, 'data' is technically plural (datum = singular). However, both 'The data points' and 'The data point' are accepted. 'Points to a clear conclusion' is widely used as a collocation in academic writing.",
-            "grammarRule": "Academic Collocations"
+            "question": "I enjoy ___ books in my free time.",
+            "options": ["read", "to read", "reading", "reads"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "reading",
+            "hint": "This verb always takes the -ing form after it.",
+            "explanation": "'Enjoy' is always followed by a gerund: enjoy reading. This is a fixed pattern that simply needs to be memorized.",
+            "grammarRule": "Verb + Gerund: Enjoy"
         },
         {
             "id": "gq_l152_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "He ___ his argument on three main assumptions.",
-            "options": [
-                "bases",
-                "builds",
-                "grounds",
-                "founds"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "bases",
-            "hint": "Which verb means 'to establish an argument on a foundation'?",
-            "explanation": "'Base an argument on' = to establish or build on: He bases his argument on three assumptions. 'Grounds' is also used: grounds his argument in. 'Founds' is less common. 'Bases on' is the most natural collocation.",
-            "grammarRule": "Academic Collocations"
+            "question": "She finished ___ her homework before dinner.",
+            "options": ["do", "doing", "to do", "does"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "doing",
+            "hint": "This verb, like 'enjoy', always takes the -ing form.",
+            "explanation": "'Finish' always takes a gerund: finished doing. Verbs like 'enjoy' and 'finish' are part of a group that never uses the infinitive form after them.",
+            "grammarRule": "Verb + Gerund: Finish"
         },
         {
             "id": "gq_l152_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The model ___ for the effects of inflation and unemployment.",
-            "options": [
-                "accounts",
-                "takes account",
-                "controls",
-                "accounts for"
-            ],
+            "question": "\u2014 Do you want to go out?\n\u2014 I'd rather avoid ___ in this weather.",
+            "options": ["go", "to go", "goes", "going"],
             "correctAnswerIndex": 3,
-            "correctAnswer": "accounts for",
-            "hint": "Which phrase means 'considers or compensates for a variable'?",
-            "explanation": "'Account for' = to consider or factor in: The model accounts for the effects of inflation. This is a key research methodology term. 'Control for' is similar: The model controls for confounding variables.",
-            "grammarRule": "Academic Collocations"
+            "correctAnswer": "going",
+            "hint": "This verb also belongs to the gerund-only group.",
+            "explanation": "'Avoid' always takes a gerund: avoid going. Like 'enjoy' and 'finish', it never pairs with 'to' + verb.",
+            "grammarRule": "Verb + Gerund: Avoid"
         },
         {
             "id": "gq_l153_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Given how limited the sample size is, it would be ___ to draw any definitive conclusions at this stage.",
-            "options": [
-                "impossible",
-                "premature",
-                "impractical",
-                "irrelevant"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "premature",
-            "hint": "The problem is about timing - it's too early, not that it truly cannot be done.",
-            "explanation": "'Premature' means happening before the right time: it would be premature to draw conclusions now, though it might be possible later with more data. 'Impossible' is too absolute, 'impractical' implies a logistical difficulty rather than a timing issue, and 'irrelevant' doesn't fit the meaning at all.",
-            "grammarRule": "Inversion / Hedged Claims"
+            "question": "I want ___ a new car next year.",
+            "options": ["to buy", "buy", "buying", "bought"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "to buy",
+            "hint": "This verb always takes 'to' + base verb after it.",
+            "explanation": "'Want' is always followed by an infinitive: want to buy. This is the opposite pattern from verbs like 'enjoy', which take a gerund instead.",
+            "grammarRule": "Verb + Infinitive: Want"
         },
         {
             "id": "gq_l153_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "No sooner ___ the policy been announced than opposition erupted.",
-            "options": [
-                "had",
-                "did",
-                "has",
-                "was"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "had",
-            "hint": "'No sooner' at the start triggers inversion with which auxiliary?",
-            "explanation": "'No sooner had + subject + past participle + than' is a fixed inverted structure for two closely sequential past events: No sooner had the policy been announced than opposition erupted. This uses past perfect, just like the related pattern with 'hardly' or 'scarcely... when'.",
-            "grammarRule": "Inversion / Hedged Claims"
+            "question": "She decided ___ her job.",
+            "options": ["quit", "quitting", "to quit", "quits"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "to quit",
+            "hint": "This verb, like 'want', always takes an infinitive.",
+            "explanation": "'Decide' always takes an infinitive: decided to quit. It belongs to the same group of verbs as 'want', 'hope', and 'plan'.",
+            "grammarRule": "Verb + Infinitive: Decide"
         },
         {
             "id": "gq_l153_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The committee spent several weeks ___ over the controversial decision.",
-            "options": [
-                "deliberated",
-                "to deliberate",
-                "deliberate",
-                "deliberating"
-            ],
+            "question": "\u2014 What are your plans?\n\u2014 I plan ___ abroad next summer.",
+            "options": ["travel", "traveling", "travels", "to travel"],
             "correctAnswerIndex": 3,
-            "correctAnswer": "deliberating",
-            "hint": "'Spend + a period of time' is followed by which verb form?",
-            "explanation": "'Spend + time + verb-ing': the committee spent several weeks deliberating over the decision. This is the same pattern as 'waste time doing something' - a verb following a time expression with spend/waste takes the -ing form, not the base form or infinitive.",
-            "grammarRule": "Inversion / Hedged Claims"
+            "correctAnswer": "to travel",
+            "hint": "This verb also belongs to the infinitive-only group.",
+            "explanation": "'Plan' always takes an infinitive: plan to travel, following the same pattern practiced with 'want' and 'decide'.",
+            "grammarRule": "Verb + Infinitive: Plan"
         },
         {
             "id": "gq_l154_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Her analysis ___ several connections that previous researchers had overlooked.",
-            "options": [
-                "reveal",
-                "to reveal",
-                "revealed",
-                "revealing"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "revealed",
-            "hint": "Which verb form correctly follows the subject 'Her analysis' in the simple past?",
-            "explanation": "'Her analysis revealed...' - simple past tense agrees with the subject and fits the timeline set up by 'had overlooked' (an earlier past action). 'Revealing,' 'reveal,' and 'to reveal' are not finite verb forms and cannot stand alone as the main verb of the sentence.",
-            "grammarRule": "Verb Tense Precision / Cleft Sentences"
+            "question": "I stopped ___ coffee; it was keeping me awake at night.",
+            "options": ["drink", "drinking", "to drink", "drank"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "drinking",
+            "hint": "This means ending an ongoing habit completely.",
+            "explanation": "'Stop + gerund' means ending an ongoing habit or activity: stopped drinking coffee (no longer drinks it at all).",
+            "grammarRule": "Verb + Gerund vs Infinitive: Stop"
         },
         {
             "id": "gq_l154_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The author's case for reform, ___ throughout the book with extensive evidence, ultimately proved persuasive.",
-            "options": [
-                "which built",
-                "builds",
-                "built",
-                "building"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "built",
-            "hint": "A passive relative clause set off by commas can be reduced to just the past participle.",
-            "explanation": "'The case, built throughout the book...' is a reduced passive relative clause = 'the case, which was built throughout the book'. 'Building' would wrongly suggest the case is actively constructing something itself; 'which built' and 'builds' don't fit this reduced, parenthetical position.",
-            "grammarRule": "Verb Tense Precision / Cleft Sentences"
+            "question": "I stopped ___ a coffee on my way to work.",
+            "options": ["to drink", "drink", "drinking", "drank"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "to drink",
+            "hint": "This means pausing one activity in order to do something else.",
+            "explanation": "'Stop + infinitive' means pausing to do something else: stopped to drink coffee (paused walking in order to drink). This is a completely different meaning from Question 1.",
+            "grammarRule": "Verb + Gerund vs Infinitive: Stop"
         },
         {
             "id": "gq_l154_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ at issue here is the relationship between economic growth and wellbeing.",
-            "options": [
-                "It is",
-                "That is",
-                "What is",
-                "This is"
-            ],
+            "question": "\u2014 Did you remember to call her?\n\u2014 Yes, I remember ___ her yesterday.",
+            "options": ["call", "to call", "calling", "called"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "What is",
-            "hint": "A 'what'-clause can function as the subject, to emphasise what follows.",
-            "explanation": "'What is at issue here is...' is a wh-cleft sentence: a 'what' clause acts as the subject to place emphasis on the information that follows (the relationship between growth and wellbeing). 'That,' 'it,' and 'this' don't build this same emphatic clause structure - they'd need a noun already established to refer back to.",
-            "grammarRule": "Verb Tense Precision / Cleft Sentences"
+            "correctAnswer": "calling",
+            "hint": "This describes remembering a completed past action, not a future duty.",
+            "explanation": "'Remember + gerund' describes recalling something already done: remember calling her (recalls the memory of the call itself), unlike 'remember + infinitive', which would describe not forgetting a future task.",
+            "grammarRule": "Verb + Gerund vs Infinitive: Remember"
         },
         {
             "id": "gq_l155_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Several methodological shortcomings ___ by peer reviewers before the paper was accepted for publication.",
-            "options": [
-                "were noted",
-                "are noted",
-                "had been noted",
-                "have been noted"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "had been noted",
-            "hint": "One past event (noting the flaws) happened before another past event (acceptance) - which tense-voice combination is needed?",
-            "explanation": "Past perfect passive shows an action completed before another past action: the shortcomings had been noted before the paper was accepted. 'Were noted' doesn't clearly establish this sequence, and 'have been noted'/'are noted' wrongly connect the noting to the present.",
-            "grammarRule": "Passive Voice Sequencing / Participle Clauses"
+            "question": "I had my hair ___ yesterday.",
+            "options": ["cutting", "to cut", "cuts", "cut"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "cut",
+            "hint": "This causative structure needs the past participle, since someone else did the action.",
+            "explanation": "Causative 'have something done' uses the past participle: had my hair cut, meaning someone else cut it, not the speaker.",
+            "grammarRule": "Causative: Have Something Done"
         },
         {
             "id": "gq_l155_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ several important recommendations, the report calls for immediate policy reform.",
-            "options": [
-                "Making",
-                "Made",
-                "To make",
-                "Makes"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Making",
-            "hint": "A participle clause at the start should share its subject with the main clause - which form works?",
-            "explanation": "'Making several recommendations, the report calls for reform' - the present participle 'making' shares its subject with the main clause ('the report'). 'Made' (past participle) would suggest a separate, completed action; 'to make' and 'makes' aren't grammatical in this opening position.",
-            "grammarRule": "Passive Voice Sequencing / Participle Clauses"
+            "question": "She's getting her car ___ tomorrow.",
+            "options": ["repair", "repaired", "repairing", "to repair"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "repaired",
+            "hint": "This uses the same causative pattern, with 'get' instead of 'have'.",
+            "explanation": "'Get something done' follows the same pattern as 'have something done': getting her car repaired, meaning a mechanic will do it.",
+            "grammarRule": "Causative: Get Something Done"
         },
         {
             "id": "gq_l155_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "It is essential that further testing ___ before the drug is approved.",
-            "options": [
-                "will be carried out",
-                "be carried out",
-                "carried out",
-                "is carried out"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "be carried out",
-            "hint": "'It is essential that' triggers the subjunctive - which form is needed?",
-            "explanation": "Adjectives like essential, vital, and necessary trigger the mandative subjunctive after 'that': it is essential that testing be carried out. The subjunctive uses the base form 'be' + past participle, regardless of subject or tense.",
-            "grammarRule": "Passive Voice Sequencing / Participle Clauses"
+            "question": "\u2014 Did you paint the house yourself?\n\u2014 No, I had it ___ by professionals.",
+            "options": ["painted", "paint", "painting", "to paint"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "painted",
+            "hint": "Someone else did the painting, matching the causative pattern.",
+            "explanation": "'Had it painted' shows someone else did the work, following the same causative pattern practiced in Questions 1 and 2.",
+            "grammarRule": "Causative: Have Something Done"
         },
         {
             "id": "gq_l156_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The entire argument rests ___ a single, unverified assumption.",
-            "options": [
-                "on",
-                "in",
-                "with",
-                "at"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "on",
-            "hint": "Which preposition fixes to 'rests' when describing a foundational basis?",
-            "explanation": "'Rest on' is the fixed collocation meaning 'to be based on': the argument rests on a single assumption. 'Rest at' and 'rest in' aren't standard here, and 'rest with' carries a different meaning entirely (e.g. 'the decision rests with the board' = the board has the authority).",
-            "grammarRule": "Fixed Collocations / Subject-Verb Agreement"
+            "question": "She said, 'I am tired.' \u2192 She said that she ___ tired.",
+            "options": ["is", "were", "was", "be"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "was",
+            "hint": "In reported speech, present tense usually shifts one step back into the past.",
+            "explanation": "Reported speech typically backshifts present to past: 'am' becomes 'was'. The original words change to reflect that time has passed since they were spoken.",
+            "grammarRule": "Reported Speech: Statements"
         },
         {
             "id": "gq_l156_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Correlation ___ causation, a principle every first-year statistics student learns.",
-            "options": [
-                "does not imply",
-                "is not implied by",
-                "is not implying",
-                "not implies"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "does not imply",
-            "hint": "Which form correctly negates the verb 'imply' in the present simple, third person?",
-            "explanation": "'Does not imply' is the correct present-simple negative for third person singular: correlation does not imply causation. 'Is not implying' wrongly uses continuous aspect for a general truth; 'is not implied by' reverses the logical direction; 'not implies' isn't a grammatical verb form.",
-            "grammarRule": "Fixed Collocations / Subject-Verb Agreement"
+            "question": "He said, 'I will call you.' \u2192 He said that he ___ call me.",
+            "options": ["will", "can", "shall", "would"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "would",
+            "hint": "'Will' also shifts back one step in reported speech.",
+            "explanation": "'Will' backshifts to 'would' in reported speech: said he would call, following the same backshifting pattern as Question 1.",
+            "grammarRule": "Reported Speech: Will to Would"
         },
         {
             "id": "gq_l156_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The study's stated purpose ___ sharply from its actual methodology, according to critics.",
-            "options": [
-                "diversity",
-                "diverges",
-                "diverse",
-                "diversify"
-            ],
+            "question": "\u2014 What did she say?\n\u2014 She said she ___ finished the project already.",
+            "options": ["has", "had", "have", "was"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "diverges",
-            "hint": "After 'The study's stated purpose', a verb is needed - which form agrees with a singular subject?",
-            "explanation": "'Diverges' is the correct third-person singular present verb: the purpose diverges from the methodology. 'Diverse' is an adjective, 'diversity' is a noun, and 'diversify' is missing the '-s' required for third-person singular agreement.",
-            "grammarRule": "Fixed Collocations / Subject-Verb Agreement"
+            "correctAnswer": "had",
+            "hint": "Present perfect also shifts back a step in reported speech.",
+            "explanation": "Present perfect ('has finished') backshifts to past perfect ('had finished') in reported speech, continuing the same time-shift pattern from this level.",
+            "grammarRule": "Reported Speech: Present Perfect to Past Perfect"
         },
         {
             "id": "gq_l157_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The melting of polar ice caps is largely ___ to rising global temperatures.",
-            "options": [
-                "attribute",
-                "attributable",
-                "attributing",
-                "attributes"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "attributable",
-            "hint": "After 'is largely', which word class is needed before 'to'?",
-            "explanation": "'Attributable to' is the adjective form used after 'be': the melting is attributable to rising temperatures. 'Attribute' (verb/noun), 'attributes,' and 'attributing' don't fit directly after 'is largely'.",
-            "grammarRule": "Adjective Forms / Long-Distance Agreement"
+            "question": "'Where do you live?' \u2192 She asked me ___ I lived.",
+            "options": ["where", "that", "if", "what"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "where",
+            "hint": "This keeps the same question word from the original question.",
+            "explanation": "Reported WH-questions keep the original question word: asked where I lived. Notice the word order also changes to statement order (I lived), not question order.",
+            "grammarRule": "Reported Speech: WH-Questions"
         },
         {
             "id": "gq_l157_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The consistency of these findings across multiple independent studies ___ that further research is urgently needed.",
-            "options": [
-                "suggesting",
-                "suggests",
-                "suggest",
-                "have suggested"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "suggests",
-            "hint": "Find the true subject of the sentence - is it singular or plural?",
-            "explanation": "The subject is 'the consistency' (singular), not 'findings' or 'studies', which sit inside prepositional phrases: The consistency...suggests. This is a classic subject-verb agreement trap - always find the head noun of the subject, ignoring the words in between.",
-            "grammarRule": "Adjective Forms / Long-Distance Agreement"
+            "question": "'Are you coming?' \u2192 He asked if I ___ coming.",
+            "options": ["am", "is", "was", "were"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "was",
+            "hint": "This yes/no question uses 'if', and the verb needs to backshift into the past.",
+            "explanation": "Yes/no questions are reported with 'if' (or 'whether'), and 'are' backshifts to 'was': asked if I was coming.",
+            "grammarRule": "Reported Speech: Yes/No Questions"
         },
         {
             "id": "gq_l157_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The results are entirely consistent ___ the theoretical predictions made by the model.",
-            "options": [
-                "for",
-                "of",
-                "with",
-                "to"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "with",
-            "hint": "'Consistent' takes one specific fixed preposition.",
-            "explanation": "'Consistent with' is the correct fixed collocation: results consistent with predictions. 'Consistent to,' 'consistent for,' and 'consistent of' are not standard English.",
-            "grammarRule": "Adjective Forms / Long-Distance Agreement"
+            "question": "\u2014 What did he ask?\n\u2014 He asked me what time it ___ .",
+            "options": ["is", "was", "were", "be"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "was",
+            "hint": "This is another WH-question needing the past tense shift.",
+            "explanation": "'Is' backshifts to 'was' in this reported WH-question: asked what time it was, keeping statement word order.",
+            "grammarRule": "Reported Speech: WH-Questions"
         },
         {
             "id": "gq_l158_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The author uses a ___ approach, drawing on both qualitative and quantitative data.",
-            "options": [
-                "mixed-method",
-                "mixed-methods",
-                "mixed method",
-                "mixed methods"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "mixed-methods",
-            "hint": "Which compound adjective correctly describes this research approach?",
-            "explanation": "'Mixed-methods' (hyphenated) as a compound adjective before a noun: a mixed-methods approach. The hyphen is standard when the compound modifies a noun. 'Mixed methods' (no hyphen) is used as a noun phrase: using mixed methods.",
-            "grammarRule": "Preposition Precision / Research Vocabulary"
+            "question": "'Close the door,' she said. \u2192 She told me ___ the door.",
+            "options": ["close", "closing", "closed", "to close"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "to close",
+            "hint": "Reported commands use 'told someone' followed by this special verb form.",
+            "explanation": "Reported commands follow the pattern 'told someone + infinitive': told me to close the door, turning the direct command into reported speech.",
+            "grammarRule": "Reported Speech: Commands"
         },
         {
             "id": "gq_l158_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The sample was ___ selected to represent the general population.",
-            "options": [
-                "strategically",
-                "randomly",
-                "selectively",
-                "purposefully"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "randomly",
-            "hint": "Which sampling method is specifically used to achieve a representative cross-section of a general population?",
-            "explanation": "Random sampling is the standard method for achieving a sample that represents the general population, since every individual has an equal chance of selection. 'Purposefully,' 'strategically,' and 'selectively' all describe deliberately choosing particular participants - the opposite of the unbiased selection needed here.",
-            "grammarRule": "Preposition Precision / Research Vocabulary"
+            "question": "'Please help me,' he said. \u2192 He asked me ___ him.",
+            "options": ["to help", "help", "helping", "helped"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "to help",
+            "hint": "Reported requests follow the same pattern as reported commands, just with 'asked' instead of 'told'.",
+            "explanation": "Reported requests use 'asked someone + infinitive', just like commands: asked me to help, following the same pattern from Question 1.",
+            "grammarRule": "Reported Speech: Requests"
         },
         {
             "id": "gq_l158_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The correlation ___ the two variables was both strong and statistically significant.",
-            "options": [
-                "with",
-                "between",
-                "among",
-                "of"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "between",
-            "hint": "Which preposition is used for a relationship between exactly two things?",
-            "explanation": "'Between' is used for two items: the correlation between the two variables. 'Among' is reserved for three or more items; 'with' and 'of' aren't the standard prepositions for expressing statistical correlation.",
-            "grammarRule": "Preposition Precision / Research Vocabulary"
+            "question": "\u2014 What did the teacher say?\n\u2014 She told us ___ quiet during the test.",
+            "options": ["be", "being", "to be", "been"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "to be",
+            "hint": "This is another reported command, following the same fixed pattern.",
+            "explanation": "'Told us to be quiet' follows the same reported command pattern practiced throughout this level: told + person + infinitive.",
+            "grammarRule": "Reported Speech: Commands"
         },
         {
             "id": "gq_l159_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The theory, ___ on the assumption of rational self-interest, has faced significant criticism in recent decades.",
-            "options": [
-                "builds",
-                "building",
-                "which builds",
-                "built"
-            ],
+            "question": "I enjoy ___ new places when I travel.",
+            "options": ["visit", "to visit", "visits", "visiting"],
             "correctAnswerIndex": 3,
-            "correctAnswer": "built",
-            "hint": "A passive relative clause set off by commas can be reduced to a past participle.",
-            "explanation": "'The theory, built on the assumption...' is a reduced passive relative clause = 'the theory, which is built on the assumption...' Only the past participle fits this reduced parenthetical form; 'building' would wrongly suggest the theory is actively constructing something.",
-            "grammarRule": "Reduced Relative Clauses / Fixed Idioms"
+            "correctAnswer": "visiting",
+            "hint": "This verb always takes the gerund form, reviewed from Level 152.",
+            "explanation": "'Enjoy' always takes a gerund: enjoy visiting, reviewing the pattern from Level 152.",
+            "grammarRule": "Verb + Gerund: Enjoy"
         },
         {
             "id": "gq_l159_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The strength of this argument lies ___ its logical consistency, not its emotional appeal.",
-            "options": [
-                "with",
-                "at",
-                "on",
-                "in"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "in",
-            "hint": "'Lies' (meaning 'is found') takes one specific fixed preposition.",
-            "explanation": "'Lie in' is the fixed idiom meaning 'to be found in' or 'to consist of': the strength lies in its consistency. 'Lies on/at' don't carry this meaning, and 'lies with' means something different entirely - 'is the responsibility of' (e.g. the decision lies with the board).",
-            "grammarRule": "Reduced Relative Clauses / Fixed Idioms"
+            "question": "She wants ___ her own business someday.",
+            "options": ["start", "to start", "starting", "started"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "to start",
+            "hint": "This verb always takes the infinitive form, reviewed from Level 153.",
+            "explanation": "'Want' always takes an infinitive: wants to start, reviewing the pattern from Level 153.",
+            "grammarRule": "Verb + Infinitive: Want"
         },
         {
             "id": "gq_l159_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ previous research, this study includes a substantially larger sample size.",
-            "options": [
-                "Building on",
-                "Built on",
-                "Builds on",
-                "To build on"
-            ],
+            "question": "\u2014 What did he tell you?\n\u2014 He told me ___ careful on the road.",
+            "options": ["to be", "being", "been", "be"],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Building on",
-            "hint": "A participle clause introducing the sentence should share its subject with the main clause - which form works?",
-            "explanation": "'Building on previous research, this study includes...' - the present participle shares its subject with the main clause ('this study'). 'Built on' would suggest the study is fixed by that earlier research rather than actively developing it; 'to build on' and 'builds on' aren't grammatical in this position.",
-            "grammarRule": "Reduced Relative Clauses / Fixed Idioms"
+            "correctAnswer": "to be",
+            "hint": "This is the same reported command structure from Level 158.",
+            "explanation": "'Told me to be careful' follows the reported command pattern practiced in Level 158: told + person + infinitive.",
+            "grammarRule": "Reported Speech: Commands"
         },
         {
             "id": "gq_l160_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Not until the 20th century ___ women granted the right to vote in most countries.",
-            "options": [
-                "women were",
-                "were women",
-                "was women",
-                "had women"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "were women",
-            "hint": "Negative adverbial inversion with 'not until'.",
-            "explanation": "'Not until + time expression + auxiliary + subject + verb': Not until the 20th century were women granted the right to vote. The auxiliary 'were' comes before the subject 'women' due to inversion after 'Not until'.",
-            "grammarRule": "Inversion / Subject-Verb Agreement"
+            "question": "All employees are required ___ the new safety training by Friday.",
+            "options": ["complete", "completing", "to complete", "completed"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "to complete",
+            "hint": "'Required' pairs with the infinitive form, a common structure in workplace memos.",
+            "explanation": "'Required to' takes the infinitive: required to complete, a very common structure in official workplace communication.",
+            "grammarRule": "Verb + Infinitive: Required To"
         },
         {
             "id": "gq_l160_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ had the agreement been signed when disputes arose.",
-            "options": [
-                "Barely",
-                "Hardly",
-                "Scarcely",
-                "No sooner"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "No sooner",
-            "hint": "Which phrase triggers 'had + subject + past participle + when/than'?",
-            "explanation": "'No sooner had + subject + past participle + than': No sooner had the agreement been signed than disputes arose. 'Barely/Hardly/Scarcely + had + subject + past participle + when'. 'No sooner' specifically takes 'than', not 'when'.",
-            "grammarRule": "Inversion / Subject-Verb Agreement"
+            "question": "The manager suggested ___ the meeting to next week.",
+            "options": ["move", "moving", "to move", "moved"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "moving",
+            "hint": "This verb always takes the gerund form, like 'enjoy' and 'avoid'.",
+            "explanation": "'Suggest' always takes a gerund: suggested moving, joining the same group as 'enjoy', 'finish', and 'avoid' from earlier in this stage.",
+            "grammarRule": "Verb + Gerund: Suggest"
         },
         {
             "id": "gq_l160_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "So ___ was the response that the team was overwhelmed.",
-            "options": [
-                "overwhelm",
-                "overwhelmed",
-                "overwhelmingly",
-                "overwhelming"
-            ],
+            "question": "\u2014 What did she say about the deadline?\n\u2014 She said the deadline ___ been extended.",
+            "options": ["has", "have", "was", "had"],
             "correctAnswerIndex": 3,
-            "correctAnswer": "overwhelming",
-            "hint": "Inverted 'so + adjective + was' structure for emphasis.",
-            "explanation": "'So + adjective + was + noun phrase + that': So overwhelming was the response that the team was overwhelmed. This inverted structure emphasises the degree of the adjective. 'Overwhelmingly' is an adverb - wrong after 'so was'.",
-            "grammarRule": "Inversion / Subject-Verb Agreement"
+            "correctAnswer": "had",
+            "hint": "This closes Stage 8 with the same present-perfect-to-past-perfect shift from Level 156.",
+            "explanation": "'Has been extended' backshifts to 'had been extended' in reported speech, closing out the full journey through gerunds, infinitives, causatives, and reported speech covered across Levels 151 to 160.",
+            "grammarRule": "Reported Speech: Present Perfect to Past Perfect"
         }
     ]
 }

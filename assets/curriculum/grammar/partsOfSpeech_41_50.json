@@ -8,23 +8,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'well' as used in the sentence below?",
-            "targetWord": "well",
-            "sentence": "She performed well in her final presentation at the conference.",
+            "question": "Which category fits 'friendly' in this sentence?",
+            "targetWord": "friendly",
+            "sentence": "The new neighbor seemed friendly from the very first hello.",
             "options": [
                 "Noun",
-                "Verb",
                 "Adjective",
+                "Verb",
                 "Adverb"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adverb",
-            "hint": "Adverbs modify verbs. Does 'well' tell us HOW she performed?",
-            "explanation": "'Well' is an adverb here - it modifies the verb 'performed'. 'Well' is the adverb form of 'good'. ('Well' returns as an adjective in level 122 and as a noun in level 182.)",
-            "grammarRule": "Adverbs",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "Not every word ending in '-ly' is an adverb. What quality does 'friendly' give to the neighbor?",
+            "explanation": "'Friendly' is an adjective describing the neighbor's manner, even though it ends in '-ly'. Many adjectives are formed by adding '-ly' to a noun, such as 'friend' + '-ly'.",
+            "grammarRule": "Predicate adjective after a linking verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "comparative form"
             ]
         },
         {
@@ -32,23 +32,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'flies' as used in the sentence below?",
-            "targetWord": "flies",
-            "sentence": "Time flies when you are truly enjoying what you do.",
+            "question": "Identify the part of speech of 'recently' in this context.",
+            "targetWord": "recently",
+            "sentence": "The barista recently switched to a new espresso machine.",
             "options": [
-                "Noun",
+                "Adverb",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs can be used figuratively. What does time do in this sentence?",
-            "explanation": "'Flies' is a verb - it is used metaphorically (time moves quickly). Note: 'flies' can be a noun (the insect), but here it is a verb with 'time' as its subject.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adverb",
+            "hint": "Notice what this '-ly' word is modifying. What does it tell us about when the switch happened?",
+            "explanation": "'Recently' is a time adverb modifying the verb 'switched' — unlike 'friendly' in the previous question, this '-ly' word truly functions as an adverb because it was formed from the adjective 'recent'.",
+            "grammarRule": "Time adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "adverb form"
             ]
         },
         {
@@ -56,23 +56,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'right' as used in the sentence below?",
-            "targetWord": "right",
-            "sentence": "She made the right decision when she chose to study medicine.",
+            "question": "What part of speech is 'lonely' in this sentence?",
+            "targetWord": "lonely",
+            "sentence": "After the move, Farah felt lonely in the unfamiliar city.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Verb",
+                "Noun"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "Adjective",
-            "hint": "Adjectives evaluate nouns. What does 'right' tell us about the decision?",
-            "explanation": "'Right' is an adjective - it describes and evaluates the noun 'decision'. ('Right' returns as a verb in level 187, meaning to restore something.)",
-            "grammarRule": "Adjectives",
+            "hint": "Remember that '-ly' does not automatically mean adverb. What does 'lonely' describe about Farah?",
+            "explanation": "'Lonely' is an adjective describing Farah's feeling after the linking verb 'felt' — like 'friendly,' it is formed from a root word plus '-ly' but functions as an adjective, not an adverb.",
+            "grammarRule": "Predicate adjective after a linking verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "comparative form"
             ]
         },
         {
@@ -80,23 +80,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'fit' as used in the sentence below?",
-            "targetWord": "fit",
-            "sentence": "You need to be physically fit to complete the military training course.",
+            "question": "Classify 'costly' as it appears in this sentence.",
+            "targetWord": "costly",
+            "sentence": "Skipping the inspection turned out to be a costly mistake.",
             "options": [
-                "Noun",
-                "Adjective",
                 "Verb",
+                "Adjective",
+                "Noun",
                 "Adverb"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "Adjective",
-            "hint": "Adjectives describe physical conditions. What does 'fit' tell us about the required condition?",
-            "explanation": "'Fit' is an adjective - it follows the linking verb 'be' and describes a required physical state. 'Fit' can also be a verb ('the shoes fit'), but here it clearly describes a state.",
-            "grammarRule": "Adjectives",
+            "hint": "Another '-ly' word describes a quality here, not an action. What quality does 'costly' give the mistake?",
+            "explanation": "'Costly' is an adjective modifying 'mistake', describing how expensive the consequence was — formed from 'cost' plus '-ly', it remains an adjective.",
+            "grammarRule": "Attributive adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "comparative form"
             ]
         },
         {
@@ -104,23 +104,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'across' as used in the sentence below?",
-            "targetWord": "across",
-            "sentence": "The river was wide, but he managed to swim across without stopping.",
+            "question": "Which part of speech does 'likely' represent in this sentence?",
+            "targetWord": "likely",
+            "sentence": "Rain seems likely later this afternoon.",
             "options": [
+                "Adverb",
                 "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Verb"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adverb",
-            "hint": "When no noun follows 'across', what part of speech is it?",
-            "explanation": "'Across' is an adverb here - it has no noun following it (no object), so it cannot be a preposition. Compare: 'swim across the river' (preposition) vs. 'swim across' (adverb).",
-            "grammarRule": "Adverbs",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "This '-ly' word also describes a quality rather than an action. What does 'likely' tell us about the rain?",
+            "explanation": "'Likely' is an adjective describing the probability of rain, following the linking verb 'seems' — it is not an adverb despite its ending.",
+            "grammarRule": "Predicate adjective after a linking verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "comparative form"
             ]
         },
         {
@@ -128,23 +128,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'feeling' as used in the sentence below?",
-            "targetWord": "feeling",
-            "sentence": "There was an unsettling feeling of calm just before the storm.",
+            "question": "In this context, what part of speech is 'silly'?",
+            "targetWord": "silly",
+            "sentence": "It felt silly to argue over such a small detail.",
             "options": [
                 "Noun",
-                "Verb",
                 "Adjective",
+                "Verb",
                 "Adverb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "'-ing' words can be nouns. Is 'feeling' naming an experience here?",
-            "explanation": "'Feeling' is a noun - it names an abstract experience. Many '-ing' words function as nouns (feeling, meaning, building, painting).",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "One more '-ly' word describing a quality. What does 'silly' describe here?",
+            "explanation": "'Silly' is an adjective describing the quality of the situation, following the linking verb 'felt' — like 'friendly,' 'lonely,' 'costly,' and 'likely,' it is an adjective, not an adverb.",
+            "grammarRule": "Predicate adjective after a linking verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "comparative form"
             ]
         },
         {
@@ -152,23 +152,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'light' as used in the sentence below?",
-            "targetWord": "light",
-            "sentence": "Choose a light meal if you plan to exercise shortly afterwards.",
+            "question": "In this sentence, 'record' is functioning as a:",
+            "targetWord": "record",
+            "sentence": "The company set a new sales record last quarter.",
             "options": [
-                "Noun",
                 "Adjective",
-                "Verb",
-                "Adverb"
+                "Adverb",
+                "Noun",
+                "Verb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe qualities of food. What does 'light' tell us about the meal?",
-            "explanation": "'Light' is an adjective - it describes 'meal', meaning not heavy or rich. ('Light' returns as a verb in level 183 and as a noun in level 193.)",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Noun",
+            "hint": "Look at what this word does in this exact sentence. What did the company set?",
+            "explanation": "'Record' is a noun here, naming the achievement the company set — it functions as the direct object of 'set'.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "verb use"
             ]
         },
         {
@@ -176,23 +176,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'interest' as used in the sentence below?",
-            "targetWord": "interest",
-            "sentence": "She has a deep interest in marine biology and ocean conservation.",
+            "question": "Now look at 'record' here. What part of speech is it?",
+            "targetWord": "record",
+            "sentence": "Please record the meeting so absent members can catch up.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Noun",
+                "Adjective"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns can name abstract concepts. Does 'interest' name a feeling or state here?",
-            "explanation": "'Interest' is a noun - it names an abstract concept (a feeling of curiosity). It follows 'a deep', confirming it is a noun.",
-            "grammarRule": "Nouns",
+            "correctAnswer": "Verb",
+            "hint": "The same word can also name an action of capturing sound or video. What is the reader asked to do?",
+            "explanation": "'Record' functions as a verb here, the action of capturing the meeting — contrast this with the earlier noun use naming an achievement.",
+            "grammarRule": "Imperative verb giving an instruction",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb use",
+                "noun use"
             ]
         },
         {
@@ -200,23 +200,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'daily' as used in the sentence below?",
-            "targetWord": "daily",
-            "sentence": "A daily walk of thirty minutes can greatly improve your health.",
+            "question": "The word 'amid' is being used as which grammatical category?",
+            "targetWord": "amid",
+            "sentence": "Amid the chaos, the manager stayed remarkably calm.",
             "options": [
-                "Noun",
                 "Verb",
+                "Noun",
                 "Adjective",
-                "Adverb"
+                "Preposition"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives can describe frequency. What does 'daily' tell us about the walk?",
-            "explanation": "'Daily' is an adjective here - it modifies the noun 'walk'. Compare: 'she walks daily' (adverb) vs. 'a daily walk' (adjective before noun).",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Preposition",
+            "hint": "Focus on its role in this sentence only. What situation surrounded the manager?",
+            "explanation": "'Amid' is a preposition introducing a phrase that shows the chaotic situation surrounding the manager while they stayed calm.",
+            "grammarRule": "Preposition introducing a surrounding circumstance",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related conjunction (while)"
             ]
         },
         {
@@ -224,9 +224,9 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'rest' as used in the sentence below?",
-            "targetWord": "rest",
-            "sentence": "The doctor advised her to get plenty of rest after the operation.",
+            "question": "Which part of speech is 'object' as it is used here?",
+            "targetWord": "object",
+            "sentence": "Scientists study each object collected from the ocean floor.",
             "options": [
                 "Noun",
                 "Verb",
@@ -235,12 +235,12 @@
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "Noun",
-            "hint": "Nouns name states and activities. Is 'rest' naming a state here?",
-            "explanation": "'Rest' is a noun - it follows the preposition 'of' ('plenty of rest'). Compare: 'I need to rest' (verb) vs. 'I need rest' (noun).",
-            "grammarRule": "Nouns",
+            "hint": "Look at what this word does in this exact sentence. What are the scientists studying?",
+            "explanation": "'Object' is a noun here, naming the physical items collected from the ocean floor — it functions as the direct object of 'study'.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "verb use"
             ]
         },
         {
@@ -248,23 +248,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'sound' as used in the sentence below?",
-            "targetWord": "sound",
-            "sentence": "That is a sound argument - the logic is very difficult to fault.",
+            "question": "Now, which category describes 'object' in this sentence?",
+            "targetWord": "object",
+            "sentence": "Residents plan to object to the new construction project.",
             "options": [
                 "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Verb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives can evaluate ideas and reasoning. What does 'sound' tell us about the argument?",
-            "explanation": "'Sound' is an adjective - it means well-reasoned and solid. ('Sound' returns as a linking verb in level 185.)",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Verb",
+            "hint": "The same word can also name an action of disagreeing. What do the residents plan to do?",
+            "explanation": "'Object' functions as a verb here, meaning to formally disagree — contrast this with the earlier noun use naming a physical item. Notice the stress shifts to the second syllable when 'object' is a verb.",
+            "grammarRule": "Verb following the infinitive marker 'to'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb use",
+                "noun use"
             ]
         },
         {
@@ -272,23 +272,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'visit' as used in the sentence below?",
-            "targetWord": "visit",
-            "sentence": "They plan to visit their grandmother in the countryside this summer.",
+            "question": "Which grammatical category best describes 'unless' here?",
+            "targetWord": "unless",
+            "sentence": "The delivery will be delayed unless the courier finds a faster route.",
             "options": [
-                "Noun",
+                "Preposition",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs express intended actions. What do they intend to do?",
-            "explanation": "'Visit' is a verb - it follows 'to' in the infinitive. 'Visit' can be a noun ('a visit'), but here it follows 'to' and names an action.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Conjunction",
+            "hint": "Think about the job it performs here. Under what condition will the delivery not be delayed?",
+            "explanation": "'Unless' is a subordinating conjunction introducing a condition — it connects the condition clause to the main clause about the delivery being delayed.",
+            "grammarRule": "Subordinating conjunction introducing a condition",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related conjunction (if)"
             ]
         },
         {
@@ -296,23 +296,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'check' as used in the sentence below?",
-            "targetWord": "check",
-            "sentence": "She did a final check of the documents before sending them.",
+            "question": "Which category fits 'present' in this sentence?",
+            "targetWord": "present",
+            "sentence": "Grandma wrapped the present in bright yellow paper.",
             "options": [
+                "Adjective",
                 "Noun",
                 "Verb",
-                "Adjective",
                 "Adverb"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "Noun",
-            "hint": "Nouns can name review processes. Is 'check' naming an action as a thing here?",
-            "explanation": "'Check' is a noun - it follows 'a final', confirming it is a noun. Compare: 'she checked the documents' (verb) vs. 'she did a check' (noun).",
-            "grammarRule": "Nouns",
+            "hint": "Notice what the word is attached to. What did Grandma wrap?",
+            "explanation": "'Present' is a noun here, naming the gift Grandma wrapped — it functions as the direct object of 'wrapped'.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "verb use"
             ]
         },
         {
@@ -320,23 +320,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'free' as used in the sentence below?",
-            "targetWord": "free",
-            "sentence": "Is there a free parking space near the entrance of the hospital?",
+            "question": "This time, what part of speech is 'present'?",
+            "targetWord": "present",
+            "sentence": "The interns will present their findings tomorrow morning.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Verb",
+                "Noun"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe availability. What does 'free' tell us about the parking space?",
-            "explanation": "'Free' is an adjective - it describes the parking space (available or costing nothing). It comes before the noun in attributive position.",
-            "grammarRule": "Adjectives",
+            "correctAnswer": "Verb",
+            "hint": "The same word can also name the action of showing or sharing information. What will the interns do tomorrow?",
+            "explanation": "'Present' functions as a verb here, meaning to share information formally — contrast this with the earlier noun use naming a gift.",
+            "grammarRule": "Verb following the modal 'will'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb use",
+                "noun use"
             ]
         },
         {
@@ -344,23 +344,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'travel' as used in the sentence below?",
-            "targetWord": "travel",
-            "sentence": "Many students choose to travel before starting their first job.",
+            "question": "Now, how is 'present' functioning here?",
+            "targetWord": "present",
+            "sentence": "Only ten employees were present for the early meeting.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Noun",
+                "Verb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs follow 'to' in infinitive form. Is 'travel' the action described?",
-            "explanation": "'Travel' is a verb - it follows the infinitive 'to' after 'choose'. 'Travel' can be a noun ('air travel'), but here it expresses an action.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adjective",
+            "hint": "The same word can also describe attendance. What does 'present' tell us about the employees?",
+            "explanation": "'Present' functions as an adjective here, describing that the employees were in attendance — a third role for this word, alongside the noun and verb uses already seen.",
+            "grammarRule": "Predicate adjective after a linking verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "noun use"
             ]
         },
         {
@@ -368,23 +368,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'hard' as used in the sentence below?",
-            "targetWord": "hard",
-            "sentence": "She studied hard for months before the professional certification exam.",
+            "question": "What kind of word is 'second' in this sentence?",
+            "targetWord": "second",
+            "sentence": "Priya finished in second place at the regional debate.",
             "options": [
                 "Noun",
                 "Verb",
                 "Adjective",
                 "Adverb"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adverb",
-            "hint": "Adverbs modify verbs. Does 'hard' tell us HOW she studied?",
-            "explanation": "'Hard' is an adverb - it modifies the verb 'studied'. Note: 'hardly' means 'almost not' - a completely different meaning! ('Hard' returns as an adjective in level 121.)",
-            "grammarRule": "Adverbs",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "Think about the job it performs here. What does 'second' tell us about Priya's place?",
+            "explanation": "'Second' is an adjective modifying 'place', showing Priya's rank in the competition.",
+            "grammarRule": "Attributive adjective showing ordinal rank",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "noun use"
             ]
         },
         {
@@ -392,23 +392,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'change' as used in the sentence below?",
-            "targetWord": "change",
-            "sentence": "A small change in your daily habits can lead to big results.",
+            "question": "This time, 'second' is functioning as a:",
+            "targetWord": "second",
+            "sentence": "The elevator doors closed within a second of the alarm.",
             "options": [
                 "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Verb"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "Noun",
-            "hint": "Nouns name abstract concepts. Is 'change' naming a modification as a thing here?",
-            "explanation": "'Change' is a noun - it follows 'A small', confirming its noun function. Compare: 'things change' (verb) vs. 'a change' (noun).",
-            "grammarRule": "Nouns",
+            "hint": "The same word can also name a unit of time. What unit of time is mentioned here?",
+            "explanation": "'Second' functions as a noun here, naming the small unit of time — contrast this with the earlier adjective use showing rank.",
+            "grammarRule": "Common noun naming a unit of time",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "adjective use"
             ]
         },
         {
@@ -416,23 +416,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'clear' as used in the sentence below?",
-            "targetWord": "clear",
-            "sentence": "The weather forecast promised a clear sky for the entire weekend.",
+            "question": "How is 'Someone' functioning in this sentence?",
+            "targetWord": "Someone",
+            "sentence": "Someone left an umbrella by the front desk.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Pronoun",
+                "Noun",
+                "Adjective"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe weather conditions. What does 'clear' tell us about the sky?",
-            "explanation": "'Clear' is an adjective - it describes the visual quality of the sky (free of clouds). ('Clear' returns as a verb in level 188, meaning to remove something.)",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "Check the words directly around it for clues. Who left the umbrella?",
+            "explanation": "'Someone' is an indefinite pronoun referring to an unspecified person — it functions as the subject of the sentence.",
+            "grammarRule": "Indefinite pronoun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular use",
+                "related pronoun (anyone)"
             ]
         },
         {
@@ -440,23 +440,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'help' as used in the sentence below?",
-            "targetWord": "help",
-            "sentence": "She was grateful for all the help she received from her neighbours.",
+            "question": "Classify 'excited' as it appears in this sentence.",
+            "targetWord": "excited",
+            "sentence": "The kids were excited about the surprise trip.",
             "options": [
                 "Noun",
-                "Verb",
                 "Adjective",
+                "Verb",
                 "Adverb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name things you can give or receive. Is 'help' naming assistance as a concept here?",
-            "explanation": "'Help' is a noun - it follows 'the', confirming it is a noun. Compare: 'she helped' (verb) vs. 'she received help' (noun).",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "This word can describe a feeling or name an action that causes a feeling. What does 'excited' describe about the kids here?",
+            "explanation": "'Excited' functions as an adjective here, describing the kids' emotional state after the linking verb 'were'.",
+            "grammarRule": "Predicate adjective after a linking verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "verb use"
             ]
         },
         {
@@ -464,23 +464,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'sharp' as used in the sentence below?",
-            "targetWord": "sharp",
-            "sentence": "The meeting starts at nine o'clock sharp, so please don't be late.",
+            "question": "Now what part of speech is 'excited' in this sentence?",
+            "targetWord": "excited",
+            "sentence": "The unexpected news excited the whole team.",
             "options": [
                 "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Verb"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Adverb",
-            "hint": "Adverbs can emphasise time expressions. Does 'sharp' add precision to 'nine o'clock'?",
-            "explanation": "'Sharp' is an adverb - it modifies the time expression 'nine o'clock' and means 'exactly'. This is a different role from level 14 where 'sharp' was an adjective.",
-            "grammarRule": "Adverbs",
+            "correctAnswer": "Verb",
+            "hint": "Now the same word names an action rather than describing a feeling. What did the news do to the team?",
+            "explanation": "'Excited' functions as a verb here, meaning the news caused excitement in the team — contrast this with the earlier sentence, where 'excited' described the kids' own feeling.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb use",
+                "adjective use"
             ]
         },
         {
@@ -488,23 +488,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'fix' as used in the sentence below?",
-            "targetWord": "fix",
-            "sentence": "The plumber was called to fix the leaking pipe in the bathroom.",
+            "question": "What grammatical job does 'trip' do in this sentence?",
+            "targetWord": "trip",
+            "sentence": "The trip lasted three days longer than planned.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Adverb",
+                "Adjective"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs follow 'to' in infinitive form. Is 'fix' naming an action here?",
-            "explanation": "'Fix' is a verb - it appears in the infinitive ('to fix'). 'Fix' can be a noun ('a quick fix'), but here it follows 'to' as an infinitive verb.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Noun",
+            "hint": "Focus on its role in this sentence only. What lasted three days longer than expected?",
+            "explanation": "'Trip' is a noun here, naming the journey that lasted longer than planned — it functions as the subject of the sentence.",
+            "grammarRule": "Common noun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "plural form"
             ]
         },
         {
@@ -512,23 +512,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'empty' as used in the sentence below?",
-            "targetWord": "empty",
-            "sentence": "The cupboard was empty - she had forgotten to buy groceries.",
+            "question": "Which part of speech is 'interested' as it is used here?",
+            "targetWord": "interested",
+            "sentence": "Maria seemed interested in the new marketing role.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Adverb",
+                "Verb"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "Adjective",
-            "hint": "Adjectives describe the state of things. What does 'empty' tell us about the cupboard?",
-            "explanation": "'Empty' is an adjective - it follows the linking verb 'was' and describes the state of the cupboard. Predicate adjectives (empty, full, clean, ready) follow linking verbs.",
-            "grammarRule": "Adjectives",
+            "hint": "This word can describe a feeling of curiosity. What does 'interested' describe about Maria?",
+            "explanation": "'Interested' functions as an adjective here, describing Maria's curiosity after the linking verb 'seemed'.",
+            "grammarRule": "Predicate adjective after a linking verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "verb use"
             ]
         },
         {
@@ -536,23 +536,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'rise' as used in the sentence below?",
-            "targetWord": "rise",
-            "sentence": "Temperatures tend to rise sharply during the hottest summer months.",
+            "question": "Now, which category describes 'interested' in this sentence?",
+            "targetWord": "interested",
+            "sentence": "The recruiter's email interested several candidates.",
             "options": [
                 "Noun",
+                "Adverb",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "Verb",
-            "hint": "Verbs follow 'to' and describe what something does. Is 'rise' an action?",
-            "explanation": "'Rise' is a verb - it appears in the infinitive ('to rise') and expresses the behaviour of temperatures. 'Rise' can be a noun ('a rise in prices'), but here it is an infinitive verb.",
-            "grammarRule": "Verbs",
+            "hint": "Now the same word names an action rather than a feeling. What did the email do to the candidates?",
+            "explanation": "'Interested' functions as a verb here, meaning the email caused interest in the candidates — contrast this with the earlier sentence, where it described Maria's own feeling.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb use",
+                "adjective use"
             ]
         },
         {
@@ -560,23 +560,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'flat' as used in the sentence below?",
-            "targetWord": "flat",
-            "sentence": "They are renting a flat in the centre of the city.",
+            "question": "Which part of speech does 'immediately' represent in this sentence?",
+            "targetWord": "immediately",
+            "sentence": "The recruiter replied immediately after the interview.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Adverb",
+                "Verb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name types of homes. In British English, what does 'flat' name here?",
-            "explanation": "'Flat' is a noun - in British English, it names an apartment. It follows 'a', confirming its noun function. ('Flat' returns as an adverb in level 189.)",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "Set aside what you know about this word in general. How quickly did the recruiter reply?",
+            "explanation": "'Immediately' is a time adverb modifying the verb 'replied' — it tells us how soon the response came after the interview.",
+            "grammarRule": "Time adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adverb use",
+                "related adjective (immediate)"
             ]
         },
         {
@@ -584,23 +584,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'guide' as used in the sentence below?",
-            "targetWord": "guide",
-            "sentence": "The tour guide led the group through the ancient walled city.",
+            "question": "In this context, what part of speech is 'call'?",
+            "targetWord": "call",
+            "sentence": "She received an urgent call from the clinic.",
             "options": [
-                "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Noun",
-            "hint": "Nouns name professional roles. Is 'guide' naming a person's role here?",
-            "explanation": "'Guide' is a noun - it names a professional role. It follows the noun 'tour' as part of a compound noun. 'Guide' can be a verb ('to guide someone'), but here it names a person.",
-            "grammarRule": "Nouns",
+            "hint": "Notice what the word is attached to. What did she receive from the clinic?",
+            "explanation": "'Call' is a noun here, naming the phone conversation she received — it functions as the direct object of 'received'.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "verb use"
             ]
         },
         {
@@ -608,23 +608,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'smooth' as used in the sentence below?",
-            "targetWord": "smooth",
-            "sentence": "The pilot promised passengers a smooth and comfortable flight.",
+            "question": "Next, what role does 'call' play in this sentence?",
+            "targetWord": "call",
+            "sentence": "Please call the clinic before nine tomorrow.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
+                "Verb",
+                "Noun",
                 "Adverb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe the quality of an experience. What does 'smooth' tell us about the flight?",
-            "explanation": "'Smooth' is an adjective - it describes the quality of 'flight'. 'Smooth' can also be a verb ('smooth the fabric'), but here it clearly modifies a noun.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Verb",
+            "hint": "The same word can also name the action of phoning someone. What is the reader asked to do?",
+            "explanation": "'Call' functions as a verb here, the action the reader is instructed to perform — contrast this with the earlier noun use naming the phone conversation itself.",
+            "grammarRule": "Imperative verb giving an instruction",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb use",
+                "noun use"
             ]
         },
         {
@@ -632,23 +632,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'book' as used in the sentence below?",
-            "targetWord": "book",
-            "sentence": "They decided to book the hotel room three months in advance.",
+            "question": "Identify the part of speech of 'close' in this context.",
+            "targetWord": "close",
+            "sentence": "Employees close the store at nine every night.",
             "options": [
-                "Noun",
                 "Verb",
                 "Adjective",
+                "Noun",
                 "Adverb"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "Verb",
-            "hint": "'Book' was a noun in level 4. Here, does it function as an action word?",
-            "explanation": "'Book' is a verb here - it means 'to make a reservation'. The same word can be a noun ('a book') or a verb ('to book a room'). Context is essential.",
-            "grammarRule": "Verbs",
+            "hint": "Think about the job it performs here. What do employees do to the store every night?",
+            "explanation": "'Close' is a verb here, describing the employees' nightly routine of shutting the store.",
+            "grammarRule": "Action verb in present tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -656,23 +656,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'dream' as used in the sentence below?",
-            "targetWord": "dream",
-            "sentence": "Her dream of becoming a doctor finally came true at forty.",
+            "question": "Based on how it is used here, 'recorded' is a:",
+            "targetWord": "recorded",
+            "sentence": "When the fire alarm rang, everyone remained surprisingly calm, and the manager quickly recorded who had left the building before the fire crew arrived.",
             "options": [
-                "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name hopes and ambitions. Is 'dream' naming an aspiration here?",
-            "explanation": "'Dream' is a noun - it names an aspiration. The possessive 'her' before it confirms it is a noun. Compare: 'she dreams of' (verb) vs. 'her dream of' (noun).",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Verb",
+            "hint": "Check the words directly around it for clues. What action did the manager take?",
+            "explanation": "'Recorded' is a verb describing the manager's action of noting down who had left the building — the same word appeared earlier in this file as a noun meaning an achievement.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb use",
+                "noun use"
             ]
         },
         {
@@ -680,23 +680,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'heavy' as used in the sentence below?",
-            "targetWord": "heavy",
-            "sentence": "The heavy rucksack made the long mountain climb even more challenging.",
+            "question": "Within that same sentence, 'calm' is functioning as a:",
+            "targetWord": "calm",
+            "sentence": "When the fire alarm rang, everyone remained surprisingly calm, and the manager quickly recorded who had left the building before the fire crew arrived.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Noun",
+                "Adjective"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Adjective",
-            "hint": "Adjectives describe physical qualities of objects. What does 'heavy' describe?",
-            "explanation": "'Heavy' is an adjective - it describes the physical weight of the noun 'rucksack'. Weight adjectives (heavy, light, solid, dense) describe physical properties of objects.",
-            "grammarRule": "Adjectives",
+            "hint": "Let the sentence, not the spelling, decide. What state did everyone remain in?",
+            "explanation": "'Calm' is an adjective describing everyone's emotional state, following the linking verb 'remained' — despite the alarming situation.",
+            "grammarRule": "Predicate adjective after a linking verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "positive form",
+                "comparative form"
             ]
         },
         {
@@ -704,23 +704,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'print' as used in the sentence below?",
-            "targetWord": "print",
-            "sentence": "Please print two copies of the report for the board meeting today.",
+            "question": "In that same sentence, what part of speech is 'surprisingly'?",
+            "targetWord": "surprisingly",
+            "sentence": "When the fire alarm rang, everyone remained surprisingly calm, and the manager quickly recorded who had left the building before the fire crew arrived.",
             "options": [
                 "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Verb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs express instructions or commands. Is 'print' an action to be performed?",
-            "explanation": "'Print' is a verb - it is used as an imperative (a command). 'Print' can be a noun ('fine print'), but here it is a command verb telling someone what to do.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "This word modifies the adjective right after it. To what degree did everyone stay calm?",
+            "explanation": "'Surprisingly' is a degree adverb modifying the adjective 'calm' — unlike the '-ly' adjectives from earlier in this file, this word truly functions as an adverb because it modifies another modifier rather than a noun.",
+            "grammarRule": "Degree adverb modifying an adjective",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "adverb form"
             ]
         }
     ]

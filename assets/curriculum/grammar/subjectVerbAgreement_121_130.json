@@ -5,513 +5,513 @@
     "quests": [
         {
             "id": "sva_l121_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The rich ___ not always happy.",
-            "hint": "'The + adjective' used as a noun always refers to a group - plural verb.",
-            "explanation": "When 'the' precedes an adjective to refer to a group of people ('the rich', 'the elderly', 'the young'), it is always treated as plural. 'The rich are not always happy'.",
+            "question": "The brilliant young violinist from the conservatory ___ every audience she performs for.",
+            "hint": "Several adjectives come before the noun here - find the noun they're all describing.",
+            "explanation": "The head noun is 'violinist', which is singular; all the adjectives and the prepositional phrase just add description. The verb takes -s: 'amazes'.",
             "options": [
-                "are",
-                "is"
+                "amaze",
+                "amazes"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "amazes",
+            "grammarRule": "A long descriptive noun phrase still has one true head noun that determines agreement",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l121_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The elderly ___ often overlooked in discussions about technology.",
-            "hint": "'The elderly' refers to elderly people as a group - plural verb.",
-            "explanation": "'The elderly' means 'elderly people in general'. Like 'the rich' and 'the poor', it is always plural: 'the elderly are often overlooked'.",
+            "question": "The tall old oak tree behind our house ___ shade all summer long.",
+            "hint": "Strip away the describing words in front of the noun and the phrase after it.",
+            "explanation": "The head noun is 'tree', which is singular. The verb takes -s: 'provides'.",
             "options": [
-                "is",
-                "are"
+                "provides",
+                "provide"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "provides",
+            "grammarRule": "A long descriptive noun phrase still has one true head noun that determines agreement",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l121_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The injured ___ rushed to hospital after the accident.",
-            "hint": "'The injured' refers to multiple injured people - plural verb.",
-            "explanation": "'The injured' refers to injured people collectively and is always treated as plural. 'The injured were rushed to hospital'.",
-            "options": [
-                "were",
-                "was"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l122_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The unemployed ___ facing increasingly difficult conditions.",
-            "hint": "'The + adjective' referring to a group of people is always plural.",
-            "explanation": "'The unemployed' means 'unemployed people in general' and is always plural: 'the unemployed are facing difficult conditions'.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l122_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The unexpected ___ often what makes a story memorable.",
-            "hint": "'The unexpected' referring to an abstract concept is singular.",
-            "explanation": "When 'the + adjective' refers to an abstract idea rather than a group of people ('the unexpected', 'the unknown', 'the impossible'), it is singular: 'the unexpected is what makes a story memorable'.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l122_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The unknown ___ both exciting and frightening at the same time.",
-            "hint": "'The unknown' as an abstract concept is singular.",
-            "explanation": "'The unknown' refers to the concept of things not yet known - an abstract singular idea. 'The unknown is both exciting and frightening'.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l123_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Both the plan and its execution ___ flawed.",
-            "hint": "Two things joined by 'both…and' always form a plural subject.",
-            "explanation": "'Both…and' always creates a plural compound subject. 'Both the plan and its execution were flawed' - the verb must be plural.",
-            "options": [
-                "were",
-                "was"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l123_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Both speed and accuracy ___ essential in this role.",
-            "hint": "'Both…and' creates a plural subject - always use a plural verb.",
-            "explanation": "'Both…and' always creates a plural subject. 'Both speed and accuracy are essential' - even if each item on its own would be singular.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l123_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Neither the design nor the functionality ___ impressive.",
-            "hint": "Both subjects after 'neither…nor' are singular - what does that tell you about the verb?",
-            "explanation": "When 'neither…nor' joins two singular subjects ('the design' and 'the functionality'), both are singular, so the verb is singular: 'was impressive'.",
-            "options": [
-                "was",
-                "were"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l124_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Neither the design nor the features ___ impressive.",
-            "hint": "With 'neither…nor', look at the subject closest to the verb.",
-            "explanation": "With 'neither…nor', the verb agrees with the subject nearest to it. 'The features' is plural, so 'were impressive' is the correct choice.",
-            "options": [
-                "was",
-                "were"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l124_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Neither the features nor the design ___ impressive.",
-            "hint": "The subject right before the verb is 'the design' - is it singular or plural?",
-            "explanation": "The subject nearest to the verb is 'the design', which is singular. With 'neither…nor', the verb always follows the nearer subject: 'was impressive'.",
-            "options": [
-                "was",
-                "were"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l124_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Both the manager and the CEO ___ aware of the problem.",
-            "hint": "Two people joined by 'both…and' - how many subjects does that make?",
-            "explanation": "'Both…and' creates a compound subject from two singular items. Even though 'the manager' and 'the CEO' are each singular, joining them with 'both…and' makes the subject plural: 'were aware'.",
-            "options": [
-                "was",
-                "were"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l125_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The new director, along with her team, ___ restructuring the department.",
-            "hint": "The main subject is 'the new director' (singular) - 'along with her team' is parenthetical.",
-            "explanation": "'Along with her team' is a parenthetical phrase and does not change the subject. The main subject is 'the new director', which is singular: 'is restructuring'.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l125_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The new director, as well as her predecessors, ___ faced this challenge before.",
-            "hint": "The main subject is 'the new director' (singular) - 'as well as her predecessors' is parenthetical.",
-            "explanation": "'As well as her predecessors' is a parenthetical addition. The main subject is 'the new director', which is singular. 'The director has faced this challenge before'.",
+            "question": "The newly renovated apartment on the fifth floor ___ a stunning view of the harbor.",
+            "hint": "This subject has several describing words plus a phrase - find the one noun they all point to.",
+            "explanation": "The head noun is 'apartment', which is singular. The verb takes -s: 'has'.",
             "options": [
                 "have",
                 "has"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "A long descriptive noun phrase still has one true head noun that determines agreement",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l122_q1",
+            "instruction": "FIND THE REAL SUBJECT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The exhausted travelers waiting at the gate for their delayed flight ___ increasingly frustrated.",
+            "hint": "This subject has a describing phrase (waiting at the gate) stacked onto a plural noun - work through each layer.",
+            "explanation": "The head noun is 'travelers', which is plural; the participial phrase just adds detail. The verb stays in the base form: 'grow'.",
+            "options": [
+                "grow",
+                "grows"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "grow",
+            "grammarRule": "Multiple stacked modifiers (adjective, participial phrase, prepositional phrase) do not change the true subject",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l122_q2",
+            "instruction": "FIND THE REAL SUBJECT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The talented young chef trained in Paris for over a decade ___ a new restaurant downtown.",
+            "hint": "This subject also has several layers - trace back to the singular noun at its core.",
+            "explanation": "The head noun is 'chef', which is singular. The verb takes -s: 'opens'.",
+            "options": [
+                "open",
+                "opens"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "opens",
+            "grammarRule": "Multiple stacked modifiers (adjective, participial phrase, prepositional phrase) do not change the true subject",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l122_q3",
+            "instruction": "FIND THE REAL SUBJECT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The abandoned houses standing empty at the edge of town ___ a strange, eerie feeling.",
+            "hint": "Even with a descriptive phrase attached, the plural head noun determines the verb.",
+            "explanation": "The head noun is 'houses', which is plural. The verb stays in the base form: 'give'.",
+            "options": [
+                "give",
+                "gives"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "give",
+            "grammarRule": "Multiple stacked modifiers (adjective, participial phrase, prepositional phrase) do not change the true subject",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l123_q1",
+            "instruction": "FIND THE REAL SUBJECT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The keynote speaker, a renowned scientist from overseas, ___ the conference every year.",
+            "hint": "The appositive between the commas renames the subject - it doesn't add a new one.",
+            "explanation": "The head noun is 'the keynote speaker', which is singular; the appositive just identifies who that is. The verb takes -s: 'opens'.",
+            "options": [
+                "open",
+                "opens"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "opens",
+            "grammarRule": "Appositive and prepositional phrases together do not change the true subject's number",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l123_q2",
+            "instruction": "FIND THE REAL SUBJECT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The twins, both students at the local university, ___ the same apartment near campus.",
+            "hint": "The phrase between the commas describes the twins - it doesn't change how many people are involved.",
+            "explanation": "The head noun is 'the twins', which is plural. The verb stays in the base form: 'share'.",
+            "options": [
+                "shares",
+                "share"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "share",
+            "grammarRule": "Appositive and prepositional phrases together do not change the true subject's number",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l123_q3",
+            "instruction": "FIND THE REAL SUBJECT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The award, a small trophy from the regional competition, ___ on the top shelf of the cabinet.",
+            "hint": "The appositive tells us what the award is, but the subject itself is still one item.",
+            "explanation": "The head noun is 'the award', which is singular. The verb takes -s: 'sits'.",
+            "options": [
+                "sits",
+                "sit"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "sits",
+            "grammarRule": "Appositive and prepositional phrases together do not change the true subject's number",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l124_q1",
+            "instruction": "FIND THE REAL SUBJECT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The recipe, surprisingly simple and requiring only five ingredients, ___ perfect for beginners.",
+            "hint": "Both phrases between the commas describe the recipe - they don't add a new subject.",
+            "explanation": "The head noun is 'the recipe', which is singular, despite the combined parenthetical and descriptive phrases. The verb is 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "Combined parenthetical and descriptive phrases do not change the true subject's number",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l124_q2",
+            "instruction": "FIND THE REAL SUBJECT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The proposal, still under review after being submitted last week, ___ careful consideration.",
+            "hint": "This long combined phrase still just describes one single proposal.",
+            "explanation": "The head noun is 'the proposal', which is singular. The verb takes -s: 'needs'.",
+            "options": [
+                "need",
+                "needs"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "needs",
+            "grammarRule": "Combined parenthetical and descriptive phrases do not change the true subject's number",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l124_q3",
+            "instruction": "FIND THE REAL SUBJECT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The workers, exhausted after a long shift, ___ a much-needed break.",
+            "hint": "The phrase between the commas describes the workers - it doesn't change their number.",
+            "explanation": "The head noun is 'the workers', which is plural. The verb stays in the base form: 'deserve'.",
+            "options": [
+                "deserves",
+                "deserve"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "deserve",
+            "grammarRule": "Combined parenthetical and descriptive phrases do not change the true subject's number",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l125_q1",
+            "instruction": "SPOT THE DISTRACTOR",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The key to the lock on the door of the old shed ___ missing.",
+            "hint": "This sentence has three 'of/on' phrases stacked together - go all the way back to the very first noun.",
+            "explanation": "The true head noun is 'the key', which is singular, despite the long chain of phrases after it. The verb is 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "Agreement follows the very first noun in a long chain of prepositional phrases",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l125_q2",
+            "instruction": "SPOT THE DISTRACTOR",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The cover of the book on the shelf in the corner of the room ___ worn out.",
+            "hint": "Don't stop at the second or third noun in this chain - find the very first one.",
+            "explanation": "The true head noun is 'the cover', which is singular. The verb takes -s: 'looks'.",
+            "options": [
+                "look",
+                "looks"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "looks",
+            "grammarRule": "Agreement follows the very first noun in a long chain of prepositional phrases",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l125_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE DISTRACTOR",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The CEO, together with the board members, ___ announced the merger.",
-            "hint": "The main subject is 'the CEO' (singular) - 'together with the board members' is parenthetical.",
-            "explanation": "'Together with the board members' is parenthetical. The real subject is 'the CEO', which is singular. 'The CEO has announced the merger'.",
+            "question": "The handle of the door at the back of the store ___ loose.",
+            "hint": "Trace back through both phrases to the noun at the very beginning.",
+            "explanation": "The true head noun is 'the handle', which is singular. The verb takes -s: 'feels'.",
             "options": [
-                "has",
-                "have"
+                "feels",
+                "feel"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "feels",
+            "grammarRule": "Agreement follows the very first noun in a long chain of prepositional phrases",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l126_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE DISTRACTOR",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The proposal, not the individual amendments, ___ rejected by the board.",
-            "hint": "The main subject is 'the proposal' (singular) - the contrasting phrase doesn't change that.",
-            "explanation": "When a contrasting phrase introduced by 'not' follows the subject, the verb still agrees with the main subject. 'The proposal' is singular: 'was rejected'.",
-            "options": [
-                "were",
-                "was"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l126_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The amendments, not the main proposal, ___ rejected by the board.",
-            "hint": "The main subject is 'the amendments' (plural) - the contrasting phrase doesn't change that.",
-            "explanation": "The main subject is 'the amendments', which is plural. 'Not the main proposal' is a contrasting phrase that doesn't change the agreement. 'The amendments were rejected'.",
-            "options": [
-                "were",
-                "was"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l126_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The company, including all its subsidiaries, ___ now under investigation.",
-            "hint": "The main subject is 'the company' (singular) - 'including all its subsidiaries' is a modifier.",
-            "explanation": "'Including all its subsidiaries' is a modifier, not a second subject. The main subject is 'the company', which is singular: 'is under investigation'.",
+            "question": "The keys to the cabinets in the storage room at the back of the building ___ missing.",
+            "hint": "This time, the very first noun in the chain is plural - keep that in mind as you read on.",
+            "explanation": "The true head noun is 'the keys', which is plural, despite the long chain of phrases after it. The verb is 'are'.",
             "options": [
                 "are",
                 "is"
             ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "are",
+            "grammarRule": "Agreement follows the very first noun in a long chain of prepositional phrases, even when it's plural",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l126_q2",
+            "instruction": "SPOT THE DISTRACTOR",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The pages of the manual in the drawer beside the printer ___ falling apart.",
+            "hint": "Go back to the very first noun, not the singular nouns tucked inside the later phrases.",
+            "explanation": "The true head noun is 'the pages', which is plural. The verb is 'are'.",
+            "options": [
+                "are",
+                "is"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "are",
+            "grammarRule": "Agreement follows the very first noun in a long chain of prepositional phrases, even when it's plural",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l126_q3",
+            "instruction": "SPOT THE DISTRACTOR",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The wheels of the cart in the corner of the warehouse ___ badly rusted.",
+            "hint": "As with the earlier questions, trace back through the whole chain to the first noun.",
+            "explanation": "The true head noun is 'the wheels', which is plural. The verb stays in the base form: 'look'.",
+            "options": [
+                "looks",
+                "look"
+            ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswer": "look",
+            "grammarRule": "Agreement follows the very first noun in a long chain of prepositional phrases, even when it's plural",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l127_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE DISTRACTOR",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "There ___ growing evidence that the vaccine is effective.",
-            "hint": "The real subject is 'growing evidence' - 'evidence' is uncountable (singular).",
-            "explanation": "In 'there is/are' sentences, the verb agrees with the real subject. 'Evidence' is uncountable and singular, so 'there is growing evidence' is correct.",
+            "question": "The letter found inside the box of old photographs from her grandmother's attic ___ a mystery to the family.",
+            "hint": "This sentence has phrases wrapped inside other phrases - unwrap them one at a time to reach the true subject.",
+            "explanation": "The true head noun is 'the letter', which is singular, despite several nested phrases describing where it was found. The verb takes -s: 'remains'.",
             "options": [
-                "is",
-                "are"
+                "remains",
+                "remain"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "remains",
+            "grammarRule": "Agreement follows the true head noun, even through several layers of embedded phrases",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l127_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE DISTRACTOR",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "There ___ many reasons why this approach might fail.",
-            "hint": "The real subject is 'many reasons' - 'reasons' is plural.",
-            "explanation": "The real subject is 'many reasons', which is plural. 'There are many reasons' - the verb agrees with the noun after 'there'.",
+            "question": "The instructions printed on the label of the medicine bottle sitting in the cabinet ___ hard to read.",
+            "hint": "Peel back each layer - printed on the label, of the bottle, sitting in the cabinet - to find the true subject.",
+            "explanation": "The true head noun is 'the instructions', which is plural. The verb is 'are'.",
             "options": [
-                "is",
-                "are"
+                "are",
+                "is"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "grammarRule": "Agreement follows the true head noun, even through several layers of embedded phrases",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l127_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE DISTRACTOR",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "There ___ considerable debate about the right course of action.",
-            "hint": "The real subject is 'considerable debate' - 'debate' used as uncountable here is singular.",
-            "explanation": "'Debate' used as an uncountable noun (meaning 'discussion') is singular. 'There is considerable debate' - singular verb with uncountable noun.",
+            "question": "The engine hidden beneath the hood of the car parked outside the garage ___ major repairs.",
+            "hint": "This sentence also nests several phrases - trace back to the very first noun.",
+            "explanation": "The true head noun is 'the engine', which is singular. The verb takes -s: 'needs'.",
             "options": [
-                "is",
-                "are"
+                "need",
+                "needs"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "needs",
+            "grammarRule": "Agreement follows the true head noun, even through several layers of embedded phrases",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l128_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE DISTRACTOR",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "There ___ a number of factors contributing to this outcome.",
-            "hint": "'A number of factors' means 'several factors' - plural verb.",
-            "explanation": "'A number of factors' = 'several factors'. In 'there is/are' sentences, the verb agrees with 'a number of factors', which is treated as plural. 'There are a number of factors'.",
+            "question": "The theory behind these experiments conducted by researchers at several universities ___ still widely debated.",
+            "hint": "This sentence is packed with plural-sounding nouns - go all the way back to the very first one.",
+            "explanation": "The true head noun is 'the theory', which is singular, despite the plural nouns ('experiments', 'researchers', 'universities') nested throughout the sentence. The verb is 'is'.",
             "options": [
                 "is",
                 "are"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "Agreement follows the true head noun, even through many nested plural distractors",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l128_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE DISTRACTOR",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "There ___ the possibility that the project will be cancelled.",
-            "hint": "The real subject is 'the possibility' (singular).",
-            "explanation": "The real subject is 'the possibility', which is singular. 'There is the possibility that the project will be cancelled'.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l128_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "There ___ various approaches to solving this kind of problem.",
-            "hint": "The real subject is 'various approaches' (plural).",
-            "explanation": "The real subject is 'various approaches', which is plural. 'There are various approaches to solving this problem'.",
+            "question": "The results from the surveys distributed to employees across multiple departments ___ mixed.",
+            "hint": "With so many plural nouns in this sentence, make sure you're matching the very first one.",
+            "explanation": "The true head noun is 'the results', which is plural. The verb is 'are'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "grammarRule": "Agreement follows the true head noun, even through many nested plural distractors",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l128_q3",
+            "instruction": "SPOT THE DISTRACTOR",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The cause of the delays affecting flights at airports throughout the region ___ still unclear.",
+            "hint": "Trace back through every nested plural noun to the true subject at the start.",
+            "explanation": "The true head noun is 'the cause', which is singular, despite the plural nouns later in the sentence. The verb is 'is'.",
+            "options": [
+                "are",
+                "is"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "is",
+            "grammarRule": "Agreement follows the true head noun, even through many nested plural distractors",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l129_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The key to success in this industry ___ adaptability and resilience.",
-            "hint": "The subject is 'the key to success' (singular) - the complement doesn't control the verb.",
-            "explanation": "'The key to success' is the subject, not 'adaptability and resilience'. With linking verbs, the verb agrees with the subject, not the complement. 'The key is adaptability'.",
+            "question": "The museum's newest exhibit, a collection of ancient artifacts recovered from a shipwreck off the coast, ___ thousands of visitors each month.",
+            "hint": "Combine everything you've learned: strip away the appositive and the prepositional details to find the true subject.",
+            "explanation": "The true head noun is 'the museum's newest exhibit', which is singular. The verb takes -s: 'attracts'.",
             "options": [
-                "is",
-                "are"
+                "attracts",
+                "attract"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "attracts",
+            "grammarRule": "Agreement follows the true head noun through a full combination of appositive, descriptive, and prepositional modifiers",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l129_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Adaptability and resilience ___ the key to success in this industry.",
-            "hint": "The subject is 'adaptability and resilience' (plural compound) - not the complement.",
-            "explanation": "Now 'adaptability and resilience' is the compound subject, making it plural. 'Adaptability and resilience are the key to success'.",
+            "question": "The committee members, all experts in their respective fields, working together on this project for over a year, ___ close to a final decision.",
+            "hint": "This sentence combines an appositive and a descriptive phrase - both describe the same plural subject.",
+            "explanation": "The true head noun is 'the committee members', which is plural. The verb is 'are'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "grammarRule": "Agreement follows the true head noun through a full combination of appositive, descriptive, and prepositional modifiers",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l129_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The best solution ___ often the simplest one.",
-            "hint": "The subject is 'the best solution' (singular) - the complement 'the simplest one' doesn't control the verb.",
-            "explanation": "The subject is 'the best solution', which is singular. With linking verbs, the verb always agrees with the subject: 'the best solution is the simplest one'.",
+            "question": "The bridge's main support beam, weakened by decades of exposure to salt water, ___ immediate attention from engineers.",
+            "hint": "The descriptive phrase explains why the beam needs attention, but the subject itself stays the same.",
+            "explanation": "The true head noun is 'the bridge's main support beam', which is singular. The verb takes -s: 'needs'.",
             "options": [
-                "is",
-                "are"
+                "needs",
+                "need"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "needs",
+            "grammarRule": "Agreement follows the true head noun through a full combination of appositive, descriptive, and prepositional modifiers",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l130_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The main concern of investors ___ whether the project will deliver returns.",
-            "hint": "The subject is 'the main concern' (singular) - 'of investors' is a modifier.",
-            "explanation": "'The main concern' is the singular subject; 'of investors' tells us whose concern it is. 'The main concern is whether the project will deliver returns'.",
+            "question": "The recommendations outlined in the report submitted by the consulting firm last quarter ___ under review by the board.",
+            "hint": "Bring together everything from this stage: trace past every phrase to the true plural subject.",
+            "explanation": "The true head noun is 'the recommendations', which is plural. The verb stays in the base form: 'remain'.",
             "options": [
-                "are",
-                "is"
+                "remains",
+                "remain"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswer": "remain",
+            "grammarRule": "Agreement follows the true head noun through a full combination of appositive, descriptive, and prepositional modifiers",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l130_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The concerns of investors ___ well documented in this report.",
-            "hint": "The subject is 'the concerns' (plural) - 'of investors' is a modifier.",
-            "explanation": "'The concerns' is the plural subject; 'of investors' is a modifier. 'The concerns are well documented' - plural subject, plural verb.",
+            "question": "The city's oldest library, a beautiful building constructed over a century ago, ___ thousands of rare manuscripts.",
+            "hint": "The appositive describes the library, but the subject itself is still one single place.",
+            "explanation": "The true head noun is 'the city's oldest library', which is singular. The verb takes -s: 'houses'.",
             "options": [
-                "are",
-                "is"
+                "house",
+                "houses"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "houses",
+            "grammarRule": "Agreement follows the true head noun through a full combination of appositive, descriptive, and prepositional modifiers",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l130_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The group of researchers who published the study ___ from three different countries.",
-            "hint": "The subject is 'the group' (singular collective) - relative clause is descriptive.",
-            "explanation": "'The group' is the subject - a singular collective noun. The relative clause 'who published the study' describes the group but doesn't change agreement. 'The group is from three countries'.",
+            "question": "The scientists working on this project, several of whom have decades of experience, ___ optimistic about the results.",
+            "hint": "As a final check, trace past the descriptive phrase about experience to the true plural subject.",
+            "explanation": "The true head noun is 'the scientists', which is plural. The verb stays in the base form: 'seem'.",
             "options": [
-                "are",
-                "is"
+                "seem",
+                "seems"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "seem",
+            "grammarRule": "Agreement follows the true head noun through a full combination of appositive, descriptive, and prepositional modifiers",
+            "subjectType": "Plural"
         }
     ]
 }

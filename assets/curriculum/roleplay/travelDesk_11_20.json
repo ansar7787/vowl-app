@@ -1,697 +1,697 @@
 {
-    "gameType": "travelDesk",
-    "batchIndex": 2,
-    "levels": "11-20",
-    "quests": [
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I need to get some local cash.",
-            "itinerary": [
-                "Neighborhood Bank",
-                "Neighborhood Post Office",
-                "Neighborhood Laundromat",
-                "Neighborhood Barber Shop"
-            ],
-            "options": [
-                "Bank",
-                "Post Office",
-                "Laundromat",
-                "Barber Shop"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Picture exactly where a traveler would go to get some local cash.",
-            "explanation": "Bank fits perfectly here, as it's set up for people who need to get some local cash.",
-            "id": "td_l11_q1",
-            "travelDocuments": "ID Card"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Can you tell me where to take a family photo?",
-            "itinerary": [
-                "Family Family Restaurant",
-                "Family Playground",
-                "Family Toy Store",
-                "Family Photo Studio"
-            ],
-            "options": [
-                "Family Restaurant",
-                "Playground",
-                "Toy Store",
-                "Photo Studio"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Think practically: if you needed to take a family photo right now, where would you head?",
-            "explanation": "Of the four options, only Photo Studio is designed to let someone take a family photo.",
-            "id": "td_l11_q2",
-            "travelDocuments": "Museum Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I want to buy a small gift.",
-            "itinerary": [
-                "Marketplace Gift Shop",
-                "Marketplace Supermarket",
-                "Marketplace Bookstore",
-                "Marketplace Farmers Market"
-            ],
-            "options": [
-                "Gift Shop",
-                "Supermarket",
-                "Bookstore",
-                "Farmers Market"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Match the purpose, not just the wording — where does someone actually go to buy a small gift?",
-            "explanation": "When someone needs to buy a small gift, Gift Shop is the natural choice.",
-            "id": "td_l11_q3",
-            "travelDocuments": "Passport"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I have to grab a quick lunch today.",
-            "itinerary": [
-                "Gourmet Bakery",
-                "Gourmet Deli",
-                "Gourmet Food Truck",
-                "Gourmet Restaurant"
-            ],
-            "options": [
-                "Bakery",
-                "Deli",
-                "Food Truck",
-                "Restaurant"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Read the request closely: the key detail is that this person needs to grab a quick lunch.",
-            "explanation": "Food Truck exists specifically for this — it's the place to grab a quick lunch.",
-            "id": "td_l12_q1",
-            "travelDocuments": "Museum Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I'd like to read in a quiet place.",
-            "itinerary": [
-                "Scholars' Botanical Garden",
-                "Scholars' History Museum",
-                "Scholars' Art Museum",
-                "Scholars' Public Library"
-            ],
-            "options": [
-                "Botanical Garden",
-                "History Museum",
-                "Art Museum",
-                "Public Library"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "One of these four exists specifically to help people read in a quiet place — look for it.",
-            "explanation": "The request points directly to the Public Library, since that's where you'd read in a quiet place.",
-            "id": "td_l12_q2",
-            "travelDocuments": "Travel Insurance"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Where can I rent a desk for the day?",
-            "itinerary": [
-                "Corporate Printing & Copy Shop",
-                "Corporate Coworking Space",
-                "Corporate Business Center",
-                "Corporate Meeting Room"
-            ],
-            "options": [
-                "Printing & Copy Shop",
-                "Coworking Space",
-                "Business Center",
-                "Meeting Room"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Not all four fit. Focus on the one place designed to let someone rent a desk for the day.",
-            "explanation": "Coworking Space is correct because that's exactly where travelers go to rent a desk for the day.",
-            "id": "td_l12_q3",
-            "travelDocuments": "ID Card"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I need to catch a bus.",
-            "itinerary": [
-                "Wanderer's Airport",
-                "Wanderer's Bus Terminal",
-                "Wanderer's Train Station",
-                "Wanderer's Hotel Lobby"
-            ],
-            "options": [
-                "Airport",
-                "Bus Terminal",
-                "Train Station",
-                "Hotel Lobby"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Look past any similar-sounding options — only one place truly lets you catch a bus.",
-            "explanation": "Travelers head to the Bus Terminal whenever they need to catch a bus.",
-            "id": "td_l13_q1",
-            "travelDocuments": "Train Ticket"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Can you tell me where to play some video games?",
-            "itinerary": [
-                "Digital Gadget Store",
-                "Digital Internet Cafe",
-                "Digital Repair Shop",
-                "Digital Gaming Lounge"
-            ],
-            "options": [
-                "Gadget Store",
-                "Internet Cafe",
-                "Repair Shop",
-                "Gaming Lounge"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Focus on the verb in the request: the traveler needs to play some video games.",
-            "explanation": "Since the traveler wants to play some video games, Gaming Lounge is the logical destination.",
-            "id": "td_l13_q2",
-            "travelDocuments": "Museum Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I want to get an eye test.",
-            "itinerary": [
-                "Wellness Dental Clinic",
-                "Wellness Pharmacy",
-                "Wellness Eye Clinic",
-                "Wellness Hospital"
-            ],
-            "options": [
-                "Dental Clinic",
-                "Pharmacy",
-                "Eye Clinic",
-                "Hospital"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "The right answer is the place whose main job is to help people get an eye test.",
-            "explanation": "Eye Clinic is the best fit — it exists specifically to help people get an eye test.",
-            "id": "td_l13_q3",
-            "travelDocuments": "Passport"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I have to try some classic arcade games today.",
-            "itinerary": [
-                "Spotlight Concert Hall",
-                "Spotlight Arcade",
-                "Spotlight Theater",
-                "Spotlight Cinema"
-            ],
-            "options": [
-                "Concert Hall",
-                "Arcade",
-                "Theater",
-                "Cinema"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Think about which kind of place specializes in helping people try some classic arcade games.",
-            "explanation": "Arcade fits perfectly here, as it's set up for people who need to try some classic arcade games.",
-            "id": "td_l14_q1",
-            "travelDocuments": "Museum Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I'd like to get a quick haircut.",
-            "itinerary": [
-                "Neighborhood Post Office",
-                "Neighborhood Bank",
-                "Neighborhood Bakery",
-                "Neighborhood Barber Shop"
-            ],
-            "options": [
-                "Post Office",
-                "Bank",
-                "Bakery",
-                "Barber Shop"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Think practically: if you needed to get a quick haircut right now, where would you head?",
-            "explanation": "This matches because Barber Shop is the standard place to get a quick haircut.",
-            "id": "td_l14_q2",
-            "travelDocuments": "Passport"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Where can I let the kids pet some animals?",
-            "itinerary": [
-                "Family Petting Zoo",
-                "Family Toy Store",
-                "Family Playground",
-                "Family Photo Studio"
-            ],
-            "options": [
-                "Petting Zoo",
-                "Toy Store",
-                "Playground",
-                "Photo Studio"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Picture exactly where a traveler would go to let the kids pet some animals.",
-            "explanation": "Petting Zoo makes sense here because that's precisely where people go to let the kids pet some animals.",
-            "id": "td_l14_q3",
-            "travelDocuments": "Train Ticket"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I need to buy a new pair of shoes.",
-            "itinerary": [
-                "Marketplace Gift Shop",
-                "Marketplace Supermarket",
-                "Marketplace Shoe Store",
-                "Marketplace Boutique"
-            ],
-            "options": [
-                "Gift Shop",
-                "Supermarket",
-                "Shoe Store",
-                "Boutique"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Rule out the options that don't fit someone trying to buy a new pair of shoes.",
-            "explanation": "Of the four options, only Shoe Store is designed to let someone buy a new pair of shoes.",
-            "id": "td_l15_q1",
-            "travelDocuments": "Train Ticket"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Can you tell me where to get some ice cream?",
-            "itinerary": [
-                "Gourmet Food Truck",
-                "Gourmet Ice Cream Parlor",
-                "Gourmet Deli",
-                "Gourmet Cafe"
-            ],
-            "options": [
-                "Food Truck",
-                "Ice Cream Parlor",
-                "Deli",
-                "Cafe"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Read the request closely: the key detail is that this person needs to get some ice cream.",
-            "explanation": "The request points directly to the Ice Cream Parlor, since that's where you'd get some ice cream.",
-            "id": "td_l15_q2",
-            "travelDocuments": "ID Card"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I want to join a guided city tour.",
-            "itinerary": [
-                "Scholars' Guided Walking Tour Meeting Point",
-                "Scholars' History Museum",
-                "Scholars' Botanical Garden",
-                "Scholars' Art Museum"
-            ],
-            "options": [
-                "Guided Walking Tour Meeting Point",
-                "History Museum",
-                "Botanical Garden",
-                "Art Museum"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Match the purpose, not just the wording — where does someone actually go to join a guided city tour?",
-            "explanation": "The clearest match is Guided Walking Tour Meeting Point, since that's exactly its purpose: to join a guided city tour.",
-            "id": "td_l15_q3",
-            "travelDocuments": "Passport"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I have to attend a business conference today.",
-            "itinerary": [
-                "Corporate Business Center",
-                "Corporate Conference Center",
-                "Corporate Meeting Room",
-                "Corporate Coworking Space"
-            ],
-            "options": [
-                "Business Center",
-                "Conference Center",
-                "Meeting Room",
-                "Coworking Space"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Not all four fit. Focus on the one place designed to let someone attend a business conference.",
-            "explanation": "Conference Center is correct because that's exactly where travelers go to attend a business conference.",
-            "id": "td_l16_q1",
-            "travelDocuments": "Hotel Reservation"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I'd like to get a city map.",
-            "itinerary": [
-                "Wanderer's Tourist Information Center",
-                "Wanderer's Hotel Lobby",
-                "Wanderer's Airport",
-                "Wanderer's Bus Terminal"
-            ],
-            "options": [
-                "Tourist Information Center",
-                "Hotel Lobby",
-                "Airport",
-                "Bus Terminal"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Ask yourself which of the four options is built for one specific purpose: to get a city map.",
-            "explanation": "Tourist Information Center exists specifically for this — it's the place to get a city map.",
-            "id": "td_l16_q2",
-            "travelDocuments": "Passport"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Where can I ask about a Wi-Fi problem?",
-            "itinerary": [
-                "Digital Gadget Store",
-                "Digital Internet Cafe",
-                "Digital Repair Shop",
-                "Digital IT Help Desk"
-            ],
-            "options": [
-                "Gadget Store",
-                "Internet Cafe",
-                "Repair Shop",
-                "IT Help Desk"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "One of these four exists specifically to help people ask about a Wi-Fi problem — look for it.",
-            "explanation": "When someone needs to ask about a Wi-Fi problem, IT Help Desk is the natural choice.",
-            "id": "td_l16_q3",
-            "travelDocuments": "City Map"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I need to get urgent medical help.",
-            "itinerary": [
-                "Wellness Pharmacy",
-                "Wellness Emergency Room",
-                "Wellness Dental Clinic",
-                "Wellness Hospital"
-            ],
-            "options": [
-                "Pharmacy",
-                "Emergency Room",
-                "Dental Clinic",
-                "Hospital"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "The right answer is the place whose main job is to help people get urgent medical help.",
-            "explanation": "Since the traveler wants to get urgent medical help, Emergency Room is the logical destination.",
-            "id": "td_l17_q1",
-            "travelDocuments": "City Map"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Can you tell me where to ride a roller coaster?",
-            "itinerary": [
-                "Spotlight Theater",
-                "Spotlight Amusement Park",
-                "Spotlight Arcade",
-                "Spotlight Cinema"
-            ],
-            "options": [
-                "Theater",
-                "Amusement Park",
-                "Arcade",
-                "Cinema"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Look past any similar-sounding options — only one place truly lets you ride a roller coaster.",
-            "explanation": "Travelers head to the Amusement Park whenever they need to ride a roller coaster.",
-            "id": "td_l17_q2",
-            "travelDocuments": "Museum Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I want to buy a plug adapter.",
-            "itinerary": [
-                "Neighborhood Bakery",
-                "Neighborhood Bank",
-                "Neighborhood Barber Shop",
-                "Neighborhood Hardware Store"
-            ],
-            "options": [
-                "Bakery",
-                "Bank",
-                "Barber Shop",
-                "Hardware Store"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Think practically: if you needed to buy a plug adapter right now, where would you head?",
-            "explanation": "Hardware Store makes sense here because that's precisely where people go to buy a plug adapter.",
-            "id": "td_l17_q3",
-            "travelDocuments": "Train Ticket"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I have to have a picnic with the kids today.",
-            "itinerary": [
-                "Family Toy Store",
-                "Family Picnic Area",
-                "Family Family Restaurant",
-                "Family Playground"
-            ],
-            "options": [
-                "Toy Store",
-                "Picnic Area",
-                "Family Restaurant",
-                "Playground"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Rule out the options that don't fit someone trying to have a picnic with the kids.",
-            "explanation": "Of the four options, only Picnic Area is designed to let someone have a picnic with the kids.",
-            "id": "td_l18_q1",
-            "travelDocuments": "ID Card"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I'd like to buy a novel for the flight.",
-            "itinerary": [
-                "Marketplace Supermarket",
-                "Marketplace Bookstore",
-                "Marketplace Shoe Store",
-                "Marketplace Gift Shop"
-            ],
-            "options": [
-                "Supermarket",
-                "Bookstore",
-                "Shoe Store",
-                "Gift Shop"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Read the request closely: the key detail is that this person needs to buy a novel for the flight.",
-            "explanation": "Bookstore is the best fit — it exists specifically to help people buy a novel for the flight.",
-            "id": "td_l18_q2",
-            "travelDocuments": "Museum Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Where can I buy some sliced cheese?",
-            "itinerary": [
-                "Gourmet Restaurant",
-                "Gourmet Bakery",
-                "Gourmet Deli",
-                "Gourmet Ice Cream Parlor"
-            ],
-            "options": [
-                "Restaurant",
-                "Bakery",
-                "Deli",
-                "Ice Cream Parlor"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Picture exactly where a traveler would go to buy some sliced cheese.",
-            "explanation": "The request points directly to the Deli, since that's where you'd buy some sliced cheese.",
-            "id": "td_l18_q3",
-            "travelDocuments": "Train Ticket"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I need to see some dinosaur bones.",
-            "itinerary": [
-                "Scholars' Natural History Museum",
-                "Scholars' History Museum",
-                "Scholars' Public Library",
-                "Scholars' Art Museum"
-            ],
-            "options": [
-                "Natural History Museum",
-                "History Museum",
-                "Public Library",
-                "Art Museum"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Match the purpose, not just the wording — where does someone actually go to see some dinosaur bones?",
-            "explanation": "This matches because Natural History Museum is the standard place to see some dinosaur bones.",
-            "id": "td_l19_q1",
-            "travelDocuments": "Boarding Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Can you tell me where to make a private work call?",
-            "itinerary": [
-                "Corporate Business Center",
-                "Corporate Conference Center",
-                "Corporate Video Call Booth",
-                "Corporate Meeting Room"
-            ],
-            "options": [
-                "Business Center",
-                "Conference Center",
-                "Video Call Booth",
-                "Meeting Room"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Think about which kind of place specializes in helping people make a private work call.",
-            "explanation": "The clearest match is Video Call Booth, since that's exactly its purpose: to make a private work call.",
-            "id": "td_l19_q2",
-            "travelDocuments": "ID Card"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I want to book a city tour.",
-            "itinerary": [
-                "Wanderer's Tour Agency",
-                "Wanderer's Tourist Information Center",
-                "Wanderer's Hotel Lobby",
-                "Wanderer's Train Station"
-            ],
-            "options": [
-                "Tour Agency",
-                "Tourist Information Center",
-                "Hotel Lobby",
-                "Train Station"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "One of these four exists specifically to help people book a city tour — look for it.",
-            "explanation": "When someone needs to book a city tour, Tour Agency is the natural choice.",
-            "id": "td_l19_q3",
-            "travelDocuments": "City Map"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I have to get a cracked screen fixed today.",
-            "itinerary": [
-                "Digital Phone Repair Kiosk",
-                "Digital Internet Cafe",
-                "Digital Gadget Store",
-                "Digital IT Help Desk"
-            ],
-            "options": [
-                "Phone Repair Kiosk",
-                "Internet Cafe",
-                "Gadget Store",
-                "IT Help Desk"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Not all four fit. Focus on the one place designed to let someone get a cracked screen fixed.",
-            "explanation": "Phone Repair Kiosk fits perfectly here, as it's set up for people who need to get a cracked screen fixed.",
-            "id": "td_l20_q1",
-            "travelDocuments": "Travel Insurance"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I'd like to relax after a long flight.",
-            "itinerary": [
-                "Wellness Pharmacy",
-                "Wellness Emergency Room",
-                "Wellness Wellness Spa",
-                "Wellness Dental Clinic"
-            ],
-            "options": [
-                "Pharmacy",
-                "Emergency Room",
-                "Wellness Spa",
-                "Dental Clinic"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Focus on the verb in the request: the traveler needs to relax after a long flight.",
-            "explanation": "Wellness Spa exists specifically for this — it's the place to relax after a long flight.",
-            "id": "td_l20_q2",
-            "travelDocuments": "Museum Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Where can I see the tropical fish?",
-            "itinerary": [
-                "Spotlight Concert Hall",
-                "Spotlight Cinema",
-                "Spotlight Amusement Park",
-                "Spotlight Aquarium"
-            ],
-            "options": [
-                "Concert Hall",
-                "Cinema",
-                "Amusement Park",
-                "Aquarium"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Ask yourself which of the four options is built for one specific purpose: to see the tropical fish.",
-            "explanation": "Aquarium is correct because that's exactly where travelers go to see the tropical fish.",
-            "id": "td_l20_q3",
-            "travelDocuments": "Travel Insurance"
-        }
-    ]
+  "gameType": "travelDesk",
+  "batchIndex": 2,
+  "levels": "11-20",
+  "quests": [
+    {
+      "instruction": "Which place can help with this request?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Where do they serve breakfast? I'd like to eat before my early tour.",
+      "itinerary": [
+        "Grand Plaza Hotel Lobby Bar",
+        "Grand Plaza Hotel Conference Room",
+        "Grand Plaza Hotel Breakfast Room",
+        "Grand Plaza Hotel Fitness Room"
+      ],
+      "options": [
+        "Lobby Bar",
+        "Conference Room",
+        "Breakfast Room",
+        "Fitness Room"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "You want a morning meal inside the hotel.",
+      "explanation": "Hotels usually serve breakfast in a dedicated room or restaurant. The bar mostly opens later in the day, and the conference and fitness rooms aren't for eating.",
+      "id": "td_l11_q1",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Which option fits the situation best?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I've got some work to print and a call to make, but I don't want to leave the hotel.",
+      "itinerary": [
+        "Grand Plaza Hotel Gift Shop",
+        "Grand Plaza Hotel Business Centre",
+        "Grand Plaza Hotel Kids' Club",
+        "Grand Plaza Hotel Rooftop Terrace"
+      ],
+      "options": [
+        "Gift Shop",
+        "Business Centre",
+        "Kids' Club",
+        "Rooftop Terrace"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "You're looking for a working space with equipment.",
+      "explanation": "The business centre has printers, computers and a quiet space for calls. The other areas are for shopping, relaxing or children's activities.",
+      "id": "td_l11_q2",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Choose the most suitable service.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "My shoulders are sore from carrying a backpack all week. A massage would be perfect.",
+      "itinerary": [
+        "Grand Plaza Hotel Luggage Room",
+        "Grand Plaza Hotel Spa",
+        "Grand Plaza Hotel Swimming Pool",
+        "Grand Plaza Hotel Laundry Room"
+      ],
+      "options": [
+        "Luggage Room",
+        "Spa",
+        "Swimming Pool",
+        "Laundry Room"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "A massage is a treatment, not an activity you do alone.",
+      "explanation": "A hotel spa offers massage treatments. The pool can relax muscles but doesn't provide a massage.",
+      "id": "td_l11_q3",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Which place can help with this request?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I've had a toothache since last night and it's getting worse.",
+      "itinerary": [
+        "Health Street Pharmacy",
+        "Health Street Physiotherapy Centre",
+        "Health Street Dental Clinic",
+        "Health Street Optician"
+      ],
+      "options": [
+        "Pharmacy",
+        "Physiotherapy Centre",
+        "Dental Clinic",
+        "Optician"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Choose the specialist for the body part involved. A shop counter can only do so much.",
+      "explanation": "A dental clinic treats teeth. A pharmacy might sell a painkiller, but it can't find or fix the cause of a toothache.",
+      "id": "td_l12_q1",
+      "travelDocuments": "Travel Insurance"
+    },
+    {
+      "instruction": "Where should the traveler go to fix this?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "The arm fell off my glasses and I can't read the menu without them.",
+      "itinerary": [
+        "Oxford Street Optician",
+        "Oxford Street Shoe Repair",
+        "Oxford Street Hair Salon",
+        "Oxford Street Dental Clinic"
+      ],
+      "options": [
+        "Optician",
+        "Shoe Repair",
+        "Hair Salon",
+        "Dental Clinic"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Which professional works with glasses and lenses?",
+      "explanation": "Opticians repair and adjust glasses, often while you wait. None of the other businesses handle spectacles.",
+      "id": "td_l12_q2",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Choose the option that deals with the most urgent part first.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I've had a fever for two days and I'd like to see a doctor, but it's not an emergency.",
+      "itinerary": [
+        "Riverside Pharmacy",
+        "Riverside Dental Clinic",
+        "Riverside Medical Clinic",
+        "Riverside Emergency Room"
+      ],
+      "options": [
+        "Pharmacy",
+        "Dental Clinic",
+        "Medical Clinic",
+        "Emergency Room"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "The words 'not an emergency' tell you which level of care is needed.",
+      "explanation": "A medical clinic is right for a doctor's visit when things aren't life-threatening. The emergency room is for urgent cases, and a pharmacy can't diagnose a fever.",
+      "id": "td_l12_q3",
+      "travelDocuments": "Travel Insurance"
+    },
+    {
+      "instruction": "Which option suits the whole group?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "We're vegetarian. Could you point us to somewhere with plenty of dishes without meat?",
+      "itinerary": [
+        "Harvest Lane Vegetarian Cafe",
+        "Harvest Lane Burger Bar",
+        "Harvest Lane Steakhouse",
+        "Harvest Lane Barbecue Grill"
+      ],
+      "options": [
+        "Vegetarian Cafe",
+        "Burger Bar",
+        "Steakhouse",
+        "Barbecue Grill"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Which place would be built around the group's diet rather than around meat?",
+      "explanation": "A vegetarian cafe has a full menu without meat. The other three centre their menus on beef or grilled meat.",
+      "id": "td_l13_q1",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Which destination best solves the request?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "We'd like to try what people here actually eat at home, not tourist food.",
+      "itinerary": [
+        "Old Quarter Sushi Bar",
+        "Old Quarter Traditional Local Restaurant",
+        "Old Quarter Fast-Food Restaurant",
+        "Old Quarter Pizza Place"
+      ],
+      "options": [
+        "Sushi Bar",
+        "Traditional Local Restaurant",
+        "Fast-Food Restaurant",
+        "Pizza Place"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Check the traveler's goal: local, everyday cooking.",
+      "explanation": "A traditional local restaurant serves regional home-style dishes. The others serve food from elsewhere or global chains.",
+      "id": "td_l13_q2",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Which option fits the situation best?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I'd like a cold drink and something sweet, but I'm not hungry enough for a meal.",
+      "itinerary": [
+        "Beachfront Ice Cream Parlour",
+        "Beachfront Sushi Bar",
+        "Beachfront Steakhouse",
+        "Beachfront Diner"
+      ],
+      "options": [
+        "Ice Cream Parlour",
+        "Sushi Bar",
+        "Steakhouse",
+        "Diner"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Match the size of the appetite. This is a treat, not a meal.",
+      "explanation": "An ice cream parlour serves cold sweet treats and drinks. Sushi, steak and diner meals are all too filling for this request.",
+      "id": "td_l13_q3",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Which option best fits the traveler's schedule?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "It's late, my bags are heavy, and my hotel is on the other side of the city.",
+      "itinerary": [
+        "Central Station Bus Stop",
+        "Central Station Metro Entrance",
+        "Central Station Taxi Rank",
+        "Central Station Bike Rental"
+      ],
+      "options": [
+        "Bus Stop",
+        "Metro Entrance",
+        "Taxi Rank",
+        "Bike Rental"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Weigh late hour, heavy bags and distance together.",
+      "explanation": "A taxi is the easiest choice with heavy luggage late at night, since it goes door to door. Bikes and buses are hard to use with big bags.",
+      "id": "td_l14_q1",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Which option fits the situation best?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I'd like to explore the coast for a day at my own pace, stopping wherever I like.",
+      "itinerary": [
+        "Harbour Road Coach Tour Desk",
+        "Harbour Road Taxi Rank",
+        "Harbour Road Car Rental Office",
+        "Harbour Road Ferry Ticket Booth"
+      ],
+      "options": [
+        "Coach Tour Desk",
+        "Taxi Rank",
+        "Car Rental Office",
+        "Ferry Ticket Booth"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "'My own pace' means nobody else controls the route or the timing.",
+      "explanation": "A rental car lets you choose stops and timing. Coach tours and ferries follow fixed routes and schedules. You'll need to show ID when you collect the car.",
+      "id": "td_l14_q2",
+      "travelDocuments": "Passport"
+    },
+    {
+      "instruction": "Choose the best fit for the budget.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I'll be hopping on and off buses and trains all day. What's the cheapest way to do that?",
+      "itinerary": [
+        "Old Town Transit Day-Pass Office",
+        "Old Town Taxi Rank",
+        "Old Town Car Rental Office",
+        "Old Town Airport Shuttle Desk"
+      ],
+      "options": [
+        "Transit Day-Pass Office",
+        "Taxi Rank",
+        "Car Rental Office",
+        "Airport Shuttle Desk"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Many short trips in one day: how could you pay only once?",
+      "explanation": "A day pass covers unlimited rides for a fixed price. Taxis and rental cars cost far more for repeated short trips.",
+      "id": "td_l14_q3",
+      "travelDocuments": "Train Ticket"
+    },
+    {
+      "instruction": "Which destination best solves the request?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I'd love to hear some live music tonight. Nothing too big, just a local band.",
+      "itinerary": [
+        "Nightlife District Football Stadium",
+        "Nightlife District Live Music Bar",
+        "Nightlife District Cinema",
+        "Nightlife District Opera House"
+      ],
+      "options": [
+        "Football Stadium",
+        "Live Music Bar",
+        "Cinema",
+        "Opera House"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "The size of the event matters: small and local.",
+      "explanation": "A live music bar hosts local bands in a relaxed setting. An opera house or a stadium would be far bigger and more formal.",
+      "id": "td_l15_q1",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Which place can help with this request?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "We'd like to see a play tonight, with real actors on a stage.",
+      "itinerary": [
+        "Arts Quarter Cinema",
+        "Arts Quarter Nightclub",
+        "Arts Quarter Theatre",
+        "Arts Quarter Concert Hall"
+      ],
+      "options": [
+        "Cinema",
+        "Nightclub",
+        "Theatre",
+        "Concert Hall"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Actors, a stage and a story: which building is designed for that?",
+      "explanation": "Theatres stage plays with live actors. A cinema shows recorded films and a concert hall is for music.",
+      "id": "td_l15_q2",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Identify the most practical destination.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "There's a big match this weekend. Where would people go to watch it live?",
+      "itinerary": [
+        "Sports Park Stadium",
+        "Sports Park Gym",
+        "Sports Park Sports Shop",
+        "Sports Park Swimming Pool"
+      ],
+      "options": [
+        "Stadium",
+        "Gym",
+        "Sports Shop",
+        "Swimming Pool"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "'Live' means being present at the game itself.",
+      "explanation": "A stadium is where matches are played in front of spectators. A sports shop only sells equipment and a gym is for exercise.",
+      "id": "td_l15_q3",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Which option suits the whole group?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "We'd like a day in nature with some walking trails and maybe a picnic.",
+      "itinerary": [
+        "Highland Way Art Gallery",
+        "Highland Way Shopping Centre",
+        "Highland Way Aquarium",
+        "Highland Way Nature Reserve"
+      ],
+      "options": [
+        "Art Gallery",
+        "Shopping Centre",
+        "Aquarium",
+        "Nature Reserve"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Trails and picnics belong outdoors, away from buildings.",
+      "explanation": "A nature reserve has marked trails and open areas for picnics. The other places are all indoors.",
+      "id": "td_l16_q1",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Choose the most suitable service.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "It's boiling today. Where can we go to cool off with a swim?",
+      "itinerary": [
+        "Coastal Road Castle",
+        "Coastal Road Old Cathedral",
+        "Coastal Road Public Beach",
+        "Coastal Road Clock Tower"
+      ],
+      "options": [
+        "Castle",
+        "Old Cathedral",
+        "Public Beach",
+        "Clock Tower"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Only one of these places has water you can swim in.",
+      "explanation": "A public beach lets you swim and cool down. Castles, cathedrals and towers are sights to look at rather than places to swim.",
+      "id": "td_l16_q2",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Choose the best place for the traveler.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I'd like to see the whole city from above at sunset.",
+      "itinerary": [
+        "Hilltop Central Library",
+        "Hilltop Observation Deck",
+        "Hilltop Ticket Office",
+        "Hilltop Market Hall"
+      ],
+      "options": [
+        "Central Library",
+        "Observation Deck",
+        "Ticket Office",
+        "Market Hall"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "You need height and an open view.",
+      "explanation": "An observation deck gives panoramic views, which are best at sunset. The library, market and ticket office are indoors at ground level.",
+      "id": "td_l16_q3",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Where should the traveler go to fix this?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "The heel just came off my shoe and I'm going to a wedding tonight.",
+      "itinerary": [
+        "Market Street Dry Cleaner",
+        "Market Street Tailor",
+        "Market Street Key Cutter",
+        "Market Street Shoe Repair Stall"
+      ],
+      "options": [
+        "Dry Cleaner",
+        "Tailor",
+        "Key Cutter",
+        "Shoe Repair Stall"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "The problem is a broken object, not a stain or a size.",
+      "explanation": "A shoe repair stall can reattach a heel quickly, often while you wait. A tailor works on clothing rather than shoes.",
+      "id": "td_l17_q1",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Choose the most suitable service.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Someone spilled red wine on my jacket. I need it cleaned properly, not just washed.",
+      "itinerary": [
+        "Park Lane Shoe Repair",
+        "Park Lane Tailor",
+        "Park Lane Laundromat",
+        "Park Lane Dry Cleaner"
+      ],
+      "options": [
+        "Shoe Repair",
+        "Tailor",
+        "Laundromat",
+        "Dry Cleaner"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Some fabrics can't go into a normal washing machine.",
+      "explanation": "A dry cleaner treats stains on delicate items such as jackets. A laundromat is fine for T-shirts and towels but risks damaging a jacket.",
+      "id": "td_l17_q2",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Which place can help with this request?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I need a spare key cut before I hand the flat back to the landlord.",
+      "itinerary": [
+        "Corner Street Bakery",
+        "Corner Street Locksmith",
+        "Corner Street Bank",
+        "Corner Street Post Office"
+      ],
+      "options": [
+        "Bakery",
+        "Locksmith",
+        "Bank",
+        "Post Office"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Making a copy of a key is a specialist job.",
+      "explanation": "A locksmith cuts duplicate keys on the spot. The others don't have the machinery to do this.",
+      "id": "td_l17_q3",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Who should the traveler ask first?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "The museum's website is down. Who can tell me today's opening hours without me walking there?",
+      "itinerary": [
+        "Seaside Hotel Laundry Service",
+        "Seaside Hotel Housekeeping",
+        "Seaside Hotel Concierge Desk",
+        "Seaside Hotel Spa"
+      ],
+      "options": [
+        "Laundry Service",
+        "Housekeeping",
+        "Concierge Desk",
+        "Spa"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Which hotel staff member is there to answer questions about the city?",
+      "explanation": "A concierge knows local opening times and can phone ahead. Housekeeping and laundry deal with rooms and clothes.",
+      "id": "td_l18_q1",
+      "travelDocuments": "Museum Pass"
+    },
+    {
+      "instruction": "Choose the most suitable service.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Which bus goes to the airport, and where does it leave from?",
+      "itinerary": [
+        "Arrivals Hall Currency Exchange",
+        "Arrivals Hall Baggage Claim",
+        "Arrivals Hall Duty-Free Shop",
+        "Arrivals Hall Transport Information Desk"
+      ],
+      "options": [
+        "Currency Exchange",
+        "Baggage Claim",
+        "Duty-Free Shop",
+        "Transport Information Desk"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "You need routes and stop locations. Who has that information?",
+      "explanation": "A transport information desk explains routes, stops and timetables. The other counters sell goods or money services.",
+      "id": "td_l18_q2",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Choose the most useful next step.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "We've just come off the plane. Where do we collect our suitcases?",
+      "itinerary": [
+        "Arrivals Hall Baggage Claim",
+        "Arrivals Hall Departure Gate",
+        "Arrivals Hall Security Control",
+        "Arrivals Hall Check-In Desk"
+      ],
+      "options": [
+        "Baggage Claim",
+        "Departure Gate",
+        "Security Control",
+        "Check-In Desk"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "The flight is over. Which step comes after landing?",
+      "explanation": "Baggage claim is where checked bags come out on the belt. Check-in, security and gates are all for departing passengers.",
+      "id": "td_l18_q3",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Choose the best place for the traveler.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I'd like a proper winter coat. I didn't realise it would be this cold.",
+      "itinerary": [
+        "Fashion Avenue Toy Shop",
+        "Fashion Avenue Garden Centre",
+        "Fashion Avenue Furniture Store",
+        "Fashion Avenue Clothing Store"
+      ],
+      "options": [
+        "Toy Shop",
+        "Garden Centre",
+        "Furniture Store",
+        "Clothing Store"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "The item is clothing, so choose the shop that sells it.",
+      "explanation": "A clothing store sells coats in different sizes. Furniture, toys and plants belong to different shops.",
+      "id": "td_l19_q1",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Which place can help with this request?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I'd like to bring flowers to my host family, something nice but not expensive.",
+      "itinerary": [
+        "Village Green Bakery",
+        "Village Green Florist",
+        "Village Green Stationery Shop",
+        "Village Green Bookshop"
+      ],
+      "options": [
+        "Bakery",
+        "Florist",
+        "Stationery Shop",
+        "Bookshop"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Which shop's main product is flowers?",
+      "explanation": "A florist sells fresh bouquets at different prices. A bakery gift is nice but doesn't answer the flower request.",
+      "id": "td_l19_q2",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Which service would be most useful here?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "We're planning a picnic: fruit, cheese, bread and some water. One stop, if possible.",
+      "itinerary": [
+        "Riverside Restaurant",
+        "Riverside Butcher",
+        "Riverside Bakery",
+        "Riverside Supermarket"
+      ],
+      "options": [
+        "Restaurant",
+        "Butcher",
+        "Bakery",
+        "Supermarket"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "The list includes several different products. Which place carries them all?",
+      "explanation": "A supermarket sells fruit, cheese, bread and water together. A butcher or bakery would only cover part of the list.",
+      "id": "td_l19_q3",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Pick the option that works within the time limit.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I've got a train in forty minutes and I haven't bought a ticket yet.",
+      "itinerary": [
+        "Central Station Ticket Office",
+        "Central Station Restrooms",
+        "Central Station Hotel Shuttle Desk",
+        "Central Station Newsagent"
+      ],
+      "options": [
+        "Ticket Office",
+        "Restrooms",
+        "Hotel Shuttle Desk",
+        "Newsagent"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "You must have a ticket before you board, and time is limited.",
+      "explanation": "The ticket office sells train tickets and can tell you the platform. The rest can wait until you're sure of your ticket.",
+      "id": "td_l20_q1",
+      "travelDocuments": "Train Ticket"
+    },
+    {
+      "instruction": "Where should the desk agent send this traveler?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "My friend has a bad stomach ache and we can't explain it well in the local language. Where can he be seen by someone who speaks English?",
+      "itinerary": [
+        "Central District Health Food Shop",
+        "Central District Day Spa",
+        "Central District Pharmacy",
+        "Central District International Medical Centre"
+      ],
+      "options": [
+        "Health Food Shop",
+        "Day Spa",
+        "Pharmacy",
+        "International Medical Centre"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "There are two needs here: medical care and communication.",
+      "explanation": "An international medical centre offers doctors who speak English. A pharmacy can't diagnose, and the other two aren't medical services.",
+      "id": "td_l20_q2",
+      "travelDocuments": "Travel Insurance"
+    },
+    {
+      "instruction": "Which option fits the situation best?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Where would be nice for a quiet morning with a book and a coffee? I'd like to avoid crowds.",
+      "itinerary": [
+        "Old Town Shopping Mall",
+        "Old Town Bookshop Cafe",
+        "Old Town Night Club",
+        "Old Town Sports Bar"
+      ],
+      "options": [
+        "Shopping Mall",
+        "Bookshop Cafe",
+        "Night Club",
+        "Sports Bar"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Quiet, relaxed and readable: which atmosphere fits?",
+      "explanation": "A bookshop cafe combines coffee with a calm reading space. Bars, clubs and malls tend to be loud or crowded.",
+      "id": "td_l20_q3",
+      "travelDocuments": "City Map"
+    }
+  ]
 }

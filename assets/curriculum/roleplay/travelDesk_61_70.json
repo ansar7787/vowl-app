@@ -1,697 +1,697 @@
 {
-    "gameType": "travelDesk",
-    "batchIndex": 7,
-    "levels": "61-70",
-    "quests": [
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I'm looking for somewhere to exchange some leftover currency before we move on.",
-            "itinerary": [
-                "Neighborhood Currency Exchange",
-                "Neighborhood Lost-and-Found Office",
-                "Neighborhood City Hall",
-                "Neighborhood Watch Repair Shop"
-            ],
-            "options": [
-                "Currency Exchange",
-                "Lost-and-Found Office",
-                "City Hall",
-                "Watch Repair Shop"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Look past any similar-sounding options — only one place truly lets you exchange some leftover currency.",
-            "explanation": "This matches because Currency Exchange is the standard place to exchange some leftover currency.",
-            "id": "td_l61_q1",
-            "travelDocuments": "Museum Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I'm a little short on time — where's the best place to take the kids to a puppet show?",
-            "itinerary": [
-                "Family Puppet Show Theater",
-                "Family Relative's Home",
-                "Family Splash Pad",
-                "Family Baby Supplies Store"
-            ],
-            "options": [
-                "Puppet Show Theater",
-                "Relative's Home",
-                "Splash Pad",
-                "Baby Supplies Store"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Think practically: if you needed to take the kids to a puppet show right now, where would you head?",
-            "explanation": "The clearest match is Puppet Show Theater, since that's exactly its purpose: to take the kids to a puppet show.",
-            "id": "td_l61_q2",
-            "travelDocuments": "Boarding Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Something's come up, and I need to buy a couple of new shirts quickly.",
-            "itinerary": [
-                "Marketplace Craft Store",
-                "Marketplace Perfume Shop",
-                "Marketplace Clothing Store",
-                "Marketplace Pet Store"
-            ],
-            "options": [
-                "Craft Store",
-                "Perfume Shop",
-                "Clothing Store",
-                "Pet Store"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Rule out the options that don't fit someone trying to buy a couple of new shirts.",
-            "explanation": "Travelers head to the Clothing Store whenever they need to buy a couple of new shirts.",
-            "id": "td_l61_q3",
-            "travelDocuments": "Travel Insurance"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Before we head to the next stop, I need to buy some handmade chocolates.",
-            "itinerary": [
-                "Gourmet Food Hall",
-                "Gourmet Coffee Roastery",
-                "Gourmet Vineyard Tour",
-                "Gourmet Chocolate Shop"
-            ],
-            "options": [
-                "Food Hall",
-                "Coffee Roastery",
-                "Vineyard Tour",
-                "Chocolate Shop"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Focus on the verb in the request: the traveler needs to buy some handmade chocolates.",
-            "explanation": "Chocolate Shop makes sense here because that's precisely where people go to buy some handmade chocolates.",
-            "id": "td_l62_q1",
-            "travelDocuments": "Museum Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "One more thing on my list: I need to try traditional brush calligraphy.",
-            "itinerary": [
-                "Scholars' Traditional Music Workshop",
-                "Scholars' University Campus Tour",
-                "Scholars' Heritage Walking Tour Office",
-                "Scholars' Calligraphy Workshop"
-            ],
-            "options": [
-                "Traditional Music Workshop",
-                "University Campus Tour",
-                "Heritage Walking Tour Office",
-                "Calligraphy Workshop"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Ask yourself which of the four options is built for one specific purpose: to try traditional brush calligraphy.",
-            "explanation": "Calligraphy Workshop is correct because that's exactly where travelers go to try traditional brush calligraphy.",
-            "id": "td_l62_q2",
-            "travelDocuments": "Passport"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I nearly forgot — I still need to find someone who can translate a contract. Any suggestions?",
-            "itinerary": [
-                "Corporate Airport Business Lounge",
-                "Corporate Convention Center",
-                "Corporate Corporate Reception Desk",
-                "Corporate Interpreter Service Desk"
-            ],
-            "options": [
-                "Airport Business Lounge",
-                "Convention Center",
-                "Corporate Reception Desk",
-                "Interpreter Service Desk"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "One of these four exists specifically to help people find someone who can translate a contract — look for it.",
-            "explanation": "Interpreter Service Desk fits perfectly here, as it's set up for people who need to find someone who can translate a contract.",
-            "id": "td_l62_q3",
-            "travelDocuments": "Boarding Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I'm looking for somewhere to get some travel vaccinations before we move on.",
-            "itinerary": [
-                "Wanderer's Metro Station",
-                "Wanderer's Taxi Stand",
-                "Wanderer's Travel Clinic",
-                "Wanderer's Transfer Desk"
-            ],
-            "options": [
-                "Metro Station",
-                "Taxi Stand",
-                "Travel Clinic",
-                "Transfer Desk"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Read the request closely: the key detail is that this person needs to get some travel vaccinations.",
-            "explanation": "Of the four options, only Travel Clinic is designed to let someone get some travel vaccinations.",
-            "id": "td_l63_q1",
-            "travelDocuments": "Train Ticket"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I'm a little short on time — where's the best place to get help with a stubborn Wi-Fi problem?",
-            "itinerary": [
-                "Digital IT Help Desk",
-                "Digital Tech Support Center",
-                "Digital Laptop Rental Counter",
-                "Digital Translation Device Counter"
-            ],
-            "options": [
-                "IT Help Desk",
-                "Tech Support Center",
-                "Laptop Rental Counter",
-                "Translation Device Counter"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Not all four fit. Focus on the one place designed to let someone get help with a stubborn Wi-Fi problem.",
-            "explanation": "When someone needs to get help with a stubborn Wi-Fi problem, Tech Support Center is the natural choice.",
-            "id": "td_l63_q2",
-            "travelDocuments": "Boarding Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Something's come up, and I need to treat some chronic back pain quickly.",
-            "itinerary": [
-                "Wellness Physiotherapy Center",
-                "Wellness Massage Therapy Center",
-                "Wellness Acupuncture Clinic",
-                "Wellness Wellness Retreat"
-            ],
-            "options": [
-                "Physiotherapy Center",
-                "Massage Therapy Center",
-                "Acupuncture Clinic",
-                "Wellness Retreat"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "The right answer is the place whose main job is to help people treat some chronic back pain.",
-            "explanation": "Physiotherapy Center is the best fit — it exists specifically to help people treat some chronic back pain.",
-            "id": "td_l63_q3",
-            "travelDocuments": "Travel Insurance"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Before we head to the next stop, I need to enjoy a whole weekend of live music.",
-            "itinerary": [
-                "Spotlight Drive-In Theater",
-                "Spotlight Music Festival Grounds",
-                "Spotlight Wildlife Safari Park",
-                "Spotlight Rooftop Bar"
-            ],
-            "options": [
-                "Drive-In Theater",
-                "Music Festival Grounds",
-                "Wildlife Safari Park",
-                "Rooftop Bar"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Picture exactly where a traveler would go to enjoy a whole weekend of live music.",
-            "explanation": "Since the traveler wants to enjoy a whole weekend of live music, Music Festival Grounds is the logical destination.",
-            "id": "td_l64_q1",
-            "travelDocuments": "ID Card"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "One more thing on my list: I need to report a lost wallet.",
-            "itinerary": [
-                "Neighborhood Currency Exchange",
-                "Neighborhood Lost-and-Found Office",
-                "Neighborhood City Hall",
-                "Neighborhood Watch Repair Shop"
-            ],
-            "options": [
-                "Currency Exchange",
-                "Lost-and-Found Office",
-                "City Hall",
-                "Watch Repair Shop"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Match the purpose, not just the wording — where does someone actually go to report a lost wallet?",
-            "explanation": "The request points directly to the Lost-and-Found Office, since that's where you'd report a lost wallet.",
-            "id": "td_l64_q2",
-            "travelDocuments": "Passport"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I nearly forgot — I still need to let the toddlers splash around safely. Any suggestions?",
-            "itinerary": [
-                "Family Puppet Show Theater",
-                "Family Baby Supplies Store",
-                "Family Splash Pad",
-                "Family Relative's Home"
-            ],
-            "options": [
-                "Puppet Show Theater",
-                "Baby Supplies Store",
-                "Splash Pad",
-                "Relative's Home"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Think about which kind of place specializes in helping people let the toddlers splash around safely.",
-            "explanation": "Splash Pad exists specifically for this — it's the place to let the toddlers splash around safely.",
-            "id": "td_l64_q3",
-            "travelDocuments": "ID Card"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I'm looking for somewhere to buy supplies for a craft project before we move on.",
-            "itinerary": [
-                "Marketplace Clothing Store",
-                "Marketplace Perfume Shop",
-                "Marketplace Pet Store",
-                "Marketplace Craft Store"
-            ],
-            "options": [
-                "Clothing Store",
-                "Perfume Shop",
-                "Pet Store",
-                "Craft Store"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Focus on the verb in the request: the traveler needs to buy supplies for a craft project.",
-            "explanation": "The clearest match is Craft Store, since that's exactly its purpose: to buy supplies for a craft project.",
-            "id": "td_l65_q1",
-            "travelDocuments": "Train Ticket"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I'm a little short on time — where's the best place to see how the local coffee is roasted?",
-            "itinerary": [
-                "Gourmet Chocolate Shop",
-                "Gourmet Food Hall",
-                "Gourmet Vineyard Tour",
-                "Gourmet Coffee Roastery"
-            ],
-            "options": [
-                "Chocolate Shop",
-                "Food Hall",
-                "Vineyard Tour",
-                "Coffee Roastery"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Rule out the options that don't fit someone trying to see how the local coffee is roasted.",
-            "explanation": "This matches because Coffee Roastery is the standard place to see how the local coffee is roasted.",
-            "id": "td_l65_q2",
-            "travelDocuments": "ID Card"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Something's come up, and I need to join a walking tour of the old town quickly.",
-            "itinerary": [
-                "Scholars' Calligraphy Workshop",
-                "Scholars' Traditional Music Workshop",
-                "Scholars' Heritage Walking Tour Office",
-                "Scholars' University Campus Tour"
-            ],
-            "options": [
-                "Calligraphy Workshop",
-                "Traditional Music Workshop",
-                "Heritage Walking Tour Office",
-                "University Campus Tour"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Ask yourself which of the four options is built for one specific purpose: to join a walking tour of the old town.",
-            "explanation": "Heritage Walking Tour Office is correct because that's exactly where travelers go to join a walking tour of the old town.",
-            "id": "td_l65_q3",
-            "travelDocuments": "Travel Insurance"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Before we head to the next stop, I need to get some quiet work done ahead of a flight.",
-            "itinerary": [
-                "Corporate Convention Center",
-                "Corporate Airport Business Lounge",
-                "Corporate Interpreter Service Desk",
-                "Corporate Corporate Reception Desk"
-            ],
-            "options": [
-                "Convention Center",
-                "Airport Business Lounge",
-                "Interpreter Service Desk",
-                "Corporate Reception Desk"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Look past any similar-sounding options — only one place truly lets you get some quiet work done ahead of a flight.",
-            "explanation": "Airport Business Lounge fits perfectly here, as it's set up for people who need to get some quiet work done ahead of a flight.",
-            "id": "td_l66_q1",
-            "travelDocuments": "ID Card"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "One more thing on my list: I need to catch the subway across town.",
-            "itinerary": [
-                "Wanderer's Transfer Desk",
-                "Wanderer's Travel Clinic",
-                "Wanderer's Taxi Stand",
-                "Wanderer's Metro Station"
-            ],
-            "options": [
-                "Transfer Desk",
-                "Travel Clinic",
-                "Taxi Stand",
-                "Metro Station"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Think practically: if you needed to catch the subway across town right now, where would you head?",
-            "explanation": "Of the four options, only Metro Station is designed to let someone catch the subway across town.",
-            "id": "td_l66_q2",
-            "travelDocuments": "Train Ticket"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I nearly forgot — I still need to rent a handheld translator for the trip. Any suggestions?",
-            "itinerary": [
-                "Digital IT Help Desk",
-                "Digital Translation Device Counter",
-                "Digital Laptop Rental Counter",
-                "Digital Tech Support Center"
-            ],
-            "options": [
-                "IT Help Desk",
-                "Translation Device Counter",
-                "Laptop Rental Counter",
-                "Tech Support Center"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Not all four fit. Focus on the one place designed to let someone rent a handheld translator for the trip.",
-            "explanation": "Travelers head to the Translation Device Counter whenever they need to rent a handheld translator for the trip.",
-            "id": "td_l66_q3",
-            "travelDocuments": "Hotel Reservation"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I'm looking for somewhere to unwind completely for a few days before we move on.",
-            "itinerary": [
-                "Wellness Massage Therapy Center",
-                "Wellness Physiotherapy Center",
-                "Wellness Wellness Retreat",
-                "Wellness Acupuncture Clinic"
-            ],
-            "options": [
-                "Massage Therapy Center",
-                "Physiotherapy Center",
-                "Wellness Retreat",
-                "Acupuncture Clinic"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Picture exactly where a traveler would go to unwind completely for a few days.",
-            "explanation": "When someone needs to unwind completely for a few days, Wellness Retreat is the natural choice.",
-            "id": "td_l67_q1",
-            "travelDocuments": "Hotel Reservation"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I'm a little short on time — where's the best place to watch a movie from the car?",
-            "itinerary": [
-                "Spotlight Wildlife Safari Park",
-                "Spotlight Rooftop Bar",
-                "Spotlight Music Festival Grounds",
-                "Spotlight Drive-In Theater"
-            ],
-            "options": [
-                "Wildlife Safari Park",
-                "Rooftop Bar",
-                "Music Festival Grounds",
-                "Drive-In Theater"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Match the purpose, not just the wording — where does someone actually go to watch a movie from the car?",
-            "explanation": "Drive-In Theater makes sense here because that's precisely where people go to watch a movie from the car.",
-            "id": "td_l67_q2",
-            "travelDocuments": "Passport"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Something's come up, and I need to register a temporary address for a visa application quickly.",
-            "itinerary": [
-                "Neighborhood Watch Repair Shop",
-                "Neighborhood Lost-and-Found Office",
-                "Neighborhood Currency Exchange",
-                "Neighborhood City Hall"
-            ],
-            "options": [
-                "Watch Repair Shop",
-                "Lost-and-Found Office",
-                "Currency Exchange",
-                "City Hall"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "One of these four exists specifically to help people register a temporary address for a visa application — look for it.",
-            "explanation": "City Hall is the best fit — it exists specifically to help people register a temporary address for a visa application.",
-            "id": "td_l67_q3",
-            "travelDocuments": "Hotel Reservation"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Before we head to the next stop, I need to visit some cousins while in town.",
-            "itinerary": [
-                "Family Baby Supplies Store",
-                "Family Puppet Show Theater",
-                "Family Splash Pad",
-                "Family Relative's Home"
-            ],
-            "options": [
-                "Baby Supplies Store",
-                "Puppet Show Theater",
-                "Splash Pad",
-                "Relative's Home"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Read the request closely: the key detail is that this person needs to visit some cousins while in town.",
-            "explanation": "The request points directly to the Relative's Home, since that's where you'd visit some cousins while in town.",
-            "id": "td_l68_q1",
-            "travelDocuments": "City Map"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "One more thing on my list: I need to buy food for a travel companion's cat.",
-            "itinerary": [
-                "Marketplace Perfume Shop",
-                "Marketplace Pet Store",
-                "Marketplace Clothing Store",
-                "Marketplace Craft Store"
-            ],
-            "options": [
-                "Perfume Shop",
-                "Pet Store",
-                "Clothing Store",
-                "Craft Store"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "The right answer is the place whose main job is to help people buy food for a travel companion's cat.",
-            "explanation": "Since the traveler wants to buy food for a travel companion's cat, Pet Store is the logical destination.",
-            "id": "td_l68_q2",
-            "travelDocuments": "Train Ticket"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I nearly forgot — I still need to tour a vineyard outside the city. Any suggestions?",
-            "itinerary": [
-                "Gourmet Food Hall",
-                "Gourmet Vineyard Tour",
-                "Gourmet Chocolate Shop",
-                "Gourmet Coffee Roastery"
-            ],
-            "options": [
-                "Food Hall",
-                "Vineyard Tour",
-                "Chocolate Shop",
-                "Coffee Roastery"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Think about which kind of place specializes in helping people tour a vineyard outside the city.",
-            "explanation": "Vineyard Tour exists specifically for this — it's the place to tour a vineyard outside the city.",
-            "id": "td_l68_q3",
-            "travelDocuments": "Boarding Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I'm looking for somewhere to see the oldest university campus in the city before we move on.",
-            "itinerary": [
-                "Scholars' University Campus Tour",
-                "Scholars' Calligraphy Workshop",
-                "Scholars' Heritage Walking Tour Office",
-                "Scholars' Traditional Music Workshop"
-            ],
-            "options": [
-                "University Campus Tour",
-                "Calligraphy Workshop",
-                "Heritage Walking Tour Office",
-                "Traditional Music Workshop"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Rule out the options that don't fit someone trying to see the oldest university campus in the city.",
-            "explanation": "The clearest match is University Campus Tour, since that's exactly its purpose: to see the oldest university campus in the city.",
-            "id": "td_l69_q1",
-            "travelDocuments": "City Map"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I'm a little short on time — where's the best place to attend a large business convention?",
-            "itinerary": [
-                "Corporate Interpreter Service Desk",
-                "Corporate Airport Business Lounge",
-                "Corporate Convention Center",
-                "Corporate Corporate Reception Desk"
-            ],
-            "options": [
-                "Interpreter Service Desk",
-                "Airport Business Lounge",
-                "Convention Center",
-                "Corporate Reception Desk"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Ask yourself which of the four options is built for one specific purpose: to attend a large business convention.",
-            "explanation": "Convention Center fits perfectly here, as it's set up for people who need to attend a large business convention.",
-            "id": "td_l69_q2",
-            "travelDocuments": "Passport"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Something's come up, and I need to grab a taxi in a hurry quickly.",
-            "itinerary": [
-                "Wanderer's Transfer Desk",
-                "Wanderer's Metro Station",
-                "Wanderer's Taxi Stand",
-                "Wanderer's Travel Clinic"
-            ],
-            "options": [
-                "Transfer Desk",
-                "Metro Station",
-                "Taxi Stand",
-                "Travel Clinic"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Think practically: if you needed to grab a taxi in a hurry right now, where would you head?",
-            "explanation": "Taxi Stand is correct because that's exactly where travelers go to grab a taxi in a hurry.",
-            "id": "td_l69_q3",
-            "travelDocuments": "Boarding Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Before we head to the next stop, I need to rent a laptop for a few days.",
-            "itinerary": [
-                "Digital Laptop Rental Counter",
-                "Digital Tech Support Center",
-                "Digital Translation Device Counter",
-                "Digital IT Help Desk"
-            ],
-            "options": [
-                "Laptop Rental Counter",
-                "Tech Support Center",
-                "Translation Device Counter",
-                "IT Help Desk"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Look past any similar-sounding options — only one place truly lets you rent a laptop for a few days.",
-            "explanation": "Travelers head to the Laptop Rental Counter whenever they need to rent a laptop for a few days.",
-            "id": "td_l70_q1",
-            "travelDocuments": "Travel Insurance"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "One more thing on my list: I need to try traditional acupuncture.",
-            "itinerary": [
-                "Wellness Massage Therapy Center",
-                "Wellness Acupuncture Clinic",
-                "Wellness Wellness Retreat",
-                "Wellness Physiotherapy Center"
-            ],
-            "options": [
-                "Massage Therapy Center",
-                "Acupuncture Clinic",
-                "Wellness Retreat",
-                "Physiotherapy Center"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Match the purpose, not just the wording — where does someone actually go to try traditional acupuncture?",
-            "explanation": "When someone needs to try traditional acupuncture, Acupuncture Clinic is the natural choice.",
-            "id": "td_l70_q2",
-            "travelDocuments": "Travel Insurance"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I nearly forgot — I still need to have a drink with a skyline view. Any suggestions?",
-            "itinerary": [
-                "Spotlight Music Festival Grounds",
-                "Spotlight Rooftop Bar",
-                "Spotlight Drive-In Theater",
-                "Spotlight Wildlife Safari Park"
-            ],
-            "options": [
-                "Music Festival Grounds",
-                "Rooftop Bar",
-                "Drive-In Theater",
-                "Wildlife Safari Park"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Not all four fit. Focus on the one place designed to let someone have a drink with a skyline view.",
-            "explanation": "Rooftop Bar makes sense here because that's precisely where people go to have a drink with a skyline view.",
-            "id": "td_l70_q3",
-            "travelDocuments": "Travel Insurance"
-        }
-    ]
+  "gameType": "travelDesk",
+  "batchIndex": 7,
+  "levels": "61-70",
+  "quests": [
+    {
+      "instruction": "Which service would be most useful here?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I've got my confirmation code and I'd rather not wait in the queue at reception.",
+      "itinerary": [
+        "Hotel Lobby Housekeeping Office",
+        "Hotel Lobby Bell Desk",
+        "Hotel Lobby Self Check-In Kiosk",
+        "Hotel Lobby Concierge Desk"
+      ],
+      "options": [
+        "Housekeeping Office",
+        "Bell Desk",
+        "Self Check-In Kiosk",
+        "Concierge Desk"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "A confirmation code lets you bypass a human agent, if the hotel offers it.",
+      "explanation": "A kiosk checks you in with just the confirmation code. The bell desk and concierge don't issue room keys.",
+      "id": "td_l61_q1",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Which option suits the whole group?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "We're a group of twelve coming off a coach, and our tour operator sent the room list yesterday.",
+      "itinerary": [
+        "Grand Hotel Restaurant Host Stand",
+        "Grand Hotel Spa Reception",
+        "Grand Hotel Bell Desk",
+        "Grand Hotel Group Check-In Desk"
+      ],
+      "options": [
+        "Restaurant Host Stand",
+        "Spa Reception",
+        "Bell Desk",
+        "Group Check-In Desk"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Twelve people with a pre-sent list need something faster than individual check-ins.",
+      "explanation": "A group check-in desk works from the tour operator's list and hands out keys quickly. Individual guests use the main reception.",
+      "id": "td_l61_q2",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Choose the most useful next step.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I think I mixed up the dates. My booking's for tomorrow, but I've turned up tonight. Do you have anything free?",
+      "itinerary": [
+        "Grand Hotel Tourist Information Office",
+        "Grand Hotel Booking Website Helpline",
+        "Grand Hotel Front Desk",
+        "Grand Hotel Concierge Desk"
+      ],
+      "options": [
+        "Tourist Information Office",
+        "Booking Website Helpline",
+        "Front Desk",
+        "Concierge Desk"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Availability tonight is known by the people managing the rooms right now.",
+      "explanation": "The front desk can see which rooms are free tonight and change your dates. A helpline can't tell you what's physically available.",
+      "id": "td_l61_q3",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Which option fits the situation best?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "It's freezing and there's only one thin blanket on the bed.",
+      "itinerary": [
+        "Grand Hotel Concierge Desk",
+        "Grand Hotel Housekeeping",
+        "Grand Hotel Bell Desk",
+        "Grand Hotel Room Service"
+      ],
+      "options": [
+        "Concierge Desk",
+        "Housekeeping",
+        "Bell Desk",
+        "Room Service"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Which team looks after bedding?",
+      "explanation": "Housekeeping supplies extra blankets and pillows. Room service brings food, not bedding.",
+      "id": "td_l62_q1",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Where should the traveler go to fix this?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "My colleague and I would like a quiet table for dinner tonight, ideally away from the bar.",
+      "itinerary": [
+        "Grand Hotel Business Centre",
+        "Grand Hotel Housekeeping",
+        "Grand Hotel Room Service",
+        "Grand Hotel Restaurant Host Stand"
+      ],
+      "options": [
+        "Business Centre",
+        "Housekeeping",
+        "Room Service",
+        "Restaurant Host Stand"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Table choices are made by whoever seats the guests.",
+      "explanation": "The host stand allocates tables and can reserve a quiet corner. Room service delivers to rooms and doesn't set tables in the restaurant.",
+      "id": "td_l62_q2",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Choose the most suitable service.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I have a very early meeting tomorrow. Could someone give me a wake-up call at half past five?",
+      "itinerary": [
+        "Grand Hotel Front Desk",
+        "Grand Hotel Gym",
+        "Grand Hotel Restaurant Host Stand",
+        "Grand Hotel Housekeeping"
+      ],
+      "options": [
+        "Front Desk",
+        "Gym",
+        "Restaurant Host Stand",
+        "Housekeeping"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Wake-up calls are booked with the desk that answers the phones day and night.",
+      "explanation": "The front desk sets wake-up calls and staffs the phones at all hours. Housekeeping starts later in the morning.",
+      "id": "td_l62_q3",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Choose the option that deals with the most urgent part first.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "The air conditioning isn't cooling at all and it's thirty-five degrees outside.",
+      "itinerary": [
+        "Grand Hotel Bell Desk",
+        "Grand Hotel Concierge Desk",
+        "Grand Hotel Housekeeping",
+        "Grand Hotel Maintenance Team"
+      ],
+      "options": [
+        "Bell Desk",
+        "Concierge Desk",
+        "Housekeeping",
+        "Maintenance Team"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "This is a broken machine, not a cleaning problem.",
+      "explanation": "Maintenance repairs air conditioning and other equipment. Housekeeping cleans rooms and can't fix technical faults.",
+      "id": "td_l63_q1",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Which counter can solve the real problem?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "My key card stopped working and I'm locked out of my room.",
+      "itinerary": [
+        "Grand Hotel Front Desk",
+        "Grand Hotel Maintenance Team",
+        "Grand Hotel Concierge Desk",
+        "Grand Hotel Housekeeping"
+      ],
+      "options": [
+        "Front Desk",
+        "Maintenance Team",
+        "Concierge Desk",
+        "Housekeeping"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Who programs and replaces key cards?",
+      "explanation": "The front desk re-encodes key cards and can let you in. Maintenance repairs equipment but doesn't issue cards.",
+      "id": "td_l63_q2",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Choose the most appropriate place to handle this.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "The party in the next room is still loud at one a.m. I've already asked them once to keep it down.",
+      "itinerary": [
+        "Grand Hotel Restaurant Host Stand",
+        "Grand Hotel Concierge Desk",
+        "Grand Hotel Housekeeping",
+        "Grand Hotel Night Manager"
+      ],
+      "options": [
+        "Restaurant Host Stand",
+        "Concierge Desk",
+        "Housekeeping",
+        "Night Manager"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "You've tried talking to the guests. You need someone with authority.",
+      "explanation": "The night manager can speak to noisy guests and move you if needed. Housekeeping and the concierge aren't on duty for disturbances.",
+      "id": "td_l63_q3",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Identify the most practical destination.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "We've got a rental car and I'm not sure where to leave it overnight. Is there someone at the entrance who can take the keys?",
+      "itinerary": [
+        "Grand Hotel Valet Desk",
+        "Grand Hotel Housekeeping",
+        "Grand Hotel Concierge Desk",
+        "Grand Hotel Bell Desk"
+      ],
+      "options": [
+        "Valet Desk",
+        "Housekeeping",
+        "Concierge Desk",
+        "Bell Desk"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Someone has to take the car and park it, not just answer questions.",
+      "explanation": "The valet desk takes charge of guests' cars and parks them. The bell desk handles luggage, and the concierge gives advice.",
+      "id": "td_l64_q1",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Pick the option that works within the time limit.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I need to print a forty-page contract for a signing tomorrow morning.",
+      "itinerary": [
+        "Grand Hotel Concierge Desk",
+        "Grand Hotel Business Centre",
+        "Grand Hotel Housekeeping",
+        "Grand Hotel Room Service"
+      ],
+      "options": [
+        "Concierge Desk",
+        "Business Centre",
+        "Housekeeping",
+        "Room Service"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "The volume and the deadline point to a place with proper printers.",
+      "explanation": "The business centre has printers for large jobs. The concierge could arrange a print shop but that takes time.",
+      "id": "td_l64_q2",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Which option best fits the traveler's schedule?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I'd like to reserve two seats on the five a.m. airport shuttle.",
+      "itinerary": [
+        "Grand Hotel Housekeeping",
+        "Grand Hotel Spa",
+        "Grand Hotel Room Service",
+        "Grand Hotel Airport Shuttle Desk"
+      ],
+      "options": [
+        "Housekeeping",
+        "Spa",
+        "Room Service",
+        "Airport Shuttle Desk"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Seat reservations for a hotel's own vehicle go through one desk.",
+      "explanation": "The shuttle desk holds the passenger list and departure times. Other departments don't manage the shuttle.",
+      "id": "td_l64_q3",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Choose the most useful next step.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Our room isn't ready, but we'd like to explore the city. Where can we leave our bags in the meantime?",
+      "itinerary": [
+        "Grand Hotel Room Service",
+        "Grand Hotel Spa Reception",
+        "Grand Hotel Bell Desk",
+        "Grand Hotel Business Centre"
+      ],
+      "options": [
+        "Room Service",
+        "Spa Reception",
+        "Bell Desk",
+        "Business Centre"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Bags need a secure holding point, not a service that delivers things.",
+      "explanation": "The bell desk stores guests' luggage safely and gives you a tag. The business centre and spa are for other services.",
+      "id": "td_l65_q1",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Who should the traveler ask first?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "My flight lands at one in the morning. Will there be someone at the hotel to let me in?",
+      "itinerary": [
+        "Grand Hotel Restaurant Host Stand",
+        "Grand Hotel 24-Hour Reception",
+        "Grand Hotel Concierge Desk",
+        "Grand Hotel Spa Reception"
+      ],
+      "options": [
+        "Restaurant Host Stand",
+        "24-Hour Reception",
+        "Concierge Desk",
+        "Spa Reception"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Not every desk works at night.",
+      "explanation": "A 24-hour reception is staffed at all hours. Tell them your arrival time so they can prepare your key.",
+      "id": "td_l65_q2",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Pick the option that works within the time limit.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I'm arriving after the restaurant has closed and I'll be starving. Is there any way to eat in my room?",
+      "itinerary": [
+        "Grand Hotel Bell Desk",
+        "Grand Hotel Concierge Desk",
+        "Grand Hotel Housekeeping",
+        "Grand Hotel Room Service"
+      ],
+      "options": [
+        "Bell Desk",
+        "Concierge Desk",
+        "Housekeeping",
+        "Room Service"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Which service brings food directly to your door?",
+      "explanation": "Room service is available later than the restaurant, and it comes to your room. It's worth asking the hours in advance.",
+      "id": "td_l65_q3",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Choose the most useful next step.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I booked on an app, and the hotel says it can't find my reservation.",
+      "itinerary": [
+        "Your Booking App Customer Service Line",
+        "Your Booking App Hotel Spa",
+        "Your Booking App Airport Information Desk",
+        "Your Booking App Tourist Information Office"
+      ],
+      "options": [
+        "Customer Service Line",
+        "Hotel Spa",
+        "Airport Information Desk",
+        "Tourist Information Office"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "The hotel has checked its own records. Who else holds the booking?",
+      "explanation": "The booking platform issued the reservation, so it can confirm or fix it. Have your confirmation number ready.",
+      "id": "td_l66_q1",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Which counter can solve the real problem?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "My name is spelled wrongly on the reservation, and it has to match my passport.",
+      "itinerary": [
+        "Grand Hotel Housekeeping",
+        "Grand Hotel Concierge Desk",
+        "Grand Hotel Reservations Department",
+        "Grand Hotel Bell Desk"
+      ],
+      "options": [
+        "Housekeeping",
+        "Concierge Desk",
+        "Reservations Department",
+        "Bell Desk"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Who has permission to edit a booking record?",
+      "explanation": "Reservations can correct the name before arrival so it matches your passport at check-in.",
+      "id": "td_l66_q2",
+      "travelDocuments": "Passport"
+    },
+    {
+      "instruction": "Which place can help with this request?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I need an invoice with our company's tax number for my expenses.",
+      "itinerary": [
+        "Grand Hotel Front Desk Cashier",
+        "Grand Hotel Bell Desk",
+        "Grand Hotel Housekeeping",
+        "Grand Hotel Concierge Desk"
+      ],
+      "options": [
+        "Front Desk Cashier",
+        "Bell Desk",
+        "Housekeeping",
+        "Concierge Desk"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Invoices come from the department handling payments.",
+      "explanation": "The front desk cashier issues invoices and can add company details. Other departments don't have access to billing.",
+      "id": "td_l66_q3",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Which service would be most useful here?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I'd like to stay two more nights. The room's perfect and I don't want to move.",
+      "itinerary": [
+        "Grand Hotel Housekeeping",
+        "Grand Hotel Bell Desk",
+        "Grand Hotel Room Service",
+        "Grand Hotel Front Desk"
+      ],
+      "options": [
+        "Housekeeping",
+        "Bell Desk",
+        "Room Service",
+        "Front Desk"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Extending a stay needs someone who can check availability and update your bill.",
+      "explanation": "The front desk can extend your booking if the room is free. Housekeeping and room service don't manage reservations.",
+      "id": "td_l67_q1",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Choose the most appropriate place to handle this.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I must cancel my stay next month. My booking allowed free cancellation up to thirty days before.",
+      "itinerary": [
+        "Grand Hotel Concierge Desk",
+        "Grand Hotel Housekeeping",
+        "Grand Hotel Reservations Office",
+        "Grand Hotel Bell Desk"
+      ],
+      "options": [
+        "Concierge Desk",
+        "Housekeeping",
+        "Reservations Office",
+        "Bell Desk"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "You're dealing with a future booking, not a current stay.",
+      "explanation": "Reservations handles future bookings and cancellations. Get a written confirmation of the cancellation.",
+      "id": "td_l67_q2",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Who should the traveler ask first?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I want to move my booking from July to August, but I booked through a travel agent.",
+      "itinerary": [
+        "Your Travel Agent Concierge Desk",
+        "Your Travel Agent Booking Office",
+        "Your Travel Agent Hotel Front Desk",
+        "Your Travel Agent Tourist Information Office"
+      ],
+      "options": [
+        "Concierge Desk",
+        "Booking Office",
+        "Hotel Front Desk",
+        "Tourist Information Office"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "The agent holds the contract. Changing dates directly with the hotel might leave the agent out.",
+      "explanation": "A booking made through an agent should be changed through that agent. Otherwise your records might not match.",
+      "id": "td_l67_q3",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Choose the best alternative.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "The hotel is overbooked and offers to move me to another one nearby. I'd like it to be the same standard and close by.",
+      "itinerary": [
+        "Grand Hotel Concierge Desk",
+        "Grand Hotel Bell Desk",
+        "Grand Hotel Front Desk Manager",
+        "Grand Hotel Housekeeping"
+      ],
+      "options": [
+        "Concierge Desk",
+        "Bell Desk",
+        "Front Desk Manager",
+        "Housekeeping"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Someone with authority has to agree the terms of the transfer.",
+      "explanation": "The front desk manager can authorise a comparable alternative. Ask for taxi costs to be covered too.",
+      "id": "td_l68_q1",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Where should the traveler go to fix this?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I paid extra for a sea view and the room looks onto a wall.",
+      "itinerary": [
+        "Grand Hotel Housekeeping",
+        "Grand Hotel Concierge Desk",
+        "Grand Hotel Front Desk",
+        "Grand Hotel Maintenance Team"
+      ],
+      "options": [
+        "Housekeeping",
+        "Concierge Desk",
+        "Front Desk",
+        "Maintenance Team"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "The problem is with the room allocation, not with the room's condition.",
+      "explanation": "The front desk can change your room to match the booking. Maintenance and housekeeping can't switch rooms.",
+      "id": "td_l68_q2",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "The pool is closed for repairs, and it was a big reason I booked. Could you offer a spa treatment instead?",
+      "itinerary": [
+        "Grand Hotel Housekeeping",
+        "Grand Hotel Duty Manager",
+        "Grand Hotel Restaurant Host Stand",
+        "Grand Hotel Bell Desk"
+      ],
+      "options": [
+        "Housekeeping",
+        "Duty Manager",
+        "Restaurant Host Stand",
+        "Bell Desk"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "You're asking for compensation, which needs someone with decision-making power.",
+      "explanation": "The duty manager can offer goodwill gestures like a spa voucher. Front-line staff often can't.",
+      "id": "td_l68_q3",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Which place or service can answer the real question behind the request?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I booked a flat through an app. The host says there's a key box at the door, but I can't find it.",
+      "itinerary": [
+        "Apartment Building Host, via the Booking App",
+        "Apartment Building Tourist Information Office",
+        "Apartment Building Police Station",
+        "Apartment Building Nearby Hotel Reception"
+      ],
+      "options": [
+        "Host, via the Booking App",
+        "Tourist Information Office",
+        "Police Station",
+        "Nearby Hotel Reception"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Private apartments don't have a reception, so who is responsible?",
+      "explanation": "The host knows where the key box is and can share the code. A hotel reception isn't linked to the flat.",
+      "id": "td_l69_q1",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Who should the traveler ask first?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "The hostel wants me to use a padlock for the lockers, but I don't have one.",
+      "itinerary": [
+        "City Hostel Bunk Dormitory",
+        "City Hostel Hostel Reception",
+        "City Hostel Hostel Kitchen",
+        "City Hostel Common Room"
+      ],
+      "options": [
+        "Bunk Dormitory",
+        "Hostel Reception",
+        "Hostel Kitchen",
+        "Common Room"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Which area is staffed, and might sell or lend one?",
+      "explanation": "Hostel receptions usually sell or lend padlocks. The kitchen and common room aren't staffed for that.",
+      "id": "td_l69_q2",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Pick the option that works within the time limit.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Breakfast at the B&B is at eight, but I've got an early train. Could they serve it earlier?",
+      "itinerary": [
+        "Riverside Ticket Office",
+        "Riverside Bakery Across the Street",
+        "Riverside B&B Owner",
+        "Riverside Taxi Rank"
+      ],
+      "options": [
+        "Ticket Office",
+        "Bakery Across the Street",
+        "B&B Owner",
+        "Taxi Rank"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "The person who decides is the person running the place.",
+      "explanation": "A B&B owner can often provide an earlier or packed breakfast if you ask ahead.",
+      "id": "td_l69_q3",
+      "travelDocuments": "Train Ticket"
+    },
+    {
+      "instruction": "Choose the option that deals with the most urgent part first.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "There's water dripping from the bathroom ceiling onto the bed.",
+      "itinerary": [
+        "Grand Hotel Restaurant Host Stand",
+        "Grand Hotel Concierge Desk",
+        "Grand Hotel Bell Desk",
+        "Grand Hotel Front Desk"
+      ],
+      "options": [
+        "Restaurant Host Stand",
+        "Concierge Desk",
+        "Bell Desk",
+        "Front Desk"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "You want a quick fix and a safe place to sleep.",
+      "explanation": "The front desk can send maintenance and offer another room immediately. The others can't solve either part.",
+      "id": "td_l70_q1",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Which place or service can answer the real question behind the request?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "We'd like a quiet family dinner and a babysitter for our two-year-old.",
+      "itinerary": [
+        "Grand Hotel Housekeeping",
+        "Grand Hotel Concierge Desk",
+        "Grand Hotel Spa Reception",
+        "Grand Hotel Bell Desk"
+      ],
+      "options": [
+        "Housekeeping",
+        "Concierge Desk",
+        "Spa Reception",
+        "Bell Desk"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Two arrangements, one person who organises things beyond the hotel.",
+      "explanation": "A concierge can book restaurants and find reliable childcare. Housekeeping and the bell desk don't organise outside services.",
+      "id": "td_l70_q2",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Which counter can solve the real problem?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I'm checking out and the bill has a minibar charge, but I never opened it.",
+      "itinerary": [
+        "Grand Hotel Front Desk Cashier",
+        "Grand Hotel Housekeeping",
+        "Grand Hotel Concierge Desk",
+        "Grand Hotel Bell Desk"
+      ],
+      "options": [
+        "Front Desk Cashier",
+        "Housekeeping",
+        "Concierge Desk",
+        "Bell Desk"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Charges are corrected where the bill is produced.",
+      "explanation": "The cashier can remove the charge or check the minibar report. Point it out before paying.",
+      "id": "td_l70_q3",
+      "travelDocuments": "Hotel Reservation"
+    }
+  ]
 }

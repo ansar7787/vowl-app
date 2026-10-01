@@ -8,720 +8,720 @@
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Would you like a window or an aisle seat?",
-            "textToSpeak": "Would you like a window or an aisle seat?",
+            "word": "I said Tuesday, not Thursday.",
+            "textToSpeak": "I said Tuesday, not Thursday.",
             "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Peak on 'said' — the speaker is repeating a statement",
+                "Peaks on 'Tuesday' and 'Thursday' — the two days are contrasted"
             ],
-            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                1,
-                2,
-                3,
-                0
-            ],
-            "hint": "This question offers two options using 'or.' Listen for how the pitch moves across 'window' and 'aisle seat.'",
-            "explanation": "Choice questions like this one rise on the first option and fall on the second. The pitch rises on 'window' then falls on 'aisle seat,' showing the question is complete.",
-            "pitchRule": "📈📉 Pitch rises on the first choice and falls on the last, showing the question is complete.",
-            "emotionContext": "Curious"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L61_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "Is this flight direct to London?",
-            "textToSpeak": "Is this flight direct to London?",
-            "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Peaks on 'Tuesday' and 'Thursday' — the two days are contrasted",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
+                4,
                 1,
-                2,
                 3
             ],
-            "hint": "This question expects a simple 'yes' or 'no.' Listen to the pitch on 'London.'",
-            "explanation": "Yes/No questions rise continuously to the end. The pitch climbs on 'London' to invite a short answer.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Excited"
+            "hint": "Two days are compared in one sentence. Listen for which words the speaker pushes out of the background.",
+            "explanation": "When two items are set against each other, both carry extra pitch height and force. 'Said' stays low because the real issue is which day, not whether it was said.",
+            "pitchRule": "🎯 Contrast puts a pitch peak on each of the two competing words.",
+            "emotionContext": "Firm"
         },
         {
-            "id": "ACC_INTONATIONMIMIC_L61_Q3",
-            "instruction": "Identify the intonation",
+            "id": "ACC_INTONATIONMIMIC_L61_Q2",
+            "instruction": "The barista brought a small cup, but you ordered a large one. Which word gets the peak when you correct it?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Should we take a taxi or the train?",
-            "textToSpeak": "Should we take a taxi or the train?",
+            "word": "I asked for a large coffee.",
+            "textToSpeak": "I asked for a large coffee.",
             "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Peak on 'large' — the size is wrong",
+                "Peak on 'coffee' — the drink is wrong"
             ],
-            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
+            "correctAnswer": "Peak on 'large' — the size is wrong",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
                 2,
-                3,
+                4,
+                2
+            ],
+            "hint": "Ask yourself what was actually wrong with the order. The peak follows the problem.",
+            "explanation": "The mistake is the size, so 'large' carries the peak. 'Coffee' is fine, so it is delivered with less energy and the pitch drops after it.",
+            "pitchRule": "🎯 The peak goes on the word that fixes the mistake.",
+            "emotionContext": "Polite but firm"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L61_Q3",
+            "instruction": "The airline gave you an aisle seat, but you booked a window seat. Which word will you stress when you speak to the agent?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "I reserved a window seat.",
+            "textToSpeak": "I reserved a window seat.",
+            "options": [
+                "Peak on 'window' — what was booked",
+                "Peak on 'reserved' — what you did"
+            ],
+            "correctAnswer": "Peak on 'window' — what was booked",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                1,
+                2,
+                4,
                 0
             ],
-            "hint": "This question offers a choice between two options. Notice the pitch pattern across 'taxi' and 'train.'",
-            "explanation": "Choice questions rise on the first option and fall on the last. The pitch rises on 'taxi' and falls on 'train,' completing the question.",
-            "pitchRule": "📈📉 Pitch rises on the first choice and falls on the last, showing the question is complete.",
-            "emotionContext": "Doubtful"
+            "hint": "Decide what the agent needs to notice first. Where does the disagreement sit?",
+            "explanation": "The type of seat is the disputed detail, so 'window' takes the peak. 'Reserved' is background, since nobody disputes that you booked something.",
+            "pitchRule": "🎯 Stress the disputed word so the listener hears where the error is.",
+            "emotionContext": "Concerned"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L62_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Do you have your passport ready?",
-            "textToSpeak": "Do you have your passport ready?",
+            "word": "No, I booked a hotel.",
+            "textToSpeak": "No, I booked a hotel.",
             "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Peak on 'hotel' — the new information",
+                "Peak on 'booked' — the repeated action"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                1,
-                1,
-                2,
-                3
-            ],
-            "hint": "This question can be answered with 'yes' or 'no.' Listen to the pitch on 'ready.'",
-            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'ready' as the speaker checks a fact.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Neutral"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L62_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "Do you want to fly in the morning or the evening?",
-            "textToSpeak": "Do you want to fly in the morning or the evening?",
-            "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
+            "correctAnswer": "Peak on 'hotel' — the new information",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
                 2,
-                3,
+                2,
+                4
+            ],
+            "hint": "A friend has just asked, 'Did you book a flight?' Which part of your reply is new to them?",
+            "explanation": "'Booked' was already implied by the question, so it stays quiet. The new piece is 'hotel', and that word carries the peak and the final fall.",
+            "pitchRule": "🎯 New information gets the peak; repeated information fades.",
+            "emotionContext": "Neutral"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L62_Q2",
+            "instruction": "Your manager asks, 'Who broke the printer?' Which word carries the peak in your answer?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "Marco broke it.",
+            "textToSpeak": "Marco broke it.",
+            "options": [
+                "Peak on 'broke' — the action",
+                "Peak on 'Marco' — the answer to 'who'"
+            ],
+            "correctAnswer": "Peak on 'Marco' — the answer to 'who'",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                4,
+                2,
+                1,
                 0
             ],
-            "hint": "This question gives two time options joined by 'or.' Listen to the pitch across 'morning' and 'evening.'",
-            "explanation": "Choice questions rise on the first option and fall on the second. The pitch rises on 'morning' and falls on 'evening.'",
-            "pitchRule": "📈📉 Pitch rises on the first choice and falls on the last, showing the question is complete.",
-            "emotionContext": "Surprised"
+            "hint": "Think about what the manager wants to find out. That word is where your voice should rise.",
+            "explanation": "The question already established that something was broken, so 'broke' is given. 'Marco' is the missing information and takes the peak.",
+            "pitchRule": "🎯 The word that answers the question carries the peak.",
+            "emotionContext": "Neutral"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L62_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "A colleague asks, 'Where is the spare key?' Which word gets the peak in your answer?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Is your luggage under the weight limit?",
-            "textToSpeak": "Is your luggage under the weight limit?",
+            "word": "It's under the flowerpot.",
+            "textToSpeak": "It's under the flowerpot.",
             "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Peak on 'flowerpot' — the location",
+                "Peak on 'under' — the position"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Peak on 'flowerpot' — the location",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
-                1,
                 2,
-                3
+                2,
+                4
             ],
-            "hint": "This question expects 'yes' or 'no.' Notice the pitch on 'limit.'",
-            "explanation": "Yes/No questions rise continuously to the end. The pitch climbs on 'limit' to seek confirmation.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Determined"
+            "hint": "The question asked 'where', so ask which word answers it best.",
+            "explanation": "The answer to 'where' is a location, so 'flowerpot' takes the pitch. 'Under' is part of the answer but less surprising, so it stays lower.",
+            "pitchRule": "🎯 A 'where' answer places the peak on the place word.",
+            "emotionContext": "Helpful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L63_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Are you traveling for business or for pleasure?",
-            "textToSpeak": "Are you traveling for business or for pleasure?",
+            "word": "It wasn't Priya who called, it was Daniel.",
+            "textToSpeak": "It wasn't Priya who called, it was Daniel.",
             "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Peak on 'called' — whether the call happened is disputed",
+                "Peaks on 'Priya' and 'Daniel' — the names are contrasted"
             ],
-            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                1,
-                2,
-                3,
-                0
-            ],
-            "hint": "This question offers two reasons joined by 'or.' Listen to the pitch across 'business' and 'pleasure.'",
-            "explanation": "Choice questions rise on the first option and fall on the last. The pitch rises on 'business' and falls on 'pleasure.'",
-            "pitchRule": "📈📉 Pitch rises on the first choice and falls on the last, showing the question is complete.",
-            "emotionContext": "Curious"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L63_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "Did you check in online already?",
-            "textToSpeak": "Did you check in online already?",
-            "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Peaks on 'Priya' and 'Daniel' — the names are contrasted",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
+                4,
                 1,
-                2,
                 3
             ],
-            "hint": "This question can be answered with 'yes' or 'no.' Listen to the pitch on 'already.'",
-            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'already' as the speaker checks an action.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Excited"
+            "hint": "Listen for which two words carry the biggest pitch movement.",
+            "explanation": "The correction is about who made the call, so both names take peaks. 'Called' is agreed by both sides and stays low.",
+            "pitchRule": "🎯 In a correction, both the wrong and the right item stand out.",
+            "emotionContext": "Matter-of-fact"
         },
         {
-            "id": "ACC_INTONATIONMIMIC_L63_Q3",
-            "instruction": "Identify the intonation",
+            "id": "ACC_INTONATIONMIMIC_L63_Q2",
+            "instruction": "A coworker says the seminar is in Room 5. It's actually Room 15. Which word will you stress?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Would you prefer a hotel or a hostel?",
-            "textToSpeak": "Would you prefer a hotel or a hostel?",
+            "word": "It's in Room fifteen.",
+            "textToSpeak": "It's in Room fifteen.",
             "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Peak on 'Room' — the place type is corrected",
+                "Peak on 'fifteen' — the number is corrected"
             ],
-            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Peak on 'fifteen' — the number is corrected",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
                 2,
-                3,
-                0
+                2,
+                4
             ],
-            "hint": "This question offers two lodging options. Notice the pitch pattern across 'hotel' and 'hostel.'",
-            "explanation": "Choice questions rise on the first option and fall on the second. The pitch rises on 'hotel' and falls on 'hostel.'",
-            "pitchRule": "📈📉 Pitch rises on the first choice and falls on the last, showing the question is complete.",
-            "emotionContext": "Doubtful"
+            "hint": "Only one part of your coworker's statement was wrong. Decide which.",
+            "explanation": "The number is the error, so 'fifteen' takes the peak. In numbers like this, the stress falls on the last syllable to separate 'fifteen' from 'fifty'.",
+            "pitchRule": "🎯 Correct the number, and stress its final syllable for -teen numbers.",
+            "emotionContext": "Helpful"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L63_Q3",
+            "instruction": "Your friend thinks you're allergic to peanuts, but it is shellfish. Which word will you stress?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "I'm allergic to shellfish.",
+            "textToSpeak": "I'm allergic to shellfish.",
+            "options": [
+                "Peak on 'allergic' — the condition is corrected",
+                "Peak on 'shellfish' — the allergy is corrected"
+            ],
+            "correctAnswer": "Peak on 'shellfish' — the allergy is corrected",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                1,
+                2,
+                2,
+                4
+            ],
+            "hint": "Your friend already has the condition right. What did they get wrong?",
+            "explanation": "Your friend was right that you have an allergy, so 'allergic' stays quiet. 'Shellfish' is the correction and gets the peak and the fall.",
+            "pitchRule": "🎯 Leave the correct part quiet and push the corrected part.",
+            "emotionContext": "Patient"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L64_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Is the airport far from the city center?",
-            "textToSpeak": "Is the airport far from the city center?",
+            "word": "Anna didn't drive to the airport.",
+            "textToSpeak": "Anna didn't drive to the airport.",
             "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Peak on 'Anna' — someone else drove",
+                "Peak on 'airport' — she drove elsewhere"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Peak on 'Anna' — someone else drove",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
-                1,
+                4,
                 2,
-                3
+                1,
+                0
             ],
-            "hint": "This question expects 'yes' or 'no.' Listen to the pitch on 'center.'",
-            "explanation": "Yes/No questions rise continuously to the end. The pitch climbs on 'center' to invite a short answer.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Neutral"
+            "hint": "The speaker is contradicting an assumption. Which part of the assumption is being denied?",
+            "explanation": "A peak on 'Anna' suggests someone else did the driving. A peak on 'airport' would suggest she drove somewhere different. The words are identical, but the stress changes the message.",
+            "pitchRule": "🎯 The stressed word in a denial shows what is being denied.",
+            "emotionContext": "Matter-of-fact"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L64_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "You promised to buy coffee, and someone says you promised to pay for dinner. Which word will you stress?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Should we visit the museum or the beach first?",
-            "textToSpeak": "Should we visit the museum or the beach first?",
+            "word": "I never promised to pay for dinner.",
+            "textToSpeak": "I never promised to pay for dinner.",
             "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Peak on 'dinner' — the promise was about something else",
+                "Peak on 'promised' — no promise was ever made"
             ],
-            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
+            "correctAnswer": "Peak on 'dinner' — the promise was about something else",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
-                2,
+                1,
                 3,
-                0
+                4
             ],
-            "hint": "This question gives two destination options. Listen to the pitch across 'museum' and 'beach.'",
-            "explanation": "Choice questions rise on the first option and fall on the last. The pitch rises on 'museum' and falls on 'beach.'",
-            "pitchRule": "📈📉 Pitch rises on the first choice and falls on the last, showing the question is complete.",
-            "emotionContext": "Surprised"
+            "hint": "The speaker denies only part of the claim. Work out which part.",
+            "explanation": "Stressing 'dinner' means 'I promised something, just not that'. Stressing 'promised' would deny making any promise at all, which isn't what you mean.",
+            "pitchRule": "🎯 Stress in a denial points to the part that is wrong, not the whole statement.",
+            "emotionContext": "Defensive"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L64_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "Your colleague told the team the price but skipped you. Which word will you stress?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Do you need a visa for this country?",
-            "textToSpeak": "Do you need a visa for this country?",
+            "word": "She didn't tell me the price.",
+            "textToSpeak": "She didn't tell me the price.",
             "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Peak on 'price' — I heard other details",
+                "Peak on 'me' — others were told"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Peak on 'me' — others were told",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
                 2,
-                3
+                4,
+                0
             ],
-            "hint": "This question can be answered with 'yes' or 'no.' Notice the pitch on 'country.'",
-            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'country' as the speaker checks a requirement.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Determined"
+            "hint": "Who is missing from the group that was informed? Listen for that word.",
+            "explanation": "The complaint is that you were left out, so 'me' takes the peak. If 'price' were stressed, it would imply you were told everything except the price.",
+            "pitchRule": "🎯 Stress a pronoun to say 'not me, but others'.",
+            "emotionContext": "Hurt"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L65_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Would you rather drive or take the bus?",
-            "textToSpeak": "Would you rather drive or take the bus?",
+            "word": "The meeting is at fifteen, not fifty.",
+            "textToSpeak": "The meeting is at fifteen, not fifty.",
             "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Peaks on 'fifteen' and 'fifty' — the numbers are contrasted",
+                "Peak on 'meeting' — the event itself is being contrasted"
             ],
-            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
+            "correctAnswer": "Peaks on 'fifteen' and 'fifty' — the numbers are contrasted",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
-                2,
-                3,
-                0
+                4,
+                1,
+                3
             ],
-            "hint": "This question offers two ways to travel. Listen to the pitch across 'drive' and 'bus.'",
-            "explanation": "Choice questions rise on the first option and fall on the second. The pitch rises on 'drive' and falls on 'bus.'",
-            "pitchRule": "📈📉 Pitch rises on the first choice and falls on the last, showing the question is complete.",
-            "emotionContext": "Curious"
+            "hint": "Similar-sounding numbers are easy to confuse. Listen to which words receive the strongest pitch.",
+            "explanation": "Numbers that sound alike need clear peaks, and -teen numbers stress the last syllable while -ty numbers stress the first. This helps listeners avoid a costly mistake.",
+            "pitchRule": "🎯 Peak on similar-sounding numbers to protect the listener from confusion.",
+            "emotionContext": "Careful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L65_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "You are confirming a gate change on the phone. Which pattern will you use?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Is your connecting flight delayed?",
-            "textToSpeak": "Is your connecting flight delayed?",
+            "word": "Flight two-one-four leaves from Gate B, not Gate D.",
+            "textToSpeak": "Flight two-one-four leaves from Gate B, not Gate D.",
             "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Peak on 'leaves' — the departure is stressed",
+                "Peaks on 'B' and 'D' — the gates are contrasted"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Peaks on 'B' and 'D' — the gates are contrasted",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
+                4,
                 1,
-                2,
-                3
+                4
             ],
-            "hint": "This question expects 'yes' or 'no.' Listen to the pitch on 'delayed.'",
-            "explanation": "Yes/No questions rise continuously to the end. The pitch climbs on 'delayed' to seek confirmation.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Excited"
+            "hint": "The confusion could be between two letters. Decide which words must be crystal clear.",
+            "explanation": "The letters B and D sound similar, so both must be delivered with a higher peak. 'Leaves' is not in dispute and stays low.",
+            "pitchRule": "🎯 Letters that sound alike need extra height and clarity.",
+            "emotionContext": "Careful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L65_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "Your teammate thought the deadline was midnight, but it's earlier. Which word will you stress?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Do you want a one-way or a round-trip ticket?",
-            "textToSpeak": "Do you want a one-way or a round-trip ticket?",
+            "word": "The deadline is Friday at noon, not midnight.",
+            "textToSpeak": "The deadline is Friday at noon, not midnight.",
             "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Peak on 'Friday' — the day of the deadline is contrasted",
+                "Peak on 'noon' and 'midnight' — the times are contrasted"
             ],
-            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Peak on 'noon' and 'midnight' — the times are contrasted",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                2,
-                3,
-                0
+                4,
+                1,
+                4
             ],
-            "hint": "This question offers two ticket options. Notice the pitch pattern across 'one-way' and 'round-trip.'",
-            "explanation": "Choice questions rise on the first option and fall on the last. The pitch rises on 'one-way' and falls on 'round-trip.'",
-            "pitchRule": "📈📉 Pitch rises on the first choice and falls on the last, showing the question is complete.",
-            "emotionContext": "Doubtful"
+            "hint": "The day is not in dispute. Which words show the real difference?",
+            "explanation": "'Noon' and 'midnight' are the two competing times, so they carry the peaks. 'Friday' is old information, so it stays lower.",
+            "pitchRule": "🎯 Peak the contrasted times, not the shared day.",
+            "emotionContext": "Firm"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L66_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Did you pack your travel adapter?",
-            "textToSpeak": "Did you pack your travel adapter?",
+            "word": "Only Sam knew about the surprise.",
+            "textToSpeak": "Only Sam knew about the surprise.",
             "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Peak on 'surprise' — the surprise is the issue",
+                "Peak on 'Only' and 'Sam' — nobody else knew"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Peak on 'Only' and 'Sam' — nobody else knew",
             "correctAnswerIndex": 1,
             "intonationMap": [
+                3,
+                4,
                 1,
-                1,
-                2,
-                3
+                0
             ],
-            "hint": "This question can be answered with 'yes' or 'no.' Listen to the pitch on 'adapter.'",
-            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'adapter' as the speaker checks a fact.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
+            "hint": "The word 'only' points at something. Listen for the word that follows it.",
+            "explanation": "'Only' links to 'Sam', so both carry emphasis. This tells the listener that Sam is the exception, not the surprise.",
+            "pitchRule": "🎯 'Only' points its peak at the word it limits.",
             "emotionContext": "Neutral"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L66_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A colleague is surprised that someone arrived late. Which pattern fits?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Are we staying for three nights or four?",
-            "textToSpeak": "Are we staying for three nights or four?",
+            "word": "Even the manager arrived late.",
+            "textToSpeak": "Even the manager arrived late.",
             "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Peak on 'Even' and 'manager' — surprising person",
+                "Peak on 'late' — the lateness is surprising"
             ],
-            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
+            "correctAnswer": "Peak on 'Even' and 'manager' — surprising person",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
-                2,
                 3,
+                4,
+                1,
                 0
             ],
-            "hint": "This question offers two lengths of stay. Listen to the pitch across 'three nights' and 'four.'",
-            "explanation": "Choice questions rise on the first option and fall on the last. The pitch rises on 'nights' and falls on 'four.'",
-            "pitchRule": "📈📉 Pitch rises on the first choice and falls on the last, showing the question is complete.",
+            "hint": "'Even' suggests an extreme case. Decide which person is the extreme case.",
+            "explanation": "'Even' works with 'manager' because the manager is the least expected person to be late. The stress signals the surprise.",
+            "pitchRule": "🎯 'Even' adds a peak to the least expected item.",
             "emotionContext": "Surprised"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L66_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You want to make clear that you didn't order two desserts. Which word will you stress?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Is this the right gate for boarding?",
-            "textToSpeak": "Is this the right gate for boarding?",
+            "word": "I only ordered one dessert.",
+            "textToSpeak": "I only ordered one dessert.",
             "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Peak on 'one' — the quantity",
+                "Peak on 'dessert' — the item"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Peak on 'one' — the quantity",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
-                1,
                 2,
-                3
+                4,
+                0
             ],
-            "hint": "This question expects 'yes' or 'no.' Notice the pitch on 'boarding.'",
-            "explanation": "Yes/No questions rise continuously to the end. The pitch climbs on 'boarding' to seek confirmation.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Determined"
+            "hint": "Think about what was over-counted. That word carries the message.",
+            "explanation": "The correction is about quantity, so 'one' takes the peak. 'Dessert' is stated but is not in dispute.",
+            "pitchRule": "🎯 Peak on the number to correct a quantity.",
+            "emotionContext": "Defensive"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L67_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Should I exchange money here or at the airport?",
-            "textToSpeak": "Should I exchange money here or at the airport?",
+            "word": "Did you say the second floor?",
+            "textToSpeak": "Did you say the second floor?",
             "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Peak on 'second' with a final rise — checking the number",
+                "Peak on 'say' with a final rise — checking whether she spoke"
             ],
-            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
+            "correctAnswer": "Peak on 'second' with a final rise — checking the number",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
-                2,
                 3,
-                0
+                4,
+                3
             ],
-            "hint": "This question offers two locations joined by 'or.' Listen to the pitch across 'here' and 'airport.'",
-            "explanation": "Choice questions rise on the first option and fall on the second. The pitch rises on 'here' and falls on 'airport.'",
-            "pitchRule": "📈📉 Pitch rises on the first choice and falls on the last, showing the question is complete.",
-            "emotionContext": "Curious"
+            "hint": "You heard 'third floor' earlier and now hear something else. Focus on which word is under question.",
+            "explanation": "The doubt is about the floor number, so 'second' carries the peak. The final rise keeps the question open for confirmation.",
+            "pitchRule": "🎯📈 In a checking question, peak the doubtful word and rise at the end.",
+            "emotionContext": "Careful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L67_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "There are several folders on a desk and you point at one. Which pattern fits your question?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Have you booked the hotel yet?",
-            "textToSpeak": "Have you booked the hotel yet?",
+            "word": "Is this the folder you meant?",
+            "textToSpeak": "Is this the folder you meant?",
             "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Peak on 'meant' with a final rise — asking about intention",
+                "Peak on 'this' with a final rise — picking one from several"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Peak on 'this' with a final rise — picking one from several",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
-                2,
+                3,
+                4,
                 3
             ],
-            "hint": "This question checks on a travel arrangement and expects 'yes' or 'no.' Listen to the pitch on 'yet.'",
-            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'yet,' since the speaker is checking whether the booking has been made.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Excited"
+            "hint": "You are trying to pick out one object from a group. Which word does that job?",
+            "explanation": "'This' picks out one folder among many, so it gets a peak. A gentle rise at the end asks for confirmation.",
+            "pitchRule": "🎯📈 Stress the picking word, then rise for the question.",
+            "emotionContext": "Helpful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L67_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You sent the wrong file and want your coworker to use another. Which pattern will you use?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Do you want to sit by the window or the door?",
-            "textToSpeak": "Do you want to sit by the window or the door?",
+            "word": "Could you review the final draft instead?",
+            "textToSpeak": "Could you review the final draft instead?",
             "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Peak on 'review' — the action changes",
+                "Peak on 'final' — replaces the earlier file"
             ],
-            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Peak on 'final' — replaces the earlier file",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
+                4,
                 2,
-                3,
-                0
+                3
             ],
-            "hint": "This question offers two seating options. Notice the pitch pattern across 'window' and 'door.'",
-            "explanation": "Choice questions rise on the first option and fall on the last. The pitch rises on 'window' and falls on 'door.'",
-            "pitchRule": "📈📉 Pitch rises on the first choice and falls on the last, showing the question is complete.",
-            "emotionContext": "Doubtful"
+            "hint": "Which word makes the difference between your two files?",
+            "explanation": "'Final' separates this file from the earlier one, so it takes the peak. The rise on 'instead' keeps the request polite.",
+            "pitchRule": "🎯📈 Put the peak on the word that separates the two files, and keep the polite rise.",
+            "emotionContext": "Polite"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L68_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Is breakfast included in this hotel?",
-            "textToSpeak": "Is breakfast included in this hotel?",
+            "word": "I didn't say it was bad, I said it was expensive.",
+            "textToSpeak": "I didn't say it was bad, I said it was expensive.",
             "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Peaks on 'bad' and 'expensive' — contrasted judgments",
+                "Peaks on 'say' and 'said' — the speech act is contested"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                1,
-                1,
-                2,
-                3
-            ],
-            "hint": "This question expects 'yes' or 'no.' Listen to the pitch on 'hotel.'",
-            "explanation": "Yes/No questions rise continuously to the end. The pitch climbs on 'hotel' to invite a short answer.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Neutral"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L68_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "Would you like a city tour or a free day?",
-            "textToSpeak": "Would you like a city tour or a free day?",
-            "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
+            "correctAnswer": "Peaks on 'bad' and 'expensive' — contrasted judgments",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
-                2,
                 3,
-                0
+                1,
+                4
             ],
-            "hint": "This question gives two ways to spend the day. Listen to the pitch across 'tour' and 'free day.'",
-            "explanation": "Choice questions rise on the first option and fall on the last. The pitch rises on 'tour' and falls on 'day.'",
-            "pitchRule": "📈📉 Pitch rises on the first choice and falls on the last, showing the question is complete.",
-            "emotionContext": "Surprised"
+            "hint": "Two claims are set against each other. Listen for the two words that stand out.",
+            "explanation": "The speaker isn't denying that they spoke, they are denying the word 'bad'. So 'bad' and 'expensive' carry the peaks.",
+            "pitchRule": "🎯 The words that differ between the two clauses take the peaks.",
+            "emotionContext": "Defensive"
         },
         {
-            "id": "ACC_INTONATIONMIMIC_L68_Q3",
-            "instruction": "Identify the intonation",
+            "id": "ACC_INTONATIONMIMIC_L68_Q2",
+            "instruction": "You explain your reaction to a gift. Which pattern will you use?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Did the airline lose your suitcase?",
-            "textToSpeak": "Did the airline lose your suitcase?",
+            "word": "It's not that I don't like it, I just can't afford it.",
+            "textToSpeak": "It's not that I don't like it, I just can't afford it.",
             "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Peaks on 'not' and 'just' — the negations",
+                "Peaks on 'like' and 'afford' — contrasted reasons"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Peaks on 'like' and 'afford' — contrasted reasons",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
+                3,
                 1,
-                2,
+                4
+            ],
+            "hint": "The speaker wants to clarify a reason. Which two words hold the contrast?",
+            "explanation": "'Like' and 'afford' are the real alternatives. The negation words are grammatical glue and stay lower.",
+            "pitchRule": "🎯 Stress the contrasted reasons, not the connector words.",
+            "emotionContext": "Regretful"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L68_Q3",
+            "instruction": "A manager corrects how a plan is described. Which pattern will you use?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "We're not cutting the budget, we're reallocating it.",
+            "textToSpeak": "We're not cutting the budget, we're reallocating it.",
+            "options": [
+                "Peaks on 'cutting' and 'reallocating' — reframed action",
+                "Peaks on 'budget' and 'it' — the object being contrasted"
+            ],
+            "correctAnswer": "Peaks on 'cutting' and 'reallocating' — reframed action",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                1,
+                4,
+                1,
                 3
             ],
-            "hint": "This question can be answered with 'yes' or 'no.' Notice the pitch on 'suitcase.'",
-            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'suitcase' as the speaker checks a problem.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Determined"
+            "hint": "The object is the same in both halves. What changes?",
+            "explanation": "Since 'budget' and 'it' refer to the same thing, they stay quiet. The change is the verb, so 'cutting' and 'reallocating' peak.",
+            "pitchRule": "🎯 Repeated words fade when the contrast is in the verb.",
+            "emotionContext": "Diplomatic"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L69_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Are we renting a car or using public transport?",
-            "textToSpeak": "Are we renting a car or using public transport?",
+            "word": "Not that bag, this one.",
+            "textToSpeak": "Not that bag, this one.",
             "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Peaks on 'that' and 'this' — the two bags",
+                "Peak on 'bag' — the object type"
             ],
-            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
+            "correctAnswer": "Peaks on 'that' and 'this' — the two bags",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
-                2,
                 3,
-                0
+                4,
+                1,
+                3
             ],
-            "hint": "This question offers two travel options. Listen to the pitch across 'car' and 'transport.'",
-            "explanation": "Choice questions rise on the first option and fall on the last. The pitch rises on 'car' and falls on 'transport.'",
-            "pitchRule": "📈📉 Pitch rises on the first choice and falls on the last, showing the question is complete.",
-            "emotionContext": "Curious"
+            "hint": "You point at two bags in a shop. Which words help the listener see which one you mean?",
+            "explanation": "Pointing words 'that' and 'this' carry the contrast, while 'bag' is already known. Speakers often lift the pitch to match a gesture.",
+            "pitchRule": "🎯 Pointing words are natural focus words.",
+            "emotionContext": "Impatient"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L69_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A shop has two sizes on display. Which pattern will you use?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Is this neighborhood safe to walk at night?",
-            "textToSpeak": "Is this neighborhood safe to walk at night?",
+            "word": "I'll take the smaller one, please.",
+            "textToSpeak": "I'll take the smaller one, please.",
             "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Peak on 'smaller' — choosing between sizes",
+                "Peak on 'take' — deciding to buy"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                1,
-                1,
-                2,
-                3
-            ],
-            "hint": "This question expects 'yes' or 'no.' Listen to the pitch on 'night.'",
-            "explanation": "Yes/No questions rise continuously to the end. The pitch climbs on 'night' to seek confirmation.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Excited"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L69_Q3",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "Should we book now or wait for a sale?",
-            "textToSpeak": "Should we book now or wait for a sale?",
-            "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
+            "correctAnswer": "Peak on 'smaller' — choosing between sizes",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
                 2,
-                3,
+                4,
                 0
             ],
-            "hint": "This question offers two timing options. Notice the pitch pattern across 'now' and 'sale.'",
-            "explanation": "Choice questions rise on the first option and fall on the second. The pitch rises on 'now' and falls on 'sale.'",
-            "pitchRule": "📈📉 Pitch rises on the first choice and falls on the last, showing the question is complete.",
-            "emotionContext": "Doubtful"
+            "hint": "You've already decided to buy. What is the new information?",
+            "explanation": "The decision to buy is background. The choice of size is the new part, so 'smaller' takes the peak.",
+            "pitchRule": "🎯 Peak the choice, not the decision to choose.",
+            "emotionContext": "Polite"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L69_Q3",
+            "instruction": "An invoice was sent to the wrong person. Which pattern will you use?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "Please send it to accounting, not to me.",
+            "textToSpeak": "Please send it to accounting, not to me.",
+            "options": [
+                "Peak on 'send' — the action being corrected here",
+                "Peaks on 'accounting' and 'me' — the recipients"
+            ],
+            "correctAnswer": "Peaks on 'accounting' and 'me' — the recipients",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                1,
+                4,
+                1,
+                4
+            ],
+            "hint": "The action isn't in dispute. Who should receive it?",
+            "explanation": "The confusion is about who should receive the invoice, so 'accounting' and 'me' carry the peaks. 'Send' is agreed.",
+            "pitchRule": "🎯 Contrast the recipients, not the action.",
+            "emotionContext": "Professional"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L70_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Did your flight arrive on time?",
-            "textToSpeak": "Did your flight arrive on time?",
+            "word": "We packed sandwiches, fruit, and plenty of water.",
+            "textToSpeak": "We packed sandwiches, fruit, and plenty of water.",
             "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Fall on every item — separate statements",
+                "Rise, rise, fall — list complete"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rise, rise, fall — list complete",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
-                3
-            ],
-            "hint": "This question can be answered with 'yes' or 'no.' Listen to the pitch on 'time.'",
-            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'time' as the speaker checks a fact.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Neutral"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L70_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "Do you want to travel by train or by plane?",
-            "textToSpeak": "Do you want to travel by train or by plane?",
-            "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                1,
-                2,
+                3,
                 3,
                 0
             ],
-            "hint": "This question offers two modes of travel. Listen to the pitch across 'train' and 'plane.'",
-            "explanation": "Choice questions rise on the first option and fall on the last. The pitch rises on 'train' and falls on 'plane.'",
-            "pitchRule": "📈📉 Pitch rises on the first choice and falls on the last, showing the question is complete.",
-            "emotionContext": "Surprised"
+            "hint": "Recall the pattern for lists. Listen to how the three items relate.",
+            "explanation": "The first two items lift to keep the list open, and 'water' falls to close it. This reviews the list pattern from earlier levels.",
+            "pitchRule": "↗️📉 Lift the items, fall on the last.",
+            "emotionContext": "Relaxed"
         },
         {
-            "id": "ACC_INTONATIONMIMIC_L70_Q3",
-            "instruction": "Identify the intonation",
+            "id": "ACC_INTONATIONMIMIC_L70_Q2",
+            "instruction": "A friend thinks your flight is on Sunday. Which pattern fits your correction?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Is there a direct bus to the old town?",
-            "textToSpeak": "Is there a direct bus to the old town?",
+            "word": "My flight is on Saturday.",
+            "textToSpeak": "My flight is on Saturday.",
             "options": [
-                "Rising-Falling Intonation (Choice Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Peak on 'flight' — corrects the topic",
+                "Peak on 'Saturday' — corrects the day"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Peak on 'Saturday' — corrects the day",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
                 2,
-                3
+                2,
+                4
             ],
-            "hint": "This question expects 'yes' or 'no.' Notice the pitch on 'town.'",
-            "explanation": "Yes/No questions rise continuously to the end. The pitch climbs on 'town' to invite a short answer.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Determined"
+            "hint": "Your friend has the right topic. Which detail did they get wrong?",
+            "explanation": "'Flight' is agreed and stays quiet. 'Saturday' is the corrected detail and takes the peak and the fall.",
+            "pitchRule": "🎯📉 The corrected word gets the peak, and the sentence lands on it.",
+            "emotionContext": "Patient"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L70_Q3",
+            "instruction": "You finish an email request out loud. Which pattern will you use?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "If you can, please bring the signed form.",
+            "textToSpeak": "If you can, please bring the signed form.",
+            "options": [
+                "Rise on 'can', fall on 'form'",
+                "Fall on 'can', fall on 'form'"
+            ],
+            "correctAnswer": "Rise on 'can', fall on 'form'",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                2,
+                3,
+                1,
+                0
+            ],
+            "hint": "There is an opening condition and a main request. Decide where the boundary lies.",
+            "explanation": "The 'if' clause is only the setup, so it lifts on 'can'. The main request falls on 'form'. It reviews thought groups and requests together.",
+            "pitchRule": "↗️📉 Softeners lift, the request falls.",
+            "emotionContext": "Polite"
         }
     ]
 }

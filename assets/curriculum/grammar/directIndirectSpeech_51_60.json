@@ -1,637 +1,654 @@
 {
-    "gameType": "directIndirectSpeech",
-    "batchIndex": 6,
-    "levels": "51-60",
-    "quests": [
-        {
-            "id": "dis_l51_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I emailed the client.'",
-            "options": [
-                "She said that she had emailed the client.",
-                "She said that she emailed the client.",
-                "She said that she has emailed the client."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said that she had emailed the client.",
-            "sentence": "She said, 'I emailed the client.'",
-            "hint": "The past simple verb shifts even further back, to past perfect.",
-            "explanation": "'Emailed' (past simple) shifts to 'had emailed' (past perfect).",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l51_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: My sister said, 'I may move abroad.'",
-            "options": [
-                "My sister said that she might move abroad.",
-                "My sister said that she may move abroad.",
-                "My sister said that I might move abroad."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "My sister said that she might move abroad.",
-            "sentence": "My sister said, 'I may move abroad.'",
-            "hint": "'May' shifts to 'might' in reported speech.",
-            "explanation": "'May' shifts to 'might', and 'I' becomes 'she'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l51_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The guide told us, 'Don't feed the animals.'",
-            "options": [
-                "The guide told us not to feed the animals.",
-                "The guide told us to not feed the animals.",
-                "The guide told us don't feed the animals."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The guide told us not to feed the animals.",
-            "sentence": "The guide told us, 'Don't feed the animals.'",
-            "hint": "Negative commands shift to 'told + people + not to + verb'.",
-            "explanation": "Negative commands use 'told + object + not to + infinitive'. 'Don't feed' becomes 'not to feed'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l52_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: They said, 'We must catch the early train.'",
-            "options": [
-                "They said that they had to catch the early train.",
-                "They said that they must catch the early train.",
-                "They said that we had to catch the early train."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "They said that they had to catch the early train.",
-            "sentence": "They said, 'We must catch the early train.'",
-            "hint": "Both the modal and the pronoun shift here.",
-            "explanation": "'Must' shifts to 'had to', and 'we' shifts to 'they'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l52_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I took the medicine.'",
-            "options": [
-                "He said that he has taken the medicine.",
-                "He said that he had taken the medicine.",
-                "He said that he took the medicine."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He said that he had taken the medicine.",
-            "sentence": "He said, 'I took the medicine.'",
-            "hint": "This verb is already past simple, so in reported speech it moves one more step back.",
-            "explanation": "'Took' (past simple) shifts to 'had taken' (past perfect).",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l52_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I met that actor here last week.'",
-            "options": [
-                "She said that she had met that actor here last week.",
-                "She said that she met that actor there the week before.",
-                "She said that she had met that actor there the week before."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She said that she had met that actor there the week before.",
-            "sentence": "She said, 'I met that actor here last week.'",
-            "hint": "Both 'here' and 'last week' shift, and the tense goes back an extra step.",
-            "explanation": "'Met' shifts to 'had met', 'here' shifts to 'there', and 'last week' shifts to 'the week before'.",
-            "grammarRule": "Time & Place Reference Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l53_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The teacher warned me, 'Don't share your password.'",
-            "options": [
-                "The teacher warned me to not share my password.",
-                "The teacher warned me not to share my password.",
-                "The teacher warned me don't share my password."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The teacher warned me not to share my password.",
-            "sentence": "The teacher warned me, 'Don't share your password.'",
-            "hint": "Negative commands shift to 'warned + person + not to + verb', and 'your' shifts too.",
-            "explanation": "Negative commands use 'warned + object + not to + infinitive'. 'Don't share' becomes 'not to share', and 'your' becomes 'my'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l53_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I may take a break soon.'",
-            "options": [
-                "He said that he may take a break soon.",
-                "He said that I might take a break soon.",
-                "He said that he might take a break soon."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "He said that he might take a break soon.",
-            "sentence": "He said, 'I may take a break soon.'",
-            "hint": "'May' shifts to 'might' in reported speech.",
-            "explanation": "'May' shifts to 'might', and 'I' becomes 'he'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l53_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I tried that new restaurant.'",
-            "options": [
-                "She said that she has tried that restaurant.",
-                "She said that she had tried that restaurant.",
-                "She said that she tried that restaurant."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "She said that she had tried that restaurant.",
-            "sentence": "She said, 'I tried that new restaurant.'",
-            "hint": "Since the direct speech was already in the past, this verb shifts an extra step to past perfect.",
-            "explanation": "'Tried' (past simple) shifts to 'had tried' (past perfect).",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l54_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: My dad said, 'I must fix the roof.'",
-            "options": [
-                "My dad said that he must fix the roof.",
-                "My dad said that he had to fix the roof.",
-                "My dad said that I had to fix the roof."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "My dad said that he had to fix the roof.",
-            "sentence": "My dad said, 'I must fix the roof.'",
-            "hint": "'Must' (obligation) shifts to 'had to' in reported speech.",
-            "explanation": "'Must' shifts to 'had to', and 'I' becomes 'he'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l54_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I applied for the job two weeks ago.'",
-            "options": [
-                "She said that she had applied for the job two weeks before.",
-                "She said that she had applied for the job two weeks ago.",
-                "She said that she applied for the job two weeks before."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said that she had applied for the job two weeks before.",
-            "sentence": "She said, 'I applied for the job two weeks ago.'",
-            "hint": "'Ago' shifts to 'before', and the tense goes back an extra step.",
-            "explanation": "'Applied' shifts to 'had applied', and 'ago' shifts to 'before'.",
-            "grammarRule": "Time & Place Reference Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l54_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The nurse told me, 'Don't remove the bandage.'",
-            "options": [
-                "The nurse told me don't remove the bandage.",
-                "The nurse told me not to remove the bandage.",
-                "The nurse told me to not remove the bandage."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The nurse told me not to remove the bandage.",
-            "sentence": "The nurse told me, 'Don't remove the bandage.'",
-            "hint": "Negative commands shift to 'told + person + not to + verb'.",
-            "explanation": "Negative commands use 'told + object + not to + infinitive'. 'Don't remove' becomes 'not to remove'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l55_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The volunteers said, 'We cleaned the whole park.'",
-            "options": [
-                "The volunteers said that they had cleaned the whole park.",
-                "The volunteers said that they cleaned the whole park.",
-                "The volunteers said that we had cleaned the whole park."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The volunteers said that they had cleaned the whole park.",
-            "sentence": "The volunteers said, 'We cleaned the whole park.'",
-            "hint": "Notice both changes here: the backshifted tense and the adjusted pronoun.",
-            "explanation": "'Cleaned' shifts to 'had cleaned', and 'we' shifts to 'they'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l55_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'The update may cause delays.'",
-            "options": [
-                "He said that the update had caused delays.",
-                "He said that the update may cause delays.",
-                "He said that the update might cause delays."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "He said that the update might cause delays.",
-            "sentence": "He said, 'The update may cause delays.'",
-            "hint": "'May' shifts to 'might', not further, in reported speech.",
-            "explanation": "'May' shifts to 'might' — a modal shift, not a full tense shift to past perfect.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Tense shifted back"
-            ]
-        },
-        {
-            "id": "dis_l55_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The captain told us, 'Pass the ball quickly.'",
-            "options": [
-                "The captain told us pass the ball quickly.",
-                "The captain told us that we pass the ball quickly.",
-                "The captain told us to pass the ball quickly."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The captain told us to pass the ball quickly.",
-            "sentence": "The captain told us, 'Pass the ball quickly.'",
-            "hint": "A command shifts to 'told + people + to + verb'.",
-            "explanation": "Commands are reported with 'told + object + to-infinitive'. 'Pass the ball quickly' becomes 'to pass the ball quickly'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l56_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The manager said, 'I must approve every request.'",
-            "options": [
-                "The manager said that I had to approve every request.",
-                "The manager said that she had to approve every request.",
-                "The manager said that she must approve every request."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The manager said that she had to approve every request.",
-            "sentence": "The manager said, 'I must approve every request.'",
-            "hint": "'Must' (obligation) shifts to 'had to' in reported speech.",
-            "explanation": "'Must' shifts to 'had to', and 'I' becomes 'she'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l56_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I lost my keys yesterday.'",
-            "options": [
-                "He said that he lost his keys the day before.",
-                "He said that he had lost his keys the day before.",
-                "He said that he had lost his keys yesterday."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He said that he had lost his keys the day before.",
-            "sentence": "He said, 'I lost my keys yesterday.'",
-            "hint": "Both 'yesterday' and the possessive word shift, and the tense goes back an extra step.",
-            "explanation": "'Lost' shifts to 'had lost', 'my' shifts to 'his', and 'yesterday' shifts to 'the day before'.",
-            "grammarRule": "Time & Place Reference Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l56_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I organized the files.'",
-            "options": [
-                "She said that she organized the files.",
-                "She said that she has organized the files.",
-                "She said that she had organized the files."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She said that she had organized the files.",
-            "sentence": "She said, 'I organized the files.'",
-            "hint": "The past simple verb shifts even further back, to past perfect.",
-            "explanation": "'Organized' (past simple) shifts to 'had organized' (past perfect).",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l57_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The pilot told the passengers, 'Don't unfasten your seatbelt.'",
-            "options": [
-                "The pilot told the passengers not to unfasten their seatbelts.",
-                "The pilot told the passengers to not unfasten their seatbelts.",
-                "The pilot told the passengers don't unfasten their seatbelts."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The pilot told the passengers not to unfasten their seatbelts.",
-            "sentence": "The pilot told the passengers, 'Don't unfasten your seatbelt.'",
-            "hint": "Negative commands shift to 'told + people + not to + verb'.",
-            "explanation": "Negative commands use 'told + object + not to + infinitive'. 'Don't unfasten' becomes 'not to unfasten'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l57_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'The results may change slightly.'",
-            "options": [
-                "She said that the results had changed slightly.",
-                "She said that the results may change slightly.",
-                "She said that the results might change slightly."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She said that the results might change slightly.",
-            "sentence": "She said, 'The results may change slightly.'",
-            "hint": "'May' shifts to 'might', not further, in reported speech.",
-            "explanation": "'May' shifts to 'might' — a modal shift, not a full tense shift to past perfect.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Tense shifted back"
-            ]
-        },
-        {
-            "id": "dis_l57_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I repaired the fence.'",
-            "options": [
-                "He said that he had repaired the fence.",
-                "He said that he repaired the fence.",
-                "He said that he has repaired the fence."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He said that he had repaired the fence.",
-            "sentence": "He said, 'I repaired the fence.'",
-            "hint": "This verb is already past simple, so in reported speech it moves one more step back.",
-            "explanation": "'Repaired' (past simple) shifts to 'had repaired' (past perfect).",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l58_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The student said, 'We must hand in our essays.'",
-            "options": [
-                "The student said that they must hand in their essays.",
-                "The student said that we had to hand in our essays.",
-                "The student said that they had to hand in their essays."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The student said that they had to hand in their essays.",
-            "sentence": "The student said, 'We must hand in our essays.'",
-            "hint": "The modal, the pronoun, and the possessive all shift here.",
-            "explanation": "'Must' shifts to 'had to', 'we' shifts to 'they', and 'our' shifts to 'their'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l58_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I visited this city three years ago.'",
-            "options": [
-                "She said that she had visited this city three years ago.",
-                "She said that she visited that city three years before.",
-                "She said that she had visited that city three years before."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She said that she had visited that city three years before.",
-            "sentence": "She said, 'I visited this city three years ago.'",
-            "hint": "'This' and 'ago' both shift, and the tense goes back an extra step.",
-            "explanation": "'Visited' shifts to 'had visited', 'this' shifts to 'that', and 'ago' shifts to 'before'.",
-            "grammarRule": "Time & Place Reference Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l58_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The librarian told us, 'Don't talk loudly in here.'",
-            "options": [
-                "The librarian told us don't talk loudly in there.",
-                "The librarian told us not to talk loudly in there.",
-                "The librarian told us not to talk loudly in here."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The librarian told us not to talk loudly in there.",
-            "sentence": "The librarian told us, 'Don't talk loudly in here.'",
-            "hint": "Negative commands shift to 'told + people + not to + verb', and 'here' shifts too.",
-            "explanation": "Negative commands use 'told + object + not to + infinitive'. 'Don't talk' becomes 'not to talk', and 'here' shifts to 'there'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l59_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: They said, 'We solved the problem.'",
-            "options": [
-                "They said that they solved the problem.",
-                "They said that they had solved the problem.",
-                "They said that we had solved the problem."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "They said that they had solved the problem.",
-            "sentence": "They said, 'We solved the problem.'",
-            "hint": "Both the tense and the pronoun shift here.",
-            "explanation": "'Solved' shifts to 'had solved', and 'we' shifts to 'they'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l59_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I may retire next year.'",
-            "options": [
-                "He said that he may retire the following year.",
-                "He said that he might retire next year.",
-                "He said that he might retire the following year."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "He said that he might retire the following year.",
-            "sentence": "He said, 'I may retire next year.'",
-            "hint": "Both 'may' and 'next year' shift together here.",
-            "explanation": "'May' shifts to 'might', and 'next year' shifts to 'the following year'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l59_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The chef warned us, 'Don't overcook the pasta.'",
-            "options": [
-                "The chef warned us not to overcook the pasta.",
-                "The chef warned us to not overcook the pasta.",
-                "The chef warned us don't overcook the pasta."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The chef warned us not to overcook the pasta.",
-            "sentence": "The chef warned us, 'Don't overcook the pasta.'",
-            "hint": "Negative commands shift to 'warned + people + not to + verb'.",
-            "explanation": "Negative commands use 'warned + object + not to + infinitive'. 'Don't overcook' becomes 'not to overcook'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l60_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I must leave immediately.'",
-            "options": [
-                "She said that she had to leave immediately.",
-                "She said that she must leave immediately.",
-                "She said that I had to leave immediately."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said that she had to leave immediately.",
-            "sentence": "She said, 'I must leave immediately.'",
-            "hint": "'Must' (obligation) shifts to 'had to' in reported speech.",
-            "explanation": "'Must' shifts to 'had to', and 'I' becomes 'she'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l60_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I called this office yesterday.'",
-            "options": [
-                "He said that he had called this office yesterday.",
-                "He said that he had called that office the day before.",
-                "He said that he called that office the day before."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He said that he had called that office the day before.",
-            "sentence": "He said, 'I called this office yesterday.'",
-            "hint": "'This' and 'yesterday' both shift, and the tense goes back an extra step.",
-            "explanation": "'Called' shifts to 'had called', 'this' shifts to 'that', and 'yesterday' shifts to 'the day before'.",
-            "grammarRule": "Time & Place Reference Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l60_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: They said, 'We completed the training.'",
-            "options": [
-                "They said that they completed the training.",
-                "They said that they have completed the training.",
-                "They said that they had completed the training."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "They said that they had completed the training.",
-            "sentence": "They said, 'We completed the training.'",
-            "hint": "Since the direct speech was already in the past, this verb shifts an extra step to past perfect.",
-            "explanation": "'Completed' (past simple) shifts to 'had completed' (past perfect) — not to present perfect.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        }
-    ]
+  "gameType": "directIndirectSpeech",
+  "batchIndex": 6,
+  "levels": "51-60",
+  "quests": [
+    {
+      "id": "dis_l51_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The manager said to Diego, \"Submit the report by Friday.\"",
+      "options": [
+        "The manager told Diego submitting the report by Friday.",
+        "The manager told Diego to submit the report by Friday.",
+        "The manager told Diego that he submit the report by Friday."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The manager told Diego to submit the report by Friday.",
+      "sentence": "The manager said to Diego, \"Submit the report by Friday.\"",
+      "hint": "Commands become 'told + person + to + base verb' in reported speech.",
+      "explanation": "The imperative 'Submit...' becomes the infinitive structure 'to submit', following the pattern 'told someone to do something'.",
+      "grammarRule": "Reported Command",
+      "changesList": [
+        "imperative → 'told + object + to'"
+      ]
+    },
+    {
+      "id": "dis_l51_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The coach said to the players, \"Warm up before the match.\"",
+      "options": [
+        "The coach told the players to warm up before the match.",
+        "The coach told the players warm up before the match.",
+        "The coach told the players that they warm up before the match."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The coach told the players to warm up before the match.",
+      "sentence": "The coach said to the players, \"Warm up before the match.\"",
+      "hint": "Keep the infinitive form 'to warm up' — don't just copy the base verb.",
+      "explanation": "The command 'Warm up...' becomes the infinitive 'to warm up' after 'told the players'.",
+      "grammarRule": "Reported Command",
+      "changesList": [
+        "imperative → 'told + object + to'"
+      ]
+    },
+    {
+      "id": "dis_l51_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The pilot said to the passengers, \"Fasten your seatbelts.\"",
+      "options": [
+        "The pilot told the passengers to fasten their seatbelts.",
+        "The pilot told the passengers to fasten your seatbelts.",
+        "The pilot told the passengers fasten their seatbelts."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The pilot told the passengers to fasten their seatbelts.",
+      "sentence": "The pilot said to the passengers, \"Fasten your seatbelts.\"",
+      "hint": "Don't forget the possessive pronoun also needs to match the object.",
+      "explanation": "'Your' becomes 'their' to match 'the passengers', and the imperative becomes 'to fasten'.",
+      "grammarRule": "Reported Command",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'your' → 'their'"
+      ]
+    },
+    {
+      "id": "dis_l52_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Elena said to her assistant, \"Please send the invoice today.\"",
+      "options": [
+        "Elena asked her assistant sending the invoice that day.",
+        "Elena told her assistant to send the invoice today.",
+        "Elena asked her assistant to send the invoice that day."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Elena asked her assistant to send the invoice that day.",
+      "sentence": "Elena said to her assistant, \"Please send the invoice today.\"",
+      "hint": "Polite requests with 'please' use 'asked' instead of 'told'.",
+      "explanation": "'Please' signals a polite request, so 'asked' is used, and 'today' becomes 'that day'.",
+      "grammarRule": "Reported Request",
+      "changesList": [
+        "imperative → 'asked + object + to'",
+        "'today' → 'that day'"
+      ]
+    },
+    {
+      "id": "dis_l52_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The librarian said to the visitors, \"Please keep your voices down.\"",
+      "options": [
+        "The librarian asked the visitors to keep their voices down.",
+        "The librarian asked the visitors keeping their voices down.",
+        "The librarian told the visitors to keep their voices down."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The librarian asked the visitors to keep their voices down.",
+      "sentence": "The librarian said to the visitors, \"Please keep your voices down.\"",
+      "hint": "'Please' marks this as a polite request rather than a plain command.",
+      "explanation": "'Please' marks this as a polite request, and 'your' becomes 'their'.",
+      "grammarRule": "Reported Request",
+      "changesList": [
+        "imperative → 'asked + object + to'",
+        "'your' → 'their'"
+      ]
+    },
+    {
+      "id": "dis_l52_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The customer said to the waiter, \"Could you bring the bill, please?\"",
+      "options": [
+        "The customer asked the waiter to bring the bill.",
+        "The customer asked the waiter could you bring the bill.",
+        "The customer told the waiter to bring the bill."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The customer asked the waiter to bring the bill.",
+      "sentence": "The customer said to the waiter, \"Could you bring the bill, please?\"",
+      "hint": "Polite questions with 'could you...' also become 'asked + object + to'.",
+      "explanation": "The polite question 'Could you...?' becomes the infinitive structure 'asked the waiter to bring'.",
+      "grammarRule": "Reported Request",
+      "changesList": [
+        "polite question → 'asked + object + to'"
+      ]
+    },
+    {
+      "id": "dis_l53_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The officer said to the driver, \"Pull over immediately!\"",
+      "options": [
+        "The officer asked the driver to pull over immediately.",
+        "The officer ordered the driver pulling over immediately.",
+        "The officer ordered the driver to pull over immediately."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The officer ordered the driver to pull over immediately.",
+      "sentence": "The officer said to the driver, \"Pull over immediately!\"",
+      "hint": "A strong, authoritative command is best reported with 'ordered', not 'asked'.",
+      "explanation": "The forceful command becomes 'ordered the driver to pull over', reflecting the authority in the original tone.",
+      "grammarRule": "Reported Command",
+      "changesList": [
+        "imperative → 'ordered + object + to'"
+      ]
+    },
+    {
+      "id": "dis_l53_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The general said to the troops, \"Hold your positions!\"",
+      "options": [
+        "The general ordered the troops to hold their positions.",
+        "The general told the troops to hold your positions.",
+        "The general ordered the troops hold their positions."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The general ordered the troops to hold their positions.",
+      "sentence": "The general said to the troops, \"Hold your positions!\"",
+      "hint": "Keep the infinitive form and match the possessive to the object.",
+      "explanation": "'Your' becomes 'their', and the command becomes 'to hold'.",
+      "grammarRule": "Reported Command",
+      "changesList": [
+        "imperative → 'ordered + object + to'",
+        "'your' → 'their'"
+      ]
+    },
+    {
+      "id": "dis_l53_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The judge said to the defendant, \"Answer the question.\"",
+      "options": [
+        "The judge ordered the defendant to answer the question.",
+        "The judge asked the defendant to answer the question.",
+        "The judge ordered the defendant answer the question."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The judge ordered the defendant to answer the question.",
+      "sentence": "The judge said to the defendant, \"Answer the question.\"",
+      "hint": "A judge's command in court is forceful enough to use 'ordered' rather than a softer verb.",
+      "explanation": "The judge's authority makes 'ordered' the appropriate reporting verb, with the infinitive 'to answer'.",
+      "grammarRule": "Reported Command",
+      "changesList": [
+        "imperative → 'ordered + object + to'"
+      ]
+    },
+    {
+      "id": "dis_l54_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The lifeguard said to the swimmers, \"Don't swim past the flags.\"",
+      "options": [
+        "The lifeguard told the swimmers don't swim past the flags.",
+        "The lifeguard warned the swimmers not to swim past the flags.",
+        "The lifeguard warned the swimmers to not swim past the flags."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The lifeguard warned the swimmers not to swim past the flags.",
+      "sentence": "The lifeguard said to the swimmers, \"Don't swim past the flags.\"",
+      "hint": "Negative commands use 'not to' directly before the verb, not 'to not'.",
+      "explanation": "'Don't swim' becomes 'not to swim' after 'warned', keeping 'not' immediately before 'to'.",
+      "grammarRule": "Reported Warning",
+      "changesList": [
+        "negative imperative → 'warned + object + not to'"
+      ]
+    },
+    {
+      "id": "dis_l54_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The electrician said to the homeowner, \"Don't touch the wires.\"",
+      "options": [
+        "The electrician warned the homeowner not to touch the wires.",
+        "The electrician warned the homeowner to touch the wires.",
+        "The electrician warned the homeowner don't touch the wires."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The electrician warned the homeowner not to touch the wires.",
+      "sentence": "The electrician said to the homeowner, \"Don't touch the wires.\"",
+      "hint": "Make sure the negative meaning survives the transformation.",
+      "explanation": "'Don't touch' becomes 'not to touch'; losing 'not' would reverse the meaning entirely.",
+      "grammarRule": "Reported Warning",
+      "changesList": [
+        "negative imperative → 'warned + object + not to'"
+      ]
+    },
+    {
+      "id": "dis_l54_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The sign said, \"Do not feed the animals.\"",
+      "options": [
+        "The sign warned visitors not to feed the animals.",
+        "The sign warned visitors to not feed the animals.",
+        "The sign told visitors not feed the animals."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The sign warned visitors not to feed the animals.",
+      "sentence": "The sign said, \"Do not feed the animals.\"",
+      "hint": "Keep 'not' directly before 'to', and don't forget the infinitive base verb.",
+      "explanation": "'Do not feed' becomes 'not to feed', following the standard negative-infinitive pattern.",
+      "grammarRule": "Reported Warning",
+      "changesList": [
+        "negative imperative → 'warned + object + not to'"
+      ]
+    },
+    {
+      "id": "dis_l55_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Grace said to her brother, \"Remember to lock the door.\"",
+      "options": [
+        "Grace told her brother remember to lock the door.",
+        "Grace reminded her brother to lock the door.",
+        "Grace reminded her brother locking the door."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Grace reminded her brother to lock the door.",
+      "sentence": "Grace said to her brother, \"Remember to lock the door.\"",
+      "hint": "'Remember to...' as an instruction is naturally reported with 'reminded'.",
+      "explanation": "'Remember to lock' becomes 'reminded...to lock', a natural match for this kind of instruction.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "imperative → 'reminded + object + to'"
+      ]
+    },
+    {
+      "id": "dis_l55_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The dentist said to the patient, \"Don't forget to floss every day.\"",
+      "options": [
+        "The dentist reminded the patient to floss every day.",
+        "The dentist reminded the patient not forgetting to floss every day.",
+        "The dentist warned the patient to floss every day."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The dentist reminded the patient to floss every day.",
+      "sentence": "The dentist said to the patient, \"Don't forget to floss every day.\"",
+      "hint": "'Don't forget to...' means the same as 'remember to...', so it's reported the same way.",
+      "explanation": "'Don't forget to floss' becomes 'reminded...to floss', since both phrases mean the same thing.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "imperative → 'reminded + object + to'"
+      ]
+    },
+    {
+      "id": "dis_l55_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The teacher said to the class, \"Remember to bring your textbooks tomorrow.\"",
+      "options": [
+        "The teacher reminded the class to bring their textbooks the next day.",
+        "The teacher reminded the class to bring your textbooks tomorrow.",
+        "The teacher told the class to remember to bring their textbooks the next day."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The teacher reminded the class to bring their textbooks the next day.",
+      "sentence": "The teacher said to the class, \"Remember to bring your textbooks tomorrow.\"",
+      "hint": "Three changes at once: the reporting verb pattern, the possessive, and the time word.",
+      "explanation": "'Remember to bring' becomes 'reminded...to bring', 'your' becomes 'their', and 'tomorrow' becomes 'the next day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "imperative → 'reminded + object + to'",
+        "'your' → 'their'",
+        "'tomorrow' → 'the next day'"
+      ]
+    },
+    {
+      "id": "dis_l56_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The doctor said to the patient, \"You should drink more water.\"",
+      "options": [
+        "The doctor advised the patient drink more water.",
+        "The doctor advised the patient to drink more water.",
+        "The doctor told the patient should drink more water."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The doctor advised the patient to drink more water.",
+      "sentence": "The doctor said to the patient, \"You should drink more water.\"",
+      "hint": "'You should...' as advice is reported with 'advised...to'.",
+      "explanation": "'You should drink' becomes the infinitive structure 'advised the patient to drink'.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'should' + verb → 'advised + object + to'"
+      ]
+    },
+    {
+      "id": "dis_l56_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The financial advisor said to the couple, \"You should save more each month.\"",
+      "options": [
+        "The financial advisor told the couple should save more each month.",
+        "The financial advisor advised the couple that saving more each month.",
+        "The financial advisor advised the couple to save more each month."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The financial advisor advised the couple to save more each month.",
+      "sentence": "The financial advisor said to the couple, \"You should save more each month.\"",
+      "hint": "Convert the advice directly into the infinitive structure after 'advised'.",
+      "explanation": "'You should save' becomes 'advised the couple to save'.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'should' + verb → 'advised + object + to'"
+      ]
+    },
+    {
+      "id": "dis_l56_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The trainer said to Marcus, \"You shouldn't skip breakfast.\"",
+      "options": [
+        "The trainer advised Marcus to not skip breakfast.",
+        "The trainer advised Marcus to skip breakfast.",
+        "The trainer advised Marcus not to skip breakfast."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The trainer advised Marcus not to skip breakfast.",
+      "sentence": "The trainer said to Marcus, \"You shouldn't skip breakfast.\"",
+      "hint": "Negative advice follows the same 'not to' pattern as negative commands.",
+      "explanation": "'Shouldn't skip' becomes 'advised...not to skip', keeping 'not' directly before 'to'.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'shouldn't' + verb → 'advised + object + not to'"
+      ]
+    },
+    {
+      "id": "dis_l57_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The manager said to the staff, \"Don't use your phones during meetings.\"",
+      "options": [
+        "The manager told the staff to not use their phones during meetings.",
+        "The manager told the staff not to use their phones during meetings.",
+        "The manager told the staff don't use their phones during meetings."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The manager told the staff not to use their phones during meetings.",
+      "sentence": "The manager said to the staff, \"Don't use your phones during meetings.\"",
+      "hint": "Keep 'not' immediately before 'to', and update the possessive to match the group.",
+      "explanation": "'Don't use' becomes 'not to use', and 'your' becomes 'their'.",
+      "grammarRule": "Reported Command",
+      "changesList": [
+        "negative imperative → 'told + object + not to'",
+        "'your' → 'their'"
+      ]
+    },
+    {
+      "id": "dis_l57_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Fatima said to her son, \"Please don't stay up too late.\"",
+      "options": [
+        "Fatima asked her son to not stay up too late.",
+        "Fatima told her son not to stay up too late.",
+        "Fatima asked her son not to stay up too late."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Fatima asked her son not to stay up too late.",
+      "sentence": "Fatima said to her son, \"Please don't stay up too late.\"",
+      "hint": "'Please' signals a request, so 'asked' fits better than 'told'.",
+      "explanation": "Because of 'please', 'asked' is the appropriate reporting verb, and 'don't stay' becomes 'not to stay'.",
+      "grammarRule": "Reported Request",
+      "changesList": [
+        "negative imperative → 'asked + object + not to'"
+      ]
+    },
+    {
+      "id": "dis_l57_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The sign at the pool said, \"Do not run near the water.\"",
+      "options": [
+        "The lifeguard warned everyone to not run near the water.",
+        "The lifeguard warned everyone not to run near the water.",
+        "The lifeguard told everyone not run near the water."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The lifeguard warned everyone not to run near the water.",
+      "sentence": "The sign at the pool said, \"Do not run near the water.\"",
+      "hint": "A safety notice like this is best reported with 'warned', keeping the negative infinitive intact.",
+      "explanation": "'Do not run' becomes 'not to run' after 'warned', preserving the safety meaning.",
+      "grammarRule": "Reported Warning",
+      "changesList": [
+        "negative imperative → 'warned + object + not to'"
+      ]
+    },
+    {
+      "id": "dis_l58_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The technician said to the customer, \"Restart the router if it stops working.\"",
+      "options": [
+        "The technician warned the customer not to restart the router if it stopped working.",
+        "The technician told the customer restart the router if it stops working.",
+        "The technician told the customer to restart the router if it stopped working."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The technician told the customer to restart the router if it stopped working.",
+      "sentence": "The technician said to the customer, \"Restart the router if it stops working.\"",
+      "hint": "This is neutral guidance, not a warning about danger — 'told' fits better than 'warned'.",
+      "explanation": "'Restart...if it stops' becomes the infinitive 'to restart...if it stopped', reported with 'told' since it's an instruction, not a danger warning.",
+      "grammarRule": "Reported Command",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'stops' → 'stopped'"
+      ]
+    },
+    {
+      "id": "dis_l58_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The safety officer said to the workers, \"Wear your helmets at all times.\"",
+      "options": [
+        "The safety officer told the workers to wear their helmets at all times.",
+        "The safety officer warned the workers not to wear their helmets at all times.",
+        "The safety officer told the workers to wear your helmets at all times."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The safety officer told the workers to wear their helmets at all times.",
+      "sentence": "The safety officer said to the workers, \"Wear your helmets at all times.\"",
+      "hint": "This is a positive instruction, not a negative warning — check the meaning carefully before choosing 'not to'.",
+      "explanation": "The positive command 'Wear...' becomes 'to wear', and 'your' becomes 'their'.",
+      "grammarRule": "Reported Command",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'your' → 'their'"
+      ]
+    },
+    {
+      "id": "dis_l58_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The nurse said to the visitors, \"Please don't touch the equipment.\"",
+      "options": [
+        "The nurse asked the visitors to touch the equipment.",
+        "The nurse warned the visitors not to touch the equipment.",
+        "The nurse warned the visitors to touch the equipment."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The nurse warned the visitors not to touch the equipment.",
+      "sentence": "The nurse said to the visitors, \"Please don't touch the equipment.\"",
+      "hint": "'Please don't...' about hospital equipment is closer to a safety warning than a simple request — and don't drop 'not'.",
+      "explanation": "Given the safety context, 'warned' is more suitable, and 'don't touch' becomes 'not to touch'.",
+      "grammarRule": "Reported Warning",
+      "changesList": [
+        "negative imperative → 'warned + object + not to'"
+      ]
+    },
+    {
+      "id": "dis_l59_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The manager said to Layla, \"Finish this by tomorrow.\"",
+      "options": [
+        "The manager told Layla to finish that by the next day.",
+        "The manager told Layla to finish this by tomorrow.",
+        "The manager asked Layla finish that by the next day."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The manager told Layla to finish that by the next day.",
+      "sentence": "The manager said to Layla, \"Finish this by tomorrow.\"",
+      "hint": "Update the demonstrative and the time word inside the infinitive clause.",
+      "explanation": "'This' becomes 'that', and 'tomorrow' becomes 'the next day', while the command becomes 'to finish'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'this' → 'that'",
+        "'tomorrow' → 'the next day'"
+      ]
+    },
+    {
+      "id": "dis_l59_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The coach said to the team, \"Meet here at 6 a.m. tomorrow.\"",
+      "options": [
+        "The coach told the team to meet there at 6 a.m. the next day.",
+        "The coach told the team to meet here at 6 a.m. the next day.",
+        "The coach warned the team not to meet there at 6 a.m. the next day."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The coach told the team to meet there at 6 a.m. the next day.",
+      "sentence": "The coach said to the team, \"Meet here at 6 a.m. tomorrow.\"",
+      "hint": "Both the place word and the time word change inside this command.",
+      "explanation": "'Here' becomes 'there', and 'tomorrow' becomes 'the next day', with 'meet' becoming 'to meet'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'here' → 'there'",
+        "'tomorrow' → 'the next day'"
+      ]
+    },
+    {
+      "id": "dis_l59_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The doctor said to Omar, \"Take your medicine twice a day.\"",
+      "options": [
+        "The doctor told Omar to take your medicine twice a day.",
+        "The doctor told Omar to take his medicine twice a day.",
+        "The doctor advised Omar taking his medicine twice a day."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The doctor told Omar to take his medicine twice a day.",
+      "sentence": "The doctor said to Omar, \"Take your medicine twice a day.\"",
+      "hint": "The possessive pronoun changes to match Omar.",
+      "explanation": "'Your' becomes 'his', and 'take' becomes 'to take'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'your' → 'his'"
+      ]
+    },
+    {
+      "id": "dis_l60_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The captain said to the crew, \"Prepare for landing.\"",
+      "options": [
+        "The captain told the crew prepare for landing.",
+        "The captain warned the crew not to prepare for landing.",
+        "The captain told the crew to prepare for landing."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The captain told the crew to prepare for landing.",
+      "sentence": "The captain said to the crew, \"Prepare for landing.\"",
+      "hint": "A neutral instruction like this uses 'told', not 'warned'.",
+      "explanation": "'Prepare for landing' becomes 'to prepare for landing' after 'told the crew'.",
+      "grammarRule": "Reported Command",
+      "changesList": [
+        "imperative → 'told + object + to'"
+      ]
+    },
+    {
+      "id": "dis_l60_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Nadia said to her roommate, \"Please don't leave dishes in the sink.\"",
+      "options": [
+        "Nadia told her roommate not to leave dishes in the sink.",
+        "Nadia asked her roommate not to leave dishes in the sink.",
+        "Nadia asked her roommate to leave dishes in the sink."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Nadia asked her roommate not to leave dishes in the sink.",
+      "sentence": "Nadia said to her roommate, \"Please don't leave dishes in the sink.\"",
+      "hint": "Recall which verb fits a polite negative request, and keep the negative meaning intact.",
+      "explanation": "'Please don't leave' becomes 'asked...not to leave', preserving both the politeness and the negative meaning.",
+      "grammarRule": "Reported Request",
+      "changesList": [
+        "negative imperative → 'asked + object + not to'"
+      ]
+    },
+    {
+      "id": "dis_l60_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The instructor said to the students, \"Submit your assignments here by tomorrow.\"",
+      "options": [
+        "The instructor told the students to submit your assignments here by tomorrow.",
+        "The instructor warned the students not to submit their assignments there by the next day.",
+        "The instructor told the students to submit their assignments there by the next day."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The instructor told the students to submit their assignments there by the next day.",
+      "sentence": "The instructor said to the students, \"Submit your assignments here by tomorrow.\"",
+      "hint": "This final review question combines the possessive, the place word, and the time word inside a command.",
+      "explanation": "'Your' becomes 'their', 'here' becomes 'there', and 'tomorrow' becomes 'the next day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'your' → 'their'",
+        "'here' → 'there'",
+        "'tomorrow' → 'the next day'"
+      ]
+    }
+  ]
 }

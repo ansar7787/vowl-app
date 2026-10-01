@@ -1,547 +1,547 @@
 {
-    "gameType": "situationalResponse",
-    "batchIndex": 4,
-    "levels": "31-40",
-    "quests": [
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You get promoted to a role you have wanted for a long time.",
-            "options": [
-                "Proud",
-                "Bored",
-                "Angry",
-                "Sleepy"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Something you worked toward for a long time has finally happened.",
-            "explanation": "Achieving a goal you worked hard for makes you feel proud.",
-            "id": "sr_l31_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel proud in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most natural reply.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A colleague says to you: 'Thank you so much for helping me yesterday!'",
-            "options": [
-                "I know, I'm the best.",
-                "You're welcome, happy to help.",
-                "Don't thank me, thank yourself.",
-                "So, what are you doing later?"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "A simple, warm response works best when someone thanks you.",
-            "explanation": "'You're welcome, happy to help' is warm and natural - the standard polite way to respond to thanks.",
-            "id": "sr_l31_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel you're welcome, happy to help. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You have been waiting at the airport for six hours because your flight was cancelled.",
-            "options": [
-                "Delighted",
-                "Calm",
-                "Exasperated",
-                "Proud"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "A long wait with no end in sight, and none of it is your fault.",
-            "explanation": "A long, unwanted delay like this typically makes you feel exasperated.",
-            "id": "sr_l31_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel exasperated in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most natural reply.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "Your friend calls and says: 'I have some really exciting news!'",
-            "options": [
-                "Ooh, tell me everything!",
-                "That's nice, I guess.",
-                "Can it wait till tomorrow?",
-                "I already heard, actually."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Show genuine interest when a friend is excited to share something.",
-            "explanation": "'Tell me everything!' shows enthusiasm - the natural way to respond to a friend's exciting news.",
-            "id": "sr_l32_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel ooh, tell me everything! in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You watch the baggage carousel go around and around, but your suitcase never appears.",
-            "options": [
-                "Delighted",
-                "Worried",
-                "Proud",
-                "Calm"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Something you need has not arrived, and you do not know why.",
-            "explanation": "Watching your luggage fail to appear naturally makes you feel worried.",
-            "id": "sr_l32_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel worried in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most natural reply.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A stranger asks you: 'Excuse me, do you know what time it is?'",
-            "options": [
-                "No idea, sorry.",
-                "Why do you need to know?",
-                "I don't wear a watch anymore.",
-                "Sure, it's about three thirty."
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "A quick, polite answer is all that is needed here.",
-            "explanation": "Giving a direct, friendly answer is the natural response to a simple question from a stranger.",
-            "id": "sr_l32_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel sure, it's about three thirty. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most natural reply.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "Your teacher says: 'Excellent work on your essay!'",
-            "options": [
-                "It was easy, honestly.",
-                "Thank you, I worked hard on it.",
-                "Really? I thought it was bad.",
-                "I know, right?"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Accept a compliment graciously instead of brushing it off.",
-            "explanation": "Thanking someone and briefly acknowledging your effort is a gracious way to accept praise.",
-            "id": "sr_l33_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel thank you, i worked hard on it. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "After a year of living abroad, you look back on all the people and places you experienced.",
-            "options": [
-                "Bored",
-                "Angry",
-                "Sleepy",
-                "Nostalgic"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "You are thinking fondly about a meaningful time that has now passed.",
-            "explanation": "Looking back warmly on a meaningful period of your life is called feeling nostalgic.",
-            "id": "sr_l33_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel nostalgic in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most natural reply.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "Your neighbor says: 'I noticed you have such a beautiful garden this year!'",
-            "options": [
-                "Thank you, I've worked on it all spring.",
-                "Oh, it's really nothing special.",
-                "You should really see the weeds though.",
-                "I don't actually enjoy gardening."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Accept the compliment and add a small, friendly detail.",
-            "explanation": "Thanking your neighbor and adding a small detail keeps the exchange warm and natural.",
-            "id": "sr_l33_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel thank you, i've worked on it all spring. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most natural reply.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A hotel receptionist asks: 'Do you have a reservation?'",
-            "options": [
-                "No, why would I?",
-                "I'm not sure, maybe.",
-                "Yes, it's under the name Martinez.",
-                "Is that really necessary?"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Give the clear information the receptionist needs to help you.",
-            "explanation": "Confirming your reservation and giving your name is the clear, efficient way to answer.",
-            "id": "sr_l34_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel yes, it's under the name martinez. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You and your partner find out you are expecting a baby for the very first time.",
-            "options": [
-                "Bored",
-                "Angry",
-                "Sleepy",
-                "Overjoyed"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Life-changing, wonderful news has just arrived.",
-            "explanation": "Learning news this significant and joyful usually makes you feel overjoyed.",
-            "id": "sr_l34_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel overjoyed in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most natural reply.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "Your friend asks: 'Would you like to grab a coffee later today?'",
-            "options": [
-                "Maybe, I don't know yet.",
-                "I don't really drink coffee, sorry.",
-                "Sure, how about four o'clock?",
-                "Coffee sounds boring today."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Accept and suggest a specific time to make the plan concrete.",
-            "explanation": "Accepting and proposing a time is a natural, practical way to confirm plans with a friend.",
-            "id": "sr_l34_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel sure, how about four o'clock? in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You arrive at a party where you do not know a single person.",
-            "options": [
-                "Delighted",
-                "Out of place",
-                "Proud",
-                "Calm"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Everyone else already seems to know each other.",
-            "explanation": "Being somewhere unfamiliar with no familiar faces often makes you feel out of place.",
-            "id": "sr_l35_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel out of place in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most natural reply.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A waiter comes to your table and asks: 'Is everything all right with your meal?'",
-            "options": [
-                "Yes, it's delicious, thank you.",
-                "It's fine, I suppose.",
-                "Not really, actually.",
-                "Why do you ask?"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "A short, friendly answer is what the waiter expects here.",
-            "explanation": "A brief, positive answer is the natural response when a waiter checks on your meal.",
-            "id": "sr_l35_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel yes, it's delicious, thank you. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You read a report saying pollution levels in your city are rising every year.",
-            "options": [
-                "Delighted",
-                "Concerned",
-                "Proud",
-                "Sleepy"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Something affecting everyone's health is getting worse.",
-            "explanation": "Learning about a growing problem that affects you and others makes you feel concerned.",
-            "id": "sr_l35_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel concerned in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most natural reply.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "Your boss emails you: 'Please have next week's report ready by Friday.'",
-            "options": [
-                "That seems impossible honestly.",
-                "I might get to it eventually.",
-                "Why does it need to be Friday?",
-                "Understood, I'll have it ready by then."
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Confirm clearly that you understand and will meet the deadline.",
-            "explanation": "A short, clear confirmation is the professional way to respond to a work request.",
-            "id": "sr_l36_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel understood, i'll have it ready by then. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You score the winning goal in the final second of the match.",
-            "options": [
-                "Elated",
-                "Bored",
-                "Sad",
-                "Sleepy"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "The whole game came down to one perfect moment, and you delivered.",
-            "explanation": "Scoring a winning goal at the last second makes you feel elated - extremely happy and excited.",
-            "id": "sr_l36_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel elated in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most natural reply.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A pharmacist says: 'Take these tablets twice a day, always with food.'",
-            "options": [
-                "I'll probably just guess.",
-                "Do I really need food with it?",
-                "Got it, twice a day with food.",
-                "That sounds complicated."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Repeat the key instructions back to show you understood them.",
-            "explanation": "Repeating instructions back is a clear, natural way to confirm you understood medical advice.",
-            "id": "sr_l36_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel got it, twice a day with food. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most natural reply.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "Your landlord tells you: 'I'm afraid your rent is going up by thirty percent next month.'",
-            "options": [
-                "Sure, whatever you say.",
-                "That seems totally fine.",
-                "I never even read letters.",
-                "That's a big jump - can we discuss it?"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "A big, unexpected increase is worth calmly questioning.",
-            "explanation": "Calmly asking to discuss a big change is a reasonable, natural response to unwelcome news like this.",
-            "id": "sr_l37_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel that's a big jump - can we discuss it? in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most natural reply.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A friend calls to say: 'I'm sorry, I'm going to be about twenty minutes late.'",
-            "options": [
-                "That's really not okay.",
-                "No worries, take your time.",
-                "You said that last time too.",
-                "I guess I'll just wait then."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "A relaxed, understanding response keeps things friendly.",
-            "explanation": "'No worries, take your time' is a warm, natural way to respond to someone running a little late.",
-            "id": "sr_l37_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel no worries, take your time. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You realize you are the only person who wore formal clothes to a casual office party.",
-            "options": [
-                "Self-conscious",
-                "Delighted",
-                "Proud",
-                "Calm"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "You suddenly stand out from everyone else in the room.",
-            "explanation": "Realizing you do not match everyone else around you often makes you feel self-conscious.",
-            "id": "sr_l37_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel self-conscious in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most natural reply.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A receptionist says: 'Please take a seat. Someone will be with you shortly.'",
-            "options": [
-                "How long exactly is shortly?",
-                "I don't have time to wait.",
-                "Thank you, I'll wait right here.",
-                "Fine, but I'm in a rush."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "A simple, polite acknowledgment is all this moment needs.",
-            "explanation": "A short, polite acknowledgment is the natural way to respond when asked to wait.",
-            "id": "sr_l38_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel thank you, i'll wait right here. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You watch your toddler take their very first steps across the living room.",
-            "options": [
-                "Overjoyed",
-                "Bored",
-                "Angry",
-                "Sleepy"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "A huge milestone is happening right in front of you.",
-            "explanation": "Watching a major milestone like this happen makes you feel overjoyed.",
-            "id": "sr_l38_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel overjoyed in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most natural reply.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A taxi driver asks: 'Where to?'",
-            "options": [
-                "Somewhere nice, surprise me.",
-                "Central Station, please.",
-                "I haven't decided yet.",
-                "Just drive, I'll tell you later."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Give a clear, specific destination.",
-            "explanation": "Giving a clear, specific destination is the natural, efficient way to answer a taxi driver.",
-            "id": "sr_l38_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel central station, please. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most natural reply.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A car salesperson says: 'That's honestly the lowest I can go on this price.'",
-            "options": [
-                "I doubt that's really final.",
-                "I'll need a few more days.",
-                "That works for me, let's do it.",
-                "Can you go any lower still?"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "You have reached a fair deal, so it is time to agree.",
-            "explanation": "Clearly confirming the agreement is the natural next step once a fair price has been reached.",
-            "id": "sr_l39_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel that works for me, let's do it. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most natural reply.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A colleague says: 'I think I made a mistake in the report. Could you check it?'",
-            "options": [
-                "That sounds like your problem.",
-                "I'm sure it's fine, don't worry.",
-                "Why didn't you check it yourself?",
-                "Of course, send it over and I'll take a look."
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Offer clear, willing help with a next step.",
-            "explanation": "Offering to help and naming a next step is the natural, supportive response to a colleague's request.",
-            "id": "sr_l39_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel of course, send it over and i'll take a look. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most natural reply.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "Your colleague asks: 'How was your inbox after being away all week?'",
-            "options": [
-                "It was actually completely empty.",
-                "I didn't check it at all.",
-                "Honestly, completely overwhelming.",
-                "About the same as always."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Be honest about how a huge pile of unread messages actually feels.",
-            "explanation": "A genuine, direct answer is the most natural way to respond to a casual question like this.",
-            "id": "sr_l39_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel honestly, completely overwhelming. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most natural reply.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A shop assistant says: 'I'm sorry, we're completely out of stock of that item.'",
-            "options": [
-                "That's a shame - let me know when it's back.",
-                "That's honestly completely unacceptable.",
-                "You should really order a lot more then.",
-                "Fine, I'll just never shop here again."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Stay polite and ask about a simple next step.",
-            "explanation": "Staying polite and asking a practical follow-up question is the most natural response here.",
-            "id": "sr_l40_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel that's a shame - let me know when it's back. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most natural reply.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You are relaxing with a book by the window when a friend texts: 'What are you up to?'",
-            "options": [
-                "Nothing, I'm completely bored.",
-                "Working, unfortunately.",
-                "I don't really know, actually.",
-                "Just relaxing with a good book."
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "A short, honest answer about your afternoon works well here.",
-            "explanation": "A simple, honest answer is the natural way to respond to a casual 'what are you up to' text.",
-            "id": "sr_l40_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel just relaxing with a good book. in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the most natural reply.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "Your doctor says: 'You need to reduce your daily sugar intake.'",
-            "options": [
-                "I don't really eat much sugar anyway.",
-                "Okay, do you have any tips for cutting back?",
-                "That sounds hard to do.",
-                "I'll think about it sometime."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Show that you are taking the advice seriously and ask something useful.",
-            "explanation": "Asking a practical follow-up question shows you are engaging seriously with your doctor's advice.",
-            "id": "sr_l40_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel okay, do you have any tips for cutting back? in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        }
-    ]
+  "gameType": "situationalResponse",
+  "batchIndex": 4,
+  "levels": "31-40",
+  "quests": [
+    {
+      "instruction": "Choose the clearest way to handle this.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A bank agent reads out a long reference number quickly over the phone and you missed the last few digits.",
+      "options": [
+        "Could you say everything again from the very beginning, please?",
+        "Sorry, could you read the last four digits again, slowly?",
+        "Yes, got it, thanks. I'll work out the rest of it myself later.",
+        "Sorry, what was that? You're mumbling and the line is terrible."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Ask for only the piece you missed.",
+      "explanation": "Naming exactly which part you missed makes repeating quick and easy. Asking for everything again wastes time, blaming the agent is unfair, and pretending you got it defeats the purpose of the call.",
+      "id": "sr_l31_q1",
+      "culturalNote": "Asking for a repeat of a specific part is normal in phone calls, especially with numbers.",
+      "formalityScore": 60
+    },
+    {
+      "instruction": "Pick the response that fits the situation.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "Your manager asks you to 'make the poster pop' but doesn't explain what she means.",
+      "options": [
+        "Sure, I'll take care of it and let you know when it's ready.",
+        "When you say 'pop', do you mean brighter colors or a bolder layout?",
+        "I'm afraid I don't really understand design terms, sorry about that.",
+        "Could you just tell me exactly what needs changing on it?"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Offer two concrete interpretations to help her pick.",
+      "explanation": "Giving options makes it easy for her to explain what she wants. Agreeing blindly risks a wasted revision, and the other replies push the work back onto her.",
+      "id": "sr_l31_q2",
+      "culturalNote": "Vague creative feedback is common; offering options turns it into a quick decision.",
+      "formalityScore": 55
+    },
+    {
+      "instruction": "Choose the most natural response.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "Your teacher says, 'Read pages twenty to thirty for Monday.' You're not sure whether page thirty counts.",
+      "options": [
+        "Are we supposed to read all of it or just skim through it?",
+        "Is that a lot of reading for one weekend, do you think?",
+        "I'll read as much of it as I possibly can before Monday.",
+        "Just to check, is page thirty included?"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Ask only about the detail that is unclear.",
+      "explanation": "A short targeted question resolves the doubt. Asking about depth, workload, or promising effort doesn't answer whether the last page is included.",
+      "id": "sr_l31_q3",
+      "culturalNote": "Ranges like 'twenty to thirty' are often ambiguous about the final number.",
+      "formalityScore": 50
+    },
+    {
+      "instruction": "What would you say?",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A friend said 'seven-fifteen' but you heard 'seven-fifty' and arrived late to the cinema.",
+      "options": [
+        "Oh no, I thought you said seven-fifty — I must have misheard. Sorry!",
+        "You definitely said seven-fifty, I'm sure I remember it clearly.",
+        "Well, you should have texted me the exact time to make sure.",
+        "It's only a few minutes, and the trailers are still playing, right?"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Own your side of the mix-up without turning it into a blame game.",
+      "explanation": "Acknowledging what you misheard and apologizing lets the moment pass. Insisting you're right or blaming her escalates a small mistake.",
+      "id": "sr_l32_q1",
+      "culturalNote": "Times like fifteen and fifty sound alike, especially in noisy places.",
+      "formalityScore": 30
+    },
+    {
+      "instruction": "Choose the most professional reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A colleague read your email as approval, but you actually meant you needed more details before deciding.",
+      "options": [
+        "I think my email was unclear — I meant I need more details before I can approve it.",
+        "I think you may have misread my email, since I never said yes.",
+        "I never said I would approve it, so please check what I wrote.",
+        "Let's forget the email. I'll just approve it now to keep things moving, and we can sort out the details later."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Take responsibility for the wording without giving in.",
+      "explanation": "Owning the unclear wording while restating your position resolves it without blame. Accusing him or approving anyway leaves the real issue unsolved.",
+      "id": "sr_l32_q2",
+      "culturalNote": "In written communication, ambiguity is often shared; acknowledging your part helps.",
+      "formalityScore": 60
+    },
+    {
+      "instruction": "Pick the most appropriate reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "You called about a refund, but the agent keeps explaining how to exchange the item.",
+      "options": [
+        "No, that isn't what I asked. Are you actually listening to me?",
+        "I think there's a misunderstanding — I'm asking about a refund, not an exchange.",
+        "An exchange is fine, I suppose, if that's all that you can offer me today, though it isn't what I wanted.",
+        "Could I speak to someone else who might understand my problem?"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "State what you want, calmly, and name the mismatch.",
+      "explanation": "Naming the gap and your actual request corrects the direction without accusing anyone. Snapping or settling for the wrong outcome doesn't solve anything.",
+      "id": "sr_l32_q3",
+      "culturalNote": "Misunderstandings in service calls are common; a calm restatement usually works best.",
+      "formalityScore": 55
+    },
+    {
+      "instruction": "Choose the best way to respond.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A close friend says 'I'm fine' but has been unusually quiet all evening.",
+      "options": [
+        "I know you're not fine, so you might as well tell me.",
+        "Okay, if you say so. I'll leave you alone about it, then.",
+        "Is this about what happened with Sam yesterday, by any chance?",
+        "You seem a bit quiet — are you sure you're okay?"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Show you noticed and leave room for an honest answer.",
+      "explanation": "A gentle check-in shows you noticed without forcing an answer. Pressing or guessing the cause puts him on the defensive.",
+      "id": "sr_l33_q1",
+      "culturalNote": "Between friends, one gentle follow-up is usually welcome after 'I'm fine'.",
+      "formalityScore": 25
+    },
+    {
+      "instruction": "What would you say?",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "You invited a friend for coffee and she replied only with 'K.' Her earlier texts were warm and chatty.",
+      "options": [
+        "Why are you being so rude? I only asked if you wanted coffee.",
+        "Your reply felt a bit short — is everything okay, or is the plan not working?",
+        "Great, see you there then, and I'll grab us a table by the window.",
+        "Did I say something wrong? I really can't tell what's happening."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Name what you noticed, and offer an easy way out.",
+      "explanation": "Describing the change and offering two options makes it easy to answer honestly. Accusations or ignoring it leave the uncertainty in place.",
+      "id": "sr_l33_q2",
+      "culturalNote": "Text messages lose tone, so a short check is better than assuming.",
+      "formalityScore": 25
+    },
+    {
+      "instruction": "Pick the most natural response.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A colleague says, 'We should catch up sometime.' You'd like to, and you're not sure she means it.",
+      "options": [
+        "Sure, sometime. That sounds really nice, let's keep in touch.",
+        "Do you actually mean it, or are you just being polite?",
+        "You always say that, and then we never actually do it.",
+        "I'd like that — how about coffee on Thursday?"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Turn a vague line into a concrete plan.",
+      "explanation": "Suggesting a specific time tests the invitation kindly and makes it real. Vague agreement or challenge make it awkward.",
+      "id": "sr_l33_q3",
+      "culturalNote": "Phrases like 'catch up sometime' are often courtesy; a concrete offer shows what you really want.",
+      "formalityScore": 40
+    },
+    {
+      "instruction": "Choose the most natural response.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A courier left a parcel addressed to your neighbor Ravi in your hallway by mistake.",
+      "options": [
+        "Hi, I think a parcel meant for you was delivered to me by mistake — shall I drop it over?",
+        "I've got your parcel here, so come and pick it up when you can.",
+        "Your parcel is at my place. The couriers around here are useless, they dump things at the wrong door every single week.",
+        "Is your name Ravi? A parcel arrived at my door earlier today."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Explain what happened and offer to fix it.",
+      "explanation": "Explaining the mix-up and offering to bring it over is clear and neighborly. The others push the effort onto him or lead with complaints.",
+      "id": "sr_l34_q1",
+      "culturalNote": "Misdelivered parcels are common; a friendly note usually resolves them quickly.",
+      "formalityScore": 40
+    },
+    {
+      "instruction": "Pick the most appropriate reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "In a shop, a customer mistakes you for an employee and asks where the umbrellas are.",
+      "options": [
+        "Do I look like I work here to you? I'm just shopping like you.",
+        "No, I'm just a customer, so I really can't help you with that.",
+        "No. Ask someone wearing the uniform, they'll know where they are.",
+        "Sorry, I don't work here — but the staff are by the entrance."
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Clear up the mistake and still point her somewhere useful.",
+      "explanation": "Correcting the mistake and directing her helps without offense. Defensive or curt replies turn an innocent error into friction.",
+      "id": "sr_l34_q2",
+      "culturalNote": "Being mistaken for staff is common; a kind redirect is the easiest response.",
+      "formalityScore": 40
+    },
+    {
+      "instruction": "Choose the most professional reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "In a meeting, your manager assigns you to the Atlas project, but you're actually on the Beacon project.",
+      "options": [
+        "That's Priya's project, not mine, so I think you meant her.",
+        "No, you've got that wrong, and it's not the first time either.",
+        "Just to clarify, I'm on the Beacon project — Priya is on Atlas.",
+        "I think you must mean someone else, because that isn't me."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "State the correct information plainly and without blame.",
+      "explanation": "Clarifying facts calmly, without judging her memory, keeps the meeting on track. Contradiction or sarcasm makes her look bad publicly.",
+      "id": "sr_l34_q3",
+      "culturalNote": "Correcting a manager works better as clarification than as contradiction.",
+      "formalityScore": 65
+    },
+    {
+      "instruction": "What would you say?",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "You gave a tourist directions and realize a minute later you sent him the wrong way. You catch up with him.",
+      "options": [
+        "Actually, I'm not sure about it. Just try that way and see.",
+        "Sorry, I sent you the wrong way — it's the other street, past the bakery.",
+        "You should have asked someone else who knew the area better, because I only moved here recently.",
+        "Did you go left? Turn around and go the other way instead."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Own your mistake and give the corrected route.",
+      "explanation": "Admitting the error and giving the fix is honest and useful. Vague, blaming, or unclear replies leave him lost.",
+      "id": "sr_l35_q1",
+      "culturalNote": "Correcting your own mistake quickly is usually appreciated, even by strangers.",
+      "formalityScore": 35
+    },
+    {
+      "instruction": "Choose the best way to respond.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "You posted the wrong meeting time (3 p.m. instead of 4 p.m.) in the team chat and someone has already replied 'see you at 3'.",
+      "options": [
+        "Meeting time changed. New time is 4, so please note that.",
+        "Correction: the meeting is at 4, not 3. Sorry for the mix-up!",
+        "Ignore my last message and just check the calendar invite.",
+        "Sorry, some of you might have got the wrong time from me."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Say what was wrong and what's right, in the same message.",
+      "explanation": "Stating both the error and the fix leaves no confusion. Vague messages or pointing to elsewhere make people work it out.",
+      "id": "sr_l35_q2",
+      "culturalNote": "In team chats, corrections should be explicit and in the same thread.",
+      "formalityScore": 50
+    },
+    {
+      "instruction": "Pick the most professional reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "Halfway through an interview, you realize you gave the wrong year for when you left your last job.",
+      "options": [
+        "I should correct something I said earlier — I left that company in 2019, not 2020.",
+        "Sorry, I think I said the wrong date earlier, but never mind that.",
+        "The exact dates don't matter too much, do they, as long as it's roughly right?",
+        "I'll double-check my dates and email you the exact answer afterwards."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Fix the mistake right away and be specific.",
+      "explanation": "Correcting immediately with the accurate date shows honesty. Brushing it off or delaying looks careless.",
+      "id": "sr_l35_q3",
+      "culturalNote": "Interviewers usually respect candidates who correct themselves promptly.",
+      "formalityScore": 80
+    },
+    {
+      "instruction": "Choose the most tactful reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "You made a sarcastic joke and your friend looks hurt, as if you meant it.",
+      "options": [
+        "I was only joking — I'm sorry it came across that way.",
+        "You're way too sensitive about things like this.",
+        "It was just a joke, relax, nobody else is offended.",
+        "I didn't mean anything by it, so there's nothing to be upset about."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Take responsibility for the impact, not just the intent.",
+      "explanation": "Apologizing for how it landed acknowledges her feelings. Blaming her sensitivity or denying meaning invalidates them.",
+      "id": "sr_l36_q1",
+      "culturalNote": "Humor depends on shared context; owning the impact repairs trust.",
+      "formalityScore": 30
+    },
+    {
+      "instruction": "Pick the most appropriate reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A coworker says you ignored his email from yesterday, but you never received it.",
+      "options": [
+        "I never got it, so you must have sent it to the wrong address.",
+        "I'm sure I replied to it already, so check your sent folder.",
+        "I don't see it in my inbox — could you resend it? Maybe it went to spam.",
+        "Just tell me what it said, since email is so unreliable anyway and I've missed messages from other people too."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "State what you see and suggest a fix.",
+      "explanation": "Saying what you see and offering a fix keeps it factual. Blaming or bluffing leaves the issue unresolved.",
+      "id": "sr_l36_q2",
+      "culturalNote": "Email delivery problems are common and rarely anyone's fault.",
+      "formalityScore": 55
+    },
+    {
+      "instruction": "Choose the most tactful reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A neighbor complains about your dog barking last night, but your dog was indoors all evening.",
+      "options": [
+        "It's not my dog, so I really don't see why you're complaining to me about it at this hour of the day.",
+        "My dog doesn't bark, so you must be mistaken about that.",
+        "Well, I'll try to keep him quieter from now on, sorry.",
+        "I don't think it was mine — my dog was inside all evening. Could it be next door's?"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Politely give facts without accepting blame for something you didn't do.",
+      "explanation": "Sharing facts calmly and suggesting another source keeps it neighborly. Denial or blindly accepting blame both cause trouble.",
+      "id": "sr_l36_q3",
+      "culturalNote": "Barking complaints often need a bit of detective work; facts help.",
+      "formalityScore": 40
+    },
+    {
+      "instruction": "Choose the most polite reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "Your restaurant bill includes a dessert you didn't order.",
+      "options": [
+        "You've overcharged me, and I'd like this fixed right away.",
+        "This bill is wrong, so please sort it out for me quickly.",
+        "I think there's a mistake — I didn't order the dessert. Could you check?",
+        "I'll pay it, but it isn't right and I'm not happy about it."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Point out the error politely and ask for a check.",
+      "explanation": "Politely naming the item and asking for a check makes fixing easy. Accusing or grudgingly paying doesn't fix the mistake.",
+      "id": "sr_l37_q1",
+      "culturalNote": "Bill errors are usually accidental; calm requests get them fixed fastest.",
+      "formalityScore": 50
+    },
+    {
+      "instruction": "Pick the most appropriate reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A hotel says your booking is for the 12th, but you meant the 21st and realize you typed the date wrong.",
+      "options": [
+        "I think I entered the wrong date when I booked — I meant the 21st. Is there any way to change it?",
+        "Your website is really confusing and the calendar is badly designed. I clearly meant the 21st, so it's your problem to fix.",
+        "I booked the 21st, whatever your system says on the screen.",
+        "Could I just take a room for the 12th instead of the 21st?"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Admit the mistake and ask about options.",
+      "explanation": "Owning the error and asking what's possible invites help. Blaming the site or insisting doesn't help the staff help you.",
+      "id": "sr_l37_q2",
+      "culturalNote": "Hotels can often help if you own the mistake quickly.",
+      "formalityScore": 60
+    },
+    {
+      "instruction": "Choose the clearest way to handle this.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A receptionist misspells your surname while checking you in for a medical appointment.",
+      "options": [
+        "It's Olu something, it's already written on the form there.",
+        "You'll find it if you look at my appointment card properly.",
+        "Let me spell that for you: O-L-U-W-A-S-E-Y-I.",
+        "It's a long name, so just use my first name instead."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Give the receptionist what she needs to get it right.",
+      "explanation": "Spelling it out lets her record it correctly. Vague or dismissive replies risk errors in your medical record.",
+      "id": "sr_l37_q3",
+      "culturalNote": "Names can be hard to spell; spelling them aloud is normal and appreciated.",
+      "formalityScore": 55
+    },
+    {
+      "instruction": "What would you say?",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "In a group chat, you wrote 'great, another meeting' and a colleague replied: 'Wow, sorry you feel that way.' You actually like the idea.",
+      "options": [
+        "Why would you think I was being sarcastic? That's a strange reading.",
+        "Never mind, just ignore my message and carry on with the plan.",
+        "To be clear, I wasn't being sarcastic — I do like the idea.",
+        "Some people read way too much into a short text message."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Say plainly what you meant.",
+      "explanation": "A direct statement clears the tone up. Blaming his reading or retreating leaves the confusion.",
+      "id": "sr_l38_q1",
+      "culturalNote": "Written sarcasm is often missed; plain clarification is best.",
+      "formalityScore": 30
+    },
+    {
+      "instruction": "Pick the most natural response.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A stranger on a bench asks, 'Do you mind if I sit here?' You're happy for her to sit.",
+      "options": [
+        "Yes, go ahead. I'll move my bag over a bit for you.",
+        "Not at all — please, sit.",
+        "Yes please do, I've been waiting for someone to join me.",
+        "I don't mind. Sit, sit, but try not to talk too much."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "'Do you mind' asks about a problem, so think about what 'yes' means.",
+      "explanation": "'Not at all' correctly says no problem to 'Do you mind'. A plain 'yes' can sound like refusal, and the others are confusing or oddly phrased.",
+      "id": "sr_l38_q2",
+      "culturalNote": "Answering 'Do you mind?' with 'Yes' can be read as 'I do mind', so 'Not at all' is safest.",
+      "formalityScore": 45
+    },
+    {
+      "instruction": "Choose the most professional reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "Your manager says, 'You might want to reconsider that approach.' You're not sure whether it's advice or an instruction.",
+      "options": [
+        "Okay, I'll keep it as it is and see how it turns out. If it doesn't work, we can always discuss it again next week.",
+        "So you're saying it's wrong, is that what you mean?",
+        "Would you like me to change it? I want to make sure I understand what you'd prefer.",
+        "I've thought about it and I still disagree with you."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Check what she wants without sounding defensive.",
+      "explanation": "Asking what she prefers clarifies the meaning without pushback. Defensive or dismissive replies can turn a suggestion into a conflict.",
+      "id": "sr_l38_q3",
+      "culturalNote": "Indirect language from managers can be advice or instruction; asking removes doubt.",
+      "formalityScore": 65
+    },
+    {
+      "instruction": "Pick the most natural response.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "Your roommate says, 'Can you do the dishes?' It's unclear whether she wants them done now or later tonight.",
+      "options": [
+        "I'll do them at some point, just give me a little while.",
+        "Why is it always me who has to do them in this house?",
+        "Right now? I'm in the middle of something, so maybe later.",
+        "Sure — do you need them done now, or is tonight fine?"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Say yes and ask about timing.",
+      "explanation": "Agreeing and checking timing settles the request quickly. Vague promises or complaints leave it unresolved.",
+      "id": "sr_l39_q1",
+      "culturalNote": "Requests often leave timing unspoken; asking is quicker than guessing.",
+      "formalityScore": 25
+    },
+    {
+      "instruction": "Choose the most professional reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A client emails: 'Please send the report ASAP.' You could send it by end of day or in an hour.",
+      "options": [
+        "When you say ASAP, would end of today work, or do you need it sooner?",
+        "I'll do my best to send it to you as soon as possible.",
+        "ASAP isn't really possible, so please give me a real deadline, because I have several other clients waiting on me today too.",
+        "I'll send it as soon as I can get to it this afternoon."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Turn 'ASAP' into an actual time.",
+      "explanation": "Offering a concrete option makes the deadline clear. Vague reassurance or pushback leaves it undefined.",
+      "id": "sr_l39_q2",
+      "culturalNote": "'ASAP' means different things to different people; a specific time avoids disappointment.",
+      "formalityScore": 70
+    },
+    {
+      "instruction": "What would you say?",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A friend texts, 'Let's meet near the station.' The station has a main entrance and a separate bus stop area.",
+      "options": [
+        "Near which station do you mean? There are several in town.",
+        "I'll find you, don't worry, just send me a message later.",
+        "Text me when you're there and I'll come over to you.",
+        "Which side of the station — the main entrance or the bus stops?"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Ask about the detail that could send you to the wrong place.",
+      "explanation": "A specific question removes the real ambiguity. Asking things you already know or leaving it open risks missing each other.",
+      "id": "sr_l39_q3",
+      "culturalNote": "'Near' is vague at big stations; agreeing on an exact spot saves stress.",
+      "formalityScore": 25
+    },
+    {
+      "instruction": "Choose the most tactful reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "You and a colleague cleared up a misunderstanding that had made her upset for two days.",
+      "options": [
+        "See, it was a misunderstanding, so it wasn't really my fault.",
+        "Fine, but you should have told me sooner that you were upset.",
+        "I'm glad we sorted that out — I should have asked earlier.",
+        "It's okay now, so let's just forget it ever happened."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Reconnect and share responsibility for the delay.",
+      "explanation": "Acknowledging your own part rebuilds trust. Blaming or dismissing hurts the repair.",
+      "id": "sr_l40_q1",
+      "culturalNote": "Sharing responsibility for a misunderstanding helps restore the relationship.",
+      "formalityScore": 40
+    },
+    {
+      "instruction": "Pick the most appropriate reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "At a noisy market, a vendor says a price you think was 'twelve euros', but it might have been 'two-ten'.",
+      "options": [
+        "Twelve euros? That's really expensive for something so small.",
+        "Fine, I'll take it and count my change when I get home.",
+        "Just to confirm — that's twelve euros in total?",
+        "Could I pay a lower price if I take two of them?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Confirm the number you think you heard.",
+      "explanation": "Repeating the price checks your understanding. Reacting or moving on could lead to paying the wrong amount.",
+      "id": "sr_l40_q2",
+      "culturalNote": "Confirming numbers aloud is standard where noise or accents may cause mishearing.",
+      "formalityScore": 45
+    },
+    {
+      "instruction": "Choose the most professional reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "At the end of a meeting, you and your colleague agreed some tasks but the details were a little loose.",
+      "options": [
+        "Great, so we're all clear then and can go on with our work.",
+        "I'll take care of everything myself and keep you updated later on, so you don't need to worry about any of it whatsoever.",
+        "Could you send notes after this meeting, so we're all sure?",
+        "Let me make sure I've got this right: I'll send the draft Friday and you'll review it Monday."
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Summarize agreements in specific terms.",
+      "explanation": "A specific summary checks shared understanding and creates a record. General agreement leaves room for confusion.",
+      "id": "sr_l40_q3",
+      "culturalNote": "Restating agreements is a common professional way to prevent misunderstandings.",
+      "formalityScore": 65
+    }
+  ]
 }

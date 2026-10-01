@@ -5,513 +5,513 @@
     "quests": [
         {
             "id": "sva_l31_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The book on the shelves ___ very old.",
-            "hint": "The subject is 'book' (singular) - 'shelves' is just the location.",
-            "explanation": "'The book' is the subject; 'on the shelves' is a prepositional phrase. Prepositional phrases do not change subject-verb agreement. 'Book' is singular, so 'is' is correct.",
+            "question": "The box of chocolates ___ on the top shelf.",
+            "hint": "Find the single main noun before 'of' and ignore what comes after it.",
+            "explanation": "The subject is 'the box', a singular noun; 'of chocolates' just describes what's inside it. Singular subjects take the -s form: 'sits'.",
             "options": [
-                "is",
-                "are"
+                "sit",
+                "sits"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "sits",
+            "grammarRule": "Agreement follows the head noun before a prepositional phrase, not the noun inside it",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l31_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The books on the shelf ___ very old.",
-            "hint": "The subject is 'books' (plural) - 'shelf' is just the location.",
-            "explanation": "'The books' is the subject; 'on the shelf' is a prepositional phrase. Since 'books' is plural, the verb must be 'are'.",
+            "question": "The captain of the players ___ the pre-game meeting.",
+            "hint": "'Of the players' describes the captain - it doesn't make the subject plural.",
+            "explanation": "'The captain' is the true subject, and it's singular, even though 'the players' (plural) appears right after it. The verb takes -s: 'leads'.",
             "options": [
-                "is",
-                "are"
+                "leads",
+                "lead"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "leads",
+            "grammarRule": "Agreement follows the head noun before a prepositional phrase, not the noun inside it",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l31_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The players on the team ___ very experienced.",
-            "hint": "The subject is 'players' (plural), not 'team'.",
-            "explanation": "'The players' is the true subject; 'on the team' describes where they play. Since 'players' is plural, the verb is 'are'.",
+            "question": "The list of ingredients ___ printed on the back of the package.",
+            "hint": "Locate the noun that the whole sentence is actually about.",
+            "explanation": "'The list' is singular, and 'of ingredients' only tells us what kind of list it is. The verb agrees with 'list': 'is'.",
             "options": [
-                "are",
-                "is"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "is",
+            "grammarRule": "Agreement follows the head noun before a prepositional phrase, not the noun inside it",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l32_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Neither rain nor snow ___ expected this weekend.",
-            "hint": "With 'neither…nor' and two singular subjects, the verb is singular.",
-            "explanation": "When both subjects in a 'neither…nor' construction are singular ('rain' and 'snow'), the verb is always singular: 'is expected'.",
+            "question": "The keys to the house ___ missing.",
+            "hint": "This time the main noun is plural - don't let the singular noun after it change your answer.",
+            "explanation": "'The keys' is the plural subject; 'to the house' is singular but doesn't affect agreement. Plural subjects take the base form: 'are'.",
             "options": [
                 "are",
                 "is"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "are",
+            "grammarRule": "Agreement follows the head noun before a prepositional phrase, even when it's plural and the phrase after it is singular",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l32_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Either coffee or tea ___ served at breakfast.",
-            "hint": "With 'either…or' and two singular subjects, the verb is singular.",
-            "explanation": "When both subjects in 'either…or' are singular, the verb is singular. 'Either coffee or tea is served' - because either one alone would be singular.",
+            "question": "The winners of the contest ___ their prize next week.",
+            "hint": "Check the noun right at the start of the subject, not the noun tucked inside the phrase.",
+            "explanation": "'The winners' is plural, and 'of the contest' is just extra detail. Plural subjects use the base verb form: 'receive'.",
             "options": [
-                "is",
-                "are"
+                "receives",
+                "receive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "receive",
+            "grammarRule": "Agreement follows the head noun before a prepositional phrase, even when it's plural and the phrase after it is singular",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l32_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The boxes of cereal ___ on the top shelf.",
-            "hint": "The subject is 'boxes' (plural), not 'cereal'.",
-            "explanation": "'The boxes' is the true subject; 'of cereal' tells us what the boxes contain. Since 'boxes' is plural, the verb must be 'are'.",
+            "question": "The pages of the report ___ numbered incorrectly.",
+            "hint": "'Report' is singular, but is it actually the subject of this sentence?",
+            "explanation": "'The pages' is the true subject and is plural; 'of the report' just specifies which pages. The verb takes the base form: 'are'.",
             "options": [
-                "is",
-                "are"
+                "are",
+                "is"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "grammarRule": "Agreement follows the head noun before a prepositional phrase, even when it's plural and the phrase after it is singular",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l33_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The director as well as the actors ___ interviewed.",
-            "hint": "'As well as' is not the same as 'and' - the verb agrees with 'director' (singular).",
-            "explanation": "Phrases like 'as well as', 'together with', and 'along with' do not create compound subjects. The verb agrees with the main subject: 'the director', which is singular.",
+            "question": "The results, surprisingly, ___ consistent across all three tests.",
+            "hint": "The word set off by commas is just an aside - it doesn't belong to the subject.",
+            "explanation": "'The results' is the plural subject; 'surprisingly' is just a comment inserted between commas. Plural subjects take the base form: 'remain'.",
             "options": [
-                "was",
-                "were"
+                "remain",
+                "remains"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswer": "remain",
+            "grammarRule": "Parenthetical adverb between subject and verb does not affect agreement",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l33_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The actors, along with the director, ___ interviewed.",
-            "hint": "The main subject is 'actors' (plural) - 'along with' doesn't change that.",
-            "explanation": "'The actors' is the true subject; 'along with the director' is a parenthetical addition. Since 'actors' is plural, the verb must be 'were'.",
+            "question": "The new manager, unfortunately, ___ little experience in this field.",
+            "hint": "Skip over the word between the commas and connect the subject directly to the verb.",
+            "explanation": "'The new manager' is singular; 'unfortunately' is a parenthetical comment that doesn't change the subject. Singular subjects take 'has'.",
             "options": [
-                "was",
-                "were"
+                "have",
+                "has"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "has",
+            "grammarRule": "Parenthetical adverb between subject and verb does not affect agreement",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l33_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Chicken and rice ___ a popular dish in many cultures.",
-            "hint": "This food combination is treated as one dish - singular verb.",
-            "explanation": "'Chicken and rice' names a single dish, not two separate foods. When two things are inseparable as a concept or dish, they take a singular verb: 'is'.",
+            "question": "This recipe, surprisingly, ___ very few ingredients.",
+            "hint": "Treat the commas like parentheses - what's inside them can be ignored for agreement.",
+            "explanation": "'This recipe' is singular; the word between the commas doesn't change that. The verb takes -s: 'requires'.",
             "options": [
-                "is",
-                "are"
+                "requires",
+                "require"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "requires",
+            "grammarRule": "Parenthetical adverb between subject and verb does not affect agreement",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l34_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The museum, together with its archives, ___ closing next year.",
-            "hint": "'Together with its archives' is a parenthetical phrase - the subject is 'museum' (singular).",
-            "explanation": "'Together with its archives' is a non-essential addition. The real subject is 'the museum', which is singular, so the verb is 'is'.",
+            "question": "The recipe, one of my grandmother's favorites, ___ only five ingredients.",
+            "hint": "The phrase between the commas adds a compliment about the subject, not a new subject.",
+            "explanation": "'The recipe' remains singular even though the parenthetical phrase mentions 'my grandmother's favorites'. The verb takes -s: 'needs'.",
             "options": [
-                "are",
-                "is"
+                "need",
+                "needs"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "needs",
+            "grammarRule": "Parenthetical noun phrase does not change the number of the subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l34_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Mathematics ___ my favourite subject at school.",
-            "hint": "Subjects ending in -ics ('mathematics', 'physics') take a singular verb.",
-            "explanation": "'Mathematics' ends in -s but is treated as a singular subject. Academic fields ending in -ics (mathematics, physics, economics) always take a singular verb.",
+            "question": "The bridge, an engineering marvel from the 1930s, ___ thousands of cars every day.",
+            "hint": "The phrase between the commas restates or praises the subject - it isn't a second subject.",
+            "explanation": "'The bridge' is singular; the descriptive phrase between the commas doesn't add a new subject. The verb takes -s: 'carries'.",
             "options": [
-                "is",
-                "are"
+                "carries",
+                "carry"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "carries",
+            "grammarRule": "Parenthetical noun phrase does not change the number of the subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l34_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The scissors ___ in the top drawer.",
-            "hint": "'Scissors' is a plural-only noun - it always takes a plural verb.",
-            "explanation": "'Scissors' is a plural noun even though it refers to one object. Like 'trousers', 'glasses', and 'pliers', it always takes a plural verb: 'are'.",
+            "question": "The twins, both excellent students, ___ the same university next fall.",
+            "hint": "The description between the commas confirms something about the subject - it doesn't change its number.",
+            "explanation": "'The twins' is plural, and 'both excellent students' just adds detail. Plural subjects take the base form: 'attend'.",
             "options": [
-                "is",
-                "are"
+                "attends",
+                "attend"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswer": "attend",
+            "grammarRule": "Parenthetical noun phrase does not change the number of the subject",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l35_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Politics ___ a subject many people feel strongly about.",
-            "hint": "'Politics' as a field of study is singular.",
-            "explanation": "Like 'mathematics' and 'economics', 'politics' ending in -ics refers to a single field and takes a singular verb: 'is'.",
+            "question": "The photos taken during the trip ___ stored on my laptop.",
+            "hint": "The phrase describing when the photos were taken doesn't change how many photos there are.",
+            "explanation": "'The photos' is the plural subject; 'taken during the trip' just describes them. Plural subjects take the base form: 'are'.",
             "options": [
-                "is",
-                "are"
+                "are",
+                "is"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswer": "are",
+            "grammarRule": "Participial (descriptive) phrase attached to the subject does not affect agreement",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l35_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The glasses on the table ___ mine.",
-            "hint": "'Glasses' (eyewear) is always plural - it takes a plural verb.",
-            "explanation": "'Glasses' (spectacles) is a plural-only noun, like 'scissors' and 'trousers'. It always takes a plural verb: 'are'.",
+            "question": "The employee hired last month ___ already impressed the whole team.",
+            "hint": "'Hired last month' tells you when, not how many - keep your focus on the subject itself.",
+            "explanation": "'The employee' is singular; 'hired last month' is a descriptive phrase, not a second subject. Singular subjects take 'has'.",
             "options": [
-                "is",
-                "are"
+                "have",
+                "has"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "has",
+            "grammarRule": "Participial (descriptive) phrase attached to the subject does not affect agreement",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l35_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "A pair of scissors ___ on the desk.",
-            "hint": "'A pair of' makes the subject singular - it's one pair.",
-            "explanation": "When we say 'a pair of scissors', the subject is 'a pair', which is singular. So the verb is 'is', not 'are'.",
+            "question": "The documents needed for the visa application ___ notarized copies.",
+            "hint": "The phrase explaining why the documents are needed doesn't affect their number.",
+            "explanation": "'The documents' is plural; 'needed for the visa application' just adds a reason. Plural subjects take the base form: 'require'.",
             "options": [
-                "is",
-                "are"
+                "require",
+                "requires"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswer": "require",
+            "grammarRule": "Participial (descriptive) phrase attached to the subject does not affect agreement",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l36_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The trousers ___ too long for him.",
-            "hint": "'Trousers' is always plural - it needs a plural verb.",
-            "explanation": "'Trousers' is a plural-only noun, like 'scissors' and 'glasses'. It always takes a plural verb: 'are'.",
+            "question": "The color of her eyes ___ everyone at first glance.",
+            "hint": "'Of her eyes' describes the color - it isn't the subject itself.",
+            "explanation": "'The color' is singular, and 'of her eyes' simply specifies whose color it is. Singular subjects take -s: 'strikes'.",
             "options": [
-                "is",
-                "are"
+                "strike",
+                "strikes"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "strikes",
+            "grammarRule": "Agreement follows the head noun before an 'of' phrase, not the noun within it",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l36_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "A pair of trousers ___ hanging in the wardrobe.",
-            "hint": "'A pair of' makes the subject singular.",
-            "explanation": "When we use 'a pair of trousers', the subject is 'a pair' - singular. So the verb is 'is', not 'are'.",
+            "question": "The cost of the repairs ___ higher than we expected.",
+            "hint": "Compare 'the cost' and 'the repairs' - which one is really doing the being?",
+            "explanation": "'The cost' is singular; 'of the repairs' just tells us what the cost refers to. The verb agrees with 'cost': 'is'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "Agreement follows the head noun before an 'of' phrase, not the noun within it",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l36_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Either the nurse or the doctors ___ responsible.",
-            "hint": "'Either…or' - the verb agrees with the nearer subject ('doctors' is plural).",
-            "explanation": "With 'either…or', the verb agrees with the nearest subject. 'The doctors' is plural, so the verb must be 'are'.",
+            "question": "The names of the winners ___ posted on the board.",
+            "hint": "'Names' is plural here, even though 'of the winners' also sounds plural - check the actual head noun.",
+            "explanation": "'The names' is the plural subject; 'of the winners' just clarifies whose names they are. Plural subjects take the base form: 'are'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "grammarRule": "Agreement follows the head noun before an 'of' phrase, not the noun within it",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l37_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "There ___ a problem with the heating system.",
-            "hint": "In 'there is/are', the verb agrees with the noun that follows ('problem' is singular).",
-            "explanation": "In sentences beginning with 'there', the verb agrees with the real subject that follows it. 'A problem' is singular, so 'there is' is correct.",
+            "question": "My friend, a talented musician, ___ in three bands.",
+            "hint": "The phrase between the commas renames 'my friend' - it doesn't add a second subject.",
+            "explanation": "'My friend' is singular, and 'a talented musician' just identifies who that friend is. Singular subjects take -s: 'plays'.",
             "options": [
-                "is",
-                "are"
+                "play",
+                "plays"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "plays",
+            "grammarRule": "Appositive phrase does not change the number of the subject it renames",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l37_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "There ___ several problems with the heating system.",
-            "hint": "In 'there is/are', the verb agrees with the noun that follows ('problems' is plural).",
-            "explanation": "In 'there is/are' sentences, the verb agrees with the noun after the verb. 'Several problems' is plural, so 'there are' is correct.",
+            "question": "The Andersons, our next-door neighbors, ___ moving to Denver next month.",
+            "hint": "The phrase between the commas just identifies who the Andersons are.",
+            "explanation": "'The Andersons' is plural, and 'our next-door neighbors' restates who they are without changing that. Plural subjects take 'are'.",
             "options": [
-                "is",
-                "are"
+                "are",
+                "is"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "grammarRule": "Appositive phrase does not change the number of the subject it renames",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l37_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The audience ___ applauding loudly at the end.",
-            "hint": "'The audience' as a single unit takes a singular verb.",
-            "explanation": "In standard English, 'audience' is a collective noun that takes a singular verb when acting as a group. 'The audience is applauding'.",
+            "question": "Mount Kilimanjaro, the tallest peak in Africa, ___ climbers from around the world every year.",
+            "hint": "The phrase between the commas is just an identifying label for the mountain.",
+            "explanation": "'Mount Kilimanjaro' is a singular subject; the appositive just adds a fact about it. The verb takes -s: 'attracts'.",
             "options": [
-                "is",
-                "are"
+                "attract",
+                "attracts"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "attracts",
+            "grammarRule": "Appositive phrase does not change the number of the subject it renames",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l38_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE DISTRACTOR",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Both the teacher and the principal ___ at the meeting.",
-            "hint": "Two people joined by 'and' form a plural compound subject.",
-            "explanation": "'The teacher and the principal' is a compound subject joined by 'and'. Compound subjects joined by 'and' take a plural verb: 'were'.",
+            "question": "The instructions on the back of the box ___ hard to follow.",
+            "hint": "Even with two phrases stacked together, only the very first noun counts as the subject.",
+            "explanation": "'The instructions' is the plural subject; 'on the back of the box' is a chain of descriptive detail. Plural subjects take 'are'.",
             "options": [
-                "was",
-                "were"
+                "are",
+                "is"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "are",
+            "grammarRule": "Stacked prepositional phrases do not change the true subject of the sentence",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l38_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE DISTRACTOR",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Neither the teacher nor the principal ___ at the meeting.",
-            "hint": "Two singular subjects joined by 'neither…nor' take a singular verb.",
-            "explanation": "When 'neither…nor' joins two singular subjects, the verb is singular. Both 'teacher' and 'principal' are singular, so 'was' is correct.",
+            "question": "The manager of the store on Fifth Avenue ___ every new hire personally.",
+            "hint": "Ignore both phrases after 'manager' and focus on that one noun.",
+            "explanation": "'The manager' is singular, no matter how many phrases follow it. The verb takes -s: 'trains'.",
             "options": [
-                "was",
-                "were"
+                "train",
+                "trains"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "trains",
+            "grammarRule": "Stacked prepositional phrases do not change the true subject of the sentence",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l38_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE DISTRACTOR",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The crew ___ working around the clock to fix the issue.",
-            "hint": "'The crew' acting as one unit takes a singular verb.",
-            "explanation": "'Crew' is a collective noun. When the crew acts together as a single unit, the verb is singular: 'the crew is working'.",
+            "question": "The condition of the roads after the storm ___ dangerous.",
+            "hint": "Trace back through both phrases to the one noun that the sentence is really about.",
+            "explanation": "'The condition' is singular; both 'of the roads' and 'after the storm' are extra detail. The verb takes -s: 'remains'.",
             "options": [
-                "are",
-                "is"
+                "remains",
+                "remain"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "remains",
+            "grammarRule": "Stacked prepositional phrases do not change the true subject of the sentence",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l39_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE DISTRACTOR",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The bread and the butter ___ already on the table.",
-            "hint": "Two separate items (bread AND butter) form a plural compound subject.",
-            "explanation": "Here, 'the bread and the butter' refers to two separate items, not a combined concept. The compound subject takes a plural verb: 'are'.",
+            "question": "The tone of her messages ___ often misunderstood by coworkers.",
+            "hint": "The noun right before the blank isn't always the real subject - trace back to the very start.",
+            "explanation": "'The tone' is the true subject and is singular, even though 'her messages' (plural) sits right before the verb. The verb agrees with 'tone': 'is'.",
             "options": [
-                "are",
-                "is"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "is",
+            "grammarRule": "Agreement follows the true head noun, even when a different-number noun sits right before the verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l39_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE DISTRACTOR",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The athlete, not the coaches, ___ responsible for the decision.",
-            "hint": "With 'not', the verb agrees with the main subject ('athlete', singular).",
-            "explanation": "Phrases introduced by 'not' do not change the main subject. 'The athlete' is the true subject and is singular, so the verb is 'is'.",
+            "question": "The reasons behind his decision ___ unclear to the team.",
+            "hint": "Don't let the singular noun right before the verb fool you - check the very first noun instead.",
+            "explanation": "'The reasons' is the true subject and is plural, even though 'his decision' (singular) appears just before the verb. The verb takes the base form: 'remain'.",
             "options": [
-                "are",
-                "is"
+                "remains",
+                "remain"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswer": "remain",
+            "grammarRule": "Agreement follows the true head noun, even when a different-number noun sits right before the verb",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l39_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE DISTRACTOR",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Economics ___ often considered a difficult subject.",
-            "hint": "Academic fields ending in -ics take a singular verb.",
-            "explanation": "Like 'mathematics' and 'politics', 'economics' ends in -s but refers to one field of study, so it takes a singular verb: 'is'.",
+            "question": "The safety of the passengers ___ always the airline's top priority.",
+            "hint": "The plural noun closest to the verb can be misleading - find the actual subject first.",
+            "explanation": "'The safety' is singular and is the true subject, even though 'the passengers' (plural) comes right before the verb. The verb agrees with 'safety': 'is'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "Agreement follows the true head noun, even when a different-number noun sits right before the verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l40_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The committee members ___ divided on the issue.",
-            "hint": "'Members' (the individuals) is plural - use a plural verb.",
-            "explanation": "When we say 'the committee members', we are referring to the individuals, not the committee as a unit. 'Members' is plural, so the verb is 'are'.",
+            "question": "The manager of the regional offices, always calm under pressure, ___ every crisis efficiently.",
+            "hint": "Combine what you've learned: trace past the 'of' phrase and the parenthetical description to the true subject.",
+            "explanation": "'The manager' is singular; both 'of the regional offices' and the parenthetical description are extra detail. The verb takes -s: 'handles'.",
             "options": [
-                "is",
-                "are"
+                "handle",
+                "handles"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "handles",
+            "grammarRule": "Identifying the head noun through an 'of' phrase and a parenthetical description",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l40_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Neither the investors nor the CEO ___ happy with the results.",
-            "hint": "'Neither…nor' - verb agrees with the nearer subject ('CEO' is singular).",
-            "explanation": "With 'neither…nor', the verb agrees with the subject nearest to it. 'The CEO' is singular, so the verb is 'is'.",
+            "question": "The results of the survey, published last week, ___ a shift in public opinion.",
+            "hint": "Two interruptions in a row - an 'of' phrase and a descriptive phrase - still don't change the subject.",
+            "explanation": "'The results' is plural; 'of the survey' and 'published last week' are both extra detail. Plural subjects take the base form: 'show'.",
             "options": [
-                "is",
-                "are"
+                "show",
+                "shows"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswer": "show",
+            "grammarRule": "Identifying the head noun through an 'of' phrase and a participial phrase",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l40_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The organisation and its partners ___ launching a new initiative.",
-            "hint": "Two entities joined by 'and' form a plural compound subject.",
-            "explanation": "'The organisation and its partners' is a compound subject joined by 'and', making it plural. The verb must be 'are'.",
+            "question": "The photographs in this exhibit, taken over three decades, ___ the city's transformation.",
+            "hint": "As a final check, trace past the prepositional phrase and the descriptive phrase to the real subject.",
+            "explanation": "'The photographs' is plural; 'in this exhibit' and 'taken over three decades' both describe it without changing its number. The verb takes the base form: 'capture'.",
             "options": [
-                "is",
-                "are"
+                "captures",
+                "capture"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswer": "capture",
+            "grammarRule": "Identifying the head noun through a prepositional phrase and a participial phrase",
+            "subjectType": "Plural"
         }
     ]
 }

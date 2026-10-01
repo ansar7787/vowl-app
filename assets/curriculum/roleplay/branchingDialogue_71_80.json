@@ -1,787 +1,787 @@
 {
-    "gameType": "branchingDialogue",
-    "batchIndex": 8,
-    "levels": "71-80",
-    "quests": [
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I want to build a culture where the team feels safe to raise problems early, before they become crises. How do you create that?'",
-            "options": [
-                "You need to build an environment of trust and open communication throughout the team.",
-                "Share a mistake you made yourself first, and thank the first person who raises a hard problem instead of shooting the messenger.",
-                "Psychological safety is increasingly recognised as a critical factor in high-performing teams."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Give specific behaviours a leader can model, not just the goal.",
-            "explanation": "Modelling vulnerability yourself and rewarding the first hard truth are concrete, repeatable leadership behaviours. 'Increasingly recognised as critical' is a general statement. 'Build an environment of trust' names the goal without saying how.",
-            "id": "bd_l71_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I have three competing intelligence priorities and only enough resources for two. How do you make that triage decision?'",
-            "options": [
-                "I'd weigh which one loses the most value if delayed, and which is hardest to recover if we miss it now.",
-                "Resource allocation decisions under constraint are common in intelligence operations.",
-                "You'll need to weigh the importance and urgency of each competing priority carefully."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name the actual criteria you'd use to triage, not just that you'd weigh them.",
-            "explanation": "Naming two concrete triage criteria gives an actual decision method. 'Common in intelligence operations' is a general statement. 'Weigh importance and urgency carefully' repeats the question without offering any real criteria.",
-            "id": "bd_l71_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I want our restaurant to be known for something truly distinctive. How do we identify what our signature could be?'",
-            "options": [
-                "A distinctive restaurant signature takes many years and many iterations to develop and refine.",
-                "Ask what you cook with more passion than anything else, and what your regulars keep coming back for - the overlap is your signature.",
-                "You need to think about what differentiates you from every other restaurant in your area."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Give the two specific questions to ask, not just the goal.",
-            "explanation": "These two questions, and the overlap between them, give a genuine method for finding a signature. 'Takes many years to develop' is a general statement. 'Think about what differentiates you' restates the goal without a method.",
-            "id": "bd_l71_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I'm leading a team of clinicians with very different diagnostic styles. How do I build a shared approach without losing individual expertise?'",
-            "options": [
-                "Build a shared framework for how we reason, not what we conclude, and hold regular case discussions where everyone shows their thinking.",
-                "Teams of clinicians with different diagnostic styles can produce better outcomes through their diversity.",
-                "It's important to respect individual clinical expertise while developing team cohesion."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Focus on shared process, not shared conclusions, plus a concrete forum.",
-            "explanation": "Separating process from conclusions, and adding a regular forum to compare reasoning, is a real structural solution. 'Diversity can produce better outcomes' is a general statement. 'Respect expertise while building cohesion' states the goal without a mechanism.",
-            "id": "bd_l72_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'My most valuable sales relationship has just been taken over by a new contact who I don't yet know. What's my strategy for the transition?'",
-            "options": [
-                "It's essential to make a strong first impression with the new contact as quickly as possible.",
-                "Relationship transitions in business development always carry a risk of business disruption.",
-                "I'd meet them within the week, lead with curiosity about their priorities, and find one early way to add real value."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Give a specific timeline and approach, not just the general goal.",
-            "explanation": "A concrete timeline plus a relationship-first approach is an actual strategy. 'Always carry a risk of disruption' is a general statement. 'Make a strong first impression quickly' states the goal without saying how.",
-            "id": "bd_l72_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I'm training a first officer who has excellent technical skills but very poor crew resource management. How do I develop them?'",
-            "options": [
-                "I'd debrief every flight focusing on communication, not just technical performance, and have them observe a strong crew's CRM habits.",
-                "Crew resource management training is a core component of all commercial pilot development programmes.",
-                "CRM skills are essential in commercial aviation and are often more important than pure technical ability."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Give concrete development actions targeted at this specific weakness.",
-            "explanation": "Targeting debriefs at communication specifically, plus observation of a strong crew, addresses the actual gap. 'Essential in commercial aviation' is a general statement. 'A core component of pilot development programmes' describes the system, not this trainee's plan.",
-            "id": "bd_l72_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'A junior crew member has made a suggestion that is actually better than my own current approach. How do you handle that as a leader?'",
-            "options": [
-                "You should always be open to good ideas regardless of where they come from.",
-                "I'd implement it, credit them publicly by name, and ask what made them comfortable enough to speak up in the first place.",
-                "Good ideas can genuinely come from any level of an organisation."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Give specific leadership actions, including reflecting on what enabled the moment.",
-            "explanation": "Crediting them and asking what enabled the input turns a single moment into a repeatable pattern. 'Good ideas can come from any level' is a general statement. 'Always be open to good ideas' states a principle without any specific action.",
-            "id": "bd_l73_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'My asset has started asking for more money than we agreed. How do I manage this without losing them or compromising the operation?'",
-            "options": [
-                "Asset management is one of the most delicate and complex aspects of intelligence operations.",
-                "You'll need to find a balance between maintaining the asset's cooperation and staying within your operational budget.",
-                "I wouldn't agree or refuse right away - I'd find out first whether it's genuine financial pressure or an attempt to extract more value."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Diagnose the reason before responding, rather than reacting immediately.",
-            "explanation": "Pausing to diagnose the real reason before responding is the situation-dependent approach this calls for. 'One of the most delicate aspects' is a general statement. 'Find a balance between cooperation and budget' names the tension without any actual approach.",
-            "id": "bd_l73_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I'm struggling to find and retain talented junior chefs. What do you think is the most important thing I could change?'",
-            "options": [
-                "You should focus on both improving compensation and creating a positive working environment.",
-                "Recruitment and retention of talented junior chefs is a challenge throughout the industry.",
-                "The biggest factor is visible progression - map out clear milestones so they can actually see the path forward."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Identify the single most important factor, with a specific mechanism.",
-            "explanation": "Naming visible progression as the single biggest lever, with a concrete mechanism, directly answers what was asked. 'A challenge throughout the industry' is a general statement. 'Compensation and positive environment' names two known factors without identifying the most powerful one.",
-            "id": "bd_l73_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I need to have a difficult conversation with a patient's family about prognosis. What communication approach do you recommend?'",
-            "options": [
-                "You need to find a compassionate way to communicate difficult information clearly.",
-                "I'd make sure we have real privacy, check what they already understand first, then be honest and give them a concrete next step.",
-                "Breaking difficult news to family members is one of the most challenging aspects of clinical communication."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Give the specific structure of the conversation, not just the goal.",
-            "explanation": "This gives an actual sequence - setting, checking understanding, honesty, and a next step - not just an intention. 'One of the most challenging aspects' is a general statement. 'Find a compassionate way to communicate clearly' states the goal without the method.",
-            "id": "bd_l74_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I've just found out that one of our products has a quality issue that affects a small percentage of units. Do we issue a proactive recall or wait to see how many complaints arise?'",
-            "options": [
-                "Product quality decisions involve a difficult balance between financial cost and reputational risk.",
-                "A proactive recall is expensive but may be the safer long-term option.",
-                "A proactive recall, without question - the exposure from knowing and waiting is far worse than the cost of acting now."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Give a clear recommendation with reasoning, not a hedge.",
-            "explanation": "A clear, unhedged recommendation with the reasoning behind it is what this situation calls for. 'A difficult balance between cost and risk' is a general framing. 'May be the safer long-term option' is correct but too hedged for a situation that needs a clear call.",
-            "id": "bd_l74_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I've been asked to fly an additional sector at the end of a very long day that would push me close to my maximum permitted duty hours. What do you do?'",
-            "options": [
-                "You should carefully assess your own level of fatigue before making a final decision.",
-                "I won't fly it if it pushes me close to my limit - fatigue is a real safety risk, and that's not a call I'll compromise on.",
-                "Pilot duty hour regulations exist to prevent fatigue-related incidents in commercial aviation."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Give a clear, principled refusal rather than a general rule or a subjective test.",
-            "explanation": "A clear refusal, with the safety reasoning stated plainly, is the principled response this situation calls for. 'Regulations exist to prevent fatigue-related incidents' is a general statement. 'Assess your own fatigue level' hands a safety-critical decision to subjective judgement instead of the objective limit.",
-            "id": "bd_l74_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I want to develop a stronger bench of future leaders within this organisation. What approach do you recommend?'",
-            "options": [
-                "Leadership development is a long-term investment that is critical for any organisation's sustainability.",
-                "You should create a formal leadership development programme with structured content and assessment.",
-                "Name your top emerging talent explicitly, give each one a real stretch assignment every year, and have senior leaders mentor them personally."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Give the specific, high-impact actions rather than a general programme idea.",
-            "explanation": "Naming talent explicitly, stretch assignments, and personal mentoring are the specific actions that actually build a pipeline. 'A long-term investment critical for sustainability' is a general statement. 'A formal programme with structured content' is one approach, but misses the most powerful elements.",
-            "id": "bd_l75_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'We have intelligence that suggests an imminent threat, but the source has been unreliable in the past. What's the decision framework?'",
-            "options": [
-                "Intelligence from unreliable sources requires very careful evaluation before acting.",
-                "You need to weigh the cost of acting on false intelligence against the cost of ignoring a genuine threat.",
-                "I'd figure out whether the past unreliability was poor access or actual deception - that changes everything about how we should act now."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Diagnose the type of past unreliability before deciding how to act.",
-            "explanation": "Distinguishing poor access from active deception gives a real basis for the decision. 'Requires very careful evaluation' is a general statement. 'Weigh the cost of acting against ignoring it' names the tension without offering any way to resolve it.",
-            "id": "bd_l75_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I've been offered the opportunity to write a cookbook. What strategic questions should I consider before committing?'",
-            "options": [
-                "Cookbooks are a significant part of many successful chefs' public profiles.",
-                "You should consider the time commitment and financial terms before making a decision.",
-                "I'd ask what unique angle it has that isn't already out there, and whether the timing actually fits where the restaurant is right now."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Ask the strategic questions specific to this opportunity, not just logistics.",
-            "explanation": "Asking about differentiation and timing addresses the strategic fit, not just the logistics. 'Part of many successful chefs' public profiles' is a general statement. 'Consider time commitment and financial terms' covers only the practical side of the decision.",
-            "id": "bd_l75_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I'm designing a new intake process for our clinic that should reduce patient anxiety and improve satisfaction. Where do you start?'",
-            "options": [
-                "I'd start by walking through the current process myself, as a patient would - the anxiety usually comes from not knowing what happens next.",
-                "Patient intake processes have a significant impact on the overall patient experience.",
-                "You should consult with patients directly about their experience of the current intake process."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Recommend a specific method for understanding the problem before redesigning.",
-            "explanation": "Walking through the process as a patient, and naming where the anxiety actually comes from, is a concrete starting method. 'Has a significant impact on patient experience' is a general statement. 'Consult with patients directly' is useful but gives less immediate insight than direct observation.",
-            "id": "bd_l76_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'A major new competitor has entered my market with significant backing and is aggressively acquiring customers. What is my response strategy?'",
-            "options": [
-                "New well-funded competitors entering a market is one of the most challenging strategic situations a business can face.",
-                "I wouldn't try to compete everywhere - I'd focus on the segments where our relationships and switching costs are strongest.",
-                "You'll need to differentiate your offering and potentially review your pricing strategy."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Recommend focusing on defensible ground rather than competing broadly.",
-            "explanation": "Recommending focus on the strongest, most defensible segments is a real strategic choice. 'One of the most challenging strategic situations' is a general statement. 'Differentiate your offering and review pricing' names tactics without the strategic focus that makes them work.",
-            "id": "bd_l76_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'A regulatory change has just been announced that will require significant training and operational updates for our entire fleet. How do you plan the implementation?'",
-            "options": [
-                "First I'd map exactly what's changing, then build the training path for each role, and schedule it without losing operational coverage.",
-                "Regulatory changes in aviation require very careful and systematic implementation planning.",
-                "You'll need to work closely with the training department and regulatory affairs to plan this properly."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Give the specific phases of implementation, not just who to involve.",
-            "explanation": "Naming the actual phases - mapping, training design, and scheduling - gives a real implementation plan. 'Requires very careful and systematic planning' is a general statement. 'Work closely with training and regulatory affairs' names stakeholders but not a plan.",
-            "id": "bd_l76_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'We need to reduce costs by fifteen percent without affecting operational effectiveness. Where do you look first?'",
-            "options": [
-                "You'll need to do a detailed analysis of all cost lines before identifying where savings can be made.",
-                "Cost reduction without operational impact is one of the most challenging balancing acts in management.",
-                "I'd look at process inefficiency first, not headcount, then at purchasing - that sequence protects operations while still finding real savings."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Give a specific starting point and sequence, not a general process.",
-            "explanation": "Naming a specific starting point, and explicitly ruling out headcount first, gives real direction. 'One of the most challenging balancing acts' is a general statement. 'A detailed analysis of all cost lines' is sound but gives no indication of where to actually look.",
-            "id": "bd_l77_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I'm about to brief a very senior official who I know dislikes receiving bad news. How do I approach this?'",
-            "options": [
-                "You should try to present the information in as constructive and solution-focused a way as possible.",
-                "I'd lead with what we need to decide, not what went wrong, and never soften the facts so much that the urgency gets lost.",
-                "Briefing senior officials who dislike bad news is a challenge that requires careful judgement."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Give a specific framing technique, plus the one thing never to compromise on.",
-            "explanation": "Reframing around the decision needed, while refusing to soften the facts, is a specific, principled technique. 'Requires careful judgement' is a general statement. 'As constructive and solution-focused as possible' sounds right but risks softening the facts too much.",
-            "id": "bd_l77_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I want to create a culture where my kitchen team takes genuine pride in what they produce. How do I build that?'",
-            "options": [
-                "A sense of pride and craftsmanship is one of the most important intangibles in any great kitchen.",
-                "I'd share guest feedback directly with whoever made the dish, and hold myself to the exact same standard I hold them to.",
-                "You need to create a positive team culture and communicate high standards clearly."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Give a specific, repeatable action, plus a principle about leading by example.",
-            "explanation": "A specific feedback habit, plus holding yourself to the same standard, are concrete leadership actions. 'One of the most important intangibles' is a general statement. 'Create a positive culture and communicate high standards' names the goal without any specific action.",
-            "id": "bd_l77_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I'm being asked to contribute to a public health campaign. What are the most important communication principles to apply?'",
-            "options": [
-                "You should focus on making the health information accessible and engaging for the general public.",
-                "Lead with the actual behaviour you want, not the medical reasoning behind it, and make that behaviour as easy as possible to do.",
-                "Public health communication reaches a much broader and more diverse audience than clinical communication."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Focus on behaviour first, and on making it easy, not just clear.",
-            "explanation": "Leading with behaviour, and making it easy rather than just compelling, reflects real behaviour-science principles. 'Reaches a broader and more diverse audience' is a general statement. 'Accessible and engaging' is good general advice but misses the behavioural insight.",
-            "id": "bd_l78_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'My negotiation partner has gone completely silent after I made what I thought was a strong offer. What does this mean and how do I respond?'",
-            "options": [
-                "I wouldn't break the silence - that's usually them considering it, and filling it with concessions is one of the costliest mistakes you can make.",
-                "Silence in negotiations can be interpreted in several different ways.",
-                "You might consider clarifying your offer or asking if they have any questions."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Give the counter-intuitive advice: resist the urge to fill the silence.",
-            "explanation": "Naming the specific, counter-intuitive risk of filling silence with concessions is real negotiation expertise. 'Can be interpreted in several ways' is a general statement. 'Clarify your offer or ask questions' is exactly the instinct that tends to be costly here.",
-            "id": "bd_l78_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I want to run a full-crew simulation exercise to test our emergency response. What scenario types give the most value?'",
-            "options": [
-                "I'd focus on cascading failures under time pressure, and scenarios with no standard procedure - the goal is to stress the system, not test what's known.",
-                "You should include the most likely and most critical emergency scenarios in your simulation design.",
-                "Simulation exercises are a critical component of professional aviation training and safety preparation."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name specific scenario types that go beyond standard procedure testing.",
-            "explanation": "Naming specific high-value scenario types, and the reasoning behind them, goes beyond standard training design. 'A critical component of aviation training' is a general statement. 'Include the most likely and critical scenarios' is standard advice that misses the higher-value scenario types.",
-            "id": "bd_l78_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'A member of my team has filed a formal complaint about my leadership style. How should I handle this?'",
-            "options": [
-                "I'd resist the instinct to defend myself, engage fully with the process, and treat it as a signal about the environment I've created.",
-                "Formal complaints against a leader's style are always uncomfortable and professionally sensitive situations.",
-                "You should follow the formal complaints process and ensure the matter is investigated fairly."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Go beyond compliance - treat the complaint as information about yourself.",
-            "explanation": "Treating the complaint as a genuine signal, not just a process to survive, shows real self-awareness. 'Always uncomfortable and sensitive' is a general statement. 'Follow the process and ensure it's investigated fairly' is the minimum required, but misses the growth opportunity.",
-            "id": "bd_l79_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I need to assess whether to trust a new source who has approached us offering high-value intelligence. What's your vetting framework?'",
-            "options": [
-                "Source vetting is one of the most critical and complex skills in intelligence work.",
-                "I'd verify a couple of biographical details independently, understand their real motivation, and test them with something low-risk first.",
-                "You need to verify the source's credentials and assess both their access and their motivation."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Give specific, concrete vetting steps, not just the categories to assess.",
-            "explanation": "Naming actual steps - independent verification, motivation, and a low-risk test - gives a real vetting method. 'One of the most critical and complex skills' is a general statement. 'Verify credentials and assess access and motivation' names the right categories but no concrete steps.",
-            "id": "bd_l79_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I've been invited to cook at a prestigious international food festival. What preparation is essential?'",
-            "options": [
-                "I'd research the audience and the local context first, and never assume I can source at the destination what I rely on at home.",
-                "You should ensure your menu is perfectly suited to the event and that all logistics are thoroughly planned.",
-                "Cooking at a prestigious international food festival is a significant opportunity for any chef."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Give specific, experience-based preparations rather than a general instruction.",
-            "explanation": "Naming audience research and the sourcing trap reflects real experience-based preparation. 'A significant opportunity for any chef' is a general statement. 'Ensure your menu is suited and logistics are planned' is sound but generic advice that misses the specific pitfalls.",
-            "id": "bd_l79_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'We've identified a significant gap in our team's capabilities that could compromise our next mission. We have eight weeks to address it. What's your plan?'",
-            "options": [
-                "You'll need to implement an accelerated training programme covering all aspects of the identified gap.",
-                "Eight weeks is a relatively short window in which to address a significant capability gap.",
-                "First, I'd diagnose exactly when and why the gap shows up, then train against those exact conditions, and test it with a full simulation."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Give a specific, phased plan with a measurable final test.",
-            "explanation": "A precise diagnosis, targeted training, and a final test to measure it is a real, phased plan. 'A relatively short window' is a general observation. 'An accelerated training programme covering all aspects' has no phasing and no way to measure whether it worked.",
-            "id": "bd_l80_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I want to develop my ability to read people more accurately in high-pressure situations. What specific practices do you recommend?'",
-            "options": [
-                "Reading people accurately in high-pressure situations is one of the most valuable skills in intelligence work.",
-                "Developing your ability to read people requires practice in many different interpersonal situations.",
-                "I'd build a baseline for each person first - deviation from their normal behaviour tells you far more than the behaviour itself."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Give a specific, expert-level technique, not general advice to practise.",
-            "explanation": "Naming the baseline technique, and why deviation matters more than raw behaviour, is real practitioner-level insight. 'One of the most valuable skills' is a general statement. 'Requires practice in many situations' is vague advice without a specific method.",
-            "id": "bd_l80_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'A senior culinary critic will be writing a profile on me as part of a major feature. How do you present yourself and your restaurant's story authentically?'",
-            "options": [
-                "I'd tell the true story of why I cook the way I do, and be honest about a real failure or two - that's what readers trust.",
-                "You should present the most compelling and positive version of your restaurant's story.",
-                "Press profiles are a very valuable opportunity to shape public perception of your restaurant."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Recommend honesty and specificity over a polished, purely positive version.",
-            "explanation": "Choosing truthful specificity, including real failures, is what actually builds trust with readers and critics. 'A very valuable opportunity to shape perception' is a general statement. 'The most compelling and positive version' is the instinct to resist - critics can usually tell when it's purely PR.",
-            "id": "bd_l80_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        }
-    ]
+  "gameType": "branchingDialogue",
+  "batchIndex": 8,
+  "levels": "71-80",
+  "quests": [
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend organizing a group dinner",
+      "scene": "A friend messages the group: 'Trying to pick a restaurant for Friday — any dietary restrictions I should know about?'",
+      "options": [
+        "I'm vegetarian, so anywhere with a couple of solid veggie options would be great, thanks for asking!",
+        "I can probably find something to eat anywhere, thinking about it now, I hadn't stopped to think it all the way through.",
+        "Restaurants these days rarely cater well to different diets, it's honestly a common problem."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When someone's planning around group needs, give them the specific information they asked for so they can plan effectively.",
+      "explanation": "Giving the specific dietary information directly helps the organiser actually pick a restaurant that works. Saying you can 'find something anywhere' sounds easygoing but doesn't give the organiser what they need to plan well. A general comment about restaurants and diets doesn't answer the specific question asked.",
+      "id": "bd_l71_q1",
+      "consequencePreviews": [
+        "Here, the organiser gets exactly what they need to pick a restaurant that works for everyone.",
+        "You may notice that the vague reassurance doesn't actually give the organiser the specific information they asked for.",
+        "As a result, the general comment doesn't answer the specific question about your own dietary needs."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend planning a joint birthday party",
+      "scene": "A friend asks: 'For the joint birthday party, should we do a potluck or just order catering?'",
+      "options": [
+        "Potlucks can be really hit or miss depending on who brings what, I've been to some good ones and some bad ones.",
+        "I really don't mind either way.",
+        "I'd lean toward catering, just to keep things simple for everyone — what do you think?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When helping plan an event together, share your actual preference with a reason, and invite the other person's view too.",
+      "explanation": "Sharing your preference with a reason, and asking theirs, keeps the planning a genuine back-and-forth rather than a one-sided decision. 'Either way is fine' doesn't contribute anything to actually deciding. A general comment about potlucks doesn't state what you'd actually prefer for this specific event.",
+      "id": "bd_l71_q2",
+      "consequencePreviews": [
+        "Here, the general comment doesn't state your actual preference for this specific party.",
+        "As a result, the neutral answer doesn't help move the actual decision forward.",
+        "You share a clear preference with reasoning and invite their input, keeping the planning collaborative."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend group chat trying to finalize numbers for a shared cabin booking",
+      "scene": "In the group chat, a friend writes: 'We need to lock in the cabin booking today — can everyone confirm if they're actually coming, since the price changes based on numbers?' You're pretty sure you're coming, but your work schedule for that weekend isn't confirmed yet.",
+      "options": [
+        "I'm in, honestly, I said that fairly quickly, though I'm open to changing my mind — and I haven't really run it past anyone else yet, and I know that's not the most thought-out response, but it's where my head's at right now.",
+        "I'm about 90% sure I'm in — my schedule should be confirmed by tomorrow morning. Could you check if the booking allows a small buffer, or should I just commit now?",
+        "I'm not sure yet, I'll let you know, to be fair, I hadn't fully worked out how it'd play out, though I'm open to changing my mind — and I'm honestly still working out how I feel about the whole thing."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When your answer is genuinely uncertain but time-sensitive, share your actual likelihood and propose a practical way to handle the remaining unknown.",
+      "explanation": "Sharing your honest likelihood and proposing a practical next step gives the group real information to work with despite the genuine uncertainty. Committing fully despite real doubt risks letting the group down if your schedule falls through. A vague 'I'll let you know' doesn't help the group meet today's actual deadline for the booking.",
+      "id": "bd_l71_q3",
+      "consequencePreviews": [
+        "As a result, committing fully despite real uncertainty risks a bigger problem later if your schedule doesn't actually work out.",
+        "Here, you give a clear, honest picture of your likelihood and propose a practical way to handle the remaining uncertainty.",
+        "As a result, the vague answer doesn't give the group anything to work with, even though a booking decision needs to be made today."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who suggests a plan that doesn't fit your budget",
+      "scene": "A friend suggests: 'Let's do a weekend trip to the coast, there's a really nice hotel I found.' You'd like to join, but the hotel they mentioned is well above what you can spend right now.",
+      "options": [
+        "Sounds fun, count me in, I suppose, I hadn't really planned past that point, so I could be wrong — and I know that's not the most thought-out response, but it's where my head's at right now.",
+        "I'd love to come — that hotel's a bit above my budget right now though, could we look at something a bit more affordable?",
+        "That hotel sounds really expensive."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When a plan doesn't fit your budget, be upfront and suggest an alternative, rather than agreeing anyway or leaving your interest unclear.",
+      "explanation": "Expressing genuine interest, being upfront about budget, and proposing an alternative keeps the trip alive within your actual means. Agreeing without mentioning the cost risks an awkward moment later when it's time to actually pay. Simply commenting that the hotel seems expensive doesn't clarify whether you're still interested in going at all.",
+      "id": "bd_l72_q1",
+      "consequencePreviews": [
+        "You may notice that agreeing without mentioning your budget could put you in an awkward position later when it's time to actually book.",
+        "As a result, you express genuine interest while being honest about budget, and you propose a way to still make the trip work.",
+        "The comment states a concern but doesn't clarify whether you're still interested in a trip within a different budget."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend suggesting an activity you don't enjoy",
+      "scene": "A friend suggests: 'Let's go rock climbing this weekend!' You've tried it before and found you really don't enjoy it, though your friend loves it.",
+      "options": [
+        "Rock climbing isn't really my kind of thing.",
+        "Sure, sounds fun, thinking about it now, that was more of a first reaction, but I'm not totally set on it — and I haven't really run it past anyone else yet.",
+        "I actually tried climbing before and it's not really my thing — but I'd love to do something else with you this weekend. Any other ideas?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When you don't enjoy something a friend loves, be honest and propose an alternative that still lets you spend time together.",
+      "explanation": "Being honest about your preference while proposing an alternative keeps the friendship time alive without pretending to enjoy something you don't. Agreeing anyway means doing something you know you dislike, which isn't sustainable if it keeps happening. Declining without an alternative leaves the weekend plan without a clear next step.",
+      "id": "bd_l72_q2",
+      "consequencePreviews": [
+        "In this moment, the honest decline doesn't offer an alternative, leaving the weekend plan unresolved.",
+        "Realistically, agreeing to something you don't actually enjoy avoids the conversation but doesn't reflect your real preference.",
+        "You're honest about your preference while keeping the door open to spending time together another way."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend group planning a trip where one person keeps overriding the group's preferences",
+      "scene": "In planning a group trip, one friend has repeatedly pushed for expensive activities that don't fit most people's budgets, and just suggested another one: 'We should definitely do the helicopter tour, it'll be amazing!'",
+      "options": [
+        "That does sound amazing — I think it might be out of budget for a few of us though. Could we maybe do a poll for the bigger-ticket activities, so everyone's preferences actually get weighed in?",
+        "Sure, that could be fun, actually, I hadn't really thought it through, though I'm open to changing my mind — and I'm honestly still working out how I feel about the whole thing, and to be fair I only heard about this a few minutes ago myself.",
+        "We can't keep doing whatever the most expensive option is every time, if I'm being honest, I hadn't stopped to think it all the way through, so there might be a better way to handle it — and a lot depends on details I haven't really looked into yet."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When one person's suggestions keep overriding a group's actual preferences, propose a fair process (like a poll) rather than going along again or calling the person out directly.",
+      "explanation": "Proposing a fair process, like a poll, addresses the underlying pattern without singling out your friend personally, which is more likely to actually change how decisions get made. Going along again keeps the group's real preferences and budgets from being properly considered. Directly calling out the pattern, while understandable, risks feeling like a personal attack rather than a fair, structural fix.",
+      "id": "bd_l72_q3",
+      "consequencePreviews": [
+        "In this moment, you acknowledge the appeal of the idea while raising the pattern gently and proposing a fair, structural solution for the whole group.",
+        "Realistically, going along again continues a pattern where the group's actual budget and preferences aren't really being considered.",
+        "The direct callout is understandable but may single out your friend personally rather than proposing a fair way forward for the group."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend whose plan you need to cancel due to illness",
+      "scene": "You're supposed to meet a friend for a hike tomorrow morning, but you've woken up with a bad cold.",
+      "options": [
+        "Hey, I'm so sorry but I've come down with a cold — could we reschedule for next weekend instead?",
+        "I don't think I can make it tomorrow.",
+        "So sorry, I feel absolutely awful about this, I know we've been planning this for weeks, I promise I'll make it up to you somehow, I really hate cancelling on people—"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When cancelling due to illness, explain briefly and propose a new time, rather than being vague or over-apologizing.",
+      "explanation": "A brief explanation plus a proposed new date handles the cancellation cleanly and considerately. The vague message doesn't explain why or offer a path forward, which could leave your friend confused or slightly hurt. Excessive apologizing, while well-meaning, buries the useful information under unnecessary guilt.",
+      "id": "bd_l73_q1",
+      "consequencePreviews": [
+        "In this moment, your friend understands clearly and you've already proposed a way to make up for the cancelled plan.",
+        "In this moment, the vague message doesn't explain why or offer any alternative, which could leave your friend uncertain.",
+        "Realistically, the excessive apologizing takes longer to convey than the simple, useful information your friend actually needs."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a colleague you've agreed to carpool with",
+      "scene": "You'd agreed to carpool with a colleague tomorrow, but your car broke down this evening.",
+      "options": [
+        "Change of plans for tomorrow.",
+        "My car is being such a nightmare lately, it's honestly the third issue this month, I really need to get a new one.",
+        "Hey, my car just broke down — would you still be able to pick me up, or should I find another way in tomorrow?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When a plan is disrupted, explain what happened briefly and ask the specific question you need answered.",
+      "explanation": "Explaining what happened briefly and asking the specific question gives your colleague what they need to respond helpfully. A vague 'change of plans' doesn't explain anything or ask for what you actually need. Venting about your car's ongoing issues doesn't get you to the practical question that actually needs answering tonight.",
+      "id": "bd_l73_q2",
+      "consequencePreviews": [
+        "In this moment, the vague message doesn't explain what actually changed or what you need from your colleague now.",
+        "Here, the extended complaint about the car doesn't clearly ask the practical question your colleague needs to answer.",
+        "Here, your colleague gets the key information and a clear question that lets them respond helpfully."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a group of friends who've planned a trip you now need to back out of for a serious reason",
+      "scene": "You need to back out of a non-refundable group trip because of a family emergency, just five days before departure.",
+      "options": [
+        "I'm really sorry but I can't make the trip anymore, honestly, I hadn't weighed all the details, but that could easily change — and I know that's not the most thought-out response, but it's where my head's at right now.",
+        "I have to share some difficult news — a family emergency means I won't be able to make the trip. I know this affects the group and the costs, and I want to talk through how we handle that together.",
+        "Something came up and I can't come on the trip, sorry about that."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "For a serious, last-minute cancellation with real practical consequences for others, be honest about the reason and proactively address the impact, rather than staying vague or leaving the fallout unaddressed.",
+      "explanation": "Being honest about the seriousness of the situation and proactively raising the shared cost issue shows care for both the relationship and the group's practical needs. Apologizing without addressing the financial impact leaves an awkward gap the group will have to raise themselves. Being vague about something this serious can leave friends unsure how concerned to be or how to respond appropriately.",
+      "id": "bd_l73_q3",
+      "consequencePreviews": [
+        "You may notice that the message is honest but doesn't address the practical impact on shared costs, which the group will likely need to figure out anyway.",
+        "As a result, you explain the serious situation honestly and proactively address the practical impact on the group, rather than leaving it unspoken.",
+        "In this moment, the vague explanation, for something this serious, may leave friends confused or worried without understanding what's actually going on."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend suggesting a time that doesn't work for you",
+      "scene": "A friend suggests: 'Let's meet at 10am Saturday.' You have a standing commitment every Saturday morning, but you're free from early afternoon.",
+      "options": [
+        "10am's a bit tricky for me.",
+        "10am doesn't work for me, but I'm free from 1pm onward — would that work for you instead?",
+        "I have plans every single Saturday morning, it's kind of a whole thing, I've had this commitment for years now actually."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When a suggested time doesn't work, say so clearly and immediately offer your actual availability.",
+      "explanation": "Clearly declining the time and offering your actual availability moves the plan forward efficiently. 'A bit tricky' is vague enough that your friend might not realize it's a genuine no. A long explanation about your commitment doesn't actually tell your friend when you are free.",
+      "id": "bd_l74_q1",
+      "consequencePreviews": [
+        "In this moment, the vague hedge doesn't clearly say no or offer an alternative, leaving the plan unresolved.",
+        "In this moment, your friend gets a clear no on the original time along with a specific, workable alternative.",
+        "In this moment, the lengthy explanation doesn't clearly state your actual availability or propose an alternative time."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker suggesting an after-work meetup",
+      "scene": "A coworker suggests: 'Want to grab drinks right after work today?' You're exhausted and would rather go home, but you don't want to seem unfriendly.",
+      "options": [
+        "Maybe, not sure yet.",
+        "Sure, why not, thinking about it now, I wasn't considering every angle, though I'm open to changing my mind.",
+        "I'd love to another time, but I'm pretty wiped today — how about later this week instead?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Turning down a plan while suggesting a different date shows real interest in seeing the person, just not immediately.",
+      "explanation": "Declining today while proposing another day shows genuine interest without forcing yourself into a plan you don't have energy for. 'Maybe, I'll see' leaves your coworker without a clear answer to plan around. Agreeing despite being exhausted isn't sustainable and doesn't reflect what you actually need right now.",
+      "id": "bd_l74_q2",
+      "consequencePreviews": [
+        "In this moment, the noncommittal answer leaves your coworker unsure whether to expect you or make other plans.",
+        "As a result, agreeing despite being genuinely exhausted isn't sustainable and doesn't reflect what you actually want right now.",
+        "As a result, you decline honestly while keeping the door open, so your coworker doesn't read it as a rejection of them personally."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a close friend who suggests a plan during a week you're already emotionally drained",
+      "scene": "A close friend, unaware of how hard your week has been, suggests: 'Let's have a big catch-up dinner tonight, I have so much to tell you!' You'd genuinely like to see them, but you don't have the energy for a big, involved evening right now.",
+      "options": [
+        "I really want to hear everything — this week's been a lot for me though, so could we do something low-key instead, like just tea at mine?",
+        "Sure, let's do it, actually, I said that fairly quickly, though I'm open to changing my mind — and a lot depends on details I haven't really looked into yet.",
+        "I don't really have the energy for anything right now, maybe another time, in fairness, I hadn't checked how that would actually land, but I'm not totally set on it."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When you want to see someone but don't have the energy for the exact plan they suggested, propose a smaller version rather than the full plan or a full decline.",
+      "explanation": "Proposing a smaller, lower-key version of the plan keeps the connection alive in a way that actually matches your real capacity right now. Agreeing to the big dinner despite being drained risks a harder evening than you can really handle, or a last-minute cancellation. Declining completely might miss out on a genuinely good, smaller way to still connect with your friend this week.",
+      "id": "bd_l74_q3",
+      "consequencePreviews": [
+        "As a result, you're honest about your capacity while keeping the connection alive in a form that actually works for you right now.",
+        "Realistically, agreeing despite being drained risks you either cancelling later or having a harder time than necessary tonight.",
+        "Declining entirely may miss a chance to still connect with your friend in a smaller, more manageable way."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend deciding on movie genres for a group watch",
+      "scene": "A friend asks the group: 'Horror or comedy for movie night?' Two people have already said horror, but you know one friend in the group gets genuinely anxious with horror movies.",
+      "options": [
+        "Horror sounds good to me.",
+        "I'm actually fine with either, but I know horror isn't great for Jess — maybe we save horror for a different night and do comedy tonight?",
+        "I don't think horror is a good idea for movie night."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When you know something relevant that others in the group might not (like a friend's comfort level), it's worth raising specifically and proposing a fair alternative.",
+      "explanation": "Raising the specific concern and proposing an alternative includes everyone thoughtfully without making a big deal of it. Simply agreeing with the majority overlooks something you know that could genuinely affect a friend's comfort. A vague objection, without the reason behind it, is easy for the group to dismiss or misunderstand.",
+      "id": "bd_l75_q1",
+      "consequencePreviews": [
+        "Going along with the majority overlooks a concern for a specific friend that you're aware of and could have raised.",
+        "In this moment, you raise a thoughtful concern for the group and propose a fair solution that includes everyone comfortably.",
+        "Here, the vague objection doesn't explain the specific reason, which makes it easier for the group to dismiss."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a group deciding where to eat after a long disagreement",
+      "scene": "Your group has been going back and forth for ten minutes about where to eat, with no resolution.",
+      "options": [
+        "How about we just narrow it to two options and vote? I'm fine with either Thai or the pizza place.",
+        "We need to just pick something, this is taking forever.",
+        "I really don't mind, whatever everyone else wants."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When a group decision has stalled, proposing a concrete method (like narrowing options or voting) is more useful than staying neutral or just expressing frustration.",
+      "explanation": "Proposing a concrete method to narrow the decision actually helps break the deadlock the group is stuck in. Staying neutral, like others already have, doesn't move a stalled decision forward. Expressing frustration about the delay is understandable but doesn't offer any actual way to resolve it.",
+      "id": "bd_l75_q2",
+      "consequencePreviews": [
+        "You propose a concrete way to break the deadlock, which helps the group actually reach a decision.",
+        "As a result, the comment expresses frustration about the delay without actually proposing a way to resolve it.",
+        "As a result, another neutral vote doesn't help break a deadlock that's already been going on for ten minutes."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend group where two people are having a quiet disagreement about the trip itinerary",
+      "scene": "During a trip planning call, you notice two friends have been subtly disagreeing about the itinerary for a few minutes, with growing tension in their tone, while the rest of the group stays quiet.",
+      "options": [
+        "I think either version would be fine, honestly.",
+        "You two need to just decide, this is dragging on.",
+        "It sounds like you two want pretty different things here — could we lay out both versions side by side and see if there's a way to combine them, or figure out which matters more to each of you?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When you notice a quiet disagreement building between two people in a group, naming it gently and proposing a structured way through often helps more than staying neutral or expressing impatience.",
+      "explanation": "Gently naming the tension and proposing a structured way to resolve it helps the group move past friction that might otherwise keep simmering unaddressed. Staying neutral avoids the real, specific tension that's actually building between your two friends. Expressing impatience about the delay doesn't address the underlying disagreement, which is what's actually causing it.",
+      "id": "bd_l75_q3",
+      "consequencePreviews": [
+        "Here, staying neutral doesn't help resolve the specific tension that's actually building between the two friends.",
+        "Realistically, the comment names the delay but may come across as impatient rather than genuinely helping resolve the underlying disagreement.",
+        "Here, you name the tension gently and propose a structured way to resolve it, which helps the group move past the quiet friction."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who wants to bring their new partner to a close friend gathering",
+      "scene": "A friend asks: 'Would it be okay if I brought my new partner to game night on Friday? I really want you all to meet them.'",
+      "options": [
+        "Sure, I suppose that works.",
+        "Of course, we'd love to meet them — thanks for checking with us first!",
+        "I mean, it's usually just the four of us, but sure, if you want."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When a friend wants to include someone new in a close group tradition, a warm, welcoming yes helps everyone feel comfortable.",
+      "explanation": "A warm, enthusiastic yes makes both your friend and their new partner feel genuinely welcome. 'I guess that's fine' technically agrees but with a hesitance that undercuts the warmth of the moment. Mentioning the usual group size adds a note of reluctance to what should be a simple, welcoming response.",
+      "id": "bd_l76_q1",
+      "consequencePreviews": [
+        "The hesitant tone doesn't match what should be a warm, welcoming response to meeting someone new.",
+        "Realistically, you welcome the new addition warmly, which makes both your friend and their partner feel genuinely included.",
+        "Realistically, pointing out the usual group size adds a slightly reluctant note to what should be a simple, welcoming yes."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend asking to bring their kids to an adults-focused gathering",
+      "scene": "A friend asks: 'Is it okay if I bring the kids to the dinner party? I couldn't find a sitter.' The gathering was originally planned as an adults-only evening.",
+      "options": [
+        "I mean, it was supposed to be adults-only, but I guess it's fine.",
+        "Yeah, that works, in fairness, I hadn't fully worked out how it'd play out, though I'm open to changing my mind.",
+        "Of course, bring them! I'll make sure there's something kid-friendly for them to do too."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When accommodating a genuine last-minute need, a warm, proactive yes helps more than a reluctant one or a flat, unenthusiastic agreement.",
+      "explanation": "A warm, proactive yes, with a thoughtful addition about the kids, shows genuine flexibility and care for a friend's real situation. Mentioning that it was 'supposed to be adults-only' adds unnecessary reluctance to a request that came from a genuine need. A flat 'sure, that's fine' technically accommodates but misses the warmth the moment could easily have.",
+      "id": "bd_l76_q2",
+      "consequencePreviews": [
+        "Here, pointing out the original plan adds a note of reluctance to what could otherwise be a simple, gracious yes.",
+        "You may notice that the flat agreement doesn't show any real warmth or thoughtfulness about making the evening work well for the kids too.",
+        "As a result, you welcome the change warmly and proactively make it work well for everyone, including the kids."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend group where one person wants to bring someone the rest of the group finds difficult",
+      "scene": "A friend asks the group chat: 'Would everyone be okay if I brought Marcus to the reunion dinner? I know he can be a lot sometimes, but he's been a good friend to me lately.' You've personally had some friction with Marcus before.",
+      "options": [
+        "I appreciate you asking — I've had some friction with Marcus before, but I'm willing to have an open mind if he's been good for you lately. Thanks for checking in with us.",
+        "Sure, that's fine, bring him along, in fairness, I hadn't really planned past that point, though I'm open to changing my mind — and I probably should have asked a few more questions before saying anything.",
+        "Honestly, I'd rather he not come, given our history, in fairness, that was more of a first reaction, so I could be wrong — and I know that's not the most thought-out response, but it's where my head's at right now."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When a group member wants to include someone you've had real friction with, being honest about that history while staying open often works better than agreeing silently or refusing outright.",
+      "explanation": "Being honest about your history while staying genuinely open respects both your own past experience and your friend's more recent, positive one. Agreeing without mentioning anything risks an awkward moment at the dinner that your friend never saw coming. Refusing outright doesn't leave room for the possibility that Marcus, or your friend's relationship with him, has genuinely changed.",
+      "id": "bd_l76_q3",
+      "consequencePreviews": [
+        "You're honest about your own history while staying open, which respects both your own experience and your friend's loyalty.",
+        "Here, agreeing without mentioning your real history risks an uncomfortable moment at the dinner without your friend knowing why.",
+        "The direct refusal is honest about your history but doesn't leave room for the fact that people and relationships can genuinely change."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend proposing an expensive group gift for another friend's birthday",
+      "scene": "A friend suggests in the group chat: 'Let's all chip in $80 each for a big birthday gift for Sam.' You'd like to contribute, but $80 is more than you can comfortably spend right now.",
+      "options": [
+        "Sure, I'm in.",
+        "$80 seems like a lot for a birthday gift honestly.",
+        "I'd love to be part of the gift — $80 is a bit more than I can do right now though, could I contribute $40 instead, or help in another way?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When a suggested group contribution is above your budget, propose a specific alternative amount rather than agreeing anyway or vaguely objecting.",
+      "explanation": "Proposing a specific, smaller amount keeps you genuinely part of the group gesture while respecting your actual budget. Agreeing despite the stretch could create financial strain that wasn't necessary. Commenting that $80 seems like a lot doesn't clarify whether you actually want to participate at a different level.",
+      "id": "bd_l77_q1",
+      "consequencePreviews": [
+        "In this moment, agreeing despite the cost being a stretch could create financial strain you didn't need to take on.",
+        "Realistically, the comment raises a concern but doesn't clarify whether you still want to be part of the gift at a different amount.",
+        "In this moment, you stay involved in the group gesture while being honest about your actual budget and proposing a fair alternative."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a colleague organizing a leaving gift for a departing coworker",
+      "scene": "A colleague says: 'I'm collecting for Dana's leaving gift, most people are putting in $25.' You're happy to contribute, but you'd genuinely prefer to give something a bit more personal instead of just cash toward a group gift.",
+      "options": [
+        "I'd love to contribute — would it be alright if I got her something personal separately instead of adding to the pool? I want to do something specific to our friendship.",
+        "Sure, I'll put in $25.",
+        "I'd rather not put money in for this kind of thing."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When you'd prefer a different way of contributing than what's being asked, explain your genuine reason rather than agreeing anyway or declining without context.",
+      "explanation": "Explaining your genuine reason for wanting to contribute differently keeps you involved without simply overriding your real preference. Agreeing to the standard contribution means doing something you didn't actually want, when a good alternative existed. A blunt decline, without explaining your actual reason, could easily be misread as not wanting to contribute at all.",
+      "id": "bd_l77_q2",
+      "consequencePreviews": [
+        "Here, you show genuine goodwill while being honest about wanting a different, more personal way to contribute.",
+        "In this moment, agreeing to the standard contribution overrides your genuine preference for giving something more personal instead.",
+        "The blunt decline doesn't explain your actual reason or your genuine wish to still contribute in a different way."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend group planning a big joint gift for a couple's wedding, where the suggested amount varies widely across friends' means",
+      "scene": "In the group chat, a friend suggests: 'Let's all put in for one big gift instead of separate ones — maybe $150 each?' You know this amount would be genuinely difficult for at least one other friend in the group, and it's a stretch for you too.",
+      "options": [
+        "Sure, I'm in for $150, to be fair, I hadn't weighed all the details, though I'm open to changing my mind — and to be fair I only heard about this a few minutes ago myself, and a lot depends on details I haven't really looked into yet.",
+        "I love the idea of one gift together — $150 is a real stretch for me right now, and I suspect I'm not the only one. Could we do a range where people give what they're comfortable with, and still get something great?",
+        "$150 each seems like a lot to ask honestly."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When a suggested group amount could be a real hardship for you or others, name it honestly and propose an inclusive alternative that still achieves the group's goal.",
+      "explanation": "Naming the real financial concern honestly, and proposing an inclusive, flexible solution, keeps the group idea alive while protecting everyone's actual comfort level. Agreeing despite genuine strain doesn't solve the underlying problem and risks the same issue coming up again with other friends. Raising the concern without proposing a solution leaves the group without a clear way to still achieve their original goal together.",
+      "id": "bd_l77_q3",
+      "consequencePreviews": [
+        "In this moment, agreeing despite real financial strain, and without raising the possibility that others might feel the same, doesn't solve the underlying problem.",
+        "You support the group idea while raising a real financial concern for yourself and possibly others, and you propose an inclusive solution.",
+        "As a result, the comment raises a fair concern but doesn't propose a solution that would still let the group get a meaningful joint gift together."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who consistently arrives very late to plans",
+      "scene": "A friend who is regularly 30+ minutes late to group plans texts: 'See you all at 7 for dinner!' before another outing.",
+      "options": [
+        "See you then!",
+        "Looking forward to it! Just a heads up, we're planning to actually order right at 7, since we've had some late starts before.",
+        "Please actually try to be on time this time, we always end up waiting for you."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "A recurring lateness pattern can often be addressed lightly and proactively, by stating the plan clearly, rather than through a direct confrontation or silence.",
+      "explanation": "Stating the actual plan lightly and proactively addresses the pattern without turning it into a confrontation. Saying nothing at all means the same pattern is likely to repeat once again. Directly calling out the lateness, especially by text ahead of time, may feel more pointed than the situation calls for when a lighter approach could achieve the same result.",
+      "id": "bd_l78_q1",
+      "consequencePreviews": [
+        "As a result, not addressing the pattern at all likely means it simply continues at this dinner too.",
+        "You address the pattern lightly and proactively, without making it feel like a confrontation before the event has even happened.",
+        "Here, the direct callout, sent ahead of time by text, may feel more confrontational than necessary for what's still a fairly minor, ongoing pattern."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a roommate who frequently uses your things without asking",
+      "scene": "You notice your roommate has used your bike again without asking, for the third time this month.",
+      "options": [
+        "You keep taking my bike without asking, that's honestly pretty inconsiderate.",
+        "It's fine, honestly.",
+        "Hey, I noticed you used my bike again — I don't mind sharing, but could you just check with me first next time?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Addressing a recurring habit with someone you live with works best when you're direct about the request but kind in tone.",
+      "explanation": "Being direct but kind about the specific request — checking first — gives your roommate a clear, reasonable ask that's easy to actually follow. Saying it's fine when it isn't lets frustration quietly build over time. Calling the behavior 'inconsiderate' may put your roommate on the defensive, making them less receptive to the actual, simple change you want.",
+      "id": "bd_l78_q2",
+      "consequencePreviews": [
+        "Realistically, the accusatory framing may put your roommate on the defensive rather than leading to the specific change you actually want.",
+        "Realistically, letting the pattern continue unaddressed may lead to growing frustration on your side over time.",
+        "Here, you address the pattern directly but kindly, making a clear, reasonable request going forward."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a longtime friend whose recent behavior in the group has started to feel subtly controlling",
+      "scene": "You've noticed that a longtime friend has, over the last few months, started subtly steering every group decision toward what they want, often dismissing other suggestions quickly. Tonight, they've just done it again: 'Let's just go with my idea, it's simpler.'",
+      "options": [
+        "I've noticed a few of us haven't gotten much say in decisions lately — I know that's not your intention, but could we make sure everyone's ideas actually get heard, starting with tonight?",
+        "Sure, your idea's fine, to be honest, I hadn't really thought it through, though I'm open to changing my mind — and a lot depends on details I haven't really looked into yet, and I'm honestly still working out how I feel about the whole thing.",
+        "You always just push for what you want and dismiss everyone else's ideas, thinking about it now, I wasn't considering every angle, but that could easily change — and honestly the whole situation caught me a bit off guard."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When raising a subtle, ongoing pattern with a longtime friend, naming it gently and assuming good intent tends to open a better conversation than going along with it again or using absolute, accusatory language.",
+      "explanation": "Naming the pattern gently, while assuming good intent, opens a real conversation about a genuine issue without putting your friend on the defensive. Going along again reinforces the very pattern you'd likely rather see change. Using absolute language like 'always' can feel like a harsher accusation than the situation calls for, even when the underlying observation has real truth to it.",
+      "id": "bd_l78_q3",
+      "consequencePreviews": [
+        "As a result, you raise the pattern honestly and kindly, giving your friend the benefit of the doubt while still being clear about the change you want.",
+        "In this moment, going along again reinforces exactly the pattern that's been building, without ever actually raising it.",
+        "Here, the blunt, absolute framing ('always') may feel like a harsher accusation than the situation calls for, even if there's real truth to the underlying pattern."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend suggesting a plan you'd actually rather do differently",
+      "scene": "A friend suggests: 'Let's do a big group trip for my birthday, maybe 15 people!' You think a smaller gathering would suit your friend and the group dynamic better, but you don't want to seem like you're controlling their birthday.",
+      "options": [
+        "That sounds fun! Can I share a thought though — I wonder if a smaller group might feel more relaxed and let you actually spend time with everyone.",
+        "Sounds great, whatever you want!",
+        "I think a big group like that would actually be a bit much."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When you have a genuine concern about someone else's plan for their own celebration, offer it gently as a thought, while making clear it's still their decision.",
+      "explanation": "Framing your honest perspective as a gentle question, while affirming it's still their decision, offers real value without overstepping. Simply agreeing means a genuinely useful perspective never gets shared with your friend. Stating your opinion directly, on their own birthday plan, risks feeling more like a judgment than the gentle suggestion you intended.",
+      "id": "bd_l79_q1",
+      "consequencePreviews": [
+        "Realistically, you offer your honest perspective gently, while making clear the final decision is still genuinely theirs.",
+        "Here, going along without sharing your honest thought means a perspective that could genuinely help never gets heard.",
+        "You may notice that the direct statement, on someone else's birthday plan, may come across as more of a judgment than a gentle suggestion."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker planning a team outing that seems mismatched for the group",
+      "scene": "A coworker organizing a team outing says: 'I'm thinking an axe-throwing venue for the team social!' You know at least two team members have mobility issues that would make that venue difficult.",
+      "options": [
+        "Sounds fun!",
+        "That could be really fun — one thing to think about, though, is that it might not be accessible for everyone on the team. Want to brainstorm a couple of alternatives together?",
+        "That venue isn't really accessible for everyone."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When you notice a real, practical issue with someone's plan, raise it kindly and offer to help solve it together, rather than only agreeing or only pointing out the problem.",
+      "explanation": "Raising the accessibility concern kindly, and offering to help brainstorm alternatives, solves a real, practical issue collaboratively. Simply agreeing risks a genuinely difficult experience for specific team members at the actual event. Pointing out the issue without offering to help leaves your coworker to solve a problem you both now know about, alone.",
+      "id": "bd_l79_q2",
+      "consequencePreviews": [
+        "Here, agreeing without mentioning accessibility could lead to real difficulty for specific team members at the actual event.",
+        "Here, you raise a genuine, practical concern kindly and offer to help find a solution that works for the whole team.",
+        "As a result, the direct statement is accurate but doesn't offer to help find a solution, leaving your coworker to solve it alone."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend planning their own wedding who asks your opinion on a choice you have real concerns about",
+      "scene": "A friend planning their wedding says: 'What do you think of doing the ceremony outdoors, no backup plan for rain?' You genuinely think this is a significant risk given the venue's unpredictable weather history, but it's their wedding and their decision.",
+      "options": [
+        "That sounds beautiful, I'm sure it'll be perfect.",
+        "I really don't think you should risk it without a backup plan, admittedly, I said that fairly quickly, so it's worth double-checking — and I probably should have asked a few more questions before saying anything.",
+        "I love the idea of an outdoor ceremony — my only real worry is the venue's weather history, so I'd hate for you to be caught without any backup option. Totally your call though, just wanted to flag it."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "For a significant decision that's someone else's to make, sharing a genuine concern honestly, while clearly leaving the choice to them, respects both honesty and their autonomy.",
+      "explanation": "Sharing the specific concern honestly, while clearly respecting their final say, gives your friend genuinely useful information without overstepping into their decision. Simply saying it'll be perfect withholds a real concern that could actually matter for planning their big day. Telling them what they 'should' do is more prescriptive than the moment calls for, given that it's ultimately their decision to make.",
+      "id": "bd_l79_q3",
+      "consequencePreviews": [
+        "Realistically, withholding a genuine, relevant concern about something this significant doesn't actually serve your friend well, even if it feels supportive in the moment.",
+        "You may notice that the direct, prescriptive framing may feel like you're making the decision for them, on something that's ultimately their call to make.",
+        "Here, you share a genuine, specific concern honestly while clearly respecting that the final decision belongs to them."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend group deciding on a recurring meetup schedule",
+      "scene": "After a fun weekend together, someone in the group says: 'We should really do this more often, don't you think?' You'd genuinely like that, but you also know your schedule is unpredictable most months.",
+      "options": [
+        "Yeah, definitely, let's do it.",
+        "I'd really like that too — my schedule's pretty unpredictable though, so maybe we set a rough monthly goal rather than a fixed date, so I can actually commit properly?",
+        "My schedule's honestly really unpredictable most months."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When you're genuinely interested in an idea but have a real constraint, express the enthusiasm and the constraint together, along with a workable proposal.",
+      "explanation": "Expressing genuine enthusiasm while naming your real constraint, and proposing something workable, sets an expectation you can actually meet. Agreeing without mentioning your schedule risks disappointing the group later when you can't follow through. Only mentioning the constraint, without confirming your actual interest, might leave the group unsure whether you even want this to happen.",
+      "id": "bd_l80_q1",
+      "consequencePreviews": [
+        "Here, agreeing without mentioning your unpredictable schedule risks setting an expectation you might not actually be able to keep.",
+        "Here, you express genuine enthusiasm while being honest about a real constraint, proposing something you can actually follow through on.",
+        "Realistically, the comment explains a constraint but doesn't confirm whether you're actually interested in the group meeting more often."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a study group deciding whether to continue meeting after the exam",
+      "scene": "After your exam, someone in your study group says: 'This really helped, should we keep meeting for the rest of the semester?' You found the group helpful but think the format could be improved.",
+      "options": [
+        "Yeah, sure, I guess, I hadn't weighed all the details, so I could be wrong — and I haven't really run it past anyone else yet, and I probably should have asked a few more questions before saying anything.",
+        "I think we went off track a lot during our sessions.",
+        "I'd love to keep going — I do think it might help to have a clearer agenda each time, since we sometimes went off track. Would that work for everyone?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When continuing something that worked reasonably well, you can express support for continuing while also suggesting a specific improvement.",
+      "explanation": "Expressing support for continuing, along with a specific, constructive suggestion, genuinely improves the group going forward. Simply agreeing misses a chance to fix a real issue that affected how useful the sessions were. Raising the issue alone, without confirming your interest in continuing, leaves the group unsure whether you actually want to keep meeting.",
+      "id": "bd_l80_q2",
+      "consequencePreviews": [
+        "Realistically, agreeing without mentioning the format issue means a real opportunity to improve the group for everyone gets missed.",
+        "You may notice that the comment raises a valid point but doesn't confirm whether you actually want to continue meeting at all.",
+        "Here, you express genuine support for continuing while suggesting a specific improvement, which benefits the whole group going forward."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a close friend group discussing whether to continue a yearly tradition that's become logistically difficult",
+      "scene": "A friend says: 'Should we keep doing the annual reunion trip? It's getting harder to coordinate everyone's schedules and budgets each year.' You genuinely value the tradition but agree the current format isn't sustainable for the group.",
+      "options": [
+        "I really value this tradition, and I don't want to lose it — but I think you're right that the current format's becoming hard to sustain. What if we tried a shorter, simpler version, or spaced it out to every other year?",
+        "Yeah, we should probably just stop doing it, I mean, I said that fairly quickly, though I'd want to think it over more — and a lot depends on details I haven't really looked into yet, and I know that's not the most thought-out response, but it's where my head's at right now.",
+        "I think we should definitely keep doing it every year no matter what."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When something meaningful has become genuinely difficult to keep doing the same way, acknowledge its importance while being honest about the logistics and suggesting a lighter version.",
+      "explanation": "Honoring the tradition's value while honestly engaging with the real difficulty, and proposing a modified format, protects what matters while solving the actual problem. Agreeing to end it outright may give up something genuinely meaningful when a smaller adjustment could have worked instead. Insisting on keeping the exact same format dismisses a real, practical issue the group is genuinely struggling with.",
+      "id": "bd_l80_q3",
+      "consequencePreviews": [
+        "In this moment, you honor what the tradition means while honestly engaging with the real logistical problem and offering a genuine path forward.",
+        "Realistically, agreeing to end the tradition entirely may give up something genuinely valued, when a modified version might have solved the actual problem.",
+        "Insisting on keeping the exact same format dismisses a real, practical problem the group is genuinely facing."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    }
+  ]
 }

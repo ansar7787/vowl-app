@@ -7,251 +7,251 @@
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I was thinking about the pancake stack... I'll add a coffee, too.",
+            "prompt": "For my main course, I'll have the grilled salmon, and a side of steamed vegetables.",
             "options": [
-                "Pancake Stack",
-                "Coffee",
-                "Waffle Stack",
-                "Tea"
-            ],
-            "correctAnswer": "Pancake Stack, Coffee",
-            "hint": "The customer pauses to think, then finishes the order with a drink.",
-            "explanation": "The pause (shown by ‘…’) is natural in spoken English when someone is deciding. ‘Pancake stack’ and ‘waffle stack’ look similar on a menu, so read carefully.",
-            "id": "go_l21_q1",
-            "menuItems": [
-                "Pancake Stack",
-                "Coffee",
-                "Waffle Stack",
-                "Tea"
-            ],
-            "menuPrices": [
-                "$21.75",
-                "$6.00",
-                "$3.25",
-                "$14.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Do you have club sandwiches? I'll take one, with a side of coleslaw.",
-            "options": [
-                "Club Sandwich",
-                "Coleslaw",
-                "BLT",
-                "Side Salad"
-            ],
-            "correctAnswer": "Club Sandwich, Coleslaw",
-            "hint": "The customer first asks a question, then places the actual order.",
-            "explanation": "Asking ‘Do you have…?’ first is common before ordering something you're not sure is on the menu. ‘I’ll take one’ then confirms the order.",
-            "id": "go_l21_q2",
-            "menuItems": [
-                "Club Sandwich",
-                "Coleslaw",
-                "BLT",
-                "Side Salad"
-            ],
-            "menuPrices": [
-                "$19.25",
-                "$6.00",
-                "$8.50",
-                "$14.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "For here, I'll have the beef chili and some cornbread.",
-            "options": [
-                "Beef Chili",
-                "Cornbread",
-                "Chicken Soup",
-                "Dinner Roll"
-            ],
-            "correctAnswer": "Beef Chili, Cornbread",
-            "hint": "‘For here’ tells the staff the customer is eating in the restaurant, not taking food away.",
-            "explanation": "‘For here’ and ‘to go’ are two essential phrases for ordering in the US. ‘Beef chili’ and ‘cornbread’ are a classic pairing.",
-            "id": "go_l21_q3",
-            "menuItems": [
-                "Beef Chili",
-                "Cornbread",
-                "Chicken Soup",
-                "Dinner Roll"
-            ],
-            "menuPrices": [
-                "$9.75",
-                "$14.00",
-                "$12.50",
-                "$15.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "To go, could I get the turkey club and a bottle of water?",
-            "options": [
-                "Turkey Club",
-                "Water",
-                "Chicken Club",
-                "Soda"
-            ],
-            "correctAnswer": "Turkey Club, Water",
-            "hint": "‘To go’ means the customer will take the food with them, not eat it at the restaurant.",
-            "explanation": "‘To go’ (called ‘takeaway’ in British English) tells the staff to pack the order. ‘Turkey’ and ‘chicken’ clubs are both common, so the meat word matters.",
-            "id": "go_l22_q1",
-            "menuItems": [
-                "Turkey Club",
-                "Water",
-                "Chicken Club",
-                "Soda"
-            ],
-            "menuPrices": [
-                "$18.00",
-                "$17.75",
-                "$19.25",
-                "$3.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I'll do the mushroom omelet and some hash browns.",
-            "options": [
-                "Mushroom Omelet",
-                "Hash Browns",
-                "Cheese Omelet",
-                "Home Fries"
-            ],
-            "correctAnswer": "Mushroom Omelet, Hash Browns",
-            "hint": "‘I’ll do…’ is a casual, modern way to place an order.",
-            "explanation": "‘I’ll do…’ is heard often in casual restaurants, meaning the same as ‘I’ll have…’ Hash browns are shredded and fried, while home fries are cut into cubes.",
-            "id": "go_l22_q2",
-            "menuItems": [
-                "Mushroom Omelet",
-                "Hash Browns",
-                "Cheese Omelet",
-                "Home Fries"
-            ],
-            "menuPrices": [
-                "$14.00",
-                "$5.75",
-                "$21.75",
-                "$8.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Give me the fish and chips and a side of tartar sauce, please.",
-            "options": [
-                "Fish and Chips",
-                "Tartar Sauce",
-                "Fried Shrimp",
-                "Cocktail Sauce"
-            ],
-            "correctAnswer": "Fish and Chips, Tartar Sauce",
-            "hint": "One item is a classic British dish; the other is its traditional dipping sauce.",
-            "explanation": "‘Give me…’ is direct, so adding ‘please’ keeps it polite. Tartar sauce is the traditional partner for fish and chips, while cocktail sauce usually goes with shrimp.",
-            "id": "go_l22_q3",
-            "menuItems": [
-                "Fish and Chips",
-                "Tartar Sauce",
-                "Fried Shrimp",
-                "Cocktail Sauce"
-            ],
-            "menuPrices": [
-                "$12.50",
-                "$19.25",
-                "$7.25",
-                "$19.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "One iced latte and one blueberry muffin, please.",
-            "options": [
-                "Iced Latte",
-                "Blueberry Muffin",
-                "Hot Latte",
-                "Bran Muffin"
-            ],
-            "correctAnswer": "Iced Latte, Blueberry Muffin",
-            "hint": "This order sounds like the customer is listing items one by one.",
-            "explanation": "‘One… and one…’ is a simple, clear way to list items, often used when ordering quickly. ‘Iced’ and ‘hot’ describe temperature, not flavor.",
-            "id": "go_l23_q1",
-            "menuItems": [
-                "Iced Latte",
-                "Blueberry Muffin",
-                "Hot Latte",
-                "Bran Muffin"
-            ],
-            "menuPrices": [
-                "$9.75",
-                "$19.25",
-                "$7.25",
-                "$14.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I'll have the Cobb salad, and could I also get a lemonade?",
-            "options": [
-                "Cobb Salad",
-                "Lemonade",
-                "Chef Salad",
-                "Iced Tea"
-            ],
-            "correctAnswer": "Cobb Salad, Lemonade",
-            "hint": "The customer adds a second request after starting the order.",
-            "explanation": "‘And could I also get…?’ is a natural way to add a second item after the first. A ‘Cobb salad’ traditionally includes egg, bacon, and blue cheese.",
-            "id": "go_l23_q2",
-            "menuItems": [
-                "Cobb Salad",
-                "Lemonade",
-                "Chef Salad",
-                "Iced Tea"
-            ],
-            "menuPrices": [
-                "$15.25",
-                "$11.25",
-                "$9.75",
-                "$5.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Actually, I'll have the grilled salmon and some steamed vegetables.",
-            "options": [
+                "Fried Salmon",
                 "Grilled Salmon",
                 "Steamed Vegetables",
-                "Grilled Trout",
                 "Roasted Vegetables"
             ],
             "correctAnswer": "Grilled Salmon, Steamed Vegetables",
-            "hint": "‘Actually’ often signals the customer has just made a final decision.",
-            "explanation": "‘Actually…’ is used when someone changes their mind or confirms a decision. ‘Steamed’ and ‘roasted’ are different cooking methods, so listen closely.",
-            "id": "go_l23_q3",
+            "hint": "'Main course' tells you the category, but the exact preparation words still matter.",
+            "explanation": "'Main course' (or 'main') refers to the primary dish of the meal - menus are often organized this way, with sides listed separately.",
+            "id": "go_l21_q1",
             "menuItems": [
+                "Fried Salmon",
                 "Grilled Salmon",
                 "Steamed Vegetables",
-                "Grilled Trout",
                 "Roasted Vegetables"
             ],
             "menuPrices": [
-                "$7.25",
-                "$13.75",
-                "$15.25",
+                "$16.50",
+                "$16.00",
+                "$4.00",
+                "$4.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "As a starter, I'll take the soup, and for my main, the roast chicken.",
+            "options": [
+                "Salad",
+                "Soup",
+                "Fried Chicken",
+                "Roast Chicken"
+            ],
+            "correctAnswer": "Soup, Roast Chicken",
+            "hint": "'Starter' and 'main' are two different menu sections - one item comes from each.",
+            "explanation": "'Starter' (called 'appetizer' in American English) comes before the main course; recognizing section words helps you follow longer orders.",
+            "id": "go_l21_q2",
+            "menuItems": [
+                "Salad",
+                "Soup",
+                "Fried Chicken",
+                "Roast Chicken"
+            ],
+            "menuPrices": [
+                "$4.50",
+                "$5.00",
+                "$13.50",
+                "$14.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "American customer: I'll start with an appetizer - the spring rolls - then the beef stir-fry for my entrée.",
+            "options": [
+                "Egg Rolls",
+                "Beef Stir-fry",
+                "Spring Rolls",
+                "Chicken Stir-fry"
+            ],
+            "correctAnswer": "Beef Stir-fry, Spring Rolls",
+            "hint": "'Appetizer' and 'entrée' are the American terms for 'starter' and 'main course.'",
+            "explanation": "In American English, 'appetizer' and 'entrée' are used where British English often says 'starter' and 'main course' - same structure, different words.",
+            "id": "go_l21_q3",
+            "menuItems": [
+                "Egg Rolls",
+                "Beef Stir-fry",
+                "Spring Rolls",
+                "Chicken Stir-fry"
+            ],
+            "menuPrices": [
+                "$6.00",
+                "$15.00",
+                "$6.50",
+                "$14.50"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "I'll have the steak with a side of mashed potatoes and steamed broccoli.",
+            "options": [
+                "Steamed Broccoli",
+                "Mashed Potatoes",
+                "Baked Potato",
+                "Steak"
+            ],
+            "correctAnswer": "Steamed Broccoli, Mashed Potatoes, Steak",
+            "hint": "Three items are named: one main and two sides - check both sides carefully.",
+            "explanation": "A single main dish can come with more than one side; here both 'mashed potatoes' and 'steamed broccoli' are named, not just one of them.",
+            "id": "go_l22_q1",
+            "menuItems": [
+                "Steamed Broccoli",
+                "Mashed Potatoes",
+                "Baked Potato",
+                "Steak"
+            ],
+            "menuPrices": [
+                "$3.25",
+                "$3.00",
+                "$3.00",
+                "$22.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Could I swap the fries for a side salad with my burger?",
+            "options": [
+                "Fries",
+                "Onion Rings",
+                "Burger",
+                "Side Salad"
+            ],
+            "correctAnswer": "Burger, Side Salad",
+            "hint": "'Swap' means one item replaces another - the replaced item doesn't belong in the final order.",
+            "explanation": "'Swap X for Y' means Y is what's actually served; X (the fries) is given up, so it shouldn't be tapped.",
+            "id": "go_l22_q2",
+            "menuItems": [
+                "Fries",
+                "Onion Rings",
+                "Burger",
+                "Side Salad"
+            ],
+            "menuPrices": [
+                "$3.00",
+                "$3.25",
+                "$8.50",
+                "$3.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Server: Today's recommended side is roasted potatoes. Customer: Perfect, I'll take that with the fish.",
+            "options": [
+                "Rice",
+                "Fries",
+                "Roasted Potatoes",
+                "Fish"
+            ],
+            "correctAnswer": "Roasted Potatoes, Fish",
+            "hint": "The side isn't named by the customer directly - it comes from the server's suggestion, which the customer accepts.",
+            "explanation": "'I'll take that' refers back to whatever the server just suggested - you have to track information across two speakers to know the full order.",
+            "id": "go_l22_q3",
+            "menuItems": [
+                "Rice",
+                "Fries",
+                "Roasted Potatoes",
+                "Fish"
+            ],
+            "menuPrices": [
+                "$3.00",
+                "$3.00",
+                "$3.50",
+                "$15.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "I'll have a soft drink - a cola - and a coffee for my dad.",
+            "options": [
+                "Tea",
+                "Cola",
+                "Coffee",
+                "Lemonade"
+            ],
+            "correctAnswer": "Cola, Coffee",
+            "hint": "'Soft drink' is the category; 'cola' is the specific choice within it.",
+            "explanation": "'Soft drink' is a general term covering sodas like cola or lemonade; the customer narrows it down by naming 'cola' specifically.",
+            "id": "go_l23_q1",
+            "menuItems": [
+                "Tea",
+                "Cola",
+                "Coffee",
+                "Lemonade"
+            ],
+            "menuPrices": [
+                "$3.00",
+                "$2.75",
+                "$3.00",
+                "$2.75"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Do you have fresh juice? I'll take an orange juice, then, and a sparkling water.",
+            "options": [
+                "Still Water",
+                "Orange Juice",
+                "Apple Juice",
+                "Sparkling Water"
+            ],
+            "correctAnswer": "Orange Juice, Sparkling Water",
+            "hint": "A question about availability comes first - the actual order follows it.",
+            "explanation": "Asking 'Do you have...?' before ordering is a common way to check availability first; the real order is what follows.",
+            "id": "go_l23_q2",
+            "menuItems": [
+                "Still Water",
+                "Orange Juice",
+                "Apple Juice",
+                "Sparkling Water"
+            ],
+            "menuPrices": [
+                "$2.00",
+                "$4.00",
+                "$4.00",
+                "$2.50"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "For hot drinks, I'll have a cappuccino, and my wife will have a hot chocolate.",
+            "options": [
+                "Mocha",
+                "Hot Chocolate",
+                "Cappuccino",
+                "Latte"
+            ],
+            "correctAnswer": "Hot Chocolate, Cappuccino",
+            "hint": "'Hot drinks' is the section; two different specific choices come from it, one per person.",
+            "explanation": "Menus often group drinks by temperature ('hot drinks,' 'cold drinks'); within that section, exact names like 'cappuccino' versus 'latte' still matter.",
+            "id": "go_l23_q3",
+            "menuItems": [
+                "Mocha",
+                "Hot Chocolate",
+                "Cappuccino",
+                "Latte"
+            ],
+            "menuPrices": [
+                "$4.75",
+                "$4.00",
+                "$4.25",
                 "$4.50"
             ]
         },
@@ -259,307 +259,55 @@
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Let's go with the beef burrito and a horchata.",
+            "prompt": "For dessert, we'll share the chocolate lava cake, and I'll also have an espresso.",
             "options": [
-                "Beef Burrito",
-                "Horchata",
-                "Chicken Burrito",
-                "Agua Fresca"
+                "Americano",
+                "Espresso",
+                "Molten Chocolate Cake",
+                "Chocolate Lava Cake"
             ],
-            "correctAnswer": "Beef Burrito, Horchata",
-            "hint": "‘Let’s go with…’ sounds like the customer is finally settling on a choice.",
-            "explanation": "‘Let’s go with…’ is a relaxed way to confirm a decision, often after considering other options. ‘Horchata’ is a sweet, cinnamon-flavored rice drink.",
+            "correctAnswer": "Espresso, Chocolate Lava Cake",
+            "hint": "'Share' tells you it's for both people, but it's still one item to tap.",
+            "explanation": "'Share' means multiple people will eat the same dish, but it's still ordered once - you don't tap it twice for two people.",
             "id": "go_l24_q1",
             "menuItems": [
-                "Beef Burrito",
-                "Horchata",
-                "Chicken Burrito",
-                "Agua Fresca"
+                "Americano",
+                "Espresso",
+                "Molten Chocolate Cake",
+                "Chocolate Lava Cake"
             ],
             "menuPrices": [
-                "$5.75",
-                "$8.50",
-                "$8.50",
-                "$16.50"
+                "$3.00",
+                "$3.00",
+                "$7.50",
+                "$7.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I was thinking about the shrimp curry... I'll have it with some rice.",
+            "prompt": "I think I'll go with the crème brûlée and a decaf coffee.",
             "options": [
-                "Shrimp Curry",
-                "Rice",
-                "Chicken Curry",
-                "Naan"
+                "Regular Coffee",
+                "Panna Cotta",
+                "Crème Brûlée",
+                "Decaf Coffee"
             ],
-            "correctAnswer": "Shrimp Curry, Rice",
-            "hint": "The customer thinks out loud before finishing the order with a side dish.",
-            "explanation": "The pause shows natural hesitation while deciding. ‘Shrimp’ and ‘chicken’ curry often sit next to each other on a menu, so the protein word is the key detail.",
+            "correctAnswer": "Crème Brûlée, Decaf Coffee",
+            "hint": "'I think I'll go with' is just another natural way of deciding on an order.",
+            "explanation": "'I think I'll go with X' is a thoughtful way to make a choice - it functions exactly like 'I'll have X.'",
             "id": "go_l24_q2",
             "menuItems": [
-                "Shrimp Curry",
-                "Rice",
-                "Chicken Curry",
-                "Naan"
+                "Regular Coffee",
+                "Panna Cotta",
+                "Crème Brûlée",
+                "Decaf Coffee"
             ],
             "menuPrices": [
-                "$12.50",
-                "$19.25",
-                "$6.00",
-                "$14.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Do you have veggie burgers? I'll take one, with a side salad.",
-            "options": [
-                "Veggie Burger",
-                "Side Salad",
-                "Beef Burger",
-                "Fries"
-            ],
-            "correctAnswer": "Veggie Burger, Side Salad",
-            "hint": "The customer checks if the item is available before confirming the order.",
-            "explanation": "‘Do you have…?’ is useful when a customer isn't sure a dish is on the menu. Once confirmed, ‘I’ll take one’ completes the order.",
-            "id": "go_l24_q3",
-            "menuItems": [
-                "Veggie Burger",
-                "Side Salad",
-                "Beef Burger",
-                "Fries"
-            ],
-            "menuPrices": [
-                "$16.50",
-                "$14.00",
-                "$19.25",
-                "$17.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "For here, I'd like the eggs benedict and a fresh orange juice.",
-            "options": [
-                "Eggs Benedict",
-                "Orange Juice",
-                "Eggs Florentine",
-                "Apple Juice"
-            ],
-            "correctAnswer": "Eggs Benedict, Orange Juice",
-            "hint": "Two egg dishes with similar names appear here — check which one was ordered.",
-            "explanation": "‘Eggs Benedict’ uses ham and hollandaise sauce, while ‘Eggs Florentine’ replaces the ham with spinach. ‘Fresh’ simply describes the juice, not a new item.",
-            "id": "go_l25_q1",
-            "menuItems": [
-                "Eggs Benedict",
-                "Orange Juice",
-                "Eggs Florentine",
-                "Apple Juice"
-            ],
-            "menuPrices": [
-                "$4.50",
-                "$20.50",
-                "$18.00",
-                "$16.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "To go, could I get the chicken shawarma and some hummus?",
-            "options": [
-                "Chicken Shawarma",
-                "Hummus",
-                "Beef Shawarma",
-                "Baba Ganoush"
-            ],
-            "correctAnswer": "Chicken Shawarma, Hummus",
-            "hint": "This Middle Eastern order names a wrap and a creamy chickpea dip.",
-            "explanation": "‘Shawarma’ is meat cooked on a rotating spit, often served in a wrap. ‘Hummus’ is made from chickpeas, while ‘baba ganoush’ is made from eggplant.",
-            "id": "go_l25_q2",
-            "menuItems": [
-                "Chicken Shawarma",
-                "Hummus",
-                "Beef Shawarma",
-                "Baba Ganoush"
-            ],
-            "menuPrices": [
-                "$9.75",
-                "$19.25",
-                "$2.00",
-                "$17.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I'll do the Korean fried chicken and some pickled radish.",
-            "options": [
-                "Korean Fried Chicken",
-                "Pickled Radish",
-                "Buffalo Wings",
-                "Coleslaw"
-            ],
-            "correctAnswer": "Korean Fried Chicken, Pickled Radish",
-            "hint": "This dish is fried twice for extra crispiness and often served with a tangy side.",
-            "explanation": "Korean fried chicken is known for its extra-crispy texture, often coated in a sweet and spicy glaze. Pickled radish is a common side that cuts through the richness.",
-            "id": "go_l25_q3",
-            "menuItems": [
-                "Korean Fried Chicken",
-                "Pickled Radish",
-                "Buffalo Wings",
-                "Coleslaw"
-            ],
-            "menuPrices": [
-                "$11.25",
-                "$19.25",
-                "$21.75",
-                "$6.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Give me the jerk chicken and some rice and peas, please.",
-            "options": [
-                "Jerk Chicken",
-                "Rice and Peas",
-                "BBQ Chicken",
-                "Mashed Potatoes"
-            ],
-            "correctAnswer": "Jerk Chicken, Rice and Peas",
-            "hint": "This spicy dish comes from the Caribbean, along with its traditional side.",
-            "explanation": "‘Jerk chicken’ is a Caribbean dish made with a spicy marinade. ‘Rice and peas’ is its classic side dish in Jamaican cooking.",
-            "id": "go_l26_q1",
-            "menuItems": [
-                "Jerk Chicken",
-                "Rice and Peas",
-                "BBQ Chicken",
-                "Mashed Potatoes"
-            ],
-            "menuPrices": [
-                "$19.25",
-                "$21.75",
-                "$20.50",
-                "$13.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "One falafel wrap and one mint lemonade, please.",
-            "options": [
-                "Falafel Wrap",
-                "Mint Lemonade",
-                "Chicken Wrap",
-                "Plain Lemonade"
-            ],
-            "correctAnswer": "Falafel Wrap, Mint Lemonade",
-            "hint": "One item is made from chickpeas; the other has a cooling herb added.",
-            "explanation": "‘Falafel’ is made from ground chickpeas, shaped into balls, and fried. ‘Mint’ tells you the lemonade has fresh mint added.",
-            "id": "go_l26_q2",
-            "menuItems": [
-                "Falafel Wrap",
-                "Mint Lemonade",
-                "Chicken Wrap",
-                "Plain Lemonade"
-            ],
-            "menuPrices": [
-                "$11.25",
-                "$7.25",
-                "$19.25",
-                "$5.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I'll have the poke bowl, and could I also get a side of edamame?",
-            "options": [
-                "Poke Bowl",
-                "Edamame",
-                "Sushi Bowl",
-                "Seaweed Salad"
-            ],
-            "correctAnswer": "Poke Bowl, Edamame",
-            "hint": "The main dish is a Hawaiian rice bowl; the side is a simple steamed bean.",
-            "explanation": "A ‘poke bowl’ typically features raw fish over rice with vegetables. ‘Edamame’ are steamed and salted soybeans, a popular starter.",
-            "id": "go_l26_q3",
-            "menuItems": [
-                "Poke Bowl",
-                "Edamame",
-                "Sushi Bowl",
-                "Seaweed Salad"
-            ],
-            "menuPrices": [
-                "$7.25",
-                "$20.50",
-                "$14.00",
-                "$11.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Actually, I'll have the shrimp tacos instead of the fish tacos, with a side of rice.",
-            "options": [
-                "Shrimp Tacos",
-                "Rice",
-                "Fish Tacos",
-                "Beans"
-            ],
-            "correctAnswer": "Shrimp Tacos, Rice",
-            "hint": "The customer changes their mind — listen for which taco they actually order.",
-            "explanation": "‘Instead of…’ shows the customer switching from one choice to another. Only the final choice — shrimp tacos — should be selected, not the one mentioned first.",
-            "id": "go_l27_q1",
-            "menuItems": [
-                "Shrimp Tacos",
-                "Rice",
-                "Fish Tacos",
-                "Beans"
-            ],
-            "menuPrices": [
-                "$9.75",
-                "$19.25",
-                "$16.50",
-                "$21.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Let's go with the pesto pasta and some garlic bread.",
-            "options": [
-                "Pesto Pasta",
-                "Garlic Bread",
-                "Tomato Pasta",
-                "Breadsticks"
-            ],
-            "correctAnswer": "Pesto Pasta, Garlic Bread",
-            "hint": "The pasta sauce and the type of bread both matter here.",
-            "explanation": "‘Pesto’ is a green sauce made from basil, pine nuts, and cheese, quite different from a tomato sauce. Garlic bread and breadsticks are both common, so check the exact word.",
-            "id": "go_l27_q2",
-            "menuItems": [
-                "Pesto Pasta",
-                "Garlic Bread",
-                "Tomato Pasta",
-                "Breadsticks"
-            ],
-            "menuPrices": [
-                "$18.00",
-                "$16.50",
-                "$11.25",
+                "$3.00",
+                "$7.00",
+                "$7.50",
                 "$3.25"
             ]
         },
@@ -567,280 +315,532 @@
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I was thinking about the Cuban sandwich... I'll have it with a side of plantains.",
+            "prompt": "Instead of a sweet dessert, I'll finish with the cheese board and a glass of port.",
             "options": [
-                "Cuban Sandwich",
-                "Plantains",
-                "Cubano Melt",
-                "French Fries"
+                "Sherry",
+                "Fruit Tart",
+                "Port",
+                "Cheese Board"
             ],
-            "correctAnswer": "Cuban Sandwich, Plantains",
-            "hint": "The customer pauses before finishing the order with a Caribbean-style side.",
-            "explanation": "A ‘Cuban sandwich’ is pressed and filled with roast pork, ham, and cheese. Plantains are a starchy fruit, often fried and served as a side.",
+            "correctAnswer": "Port, Cheese Board",
+            "hint": "'Instead of a sweet dessert' tells you the customer is choosing a non-sweet way to finish the meal.",
+            "explanation": "Not every dessert-course choice is sweet - a cheese board is a common savory alternative at the end of a meal.",
+            "id": "go_l24_q3",
+            "menuItems": [
+                "Sherry",
+                "Fruit Tart",
+                "Port",
+                "Cheese Board"
+            ],
+            "menuPrices": [
+                "$7.50",
+                "$6.50",
+                "$8.50",
+                "$9.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Server: The chicken supreme comes with a creamy mushroom sauce. Customer: That sounds great, I'll have that, with a side of rice.",
+            "options": [
+                "Chicken Supreme",
+                "Rice",
+                "Chicken Parmigiana",
+                "Mashed Potatoes"
+            ],
+            "correctAnswer": "Chicken Supreme, Rice",
+            "hint": "'That' refers back to the dish the server just described.",
+            "explanation": "When a customer says 'I'll have that' right after a description, 'that' means the exact dish just mentioned, not a similar one.",
+            "id": "go_l25_q1",
+            "menuItems": [
+                "Chicken Supreme",
+                "Rice",
+                "Chicken Parmigiana",
+                "Mashed Potatoes"
+            ],
+            "menuPrices": [
+                "$15.00",
+                "$3.00",
+                "$15.50",
+                "$3.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Is the beef bourguignon the one with the red wine sauce? Great, I'll have it, and the garlic mashed potatoes.",
+            "options": [
+                "Beef Bourguignon",
+                "Garlic Mashed Potatoes",
+                "Plain Mashed Potatoes",
+                "Beef Stroganoff"
+            ],
+            "correctAnswer": "Beef Bourguignon, Garlic Mashed Potatoes",
+            "hint": "The customer confirms an ingredient detail before deciding - the confirmation itself isn't a separate item.",
+            "explanation": "Asking about an ingredient ('the one with the red wine sauce') is a way of confirming a dish before ordering it, not a separate request.",
+            "id": "go_l25_q2",
+            "menuItems": [
+                "Beef Bourguignon",
+                "Garlic Mashed Potatoes",
+                "Plain Mashed Potatoes",
+                "Beef Stroganoff"
+            ],
+            "menuPrices": [
+                "$18.00",
+                "$3.50",
+                "$3.00",
+                "$17.50"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Not the one with pesto - I'll have the plain margherita pizza and a side salad.",
+            "options": [
+                "Margherita Pizza",
+                "Pesto Pizza",
+                "Side Salad",
+                "Caesar Salad"
+            ],
+            "correctAnswer": "Margherita Pizza, Side Salad",
+            "hint": "The customer rules out one dish by its ingredient before naming the one they actually want.",
+            "explanation": "Ruling something out ('not the one with...') helps distinguish between similar dishes; the rejected item should never be tapped.",
+            "id": "go_l25_q3",
+            "menuItems": [
+                "Margherita Pizza",
+                "Pesto Pizza",
+                "Side Salad",
+                "Caesar Salad"
+            ],
+            "menuPrices": [
+                "$11.00",
+                "$12.00",
+                "$3.00",
+                "$4.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Under starters I'll have the bruschetta, and under mains, the grilled swordfish.",
+            "options": [
+                "Bruschetta",
+                "Caprese",
+                "Pan-Seared Tuna",
+                "Grilled Swordfish"
+            ],
+            "correctAnswer": "Bruschetta, Grilled Swordfish",
+            "hint": "'Under' here means 'from this section of the menu.'",
+            "explanation": "'Under [section name]' is a natural way to say which part of the menu an item comes from, especially when reading a menu aloud.",
+            "id": "go_l26_q1",
+            "menuItems": [
+                "Bruschetta",
+                "Caprese",
+                "Pan-Seared Tuna",
+                "Grilled Swordfish"
+            ],
+            "menuPrices": [
+                "$7.00",
+                "$7.50",
+                "$18.00",
+                "$19.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "From the sides section, I'll add the truffle fries to my order, along with the steak I mentioned earlier.",
+            "options": [
+                "Steak",
+                "Sweet Potato Fries",
+                "Truffle Fries",
+                "Ribeye"
+            ],
+            "correctAnswer": "Steak, Truffle Fries",
+            "hint": "'The steak I mentioned earlier' refers to something said before this sentence - trust that it's part of the order.",
+            "explanation": "Real conversations often refer back to something said earlier; you have to accept that reference as part of the order even without hearing the original mention.",
+            "id": "go_l26_q2",
+            "menuItems": [
+                "Steak",
+                "Sweet Potato Fries",
+                "Truffle Fries",
+                "Ribeye"
+            ],
+            "menuPrices": [
+                "$24.00",
+                "$3.50",
+                "$4.50",
+                "$26.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "So, starters: the calamari. Mains: the lamb shank. And sides: honestly, just bread is fine.",
+            "options": [
+                "Calamari",
+                "Fries",
+                "Bread",
+                "Lamb Shank"
+            ],
+            "correctAnswer": "Calamari, Bread, Lamb Shank",
+            "hint": "Each menu section is labeled clearly - one item comes from each.",
+            "explanation": "Naming each section before the item ('Starters: ... Mains: ... Sides: ...') is a clear, organized way some customers order.",
+            "id": "go_l26_q3",
+            "menuItems": [
+                "Calamari",
+                "Fries",
+                "Bread",
+                "Lamb Shank"
+            ],
+            "menuPrices": [
+                "$8.00",
+                "$3.00",
+                "$2.00",
+                "$21.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Server: This one's a spicy pork dish with peppers, and that one is a milder chicken dish. Customer: I'll take the milder one, and a coke.",
+            "options": [
+                "Coke",
+                "Chicken Dish",
+                "Pork Dish",
+                "Diet Coke"
+            ],
+            "correctAnswer": "Coke, Chicken Dish",
+            "hint": "The customer never says the dish's name directly - you must match the description to the choice.",
+            "explanation": "Sometimes customers refer to a description ('the milder one') instead of a dish name; match the description back to the correct item.",
+            "id": "go_l27_q1",
+            "menuItems": [
+                "Coke",
+                "Chicken Dish",
+                "Pork Dish",
+                "Diet Coke"
+            ],
+            "menuPrices": [
+                "$2.75",
+                "$13.00",
+                "$14.00",
+                "$2.75"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "I'll skip the one with shellfish and have the vegetable curry instead, with naan bread.",
+            "options": [
+                "Naan Bread",
+                "Vegetable Curry",
+                "Garlic Naan",
+                "Shrimp Curry"
+            ],
+            "correctAnswer": "Naan Bread, Vegetable Curry",
+            "hint": "The customer avoids one dish based on an ingredient, then chooses two other items.",
+            "explanation": "'Skip' means to avoid something; the item mentioned right after 'skip' is explicitly not ordered.",
+            "id": "go_l27_q2",
+            "menuItems": [
+                "Naan Bread",
+                "Vegetable Curry",
+                "Garlic Naan",
+                "Shrimp Curry"
+            ],
+            "menuPrices": [
+                "$3.00",
+                "$12.00",
+                "$3.50",
+                "$14.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Server: The pad thai has peanuts in it; the pad see ew doesn't. Customer: I'll have the one without, then, and a Thai iced tea.",
+            "options": [
+                "Thai Iced Tea",
+                "Pad Thai",
+                "Pad See Ew",
+                "Thai Iced Coffee"
+            ],
+            "correctAnswer": "Thai Iced Tea, Pad See Ew",
+            "hint": "The server states which dish contains peanuts, so 'the one without' is fully explained in the dialogue.",
+            "explanation": "This tests careful listening across two sentences: the server's explanation decides which dish 'the one without' actually refers to.",
             "id": "go_l27_q3",
             "menuItems": [
-                "Cuban Sandwich",
-                "Plantains",
-                "Cubano Melt",
-                "French Fries"
+                "Thai Iced Tea",
+                "Pad Thai",
+                "Pad See Ew",
+                "Thai Iced Coffee"
             ],
             "menuPrices": [
-                "$4.50",
-                "$2.00",
-                "$12.50",
-                "$13.75"
+                "$3.00",
+                "$12.00",
+                "$12.00",
+                "$3.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Do you have breakfast burritos? I'll take one, with a black coffee.",
+            "prompt": "I'll have the chicken parmesan, not the chicken piccata, and a side of pasta.",
             "options": [
-                "Breakfast Burrito",
-                "Black Coffee",
-                "Breakfast Bowl",
-                "Latte"
+                "Pasta",
+                "Chicken Piccata",
+                "Garlic Bread",
+                "Chicken Parmesan"
             ],
-            "correctAnswer": "Breakfast Burrito, Black Coffee",
-            "hint": "The customer checks the menu item exists, then adds a simple drink.",
-            "explanation": "‘Black coffee’ means coffee with nothing added — no milk or sugar. This is different from a latte, which is mostly steamed milk.",
+            "correctAnswer": "Pasta, Chicken Parmesan",
+            "hint": "The customer names the one they want and the one they don't - only tap the wanted one.",
+            "explanation": "Explicitly rejecting a similar-sounding dish helps you avoid a common mix-up between two dishes with the same main ingredient.",
             "id": "go_l28_q1",
             "menuItems": [
-                "Breakfast Burrito",
-                "Black Coffee",
-                "Breakfast Bowl",
-                "Latte"
+                "Pasta",
+                "Chicken Piccata",
+                "Garlic Bread",
+                "Chicken Parmesan"
             ],
             "menuPrices": [
-                "$18.00",
-                "$3.25",
-                "$9.75",
-                "$18.00"
+                "$3.50",
+                "$17.00",
+                "$2.50",
+                "$16.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "For here, I'd like the eggplant parmesan and a side salad.",
+            "prompt": "Vegetable lo mein, not vegetable chow mein - they're different noodles. And a green tea, please.",
             "options": [
-                "Eggplant Parmesan",
-                "Side Salad",
-                "Chicken Parmesan",
-                "Caesar Salad"
+                "Green Tea",
+                "Black Tea",
+                "Vegetable Lo Mein",
+                "Vegetable Chow Mein"
             ],
-            "correctAnswer": "Eggplant Parmesan, Side Salad",
-            "hint": "The main ingredient of the parmesan dish is the key detail — it isn't meat this time.",
-            "explanation": "‘Eggplant parmesan’ replaces the usual chicken with breaded, fried eggplant. Both parmesan dishes are common, so the first word decides the answer.",
+            "correctAnswer": "Green Tea, Vegetable Lo Mein",
+            "hint": "The customer explains why the distinction matters - the dishes just have different noodle types.",
+            "explanation": "Explaining a distinction out loud ('they're different noodles') is something speakers do to avoid mix-ups - the explanation isn't a new item.",
             "id": "go_l28_q2",
             "menuItems": [
-                "Eggplant Parmesan",
-                "Side Salad",
-                "Chicken Parmesan",
+                "Green Tea",
+                "Black Tea",
+                "Vegetable Lo Mein",
+                "Vegetable Chow Mein"
+            ],
+            "menuPrices": [
+                "$3.00",
+                "$3.00",
+                "$11.00",
+                "$11.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Server: The lasagna has meat in it; the vegetable version is called the melanzane. Customer: I'll take the melanzane, then, and a house salad.",
+            "options": [
+                "House Salad",
+                "Caesar Salad",
+                "Lasagna",
+                "Melanzane"
+            ],
+            "correctAnswer": "House Salad, Melanzane",
+            "hint": "A less familiar dish name is explained through contrast with a more familiar one.",
+            "explanation": "When an unfamiliar dish name appears, listen for how the server distinguishes it from something you already recognize.",
+            "id": "go_l28_q3",
+            "menuItems": [
+                "House Salad",
+                "Caesar Salad",
+                "Lasagna",
+                "Melanzane"
+            ],
+            "menuPrices": [
+                "$4.00",
+                "$4.50",
+                "$13.50",
+                "$13.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Server: Our special tonight is a pan-seared duck breast with a cherry glaze. Customer: That sounds wonderful - I'll have that, and the wine pairing you recommend.",
+            "options": [
+                "Chicken Breast",
+                "Duck Breast",
+                "Wine Pairing",
+                "House Wine"
+            ],
+            "correctAnswer": "Duck Breast, Wine Pairing",
+            "hint": "'The wine pairing you recommend' hands the choice to the server, but it's still an item being ordered.",
+            "explanation": "Letting the server choose ('the wine pairing you recommend') is a real ordering style - it still adds a specific item to the order.",
+            "id": "go_l29_q1",
+            "menuItems": [
+                "Chicken Breast",
+                "Duck Breast",
+                "Wine Pairing",
+                "House Wine"
+            ],
+            "menuPrices": [
+                "$18.00",
+                "$26.00",
+                "$9.00",
+                "$7.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Server: The seafood platter includes shrimp, mussels, and calamari, served with garlic bread. Customer: Perfect, that's exactly what I'm after, and a lemonade to go with it.",
+            "options": [
+                "Meat Platter",
+                "Seafood Platter",
+                "Iced Tea",
+                "Lemonade"
+            ],
+            "correctAnswer": "Seafood Platter, Lemonade",
+            "hint": "Everything the server described comes as one dish - you don't tap each ingredient separately.",
+            "explanation": "When a server describes what's included in one dish, you order the dish as a whole, not each component listed in the description.",
+            "id": "go_l29_q2",
+            "menuItems": [
+                "Meat Platter",
+                "Seafood Platter",
+                "Iced Tea",
+                "Lemonade"
+            ],
+            "menuPrices": [
+                "$24.00",
+                "$28.00",
+                "$3.00",
+                "$3.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Does the mushroom risotto have any meat in it? No? Great, I'll have that, then, and a house salad.",
+            "options": [
+                "Chicken Risotto",
+                "House Salad",
+                "Mushroom Risotto",
+                "Caesar Salad"
+            ],
+            "correctAnswer": "House Salad, Mushroom Risotto",
+            "hint": "The customer asks a yes/no question first, and the implied answer leads directly to their decision.",
+            "explanation": "A short implied answer shows a question was answered off-screen; you have to trust the resulting decision as the real order.",
+            "id": "go_l29_q3",
+            "menuItems": [
+                "Chicken Risotto",
+                "House Salad",
+                "Mushroom Risotto",
                 "Caesar Salad"
             ],
             "menuPrices": [
-                "$21.75",
+                "$15.00",
+                "$4.00",
                 "$14.00",
-                "$8.50",
-                "$8.50"
+                "$4.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "To go, could I get the banh mi and a Vietnamese iced coffee?",
+            "prompt": "For starters, the burrata; for my main, the branzino, which I understand is grilled, not fried.",
             "options": [
-                "Banh Mi",
-                "Vietnamese Iced Coffee",
-                "Spring Roll Wrap",
-                "Regular Iced Coffee"
+                "Fried Branzino",
+                "Branzino",
+                "Caprese Salad",
+                "Burrata"
             ],
-            "correctAnswer": "Banh Mi, Vietnamese Iced Coffee",
-            "hint": "The sandwich and the sweetened, strong coffee are both named specifically.",
-            "explanation": "‘Banh mi’ is a Vietnamese sandwich served on a crispy baguette. Vietnamese iced coffee is made with sweetened condensed milk, giving it a distinct taste.",
-            "id": "go_l28_q3",
-            "menuItems": [
-                "Banh Mi",
-                "Vietnamese Iced Coffee",
-                "Spring Roll Wrap",
-                "Regular Iced Coffee"
-            ],
-            "menuPrices": [
-                "$11.25",
-                "$16.50",
-                "$8.50",
-                "$11.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I'll do the Greek gyro and some tzatziki on the side.",
-            "options": [
-                "Greek Gyro",
-                "Tzatziki",
-                "Chicken Kebab",
-                "Hummus"
-            ],
-            "correctAnswer": "Greek Gyro, Tzatziki",
-            "hint": "The wrap and its cool, yogurt-based sauce are both mentioned.",
-            "explanation": "A ‘gyro’ is meat cooked on a spit and wrapped in flatbread. ‘Tzatziki’ is a yogurt sauce with cucumber and garlic, different from hummus.",
-            "id": "go_l29_q1",
-            "menuItems": [
-                "Greek Gyro",
-                "Tzatziki",
-                "Chicken Kebab",
-                "Hummus"
-            ],
-            "menuPrices": [
-                "$19.25",
-                "$8.50",
-                "$20.50",
-                "$19.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Give me the ramen with pork belly and a soft-boiled egg on top, please.",
-            "options": [
-                "Ramen with Pork Belly",
-                "Soft-Boiled Egg",
-                "Ramen with Chicken",
-                "Hard-Boiled Egg"
-            ],
-            "correctAnswer": "Ramen with Pork Belly, Soft-Boiled Egg",
-            "hint": "The protein in the ramen and the way the egg is cooked both need attention.",
-            "explanation": "‘Pork belly’ and ‘chicken’ are common ramen toppings, so check which was named. ‘Soft-boiled’ eggs have a runny center, unlike ‘hard-boiled’ eggs.",
-            "id": "go_l29_q2",
-            "menuItems": [
-                "Ramen with Pork Belly",
-                "Soft-Boiled Egg",
-                "Ramen with Chicken",
-                "Hard-Boiled Egg"
-            ],
-            "menuPrices": [
-                "$11.25",
-                "$9.75",
-                "$18.00",
-                "$20.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "One margherita flatbread and one sparkling lemonade, please.",
-            "options": [
-                "Margherita Flatbread",
-                "Sparkling Lemonade",
-                "Pepperoni Flatbread",
-                "Still Lemonade"
-            ],
-            "correctAnswer": "Margherita Flatbread, Sparkling Lemonade",
-            "hint": "The flatbread topping and the type of lemonade both matter.",
-            "explanation": "‘Margherita’ describes a simple tomato, cheese, and basil topping. ‘Sparkling’ tells you the lemonade has bubbles, unlike a ‘still’ one.",
-            "id": "go_l29_q3",
-            "menuItems": [
-                "Margherita Flatbread",
-                "Sparkling Lemonade",
-                "Pepperoni Flatbread",
-                "Still Lemonade"
-            ],
-            "menuPrices": [
-                "$9.75",
-                "$14.00",
-                "$9.75",
-                "$17.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I'll have a double espresso, and could I also get the almond croissant?",
-            "options": [
-                "Double Espresso",
-                "Almond Croissant",
-                "Single Espresso",
-                "Plain Croissant"
-            ],
-            "correctAnswer": "Double Espresso, Almond Croissant",
-            "hint": "The strength of the coffee and the croissant filling both need attention.",
-            "explanation": "A ‘double espresso’ uses twice the coffee of a single shot. ‘Almond’ tells you the croissant has an almond filling, unlike a plain one.",
+            "correctAnswer": "Branzino, Burrata",
+            "hint": "The clarification about cooking method describes the branzino - it isn't a separate item.",
+            "explanation": "Not every detail in a long sentence becomes a tappable item - a cooking-method clarification describes an already-named dish, it doesn't add a new one.",
             "id": "go_l30_q1",
             "menuItems": [
-                "Double Espresso",
-                "Almond Croissant",
-                "Single Espresso",
-                "Plain Croissant"
+                "Fried Branzino",
+                "Branzino",
+                "Caprese Salad",
+                "Burrata"
             ],
             "menuPrices": [
-                "$9.75",
-                "$19.25",
-                "$16.50",
-                "$2.00"
+                "$22.00",
+                "$24.00",
+                "$8.00",
+                "$9.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Actually, I'll have the oat milk latte instead of the regular one, with an avocado toast.",
+            "prompt": "From the mains, I'd like the osso buco; the risotto that comes with it is fine, but could I also get some extra parmesan?",
             "options": [
-                "Oat Milk Latte",
-                "Avocado Toast",
-                "Regular Latte",
-                "Sourdough Toast"
+                "Extra Parmesan",
+                "Extra Butter",
+                "Osso Buco",
+                "Risotto"
             ],
-            "correctAnswer": "Oat Milk Latte, Avocado Toast",
-            "hint": "The customer changes the type of milk in their coffee order — listen for the final choice.",
-            "explanation": "‘Instead of…’ signals a switch from one choice to another. Only the final drink — the oat milk latte — should be selected.",
+            "correctAnswer": "Extra Parmesan, Osso Buco, Risotto",
+            "hint": "One side is already included and accepted, while a genuinely new extra item is requested separately.",
+            "explanation": "Accepting an included side ('is fine') still counts it as part of the order, and 'could I also get' introduces a true add-on item.",
             "id": "go_l30_q2",
             "menuItems": [
-                "Oat Milk Latte",
-                "Avocado Toast",
-                "Regular Latte",
-                "Sourdough Toast"
+                "Extra Parmesan",
+                "Extra Butter",
+                "Osso Buco",
+                "Risotto"
             ],
             "menuPrices": [
-                "$13.75",
-                "$16.50",
-                "$18.00",
-                "$11.25"
+                "$1.50",
+                "$1.00",
+                "$26.00",
+                "$6.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Let's go with the cold brew and some banana bread.",
+            "prompt": "We'll start with the antipasto to share, I'll move on to the veal marsala, my husband's having the eggplant parmesan, and let's just say we'll figure out dessert later.",
             "options": [
-                "Cold Brew",
-                "Banana Bread",
-                "Iced Coffee",
-                "Blueberry Muffin"
+                "Eggplant Parmesan",
+                "Tiramisu",
+                "Veal Marsala",
+                "Antipasto"
             ],
-            "correctAnswer": "Cold Brew, Banana Bread",
-            "hint": "This coffee style is brewed slowly with cold water, not hot.",
-            "explanation": "‘Cold brew’ is steeped in cold water for many hours, giving it a smoother taste than regular iced coffee. Banana bread is a common café treat.",
+            "correctAnswer": "Eggplant Parmesan, Veal Marsala, Antipasto",
+            "hint": "Three real items are named for now; a decision that's postponed isn't part of the current order.",
+            "explanation": "'We'll figure out dessert later' explicitly postpones a decision - only committed choices belong in the order, which is why dessert isn't tapped.",
             "id": "go_l30_q3",
             "menuItems": [
-                "Cold Brew",
-                "Banana Bread",
-                "Iced Coffee",
-                "Blueberry Muffin"
+                "Eggplant Parmesan",
+                "Tiramisu",
+                "Veal Marsala",
+                "Antipasto"
             ],
             "menuPrices": [
-                "$4.50",
-                "$19.25",
-                "$9.75",
-                "$19.25"
+                "$18.00",
+                "$8.00",
+                "$24.00",
+                "$12.00"
             ]
         }
     ]

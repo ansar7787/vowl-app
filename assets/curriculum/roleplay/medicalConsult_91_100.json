@@ -1,637 +1,637 @@
 {
-    "gameType": "medicalConsult",
-    "batchIndex": 10,
-    "levels": "91-100",
-    "quests": [
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I've had this persistent dull ache on one side of my abdomen, and I've also felt bloated most evenings.\"",
-            "symptoms": [
-                "Side Pain",
-                "Bloating",
-                "Stomach Ache",
-                "Nausea"
-            ],
-            "correctAnswer": "Side Pain, Bloating",
-            "hint": "One symptom is a dull ache on the side, and the other is a fullness feeling in the evening.",
-            "explanation": "A dull ache on one side is Side Pain, and evening fullness is Bloating.",
-            "id": "mc_l91_q1",
-            "medicalVocab": [
-                "Side Pain, Bloating",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The nurse's intake note reads: \"Patient reports intermittent joint pain and low-grade fever over the past week.\"",
-            "symptoms": [
-                "Joint Stiffness",
-                "Joint Pain",
-                "Fever",
-                "Chills"
-            ],
-            "correctAnswer": "Joint Pain, Fever",
-            "hint": "The note names pain in the joints and a change in temperature.",
-            "explanation": "The note describes Joint Pain and a low-grade Fever.",
-            "id": "mc_l91_q2",
-            "medicalVocab": [
-                "Joint Pain, Fever",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've been getting these episodes where everything sounds muffled, like I'm underwater, and it comes with some ringing,\" the patient tells the doctor.",
-            "symptoms": [
-                "Hearing Loss",
-                "Ear Fullness",
-                "Dizziness",
-                "Ringing in the Ears"
-            ],
-            "correctAnswer": "Hearing Loss, Ringing in the Ears",
-            "hint": "One symptom is a loss of clarity in sound, and the other is a sound the patient hears.",
-            "explanation": "Muffled hearing is Hearing Loss, and the accompanying sound is Ringing in the Ears.",
-            "id": "mc_l91_q3",
-            "medicalVocab": [
-                "Hearing Loss, Ringing in the Ears",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"My scalp's been unbearably itchy, and I've also had trouble sleeping because of how much it itches at night.\"",
-            "symptoms": [
-                "Dry Skin",
-                "Scalp Itching",
-                "Rash",
-                "Insomnia"
-            ],
-            "correctAnswer": "Scalp Itching, Insomnia",
-            "hint": "One symptom is the itching itself, and the other is what it's causing at night.",
-            "explanation": "Constant scalp itching is Scalp Itching, and losing sleep over it is Insomnia.",
-            "id": "mc_l92_q1",
-            "medicalVocab": [
-                "Scalp Itching, Insomnia",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"My grandfather's had trouble finding the right words lately, and he seems to tire out much faster than before.\"",
-            "symptoms": [
-                "Brain Fog",
-                "Weakness",
-                "Fatigue",
-                "Dizziness"
-            ],
-            "correctAnswer": "Brain Fog, Fatigue",
-            "hint": "One symptom is about thinking and words, and the other is about tiring out.",
-            "explanation": "Trouble finding words fits Brain Fog, and tiring out faster fits Fatigue.",
-            "id": "mc_l92_q2",
-            "medicalVocab": [
-                "Brain Fog, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I get this deep, aching pressure in my jaw, worse at night when I'm clenching my teeth, and I've also noticed my neck feels stiff most mornings,\" the patient tells the doctor.",
-            "symptoms": [
-                "Toothache",
-                "Headache",
-                "Jaw Pain",
-                "Stiff Neck"
-            ],
-            "correctAnswer": "Jaw Pain, Stiff Neck",
-            "hint": "One symptom is in the jaw, and the other is in the neck.",
-            "explanation": "Aching from clenching is Jaw Pain, and morning tightness is a Stiff Neck.",
-            "id": "mc_l92_q3",
-            "medicalVocab": [
-                "Jaw Pain, Stiff Neck",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I've had this tightness in my chest sometimes, and I get short of breath too.\"",
-            "symptoms": [
-                "Racing Heartbeat",
-                "Chest Pain",
-                "Shortness of Breath",
-                "Fatigue"
-            ],
-            "correctAnswer": "Chest Pain, Shortness of Breath",
-            "hint": "One symptom is a feeling in the chest, and the other is about breathing.",
-            "explanation": "The patient reports Chest Pain along with Shortness of Breath.",
-            "id": "mc_l93_q1",
-            "medicalVocab": [
-                "Chest Pain, Shortness of Breath",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The nurse's intake note reads: \"Patient describes new-onset lower back pain radiating to the left leg, accompanied by occasional numbness in the foot.\"",
-            "symptoms": [
-                "Leg Pain",
-                "Cramp",
-                "Back Pain",
-                "Numbness"
-            ],
-            "correctAnswer": "Back Pain, Numbness",
-            "hint": "The note names pain that starts in the back and a separate loss of feeling in the foot.",
-            "explanation": "The note describes Back Pain radiating down, and Numbness in the foot.",
-            "id": "mc_l93_q2",
-            "medicalVocab": [
-                "Back Pain, Numbness",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've had this ache along my inner arm that wasn't there before, and I've been more tired than usual,\" the patient tells the doctor.",
-            "symptoms": [
-                "Muscle Soreness",
-                "Numbness",
-                "Fatigue",
-                "Weakness"
-            ],
-            "correctAnswer": "Muscle Soreness, Fatigue",
-            "hint": "One symptom is a new ache in the muscle, and the other is about energy.",
-            "explanation": "A new ache in the arm is Muscle Soreness, and low energy overall is Fatigue.",
-            "id": "mc_l93_q3",
-            "medicalVocab": [
-                "Muscle Soreness, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I've noticed my ankles staying puffy well into the next morning now, and I've also been more short of breath lying flat at night.\"",
-            "symptoms": [
-                "Leg Pain",
-                "Swollen Ankles",
-                "Fatigue",
-                "Shortness of Breath"
-            ],
-            "correctAnswer": "Swollen Ankles, Shortness of Breath",
-            "hint": "One symptom is about the ankles, and the other is about breathing at night.",
-            "explanation": "Ankles that stay puffy overnight is Swollen Ankles, and breathlessness lying flat is Shortness of Breath.",
-            "id": "mc_l94_q1",
-            "medicalVocab": [
-                "Swollen Ankles, Shortness of Breath",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"My appetite's dropped off completely this week, and even the smell of food makes me queasy.\"",
-            "symptoms": [
-                "Loss of Appetite",
-                "Nausea",
-                "Bloating",
-                "Fatigue"
-            ],
-            "correctAnswer": "Loss of Appetite, Nausea",
-            "hint": "One symptom is about not wanting to eat, and the other is about feeling sick.",
-            "explanation": "No interest in eating is Loss of Appetite, and feeling queasy from smells is Nausea.",
-            "id": "mc_l94_q2",
-            "medicalVocab": [
-                "Loss of Appetite, Nausea",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've been getting these moments of blurry vision, and I've had a persistent headache alongside it,\" the patient tells the doctor.",
-            "symptoms": [
-                "Blurred Vision",
-                "Dizziness",
-                "Light Sensitivity",
-                "Headache"
-            ],
-            "correctAnswer": "Blurred Vision, Headache",
-            "hint": "One symptom is about sight, and the other is pain in the head.",
-            "explanation": "Moments of blurry vision are Blurred Vision, paired with a Headache.",
-            "id": "mc_l94_q3",
-            "medicalVocab": [
-                "Blurred Vision, Headache",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I've had this dull discomfort in my upper stomach on and off, and I've had less appetite than usual.\"",
-            "symptoms": [
-                "Stomach Ache",
-                "Loss of Appetite",
-                "Heartburn",
-                "Bloating"
-            ],
-            "correctAnswer": "Stomach Ache, Loss of Appetite",
-            "hint": "One symptom is general discomfort, and the other is about eating less.",
-            "explanation": "Dull, on-and-off discomfort is a Stomach Ache, and eating less is Loss of Appetite.",
-            "id": "mc_l95_q1",
-            "medicalVocab": [
-                "Stomach Ache, Loss of Appetite",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The nurse's intake note reads: \"Patient reports two days of watery stools and mild abdominal cramping, denies fever.\"",
-            "symptoms": [
-                "Nausea",
-                "Diarrhea",
-                "Stomach Ache",
-                "Fever"
-            ],
-            "correctAnswer": "Diarrhea, Stomach Ache",
-            "hint": "Read carefully - the note directly says the patient denies one of these.",
-            "explanation": "The note describes Diarrhea and cramping (Stomach Ache); it explicitly rules out Fever.",
-            "id": "mc_l95_q2",
-            "medicalVocab": [
-                "Diarrhea, Stomach Ache",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My hands have been so stiff and swollen in the morning that I can barely make a fist, though it loosens up by mid-morning,\" the patient tells the doctor.",
-            "symptoms": [
-                "Joint Pain",
-                "Joint Stiffness",
-                "Numbness",
-                "Swelling"
-            ],
-            "correctAnswer": "Joint Stiffness, Swelling",
-            "hint": "One symptom is difficulty moving, and the other is about size.",
-            "explanation": "Difficulty making a fist is Joint Stiffness, and puffiness is Swelling.",
-            "id": "mc_l95_q3",
-            "medicalVocab": [
-                "Joint Stiffness, Swelling",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I've had this scratchy, irritated feeling in my throat for weeks now, and I clear it constantly, which is starting to make my voice go rough.\"",
-            "symptoms": [
-                "Cough",
-                "Dry Mouth",
-                "Sore Throat",
-                "Hoarse Voice"
-            ],
-            "correctAnswer": "Sore Throat, Hoarse Voice",
-            "hint": "One symptom is the original throat irritation, and the other is its effect on the voice.",
-            "explanation": "Weeks of throat irritation is a Sore Throat, and the resulting rough sound is a Hoarse Voice.",
-            "id": "mc_l96_q1",
-            "medicalVocab": [
-                "Sore Throat, Hoarse Voice",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"My energy's been rock bottom for about a month, and I've needed twice as much sleep as usual just to function.\"",
-            "symptoms": [
-                "Fatigue",
-                "Insomnia",
-                "Oversleeping",
-                "Weakness"
-            ],
-            "correctAnswer": "Fatigue, Oversleeping",
-            "hint": "One symptom is about energy, and the other is the opposite of trouble sleeping.",
-            "explanation": "Low energy is Fatigue, and needing far more sleep than usual is Oversleeping.",
-            "id": "mc_l96_q2",
-            "medicalVocab": [
-                "Fatigue, Oversleeping",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"My skin has felt uncomfortably dry across both shins for a few weeks now, and it's started to properly itch in the evenings.\"",
-            "symptoms": [
-                "Dry Skin",
-                "Rash",
-                "Cracked Skin",
-                "Itching"
-            ],
-            "correctAnswer": "Dry Skin, Itching",
-            "hint": "One symptom is about texture, and the other is a feeling that's worse at a specific time.",
-            "explanation": "Dry skin on the shins is Dry Skin, and the evening discomfort is Itching.",
-            "id": "mc_l96_q3",
-            "medicalVocab": [
-                "Dry Skin, Itching",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I've noticed my heart skipping beats every so often, especially when I'm lying down at night, and it makes me feel a bit anxious.\"",
-            "symptoms": [
-                "Racing Heartbeat",
-                "Heart Palpitations",
-                "Anxiety",
-                "Insomnia"
-            ],
-            "correctAnswer": "Heart Palpitations, Anxiety",
-            "hint": "One symptom is the heart itself, and the other is the emotional reaction to it.",
-            "explanation": "Skipping beats is Heart Palpitations, and the worried feeling that follows is Anxiety.",
-            "id": "mc_l97_q1",
-            "medicalVocab": [
-                "Heart Palpitations, Anxiety",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The nurse's intake note reads: \"Patient reports three weeks of intermittent dizziness and one episode of fainting while standing.\"",
-            "symptoms": [
-                "Vertigo",
-                "Weakness",
-                "Dizziness",
-                "Fainting"
-            ],
-            "correctAnswer": "Dizziness, Fainting",
-            "hint": "The note names an ongoing balance symptom and one specific, more serious episode.",
-            "explanation": "Three weeks of Dizziness is paired here with one distinct episode of Fainting.",
-            "id": "mc_l97_q2",
-            "medicalVocab": [
-                "Dizziness, Fainting",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My eyelids have been twitching on and off for days, and I've had trouble concentrating at work,\" the patient tells the doctor.",
-            "symptoms": [
-                "Blurred Vision",
-                "Eye Twitching",
-                "Fatigue",
-                "Brain Fog"
-            ],
-            "correctAnswer": "Eye Twitching, Brain Fog",
-            "hint": "One symptom is an involuntary movement, and the other is about focus.",
-            "explanation": "Twitching eyelids are Eye Twitching, and trouble concentrating is Brain Fog.",
-            "id": "mc_l97_q3",
-            "medicalVocab": [
-                "Eye Twitching, Brain Fog",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I've had this deep, bruise-like ache in my thigh muscle after my long run, and I've also had a mild headache from the heat.\"",
-            "symptoms": [
-                "Muscle Soreness",
-                "Cramp",
-                "Headache",
-                "Leg Pain"
-            ],
-            "correctAnswer": "Muscle Soreness, Headache",
-            "hint": "One symptom is soreness in the muscle, and the other is pain in the head.",
-            "explanation": "A deep ache after running is Muscle Soreness, and the separate symptom is a Headache.",
-            "id": "mc_l98_q1",
-            "medicalVocab": [
-                "Muscle Soreness, Headache",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"My mouth's been dry no matter how much water I drink, and I've had this dry, hacking cough that produces nothing.\"",
-            "symptoms": [
-                "Dry Mouth",
-                "Cough",
-                "Sore Throat",
-                "Wheezing"
-            ],
-            "correctAnswer": "Dry Mouth, Cough",
-            "hint": "The dryness is described in the mouth specifically, despite drinking water.",
-            "explanation": "Dryness in the mouth despite drinking water is Dry Mouth, and the hacking sound is a Cough.",
-            "id": "mc_l98_q2",
-            "medicalVocab": [
-                "Dry Mouth, Cough",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"I've had this persistent low mood along with trouble falling asleep most nights, even though I'm exhausted by bedtime.\"",
-            "symptoms": [
-                "Low Mood",
-                "Fatigue",
-                "Brain Fog",
-                "Insomnia"
-            ],
-            "correctAnswer": "Low Mood, Insomnia",
-            "hint": "One symptom is emotional, and the other is about falling asleep specifically.",
-            "explanation": "A persistent low mood is Low Mood, and trouble falling asleep despite exhaustion is Insomnia.",
-            "id": "mc_l98_q3",
-            "medicalVocab": [
-                "Low Mood, Insomnia",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I've had this odd numbness creeping up my leg after sitting cross-legged, lasting longer than it used to, and I've also had some lower back pain this week.\"",
-            "symptoms": [
-                "Pins and Needles",
-                "Cramp",
-                "Numbness",
-                "Back Pain"
-            ],
-            "correctAnswer": "Numbness, Back Pain",
-            "hint": "One symptom is a loss of feeling in the leg, and the other is separately in the back.",
-            "explanation": "Numbness after sitting is Numbness, and separate discomfort lower down is Back Pain.",
-            "id": "mc_l99_q1",
-            "medicalVocab": [
-                "Numbness, Back Pain",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The nurse's intake note reads: \"Patient reports a two-week history of fatigue, low mood, and reduced interest in usual activities.\"",
-            "symptoms": [
-                "Insomnia",
-                "Fatigue",
-                "Weakness",
-                "Low Mood"
-            ],
-            "correctAnswer": "Fatigue, Low Mood",
-            "hint": "The note names both a physical and an emotional symptom over two weeks.",
-            "explanation": "Two weeks of low energy is Fatigue, and reduced interest and mood point to Low Mood.",
-            "id": "mc_l99_q2",
-            "medicalVocab": [
-                "Fatigue, Low Mood",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've had this persistent lump-like feeling when I swallow, and my voice gets tired by the end of the day,\" the patient tells the doctor.",
-            "symptoms": [
-                "Lump in Throat",
-                "Hoarse Voice",
-                "Sore Throat",
-                "Difficulty Swallowing"
-            ],
-            "correctAnswer": "Lump in Throat, Hoarse Voice",
-            "hint": "One symptom is a sensation, and the other is about how the voice sounds later in the day.",
-            "explanation": "A lump-like feeling when swallowing is Lump in Throat, and a tired-sounding voice is Hoarse Voice.",
-            "id": "mc_l99_q3",
-            "medicalVocab": [
-                "Lump in Throat, Hoarse Voice",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I've had this constant dull pressure across my forehead and temples that's lasted three days straight, unlike my usual headaches, and my neck's been sore from all the stress at work.\"",
-            "symptoms": [
-                "Tension Headache",
-                "Migraine",
-                "Sinus Pressure",
-                "Neck Pain"
-            ],
-            "correctAnswer": "Tension Headache, Neck Pain",
-            "hint": "A band-like pressure across the forehead, different from the patient's usual headaches, has a specific name.",
-            "explanation": "Pressure across the forehead from stress is a Tension Headache, paired with separate Neck Pain.",
-            "id": "mc_l100_q1",
-            "medicalVocab": [
-                "Tension Headache, Neck Pain",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"I've noticed I'm thirstier than usual lately, and I've needed the bathroom a lot more too.\"",
-            "symptoms": [
-                "Excessive Thirst",
-                "Fatigue",
-                "Frequent Urination",
-                "Dry Mouth"
-            ],
-            "correctAnswer": "Excessive Thirst, Frequent Urination",
-            "hint": "One symptom is about drinking, and the other is about bathroom trips.",
-            "explanation": "Being thirstier than usual is Excessive Thirst, and more bathroom trips is Frequent Urination.",
-            "id": "mc_l100_q2",
-            "medicalVocab": [
-                "Excessive Thirst, Frequent Urination",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've had this heavy, exhausted feeling that sleep doesn't seem to fix anymore, and I've noticed I'm more forgetful than usual too,\" the patient tells the doctor.",
-            "symptoms": [
-                "Insomnia",
-                "Fatigue",
-                "Brain Fog",
-                "Low Mood"
-            ],
-            "correctAnswer": "Fatigue, Brain Fog",
-            "hint": "One symptom is about energy that sleep doesn't fix, and the other is about memory and focus.",
-            "explanation": "Exhaustion that sleep doesn't fix is Fatigue, and increased forgetfulness is Brain Fog.",
-            "id": "mc_l100_q3",
-            "medicalVocab": [
-                "Fatigue, Brain Fog",
-                "Symptom",
-                "Patient"
-            ]
-        }
-    ]
+  "gameType": "medicalConsult",
+  "batchIndex": 10,
+  "levels": "91-100",
+  "quests": [
+    {
+      "instruction": "Select the type of history the patient is describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I've had this cough for three days. My job involves a lot of repetitive movement, standing, or physical strain.\"",
+      "symptoms": [
+        "Existing Condition",
+        "Occupational Exposure",
+        "Recent Injury",
+        "Previous Episode"
+      ],
+      "correctAnswer": "Occupational Exposure",
+      "hint": "Which kind of background information is hiding in the second sentence?",
+      "explanation": "Saying “My job involves a lot of repetitive movement, standing, or physical strain” is an example of Occupational Exposure, distinct from the other history categories listed.",
+      "id": "mc_l91_q1",
+      "medicalVocab": [
+        "Cough",
+        "Occupational Exposure",
+        "History"
+      ]
+    },
+    {
+      "instruction": "Select the follow-up question that would clarify this history.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I've had this cough for three days. I got back from a trip abroad about a week ago.\"",
+      "symptoms": [
+        "How was that earlier episode treated, and did it fully go away?",
+        "Did you notice any symptoms starting while you were away, or only after returning?",
+        "How long have you been dealing with this level of stress?",
+        "What specifically changed about what you've been eating?"
+      ],
+      "correctAnswer": "Did you notice any symptoms starting while you were away, or only after returning?",
+      "hint": "What would you most want to know next about this particular piece of history?",
+      "explanation": "Because this is a case of Recent Travel, the most useful next question is one that explores that specific background, not a generic question aimed at a different kind of history.",
+      "id": "mc_l91_q2",
+      "medicalVocab": [
+        "Cough",
+        "Recent Travel",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Two pieces of history are mentioned. Select the one most relevant to note first.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I keep bringing up thick mucus whenever I cough. I've been under a lot of stress lately, more than usual. Also, I had a bad cold just last week, right before this started.\"",
+      "symptoms": [
+        "Chronic Stress",
+        "Recent Illness",
+        "Recent Diet Change",
+        "Recent Travel"
+      ],
+      "correctAnswer": "Chronic Stress",
+      "hint": "Think about which piece of history is closest in time or cause to the current symptom.",
+      "explanation": "Both Chronic Stress and Recent Illness are mentioned, but Chronic Stress is the detail most directly tied to when the current symptom began, making it the priority to record first.",
+      "id": "mc_l91_q3",
+      "medicalVocab": [
+        "Cough",
+        "Chronic Stress",
+        "History"
+      ]
+    },
+    {
+      "instruction": "Choose what kind of relevant background this is.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel like I'm burning up. I've actually changed my diet quite a bit over the past few weeks.\"",
+      "symptoms": [
+        "Previous Treatment",
+        "Recent Illness",
+        "Previous Episode",
+        "Recent Diet Change"
+      ],
+      "correctAnswer": "Recent Diet Change",
+      "hint": "Identify where in the patient's life this piece of context comes from.",
+      "explanation": "Saying “I've actually changed my diet quite a bit over the past few weeks” is an example of Recent Diet Change, distinct from the other history categories listed.",
+      "id": "mc_l92_q1",
+      "medicalVocab": [
+        "Fever",
+        "Recent Diet Change",
+        "History"
+      ]
+    },
+    {
+      "instruction": "Choose the best question to learn more about this background.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel like I'm burning up. My mother had something similar when she was around my age.\"",
+      "symptoms": [
+        "What specifically changed about what you've been eating?",
+        "How well is that existing condition currently being managed?",
+        "Do you know how that was diagnosed or treated in your family member?",
+        "How was that earlier episode treated, and did it fully go away?"
+      ],
+      "correctAnswer": "Do you know how that was diagnosed or treated in your family member?",
+      "hint": "A generic question is weaker than one aimed at the exact background the patient gave.",
+      "explanation": "Because this is a case of Family History, the most useful next question is one that explores that specific background, not a generic question aimed at a different kind of history.",
+      "id": "mc_l92_q2",
+      "medicalVocab": [
+        "Fever",
+        "Family History",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Two pieces of history are mentioned. Select the one most relevant to note first.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I checked and I was running a little above normal earlier. This isn't the first time — I had something similar about a year ago. Also, I tried an over-the-counter remedy already, but it didn't help much.\"",
+      "symptoms": [
+        "Recent Diet Change",
+        "Previous Episode",
+        "Previous Treatment",
+        "Recent Travel"
+      ],
+      "correctAnswer": "Previous Episode",
+      "hint": "Ask which background detail you would record first to make sense of the timeline.",
+      "explanation": "Both Previous Episode and Previous Treatment are mentioned, but Previous Episode is the detail most directly tied to when the current symptom began, making it the priority to record first.",
+      "id": "mc_l92_q3",
+      "medicalVocab": [
+        "Fever",
+        "Previous Episode",
+        "History"
+      ]
+    },
+    {
+      "instruction": "Identify the background information the patient shares.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My stomach has really been hurting. This isn't the first time — I had something similar about a year ago.\"",
+      "symptoms": [
+        "Recent Injury",
+        "Previous Treatment",
+        "Existing Condition",
+        "Previous Episode"
+      ],
+      "correctAnswer": "Previous Episode",
+      "hint": "Ask yourself: is this about the past, a relative, a long-term health issue, or something that just happened?",
+      "explanation": "Saying “This isn't the first time — I had something similar about a year ago” is an example of Previous Episode, distinct from the other history categories listed.",
+      "id": "mc_l93_q1",
+      "medicalVocab": [
+        "Stomach Ache",
+        "Previous Episode",
+        "History"
+      ]
+    },
+    {
+      "instruction": "Select the follow-up question that would clarify this history.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My stomach has really been hurting. I've actually changed my diet quite a bit over the past few weeks.\"",
+      "symptoms": [
+        "What specifically changed about what you've been eating?",
+        "What exactly did you try, and how long did you give it before stopping?",
+        "Can you describe exactly what happened when it was injured?",
+        "How well is that existing condition currently being managed?"
+      ],
+      "correctAnswer": "What specifically changed about what you've been eating?",
+      "hint": "Match your question to the specific kind of background just mentioned.",
+      "explanation": "Because this is a case of Recent Diet Change, the most useful next question is one that explores that specific background, not a generic question aimed at a different kind of history.",
+      "id": "mc_l93_q2",
+      "medicalVocab": [
+        "Stomach Ache",
+        "Recent Diet Change",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Two pieces of history are mentioned. Select the one most relevant to note first.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"There's this gnawing ache right in the middle of my stomach. My mother had something similar when she was around my age. Also, I got back from a trip abroad about a week ago.\"",
+      "symptoms": [
+        "Existing Condition",
+        "Recent Injury",
+        "Recent Travel",
+        "Family History"
+      ],
+      "correctAnswer": "Family History",
+      "hint": "Both details are useful; decide which one lines up most directly with when this began.",
+      "explanation": "Both Family History and Recent Travel are mentioned, but Family History is the detail most directly tied to when the current symptom began, making it the priority to record first.",
+      "id": "mc_l93_q3",
+      "medicalVocab": [
+        "Stomach Ache",
+        "Family History",
+        "History"
+      ]
+    },
+    {
+      "instruction": "Select the type of history the patient is describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My stomach feels queasy. My mother had something similar when she was around my age.\"",
+      "symptoms": [
+        "Occupational Exposure",
+        "Recent Diet Change",
+        "Family History",
+        "Previous Treatment"
+      ],
+      "correctAnswer": "Family History",
+      "hint": "Which kind of background information is hiding in the second sentence?",
+      "explanation": "Saying “My mother had something similar when she was around my age” is an example of Family History, distinct from the other history categories listed.",
+      "id": "mc_l94_q1",
+      "medicalVocab": [
+        "Nausea",
+        "Family History",
+        "History"
+      ]
+    },
+    {
+      "instruction": "Choose the best question to learn more about this background.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My stomach feels queasy. I've actually changed my diet quite a bit over the past few weeks.\"",
+      "symptoms": [
+        "How was that earlier episode treated, and did it fully go away?",
+        "Have you fully recovered from that illness, or are any symptoms still lingering?",
+        "How long have you been dealing with this level of stress?",
+        "What specifically changed about what you've been eating?"
+      ],
+      "correctAnswer": "What specifically changed about what you've been eating?",
+      "hint": "What would you most want to know next about this particular piece of history?",
+      "explanation": "Because this is a case of Recent Diet Change, the most useful next question is one that explores that specific background, not a generic question aimed at a different kind of history.",
+      "id": "mc_l94_q2",
+      "medicalVocab": [
+        "Nausea",
+        "Recent Diet Change",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Two pieces of history are mentioned. Select the one most relevant to note first.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My stomach turns over every time I smell food cooking. I've been under a lot of stress lately, more than usual. Also, this isn't the first time — I had something similar about a year ago.\"",
+      "symptoms": [
+        "Chronic Stress",
+        "Recent Travel",
+        "Occupational Exposure",
+        "Previous Episode"
+      ],
+      "correctAnswer": "Chronic Stress",
+      "hint": "Think about which piece of history is closest in time or cause to the current symptom.",
+      "explanation": "Both Chronic Stress and Previous Episode are mentioned, but Chronic Stress is the detail most directly tied to when the current symptom began, making it the priority to record first.",
+      "id": "mc_l94_q3",
+      "medicalVocab": [
+        "Nausea",
+        "Chronic Stress",
+        "History"
+      ]
+    },
+    {
+      "instruction": "Choose what kind of relevant background this is.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My back has been aching all week. I tried an over-the-counter remedy already, but it didn't help much.\"",
+      "symptoms": [
+        "Occupational Exposure",
+        "Recent Illness",
+        "Recent Injury",
+        "Previous Treatment"
+      ],
+      "correctAnswer": "Previous Treatment",
+      "hint": "Identify where in the patient's life this piece of context comes from.",
+      "explanation": "Saying “I tried an over-the-counter remedy already, but it didn't help much” is an example of Previous Treatment, distinct from the other history categories listed.",
+      "id": "mc_l95_q1",
+      "medicalVocab": [
+        "Back Pain",
+        "Previous Treatment",
+        "History"
+      ]
+    },
+    {
+      "instruction": "Select the follow-up question that would clarify this history.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My back has been aching all week. I got back from a trip abroad about a week ago.\"",
+      "symptoms": [
+        "How well is that existing condition currently being managed?",
+        "Did you notice any symptoms starting while you were away, or only after returning?",
+        "How long have you been dealing with this level of stress?",
+        "What specifically changed about what you've been eating?"
+      ],
+      "correctAnswer": "Did you notice any symptoms starting while you were away, or only after returning?",
+      "hint": "A generic question is weaker than one aimed at the exact background the patient gave.",
+      "explanation": "Because this is a case of Recent Travel, the most useful next question is one that explores that specific background, not a generic question aimed at a different kind of history.",
+      "id": "mc_l95_q2",
+      "medicalVocab": [
+        "Back Pain",
+        "Recent Travel",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Two pieces of history are mentioned. Select the one most relevant to note first.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel it most when I try to get up out of a chair. I already have an ongoing condition, and this feels connected to it. Also, my job involves a lot of repetitive movement, standing, or physical strain.\"",
+      "symptoms": [
+        "Previous Episode",
+        "Occupational Exposure",
+        "Existing Condition",
+        "Chronic Stress"
+      ],
+      "correctAnswer": "Existing Condition",
+      "hint": "Ask which background detail you would record first to make sense of the timeline.",
+      "explanation": "Both Existing Condition and Occupational Exposure are mentioned, but Existing Condition is the detail most directly tied to when the current symptom began, making it the priority to record first.",
+      "id": "mc_l95_q3",
+      "medicalVocab": [
+        "Back Pain",
+        "Existing Condition",
+        "History"
+      ]
+    },
+    {
+      "instruction": "Identify the background information the patient shares.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My knees have been aching. I had a bad cold just last week, right before this started.\"",
+      "symptoms": [
+        "Recent Travel",
+        "Family History",
+        "Recent Illness",
+        "Previous Treatment"
+      ],
+      "correctAnswer": "Recent Illness",
+      "hint": "Ask yourself: is this about the past, a relative, a long-term health issue, or something that just happened?",
+      "explanation": "Saying “I had a bad cold just last week, right before this started” is an example of Recent Illness, distinct from the other history categories listed.",
+      "id": "mc_l96_q1",
+      "medicalVocab": [
+        "Joint Pain",
+        "Recent Illness",
+        "History"
+      ]
+    },
+    {
+      "instruction": "Choose the best question to learn more about this background.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My knees have been aching. My mother had something similar when she was around my age.\"",
+      "symptoms": [
+        "Do you know how that was diagnosed or treated in your family member?",
+        "How many hours a day does that kind of activity usually take?",
+        "What specifically changed about what you've been eating?",
+        "Did you notice any symptoms starting while you were away, or only after returning?"
+      ],
+      "correctAnswer": "Do you know how that was diagnosed or treated in your family member?",
+      "hint": "Match your question to the specific kind of background just mentioned.",
+      "explanation": "Because this is a case of Family History, the most useful next question is one that explores that specific background, not a generic question aimed at a different kind of history.",
+      "id": "mc_l96_q2",
+      "medicalVocab": [
+        "Joint Pain",
+        "Family History",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Two pieces of history are mentioned. Select the one most relevant to note first.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"There's a deep ache right in the joint whenever I climb stairs. I've been under a lot of stress lately, more than usual. Also, I twisted it awkwardly a few days before this began.\"",
+      "symptoms": [
+        "Recent Injury",
+        "Recent Illness",
+        "Existing Condition",
+        "Chronic Stress"
+      ],
+      "correctAnswer": "Chronic Stress",
+      "hint": "Both details are useful; decide which one lines up most directly with when this began.",
+      "explanation": "Both Chronic Stress and Recent Injury are mentioned, but Chronic Stress is the detail most directly tied to when the current symptom began, making it the priority to record first.",
+      "id": "mc_l96_q3",
+      "medicalVocab": [
+        "Joint Pain",
+        "Chronic Stress",
+        "History"
+      ]
+    },
+    {
+      "instruction": "Select the type of history the patient is describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My legs are really achy. I tried an over-the-counter remedy already, but it didn't help much.\"",
+      "symptoms": [
+        "Recent Diet Change",
+        "Chronic Stress",
+        "Previous Treatment",
+        "Recent Travel"
+      ],
+      "correctAnswer": "Previous Treatment",
+      "hint": "Which kind of background information is hiding in the second sentence?",
+      "explanation": "Saying “I tried an over-the-counter remedy already, but it didn't help much” is an example of Previous Treatment, distinct from the other history categories listed.",
+      "id": "mc_l97_q1",
+      "medicalVocab": [
+        "Muscle Soreness",
+        "Previous Treatment",
+        "History"
+      ]
+    },
+    {
+      "instruction": "Select the follow-up question that would clarify this history.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My legs are really achy. My job involves a lot of repetitive movement, standing, or physical strain.\"",
+      "symptoms": [
+        "How well is that existing condition currently being managed?",
+        "What exactly did you try, and how long did you give it before stopping?",
+        "What specifically changed about what you've been eating?",
+        "How many hours a day does that kind of activity usually take?"
+      ],
+      "correctAnswer": "How many hours a day does that kind of activity usually take?",
+      "hint": "What would you most want to know next about this particular piece of history?",
+      "explanation": "Because this is a case of Occupational Exposure, the most useful next question is one that explores that specific background, not a generic question aimed at a different kind of history.",
+      "id": "mc_l97_q2",
+      "medicalVocab": [
+        "Muscle Soreness",
+        "Occupational Exposure",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Two pieces of history are mentioned. Select the one most relevant to note first.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My calves feel tight and tender whenever I press on them. This isn't the first time — I had something similar about a year ago. Also, I had a bad cold just last week, right before this started.\"",
+      "symptoms": [
+        "Recent Travel",
+        "Recent Illness",
+        "Existing Condition",
+        "Previous Episode"
+      ],
+      "correctAnswer": "Previous Episode",
+      "hint": "Think about which piece of history is closest in time or cause to the current symptom.",
+      "explanation": "Both Previous Episode and Recent Illness are mentioned, but Previous Episode is the detail most directly tied to when the current symptom began, making it the priority to record first.",
+      "id": "mc_l97_q3",
+      "medicalVocab": [
+        "Muscle Soreness",
+        "Previous Episode",
+        "History"
+      ]
+    },
+    {
+      "instruction": "Choose what kind of relevant background this is.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel worn out even after sleeping. I've been under a lot of stress lately, more than usual.\"",
+      "symptoms": [
+        "Chronic Stress",
+        "Recent Illness",
+        "Existing Condition",
+        "Recent Diet Change"
+      ],
+      "correctAnswer": "Chronic Stress",
+      "hint": "Identify where in the patient's life this piece of context comes from.",
+      "explanation": "Saying “I've been under a lot of stress lately, more than usual” is an example of Chronic Stress, distinct from the other history categories listed.",
+      "id": "mc_l98_q1",
+      "medicalVocab": [
+        "Fatigue",
+        "Chronic Stress",
+        "History"
+      ]
+    },
+    {
+      "instruction": "Choose the best question to learn more about this background.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel worn out even after sleeping. This isn't the first time — I had something similar about a year ago.\"",
+      "symptoms": [
+        "Do you know how that was diagnosed or treated in your family member?",
+        "How was that earlier episode treated, and did it fully go away?",
+        "Did you notice any symptoms starting while you were away, or only after returning?",
+        "How well is that existing condition currently being managed?"
+      ],
+      "correctAnswer": "How was that earlier episode treated, and did it fully go away?",
+      "hint": "A generic question is weaker than one aimed at the exact background the patient gave.",
+      "explanation": "Because this is a case of Previous Episode, the most useful next question is one that explores that specific background, not a generic question aimed at a different kind of history.",
+      "id": "mc_l98_q2",
+      "medicalVocab": [
+        "Fatigue",
+        "Previous Episode",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Two pieces of history are mentioned. Select the one most relevant to note first.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I just don't bounce back the way I used to after a normal day. I got back from a trip abroad about a week ago. Also, I had a bad cold just last week, right before this started.\"",
+      "symptoms": [
+        "Recent Illness",
+        "Recent Travel",
+        "Previous Episode",
+        "Recent Diet Change"
+      ],
+      "correctAnswer": "Recent Travel",
+      "hint": "Ask which background detail you would record first to make sense of the timeline.",
+      "explanation": "Both Recent Travel and Recent Illness are mentioned, but Recent Travel is the detail most directly tied to when the current symptom began, making it the priority to record first.",
+      "id": "mc_l98_q3",
+      "medicalVocab": [
+        "Fatigue",
+        "Recent Travel",
+        "History"
+      ]
+    },
+    {
+      "instruction": "Identify the background information the patient shares.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I haven't been able to sleep at all this week. I've been under a lot of stress lately, more than usual.\"",
+      "symptoms": [
+        "Chronic Stress",
+        "Existing Condition",
+        "Occupational Exposure",
+        "Previous Episode"
+      ],
+      "correctAnswer": "Chronic Stress",
+      "hint": "Ask yourself: is this about the past, a relative, a long-term health issue, or something that just happened?",
+      "explanation": "Saying “I've been under a lot of stress lately, more than usual” is an example of Chronic Stress, distinct from the other history categories listed.",
+      "id": "mc_l99_q1",
+      "medicalVocab": [
+        "Insomnia",
+        "Chronic Stress",
+        "History"
+      ]
+    },
+    {
+      "instruction": "Select the follow-up question that would clarify this history.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I haven't been able to sleep at all this week. I've actually changed my diet quite a bit over the past few weeks.\"",
+      "symptoms": [
+        "Did you notice any symptoms starting while you were away, or only after returning?",
+        "How well is that existing condition currently being managed?",
+        "What specifically changed about what you've been eating?",
+        "How was that earlier episode treated, and did it fully go away?"
+      ],
+      "correctAnswer": "What specifically changed about what you've been eating?",
+      "hint": "Match your question to the specific kind of background just mentioned.",
+      "explanation": "Because this is a case of Recent Diet Change, the most useful next question is one that explores that specific background, not a generic question aimed at a different kind of history.",
+      "id": "mc_l99_q2",
+      "medicalVocab": [
+        "Insomnia",
+        "Recent Diet Change",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Two pieces of history are mentioned. Select the one most relevant to note first.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My mind just won't switch off once I get into bed. I had a bad cold just last week, right before this started. Also, I already have an ongoing condition, and this feels connected to it.\"",
+      "symptoms": [
+        "Recent Illness",
+        "Chronic Stress",
+        "Existing Condition",
+        "Recent Diet Change"
+      ],
+      "correctAnswer": "Recent Illness",
+      "hint": "Both details are useful; decide which one lines up most directly with when this began.",
+      "explanation": "Both Recent Illness and Existing Condition are mentioned, but Recent Illness is the detail most directly tied to when the current symptom began, making it the priority to record first.",
+      "id": "mc_l99_q3",
+      "medicalVocab": [
+        "Insomnia",
+        "Recent Illness",
+        "History"
+      ]
+    },
+    {
+      "instruction": "Select the type of history the patient is describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"The room spins sometimes. This isn't the first time — I had something similar about a year ago.\"",
+      "symptoms": [
+        "Existing Condition",
+        "Family History",
+        "Previous Episode",
+        "Occupational Exposure"
+      ],
+      "correctAnswer": "Previous Episode",
+      "hint": "Which kind of background information is hiding in the second sentence?",
+      "explanation": "Saying “This isn't the first time — I had something similar about a year ago” is an example of Previous Episode, distinct from the other history categories listed.",
+      "id": "mc_l100_q1",
+      "medicalVocab": [
+        "Dizziness",
+        "Previous Episode",
+        "History"
+      ]
+    },
+    {
+      "instruction": "Choose the best question to learn more about this background.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"The room spins sometimes. I've been under a lot of stress lately, more than usual.\"",
+      "symptoms": [
+        "Can you describe exactly what happened when it was injured?",
+        "How long have you been dealing with this level of stress?",
+        "What exactly did you try, and how long did you give it before stopping?",
+        "How well is that existing condition currently being managed?"
+      ],
+      "correctAnswer": "How long have you been dealing with this level of stress?",
+      "hint": "What would you most want to know next about this particular piece of history?",
+      "explanation": "Because this is a case of Chronic Stress, the most useful next question is one that explores that specific background, not a generic question aimed at a different kind of history.",
+      "id": "mc_l100_q2",
+      "medicalVocab": [
+        "Dizziness",
+        "Chronic Stress",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Two pieces of history are mentioned. Select the one most relevant to note first.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I get this swimming feeling in my head if I turn quickly. I already have an ongoing condition, and this feels connected to it. Also, my mother had something similar when she was around my age.\"",
+      "symptoms": [
+        "Family History",
+        "Existing Condition",
+        "Chronic Stress",
+        "Recent Illness"
+      ],
+      "correctAnswer": "Existing Condition",
+      "hint": "Think about which piece of history is closest in time or cause to the current symptom.",
+      "explanation": "Both Existing Condition and Family History are mentioned, but Existing Condition is the detail most directly tied to when the current symptom began, making it the priority to record first.",
+      "id": "mc_l100_q3",
+      "medicalVocab": [
+        "Dizziness",
+        "Existing Condition",
+        "History"
+      ]
+    }
+  ]
 }

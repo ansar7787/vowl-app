@@ -1,307 +1,307 @@
 {
-    "gameType": "yesNoSpeaking",
-    "batchIndex": 15,
-    "levels": "141-150",
-    "quests": [
-        {
-            "id": "SPK_YESNOSPEAKING_L141_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This sentence has more than one part -- listen closely to the two-word verb, currently \"into\".",
-            "explanation": "\"after\" replaced \"into\" in the two-word verb. In longer, more complex sentences, that's exactly where changes tend to hide.",
-            "prompt": "The new supervisor has decided to look into the recent customer complaints.",
-            "sampleAnswer": "The new supervisor has decided to look after the recent customer complaints.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L141_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Don't just listen for words -- listen for the logic in the linking word: \"because\".",
-            "explanation": "This pair tests your ear for the linking word. The sentence uses \"because\", not \"although\" -- a subtle but meaningful difference.",
-            "prompt": "The project was delayed because the supplier missed the shipment deadline.",
-            "sampleAnswer": "The project was delayed although the supplier missed the shipment deadline.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L141_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Don't just catch the main idea -- listen for the second half of the sentence too, written here as \"extend\".",
-            "explanation": "Notice that only the second half of the sentence changed: \"extend\" became \"renegotiate\". Everything surrounding it was identical.",
-            "prompt": "The client agreed to extend the contract for another full year.",
-            "sampleAnswer": "The client agreed to renegotiate the contract for another full year.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L142_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Longer sentences hide their changes in the details. Watch for the second half of the sentence -- right now, \"crashing\".",
-            "explanation": "The sentence structure is the same in both versions. The actual difference sits in the second half of the sentence: \"crashing\" versus \"slowing\".",
-            "prompt": "Engineers had to figure out why the servers kept crashing overnight.",
-            "sampleAnswer": "Engineers had to figure out why the servers kept slowing overnight.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L142_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The meaning shifts depending on the linking word -- the text currently says \"since\". Listen carefully.",
-            "explanation": "\"since\" and \"while\" look similar, but the linking word is exactly what this sentence was testing.",
-            "prompt": "The app stopped working properly since the last update was installed.",
-            "sampleAnswer": "The app stopped working properly while the last update was installed.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L142_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Slow down and listen past the main clause -- the text reads \"phase\" in the two-word verb.",
-            "explanation": "The two versions differ in just one place, the two-word verb: \"phase\" versus \"roll\". The rest of the sentence stays identical.",
-            "prompt": "The company decided to phase out the older model by next year.",
-            "sampleAnswer": "The company decided to roll out the older model by next year.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L143_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This one is subtle. Pay close attention to the linking word -- the text has \"because of\".",
-            "explanation": "This pair tests your ear for the linking word. The sentence uses \"because of\", not \"despite\" -- a subtle but meaningful difference.",
-            "prompt": "Local officials called off the outdoor festival because of the storm warning.",
-            "sampleAnswer": "Local officials called off the outdoor festival despite the storm warning.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L143_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This one rewards careful listening to the second half of the sentence -- the text has it as \"polluted\".",
-            "explanation": "This question tests your attention to the second half of the sentence. Here it was \"polluted\", not \"flooded\" -- a small difference with a real effect on meaning.",
-            "prompt": "Volunteers worked all weekend long to clean up the polluted riverbank.",
-            "sampleAnswer": "Volunteers worked all weekend long to clean up the flooded riverbank.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L143_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This sentence has more than one part -- listen closely to the second half of the sentence, currently \"water\".",
-            "explanation": "Notice that only the second half of the sentence changed: \"water\" became \"energy\". Everything surrounding it was identical.",
-            "prompt": "The factory finally agreed to cut down on its water usage.",
-            "sampleAnswer": "The factory finally agreed to cut down on its energy usage.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L144_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The key detail is tucked inside the sentence. Focus on the second half of the sentence: the text says \"sugar\".",
-            "explanation": "The sentence structure is the same in both versions. The actual difference sits in the second half of the sentence: \"sugar\" versus \"caffeine\".",
-            "prompt": "She finally decided to cut out sugar after her last checkup.",
-            "sampleAnswer": "She finally decided to cut out caffeine after her last checkup.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L144_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This sentence is as much about logic as vocabulary. Listen for the linking word: \"since\", as written.",
-            "explanation": "Notice that the linking word shifted from \"since\" to \"although\". Precise listening matters most in sentences like this.",
-            "prompt": "He stopped jogging outside entirely since the pollen count went up.",
-            "sampleAnswer": "He stopped jogging outside entirely although the pollen count went up.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L144_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Longer sentences hide their changes in the details. Watch for the two-word verb -- right now, \"away\".",
-            "explanation": "The two versions differ in just one place, the two-word verb: \"away\" versus \"down\". The rest of the sentence stays identical.",
-            "prompt": "The clinic had to turn away several patients due to overcrowding.",
-            "sampleAnswer": "The clinic had to turn down several patients due to overcrowding.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L145_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The overall meaning is close either way. What matters is the second half of the sentence: \"difficult\", as written.",
-            "explanation": "\"confusing\" replaced \"difficult\" in the second half of the sentence. In longer, more complex sentences, that's exactly where changes tend to hide.",
-            "prompt": "The tutor patiently helped him work through the most difficult chapters.",
-            "sampleAnswer": "The tutor patiently helped him work through the most confusing chapters.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L145_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Slow down and listen past the main clause -- the text reads \"exhausted\" in the second half of the sentence.",
-            "explanation": "This question tests your attention to the second half of the sentence. Here it was \"exhausted\", not \"confident\" -- a small difference with a real effect on meaning.",
-            "prompt": "She kept studying late every night even though she felt exhausted.",
-            "sampleAnswer": "She kept studying late every night even though she felt confident.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L145_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Hold the whole sentence in mind, especially the two-word verb, which currently reads \"bring forward\".",
-            "explanation": "Notice that only the two-word verb changed: \"bring forward\" became \"push back\". Everything surrounding it was identical.",
-            "prompt": "The professor decided to bring forward the final exam by a week.",
-            "sampleAnswer": "The professor decided to push back the final exam by a week.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L146_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This one rewards careful listening to the second half of the sentence -- the text has it as \"mechanical fault\".",
-            "explanation": "The sentence structure is the same in both versions. The actual difference sits in the second half of the sentence: \"mechanical fault\" versus \"staffing shortage\".",
-            "prompt": "The airline had to call off the flight because of a mechanical fault.",
-            "sampleAnswer": "The airline had to call off the flight because of a staffing shortage.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L146_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The individual words are easy to hear; the linking word -- \"since\" -- is the real challenge.",
-            "explanation": "This pair tests your ear for the linking word. The sentence uses \"since\", not \"although\" -- a subtle but meaningful difference.",
-            "prompt": "We decided to check out early since the hotel was so noisy.",
-            "sampleAnswer": "We decided to check out early although the hotel was so noisy.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L146_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The key detail is tucked inside the sentence. Focus on the second half of the sentence: the text says \"sunrise\".",
-            "explanation": "The two versions differ in just one place, the second half of the sentence: \"sunrise\" versus \"sunset\". The rest of the sentence stays identical.",
-            "prompt": "The tour guide told us to set off before sunrise to beat the crowds.",
-            "sampleAnswer": "The tour guide told us to set off before sunset to beat the crowds.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L147_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Don't just catch the main idea -- listen for the second half of the sentence too, written here as \"paper receipts\".",
-            "explanation": "\"plastic bags\" replaced \"paper receipts\" in the second half of the sentence. In longer, more complex sentences, that's exactly where changes tend to hide.",
-            "prompt": "The retailer finally decided to do away with paper receipts entirely.",
-            "sampleAnswer": "The retailer finally decided to do away with plastic bags entirely.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L147_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Longer sentences hide their changes in the details. Watch for the second half of the sentence -- right now, \"raised\".",
-            "explanation": "This question tests your attention to the second half of the sentence. Here it was \"raised\", not \"lowered\" -- a small difference with a real effect on meaning.",
-            "prompt": "Sales dropped sharply once the company quietly raised its shipping fees.",
-            "sampleAnswer": "Sales dropped sharply once the company quietly lowered its shipping fees.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L147_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The overall meaning is close either way. What matters is the two-word verb: \"logging them out\", as written.",
-            "explanation": "Notice that only the two-word verb changed: \"logging them out\" became \"signing them up\". Everything surrounding it was identical.",
-            "prompt": "Customers repeatedly complained that the app kept logging them out randomly.",
-            "sampleAnswer": "Customers repeatedly complained that the app kept signing them up randomly.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L148_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Slow down and listen past the main clause -- the text reads \"safety\" in the second half of the sentence.",
-            "explanation": "The sentence structure is the same in both versions. The actual difference sits in the second half of the sentence: \"safety\" versus \"financial\".",
-            "prompt": "The team had to carry out a full safety review before reopening.",
-            "sampleAnswer": "The team had to carry out a full financial review before reopening.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L148_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Hold the whole sentence in mind, especially the second half of the sentence, which currently reads \"started\".",
-            "explanation": "Both versions sound similar at a glance, but the second half of the sentence tells the real story: \"started\", not \"stopped\".",
-            "prompt": "Morale improved noticeably once management started listening to staff concerns.",
-            "sampleAnswer": "Morale improved noticeably once management stopped listening to staff concerns.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L148_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This one rewards careful listening to the two-word verb -- the text has it as \"hold off on\".",
-            "explanation": "The two versions differ in just one place, the two-word verb: \"hold off on\" versus \"go ahead with\". The rest of the sentence stays identical.",
-            "prompt": "The board decided to hold off on the merger for financial reasons.",
-            "sampleAnswer": "The board decided to go ahead with the merger for financial reasons.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L149_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This sentence has more than one part -- listen closely to the second half of the sentence, currently \"sister\".",
-            "explanation": "\"grandparents\" replaced \"sister\" in the second half of the sentence. In longer, more complex sentences, that's exactly where changes tend to hide.",
-            "prompt": "My parents decided to look into moving closer to my sister.",
-            "sampleAnswer": "My parents decided to look into moving closer to my grandparents.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L149_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The meaning shifts depending on the linking word -- the text currently says \"since\". Listen carefully.",
-            "explanation": "Notice that the linking word shifted from \"since\" to \"although\". Precise listening matters most in sentences like this.",
-            "prompt": "We put off the family trip since my brother was sick.",
-            "sampleAnswer": "We put off the family trip although my brother was sick.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L149_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Don't just catch the main idea -- listen for the two-word verb too, written here as \"smoking\".",
-            "explanation": "Notice that only the two-word verb changed: \"smoking\" became \"drinking\". Everything surrounding it was identical.",
-            "prompt": "My uncle finally gave up smoking after fifteen years of trying.",
-            "sampleAnswer": "My uncle finally gave up drinking after fifteen years of trying.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L150_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Longer sentences hide their changes in the details. Watch for the second half of the sentence -- right now, \"music\".",
-            "explanation": "The sentence structure is the same in both versions. The actual difference sits in the second half of the sentence: \"music\" versus \"sports\".",
-            "prompt": "The school finally decided to bring back the after-school music program.",
-            "sampleAnswer": "The school finally decided to bring back the after-school sports program.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L150_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The overall meaning is close either way. What matters is the two-word verb: \"did away with the\", as written.",
-            "explanation": "Both versions sound similar at a glance, but the two-word verb tells the real story: \"did away with the\", not \"brought in a\".",
-            "prompt": "Attendance rose sharply after the college did away with the strict dress code.",
-            "sampleAnswer": "Attendance rose sharply after the college brought in a strict dress code.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L150_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Don't just listen for words -- listen for the logic in the linking word: \"strong\".",
-            "explanation": "\"strong\" and \"weak\" look similar, but the linking word is exactly what this sentence was testing.",
-            "prompt": "The scholarship committee turned down his application despite his strong grades.",
-            "sampleAnswer": "The scholarship committee turned down his application despite his weak grades.",
-            "followUpQuestion": "Why do you think that?"
-        }
-    ]
+  "gameType": "yesNoSpeaking",
+  "batchIndex": 15,
+  "levels": "141-150",
+  "quests": [
+    {
+      "id": "SPK_YESNOSPEAKING_L141_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The phrasal verb after \"I'll\" tells you what the speaker will do.",
+      "explanation": "Look into means to investigate and look for means to search for something. One sounds like a promise to solve, the other like a hunt.",
+      "prompt": "I'll look into the problem and get back to you before the end of the day.",
+      "sampleAnswer": "I'll look for the problem and get back to you before the end of the day.",
+      "followUpQuestion": "Promise to look into a problem, and say when you will report back."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L141_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A two-word verb starts the sentence. What does it mean?",
+      "explanation": "No change. \"Find out\" means to discover information, and it fits with an indirect question.",
+      "prompt": "We need to find out what time the last train leaves before we make plans.",
+      "sampleAnswer": "We need to find out what time the last train leaves before we make plans.",
+      "followUpQuestion": "Say what you would need to find out before making plans."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L141_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A request uses a phrasal verb with an object in the middle.",
+      "explanation": "You heard exactly what was written. The object \"the children\" goes between \"drop\" and \"off\", because it's a noun phrase.",
+      "prompt": "Could you drop the children off at school on your way to work?",
+      "sampleAnswer": "Could you drop the children off at school on your way to work?",
+      "followUpQuestion": "Ask someone to take the children somewhere, and say when."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L142_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A small problem and its consequence are joined by \"so\".",
+      "explanation": "\"Run out of\" means that the supply is finished, and it is followed by the noun.",
+      "prompt": "I ran out of milk this morning, so I had to make black coffee.",
+      "sampleAnswer": "I ran out of milk this morning, so I had to make black coffee.",
+      "followUpQuestion": "Say what happened when you ran out of something."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L142_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "One phrasal verb tells you whether the launch is postponed or cancelled.",
+      "explanation": "Put off means to delay until later, and call off means to cancel. If you hear the second, the launch might never happen.",
+      "prompt": "The company has decided to call off the launch for a few months.",
+      "sampleAnswer": "The company has decided to put off the launch for a few months.",
+      "followUpQuestion": "Explain the difference between putting off and calling off, with an example."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L142_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A ride is offered. Are you being collected or taken somewhere?",
+      "explanation": "Pick up and drop off are opposite parts of a lift. A friend would wait at home in one case and at the cinema in the other.",
+      "prompt": "I'll pick you up outside the cinema at seven, if that works for you.",
+      "sampleAnswer": "I'll drop you off outside the cinema at seven, if that works for you.",
+      "followUpQuestion": "Offer someone a lift and say where you will meet."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L143_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A small word after \"checking\" sets the direction of the stay.",
+      "explanation": "In means arriving at the hotel, and out means leaving it. Both connect with leaving bags, so only your ear knows the difference.",
+      "prompt": "We're checking in at two, so we can leave our bags at the desk.",
+      "sampleAnswer": "We're checking out at two, so we can leave our bags at the desk.",
+      "followUpQuestion": "Explain what happens when you check in at a hotel."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L143_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Two phrasal verbs appear in one sentence. Match them to their objects.",
+      "explanation": "\"Work out\" means to figure out a solution, and \"set up\" means to prepare for use.",
+      "prompt": "It took us a while to work out how to set up the printer.",
+      "sampleAnswer": "It took us a while to work out how to set up the printer.",
+      "followUpQuestion": "Describe something you worked out on your own."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L143_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A request to a customer. The first phrasal verb is what the customer has to do.",
+      "explanation": "Filling in means writing on the form, and handing in means giving it to someone. The customer would do a different action.",
+      "prompt": "Could you hand in this form while I sort out the details of your booking?",
+      "sampleAnswer": "Could you fill in this form while I sort out the details of your booking?",
+      "followUpQuestion": "Ask a customer to do a task while you do another."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L144_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A deal is offered between two people. Track both halves.",
+      "explanation": "Nothing was altered in this one. \"Look after\" means to take care of, and \"cover for\" means to do someone's job when they're away.",
+      "prompt": "If you look after the kids tonight, I'll cover for you next weekend.",
+      "sampleAnswer": "If you look after the kids tonight, I'll cover for you next weekend.",
+      "followUpQuestion": "Offer to swap a favour with a friend, using cover for."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L144_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The problem is stated, then the solution. Focus on who was called.",
+      "explanation": "A mechanic and a tow truck are both sensible, but they solve the problem in different ways.",
+      "prompt": "My car broke down on the motorway, so I had to call a mechanic.",
+      "sampleAnswer": "My car broke down on the motorway, so I had to call a tow truck.",
+      "followUpQuestion": "Say what you would do if your car broke down on the way to work."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L144_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The advice includes a verb that tells you how much sugar is allowed.",
+      "explanation": "Cut out means to stop completely and cut down on means to reduce. The patient would eat a lot differently.",
+      "prompt": "The doctor advised me to cut out sugar and get more sleep.",
+      "sampleAnswer": "The doctor advised me to cut down on sugar and get more sleep.",
+      "followUpQuestion": "Give a friend some advice about eating or sleeping."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L145_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A common workplace promise, with a condition of timing.",
+      "explanation": "\"Get back to\" means to reply after checking, and \"as soon as\" sets the timing.",
+      "prompt": "I'll get back to you as soon as I've checked with the team.",
+      "sampleAnswer": "I'll get back to you as soon as I've checked with the team.",
+      "followUpQuestion": "Tell someone you will reply once you have checked something."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L145_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A phrasal verb tells you how the idea appeared.",
+      "explanation": "Text and audio are the same. \"Came up with\" means she thought of it, and \"while\" gives the situation.",
+      "prompt": "She came up with a brilliant idea while we were stuck in traffic.",
+      "sampleAnswer": "She came up with a brilliant idea while we were stuck in traffic.",
+      "followUpQuestion": "Describe a good idea you came up with in an unusual place."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L145_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A teacher gives an instruction with a deadline and a reason. Listen to the reason.",
+      "explanation": "Marking means checking the work, and returning means giving it back. Students would expect a different result over the weekend.",
+      "prompt": "Please hand in your assignments by Friday so I can mark them over the weekend.",
+      "sampleAnswer": "Please hand in your assignments by Friday so I can return them over the weekend.",
+      "followUpQuestion": "Tell a group how and when to submit their work."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L146_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The verb in the middle introduces a fact.",
+      "explanation": "\"Pointed out\" means to draw attention to something that people may not have noticed.",
+      "prompt": "The manager pointed out that we've been over budget for three months.",
+      "sampleAnswer": "The manager pointed out that we've been over budget for three months.",
+      "followUpQuestion": "Point out a problem politely to a colleague."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L146_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Two phrasal verbs with \"up\" are easy to confuse. Which is it?",
+      "explanation": "Keep up means to stay at the same pace, and catch up means to get to the same level after falling behind.",
+      "prompt": "I've been trying to catch up with the news, but there's too much.",
+      "sampleAnswer": "I've been trying to keep up with the news, but there's too much.",
+      "followUpQuestion": "Say what you try to stay up to date with."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L146_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A plan is mentioned, then dropped. Track the verb after \"going to\".",
+      "explanation": "The recording follows the text word for word. \"Bring up\" means to raise a subject for discussion.",
+      "prompt": "He was going to bring up the problem at the meeting, but he changed his mind.",
+      "sampleAnswer": "He was going to bring up the problem at the meeting, but he changed his mind.",
+      "followUpQuestion": "Say something you had planned to bring up, and why you didn't."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L147_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The reason is in the first half and uses a phrasal verb.",
+      "explanation": "One bus stopped working, the other never arrived. Either way you walk, but the story about the delay is not the same.",
+      "prompt": "The bus broke down, so we had to walk the whole way home.",
+      "sampleAnswer": "The bus didn't turn up, so we had to walk the whole way home.",
+      "followUpQuestion": "Explain how you got home when transport failed."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L147_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Two verbs show who gives and who receives.",
+      "explanation": "Taking over and handing over are opposites. One team gains the work while the other loses it.",
+      "prompt": "Our team is handing over the project to the design department next month.",
+      "sampleAnswer": "Our team is taking over the project from the design department next month.",
+      "followUpQuestion": "Say what your team will hand over or take over next month."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L147_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Surprise is expressed and an action is described.",
+      "explanation": "\"Gave up\" means she stopped doing it, and the infinitive shows her purpose.",
+      "prompt": "I can't believe she gave up her job to travel around the world.",
+      "sampleAnswer": "I can't believe she gave up her job to travel around the world.",
+      "followUpQuestion": "Say what someone you know gave up, and what you think of it."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L148_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "One friend prepares the room, and you can hear what kind of preparation.",
+      "explanation": "Setting up means getting things ready before the meeting, and cleaning up means tidying after it. The timing of the job is different.",
+      "prompt": "I'll clean up the meeting room while you prepare the slides.",
+      "sampleAnswer": "I'll set up the meeting room while you prepare the slides.",
+      "followUpQuestion": "Share out two jobs before an event between you and a friend."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L148_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "An unexpected result is signalled by \"ended up\".",
+      "explanation": "The audio matches the text. \"Ended up\" describes the final result of a series of events.",
+      "prompt": "We ended up eating at home because every restaurant was fully booked.",
+      "sampleAnswer": "We ended up eating at home because every restaurant was fully booked.",
+      "followUpQuestion": "Say where you ended up last time your plans changed."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L148_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A habit explains a reaction. Follow the words \"used to\".",
+      "explanation": "\"Used to\" plus -ing means she's accustomed to it, and it differs from the past habit \"used to\" plus a bare verb.",
+      "prompt": "She's used to getting up early, so the early flight doesn't bother her.",
+      "sampleAnswer": "She's used to getting up early, so the early flight doesn't bother her.",
+      "followUpQuestion": "Say what you are used to doing every day."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L149_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Two contrasting ideas are separated by \"but\".",
+      "explanation": "This is a straight match. \"Looking forward to\" is followed by -ing, and \"might\" shows uncertainty.",
+      "prompt": "I'm looking forward to seeing you, but I might be late because of work.",
+      "sampleAnswer": "I'm looking forward to seeing you, but I might be late because of work.",
+      "followUpQuestion": "Say what you are looking forward to, and what might get in the way."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L149_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The picnic's future is decided by a phrasal verb.",
+      "explanation": "Put off keeps the picnic alive for another day, while call off cancels it. It's a common source of confusion.",
+      "prompt": "They put off the picnic because it was pouring with rain.",
+      "sampleAnswer": "They called off the picnic because it was pouring with rain.",
+      "followUpQuestion": "Say what you would do if a plan fell through because of the weather."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L149_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Advice with two actions. Hear both verbs.",
+      "explanation": "\"Run into\" means to meet unexpectedly, and \"give me a call\" is an informal request.",
+      "prompt": "If you run into any problems, just give me a call and I'll help.",
+      "sampleAnswer": "If you run into any problems, just give me a call and I'll help.",
+      "followUpQuestion": "Offer help to a colleague who might run into difficulties."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L150_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A journey is interrupted. Follow the order of verbs.",
+      "explanation": "\"Set off\" starts the trip, and \"turned back\" reverses it.",
+      "prompt": "After we set off, we realised we'd forgotten the tickets, so we turned back.",
+      "sampleAnswer": "After we set off, we realised we'd forgotten the tickets, so we turned back.",
+      "followUpQuestion": "Retell the trip, starting with \"We set off, but...\""
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L150_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A struggle with a habit at a certain time of day.",
+      "explanation": "Morning and evening cravings are about different routines, like coffee and dessert.",
+      "prompt": "I'm trying to give up sugar, but it's really hard in the evenings.",
+      "sampleAnswer": "I'm trying to give up sugar, but it's really hard in the mornings.",
+      "followUpQuestion": "Talk about a habit you are trying to give up."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L150_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The result of a long meeting is described in the last words.",
+      "explanation": "Anything means nothing was agreed, whereas a date means only one issue was left open.",
+      "prompt": "The meeting dragged on for hours, and nobody could agree on a date.",
+      "sampleAnswer": "The meeting dragged on for hours, and nobody could agree on anything.",
+      "followUpQuestion": "Describe a meeting that dragged on, and what you would have changed."
+    }
+  ]
 }

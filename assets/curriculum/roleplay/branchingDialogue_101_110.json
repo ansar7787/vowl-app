@@ -1,787 +1,787 @@
 {
-    "gameType": "branchingDialogue",
-    "batchIndex": 11,
-    "levels": "101-110",
-    "quests": [
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'Our intelligence suggests we're facing an adversary who is far better resourced than us. How do you develop an asymmetric advantage?'",
-            "options": [
-                "I'd look for where their size actually becomes a weakness - exploit speed and precision where they're forced to be slow.",
-                "We should focus on the areas where our capabilities are already closest to parity.",
-                "Fighting a better-resourced adversary is always a fundamentally difficult strategic challenge."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Find the constraint their size creates, rather than competing head-on.",
-            "explanation": "Identifying where superior resources become inflexibility is a genuinely asymmetric strategy. 'Always a fundamentally difficult challenge' is a general statement. 'Focus on areas closest to parity' is conventional competition, which asymmetric strategy deliberately avoids.",
-            "id": "bd_l101_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I've been asked to assess the loyalty of an entire department. How do you conduct that kind of evaluation without damaging trust?'",
-            "options": [
-                "Loyalty assessments are very sensitive and must be conducted with extreme care.",
-                "I'd assess behaviour, not intention - track access patterns and unusual outside contact quietly, rather than asking anyone directly.",
-                "You'll need to build rapport with people in the department before assessing their loyalty."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Assess through quiet behavioural patterns rather than direct questioning.",
-            "explanation": "Reading behaviour patterns rather than asking directly preserves trust while still gathering real signal. 'Very sensitive, must be conducted with care' is a general statement. 'Build rapport before assessing' invites exactly the direct interrogation that damages trust.",
-            "id": "bd_l101_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I've been approached to consult for a major hotel chain looking to elevate their restaurant offering globally. What should I assess before accepting?'",
-            "options": [
-                "I'd check whether they genuinely want quality or just the association, who owns the recipes, and whether there's a real exit clause.",
-                "Consulting for global hotel chains can be both prestigious and very lucrative.",
-                "You should assess the financial terms and the scope of the role very carefully before committing."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name specific, non-obvious risks beyond money and scope.",
-            "explanation": "These questions surface the real risks - motive, ownership, and exit - that money and scope alone don't cover. 'Prestigious and lucrative' is a general statement. 'Assess financial terms and scope' covers only two of the real considerations.",
-            "id": "bd_l101_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I'm writing clinical guidelines that will affect treatment decisions for thousands of patients. What quality standards should govern this work?'",
-            "options": [
-                "Full evidence review, not selective, clear conflict-of-interest declarations, and a defined review date, since guidelines that never expire become dangerous.",
-                "Clinical guidelines have enormous impact on patient outcomes at a population level.",
-                "You should follow established clinical guideline development frameworks and peer review processes."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name specific, non-negotiable standards rather than a general process.",
-            "explanation": "Naming specific standards - full review, disclosed conflicts, and an expiry date - gives real, checkable rigour. 'Enormous impact at a population level' is a general statement. 'Follow established frameworks and peer review' is sound but doesn't name the specific standards.",
-            "id": "bd_l102_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'My business partner of ten years has suggested we should dissolve the partnership. How do I handle this professionally?'",
-            "options": [
-                "Business partnership dissolutions after long relationships are always professionally and personally complex.",
-                "First, an open conversation to understand the real reason, then a mediator - protecting the business's reputation comes before either of our feelings.",
-                "You should seek legal advice immediately to protect your interests in the dissolution process."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Understand the reason first, then protect the business through the process.",
-            "explanation": "Understanding the real reason, then protecting the business above personal feelings, is a genuinely staged, professional approach. 'Always professionally and personally complex' is a general statement. 'Seek legal advice immediately' treats the dissolution as adversarial from the outset.",
-            "id": "bd_l102_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'We're developing a new route to a destination where there is no existing navigation infrastructure. How do you plan it?'",
-            "options": [
-                "You'll need to work with aviation authorities and navigation specialists on a route like this.",
-                "Planning routes to destinations with no existing navigation infrastructure is a specialised aviation challenge.",
-                "I'd map every available navigation point first, plan fuel for zero diversion airports, and set a clear turn-back point for every stage."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Give the specific planning stages, not just who to consult.",
-            "explanation": "Naming the actual planning stages - navigation points, fuel assumptions, and turn-back points - gives a real methodology. 'A specialised aviation challenge' is a general statement. 'Work with authorities and specialists' names collaborators but not a plan.",
-            "id": "bd_l102_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'Our team has been together for three years and performance has plateaued. What would you do to re-ignite momentum?'",
-            "options": [
-                "You should consider introducing some fresh challenges and possibly some new team members.",
-                "Team performance plateaus after extended periods together are a common and well-documented phenomenon.",
-                "I'd disrupt deliberately - swap roles, bring in an outside perspective, and let the team define their own ambitious goal."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Give specific interventions, including a self-defined goal, not just fresh challenges.",
-            "explanation": "Naming specific interventions, especially a self-defined goal, reflects real evidence about what re-engages plateaued teams. 'A common and well-documented phenomenon' is a general statement. 'Fresh challenges and possibly new team members' is vague compared to these concrete levers.",
-            "id": "bd_l103_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I need to establish an intelligence network from scratch in a city I've never operated in before. What are the first three things you do?'",
-            "options": [
-                "Building an intelligence network from scratch is one of the most demanding assignments in field operations.",
-                "First, I'd just observe for a few weeks, then find the best-connected people, and build one low-key relationship as my way in.",
-                "You should start by establishing your cover identity and a secure base of operations."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Prioritise observation and connection over establishing logistics first.",
-            "explanation": "Observation, then connection through the best-connected (not most powerful) people, is sophisticated network-building. 'One of the most demanding assignments' is a general statement. 'Establish cover identity and a secure base' is logistics, not a network-building strategy.",
-            "id": "bd_l103_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I want to source my entire menu from within fifty kilometres of the restaurant. What are the main challenges with this approach?'",
-            "options": [
-                "Local sourcing is an admirable and increasingly popular approach in contemporary cuisine.",
-                "Seasonal changes will force menu rewrites several times a year, some ingredients won't be available, and the premium cost has to go somewhere.",
-                "You'll need to build strong relationships with local farmers and producers to make this work."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name the real, practical challenges rather than the general trend.",
-            "explanation": "Naming concrete challenges - menu rewrites, unavailable ingredients, and cost - actually answers what was asked. 'Admirable and increasingly popular' is a general statement. 'Build strong relationships with local farmers' is a solution, not an account of the challenges.",
-            "id": "bd_l103_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'A patient has presented with a symptom cluster that doesn't fit any standard diagnosis. How do you approach this clinically?'",
-            "options": [
-                "Atypical presentations are one of the most intellectually demanding aspects of clinical medicine.",
-                "I'd verify every standard diagnosis is genuinely excluded, look for one mechanism that explains the whole cluster, then consider a specialist referral.",
-                "You should keep an open mind and resist anchoring on any single diagnosis too quickly."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Give the specific clinical steps, not just the cognitive stance.",
-            "explanation": "Naming the actual steps - exclusion, unifying mechanism, referral - gives real clinical methodology. 'One of the most intellectually demanding aspects' is a general statement. 'Keep an open mind and resist anchoring' describes the mindset but not the method.",
-            "id": "bd_l104_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I'm about to enter a negotiation where I hold significantly less leverage than the other party. What's your strategy?'",
-            "options": [
-                "I'd widen what's on the table beyond just price, know my real alternative value, and be genuinely willing to walk away.",
-                "You should do extensive preparation to understand their interests as deeply as possible before the negotiation.",
-                "Negotiating from a position of lower leverage requires careful strategy and preparation."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Give specific tactics for a low-leverage position, not just general preparation.",
-            "explanation": "Naming specific tactics - widening scope, knowing your alternative, and real willingness to walk - gives actual leverage. 'Requires careful strategy and preparation' is a general statement. 'Understand their interests deeply' is one useful element, not a full strategy.",
-            "id": "bd_l104_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'We've been asked to carry a very unusual and sensitive cargo that requires special handling protocols we've never used before. How do you prepare your crew?'",
-            "options": [
-                "I'd get full technical data from the manufacturer, run a table-top scenario, and make sure every crew member knows what to do if things go wrong.",
-                "Unusual cargo with special handling protocols requires thorough preparation before flight.",
-                "You should consult with relevant specialists and ensure all crew members are briefed on the new protocols."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Give the specific preparation stages, not a general instruction to consult and brief.",
-            "explanation": "Naming the manufacturer consultation, simulation, and a specific test of crew knowledge gives a thorough, checkable process. 'Requires thorough preparation' is a general statement. 'Consult specialists and brief crew' names two steps without the specific framework.",
-            "id": "bd_l104_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I've been asked to give an after-action report on a mission that was successful but that involved a decision I'm not comfortable with in retrospect. How do you handle that?'",
-            "options": [
-                "After-action reports require complete honesty, including about decisions that may reflect poorly on yourself.",
-                "You should report the facts accurately and present the mission outcomes objectively.",
-                "I'd report it exactly as it happened, including my honest doubts - a report that edits out discomfort is a report that lies."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Include your honest retrospective judgement, not just the objective facts.",
-            "explanation": "Naming discomfort as exactly what a good report should surface is the principled, courageous standard here. 'Require complete honesty' is a general statement. 'Report facts accurately and present outcomes objectively' misses the retrospective judgement that makes the report valuable.",
-            "id": "bd_l105_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I've been asked to mentor a junior agent who reminds me significantly of myself at that age. How do I avoid projecting my own path onto them?'",
-            "options": [
-                "Mentoring someone who reminds you of yourself requires particular self-awareness.",
-                "I'd start every conversation with a question, not advice, and check whether my own experience is actually relevant, or just familiar to me.",
-                "You should be self-aware about the risk of projecting your own experience onto your mentee."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Give the specific practice, not just the general awareness.",
-            "explanation": "Naming a specific practice - questions first, and a real test for relevance - operationalises self-awareness. 'Requires particular self-awareness' is a general statement. 'Be self-aware about the risk' names the need without a specific practice.",
-            "id": "bd_l105_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I've been invited to collaborate with a world-renowned chef on a special event. We have very different culinary philosophies. How do we make it work?'",
-            "options": [
-                "Collaborations between chefs with different philosophies can produce either extraordinary or disastrous results.",
-                "I'd have a frank conversation about our different philosophies first, agree who leads on what, and stay genuinely open to learning from them.",
-                "You should try to find common ground and focus on what you both share rather than your differences."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Address the differences directly rather than looking only for common ground.",
-            "explanation": "Naming a frank conversation, clear roles, and genuine reciprocity gives an actual working structure. 'Can produce extraordinary or disastrous results' is a general statement. 'Find common ground and focus on what you share' avoids the productive value of the difference.",
-            "id": "bd_l105_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I have a research idea that I believe could be important, but it challenges a view held by the most eminent person in my field. How do I pursue it?'",
-            "options": [
-                "I'd make the evidence rigorous enough that it can only be answered scientifically, and engage with their work seriously, not dismissively.",
-                "You should build your case carefully and present it through proper peer review channels.",
-                "Challenging established views in a field is always professionally risky but intellectually essential."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Focus on rigour and genuine engagement, not just the process to follow.",
-            "explanation": "Naming rigour and genuine engagement with the existing work gives a real, principled approach. 'Always professionally risky but intellectually essential' is a general statement. 'Build your case and present through peer review' is sound but doesn't name the specific principles.",
-            "id": "bd_l106_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I need to make a presentation to a board that includes both technical experts and non-technical directors. How do I structure it?'",
-            "options": [
-                "Presenting to a mixed board of technical experts and non-technical directors requires careful calibration.",
-                "You should pitch the level of technical detail at the average level of the audience.",
-                "I'd open with the decision at stake in plain language, then give evidence experts can interrogate and others can still follow."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Give the actual structure that serves both audiences at once.",
-            "explanation": "Naming a structure that serves both groups at once, rather than a single average level, is the real solution here. 'Requires careful calibration' is a general statement. 'Pitch at the average level' is a common approach but serves neither group especially well.",
-            "id": "bd_l106_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I've been asked to write the new emergency procedures manual for our entire fleet. What principles should govern this document?'",
-            "options": [
-                "Emergency procedure manuals are among the most critically important documents in commercial aviation.",
-                "You should follow existing aviation authority standards and consult widely with experienced pilots.",
-                "Every step has to work for a stressed pilot, not a calm reader, and every procedure needs testing in simulation, not just on paper."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Design for the stressed reader and require simulation testing, not just theory.",
-            "explanation": "Designing explicitly for cognitive load under stress, and requiring real testing, are the principles that make a manual actually work. 'Among the most critically important documents' is a general statement. 'Follow authority standards and consult pilots' names sources, not governing design principles.",
-            "id": "bd_l106_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I've discovered that a key decision made two years ago, one that I championed strongly, was based on fundamentally flawed intelligence. How do I handle this?'",
-            "options": [
-                "You should conduct a thorough review of the decision and its current operational implications.",
-                "Discovering that a past decision was based on flawed intelligence is a significant leadership moment.",
-                "I'd assess what it means for current plans, fix what went wrong in the process, and disclose it proactively before I'm asked."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Cover the operational, institutional, and personal dimensions together.",
-            "explanation": "Covering the operational impact, the process fix, and proactive disclosure together is a complete response. 'A significant leadership moment' is a general statement. 'Conduct a thorough review of operational implications' addresses only the operational dimension.",
-            "id": "bd_l107_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'My asset's information has just saved lives, but the method I used to recruit them violated protocol. What do you do?'",
-            "options": [
-                "Protocol violations, even when they produce positive outcomes, cannot simply be justified by those outcomes.",
-                "I'd report the violation fully and proactively, including how I recruited them - a good outcome can't retroactively justify breaking protocol.",
-                "You should report the successful operation while managing how the recruitment details are documented."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Report the violation fully rather than managing how it's documented.",
-            "explanation": "Full, proactive disclosure, without shaping the narrative, is the principled response here. 'Cannot simply be justified by outcomes' is a general statement. 'Report the operation while managing the details' is essentially selective disclosure, which is itself a violation.",
-            "id": "bd_l107_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I've been offered the chance to open a restaurant in a country I've never visited, for a client who will fund everything but wants creative control. What is your honest assessment?'",
-            "options": [
-                "Honestly, this has the ingredients of a project that ends badly - a country you don't know, and a funder who wants creative control.",
-                "International restaurant openings with third-party funding and creative input are high-risk propositions.",
-                "You should conduct thorough due diligence and negotiate clear creative control boundaries before committing."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Give an honest, direct assessment rather than a hedged one.",
-            "explanation": "Giving a direct, unhedged assessment is exactly the honesty that was asked for. 'High-risk propositions' is a general statement. 'Conduct due diligence and negotiate boundaries' is reasonable but avoids actually giving the honest assessment requested.",
-            "id": "bd_l107_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I'm developing a training curriculum for clinicians working in extreme resource-limited settings. What principles should guide it?'",
-            "options": [
-                "You should focus on adaptability and practical skills that can be applied across many different contexts.",
-                "Design for the conditions that will actually exist, prioritise the highest-impact procedures per resource, and teach decision-making without confirmatory tests.",
-                "Training clinicians for extreme resource-limited settings requires fundamentally different thinking than standard curricula."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Give context-specific design principles, not general adaptability.",
-            "explanation": "Naming real-conditions design, impact-per-resource prioritisation, and uncertainty training reflects genuine context-specific principles. 'Requires fundamentally different thinking' is a general statement. 'Focus on adaptability and practical skills' is too general to guide actual curriculum design.",
-            "id": "bd_l108_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'A key stakeholder is opposing my project for reasons that are genuinely unclear to me. How do you uncover the real objection?'",
-            "options": [
-                "I'd listen for what they repeat across conversations, and ask 'if X were fixed, would you support it?' - the yes reveals what X really is.",
-                "Unclear stakeholder opposition to a project is often a significant indicator of an unexpressed underlying concern.",
-                "You should have a frank conversation with the stakeholder and ask them directly about their concerns."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Use indirect techniques, since a direct question often won't surface the real objection.",
-            "explanation": "Listening for repeated themes and using a specific hypothetical are practical techniques for surfacing unexpressed objections. 'Often a significant indicator' is a general statement. 'Ask them directly' often fails precisely because the real objection is unexpressed.",
-            "id": "bd_l108_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I want to advocate for a significant safety improvement that will be costly for the airline. How do I build the most compelling case?'",
-            "options": [
-                "I'd quantify the risk in numbers the board understands, attach a real financial cost to it, and frame it as an investment, not a principle.",
-                "You should build a strong evidence base and present the safety case clearly to the relevant decision-makers.",
-                "Safety advocacy that requires significant financial investment is always challenging in a commercial aviation context."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Frame safety in financial terms the board actually responds to.",
-            "explanation": "Quantifying risk and framing it financially speaks the board's actual decision-making language. 'Always challenging in a commercial context' is a general statement. 'Build a strong evidence base and present clearly' is generic without the specific commercial framing.",
-            "id": "bd_l108_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I need to give an honest assessment of a colleague who I both respect and have serious professional concerns about. How do I separate the personal from the professional?'",
-            "options": [
-                "I'd write down only what I actually observed and what resulted - my respect for them isn't evidence, and neither are my concerns.",
-                "Assessing someone you respect but have serious concerns about is one of the most difficult professional judgments to get right.",
-                "You should try to be as objective as possible and focus on documented facts rather than impressions."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Give the specific discipline for separating feeling from evidence.",
-            "explanation": "Naming observable behaviour as the only evidence, explicitly excluding respect and concern, is a real, usable discipline. 'One of the most difficult judgments to get right' is a general statement. 'Be as objective as possible' states the goal without the specific method.",
-            "id": "bd_l109_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'An operation I've been running for two years has produced intelligence that is significant but that requires breaking my own cover to act on. What is the decision framework?'",
-            "options": [
-                "You should escalate this decision to senior level immediately given its significance.",
-                "This is one of the most difficult operational decisions in long-term intelligence work.",
-                "First I'd ask if this can be acted on without me directly - only a truly immediate window makes breaking cover worth considering."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Give the actual decision logic, not just an instruction to escalate.",
-            "explanation": "Naming the actual decision sequence - alternative paths first, then time sensitivity - gives a real framework. 'One of the most difficult operational decisions' is a general statement. 'Escalate to senior level immediately' is one valid step but not the decision framework itself.",
-            "id": "bd_l109_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I want to create a mentoring relationship with a young chef who has exceptional talent but comes from a very different culinary background than mine. What approach works?'",
-            "options": [
-                "You should be sensitive to cultural differences while helping the chef develop their technical foundation.",
-                "I'd stay genuinely curious, not corrective - ask why their technique works in their tradition, and teach discipline, not my own taste.",
-                "Cross-cultural culinary mentoring can be both deeply enriching and challenging."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Recommend curiosity and teaching discipline over correcting toward your own style.",
-            "explanation": "Choosing curiosity over correction, and naming discipline over taste, protects the mentee's distinct voice. 'Can be deeply enriching and challenging' is a general statement. 'Be sensitive while helping develop technical foundation' misses the deeper risk of imposing your own style.",
-            "id": "bd_l109_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I'm being asked to take on a leadership role in a major health system reform. The scale is much larger than anything I've managed before. What should I think about before accepting?'",
-            "options": [
-                "Taking on a leadership role at a significantly larger scale is always a major career decision.",
-                "You should assess your readiness for the increased responsibility and consider what additional support and resources you would need.",
-                "I'd ask whether I have my own theory of change, whether the governance structure has patience for real timelines, and what personal cost I'm ready to accept."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Ask specific, searching questions rather than a general readiness check.",
-            "explanation": "These specific questions - ownership of the vision, governance patience, and personal cost - are the ones that actually determine fit. 'Always a major career decision' is a general statement. 'Assess your readiness and needed support' covers only part of the real evaluation.",
-            "id": "bd_l110_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I've been asked to sit on the board of a company in which I also hold commercial interests. How do I manage the conflict of interest?'",
-            "options": [
-                "You should declare your commercial interests formally and follow the board's conflict of interest policy.",
-                "Board service with existing commercial interests creates a conflict of interest that must be managed very carefully.",
-                "I'd disclose everything in full before accepting, get independent legal advice on compatibility, and set up a clear recusal process for conflicted votes."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Give the specific, rigorous steps, not just a general policy reference.",
-            "explanation": "Naming full disclosure, independent advice, and a specific recusal process gives real rigour beyond a generic policy. 'Must be managed very carefully' is a general statement. 'Declare interests and follow the policy' names two steps without the specific rigour required.",
-            "id": "bd_l110_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I have a crew member who is technically excellent but whose interpersonal communication creates safety risks. How do I address this professionally?'",
-            "options": [
-                "You should have a direct and supportive conversation about the communication issues and consider some coaching or development support.",
-                "A crew member whose interpersonal communication creates safety risks is a significant operational and welfare challenge.",
-                "I'd document specific incidents, then have a private conversation framed entirely around safety, not personality, and escalate through safety channels if it continues."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Frame this as a safety issue throughout, not a personality or HR issue.",
-            "explanation": "Documenting specific incidents and keeping the frame on safety, not personality, treats this as the safety matter it actually is. 'A significant operational and welfare challenge' is a general statement. 'A direct supportive conversation and coaching' treats this as an interpersonal issue rather than a safety one.",
-            "id": "bd_l110_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        }
-    ]
+  "gameType": "branchingDialogue",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker discussing a new office policy",
+      "scene": "A coworker asks: 'What do you think about the new open-plan seating policy?' You genuinely think it hurts focus work, though a few colleagues seem to like it.",
+      "options": [
+        "It's fine I guess.",
+        "Honestly, I think it makes deep focus work harder — I liked having a quieter space. Curious what's working for you about it though.",
+        "It's a terrible policy, whoever decided this clearly doesn't understand how people actually work."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Sharing an honest opinion works best with a specific reason, while staying open to other viewpoints.",
+      "explanation": "Giving your honest view with a concrete reason, and inviting their perspective, makes for a real exchange of opinions. Saying it's 'fine' when you don't think that hides your actual view from someone who asked for it. Harshly judging the decision-makers goes beyond sharing your opinion into an attack that wasn't necessary to make your point.",
+      "id": "bd_l101_q1",
+      "consequencePreviews": [
+        "Realistically, hiding your actual opinion means your coworker doesn't get your genuine perspective, which they asked for.",
+        "In this moment, you share your honest view with a reason and stay open to hearing a different perspective.",
+        "The sweeping judgment about the decision-makers goes further than sharing your own honest opinion required."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a classmate discussing a controversial reading assigned in class",
+      "scene": "A classmate asks: 'What did you think of that article we read? I actually really agreed with it.' You found the argument fairly weak.",
+      "options": [
+        "That article was basically nonsense, I don't know how anyone could take it seriously.",
+        "It was interesting.",
+        "I actually found the argument pretty weak, especially the part about the data — but I can see why the main point resonated with you."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When your genuine opinion differs from someone else's, share it honestly along with your reasoning, while acknowledging their view.",
+      "explanation": "Sharing your honest, specific critique while acknowledging their differing view keeps the conversation an actual exchange of ideas. 'It was interesting' avoids saying what you actually thought. Calling the article 'nonsense' right after your classmate said they agreed with it may feel like an indirect jab at their judgment too.",
+      "id": "bd_l101_q2",
+      "consequencePreviews": [
+        "The dismissive tone toward the article may feel like it's also dismissing your classmate, who just said they agreed with it.",
+        "Here, the vague, non-committal answer avoids sharing what you actually thought about the article.",
+        "In this moment, you share your genuine, differing view while acknowledging your classmate's perspective respectfully."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a family member with strong views on a topic you disagree with",
+      "scene": "At a family dinner, a relative says confidently: 'Remote work is just people being lazy, nobody's actually productive at home.' You disagree, based on your own experience working from home.",
+      "options": [
+        "I'd actually push back on that a bit — in my own experience, I've been more productive at home, though I know it depends a lot on the role and the person.",
+        "That's just not true at all, you clearly don't understand how remote work actually functions.",
+        "Yeah, maybe, looking back, I hadn't fully worked out how it'd play out, though I'm open to changing my mind — and a lot depends on details I haven't really looked into yet."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Disagreeing with a confident, sweeping claim works best when you share your own experience and acknowledge the nuance, rather than agreeing falsely or dismissing them outright.",
+      "explanation": "Sharing your own experience and acknowledging nuance disagrees honestly without dismissing the other person outright. Agreeing when you don't actually agree hides your genuine perspective and misses a chance for honest conversation. Telling them they 'don't understand' is a stronger dismissal than the disagreement itself calls for, especially at a family gathering.",
+      "id": "bd_l101_q3",
+      "consequencePreviews": [
+        "Realistically, you share your honest, experience-based disagreement while acknowledging the topic is more nuanced than a blanket claim.",
+        "In this moment, the blunt dismissal may escalate tension at a family dinner more than the disagreement itself required.",
+        "As a result, agreeing when you actually disagree hides your genuine experience and perspective from the conversation."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend asking for your opinion on their haircut",
+      "scene": "A friend just got a new haircut and asks: 'Be honest, what do you think?' You don't love it, but it's not a big deal either way.",
+      "options": [
+        "It looks amazing, I love it, if I'm honest, I hadn't really planned past that point, but I'm not totally set on it — and I probably should have asked a few more questions before saying anything.",
+        "It's definitely different from your usual style — how are you feeling about it? I think it might just take some getting used to for me.",
+        "Honestly, I don't really like it, it doesn't suit you at all."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "For low-stakes personal opinions, honesty softened with genuine curiosity usually lands better than false praise or blunt criticism.",
+      "explanation": "Being honestly measured, and asking how they feel about it, respects both truthfulness and their feelings on something personal. False enthusiasm isn't honest, which matters since they specifically asked for your real opinion. A blunt 'I don't like it' is honest but unnecessarily harsh for a low-stakes, personal choice like a haircut.",
+      "id": "bd_l102_q1",
+      "consequencePreviews": [
+        "Here, the enthusiastic praise isn't actually honest, which undercuts the trust your friend was placing in you by asking.",
+        "As a result, you give an honest, gentle response that opens a real conversation rather than a blunt verdict.",
+        "In this moment, the blunt, unsoftened opinion may feel harsher than necessary for something as low-stakes as a haircut."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker asking for your opinion on their presentation slides",
+      "scene": "A coworker shows you their slides before a big meeting and asks: 'What do you honestly think?' The content is solid but visually cluttered.",
+      "options": [
+        "The content's really strong — I'd just suggest simplifying a couple of the busier slides so the key points stand out more.",
+        "Looks great, looking back, I hadn't really planned past that point, but I'm not totally set on it — and I probably should have asked a few more questions before saying anything.",
+        "Honestly, these slides are way too busy, it's hard to focus on anything, actually, I was going more on instinct than anything, though I'm open to changing my mind."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Honest, useful opinions on someone's work usually name both what's working and what could improve.",
+      "explanation": "Naming the strength and the specific improvement gives a genuinely useful, honest opinion right when it matters most. Empty praise doesn't reflect your real view and doesn't help your coworker before the meeting. Blunt criticism, without acknowledging the strong content, risks feeling discouraging at a stressful moment.",
+      "id": "bd_l102_q2",
+      "consequencePreviews": [
+        "In this moment, you give an honest, specific, and constructive opinion that's genuinely useful before the meeting.",
+        "Here, the generic praise doesn't reflect your actual view and misses a chance to help before it matters.",
+        "The blunt criticism, without acknowledging the strong content, may feel discouraging right before a big meeting."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "your manager asking for your honest opinion on a decision they've already made",
+      "scene": "Your manager says: 'I've decided to restructure the team into smaller pods — what's your honest take?' You have real reservations, but the decision already seems final.",
+      "options": [
+        "That works for me, looking back, that was more of a first reaction, so take it with a grain of salt — and to be fair I only heard about this a few minutes ago myself, and I'm honestly still working out how I feel about the whole thing.",
+        "Honestly, I don't think this is a good idea at all, I guess, I hadn't checked how that would actually land, so let me know if that's off — and I'm honestly still working out how I feel about the whole thing.",
+        "I think there's real potential in it — my honest concern is around how handoffs between pods will work. Is there room to think that part through together, or is the structure fully set?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When someone wants your candid take on a choice that appears settled, name the particular worry you have while asking how much flexibility remains.",
+      "explanation": "Sharing the specific concern while checking how much flexibility remains respects both honesty and the reality that the decision may be set. Agreeing when you have real reservations hides input that could genuinely help the outcome. Flatly opposing an already-made decision, without offering anything constructive, may come across as resistance rather than useful feedback.",
+      "id": "bd_l102_q3",
+      "consequencePreviews": [
+        "Here, hiding a genuine concern means your manager doesn't get input that could actually improve the outcome.",
+        "As a result, the blunt, unqualified opposition to an already-made decision may come across as more resistant than constructive.",
+        "As a result, you share your genuine concern honestly while respecting that the decision may already be finalized."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who holds a strong opinion you partly agree with",
+      "scene": "A friend says: 'I think social media is destroying real friendships completely.' You partly agree, but think it's more nuanced than that.",
+      "options": [
+        "I don't think that's true at all, social media has actually helped a lot of friendships.",
+        "Yeah, totally agree.",
+        "I agree it's changed friendships in some real ways, though I think it's also helped some people stay connected who otherwise wouldn't have. Bit of both, maybe?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When you partly agree with a strong opinion, say so specifically, rather than fully agreeing or fully disagreeing.",
+      "explanation": "Naming both the part you agree with and the part you see differently gives an accurate, nuanced picture of your actual opinion. Fully agreeing hides the more nuanced view you actually hold. Fully disagreeing misrepresents that you do agree with part of what your friend said.",
+      "id": "bd_l103_q1",
+      "consequencePreviews": [
+        "As a result, the flat disagreement doesn't reflect that you actually do agree with part of what your friend said.",
+        "In this moment, agreeing fully hides the part of your actual view that's more nuanced than your friend's statement.",
+        "In this moment, you share your genuinely nuanced view, agreeing partly while adding the part you see differently."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker who holds a strong opinion about a new company tool",
+      "scene": "A coworker says: 'This new project management tool is a complete waste of money, it doesn't do anything the old one didn't.' You think it's genuinely better in a few specific ways, though it does have some real gaps too.",
+      "options": [
+        "Yeah, I don't really see the point of it either, thinking about it now, I said that fairly quickly, though I'm open to changing my mind — and I know that's not the most thought-out response, but it's where my head's at right now.",
+        "I actually think it's better for tracking dependencies, though I agree the reporting features are weaker than the old tool's. Depends what you're using it for, I guess.",
+        "I think it's a great tool actually, way better than the old one."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "A nuanced opinion that agrees on some points and disagrees on others is often more accurate and more useful than a flat agreement or disagreement.",
+      "explanation": "Naming the specific point you agree with and the one you don't gives a genuinely useful, accurate opinion for the discussion. Agreeing entirely hides real benefits you actually see. Disagreeing entirely dismisses a real gap your coworker raised that you also recognize.",
+      "id": "bd_l103_q2",
+      "consequencePreviews": [
+        "Realistically, agreeing fully hides the genuine benefits you actually see in the new tool.",
+        "As a result, you share your nuanced, honest view, agreeing on one point while disagreeing on another.",
+        "As a result, the flat disagreement doesn't acknowledge the real gaps your coworker specifically pointed out, which you also see."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a close friend whose strongly held political-adjacent view on a workplace topic you partly share, in a group setting",
+      "scene": "In a group conversation, a close friend says confidently: 'Companies that don't offer fully remote work are just behind the times and don't trust their employees.' You partly agree but think it depends heavily on the type of role, and you're aware others in the group might have different views too.",
+      "options": [
+        "I get where that comes from — for some roles I think that's fair, though for others, like ones needing a lot of spontaneous collaboration, in-person can genuinely help. Curious what others here think too.",
+        "I don't think that's really true, plenty of good companies still want people in the office.",
+        "Yeah, exactly, companies that don't do remote work are stuck in the past."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "In a group setting, sharing a nuanced view honestly and inviting others in is often more constructive than fully agreeing or fully disagreeing with a confident opinion.",
+      "explanation": "Sharing the nuanced view honestly, and inviting others into the conversation, keeps the group discussion open rather than one-sided. Fully agreeing hides your actual, more nuanced view and could pressure quieter group members to just go along with it too. Flatly disagreeing skips over the real part of your friend's point that you do agree with.",
+      "id": "bd_l103_q3",
+      "consequencePreviews": [
+        "In this moment, you share your nuanced view honestly while being mindful of the group setting and inviting other perspectives.",
+        "You may notice that the flat disagreement doesn't acknowledge the part of your friend's point you actually agree with.",
+        "Here, fully agreeing in front of the group hides your actual, more nuanced view and may pressure others toward agreeing too."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend asking why you think a mutual friend hasn't called them back",
+      "scene": "A friend asks: 'Why do you think Jamie hasn't called me back in three days? Do you think something's wrong?' You genuinely don't know, but you have a reasonable guess.",
+      "options": [
+        "I'm sure everything's fine, don't worry about it.",
+        "Honestly, who knows, people are unpredictable.",
+        "I don't actually know for sure — but Jamie mentioned being slammed at work lately, so my guess is it's probably that rather than anything personal."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When you're asked to speculate about someone else, be clear about what you actually know versus what you're guessing.",
+      "explanation": "Being clear that it's a guess, while still offering a reasonable, relevant one, is both honest and genuinely useful. Speaking with false certainty that 'everything's fine' isn't accurate to what you actually know. A vague, unhelpful shrug wastes the genuinely useful context you do have about Jamie's situation.",
+      "id": "bd_l104_q1",
+      "consequencePreviews": [
+        "As a result, the reassurance is offered as certainty you don't actually have, which isn't quite honest.",
+        "In this moment, the vague shrug doesn't offer your friend any of the genuinely useful information you actually have.",
+        "Realistically, you're honest about the limits of your knowledge while still offering a genuinely reasonable, reassuring guess."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker asking why a project seemed to stall",
+      "scene": "A coworker asks: 'Why do you think leadership put the Halvorsen project on hold? Any idea what happened?' You have a guess based on things you've overheard, but nothing confirmed.",
+      "options": [
+        "I don't know for certain, but from what I've heard, it might be related to budget reviews happening this quarter — take that with a grain of salt though.",
+        "It's because of budget cuts, that's definitely why, honestly, I hadn't really planned past that point, so let me know if that's off — and honestly the whole situation caught me a bit off guard.",
+        "No idea, could be anything really, to be fair, I hadn't checked how that would actually land, though I'd want to think it over more — and there's a decent chance I'd see it differently after sleeping on it."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When sharing an unconfirmed guess, be clear it's speculation rather than stating it as fact or withholding it entirely.",
+      "explanation": "Sharing the guess while clearly marking it as unconfirmed gives your coworker useful information without spreading it as fact. Stating your guess with full confidence risks spreading inaccurate information if it turns out to be wrong. Saying you have 'no idea' withholds genuinely relevant information you actually do have, even if it's uncertain.",
+      "id": "bd_l104_q2",
+      "consequencePreviews": [
+        "In this moment, you share your genuine but unconfirmed guess honestly, clearly marking it as speculation.",
+        "Here, stating an unconfirmed guess as fact could spread inaccurate information if your guess turns out to be wrong.",
+        "As a result, the vague answer withholds the genuinely relevant information you actually have, even if it's not confirmed."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a family member speculating about a sensitive situation involving another relative",
+      "scene": "A family member asks: 'Why do you think Aunt Carla skipped the reunion this year? Do you think she's upset with someone?' You have a guess, but it involves sensitive family history you're not sure is your place to share.",
+      "options": [
+        "It's probably because of that whole thing with Uncle Pete a few years back.",
+        "I honestly don't know for sure, and I'd rather not guess about something that personal — it might be worth just asking her directly if you're curious.",
+        "No idea, who really knows with her, I suppose, I hadn't really thought it through, so feel free to push back — and I know that's not the most thought-out response, but it's where my head's at right now."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When someone wants you to theorize about a private topic involving another person, it's usually better to decline and point them toward the source, rather than offering a hunch or brushing them off.",
+      "explanation": "Declining to speculate on something sensitive, and suggesting a direct, respectful path to an answer, protects privacy while still being helpful. Sharing your specific guess about sensitive family history risks spreading something private that isn't really yours to share. A dismissive comment about the relative in question, even if meant lightly, can come across as unkind rather than simply honest uncertainty.",
+      "id": "bd_l104_q3",
+      "consequencePreviews": [
+        "You may notice that sharing your guess about sensitive family history, even if plausible, risks spreading a private matter that isn't yours to share.",
+        "In this moment, you're honest about not wanting to speculate on something sensitive, while suggesting a respectful way to actually find out.",
+        "As a result, the dismissive comment, especially about a specific family member, may come across as slightly unkind rather than simply honest."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a classmate arguing a point you think is factually wrong",
+      "scene": "In a class discussion, a classmate confidently states something you're fairly sure is factually incorrect about a historical event you've studied closely.",
+      "options": [
+        "That's completely wrong, you clearly haven't done the reading.",
+        "That's not accurate.",
+        "I think that's actually a bit different from what I've read — from what I understand, it happened the other way around. Might be worth double-checking though."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Correcting a factual error works best when you explain what you understand to be accurate, while staying open to being wrong yourself.",
+      "explanation": "Explaining what you understand to be accurate, while leaving room for your own error, corrects the point constructively. 'That's not right' flags an error without giving the correct information. Attacking their preparation adds an unnecessary personal jab to what should simply be a factual correction.",
+      "id": "bd_l105_q1",
+      "consequencePreviews": [
+        "As a result, the harsh, personal jab about their preparation goes well beyond simply correcting a factual point.",
+        "You may notice that the bare correction doesn't explain what's actually accurate, leaving your classmate without the correct information.",
+        "As a result, you correct the factual point calmly and specifically, while leaving room for your own possible error."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker stating something factually incorrect about a client's contract terms",
+      "scene": "In a meeting, a coworker confidently tells the team: 'The Whitfield contract renews automatically every year.' You're fairly sure it actually requires manual renewal, based on documents you reviewed recently.",
+      "options": [
+        "That's not correct.",
+        "I think it might actually need manual renewal — I remember seeing that in the contract when I reviewed it last month. Worth double-checking before we assume it renews on its own.",
+        "That's wrong, you clearly haven't looked at the contract closely, actually, I wasn't considering every angle, though I'd want to think it over more — and I haven't really run it past anyone else yet."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Correcting a factual error in a professional setting works best when you state what you believe is accurate and where that information came from.",
+      "explanation": "Stating the correct information and its source gives the team what they need to avoid a real, potentially costly mistake. Simply saying 'that's not correct' doesn't give the team the accurate information they actually need. Criticizing their diligence adds an unnecessary edge to what should be a straightforward factual correction.",
+      "id": "bd_l105_q2",
+      "consequencePreviews": [
+        "You may notice that the correction doesn't explain what's actually accurate, so the team still doesn't have the right information to act on.",
+        "As a result, you correct the factual point clearly, with your source, in a way that protects the team from a real mistake.",
+        "The critical comment about their diligence goes beyond correcting the factual point, which was the actually important thing here."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a senior colleague stating something factually incorrect to a client on a call, in real time",
+      "scene": "On a client call, a senior colleague confidently states a technical detail about your product's capabilities that you know is factually incorrect, in front of the client.",
+      "options": [
+        "Sorry to jump in — I think that feature actually works a bit differently; let me clarify quickly so we give the client accurate information.",
+        "That's not quite right actually.",
+        "You're wrong about that, it doesn't work that way at all, to be fair, I hadn't fully worked out how it'd play out, though I'd want to think it over more."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Fixing a coworker's mistake in front of an outside party works best when it happens right away, tactfully, and is paired immediately with the correct detail.",
+      "explanation": "Correcting it immediately, diplomatically, and with the accurate information protects both the client relationship and your colleague's standing. Flagging that something's wrong without immediately clarifying the fact leaves the client confused rather than informed. A blunt correction in front of the client may embarrass your colleague more than necessary, even though the underlying correction is important to make.",
+      "id": "bd_l105_q3",
+      "consequencePreviews": [
+        "In this moment, you correct the factual error immediately and diplomatically, protecting both the client relationship and your colleague's credibility.",
+        "Here, the correction, without immediately clarifying the actual fact, leaves the client with an unresolved contradiction rather than accurate information.",
+        "The blunt correction, delivered in front of the client, may embarrass your colleague more than the situation requires."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend asking your opinion on a decision they've already made",
+      "scene": "A friend says: 'I already put down the deposit on the apartment, but what do you honestly think of the location?' You have real reservations about the neighborhood's safety at night.",
+      "options": [
+        "Since it's already decided, I'll just say — I'd double-check how well-lit the street is at night, that's the one thing that stood out to me. Otherwise it seems like a solid choice!",
+        "It's a great location, actually, I hadn't checked how that would actually land, but I'm not totally set on it — and a lot depends on details I haven't really looked into yet, and to be fair I only heard about this a few minutes ago myself.",
+        "Honestly, I wouldn't have picked that neighborhood, it doesn't seem very safe, thinking about it now, I hadn't weighed all the details, but that could easily change — and to be fair I only heard about this a few minutes ago myself."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When someone asks your opinion on a decision that's already made, frame honest concerns in a way that's still practically useful, not just critical.",
+      "explanation": "Framing the real concern as something practical to check keeps the honesty useful rather than just unsettling. False enthusiasm hides a genuine concern that could actually matter for your friend's safety. Bluntly saying you wouldn't have picked it, after the decision is final, offers criticism without giving your friend anything useful to actually do with it.",
+      "id": "bd_l106_q1",
+      "consequencePreviews": [
+        "Here, you share your genuine concern in a way that's still useful, given the decision is already made.",
+        "You may notice that hiding your real concern means your friend misses out on genuinely useful safety information.",
+        "The blunt opinion, delivered after the decision's already final, may just cause worry without being actionable."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker asking your opinion on a career move they've already committed to",
+      "scene": "A coworker says: 'I already accepted the offer, but what do you honestly think about the company?' You've heard some concerning things about their management style from a mutual contact.",
+      "options": [
+        "That's great, I'm sure it'll be a good move for you, I suppose, I wasn't considering every angle, though I'm open to changing my mind — and to be fair I only heard about this a few minutes ago myself.",
+        "Since it's decided, congrats! One thing worth knowing — I've heard their management style can be pretty hands-off, so it might help to ask clear questions about expectations early on.",
+        "Honestly, I've heard some bad things about that company's management, in hindsight, I wasn't considering every angle, so there might be a better way to handle it — and there's a decent chance I'd see it differently after sleeping on it."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When sharing a concern about a decision that's already final, frame it as forward-looking, actionable advice rather than vague worry.",
+      "explanation": "Congratulating them genuinely while framing the concern as something actionable respects the finality of the decision while still being useful. Simply offering congratulations hides information that could genuinely help them navigate the new role. A vague warning about 'bad things' creates worry without giving your coworker anything specific to actually do with it.",
+      "id": "bd_l106_q2",
+      "consequencePreviews": [
+        "You may notice that withholding the concerning information means your coworker starts the new role without a heads-up that could genuinely help them.",
+        "You share the concerning information in a genuinely useful, forward-looking way, given the decision is final.",
+        "As a result, the vague, unresolved concern creates worry without giving your coworker anything actionable to do about it."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a sibling asking your opinion on a partner they've just gotten engaged to",
+      "scene": "Your sibling, recently engaged, asks: 'I know it's happening either way, but what's your honest take on Sam?' You like Sam overall but have noticed a pattern of them being dismissive of your sibling's opinions in group settings.",
+      "options": [
+        "Honestly, I've noticed Sam can be pretty dismissive of you sometimes, if I'm honest, I hadn't stopped to think it all the way through, though I'm open to changing my mind — and I'm honestly still working out how I feel about the whole thing.",
+        "Sam's great, I'm really happy for you both, admittedly, I hadn't fully worked out how it'd play out, so it's worth double-checking — and there's a decent chance I'd see it differently after sleeping on it, and honestly the whole situation caught me a bit off guard.",
+        "I really do like Sam, and I can see how happy you are — one honest thing I've noticed is Sam can come across as a bit dismissive of your opinions in groups. Might just be worth keeping an eye on, for your own sake."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "For an honest opinion on someone's already-decided relationship, pairing genuine warmth with a specific, caring observation respects both the relationship and their wellbeing.",
+      "explanation": "Pairing genuine warmth with a specific, caring observation respects the happy occasion while still giving your sibling something honestly useful. Simply offering enthusiastic approval withholds an observation that could genuinely matter for your sibling's wellbeing. Leading only with the concern, without any warmth, may land harder than intended on news your sibling is clearly excited about.",
+      "id": "bd_l106_q3",
+      "consequencePreviews": [
+        "In this moment, leading with only the concern, without warmth or context, may land harder than intended on news your sibling is clearly happy about.",
+        "As a result, withholding a genuine, potentially important observation doesn't actually serve your sibling well, even though it feels kind in the moment.",
+        "As a result, you share genuine warmth alongside an honest, specific observation, respecting both the relationship and your sibling's wellbeing."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who asks if you think their business idea is good",
+      "scene": "A friend excitedly shares a business idea and asks: 'What do you honestly think, is this a good idea?' You see a significant flaw in the plan, though the core concept has potential.",
+      "options": [
+        "Yeah, sounds like a great idea!",
+        "Honestly, I don't think the numbers work at all, I mean, I said that fairly quickly, so let me know if that's off — and a lot depends on details I haven't really looked into yet.",
+        "I really like the core concept — my honest concern is around the pricing model, I think it might not cover costs at that scale. Want to think through that part together?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When you see a real flaw in someone's excited pitch, name both what's genuinely good and the specific concern, rather than empty praise or pure criticism.",
+      "explanation": "Naming both the genuine strength and the specific flaw gives your friend real, actionable feedback on something that matters to them. Empty enthusiasm hides a significant concern that could genuinely affect whether the business succeeds. Criticizing only the numbers, without acknowledging the real potential, risks discouraging your friend more than the situation calls for.",
+      "id": "bd_l107_q1",
+      "consequencePreviews": [
+        "As a result, hiding a significant flaw means your friend might move forward without addressing something that could genuinely hurt the business.",
+        "Realistically, the blunt criticism, without acknowledging the genuine potential of the concept, may feel needlessly discouraging.",
+        "Here, you share genuine enthusiasm for the strength while being honest about the specific, significant flaw you see."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker who asks if you think their proposed process change is a good idea",
+      "scene": "A coworker excitedly proposes a new workflow and asks: 'Do you think this could actually work?' You see a real bottleneck it would create for another team, though the overall idea is smart.",
+      "options": [
+        "I think the core idea is really smart — my one worry is it might create a bottleneck for the design team's review step. Worth checking with them before we roll it out?",
+        "Yeah, I think that could work well, to be fair, I was going more on instinct than anything, so let me know if that's off — and I probably should have asked a few more questions before saying anything.",
+        "Honestly, I don't think this is going to work, if I'm being honest, it wasn't a fully considered answer, but I'm not totally set on it — and to be fair I only heard about this a few minutes ago myself."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When you see a real, specific problem with an otherwise good idea, name both the strength and the concern clearly.",
+      "explanation": "Naming the genuine strength and the specific bottleneck concern gives your coworker exactly what they need to refine the idea before rolling it out. Simply approving hides a real problem that could surface later, causing bigger issues. Flatly rejecting the whole idea doesn't reflect your actual, more nuanced view, which sees real value in the core concept.",
+      "id": "bd_l107_q2",
+      "consequencePreviews": [
+        "As a result, you share genuine appreciation for the idea while flagging the specific, practical concern before it becomes a bigger problem.",
+        "Here, hiding the specific bottleneck concern means it might only surface after the change causes real problems.",
+        "In this moment, the blunt rejection, without acknowledging the smart core idea, doesn't reflect your actual, more balanced view."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a close friend who asks if you think they should quit their job to pursue their startup idea full time",
+      "scene": "A close friend, clearly excited, asks: 'Do you think I should quit and go all in on this?' You believe in the idea, but you know they have no savings buffer and significant debt, which they haven't mentioned in their excitement.",
+      "options": [
+        "Yeah, go for it, follow your passion!",
+        "I genuinely believe in the idea — my honest concern is the financial side. Have you thought through a runway, given where things stand with savings and debt? I want you to succeed, and that part worries me a bit.",
+        "Honestly, that sounds way too risky financially, to be fair, I wasn't considering every angle, though I'd want to think it over more — and I probably should have asked a few more questions before saying anything, and I know that's not the most thought-out response, but it's where my head's at right now."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "For a major, excited decision with a real practical risk the person hasn't mentioned, pair genuine belief in their idea with an honest, caring flag of the risk.",
+      "explanation": "Pairing genuine belief in the idea with an honest, caring flag about the financial risk respects both their excitement and their real wellbeing. Simply encouraging the leap ignores a significant practical risk that could genuinely hurt your friend if things don't work out. Leading only with the financial worry, without acknowledging real belief in the idea, risks feeling discouraging rather than like genuine support.",
+      "id": "bd_l107_q3",
+      "consequencePreviews": [
+        "Encouraging the leap without raising the significant financial risk doesn't actually serve your friend's real wellbeing.",
+        "You share genuine belief in the idea while honestly raising the significant, practical risk that's easy to overlook in excitement.",
+        "Here, leading only with the financial concern, without acknowledging genuine belief in the idea, may feel discouraging rather than supportive."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a debate partner in a class discussion",
+      "scene": "In a structured class debate, your assigned position is one you personally disagree with, and your partner asks: 'How do you want to approach defending this stance?'",
+      "options": [
+        "Even though I don't personally agree, I think the strongest argument for this side is the economic data — let's build around that, since it's the most defensible point.",
+        "This position is honestly kind of indefensible, we're not going to win with this.",
+        "I don't really agree with this stance, so I'm not sure how to argue it well, if I'm honest, I hadn't checked how that would actually land, so take it with a grain of salt — and there's a decent chance I'd see it differently after sleeping on it."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "In a structured debate, you can separate your personal opinion from the task of building the strongest possible case for an assigned position.",
+      "explanation": "Separating your personal view from the task, and focusing on the strongest available argument, is exactly what a good debater does. Letting your personal disagreement show as an obstacle undermines the actual preparation needed. Declaring the position indefensible before trying doesn't help your partner prepare and may not even be accurate.",
+      "id": "bd_l108_q1",
+      "consequencePreviews": [
+        "As a result, you engage seriously with the assigned position, separating your personal view from the task of building the strongest case.",
+        "You may notice that declaring the position hopeless before even trying doesn't help your partner prepare for the actual debate.",
+        "In this moment, letting your personal disagreement get in the way undermines the actual task of constructing a strong argument for the debate."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a mock trial team member assigned to argue a side you disagree with",
+      "scene": "For a mock trial exercise, your team asks: 'Since you disagree with this side personally, are you still good to help build our arguments?'",
+      "options": [
+        "Honestly, I think our side is wrong, so this is going to be tough, I suppose, it wasn't a fully considered answer, though I'm open to changing my mind.",
+        "I guess so, though I'm not sure I can argue something I don't believe in.",
+        "Absolutely — I can set my personal view aside for this. I actually think there's a strong angle around the timeline of events we could use."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Confirming you can separate personal belief from professional or academic task performance reassures your team and keeps the focus on building a strong case.",
+      "explanation": "Confidently confirming you can separate personal belief from the task, and offering a concrete idea, reassures your team and moves the work forward. Expressing doubt about whether you can argue something you disagree with may unnecessarily worry your teammates about your commitment. Leading with your personal view, rather than the task, doesn't give your team confidence in your contribution.",
+      "id": "bd_l108_q2",
+      "consequencePreviews": [
+        "Here, leading with your personal disagreement, rather than professional engagement, doesn't reassure your team you're ready to contribute.",
+        "As a result, the hesitation may worry your team about your commitment to the exercise, even though separating personal views from the task is a normal skill.",
+        "As a result, you confirm your professional commitment to the task while offering a genuinely useful strategic idea."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a junior lawyer asked by a senior partner to argue a position they personally find ethically uncomfortable, within legal and professional bounds",
+      "scene": "A senior partner says: 'I know this argument might not sit perfectly with you personally, but can you build the strongest possible version of it for the brief?' The position itself is legally and professionally legitimate, just not one you'd personally choose.",
+      "options": [
+        "I'll do my best, though this one's a bit tough for me personally.",
+        "I can definitely build the strongest version of that argument — I'll separate my personal view from the brief and focus on what makes the case strongest.",
+        "I'm not really comfortable arguing this position."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "For a professionally legitimate task that isn't your personal preference, confidently confirming your commitment to doing the job well is usually what the role actually requires.",
+      "explanation": "Confidently confirming the professional commitment, while noting you'll separate personal view from the brief, meets exactly what the role requires here. Voicing personal discomfort to a senior partner, rather than confirming commitment, may create unnecessary doubt about your professionalism on a request within normal bounds. Declining outright, when the task is legitimate and within professional norms, doesn't reflect what's actually expected in this kind of role, and offers no path forward.",
+      "id": "bd_l108_q3",
+      "consequencePreviews": [
+        "Here, voicing personal discomfort to a senior partner, rather than confirming professional commitment, may raise unnecessary doubts about your reliability.",
+        "Realistically, you professionally commit to the task, clearly and confidently, which is what the role actually requires here.",
+        "Realistically, since the position is legitimate and within professional bounds, declining outright may not reflect the actual expectations of the role, and doesn't offer an alternative."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend asking your opinion on their relationship choices",
+      "scene": "A friend asks: 'Do you think I'm making a mistake staying with someone who doesn't want kids, when I know I do?' This is a deeply personal decision you have real thoughts on.",
+      "options": [
+        "I don't think I should really weigh in on something this personal.",
+        "You're definitely making a mistake, that's not something you can compromise on, to be honest, it wasn't a fully considered answer, so feel free to push back — and honestly the whole situation caught me a bit off guard.",
+        "That's such a personal thing, so take this as just one perspective — I do think that's a hard thing to compromise on long-term, but only you really know your own priorities here."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "For deeply personal decisions, sharing your honest perspective while clearly framing it as just one view respects both honesty and their autonomy.",
+      "explanation": "Sharing your honest view while framing it clearly as one perspective respects both your friend's request for input and their ultimate autonomy. Stating your opinion with total certainty overstates how much anyone outside the relationship can really know. Declining to weigh in at all, when your friend specifically asked, misses a genuine opportunity to offer something they were hoping for.",
+      "id": "bd_l109_q1",
+      "consequencePreviews": [
+        "As a result, declining to share any perspective, when your friend specifically asked, may leave them without input they were genuinely hoping for.",
+        "You may notice that the confident, definitive framing overstates how much you can actually know about someone else's deeply personal relationship decision.",
+        "In this moment, you share your genuine view while clearly framing it as one perspective on a decision that's ultimately theirs."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker asking your opinion on whether they should report a minor policy violation by another team member",
+      "scene": "A coworker asks: 'Do you think I should report Alex for fudging the expense report by a small amount? I keep going back and forth.' You have real thoughts, but it's ultimately their call.",
+      "options": [
+        "That's a tough one, so take this as just my take — small as it is, it's still a real violation, and I think it matters more how comfortable you'd feel not reporting it. Ultimately it's your call though.",
+        "You definitely need to report that, no question.",
+        "I'd rather not get involved in that decision."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "For an ethical decision that's ultimately someone else's to make, share your honest view clearly while framing it as input, not a directive.",
+      "explanation": "Sharing your honest view, framed clearly as input rather than a directive, respects that this decision is ultimately your coworker's to make. Telling them definitively what to do doesn't leave room for their own judgment on something that's genuinely their call. Declining to share any view at all misses a chance to actually help them think it through, which is what they were asking for.",
+      "id": "bd_l109_q2",
+      "consequencePreviews": [
+        "In this moment, you share your genuine perspective clearly while respecting that this is ultimately their decision to make.",
+        "In this moment, the confident directive doesn't leave room for your coworker's own judgment on a decision that's genuinely theirs to make.",
+        "Realistically, declining to share any perspective, when your coworker specifically asked for one, misses an opportunity to actually help them think it through."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a sibling asking your opinion on a major decision about their aging parent's care that carries real family and financial consequences",
+      "scene": "Your sibling asks: 'Do you think we should move Mom into assisted living, or try to make home care work? I know you'll have thoughts.' The decision has real implications for the whole family, including you.",
+      "options": [
+        "Whatever you think is best, I'll go along with it, to be fair, I was just going with my gut on that one, so feel free to push back — and to be fair I only heard about this a few minutes ago myself.",
+        "I do have thoughts, since it affects all of us — my honest lean is toward assisted living for the medical support, but I really want to hear your read on it too before we land anywhere.",
+        "I really think assisted living is the only sensible option here, in fairness, I hadn't really thought it through, so it's worth double-checking — and a lot depends on details I haven't really looked into yet."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "For a major family decision that affects you too, share your honest opinion while genuinely inviting the other person's perspective, rather than deferring entirely or presenting your view as the only option.",
+      "explanation": "Sharing your honest opinion, given your real stake, while genuinely inviting their view, treats this as the shared decision it actually is. Deferring entirely withholds a perspective that matters, since this decision genuinely affects you too. Presenting your view as the only sensible option doesn't leave real room for your sibling, even though the decision affects both of you.",
+      "id": "bd_l109_q3",
+      "consequencePreviews": [
+        "Deferring entirely, on a decision that genuinely affects you too, withholds a perspective your sibling may actually need to hear.",
+        "Realistically, you share your genuine opinion honestly, given your real stake in the decision, while genuinely inviting their perspective too.",
+        "Here, stating your view as the only sensible option, on a family decision with shared stakes, doesn't leave real room for your sibling's perspective."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend asking why you changed your mind about something",
+      "scene": "A friend notices: 'Didn't you used to think working from home was way better? What changed?' You genuinely did change your view after some experience.",
+      "options": [
+        "I don't know, I guess I just feel differently now.",
+        "I did think that for a while — after a year of it though, I realized I actually missed the structure and collaboration of being in an office. Experience changed my mind.",
+        "I never really thought that in the first place."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When your opinion has genuinely changed, explaining the specific experience or reasoning behind the shift is more honest and useful than vague or evasive answers.",
+      "explanation": "Explaining the specific experience behind your changed view is honest and gives your friend real insight into your thinking. A vague 'I just feel differently' doesn't actually explain the reasoning behind the change. Denying you ever held the original view isn't honest and avoids genuinely engaging with how your thinking has evolved.",
+      "id": "bd_l110_q1",
+      "consequencePreviews": [
+        "You may notice that the vague answer doesn't actually explain the real reasoning behind your changed opinion.",
+        "Here, you explain the genuine reasoning behind your changed view honestly and specifically.",
+        "As a result, denying a view you actually held isn't honest and avoids explaining a genuine change in thinking."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker noticing you've changed your position on a technical approach",
+      "scene": "A coworker says: 'Didn't you push hard for the microservices approach last year? Now you seem less sure.' Your view genuinely shifted after seeing the maintenance costs firsthand.",
+      "options": [
+        "I guess I've just been thinking about it differently lately.",
+        "I never really pushed that hard for it, you're misremembering.",
+        "I did push for it — after seeing how much overhead it added to maintenance, I've become more cautious about using it everywhere. Still think it's right for some cases, just not all."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When your professional opinion has evolved with experience, explaining the specific reasoning is more useful and honest than being vague or denying your earlier view.",
+      "explanation": "Explaining the specific experience behind your evolved view is honest and gives your coworker genuinely useful technical insight. A vague explanation doesn't share the actual reasoning that changed your mind. Denying your earlier position isn't accurate and misses a chance to share a genuinely useful lesson learned.",
+      "id": "bd_l110_q2",
+      "consequencePreviews": [
+        "In this moment, the vague explanation doesn't give your coworker the actual, useful reasoning behind your shifted technical view.",
+        "You may notice that denying a position you actually held isn't accurate and avoids explaining a genuinely useful shift in your thinking.",
+        "As a result, you explain the genuine, specific reasoning behind your evolved technical opinion."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a mentee who's noticed you've become more cautious about a leadership approach you used to strongly advocate for",
+      "scene": "A mentee, whom you've guided for years, asks: 'You used to be really big on the \"move fast and iterate\" approach. You seem more careful about it lately — did something happen?' Your view shifted after a project failure you were closely involved in, which is a somewhat sensitive topic for you.",
+      "options": [
+        "I did believe in that pretty strongly — a project a while back taught me the hard way that speed without enough guardrails can cause real damage. It's a bit of a sensitive one for me, but I'm happy to share what I learned if it'd help you.",
+        "I've just become a bit more careful over the years, that's all.",
+        "I'd rather not get into that, it's kind of a sensitive topic for me."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When a genuine shift in your professional view comes from a sensitive experience, you can acknowledge the sensitivity honestly while still offering the valuable lesson, rather than being vague or declining outright.",
+      "explanation": "Honestly acknowledging both the shift and its sensitive cause, while offering to share more, respects your own boundaries while still being genuinely valuable to your mentee. A vague answer misses sharing a lesson that could genuinely help someone you're mentoring. Declining entirely, without acknowledging the mentee's genuine question, misses an opportunity to pass on something valuable, even though your instinct to protect your own privacy is understandable.",
+      "id": "bd_l110_q3",
+      "consequencePreviews": [
+        "In this moment, you honestly acknowledge the genuine shift and its cause, while being honest about the sensitivity, and offer to share more if it would help your mentee.",
+        "The vague answer skips sharing the actual, valuable lesson behind your changed approach, which could genuinely benefit your mentee.",
+        "Declining entirely, without any explanation, may leave your mentee without a genuinely valuable lesson, even though the sensitivity is understandable."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    }
+  ]
 }

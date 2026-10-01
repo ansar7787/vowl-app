@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "gq_l181_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The axiom ___ all political decisions involve trade-offs is well established.",
+            "question": "Subject: Meeting Update\n\nHi team, the meeting ___ moved to 3 pm due to a scheduling conflict.",
             "options": [
-                "whereby",
-                "which",
-                "that",
-                "whose"
+                "has been",
+                "is being",
+                "was being",
+                "had being"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "that",
-            "hint": "An appositive 'that' clause explains the axiom.",
-            "explanation": "'That' introduces an appositive clause defining a noun like 'axiom', 'fact', 'idea', 'assumption', 'belief': The axiom that all decisions involve trade-offs. This 'that' is a complementiser, not a relative pronoun - it cannot be replaced by 'which'.",
-            "grammarRule": "Appositive Clauses / Inversion"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "has been",
+            "hint": "The email is announcing a change that is now in effect.",
+            "explanation": "'Has been moved' is present perfect passive, connecting a recent change to its current effect: the meeting has been moved (and is now at 3 pm).",
+            "grammarRule": "Workplace Email: Present Perfect Passive"
         },
         {
             "id": "gq_l181_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "So ___ is the damage that recovery may take decades.",
+            "question": "Hi Sam, could you let me know ___ you'll be free to review the draft?",
             "options": [
-                "severely",
-                "severe",
-                "serious",
-                "greatly"
+                "that",
+                "if that",
+                "when",
+                "what"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "severe",
-            "hint": "Inverted 'so + adjective + is' structure - which word class?",
-            "explanation": "'So + adjective + is + noun + that': So severe is the damage that recovery may take decades. 'Severe' is an adjective (modifying 'the damage'). 'Severely' is an adverb - wrong after 'so is'. 'Serious' also works: so serious is the situation.",
-            "grammarRule": "Appositive Clauses / Inversion"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "when",
+            "hint": "This introduces an indirect question about time inside a polite request.",
+            "explanation": "'Let me know when' introduces an indirect question as a noun clause, a common structure in workplace messages asking for availability.",
+            "grammarRule": "Workplace Email: Indirect Questions"
         },
         {
             "id": "gq_l181_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The proposal is flawed ___ several critical assumptions are unsubstantiated.",
+            "question": "Thanks for your patience. ___ any issues come up, please don't hesitate to reach out.",
             "options": [
-                "in that",
-                "whereby",
-                "which means",
-                "such that"
+                "Would",
+                "Could",
+                "Must",
+                "Should"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "in that",
-            "hint": "Which phrase introduces a clause explaining how the proposal is flawed?",
-            "explanation": "'In that' = because in this specific way/respect: The proposal is flawed in that several assumptions are unsubstantiated. It introduces a clause explaining the specific nature of a flaw. Very formal and precise in academic writing.",
-            "grammarRule": "Appositive Clauses / Inversion"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Should",
+            "hint": "This is the formal, inverted way of saying 'if any issues come up'.",
+            "explanation": "'Should any issues come up' is a formal inverted conditional, commonly used in professional emails to sound polished and polite.",
+            "grammarRule": "Workplace Email: Inverted Conditional"
         },
         {
             "id": "gq_l182_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "It ___ be overstated how significant this discovery was.",
+            "question": "Traveler at check-in: Excuse me, ___ you tell me which gate is for flight 220?",
             "options": [
-                "would",
-                "must not",
-                "should not",
-                "cannot"
+                "do",
+                "could",
+                "are",
+                "must"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "cannot",
-            "hint": "The fixed phrase '___cannot be overstated' means something is extremely significant.",
-            "explanation": "'It cannot be overstated' = this is so significant it cannot be exaggerated: It cannot be overstated how significant this discovery was. A fixed emphatic phrase. Note: 'cannot be underestimated' is a common error - 'cannot be overstated' is correct when stressing importance.",
-            "grammarRule": "Reduced Relative Clauses / Formal Conditionals"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "could",
+            "hint": "This is a polite request to a stranger in a service setting.",
+            "explanation": "'Could you tell me' is a polite, widely used request pattern for asking strangers for information in travel situations.",
+            "grammarRule": "Travel English: Polite Requests"
         },
         {
             "id": "gq_l182_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The methodology ___ in this paper differs significantly from that of earlier studies in the field.",
+            "question": "Airline staff: I'm sorry, but this flight ___ overbooked, so we need volunteers.",
             "options": [
-                "adopts",
-                "adopted",
-                "which adopts",
-                "adopting"
+                "was",
+                "has been",
+                "will",
+                "is"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "adopted",
-            "hint": "A reduced passive relative clause here uses which verb form?",
-            "explanation": "'The methodology adopted in this paper' = 'the methodology which was adopted in this paper' - a reduced passive relative clause using the past participle. 'Adopting' would wrongly suggest the methodology is actively adopting something; 'adopts' and 'which adopts' don't fit this reduced, modifying position.",
-            "grammarRule": "Reduced Relative Clauses / Formal Conditionals"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "is",
+            "hint": "The staff member is describing the current situation at the gate.",
+            "explanation": "Present simple passive describes a current state of affairs: the flight is overbooked, explaining what's happening right now.",
+            "grammarRule": "Travel English: Present Simple Passive"
         },
         {
             "id": "gq_l182_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Should the government ___ its current fiscal policy, the deficit will continue to grow unchecked.",
+            "question": "\u2014 How long have you been waiting at customs?\n\u2014 We ___ been standing here for over an hour.",
             "options": [
-                "maintained",
-                "maintains",
-                "have maintained",
-                "maintain"
+                "has",
+                "have",
+                "had",
+                "was"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "maintain",
-            "hint": "'Should' at the start of a formal conditional is followed by which verb form?",
-            "explanation": "'Should + subject + base verb' is formal inverted first conditional = 'If the government maintains...': Should the government maintain its policy, the deficit will grow. Base form only - no '-s', no past tense.",
-            "grammarRule": "Reduced Relative Clauses / Formal Conditionals"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "have",
+            "hint": "The subject 'we' needs the matching present perfect continuous helper verb.",
+            "explanation": "'We' takes 'have' in present perfect continuous: have been standing, emphasizing the ongoing wait right up to now.",
+            "grammarRule": "Travel English: Present Perfect Continuous"
         },
         {
             "id": "gq_l183_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'Visiting relatives can be boring.' What does this sentence mean?",
+            "question": "Customer service chat: I understand your frustration. Your order ___ shipped by tomorrow morning at the latest.",
             "options": [
-                "Only that visiting relatives is a boring activity.",
-                "It could mean either: relatives who visit are boring, OR the activity of visiting relatives is boring.",
-                "Only that relatives who visit are boring.",
-                "It means you should not visit relatives."
+                "will be",
+                "is",
+                "was",
+                "has"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "It could mean either: relatives who visit are boring, OR the activity of visiting relatives is boring.",
-            "hint": "Grammatical ambiguity - 'visiting' could be an adjective or a gerund.",
-            "explanation": "This sentence is grammatically ambiguous: 'visiting' can be (1) a present participle adjective: relatives who are visiting are boring; or (2) a gerund (noun): the activity of visiting relatives is boring. Both readings are fully grammatical.",
-            "grammarRule": "Grammatical Ambiguity (Attachment)"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "will be",
+            "hint": "This is a promise about a future action.",
+            "explanation": "Future passive reassures the customer about what will happen next: your order will be shipped, a common structure in customer service responses.",
+            "grammarRule": "Customer Service: Future Passive"
         },
         {
             "id": "gq_l183_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which sentence is NOT grammatically ambiguous?",
+            "question": "\u2014 Can I get a refund for this item?\n\u2014 If the item ___ damaged, we can process a full refund.",
             "options": [
-                "Flying planes can be dangerous.",
-                "She stopped talking when she saw him.",
-                "The chicken is ready to eat.",
-                "She saw the man with the telescope."
+                "was",
+                "were",
+                "is",
+                "will be"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "She stopped talking when she saw him.",
-            "hint": "Which sentence has only one possible grammatical reading?",
-            "explanation": "'She stopped talking when she saw him' has one clear reading. The others are ambiguous: Flying planes (gerund or adjective?), The chicken is ready to eat (who eats whom?), Saw the man with the telescope (who has the telescope?). Ambiguity awareness is a key linguistic skill.",
-            "grammarRule": "Grammatical Ambiguity (Attachment)"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "is",
+            "hint": "This describes a real, checkable condition about the present state of the item.",
+            "explanation": "This is a first conditional describing a real, checkable present condition: if the item is damaged, refund is possible. The if-clause stays in present simple.",
+            "grammarRule": "Customer Service: First Conditional"
         },
         {
             "id": "gq_l183_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'I saw the man on the hill.' This sentence is ambiguous because 'on the hill' could describe:",
+            "question": "\u2014 I never received a confirmation email.\n\u2014 I apologize ___ the inconvenience; let me look into that right away.",
             "options": [
-                "Either where the man was, or where I was when I saw him.",
-                "Neither the man nor the speaker's location.",
-                "Only where the man was standing.",
-                "Only where 'I' was standing when I saw him."
+                "about",
+                "for",
+                "with",
+                "of"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Either where the man was, or where I was when I saw him.",
-            "hint": "This is attachment ambiguity - the phrase could attach to different parts of the sentence.",
-            "explanation": "'On the hill' can attach to 'the man' (the man was on the hill) or to 'saw' (I was on the hill when I saw him). This is called attachment ambiguity - a prepositional phrase can modify either a nearby noun or the main verb, and this sentence genuinely permits both readings.",
-            "grammarRule": "Grammatical Ambiguity (Attachment)"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "for",
+            "hint": "This fixed phrase always uses the same preposition.",
+            "explanation": "'Apologize for' is a fixed phrase; the preposition never changes regardless of context, unlike some other verb-preposition pairs.",
+            "grammarRule": "Dependent Prepositions: Apologize For"
         },
         {
             "id": "gq_l184_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which sentence correctly uses 'which' as a sentential relative?",
+            "question": "Interviewer: Tell me about a challenge you ___ overcome in your last role.",
             "options": [
-                "I passed the exam which was difficult.",
-                "I passed the exam, which was unexpected.",
-                "I passed the exam, which I studied for.",
-                "I passed the exam, which difficult."
+                "had",
+                "has",
+                "did",
+                "have"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "I passed the exam, which was unexpected.",
-            "hint": "A sentential relative clause refers to the whole preceding statement.",
-            "explanation": "'Which was unexpected' refers to the whole event (passing the exam), not just the noun 'exam'. This is called a sentential (or non-restrictive) relative clause. It must be set off with a comma and uses 'which', never 'that'.",
-            "grammarRule": "Sentential Relative Clauses"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "have",
+            "hint": "This asks about experience relevant to the interview happening now.",
+            "explanation": "Present perfect fits questions about relevant past experience in interviews: challenges you have overcome, connecting past achievements to the present conversation.",
+            "grammarRule": "Job Interview: Present Perfect"
         },
         {
             "id": "gq_l184_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The report concluded that salaries were inadequate, ___ to widespread discontent.",
+            "question": "Candidate: If I ___ hired, I would start by reviewing the current workflow.",
             "options": [
-                "which it led",
-                "which led",
-                "leading",
-                "that led"
+                "were",
+                "was",
+                "am",
+                "be"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "leading",
-            "hint": "A present participial clause expressing result.",
-            "explanation": "'Leading to widespread discontent' is a present participial clause expressing result: the conclusion led to discontent. This non-finite clause relates to the whole main clause. 'Which led' (relative clause) is also possible but 'leading' is more concise.",
-            "grammarRule": "Sentential Relative Clauses"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "were",
+            "hint": "This is a hypothetical situation about a job offer that hasn't happened yet.",
+            "explanation": "'If I were hired' uses the traditional second conditional form with 'were' for all subjects, common in interview answers about hypothetical scenarios.",
+            "grammarRule": "Job Interview: Second Conditional"
         },
         {
             "id": "gq_l184_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She had left before I arrived, ___ would have been an awkward encounter.",
+            "question": "Interviewer: Do you have any experience ___ managing remote teams?",
             "options": [
-                "as",
-                "it",
-                "that",
-                "which"
+                "of",
+                "for",
+                "in",
+                "with"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "'Which' referring to a hypothetical situation.",
-            "explanation": "'Which would have been an awkward encounter' - 'which' refers back to the implied encounter that didn't happen (her being there when I arrived). This is a complex use of the sentential relative 'which' referring to a hypothetical or implied situation.",
-            "grammarRule": "Sentential Relative Clauses"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "in",
+            "hint": "This adjective phrase pairs with a fixed preposition before a gerund.",
+            "explanation": "'Experience in' pairs naturally with a gerund: experience in managing, a standard interview phrase for describing skills.",
+            "grammarRule": "Dependent Prepositions: Experience In"
         },
         {
             "id": "gq_l185_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "By ___ the agent of the action entirely, passive voice can subtly shift a reader's perception of responsibility.",
+            "question": "Doctor's office recording: If you ___ experiencing a medical emergency, please hang up and dial emergency services.",
             "options": [
-                "omitting",
-                "omits",
-                "omission",
-                "omit"
+                "is",
+                "were",
+                "are",
+                "have"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "omitting",
-            "hint": "A preposition like 'by' is followed by which verb form?",
-            "explanation": "Prepositions are followed by a gerund: by omitting the agent. 'Omission' is a noun (it would need 'by the omission of', a different structure); 'omit' and 'omits' are finite/bare verb forms that can't follow a preposition directly.",
-            "grammarRule": "Preposition + Gerund / Passive Function"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "are",
+            "hint": "This describes a real, ongoing possibility right now.",
+            "explanation": "First conditional with present continuous describes a real, current possibility: if you are experiencing, call for help immediately.",
+            "grammarRule": "Appointments: First Conditional"
         },
         {
             "id": "gq_l185_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'The window was broken' (passive) vs 'John broke the window' (active). The passive is preferable when:",
+            "question": "Receptionist: Your appointment ___ confirmed for Tuesday at 10 am.",
             "options": [
-                "We want shorter, more direct sentences.",
-                "The agent (John) is known and important.",
-                "The focus is on the action and its result, not the agent.",
-                "We want to assign clear blame."
+                "has been",
+                "is being",
+                "was",
+                "will"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The focus is on the action and its result, not the agent.",
-            "hint": "When does passive voice serve communication better?",
-            "explanation": "Passive is preferable when: the agent is unknown, unimportant, or deliberately de-emphasised; when the object of the action is the topic; or in formal/academic writing. 'The window was broken' focuses on the window and the event, not on who did it.",
-            "grammarRule": "Preposition + Gerund / Passive Function"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "has been",
+            "hint": "The confirmation already happened and remains true now.",
+            "explanation": "Present perfect passive shows a completed action with present relevance: has been confirmed, meaning the appointment is set right now.",
+            "grammarRule": "Appointments: Present Perfect Passive"
         },
         {
             "id": "gq_l185_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "In formal academic prose, nominalisations are used primarily to:",
+            "question": "\u2014 Can I reschedule my appointment?\n\u2014 Of course, ___ day works better for you?",
             "options": [
-                "Sound more authoritative and create information density.",
-                "Replace all verb forms with noun forms.",
-                "Avoid the use of the passive voice.",
-                "Make sentences shorter and simpler."
+                "what",
+                "which",
+                "who",
+                "where"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Sound more authoritative and create information density.",
-            "hint": "What is the primary function of nominalisation in academic writing?",
-            "explanation": "Nominalisation (turning verbs into nouns: investigate → investigation) creates information density, allows complex ideas to become noun phrases, and gives writing an authoritative, formal register. It does not simply replace all verbs - it is a deliberate stylistic choice.",
-            "grammarRule": "Preposition + Gerund / Passive Function"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "which",
+            "hint": "This question asks the patient to choose from a limited, implied set of days.",
+            "explanation": "'Which' is often preferred over 'what' when choosing from a somewhat limited set of options, like days of the week.",
+            "grammarRule": "WH-Questions: Which vs What"
         },
         {
             "id": "gq_l186_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'The more the merrier.' This is an example of:",
+            "question": "Notice: All packages ___ be left unattended in the lobby.",
             "options": [
-                "A double comparative",
-                "An inverted conditional",
-                "A double superlative",
-                "A correlative comparative"
+                "mustn't have",
+                "don't have to",
+                "shouldn't have",
+                "must not"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "A double comparative",
-            "hint": "Identify the grammatical structure of this idiom.",
-            "explanation": "'The more, the merrier' is a double comparative: 'The + comparative, the + comparative.' It shows that as one quantity increases, another also increases. Both elements use comparative adjectives. This is a fixed idiom but uses a genuine grammatical structure.",
-            "grammarRule": "Double Comparative"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "must not",
+            "hint": "This is a strict rule, a clear prohibition.",
+            "explanation": "'Must not' expresses a firm prohibition suited to official notices: packages must not be left unattended, a clear rule with no exceptions.",
+            "grammarRule": "Notices: Must Not (Prohibition)"
         },
         {
             "id": "gq_l186_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'Rarely has a scientific discovery had such impact.' This is an example of:",
+            "question": "Notice: Residents ___ requested to keep noise to a minimum after 10 pm.",
             "options": [
-                "A cleft sentence",
-                "Third conditional",
-                "A nominal relative clause",
-                "Inversion for emphasis after a negative adverb"
+                "is",
+                "were",
+                "was",
+                "are"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Inversion for emphasis after a negative adverb",
-            "hint": "This structure inverts the subject and auxiliary after a negative adverb.",
-            "explanation": "'Rarely has a scientific discovery had...' = inversion after a negative adverb. When negative adverbs (rarely, never, seldom, barely, hardly) begin a sentence, the subject and auxiliary invert: Rarely has a discovery... rather than A discovery has rarely...",
-            "grammarRule": "Inversion (Negative Adverb)"
+            "correctAnswer": "are",
+            "hint": "This is a general, standing rule addressed to a plural group.",
+            "explanation": "'Are requested' fits this plural subject in a standing rule, a very common passive structure for polite official notices.",
+            "grammarRule": "Notices: Present Simple Passive"
         },
         {
             "id": "gq_l186_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'What the data reveal is a more complex picture.' This is an example of:",
+            "question": "Notice: This elevator ___ being serviced and will reopen this afternoon.",
             "options": [
-                "A passive sentence",
-                "An embedded question",
-                "A relative clause",
-                "A cleft sentence with 'what'"
+                "was",
+                "is",
+                "has",
+                "will"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "A cleft sentence with 'what'",
-            "hint": "This structure uses a 'what' clause to place emphasis on what follows.",
-            "explanation": "'What + clause + be + noun phrase' is a pseudo-cleft or wh-cleft sentence: What the data reveal is a more complex picture. It emphasises the noun phrase at the end. Compare: It-cleft: 'It is a more complex picture that the data reveal.'",
-            "grammarRule": "Cleft Sentence (Wh-Cleft)"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "is",
+            "hint": "This describes work in progress at this exact moment.",
+            "explanation": "Present continuous passive describes an action happening right now: is being serviced, explaining the elevator's current unavailability.",
+            "grammarRule": "Notices: Present Continuous Passive"
         },
         {
             "id": "gq_l187_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Choose the sentence with the most sophisticated use of fronting:",
+            "question": "Form instructions: Applicants ___ complete every section before submitting.",
             "options": [
-                "The cost is conspicuously absent from the discussion.",
-                "Conspicuously absent from the discussion is any mention of cost.",
-                "More data we need.",
-                "Data we need more of."
+                "might",
+                "could",
+                "must",
+                "would"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Conspicuously absent from the discussion is any mention of cost.",
-            "hint": "Fronting moves a non-subject element to the start for emphasis.",
-            "explanation": "'Conspicuously absent from the discussion is any mention of cost' fronts the subject complement ('conspicuously absent') for emphasis, requiring subject-verb inversion. This is a sophisticated formal/literary technique for emphasis.",
-            "grammarRule": "Fronting for Emphasis"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "must",
+            "hint": "This is a strict requirement on an official form.",
+            "explanation": "'Must' expresses a firm requirement typical of form instructions: must complete every section, with no exceptions allowed.",
+            "grammarRule": "Forms: Must (Obligation)"
         },
         {
             "id": "gq_l187_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which sentence demonstrates the correct use of 'lest'?",
+            "question": "Form instructions: If any information is missing, your application ___ be returned.",
             "options": [
-                "She whispered lest to wake the baby.",
-                "She whispered lest she would wake the baby.",
-                "She whispered lest she wake the baby.",
-                "She whispered lest she woke the baby."
+                "will",
+                "would",
+                "was",
+                "is being"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She whispered lest she wake the baby.",
-            "hint": "'Lest' is a formal conjunction that triggers the subjunctive.",
-            "explanation": "'Lest + subject + base verb (subjunctive)': She whispered lest she wake the baby = so that she would not wake the baby. 'Lest' is a formal/literary word meaning 'for fear that'. It triggers the subjunctive, so 'wake' (not 'woke' or 'would wake').",
-            "grammarRule": "Subjunctive After 'Lest'"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "will",
+            "hint": "This describes a real, predictable consequence of a real condition.",
+            "explanation": "First conditional describes the predictable result of missing information: will be returned, a standard structure in form instructions.",
+            "grammarRule": "Forms: First Conditional"
         },
         {
             "id": "gq_l187_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which sentence correctly uses an absolute phrase?",
+            "question": "\u2014 Do I need to sign every page?\n\u2014 Only the pages ___ marked with an X.",
             "options": [
-                "The game ending, we went home.",
-                "Because the game ended, we went home.",
-                "The game ends, we went home.",
-                "With the game to end, we went home."
+                "who are",
+                "that are",
+                "which is",
+                "whose"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The game ending, we went home.",
-            "hint": "An absolute phrase has its own subject but is not a clause.",
-            "explanation": "'The game ending, we went home' is an absolute phrase: it has its own subject ('the game') and a participle ('ending'), but is not a full clause (no auxiliary). It modifies the entire main clause. Absolute phrases are common in formal and literary writing.",
-            "grammarRule": "Absolute Phrases"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "that are",
+            "hint": "This identifies specific pages out of all the pages in the form.",
+            "explanation": "'That are' introduces a defining relative clause identifying exactly which pages: the pages that are marked with an X, essential information for completing the form correctly.",
+            "grammarRule": "Defining Relative Clauses"
         },
         {
             "id": "gq_l188_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'He is, as it were, a fish out of water.' The phrase 'as it were' functions as:",
+            "question": "Text message: Running late, ___ you mind waiting five more minutes?",
             "options": [
-                "A comparison marker",
-                "A conditional clause",
-                "A parenthetical hedging device",
-                "A relative clause"
+                "will",
+                "do",
+                "shall",
+                "would"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "A parenthetical hedging device",
-            "hint": "'As it were' is a formal hedging expression.",
-            "explanation": "'As it were' = in a manner of speaking; so to speak. It acknowledges that the expression (a fish out of water) is being used figuratively, not literally. It is a formal parenthetical hedging device that signals a metaphorical or approximate usage.",
-            "grammarRule": "Hedging Parentheticals / Conditionals"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "would",
+            "hint": "This is the fixed polite phrase for a casual but courteous request.",
+            "explanation": "'Would you mind' is the fixed polite request pattern reviewed from Stage 5, natural even in a quick, casual text message.",
+            "grammarRule": "Everyday Messaging: Would You Mind"
         },
         {
             "id": "gq_l188_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which sentence correctly uses 'provided' as a conditional conjunction?",
+            "question": "Text message: Can't talk now, but I ___ call you back as soon as I'm free.",
             "options": [
-                "Provided that she passes the exam, she can graduate.",
-                "Provided to pass the exam, she could graduate.",
-                "Provided she will pass the exam, she can graduate.",
-                "Provided of passing the exam, she can graduate."
+                "will",
+                "would",
+                "am going",
+                "was"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Provided that she passes the exam, she can graduate.",
-            "hint": "'Provided (that) + present simple' for future conditions.",
-            "explanation": "'Provided (that) + present simple': Provided that she passes the exam, she can graduate. This is a formal first conditional. Do not use 'will' in the provided clause (future conditionals use present simple). 'Provided to' is incorrect.",
-            "grammarRule": "Hedging Parentheticals / Conditionals"
+            "correctAnswer": "will",
+            "hint": "This decision to call back is being made spontaneously, right now.",
+            "explanation": "'Will' fits this spontaneous decision made at the moment of texting: will call you back, a natural everyday promise.",
+            "grammarRule": "Everyday Messaging: Will for Spontaneous Decisions"
         },
         {
             "id": "gq_l188_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'The findings notwithstanding, the project will proceed.' Rephrase using 'despite':",
+            "question": "\u2014 Are we still on for dinner tonight?\n\u2014 Yes, ___ change unless something urgent comes up at work.",
             "options": [
-                "Despite of the findings, the project will proceed.",
-                "Despite that the findings, the project will proceed.",
-                "Despite the findings not standing, the project will proceed.",
-                "Despite the findings, the project will proceed."
+                "nothing would",
+                "nothing does",
+                "nothing will",
+                "nothing changed"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Despite the findings, the project will proceed.",
-            "hint": "'Despite + noun phrase' - no 'of', no clause.",
-            "explanation": "'Despite the findings, the project will proceed.' 'Despite' = in spite of, and it is followed directly by a noun phrase - never 'despite of' and never 'despite that + clause'. 'The findings notwithstanding' = 'Despite the findings' in formal style.",
-            "grammarRule": "Hedging Parentheticals / Conditionals"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "nothing will",
+            "hint": "This describes a realistic future plan with one possible exception.",
+            "explanation": "'Nothing will change unless' combines simple future with 'unless' to describe a firm plan with one exception, a natural pattern in everyday confirmations.",
+            "grammarRule": "Everyday Messaging: Unless"
         },
         {
             "id": "gq_l189_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Select the sentence that best demonstrates parallel structure in a formal context:",
+            "question": "Class instructions: Students ___ submit their essays online before midnight.",
             "options": [
-                "The policy aims at reducing poverty, to increase opportunity, and improving health outcomes.",
-                "The policy aims to reduce poverty, increasing opportunity, and to improve health outcomes.",
-                "The policy aims to reduce poverty, to increase opportunity, and the improvement of health outcomes.",
-                "The policy aims to reduce poverty, to increase opportunity, and to improve health outcomes."
+                "are required to",
+                "require to",
+                "are requiring",
+                "required"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "The policy aims to reduce poverty, to increase opportunity, and to improve health outcomes.",
-            "hint": "Parallel structure requires matching grammatical forms throughout.",
-            "explanation": "'To reduce, to increase, and to improve' - all three infinitives are parallel. Any mixing of forms (reducing, to increase, improvement of) breaks the parallelism. Parallel structure is a key feature of clear, professional writing.",
-            "grammarRule": "Parallel Structure / Dangling Modifiers"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "are required to",
+            "hint": "This fixed passive phrase pairs with an infinitive.",
+            "explanation": "'Are required to' takes the infinitive: required to submit, a standard structure for describing academic obligations.",
+            "grammarRule": "Education: Required To"
         },
         {
             "id": "gq_l189_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which option correctly completes this sentence with a dangling modifier? 'Having reviewed the evidence, ___.'",
+            "question": "\u2014 What happens if I miss the deadline?\n\u2014 If you ___ the deadline, you'll lose ten percent of your grade.",
             "options": [
-                "it was clear what the conclusion was.",
-                "the team reached a clear conclusion.",
-                "the conclusion was clear.",
-                "a clear conclusion was reached."
+                "missed",
+                "will miss",
+                "miss",
+                "had missed"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "the team reached a clear conclusion.",
-            "hint": "A participle clause must have the same subject as the main clause.",
-            "explanation": "'Having reviewed the evidence, the team reached a conclusion.' The subject of 'having reviewed' must be the same as the subject of the main clause: 'the team'. Options A, C, D have dangling modifiers - 'the conclusion', 'a conclusion', and 'it' did not review the evidence.",
-            "grammarRule": "Parallel Structure / Dangling Modifiers"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "miss",
+            "hint": "This describes a real, likely future possibility with a clear rule attached.",
+            "explanation": "First conditional describes a real academic consequence: if you miss the deadline, you'll lose points, keeping the if-clause in present simple.",
+            "grammarRule": "Education: First Conditional"
         },
         {
             "id": "gq_l189_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'The data are clear; however, the implications are not.' What does the semicolon indicate here?",
+            "question": "\u2014 Did you finish the reading before class?\n\u2014 No, I hadn't finished it ___ the professor called on me.",
             "options": [
-                "That the second clause explains the first.",
-                "That the second clause is a subordinate clause.",
-                "That both clauses are equally important independent clauses.",
-                "That the second clause corrects the first."
+                "until",
+                "when",
+                "by the time",
+                "since"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "That both clauses are equally important independent clauses.",
-            "hint": "Semicolons connect independent clauses of equal weight.",
-            "explanation": "A semicolon joins two independent clauses of equal grammatical weight. 'The data are clear' and 'the implications are not' are both independent clauses. The semicolon shows they are closely related in content but distinct in meaning. 'However' adds a contrasting connection.",
-            "grammarRule": "Parallel Structure / Dangling Modifiers"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "when",
+            "hint": "This past perfect sentence needs a word introducing the sudden interrupting moment.",
+            "explanation": "'When' introduces the interrupting past event, paired naturally with past perfect: hadn't finished when she called on me, a classic sequencing pattern.",
+            "grammarRule": "Education: Past Perfect with When"
         },
         {
             "id": "gq_l190_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which best describes the function of 'albeit' in formal writing?",
+            "question": "Social invitation: A few of us ___ getting together this weekend; want to join?",
             "options": [
-                "It introduces a new paragraph topic.",
-                "It introduces a concession within the same clause.",
-                "It introduces a result.",
-                "It introduces a cause."
+                "were",
+                "was",
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "It introduces a concession within the same clause.",
-            "hint": "'Albeit' = although it is - a one-word concessive.",
-            "explanation": "'Albeit' = even though/although it is: a small, albeit important, concession. It is a one-word concessive that can introduce an adjective, adverb, noun, or phrase within the same sentence. More concise than 'although it is' or 'even if it is'.",
-            "grammarRule": "One-Word Concessives / Relative Adverbs"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "are",
+            "hint": "The subject 'a few of us' behaves as a plural group.",
+            "explanation": "'A few of us' is treated as plural, taking 'are': a few of us are getting together, a casual, friendly invitation.",
+            "grammarRule": "Social Conversations: Subject-Verb Agreement"
         },
         {
             "id": "gq_l190_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which sentence uses 'whereby' correctly?",
+            "question": "\u2014 Have you seen the new caf\u00e9 downtown?\n\u2014 Not yet, but I've heard it ___ amazing coffee.",
             "options": [
-                "They adopted a new policy, whereby all disputes would be resolved by arbitration.",
-                "They adopted a new policy whereby of resolving disputes.",
-                "They adopted a new policy, whereby solving all disputes arbitrarily.",
-                "They adopted a new policy, whereby was the resolution of all disputes."
+                "have",
+                "is having",
+                "has",
+                "had"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "They adopted a new policy, whereby all disputes would be resolved by arbitration.",
-            "hint": "'Whereby' = by means of which - introduces a relative clause.",
-            "explanation": "'Whereby' = by means of which: a new policy whereby all disputes would be resolved by arbitration = a new policy by means of which all disputes would be resolved. It is a formal relative adverb. Always followed by a full clause (subject + verb).",
-            "grammarRule": "One-Word Concessives / Relative Adverbs"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "has",
+            "hint": "The subject 'it' refers back to the singular caf\u00e9.",
+            "explanation": "'It' takes 'has' for this general fact about the caf\u00e9: it has amazing coffee, describing an ongoing quality rather than a momentary action.",
+            "grammarRule": "Social Conversations: Simple Present"
         },
         {
             "id": "gq_l190_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'The experiment was designed so as to eliminate all possible confounding variables.' 'So as to' means:",
+            "question": "\u2014 What would you do if you could live anywhere?\n\u2014 Honestly, if money ___ no object, I'd move to the coast.",
             "options": [
-                "In order to",
-                "As a result of",
-                "Despite the fact that",
-                "On condition that"
+                "were",
+                "was",
+                "is",
+                "would be"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "In order to",
-            "hint": "'So as to + infinitive' = in order to - expressing purpose.",
-            "explanation": "'So as to + base verb' = in order to: The experiment was designed so as to eliminate confounding variables = in order to eliminate them. 'So as to' is more formal than 'to' alone and emphasises deliberate design or intent.",
-            "grammarRule": "One-Word Concessives / Relative Adverbs"
+            "correctAnswer": "were",
+            "hint": "This closes Levels 181\u2013190 with the same hypothetical form of 'be' practiced throughout Stage 7.",
+            "explanation": "'If money were no object' uses the traditional second conditional 'were', wrapping up this real-world block by returning to a structure first mastered back in Stage 7.",
+            "grammarRule": "Second Conditional: If I Were"
         }
     ]
 }

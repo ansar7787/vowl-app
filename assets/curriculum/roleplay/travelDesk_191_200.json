@@ -1,697 +1,697 @@
 {
-    "gameType": "travelDesk",
-    "batchIndex": 20,
-    "levels": "191-200",
-    "quests": [
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Time is tight, so I'd like the most direct option for where to get a new prescription fitted after losing a pair on a hike.",
-            "itinerary": [
-                "Neighborhood Shoe Repair Shop",
-                "Neighborhood Watch Repair Shop",
-                "Neighborhood Passport Photo Shop",
-                "Neighborhood Optician"
-            ],
-            "options": [
-                "Shoe Repair Shop",
-                "Watch Repair Shop",
-                "Passport Photo Shop",
-                "Optician"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Not all four fit. Focus on the one place designed to let someone get a new prescription fitted after losing a pair on a hike.",
-            "explanation": "Optician is the answer, because everything in the request points to needing to get a new prescription fitted after losing a pair on a hike.",
-            "id": "td_l191_q1",
-            "travelDocuments": "ID Card"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I need to make the most of a narrow window of time to replace a stroller part that broke on the cobblestones.",
-            "itinerary": [
-                "Family Playroom",
-                "Family Kids' Club",
-                "Family Pediatric Clinic",
-                "Family Baby Supplies Store"
-            ],
-            "options": [
-                "Playroom",
-                "Kids' Club",
-                "Pediatric Clinic",
-                "Baby Supplies Store"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "One of these four exists specifically to help people replace a stroller part that broke on the cobblestones — look for it.",
-            "explanation": "Baby Supplies Store is correct — the other options sound similar but won't actually let you replace a stroller part that broke on the cobblestones.",
-            "id": "td_l191_q2",
-            "travelDocuments": "ID Card"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Could you advise on the most appropriate venue to source enough of one fabric pattern for a full outfit, given the constraints I'm working with?",
-            "itinerary": [
-                "Marketplace Ceramics Shop",
-                "Marketplace Leather Goods Shop",
-                "Marketplace Boutique",
-                "Marketplace Textile Shop"
-            ],
-            "options": [
-                "Ceramics Shop",
-                "Leather Goods Shop",
-                "Boutique",
-                "Textile Shop"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Ask yourself which of the four options is built for one specific purpose: to source enough of one fabric pattern for a full outfit.",
-            "explanation": "The best match is Textile Shop; it's the one option truly built around helping people source enough of one fabric pattern for a full outfit.",
-            "id": "td_l191_q3",
-            "travelDocuments": "ID Card"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "All things considered, where would you say is the ideal place to rebook a vineyard tour that was cancelled due to weather?",
-            "itinerary": [
-                "Gourmet Brewery",
-                "Gourmet Vineyard Tour",
-                "Gourmet Wine Cellar",
-                "Gourmet Coffee Roastery"
-            ],
-            "options": [
-                "Brewery",
-                "Vineyard Tour",
-                "Wine Cellar",
-                "Coffee Roastery"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Focus on the verb in the request: the traveler needs to rebook a vineyard tour that was cancelled due to weather.",
-            "explanation": "Right — Vineyard Tour is where this kind of request always leads, since you need to rebook a vineyard tour that was cancelled due to weather.",
-            "id": "td_l192_q1",
-            "travelDocuments": "Hotel Reservation"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Given my schedule, I need to identify the most suitable place to arrange a meeting with a visiting research fellow as soon as possible.",
-            "itinerary": [
-                "Scholars' Cultural Center",
-                "Scholars' Language Exchange Café",
-                "Scholars' University Campus Tour",
-                "Scholars' Heritage Walking Tour Office"
-            ],
-            "options": [
-                "Cultural Center",
-                "Language Exchange Café",
-                "University Campus Tour",
-                "Heritage Walking Tour Office"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Some options belong to the same general category, but only one is the exact place to arrange a meeting with a visiting research fellow.",
-            "explanation": "This matches because University Campus Tour is the standard place to arrange a meeting with a visiting research fellow.",
-            "id": "td_l192_q2",
-            "travelDocuments": "City Map"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I'd be grateful for a recommendation on where best to resolve a booth placement dispute ahead of opening hours before my plans shift again.",
-            "itinerary": [
-                "Corporate Networking Reception",
-                "Corporate Convention Center",
-                "Corporate Trade Show Hall",
-                "Corporate Exhibition Booth"
-            ],
-            "options": [
-                "Networking Reception",
-                "Convention Center",
-                "Trade Show Hall",
-                "Exhibition Booth"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Match the purpose, not just the wording — where does someone actually go to resolve a booth placement dispute ahead of opening hours?",
-            "explanation": "The request points directly to the Trade Show Hall, since that's where you'd resolve a booth placement dispute ahead of opening hours.",
-            "id": "td_l192_q3",
-            "travelDocuments": "City Map"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Time is tight, so I'd like the most direct option for where to file a damage report on a bag collected an hour ago.",
-            "itinerary": [
-                "Wanderer's Baggage Claim",
-                "Wanderer's Luggage Storage",
-                "Wanderer's Arrival Hall",
-                "Wanderer's Customs Office"
-            ],
-            "options": [
-                "Baggage Claim",
-                "Luggage Storage",
-                "Arrival Hall",
-                "Customs Office"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Consider the precise nature of the request, not just its general category, to work out where to file a damage report on a bag collected an hour ago.",
-            "explanation": "Baggage Claim is the best fit — it exists specifically to help people file a damage report on a bag collected an hour ago.",
-            "id": "td_l193_q1",
-            "travelDocuments": "Train Ticket"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I need to make the most of a narrow window of time to reprint a photo batch that came out with the wrong colors.",
-            "itinerary": [
-                "Digital Camera Rental Shop",
-                "Digital Gadget Store",
-                "Digital 3D Printing Studio",
-                "Digital Photo Printing Kiosk"
-            ],
-            "options": [
-                "Camera Rental Shop",
-                "Gadget Store",
-                "3D Printing Studio",
-                "Photo Printing Kiosk"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Read the request closely: the key detail is that this person needs to reprint a photo batch that came out with the wrong colors.",
-            "explanation": "Photo Printing Kiosk makes sense here because that's precisely where people go to reprint a photo batch that came out with the wrong colors.",
-            "id": "td_l193_q2",
-            "travelDocuments": "Train Ticket"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Could you advise on the most appropriate venue to continue a physiotherapy plan that was started back home, given the constraints I'm working with?",
-            "itinerary": [
-                "Wellness Sports Medicine Clinic",
-                "Wellness Physiotherapy Center",
-                "Wellness Massage Therapy Center",
-                "Wellness Rehabilitation Center"
-            ],
-            "options": [
-                "Sports Medicine Clinic",
-                "Physiotherapy Center",
-                "Massage Therapy Center",
-                "Rehabilitation Center"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Rule out the options that don't fit someone trying to continue a physiotherapy plan that was started back home.",
-            "explanation": "When someone needs to continue a physiotherapy plan that was started back home, Physiotherapy Center is the natural choice.",
-            "id": "td_l193_q3",
-            "travelDocuments": "Passport"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "All things considered, where would you say is the ideal place to move a rooftop reservation indoors after a sudden weather change?",
-            "itinerary": [
-                "Spotlight Music Festival Grounds",
-                "Spotlight Jazz Club",
-                "Spotlight Rooftop Bar",
-                "Spotlight Drive-In Theater"
-            ],
-            "options": [
-                "Music Festival Grounds",
-                "Jazz Club",
-                "Rooftop Bar",
-                "Drive-In Theater"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "The right answer is the place whose main job is to help people move a rooftop reservation indoors after a sudden weather change.",
-            "explanation": "Rooftop Bar is the answer, because everything in the request points to needing to move a rooftop reservation indoors after a sudden weather change.",
-            "id": "td_l194_q1",
-            "travelDocuments": "Train Ticket"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Given my schedule, I need to identify the most suitable place to retrieve a passport that was logged under someone else's name as soon as possible.",
-            "itinerary": [
-                "Neighborhood Lost-and-Found Office",
-                "Neighborhood City Hall",
-                "Neighborhood Post Office",
-                "Neighborhood Community Center"
-            ],
-            "options": [
-                "Lost-and-Found Office",
-                "City Hall",
-                "Post Office",
-                "Community Center"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Think about which kind of place specializes in helping people retrieve a passport that was logged under someone else's name.",
-            "explanation": "Lost-and-Found Office is correct — the other options sound similar but won't actually let you retrieve a passport that was logged under someone else's name.",
-            "id": "td_l194_q2",
-            "travelDocuments": "Hotel Reservation"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I'd be grateful for a recommendation on where best to get travel vaccinations approved for an infant before my plans shift again.",
-            "itinerary": [
-                "Family Kids' Club",
-                "Family Babysitting Agency",
-                "Family Pediatric Clinic",
-                "Family Baby Supplies Store"
-            ],
-            "options": [
-                "Kids' Club",
-                "Babysitting Agency",
-                "Pediatric Clinic",
-                "Baby Supplies Store"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Picture exactly where a traveler would go to get travel vaccinations approved for an infant.",
-            "explanation": "The best match is Pediatric Clinic; it's the one option truly built around helping people get travel vaccinations approved for an infant.",
-            "id": "td_l194_q3",
-            "travelDocuments": "City Map"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Time is tight, so I'd like the most direct option for where to replace a charger that stopped working overnight.",
-            "itinerary": [
-                "Marketplace Luggage Shop",
-                "Marketplace Discount Store",
-                "Marketplace Electronics Store",
-                "Marketplace Craft Store"
-            ],
-            "options": [
-                "Luggage Shop",
-                "Discount Store",
-                "Electronics Store",
-                "Craft Store"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Ask yourself which of the four options is built for one specific purpose: to replace a charger that stopped working overnight.",
-            "explanation": "Right — Electronics Store is where this kind of request always leads, since you need to replace a charger that stopped working overnight.",
-            "id": "td_l195_q1",
-            "travelDocuments": "Museum Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I need to make the most of a narrow window of time to find out which farm supplied this morning's batch.",
-            "itinerary": [
-                "Gourmet Cafe",
-                "Gourmet Chocolate Shop",
-                "Gourmet Coffee Roastery",
-                "Gourmet Tea House"
-            ],
-            "options": [
-                "Cafe",
-                "Chocolate Shop",
-                "Coffee Roastery",
-                "Tea House"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Not all four fit. Focus on the one place designed to let someone find out which farm supplied this morning's batch.",
-            "explanation": "Coffee Roastery is correct because that's exactly where travelers go to find out which farm supplied this morning's batch.",
-            "id": "td_l195_q2",
-            "travelDocuments": "Passport"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Could you advise on the most appropriate venue to find a language partner who specializes in business vocabulary, given the constraints I'm working with?",
-            "itinerary": [
-                "Scholars' University Campus Tour",
-                "Scholars' Language Exchange Café",
-                "Scholars' Cultural Center",
-                "Scholars' Calligraphy Workshop"
-            ],
-            "options": [
-                "University Campus Tour",
-                "Language Exchange Café",
-                "Cultural Center",
-                "Calligraphy Workshop"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Match the purpose, not just the wording — where does someone actually go to find a language partner who specializes in business vocabulary?",
-            "explanation": "Since the traveler wants to find a language partner who specializes in business vocabulary, Language Exchange Café is the logical destination.",
-            "id": "td_l195_q3",
-            "travelDocuments": "Hotel Reservation"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "All things considered, where would you say is the ideal place to host an informal debrief after a long client meeting?",
-            "itinerary": [
-                "Corporate Shared Office Lounge",
-                "Corporate Client Meeting Lounge",
-                "Corporate Executive Lounge",
-                "Corporate Airport Business Lounge"
-            ],
-            "options": [
-                "Shared Office Lounge",
-                "Client Meeting Lounge",
-                "Executive Lounge",
-                "Airport Business Lounge"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Think practically: if you needed to host an informal debrief after a long client meeting right now, where would you head?",
-            "explanation": "Travelers head to the Executive Lounge whenever they need to host an informal debrief after a long client meeting.",
-            "id": "td_l196_q1",
-            "travelDocuments": "Hotel Reservation"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Given my schedule, I need to identify the most suitable place to exchange leftover currency from two earlier stops on the trip as soon as possible.",
-            "itinerary": [
-                "Wanderer's Currency Exchange Booth",
-                "Wanderer's Tourist Information Center",
-                "Wanderer's Travel Agency",
-                "Wanderer's Duty-Free Shop"
-            ],
-            "options": [
-                "Currency Exchange Booth",
-                "Tourist Information Center",
-                "Travel Agency",
-                "Duty-Free Shop"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Narrow it down by asking where, specifically, people go to exchange leftover currency from two earlier stops on the trip.",
-            "explanation": "Currency Exchange Booth fits perfectly here, as it's set up for people who need to exchange leftover currency from two earlier stops on the trip.",
-            "id": "td_l196_q2",
-            "travelDocuments": "ID Card"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I'd be grateful for a recommendation on where best to restore access after a guest network password change before my plans shift again.",
-            "itinerary": [
-                "Digital Repair Shop",
-                "Digital Tech Support Center",
-                "Digital IT Help Desk",
-                "Digital Internet Cafe"
-            ],
-            "options": [
-                "Repair Shop",
-                "Tech Support Center",
-                "IT Help Desk",
-                "Internet Cafe"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Some options belong to the same general category, but only one is the exact place to restore access after a guest network password change.",
-            "explanation": "The request points directly to the IT Help Desk, since that's where you'd restore access after a guest network password change.",
-            "id": "td_l196_q3",
-            "travelDocuments": "Hotel Reservation"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Time is tight, so I'd like the most direct option for where to get a second opinion before a scheduled procedure abroad.",
-            "itinerary": [
-                "Wellness Urgent Care Center",
-                "Wellness Hospital",
-                "Wellness Radiology Center",
-                "Wellness Emergency Room"
-            ],
-            "options": [
-                "Urgent Care Center",
-                "Hospital",
-                "Radiology Center",
-                "Emergency Room"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Look past any similar-sounding options — only one place truly lets you get a second opinion before a scheduled procedure abroad.",
-            "explanation": "Hospital is the answer, because everything in the request points to needing to get a second opinion before a scheduled procedure abroad.",
-            "id": "td_l197_q1",
-            "travelDocuments": "Boarding Pass"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I need to make the most of a narrow window of time to find the re-entry gate after stepping out of the festival briefly.",
-            "itinerary": [
-                "Spotlight Circus Tent",
-                "Spotlight Concert Hall",
-                "Spotlight Music Festival Grounds",
-                "Spotlight Jazz Club"
-            ],
-            "options": [
-                "Circus Tent",
-                "Concert Hall",
-                "Music Festival Grounds",
-                "Jazz Club"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "The other three options sound plausible, but only one is made for this: to find the re-entry gate after stepping out of the festival briefly.",
-            "explanation": "Music Festival Grounds is correct — the other options sound similar but won't actually let you find the re-entry gate after stepping out of the festival briefly.",
-            "id": "td_l197_q2",
-            "travelDocuments": "Hotel Reservation"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Could you advise on the most appropriate venue to convert leftover currency from three different countries at once, given the constraints I'm working with?",
-            "itinerary": [
-                "Neighborhood Currency Exchange",
-                "Neighborhood Notary Office",
-                "Neighborhood Bank",
-                "Neighborhood Money Transfer Office"
-            ],
-            "options": [
-                "Currency Exchange",
-                "Notary Office",
-                "Bank",
-                "Money Transfer Office"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "One of these four exists specifically to help people convert leftover currency from three different countries at once — look for it.",
-            "explanation": "The best match is Currency Exchange; it's the one option truly built around helping people convert leftover currency from three different countries at once.",
-            "id": "td_l197_q3",
-            "travelDocuments": "Travel Insurance"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "All things considered, where would you say is the ideal place to book the hall for a milestone anniversary celebration?",
-            "itinerary": [
-                "Family Picnic Area",
-                "Family Wedding Planner's Office",
-                "Family Relative's Home",
-                "Family Reunion Hall"
-            ],
-            "options": [
-                "Picnic Area",
-                "Wedding Planner's Office",
-                "Relative's Home",
-                "Reunion Hall"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Trust the specific wording of the request when deciding where someone would go to book the hall for a milestone anniversary celebration.",
-            "explanation": "Right — Reunion Hall is where this kind of request always leads, since you need to book the hall for a milestone anniversary celebration.",
-            "id": "td_l198_q1",
-            "travelDocuments": "ID Card"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Given my schedule, I need to identify the most suitable place to match a scent from an unlabeled sample vial as soon as possible.",
-            "itinerary": [
-                "Marketplace Jewelry Shop",
-                "Marketplace Department Store",
-                "Marketplace Perfume Shop",
-                "Marketplace Boutique"
-            ],
-            "options": [
-                "Jewelry Shop",
-                "Department Store",
-                "Perfume Shop",
-                "Boutique"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Watch for choices that sound related but serve a slightly different purpose than helping someone match a scent from an unlabeled sample vial.",
-            "explanation": "This matches because Perfume Shop is the standard place to match a scent from an unlabeled sample vial.",
-            "id": "td_l198_q2",
-            "travelDocuments": "Travel Insurance"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I'd be grateful for a recommendation on where best to find a specific shellfish that's only in season briefly before my plans shift again.",
-            "itinerary": [
-                "Gourmet Butcher Shop",
-                "Gourmet Seafood Market",
-                "Gourmet Sushi Bar",
-                "Gourmet Deli"
-            ],
-            "options": [
-                "Butcher Shop",
-                "Seafood Market",
-                "Sushi Bar",
-                "Deli"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Focus on the verb in the request: the traveler needs to find a specific shellfish that's only in season briefly.",
-            "explanation": "Seafood Market is correct because that's exactly where travelers go to find a specific shellfish that's only in season briefly.",
-            "id": "td_l198_q3",
-            "travelDocuments": "Passport"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Time is tight, so I'd like the most direct option for where to confirm whether a family heirloom matches a museum record.",
-            "itinerary": [
-                "Scholars' History Museum",
-                "Scholars' Art Museum",
-                "Scholars' Maritime Museum",
-                "Scholars' Natural History Museum"
-            ],
-            "options": [
-                "History Museum",
-                "Art Museum",
-                "Maritime Museum",
-                "Natural History Museum"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "The right answer is the place whose main job is to help people confirm whether a family heirloom matches a museum record.",
-            "explanation": "Of the four options, only History Museum is designed to let someone confirm whether a family heirloom matches a museum record.",
-            "id": "td_l199_q1",
-            "travelDocuments": "Travel Insurance"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I need to make the most of a narrow window of time to verify accessibility arrangements for a visiting delegate.",
-            "itinerary": [
-                "Corporate Conference Center",
-                "Corporate Convention Center",
-                "Corporate Trade Show Hall",
-                "Corporate Seminar Hall"
-            ],
-            "options": [
-                "Conference Center",
-                "Convention Center",
-                "Trade Show Hall",
-                "Seminar Hall"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Rule out the options that don't fit someone trying to verify accessibility arrangements for a visiting delegate.",
-            "explanation": "The clearest match is Convention Center, since that's exactly its purpose: to verify accessibility arrangements for a visiting delegate.",
-            "id": "td_l199_q2",
-            "travelDocuments": "Hotel Reservation"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Could you advise on the most appropriate venue to rework an itinerary after one leg of the trip was cancelled, given the constraints I'm working with?",
-            "itinerary": [
-                "Wanderer's Travel Agency",
-                "Wanderer's Car Rental Office",
-                "Wanderer's Tour Agency",
-                "Wanderer's Tourist Information Center"
-            ],
-            "options": [
-                "Travel Agency",
-                "Car Rental Office",
-                "Tour Agency",
-                "Tourist Information Center"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Think about which kind of place specializes in helping people rework an itinerary after one leg of the trip was cancelled.",
-            "explanation": "Travel Agency makes sense here because that's precisely where people go to rework an itinerary after one leg of the trip was cancelled.",
-            "id": "td_l199_q3",
-            "travelDocuments": "Hotel Reservation"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "All things considered, where would you say is the ideal place to replace a charging cable that frayed on the last leg of the trip?",
-            "itinerary": [
-                "Digital SIM Card Kiosk",
-                "Digital Repair Shop",
-                "Digital Gadget Store",
-                "Digital Data Top-Up Counter"
-            ],
-            "options": [
-                "SIM Card Kiosk",
-                "Repair Shop",
-                "Gadget Store",
-                "Data Top-Up Counter"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Look past any similar-sounding options — only one place truly lets you replace a charging cable that frayed on the last leg of the trip.",
-            "explanation": "Gadget Store is the answer, because everything in the request points to needing to replace a charging cable that frayed on the last leg of the trip.",
-            "id": "td_l200_q1",
-            "travelDocuments": "City Map"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "Given my schedule, I need to identify the most suitable place to extend a wellness booking after deciding to stay a few extra days as soon as possible.",
-            "itinerary": [
-                "Wellness Massage Therapy Center",
-                "Wellness Wellness Spa",
-                "Wellness Acupuncture Clinic",
-                "Wellness Wellness Retreat"
-            ],
-            "options": [
-                "Massage Therapy Center",
-                "Wellness Spa",
-                "Acupuncture Clinic",
-                "Wellness Retreat"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Some options belong to the same general category, but only one is the exact place to extend a wellness booking after deciding to stay a few extra days.",
-            "explanation": "Wellness Retreat is correct — the other options sound similar but won't actually let you extend a wellness booking after deciding to stay a few extra days.",
-            "id": "td_l200_q2",
-            "travelDocuments": "Travel Insurance"
-        },
-        {
-            "instruction": "Match the destination to the traveler's request.",
-            "subtype": "travelDesk",
-            "interactionType": "dialogue",
-            "prompt": "I'd be grateful for a recommendation on where best to check whether tonight's screening was moved indoors for weather before my plans shift again.",
-            "itinerary": [
-                "Spotlight Drive-In Theater",
-                "Spotlight Rooftop Bar",
-                "Spotlight Cinema",
-                "Spotlight Music Festival Grounds"
-            ],
-            "options": [
-                "Drive-In Theater",
-                "Rooftop Bar",
-                "Cinema",
-                "Music Festival Grounds"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "One of these four exists specifically to help people check whether tonight's screening was moved indoors for weather — look for it.",
-            "explanation": "The best match is Drive-In Theater; it's the one option truly built around helping people check whether tonight's screening was moved indoors for weather.",
-            "id": "td_l200_q3",
-            "travelDocuments": "Boarding Pass"
-        }
-    ]
+  "gameType": "travelDesk",
+  "batchIndex": 20,
+  "levels": "191-200",
+  "quests": [
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "We booked a package holiday, the airline within it has gone into administration, but the hotel and transfers were arranged separately by our travel agent.",
+      "itinerary": [
+        "Travel Agent Contacting Them About Protected Alternatives",
+        "Travel Agent Waiting for the Airline to Reopen",
+        "Travel Agent Booking an Entirely New Holiday Yourself",
+        "Travel Agent Assuming Everything Is Cancelled"
+      ],
+      "options": [
+        "Contacting Them About Protected Alternatives",
+        "Waiting for the Airline to Reopen",
+        "Booking an Entirely New Holiday Yourself",
+        "Assuming Everything Is Cancelled"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Package protections often mean one failed component doesn't cancel the whole trip.",
+      "explanation": "The travel agent can explain what protection applies and arrange alternative flights while keeping the rest of the package. Assuming total cancellation may be inaccurate and costly.",
+      "id": "td_l191_q1",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Our multi-city rail pass is valid, but a regional strike affects only one leg, and there's no official announcement about alternatives yet.",
+      "itinerary": [
+        "Rail Customer Service Buying a Separate New Ticket",
+        "Rail Customer Service Abandoning That Leg of the Trip",
+        "Rail Customer Service Asking About Alternative Routes Under the Pass",
+        "Rail Customer Service Waiting Silently for an Announcement"
+      ],
+      "options": [
+        "Buying a Separate New Ticket",
+        "Abandoning That Leg of the Trip",
+        "Asking About Alternative Routes Under the Pass",
+        "Waiting Silently for an Announcement"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Silence from announcements doesn't mean staff have no information; ask directly.",
+      "explanation": "Customer service often knows about rerouting options before public announcements are updated. Buying a new ticket may duplicate what the pass already covers.",
+      "id": "td_l191_q2",
+      "travelDocuments": "Train Ticket"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "We're mid-layover when we learn our destination country has just introduced a new entry requirement, and we don't have the new document.",
+      "itinerary": [
+        "Transit Hall Airline Transfer Desk, for Guidance",
+        "Transit Hall Turning Back Immediately",
+        "Transit Hall Ignoring the News as Unconfirmed",
+        "Transit Hall Boarding the Flight and Hoping"
+      ],
+      "options": [
+        "Airline Transfer Desk, for Guidance",
+        "Turning Back Immediately",
+        "Ignoring the News as Unconfirmed",
+        "Boarding the Flight and Hoping"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "New requirements announced mid-journey are best verified with the airline actually flying you there.",
+      "explanation": "The airline can confirm the requirement and may help arrange the document or a workaround. Boarding without resolving it risks being denied entry on arrival.",
+      "id": "td_l191_q3",
+      "travelDocuments": "Passport"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Our non-refundable hotel booking turns out to be next to a construction site starting at six a.m., which wasn't mentioned when we booked.",
+      "itinerary": [
+        "Grand Hotel Accepting It Without Comment",
+        "Grand Hotel Front Desk, Requesting a Room Change or Compensation",
+        "Grand Hotel Leaving a Bad Review Without Raising It First",
+        "Grand Hotel Demanding an Immediate Full Refund and Leaving"
+      ],
+      "options": [
+        "Accepting It Without Comment",
+        "Front Desk, Requesting a Room Change or Compensation",
+        "Leaving a Bad Review Without Raising It First",
+        "Demanding an Immediate Full Refund and Leaving"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Raise the undisclosed issue with the hotel before assuming there's no remedy.",
+      "explanation": "The front desk can often move you to a quieter room or offer partial compensation, which is more constructive than an immediate refund demand or silent acceptance.",
+      "id": "td_l192_q1",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "We're told our connecting flight seat wasn't actually confirmed, despite a confirmation email, and the flight is now nearly full.",
+      "itinerary": [
+        "Airline Booking an Entirely Different Airline",
+        "Airline Insisting Loudly Without Evidence",
+        "Airline Accepting Standby Without Discussion",
+        "Airline Supervisor, With the Confirmation Email as Evidence"
+      ],
+      "options": [
+        "Booking an Entirely Different Airline",
+        "Insisting Loudly Without Evidence",
+        "Accepting Standby Without Discussion",
+        "Supervisor, With the Confirmation Email as Evidence"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Documented proof strengthens your position when a system error contradicts what you were told.",
+      "explanation": "Showing the confirmation email to a supervisor gives them grounds to prioritise your seat. Accepting standby immediately gives up a position you may be entitled to.",
+      "id": "td_l192_q2",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Our rental car agreement includes 'unlimited mileage', but the dashboard shows a daily mileage cap warning that contradicts this.",
+      "itinerary": [
+        "Car Rental Branch Manager, Referencing the Signed Agreement",
+        "Car Rental Assuming the Agreement Is Wrong",
+        "Car Rental Ignoring the Dashboard Warning",
+        "Car Rental Driving as Little as Possible Just in Case"
+      ],
+      "options": [
+        "Branch Manager, Referencing the Signed Agreement",
+        "Assuming the Agreement Is Wrong",
+        "Ignoring the Dashboard Warning",
+        "Driving as Little as Possible Just in Case"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "A written agreement outranks a possible system misconfiguration, but it's worth confirming.",
+      "explanation": "The branch manager can clarify the discrepancy and confirm the agreement's terms apply. Limiting your driving unnecessarily assumes the dashboard is correct without checking.",
+      "id": "td_l192_q3",
+      "travelDocuments": "Passport"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "We're offered a voluntary bump for a later flight with compensation, but it would mean missing a connecting flight we also hold on a separate ticket.",
+      "itinerary": [
+        "Airline Assuming the Airline Will Handle Everything",
+        "Airline Asking Whether Compensation Covers the Separate Ticket's Loss",
+        "Airline Declining Automatically Without Asking",
+        "Airline Accepting Without Considering the Connection"
+      ],
+      "options": [
+        "Assuming the Airline Will Handle Everything",
+        "Asking Whether Compensation Covers the Separate Ticket's Loss",
+        "Declining Automatically Without Asking",
+        "Accepting Without Considering the Connection"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "A voluntary offer needs weighing against costs the airline may not automatically consider.",
+      "explanation": "Asking explicitly ensures the true cost of accepting is understood before deciding. Accepting or declining automatically risks an unfair outcome either way.",
+      "id": "td_l193_q1",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Our travel insurance claim was denied for a 'pre-existing condition' we don't believe applies, and the letter cites a clause we don't recognise.",
+      "itinerary": [
+        "Insurance Company Requesting a Detailed Explanation and Appeal Process",
+        "Insurance Company Giving Up and Paying Out of Pocket",
+        "Insurance Company Accepting the Denial Without Question",
+        "Insurance Company Assuming the Clause Doesn't Apply and Resubmitting Unchanged"
+      ],
+      "options": [
+        "Requesting a Detailed Explanation and Appeal Process",
+        "Giving Up and Paying Out of Pocket",
+        "Accepting the Denial Without Question",
+        "Assuming the Clause Doesn't Apply and Resubmitting Unchanged"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "An unclear denial is worth challenging through the proper channel before accepting it.",
+      "explanation": "Requesting a detailed explanation and using the appeal process is the structured way to contest a denial. Simply resubmitting the same claim rarely changes the outcome.",
+      "id": "td_l193_q2",
+      "travelDocuments": "Travel Insurance"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Our hotel loyalty status promises a free upgrade, but the front desk says the hotel is fully booked at the higher tier.",
+      "itinerary": [
+        "Grand Hotel Front Desk, Asking About Other Loyalty Benefits Instead",
+        "Grand Hotel Accepting Silently With No Benefit",
+        "Grand Hotel Insisting the Upgrade Must Happen Regardless",
+        "Grand Hotel Threatening to Leave a Negative Review Immediately"
+      ],
+      "options": [
+        "Front Desk, Asking About Other Loyalty Benefits Instead",
+        "Accepting Silently With No Benefit",
+        "Insisting the Upgrade Must Happen Regardless",
+        "Threatening to Leave a Negative Review Immediately"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When the specific benefit isn't available, ask what else the same status entitles you to.",
+      "explanation": "Loyalty programmes often have alternative perks when an upgrade isn't possible. Insisting on something genuinely unavailable rarely produces a better result than asking for alternatives.",
+      "id": "td_l193_q3",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "We're changing planes with a visa-required stopover country, our layover is eight hours, and we're unsure if a same-day transit exemption applies to us.",
+      "itinerary": [
+        "Transit Hall Assuming the Exemption Applies",
+        "Transit Hall Staying in the Airport Without Checking",
+        "Transit Hall Airline or Airport Transit Desk for Verification",
+        "Transit Hall Leaving the Airport to Explore Anyway"
+      ],
+      "options": [
+        "Assuming the Exemption Applies",
+        "Staying in the Airport Without Checking",
+        "Airline or Airport Transit Desk for Verification",
+        "Leaving the Airport to Explore Anyway"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Transit exemptions vary by nationality and airport, so verify rather than assume.",
+      "explanation": "A transit desk can confirm whether your specific situation qualifies for an exemption. Assuming either way risks either an unnecessary confinement or an immigration problem.",
+      "id": "td_l194_q1",
+      "travelDocuments": "Passport"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Our train ticket allows a stopover, but the connecting service we planned to use has just been discontinued without much notice.",
+      "itinerary": [
+        "Rail Customer Service Waiting at the Old Connection Point",
+        "Rail Customer Service Asking for the Closest Valid Alternative",
+        "Rail Customer Service Abandoning the Stopover Plan",
+        "Rail Customer Service Buying an Entirely New Ticket"
+      ],
+      "options": [
+        "Waiting at the Old Connection Point",
+        "Asking for the Closest Valid Alternative",
+        "Abandoning the Stopover Plan",
+        "Buying an Entirely New Ticket"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "A discontinued service under an existing ticket usually has a designated replacement.",
+      "explanation": "Customer service can direct you to the closest valid alternative under the same ticket. Buying a new ticket may be unnecessary and costly.",
+      "id": "td_l194_q2",
+      "travelDocuments": "Train Ticket"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Our travel companion's medication requires proof of prescription at customs, but the prescription is in a language customs doesn't recognise.",
+      "itinerary": [
+        "Customs Discarding the Medication to Avoid the Issue",
+        "Customs Arguing That Translation Shouldn't Be Required",
+        "Customs Requesting a Translated Summary or Doctor's Letter",
+        "Customs Hiding the Medication"
+      ],
+      "options": [
+        "Discarding the Medication to Avoid the Issue",
+        "Arguing That Translation Shouldn't Be Required",
+        "Requesting a Translated Summary or Doctor's Letter",
+        "Hiding the Medication"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "A language barrier around required documents is solved with translation, not avoidance.",
+      "explanation": "A translated summary or doctor's letter satisfies the requirement properly. Hiding or discarding medication creates far bigger problems.",
+      "id": "td_l194_q3",
+      "travelDocuments": "Travel Insurance"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "We're rerouted through a country requiring a transit visa we don't have, the rerouting was the airline's choice, and boarding is in thirty minutes.",
+      "itinerary": [
+        "Departures Hall Refusing to Board Without Explanation",
+        "Departures Hall Airline Duty Manager for an Alternative Routing",
+        "Departures Hall Trying to Get the Visa in Thirty Minutes",
+        "Departures Hall Boarding and Hoping It Works Out"
+      ],
+      "options": [
+        "Refusing to Board Without Explanation",
+        "Airline Duty Manager for an Alternative Routing",
+        "Trying to Get the Visa in Thirty Minutes",
+        "Boarding and Hoping It Works Out"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "An airline-caused routing problem should be resolved by the airline finding another route.",
+      "explanation": "A duty manager can arrange a routing that doesn't require a visa you don't have, since the airline created the issue. Boarding and hoping risks being denied transit entirely.",
+      "id": "td_l195_q1",
+      "travelDocuments": "Passport"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Our documented food allergy triggered a reaction despite assurances from the kitchen, and we need medical help while still wanting to understand what went wrong.",
+      "itinerary": [
+        "Restaurant Speaking to the Manager Before Anything Else",
+        "Restaurant Waiting to See if Symptoms Improve",
+        "Restaurant Calling Emergency Medical Help First, Then the Manager",
+        "Restaurant Leaving Immediately Without Telling Anyone"
+      ],
+      "options": [
+        "Speaking to the Manager Before Anything Else",
+        "Waiting to See if Symptoms Improve",
+        "Calling Emergency Medical Help First, Then the Manager",
+        "Leaving Immediately Without Telling Anyone"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Health comes first; the investigation into what went wrong can follow.",
+      "explanation": "Calling for medical help immediately addresses the urgent risk. The conversation with the manager matters but comes second.",
+      "id": "td_l195_q2",
+      "travelDocuments": "Travel Insurance"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Our night train's sleeper cabin was double-booked, the conductor offers a shared cabin with strangers, and our children are with us.",
+      "itinerary": [
+        "Train Getting Off at the Next Stop With No Plan",
+        "Train Standing in the Corridor All Night",
+        "Train Accepting the Shared Cabin Without Discussion",
+        "Train Conductor, Requesting a Family-Appropriate Alternative"
+      ],
+      "options": [
+        "Getting Off at the Next Stop With No Plan",
+        "Standing in the Corridor All Night",
+        "Accepting the Shared Cabin Without Discussion",
+        "Conductor, Requesting a Family-Appropriate Alternative"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "A double-booking error should be resolved with an option suitable for the actual travelers.",
+      "explanation": "Asking the conductor for a family-appropriate alternative addresses the real problem. Accepting a shared cabin with strangers isn't suitable with children present.",
+      "id": "td_l195_q3",
+      "travelDocuments": "Train Ticket"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "We've discovered our tour guide is uncertified after an incident raised safety questions, and the rest of the group wants to continue regardless.",
+      "itinerary": [
+        "Tour Company Leaving the Tour Without Explanation",
+        "Tour Company Confronting the Guide Publicly Mid-Tour",
+        "Tour Company Head Office, Raising the Safety Concern Directly",
+        "Tour Company Continuing Silently to Avoid Conflict With the Group"
+      ],
+      "options": [
+        "Leaving the Tour Without Explanation",
+        "Confronting the Guide Publicly Mid-Tour",
+        "Head Office, Raising the Safety Concern Directly",
+        "Continuing Silently to Avoid Conflict With the Group"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "A genuine safety concern outweighs social pressure from the rest of the group.",
+      "explanation": "Raising it directly with the head office ensures it's addressed properly, regardless of the group's wishes. Staying silent risks continued safety issues.",
+      "id": "td_l196_q1",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Our booked activity requires a waiver releasing the operator from certain liabilities, and one clause seems unusually broad compared to what we've seen before.",
+      "itinerary": [
+        "Activity Operator Refusing to Do the Activity at All",
+        "Activity Operator Asking Staff to Clarify the Specific Clause",
+        "Activity Operator Signing Without Reading It Fully",
+        "Activity Operator Crossing Out the Clause Yourself"
+      ],
+      "options": [
+        "Refusing to Do the Activity at All",
+        "Asking Staff to Clarify the Specific Clause",
+        "Signing Without Reading It Fully",
+        "Crossing Out the Clause Yourself"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "An unclear clause is worth clarifying before deciding, rather than reacting immediately either way.",
+      "explanation": "Asking staff to clarify the clause lets you make an informed decision. Signing without understanding it, or unilaterally altering the document, both carry risk.",
+      "id": "td_l196_q2",
+      "travelDocuments": "Travel Insurance"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Our travel companion has become confused and disoriented after a long flight, and we're unsure whether this is jet lag or something more serious.",
+      "itinerary": [
+        "Airport Assuming It's Just Jet Lag",
+        "Airport Airport Medical Services for an Assessment",
+        "Airport Waiting Several Hours to See if It Passes",
+        "Airport Giving Them Coffee and Continuing the Journey"
+      ],
+      "options": [
+        "Assuming It's Just Jet Lag",
+        "Airport Medical Services for an Assessment",
+        "Waiting Several Hours to See if It Passes",
+        "Giving Them Coffee and Continuing the Journey"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Sudden confusion has several possible causes, and a professional assessment rules out the serious ones.",
+      "explanation": "Airport medical services can properly assess whether this is ordinary jet lag or something requiring urgent attention. Assuming or waiting risks missing a real medical issue.",
+      "id": "td_l196_q3",
+      "travelDocuments": "Travel Insurance"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "We're asked by a border officer to explain a large amount of cash we're carrying, which is legal but unusual, and we have receipts from a currency exchange.",
+      "itinerary": [
+        "Border Control Claiming Not to Understand the Question",
+        "Border Control Refusing to Explain, Citing Privacy",
+        "Border Control Explaining Clearly and Showing the Receipts",
+        "Border Control Offering to Leave the Cash Behind"
+      ],
+      "options": [
+        "Claiming Not to Understand the Question",
+        "Refusing to Explain, Citing Privacy",
+        "Explaining Clearly and Showing the Receipts",
+        "Offering to Leave the Cash Behind"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Clear, documented explanations resolve legitimate questions faster than resistance.",
+      "explanation": "Explaining clearly and showing receipts satisfies the officer's legitimate question quickly. Refusing to explain can cause unnecessary delay or suspicion.",
+      "id": "td_l197_q1",
+      "travelDocuments": "Passport"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Our hotel's safe malfunctioned, appears to have been opened, and jewellery is missing, but no signs of forced entry are visible.",
+      "itinerary": [
+        "Grand Hotel Waiting Until Check-Out to Mention It",
+        "Grand Hotel Assuming It Was Lost, Not Stolen",
+        "Grand Hotel Confronting Housekeeping Staff Directly",
+        "Grand Hotel Hotel Security and the Local Police, Together"
+      ],
+      "options": [
+        "Waiting Until Check-Out to Mention It",
+        "Assuming It Was Lost, Not Stolen",
+        "Confronting Housekeeping Staff Directly",
+        "Hotel Security and the Local Police, Together"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "A possible theft with an unclear cause needs both the property's security team and an official record.",
+      "explanation": "Involving both hotel security and the police creates a proper investigation and an official record for any claim. Confronting staff directly without evidence is inappropriate.",
+      "id": "td_l197_q2",
+      "travelDocuments": "Travel Insurance"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Our onward flight is fine, but the local currency we have left is now worthless because of an overnight currency reform we hadn't heard about.",
+      "itinerary": [
+        "Central Bank Exchange Counter Trying to Spend It Quickly Anyway",
+        "Central Bank Exchange Counter Assuming the Money Is Now Worthless Forever",
+        "Central Bank Exchange Counter Leaving It Behind",
+        "Central Bank Exchange Counter Asking About the Official Exchange Window"
+      ],
+      "options": [
+        "Trying to Spend It Quickly Anyway",
+        "Assuming the Money Is Now Worthless Forever",
+        "Leaving It Behind",
+        "Asking About the Official Exchange Window"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Currency reforms often include a formal exchange period for old notes.",
+      "explanation": "A central bank counter can explain the official exchange window, which may let you recover the value. Assuming it's worthless without checking could lose money unnecessarily.",
+      "id": "td_l197_q3",
+      "travelDocuments": "ID Card"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "We're stuck between two competing pieces of advice: our travel insurer says to seek treatment at a private clinic, while the embassy recommends the public hospital.",
+      "itinerary": [
+        "Embassy or Consulate Delaying Treatment Until They Agree",
+        "Embassy or Consulate Ignoring Both and Deciding Alone",
+        "Embassy or Consulate Asking Them to Clarify the Reasoning Behind Their Advice",
+        "Embassy or Consulate Following Whichever Advice Came First"
+      ],
+      "options": [
+        "Delaying Treatment Until They Agree",
+        "Ignoring Both and Deciding Alone",
+        "Asking Them to Clarify the Reasoning Behind Their Advice",
+        "Following Whichever Advice Came First"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Conflicting professional advice is best resolved by understanding the reasoning, not by picking arbitrarily.",
+      "explanation": "Asking the embassy to explain their reasoning helps you weigh both pieces of advice properly. Delaying treatment to wait for agreement could be harmful.",
+      "id": "td_l198_q1",
+      "travelDocuments": "Travel Insurance"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Our travel group disagrees about whether to report a minor scam attempt to police, since some worry it will consume the whole afternoon.",
+      "itinerary": [
+        "Tourist Police Post Filing a Brief Report While the Group Continues Separately",
+        "Tourist Police Post Making the Whole Group Wait Together",
+        "Tourist Police Post Not Reporting It at All",
+        "Tourist Police Post Reporting It Anonymously Online Instead"
+      ],
+      "options": [
+        "Filing a Brief Report While the Group Continues Separately",
+        "Making the Whole Group Wait Together",
+        "Not Reporting It at All",
+        "Reporting It Anonymously Online Instead"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "A brief, efficient report doesn't have to consume everyone's time.",
+      "explanation": "A brief report at a tourist police post is usually quick, and the group needn't all wait together. Not reporting it means others may fall for the same scam.",
+      "id": "td_l198_q2",
+      "travelDocuments": "Travel Insurance"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "We're offered a refund in a currency different from what we originally paid, due to a technical limitation, and the exchange rate used seems unfavourable.",
+      "itinerary": [
+        "Payment Provider Asking for the Refund in the Original Currency or a Fair Rate",
+        "Payment Provider Accepting the Unfavourable Rate Without Comment",
+        "Payment Provider Disputing the Entire Transaction as Fraud",
+        "Payment Provider Refusing Any Refund at All"
+      ],
+      "options": [
+        "Asking for the Refund in the Original Currency or a Fair Rate",
+        "Accepting the Unfavourable Rate Without Comment",
+        "Disputing the Entire Transaction as Fraud",
+        "Refusing Any Refund at All"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "A technical limitation doesn't mean you must accept an unfair outcome; ask for a fair fix first.",
+      "explanation": "Asking for the original currency or a fair rate addresses the specific problem directly. Disputing the whole transaction as fraud is a disproportionate response to a processing issue.",
+      "id": "td_l198_q3",
+      "travelDocuments": "ID Card"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "We must choose between two flights: one direct but landing after our connecting train's last departure, and one with a layover but arriving in time for an earlier train.",
+      "itinerary": [
+        "Booking Desk Neither, Rebooking the Train Instead",
+        "Booking Desk Flipping a Coin",
+        "Booking Desk The Direct Flight for Simplicity",
+        "Booking Desk The Layover Option That Makes the Earlier Train"
+      ],
+      "options": [
+        "Neither, Rebooking the Train Instead",
+        "Flipping a Coin",
+        "The Direct Flight for Simplicity",
+        "The Layover Option That Makes the Earlier Train"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Weigh the real consequence of each option against the goal of reaching the destination smoothly.",
+      "explanation": "The layover option, despite being less simple, actually achieves the connection, while the direct flight would strand you without a train that night.",
+      "id": "td_l199_q1",
+      "travelDocuments": "Train Ticket"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Our elderly companion refuses medical attention despite visible signs of heat exhaustion, and we must decide how firmly to intervene while respecting their wishes.",
+      "itinerary": [
+        "Nearby Pharmacy Respecting the Refusal Completely",
+        "Nearby Pharmacy Getting a Professional Opinion They Might Accept More Readily",
+        "Nearby Pharmacy Waiting to See if It Gets Worse",
+        "Nearby Pharmacy Forcing Them to a Hospital Against Their Will"
+      ],
+      "options": [
+        "Respecting the Refusal Completely",
+        "Getting a Professional Opinion They Might Accept More Readily",
+        "Waiting to See if It Gets Worse",
+        "Forcing Them to a Hospital Against Their Will"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Balancing autonomy and safety often means finding a lower-pressure way to get expert input.",
+      "explanation": "A pharmacist can often assess the situation gently and may persuade them to seek further help if needed, without forcing anything. Simply waiting risks the condition worsening.",
+      "id": "td_l199_q2",
+      "travelDocuments": "Travel Insurance"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Two of our four flights on one itinerary were affected by the same technical fault, one already rebooked automatically to a worse routing, and we haven't yet checked the second.",
+      "itinerary": [
+        "Airline Accepting the Worse Routing Without Comment",
+        "Airline Cancelling the Entire Trip",
+        "Airline Assuming the Second Flight Is Fine",
+        "Airline Contacting Customer Service About the Whole Itinerary"
+      ],
+      "options": [
+        "Accepting the Worse Routing Without Comment",
+        "Cancelling the Entire Trip",
+        "Assuming the Second Flight Is Fine",
+        "Contacting Customer Service About the Whole Itinerary"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "A known systemic fault affecting one flight is reason enough to check the rest of the itinerary too.",
+      "explanation": "Contacting customer service about the whole itinerary catches problems on the second flight before they become urgent. Assuming it's fine ignores the pattern already seen.",
+      "id": "td_l199_q3",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "With twenty minutes until boarding, our gate has changed, our connecting bag transfer status is unconfirmed, and a family member needs a restroom urgently.",
+      "itinerary": [
+        "Departures Hall Handling Everything Yourself in Sequence",
+        "Departures Hall Ignoring the Bag Issue to Save Time",
+        "Departures Hall Delaying the Restroom Need Until Boarding",
+        "Departures Hall Asking Staff to Confirm the Bag While the Family Member Goes to the Restroom Nearby"
+      ],
+      "options": [
+        "Handling Everything Yourself in Sequence",
+        "Ignoring the Bag Issue to Save Time",
+        "Delaying the Restroom Need Until Boarding",
+        "Asking Staff to Confirm the Bag While the Family Member Goes to the Restroom Nearby"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "When multiple things compete for the same short window, look for what can happen at the same time rather than one after another.",
+      "explanation": "Splitting the tasks, confirming the bag with staff while the restroom need is handled separately, uses the time efficiently. Doing everything in strict sequence risks missing boarding.",
+      "id": "td_l200_q1",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "On our last day, we must choose between a paid excursion we already committed to, a family member feeling unwell who'd rather rest, and a non-refundable dinner reservation that evening.",
+      "itinerary": [
+        "Hotel Concierge Asking Whether the Excursion or Dinner Can Be Rescheduled Instead of Cancelled",
+        "Hotel Concierge Splitting Up With No Communication Plan",
+        "Hotel Concierge Ignoring the Unwell Family Member's Preference",
+        "Hotel Concierge Cancelling Everything to Be Safe"
+      ],
+      "options": [
+        "Asking Whether the Excursion or Dinner Can Be Rescheduled Instead of Cancelled",
+        "Splitting Up With No Communication Plan",
+        "Ignoring the Unwell Family Member's Preference",
+        "Cancelling Everything to Be Safe"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Competing commitments on limited time are often better rearranged than abandoned outright.",
+      "explanation": "Asking the concierge about rescheduling preserves value from both commitments while still allowing rest. Cancelling everything outright may be an unnecessarily costly overreaction.",
+      "id": "td_l200_q2",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "At the very end of the trip, a series of small issues, a delayed refund, a lost item, and an unclear final bill, all need resolving before you fly home in three hours.",
+      "itinerary": [
+        "Grand Hotel Tackling Each Issue at a Different Desk Separately",
+        "Grand Hotel Leaving All Three Unresolved",
+        "Grand Hotel Focusing Only on the Bill and Ignoring the Rest",
+        "Grand Hotel Asking the Duty Manager to Address All Three Together"
+      ],
+      "options": [
+        "Tackling Each Issue at a Different Desk Separately",
+        "Leaving All Three Unresolved",
+        "Focusing Only on the Bill and Ignoring the Rest",
+        "Asking the Duty Manager to Address All Three Together"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "When time is short and issues are related, one empowered person handling them together is more efficient than separate queues.",
+      "explanation": "A duty manager can often resolve multiple related issues in one conversation, saving valuable time before departure. Visiting separate desks would likely take longer than the time available.",
+      "id": "td_l200_q3",
+      "travelDocuments": "Hotel Reservation"
+    }
+  ]
 }

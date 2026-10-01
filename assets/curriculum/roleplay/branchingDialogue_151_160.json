@@ -1,787 +1,787 @@
 {
-    "gameType": "branchingDialogue",
-    "batchIndex": 16,
-    "levels": "151-160",
-    "quests": [
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I need to write a formal assessment of a mission that succeeded but used methods I have moral concerns about. How do you document this honestly?'",
-            "options": [
-                "Document the successful outcome thoroughly and raise your methodological concerns through separate informal channels.",
-                "Consult with legal counsel before documenting any moral concerns about methods in a formal assessment.",
-                "I'd document the outcome and the method separately, and put my moral concerns on the record in the methodology section - informal channels are where concerns like this disappear."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Put moral concerns on the formal record, not in an informal side conversation.",
-            "explanation": "Documenting concerns formally, in the right section, ensures they're preserved and reviewable. 'Document the outcome and raise concerns informally' uses exactly the channel where concerns tend to disappear. 'Consult legal counsel first' is overcautious about a standard professional documentation duty.",
-            "id": "bd_l151_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'A source I've been cultivating for six months has just provided intelligence that, if true, changes everything. But I cannot verify it. What do you do?'",
-            "options": [
-                "I'd send it up the chain clearly marked as unverified, start the fastest verification path immediately, and take only reversible protective steps until it's confirmed.",
-                "Act immediately - if the intelligence is accurate, any delay could be catastrophic.",
-                "Hold the intelligence until it can be properly verified - unverified intelligence is too risky to act on."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Balance disclosure, verification, and reversible action rather than choosing one extreme.",
-            "explanation": "Reporting with an honest confidence level, verifying fast, and taking only reversible steps balances the risk of both ignoring and over-acting. 'Hold until verified' skips protective actions that even unverified intelligence can warrant. 'Act immediately' skips verification entirely.",
-            "id": "bd_l151_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'A dish I've been serving for five years has started to feel tired to me. How do you know when to retire a dish versus when that feeling is your own fatigue rather than the dish's?'",
-            "options": [
-                "Retire the dish and introduce something new - constant evolution is what keeps a restaurant vital.",
-                "The real test is the guest's experience, not mine - I've eaten this dish hundreds of times, so of course I'm tired of it, but that's not the same thing.",
-                "Trust your instinct - as the chef you are the most qualified person to know when a dish has run its course."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Distinguish your own fatigue from the guest's actual experience of the dish.",
-            "explanation": "Separating personal fatigue from the guest's actual experience gives a real, testable way to judge this. 'Trust your instinct as the most qualified person' treats the source of the bias as a source of authority. 'Retire it - constant evolution keeps a restaurant vital' applies a general principle without checking the specific case.",
-            "id": "bd_l151_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I'm advising on a public health intervention that is technically sound but requires significant behaviour change from a population that has historically been resistant to health messaging. How do you design for behaviour change rather than information transfer?'",
-            "options": [
-                "Develop clear and compelling information materials that accurately communicate the health benefits of the behaviour change.",
-                "The barrier is almost never information - it's usually trust, cost, or convenience. I'd make the healthy choice the default, and use trusted community voices, not institutional ones.",
-                "Conduct a comprehensive social media campaign to reach the target population with clear health messaging."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Identify the real barrier and design around it, rather than improving the information itself.",
-            "explanation": "Naming the real barrier, and designing the default and messenger around it, is genuine behaviour-change design. 'Develop clear, compelling information materials' is precisely information transfer, not behaviour change. 'A comprehensive social media campaign' is still an institutional channel, which this population has historically resisted.",
-            "id": "bd_l152_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I need to make a significant hire for a role I've never had in my organisation before. How do you hire well for a role you don't fully understand?'",
-            "options": [
-                "Rely on a specialist recruitment agency who understands this type of role in depth.",
-                "Post the role description, conduct structured interviews, and check references thoroughly.",
-                "I'd bring in someone just to define the role first, make the hire explicitly probationary with clear milestones, and prioritise honesty over expertise I can't actually judge."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Address the fact that you don't understand the role itself, not just the hiring process.",
-            "explanation": "Defining the role first, and prioritising honesty over unverifiable expertise, addresses the actual problem of not understanding the role. 'Post the description, interview, check references' is the standard process that assumes you already understand what to look for. 'Rely on a specialist recruitment agency' still leaves you unable to judge whether their assessment is right.",
-            "id": "bd_l152_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I've been asked to evaluate whether a new training simulator accurately represents the real aircraft well enough to be used for type rating. What are the critical evaluation criteria?'",
-            "options": [
-                "I'd check fidelity in the most likely failure modes specifically, and make sure the workload demands feel real, not simplified - a simulator that feels easy breeds false confidence.",
-                "Maintain currency through recurrent training and simulator practice on the relevant procedures and scenarios.",
-                "Assess the simulator against the manufacturer's specifications and established certification standards."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Give specific evaluation criteria, especially workload realism, not just a certification check.",
-            "explanation": "Naming specific fidelity and workload criteria gives real, safety-critical evaluation substance. 'Assess against manufacturer specifications and certification standards' describes the process category without the specific criteria. 'Maintain currency through recurrent training' addresses pilot practice, not simulator evaluation.",
-            "id": "bd_l152_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I want to understand what makes some military strategies genuinely elegant and others merely complicated. What is the distinction?'",
-            "options": [
-                "An elegant strategy does several things with one move and survives things breaking - a complicated one needs everything to go exactly right, and falls apart when one piece doesn't.",
-                "Complicated strategies typically require more resources and tighter coordination across every unit involved.",
-                "Elegant strategies are simpler and easier to execute, while complicated strategies require extensive resources and coordination."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Give the precise mechanism and a test for elegance, not just relative simplicity.",
-            "explanation": "Naming multi-purpose actions and a real test - what can break and still succeed - identifies the precise mechanism. 'Simpler and easier to execute' is superficially true but misses the mechanism. 'Apply established doctrine and best practices' is a general statement.",
-            "id": "bd_l153_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I need to run a training exercise for new analysts that builds genuine analytical capability rather than just analytical familiarity. What's the design principle?'",
-            "options": [
-                "Design exercises that cover the core analytical methods and build trainees' familiarity with each technique.",
-                "Simplify the exercises initially so new analysts can build confidence before tackling harder material.",
-                "I'd design it to make trainees wrong in specific, useful ways - premature conclusions, confirmation bias - not to make them succeed. Success builds confidence, not capability."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Design to surface specific errors, not to build success or familiarity.",
-            "explanation": "Designing backwards from specific errors to surface is the counter-intuitive principle that builds real capability. 'Cover core methods and build familiarity' produces familiarity, not capability. 'Simplify exercises to build confidence first' builds exactly the false confidence this approach warns against.",
-            "id": "bd_l153_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I want to write a culinary manifesto that genuinely says something. What does a culinary manifesto need to do to be worth the name?'",
-            "options": [
-                "It has to say what the industry's getting wrong, prove itself in an actual meal, not just theory, and name what it costs you to follow it.",
-                "A culinary manifesto needs to articulate a distinctive vision that sets the writer apart and inspires others to follow.",
-                "Include recipes that are precise enough for other chefs to replicate exactly."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name specific, demanding criteria, including what it costs, not just an inspiring vision.",
-            "explanation": "Naming what's wrong, demonstrating it in food, and naming the cost are the demanding criteria that separate a manifesto from marketing. 'Articulate a distinctive vision that sets you apart' describes a personal brand statement, not a manifesto. 'Draw inspiration from heritage and trends' describes a creative process, not manifesto criteria.",
-            "id": "bd_l153_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I've been asked to design the ethical oversight framework for a national health data system that will hold sensitive data on millions of people. What are the non-negotiable elements?'",
-            "options": [
-                "The framework must comply with all applicable data protection legislation and international standards.",
-                "Anonymise all health data thoroughly before it is used for any secondary purpose.",
-                "Purpose limitation on the data, genuine independent oversight with real power to stop misuse, meaningful access rights for individuals, and a mandatory breach notification timeline."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name specific, non-negotiable elements beyond basic legal compliance.",
-            "explanation": "Naming specific elements - purpose limitation, real oversight power, access rights, and notification - goes beyond minimum legal compliance. 'Must comply with all applicable legislation and standards' names the legal floor, not the ethical ceiling this framework needs. 'Restrict access on a need-to-know basis' is one security principle, not a full oversight framework.",
-            "id": "bd_l154_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I've been watching the market I operate in consolidate rapidly around two dominant players. I am neither of them. What is the strategic choice set?'",
-            "options": [
-                "Focus on cutting costs aggressively so you can compete with the dominant players on price.",
-                "I'd either become genuinely acquisition-worthy to one of them, or own a niche their scale can't serve well - staying still is really just a weaker version of the first option.",
-                "Find your niche and focus on serving a specific customer segment that the dominant players overlook."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name the full set of genuine strategic choices, including why staying static isn't really one of them.",
-            "explanation": "Naming the genuine choices, and explaining why staying static isn't really a separate option, gives the complete strategic picture. 'Find your niche and focus on an overlooked segment' names only one of the genuine choices. 'Conduct comprehensive market research and develop a strategic response' describes a process, not the actual choice set.",
-            "id": "bd_l154_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I want to understand what distinguishes the most effective accident investigators from the competent ones. What specific quality of mind?'",
-            "options": [
-                "The best investigators hold real curiosity about why the action made sense to that person at the time, instead of retrospective judgment - that's what recovers the true causal chain.",
-                "Check that the simulator has passed its most recent recurring certification audit.",
-                "The most effective accident investigators have exceptional technical knowledge, systematic methodology, and the ability to analyse large volumes of evidence efficiently."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name genuine curiosity about the actor's perspective as the distinguishing quality.",
-            "explanation": "Naming curiosity about the actor's perspective, rather than judgment, identifies the specific quality that recovers real causes. 'Exceptional technical knowledge and systematic methodology' describes competent investigators generally, not what distinguishes the best. 'Follow SOPs and consult technical documentation' doesn't address investigative mindset at all.",
-            "id": "bd_l154_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I've been asked to advise on a conflict resolution process between two communities that have been in dispute for a generation. What does an effective process require that a quick resolution does not?'",
-            "options": [
-                "Bring in a widely respected external mediator who has resolved similar disputes elsewhere before.",
-                "An effective conflict resolution process requires skilled professional mediation and clear legal frameworks.",
-                "It needs real acknowledgment of both communities' history, involvement from the people who'll actually live with it, not just their representatives, and a pace set by readiness, not deadlines."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name specific requirements beyond mediation and legal frameworks, which quick resolution also has.",
-            "explanation": "Naming acknowledgment, genuine participation, and readiness-based pacing identifies what quick resolution specifically lacks. 'Skilled professional mediation and clear legal frameworks' describes inputs present in quick resolution too. 'Apply established doctrine and best practices' is a general statement.",
-            "id": "bd_l155_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I've been asked to design a protection programme for a high-profile individual who has received credible threats but refuses to change their behaviour or routine. How do you manage this?'",
-            "options": [
-                "Advise the principal clearly about the risks they are creating and recommend a protective detail large enough to compensate.",
-                "I'd rotate the detail's timing and composition invisibly, invest heavily in advance intelligence over visible presence, and ask exactly which small changes they'd actually tolerate.",
-                "Increase the number of protective personnel assigned to the principal's detail significantly."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Work around the principal's fixed behaviour rather than trying to change it again.",
-            "explanation": "Working entirely around the fixed behaviour, and identifying tolerable changes specifically, respects the constraint stated in the scenario. 'Advise on the risks and recommend a larger detail' repeats an approach already rejected. 'Follow operational security protocols and consult your senior officer' is a general statement.",
-            "id": "bd_l155_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I'm creating a dish that is meant to evoke a specific memory that many people in this culture share. How do you work with collective memory in food?'",
-            "options": [
-                "Recreate the exact recipes as closely as possible to how they were traditionally made.",
-                "Research the traditional preparation methods and authentic ingredients associated with this shared cultural memory.",
-                "It works through specific sensory detail, not general categories - the exact warmth of bread from the oven in winter matters more than getting the category technically right."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name the specific sensory mechanism, not a general research process.",
-            "explanation": "Naming the specific sensory mechanism, with a concrete example, identifies how collective memory actually works in food. 'Research traditional methods and authentic ingredients' operates at the category level, missing the sensory-trigger insight. 'Showcase seasonal ingredients and culinary strengths' doesn't address collective memory at all.",
-            "id": "bd_l155_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I've been asked to advise on reforming a medical education system that produces technically competent doctors who are poor communicators and struggle with uncertainty. Where do you intervene?'",
-            "options": [
-                "Extend the length of medical training so students have more time to develop these skills.",
-                "The fix is in assessment, not curriculum - students optimise for whatever gets measured, so I'd build communication and reasoning under uncertainty into every exam from year one.",
-                "Introduce dedicated communication skills modules and courses on clinical reasoning under uncertainty."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Intervene at assessment specifically, not by adding new curriculum content.",
-            "explanation": "Naming assessment as the actual lever, since students optimise for what's measured, identifies the real intervention point. 'Introduce dedicated modules and courses' is exactly the curriculum-only intervention this answer argues against. 'Engage policymakers and gather evidence' is a general statement.",
-            "id": "bd_l156_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I want to develop my own strategic judgment rather than relying on advisers and consultants. What specific practices build genuine strategic judgment over time?'",
-            "options": [
-                "Read widely in strategic thinking and study the decision-making approaches of successful business leaders.",
-                "Write down your own prediction before hearing any expert view, then compare both to what actually happens - and find someone who disagrees with you for good reasons.",
-                "Take on a mentor with strong strategic judgment and learn by observing how they decide."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Give specific, active practices for calibrating judgment, not general reading.",
-            "explanation": "Recording predictions and seeking genuine disagreement are specific, active practices that actually calibrate judgment over time. 'Read widely and study successful leaders' is information consumption, not judgment-building practice. 'Gather information, consult advisers, apply a framework' describes using judgment, not building it.",
-            "id": "bd_l156_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I want to understand why some aviation incidents produce systemic learning and others produce only procedural compliance. What determines which outcome you get?'",
-            "options": [
-                "It's how far back the investigation actually goes - stopping at the last human error just tightens a rule, going back to what made that error likely actually changes the system.",
-                "The quality of the investigation team and the rigor of their methodology determines whether the learning is systemic.",
-                "The most important factor is giving pilots refresher training on the specific failure that occurred."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name the specific mechanism - how far back the causal chain is traced.",
-            "explanation": "Naming how far back the causal chain is traced identifies the precise determining factor. 'The quality of the investigation team and rigour of methodology' is one relevant factor but doesn't identify the specific mechanism. 'Follow the emergency checklist and apply SOPs' doesn't address investigation methodology at all.",
-            "id": "bd_l156_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I've been asked to advise on the ethics of autonomous weapons systems. What is the essential ethical question?'",
-            "options": [
-                "The technology needs far more testing before it can be deployed in real operational conditions.",
-                "The essential ethical question is whether autonomous weapons systems can reliably distinguish between combatants and civilians.",
-                "The essential question is accountability - when the system kills the wrong person, who's actually responsible? Making it more accurate changes the odds, not that underlying gap."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name accountability as the essential question, distinct from accuracy.",
-            "explanation": "Naming accountability, and explaining why accuracy doesn't resolve it, identifies the actual philosophical core of the issue. 'Whether the systems can reliably distinguish combatants from civilians' is the accuracy question this answer explains doesn't resolve the deeper issue. 'Apply established doctrine and best practices' is a general statement.",
-            "id": "bd_l157_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I've been offered a very senior position in an intelligence organisation I have serious reservations about. What is the right framework for this decision?'",
-            "options": [
-                "I'd ask whether my reservations are about fixable practices or the organisation's actual purpose, and whether the role gives me real authority or just lends it my credibility.",
-                "Speak candidly with people currently in the organisation about what the role actually involves day to day.",
-                "Weigh the career opportunity against your reservations and make a decision based on your long-term career objectives."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Ask specific, searching questions about the nature of the reservations and the authority offered.",
-            "explanation": "Asking these specific questions treats this as the ethical decision it is, not just a career choice. 'Weigh the opportunity against reservations based on career objectives' frames this as primarily a career decision. 'Gather additional intelligence and conduct a rigorous review' is a general statement unrelated to this personal decision.",
-            "id": "bd_l157_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I've been asked to advise on designing the food and drink programme for a cultural institution that wants food to be genuinely integrated with the cultural experience rather than just a revenue service. How do you think about this?'",
-            "options": [
-                "Design menus that reflect the cultural themes of the institution and source ingredients from relevant regions or traditions.",
-                "I'd decide precisely what role food plays here - as background, as an extension of the experience, or as its own expression. Only the last two are genuine integration.",
-                "Focus on sourcing seasonal, high-quality ingredients that reflect the surrounding region."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Decide food's precise role first, rather than jumping to menu content.",
-            "explanation": "Deciding the precise role food plays, with a clear distinction of what counts as genuine integration, is the actual framework needed. 'Design menus reflecting cultural themes and sourcing regionally' assumes a role without deciding it first. 'Source seasonal, high-quality regional ingredients' addresses quality, not integration.",
-            "id": "bd_l157_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I want to understand what the best clinicians do differently when they face a genuinely difficult diagnostic case. What is the specific process?'",
-            "options": [
-                "The best clinicians combine deep domain knowledge with systematic application of diagnostic protocols.",
-                "Order the full battery of relevant tests immediately to rule out every possibility at once.",
-                "The best ones deliberately slow down instead of pattern-matching fast, and actively look for the one finding that doesn't fit their favoured diagnosis, not just the ones that confirm it."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name the specific process stages, especially seeking disconfirming evidence.",
-            "explanation": "Naming deliberate slowing and the active search for disconfirming evidence identifies the specific process that distinguishes the best clinicians. 'Deep domain knowledge with systematic protocols' describes competent clinicians generally. 'Follow established guidelines and consult specialists' is a general statement.",
-            "id": "bd_l158_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I've been asked to represent my industry's interests in a government consultation. What is the most effective and most principled way to do this?'",
-            "options": [
-                "I'd be transparent about where our interests actually conflict with the public interest, and bring evidence that complicates our case, not just supports it.",
-                "Focus on building a personal rapport with the officials leading the consultation process.",
-                "Present your industry's position clearly and forcefully, backed by the strongest available evidence."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Include complicating evidence and acknowledge conflicts, not just advocate forcefully.",
-            "explanation": "Being transparent about conflicts and including complicating evidence treats the consultation as genuine exchange, which builds more influence over time. 'Present your position clearly and forcefully' is straightforward advocacy without this principled approach. 'Apply sound commercial judgment and consult advisers' is a general statement.",
-            "id": "bd_l158_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I've been asked to lead an industry working group on the future of human oversight in highly automated aviation. What is the central question?'",
-            "options": [
-                "Ensure pilots receive extensive training on the automated systems before they are certified to fly with them.",
-                "The central question is how to set the appropriate level of automation for different flight phases and conditions.",
-                "It's not how much to automate - it's how you keep the human skilled enough to take over when automation fails, because it always eventually does."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Reframe the question toward maintaining human expertise, not calibrating automation levels.",
-            "explanation": "Reframing toward maintaining human expertise for eventual failure is the more sophisticated central question. 'How to set the appropriate level of automation' is described as the previous generation's question. 'Ensure extensive training before certification' addresses initial training, not the ongoing atrophy problem this answer identifies.",
-            "id": "bd_l158_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I want to understand why some organisations remain genuinely excellent over multiple generations of leadership while others peak and then decline. What is the specific mechanism?'",
-            "options": [
-                "It's whether the organisation renews its best capabilities or just replicates them - replication wins when conditions stay stable, and fails hard the moment they change.",
-                "Organisations that remain genuinely excellent across multiple leadership generations have strong cultures, clear values, and excellent talent development processes.",
-                "Recruit and retain the most talented people available at every level of the organisation."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name the specific mechanism - renewal versus replication - not general organisational traits.",
-            "explanation": "Naming renewal versus replication identifies the precise mechanism behind sustained excellence. 'Strong cultures, clear values, and talent development' describes what excellent organisations have without the specific mechanism. 'Lead by example and maintain clear command lines' is a general statement.",
-            "id": "bd_l159_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I want to understand what makes some people's intelligence judgments consistently more accurate than others over a long career. What is the underlying quality?'",
-            "options": [
-                "Track each analyst's prediction accuracy over time and promote based on the results.",
-                "It's a specific kind of humility - actively hunting for the evidence that would prove you wrong, and being able to say exactly what changed your mind and why.",
-                "Consistently more accurate analysts have superior domain expertise, better sources, and more efficient analytical processes."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name the specific, active form of humility, with a test for genuine belief change.",
-            "explanation": "Naming the active, specific form of humility, plus a real test for genuine belief change, identifies the precise underlying quality. 'Superior domain expertise, better sources, more efficient processes' describes advantages, not the specific quality. 'Gather additional intelligence and conduct a rigorous review' is a general statement.",
-            "id": "bd_l159_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I'm asked to describe what I believe cooking at its highest level is actually doing. What is the honest answer?'",
-            "options": [
-                "At its highest level, cooking is the finest possible expression of craft, technique, and the creative transformation of raw ingredients.",
-                "Honestly, it's turning attention into presence - the exact care you put into an ingredient becomes a moment where the person eating it is fully there, in their own experience.",
-                "It's fundamentally a form of hospitality - making sure people feel looked after and welcome."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name the specific effect on the person eating, not a description of craft.",
-            "explanation": "Naming the specific effect - genuine presence in the eater - identifies something true and unusual about cooking. 'The finest possible expression of craft and technique' describes cooking without naming its effect on the person experiencing it. 'Apply your expertise and consult colleagues' is a general statement.",
-            "id": "bd_l159_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I want to understand what distinguishes the most genuinely wise clinicians from the most technically excellent ones. What is the quality?'",
-            "options": [
-                "Refer complex or ambiguous cases to a specialist promptly rather than risk a delayed diagnosis.",
-                "The most genuinely wise clinicians combine technical excellence with deep compassion and extensive clinical experience.",
-                "The wisest ones ask what this actually stops you doing in the life you live, not just where and when it hurts - that's treating a person with symptoms, not symptoms in a person."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name the specific question that brings the patient's actual life into the clinical picture.",
-            "explanation": "Naming the specific question, and the precise formulation of the distinction, identifies the exact quality this question asks about. 'Technical excellence with compassion and experience' describes the components of a wise clinician, not the specific quality. 'Follow established guidelines and consult specialists' is a general statement.",
-            "id": "bd_l160_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'Looking back over a long career, what is the most important thing you've learned about the relationship between commercial success and personal integrity that you wish you'd known earlier?'",
-            "options": [
-                "They're less in conflict than you fear when you're young, and more than you'll admit once you're successful - ask if your recent choices would've bothered who you meant to become.",
-                "Success and integrity rarely conflict in practice, since a good reputation is good for business.",
-                "Commercial success and personal integrity are ultimately aligned - the most successful businesses are built on genuine integrity."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Give the honest, dual account and a specific self-assessment practice.",
-            "explanation": "Naming the honest dual pattern, plus a specific self-assessment question, gives real, actionable insight. 'Ultimately aligned - the most successful businesses are built on integrity' is precisely the reassuring narrative this answer identifies as a blind spot. 'Maintain strong client relationships through communication' doesn't address the reflective question at all.",
-            "id": "bd_l160_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I want to understand what flying has taught me about the relationship between preparation and improvisation that applies more broadly to how to live a good life. What is it?'",
-            "options": [
-                "Recurrent training and simulator practice are what keep pilots ready for genuine emergencies.",
-                "They're complements, not opposites - you can't prepare for the specific novel failure, but you can prepare the capacity to notice it, pause, and create options before they close.",
-                "Flying has taught me that thorough preparation and attention to detail are the foundation of everything, and that staying calm under pressure comes from that preparation."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name the specific capacities preparation builds, not just general thoroughness.",
-            "explanation": "Naming the specific capacities - noticing, pausing, creating options - explains how preparation actually enables improvisation. 'Thorough preparation and attention to detail are the foundation' is true but doesn't explain the specific relationship being asked about. 'Follow SOPs and consult documentation' doesn't address the reflective question at all.",
-            "id": "bd_l160_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        }
-    ]
+  "gameType": "branchingDialogue",
+  "batchIndex": 16,
+  "levels": "151-160",
+  "quests": [
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "your team lead",
+      "scene": "You want your team lead to approve a two-week trial of four-day weeks for your team. She says she's sceptical: 'Sounds nice, but won't clients notice?'",
+      "options": [
+        "That's the right worry to have. What if we ran it only with internal-facing work for two weeks and tracked response times, so we'd have real numbers before anyone outside noticed a thing?",
+        "Clients won't care, honestly. Every company is doing this now, so we're just falling behind by waiting.",
+        "I understand. I'll drop it for now, maybe we can revisit it next year, if I'm being honest, I was going more on instinct than anything, though I'm open to changing my mind — and to be fair I only heard about this a few minutes ago myself."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When someone raises an objection, treat it as valid and reshape your proposal around it instead of dismissing or abandoning it.",
+      "explanation": "She named a real risk, so the strongest move is to shrink the risk with a small, measurable trial. Dismissing the worry with 'everyone's doing it' asks her to trust you without evidence, and giving up immediately signals you didn't believe in the idea enough to adapt it.",
+      "id": "bd_l151_q1",
+      "consequencePreviews": [
+        "Here, you treat her objection as legitimate and turn it into a low-risk test she can say yes to.",
+        "Here, you wave away the concern and lean on 'everyone's doing it,' which gives her no evidence to trust.",
+        "You retreat at the first objection, so a workable idea dies without a real attempt to address the worry."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a neighbour on the residents' committee",
+      "scene": "You'd like the residents' committee to agree to fund a bike shelter. One member says: 'Only a handful of people cycle here. Why should everyone pay?'",
+      "options": [
+        "Because it's the right thing to do for the environment, and we should all be willing to contribute.",
+        "Fair question. Could we do a quick head-count first, and if fewer than fifteen households would use it, I'll withdraw the proposal myself?",
+        "It's only a small amount per household, so I doubt anyone will really mind paying, I mean, that was more of a first reaction, though I'd want to think it over more."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Answer a fairness objection with a way to check the facts, not with a moral appeal.",
+      "explanation": "The member's real question is who benefits, so offering a head-count with a stated cut-off answers it directly and shows you're willing to lose. Moral appeals and 'it's cheap' both skip the question and make people feel pressured rather than persuaded.",
+      "id": "bd_l151_q2",
+      "consequencePreviews": [
+        "Realistically, you appeal to values instead of answering the cost question, so the objection stays unanswered.",
+        "Here, you accept the challenge with a clear test, which makes your request look reasonable rather than pushy.",
+        "In this moment, you minimise the cost without evidence, which can sound like you're brushing off a fair concern."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a senior director",
+      "scene": "You believe a product launch should be delayed a month. The director, who owns the launch date, says: 'The date is set. Bring me something I can act on, not a complaint.'",
+      "options": [
+        "I think launching now is a serious mistake and I'd feel responsible if I didn't say that clearly.",
+        "I hear you. If the date is fixed, we'll just do our best and hope the defects don't cause trouble.",
+        "Understood. Here's the one-page version: three defects that affect checkout, the cost of fixing after launch versus before, and two options that keep your date for a smaller release. Which would you prefer to look at first?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When someone with authority asks for something actionable, bring options they can choose between, not just your opinion.",
+      "explanation": "She has told you what will persuade her: actionable material. Options that preserve her date turn you from a critic into a problem-solver. Restating your conviction ignores her request, and quietly hoping for the best abandons your responsibility to flag the risk.",
+      "id": "bd_l151_q3",
+      "consequencePreviews": [
+        "As a result, you state your conviction strongly but give her nothing to act on, which is exactly what she warned against.",
+        "In this moment, you give up your concern entirely, leaving the risk unmanaged and the decision uninformed.",
+        "You meet her on her terms with concrete options and let her choose, which respects her ownership of the decision."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who's hesitant about a career change",
+      "scene": "Your friend wants to leave accounting to study design but keeps postponing. You think she'd regret not trying.",
+      "options": [
+        "You've talked about this for two years. Just quit and go for it, life is short.",
+        "What's the smallest step that would tell you whether you'd like it? Maybe one evening course, so you'd know before risking anything?",
+        "Honestly, only you can decide, so I won't say anything about it."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Persuading someone to change often works better by shrinking the first step than by urging the whole leap.",
+      "explanation": "Hesitation usually comes from perceived risk, so a small, reversible step addresses the real blocker. Telling her to quit adds pressure without solving the fear, and staying silent withholds the support she quietly wants.",
+      "id": "bd_l152_q1",
+      "consequencePreviews": [
+        "As a result, you push a big, risky leap on her, which can trigger more resistance than movement.",
+        "Here, you lower the stakes and let her generate the next step herself, which makes action feel possible.",
+        "As a result, you stay neutral, but she leaves with no help moving past the thing that's actually stopping her."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a colleague from another department",
+      "scene": "You need a busy colleague to review your budget draft this week, and you can't offer anything in return except thanks.",
+      "options": [
+        "Everyone else already reviewed theirs, so it would be a bit awkward if yours were the only one skipped.",
+        "It would really help me out if you could look over the whole thing whenever you get a chance, looking back, that was more of a first reaction, so feel free to push back.",
+        "Could you give me fifteen minutes on Thursday just on the travel lines? That's where I'm least sure, and your team's numbers are the ones I'm comparing against."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "A specific, small, well-justified request is easier to say yes to than a large open-ended one.",
+      "explanation": "Naming the exact section, the time and why she is the right person makes the request cheap to grant and flattering in a genuine way. Vague asks drift, and guilt-based ones cost you goodwill.",
+      "id": "bd_l152_q2",
+      "consequencePreviews": [
+        "You may notice that using social pressure may get a yes but leaves resentment in a relationship you'll need again.",
+        "As a result, the open-ended request is large and vague, so it's easy for her to postpone indefinitely.",
+        "As a result, you make the ask small, specific and clearly tied to her expertise, which is easy to accept."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a client with a fixed budget",
+      "scene": "A client rejected your proposal as 'too expensive'. You believe the higher package is the only one that will solve their real problem.",
+      "options": [
+        "Before I cut anything, may I ask what result would make this worthwhile for you? If the cheaper version can reach it, I'll recommend that one instead.",
+        "I can knock 15% off right now if that helps you decide today.",
+        "The cheaper option simply won't work, so I'd advise against choosing it, I mean, I hadn't checked how that would actually land, so it's worth double-checking."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When a price objection appears, find out what outcome the person is buying before you negotiate the number.",
+      "explanation": "'Too expensive' usually means 'not clearly worth it'. Asking about the desired result surfaces the value gap and shows you'd rather solve the problem than make the sale. A quick discount or a flat warning both skip that discovery.",
+      "id": "bd_l152_q3",
+      "consequencePreviews": [
+        "Realistically, you reopen the goal rather than defend the price, which builds trust and reveals what they actually need.",
+        "In this moment, an instant discount signals the price was inflated and still doesn't check whether the package fits their need.",
+        "Realistically, you assert your view without exploring theirs, which sounds like pushing the expensive option."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "your manager",
+      "scene": "You want to persuade your manager to let you attend a conference. Budget is tight this quarter.",
+      "options": [
+        "There's a great conference coming up. Do you think I could go?",
+        "I've worked really hard this year and I think I've earned the chance to go.",
+        "I've drafted a one-page plan: two sessions directly on the payments problem we're stuck on, a promise to present it to the team afterwards, and a cost cap of $900 using the early-bird ticket."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "To win approval, make the benefit to the other person and the cost limit explicit.",
+      "explanation": "Managers approve spending when they can see the return and the ceiling. A plan with a named problem, a sharing commitment and a cap answers the objection in advance, while 'I've earned it' and a bare question leave the case unmade.",
+      "id": "bd_l153_q1",
+      "consequencePreviews": [
+        "In this moment, the open question hands the whole job of justifying it to your manager.",
+        "You make it about deserving, which doesn't answer the budget concern at all.",
+        "As a result, you show the benefit, the return to the team and a cost limit, so approving looks low-risk."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a parent at your child's school",
+      "scene": "You want other parents to join a walking group so kids don't all get driven to school. Several say they're too busy.",
+      "options": [
+        "Think about the traffic and pollution outside the gates. It's really bad for the children.",
+        "Even one morning a week would help. If we split it into a rota, each of us would only walk once every couple of weeks. Want to try it for a month and see?",
+        "That's fine, I'll just organise it with the few who are interested, in fairness, I wasn't considering every angle, so take it with a grain of salt — and to be fair I only heard about this a few minutes ago myself."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Address the stated objection directly, then shrink the commitment.",
+      "explanation": "The parents said time was the problem, so a rota that cuts the load answers them. Talking about pollution skips their objection, and retreating to a small group is fine but gives up without testing whether a lighter version would work.",
+      "id": "bd_l153_q2",
+      "consequencePreviews": [
+        "In this moment, the guilt-tinged appeal doesn't touch the time objection people actually gave.",
+        "As a result, you reduce the commitment and offer a trial, answering the 'too busy' objection directly.",
+        "In this moment, you accept a small group, which is reasonable but stops trying to remove the barrier for others."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a board of trustees",
+      "scene": "You're presenting a proposal to move a charity's fundraising online. Two trustees are openly opposed, one is undecided, and the chair supports you.",
+      "options": [
+        "I'd like to start with what worries you most about this, because the plan should answer those points. Then I'll show the pilot results and what we'd stop doing if it failed.",
+        "I know some of you disagree, but the chair has backed it, so I hope we can move forward together, actually, that was more of a first reaction, so there might be a better way to handle it.",
+        "Most of you already know this is the direction the sector is going, so I'll go through the details quickly, thinking about it now, I hadn't really thought it through, though I'm open to changing my mind."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "With a divided audience, surface the objections yourself and show what would happen if you're wrong.",
+      "explanation": "The undecided trustee decides based on how you handle the opponents. Naming their worries and showing a failure plan looks confident and fair. Rushing past them or citing the chair's backing makes the proposal look fragile.",
+      "id": "bd_l153_q3",
+      "consequencePreviews": [
+        "In this moment, you invite the opposition in first and offer a defined exit, which persuades the undecided trustee.",
+        "As a result, leaning on the chair's support signals you can't answer the objections yourself.",
+        "Realistically, skipping the concerns of two opponents makes the room feel steamrolled, and the undecided trustee notices."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a colleague reluctant to use a new tool",
+      "scene": "A colleague keeps using a spreadsheet instead of the team's new tracking software. You'd like her to switch.",
+      "options": [
+        "The new tool is company policy now, so everyone has to use it eventually, actually, I wasn't considering every angle, so I could be wrong — and to be fair I only heard about this a few minutes ago myself.",
+        "What is the spreadsheet doing for you that the tool doesn't yet? If we can fix that one thing, would you be willing to try it for a week?",
+        "It's fine to keep the spreadsheet if it works for you. I just thought I'd mention it, to be fair, I said that fairly quickly, though I'd want to think it over more."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Ask what someone would lose by changing before you ask them to change.",
+      "explanation": "Resistance usually protects something valuable. Learning what she'd lose lets you fix it, and a time-limited trial keeps the ask small. Citing policy forces a change without buy-in, while backing off ends the conversation.",
+      "id": "bd_l154_q1",
+      "consequencePreviews": [
+        "The policy argument may produce compliance but not willingness, and she may find workarounds.",
+        "In this moment, you look for what she's really protecting and offer a bounded trial.",
+        "In this moment, you drop the request completely, so nothing changes and the team keeps two systems."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a landlord",
+      "scene": "You want your landlord to let you install a washing machine, which the lease doesn't mention. He is wary about water damage.",
+      "options": [
+        "I'd be happy to have a plumber install it properly and give you the receipt. And I'd add a drip tray. Would that address the water risk?",
+        "I'll be very careful with it, I promise. I've never had any problems with appliances before, to be fair, I wasn't considering every angle, though I'm open to changing my mind.",
+        "The lease doesn't forbid it, so technically I don't need your permission, to be honest, that was more of a first reaction, so take it with a grain of salt."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Persuade by removing the other person's specific risk, not by asking them to trust you.",
+      "explanation": "His fear is damage, so a professional installation and a tray address it concretely. A promise is weak evidence, and a legalistic argument might win the point but damage the relationship you rely on.",
+      "id": "bd_l154_q2",
+      "consequencePreviews": [
+        "As a result, you solve his stated risk in advance, making agreement easy.",
+        "Here, a promise of care doesn't change his risk; it only asks him to trust you.",
+        "In this moment, arguing the letter of the lease may be true but turns a favour into a dispute."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who is sceptical about seeing a doctor",
+      "scene": "A friend has had persistent back pain for months but says 'it'll go away'. You are worried and want him to book an appointment.",
+      "options": [
+        "Well, you know your own body best, so I'll leave it up to you, honestly, I hadn't fully worked out how it'd play out, though I'm open to changing my mind — and I know that's not the most thought-out response, but it's where my head's at right now.",
+        "If you ignore this it could turn into something much worse, and then you'll really regret it, if I'm honest, I hadn't really planned past that point, but that could easily change.",
+        "I'm not saying it's serious. I'd just feel better if you knew. Would it help if I sat with you while you booked it now? Then it's done and you can stop thinking about it."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When the topic is sensitive, express your concern calmly and make the first step effortless.",
+      "explanation": "Fear-based warnings often cause avoidance. Calm concern plus practical help with the booking targets the real barrier, which is inertia. Deferring entirely is respectful but abandons a friend you're worried about.",
+      "id": "bd_l154_q3",
+      "consequencePreviews": [
+        "Realistically, you respect his autonomy but leave a persistent problem without any nudge.",
+        "The scare tactic may make him defensive and avoid the subject entirely.",
+        "Realistically, you say your concern without alarm and remove the effort of the first step."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a hiring manager",
+      "scene": "In an interview you're asked to explain why you are a stronger candidate than others. You don't know the other candidates.",
+      "options": [
+        "I can't speak for others, but here's what I'd bring: I've run a migration like the one you described, and I can show you the plan I used in my last role.",
+        "Frankly, I'm probably better qualified than most people who would apply for this job.",
+        "I'm not sure I'm the best. I just work hard and hope for the best."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Support a claim with specific, relevant evidence and avoid comparing yourself to people you don't know.",
+      "explanation": "You can't judge others, but you can show fit. A relevant example the interviewer can verify is persuasive. Boasting sounds unearned, and self-doubt gives no reason to choose you.",
+      "id": "bd_l155_q1",
+      "consequencePreviews": [
+        "As a result, you avoid comparing, offer matching evidence and invite a closer look.",
+        "A sweeping claim without evidence sounds arrogant and is easy to doubt.",
+        "In this moment, you undermine your own case and give the interviewer nothing concrete to remember."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend in a group chat",
+      "scene": "Your group is deciding between two holiday destinations, and you strongly prefer the mountains. Two friends lean towards the coast.",
+      "options": [
+        "The coast is boring, and we did that last year, so I really don't want to go again, thinking about it now, that was more of a first reaction.",
+        "I'd love the mountains, mostly for the hiking. What's the coast giving you that I'd miss? Maybe there's a place that has both.",
+        "Whatever you all decide is fine with me. I don't mind, honestly, I was going more on instinct than anything, so there might be a better way to handle it."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "In a group decision, state your preference with a reason and ask about theirs.",
+      "explanation": "Showing what you want and learning what they want is how groups find creative options. Dismissing the other choice creates sides, and false flexibility leaves you resentful later.",
+      "id": "bd_l155_q2",
+      "consequencePreviews": [
+        "Dismissing their choice puts them on the defensive and turns it into a contest.",
+        "In this moment, you state your preference, ask for theirs and open the door to a compromise.",
+        "As a result, you hide a strong preference, so the group decides without knowing what matters to you."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a regulator's inspector",
+      "scene": "During an inspection, the inspector says a procedure at your clinic doesn't meet the standard. You believe he has misread the current guideline.",
+      "options": [
+        "That's incorrect. The guideline was changed last year, and you're using the old version.",
+        "Thank you for pointing it out. We'll change the procedure straight away.",
+        "Could I show you the paragraph I'm working from? If I've misread the 2024 update, I'd rather know now, and if the wording is ambiguous, I'd welcome it in writing."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When you may be right against an authority, show the source and stay open to being wrong.",
+      "explanation": "Inviting him to check the paragraph makes the guideline the arbiter, not his pride. Contradicting him bluntly creates a status fight, and agreeing without checking risks changing a correct procedure.",
+      "id": "bd_l155_q3",
+      "consequencePreviews": [
+        "Here, the blunt correction may be right but makes him defend his authority.",
+        "In this moment, you accept a possibly mistaken finding and change a compliant practice unnecessarily.",
+        "As a result, you invite verification and stay open to being wrong, which makes a correction easy for him to accept."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a shop owner",
+      "scene": "You'd like a local shop to stock your handmade candles. The owner says she has no shelf space.",
+      "options": [
+        "They're very popular at markets, so I'm sure they'll sell quickly in your shop too, looking back, that was more of a first reaction.",
+        "Okay, no problem. If you change your mind, you know where to find me.",
+        "Would a small tester display by the till work? I'll supply it and collect anything unsold after a month, so you carry no risk."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "A first refusal is often about a specific constraint. Offer a version that removes it.",
+      "explanation": "Shelf space was her stated problem, so a compact display with returns solves it. Sales claims ignore the constraint, and leaving immediately forfeits an easy adjustment.",
+      "id": "bd_l156_q1",
+      "consequencePreviews": [
+        "The claim doesn't address her space concern and asks her to take your word.",
+        "Here, you accept the first no without exploring whether a smaller arrangement might work.",
+        "Here, you remove both the space and the risk problems in a single offer."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a teenage nephew",
+      "scene": "Your nephew wants to drop his science subjects to spend more time on gaming videos he makes. You think he's closing doors too early.",
+      "options": [
+        "Your channel is impressive. What if you kept the sciences for one more year, and I'll help you plan when you film? Then you'd keep both options open.",
+        "It's your choice and your future, so I won't interfere, in hindsight, that was more of a first reaction, so let me know if that's off — and I'm honestly still working out how I feel about the whole thing.",
+        "You'll thank me when you're older. Trust me, you can't build a life on videos, to be honest, I hadn't weighed all the details, but that could easily change."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "With teenagers and young adults, respect what genuinely matters to them and offer practical support that avoids closing doors too early.",
+      "explanation": "Teenagers resist being overruled. Validating his work and offering practical support gives him a reason to keep sciences without feeling controlled. A lecture invites defiance, and silence leaves him alone with a big choice.",
+      "id": "bd_l156_q2",
+      "consequencePreviews": [
+        "As a result, you respect his interest, offer help and frame the choice as keeping options rather than a lecture.",
+        "Here, you avoid conflict but withhold a genuine perspective he might value.",
+        "Dismissing what he cares about will likely harden his position."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a mediator in a team dispute",
+      "scene": "Two colleagues are stuck: one wants weekly reports, the other says they waste time. You're asked to help them agree.",
+      "options": [
+        "Let's compromise and do reports every two weeks. That way you each get half of what you want.",
+        "Can each of you tell me what the reports are meant to achieve? If we agree on that first, we can look for a lighter way to get it.",
+        "The manager asked for weekly reports, so I think we should just follow that."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When two people are stuck on positions, ask what each is trying to achieve.",
+      "explanation": "The dispute is really about purpose and cost. Exploring purpose lets both accept a new format. A midpoint may satisfy neither, and citing the manager wins compliance but not agreement.",
+      "id": "bd_l156_q3",
+      "consequencePreviews": [
+        "Here, splitting the difference is quick but ignores what each person actually needs.",
+        "You shift from positions to purposes, which creates room for a solution both can accept.",
+        "You may notice that appealing to authority ends the discussion without persuading anyone."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a colleague who resists feedback",
+      "scene": "You need a proud colleague to start writing test cases for his code. Previous attempts made him defensive.",
+      "options": [
+        "You know this code better than anyone, so you'd write better tests than I could. Could we agree on three key cases per feature, just to start?",
+        "Every other developer already does this, so it's really not much to ask, actually, I hadn't weighed all the details, so feel free to push back — and to be fair I only heard about this a few minutes ago myself.",
+        "I could write the tests for you, if you don't want to bother with them, thinking about it now, I was just going with my gut on that one, so I could be wrong."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "With someone defensive, frame the request around their strengths and keep it small.",
+      "explanation": "Recognising his expertise makes the request feel like respect, not criticism. Peer comparison stings, and doing it yourself relieves the pressure without solving the problem.",
+      "id": "bd_l157_q1",
+      "consequencePreviews": [
+        "In this moment, you appeal to his expertise and set a small, clear standard.",
+        "The comparison implies he is behind, which is what makes him defensive.",
+        "As a result, you take on his work, which avoids conflict but doesn't change his behaviour."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a customer support agent",
+      "scene": "A company won't refund a faulty item bought fourteen months ago; the policy is twelve months. You believe a repair is reasonable.",
+      "options": [
+        "That policy is unfair. A product like this should last much longer than a year, I guess, I was going more on instinct than anything, so feel free to push back — and to be fair I only heard about this a few minutes ago myself.",
+        "I understand the policy. Since it failed under normal use just two months past the window, could you check whether a repair or partial credit is possible as an exception?",
+        "Fine, I'll just buy a new one. I won't shop with you again, though."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Ask for a specific exception that the person has the power to grant.",
+      "explanation": "Agents can often offer repairs or credits even when refunds are closed. Acknowledging the rule and asking for a modest exception gives her a path to yes. Criticising policy or threatening to leave doesn't.",
+      "id": "bd_l157_q2",
+      "consequencePreviews": [
+        "Realistically, attacking the policy targets someone who can't change it.",
+        "Here, you accept the rule and ask for a specific, limited exception she has room to grant.",
+        "A threat after giving up removes any motive for her to help."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a community leader",
+      "scene": "You need older residents to agree to a new digital voting system for the neighbourhood association. Several say they don't trust computers.",
+      "options": [
+        "The system is very secure, and experts have confirmed it. You really don't need to worry, actually, I wasn't considering every angle, but I'm not totally set on it.",
+        "Everyone else has agreed to it, so you might as well go along with the majority, to be honest, I hadn't weighed all the details, but that could easily change — and I haven't really run it past anyone else yet.",
+        "That's a fair concern. What if we keep paper ballots this year alongside the online option, and two of you help count both, so you can see the results match?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When trust is the issue, give people a way to verify, not just an assurance.",
+      "explanation": "Distrust is best answered with transparency. Running both systems and letting residents help count gives them evidence they can see. Assurances and majority pressure ask for trust that hasn't been earned.",
+      "id": "bd_l157_q3",
+      "consequencePreviews": [
+        "In this moment, reassurance from unseen experts doesn't build trust in people who already distrust the technology.",
+        "Here, majority pressure makes them feel ignored rather than convinced.",
+        "As a result, you address the trust issue with visible verification and shared control."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a partner",
+      "scene": "You'd like your partner to help more with household chores. Last time you raised it, it became an argument.",
+      "options": [
+        "I'd like us to find a split that feels fair to both of us. Could we list everything that needs doing this weekend and see who would rather take what?",
+        "It's okay, I'll manage. I just hope you'll notice how much I'm doing.",
+        "You never do your share. I'm the only one who keeps this place running."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Raise a recurring problem as a shared task to solve, not as a charge to answer.",
+      "explanation": "A joint list and a choice of tasks turns blame into planning. Accusations trigger defence, and silent hints rarely lead to change.",
+      "id": "bd_l158_q1",
+      "consequencePreviews": [
+        "In this moment, you frame it as a shared problem and invite choice, which lowers defensiveness.",
+        "Here, hoping to be noticed hides the request, so nothing is likely to change.",
+        "In this moment, absolute accusations tend to restart the argument you're trying to avoid."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a project sponsor",
+      "scene": "The sponsor wants to add a big feature late in the project. You believe it will jeopardise the launch, but he's invested.",
+      "options": [
+        "Okay, we'll add it, and I'll try to make up the time somehow.",
+        "That's impossible in the time left. We simply can't do it, honestly, I hadn't really planned past that point, so feel free to push back — and I haven't really run it past anyone else yet.",
+        "I can see why it matters. If we add it, here's what slips: the security review and the training. Would you rather keep the date with the feature reduced, or move the date?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When a request has a cost, show the trade-off and let the decision-maker choose.",
+      "explanation": "Sponsors respond to consequences. Saying exactly what slips gives him a real choice. 'Impossible' invites a fight, and silent acceptance means he learns of the damage too late.",
+      "id": "bd_l158_q2",
+      "consequencePreviews": [
+        "Realistically, agreeing without naming the cost hides the risk you already see.",
+        "Realistically, a flat refusal without reasons sounds like unwillingness, and he may escalate.",
+        "You show the trade-off and let him choose, so the consequence persuades rather than your opinion."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend of a friend at a party",
+      "scene": "Someone at a party says confidently that vaccines are dangerous. You disagree, and you don't want to embarrass her or start a fight.",
+      "options": [
+        "That's completely wrong. Every study shows they're safe, so you should really stop repeating that, I mean, that was more of a first reaction.",
+        "I've read a different picture. What made you look into it? I'm curious where you got your information from.",
+        "Mm, interesting. Shall we get some more drinks? Is there a better way to handle it? Honestly, I hadn't really planned past that point."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Curiosity about how someone formed a belief is usually more persuasive than direct contradiction.",
+      "explanation": "Asking where her views come from keeps her engaged and might reveal what worries her. Head-on correction rarely persuades in public, and changing the subject avoids the issue completely.",
+      "id": "bd_l158_q3",
+      "consequencePreviews": [
+        "In this moment, a public correction is likely to make her defend her view harder.",
+        "In this moment, you signal disagreement gently and open a real conversation instead of a debate.",
+        "In this moment, avoiding the topic keeps the peace but leaves a strongly held claim untouched."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "your landlord",
+      "scene": "You'd like to renew your lease with the rent unchanged. The landlord has mentioned rising costs.",
+      "options": [
+        "I've been a reliable tenant for three years and I'd like to stay long-term. If I sign for two years, could you hold the rent at the current level?",
+        "I've never been late with rent, so I think it's only fair that you keep it the same.",
+        "If the rent goes up, I'll have to start looking for another flat."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Offer something the other person values in exchange for what you want.",
+      "explanation": "Landlords value fewer vacancies. A longer term is a real benefit, so trading it for a stable rent is persuasive. Fairness claims and threats give him nothing to gain.",
+      "id": "bd_l159_q1",
+      "consequencePreviews": [
+        "Realistically, you offer him certainty in exchange for stability, a trade he can weigh.",
+        "Appealing to fairness alone gives him no reason of his own to agree.",
+        "Here, an implied threat before negotiation begins may harden his position."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a conference organiser",
+      "scene": "You'd like to give a talk at a conference, but the programme is full. She says it's too late.",
+      "options": [
+        "I've spoken at much larger events than this, so I'm sure the audience would enjoy it, if I'm honest, I hadn't weighed all the details, but that could easily change — and I know that's not the most thought-out response, but it's where my head's at right now.",
+        "Understood. If a speaker drops out, I could step in with fifteen minutes, and I can send my slides in advance so you're not at risk. May I stay on your reserve list?",
+        "That's a pity. I'll look for other conferences then, in hindsight, I hadn't checked how that would actually land, but that could easily change — and I'm honestly still working out how I feel about the whole thing."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When the answer is no, ask for a smaller, lower-risk way in.",
+      "explanation": "Programmes change often, so a prepared reserve is useful. You solve her problem, not yours. Boasting doesn't help her, and leaving abandons the opening.",
+      "id": "bd_l159_q2",
+      "consequencePreviews": [
+        "Here, self-promotion doesn't create a slot that isn't there.",
+        "As a result, you make yourself an easy, low-risk backup instead of demanding a place.",
+        "As a result, you walk away when a small opening was available."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a group of coworkers planning to skip a mandatory training",
+      "scene": "Some coworkers plan to skip a compliance training because it's dull. You think they'll be caught and blamed, and you'd rather they attend.",
+      "options": [
+        "You'll all be in trouble, and I won't cover for you if anyone asks, honestly, I hadn't fully worked out how it'd play out, but that could easily change.",
+        "Well, it's up to you. I've already booked myself in.",
+        "I get it, it's dull. I heard they're checking attendance this year. How about we sit together and finish the modules early so it's over quickly?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "With peers, pair a practical fact with an offer that makes the desired action easier.",
+      "explanation": "The fact about attendance checks gives a reason, and the shared plan removes the dullness. Threats damage peer relationships, and passive neutrality lets a preventable problem happen.",
+      "id": "bd_l159_q3",
+      "consequencePreviews": [
+        "You may notice that a threat from a peer turns you into an enemy and may not change their plans.",
+        "As a result, you stay neutral and lose the chance to protect them from a real risk.",
+        "Realistically, you share a practical fact and offer a way to make attending easier."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "the CEO",
+      "scene": "You need the CEO to approve funding for a security upgrade. She says: 'Nothing has happened in five years. Why spend on it now?'",
+      "options": [
+        "Exactly, and that's what makes it easy to underestimate. Two competitors were breached last quarter. Here's the cost of one incident against the upgrade, and a phased version that starts with the highest-risk systems.",
+        "You're right, nothing has happened. Maybe we can wait and revisit it next year, if I'm being honest, I wasn't considering every angle, so feel free to push back — and I know that's not the most thought-out response, but it's where my head's at right now.",
+        "It's only a matter of time before something serious happens, and then it will be too late, thinking about it now, I was just going with my gut on that one, but I'm not totally set on it — and honestly the whole situation caught me a bit off guard."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Answer a 'why now?' objection with current evidence, a cost comparison and a smaller first step.",
+      "explanation": "She asked for a reason to act now. Recent competitor breaches and a cost comparison give it, and phasing lowers the barrier. Fear without data is easy to dismiss, and agreeing means the case is never made.",
+      "id": "bd_l160_q1",
+      "consequencePreviews": [
+        "You validate her observation, give evidence and offer a phased option to make approval easier.",
+        "Here, you agree with the objection and abandon a risk you believe is real.",
+        "In this moment, doom warnings without evidence sound alarmist and are easy to dismiss."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a hesitant volunteer",
+      "scene": "A volunteer says she'd like to lead the fundraising event but doubts she's experienced enough. You believe she'd be great.",
+      "options": [
+        "Don't be silly, of course you're experienced enough. You'll be fine.",
+        "Okay, I'll ask someone else who feels more confident about it.",
+        "You handled the raffle last year without any help. I'd like you to lead it, and I'll be the person you check with when you're unsure. Would that feel manageable?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Counter self-doubt with specific evidence and offer support.",
+      "explanation": "Reassurance without proof rarely convinces. A real past success plus a named backup makes the role feel safe. Waving the doubt away ignores her, and moving on ends the opportunity.",
+      "id": "bd_l160_q2",
+      "consequencePreviews": [
+        "Realistically, dismissing her feeling doesn't give her a reason to believe it.",
+        "Here, you accept her doubt and lose the chance to develop someone capable.",
+        "You give concrete evidence of her ability and offer support, which addresses her doubt."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a divided family",
+      "scene": "Your family disagrees about whether to sell a shared holiday cottage. Your sister wants to sell, your brother wants to keep it, and you're in the middle.",
+      "options": [
+        "We should vote, and everyone should accept whatever the majority decides.",
+        "Could each of you say what the cottage means to you, and what selling or keeping would need to look like for you to feel okay? Then we can see what all of us can agree to, before talking about money.",
+        "I'd rather not take sides. You two should settle it between yourselves."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "In a family disagreement, ask each person what matters to them before discussing solutions.",
+      "explanation": "The cottage carries emotional and financial meanings. Naming these first lets you find options like renting or part-ownership. A vote decides but doesn't persuade, and withdrawing leaves the deadlock as it was.",
+      "id": "bd_l160_q3",
+      "consequencePreviews": [
+        "You may notice that a vote quickly ends the discussion but may leave the losing side resentful.",
+        "Here, you move the family from positions to needs, which opens a route to a shared decision.",
+        "Stepping back leaves two people locked in the argument without help."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    }
+  ]
 }

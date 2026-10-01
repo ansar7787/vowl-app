@@ -4,633 +4,633 @@
     "levels": "41-50",
     "quests": [
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Numbers alone don't make an answer credible. Choose the one that explains what actually changed.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you faced a major challenge at work.",
+            "interviewerQuestion": "You said you improved a process at your last job. What actually changed?",
             "options": [
-                "When our main supplier fell through, I quickly found an alternative vendor to keep the project on track.",
-                "I don't think I've faced any real challenges yet.",
-                "There was a challenge once, but I mostly just waited for it to resolve itself."
+                "I streamlined a lot of things, and it made everyone's days smoother.",
+                "We entered orders twice, on paper and in the system. I built one entry form, and reconciliation dropped from an hour to fifteen minutes.",
+                "I made things about 200% more efficient, and the whole team loved it. People kept saying they couldn't believe how much faster everything felt afterward."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "A specific challenge with a clear action you took makes the strongest answer.",
-            "explanation": "Describing a specific challenge and the action you took proves your problem-solving ability with real evidence.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Ask yourself which answer would let the interviewer picture the before and after.",
+            "explanation": "A believable improvement names the old way, the new way, and the effect. The 200% claim has a number but no mechanism, so it can't be checked, and 'smoother days' gives the interviewer nothing to picture.",
             "id": "ji_l41_q1",
             "interviewerReaction": [
+                "unconvinced",
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "skeptical"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the description that turns a job title into actual duties.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a difficult situation you overcame professionally.",
+            "interviewerQuestion": "You wrote that you 'helped run the front desk.' What did that involve on a normal shift?",
             "options": [
-                "I try to avoid difficult situations when I can.",
-                "I once had to learn an entirely new process in one week to cover for a coworker on leave, and I managed it successfully.",
-                "Nothing difficult really comes to mind."
+                "I basically ran the desk. It was busy, and I was good at it, and my coworkers and even the manager relied on me a great deal on busy days.",
+                "I handled all front desk responsibilities, which involved a wide range of duties and required strong multitasking skills.",
+                "Check-ins, check-outs, room changes, the odd complaint. On busy Fridays I told housekeeping which rooms to turn first."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Naming the specific difficulty and how you overcame it is key.",
-            "explanation": "Naming the specific difficulty and the concrete steps you took to overcome it shows resilience and capability.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Look for the answer you could repeat back to someone else in concrete terms.",
+            "explanation": "Listing real tasks and one judgment call shows what the job actually was. The corporate-sounding answer restates the title in longer words, and 'I was good at it' is a claim with nothing behind it.",
             "id": "ji_l41_q2",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "unconvinced",
+                "unimpressed",
+                "interested"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "You told the interviewer you improved onboarding. Choose the follow-up that offers real evidence.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What's the biggest professional challenge you've faced?",
+            "interviewerQuestion": "Okay, and how did you know the onboarding actually got better?",
             "options": [
-                "Everything about my last job felt like a challenge, honestly.",
-                "I haven't really had any significant challenges in my career.",
-                "Managing a project with a much smaller budget than expected taught me to be resourceful and prioritize carefully."
+                "I could tell from how happy the new hires seemed.",
+                "Everyone told me it was way better, so I knew it worked. Honestly, the feedback I got was overwhelmingly positive from pretty much everybody.",
+                "New hires reached their first solo shift about a week sooner, and trainers said they were getting fewer repeat questions."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "A challenge paired with what you learned from it shows real growth.",
-            "explanation": "Pairing a challenge with what you learned from it shows growth, not just that you survived a hard situation.",
+            "professionalismRating": 4,
+            "hint": "Evidence is something another person could observe or check, not just a feeling.",
+            "explanation": "Faster time to first solo shift and fewer repeat questions are observable results. Praise and good moods are pleasant, but they don't show that anything measurable changed.",
             "id": "ji_l41_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "unconvinced",
+                "uncertain",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names a real issue without blaming or dodging.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you met a tight deadline.",
+            "interviewerQuestion": "What's something you'd change about your last workplace?",
             "options": [
-                "I usually just ask for an extension when deadlines are tight.",
-                "I once had 48 hours to finish a report, so I prioritized the key sections and delivered it on time.",
-                "I don't remember a time when a deadline was especially tight."
+                "Management was disorganized and nobody communicated, so it was hard to get anything done, and honestly a lot of us felt the same way.",
+                "I'd have liked clearer shift handoffs. I started a shared notes sheet, though it never became official.",
+                "Honestly, not much. It was a great place and I don't have any complaints."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "A specific example showing prioritization under time pressure works well.",
-            "explanation": "A specific example showing how you prioritized under time pressure proves you can perform reliably when it matters most.",
+            "professionalismRating": 4,
+            "hint": "One of the weaker answers is too polished to be believable, and the other is too bitter.",
+            "explanation": "A constructive answer names a real problem, then shows what you did about it. 'No complaints' sounds guarded, and blaming management suggests you'd carry the same frustration into a new job.",
             "id": "ji_l42_q1",
             "interviewerReaction": [
-                "disappointed",
+                "concerned",
                 "impressed",
-                "disappointed"
+                "wary"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that handles a difficult manager honestly and constructively.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a time you had very little time to finish an important task.",
+            "interviewerQuestion": "Tell me about a manager you found hard to work with.",
             "options": [
-                "With only a day to prepare a client presentation, I focused on the most essential points and delivered it successfully.",
-                "I tend to struggle when I don't have much time.",
-                "I usually just do my best and hope it works out."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Focusing on essentials under time pressure is a strong, specific strategy.",
-            "explanation": "Focusing on essentials under time pressure is a strong, specific strategy that shows clear thinking, not just effort.",
-            "id": "ji_l42_q2",
-            "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you delivered results under a strict time limit.",
-            "options": [
-                "I've never really had to work under a strict deadline.",
-                "I usually just work through the night if a deadline is tight.",
-                "I coordinated with two coworkers to split a large task and finish it together well before the deadline."
-            ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Delegating or coordinating with others is a smart strategy under time pressure.",
-            "explanation": "Coordinating with others under time pressure shows both teamwork and smart delegation, not just individual hustle.",
-            "id": "ji_l42_q3",
-            "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you made a mistake at work.",
-            "options": [
-                "I try not to think about my past mistakes.",
-                "I don't really make mistakes very often.",
-                "I once sent a report with an error, so I corrected it immediately and I double-check my work more carefully now."
-            ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Owning the mistake and describing a lasting change is the strongest approach.",
-            "explanation": "Owning the mistake and describing a lasting change afterward shows accountability and genuine growth.",
-            "id": "ji_l43_q1",
-            "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a professional error and how you handled it.",
-            "options": [
-                "I usually try to avoid bringing up my mistakes in interviews.",
-                "I missed a client's request in an email once, so I called immediately to apologize and fix the issue.",
-                "Mistakes happen, I don't really dwell on them."
+                "I've been lucky, I've never really had a difficult manager. Everyone I've reported to has been reasonable and easy to work with.",
+                "One manager gave very brief instructions, which was tough at first. I learned to ask two or three clarifying questions upfront, and that worked well for both of us.",
+                "One of them micromanaged everything, so I just stopped taking any initiative."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Quick, honest action after a mistake shows strong professionalism.",
-            "explanation": "Quick, honest action after a mistake, like calling to fix it right away, shows strong professionalism under pressure.",
-            "id": "ji_l43_q2",
+            "professionalismRating": 4,
+            "hint": "Notice what each answer says about how you adapt when someone is hard to work with.",
+            "explanation": "The strongest answer describes the friction fairly and shows an adjustment you made. Claiming there's never been a difficult manager sounds evasive, and withdrawing initiative shows you respond to frustration by disengaging.",
+            "id": "ji_l42_q2",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "skeptical",
+                "pleased",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "You're an internal candidate. Choose the answer that explains the move without criticizing your current team.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you had to correct an error you made.",
+            "interviewerQuestion": "You're applying to move to another team. What's pushing you to leave your current one?",
             "options": [
-                "I miscalculated a budget figure, so I flagged it to my manager immediately and reworked the numbers correctly.",
-                "I don't recall making any significant errors.",
-                "I usually just hope nobody notices small mistakes."
+                "It's less about leaving and more about where I want to build skills. I've learned what I can in support, and the analyst work is the direction I want to go.",
+                "My current team isn't great about recognizing people, so I'm ready for a change,. or so it seems to me, anyway.",
+                "I've been there three years and thought it was time for something different."
+            ],
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Think about which answer gives a reason that's about the future rather than about the past.",
+            "explanation": "Framing the move around skills you want to build is positive and specific. Criticizing your team reflects on you as well as them, and 'time for something different' doesn't explain why this move.",
+            "id": "ji_l42_q3",
+            "interviewerReaction": [
+                "reassured",
+                "concerned",
+                "uncertain"
+            ]
+        },
+        {
+            "instruction": "You handled weekly supplier orders at a café. Choose the answer that connects that directly to the posting.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "The posting mentions coordinating with vendors. Have you done anything like that?",
+            "options": [
+                "Yes. At the café I ordered produce weekly and chased the supplier when a delivery came up short.",
+                "Not directly, but I'm a quick learner and I'm sure I could figure it out once I'm in the role and shown how things work here.",
+                "I'm very comfortable dealing with all kinds of people and building relationships, and I've always found vendors easy to get along with."
+            ],
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Match your experience to the exact task the interviewer mentioned.",
+            "explanation": "Connecting a real task to the posting's exact requirement answers the question. Comfort with people is true of most candidates, and jumping straight to 'I'd learn' skips experience you actually have.",
+            "id": "ji_l43_q1",
+            "interviewerReaction": [
+                "impressed",
+                "uncertain",
+                "neutral"
+            ]
+        },
+        {
+            "instruction": "This is a school administrative assistant role. Choose the answer that speaks to that setting.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "What makes you a good fit for a busy school office?",
+            "options": [
+                "I'm organized and good with computers, which is useful in any office.",
+                "I'm patient with upset or rushed parents, and I've kept a front desk moving while phones and walk-ins overlapped.",
+                "I'm dedicated, hard-working, and passionate about making a difference in education, and I'd bring real energy to the school every day."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "If an answer would work equally well for any job, it isn't tailored.",
+            "explanation": "The best answer names a situation specific to school offices, like anxious parents and overlapping demands. The other two could be said for any role at any organization.",
+            "id": "ji_l43_q2",
+            "interviewerReaction": [
+                "neutral",
+                "impressed",
+                "unimpressed"
+            ]
+        },
+        {
+            "instruction": "You're applying for a junior analyst role. Your only related experience is a spreadsheet project for a campus club. Choose the strongest fit statement.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "How does your background fit this analyst position?",
+            "options": [
+                "I tracked membership and event attendance for a campus club and built a summary that helped us decide which events to keep. It's small, but it's the same habit: turn numbers into a decision.",
+                "I don't have formal analyst experience yet, but I took a statistics course and got a good grade.",
+                "I've always been good with numbers and love solving problems, so analysis feels natural to me, and I enjoy digging into data."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Flagging an error to your manager right away shows honesty and responsibility.",
-            "explanation": "Flagging an error to your manager right away shows honesty and responsibility, both essential workplace qualities.",
+            "hint": "Small experience still counts when you show what you did with it.",
+            "explanation": "A modest project becomes convincing when you show the outcome and link it to the job. A love of numbers is a claim, and a course grade shows study rather than application.",
             "id": "ji_l43_q3",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "reserved",
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "The interviewer wants proof. Choose the answer that supplies it.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you went above and beyond at work.",
+            "interviewerQuestion": "You said you're good under pressure. Can you back that up?",
             "options": [
-                "I noticed a process was inefficient, so I redesigned it on my own time and it saved the team hours each week.",
-                "I try to stick to exactly what's asked of me.",
-                "I don't think I've ever really gone above and beyond."
+                "During our year-end close I covered for a teammate who was out sick and still got both sets of reconciliations in on time. I stayed late two nights, but nothing went out wrong.",
+                "Absolutely. Pressure doesn't really bother me, I actually work better when things get intense, and I've never once missed a deadline.",
+                "I think so. I haven't had many high-pressure moments, but I stay calm in general."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "A specific example of extra effort with a measurable result is very strong.",
-            "explanation": "A specific example of extra effort with a measurable result gives real proof of initiative beyond your basic duties.",
+            "professionalismRating": 4,
+            "hint": "A claim about yourself becomes evidence when it's tied to something that happened.",
+            "explanation": "A specific situation with an outcome, including the cost of two late nights, is believable. Repeating the claim more forcefully adds no proof, and the hedged answer offers no example at all.",
             "id": "ji_l44_q1",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "skeptical",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that proves attention to detail instead of asserting it.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a time you exceeded expectations on a task.",
+            "interviewerQuestion": "How do I know you're really as detail-oriented as you say?",
             "options": [
-                "I usually just do exactly what's assigned, nothing more.",
-                "I was asked to update one document but ended up improving the whole filing system for the team.",
-                "I can't really think of a specific example."
+                "People always tell me I'm very thorough, so that's probably the best proof. Both my last managers said the same thing when I left.",
+                "Fair question. In my internship I caught an invoice that had been paid twice, and now I check totals against purchase orders before I submit anything.",
+                "You can see it in my resume, which has no typos and is formatted carefully."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Turning a small task into a bigger positive impact shows real initiative.",
-            "explanation": "Turning a small task into a bigger positive impact shows initiative and a genuine desire to add value.",
+            "professionalismRating": 4,
+            "hint": "Which answer describes something a careless person wouldn't have caught?",
+            "explanation": "Catching a real error and describing the habit it created is direct proof. A clean resume is weak evidence, and 'people tell me' repeats the claim through someone else.",
             "id": "ji_l44_q2",
             "interviewerReaction": [
-                "disappointed",
+                "skeptical",
                 "impressed",
-                "disappointed"
+                "unimpressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that shows teamwork through an action, not a label.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Give an example of a time you took on extra responsibility.",
+            "interviewerQuestion": "Everyone says they're a team player. What makes you one?",
             "options": [
-                "I try not to take on more than what's expected of me.",
-                "I don't remember taking on extra responsibility before.",
-                "When a coworker was out sick, I covered their tasks in addition to my own without being asked."
+                "I'm a team player because I get along with all my coworkers, and I've never had any real conflict in the years I've worked.",
+                "I always put the team first, and I'd never let anyone down, no matter what the situation was or how much it cost me.",
+                "New staff were guessing at closing tasks when our lead was out, so I wrote a one-page checklist."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Volunteering for extra responsibility without being asked shows real initiative.",
-            "explanation": "Volunteering for extra responsibility without being asked shows real initiative and dependability to your team.",
+            "professionalismRating": 4,
+            "hint": "Notice which answer names something you did that nobody asked you to do.",
+            "explanation": "Unprompted action that helped others shows what a team player does. Absolute promises like 'never let anyone down' are hard to believe, and getting along with people is pleasant but not the same as contributing.",
             "id": "ji_l44_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "unconvinced",
+                "wary",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "One of these sounds like it was memorized. Choose the answer that sounds like a real person with a real reason.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you learned something new quickly.",
+            "interviewerQuestion": "What draws you to hospitality?",
             "options": [
-                "I usually take a long time to learn new things.",
-                "I don't recall learning anything particularly quickly.",
-                "I learned a new inventory system in two days by practicing during breaks, so I could keep the team on schedule."
+                "I'm passionate about creating exceptional guest experiences and delivering excellence in every interaction, every single day of the week.",
+                "I like people, and it seemed fun, so I figured I'd give it a shot.",
+                "Honestly, I like the moment a stressed traveler arrives and leaves relaxed. I worked a hotel front desk one summer and that stuck with me."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "A specific timeline plus a reason for learning fast makes a strong story.",
-            "explanation": "A specific timeline paired with a clear reason for learning quickly shows both capability and motivation.",
+            "professionalismRating": 4,
+            "hint": "Listen for the answer that includes a detail only you could have supplied.",
+            "explanation": "A personal moment and a specific memory make the answer sound like yours. The polished slogan could belong to anyone, and 'seemed fun' is natural but gives no real reason.",
             "id": "ji_l45_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "unimpressed",
+                "neutral",
+                "pleased"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the description of your work style that sounds natural and still tells the interviewer something.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a time you had to pick up a new skill on short notice.",
+            "interviewerQuestion": "How do you like to work when a new project lands on your desk?",
             "options": [
-                "I had one day to learn a new reporting tool before a client meeting, so I focused on the essential features first.",
-                "I usually need a lot of time to feel comfortable with new tools.",
-                "I try to avoid situations where I have to learn something fast."
+                "I want a clear picture of the goal first, then I work fairly independently and check in at natural milestones.",
+                "My approach is collaborative, proactive, and results-oriented, with a strong focus on continuous improvement across every project.",
+                "It depends, I guess. I mostly just adapt to whatever the situation needs, and I'm fine with whatever the team decides works best."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Focusing on essential features first is a smart, efficient learning strategy.",
-            "explanation": "Focusing on essential features first is a smart, efficient learning strategy that gets you productive quickly.",
+            "professionalismRating": 4,
+            "hint": "A string of adjectives tells the interviewer less than one specific habit.",
+            "explanation": "A concrete pattern, like asking questions early and then working independently, is easy to picture and clearly your own. The adjective list sounds scripted, and 'it depends' avoids describing anything.",
             "id": "ji_l45_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "interested",
+                "unimpressed",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "The interviewer noticed a rehearsed answer. Choose the best recovery.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you adapted quickly to unfamiliar responsibilities.",
+            "interviewerQuestion": "That sounded pretty polished. What's the plain, everyday reason you want to work in logistics?",
             "options": [
-                "I usually feel uncomfortable taking on unfamiliar tasks.",
-                "When my manager was out unexpectedly, I quickly learned her key responsibilities to keep things running smoothly.",
-                "I haven't had to adapt to unfamiliar responsibilities before."
+                "No, that's genuinely how I feel. I've always had a deep passion for supply chain excellence.",
+                "Sorry, I practiced too much. I'll try to sound more natural, I just really wanted to make a good impression on you today.",
+                "Fair, that came out rehearsed. The plain version is that I like the puzzle of getting things to the right place on time, and I want to do that at a larger scale."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Stepping up during an unexpected gap shows adaptability and initiative.",
-            "explanation": "Stepping up to cover unfamiliar responsibilities shows both adaptability and initiative during an unexpected situation.",
+            "hint": "Think about what the interviewer is actually asking for when they say 'plain, everyday reason.'",
+            "explanation": "Acknowledging it briefly and then giving the real reason answers the request. Repeating the polished language doubles down, and apologizing without answering leaves the question open.",
             "id": "ji_l45_q3",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "skeptical",
+                "sympathetic",
+                "pleased"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "One answer talks about you instead of about how you'd handle it. Choose the one that answers the question.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you disagreed with a coworker.",
+            "interviewerQuestion": "How do you usually handle a customer who's upset about a delay?",
             "options": [
-                "I usually just go along with whatever others decide.",
-                "I tend to avoid disagreements altogether.",
-                "I disagreed with a coworker's approach to a project, so I calmly shared my perspective and we found a solution together."
+                "I acknowledge it first, say exactly what I know and when I'll update them, then follow up when I said I would.",
+                "I've handled delays for three years and I've always had good reviews from customers, including a few who wrote in to thank me.",
+                "Delays are usually caused by carriers, so it's hard to control, and customers should understand that."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Calmly sharing your view and finding a solution together is the strongest approach.",
-            "explanation": "Calmly sharing your view and working toward a shared solution shows both confidence and respect for others' input.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "The question asks how, so look for the answer that describes steps.",
+            "explanation": "The question asks about method, and the strongest answer gives one: acknowledge, inform, follow up. A record of good reviews answers a different question, and explaining the cause of delays sidesteps how you'd treat the customer.",
             "id": "ji_l46_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "reassured",
+                "neutral",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that responds to the specific tool the interviewer asked about.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a time you had a difference of opinion with someone at work.",
+            "interviewerQuestion": "What's your experience with scheduling software?",
             "options": [
-                "I disagreed with a teammate's data analysis, so I walked through my reasoning with them and we reached a better conclusion together.",
-                "I generally keep my opinions to myself to avoid conflict.",
-                "I usually just insist that my way is correct."
+                "I'm really good with technology in general, and I pick up new systems quickly, usually within a day or two of starting.",
+                "I've used Google Calendar and Calendly for appointments. Not enterprise tools yet, but I'm comfortable learning.",
+                "I've scheduled lots of people before, mostly by hand on a whiteboard, and honestly it went fine every single week for over a year."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Walking through your reasoning respectfully leads to better outcomes than insisting you're right.",
-            "explanation": "Walking through your reasoning respectfully, rather than insisting you're right, often leads to a better shared outcome.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Check which answer actually names something you've used.",
+            "explanation": "Naming the tools you've used, and being candid about what you haven't, answers the question. General tech confidence skips it, and a whiteboard is scheduling but not software.",
             "id": "ji_l46_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "neutral",
+                "reassured",
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that gives an honest, direct response with the actual detail requested.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a disagreement you had with a manager.",
+            "interviewerQuestion": "Have you ever worked with a budget?",
             "options": [
-                "I never disagree with my managers, even privately.",
-                "I disagreed with a decision, so I respectfully explained my concerns and ultimately supported the final call.",
-                "I usually just complain to coworkers instead of addressing it directly."
+                "No, but I've managed my own monthly budget for four years, and I've stayed within it every single month.",
+                "I'm very responsible with money and always try to avoid waste, so I'd be careful with any budget I was trusted with.",
+                "Only a small one: a $300 monthly supply budget for our student club, tracked in a running sheet."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Respectfully voicing concerns, then supporting the final decision, shows professionalism.",
-            "explanation": "Respectfully voicing concerns and then supporting the final decision shows professionalism and healthy workplace communication.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "A small real example beats a personal quality, and it beats a stretch from a different context.",
+            "explanation": "A small but genuine budget experience, honestly sized, answers the question. Being responsible with money is a trait rather than experience, and a personal budget is a stretch when a closer example exists.",
             "id": "ji_l46_q3",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "neutral",
+                "pleased"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that makes a case for you without claiming to beat other candidates.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you had to multitask effectively.",
+            "interviewerQuestion": "Why should we hire you over the other candidates?",
             "options": [
-                "I usually find it hard to focus on more than one thing.",
-                "I managed three client accounts at once by creating a clear schedule that tracked each one's priorities.",
-                "I try to avoid multitasking whenever I can."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "A specific system for tracking multiple priorities shows real multitasking skill.",
-            "explanation": "A specific system for tracking multiple priorities, like a schedule, proves genuine multitasking ability.",
-            "id": "ji_l47_q1",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a time you juggled several responsibilities at once.",
-            "options": [
-                "I usually let one responsibility slide when I have too much going on.",
-                "I prefer to focus on just one task and ignore the rest.",
-                "While training a new hire, I also kept up with my regular workload by setting aside dedicated time for each."
+                "I probably have less experience than some, but I'd work harder than anyone you could hire for this job, and I'd never give up.",
+                "Because I'm honestly the most motivated person you'll interview, and I'm willing to prove that from my very first day here.",
+                "I can't speak for the others, but I've already done this kind of intake work, so I'd be productive quickly."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Setting aside dedicated time for each responsibility shows strong organization.",
-            "explanation": "Setting aside dedicated time for each responsibility shows strong organization, rather than letting things slip.",
-            "id": "ji_l47_q2",
+            "hint": "You can't know the other candidates, so avoid answers that depend on comparing yourself to them.",
+            "explanation": "Focusing on what you bring, backed by relevant experience, is honest and persuasive. Claiming to be the most motivated can't be proved, and starting with 'less experience' while promising more effort undersells you and still makes a comparison.",
+            "id": "ji_l47_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "uncertain",
+                "wary",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names something genuinely distinctive about you.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you balanced multiple projects successfully.",
+            "interviewerQuestion": "We've got a lot of strong applicants. What sets you apart?",
             "options": [
-                "I used a shared tracker to monitor deadlines across two projects, which helped me deliver both on time.",
-                "I don't usually handle more than one project at a time.",
-                "I struggled a lot the last time I had multiple projects."
+                "I'm not sure I'm different from anyone else, but I'd give it my very best if you hired me and work hard every day.",
+                "Probably that I've been the customer on hold and the rep answering, which shapes how I handle calls.",
+                "I'm a hard worker with a great attitude, which is honestly pretty rare these days, and I never take that for granted."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "If many other candidates could say the same thing, it isn't distinctive.",
+            "explanation": "Something specific to your experience, like seeing both sides of a call, is hard to copy. 'Hard worker with a great attitude' is what most applicants say, and doubting your own difference invites the interviewer to doubt it too.",
+            "id": "ji_l47_q2",
+            "interviewerReaction": [
+                "reserved",
+                "intrigued",
+                "unimpressed"
+            ]
+        },
+        {
+            "instruction": "You have two years of scheduling experience. Choose the strongest one-reason answer.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Give me one reason to pick you.",
+            "options": [
+                "I've done this kind of scheduling for two years, so you wouldn't be paying for me to learn the basics.",
+                "I really need this job and I won't let you down.",
+                "I bring passion, energy, and a positive attitude to everything I do."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "A tracking tool used across projects shows a reliable system for balance.",
-            "explanation": "Using a tracking tool across multiple projects shows a reliable system, not just good luck or last-minute effort.",
+            "professionalismRating": 4,
+            "hint": "A reason should be about what you can do, not what you need or how you feel.",
+            "explanation": "Relevant experience turned into a benefit for the employer is a real reason. Needing the job is understandable but puts your interest ahead of theirs, and a list of positive traits is easy to say and hard to verify.",
             "id": "ji_l47_q3",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "sympathetic",
+                "unimpressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "It's a quick factual question. Choose the answer with the right amount of detail.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you received positive feedback.",
+            "interviewerQuestion": "Do you have experience with cash handling?",
             "options": [
-                "My manager praised my presentation skills after a client meeting, which motivated me to keep improving them.",
-                "I don't really remember getting much positive feedback.",
-                "I don't pay much attention to feedback either way."
+                "Yes, two years on a register, including closing out my own till each night.",
+                "Yes, I do.",
+                "Yes. I started at a bakery at sixteen, and before that I helped at my uncle's shop, and the register there was an old model that jammed a lot, so I learned a few tricks, and later at the supermarket things were different because we had scanners."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Connecting positive feedback to continued growth shows a strong mindset.",
-            "explanation": "Connecting positive feedback to continued growth shows you use praise as motivation, not just a moment of pride.",
+            "professionalismRating": 3,
+            "hint": "Consider what the interviewer needs to know in order to move on.",
+            "explanation": "A short answer with one confirming detail satisfies a factual question. The long version buries the answer in story, and a bare 'Yes' is correct but leaves the interviewer to ask for the details.",
             "id": "ji_l48_q1",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "reassured",
+                "waiting for more",
+                "losing interest"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that gives a clear reason in a couple of sentences.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a compliment you received about your work that meant a lot to you.",
+            "interviewerQuestion": "Give me the short version: why did you choose healthcare administration?",
             "options": [
-                "I can't really think of any specific feedback I've gotten.",
-                "A client once thanked me specifically for how clearly I explained a complex issue, which reinforced my focus on clear communication.",
-                "I don't put much weight on compliments from others."
+                "It's a long story, but basically several things led me there, and it's hard to say which one mattered most.",
+                "A family member was in the hospital for a while, and I noticed how much the front desk and billing teams shaped the experience. I wanted to be on that side.",
+                "Well, when I was younger I wanted to be a doctor, but then I learned about the years of study, so I looked at other options, and my cousin told me about administration, and I also considered IT for a while, and then..."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "A specific compliment tied to a skill shows real, credible strength.",
-            "explanation": "A specific compliment tied to a real skill, like clear communication, gives credible evidence of your strengths.",
+            "professionalismRating": 4,
+            "hint": "The interviewer asked for the short version, so look for a reason that fits in two sentences.",
+            "explanation": "One clear reason, told briefly, respects the request for a short version. Refusing to choose a reason avoids answering, and the winding chain of events makes the interviewer do the summarizing.",
             "id": "ji_l48_q2",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "interested",
+                "losing interest"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that matches the casual, factual tone of the question.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a performance review that went especially well.",
+            "interviewerQuestion": "How did you hear about this position?",
             "options": [
-                "I don't really remember much from my past reviews.",
-                "Reviews don't really matter much to me either way.",
-                "My last review highlighted my reliability, which encouraged me to keep taking on more responsibility."
+                "I was scrolling through a few job boards, and I've been on quite a few of them lately, and I sent out a bunch of applications last week, and yours was one of the ones I saw.",
+                "Online.",
+                "A friend who works here mentioned it, and the posting matched what I've been looking for."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Linking a strong review to increased responsibility shows growth.",
-            "explanation": "Linking a strong review to increased responsibility shows how you use feedback to grow within a role.",
+            "professionalismRating": 3,
+            "hint": "Think about which answer is complete without being a story.",
+            "explanation": "One sentence for the source and one for why it appealed is the right size. The rambling version answers slowly and reveals a scattershot search, and 'Online' is accurate but closes the conversation.",
             "id": "ji_l48_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "neutral",
+                "waiting for more",
+                "pleased"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "You have never used Salesforce, but you've used HubSpot for two years. Choose the honest, constructive answer.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you solved a difficult problem.",
+            "interviewerQuestion": "The posting asks for experience with Salesforce. Have you used it?",
             "options": [
-                "I usually let someone else handle difficult problems.",
-                "I can't think of a specific problem I've solved.",
-                "When our inventory numbers kept coming out wrong, I traced the issue to a data entry error and fixed the process."
+                "Yes, I've used it a bit.",
+                "I haven't, but I'm sure it's similar to everything else I've used and I'd pick it up in no time once I got started.",
+                "Not Salesforce specifically. I've used HubSpot for two years to track leads, so the concepts are familiar, and I've started a tutorial."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Tracing a problem to its root cause shows strong analytical skill.",
-            "explanation": "Tracing a problem to its root cause shows strong analytical skill, not just a quick fix that might not last.",
+            "hint": "One answer shouldn't be chosen no matter how confident it sounds, because it isn't true.",
+            "explanation": "Being honest about the gap while pointing to closely related experience and a step already taken is credible. Assuming it will be easy sounds careless, and claiming experience you don't have will fall apart at the first follow-up question.",
             "id": "ji_l49_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "concerned",
+                "uncertain",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "You've only presented to classmates and your own team. Choose the answer that's honest and shows movement.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a time you found a creative solution to an issue.",
+            "interviewerQuestion": "This role involves presenting to clients. Is that something you've done?",
             "options": [
-                "When two teams had conflicting schedules, I proposed a shared calendar that solved the conflict for everyone.",
-                "I usually just wait for someone else to come up with solutions.",
-                "I don't consider myself very creative when it comes to solving problems."
+                "Mostly to classmates and my own team so far, so nothing client-facing yet. I've been recording myself practicing and asking a friend for feedback, and I'd welcome coaching.",
+                "Not really. Presenting isn't my strength, so I'd hope it's a small part of the job and not something I'd do every week.",
+                "Yes, I've presented plenty of times to large groups, so that's really no problem for me at all."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "A solution that benefits multiple people shows thoughtful problem-solving.",
-            "explanation": "A solution that benefits multiple people at once shows thoughtful, creative problem-solving beyond a quick individual fix.",
+            "professionalismRating": 4,
+            "hint": "Consider what each answer would sound like if the interviewer asked to hear about your last client presentation.",
+            "explanation": "Naming your real level while showing effort to improve builds trust. Hoping to avoid part of the job signals reluctance, and overstating your experience creates a problem the moment someone follows up.",
             "id": "ji_l49_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
+                "encouraged",
+                "concerned",
+                "skeptical"
+            ]
+        },
+        {
+            "instruction": "Your only leadership experience is captaining a college team. Choose the answer that's honest without underselling.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "You'd be managing a small team here. Have you led people before?",
+            "options": [
+                "Leadership comes naturally to me, I've always been the one people look to, and teams tend to organize themselves around me.",
+                "Not in a workplace yet. I captained my college volleyball team for a season, which taught me a lot about keeping people motivated after losses, and I'm ready to learn the management side properly.",
+                "No, I haven't, so I'd probably be better suited to a non-leadership role."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Look for the answer that gives the interviewer something to weigh instead of a verdict on yourself.",
+            "explanation": "Naming the limit and then describing what the real experience taught you is fair and useful. Claiming natural leadership offers no evidence, and ruling yourself out saves the interviewer the trouble of considering you.",
+            "id": "ji_l49_q3",
+            "interviewerReaction": [
+                "skeptical",
+                "encouraged",
                 "disappointed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "You just said 'I'm a hard worker and I love helping people.' Choose the follow-up that proves it.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you resolved a technical issue on your own.",
+            "interviewerQuestion": "Can you give me an example of that?",
             "options": [
-                "I usually need someone else's help with technical issues.",
-                "When our system crashed, I researched the issue and found a fix before it caused major delays.",
-                "I try to avoid dealing with technical problems myself."
+                "It's hard to pick just one, there are honestly so many examples I could give you from my last few jobs if we had time.",
+                "Sure. Last winter our clinic had a flu surge and I stayed on the phones through lunch three days running.",
+                "Sure, I work hard in everything I do, whether it's work, school, or volunteering, and I always give it everything I have."
             ],
             "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Independently researching and resolving an issue shows resourcefulness.",
-            "explanation": "Independently researching and resolving an issue shows resourcefulness, an important quality for any role.",
-            "id": "ji_l49_q3",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you had to work closely with someone difficult.",
-            "options": [
-                "I worked with a coworker who was often blunt, so I focused on staying professional and kept our conversations task-focused.",
-                "I usually just avoid people I find difficult.",
-                "I complained to my manager right away instead of trying to work it out."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Staying professional and task-focused is the best strategy for difficult working relationships.",
-            "explanation": "Staying professional and task-focused, even with a difficult personality, shows maturity and strong interpersonal skills.",
+            "hint": "When someone asks for an example, the answer should contain one.",
+            "explanation": "A single vivid, specific situation is exactly what an example request wants. Restating the claim in more settings isn't an example, and saying there are too many to choose from delays without delivering.",
             "id": "ji_l50_q1",
             "interviewerReaction": [
+                "skeptical",
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "unimpressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "The posting stresses reliability and clear communication. Choose the answer that's tailored and backed by evidence.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a time you built a better working relationship with someone you initially clashed with.",
+            "interviewerQuestion": "What would your last supervisor say about you?",
             "options": [
-                "I usually just accept that some working relationships never improve.",
-                "I asked to be moved to a different team instead.",
-                "After a rocky start with a new teammate, I made an effort to understand their working style, and we became a strong team."
+                "She'd say I was one of her best employees and she was sad to see me go, and she even offered to be a reference.",
+                "I think she'd say good things, we got along well and never had any issues at any point while I worked there under her.",
+                "She'd say I'm dependable, since I covered extra shifts when we were short, and that I flag problems early."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Making an effort to understand someone's style often improves a difficult relationship.",
-            "explanation": "Making an effort to understand someone's working style shows patience and emotional intelligence, both valuable workplace skills.",
+            "hint": "Which answer picks up the qualities the posting cares about and proves them?",
+            "explanation": "The strongest answer chooses qualities the job values and attaches a behavior to each. Praise without detail is unverifiable, and 'never had any issues' says nothing about your work.",
             "id": "ji_l50_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "neutral",
+                "uncertain",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Several answers sound reasonable. Choose the one that shows realistic judgment about a first month.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you had to stay professional with someone who frustrated you.",
+            "interviewerQuestion": "What would you do in your first month here if we hired you?",
             "options": [
-                "I usually let my frustration show in the moment.",
-                "A colleague often interrupted me in meetings, so I calmly and privately asked if we could take turns speaking.",
-                "I try to just avoid speaking up in meetings with that person."
+                "Mostly listen and learn: shadow a few calls, learn your tools, and ask what a good first-month result looks like.",
+                "I'd hit the ground running and start improving processes right away, since I think fresh eyes can spot problems fast.",
+                "I'd probably just follow whatever training you give me."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Addressing frustration calmly and privately is more professional than avoiding it or reacting emotionally.",
-            "explanation": "Addressing frustration calmly and privately shows emotional control and directness, both signs of strong professionalism.",
+            "hint": "Think about what a new hire actually knows in week one, and what a manager would want from them.",
+            "explanation": "Learning first while asking how success is measured is realistic and proactive. Changing processes before understanding them is overconfident, and waiting passively for training shows little ownership.",
             "id": "ji_l50_q3",
             "interviewerReaction": [
-                "disappointed",
                 "impressed",
-                "disappointed"
+                "wary",
+                "uncertain"
             ]
         }
     ]

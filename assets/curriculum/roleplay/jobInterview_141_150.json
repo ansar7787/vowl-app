@@ -4,632 +4,632 @@
     "levels": "141-150",
     "quests": [
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names a decision entirely your own, directly disarming the anticipated challenge.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you drive organizational change?",
+            "interviewerQuestion": "Tell me about a failure — and before you answer, I'll say upfront that these stories often sound like someone else's fault by the end. Prove me wrong.",
             "options": [
-                "I set a clear vision and communicate it consistently across the organization.",
-                "I implement changes carefully to minimize disruption to the business.",
-                "I build a compelling case grounded in data, engage key stakeholders early to build genuine buy-in, and communicate progress transparently throughout."
+                "I understand the concern. I've had failures, and I try to take responsibility for them honestly, even when other factors were involved too.",
+                "That's a fair thing to watch for. I once launched a feature that didn't test well externally, though our testing resources were pretty limited at the time, which made it hard to get a fully representative sample before launch.",
+                "Fair warning taken. I once launched a feature without enough user testing, assuming feedback from a small internal group was representative. It wasn't, and we had to roll it back. That was entirely a call I made, not a testing resource issue, and I now require external testers on every launch regardless of timeline pressure."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Building buy-in through early stakeholder engagement and data is stronger than communicating vision alone or focusing mainly on minimizing disruption.",
-            "explanation": "Building a data-driven case and engaging stakeholders early creates genuine, lasting buy-in for change, while simply communicating a vision or focusing on minimizing disruption doesn't build that same active organizational support.",
+            "hint": "The strongest answer names a decision that was entirely yours, with no shared blame, to directly disarm the anticipated challenge.",
+            "explanation": "Naming a decision that was entirely your own, with no shared blame at all, directly disarms the exact challenge the interviewer flagged in advance. Mentioning limited resources reintroduces a shared-blame element even while trying to avoid it, and a general statement about taking responsibility doesn't actually demonstrate it with a real example.",
             "id": "ji_l141_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "unconvinced",
+                "skeptical",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names a real personal misjudgment with a real cost, directly addressing the interviewer's stated concern.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you led a major organizational change initiative.",
+            "interviewerQuestion": "Give me a real failure story. And I want to be direct: most people I ask this tell a story where they're secretly the hero. Don't do that.",
             "options": [
-                "I identified the informal leaders across departments early and enlisted them as champions, which accelerated adoption far beyond what a top-down mandate would have achieved.",
-                "I rolled out the change in phases to manage the transition smoothly.",
-                "I made sure leadership was aligned before communicating the change broadly."
+                "Understood. I once pushed back hard on a colleague's approach in a planning meeting, was wrong, and it cost us a week redoing work. I was overconfident and didn't ask enough questions before objecting. I now make myself ask at least two clarifying questions before pushing back on anything in a meeting.",
+                "That's fair. I once pushed back on an approach that turned out to be right after all, though the team dynamics at the time made it hard to fully evaluate either option before deciding.",
+                "I hear you. I try to be honest about my failures,. though someone else might see it differently."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Enlisting informal champions across the organization drives more genuine adoption than phased rollout or leadership alignment alone.",
-            "explanation": "Enlisting informal leaders as champions accelerates genuine, grassroots adoption, while a phased rollout or leadership alignment alone doesn't create that same organic momentum throughout the organization.",
+            "hint": "The strongest answer names a specific personal misjudgment with a real cost, addressing the interviewer's specific concern about hidden self-flattery.",
+            "explanation": "Naming a specific personal misjudgment, its real cost, and a genuine behavior change directly answers the interviewer's specific concern about hidden self-flattery. Blaming team dynamics reintroduces exactly the deflection the interviewer warned against, and a general claim of honesty without an actual story doesn't prove anything.",
             "id": "ji_l141_q2",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "skeptical",
+                "unconvinced"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that picks a genuine oversight, avoiding anything that could be read as a disguised strength.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What's your approach to overcoming resistance to organizational change?",
+            "interviewerQuestion": "I'd like a failure example, but I'll be honest, a lot of candidates give me a 'failure' that's really a backhanded brag. Give me a genuine one.",
             "options": [
-                "I address concerns as they come up and adjust the plan when reasonable.",
-                "I seek to genuinely understand the source of resistance, since it's often rooted in a legitimate concern that, once addressed, turns skeptics into advocates.",
-                "I communicate the benefits of the change clearly and repeatedly."
+                "Good to know. I once worked too many hours on a project because I cared so much about getting it right, which in hindsight probably wasn't the most sustainable approach. but I wouldn't swear to that.",
+                "Fair, I'll avoid that trap. I once assumed a client understood a proposal's scope without confirming it in writing, and it led to a real disagreement about what was included. That was a genuine oversight on my part, and I now always send a written scope summary before starting any project.",
+                "That makes sense. I'll try to think of a real one rather than something that sounds better than it actually is."
             ],
             "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Understanding the legitimate root of resistance is a more strategic approach than reactive adjustment or repeated messaging alone.",
-            "explanation": "Understanding the legitimate root of resistance can turn skeptics into advocates, a much stronger outcome than simply reacting to concerns as they arise or repeating the benefits without addressing the underlying hesitation.",
+            "hint": "The strongest answer picks a genuine oversight with a real cost, avoiding anything that could be read as a disguised strength.",
+            "explanation": "Picking a genuine oversight with a real cost and a concrete fix avoids the exact trap the interviewer named. Framing overwork as a failure is a classic disguised-brag, which is precisely what was flagged, and simply promising to avoid the trap without giving an actual example doesn't answer the question.",
             "id": "ji_l141_q3",
             "interviewerReaction": [
-                "disappointed",
+                "skeptical",
                 "impressed",
-                "disappointed"
+                "unconvinced"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names a specific action you took that was the actual mistake, not a shared cause.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you communicate a strategic vision to your team?",
+            "interviewerQuestion": "Tell me about a conflict with a coworker. I don't want the resolution, I want to know specifically what YOU did wrong in it.",
             "options": [
-                "I make sure the vision is communicated clearly and consistently.",
-                "I connect the vision to what matters most to each part of the organization, so people see not just what we're doing, but why it matters to them specifically.",
-                "I share the vision through multiple channels to ensure it reaches everyone."
+                "I've had conflicts before, and I try to reflect on my part in them honestly, even though it's not always easy to pinpoint exactly what I did wrong. or so it seems to me, anyway.",
+                "I assumed a coworker's silence in a meeting meant agreement, and I moved forward on a shared task without checking. She was actually opposed, and we ended up redoing part of the work. What I did wrong was not directly asking for her input instead of assuming it.",
+                "There was a conflict where a coworker and I disagreed about task ownership,. even though I haven't tested that assumption."
             ],
             "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Connecting the vision to individual relevance drives deeper understanding than clarity or reach alone.",
-            "explanation": "Connecting the vision to what matters to each part of the organization creates genuine personal relevance, while communicating clearly or through many channels alone doesn't guarantee that same depth of understanding and buy-in.",
+            "hint": "Name a specific action you took that was the actual mistake, not a shared or structural cause.",
+            "explanation": "Naming a specific action, assuming silence meant agreement, directly answers what was asked: your specific error. Pointing to unclear role definitions shifts toward a structural cause rather than your own action, and a general statement about reflecting doesn't name anything specific at all.",
             "id": "ji_l142_q1",
             "interviewerReaction": [
-                "disappointed",
+                "unconvinced",
                 "impressed",
-                "disappointed"
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that identifies one specific behavior of yours as the actual error.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you successfully rallied an organization around a new strategic direction.",
+            "interviewerQuestion": "Walk me through a disagreement you had at work, but specifically the part where you were in the wrong, not just what happened overall.",
             "options": [
-                "I presented the strategy clearly at an all-hands meeting.",
-                "I made sure leadership consistently reinforced the new direction.",
-                "I translated the high-level strategy into specific, meaningful implications for each team, so everyone understood exactly how their work connected to the bigger picture."
+                "I can think of a disagreement, and I know I probably wasn't perfect in how I handled it, though it's a bit hard to isolate one specific thing. even if I haven't fully thought it through.",
+                "There was a disagreement about a design direction,. though I could easily be wrong about that.",
+                "I insisted on a design direction a teammate disagreed with, without fully hearing her reasoning first. She was right, and I'd effectively shut her out of a decision that was partly hers to make. My mistake was not asking why before pushing my own view."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Translating strategy into specific, team-level implications creates deeper alignment than a single presentation or leadership reinforcement alone.",
-            "explanation": "Translating high-level strategy into specific implications for each team creates genuine, working-level alignment, while a single presentation or leadership reinforcement alone doesn't provide that same practical clarity.",
+            "professionalismRating": 4,
+            "hint": "Identify one specific behavior of yours that was the actual error, not a mutual dynamic.",
+            "explanation": "Identifying one specific behavior, pushing a view without hearing reasoning first, directly answers what was asked about your own error. Framing it as both having valid points sidesteps naming your specific wrongdoing, and admitting it's hard to isolate one thing fails to answer the direct question.",
             "id": "ji_l142_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "unconvinced",
+                "uncertain",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names a specific bias or action of yours, not a mutual communication issue.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you make a strategic vision feel real and actionable to employees?",
+            "interviewerQuestion": "Tell me about a real disagreement with someone at work, and I specifically want to hear where you were at fault, not a balanced summary.",
             "options": [
-                "I break the vision down into concrete near-term milestones so people can see tangible progress rather than an abstract long-term goal.",
-                "I check in regularly to make sure the vision stays top of mind.",
-                "I share stories and examples that bring the vision to life."
+                "I'd say I was at fault in some way, though it's honestly hard to single out exactly what without overanalyzing the situation. at least that's roughly how I'd think about it.",
+                "I dismissed a junior colleague's suggestion too quickly in a meeting because it sounded unconventional, without actually considering it. It turned out to be a better idea than the one we went with, and my fault was not giving it a fair hearing because of who suggested it, not what was said.",
+                "There was a disagreement about which approach to take, and looking back, both of us probably could have communicated a bit more clearly from the start."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Breaking a vision into concrete milestones makes it tangible more reliably than reminders or storytelling alone.",
-            "explanation": "Breaking a vision into concrete near-term milestones makes progress tangible and real, while regular reminders or storytelling alone doesn't provide that same measurable sense of forward motion.",
+            "hint": "Name a specific bias or action of yours that caused the disagreement, not a mutual communication issue.",
+            "explanation": "Naming a specific bias, dismissing an idea based on who said it, directly answers the request for where you were at fault. A comment about both people communicating unclearly avoids naming your specific fault, and admitting it's hard to single out anything doesn't answer the direct question at all.",
             "id": "ji_l142_q3",
             "interviewerReaction": [
+                "unconvinced",
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response with one extremely short, specific clarifying question, given the stated time pressure.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle a crisis under public scrutiny?",
+            "interviewerQuestion": "Quickly, tell me about your leadership experience. I don't have a lot of time for a long clarifying back-and-forth.",
             "options": [
-                "I prioritize transparent, timely communication with accurate information, even when the full picture isn't yet complete, rather than waiting for perfect certainty.",
-                "I make sure to gather all the facts before making any public statements.",
-                "I coordinate closely with communications and legal before responding."
+                "That's a good question, and leadership can mean a lot of different things, so let me just start with an example and you can let me know if it's not quite what you had in mind.",
+                "I don't want to take up too much time, so I'll just talk about something general related to leadership. though I recognize that might not hold up.",
+                "Understood, I'll be brief: do you mean formal management experience, or times I've led informally, like on a project? I have a strong example for either, just want to make sure I give you the most useful one."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Timely transparency, even with incomplete information, is often more effective in a public crisis than waiting for full certainty or extensive internal coordination first.",
-            "explanation": "Timely, transparent communication, even before every fact is confirmed, maintains public trust, while waiting for complete certainty or extensive internal coordination first can look evasive during a fast-moving public crisis.",
+            "hint": "Even under time pressure, one extremely short, specific clarifying question is faster than answering the wrong version of the question.",
+            "explanation": "A single, extremely short clarifying question respects the stated time pressure while still avoiding a wasted answer. Starting with a guess and hoping it's right risks answering the wrong question and needing a redo, which costs more time, and a vague general answer wastes the limited time on something unfocused.",
             "id": "ji_l143_q1",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain",
+                "uncertain",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response with a single, fast clarifying question rather than guessing or stalling.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you led your organization through a public crisis.",
+            "interviewerQuestion": "I need this fast: tell me about a time you handled pressure. Don't overthink the question, just answer.",
             "options": [
-                "I made sure our messaging was consistent across all channels.",
-                "I worked to correct any misinformation as quickly as possible.",
-                "I communicated what we knew, what we didn't yet know, and what we were doing to find out — which maintained credibility even amid uncertainty."
-            ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Being transparent about the limits of your knowledge maintains more credibility than consistent messaging or correcting misinformation alone.",
-            "explanation": "Being transparent about both what's known and unknown maintains genuine credibility during uncertainty, while consistent messaging or correcting misinformation alone doesn't provide that same honest, complete picture.",
-            "id": "ji_l143_q2",
-            "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "How do you protect trust when facing intense public criticism?",
-            "options": [
-                "I respond calmly and factually to address the criticism.",
-                "I acknowledge legitimate concerns directly and honestly, rather than getting defensive or over-explaining, which usually erodes trust further.",
-                "I focus on correcting any inaccuracies in the public narrative."
+                "Sure, I won't overthink it, I'll just go with whatever comes to mind first about pressure in general.",
+                "Quickly: do you mean time pressure on a deadline, or pressure from a difficult person? I've got a tight, relevant example either way.",
+                "Okay, I'll try to answer quickly without asking too many questions about it."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Directly acknowledging legitimate concerns protects trust more than calm factual responses or narrowly correcting inaccuracies.",
-            "explanation": "Directly acknowledging legitimate concerns shows genuine accountability, while responding calmly and factually or only correcting inaccuracies can feel evasive if it avoids the substance of the criticism.",
+            "professionalismRating": 4,
+            "hint": "A single, fast clarifying question is still faster overall than answering the wrong version and having to redo it.",
+            "explanation": "A single, fast clarifying question resolves real ambiguity without meaningfully costing time, especially compared to answering the wrong version. Going with whatever comes to mind first risks a less relevant answer, and simply promising to be quick without resolving the ambiguity doesn't actually address it.",
+            "id": "ji_l143_q2",
+            "interviewerReaction": [
+                "uncertain",
+                "reassured",
+                "uncertain"
+            ]
+        },
+        {
+            "instruction": "Choose the response with a single, sharp clarifying question, itself free of any preamble.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Just tell me about your biggest achievement, I don't need a whole preamble.",
+            "options": [
+                "Okay, I'll try to keep it short and just pick something.",
+                "No preamble, got it. I'll just go with whatever comes to mind first as my biggest achievement.",
+                "Got it, no preamble: are you interested in something recent and professional, or is an earlier one, even outside work, also useful?"
+            ],
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "A single, sharp clarifying question, stripped of any preamble itself, respects the interviewer's stated preference while still avoiding a wasted answer.",
+            "explanation": "A single, sharp clarifying question, with no preamble of its own, respects the exact request while still avoiding a mismatched answer. Picking whatever comes to mind first risks giving a less relevant example, and vaguely promising brevity without resolving the ambiguity doesn't actually address the request.",
             "id": "ji_l143_q3",
             "interviewerReaction": [
-                "disappointed",
+                "uncertain",
+                "uncertain",
+                "reassured"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that names something specific and different from the flagged cliché, with a concrete improvement step.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "What's a weakness of yours? And just so you know, I've heard 'I work too hard' a hundred times, so skip that one.",
+            "options": [
+                "Good to know. I'd say I sometimes take on too much, which I know can come across similarly to the answer you mentioned, but it's genuinely something I struggle with.",
+                "Fair, I'll skip it. A real one: I tend to avoid delegating tasks I could easily hand off, because it feels faster to just do them myself. I've started deliberately assigning at least one task per week that I'd normally keep, specifically to build that muscle.",
+                "That's helpful context. I'll think of something else, though weaknesses are always a bit hard to identify on the spot. but plenty of people might disagree with me there."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "The strongest answer names something specific and different from the flagged cliché, with a concrete improvement step.",
+            "explanation": "Naming something specific and genuinely different from the flagged cliché, plus a concrete improvement step, directly answers the challenge. Offering a weakness that resembles the flagged cliché risks landing in the same trap even while acknowledging it, and struggling to think of anything on the spot doesn't answer the question at all.",
+            "id": "ji_l144_q1",
+            "interviewerReaction": [
+                "uncertain",
                 "impressed",
                 "disappointed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that's clearly distinct from the flagged cliché, backed by a specific coping mechanism.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you negotiate a job offer?",
+            "interviewerQuestion": "Tell me a real weakness. Not 'perfectionism,' everyone says that, and it's basically a humble brag at this point.",
             "options": [
-                "I research market rates thoroughly, then advocate for what I've earned with specific evidence, while staying open to a mutually beneficial conversation.",
-                "I ask for a higher salary than what was initially offered.",
-                "I try to negotiate the best possible package I can."
+                "Fair enough. A real one: I sometimes avoid difficult conversations longer than I should, hoping things will resolve on their own. I've started setting myself a 48-hour rule, if something's still bothering me after two days, I address it directly.",
+                "That's understood. I'd say I hold myself to high standards, which I know sounds close to what you mentioned, but it does genuinely affect how I approach my work.",
+                "Okay, noted. It's hard to think of a good one on the spot that isn't something like that."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Grounding your negotiation in researched, specific evidence is stronger than simply asking for more or aiming broadly for the best deal.",
-            "explanation": "Grounding a negotiation in researched, specific evidence makes your case credible and collaborative, while simply asking for more or aiming broadly for the best deal doesn't provide that same substantive foundation.",
-            "id": "ji_l144_q1",
-            "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you successfully negotiated compensation.",
-            "options": [
-                "I explained why I felt I deserved a higher salary.",
-                "I presented specific market data alongside my track record, which gave the employer a clear, objective basis to justify a higher offer.",
-                "I compared offers I'd received from other companies."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Combining objective market data with your track record gives an employer a stronger basis to act than personal reasoning or competing offers alone.",
-            "explanation": "Combining objective market data with your track record gives the employer clear, defensible justification to act, while personal reasoning or simply citing competing offers doesn't provide that same objective foundation.",
+            "hint": "Choose something clearly distinct from the flagged answer, backed by a real, specific coping mechanism.",
+            "explanation": "Choosing something clearly distinct from the flagged cliché, with a specific coping mechanism, directly answers the challenge. An answer that closely resembles the flagged cliché risks the same criticism even with a disclaimer, and admitting difficulty thinking of anything fails to answer the question.",
             "id": "ji_l144_q2",
             "interviewerReaction": [
-                "disappointed",
                 "impressed",
+                "uncertain",
                 "disappointed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the genuinely distinct weakness with a specific, practical fix.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you approach negotiating beyond just salary?",
+            "interviewerQuestion": "Give me a genuine weakness, and please don't say 'I care too much,' that tells me nothing useful.",
             "options": [
-                "I focus mainly on getting the base salary right first.",
-                "I ask about benefits and perks after the salary is settled.",
-                "I think holistically about what matters most to me, like flexibility or growth opportunities, and negotiate the full package accordingly."
+                "Got it. I'll try to come up with something better, though it's a bit tricky to think of one that isn't like that. though I wouldn't stake much on that being right.",
+                "That's fair. I'd say I sometimes get very invested in the outcome of my work, which I know is close to what you just mentioned, but it does affect how I handle setbacks.",
+                "Understood. A genuine one: I can be slow to ask for help when I'm stuck, which sometimes costs more time than just asking would. I now give myself a 30-minute limit before I'm stuck alone before reaching out."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Considering the full package holistically from the start reflects more sophisticated negotiation than sequencing salary first.",
-            "explanation": "Considering the full package holistically reflects sophisticated, strategic negotiation, while focusing mainly on salary first or addressing benefits only afterward can miss opportunities to negotiate what actually matters most.",
+            "hint": "Choose a genuinely distinct weakness with a specific, practical fix, rather than a near-miss of the flagged cliché.",
+            "explanation": "Choosing a genuinely distinct weakness with a specific, practical fix directly answers the challenge posed. An answer that's a near-miss of the flagged cliché risks the same complaint even while trying to distance from it, and admitting difficulty finding a better one doesn't actually answer the question.",
             "id": "ji_l144_q3",
             "interviewerReaction": [
                 "disappointed",
-                "disappointed",
+                "uncertain",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that packs situation, action, and a quantified result into one tight statement.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you approach salary negotiation?",
+            "interviewerQuestion": "Give me a behavioral example, but keep it under 20 seconds, and make sure I understand the business impact, not just the story.",
             "options": [
-                "I anchor the conversation in the value I bring and market data, and I treat it as a collaborative discussion rather than a confrontation.",
-                "I try to negotiate confidently and stand firm on my number.",
-                "I wait to see the initial offer before deciding how to respond."
+                "Sure: I noticed duplicate data entry slowing our team, built a simple sync tool, and it cut a weekly two-hour task down to ten minutes, freeing up real staff time for higher-value work.",
+                "There was a time I solved a problem that saved some time for the team,. or that's at least what comes to mind right now.",
+                "Okay, I'll try to keep it short. So there was a data entry issue affecting the team, and I worked on a solution for it that ended up helping things run more smoothly overall in the department."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Framing negotiation around value and data, as a collaborative discussion, is more effective than firmness alone or a purely reactive approach.",
-            "explanation": "Framing the negotiation around value and data as a collaborative discussion builds a stronger, more sustainable outcome, while standing firm on a number or simply reacting to the initial offer doesn't provide that same substantive, cooperative foundation.",
+            "hint": "Pack a situation, action, and quantified business result into one tight, specific sentence or two.",
+            "explanation": "Packing situation, action, and a quantified business result into one tight statement satisfies both the time limit and the business-impact request. A vague summary without a number ignores the explicit request for business impact, and 'saved some time' with no specifics fails both requirements at once.",
             "id": "ji_l145_q1",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "unconvinced",
+                "losing interest"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that fits the problem, the fix, and a specific business consequence into one tight statement.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you had to negotiate for what you were worth.",
+            "interviewerQuestion": "Tell me about a time you solved a problem, in one breath, and make it clear why it actually mattered to the business.",
             "options": [
-                "I made a clear case for why I deserved more.",
-                "I documented my specific contributions and their measurable impact, which gave me a strong, evidence-based case for a higher salary.",
-                "I compared my compensation to industry standards."
+                "There was a problem I solved once, and it helped things run better for the business, generally speaking.",
+                "Okay, I'll try to be quick. So there was a backup in our support queue at one point, and I worked on fixing that, which ended up being a good thing for the team overall.",
+                "One breath: our support queue was backing up, I built an auto-triage rule, and average response time dropped from six hours to ninety minutes, directly improving customer retention on flagged accounts."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Documenting specific, measurable impact makes a stronger case than a general argument or a comparison to standards alone.",
-            "explanation": "Documenting specific, measurable contributions provides concrete, evidence-based leverage, while a general case for deserving more or a comparison to industry standards alone doesn't offer that same compelling proof of individual value.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Fit the problem, the fix, and a specific business consequence into one tight statement.",
+            "explanation": "Fitting the problem, fix, and a specific business consequence into one tight statement satisfies both constraints together. A vague summary without a number ignores the explicit request to show why it mattered, and a generic 'helped things run better' fails both requirements.",
             "id": "ji_l145_q2",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "How do you know when to push further in a salary negotiation versus accepting an offer?",
-            "options": [
-                "I push a bit further if I feel the offer could be improved.",
-                "I accept the offer if it feels reasonably fair overall.",
-                "I consider whether the gap between the offer and my researched value is significant enough to justify pushing, and I stay professional either way."
-            ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Basing the decision on a researched value gap gives clearer judgment than a general feeling about improvement or overall fairness.",
-            "explanation": "Basing the decision on a researched value gap provides objective, defensible judgment, while relying on a general feeling that the offer could be improved or simply that it feels fair doesn't offer that same grounded reasoning.",
-            "id": "ji_l145_q3",
-            "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "unconvinced",
+                "losing interest",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names the specific dollar or time figure directly, exactly as requested.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you explain an employment gap on your resume?",
+            "interviewerQuestion": "Quick behavioral example, please, and I want the actual dollar or time impact, not just that it 'went well.'",
             "options": [
-                "I explain what happened during that time as clearly as I can.",
-                "I keep the explanation brief since it's not the most important part of my story.",
-                "I explain the gap honestly and briefly, then pivot quickly to what I learned or accomplished during that time and how it prepared me for this role."
-            ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Pivoting quickly from an honest explanation to relevant growth is stronger than a purely factual account or minimizing the topic.",
-            "explanation": "Pivoting quickly from an honest explanation to relevant growth reframes the gap constructively, while a purely factual account or minimizing the topic doesn't give the interviewer that same forward-looking context.",
-            "id": "ji_l146_q1",
-            "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me how you'd address a career gap during an interview.",
-            "options": [
-                "I'd be upfront about the gap and focus on demonstrating that I'm ready and well-prepared to contribute now.",
-                "I'd explain the circumstances honestly and answer any follow-up questions.",
-                "I'd keep the explanation short and redirect to my qualifications."
+                "Quick one: I renegotiated a recurring vendor contract, which saved us about $8,000 a year, directly improving our department's margin.",
+                "Sure, I'll keep it brief. There was a vendor contract I worked on, and it ended up being a pretty good outcome for the department overall.",
+                "There's an example where things went well with a vendor, and it helped the budget somewhat. but honestly, I haven't really put that to the test."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Being upfront while emphasizing current readiness is a more complete answer than simply explaining circumstances or quickly redirecting.",
-            "explanation": "Being upfront about the gap while emphasizing current readiness gives a complete, confident picture, while simply explaining the circumstances or quickly redirecting doesn't provide that same reassuring context.",
+            "hint": "Name the specific dollar or time figure directly, since that's exactly what was requested.",
+            "explanation": "Naming the specific dollar figure directly satisfies the exact request made. A vague 'good outcome' ignores the explicit ask for a number, and 'helped the budget somewhat' fails to give any real impact at all.",
+            "id": "ji_l145_q3",
+            "interviewerReaction": [
+                "impressed",
+                "losing interest",
+                "unconvinced"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that picks one concrete, named detail and drops everything else.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "I want a specific example, with real names of tools or people if relevant, but keep the whole thing under ten seconds.",
+            "options": [
+                "I've done something specific like that before, but it's hard to be both specific and quick at the same time. though I can't point to anything concrete backing that up.",
+                "That's a tight ask, but I'll try. So there was a migration project involving a couple of tools, and it took a little while, but it ended up being worth it overall.",
+                "Sure: I migrated our CRM from Salesforce to HubSpot in six weeks, cutting our monthly software cost by $2,000."
+            ],
+            "correctAnswerIndex": 2,
+            "professionalismRating": 5,
+            "hint": "Pick one concrete, named detail and drop everything else, since specificity and brevity aren't actually in conflict if you choose carefully.",
+            "explanation": "Choosing one concrete, named detail and cutting everything else proves specificity and brevity aren't really in conflict. Softening the specifics under time pressure abandons half the request, and treating the two demands as impossible to satisfy together gives up without trying.",
+            "id": "ji_l146_q1",
+            "interviewerReaction": [
+                "unconvinced",
+                "losing interest",
+                "impressed"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that names the tool and number directly, in the fewest possible words.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Give me a specific number and the exact tool you used, but I really only have about ten seconds, so make it count.",
+            "options": [
+                "Ten seconds: Tableau dashboard, cut reporting time from three hours to twenty minutes weekly.",
+                "Okay, that's a tough combination, but I'll do my best. There was a tool involved in a reporting project, and it saved a meaningful amount of time each week.",
+                "I can think of an example, but naming the specific tool and keeping it that short at the same time is a bit difficult. but I'm not fully confident saying that."
+            ],
+            "correctAnswerIndex": 0,
+            "professionalismRating": 5,
+            "hint": "Name the tool and number directly, in the fewest possible words, rather than treating the two requests as competing.",
+            "explanation": "Naming the tool and number directly, in the fewest possible words, satisfies both demands at once. Softening the tool name into a vague reference drops half the request, and treating the combination as genuinely difficult stalls instead of just answering.",
             "id": "ji_l146_q2",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "losing interest",
+                "unconvinced"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that fits the industry and the number into a single, tight sentence.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How would you handle a question about a period of unemployment?",
+            "interviewerQuestion": "I want the actual client's industry and a real number, but keep it to one sentence, please.",
             "options": [
-                "I'd explain the situation and note that I'm eager to get back to work.",
-                "I'd answer honestly and highlight any relevant activity, like courses or projects, that shows I stayed engaged and prepared during that time.",
-                "I'd keep my answer factual without dwelling on the details."
+                "There's a client example I could give, but fitting it into one sentence with all those details is tricky.",
+                "One sentence: a healthcare client's onboarding time dropped from three weeks to five days after I redesigned the intake process.",
+                "I'll try to keep this to one sentence, though it's a bit hard to fit both the specific details and stay that brief at the same time."
             ],
             "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Highlighting specific relevant activity during the gap is stronger than a general explanation or a purely factual, brief answer.",
-            "explanation": "Highlighting specific relevant activity during the gap shows concrete engagement and preparation, while a general explanation or a purely factual, brief answer doesn't provide that same reassuring evidence.",
+            "hint": "Fit the industry and the number into a single, tight sentence rather than explaining why it's hard.",
+            "explanation": "Fitting the industry and the number into a single, tight sentence proves the request is entirely doable. Explaining the difficulty instead of just answering wastes the one sentence you were given, and stalling on the difficulty without ever giving the actual answer fails the request completely.",
             "id": "ji_l146_q3",
             "interviewerReaction": [
-                "disappointed",
+                "unconvinced",
                 "impressed",
-                "disappointed"
+                "losing interest"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that adapts smoothly to the pivot with a specific, ready example.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you explain a layoff from a previous role?",
+            "interviewerQuestion": "Tell me about your experience with — actually, hold on, let's switch. Instead, tell me about a time you had to learn something completely new under pressure.",
             "options": [
-                "I explain that it was a difficult situation outside of my control.",
-                "I explain it factually as part of a broader company decision, without personalizing it, and pivot to what I've done since and what I bring to this role.",
-                "I mention it briefly since it wasn't related to my performance."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Explaining it factually and pivoting forward is stronger than emphasizing difficulty or simply noting it wasn't performance-related.",
-            "explanation": "Explaining the layoff factually and pivoting forward to your current readiness gives a confident, complete picture, while emphasizing difficulty or briefly noting it wasn't performance-related doesn't provide that same forward-looking context.",
-            "id": "ji_l147_q1",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me how you'd discuss being let go from a company during a downsizing.",
-            "options": [
-                "I'd describe it as part of a broader restructuring, focus on what I accomplished while there, and connect it clearly to my readiness for this opportunity.",
-                "I'd explain it honestly and note that it happened to many others too.",
-                "I'd keep the explanation brief and move on to other topics."
+                "No problem. When our team lost our only data analyst, I had to quickly learn basic SQL to keep our weekly reports going, teaching myself over a single weekend using online tutorials and a lot of trial and error.",
+                "Okay, sure. I don't have a specific example ready for that one, but generally I'm someone who picks things up quickly under pressure. even though that's a bit of a hunch on my end.",
+                "Sure, switching topics, that's fine. So, um, let me think of something. There was a time I had to learn something new, though it's taking me a second to land on a specific example."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Connecting the layoff clearly to your readiness for the new role is a stronger answer than simply noting shared circumstances or minimizing the topic.",
-            "explanation": "Connecting the layoff clearly to your current readiness reframes it constructively, while simply noting that others were affected too or minimizing the topic doesn't provide that same forward-focused context.",
-            "id": "ji_l147_q2",
+            "hint": "Adapt smoothly to the pivot and give a specific, ready example rather than stalling or offering only a general trait.",
+            "explanation": "Adapting smoothly and delivering a specific, ready example shows real composure under an unexpected redirect. Visibly stalling to find an example undercuts confidence, and offering only a general trait without an actual story fails to answer the new question.",
+            "id": "ji_l147_q1",
             "interviewerReaction": [
                 "impressed",
                 "disappointed",
-                "disappointed"
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that pivots smoothly and delivers a specific example immediately.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How would you respond if asked directly why you were laid off?",
+            "interviewerQuestion": "What would you say your biggest — you know, let's actually go a different direction. Tell me instead about a time you had to say no to someone at work.",
             "options": [
-                "I'd explain the situation clearly and answer any follow-up questions.",
-                "I'd be honest but keep the focus on my qualifications for this role.",
-                "I'd answer honestly that it was part of a company-wide restructuring, then confidently highlight the strengths I've continued to build since."
-            ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Combining an honest, factual answer with confident emphasis on continued growth is stronger than a general clear explanation or simply shifting focus.",
-            "explanation": "Combining an honest, factual answer with confident emphasis on continued growth gives a complete, reassuring picture, while a general clear explanation or simply shifting focus to qualifications doesn't provide that same balanced context.",
-            "id": "ji_l147_q3",
-            "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "How do you approach succession planning?",
-            "options": [
-                "I make sure key roles have a clear backup plan in place.",
-                "I identify high-potential talent early and invest deliberately in their development, so the organization isn't dependent on any single person.",
-                "I look for opportunities to develop talent across the organization."
+                "Okay, that's fine. I don't have a specific example of saying no ready, but I'm generally comfortable doing it when needed. but that's just a guess on my part, honestly.",
+                "Happy to switch gears. A client once asked for a rush change two days before a launch that risked breaking something else. I explained the risk clearly and said no to the rush version, offering a safer version right after launch instead.",
+                "Sure, no problem changing direction. Let me think for a second, saying no to someone, that's an interesting one to come up with on the spot."
             ],
             "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Deliberately investing in identified high-potential talent early is a more proactive strategy than having a backup plan or general development efforts alone.",
-            "explanation": "Deliberately investing in identified high-potential talent early builds real organizational resilience, while simply having a backup plan or general development efforts alone doesn't provide that same targeted, proactive approach.",
-            "id": "ji_l148_q1",
+            "hint": "Pivot smoothly and deliver a specific, real example immediately, rather than visibly searching for one or offering only a general claim.",
+            "explanation": "Pivoting smoothly and immediately delivering a specific, real example shows real adaptability under a genuine mid-question redirect. Visibly needing a moment to think undercuts composure, and a general claim of comfort without an actual example doesn't answer the new question.",
+            "id": "ji_l147_q2",
             "interviewerReaction": [
                 "disappointed",
+                "impressed",
+                "uncertain"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that adapts to the pivot smoothly and gives a specific, complete example immediately.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "How do you typically approach — actually, scratch that, let's pivot. Tell me about a time your first instinct on something turned out to be wrong.",
+            "options": [
+                "Okay, switching gears, that's fine. Let me think of a time my first instinct was wrong, give me just a second here.",
+                "Sure, happy to pivot. I initially assumed a slow sales quarter was due to weak marketing, and pushed for a bigger ad budget. It turned out to be a pricing issue instead, which a quick customer survey revealed. I adjusted the price, and sales recovered within a month.",
+                "Sure, that's fine. I can't think of a specific one right now, but I'm sure it's happened before at some point."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Adapt to the pivot smoothly and give a specific, complete example immediately.",
+            "explanation": "Adapting to the pivot smoothly and giving a specific, complete example immediately shows genuine composure and preparedness. Asking for a moment to think undercuts confidence in the moment, and admitting you can't think of an example fails to answer the redirected question at all.",
+            "id": "ji_l147_q3",
+            "interviewerReaction": [
+                "uncertain",
                 "impressed",
                 "disappointed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names one specific, real behavior and its concrete effect, while staying measured.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you developed a successor for a key role.",
+            "interviewerQuestion": "I want an honest, specific critique of your last manager, not vague diplomacy, but I also expect you to stay professional about it. Go.",
             "options": [
-                "I identified someone with strong potential and provided mentorship.",
-                "I made sure key knowledge was documented and shared with the team.",
-                "I gave a high-potential employee increasing responsibility over time, with honest feedback along the way, until they were genuinely ready to step into the role."
+                "Fair ask. Specifically, he rarely gave feedback until formal reviews, which meant small issues went uncorrected for months. I found that genuinely frustrating, and it's part of why I now ask directly for regular feedback rather than waiting for it.",
+                "Honestly, he wasn't great, communication was a real weak point for him, and it made the team's work harder than it needed to be a lot of the time.",
+                "I'd rather keep that fairly general, since I don't feel totally comfortable getting too specific about a former manager in an interview. though it's a fairly rough sense of things on my part."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Gradually increasing responsibility with ongoing honest feedback builds genuine readiness more than mentorship alone or documentation alone.",
-            "explanation": "Gradually increasing responsibility with honest feedback builds genuine, tested readiness, while mentorship alone or simply documenting knowledge doesn't provide that same hands-on preparation for the role.",
+            "hint": "Name one specific, real behavior and its concrete effect, while staying measured and forward-looking rather than harsh.",
+            "explanation": "Naming one specific behavior, its real effect, and how you've adapted since satisfies both the honesty and professionalism demands at once. A broader, harsher critique meets the honesty request but risks the professionalism one, and staying vague fails the explicit request for specifics entirely.",
+            "id": "ji_l148_q1",
+            "interviewerReaction": [
+                "reassured",
+                "concerned",
+                "disappointed"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that names one specific behavior with a fair, balanced resolution.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Give me a real, specific criticism of a former colleague you worked closely with, but keep it fair and professional.",
+            "options": [
+                "I'd rather not single anyone out specifically, but I can say working relationships aren't always perfect.",
+                "Specifically, a colleague I worked with often missed sharing updates until I asked directly, which slowed down a few handoffs. To be fair, once I started asking proactively for status updates myself, it stopped being an issue between us.",
+                "Honestly, communication just wasn't her strong suit, and it caused a fair number of headaches on our team over the time we worked together."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Name one specific, real behavior with a concrete effect, while including a fair, balanced note about how it was handled.",
+            "explanation": "Naming one specific behavior, its concrete effect, and a fair resolution satisfies both the specificity and professionalism requested. A general character judgment about her communication skills risks sounding harsh without the balancing fairness, and refusing to be specific at all fails the direct request.",
             "id": "ji_l148_q2",
             "interviewerReaction": [
                 "disappointed",
-                "disappointed",
-                "impressed"
+                "reassured",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names one specific, systemic issue with a concrete effect and what you changed because of it.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you balance succession planning with retaining current talent?",
+            "interviewerQuestion": "Be honest and specific about a real flaw in how your last team operated, but don't just trash them either.",
             "options": [
-                "I frame development opportunities as growth for the whole team, so building future leaders doesn't feel like a threat to anyone's current position.",
-                "I try to create development opportunities for as many people as possible.",
-                "I communicate openly about the organization's long-term talent needs."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Framing development as shared growth addresses retention concerns more directly than broad opportunity or general communication alone.",
-            "explanation": "Framing development as shared growth for the whole team directly addresses potential retention concerns, while broad opportunities or general communication about talent needs doesn't provide that same reassurance to current employees.",
-            "id": "ji_l148_q3",
-            "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "How do you mentor future leaders?",
-            "options": [
-                "I share the lessons I've learned throughout my career.",
-                "I offer guidance and support whenever they need it.",
-                "I give them real decision-making opportunities with appropriate support, since genuine experience builds leadership skills faster than advice alone."
+                "I'd rather keep this fairly general, since I don't want to come across as being too critical of people I used to work with. or that's the impression I have, anyway.",
+                "Honestly, the team was pretty disorganized a lot of the time, and decisions felt kind of random depending on who happened to be around that day.",
+                "Specifically, decisions often got made in informal hallway conversations rather than being documented, which meant people who weren't in the room were regularly out of the loop. It was a real problem, and it's part of why I now insist on written decision logs."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Real decision-making experience with support builds leadership more effectively than shared lessons or general guidance alone.",
-            "explanation": "Real decision-making experience with appropriate support builds leadership skills through genuine practice, while sharing lessons learned or offering general guidance alone doesn't provide that same hands-on development.",
+            "hint": "Name one specific, systemic issue with a concrete effect and what you've changed because of it, staying measured throughout.",
+            "explanation": "Naming one specific, systemic issue, its concrete effect, and a resulting personal change satisfies both honesty and fairness at once. Calling the whole team 'disorganized' and 'random' is a broad, harsher judgment than the specificity requested, and staying general entirely fails the direct request for specifics.",
+            "id": "ji_l148_q3",
+            "interviewerReaction": [
+                "disappointed",
+                "concerned",
+                "reassured"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that commits to a clear, honest verdict, backed by what actually happened.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Tell me about a time you disagreed with a decision your manager made, and be honest with me: looking back, were you actually right?",
+            "options": [
+                "I've disagreed with decisions before, and I try to stay pretty neutral about who ended up being right in situations like that. though that's really just my own read on it.",
+                "I disagreed with a manager's call to cut a testing phase to save time. Looking back, I was right, we shipped a bug that testing likely would have caught, and it cost more time to fix afterward than the testing would have taken.",
+                "I disagreed with a decision once, and honestly it's hard to say in hindsight whether I was really right or if it just felt that way at the time."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 5,
+            "hint": "The strongest answer commits to a clear, honest verdict about who was right, backed by what actually happened.",
+            "explanation": "Committing to a clear, honest verdict, backed by what actually happened, answers the specific and unusual request for hindsight honesty. Hedging on whether you were really right avoids answering the direct question, and staying deliberately neutral sidesteps the entire point of what was asked.",
             "id": "ji_l149_q1",
             "interviewerReaction": [
                 "disappointed",
-                "disappointed",
-                "impressed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you helped develop someone into a leadership role.",
-            "options": [
-                "I gave them a meaningful project to lead independently, then debriefed honestly afterward on what went well and what to improve.",
-                "I provided regular coaching and encouragement along their journey.",
-                "I connected them with leadership training resources."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Real independent leadership experience, paired with honest debriefing, builds more capability than coaching or training resources alone.",
-            "explanation": "Real independent leadership experience paired with honest debriefing builds genuine, tested capability, while regular coaching or connecting them with training resources alone doesn't provide that same practical, applied development.",
-            "id": "ji_l149_q2",
-            "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that gives a clear, honest verdict, even if it means admitting the manager's call was better.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What's the most important thing you do when mentoring someone for a bigger role?",
+            "interviewerQuestion": "Give me a time you pushed back on something at work, and be honest, in hindsight, was your manager actually right instead?",
             "options": [
-                "I make sure to give them honest, constructive feedback.",
-                "I make sure they experience real consequences and real credit for their decisions, since that builds genuine ownership and confidence.",
-                "I try to be available and approachable when they need support."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Real ownership through consequences and credit builds confidence more powerfully than feedback or availability alone.",
-            "explanation": "Real ownership through genuine consequences and credit builds authentic confidence and leadership readiness, while honest feedback or being approachable alone doesn't provide that same depth of practical development.",
-            "id": "ji_l149_q3",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle a major project failure?",
-            "options": [
-                "I make sure to communicate transparently with all stakeholders.",
-                "I focus the team on recovering and moving forward quickly.",
-                "I take ownership publicly, lead a thorough analysis of what went wrong, and make sure the lessons genuinely change how we operate going forward."
+                "I've pushed back on things before, and I generally try not to dwell too much on who turns out to be right afterward.",
+                "I pushed back on something once, and it's honestly hard to say who was more right, since both approaches probably had some merit to them.",
+                "I pushed back on a manager's decision to launch a feature earlier than I thought was ready. In hindsight, she was right, the early feedback we got let us fix real issues before a bigger rollout, faster than my more cautious plan would have."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Ensuring lessons genuinely change future operations is a more complete response than transparency or moving forward alone.",
-            "explanation": "Ensuring lessons genuinely change future operations demonstrates real accountability and growth, while transparent communication or simply moving forward quickly alone doesn't guarantee that same lasting improvement.",
-            "id": "ji_l150_q1",
+            "hint": "Give a clear, honest answer about who was actually right, even if it means admitting your manager's call was better.",
+            "explanation": "Giving a clear, honest answer, even one that admits your manager was right, directly answers a genuinely difficult hindsight question with real self-awareness. Suggesting both sides had merit avoids committing to an honest verdict, and refusing to dwell on it sidesteps the entire point of the question.",
+            "id": "ji_l149_q2",
             "interviewerReaction": [
                 "disappointed",
-                "disappointed",
+                "uncertain",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that honestly admits real, partial wrongness with specifics.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you led a team through a significant project failure.",
+            "interviewerQuestion": "Tell me about a stance you took at work that others disagreed with, and honestly, were you actually wrong?",
             "options": [
-                "I led an honest post-mortem where the team could speak freely about what went wrong, then we implemented specific changes to prevent it from recurring.",
-                "I took responsibility and made sure leadership was informed promptly.",
-                "I focused on rebuilding the team's confidence after the setback."
+                "I insisted on a stricter data validation process that slowed our team down initially, and a few people disagreed. Honestly, I was partly wrong, the process was more rigid than it needed to be, and I later simplified it once I saw where it was actually causing unnecessary friction.",
+                "I've taken stances before, and I try not to focus too much on whether I was ultimately right or wrong about them.",
+                "I took a stance others disagreed with once, and I still believe I was right about most of it, even if a few of the specifics could have gone differently."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "An honest post-mortem leading to specific preventive changes shows more thorough accountability than prompt reporting or confidence-rebuilding alone.",
-            "explanation": "An honest post-mortem leading to specific preventive changes shows thorough, lasting accountability, while prompt reporting to leadership or focusing mainly on rebuilding confidence alone doesn't provide that same systemic improvement.",
-            "id": "ji_l150_q2",
+            "professionalismRating": 4,
+            "hint": "The strongest answer honestly admits real, partial wrongness with specifics, not just a technicality.",
+            "explanation": "Honestly admitting real, partial wrongness with specifics shows genuine self-awareness under a demanding honesty test. Insisting you were mostly right while conceding only minor specifics dodges the actual question, and refusing to reflect on right or wrong sidesteps it entirely.",
+            "id": "ji_l149_q3",
             "interviewerReaction": [
                 "impressed",
                 "disappointed",
+                "uncertain"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that satisfies both constraints, personal ownership and brevity, in one tight sentence.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Tell me about a failure, and I want to hear specifically what you did wrong, not the circumstances, but keep your whole answer under 30 seconds.",
+            "options": [
+                "Thirty seconds: I approved a design without testing it on mobile first, and it broke for a third of our users. My mistake, not a testing gap. I now test every design on mobile before any approval.",
+                "That's a tight ask. So there was a time a design didn't work well, and there were a few factors involved, including some testing limitations we had at the time.",
+                "I've had failures, and I try to own my part in them, though it's a bit hard to be both quick and specific about what I did wrong at the same time. but I haven't really examined that closely."
+            ],
+            "correctAnswerIndex": 0,
+            "professionalismRating": 5,
+            "hint": "Satisfy both constraints, personal ownership and brevity, by naming one specific action in one tight sentence.",
+            "explanation": "Naming one specific action in one tight sentence satisfies both the ownership requirement and the time limit simultaneously. Mentioning testing limitations reintroduces shared blame, exactly what was excluded, and claiming the two constraints are hard to satisfy together stalls instead of just answering.",
+            "id": "ji_l150_q1",
+            "interviewerReaction": [
+                "impressed",
+                "skeptical",
                 "disappointed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that satisfies all three parts, your fault, the lesson, and role relevance, in one connected answer.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you turn a project failure into a valuable learning experience?",
+            "interviewerQuestion": "Give me a conflict example, specifically where you were wrong, and connect it to why that makes you a better fit for this team, all in one tight answer.",
             "options": [
-                "I reflect on what went wrong and apply those lessons going forward.",
-                "I make sure the specific lessons are documented and shared broadly, so the same mistake doesn't happen again elsewhere in the organization.",
-                "I discuss the failure openly with my team to understand what happened."
+                "I can think of a conflict, but connecting my own fault in it to why I'm a good fit here in one answer is a bit tricky to do well.",
+                "That's a lot to cover at once. There was a conflict where I probably wasn't fully right,. even if I can't be fully certain about it.",
+                "I once dismissed a teammate's data-based objection because I trusted my gut over her numbers. I was wrong, and it cost us a week. That's exactly why I'd be a good fit here, I've learned to weigh evidence over instinct, which I know matters a lot on a data-driven team like this one."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Documenting and sharing lessons broadly extends the value beyond personal reflection or a single team discussion.",
-            "explanation": "Documenting and sharing lessons broadly extends the value of the failure across the whole organization, while personal reflection or a single team discussion alone doesn't provide that same wider, lasting impact.",
-            "id": "ji_l150_q3",
+            "hint": "Satisfy all three parts, your fault, the lesson, and role relevance, in one connected, specific answer.",
+            "explanation": "Satisfying all three parts, your specific fault, the lesson learned, and explicit role relevance, in one connected answer meets a genuinely demanding combined request. Softening your fault into 'probably wasn't fully right' avoids real specificity, and admitting the combination is tricky stalls instead of attempting a real answer.",
+            "id": "ji_l150_q2",
             "interviewerReaction": [
                 "disappointed",
+                "uncertain",
+                "impressed"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that satisfies both the specificity of the weakness and the concreteness of a current, active step.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "One more like that: tell me about a weakness, but give me a real one, not a cliché, and tell me specifically what you're doing about it right now, this month, not just generally.",
+            "options": [
+                "Real one, and current: I avoid giving critical feedback to peers. This month specifically, I've committed to giving at least one piece of direct, constructive feedback in every project retro, starting with one I gave just last week.",
+                "That's a lot to nail down at once. I'd say I sometimes hold back feedback, and I'm generally trying to work on being more direct with people around me.",
+                "I can think of a real weakness, but pinning down something specific I'm doing about it this exact month is a bit harder to do on the spot. but that's admittedly a bit of a simplification."
+            ],
+            "correctAnswerIndex": 0,
+            "professionalismRating": 5,
+            "hint": "Satisfy both the specificity of the weakness and the concreteness of a current, active step, not a general intention.",
+            "explanation": "Satisfying both the specificity of a genuine weakness and a concrete, current action taken this month meets a demanding combined request fully. A vague intention to 'work on being more direct' fails the current-and-concrete part of the ask, and admitting difficulty pinning down a current step stalls instead of answering.",
+            "id": "ji_l150_q3",
+            "interviewerReaction": [
                 "impressed",
+                "uncertain",
                 "disappointed"
             ]
         }

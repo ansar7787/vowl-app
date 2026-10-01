@@ -1,637 +1,668 @@
 {
-    "gameType": "directIndirectSpeech",
-    "batchIndex": 1,
-    "levels": "1-10",
-    "quests": [
-        {
-            "id": "dis_l1_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I like chocolate cake.'",
-            "options": [
-                "She said that she liked chocolate cake.",
-                "She said that I liked chocolate cake.",
-                "She said that she likes chocolate cake."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said that she liked chocolate cake.",
-            "sentence": "She said, 'I like chocolate cake.'",
-            "hint": "Shift 'like' one step back in time, and change 'I' to match the speaker.",
-            "explanation": "Present simple 'like' shifts to past simple 'liked', and 'I' becomes 'she' since we're reporting her words.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l1_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: Tom said, 'My sister is a nurse.'",
-            "options": [
-                "Tom said that his sister is a nurse.",
-                "Tom said that my sister was a nurse.",
-                "Tom said that his sister was a nurse."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Tom said that his sister was a nurse.",
-            "sentence": "Tom said, 'My sister is a nurse.'",
-            "hint": "'My' belongs to Tom, so it must change to match him.",
-            "explanation": "'My' shifts to 'his' because Tom is the speaker, and 'is' shifts to 'was' in reported speech.",
-            "grammarRule": "Pronoun & Possessive Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l1_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I am cooking dinner.'",
-            "options": [
-                "He said that he was cooking dinner.",
-                "He said that I was cooking dinner.",
-                "He said that he is cooking dinner."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He said that he was cooking dinner.",
-            "sentence": "He said, 'I am cooking dinner.'",
-            "hint": "Present continuous shifts one step back to past continuous, and the pronoun changes too.",
-            "explanation": "'Am cooking' (present continuous) shifts to 'was cooking' (past continuous), and 'I' becomes 'he'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l2_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The student said, 'I understand the lesson.'",
-            "options": [
-                "The student said that I understood the lesson.",
-                "The student said that she understands the lesson.",
-                "The student said that she understood the lesson."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The student said that she understood the lesson.",
-            "sentence": "The student said, 'I understand the lesson.'",
-            "hint": "Shift 'understand' back in time, and use a pronoun for the student.",
-            "explanation": "Present simple 'understand' shifts to past simple 'understood', and 'I' becomes 'she'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l2_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The teacher said, 'Our classroom needs new chairs.'",
-            "options": [
-                "The teacher said that our classroom needed new chairs.",
-                "The teacher said that their classroom needed new chairs.",
-                "The teacher said that their classroom needs new chairs."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The teacher said that their classroom needed new chairs.",
-            "sentence": "The teacher said, 'Our classroom needs new chairs.'",
-            "hint": "'Our' belongs to the teacher's group, so it must shift like other possessives.",
-            "explanation": "'Our' shifts to 'their' because the reporter isn't part of that group, and 'needs' shifts to 'needed'.",
-            "grammarRule": "Pronoun & Possessive Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l2_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'It is raining outside.'",
-            "options": [
-                "She said that it was raining outside.",
-                "She said that it had rained outside.",
-                "She said that it is raining outside."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said that it was raining outside.",
-            "sentence": "She said, 'It is raining outside.'",
-            "hint": "Present continuous shifts one step back to past continuous.",
-            "explanation": "'Is raining' (present continuous) shifts to 'was raining' (past continuous) — one step back, not to past perfect.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l3_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: My brother said, 'I have a new puppy.'",
-            "options": [
-                "My brother said that he has a new puppy.",
-                "My brother said that I had a new puppy.",
-                "My brother said that he had a new puppy."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "My brother said that he had a new puppy.",
-            "sentence": "My brother said, 'I have a new puppy.'",
-            "hint": "Shift 'have' back in time, and change the pronoun to match your brother.",
-            "explanation": "Present simple 'have' shifts to past simple 'had', and 'I' becomes 'he'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l3_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: Maria said, 'I miss my friends.'",
-            "options": [
-                "Maria said that she missed her friends.",
-                "Maria said that she missed my friends.",
-                "Maria said that she misses her friends."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Maria said that she missed her friends.",
-            "sentence": "Maria said, 'I miss my friends.'",
-            "hint": "Both the pronoun and the possessive word need to shift to match Maria.",
-            "explanation": "'I' becomes 'she' and 'my' becomes 'her'; 'miss' shifts to 'missed'.",
-            "grammarRule": "Pronoun & Possessive Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l3_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I am buying a new jacket.'",
-            "options": [
-                "He said that he is buying a new jacket.",
-                "He said that he was buy a new jacket.",
-                "He said that he was buying a new jacket."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "He said that he was buying a new jacket.",
-            "sentence": "He said, 'I am buying a new jacket.'",
-            "hint": "Shift the continuous tense one step back in time.",
-            "explanation": "'Am buying' (present continuous) shifts to 'was buying' (past continuous).",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l4_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I wake up early every day.'",
-            "options": [
-                "She said that she woke up early every day.",
-                "She said that I woke up early every day.",
-                "She said that she wakes up early every day."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said that she woke up early every day.",
-            "sentence": "She said, 'I wake up early every day.'",
-            "hint": "Shift the verb back in time, and match the pronoun to the speaker.",
-            "explanation": "Present simple 'wake up' shifts to past simple 'woke up', and 'I' becomes 'she'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l4_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The coach said, 'My team plays well together.'",
-            "options": [
-                "The coach said that my team played well together.",
-                "The coach said that his team plays well together.",
-                "The coach said that his team played well together."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The coach said that his team played well together.",
-            "sentence": "The coach said, 'My team plays well together.'",
-            "hint": "'My' belongs to the coach, so it changes like other possessives.",
-            "explanation": "'My' shifts to 'his', and 'plays' shifts to 'played' in reported speech.",
-            "grammarRule": "Pronoun & Possessive Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l4_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: They said, 'We are watching a movie.'",
-            "options": [
-                "They said that we were watching a movie.",
-                "They said that they were watching a movie.",
-                "They said that they are watching a movie."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "They said that they were watching a movie.",
-            "sentence": "They said, 'We are watching a movie.'",
-            "hint": "Shift the tense back, and change 'we' since you're not part of that group.",
-            "explanation": "'Are watching' shifts to 'were watching', and 'we' becomes 'they'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l5_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I love spicy food.'",
-            "options": [
-                "He said that I loved spicy food.",
-                "He said that he loves spicy food.",
-                "He said that he loved spicy food."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "He said that he loved spicy food.",
-            "sentence": "He said, 'I love spicy food.'",
-            "hint": "Shift 'love' back in time to match the reported speech pattern.",
-            "explanation": "Present simple 'love' shifts to past simple 'loved', and 'I' becomes 'he'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l5_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The children said, 'Our mom is a doctor.'",
-            "options": [
-                "The children said that our mom was a doctor.",
-                "The children said that their mom was a doctor.",
-                "The children said that their mom is a doctor."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The children said that their mom was a doctor.",
-            "sentence": "The children said, 'Our mom is a doctor.'",
-            "hint": "'Our' belongs to the children, so it must shift too.",
-            "explanation": "'Our' shifts to 'their', and 'is' shifts to 'was'.",
-            "grammarRule": "Pronoun & Possessive Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l5_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I am charging my phone.'",
-            "options": [
-                "She said that she was charging my phone.",
-                "She said that she is charging her phone.",
-                "She said that she was charging her phone."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She said that she was charging her phone.",
-            "sentence": "She said, 'I am charging my phone.'",
-            "hint": "Two things shift here: the continuous tense, and the word for 'my'.",
-            "explanation": "'Am charging' shifts to 'was charging' (tense), and 'my' shifts to 'her' (possessive) since she's the speaker.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Tense shifted back"
-            ]
-        },
-        {
-            "id": "dis_l6_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I feel sick.'",
-            "options": [
-                "He said that he feels sick.",
-                "He said that I felt sick.",
-                "He said that he felt sick."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "He said that he felt sick.",
-            "sentence": "He said, 'I feel sick.'",
-            "hint": "Shift the verb back in time, and match the pronoun to the speaker.",
-            "explanation": "Present simple 'feel' shifts to past simple 'felt', and 'I' becomes 'he'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l6_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: My friends said, 'Our plans are ready.'",
-            "options": [
-                "My friends said that their plans are ready.",
-                "My friends said that our plans were ready.",
-                "My friends said that their plans were ready."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "My friends said that their plans were ready.",
-            "sentence": "My friends said, 'Our plans are ready.'",
-            "hint": "'Our' belongs to your friends, so it shifts to match them.",
-            "explanation": "'Our' shifts to 'their', and 'are' shifts to 'were'.",
-            "grammarRule": "Pronoun & Possessive Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l6_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I am practicing tennis.'",
-            "options": [
-                "She said that she practices tennis.",
-                "She said that she is practicing tennis.",
-                "She said that she was practicing tennis."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She said that she was practicing tennis.",
-            "sentence": "She said, 'I am practicing tennis.'",
-            "hint": "The continuous tense shifts one step back.",
-            "explanation": "'Am practicing' (present continuous) shifts to 'was practicing' (past continuous), not to simple present.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l7_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The boy said, 'I know the answer.'",
-            "options": [
-                "The boy said that I knew the answer.",
-                "The boy said that he knows the answer.",
-                "The boy said that he knew the answer."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The boy said that he knew the answer.",
-            "sentence": "The boy said, 'I know the answer.'",
-            "hint": "Shift 'know' back in time, and match the pronoun.",
-            "explanation": "Present simple 'know' shifts to past simple 'knew', and 'I' becomes 'he'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l7_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: Anna said, 'My laptop is very slow.'",
-            "options": [
-                "Anna said that my laptop was very slow.",
-                "Anna said that her laptop was very slow.",
-                "Anna said that her laptop is very slow."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Anna said that her laptop was very slow.",
-            "sentence": "Anna said, 'My laptop is very slow.'",
-            "hint": "'My' belongs to Anna, so it must shift too.",
-            "explanation": "'My' shifts to 'her', and 'is' shifts to 'was'.",
-            "grammarRule": "Pronoun & Possessive Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l7_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: They said, 'We are baking cookies.'",
-            "options": [
-                "They said that they were baking cookies.",
-                "They said that we were baking cookies.",
-                "They said that they are baking cookies."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "They said that they were baking cookies.",
-            "sentence": "They said, 'We are baking cookies.'",
-            "hint": "Shift the tense, and change 'we' since you're reporting, not included.",
-            "explanation": "'Are baking' shifts to 'were baking', and 'we' becomes 'they'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l8_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: My dad said, 'I trust you completely.'",
-            "options": [
-                "My dad said that he trusts me completely.",
-                "My dad said that he trusted me completely.",
-                "My dad said that he trusted you completely."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "My dad said that he trusted me completely.",
-            "sentence": "My dad said, 'I trust you completely.'",
-            "hint": "Shift the verb, and remember 'you' changes when the listener is 'me'.",
-            "explanation": "'Trust' shifts to 'trusted', and 'you' becomes 'me' since Dad was talking to me.",
-            "grammarRule": "Pronoun & Possessive Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l8_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The forecaster said, 'It looks cloudy.'",
-            "options": [
-                "The forecaster said that it looked cloudy.",
-                "The forecaster said that it had looked cloudy.",
-                "The forecaster said that it looks cloudy."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The forecaster said that it looked cloudy.",
-            "sentence": "The forecaster said, 'It looks cloudy.'",
-            "hint": "Shift the verb one simple step back in time, not further.",
-            "explanation": "Present simple 'looks' shifts to past simple 'looked' — just one step back, not to past perfect.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l8_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'My dog is sleeping.'",
-            "options": [
-                "He said that his dog was sleeping.",
-                "He said that my dog was sleeping.",
-                "He said that his dog is sleeping."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He said that his dog was sleeping.",
-            "sentence": "He said, 'My dog is sleeping.'",
-            "hint": "Both the possessive word and the tense shift here.",
-            "explanation": "'My' shifts to 'his', and 'is sleeping' shifts to 'was sleeping'.",
-            "grammarRule": "Pronoun & Possessive Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l9_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I walk to work every morning.'",
-            "options": [
-                "She said that she walked to work every morning.",
-                "She said that she walks to work every morning.",
-                "She said that I walked to work every morning."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said that she walked to work every morning.",
-            "sentence": "She said, 'I walk to work every morning.'",
-            "hint": "Shift the habitual verb back in time.",
-            "explanation": "Present simple 'walk' shifts to past simple 'walked', and 'I' becomes 'she'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l9_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The customer said, 'My order is late.'",
-            "options": [
-                "The customer said that his order was late.",
-                "The customer said that my order was late.",
-                "The customer said that his order is late."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The customer said that his order was late.",
-            "sentence": "The customer said, 'My order is late.'",
-            "hint": "'My' belongs to the customer, so it changes.",
-            "explanation": "'My' shifts to 'his', and 'is' shifts to 'was'.",
-            "grammarRule": "Pronoun & Possessive Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l9_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: They said, 'We are enjoying the show.'",
-            "options": [
-                "They said that we were enjoying the show.",
-                "They said that they enjoy the show.",
-                "They said that they were enjoying the show."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "They said that they were enjoying the show.",
-            "sentence": "They said, 'We are enjoying the show.'",
-            "hint": "Shift the continuous tense, and change the pronoun for the group.",
-            "explanation": "'Are enjoying' shifts to 'were enjoying', and 'we' becomes 'they'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l10_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I feel much better.'",
-            "options": [
-                "He said that I felt much better.",
-                "He said that he feels much better.",
-                "He said that he felt much better."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "He said that he felt much better.",
-            "sentence": "He said, 'I feel much better.'",
-            "hint": "Shift the verb, and match the pronoun to him.",
-            "explanation": "Present simple 'feel' shifts to past simple 'felt', and 'I' becomes 'he'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l10_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: Lily said, 'My best friend lives in Paris.'",
-            "options": [
-                "Lily said that her best friend lives in Paris.",
-                "Lily said that her best friend lived in Paris.",
-                "Lily said that my best friend lived in Paris."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Lily said that her best friend lived in Paris.",
-            "sentence": "Lily said, 'My best friend lives in Paris.'",
-            "hint": "'My' belongs to Lily, so it changes to match her.",
-            "explanation": "'My' shifts to 'her', and 'lives' shifts to 'lived'.",
-            "grammarRule": "Pronoun & Possessive Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l10_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The tourists said, 'We are having a great time.'",
-            "options": [
-                "The tourists said that we were having a great time.",
-                "The tourists said that they were having a great time.",
-                "The tourists said that they are having a great time."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The tourists said that they were having a great time.",
-            "sentence": "The tourists said, 'We are having a great time.'",
-            "hint": "Shift the tense, and change 'we' to match the group being reported.",
-            "explanation": "'Are having' shifts to 'were having', and 'we' becomes 'they'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        }
-    ]
+  "gameType": "directIndirectSpeech",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "dis_l1_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Maria said, \"I walk to school every day.\"",
+      "options": [
+        "Maria said that she walks to school every day.",
+        "Maria said that I walked to school every day.",
+        "Maria said that she walked to school every day."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Maria said that she walked to school every day.",
+      "sentence": "Maria said, \"I walk to school every day.\"",
+      "hint": "Check what happens to the verb tense and to the pronoun 'I' when Maria's own words are reported.",
+      "explanation": "'Walk' backshifts to 'walked', and 'I' becomes 'she' because Maria is the speaker being reported.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'walk' → 'walked'",
+        "'I' → 'she'"
+      ]
+    },
+    {
+      "id": "dis_l1_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Daniel said, \"I play the guitar on weekends.\"",
+      "options": [
+        "Daniel said that he plays the guitar on weekends.",
+        "Daniel said that I played the guitar on weekends.",
+        "Daniel said that he played the guitar on weekends."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Daniel said that he played the guitar on weekends.",
+      "sentence": "Daniel said, \"I play the guitar on weekends.\"",
+      "hint": "Look for two changes: the verb moves one step into the past, and 'I' becomes a pronoun referring to Daniel.",
+      "explanation": "'Play' shifts back to 'played', and 'I' changes to 'he' since we are reporting Daniel's statement.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'play' → 'played'",
+        "'I' → 'he'"
+      ]
+    },
+    {
+      "id": "dis_l1_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Grace said, \"I live near the station.\"",
+      "options": [
+        "Grace said that she lives near the station.",
+        "Grace said that she lived near the station.",
+        "Grace said that her lived near the station."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Grace said that she lived near the station.",
+      "sentence": "Grace said, \"I live near the station.\"",
+      "hint": "Decide whether you need a subject pronoun ('she') or a possessive ('her'), and remember present simple moves one step back.",
+      "explanation": "'Live' shifts to 'lived', and the subject pronoun 'I' becomes the subject pronoun 'she', not the possessive 'her'.",
+      "grammarRule": "Pronoun Reference Shift",
+      "changesList": [
+        "'live' → 'lived'",
+        "'I' → 'she'"
+      ]
+    },
+    {
+      "id": "dis_l2_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Omar said, \"I am waiting for the bus.\"",
+      "options": [
+        "Omar said that he is waiting for the bus.",
+        "Omar said that I was waiting for the bus.",
+        "Omar said that he was waiting for the bus."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Omar said that he was waiting for the bus.",
+      "sentence": "Omar said, \"I am waiting for the bus.\"",
+      "hint": "'Am' is part of the present continuous — think about what it becomes in the past, and who 'I' refers to.",
+      "explanation": "'Am waiting' (present continuous) shifts to 'was waiting' (past continuous); 'I' becomes 'he' since Omar is being reported.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'am waiting' → 'was waiting'",
+        "'I' → 'he'"
+      ]
+    },
+    {
+      "id": "dis_l2_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Fatima said, \"I am cooking dinner.\"",
+      "options": [
+        "Fatima said that she is cooking dinner.",
+        "Fatima said that she was cooked dinner.",
+        "Fatima said that she was cooking dinner."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Fatima said that she was cooking dinner.",
+      "sentence": "Fatima said, \"I am cooking dinner.\"",
+      "hint": "The auxiliary 'am' must shift, but keep the '-ing' form of the verb.",
+      "explanation": "'Am cooking' becomes 'was cooking' — the auxiliary changes but the '-ing' form stays; 'I' becomes 'she'.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'am cooking' → 'was cooking'",
+        "'I' → 'she'"
+      ]
+    },
+    {
+      "id": "dis_l2_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Kwame said, \"I am reading a good book.\"",
+      "options": [
+        "Kwame said that he was reading a good book.",
+        "Kwame said that I was reading a good book.",
+        "Kwame said that he is reading a good book."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Kwame said that he was reading a good book.",
+      "sentence": "Kwame said, \"I am reading a good book.\"",
+      "hint": "Two changes are needed: the continuous auxiliary and the pronoun referring to Kwame.",
+      "explanation": "'Am reading' shifts to 'was reading', and 'I' becomes 'he' because Kwame is the one being quoted.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'am reading' → 'was reading'",
+        "'I' → 'he'"
+      ]
+    },
+    {
+      "id": "dis_l3_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Elena said, \"My brother works at the hospital.\"",
+      "options": [
+        "Elena said that my brother worked at the hospital.",
+        "Elena said that her brother works at the hospital.",
+        "Elena said that her brother worked at the hospital."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Elena said that her brother worked at the hospital.",
+      "sentence": "Elena said, \"My brother works at the hospital.\"",
+      "hint": "'My' belongs to Elena, so think about which possessive pronoun refers to her; also check the verb tense.",
+      "explanation": "'My' becomes 'her' because Elena is the speaker, and 'works' backshifts to 'worked'.",
+      "grammarRule": "Possessive Shift",
+      "changesList": [
+        "'my' → 'her'",
+        "'works' → 'worked'"
+      ]
+    },
+    {
+      "id": "dis_l3_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Marcus said, \"My car needs a repair.\"",
+      "options": [
+        "Marcus said that his car needs a repair.",
+        "Marcus said that his car needed a repair.",
+        "Marcus said that my car needed a repair."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Marcus said that his car needed a repair.",
+      "sentence": "Marcus said, \"My car needs a repair.\"",
+      "hint": "Identify who 'my' refers to before choosing the possessive pronoun.",
+      "explanation": "'My' shifts to 'his' since Marcus owns the car, and 'needs' shifts to 'needed'.",
+      "grammarRule": "Possessive Shift",
+      "changesList": [
+        "'my' → 'his'",
+        "'needs' → 'needed'"
+      ]
+    },
+    {
+      "id": "dis_l3_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Nadia said, \"My parents live in Portugal.\"",
+      "options": [
+        "Nadia said that her parents live in Portugal.",
+        "Nadia said that their parents lived in Portugal.",
+        "Nadia said that her parents lived in Portugal."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Nadia said that her parents lived in Portugal.",
+      "sentence": "Nadia said, \"My parents live in Portugal.\"",
+      "hint": "The possessive pronoun depends on who is speaking, not on whether the noun after it is plural.",
+      "explanation": "'My' refers to Nadia, so it becomes 'her' regardless of 'parents' being plural; 'live' backshifts to 'lived'.",
+      "grammarRule": "Possessive Shift",
+      "changesList": [
+        "'my' → 'her'",
+        "'live' → 'lived'"
+      ]
+    },
+    {
+      "id": "dis_l4_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Victor said, \"I am tired after work.\"",
+      "options": [
+        "Victor said that he were tired after work.",
+        "Victor said that he was tired after work.",
+        "Victor said that he is tired after work."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Victor said that he was tired after work.",
+      "sentence": "Victor said, \"I am tired after work.\"",
+      "hint": "Match the pronoun to the correct past form of 'to be': was or were?",
+      "explanation": "'Am' becomes 'was' with the singular pronoun 'he', and 'I' changes to 'he'.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'am' → 'was'",
+        "'I' → 'he'"
+      ]
+    },
+    {
+      "id": "dis_l4_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Isabella said, \"The lake is very cold.\"",
+      "options": [
+        "Isabella said that the lake was very cold.",
+        "Isabella said that the lake is very cold.",
+        "Isabella said that the lake were very cold."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Isabella said that the lake was very cold.",
+      "sentence": "Isabella said, \"The lake is very cold.\"",
+      "hint": "This subject is not 'I' — focus only on the correct past form of 'to be'.",
+      "explanation": "'Is' shifts to 'was' because the subject 'the lake' is singular; no pronoun change is needed here.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'is' → 'was'"
+      ]
+    },
+    {
+      "id": "dis_l4_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Hassan said, \"I am ready for the interview.\"",
+      "options": [
+        "Hassan said that he is ready for the interview.",
+        "Hassan said that he was ready for the interview.",
+        "Hassan said that I was ready for the interview."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Hassan said that he was ready for the interview.",
+      "sentence": "Hassan said, \"I am ready for the interview.\"",
+      "hint": "Apply both changes you have practiced: the verb 'to be' and the pronoun 'I'.",
+      "explanation": "'Am' becomes 'was', and 'I' becomes 'he' since Hassan is being reported.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'am' → 'was'",
+        "'I' → 'he'"
+      ]
+    },
+    {
+      "id": "dis_l5_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Sofia said, \"I don't like spicy food.\"",
+      "options": [
+        "Sofia said that she not liked spicy food.",
+        "Sofia said that she doesn't like spicy food.",
+        "Sofia said that she didn't like spicy food."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Sofia said that she didn't like spicy food.",
+      "sentence": "Sofia said, \"I don't like spicy food.\"",
+      "hint": "Negative present simple uses 'don't' or 'doesn't' — what does this become in the past?",
+      "explanation": "'Don't like' shifts to 'didn't like', and 'I' becomes 'she'.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'don't like' → 'didn't like'",
+        "'I' → 'she'"
+      ]
+    },
+    {
+      "id": "dis_l5_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Ravi said, \"My sister doesn't drive.\"",
+      "options": [
+        "Ravi said that his sister doesn't drive.",
+        "Ravi said that my sister didn't drive.",
+        "Ravi said that his sister didn't drive."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Ravi said that his sister didn't drive.",
+      "sentence": "Ravi said, \"My sister doesn't drive.\"",
+      "hint": "Two things change here: the possessive pronoun and the negative auxiliary.",
+      "explanation": "'My' becomes 'his', and 'doesn't drive' becomes 'didn't drive'.",
+      "grammarRule": "Possessive Shift",
+      "changesList": [
+        "'my' → 'his'",
+        "'doesn't drive' → 'didn't drive'"
+      ]
+    },
+    {
+      "id": "dis_l5_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Clara said, \"I don't understand the exercise.\"",
+      "options": [
+        "Clara said that she doesn't understand the exercise.",
+        "Clara said that she didn't understand the exercise.",
+        "Clara said that I didn't understand the exercise."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Clara said that she didn't understand the exercise.",
+      "sentence": "Clara said, \"I don't understand the exercise.\"",
+      "hint": "Combine the pronoun change with the negative backshift you just practiced.",
+      "explanation": "'Don't understand' becomes 'didn't understand', and 'I' becomes 'she'.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'don't understand' → 'didn't understand'",
+        "'I' → 'she'"
+      ]
+    },
+    {
+      "id": "dis_l6_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The twins said, \"We enjoy hiking.\"",
+      "options": [
+        "The twins said that they enjoyed hiking.",
+        "The twins said that we enjoyed hiking.",
+        "The twins said that they enjoy hiking."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The twins said that they enjoyed hiking.",
+      "sentence": "The twins said, \"We enjoy hiking.\"",
+      "hint": "'We' refers to the twins themselves — what pronoun replaces it when their words are reported by someone else?",
+      "explanation": "'We' becomes 'they' because the twins are being referred to from outside, and 'enjoy' backshifts to 'enjoyed'.",
+      "grammarRule": "Pronoun Reference Shift",
+      "changesList": [
+        "'we' → 'they'",
+        "'enjoy' → 'enjoyed'"
+      ]
+    },
+    {
+      "id": "dis_l6_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: My neighbors said, \"We are moving to a new apartment.\"",
+      "options": [
+        "My neighbors said that they are moving to a new apartment.",
+        "My neighbors said that we were moving to a new apartment.",
+        "My neighbors said that they were moving to a new apartment."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "My neighbors said that they were moving to a new apartment.",
+      "sentence": "My neighbors said, \"We are moving to a new apartment.\"",
+      "hint": "Apply the same 'we' → 'they' rule together with the present continuous backshift.",
+      "explanation": "'We' becomes 'they', and 'are moving' backshifts to 'were moving'.",
+      "grammarRule": "Pronoun Reference Shift",
+      "changesList": [
+        "'we' → 'they'",
+        "'are moving' → 'were moving'"
+      ]
+    },
+    {
+      "id": "dis_l6_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The coaches said, \"We train every morning.\"",
+      "options": [
+        "The coaches said that we trained every morning.",
+        "The coaches said that they trained every morning.",
+        "The coaches said that they train every morning."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The coaches said that they trained every morning.",
+      "sentence": "The coaches said, \"We train every morning.\"",
+      "hint": "Third-person reporting always replaces 'we' with the same pronoun — which one?",
+      "explanation": "'We' becomes 'they', and 'train' backshifts to 'trained'.",
+      "grammarRule": "Pronoun Reference Shift",
+      "changesList": [
+        "'we' → 'they'",
+        "'train' → 'trained'"
+      ]
+    },
+    {
+      "id": "dis_l7_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The students said, \"Our teacher is very patient.\"",
+      "options": [
+        "The students said that our teacher was very patient.",
+        "The students said that their teacher is very patient.",
+        "The students said that their teacher was very patient."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The students said that their teacher was very patient.",
+      "sentence": "The students said, \"Our teacher is very patient.\"",
+      "hint": "'Our' belongs to the students — decide which possessive pronoun replaces it.",
+      "explanation": "'Our' becomes 'their', and 'is' backshifts to 'was'.",
+      "grammarRule": "Possessive Shift",
+      "changesList": [
+        "'our' → 'their'",
+        "'is' → 'was'"
+      ]
+    },
+    {
+      "id": "dis_l7_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The players said, \"Our team plays well together.\"",
+      "options": [
+        "The players said that their team plays well together.",
+        "The players said that their team played well together.",
+        "The players said that our team played well together."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The players said that their team played well together.",
+      "sentence": "The players said, \"Our team plays well together.\"",
+      "hint": "Keep both rules in mind: the possessive pronoun and the tense of 'play'.",
+      "explanation": "'Our' becomes 'their', and 'plays' backshifts to 'played'.",
+      "grammarRule": "Possessive Shift",
+      "changesList": [
+        "'our' → 'their'",
+        "'plays' → 'played'"
+      ]
+    },
+    {
+      "id": "dis_l7_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The workers said, \"Our manager is very fair.\"",
+      "options": [
+        "The workers said that their manager is very fair.",
+        "The workers said that our manager was very fair.",
+        "The workers said that their manager was very fair."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The workers said that their manager was very fair.",
+      "sentence": "The workers said, \"Our manager is very fair.\"",
+      "hint": "Same pattern again — check the possessive pronoun and the verb 'to be'.",
+      "explanation": "'Our' becomes 'their', and 'is' backshifts to 'was'.",
+      "grammarRule": "Possessive Shift",
+      "changesList": [
+        "'our' → 'their'",
+        "'is' → 'was'"
+      ]
+    },
+    {
+      "id": "dis_l8_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Yuki said, \"I lose my keys all the time.\"",
+      "options": [
+        "Yuki said that I lost her keys all the time.",
+        "Yuki said that she loses her keys all the time.",
+        "Yuki said that she lost her keys all the time."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Yuki said that she lost her keys all the time.",
+      "sentence": "Yuki said, \"I lose my keys all the time.\"",
+      "hint": "Both the pronoun and the possessive belong to Yuki — check each one separately.",
+      "explanation": "'I' becomes 'she' and 'my' becomes 'her'; 'lose' backshifts to 'lost'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'I' → 'she'",
+        "'my' → 'her'",
+        "'lose' → 'lost'"
+      ]
+    },
+    {
+      "id": "dis_l8_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Liam said, \"I forget my umbrella every winter.\"",
+      "options": [
+        "Liam said that I forgot my umbrella every winter.",
+        "Liam said that he forgot his umbrella every winter.",
+        "Liam said that he forgets his umbrella every winter."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Liam said that he forgot his umbrella every winter.",
+      "sentence": "Liam said, \"I forget my umbrella every winter.\"",
+      "hint": "Two separate words need to change to match Liam: the subject pronoun and the possessive.",
+      "explanation": "'I' becomes 'he', 'my' becomes 'his', and 'forget' backshifts to 'forgot'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'I' → 'he'",
+        "'my' → 'his'",
+        "'forget' → 'forgot'"
+      ]
+    },
+    {
+      "id": "dis_l8_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Aisha said, \"I love my job.\"",
+      "options": [
+        "Aisha said that I loved my job.",
+        "Aisha said that she loves her job.",
+        "Aisha said that she loved her job."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Aisha said that she loved her job.",
+      "sentence": "Aisha said, \"I love my job.\"",
+      "hint": "Change the pronoun, the possessive, and the tense — three small steps in one sentence.",
+      "explanation": "'I' becomes 'she', 'my' becomes 'her', and 'love' backshifts to 'loved'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'I' → 'she'",
+        "'my' → 'her'",
+        "'love' → 'loved'"
+      ]
+    },
+    {
+      "id": "dis_l9_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The manager said, \"The project is behind schedule.\"",
+      "options": [
+        "The manager said that the project has been behind schedule.",
+        "The manager said that the project was behind schedule.",
+        "The manager said that the project is behind schedule."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The manager said that the project was behind schedule.",
+      "sentence": "The manager said, \"The project is behind schedule.\"",
+      "hint": "Not every reported sentence needs a pronoun change — check only what actually needs to move.",
+      "explanation": "Only the verb 'to be' backshifts from 'is' to 'was'; there is no pronoun to change here.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'is' → 'was'"
+      ]
+    },
+    {
+      "id": "dis_l9_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Diego said, \"I am learning to swim.\"",
+      "options": [
+        "Diego said that he is learning to swim.",
+        "Diego said that he was learn to swim.",
+        "Diego said that he was learning to swim."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Diego said that he was learning to swim.",
+      "sentence": "Diego said, \"I am learning to swim.\"",
+      "hint": "Keep the continuous form intact — only the auxiliary and the pronoun move.",
+      "explanation": "'Am learning' becomes 'was learning', and 'I' becomes 'he'.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'am learning' → 'was learning'",
+        "'I' → 'he'"
+      ]
+    },
+    {
+      "id": "dis_l9_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Amara said, \"My flight leaves early.\"",
+      "options": [
+        "Amara said that my flight left early.",
+        "Amara said that her flight leaves early.",
+        "Amara said that her flight left early."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Amara said that her flight left early.",
+      "sentence": "Amara said, \"My flight leaves early.\"",
+      "hint": "Whose flight is it? Choose the possessive that matches the speaker, and backshift the verb.",
+      "explanation": "'My' becomes 'her' and 'leaves' backshifts to 'left'.",
+      "grammarRule": "Possessive Shift",
+      "changesList": [
+        "'my' → 'her'",
+        "'leaves' → 'left'"
+      ]
+    },
+    {
+      "id": "dis_l10_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Felix said, \"I am the new manager.\"",
+      "options": [
+        "Felix said that I was the new manager.",
+        "Felix said that he was the new manager.",
+        "Felix said that he is the new manager."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Felix said that he was the new manager.",
+      "sentence": "Felix said, \"I am the new manager.\"",
+      "hint": "This combines two of the very first rules you learned — find both of them.",
+      "explanation": "'Am' becomes 'was', and 'I' becomes 'he'.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'am' → 'was'",
+        "'I' → 'he'"
+      ]
+    },
+    {
+      "id": "dis_l10_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The children said, \"We don't want to leave yet.\"",
+      "options": [
+        "The children said that we didn't want to leave yet.",
+        "The children said that they didn't want to leave yet.",
+        "The children said that they don't want to leave yet."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The children said that they didn't want to leave yet.",
+      "sentence": "The children said, \"We don't want to leave yet.\"",
+      "hint": "Recall how 'we' changes when someone else reports a group's words, and how negatives shift tense.",
+      "explanation": "'We' becomes 'they', and 'don't want' becomes 'didn't want'.",
+      "grammarRule": "Pronoun Reference Shift",
+      "changesList": [
+        "'we' → 'they'",
+        "'don't want' → 'didn't want'"
+      ]
+    },
+    {
+      "id": "dis_l10_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Zara said, \"My phone is not working properly.\"",
+      "options": [
+        "Zara said that her phone was not working properly.",
+        "Zara said that her phone is not working properly.",
+        "Zara said that my phone was not working properly."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Zara said that her phone was not working properly.",
+      "sentence": "Zara said, \"My phone is not working properly.\"",
+      "hint": "This question checks three things at once: the possessive, the verb 'to be', and the continuous form.",
+      "explanation": "'My' becomes 'her', and 'is not working' becomes 'was not working'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'my' → 'her'",
+        "'is not working' → 'was not working'"
+      ]
+    }
+  ]
 }

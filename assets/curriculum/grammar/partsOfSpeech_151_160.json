@@ -8,23 +8,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'however' as used in the sentence below?",
-            "targetWord": "however",
-            "sentence": "The business plan seemed financially sound; however, several critical assumptions proved incorrect.",
+            "question": "In this context, what part of speech is 'Three'?",
+            "targetWord": "Three",
+            "sentence": "Three students left early.",
             "options": [
-                "Conjunction",
-                "Adverb",
                 "Adjective",
-                "Noun"
+                "Noun",
+                "Pronoun",
+                "Verb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Adverb",
-            "hint": "'However' connects ideas but is it a conjunction or an adverb?",
-            "explanation": "'However' is a conjunctive adverb - it connects two independent clauses but is preceded by a semicolon, not a comma. True coordinating conjunctions (but, yet) use a comma. 'However' is an adverb that transitions between clauses.",
-            "grammarRule": "Adverbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adjective",
+            "hint": "Numbers directly before a noun function as words. What noun does 'three' describe here?",
+            "explanation": "'Three' is an adjective here, modifying 'students' and telling us how many left early.",
+            "grammarRule": "Cardinal number functioning as an adjective",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "pronoun use"
             ]
         },
         {
@@ -32,23 +32,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'impetus' as used in the sentence below?",
-            "targetWord": "impetus",
-            "sentence": "The deep recession provided the essential impetus for a fundamental rethink of national economic policy.",
+            "question": "Now what part of speech is 'Three' in this sentence?",
+            "targetWord": "Three",
+            "sentence": "Three of them left early.",
             "options": [
-                "Noun",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Pronoun"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Abstract nouns name forces that cause action. What does 'impetus' name here?",
-            "explanation": "'Impetus' is a noun - it names the driving force behind an action. It follows 'the essential'.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Pronoun",
+            "hint": "A common mistake is assuming numbers are always adjectives. Here, does 'three' sit directly before a noun, or does it stand alone as the subject?",
+            "explanation": "'Three' functions as a pronoun here, standing alone as the subject and representing an unspecified group of people — it is not directly followed by a noun.",
+            "grammarRule": "Cardinal number functioning as a pronoun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "pronoun use",
+                "adjective use"
             ]
         },
         {
@@ -56,23 +56,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'refine' as used in the sentence below?",
-            "targetWord": "refine",
-            "sentence": "Researchers across the field continue to refine the theoretical model in light of new experimental data.",
+            "question": "Classify 'two' as it appears in this sentence.",
+            "targetWord": "two",
+            "sentence": "Only two remained after the meeting.",
             "options": [
-                "Noun",
+                "Pronoun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Scientific verbs describe improving through careful adjustments. What do researchers continue to do?",
-            "explanation": "'Refine' is a verb - it follows 'to' as an infinitive. 'Refinement' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Pronoun",
+            "hint": "Remember: numbers standing alone as the subject function as words, not adjectives. What does 'two' represent here?",
+            "explanation": "'Two' functions as a pronoun here, standing alone as the subject and representing an unspecified group — the same pattern as 'three' earlier in this file.",
+            "grammarRule": "Cardinal number functioning as a pronoun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "pronoun use",
+                "adjective use"
             ]
         },
         {
@@ -80,23 +80,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'furthermore' as used in the sentence below?",
-            "targetWord": "furthermore",
-            "sentence": "The data was seriously incomplete; furthermore, the methodology had not been adequately explained.",
+            "question": "Which part of speech is 'why' as it is used here?",
+            "targetWord": "why",
+            "sentence": "That's the reason why she left the company.",
             "options": [
-                "Conjunction",
+                "Noun",
+                "Pronoun",
                 "Adverb",
-                "Adjective",
-                "Noun"
+                "Conjunction"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "Adverb",
-            "hint": "How is 'furthermore' connecting these two clauses?",
-            "explanation": "'Furthermore' is a conjunctive adverb - it adds additional information and connects two independent clauses with a semicolon. It means 'in addition' or 'moreover'.",
-            "grammarRule": "Adverbs",
+            "hint": "A common mistake is assuming this word only appears in questions. Here it introduces a clause explaining a reason, inside a statement. What role does it play?",
+            "explanation": "'Why' functions as a relative adverb here, introducing a clause that explains 'the reason' — even though it looks like a question word, it is simply connecting and modifying within a statement.",
+            "grammarRule": "Relative adverb introducing a reason clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "relative use",
+                "interrogative use"
             ]
         },
         {
@@ -104,23 +104,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'vanguard' as used in the sentence below?",
-            "targetWord": "vanguard",
-            "sentence": "She was consistently at the very vanguard of the growing movement for meaningful electoral reform.",
+            "question": "Based on how it is used here, 'when' is a:",
+            "targetWord": "when",
+            "sentence": "I still remember the day when we first met.",
             "options": [
-                "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Conjunction",
+                "Pronoun",
+                "Noun"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Military terms are often used metaphorically. What does 'vanguard' name here?",
-            "explanation": "'Vanguard' is a noun - it names the leading position or forefront (literally: the front of an army; metaphorically: the leading edge of a movement).",
-            "grammarRule": "Nouns",
+            "correctAnswer": "Adverb",
+            "hint": "Like 'why' in the previous sentence, this question word can also introduce a clause in a statement. What clause does it introduce here?",
+            "explanation": "'When' functions as a relative adverb here, introducing a clause that describes 'the day' — the same pattern as 'why' earlier in this file.",
+            "grammarRule": "Relative adverb introducing a time clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "relative use",
+                "interrogative use"
             ]
         },
         {
@@ -128,23 +128,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'iterate' as used in the sentence below?",
-            "targetWord": "iterate",
-            "sentence": "The product design team needed to iterate on the prototype several more times before mass production.",
+            "question": "What part of speech is 'where' in this sentence?",
+            "targetWord": "where",
+            "sentence": "This is the place where we got married.",
             "options": [
                 "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Pronoun",
+                "Conjunction"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Technology and design verbs describe repeating a process. What did the team need to do?",
-            "explanation": "'Iterate' is a verb - it follows 'to' as an infinitive. 'Iteration' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Adverb",
+            "hint": "This question word can also introduce a descriptive clause in a statement. What clause does it introduce here?",
+            "explanation": "'Where' functions as a relative adverb here, introducing a clause that describes 'the place' — completing the pattern seen with 'why' and 'when' earlier in this file.",
+            "grammarRule": "Relative adverb introducing a place clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "relative use",
+                "interrogative use"
             ]
         },
         {
@@ -152,23 +152,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'consequently' as used in the sentence below?",
-            "targetWord": "consequently",
-            "sentence": "The investment was poorly managed; consequently, the entire project had to be abandoned.",
+            "question": "In this context, what part of speech is 'means'?",
+            "targetWord": "means",
+            "sentence": "Public transportation remains the cheapest means of getting downtown.",
             "options": [
-                "Conjunction",
                 "Noun",
+                "Adjective",
                 "Adverb",
-                "Adjective"
+                "Verb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adverb",
-            "hint": "'Consequently' expresses a result. Is it a conjunction or an adverb?",
-            "explanation": "'Consequently' is a conjunctive adverb - it expresses a consequence and connects two independent clauses with a semicolon. Compare: 'so' (conjunction, comma) vs. 'consequently' (adverb, semicolon).",
-            "grammarRule": "Adverbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "A common mistake is assuming any word ending in '-s' must be plural. This word is singular here, even though it ends in '-s.' What role does it play?",
+            "explanation": "'Means' is a singular noun here, naming a method — it looks plural because of the '-s' ending, but it takes a singular verb ('remains') and refers to one method.",
+            "grammarRule": "Uncountable noun ending in -s, used as a singular subject complement",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular use",
+                "same plural form"
             ]
         },
         {
@@ -176,23 +176,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'proliferation' as used in the sentence below?",
-            "targetWord": "proliferation",
-            "sentence": "The rapid proliferation of cheap smartphones has transformed access to the internet worldwide.",
+            "question": "What role does 'news' play in this sentence?",
+            "targetWord": "news",
+            "sentence": "The news about the merger spread quickly.",
             "options": [
                 "Noun",
+                "Adverb",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "Noun",
-            "hint": "'Proliferation' is a nominalisation. What does it name here?",
-            "explanation": "'Proliferation' is a noun - it is a nominalisation of 'proliferate', naming the process of rapid increase and spread. It follows 'The rapid'.",
-            "grammarRule": "Nouns",
+            "hint": "Like 'means' in the previous sentence, this word ends in '-s' but is treated as singular. What is the subject of this sentence?",
+            "explanation": "'News' is a singular, uncountable noun here — despite ending in '-s,' it takes a singular meaning and is never used with 'a' or in a plural form.",
+            "grammarRule": "Uncountable noun ending in -s, functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular use",
+                "same plural form"
             ]
         },
         {
@@ -200,23 +200,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'reassess' as used in the sentence below?",
-            "targetWord": "reassess",
-            "sentence": "After reviewing the initial results, the team needed urgently to reassess their core assumptions.",
+            "question": "Which category fits 'spread' in this sentence?",
+            "targetWord": "spread",
+            "sentence": "The news about the merger spread quickly.",
             "options": [
                 "Noun",
+                "Adverb",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "Verb",
-            "hint": "Verbs describe reviewing and revising judgements. What did the team need to do?",
-            "explanation": "'Reassess' is a verb - it follows 'to' as an infinitive. The prefix 're-' means again (reassess, reconsider, recalculate).",
-            "grammarRule": "Verbs",
+            "hint": "Think about the job it performs here. Note that this word doesn't change form between present and past tense — what did the news do?",
+            "explanation": "'Spread' is a verb here, describing how the news traveled — it is a verb whose past-tense form is identical to its base form.",
+            "grammarRule": "Action verb with an unchanged past-tense form",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "same past-tense form"
             ]
         },
         {
@@ -224,23 +224,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'meanwhile' as used in the sentence below?",
-            "targetWord": "meanwhile",
-            "sentence": "Negotiations continued inside for days; meanwhile, the situation outside continued to deteriorate.",
+            "question": "What grammatical job does 'One' do in this sentence?",
+            "targetWord": "One",
+            "sentence": "One should always double-check important emails before sending.",
             "options": [
-                "Conjunction",
+                "Verb",
+                "Pronoun",
                 "Noun",
-                "Adverb",
                 "Adjective"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adverb",
-            "hint": "How does 'meanwhile' connect the two clauses?",
-            "explanation": "'Meanwhile' is a conjunctive adverb - it shows two events happening at the same time and connects two independent clauses with a semicolon. It means 'at the same time; in the intervening period'.",
-            "grammarRule": "Adverbs",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "A common mistake is assuming 'one' is always a number. Here it refers to people in general, not a quantity. What does 'one' represent?",
+            "explanation": "'One' functions as an indefinite pronoun here, meaning 'a person in general' — it does not refer to a specific quantity.",
+            "grammarRule": "Indefinite pronoun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "pronoun use",
+                "number use"
             ]
         },
         {
@@ -248,23 +248,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'contingency' as used in the sentence below?",
-            "targetWord": "contingency",
-            "sentence": "Any robust and professionally prepared plan must include a contingency for unexpected delays.",
+            "question": "Now, which category describes 'one' in this sentence?",
+            "targetWord": "one",
+            "sentence": "I only need one more signature to finish the form.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Noun",
+                "Pronoun"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Planning nouns name provisions for uncertain future events. What does 'contingency' name?",
-            "explanation": "'Contingency' is a noun - it names a provision made for a possible future event. It follows 'a', confirming it is a noun.",
-            "grammarRule": "Nouns",
+            "correctAnswer": "Adjective",
+            "hint": "Now compare: this word sits directly before a noun and shows a quantity. What noun does it describe?",
+            "explanation": "'One' functions as an adjective here, modifying 'signature' and showing the exact quantity needed — contrast this with the indefinite pronoun use in the previous sentence.",
+            "grammarRule": "Cardinal number functioning as an adjective",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "pronoun use"
             ]
         },
         {
@@ -272,23 +272,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'validate' as used in the sentence below?",
-            "targetWord": "validate",
-            "sentence": "Independent external experts were specifically brought in to validate the findings of the internal review.",
+            "question": "Now look at 'one' here. What part of speech is it?",
+            "targetWord": "one",
+            "sentence": "Would you prefer the blue one?",
             "options": [
                 "Noun",
+                "Pronoun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verification verbs describe confirming something is correct. What were the experts brought in to do?",
-            "explanation": "'Validate' is a verb - it follows 'to' as an infinitive. 'Validation' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Pronoun",
+            "hint": "Here 'one' stands in for a noun already understood from context, rather than showing a quantity or people in general. What is 'one' replacing?",
+            "explanation": "'One' functions as a pronoun here, substituting for a specific item already understood from context (such as a particular pastry or product) — a third role for this word, alongside the indefinite and numeral adjective uses seen earlier.",
+            "grammarRule": "Pronoun substituting for a specific noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "pronoun use",
+                "number use"
             ]
         },
         {
@@ -296,23 +296,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'nevertheless' as used in the sentence below?",
-            "targetWord": "nevertheless",
-            "sentence": "The evidence presented was admittedly weak; nevertheless, the court chose to proceed with the trial.",
+            "question": "How is 'took off' functioning in this sentence?",
+            "targetWord": "took off",
+            "sentence": "The plane took off ten minutes late.",
             "options": [
-                "Conjunction",
                 "Noun",
-                "Adverb",
-                "Adjective"
+                "Adjective",
+                "Verb",
+                "Preposition"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Adverb",
-            "hint": "How does 'nevertheless' connect the two clauses?",
-            "explanation": "'Nevertheless' is a conjunctive adverb - it expresses contrast (despite what was just said) and connects two independent clauses with a semicolon. It means 'in spite of that'.",
-            "grammarRule": "Adverbs",
+            "correctAnswer": "Verb",
+            "hint": "This two-word expression has a meaning you can't guess just by combining the two words separately. What did the plane do?",
+            "explanation": "'Took off' is a phrasal verb here, meaning 'departed' — its meaning as a whole is different from 'took' and 'off' used separately.",
+            "grammarRule": "Phrasal verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form (take off)",
+                "past-tense form"
             ]
         },
         {
@@ -320,23 +320,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'precedent' as used in the sentence below?",
-            "targetWord": "precedent",
-            "sentence": "The landmark judicial ruling set an important legal precedent that courts would follow for generations.",
+            "question": "Identify the part of speech of 'off' in this context.",
+            "targetWord": "off",
+            "sentence": "She took the book off the shelf.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Noun",
+                "Preposition"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Legal nouns name decisions that guide future cases. What does 'precedent' name?",
-            "explanation": "'Precedent' is a noun - it names an earlier decision that serves as an example for future cases. It follows 'an important legal'.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Preposition",
+            "hint": "Now compare: does 'off' combine with 'took' to create a new meaning, or does it simply show where the book came from?",
+            "explanation": "'Off' functions as a preposition here, showing the book's original location — contrast this with 'took off' in the previous sentence, which formed a phrasal verb with an idiomatic meaning.",
+            "grammarRule": "Preposition introducing a location phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "phrasal verb use"
             ]
         },
         {
@@ -344,23 +344,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'exemplify' as used in the sentence below?",
-            "targetWord": "exemplify",
-            "sentence": "This high-profile case is regularly used to exemplify the tension between liberty and security.",
+            "question": "Classify 'called off' as it appears in this sentence.",
+            "targetWord": "called off",
+            "sentence": "The meeting was called off due to rain.",
             "options": [
                 "Noun",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Preposition"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "Verb",
-            "hint": "Teaching verbs describe using something as an example. What is the case used to do?",
-            "explanation": "'Exemplify' is a verb - it follows 'to' as an infinitive. 'Exemplification' is the noun form.",
-            "grammarRule": "Verbs",
+            "hint": "Like 'took off' earlier in this file, this two-word expression has an idiomatic meaning. What happened to the meeting?",
+            "explanation": "'Called off' is a phrasal verb here, meaning 'canceled' — the same pattern as 'took off' earlier in this file, where the two words together create a new meaning.",
+            "grammarRule": "Phrasal verb in the passive voice",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form (call off)",
+                "past-participle form"
             ]
         },
         {
@@ -368,23 +368,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'indeed' as used in the sentence below?",
-            "targetWord": "indeed",
-            "sentence": "The published figures are genuinely alarming; indeed, they are the worst recorded in thirty years.",
+            "question": "Which part of speech does 'advice' represent in this sentence?",
+            "targetWord": "advice",
+            "sentence": "She gave me some useful advice before the interview.",
             "options": [
-                "Conjunction",
-                "Noun",
+                "Verb",
                 "Adverb",
+                "Noun",
                 "Adjective"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Adverb",
-            "hint": "'Indeed' adds emphasis. Is it a conjunction or an adverb here?",
-            "explanation": "'Indeed' is a conjunctive adverb - it emphasises or strengthens what was just said. It means 'in fact' or 'as a matter of fact'. It cannot replace 'and' or 'but' (conjunctions).",
-            "grammarRule": "Adverbs",
+            "correctAnswer": "Noun",
+            "hint": "A common mistake is assuming this word needs 'a' or a plural form like other words. Is 'advice' countable or uncountable here?",
+            "explanation": "'Advice' is an uncountable noun here — it never takes 'a' or a plural '-s' ending, even though it names something real that was given.",
+            "grammarRule": "Uncountable noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "uncountable use",
+                "related countable noun (tip)"
             ]
         },
         {
@@ -392,23 +392,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'magnitude' as used in the sentence below?",
-            "targetWord": "magnitude",
-            "sentence": "Scientists are only beginning to understand the true and full magnitude of the environmental crisis.",
+            "question": "In this sentence, 'tip' is functioning as a:",
+            "targetWord": "tip",
+            "sentence": "She gave me a useful tip before the interview.",
             "options": [
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Adjective"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "Noun",
-            "hint": "Abstract nouns name the size or extent of things. What does 'magnitude' name here?",
-            "explanation": "'Magnitude' is a noun - it names the size or importance of something. It follows 'the true and full'.",
-            "grammarRule": "Nouns",
+            "hint": "Now compare: this word can take 'a' and can be pluralized. What kind of word is it?",
+            "explanation": "'Tip' is a countable noun here — unlike 'advice' in the previous sentence, it can be used with 'a' and pluralized as 'tips'.",
+            "grammarRule": "Countable noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "plural form"
             ]
         },
         {
@@ -416,23 +416,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'postulate' as used in the sentence below?",
-            "targetWord": "postulate",
-            "sentence": "Einstein was the very first physicist to postulate that energy and mass are fundamentally interchangeable.",
+            "question": "Which grammatical category best describes 'equipment' here?",
+            "targetWord": "equipment",
+            "sentence": "The new equipment arrived yesterday.",
             "options": [
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Scientific verbs describe formally proposing a theory. What did Einstein do?",
-            "explanation": "'Postulate' is a verb - it follows 'to' as an infinitive. 'Postulate' can also be a noun ('a mathematical postulate'), but here it follows 'to'.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Like 'advice' earlier in this file, this word cannot be pluralized even though it refers to multiple items. What arrived yesterday?",
+            "explanation": "'Equipment' is an uncountable noun here — it refers to a whole category of tools or machines but has no plural form.",
+            "grammarRule": "Uncountable noun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "uncountable use",
+                "related countable noun (tool)"
             ]
         },
         {
@@ -440,23 +440,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'thereby' as used in the sentence below?",
-            "targetWord": "thereby",
-            "sentence": "She formally accepted the conditions of the agreement, thereby agreeing to be bound by all its terms.",
+            "question": "What kind of word is 'Few' in this sentence?",
+            "targetWord": "Few",
+            "sentence": "Few people attended the early session.",
             "options": [
-                "Conjunction",
                 "Noun",
-                "Adverb",
-                "Adjective"
+                "Adjective",
+                "Verb",
+                "Pronoun"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adverb",
-            "hint": "Does 'thereby' show how the consequence came about?",
-            "explanation": "'Thereby' is an adverb - it shows how the consequence follows from the action and means 'by that means'. It is not a conjunction because it does not join two equal clauses.",
-            "grammarRule": "Adverbs",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "Quantity words directly before a noun function as words. What noun does 'few' describe here?",
+            "explanation": "'Few' is an adjective here, modifying 'people' and describing the small number who attended.",
+            "grammarRule": "Quantifier functioning as an adjective",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "pronoun use"
             ]
         },
         {
@@ -464,23 +464,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'dichotomy' as used in the sentence below?",
-            "targetWord": "dichotomy",
-            "sentence": "The essay explores the fundamental dichotomy between individual freedom and collective responsibility.",
+            "question": "This time, what part of speech is 'Few'?",
+            "targetWord": "Few",
+            "sentence": "Few attended the early session.",
             "options": [
-                "Noun",
                 "Verb",
+                "Noun",
                 "Adjective",
-                "Adverb"
+                "Pronoun"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Abstract nouns name divisions into two contrasting parts. What does 'dichotomy' name?",
-            "explanation": "'Dichotomy' is a noun - it names a division between two completely opposite concepts. It follows 'the fundamental'. The prefix 'dicho-' means two.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Pronoun",
+            "hint": "A common mistake is assuming quantity words are always adjectives. Here, does 'few' sit directly before a noun, or does it stand alone?",
+            "explanation": "'Few' functions as a pronoun here, standing alone as the subject and representing an unspecified small group — contrast this with the adjective use in the previous sentence.",
+            "grammarRule": "Quantifier functioning as a pronoun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "pronoun use",
+                "adjective use"
             ]
         },
         {
@@ -488,23 +488,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'negate' as used in the sentence below?",
-            "targetWord": "negate",
-            "sentence": "A single valid counterexample is sufficient to negate what had previously appeared to be a universal rule.",
+            "question": "The word 'Much' is being used as which grammatical category?",
+            "targetWord": "Much",
+            "sentence": "Much of the budget went unused this year.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Pronoun",
+                "Verb",
+                "Noun"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Logical verbs describe making something ineffective. What can one counterexample do?",
-            "explanation": "'Negate' is a verb - it follows 'to' as an infinitive. 'Negation' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Pronoun",
+            "hint": "Like 'few' earlier in this file, this quantity word can stand alone as a word. What does 'much' represent here?",
+            "explanation": "'Much' functions as a pronoun here, standing alone as the subject and representing an unspecified portion of the budget.",
+            "grammarRule": "Quantifier functioning as a pronoun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "pronoun use",
+                "adjective use"
             ]
         },
         {
@@ -512,23 +512,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'hitherto' as used in the sentence below?",
-            "targetWord": "hitherto",
-            "sentence": "Hitherto unexplored regions of the human genome may hold the key to treating currently incurable conditions.",
+            "question": "Based on how it is used here, 'enough' is a:",
+            "targetWord": "enough",
+            "sentence": "We don't have enough time to finish today.",
             "options": [
-                "Conjunction",
-                "Noun",
                 "Adverb",
+                "Noun",
+                "Pronoun",
                 "Adjective"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adverb",
-            "hint": "'Hitherto' describes a time relationship. Is it modifying the adjective 'unexplored'?",
-            "explanation": "'Hitherto' is an adverb - it modifies the adjective 'unexplored' and means 'until now'. It is a formal or literary adverb. Compare: 'hitherto unknown' (formal) = 'previously unknown'.",
-            "grammarRule": "Adverbs",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "This word sits directly before a noun here, showing sufficiency. What noun does 'enough' describe?",
+            "explanation": "'Enough' is an adjective here, modifying 'time' and showing that the amount is insufficient.",
+            "grammarRule": "Quantifier functioning as an adjective",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "adverb use"
             ]
         },
         {
@@ -536,23 +536,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'axiom' as used in the sentence below?",
-            "targetWord": "axiom",
-            "sentence": "In formal mathematics, an axiom is a statement accepted as self-evidently true without requiring proof.",
+            "question": "Now look at 'enough' here. What part of speech is it?",
+            "targetWord": "enough",
+            "sentence": "This coffee isn't strong enough for me.",
             "options": [
+                "Adverb",
                 "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Pronoun"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Mathematical nouns name self-evident truths. What does 'axiom' name here?",
-            "explanation": "'Axiom' is a noun - it names a statement accepted as true without proof. It follows 'an', confirming it is a noun.",
-            "grammarRule": "Nouns",
+            "correctAnswer": "Adverb",
+            "hint": "A common mistake is expecting modifying words to always come before what they describe. Here, 'enough' comes after an adjective. What does it modify?",
+            "explanation": "'Enough' functions as an adverb here, modifying the adjective 'strong' — unusually, it comes after the word it modifies rather than before it.",
+            "grammarRule": "Degree adverb modifying an adjective, placed after it",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adverb use",
+                "adjective use"
             ]
         },
         {
@@ -560,23 +560,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'interrogate' as used in the sentence below?",
-            "targetWord": "interrogate",
-            "sentence": "We must rigorously interrogate all the assumptions that underlie the entire theoretical framework.",
+            "question": "Which category fits 'Enough' in this sentence?",
+            "targetWord": "Enough",
+            "sentence": "Enough of the guests arrived to start the toast.",
             "options": [
                 "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Pronoun",
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Academic verbs describe critically examining ideas. What must we do to assumptions?",
-            "explanation": "'Interrogate' is a verb - it follows the modal 'must'. It is used metaphorically here to mean 'critically examine'. 'Interrogation' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Pronoun",
+            "hint": "Like 'few' and 'much' earlier in this file, this quantity word can stand alone as a word. What does 'enough' represent here?",
+            "explanation": "'Enough' functions as a pronoun here, standing alone as the subject and representing a sufficient portion of the guests.",
+            "grammarRule": "Quantifier functioning as a pronoun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "pronoun use",
+                "adjective use"
             ]
         },
         {
@@ -584,23 +584,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'nonetheless' as used in the sentence below?",
-            "targetWord": "nonetheless",
-            "sentence": "The obstacles presented were considerable and significant; nonetheless, she completed the journey in record time.",
+            "question": "What role does 'Few' play in this sentence?",
+            "targetWord": "Few",
+            "sentence": "Few managers had enough experience to handle the crisis well, so headquarters sent additional support immediately.",
             "options": [
-                "Conjunction",
+                "Verb",
                 "Noun",
-                "Adverb",
-                "Adjective"
+                "Adjective",
+                "Pronoun"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Adverb",
-            "hint": "How does 'nonetheless' connect the two clauses?",
-            "explanation": "'Nonetheless' is a conjunctive adverb - it expresses contrast and connects two independent clauses (semicolon before it). It means 'despite that' and is interchangeable with 'nevertheless'.",
-            "grammarRule": "Adverbs",
+            "correctAnswer": "Adjective",
+            "hint": "This quantity word sits directly before a noun here. What noun does it describe?",
+            "explanation": "'Few' is an adjective here, modifying 'managers' and describing how small the qualified group was.",
+            "grammarRule": "Quantifier functioning as an adjective",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "pronoun use"
             ]
         },
         {
@@ -608,23 +608,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'cognition' as used in the sentence below?",
-            "targetWord": "cognition",
-            "sentence": "Research into human cognition has revealed how profoundly emotion influences rational decision-making.",
+            "question": "In the same sentence, what role does 'enough' play?",
+            "targetWord": "enough",
+            "sentence": "Few managers had enough experience to handle the crisis well, so headquarters sent additional support immediately.",
             "options": [
                 "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
+                "Pronoun",
+                "Adverb",
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Psychological nouns name mental processes. What does 'cognition' name?",
-            "explanation": "'Cognition' is a noun - it names the mental processes involved in knowledge and understanding. It follows 'human', confirming it is a noun.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "This word also sits directly before a noun. What noun does 'enough' describe here?",
+            "explanation": "'Enough' is an adjective here, modifying 'experience' and showing that few managers had a sufficient amount.",
+            "grammarRule": "Quantifier functioning as an adjective",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "adverb use"
             ]
         },
         {
@@ -632,23 +632,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'demarcate' as used in the sentence below?",
-            "targetWord": "demarcate",
-            "sentence": "The committee found itself unable to clearly demarcate the precise boundary between the two legal jurisdictions.",
+            "question": "Looking at the same sentence, how is 'well' functioning?",
+            "targetWord": "well",
+            "sentence": "Few managers had enough experience to handle the crisis well, so headquarters sent additional support immediately.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Interjection",
+                "Adverb",
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Formal verbs describe drawing or establishing boundaries. What was the committee unable to do?",
-            "explanation": "'Demarcate' is a verb - it follows 'to' as an infinitive. 'Demarcation' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "Remember from an earlier lesson that this word can be an adjective, word, or interjection. Here it modifies a verb. What does it describe?",
+            "explanation": "'Well' functions as an adverb here, modifying the verb 'handle' and describing the quality of managing the crisis — the genuine adverb use from an earlier lesson.",
+            "grammarRule": "Manner adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "adverb use"
             ]
         },
         {
@@ -656,23 +656,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'thus' as used in the sentence below?",
-            "targetWord": "thus",
-            "sentence": "The variables were carefully controlled throughout; thus, the results can be considered fully reliable.",
+            "question": "What kind of word is 'why' in this sentence?",
+            "targetWord": "why",
+            "sentence": "That's the reason why only three of the volunteers had enough information to answer questions confidently during the meeting.",
             "options": [
-                "Conjunction",
-                "Noun",
                 "Adverb",
-                "Adjective"
+                "Pronoun",
+                "Noun",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "Adverb",
-            "hint": "'Thus' expresses a logical consequence. Is it functioning as a conjunction or an adverb?",
-            "explanation": "'Thus' is a conjunctive adverb - it expresses a logical consequence and connects two independent clauses (semicolon before it). It means 'therefore'. 'Thus' is more formal than 'so' (conjunction).",
-            "grammarRule": "Adverbs",
+            "hint": "Remember from earlier in this file: this question word can introduce a clause in a statement. What clause does it introduce here?",
+            "explanation": "'Why' functions as a relative adverb here, introducing a clause that explains 'the reason' — the same pattern taught earlier in this file.",
+            "grammarRule": "Relative adverb introducing a reason clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "relative use",
+                "interrogative use"
             ]
         },
         {
@@ -680,23 +680,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'epiphany' as used in the sentence below?",
-            "targetWord": "epiphany",
-            "sentence": "She had a sudden and transformative epiphany that entirely changed the direction of her research project.",
+            "question": "In the same sentence, what role does 'three' play?",
+            "targetWord": "three",
+            "sentence": "That's the reason why only three of the volunteers had enough information to answer questions confidently during the meeting.",
             "options": [
-                "Noun",
+                "Pronoun",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Abstract nouns name moments of sudden understanding. What does 'epiphany' name?",
-            "explanation": "'Epiphany' is a noun - it names a moment of sudden and profound insight. It follows 'a sudden and transformative'.",
-            "grammarRule": "Nouns",
+            "correctAnswer": "Pronoun",
+            "hint": "Remember: numbers standing alone, followed by 'of,' function as words rather than adjectives. What does 'three' represent here?",
+            "explanation": "'Three' functions as a pronoun here, standing alone as the subject and representing an unspecified group of volunteers — the same pattern as earlier in this file.",
+            "grammarRule": "Cardinal number functioning as a pronoun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "pronoun use",
+                "adjective use"
             ]
         },
         {
@@ -704,23 +704,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'disseminate' as used in the sentence below?",
-            "targetWord": "disseminate",
-            "sentence": "Academic journals and conferences exist primarily to disseminate new findings to the research community.",
+            "question": "Within that same sentence, 'confidently' is functioning as a:",
+            "targetWord": "confidently",
+            "sentence": "That's the reason why only three of the volunteers had enough information to answer questions confidently during the meeting.",
             "options": [
                 "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Verb"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Communication verbs describe spreading information widely. What is the purpose of academic journals?",
-            "explanation": "'Disseminate' is a verb - it follows 'to' as an infinitive. 'Dissemination' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Adverb",
+            "hint": "Set aside what you know about this word in general. How did the volunteers answer questions?",
+            "explanation": "'Confidently' is a manner adverb modifying the verb 'answer', describing how the volunteers responded.",
+            "grammarRule": "Manner adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "adverb form"
             ]
         }
     ]

@@ -7,643 +7,167 @@
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "We're really pushing the boat out tonight, so let's have the lobster bisque, the beef wellington, and the tarte tatin.",
+            "prompt": "Could we have the check, please? And could you add two coffees to it, and a slice of cheesecake to take away?",
             "options": [
-                "Lobster Bisque",
-                "Beef Wellington",
-                "Tarte Tatin",
-                "Apple Crumble"
+                "Tea",
+                "Coffee",
+                "Cheesecake",
+                "Brownie"
             ],
-            "correctAnswer": "Lobster Bisque, Beef Wellington, Tarte Tatin",
-            "hint": "‘Pushing the boat out’ is an idiom meaning to spend generously on something special.",
-            "explanation": "‘Pushing the boat out’ means splurging or being extra generous, usually to celebrate something. ‘Beef Wellington’ wraps tenderloin in pastry with mushroom duxelles, a dramatic centerpiece dish.",
+            "correctAnswer": "Coffee, Cheesecake",
+            "hint": "Extra items are added before the bill is printed.",
+            "explanation": "'Check' is the usual American word for the bill; asking to add items before it arrives is common.",
             "id": "go_l141_q1",
             "menuItems": [
-                "Lobster Bisque",
-                "Beef Wellington",
-                "Tarte Tatin",
-                "Apple Crumble"
+                "Tea",
+                "Coffee",
+                "Cheesecake",
+                "Brownie"
             ],
             "menuPrices": [
-                "$10.00",
-                "$5.75",
-                "$4.50",
-                "$20.50"
+                "$2.75",
+                "$3.00",
+                "$6.50",
+                "$5.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Could we possibly modify the almond tart to leave out the nuts? Then the pan-seared duck, and the cheese trolley, if you'd be so kind.",
+            "prompt": "Could we have the bill, please? We'll also have two more teas while we wait, and a slice of the lemon cake.",
             "options": [
-                "Almond Tart",
-                "Pan-Seared Duck",
-                "Cheese Trolley",
-                "Fruit Tart"
+                "Coffee",
+                "Tea",
+                "Carrot Cake",
+                "Lemon Cake"
             ],
-            "correctAnswer": "Almond Tart, Pan-Seared Duck, Cheese Trolley",
-            "hint": "An allergy-related modification is requested very politely at the start.",
-            "explanation": "A ‘cheese trolley’ is a cart wheeled to the table so guests can choose from a selection of cheeses — a traditional way to end a formal meal.",
+            "correctAnswer": "Tea, Lemon Cake",
+            "hint": "The British word 'bill' is used instead of 'check.'",
+            "explanation": "In the UK and many other places people ask for 'the bill'; in the US it's 'the check.' Both mean the same thing.",
             "id": "go_l141_q2",
             "menuItems": [
-                "Almond Tart",
-                "Pan-Seared Duck",
-                "Cheese Trolley",
-                "Fruit Tart"
+                "Coffee",
+                "Tea",
+                "Carrot Cake",
+                "Lemon Cake"
             ],
             "menuPrices": [
-                "$2.00",
-                "$5.75",
-                "$10.00",
-                "$19.25"
+                "$3.00",
+                "$2.75",
+                "$5.50",
+                "$5.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll have the full works — the oysters, the chateaubriand, and the crêpe suzette — and don't hold back on any of it.",
+            "prompt": "Server: Would you like anything else, or shall I bring the check? Customer: The check, thanks - but could I get a dessert to go? The chocolate cake, and a coffee for the road.",
             "options": [
-                "Oysters",
-                "Chateaubriand",
-                "Crêpe Suzette",
-                "Trifle"
+                "Carrot Cake",
+                "Coffee",
+                "Chocolate Cake",
+                "Tea"
             ],
-            "correctAnswer": "Oysters, Chateaubriand, Crêpe Suzette",
-            "hint": "‘The full works’ means everything available, without leaving anything out.",
-            "explanation": "‘Chateaubriand’ is a thick, tender cut of beef tenderloin, traditionally carved and served for two. ‘The full works’ signals a complete, no-holds-barred order.",
+            "correctAnswer": "Coffee, Chocolate Cake",
+            "hint": "Something is ordered 'to go' even though the meal is ending.",
+            "explanation": "'For the road' means to take with you; it's a natural way to add a last item.",
             "id": "go_l141_q3",
             "menuItems": [
-                "Oysters",
-                "Chateaubriand",
-                "Crêpe Suzette",
-                "Trifle"
+                "Carrot Cake",
+                "Coffee",
+                "Chocolate Cake",
+                "Tea"
             ],
             "menuPrices": [
-                "$21.75",
-                "$5.75",
-                "$14.00",
-                "$14.00"
+                "$6.50",
+                "$3.00",
+                "$6.50",
+                "$2.75"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Spare no expense tonight: the caviar, the dover sole, and the soufflé, whatever the cost.",
+            "prompt": "Do you accept cards here, or is it cash only? Server: Cards are fine. Customer: Good - then we'll have the two lunch specials and the iced teas.",
             "options": [
-                "Caviar",
-                "Dover Sole",
-                "Soufflé",
-                "Crème Brûlée"
+                "Lemonade",
+                "Iced Tea",
+                "Dinner Special",
+                "Lunch Special"
             ],
-            "correctAnswer": "Caviar, Dover Sole, Soufflé",
-            "hint": "‘Spare no expense’ means cost is not a concern for this order.",
-            "explanation": "‘Spare no expense’ is a strong idiom showing that money is not a limiting factor. ‘Dover sole’ is a prized flatfish, often served whole and filleted table-side.",
+            "correctAnswer": "Iced Tea, Lunch Special",
+            "hint": "A payment question comes before the order.",
+            "explanation": "Asking about payment methods early avoids problems later, especially in smaller places.",
             "id": "go_l142_q1",
             "menuItems": [
-                "Caviar",
-                "Dover Sole",
-                "Soufflé",
-                "Crème Brûlée"
+                "Lemonade",
+                "Iced Tea",
+                "Dinner Special",
+                "Lunch Special"
             ],
             "menuPrices": [
-                "$20.50",
-                "$15.25",
-                "$16.50",
-                "$2.00"
+                "$3.00",
+                "$3.00",
+                "$16.00",
+                "$11.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "The wine list is extensive, so I'll ask for your guidance there, but for food, the terrine, the quail, and the clafoutis.",
+            "prompt": "Can I pay with my phone? Server: Yes, contactless works. Customer: Great - I'll have the soup and the roll.",
             "options": [
-                "Terrine",
-                "Quail",
-                "Clafoutis",
-                "Tart"
+                "Salad",
+                "Garlic Bread",
+                "Soup",
+                "Bread Roll"
             ],
-            "correctAnswer": "Terrine, Quail, Clafoutis",
-            "hint": "The wine decision is delegated, but the three food courses are all named directly.",
-            "explanation": "A ‘terrine’ is a type of pâté set in a loaf-shaped mold. ‘Clafoutis’ is a French baked dessert of fruit set in a custard-like batter.",
+            "correctAnswer": "Soup, Bread Roll",
+            "hint": "'Contactless' means paying by tapping a card or phone.",
+            "explanation": "'Contactless' payment is now common; the question 'Can I pay with my phone?' is natural.",
             "id": "go_l142_q2",
             "menuItems": [
-                "Terrine",
-                "Quail",
-                "Clafoutis",
-                "Tart"
+                "Salad",
+                "Garlic Bread",
+                "Soup",
+                "Bread Roll"
             ],
             "menuPrices": [
-                "$13.75",
-                "$10.00",
-                "$12.50",
-                "$13.75"
+                "$7.00",
+                "$3.00",
+                "$5.00",
+                "$1.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I understand the pithivier requires a forty-minute wait — that's no trouble at all. Then the venison, and the baba au rhum.",
+            "prompt": "Server: I'm afraid the card machine is down - cash only tonight. Customer: I've got cash, so that's fine - the pizza and a beer, please.",
             "options": [
-                "Pithivier",
-                "Venison",
-                "Baba au Rhum",
-                "Soufflé"
+                "Pasta",
+                "Cider",
+                "Beer",
+                "Pizza"
             ],
-            "correctAnswer": "Pithivier, Venison, Baba au Rhum",
-            "hint": "A long preparation time is accepted without complaint before the rest of the order continues.",
-            "explanation": "A ‘pithivier’ is a round, domed pastry pie, often filled with meat or a sweet filling, requiring time to bake properly. ‘Baba au rhum’ is a small, rum-soaked cake.",
+            "correctAnswer": "Beer, Pizza",
+            "hint": "A payment problem doesn't change the order.",
+            "explanation": "'Cash only' limits how you can pay, but it doesn't change what you order.",
             "id": "go_l142_q3",
             "menuItems": [
-                "Pithivier",
-                "Venison",
-                "Baba au Rhum",
-                "Soufflé"
+                "Pasta",
+                "Cider",
+                "Beer",
+                "Pizza"
             ],
             "menuPrices": [
-                "$18.00",
-                "$2.00",
+                "$13.00",
+                "$6.50",
                 "$6.00",
-                "$16.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Rather than choose myself, I'll ask the kitchen to send out the langoustine, the turbot, and the floating island at their discretion.",
-            "options": [
-                "Langoustine",
-                "Turbot",
-                "Floating Island",
-                "Crème Caramel"
-            ],
-            "correctAnswer": "Langoustine, Turbot, Floating Island",
-            "hint": "The customer hands the entire course selection over to the kitchen's judgment.",
-            "explanation": "‘Floating island’ is a light dessert of soft meringue floating on a pool of custard sauce. ‘At their discretion’ means the kitchen decides the details, similar to ‘I’ll let you surprise me.’",
-            "id": "go_l143_q1",
-            "menuItems": [
-                "Langoustine",
-                "Turbot",
-                "Floating Island",
-                "Crème Caramel"
-            ],
-            "menuPrices": [
-                "$21.75",
-                "$8.50",
-                "$5.75",
-                "$6.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Given it's a milestone birthday, we've spared no expense: the foie gras, the wagyu, and the chocolate fondant for everyone.",
-            "options": [
-                "Foie Gras",
-                "Wagyu",
-                "Chocolate Fondant",
-                "Chocolate Mousse"
-            ],
-            "correctAnswer": "Foie Gras, Wagyu, Chocolate Fondant",
-            "hint": "A significant birthday explains this generous order for the whole group.",
-            "explanation": "A ‘milestone birthday’ refers to a significant age, like a 30th, 40th, or 50th — often celebrated with an especially memorable meal.",
-            "id": "go_l143_q2",
-            "menuItems": [
-                "Foie Gras",
-                "Wagyu",
-                "Chocolate Fondant",
-                "Chocolate Mousse"
-            ],
-            "menuPrices": [
-                "$10.00",
-                "$7.25",
-                "$6.00",
-                "$12.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I'll round off the meal with the cheese course, having already decided on the bouillabaisse and the rack of veal.",
-            "options": [
-                "Cheese Course",
-                "Bouillabaisse",
-                "Rack of Veal",
-                "Consommé"
-            ],
-            "correctAnswer": "Cheese Course, Bouillabaisse, Rack of Veal",
-            "hint": "Dessert is mentioned first, but the sentence clarifies the starter and main were already decided.",
-            "explanation": "‘Bouillabaisse’ is a rich, saffron-infused French seafood stew. ‘Having already decided on…’ confirms the earlier two courses without repeating them in order.",
-            "id": "go_l143_q3",
-            "menuItems": [
-                "Cheese Course",
-                "Bouillabaisse",
-                "Rack of Veal",
-                "Consommé"
-            ],
-            "menuPrices": [
-                "$14.00",
-                "$19.25",
-                "$16.50",
-                "$5.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Whatever accompanies the monkfish best is what I'll have with it, along with the escargot and the tarte tatin.",
-            "options": [
-                "Monkfish",
-                "Escargot",
-                "Tarte Tatin",
-                "Apple Crumble"
-            ],
-            "correctAnswer": "Monkfish, Escargot, Tarte Tatin",
-            "hint": "The customer trusts the kitchen's pairing judgment for a side, but still names three clear courses.",
-            "explanation": "‘Monkfish’ is a firm, meaty white fish often compared to lobster in texture. Trusting the kitchen's pairing for a side dish doesn't change the three main items ordered.",
-            "id": "go_l144_q1",
-            "menuItems": [
-                "Monkfish",
-                "Escargot",
-                "Tarte Tatin",
-                "Apple Crumble"
-            ],
-            "menuPrices": [
-                "$19.25",
-                "$20.50",
-                "$4.50",
-                "$20.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "We're really pushing the boat out tonight, so let's have the terrine, the beef wellington, and the soufflé.",
-            "options": [
-                "Terrine",
-                "Beef Wellington",
-                "Soufflé",
-                "Crème Brûlée"
-            ],
-            "correctAnswer": "Terrine, Beef Wellington, Soufflé",
-            "hint": "This celebratory idiom returns with a new, equally impressive set of dishes.",
-            "explanation": "This phrase continues to signal an especially generous, indulgent order, fitting for a memorable night out.",
-            "id": "go_l144_q2",
-            "menuItems": [
-                "Terrine",
-                "Beef Wellington",
-                "Soufflé",
-                "Crème Brûlée"
-            ],
-            "menuPrices": [
-                "$13.75",
-                "$5.75",
-                "$16.50",
-                "$2.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Could we possibly modify the quail to remove the bones? Then the risotto, and the cheese trolley, if you'd be so kind.",
-            "options": [
-                "Quail",
-                "Risotto",
-                "Cheese Trolley",
-                "Panna Cotta"
-            ],
-            "correctAnswer": "Quail, Risotto, Cheese Trolley",
-            "hint": "A specific preparation request is made politely for the starter.",
-            "explanation": "Asking for a dish to be deboned is a common, reasonable request for smaller game birds like quail, which can otherwise be fiddly to eat.",
-            "id": "go_l144_q3",
-            "menuItems": [
-                "Quail",
-                "Risotto",
-                "Cheese Trolley",
-                "Panna Cotta"
-            ],
-            "menuPrices": [
-                "$10.00",
-                "$6.00",
-                "$10.00",
-                "$3.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I'll have the full works — the lobster bisque, the chateaubriand, and the baba au rhum — and don't hold back on any of it.",
-            "options": [
-                "Lobster Bisque",
-                "Chateaubriand",
-                "Baba au Rhum",
-                "Crème Caramel"
-            ],
-            "correctAnswer": "Lobster Bisque, Chateaubriand, Baba au Rhum",
-            "hint": "This ‘full works’ idiom returns with a new set of indulgent dishes.",
-            "explanation": "This phrase continues to express a desire for the complete, unrestrained version of the meal, holding nothing back.",
-            "id": "go_l145_q1",
-            "menuItems": [
-                "Lobster Bisque",
-                "Chateaubriand",
-                "Baba au Rhum",
-                "Crème Caramel"
-            ],
-            "menuPrices": [
-                "$10.00",
-                "$5.75",
-                "$6.00",
-                "$6.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Spare no expense tonight: the caviar, the turbot, and the floating island, whatever the cost.",
-            "options": [
-                "Caviar",
-                "Turbot",
-                "Floating Island",
-                "Soufflé"
-            ],
-            "correctAnswer": "Caviar, Turbot, Floating Island",
-            "hint": "This cost-is-no-object idiom returns to close out a lavish order.",
-            "explanation": "This structure continues to show a complete disregard for cost, appropriate for an especially special occasion.",
-            "id": "go_l145_q2",
-            "menuItems": [
-                "Caviar",
-                "Turbot",
-                "Floating Island",
-                "Soufflé"
-            ],
-            "menuPrices": [
-                "$20.50",
-                "$8.50",
-                "$5.75",
-                "$16.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "The wine list is extensive, so I'll ask for your guidance there, but for food, the escargot, the venison, and the clafoutis.",
-            "options": [
-                "Escargot",
-                "Venison",
-                "Clafoutis",
-                "Tarte Tatin"
-            ],
-            "correctAnswer": "Escargot, Venison, Clafoutis",
-            "hint": "The wine-delegation phrase returns once more, with three newly named food courses.",
-            "explanation": "This structure remains a graceful way to separate the wine decision from a clearly self-directed food order.",
-            "id": "go_l145_q3",
-            "menuItems": [
-                "Escargot",
-                "Venison",
-                "Clafoutis",
-                "Tarte Tatin"
-            ],
-            "menuPrices": [
-                "$20.50",
-                "$2.00",
-                "$12.50",
-                "$4.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I understand the soufflé requires a twenty-minute wait — that's no trouble at all. Then the dover sole, and the terrine.",
-            "options": [
-                "Soufflé",
-                "Dover Sole",
-                "Terrine",
-                "Cheese Trolley"
-            ],
-            "correctAnswer": "Soufflé, Dover Sole, Terrine",
-            "hint": "Dessert is mentioned first here, with the wait time explained before the rest of the order.",
-            "explanation": "Since soufflés must be ordered in advance, some guests choose to mention them first, even though they'll be eaten last — a good test of listening past the meal's natural order.",
-            "id": "go_l146_q1",
-            "menuItems": [
-                "Soufflé",
-                "Dover Sole",
-                "Terrine",
-                "Cheese Trolley"
-            ],
-            "menuPrices": [
-                "$16.50",
-                "$15.25",
-                "$13.75",
-                "$10.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Rather than choose myself, I'll ask the kitchen to send out the quail, the risotto, and the pithivier at their discretion.",
-            "options": [
-                "Quail",
-                "Risotto",
-                "Pithivier",
-                "Baba au Rhum"
-            ],
-            "correctAnswer": "Quail, Risotto, Pithivier",
-            "hint": "This full-trust ordering style returns once more with a new set of dishes.",
-            "explanation": "This structure continues to express complete confidence in the kitchen's judgment for an entire multi-course meal.",
-            "id": "go_l146_q2",
-            "menuItems": [
-                "Quail",
-                "Risotto",
-                "Pithivier",
-                "Baba au Rhum"
-            ],
-            "menuPrices": [
-                "$10.00",
-                "$6.00",
-                "$18.00",
-                "$6.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Given it's a milestone birthday, we've spared no expense: the lobster bisque, the beef wellington, and the crème brûlée for everyone.",
-            "options": [
-                "Lobster Bisque",
-                "Beef Wellington",
-                "Crème Brûlée",
-                "Chocolate Fondant"
-            ],
-            "correctAnswer": "Lobster Bisque, Beef Wellington, Crème Brûlée",
-            "hint": "The milestone-celebration structure returns once more, explaining a generous group order.",
-            "explanation": "This phrase continues to explain an elevated order made specifically because of a significant birthday celebration.",
-            "id": "go_l146_q3",
-            "menuItems": [
-                "Lobster Bisque",
-                "Beef Wellington",
-                "Crème Brûlée",
-                "Chocolate Fondant"
-            ],
-            "menuPrices": [
-                "$10.00",
-                "$5.75",
-                "$2.00",
-                "$6.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I'll round off the meal with the floating island, having already decided on the terrine and the chateaubriand.",
-            "options": [
-                "Floating Island",
-                "Terrine",
-                "Chateaubriand",
-                "Crème Caramel"
-            ],
-            "correctAnswer": "Floating Island, Terrine, Chateaubriand",
-            "hint": "Dessert leads the sentence again, with the earlier two courses confirmed afterward.",
-            "explanation": "This reordering structure continues from earlier tiers, always requiring careful listening regardless of which course is named first.",
-            "id": "go_l147_q1",
-            "menuItems": [
-                "Floating Island",
-                "Terrine",
-                "Chateaubriand",
-                "Crème Caramel"
-            ],
-            "menuPrices": [
-                "$5.75",
-                "$13.75",
-                "$5.75",
-                "$6.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Whatever accompanies the turbot best is what I'll have with it, along with the caviar and the tarte tatin.",
-            "options": [
-                "Turbot",
-                "Caviar",
-                "Tarte Tatin",
-                "Apple Crumble"
-            ],
-            "correctAnswer": "Turbot, Caviar, Tarte Tatin",
-            "hint": "A side-dish decision is again left to the kitchen's judgment for the main course.",
-            "explanation": "This structure continues to show trust in the kitchen for smaller decisions, while the three headline dishes remain clearly stated.",
-            "id": "go_l147_q2",
-            "menuItems": [
-                "Turbot",
-                "Caviar",
-                "Tarte Tatin",
-                "Apple Crumble"
-            ],
-            "menuPrices": [
-                "$8.50",
-                "$20.50",
-                "$4.50",
-                "$20.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "We're really pushing the boat out tonight, so let's have the escargot, the venison, and the soufflé.",
-            "options": [
-                "Escargot",
-                "Venison",
-                "Soufflé",
-                "Crème Brûlée"
-            ],
-            "correctAnswer": "Escargot, Venison, Soufflé",
-            "hint": "This celebratory idiom makes another appearance with new dishes.",
-            "explanation": "This phrase remains a natural, idiomatic way to describe an especially generous, celebratory order.",
-            "id": "go_l147_q3",
-            "menuItems": [
-                "Escargot",
-                "Venison",
-                "Soufflé",
-                "Crème Brûlée"
-            ],
-            "menuPrices": [
-                "$20.50",
-                "$2.00",
-                "$16.50",
-                "$2.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Could we possibly modify the terrine to leave out the pistachios? Then the dover sole, and the cheese trolley, if you'd be so kind.",
-            "options": [
-                "Terrine",
-                "Dover Sole",
-                "Cheese Trolley",
-                "Baba au Rhum"
-            ],
-            "correctAnswer": "Terrine, Dover Sole, Cheese Trolley",
-            "hint": "An allergy or preference-related modification returns for the starter.",
-            "explanation": "Many terrines include nuts for texture, so asking about pistachios specifically is a realistic, practical question.",
-            "id": "go_l148_q1",
-            "menuItems": [
-                "Terrine",
-                "Dover Sole",
-                "Cheese Trolley",
-                "Baba au Rhum"
-            ],
-            "menuPrices": [
-                "$13.75",
-                "$15.25",
-                "$10.00",
-                "$6.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I'll have the full works — the caviar, the beef wellington, and the crêpe suzette — and don't hold back on any of it.",
-            "options": [
-                "Caviar",
-                "Beef Wellington",
-                "Crêpe Suzette",
-                "Trifle"
-            ],
-            "correctAnswer": "Caviar, Beef Wellington, Crêpe Suzette",
-            "hint": "This indulgent idiom returns once more with a rich three-course order.",
-            "explanation": "This structure remains a vivid way to request the complete, most generous version of a meal.",
-            "id": "go_l148_q2",
-            "menuItems": [
-                "Caviar",
-                "Beef Wellington",
-                "Crêpe Suzette",
-                "Trifle"
-            ],
-            "menuPrices": [
-                "$20.50",
-                "$5.75",
-                "$14.00",
                 "$14.00"
             ]
         },
@@ -651,196 +175,672 @@
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Spare no expense tonight: the lobster bisque, the chateaubriand, and the floating island, whatever the cost.",
+            "prompt": "Could we split the check four ways? We shared two pizzas and a big salad.",
             "options": [
-                "Lobster Bisque",
-                "Chateaubriand",
-                "Floating Island",
-                "Soufflé"
+                "Soup",
+                "Pizza",
+                "Salad",
+                "Pasta"
             ],
-            "correctAnswer": "Lobster Bisque, Chateaubriand, Floating Island",
-            "hint": "The cost-is-no-object phrase returns once more.",
-            "explanation": "This idiom continues to appear whenever a customer wants to signal that no budget limit applies to their order.",
+            "correctAnswer": "Pizza, Salad",
+            "hint": "Splitting evenly works best when everything was shared.",
+            "explanation": "'Split the check four ways' means dividing the total equally among four people.",
+            "id": "go_l143_q1",
+            "menuItems": [
+                "Soup",
+                "Pizza",
+                "Salad",
+                "Pasta"
+            ],
+            "menuPrices": [
+                "$5.00",
+                "$14.00",
+                "$10.00",
+                "$13.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Can we split the bill equally? It was just the nachos and the wings to share, and the pitcher of beer.",
+            "options": [
+                "Pitcher of Soda",
+                "Nachos",
+                "Pitcher of Beer",
+                "Wings"
+            ],
+            "correctAnswer": "Nachos, Pitcher of Beer, Wings",
+            "hint": "Everything on the table was shared, so an even split makes sense.",
+            "explanation": "'Equally' or 'evenly' tells the server to divide the total by the number of people.",
+            "id": "go_l143_q2",
+            "menuItems": [
+                "Pitcher of Soda",
+                "Nachos",
+                "Pitcher of Beer",
+                "Wings"
+            ],
+            "menuPrices": [
+                "$8.00",
+                "$9.00",
+                "$16.00",
+                "$11.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Server: Together or separate? Customer: Together, split three ways, please - the pasta, the bruschetta, and the wine were all shared.",
+            "options": [
+                "Pizza",
+                "Bruschetta",
+                "Pasta",
+                "Wine"
+            ],
+            "correctAnswer": "Bruschetta, Pasta, Wine",
+            "hint": "The server asks how to arrange the bill.",
+            "explanation": "'Together or separate?' is the standard question when a group asks for the bill.",
+            "id": "go_l143_q3",
+            "menuItems": [
+                "Pizza",
+                "Bruschetta",
+                "Pasta",
+                "Wine"
+            ],
+            "menuPrices": [
+                "$14.00",
+                "$7.00",
+                "$13.00",
+                "$9.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Could we get separate checks? Mine is the pasta and a glass of white wine.",
+            "options": [
+                "Pizza",
+                "White Wine",
+                "Red Wine",
+                "Pasta"
+            ],
+            "correctAnswer": "White Wine, Pasta",
+            "hint": "Only the speaker's own items are on their check.",
+            "explanation": "'Separate checks' means each person pays for their own items; you list only what you had.",
+            "id": "go_l144_q1",
+            "menuItems": [
+                "Pizza",
+                "White Wine",
+                "Red Wine",
+                "Pasta"
+            ],
+            "menuPrices": [
+                "$14.00",
+                "$8.00",
+                "$8.00",
+                "$13.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Server: Do you want it all on one check? Customer: Actually, separate, please: I had the burger and the milkshake; she had the salad and the tea.",
+            "options": [
+                "Tea",
+                "Salad",
+                "Burger",
+                "Milkshake"
+            ],
+            "correctAnswer": "Burger, Milkshake",
+            "hint": "Two people's items are described, but only one belongs to the customer speaking.",
+            "explanation": "When 'I had...' and 'she had...' are mixed in one sentence, follow who each item belongs to.",
+            "id": "go_l144_q2",
+            "menuItems": [
+                "Tea",
+                "Salad",
+                "Burger",
+                "Milkshake"
+            ],
+            "menuPrices": [
+                "$3.00",
+                "$8.00",
+                "$9.00",
+                "$5.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Can you put the steak and the red wine on my card, and the rest on his?",
+            "options": [
+                "White Wine",
+                "Fish",
+                "Red Wine",
+                "Steak"
+            ],
+            "correctAnswer": "Red Wine, Steak",
+            "hint": "The speaker names only what goes on their own card.",
+            "explanation": "'Put X on my card, and the rest on his' is a quick way to divide a bill between two payers.",
+            "id": "go_l144_q3",
+            "menuItems": [
+                "White Wine",
+                "Fish",
+                "Red Wine",
+                "Steak"
+            ],
+            "menuPrices": [
+                "$9.00",
+                "$19.00",
+                "$9.00",
+                "$26.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Could I get an itemized receipt, please? It's for my expenses - I had the lunch special and a coffee.",
+            "options": [
+                "Lunch Special",
+                "Coffee",
+                "Tea",
+                "Salad"
+            ],
+            "correctAnswer": "Lunch Special, Coffee",
+            "hint": "An itemized receipt lists each item separately.",
+            "explanation": "'Itemized' means each item and its price are listed - useful for expense reports.",
+            "id": "go_l145_q1",
+            "menuItems": [
+                "Lunch Special",
+                "Coffee",
+                "Tea",
+                "Salad"
+            ],
+            "menuPrices": [
+                "$11.00",
+                "$3.00",
+                "$2.75",
+                "$8.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Server: Would you like the receipt? Customer: Yes, please - and could you write the company name on it? I'll have a last coffee and a slice of chocolate cake while I wait.",
+            "options": [
+                "Coffee",
+                "Chocolate Cake",
+                "Carrot Cake",
+                "Tea"
+            ],
+            "correctAnswer": "Coffee, Chocolate Cake",
+            "hint": "A special request for the receipt is followed by a small order.",
+            "explanation": "Asking for a company name on a receipt is common for business meals; the customer also adds a last order.",
+            "id": "go_l145_q2",
+            "menuItems": [
+                "Coffee",
+                "Chocolate Cake",
+                "Carrot Cake",
+                "Tea"
+            ],
+            "menuPrices": [
+                "$3.00",
+                "$6.50",
+                "$6.50",
+                "$2.75"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "No paper receipt for me, thanks - but could you email it? I had the salmon and the salad.",
+            "options": [
+                "Salmon",
+                "Chicken",
+                "Salad",
+                "Soup"
+            ],
+            "correctAnswer": "Salmon, Salad",
+            "hint": "A receipt can be sent by email instead of printed.",
+            "explanation": "Many restaurants offer email receipts; you can say 'no paper receipt' and ask for a digital one.",
+            "id": "go_l145_q3",
+            "menuItems": [
+                "Salmon",
+                "Chicken",
+                "Salad",
+                "Soup"
+            ],
+            "menuPrices": [
+                "$19.00",
+                "$15.00",
+                "$8.00",
+                "$5.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Is service included, or should I add a tip? Server: Service charge isn't included. Customer: Thanks - then I'll leave twenty percent. That was the ribeye and the fries, right?",
+            "options": [
+                "Ribeye",
+                "Sirloin",
+                "Salad",
+                "Fries"
+            ],
+            "correctAnswer": "Ribeye, Fries",
+            "hint": "A tipping question is asked and answered before the bill is paid.",
+            "explanation": "In the US, service isn't usually included, so tipping is expected; asking 'Is service included?' avoids paying twice.",
+            "id": "go_l146_q1",
+            "menuItems": [
+                "Ribeye",
+                "Sirloin",
+                "Salad",
+                "Fries"
+            ],
+            "menuPrices": [
+                "$28.00",
+                "$24.00",
+                "$8.00",
+                "$3.50"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Server: Just so you know, a ten percent service charge is added for groups. Customer: Thanks for telling me - so I won't add anything extra. For the record, we had the two pastas and the wine.",
+            "options": [
+                "Pasta",
+                "Beer",
+                "Wine",
+                "Pizza"
+            ],
+            "correctAnswer": "Pasta, Wine",
+            "hint": "A service charge replaces a separate tip.",
+            "explanation": "A 'service charge' is added automatically, so you usually don't add a second tip.",
+            "id": "go_l146_q2",
+            "menuItems": [
+                "Pasta",
+                "Beer",
+                "Wine",
+                "Pizza"
+            ],
+            "menuPrices": [
+                "$13.00",
+                "$6.00",
+                "$9.00",
+                "$14.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Customer: In some countries tipping isn't expected - is it normal here? Server: A little is appreciated, not required. Customer: OK - I'll round up for the coffee and cake.",
+            "options": [
+                "Coffee",
+                "Muffin",
+                "Tea",
+                "Cake"
+            ],
+            "correctAnswer": "Coffee, Cake",
+            "hint": "Tipping customs vary by country.",
+            "explanation": "Asking whether tipping is normal is a good habit when you're traveling; 'round up' means paying a little more than the bill.",
+            "id": "go_l146_q3",
+            "menuItems": [
+                "Coffee",
+                "Muffin",
+                "Tea",
+                "Cake"
+            ],
+            "menuPrices": [
+                "$3.00",
+                "$3.50",
+                "$2.75",
+                "$6.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the guest's final order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Excuse me, I think there's a mistake on the check - I'm being charged for two beers, but we only had one. The pizza is correct.",
+            "options": [
+                "Pizza",
+                "Beer",
+                "Wine",
+                "Pasta"
+            ],
+            "correctAnswer": "Pizza, Beer",
+            "hint": "One line on the bill is wrong; another is right.",
+            "explanation": "'I think there's a mistake on the check' is a polite way to question a charge without accusing anyone.",
+            "id": "go_l147_q1",
+            "menuItems": [
+                "Pizza",
+                "Beer",
+                "Wine",
+                "Pasta"
+            ],
+            "menuPrices": [
+                "$14.00",
+                "$6.00",
+                "$8.00",
+                "$13.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the guest's final order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "This says three coffees, but there were only two of us - and the desserts are right, the two cheesecakes.",
+            "options": [
+                "Cheesecake",
+                "Coffee",
+                "Brownie",
+                "Tea"
+            ],
+            "correctAnswer": "Cheesecake, Coffee",
+            "hint": "A number on the bill doesn't match what was ordered.",
+            "explanation": "Checking quantities on the bill is a good habit; you can say what you actually had and what's right.",
+            "id": "go_l147_q2",
+            "menuItems": [
+                "Cheesecake",
+                "Coffee",
+                "Brownie",
+                "Tea"
+            ],
+            "menuPrices": [
+                "$6.50",
+                "$3.00",
+                "$6.00",
+                "$2.75"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the guest's final order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "I don't think we ordered the garlic bread - we asked for the bruschetta. Could you check? The soup and wine are correct.",
+            "options": [
+                "Soup",
+                "Wine",
+                "Bruschetta",
+                "Garlic Bread"
+            ],
+            "correctAnswer": "Soup, Wine, Bruschetta",
+            "hint": "A wrong item appears on the bill; three other items are confirmed.",
+            "explanation": "'I don't think we ordered...' is a soft way to point out a possible error on the bill.",
+            "id": "go_l147_q3",
+            "menuItems": [
+                "Soup",
+                "Wine",
+                "Bruschetta",
+                "Garlic Bread"
+            ],
+            "menuPrices": [
+                "$5.00",
+                "$9.00",
+                "$7.00",
+                "$4.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Please, let me get this - it's on me. I had the fish, and she had the pasta.",
+            "options": [
+                "Pasta",
+                "Steak",
+                "Salad",
+                "Fish"
+            ],
+            "correctAnswer": "Pasta, Fish",
+            "hint": "One person pays for everyone's food.",
+            "explanation": "'It's on me' means 'I'll pay'; it's a friendly way to treat someone.",
+            "id": "go_l148_q1",
+            "menuItems": [
+                "Pasta",
+                "Steak",
+                "Salad",
+                "Fish"
+            ],
+            "menuPrices": [
+                "$13.00",
+                "$26.00",
+                "$8.00",
+                "$17.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "No, no - you paid last time, this one's mine. The two coffees and the two croissants, please.",
+            "options": [
+                "Croissant",
+                "Muffin",
+                "Coffee",
+                "Tea"
+            ],
+            "correctAnswer": "Croissant, Coffee",
+            "hint": "Friends take turns paying.",
+            "explanation": "'You paid last time' is a common way to explain why it's your turn to pay.",
+            "id": "go_l148_q2",
+            "menuItems": [
+                "Croissant",
+                "Muffin",
+                "Coffee",
+                "Tea"
+            ],
+            "menuPrices": [
+                "$3.50",
+                "$3.25",
+                "$3.00",
+                "$2.75"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Let's split the calamari and the bruschetta, and I'll pay for my own main - the lamb.",
+            "options": [
+                "Bruschetta",
+                "Beef",
+                "Lamb",
+                "Calamari"
+            ],
+            "correctAnswer": "Bruschetta, Lamb, Calamari",
+            "hint": "Some items are shared, and one item is paid for by one person.",
+            "explanation": "Mixing shared and individual payments is common: split the starters, pay for your own main.",
             "id": "go_l148_q3",
             "menuItems": [
-                "Lobster Bisque",
-                "Chateaubriand",
-                "Floating Island",
-                "Soufflé"
+                "Bruschetta",
+                "Beef",
+                "Lamb",
+                "Calamari"
             ],
             "menuPrices": [
-                "$10.00",
-                "$5.75",
-                "$5.75",
-                "$16.50"
+                "$7.00",
+                "$26.00",
+                "$24.00",
+                "$11.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "The wine list is extensive, so I'll ask for your guidance there, but for food, the quail, the risotto, and the clafoutis.",
+            "prompt": "Could I get a box for the leftovers, please? Just the rest of my pizza, and the garlic bread.",
             "options": [
-                "Quail",
-                "Risotto",
-                "Clafoutis",
-                "Tarte Tatin"
+                "Salad",
+                "Pizza",
+                "Garlic Bread",
+                "Pasta"
             ],
-            "correctAnswer": "Quail, Risotto, Clafoutis",
-            "hint": "This wine-delegation structure appears once more with new food courses.",
-            "explanation": "This structure continues to be a natural, elegant way to separate the wine decision from the food order.",
+            "correctAnswer": "Pizza, Garlic Bread",
+            "hint": "Leftovers are taken home in a box.",
+            "explanation": "'Leftovers' are the food you didn't finish; asking for a box is polite and common.",
             "id": "go_l149_q1",
             "menuItems": [
-                "Quail",
-                "Risotto",
-                "Clafoutis",
-                "Tarte Tatin"
+                "Salad",
+                "Pizza",
+                "Garlic Bread",
+                "Pasta"
             ],
             "menuPrices": [
-                "$10.00",
-                "$6.00",
-                "$12.50",
-                "$4.50"
+                "$8.00",
+                "$14.00",
+                "$4.00",
+                "$13.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I understand the pithivier requires a forty-minute wait — that's no trouble at all. Then the turbot, and the terrine.",
+            "prompt": "Could you wrap these up to take home? The steak, and half of the potatoes - but not the salad.",
             "options": [
-                "Pithivier",
-                "Turbot",
-                "Terrine",
-                "Cheese Trolley"
+                "Salad",
+                "Steak",
+                "Fries",
+                "Potatoes"
             ],
-            "correctAnswer": "Pithivier, Turbot, Terrine",
-            "hint": "The main course is named first here, with the terrine — a starter — mentioned last.",
-            "explanation": "This out-of-order sentence tests listening carefully rather than assuming the starter always comes first in speech.",
+            "correctAnswer": "Steak, Potatoes",
+            "hint": "Some items go home, and one is left behind on purpose.",
+            "explanation": "'Wrap up' or 'box up' means to pack food to take away; 'but not X' excludes one item.",
             "id": "go_l149_q2",
             "menuItems": [
-                "Pithivier",
-                "Turbot",
-                "Terrine",
-                "Cheese Trolley"
+                "Salad",
+                "Steak",
+                "Fries",
+                "Potatoes"
             ],
             "menuPrices": [
-                "$18.00",
-                "$8.50",
-                "$13.75",
-                "$10.00"
+                "$8.00",
+                "$26.00",
+                "$3.50",
+                "$4.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Rather than choose myself, I'll ask the kitchen to send out the caviar, the venison, and the baba au rhum at their discretion.",
+            "prompt": "Server: Would you like a doggy bag? Customer: Yes, please - the ribs and the cornbread; I finished the coleslaw.",
             "options": [
-                "Caviar",
-                "Venison",
-                "Baba au Rhum",
-                "Crème Caramel"
+                "Coleslaw",
+                "Cornbread",
+                "Ribs",
+                "Fries"
             ],
-            "correctAnswer": "Caviar, Venison, Baba au Rhum",
-            "hint": "This complete-trust structure returns once more with a fresh set of dishes.",
-            "explanation": "This phrase remains a graceful way to hand over an entire meal's course selection to the kitchen's expertise.",
+            "correctAnswer": "Cornbread, Ribs",
+            "hint": "A 'doggy bag' is a bag for leftovers; the customer names what's left.",
+            "explanation": "'Doggy bag' is an American phrase for taking leftovers home; 'to-go box' is more common now.",
             "id": "go_l149_q3",
             "menuItems": [
-                "Caviar",
-                "Venison",
-                "Baba au Rhum",
-                "Crème Caramel"
+                "Coleslaw",
+                "Cornbread",
+                "Ribs",
+                "Fries"
             ],
             "menuPrices": [
-                "$20.50",
-                "$2.00",
-                "$6.00",
-                "$6.00"
+                "$3.00",
+                "$3.00",
+                "$21.00",
+                "$3.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Given it's a milestone birthday, we've spared no expense: the escargot, the dover sole, and the soufflé for everyone.",
+            "prompt": "Server: Together or separately? Customer: Separately. I had the salmon and the white wine - and could you box up the leftover bread too?",
             "options": [
-                "Escargot",
-                "Dover Sole",
-                "Soufflé",
-                "Crème Brûlée"
+                "Bread",
+                "White Wine",
+                "Risotto",
+                "Salmon"
             ],
-            "correctAnswer": "Escargot, Dover Sole, Soufflé",
-            "hint": "This milestone-celebration phrase closes out this set of levels.",
-            "explanation": "This sentence concludes this level range with the same generous, celebratory structure used throughout for marking significant occasions.",
+            "correctAnswer": "Bread, White Wine, Salmon",
+            "hint": "A separate check and a leftovers request appear together.",
+            "explanation": "This level combines a separate bill with a leftovers request, mixing the skills of the unit.",
             "id": "go_l150_q1",
             "menuItems": [
-                "Escargot",
-                "Dover Sole",
-                "Soufflé",
-                "Crème Brûlée"
+                "Bread",
+                "White Wine",
+                "Risotto",
+                "Salmon"
             ],
             "menuPrices": [
-                "$20.50",
-                "$15.25",
-                "$16.50",
-                "$2.00"
+                "$2.50",
+                "$8.00",
+                "$15.00",
+                "$19.00"
             ]
         },
         {
-            "instruction": "Tap the items to fulfill the customer's order.",
+            "instruction": "Tap the items to fulfill the guest's final order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll round off the meal with the tarte tatin, having already decided on the lobster bisque and the beef wellington.",
+            "prompt": "Excuse me, there's an error on our check: we were charged for two desserts, but we shared the one tiramisu. Once that's fixed, we'll split it evenly. We had the pasta, the fish, and the tiramisu.",
             "options": [
-                "Tarte Tatin",
-                "Lobster Bisque",
-                "Beef Wellington",
-                "Apple Crumble"
+                "Tiramisu",
+                "Cheesecake",
+                "Pasta",
+                "Fish"
             ],
-            "correctAnswer": "Tarte Tatin, Lobster Bisque, Beef Wellington",
-            "hint": "Dessert leads this sentence one final time, followed by confirmation of the earlier two courses.",
-            "explanation": "This reordering structure makes its final appearance in this level range, reinforcing the importance of listening for content rather than assuming course order.",
+            "correctAnswer": "Tiramisu, Pasta, Fish",
+            "hint": "An error is corrected first, then the bill is divided evenly.",
+            "explanation": "Fixing errors before splitting the bill saves confusion; the order of steps is important.",
             "id": "go_l150_q2",
             "menuItems": [
-                "Tarte Tatin",
-                "Lobster Bisque",
-                "Beef Wellington",
-                "Apple Crumble"
+                "Tiramisu",
+                "Cheesecake",
+                "Pasta",
+                "Fish"
             ],
             "menuPrices": [
-                "$4.50",
-                "$10.00",
-                "$5.75",
-                "$20.50"
+                "$7.50",
+                "$7.00",
+                "$13.00",
+                "$17.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Whatever accompanies the chateaubriand best is what I'll have with it, along with the terrine and the floating island.",
+            "prompt": "Server: Everything OK with your meal? Customer: It was lovely, thanks. Could we have the bill? We'd like to add one last espresso and a slice of the lemon tart to take away - and I'll pay by card.",
             "options": [
-                "Chateaubriand",
-                "Terrine",
-                "Floating Island",
-                "Crème Caramel"
+                "Cappuccino",
+                "Cheesecake",
+                "Lemon Tart",
+                "Espresso"
             ],
-            "correctAnswer": "Chateaubriand, Terrine, Floating Island",
-            "hint": "This trust-the-kitchen structure for a side dish makes its final appearance here.",
-            "explanation": "This sentence closes out the tier, once again showing confidence in the kitchen's pairing choices while clearly naming the three main courses.",
+            "correctAnswer": "Lemon Tart, Espresso",
+            "hint": "A polite closing exchange ends with small additions.",
+            "explanation": "This final level of the unit brings together compliments, the bill, additions and payment in one natural closing.",
             "id": "go_l150_q3",
             "menuItems": [
-                "Chateaubriand",
-                "Terrine",
-                "Floating Island",
-                "Crème Caramel"
+                "Cappuccino",
+                "Cheesecake",
+                "Lemon Tart",
+                "Espresso"
             ],
             "menuPrices": [
-                "$5.75",
-                "$13.75",
-                "$5.75",
-                "$6.00"
+                "$4.00",
+                "$6.50",
+                "$6.00",
+                "$3.00"
             ]
         }
     ]

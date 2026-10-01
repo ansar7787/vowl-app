@@ -4,633 +4,633 @@
     "levels": "21-30",
     "quests": [
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that pairs an honest weakness with a real improvement step.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What motivates you at work?",
+            "interviewerQuestion": "What's one weakness of yours that you're aware of?",
             "options": [
-                "I'm motivated by solving problems and seeing the results of my effort.",
-                "Mostly just getting a paycheck.",
-                "I don't really need motivation, I just show up."
+                "I sometimes take on too many small tasks before prioritizing, so I've started making myself a quick priority list at the start of each day.",
+                "I don't really have any big weaknesses I can think of.",
+                "I guess I can be a bit disorganized sometimes."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "A motivation tied to the work itself sounds stronger than one tied only to pay.",
-            "explanation": "A motivation tied to the work itself, like problem-solving, shows genuine engagement rather than just financial need.",
+            "hint": "Pick a real weakness and pair it with a concrete step you're taking to manage it.",
+            "explanation": "Naming a real weakness alongside an active improvement step shows self-awareness and growth. Denying any weakness sounds evasive, and naming one with no plan attached leaves the interviewer unsure how self-aware you really are.",
             "id": "ji_l21_q1",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "skeptical",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which answer shows an honest, ongoing effort rather than a finished fix or no answer at all?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What keeps you motivated during a long project?",
+            "interviewerQuestion": "Tell me something you're working on improving.",
             "options": [
-                "Honestly, I lose motivation pretty easily.",
-                "I focus on the end goal and celebrate small milestones along the way.",
-                "I just push through because I have no choice."
+                "I used to be bad at time management, but I've pretty much fixed that completely, and it hasn't been an issue for a long time now.",
+                "Nothing specific comes to mind right now.",
+                "Public speaking used to make me nervous, so I've been volunteering to lead small team updates to build that muscle."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Breaking a big goal into smaller milestones is a strong motivation strategy.",
-            "explanation": "Breaking a big goal into smaller milestones is a strong, practical strategy that shows self-management skills.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "An ongoing improvement effort is more credible than a claim of a finished, perfect fix.",
+            "explanation": "An ongoing, active effort to improve feels honest and realistic. Claiming a weakness is now completely fixed can sound overstated, and having nothing to say avoids the question entirely.",
             "id": "ji_l21_q2",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "skeptical",
+                "uncertain",
+                "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the growth area that's specific and believable.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What kind of work energizes you the most?",
+            "interviewerQuestion": "What's an area where you still have room to grow?",
             "options": [
-                "Nothing really energizes me, work is just work.",
-                "Work that doesn't require much effort.",
-                "Work that lets me learn something new or improve a process."
+                "I can be a perfectionist with details, so I'm learning to recognize when something is good enough to move forward.",
+                "Probably patience, some tasks test that more than others, especially when I'm waiting on other people to finish their part.",
+                "I honestly can't think of one that really applies to me."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Employers like to hear that you're energized by growth and improvement.",
-            "explanation": "Being energized by growth and improvement suggests you'll stay engaged and motivated over time in the role.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Choose a specific, believable growth area that includes some self-management.",
+            "explanation": "A specific growth area paired with a bit of self-management shows genuine reflection. A vague trait like patience is plausible but underdeveloped as an answer, and refusing to name one avoids the question.",
             "id": "ji_l21_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "impressed",
+                "neutral",
+                "skeptical"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the goal that connects your future to this kind of opportunity.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle criticism?",
+            "interviewerQuestion": "Where do you see yourself in a couple of years?",
             "options": [
-                "It's hard for me not to take it personally.",
-                "I listen carefully and look for ways to use the feedback to improve.",
-                "I usually just ignore it if I disagree."
+                "Probably somewhere completely different, to be honest.",
+                "I'd like to grow into a role with more ownership over projects, ideally within a company like this one.",
+                "I haven't really thought that far ahead yet, I've mostly been focused on finding a job that suits me right now."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "A good answer shows openness to feedback, not defensiveness.",
-            "explanation": "Showing openness to feedback, rather than defensiveness, tells employers you're coachable and eager to grow.",
+            "professionalismRating": 4,
+            "hint": "Connect your near-future goal to growth within this kind of role or company.",
+            "explanation": "A goal connected to growth within this type of role shows you're thinking long-term about this opportunity. Not having thought about it, or expecting to move on entirely, raises doubts about commitment.",
             "id": "ji_l22_q1",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "concerned",
+                "pleased",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which answer shows the most direction for this stage of your career?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you respond when someone points out a mistake in your work?",
+            "interviewerQuestion": "What are you hoping to achieve in the next year or two professionally?",
             "options": [
-                "I thank them for pointing it out and correct it right away.",
-                "I get a little defensive at first.",
-                "I usually explain why it wasn't really my fault."
+                "I don't usually plan that far in advance.",
+                "I want to get much stronger technically and start taking on slightly more complex projects independently.",
+                "I'm mostly just focused on getting my foot in the door somewhere right now, and I'll figure out the rest once I'm working."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Name a specific, believable skill-based goal.",
+            "explanation": "A specific, skill-based goal shows direction and ambition appropriate to this stage of your career. A goal focused only on getting hired doesn't look past this interview, and having no plan at all can seem passive.",
+            "id": "ji_l22_q2",
+            "interviewerReaction": [
+                "uncertain",
+                "impressed",
+                "neutral"
+            ]
+        },
+        {
+            "instruction": "Choose the response that shows genuine commitment to this field.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "What's your longer-term goal in this field?",
+            "options": [
+                "I want to build real expertise in this area over the next few years and eventually take on more responsibility as I do.",
+                "I try not to set goals too far ahead, things change too much.",
+                "I'm mostly just trying this field out to see if it's a good fit."
+            ],
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "A goal built on genuine commitment is stronger than a tentative or noncommittal one.",
+            "explanation": "A goal built around genuine commitment to the field reassures the interviewer this isn't just a trial run. Framing it as an experiment, or avoiding goals altogether, can suggest less investment.",
+            "id": "ji_l22_q3",
+            "interviewerReaction": [
+                "pleased",
+                "uncertain",
+                "uncertain"
+            ]
+        },
+        {
+            "instruction": "Choose the achievement backed by something specific and measurable.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "What's something you're proud of from a previous job?",
+            "options": [
+                "I was recognized for having the highest customer satisfaction scores on my team for three months straight.",
+                "I guess I just generally did a good job overall, and my managers never had any complaints about my work that I heard of.",
+                "Nothing really stands out as a specific achievement."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "A gracious, action-oriented response is stronger than a defensive one.",
-            "explanation": "A gracious, action-oriented response shows maturity and a willingness to take accountability quickly.",
-            "id": "ji_l22_q2",
+            "hint": "A specific, even small, measurable achievement is more convincing than a general sense of doing well.",
+            "explanation": "A specific, measurable achievement gives the interviewer real evidence of your impact. A general sense of doing fine, or no example at all, doesn't demonstrate anything concrete.",
+            "id": "ji_l23_q1",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
+                "uncertain",
                 "disappointed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which answer counts a real, specific accomplishment even outside formal work?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you received tough feedback.",
+            "interviewerQuestion": "Tell me about an accomplishment you're proud of, even outside of formal work.",
             "options": [
-                "I don't really remember getting tough feedback before.",
-                "I got some, but I didn't agree with it, so I ignored it.",
-                "My manager once told me my reports needed more detail, so I adjusted my approach and it improved."
+                "I've done okay in school, but nothing outside of that really, since most of my time went to classes and part-time shifts.",
+                "I can't think of anything specific right now.",
+                "I organized a small fundraiser for a school club that ended up raising more than double our original goal."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "A specific example that ends in a positive change is the strongest kind of answer.",
-            "explanation": "A specific example that ends in a positive change shows you can turn feedback into real improvement.",
-            "id": "ji_l22_q3",
+            "professionalismRating": 4,
+            "hint": "Accomplishments outside formal jobs still count if they're specific and show real effort.",
+            "explanation": "A specific accomplishment outside formal work, with a measurable result, still demonstrates real capability. Vague references to doing okay, or no example at all, don't give the interviewer anything to evaluate.",
+            "id": "ji_l23_q2",
             "interviewerReaction": [
-                "disappointed",
+                "neutral",
                 "disappointed",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the achievement with a clear before-and-after result.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What is your ideal work environment?",
+            "interviewerQuestion": "What achievement are you most proud of in your career so far?",
             "options": [
-                "One where nobody bothers me.",
-                "A collaborative environment where people communicate openly and support each other.",
-                "I don't really have a preference."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Mentioning collaboration and communication fits most professional workplaces.",
-            "explanation": "Mentioning collaboration and communication shows you value a healthy, functional workplace culture.",
-            "id": "ji_l23_q1",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "What kind of workplace culture helps you do your best work?",
-            "options": [
-                "One that encourages open feedback and gives people room to grow.",
-                "One that's very relaxed and has few expectations.",
-                "It doesn't really matter to me either way."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Growth and open feedback are qualities most companies value and offer.",
-            "explanation": "Mentioning growth and open feedback shows you're thoughtful about your own development, which most companies value.",
-            "id": "ji_l23_q2",
-            "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Do you prefer a structured or flexible work environment?",
-            "options": [
-                "I need total flexibility with no structure at all.",
-                "I need everything to be extremely rigid and controlled.",
-                "I appreciate having clear expectations along with some flexibility in how I meet them."
+                "I don't usually think about my work in terms of achievements, I just show up, do the job, and go home at the end.",
+                "I've generally been a reliable member of every team I've been on, and people have always been able to count on me.",
+                "I helped streamline our shipping checklist, which cut our packing errors by almost half over a few months."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "A balanced answer usually fits real workplaces better than an extreme one.",
-            "explanation": "A balanced answer shows adaptability, since most real workplaces combine structure with some flexibility.",
+            "hint": "Pick a specific result you contributed to, ideally with a number or a clear before/after.",
+            "explanation": "A specific, measurable result you contributed to gives the interviewer concrete proof of your impact. A general reputation for reliability is positive but vague, and avoiding the question entirely offers nothing.",
             "id": "ji_l23_q3",
             "interviewerReaction": [
                 "disappointed",
-                "disappointed",
+                "neutral",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the example that shows real coordination with teammates.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you prioritize your tasks?",
+            "interviewerQuestion": "Can you tell me about a time you worked well as part of a team?",
             "options": [
-                "I usually just do things in the order they come in.",
-                "I focus on what's most urgent and important first, then work through the rest.",
-                "I do the easiest tasks first to get them out of the way."
+                "I get along with basically everyone, so teamwork has never been an issue.",
+                "During a big holiday sale, I coordinated with two coworkers to split up sections of the floor so we could help customers faster.",
+                "I don't have a specific team example in mind."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Urgency and importance are the two key factors in good prioritization.",
-            "explanation": "Focusing on urgency and importance is a widely recognized, effective way to prioritize work.",
+            "professionalismRating": 4,
+            "hint": "A real, specific example of coordinating with others is stronger than a general claim of getting along.",
+            "explanation": "A specific example of coordinating with teammates shows real collaboration skills in action. A general claim about getting along with everyone is plausible but unproven, and having no example at all leaves the question unanswered.",
             "id": "ji_l24_q1",
             "interviewerReaction": [
-                "disappointed",
+                "neutral",
                 "impressed",
                 "disappointed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which answer shows how a specific team decision actually changed the outcome?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you decide what to work on first when you have several tasks?",
+            "interviewerQuestion": "Describe a situation where teamwork made a real difference in the outcome.",
             "options": [
-                "I consider deadlines and impact, then plan my day around the highest priorities.",
-                "I just start with whatever feels easiest at the moment.",
-                "I usually wait until someone tells me what's most important."
+                "Most of my work has been pretty independent, honestly.",
+                "On a group project, splitting tasks based on each person's strengths let us finish a week ahead of the deadline.",
+                "Teamwork is usually pretty smooth for me, I don't overthink it, and I've rarely had a problem with any group I've been in."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Deadlines and impact are useful criteria for setting priorities.",
-            "explanation": "Considering deadlines and impact shows independent judgment, rather than relying on others to set your priorities.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Show how a specific team decision, like dividing tasks by strength, actually changed the result.",
+            "explanation": "Showing how a specific team decision led to a better outcome demonstrates real collaborative thinking. A general comment about smooth teamwork lacks detail, and admitting mostly independent work doesn't answer the question asked.",
             "id": "ji_l24_q2",
             "interviewerReaction": [
+                "uncertain",
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names a specific, useful role within a team.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What do you do when everything seems equally urgent?",
+            "interviewerQuestion": "What role do you usually take on when working in a team?",
             "options": [
-                "I try to do everything at once.",
-                "I pick whatever I feel like doing first.",
-                "I check in with my manager to confirm priorities, then focus on one task at a time."
+                "I usually just go along with whatever the group decides, since I don't like slowing things down over small disagreements.",
+                "It really depends on the team, I don't have a set role, I just fill in wherever there happens to be a gap.",
+                "I tend to keep track of who's doing what, so nothing gets missed or duplicated."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Checking in for clarity is a smart move when priorities are unclear.",
-            "explanation": "Checking in with your manager for clarity is a smart, professional move when priorities genuinely aren't clear.",
+            "professionalismRating": 4,
+            "hint": "Naming a specific, useful team role shows self-awareness about your contribution.",
+            "explanation": "Naming a specific, useful role, like tracking tasks, shows self-awareness about how you contribute to a team. Simply going along with the group undersells your input, and having no sense of your role at all is a less convincing answer.",
             "id": "ji_l24_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "neutral",
+                "uncertain",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names one specific task you're genuinely drawn to.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you worked well in a team.",
+            "interviewerQuestion": "What part of this role are you most looking forward to?",
             "options": [
-                "On a group project, I coordinated tasks between team members so we finished ahead of schedule.",
-                "I usually just let others handle the group work.",
-                "I don't have much experience working in teams."
+                "Honestly, the debugging work — I like the process of narrowing down exactly what's going wrong.",
+                "I'm not sure yet, I'd have to actually start to know which parts I like, since it's hard to tell from a description.",
+                "All of it sounds pretty interesting to me, it's a good mix of things, and I'm sure I'd enjoy every part of the job."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "A specific example with a positive outcome makes the strongest answer.",
-            "explanation": "A specific example with a clear, positive outcome proves your teamwork skills rather than just claiming them.",
+            "professionalismRating": 4,
+            "hint": "Naming one specific task you're drawn to is more convincing than saying everything sounds good.",
+            "explanation": "Naming one specific task you're genuinely drawn to shows real, informed interest. Saying everything sounds interesting is vague, and admitting you don't know yet suggests limited engagement with the role's actual duties.",
             "id": "ji_l25_q1",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "pleased",
+                "uncertain",
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which answer explains a specific task and why it appeals to you?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a successful team project you were part of.",
+            "interviewerQuestion": "Which part of the day-to-day work excites you most?",
             "options": [
-                "I was part of a team once, but I don't remember the details.",
-                "Our team launched a new process that reduced errors, and I contributed by testing each step.",
-                "I mostly just followed along with what others were doing."
+                "Testing different messaging to see what actually connects with people — I like that it's part creative, part data-driven.",
+                "I haven't really thought about specific tasks, just the field in general.",
+                "The whole marketing side of things is exciting to me."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Mentioning your specific contribution makes a team story more convincing.",
-            "explanation": "Mentioning your specific contribution, not just the team's success, shows your individual value within a group.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Choose a specific task and explain briefly why it appeals to you.",
+            "explanation": "A specific task paired with a reason it appeals to you shows genuine, informed enthusiasm. A broad statement about the field, or no specific answer at all, is far less convincing.",
             "id": "ji_l25_q2",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "pleased",
+                "unconvinced",
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer focused on the actual work rather than external factors.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Give an example of a time teamwork helped you succeed.",
+            "interviewerQuestion": "What's the most appealing part of this role to you personally?",
             "options": [
-                "Teamwork isn't usually that important in my experience.",
-                "We worked as a team, but honestly I did most of the work myself.",
-                "By dividing tasks based on each person's strengths, our team finished a project faster and with fewer errors."
+                "I mostly just need a job right now, so most parts of it are fine with me, and I'm not going to be picky about the details.",
+                "Helping a frustrated customer turn into a happy one — there's a clear, satisfying result to that kind of work.",
+                "The company benefits looked pretty good, if I'm honest."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Highlighting how the team's combined strengths led to success works well.",
-            "explanation": "Highlighting how combined strengths led to success shows you value collaboration, not just individual effort.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Focus on something specific about the actual work, not external factors like benefits or general need for a job.",
+            "explanation": "Focusing on a specific, satisfying part of the actual work shows genuine motivation for the role itself. Leading with benefits, or a general need for a job, doesn't show interest in the work.",
             "id": "ji_l25_q3",
             "interviewerReaction": [
                 "disappointed",
-                "disappointed",
-                "impressed"
+                "pleased",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that points to something specific and substantive about the company.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What are your career goals?",
+            "interviewerQuestion": "What about our company's approach do you find appealing?",
             "options": [
-                "I want to develop my skills in this field and eventually take on more responsibility.",
-                "I haven't really set any specific goals.",
-                "I just want to earn as much money as possible."
+                "I like that your sustainability commitments seem built into the product decisions, not just marketing language.",
+                "I don't know a huge amount about your specific approach yet.",
+                "The company has a good reputation, from what I've heard from friends and online, and that's what made me want to apply."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "A goal focused on growth and responsibility sounds ambitious and realistic.",
-            "explanation": "A goal focused on growth and responsibility sounds both ambitious and realistic, which reassures employers about your commitment.",
+            "hint": "Point to something specific and substantive, not just general reputation.",
+            "explanation": "Pointing to something specific and substantive about the company's real practices shows deeper research. General reputation is a weaker signal, and admitting limited knowledge undercuts the answer entirely.",
             "id": "ji_l26_q1",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "concerned",
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which answer connects a specific company value to a genuine personal belief?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Where do you see your career heading in the next few years?",
+            "interviewerQuestion": "How do our values line up with what matters to you?",
             "options": [
-                "I try not to think too far ahead.",
-                "Somewhere that requires a lot less effort than this.",
-                "I hope to grow into a role with more leadership and expertise in this area."
+                "I haven't really compared it to other places.",
+                "I think most healthcare places probably have similar values.",
+                "Your focus on patient follow-up care matches something I really believe in — that the job isn't done once someone leaves the building."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Mentioning leadership or expertise shows long-term ambition.",
-            "explanation": "Mentioning leadership or expertise shows long-term ambition and a genuine interest in developing within the field.",
+            "professionalismRating": 4,
+            "hint": "Connect a specific stated value of the company to a real belief of your own.",
+            "explanation": "Connecting a specific company value to a genuine personal belief shows real alignment. Assuming all similar organizations share the same values is a weaker generalization, and no comparison at all avoids the question.",
             "id": "ji_l26_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "uncertain",
+                "neutral",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names a specific, believable advantage of company size.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What are you hoping to achieve in your career?",
+            "interviewerQuestion": "Why does working for a smaller, local business appeal to you, if it does?",
             "options": [
-                "I'm honestly not sure what I want long-term.",
-                "I want to become an expert in my field and mentor others as I grow.",
-                "Just enough to get by, nothing too ambitious."
+                "Smaller companies just generally seem nicer to work for, more like a family, and you get to know everyone by name and don't feel like just a number.",
+                "I hadn't thought about the size difference much.",
+                "I like that decisions here probably happen faster, and that my work would be more visible than at a huge company."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Mentioning both expertise and helping others shows a well-rounded goal.",
-            "explanation": "Mentioning both expertise and helping others shows a well-rounded goal that goes beyond just personal advancement.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Name a specific, believable advantage of the smaller scale.",
+            "explanation": "A specific, believable advantage tied to company size shows real thought about the actual working experience. A vague sense that smaller is nicer, or no consideration at all, is far less convincing.",
             "id": "ji_l26_q3",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "neutral",
+                "uncertain",
+                "pleased"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer with a concrete system, not just good intentions.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you stay organized at work?",
+            "interviewerQuestion": "How do you make sure you follow through on something you've committed to?",
             "options": [
-                "I mostly just try to remember everything.",
-                "I use a task list and calendar to track deadlines and priorities.",
-                "I'm not very organized, honestly."
+                "I write it down immediately with a rough deadline, so it doesn't rely only on memory.",
+                "I don't always follow through perfectly, but I try, and I usually apologize when something slips past me for a while.",
+                "I usually just try to remember and get to it when I can, and so far that's worked fine for me most of the time."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Naming a specific tool or system shows real organizational habits.",
-            "explanation": "Naming a specific tool or system, like a task list, shows real, practical organizational habits.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "A concrete system beats relying purely on memory or good intentions.",
+            "explanation": "A concrete system, like writing tasks down with a deadline, is a reliable way to ensure follow-through. Relying on memory or general good intentions is less dependable in a busy workplace.",
             "id": "ji_l27_q1",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "reassured",
+                "uncertain",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which definition of ownership goes beyond just your own part?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What systems do you use to keep track of your work?",
+            "interviewerQuestion": "What does taking ownership of your work mean to you?",
             "options": [
-                "I break projects into steps and check off tasks as I complete them.",
-                "I don't really use any system.",
-                "I keep it all in my head."
+                "Doing my part and trusting the rest of the team to handle theirs.",
+                "Following a task through to the end, even the boring parts, and speaking up if something's going to get in the way.",
+                "Making sure I don't get blamed if something goes wrong."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Breaking tasks into steps is a clear, practical organizational method.",
-            "explanation": "Breaking tasks into steps is a clear, practical method that shows you can manage complex work reliably.",
+            "hint": "Real ownership includes following through to completion and communicating obstacles, not just avoiding blame.",
+            "explanation": "A definition centered on full follow-through and proactive communication reflects real ownership. Focusing only on your own part, or on avoiding blame, misses the fuller meaning of responsibility.",
             "id": "ji_l27_q2",
             "interviewerReaction": [
+                "neutral",
                 "impressed",
-                "disappointed",
                 "disappointed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that takes initiative on an unassigned task.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you make sure nothing falls through the cracks?",
+            "interviewerQuestion": "How do you handle a task that no one specifically assigned to you, but clearly needs doing?",
             "options": [
-                "Sometimes things do slip through, but I try my best.",
-                "I just hope I remember everything important.",
-                "I review my task list daily and follow up on anything that's pending."
+                "If it's something I can reasonably do, I'll just take care of it and let the team know afterward.",
+                "I usually wait to see if it's actually part of my job first, because I don't want to step on anyone's toes or take over something that belongs to someone else.",
+                "I'd probably assume someone else will handle it eventually."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "A daily review habit shows reliable follow-through.",
-            "explanation": "A daily review habit shows reliable follow-through, which is exactly what prevents tasks from being forgotten.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Quietly taking initiative on an unassigned task, then informing the team, shows real ownership.",
+            "explanation": "Taking reasonable initiative on an unassigned task, then informing the team, shows real ownership of outcomes. Waiting to confirm it's officially your job, or assuming someone else will do it, can leave things undone.",
             "id": "ji_l27_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "impressed",
+                "uncertain",
+                "disappointed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the update habit that avoids surprises later.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How would you describe your communication style?",
+            "interviewerQuestion": "How do you keep your manager updated on your progress?",
             "options": [
-                "I don't really think about how I communicate.",
-                "I tend to avoid difficult conversations.",
-                "I'm direct but always try to be respectful and clear."
+                "I wait for my manager to ask how things are going.",
+                "I usually only reach out if something goes wrong, since I assume no news means things are fine and my manager is busy.",
+                "I send a short update at natural checkpoints, even if nothing's gone wrong, so there are no surprises later."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Being direct and respectful is a strong combination for workplace communication.",
-            "explanation": "Being direct and respectful is a strong combination, since it keeps communication clear without being harsh.",
+            "hint": "Proactive updates, even when things are fine, are more valuable than only reporting problems or waiting to be asked.",
+            "explanation": "Proactive updates, even when everything is on track, build trust and prevent surprises. Only speaking up when there's a problem, or waiting to be asked, leaves your manager less informed than they should be.",
             "id": "ji_l28_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "concerned",
+                "uncertain",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which answer ensures the handoff between shifts is reliable?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you communicate with people who have different working styles than you?",
+            "interviewerQuestion": "If you noticed something important during your shift, how would you make sure the next shift knew about it?",
             "options": [
-                "I try to adjust my approach based on what works best for the other person.",
-                "I usually just communicate the same way with everyone.",
-                "I let them adjust to how I communicate."
+                "I'd assume it would come up naturally if it mattered, since anything really important usually gets noticed pretty fast.",
+                "I'd leave a clear note or tell the incoming person directly, so nothing gets lost between shifts.",
+                "I'd mention it if I happened to see them before I left, but otherwise I'd assume they'd notice it on their own eventually."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Adapting your style to others shows flexibility, a valued communication skill.",
-            "explanation": "Adapting your communication style to others shows flexibility, which helps you work well with a wide range of people.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "A direct, reliable way of passing on information beats hoping it comes up naturally.",
+            "explanation": "A direct, reliable handoff, like a note or a direct conversation, ensures important information isn't lost. Relying on a chance encounter or assuming it'll come up naturally both risk the information never being passed on.",
             "id": "ji_l28_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "concerned",
+                "reassured",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that documents the issue where the whole team can see it.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you make sure your message is understood clearly?",
+            "interviewerQuestion": "How would you let your team know about a customer issue that might come up again?",
             "options": [
-                "I usually assume people understand unless they say otherwise.",
-                "I keep things simple and check in to confirm the other person understood.",
-                "I just repeat myself if something isn't clear."
+                "I'd mention it verbally to whoever's around at the time, since that's the quickest way to get the word out to people.",
+                "I'd document it briefly in our shared notes so anyone who deals with that customer next has context.",
+                "I'd figure it's probably a one-time thing."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Checking for understanding is an important communication habit.",
-            "explanation": "Checking in to confirm understanding is an important habit that prevents miscommunication before it becomes a problem.",
+            "professionalismRating": 4,
+            "hint": "Written, shared documentation is more reliable than a verbal mention or assuming it won't recur.",
+            "explanation": "Documenting the issue where the whole team can see it ensures the information is actually useful later. A verbal mention to whoever's nearby is easy to miss, and assuming it's a one-time issue risks it happening again unprepared.",
             "id": "ji_l28_q3",
             "interviewerReaction": [
-                "disappointed",
+                "neutral",
                 "impressed",
-                "disappointed"
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that connects routine work to a bigger purpose.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle working with a difficult coworker?",
+            "interviewerQuestion": "How do you stay motivated with tasks that are repetitive or less exciting?",
             "options": [
-                "I usually just avoid them as much as possible.",
-                "I stay professional and try to understand their perspective before addressing any issues.",
-                "I let my manager deal with it right away."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Understanding another person's perspective often helps resolve friction.",
-            "explanation": "Trying to understand another person's perspective often helps resolve friction before it becomes a bigger issue.",
-            "id": "ji_l29_q1",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "What would you do if a coworker wasn't pulling their weight?",
-            "options": [
-                "I'd complain about them to other coworkers.",
-                "I'd just do their work for them to avoid conflict.",
-                "I'd have an honest conversation with them first to understand what's going on."
+                "Those tasks are honestly hard for me to stay focused on.",
+                "I just push through it, even if I don't enjoy it much.",
+                "I remind myself how the small stuff connects to the bigger picture, and I try to find small ways to be more efficient at it."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "An honest, direct conversation is usually the most professional first step.",
-            "explanation": "An honest, direct conversation is usually the most professional first step, rather than avoiding or escalating the issue.",
-            "id": "ji_l29_q2",
+            "professionalismRating": 4,
+            "hint": "Connecting repetitive work to a bigger purpose is stronger than simply enduring it or admitting difficulty.",
+            "explanation": "Connecting repetitive tasks to a bigger purpose, and looking for small efficiencies, shows real engagement even with less exciting work. Simply enduring it is honest but passive, and admitting difficulty focusing raises a concern.",
+            "id": "ji_l29_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "concerned",
+                "neutral",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which response shows the best fit with a fairly routine role?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle disagreements with a colleague?",
+            "interviewerQuestion": "A lot of this job is fairly routine. How do you feel about that?",
             "options": [
-                "I focus on the issue, not the person, and try to find a solution we both agree on.",
-                "I usually just avoid the topic to keep the peace.",
-                "I make sure they know I'm right."
+                "It's not my favorite, but every job has boring parts, and I've learned that you just have to get through them.",
+                "I don't mind routine work, especially when I can see it directly supports the team hitting its numbers.",
+                "I'd hope there's more variety than that, honestly, because doing the same thing all day tends to wear me down."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Connecting routine work to a clear outcome is stronger than just tolerating it or hoping for something different.",
+            "explanation": "Linking routine work to a clear, valued outcome shows you can stay engaged with it. Simply tolerating boredom is realistic but passive, and hoping for more variety raises doubts about fit for this specific role.",
+            "id": "ji_l29_q2",
+            "interviewerReaction": [
+                "neutral",
+                "reassured",
+                "concerned"
+            ]
+        },
+        {
+            "instruction": "Choose the answer with a specific technique for maintaining focus.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "How do you keep your attention up during long stretches of detailed, similar work?",
+            "options": [
+                "I break it into smaller chunks with quick checkpoints, which keeps my focus sharper than trying to power through all at once.",
+                "I usually take a lot of breaks to manage it.",
+                "I just focus really hard and get through it."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Focusing on the issue, not the person, keeps disagreements professional.",
-            "explanation": "Focusing on the issue rather than the person keeps disagreements professional and focused on finding real solutions.",
+            "professionalismRating": 4,
+            "hint": "A specific technique for maintaining focus is more convincing than a general effort or reliance on frequent breaks.",
+            "explanation": "A specific technique, like breaking work into checkpoints, shows a real, practical strategy for sustained focus. General effort is vague, and relying heavily on frequent breaks could raise concerns about consistent output.",
             "id": "ji_l29_q3",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain",
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that balances honest disagreement with respect for the final decision.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What does success mean to you?",
+            "interviewerQuestion": "If you disagreed with a decision your manager made, would you say something?",
             "options": [
-                "Success means making a lot of money.",
-                "Success means consistently growing my skills while contributing real value to my team.",
-                "I haven't really thought about what success means to me."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Connecting success to growth and contribution shows a mature perspective.",
-            "explanation": "Connecting success to growth and contribution shows a mature, well-rounded perspective beyond just financial reward.",
-            "id": "ji_l30_q1",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "How do you personally measure success at work?",
-            "options": [
-                "I look at whether my work helped the team reach its goals, not just my own output.",
-                "I measure it by how little I have to do.",
-                "I don't really measure it, I just keep working."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Connecting your success to team goals shows a collaborative mindset.",
-            "explanation": "Connecting your personal success to team goals shows a collaborative mindset that most employers highly value.",
-            "id": "ji_l30_q2",
-            "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "What would make you feel successful in this role?",
-            "options": [
-                "Just making it through each day without problems.",
-                "Getting recognized more than my coworkers.",
-                "Knowing that my contributions made a real, positive difference to the team."
+                "I'd probably just go along with it to avoid conflict, since it's not really my place to question my manager's decisions.",
+                "Yes, I'd definitely tell them if I thought they were wrong.",
+                "Yes, I'd raise it respectfully and privately, with a specific reason, but I'd support the final decision either way."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Focusing on positive impact is stronger than focusing on recognition or ease.",
-            "explanation": "Focusing on positive impact, rather than recognition or ease, shows genuine motivation to do meaningful work.",
+            "hint": "The strongest answer balances honest disagreement with respect for the right setting and the final decision.",
+            "explanation": "Raising a specific concern privately and respectfully, while still supporting the outcome, balances honesty with professionalism. Avoiding the conversation entirely suppresses useful input, while an unqualified 'I'd tell them' can sound blunt without considering tone or setting.",
+            "id": "ji_l30_q1",
+            "interviewerReaction": [
+                "concerned",
+                "uncertain",
+                "impressed"
+            ]
+        },
+        {
+            "instruction": "Which response separates what you say to the customer from where you raise internal concerns?",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "What would you do if you personally disagreed with a company policy a customer was upset about?",
+            "options": [
+                "I'd let the customer know I don't necessarily agree with it either.",
+                "I'd just enforce the policy and keep my opinion to myself entirely.",
+                "I'd still explain and follow the policy professionally with the customer, but I might raise my concern with my manager separately afterward."
+            ],
+            "correctAnswerIndex": 2,
+            "professionalismRating": 5,
+            "hint": "Separating what you say to the customer from where you raise internal concerns is the more balanced approach.",
+            "explanation": "Professionally upholding the policy with the customer while raising concerns internally afterward balances accountability with honest feedback. Voicing disagreement to the customer undermines the policy in the moment, while keeping every concern to yourself forever means useful feedback never reaches anyone who could change it.",
+            "id": "ji_l30_q2",
+            "interviewerReaction": [
+                "concerned",
+                "neutral",
+                "reassured"
+            ]
+        },
+        {
+            "instruction": "Choose the response that checks understanding before offering your own opinion.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "If a coworker suggested an approach you thought was clearly worse, what would you do?",
+            "options": [
+                "I'd tell them directly that I think there's a better way, because I'd rather be honest than let a worse idea go ahead.",
+                "I'd ask a question or two about their reasoning first, in case I was missing something, before offering my own view.",
+                "I'd just go with their idea to keep things friendly."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Checking your own understanding first is often stronger than either yielding immediately or leading with your own opinion.",
+            "explanation": "Asking about their reasoning first shows openness and avoids dismissing a perspective you might not fully understand, before offering your own view. Deferring immediately avoids useful input, while leading with a blunt correction can come across as dismissive.",
             "id": "ji_l30_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "concerned",
+                "impressed",
+                "disappointed"
             ]
         }
     ]

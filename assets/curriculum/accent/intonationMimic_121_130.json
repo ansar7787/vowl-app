@@ -5,160 +5,160 @@
     "quests": [
         {
             "id": "ACC_INTONATIONMIMIC_L121_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "A director enters a tense meeting, wanting to know who authorized a late change.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "What time does the show start tonight?",
-            "textToSpeak": "What time does the show start tonight?",
+            "word": "Who signed off on this change?",
+            "textToSpeak": "Who signed off on this change?",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Rising, light — tentative, polite check",
+                "Falling, firm — demanding information"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Falling, firm — demanding information",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 3,
                 2,
                 1,
                 0
             ],
-            "hint": "This is a calm, genuine question asking for a fact. Listen to the pitch on 'tonight.'",
-            "explanation": "Ordinary Wh-questions that calmly request information end with falling intonation. The pitch drops on 'tonight.'",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Curious"
+            "hint": "The room has gone quiet. How does the question land?",
+            "explanation": "A WH-question seeking a name falls, and firmness on 'signed off' shows that the director expects an answer now. A light rise would sound tentative.",
+            "pitchRule": "💼📉 A firm fall makes a WH-question an expectation to answer.",
+            "emotionContext": "Firm"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L121_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "Your manager wraps up a long meeting.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "She did what during the live show?",
-            "textToSpeak": "She did what during the live show?",
+            "word": "Okay, I think that covers everything for today.",
+            "textToSpeak": "Okay, I think that covers everything for today.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Rising — inviting more items",
+                "Falling — wrapping up"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Echo Question)",
+            "correctAnswer": "Falling — wrapping up",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
                 2,
                 3,
-                4
+                1,
+                0
             ],
-            "hint": "This question reacts to surprising news by repeating it back. Listen to the pitch on 'what.'",
-            "explanation": "Surprise or echo questions break the usual rule for Wh-questions: instead of falling, the pitch rises sharply on 'what,' showing disbelief rather than a calm request for facts.",
-            "pitchRule": "📈 Pitch leaps upward on an echo question, breaking the usual Wh-question pattern to show disbelief.",
-            "emotionContext": "Excited"
+            "hint": "The manager wants people to leave. Which ending closes the meeting?",
+            "explanation": "A fall on 'today' signals that the agenda is complete. A rise would invite extra points and prolong the meeting.",
+            "pitchRule": "📉 A wrap-up sentence needs a clear fall to end the meeting.",
+            "emotionContext": "Relaxed"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L121_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You notice a mistake in a colleague's spreadsheet and want to mention it gently.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Who directed this award-winning film?",
-            "textToSpeak": "Who directed this award-winning film?",
+            "word": "I think there might be a small typo in row twelve.",
+            "textToSpeak": "I think there might be a small typo in row twelve.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Firm fall on 'twelve' — direct correction",
+                "Slight lift on 'twelve' — softened correction"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Slight lift on 'twelve' — softened correction",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                3,
                 2,
-                1,
-                0
+                2,
+                2,
+                3
             ],
-            "hint": "This is a calm question asking for a name. Listen to the pitch on 'film.'",
-            "explanation": "Genuine Wh-questions end with falling intonation. The pitch drops on 'film,' since the speaker simply wants information.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Doubtful"
+            "hint": "The words are already cushioned with 'I think' and 'might'. Which ending keeps them soft?",
+            "explanation": "A slight lift at the end keeps the correction tentative and avoids embarrassing your colleague. A firm fall would make it sound like a verdict.",
+            "pitchRule": "📈 A slight lift can soften a correction between colleagues.",
+            "emotionContext": "Tactful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L122_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "A student complains to a friend about an unfair rule.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "He won how many awards this year?",
-            "textToSpeak": "He won how many awards this year?",
+            "word": "Do they really expect us to finish this by Monday?",
+            "textToSpeak": "Do they really expect us to finish this by Monday?",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Falling, stress on 'really' — rhetorical complaint",
+                "Rising, curious — genuine yes/no question"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Echo Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling, stress on 'really' — rhetorical complaint",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
                 2,
-                3,
-                4
+                4,
+                1,
+                0
             ],
-            "hint": "This question reacts with surprise to an impressive number. Listen to the pitch on 'year.'",
-            "explanation": "Echo questions expressing surprise rise in pitch, even though they contain a wh-word. The pitch climbs on 'year,' showing astonishment rather than a calm request.",
-            "pitchRule": "📈 Pitch leaps upward on an echo question, breaking the usual Wh-question pattern to show disbelief.",
-            "emotionContext": "Neutral"
+            "hint": "The student isn't going to wait for a reply. Which word shows the complaint?",
+            "explanation": "Stress on 'really' and a falling ending make the sentence a complaint dressed as a question. A rise would ask whether anyone knew what the teachers expected.",
+            "pitchRule": "📉 Stress on 'really' plus a fall makes a yes/no question rhetorical.",
+            "emotionContext": "Annoyed"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L122_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "Your professor confirms a deadline in class.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Where was this movie actually filmed?",
-            "textToSpeak": "Where was this movie actually filmed?",
+            "word": "Submissions close at midnight on the fourteenth.",
+            "textToSpeak": "Submissions close at midnight on the fourteenth.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Falling — firm deadline",
+                "Rising — asking students to confirm"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Falling — firm deadline",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
+                2,
                 2,
                 1,
                 0
             ],
-            "hint": "This is a calm question asking for a location. Listen to the pitch on 'filmed.'",
-            "explanation": "Genuine Wh-questions fall at the end. The pitch drops on 'filmed,' since real information is being requested.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Surprised"
+            "hint": "The professor isn't asking anything. Listen for the finality on 'fourteenth'.",
+            "explanation": "A fall on 'fourteenth' makes the deadline final and non-negotiable. A rise would sound as if students were being consulted.",
+            "pitchRule": "📉 A firm deadline lands with a fall on the date.",
+            "emotionContext": "Firm"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L122_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "In a group project, you offer to take one part but want the others to agree.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "They canceled the show for what reason?",
-            "textToSpeak": "They canceled the show for what reason?",
+            "word": "I could do the introduction, if that works for everyone?",
+            "textToSpeak": "I could do the introduction, if that works for everyone?",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Fall on 'everyone' — assigning the task",
+                "Rise on 'everyone' — inviting agreement"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Echo Question)",
+            "correctAnswer": "Rise on 'everyone' — inviting agreement",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
+                1,
                 2,
-                3,
-                4
+                3
             ],
-            "hint": "This question reacts with disbelief to unexpected news. Listen to the pitch on 'reason.'",
-            "explanation": "Surprise questions rise in pitch instead of falling. The pitch climbs on 'reason,' showing the speaker can hardly believe the news.",
-            "pitchRule": "📈 Pitch leaps upward on an echo question, breaking the usual Wh-question pattern to show disbelief.",
-            "emotionContext": "Determined"
+            "hint": "You're offering, not deciding. Which ending shows that you are open to the group's view?",
+            "explanation": "The rise on 'everyone' turns your offer into a suggestion. A fall would announce that you had already chosen.",
+            "pitchRule": "📈 A final rise makes an offer a proposal, not a decision.",
+            "emotionContext": "Cooperative"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L123_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "You stare at a changed departures board in a busy airport.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Why did the actor leave the production?",
-            "textToSpeak": "Why did the actor leave the production?",
+            "word": "Which gate is the flight to Lisbon boarding from?",
+            "textToSpeak": "Which gate is the flight to Lisbon boarding from?",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Falling — information question",
+                "Rising — repeat request"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Falling — information question",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 3,
@@ -166,562 +166,562 @@
                 1,
                 0
             ],
-            "hint": "This is a calm question asking for a reason. Listen to the pitch on 'production.'",
-            "explanation": "Genuine Wh-questions end with falling intonation. The pitch drops on 'production.'",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Curious"
+            "hint": "You need a piece of information and nobody has said it yet. Listen to how the question ends.",
+            "explanation": "This is a WH-question seeking new information, so the pitch falls on 'from'. A rise would sound as if you were repeating what someone said.",
+            "pitchRule": "📉 A first-time WH-question in a busy place falls.",
+            "emotionContext": "Anxious"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L123_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "The airline agent asks what luggage you have.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The tickets cost how much?",
-            "textToSpeak": "The tickets cost how much?",
+            "word": "Just the one bag, and this backpack.",
+            "textToSpeak": "Just the one bag, and this backpack.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Lift on 'bag', fall on 'backpack' — two items in one answer",
+                "Fall on 'bag' and on 'backpack' — two separate answers"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Echo Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Lift on 'bag', fall on 'backpack' — two items in one answer",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
                 2,
                 3,
-                4
+                2,
+                0
             ],
-            "hint": "This question reacts with shock to a price. Listen to the pitch on 'much.'",
-            "explanation": "Echo questions expressing disbelief rise in pitch. The pitch climbs sharply on 'much,' showing surprise at the price.",
-            "pitchRule": "📈 Pitch leaps upward on an echo question, breaking the usual Wh-question pattern to show disbelief.",
-            "emotionContext": "Excited"
+            "hint": "Your answer has two parts. Where does the first part pause?",
+            "explanation": "The first item lifts to keep the answer going, and the last item falls to close it. It sounds like a single, connected answer.",
+            "pitchRule": "↗️📉 A two-part answer lifts after the first part.",
+            "emotionContext": "Neutral"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L123_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You reach a hotel after a delayed flight, and you're exhausted.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "What genre is this new series?",
-            "textToSpeak": "What genre is this new series?",
+            "word": "I'm afraid we've arrived quite a bit later than planned.",
+            "textToSpeak": "I'm afraid we've arrived quite a bit later than planned.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Lowered, slower fall — apologetic",
+                "Bright, quick fall — upbeat"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Lowered, slower fall — apologetic",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
+                2,
                 2,
                 1,
                 0
             ],
-            "hint": "This is a calm question asking for a category. Listen to the pitch on 'series.'",
-            "explanation": "Genuine Wh-questions fall at the end. The pitch drops on 'series,' since real information is requested.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Doubtful"
+            "hint": "You need to sound polite and tired. Which delivery fits both?",
+            "explanation": "A slower, lowered fall signals apology and fatigue. A bright, quick fall would sound cheerful and misplaced.",
+            "pitchRule": "📉 A slower pace and lower pitch make an apology sound sincere.",
+            "emotionContext": "Apologetic"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L124_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "You pick up a jacket and ask the assistant for one detail.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "She quit the band for what reason?",
-            "textToSpeak": "She quit the band for what reason?",
+            "word": "What sizes does this come in?",
+            "textToSpeak": "What sizes does this come in?",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Rising — repeat request",
+                "Falling — information question"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Echo Question)",
+            "correctAnswer": "Falling — information question",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                2,
                 3,
-                4
+                2,
+                1,
+                0
             ],
-            "hint": "This question reacts with disbelief to surprising news. Listen to the pitch on 'reason.'",
-            "explanation": "Surprise questions rise in pitch rather than falling. The pitch climbs on 'reason,' showing the speaker's shock.",
-            "pitchRule": "📈 Pitch leaps upward on an echo question, breaking the usual Wh-question pattern to show disbelief.",
-            "emotionContext": "Neutral"
+            "hint": "You haven't heard an answer yet. Think about what kind of reply you expect.",
+            "explanation": "A WH-question asking for new information falls on 'in'. A rise would suggest that you were asking the assistant to repeat.",
+            "pitchRule": "📉 A first request for a list of options falls.",
+            "emotionContext": "Curious"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L124_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "The assistant explains what is available.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "How long did the concert actually last?",
-            "textToSpeak": "How long did the concert actually last?",
+            "word": "We're out of blue, but we have it in green.",
+            "textToSpeak": "We're out of blue, but we have it in green.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Lift on 'blue', fall on 'green' — bad news, then alternative",
+                "Fall on 'blue' and on 'green' — two unrelated statements"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Lift on 'blue', fall on 'green' — bad news, then alternative",
             "correctAnswerIndex": 0,
             "intonationMap": [
+                2,
                 3,
                 2,
-                1,
                 0
             ],
-            "hint": "This is a calm question asking for a duration. Listen to the pitch on 'last.'",
-            "explanation": "Genuine Wh-questions end with falling intonation. The pitch drops on 'last.'",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Surprised"
+            "hint": "The sentence has bad news and a possible solution. Where does the voice hold back?",
+            "explanation": "The first part lifts to keep the sentence going toward 'but'. The fall on 'green' finishes the offer.",
+            "pitchRule": "↗️📉 Lift on the problem, fall on the solution.",
+            "emotionContext": "Helpful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L124_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You've decided to buy after trying it on.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The movie made how much money?",
-            "textToSpeak": "The movie made how much money?",
+            "word": "Actually, I think I'll take both.",
+            "textToSpeak": "Actually, I think I'll take both.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Falling, with stress on 'both' — decisive",
+                "Rising, with stress on 'both' — asking permission"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Echo Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling, with stress on 'both' — decisive",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
                 2,
-                3,
-                4
+                4,
+                1,
+                0
             ],
-            "hint": "This question reacts with astonishment to a huge number. Listen to the pitch on 'money.'",
-            "explanation": "Echo questions rise sharply in pitch to show disbelief. The pitch climbs on 'money,' rather than falling like a calm question.",
-            "pitchRule": "📈 Pitch leaps upward on an echo question, breaking the usual Wh-question pattern to show disbelief.",
-            "emotionContext": "Determined"
+            "hint": "You've made up your mind. Which word carries the decision?",
+            "explanation": "The stress on 'both' marks the change of plan, and the fall shows you are sure. A rise would ask for permission.",
+            "pitchRule": "📉 A decision falls, with stress on the new part.",
+            "emotionContext": "Decisive"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L125_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "You are calling a number and someone picks up.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Which actor plays the main character?",
-            "textToSpeak": "Which actor plays the main character?",
+            "word": "Hello, am I speaking to Ms Okafor?",
+            "textToSpeak": "Hello, am I speaking to Ms Okafor?",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Falling — announcing a name",
+                "Rising — confirming identity"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising — confirming identity",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                3,
-                2,
                 1,
-                0
+                2,
+                2,
+                4
             ],
-            "hint": "This is a calm question asking for a name. Listen to the pitch on 'character.'",
-            "explanation": "Genuine Wh-questions fall at the end. The pitch drops on 'character.'",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Curious"
+            "hint": "You aren't sure who has answered. Listen to the end of the name.",
+            "explanation": "A rise on 'Okafor' turns the sentence into a question about who is speaking. A fall would sound as if you knew.",
+            "pitchRule": "📈 Checking a name ends with a rise.",
+            "emotionContext": "Polite"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L125_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "You're finishing a voicemail to a friend.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "He turned down what role?",
-            "textToSpeak": "He turned down what role?",
+            "word": "Anyway, call me back when you get this.",
+            "textToSpeak": "Anyway, call me back when you get this.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Rising — asking a question",
+                "Falling — casual closing"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Echo Question)",
+            "correctAnswer": "Falling — casual closing",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
                 2,
-                3,
-                4
+                2,
+                1,
+                0
             ],
-            "hint": "This question reacts with disbelief to a decision. Listen to the pitch on 'role.'",
-            "explanation": "Surprise questions rise in pitch instead of falling. The pitch climbs on 'role,' showing the speaker finds the decision hard to believe.",
-            "pitchRule": "📈 Pitch leaps upward on an echo question, breaking the usual Wh-question pattern to show disbelief.",
-            "emotionContext": "Excited"
+            "hint": "You are not asking; you are wrapping up. Which ending closes the message?",
+            "explanation": "A fall on 'this' closes the message with a friendly instruction. A rise would sound uncertain.",
+            "pitchRule": "📉 A casual closing instruction falls.",
+            "emotionContext": "Relaxed"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L125_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You need to write something down while on the phone.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "What time does the theater open tonight?",
-            "textToSpeak": "What time does the theater open tonight?",
+            "word": "Could you hold on a second? I'll grab a pen.",
+            "textToSpeak": "Could you hold on a second? I'll grab a pen.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Rise on 'second', fall on 'pen' — request then statement",
+                "Fall on 'second' and on 'pen' — two firm commands"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Rise on 'second', fall on 'pen' — request then statement",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
-                2,
                 1,
+                2,
+                3,
                 0
             ],
-            "hint": "This is a calm question asking for a time. Listen to the pitch on 'tonight.'",
-            "explanation": "Genuine Wh-questions end with falling intonation. The pitch drops on 'tonight.'",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Doubtful"
+            "hint": "Two short sentences follow each other. Listen to how each ends.",
+            "explanation": "The request rises so the caller can agree, and the second sentence falls to announce what you'll do. Falling on both would make you sound abrupt.",
+            "pitchRule": "↗️📉 A polite request rises, and its follow-up statement falls.",
+            "emotionContext": "Polite"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L126_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "You call a clinic to change a booking.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The band is breaking up for what reason?",
-            "textToSpeak": "The band is breaking up for what reason?",
+            "word": "I'd like to reschedule my appointment for next week, if possible.",
+            "textToSpeak": "I'd like to reschedule my appointment for next week, if possible.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Fall on 'possible' — firm demand",
+                "Slight lift on 'possible' — softening"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Echo Question)",
+            "correctAnswer": "Slight lift on 'possible' — softening",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
                 2,
                 3,
-                4
+                2,
+                3
             ],
-            "hint": "This question reacts with shock to unexpected news. Listen to the pitch on 'reason.'",
-            "explanation": "Echo questions rise in pitch to express disbelief. The pitch climbs on 'reason,' rather than falling like an ordinary question.",
-            "pitchRule": "📈 Pitch leaps upward on an echo question, breaking the usual Wh-question pattern to show disbelief.",
-            "emotionContext": "Neutral"
+            "hint": "The phrase 'if possible' leaves room for a no. Which ending honors that?",
+            "explanation": "A slight lift on 'possible' keeps your request open. A fall would sound like a fixed requirement.",
+            "pitchRule": "📈 Softening phrases at the end keep a request open with a small lift.",
+            "emotionContext": "Polite"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L126_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "The receptionist offers two times.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Who wrote the music for this film?",
-            "textToSpeak": "Who wrote the music for this film?",
+            "word": "Would Tuesday at ten or Thursday at two work better?",
+            "textToSpeak": "Would Tuesday at ten or Thursday at two work better?",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Rise on both — open question",
+                "Rise on 'ten', fall on 'two' — choice"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rise on 'ten', fall on 'two' — choice",
+            "correctAnswerIndex": 1,
             "intonationMap": [
+                1,
                 3,
-                2,
                 1,
                 0
             ],
-            "hint": "This is a calm question asking for the composer's name. Listen to the pitch on 'film.'",
-            "explanation": "Genuine Wh-questions fall at the end. The pitch drops on 'film.'",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Surprised"
+            "hint": "She gives you two specific slots. Listen to how the second slot ends.",
+            "explanation": "With two named options, the first rises and the last falls. Both rising would suggest that other times were also available.",
+            "pitchRule": "↗️📉 Two specific choices use a rise then a fall.",
+            "emotionContext": "Helpful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L126_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You confirm an appointment over the phone.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "She auditioned for who exactly?",
-            "textToSpeak": "She auditioned for who exactly?",
+            "word": "Yes, that works. I'll see you then.",
+            "textToSpeak": "Yes, that works. I'll see you then.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Falling — settled agreement",
+                "Rising — still unsure"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Echo Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling — settled agreement",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
                 2,
-                3,
-                4
+                2,
+                1,
+                0
             ],
-            "hint": "This question reacts with surprise to unexpected news. Listen to the pitch on 'exactly.'",
-            "explanation": "Surprise questions rise sharply in pitch. The pitch climbs on 'exactly,' showing the speaker's astonishment.",
-            "pitchRule": "📈 Pitch leaps upward on an echo question, breaking the usual Wh-question pattern to show disbelief.",
-            "emotionContext": "Determined"
+            "hint": "The matter is decided. Which ending shows this?",
+            "explanation": "Two falling sentences make the agreement clear. A rise would leave the door open.",
+            "pitchRule": "📉 Two falls in a row sound settled.",
+            "emotionContext": "Calm"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L127_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "You're at a restaurant's front desk.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "How many episodes are in this season?",
-            "textToSpeak": "How many episodes are in this season?",
+            "word": "We booked a table for seven, under Chen.",
+            "textToSpeak": "We booked a table for seven, under Chen.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Falling — stating details",
+                "Rising — asking if it exists"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Falling — stating details",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
                 2,
+                3,
                 1,
                 0
             ],
-            "hint": "This is a calm question asking for a number. Listen to the pitch on 'season.'",
-            "explanation": "Genuine Wh-questions end with falling intonation. The pitch drops on 'season.'",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Curious"
+            "hint": "You know you booked. Which ending reflects that?",
+            "explanation": "A fall on 'Chen' presents the booking as a fact. A rise would ask whether the booking was found.",
+            "pitchRule": "📉 Booking details given as facts end with a fall.",
+            "emotionContext": "Confident"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L127_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "The waiter notices you haven't touched your plate.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The studio rejected the script for what reason?",
-            "textToSpeak": "The studio rejected the script for what reason?",
+            "word": "Is everything all right with your meal?",
+            "textToSpeak": "Is everything all right with your meal?",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Fast, flat fall — routine formality",
+                "Lowered rise — genuine concern"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Echo Question)",
+            "correctAnswer": "Lowered rise — genuine concern",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
+                1,
                 2,
-                3,
-                4
+                3
             ],
-            "hint": "This question reacts with disbelief to a decision. Listen to the pitch on 'reason.'",
-            "explanation": "Echo questions rise in pitch rather than falling. The pitch climbs on 'reason,' showing surprise at the studio's decision.",
-            "pitchRule": "📈 Pitch leaps upward on an echo question, breaking the usual Wh-question pattern to show disbelief.",
-            "emotionContext": "Excited"
+            "hint": "He seems genuinely worried. Listen to the tone of the ending.",
+            "explanation": "A lowered rise shows sincere interest and gives you the space to say something is wrong. A fast, flat fall would sound automatic.",
+            "pitchRule": "📈 A soft, lowered rise sounds sincere, not scripted.",
+            "emotionContext": "Concerned"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L127_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You tell the waiter politely that the dish was too spicy.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Where can I watch this documentary?",
-            "textToSpeak": "Where can I watch this documentary?",
+            "word": "It was delicious, but a little spicy for me.",
+            "textToSpeak": "It was delicious, but a little spicy for me.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Lift on 'delicious', fall on 'me' — compliment then complaint",
+                "Fall on 'delicious' and on 'me' — two separate opinions"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Lift on 'delicious', fall on 'me' — compliment then complaint",
             "correctAnswerIndex": 0,
             "intonationMap": [
+                2,
                 3,
                 2,
-                1,
                 0
             ],
-            "hint": "This is a calm question asking for information. Listen to the pitch on 'documentary.'",
-            "explanation": "Genuine Wh-questions fall at the end. The pitch drops on 'documentary.'",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Doubtful"
+            "hint": "There is praise followed by a limit. Where does the voice hold back?",
+            "explanation": "The compliment lifts to lead into 'but', and the complaint falls on 'me' to close. It sounds like one balanced opinion.",
+            "pitchRule": "↗️📉 Praise lifts into the 'but', and the qualification falls.",
+            "emotionContext": "Polite"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L128_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "A colleague keeps cutting you off mid-sentence, and you finally push back.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "He spent how much on that costume?",
-            "textToSpeak": "He spent how much on that costume?",
+            "word": "Are you going to let me finish?",
+            "textToSpeak": "Are you going to let me finish?",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Falling, firm — pointed rhetorical question",
+                "Rising — genuine request for permission"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Echo Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling, firm — pointed rhetorical question",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
-                2,
                 3,
-                4
+                3,
+                1,
+                0
             ],
-            "hint": "This question reacts with shock to a cost. Listen to the pitch on 'costume.'",
-            "explanation": "Echo questions rise sharply in pitch to show disbelief. The pitch climbs on 'costume,' rather than falling.",
-            "pitchRule": "📈 Pitch leaps upward on an echo question, breaking the usual Wh-question pattern to show disbelief.",
-            "emotionContext": "Neutral"
+            "hint": "You have been interrupted several times already. Do you really need permission?",
+            "explanation": "A firm fall on 'finish' shows that this is a boundary, not a request. A rise would sound as if you sincerely wanted permission.",
+            "pitchRule": "💼📉 A pointed yes/no question falls when it is really an instruction.",
+            "emotionContext": "Firm"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L128_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "The chair postpones a topic.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Why was the premiere postponed?",
-            "textToSpeak": "Why was the premiere postponed?",
+            "word": "Let's circle back to that after the break.",
+            "textToSpeak": "Let's circle back to that after the break.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Rising — suggestion",
+                "Falling — decision"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Falling — decision",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                3,
+                2,
                 2,
                 1,
                 0
             ],
-            "hint": "This is a calm question asking for a reason. Listen to the pitch on 'postponed.'",
-            "explanation": "Genuine Wh-questions end with falling intonation. The pitch drops on 'postponed.'",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Surprised"
+            "hint": "The chair is deciding, not consulting. Which ending sounds final?",
+            "explanation": "A fall on 'break' makes the plan a decision. A rise would ask the group to agree.",
+            "pitchRule": "📉 A chair's decision falls, and a request would rise.",
+            "emotionContext": "Firm"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L128_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You disagree with a colleague diplomatically.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The critics gave it what kind of review?",
-            "textToSpeak": "The critics gave it what kind of review?",
+            "word": "I see your point, but I'm not convinced it'll scale.",
+            "textToSpeak": "I see your point, but I'm not convinced it'll scale.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Fall on 'point' and again on 'scale' — two unconnected statements",
+                "Lift on 'point', fall on 'scale' — acknowledgement, then disagreement"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Echo Question)",
+            "correctAnswer": "Lift on 'point', fall on 'scale' — acknowledgement, then disagreement",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
                 2,
                 3,
-                4
+                2,
+                0
             ],
-            "hint": "This question reacts with surprise to unexpected feedback. Listen to the pitch on 'review.'",
-            "explanation": "Surprise questions rise in pitch instead of falling. The pitch climbs on 'review,' showing disbelief at the reaction.",
-            "pitchRule": "📈 Pitch leaps upward on an echo question, breaking the usual Wh-question pattern to show disbelief.",
-            "emotionContext": "Determined"
+            "hint": "There is agreement followed by a doubt. Which part gets the lift?",
+            "explanation": "The first part lifts to keep the sentence moving toward 'but', and the doubt falls on 'scale'. This keeps the tone respectful.",
+            "pitchRule": "↗️📉 Acknowledge with a lift, disagree with a fall.",
+            "emotionContext": "Diplomatic"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L129_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "Your partner has misplaced the keys for the third time this week, and you are weary.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "What inspired the writer to create this story?",
-            "textToSpeak": "What inspired the writer to create this story?",
+            "word": "Where did you put them this time?",
+            "textToSpeak": "Where did you put them this time?",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Falling, weary — mild exasperation",
+                "Rising — a real search question"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Falling, weary — mild exasperation",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
+                2,
                 2,
                 1,
                 0
             ],
-            "hint": "This is a calm question asking for a source of inspiration. Listen to the pitch on 'story.'",
-            "explanation": "Genuine Wh-questions fall at the end. The pitch drops on 'story.'",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Curious"
+            "hint": "The keys always seem to vanish. How tired of looking does the speaker sound?",
+            "explanation": "'This time' signals a pattern, and a weary fall on 'time' carries the sigh. A rise would sound like a fresh, hopeful search.",
+            "pitchRule": "📉 A weary fall on 'this time' shows a pattern, not curiosity.",
+            "emotionContext": "Weary"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L129_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "Your friend has just told you she's moving abroad.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "She replaced who in the cast?",
-            "textToSpeak": "She replaced who in the cast?",
+            "word": "I'm going to miss you so much.",
+            "textToSpeak": "I'm going to miss you so much.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Bright, quick fall — cheerful",
+                "Slow, warm fall — heartfelt"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Echo Question)",
+            "correctAnswer": "Slow, warm fall — heartfelt",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                2,
                 3,
-                4
+                2,
+                1,
+                0
             ],
-            "hint": "This question reacts with surprise to casting news. Listen to the pitch on 'cast.'",
-            "explanation": "Echo questions rise sharply in pitch. The pitch climbs on 'cast,' showing the speaker's astonishment at the news.",
-            "pitchRule": "📈 Pitch leaps upward on an echo question, breaking the usual Wh-question pattern to show disbelief.",
-            "emotionContext": "Excited"
+            "hint": "You are happy for her but sad. Which delivery is more genuine?",
+            "explanation": "A slower, warm fall shows real sadness. A bright, quick fall would sound as if you didn't feel the loss.",
+            "pitchRule": "📉 A slow, warm fall makes an emotional sentence sound sincere.",
+            "emotionContext": "Wistful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L129_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "A colleague claims the deadline was always Friday, but your records say otherwise.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "How did the director choose this location?",
-            "textToSpeak": "How did the director choose this location?",
+            "word": "Is that really what we agreed?",
+            "textToSpeak": "Is that really what we agreed?",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Rising — checking your own memory",
+                "Falling, stress on 'really' — challenging"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Falling, stress on 'really' — challenging",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                3,
                 2,
+                4,
                 1,
                 0
             ],
-            "hint": "This is a calm question asking for a process. Listen to the pitch on 'location.'",
-            "explanation": "Genuine Wh-questions end with falling intonation. The pitch drops on 'location.'",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Doubtful"
+            "hint": "You have the evidence. Does the speaker truly need an answer?",
+            "explanation": "Stress on 'really' and a fall make the question a challenge to the claim. A rise would show real uncertainty.",
+            "pitchRule": "📉 A falling yes/no question can challenge instead of ask.",
+            "emotionContext": "Challenging"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L130_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "A support agent starts a call.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The show got canceled after how many episodes?",
-            "textToSpeak": "The show got canceled after how many episodes?",
+            "word": "Thank you for calling, how can I help you today?",
+            "textToSpeak": "Thank you for calling, how can I help you today?",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Rise on 'today' — yes/no question",
+                "Fall on 'today' — friendly WH-question"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Echo Question)",
+            "correctAnswer": "Fall on 'today' — friendly WH-question",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
                 2,
                 3,
-                4
-            ],
-            "hint": "This question reacts with disbelief to surprising news. Listen to the pitch on 'episodes.'",
-            "explanation": "Echo questions rise in pitch rather than falling. The pitch climbs on 'episodes,' showing the speaker's shock.",
-            "pitchRule": "📈 Pitch leaps upward on an echo question, breaking the usual Wh-question pattern to show disbelief.",
-            "emotionContext": "Neutral"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L130_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "Who composed the soundtrack for this movie?",
-            "textToSpeak": "Who composed the soundtrack for this movie?",
-            "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                3,
-                2,
                 1,
                 0
             ],
-            "hint": "This is a calm question asking for a name. Listen to the pitch on 'movie.'",
-            "explanation": "Genuine Wh-questions fall at the end. The pitch drops on 'movie.'",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Surprised"
+            "hint": "The agent expects a full answer, not yes or no. Listen to how the sentence ends.",
+            "explanation": "It's a WH-question, so it falls on 'today'. The first part lifts slightly, because the question is still coming.",
+            "pitchRule": "📉 A support script's question falls.",
+            "emotionContext": "Friendly"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L130_Q2",
+            "instruction": "The agent has to say the item is gone.",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "Unfortunately, that item is no longer available.",
+            "textToSpeak": "Unfortunately, that item is no longer available.",
+            "options": [
+                "Lowered fall — regretful",
+                "Bright rise — cheerful"
+            ],
+            "correctAnswer": "Lowered fall — regretful",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                2,
+                1,
+                1,
+                0
+            ],
+            "hint": "This is bad news. Which delivery respects that?",
+            "explanation": "A lowered fall shows that the agent regrets the news. A bright rise would sound inappropriate.",
+            "pitchRule": "📉 Bad news calls for a lowered fall.",
+            "emotionContext": "Regretful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L130_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You are the customer and this is your third call about the same issue.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "He forgot his lines during what scene?",
-            "textToSpeak": "He forgot his lines during what scene?",
+            "word": "I've been on hold for forty minutes.",
+            "textToSpeak": "I've been on hold for forty minutes.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Surprise/Echo Question)"
+                "Falling, stressed 'forty' — complaint",
+                "Rising, even — asking a real question"
             ],
-            "correctAnswer": "Rising Intonation (Surprise/Echo Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling, stressed 'forty' — complaint",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
                 2,
-                3,
-                4
+                4,
+                1,
+                0
             ],
-            "hint": "This question reacts with surprise to an embarrassing moment. Listen to the pitch on 'scene.'",
-            "explanation": "Surprise questions rise sharply in pitch instead of falling. The pitch climbs on 'scene,' showing disbelief, completing this tier's focus on echo questions.",
-            "pitchRule": "📈 Pitch leaps upward on an echo question, breaking the usual Wh-question pattern to show disbelief.",
-            "emotionContext": "Determined"
+            "hint": "You are making a point, not asking. Which word delivers the complaint?",
+            "explanation": "Stress on 'forty' highlights the length of the wait, and the fall makes it a complaint. A rise would ask an unclear question.",
+            "pitchRule": "📉 A complaint stresses the number that proves the point.",
+            "emotionContext": "Frustrated"
         }
     ]
 }

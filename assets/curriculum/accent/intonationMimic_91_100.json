@@ -5,400 +5,424 @@
     "quests": [
         {
             "id": "ACC_INTONATIONMIMIC_L91_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "Your friend says, 'I'm moving to Norway next month.' You are stunned.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Your parents are visiting this weekend, aren't they.",
-            "textToSpeak": "Your parents are visiting this weekend, aren't they.",
+            "word": "You're moving to Norway?",
+            "textToSpeak": "You're moving to Norway?",
             "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
+                "High rise — surprised echo",
+                "Low rise — calm check"
             ],
-            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
+            "correctAnswer": "High rise — surprised echo",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                1,
-                0,
-                0
-            ],
-            "hint": "This sentence ends with the tag 'aren't they.' The speaker sounds confident this visit was already arranged. Listen to the pitch on the tag.",
-            "explanation": "Confirming tags fall in pitch when the speaker already believes the plan. The voice drops on 'aren't they,' since the visit seems to have been planned in advance.",
-            "pitchRule": "📉 Pitch falls on a tag question when the speaker is fairly sure and mainly wants confirmation.",
-            "emotionContext": "Curious"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L91_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "You haven't told your sister yet, have you?",
-            "textToSpeak": "You haven't told your sister yet, have you?",
-            "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
-            ],
-            "correctAnswer": "Rising Intonation (Checking Tag Question)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
                 2,
-                1,
-                0,
-                3
+                3,
+                4
             ],
-            "hint": "This sentence ends with the tag 'have you?' The speaker sounds genuinely unsure whether the news has been shared. Listen to the pitch on the tag.",
-            "explanation": "Checking tags rise in pitch when the speaker truly wants to know. The voice climbs on 'have you,' since sharing news with family isn't something to assume happened.",
-            "pitchRule": "📈 Pitch rises on a tag question when the speaker genuinely doesn't know the answer.",
-            "emotionContext": "Excited"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L91_Q3",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "He proposed to her last spring, didn't he.",
-            "textToSpeak": "He proposed to her last spring, didn't he.",
-            "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                2,
-                1,
-                0,
-                0
-            ],
-            "hint": "This sentence ends with the tag 'didn't he.' The speaker sounds confident about this remembered milestone. Listen to the pitch on the tag.",
-            "explanation": "Confirming tags fall in pitch when the speaker already believes the timeline. The voice drops on 'didn't he,' since the speaker seems to clearly recall when the proposal happened.",
-            "pitchRule": "📉 Pitch falls on a tag question when the speaker is fairly sure and mainly wants confirmation.",
-            "emotionContext": "Doubtful"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L92_Q1",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "You're not still angry with your brother, are you?",
-            "textToSpeak": "You're not still angry with your brother, are you?",
-            "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
-            ],
-            "correctAnswer": "Rising Intonation (Checking Tag Question)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                2,
-                1,
-                0,
-                3
-            ],
-            "hint": "This sentence ends with the tag 'are you?' The speaker genuinely wants to know if there's lingering tension. Listen to the pitch on the tag.",
-            "explanation": "Checking tags rise in pitch when the speaker is truly uncertain about someone's feelings. The voice climbs on 'are you,' since emotions can change and shouldn't be assumed.",
-            "pitchRule": "📈 Pitch rises on a tag question when the speaker genuinely doesn't know the answer.",
-            "emotionContext": "Neutral"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L92_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "Your grandparents celebrated fifty years together, didn't they.",
-            "textToSpeak": "Your grandparents celebrated fifty years together, didn't they.",
-            "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                2,
-                1,
-                0,
-                0
-            ],
-            "hint": "This sentence ends with the tag 'didn't they.' The speaker sounds confident about this well-known milestone. Listen to the pitch on the tag.",
-            "explanation": "Confirming tags fall in pitch when the speaker already knows the fact. The voice drops on 'didn't they,' since a fifty-year anniversary is the kind of event that's widely remembered.",
-            "pitchRule": "📉 Pitch falls on a tag question when the speaker is fairly sure and mainly wants confirmation.",
+            "hint": "The news is unexpected. Listen to how far the pitch travels on the last word.",
+            "explanation": "In an echo question, the last word rises high to express surprise. A low rise would just check the fact calmly.",
+            "pitchRule": "📈 A high, wide rise turns a repeat into an expression of surprise.",
             "emotionContext": "Surprised"
         },
         {
-            "id": "ACC_INTONATIONMIMIC_L92_Q3",
-            "instruction": "Identify the intonation",
+            "id": "ACC_INTONATIONMIMIC_L91_Q2",
+            "instruction": "Your colleague says the CEO is retiring tomorrow. You'd like to double-check calmly.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This isn't the first time they've argued, is it?",
-            "textToSpeak": "This isn't the first time they've argued, is it?",
+            "word": "The CEO is retiring tomorrow?",
+            "textToSpeak": "The CEO is retiring tomorrow?",
             "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
+                "High rise — surprised echo",
+                "Low rise — calm check"
             ],
-            "correctAnswer": "Rising Intonation (Checking Tag Question)",
+            "correctAnswer": "Low rise — calm check",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
                 1,
-                0,
+                1,
+                2,
                 3
             ],
-            "hint": "This sentence ends with the tag 'is it?' The speaker sounds genuinely unsure about the history between two people. Listen to the pitch on the tag.",
-            "explanation": "Checking tags rise in pitch when the speaker truly wants background information. The voice climbs on 'is it,' since a pattern of arguments isn't something an outsider can simply assume.",
-            "pitchRule": "📈 Pitch rises on a tag question when the speaker genuinely doesn't know the answer.",
-            "emotionContext": "Determined"
+            "hint": "You are not shocked, only careful. Which rise fits?",
+            "explanation": "A modest rise asks for confirmation without drama. A very high rise would suggest shock.",
+            "pitchRule": "📈 A small rise checks; a large rise reacts.",
+            "emotionContext": "Careful"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L91_Q3",
+            "instruction": "Someone tells you they walked twenty kilometers today. You are simply repeating to make sure you heard.",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "You walked twenty kilometers?",
+            "textToSpeak": "You walked twenty kilometers?",
+            "options": [
+                "Low rise — calm check",
+                "Falling — flat repeat, no surprise"
+            ],
+            "correctAnswer": "Low rise — calm check",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                1,
+                1,
+                2,
+                3
+            ],
+            "hint": "There is no surprise here, only a check of the number. Listen for the size of the rise.",
+            "explanation": "A gentle rise on 'kilometers' asks for confirmation. A falling ending would treat the number as known.",
+            "pitchRule": "📈 A gentle rise checks; a fall would close the topic.",
+            "emotionContext": "Neutral"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L92_Q1",
+            "instruction": "A friend says, 'That jacket cost four hundred euros.' You can't believe it.",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "You paid how much?",
+            "textToSpeak": "You paid how much?",
+            "options": [
+                "High rise on the WH-word — echo of surprise",
+                "Falling — new information question"
+            ],
+            "correctAnswer": "High rise on the WH-word — echo of surprise",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                1,
+                3,
+                4,
+                4
+            ],
+            "hint": "The information was just given, so this is not a new question. Listen to where the pitch peaks.",
+            "explanation": "The high rise on 'how much' repeats the shocking number and shows disbelief. A falling WH-question would ask a fresh question.",
+            "pitchRule": "📈 An echo WH-question rises on the WH-word to show surprise.",
+            "emotionContext": "Shocked"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L92_Q2",
+            "instruction": "A coworker says the meeting is at six in the morning. You can't believe it.",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "It starts when?",
+            "textToSpeak": "It starts when?",
+            "options": [
+                "High rise on the WH-word — echo of surprise",
+                "Falling — new information question"
+            ],
+            "correctAnswer": "High rise on the WH-word — echo of surprise",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                1,
+                3,
+                4,
+                4
+            ],
+            "hint": "The speaker already knows what was said. Which pitch shows surprise instead of curiosity?",
+            "explanation": "A high rise on 'when' turns the question into an expression of disbelief. It is not a request for a time.",
+            "pitchRule": "📈 A high rise on 'when' echoes the time in disbelief.",
+            "emotionContext": "Incredulous"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L92_Q3",
+            "instruction": "You have not yet heard the ticket price and need to know.",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "How much is the ticket?",
+            "textToSpeak": "How much is the ticket?",
+            "options": [
+                "High rise on the WH-word — echo of surprise",
+                "Falling — new information question"
+            ],
+            "correctAnswer": "Falling — new information question",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                3,
+                2,
+                1,
+                0
+            ],
+            "hint": "You are asking for new information. Which ending matches a real request?",
+            "explanation": "A falling WH-question shows real information seeking. A high rise on 'much' would signal that you had already heard the price.",
+            "pitchRule": "📉 A real request for a price falls.",
+            "emotionContext": "Neutral"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L93_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "You called your mother yesterday, didn't you.",
-            "textToSpeak": "You called your mother yesterday, didn't you.",
+            "word": "Wait, the store closed at noon?",
+            "textToSpeak": "Wait, the store closed at noon?",
             "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
+                "Falling — stating a fact",
+                "Rising — surprised check"
             ],
-            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                2,
-                1,
-                0,
-                0
-            ],
-            "hint": "This sentence ends with the tag 'didn't you.' The speaker sounds fairly confident this regular call happened. Listen to the pitch on the tag.",
-            "explanation": "Confirming tags fall in pitch when the speaker mostly expects agreement. The voice drops on 'didn't you,' since calling a parent is treated here as a routine, expected action.",
-            "pitchRule": "📉 Pitch falls on a tag question when the speaker is fairly sure and mainly wants confirmation.",
-            "emotionContext": "Curious"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L93_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "Your cousin hasn't moved away yet, has she?",
-            "textToSpeak": "Your cousin hasn't moved away yet, has she?",
-            "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
-            ],
-            "correctAnswer": "Rising Intonation (Checking Tag Question)",
+            "correctAnswer": "Rising — surprised check",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
                 1,
-                0,
-                3
+                2,
+                4
             ],
-            "hint": "This sentence ends with the tag 'has she?' The speaker sounds genuinely unsure about recent changes. Listen to the pitch on the tag.",
-            "explanation": "Checking tags rise in pitch when the speaker truly wants an update. The voice climbs on 'has she,' since a move is the kind of change that needs to be confirmed, not assumed.",
-            "pitchRule": "📈 Pitch rises on a tag question when the speaker genuinely doesn't know the answer.",
-            "emotionContext": "Excited"
+            "hint": "The word 'wait' marks a change in the speaker's thinking. Listen to how the last word ends.",
+            "explanation": "'Wait' interrupts the speaker's assumptions and the rise on 'noon' shows the surprise. A fall would state the fact without the reaction.",
+            "pitchRule": "📈 A rise after 'wait' expresses that the fact is new and surprising.",
+            "emotionContext": "Surprised"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L93_Q2",
+            "instruction": "You realize that you booked the wrong date as your friend explains the schedule.",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "Oh no, I booked the wrong date.",
+            "textToSpeak": "Oh no, I booked the wrong date.",
+            "options": [
+                "Rising — unsure question",
+                "Falling — dismayed realization"
+            ],
+            "correctAnswer": "Falling — dismayed realization",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                3,
+                2,
+                1,
+                0
+            ],
+            "hint": "You are not asking a question, you have just realized something. Which ending fits?",
+            "explanation": "A fall on 'date' shows a private realization. The peak on 'no' carries the dismay.",
+            "pitchRule": "📉 A sinking realization usually ends with a fall.",
+            "emotionContext": "Dismayed"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L93_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You walk into the office and see two colleagues chatting like old friends.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "They named the baby after her grandmother, didn't they.",
-            "textToSpeak": "They named the baby after her grandmother, didn't they.",
+            "word": "Hold on, you two already met?",
+            "textToSpeak": "Hold on, you two already met?",
             "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
+                "Rising — surprised check",
+                "Falling — stating a fact"
             ],
-            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
+            "correctAnswer": "Rising — surprised check",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
                 1,
-                0,
-                0
+                1,
+                2,
+                4
             ],
-            "hint": "This sentence ends with the tag 'didn't they.' The speaker sounds confident about this meaningful family detail. Listen to the pitch on the tag.",
-            "explanation": "Confirming tags fall in pitch when the speaker already believes the detail is correct. The voice drops on 'didn't they,' since the speaker seems to have already heard this touching story.",
-            "pitchRule": "📉 Pitch falls on a tag question when the speaker is fairly sure and mainly wants confirmation.",
-            "emotionContext": "Doubtful"
+            "hint": "You had no idea they knew each other. Listen to the ending.",
+            "explanation": "The rise on 'met' invites an explanation and shows surprise. A fall would simply report the observation.",
+            "pitchRule": "📈 Surprise about a relationship rises on the last word.",
+            "emotionContext": "Surprised"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L94_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "You're joining us for the family reunion, aren't you?",
-            "textToSpeak": "You're joining us for the family reunion, aren't you?",
+            "word": "You're kidding me!",
+            "textToSpeak": "You're kidding me!",
             "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
+                "Rise-fall — strong disbelief",
+                "Rising — checking if it's a joke"
             ],
-            "correctAnswer": "Rising Intonation (Checking Tag Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rise-fall — strong disbelief",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
                 1,
-                0,
-                3
+                3,
+                4,
+                0
             ],
-            "hint": "This sentence ends with the tag 'aren't you?' The speaker genuinely wants to confirm attendance, not assume it. Listen to the pitch on the tag.",
-            "explanation": "Checking tags rise in pitch when the speaker truly wants a firm answer. The voice climbs on 'aren't you,' since plans can change and attendance needs to be confirmed.",
-            "pitchRule": "📈 Pitch rises on a tag question when the speaker genuinely doesn't know the answer.",
-            "emotionContext": "Neutral"
+            "hint": "An exclamation is not a genuine request for confirmation. Track the peak in the middle of the sentence.",
+            "explanation": "A rise-fall reacts strongly: the pitch climbs and then drops, which expresses emotion rather than a question.",
+            "pitchRule": "↗️📉 A rise-fall marks a strong emotional reaction.",
+            "emotionContext": "Incredulous"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L94_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "Someone tells you the airline lost all your bags.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Your uncle still lives in the old house, doesn't he.",
-            "textToSpeak": "Your uncle still lives in the old house, doesn't he.",
+            "word": "No way, all of them?",
+            "textToSpeak": "No way, all of them?",
             "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
+                "Falling — accepting the facts",
+                "Rising — checking in shock"
             ],
-            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising — checking in shock",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
                 1,
-                0,
-                0
+                2,
+                3,
+                4
             ],
-            "hint": "This sentence ends with the tag 'doesn't he.' The speaker sounds confident about this long-standing fact. Listen to the pitch on the tag.",
-            "explanation": "Confirming tags fall in pitch when the speaker already believes something unchanged is still true. The voice drops on 'doesn't he,' since the living situation is treated as a long-known fact.",
-            "pitchRule": "📉 Pitch falls on a tag question when the speaker is fairly sure and mainly wants confirmation.",
-            "emotionContext": "Surprised"
+            "hint": "The speaker cannot accept the news. Which ending suits?",
+            "explanation": "'All of them' rises because the speaker wants the news to be denied. A fall would sound accepting.",
+            "pitchRule": "📈 A shocked check ends on a rise that hopes for a different answer.",
+            "emotionContext": "Shocked"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L94_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend claims he ran a marathon without training and you don't believe him.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This won't cause a problem with your in-laws, will it?",
-            "textToSpeak": "This won't cause a problem with your in-laws, will it?",
+            "word": "Oh, come on, you can't be serious.",
+            "textToSpeak": "Oh, come on, you can't be serious.",
             "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
+                "Rise-fall — incredulous challenge",
+                "Rising — sincere question"
             ],
-            "correctAnswer": "Rising Intonation (Checking Tag Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rise-fall — incredulous challenge",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
                 1,
-                0,
-                3
+                3,
+                4,
+                0
             ],
-            "hint": "This sentence ends with the tag 'will it?' The speaker sounds a little anxious about a sensitive family situation. Listen to the pitch on the tag.",
-            "explanation": "Checking tags rise in pitch when the speaker genuinely wants reassurance about something uncertain. The voice climbs on 'will it,' since family reactions can't be predicted with confidence.",
-            "pitchRule": "📈 Pitch rises on a tag question when the speaker genuinely doesn't know the answer.",
-            "emotionContext": "Determined"
+            "hint": "You are not asking. Consider whether you actually want a reply.",
+            "explanation": "A rise-fall on 'serious' challenges the claim and shows that you doubt it. A plain rise would ask for a sincere answer.",
+            "pitchRule": "↗️📉 A rise-fall can mean 'I don't believe it'.",
+            "emotionContext": "Skeptical"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L95_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Your sister got the job she wanted, didn't she.",
-            "textToSpeak": "Your sister got the job she wanted, didn't she.",
+            "word": "That's amazing!",
+            "textToSpeak": "That's amazing!",
             "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
+                "Narrow fall — polite acknowledgement",
+                "Wide rise-fall — genuine excitement"
             ],
-            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                2,
-                1,
-                0,
-                0
-            ],
-            "hint": "This sentence ends with the tag 'didn't she.' The speaker sounds confident about this happy outcome. Listen to the pitch on the tag.",
-            "explanation": "Confirming tags fall in pitch when the speaker already knows the good news. The voice drops on 'didn't she,' since the speaker seems to already be aware of the result.",
-            "pitchRule": "📉 Pitch falls on a tag question when the speaker is fairly sure and mainly wants confirmation.",
-            "emotionContext": "Curious"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L95_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "You haven't met his new wife yet, have you?",
-            "textToSpeak": "You haven't met his new wife yet, have you?",
-            "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
-            ],
-            "correctAnswer": "Rising Intonation (Checking Tag Question)",
+            "correctAnswer": "Wide rise-fall — genuine excitement",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
                 1,
-                0,
-                3
+                3,
+                4,
+                0
             ],
-            "hint": "This sentence ends with the tag 'have you?' The speaker sounds genuinely curious whether an introduction has happened. Listen to the pitch on the tag.",
-            "explanation": "Checking tags rise in pitch when the speaker truly wants to know. The voice climbs on 'have you,' since meeting someone new in the family isn't something to assume.",
-            "pitchRule": "📈 Pitch rises on a tag question when the speaker genuinely doesn't know the answer.",
+            "hint": "The speaker sounds thrilled. Listen to how far the pitch moves.",
+            "explanation": "A wide pitch range signals enthusiasm. A narrow fall would sound polite but unmoved.",
+            "pitchRule": "🎉 A wide pitch range makes enthusiasm audible.",
             "emotionContext": "Excited"
         },
         {
-            "id": "ACC_INTONATIONMIMIC_L95_Q3",
-            "instruction": "Identify the intonation",
+            "id": "ACC_INTONATIONMIMIC_L95_Q2",
+            "instruction": "A friend says she just got the job you both hoped for.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Their daughter graduates this June, doesn't she.",
-            "textToSpeak": "Their daughter graduates this June, doesn't she.",
+            "word": "You got the job? That's wonderful!",
+            "textToSpeak": "You got the job? That's wonderful!",
             "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
+                "Rise, then high fall — surprise, then joy",
+                "Fall, then fall — routine reaction"
             ],
-            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
+            "correctAnswer": "Rise, then high fall — surprise, then joy",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
+                3,
+                4,
+                1
+            ],
+            "hint": "There are two parts: a check and a celebration. Notice how they differ.",
+            "explanation": "The first part rises in surprise, and the second part falls with joy. Together they show the change from disbelief to delight.",
+            "pitchRule": "↗️📉 Surprise rises; joy falls from a high starting point.",
+            "emotionContext": "Delighted"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L95_Q3",
+            "instruction": "A colleague quietly mentions a promotion and you are happy for them.",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "Congratulations, you really deserve it.",
+            "textToSpeak": "Congratulations, you really deserve it.",
+            "options": [
+                "Wide fall — sincere praise",
+                "Flat fall — routine politeness"
+            ],
+            "correctAnswer": "Wide fall — sincere praise",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                3,
+                2,
                 1,
-                0,
                 0
             ],
-            "hint": "This sentence ends with the tag 'doesn't she.' The speaker sounds confident about this scheduled milestone. Listen to the pitch on the tag.",
-            "explanation": "Confirming tags fall in pitch when the speaker already knows the date. The voice drops on 'doesn't she,' since graduation dates are usually set well in advance.",
-            "pitchRule": "📉 Pitch falls on a tag question when the speaker is fairly sure and mainly wants confirmation.",
-            "emotionContext": "Doubtful"
+            "hint": "This is a kind sentence, but a flat voice would spoil it. Which ending sounds sincere?",
+            "explanation": "A wide fall starting high on 'really' gives the compliment weight. A flat fall would sound automatic.",
+            "pitchRule": "🎉 Sincere praise starts high and falls with warmth.",
+            "emotionContext": "Warm"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L96_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "You're not planning to move far away, are you?",
-            "textToSpeak": "You're not planning to move far away, are you?",
+            "word": "Oh no, what happened?",
+            "textToSpeak": "Oh no, what happened?",
             "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
+                "Rising on 'what happened' — casual curiosity",
+                "Falling on 'what happened' — concerned request"
             ],
-            "correctAnswer": "Rising Intonation (Checking Tag Question)",
+            "correctAnswer": "Falling on 'what happened' — concerned request",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
+                2,
                 1,
-                0,
-                3
+                0
             ],
-            "hint": "This sentence ends with the tag 'are you?' The speaker sounds genuinely worried about losing closeness with family. Listen to the pitch on the tag.",
-            "explanation": "Checking tags rise in pitch when the speaker is truly uncertain and emotionally invested. The voice climbs on 'are you,' since future plans can't simply be assumed.",
-            "pitchRule": "📈 Pitch rises on a tag question when the speaker genuinely doesn't know the answer.",
-            "emotionContext": "Neutral"
+            "hint": "The speaker has just realized that something bad happened. Listen to how gently the question falls.",
+            "explanation": "A low fall makes the question sound caring and serious. A rise would sound more casual.",
+            "pitchRule": "📉 A low, slow fall expresses concern.",
+            "emotionContext": "Concerned"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L96_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "Your friend says her flight was cancelled.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Your parents raised you in this town, didn't they.",
-            "textToSpeak": "Your parents raised you in this town, didn't they.",
+            "word": "You're stuck there overnight?",
+            "textToSpeak": "You're stuck there overnight?",
             "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
+                "Rising — concerned check",
+                "Falling — matter-of-fact"
             ],
-            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
+            "correctAnswer": "Rising — concerned check",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                1,
+                1,
+                2,
+                3
+            ],
+            "hint": "You are worried and want to know the consequences. Choose the ending that sounds caring.",
+            "explanation": "A rise keeps the question open and warm. A fall would treat the news as ordinary.",
+            "pitchRule": "📈 Worried checks rise gently.",
+            "emotionContext": "Sympathetic"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L96_Q3",
+            "instruction": "A colleague tells you they lost a family member.",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "That's terrible, I'm so sorry.",
+            "textToSpeak": "That's terrible, I'm so sorry.",
+            "options": [
+                "Low, slow fall — sympathy",
+                "High, quick fall — cheerful"
+            ],
+            "correctAnswer": "Low, slow fall — sympathy",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
@@ -406,322 +430,298 @@
                 0,
                 0
             ],
-            "hint": "This sentence ends with the tag 'didn't they.' The speaker sounds confident about this background detail. Listen to the pitch on the tag.",
-            "explanation": "Confirming tags fall in pitch when the speaker already knows someone's history. The voice drops on 'didn't they,' since where someone grew up is treated here as settled, known information.",
-            "pitchRule": "📉 Pitch falls on a tag question when the speaker is fairly sure and mainly wants confirmation.",
-            "emotionContext": "Surprised"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L96_Q3",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "This argument won't ruin your friendship, will it?",
-            "textToSpeak": "This argument won't ruin your friendship, will it?",
-            "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
-            ],
-            "correctAnswer": "Rising Intonation (Checking Tag Question)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                2,
-                1,
-                0,
-                3
-            ],
-            "hint": "This sentence ends with the tag 'will it?' The speaker sounds genuinely worried about the future of a relationship. Listen to the pitch on the tag.",
-            "explanation": "Checking tags rise in pitch when the speaker truly wants hopeful reassurance. The voice climbs on 'will it,' since the outcome of a disagreement can't be predicted with certainty.",
-            "pitchRule": "📈 Pitch rises on a tag question when the speaker genuinely doesn't know the answer.",
-            "emotionContext": "Determined"
+            "hint": "The speaker expresses sympathy. Listen for the speed and the height.",
+            "explanation": "A low and slow fall shows respect and sorrow. A high, quick fall would sound cheerful and inappropriate.",
+            "pitchRule": "📉 Sympathy is low, slow and falling.",
+            "emotionContext": "Sympathetic"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L97_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "He takes after his father, doesn't he.",
-            "textToSpeak": "He takes after his father, doesn't he.",
+            "word": "I thought the meeting was tomorrow?",
+            "textToSpeak": "I thought the meeting was tomorrow?",
             "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
+                "Falling — plainly stating what the speaker believes",
+                "Rising — surprised mismatch with expectation"
             ],
-            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising — surprised mismatch with expectation",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
                 1,
-                0,
-                0
+                1,
+                2,
+                4
             ],
-            "hint": "This sentence ends with the tag 'doesn't he.' The speaker sounds confident about an obvious resemblance. Listen to the pitch on the tag.",
-            "explanation": "Confirming tags fall in pitch when the speaker already sees something as clearly true. The voice drops on 'doesn't he,' since family resemblance is often considered self-evident.",
-            "pitchRule": "📉 Pitch falls on a tag question when the speaker is fairly sure and mainly wants confirmation.",
-            "emotionContext": "Curious"
+            "hint": "The speaker's expectation doesn't match what they hear. Listen to the last word.",
+            "explanation": "The rise on 'tomorrow' shows that the speaker is surprised and hopes to be corrected. A fall would state the belief as fact.",
+            "pitchRule": "📈 A rise after 'I thought' expresses a mismatch and invites explanation.",
+            "emotionContext": "Confused"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L97_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "You arrive at a shop and find it closed.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "You haven't forgiven her completely, have you?",
-            "textToSpeak": "You haven't forgiven her completely, have you?",
+            "word": "Isn't it supposed to open at nine?",
+            "textToSpeak": "Isn't it supposed to open at nine?",
             "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
+                "Falling — a complaint about the store's timing",
+                "Rising — surprised mismatch with expectation"
             ],
-            "correctAnswer": "Rising Intonation (Checking Tag Question)",
+            "correctAnswer": "Rising — surprised mismatch with expectation",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
                 1,
-                0,
-                3
+                1,
+                2,
+                4
             ],
-            "hint": "This sentence ends with the tag 'have you?' The speaker sounds genuinely curious about deep, private feelings. Listen to the pitch on the tag.",
-            "explanation": "Checking tags rise in pitch when the speaker truly wants an honest, personal answer. The voice climbs on 'have you,' since feelings like forgiveness can't be assumed from the outside.",
-            "pitchRule": "📈 Pitch rises on a tag question when the speaker genuinely doesn't know the answer.",
-            "emotionContext": "Excited"
+            "hint": "You are puzzled, not angry. Choose the pitch that leaves the door open.",
+            "explanation": "A rise on 'nine' asks for an explanation. A fall would turn the sentence into a complaint.",
+            "pitchRule": "📈 Puzzled questions rise; complaints fall.",
+            "emotionContext": "Puzzled"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L97_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You've just learned that your neighbor plays in an orchestra.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Your niece just started high school, didn't she.",
-            "textToSpeak": "Your niece just started high school, didn't she.",
+            "word": "I didn't know you played the violin.",
+            "textToSpeak": "I didn't know you played the violin.",
             "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
+                "Falling — a pleasant discovery",
+                "Rising — asking for confirmation"
             ],
-            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
+            "correctAnswer": "Falling — a pleasant discovery",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
+                3,
                 1,
-                0,
                 0
             ],
-            "hint": "This sentence ends with the tag 'didn't she.' The speaker sounds confident about this recent milestone. Listen to the pitch on the tag.",
-            "explanation": "Confirming tags fall in pitch when the speaker already knows about a recent event. The voice drops on 'didn't she,' since starting high school is treated here as recently confirmed news.",
-            "pitchRule": "📉 Pitch falls on a tag question when the speaker is fairly sure and mainly wants confirmation.",
-            "emotionContext": "Doubtful"
+            "hint": "You are pleasantly surprised and not asking anything. Which pitch shows this?",
+            "explanation": "The statement falls on 'violin' because it comments on a discovery. A rise would ask for confirmation.",
+            "pitchRule": "📉 A fall can express a pleasant discovery.",
+            "emotionContext": "Interested"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L98_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "You're staying close with your siblings, aren't you?",
-            "textToSpeak": "You're staying close with your siblings, aren't you?",
+            "word": "Oh, that's why she left early.",
+            "textToSpeak": "Oh, that's why she left early.",
             "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
+                "Rising — asking why",
+                "Falling — realization"
             ],
-            "correctAnswer": "Rising Intonation (Checking Tag Question)",
+            "correctAnswer": "Falling — realization",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
+                2,
                 1,
-                0,
-                3
+                0
             ],
-            "hint": "This sentence ends with the tag 'aren't you?' The speaker genuinely wants an honest update on the relationship. Listen to the pitch on the tag.",
-            "explanation": "Checking tags rise in pitch when the speaker truly wants current, personal information. The voice climbs on 'aren't you,' since closeness between siblings can change over time.",
-            "pitchRule": "📈 Pitch rises on a tag question when the speaker genuinely doesn't know the answer.",
-            "emotionContext": "Neutral"
+            "hint": "The speaker has just understood something. Listen to whether they are asking or concluding.",
+            "explanation": "A fall shows that the puzzle is solved. A rise would ask another question.",
+            "pitchRule": "📉 A realization ends with a fall.",
+            "emotionContext": "Understanding"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L98_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend explains why the road was closed, and you are still processing.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Your aunt and uncle adopted a child, didn't they.",
-            "textToSpeak": "Your aunt and uncle adopted a child, didn't they.",
+            "word": "Oh, so that's why?",
+            "textToSpeak": "Oh, so that's why?",
             "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
+                "Falling — settled realization",
+                "Rising — checking a new understanding"
             ],
-            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising — checking a new understanding",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
                 1,
-                0,
-                0
+                1,
+                2,
+                4
             ],
-            "hint": "This sentence ends with the tag 'didn't they.' The speaker sounds confident about this happy family news. Listen to the pitch on the tag.",
-            "explanation": "Confirming tags fall in pitch when the speaker already knows the news. The voice drops on 'didn't they,' since the speaker seems to already be aware of the adoption.",
-            "pitchRule": "📉 Pitch falls on a tag question when the speaker is fairly sure and mainly wants confirmation.",
-            "emotionContext": "Surprised"
+            "hint": "You are not fully sure yet. Which ending suits?",
+            "explanation": "A rise shows that you have a new idea but want confirmation. A fall would sound settled.",
+            "pitchRule": "📈 A tentative new understanding rises.",
+            "emotionContext": "Thoughtful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L98_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You have just met someone at a conference and realize who they are.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This news won't upset your grandmother, will it?",
-            "textToSpeak": "This news won't upset your grandmother, will it?",
+            "word": "Oh! You're the new manager?",
+            "textToSpeak": "Oh! You're the new manager?",
             "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
+                "Falling — flat statement",
+                "Rising — surprised recognition"
             ],
-            "correctAnswer": "Rising Intonation (Checking Tag Question)",
+            "correctAnswer": "Rising — surprised recognition",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
                 1,
-                0,
-                3
+                1,
+                2,
+                4
             ],
-            "hint": "This sentence ends with the tag 'will it?' The speaker sounds genuinely concerned about an older relative's reaction. Listen to the pitch on the tag.",
-            "explanation": "Checking tags rise in pitch when the speaker truly wants reassurance about an unpredictable reaction. The voice climbs on 'will it,' since how someone will respond to news can't be assumed.",
-            "pitchRule": "📈 Pitch rises on a tag question when the speaker genuinely doesn't know the answer.",
-            "emotionContext": "Determined"
+            "hint": "You didn't expect the connection. Notice the surprise in the ending.",
+            "explanation": "The 'Oh!' marks the discovery and the rise on 'manager' turns the recognition into a check.",
+            "pitchRule": "📈 Surprised recognition ends with a rise.",
+            "emotionContext": "Surprised"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L99_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Your brother finally apologized, didn't he.",
-            "textToSpeak": "Your brother finally apologized, didn't he.",
+            "word": "He actually said that to you?",
+            "textToSpeak": "He actually said that to you?",
             "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
+                "High rise — incredulous",
+                "Falling — flat summary"
             ],
-            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
+            "correctAnswer": "High rise — incredulous",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
                 1,
-                0,
-                0
+                2,
+                3,
+                4
             ],
-            "hint": "This sentence ends with the tag 'didn't he.' The speaker sounds confident about this resolved conflict. Listen to the pitch on the tag.",
-            "explanation": "Confirming tags fall in pitch when the speaker already believes the good news. The voice drops on 'didn't he,' since the speaker seems to already know the apology happened.",
-            "pitchRule": "📉 Pitch falls on a tag question when the speaker is fairly sure and mainly wants confirmation.",
-            "emotionContext": "Curious"
+            "hint": "The speaker is reacting to a story. Notice the intensity of the rise.",
+            "explanation": "A high rise expresses disbelief at the story. A fall would simply summarize it.",
+            "pitchRule": "📈 A high rise on the last word shows disbelief.",
+            "emotionContext": "Incredulous"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L99_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "Your friend says, 'I finally finished my thesis!'",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "You're not keeping secrets from your family, are you?",
-            "textToSpeak": "You're not keeping secrets from your family, are you?",
+            "word": "Finally! Well done.",
+            "textToSpeak": "Finally! Well done.",
             "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
+                "Falling — warm relief",
+                "Rising — unsure"
             ],
-            "correctAnswer": "Rising Intonation (Checking Tag Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling — warm relief",
+            "correctAnswerIndex": 0,
             "intonationMap": [
+                3,
                 2,
                 1,
-                0,
-                3
+                0
             ],
-            "hint": "This sentence ends with the tag 'are you?' The speaker sounds genuinely suspicious and wants an honest answer. Listen to the pitch on the tag.",
-            "explanation": "Checking tags rise in pitch when the speaker is truly uncertain and wants the truth. The voice climbs on 'are you,' since hidden secrets, by definition, can't be assumed either way.",
-            "pitchRule": "📈 Pitch rises on a tag question when the speaker genuinely doesn't know the answer.",
-            "emotionContext": "Excited"
+            "hint": "The friend has achieved something after a long time. Choose the ending that celebrates.",
+            "explanation": "A fall from a high start shares both relief and pride. A rise would sound unsure.",
+            "pitchRule": "🎉 A warm fall confirms shared relief.",
+            "emotionContext": "Warm"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L99_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "Your colleague explains why the server went down, and it all fits together.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "They moved closer to be near the grandchildren, didn't they.",
-            "textToSpeak": "They moved closer to be near the grandchildren, didn't they.",
+            "word": "That explains a lot.",
+            "textToSpeak": "That explains a lot.",
             "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
+                "Rising — asking",
+                "Falling — dry realization"
             ],
-            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Falling — dry realization",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
+                2,
                 1,
-                0,
                 0
             ],
-            "hint": "This sentence ends with the tag 'didn't they.' The speaker sounds confident about the reason behind a move. Listen to the pitch on the tag.",
-            "explanation": "Confirming tags fall in pitch when the speaker already understands someone's motivation. The voice drops on 'didn't they,' since the reason for the move seems to be common family knowledge.",
-            "pitchRule": "📉 Pitch falls on a tag question when the speaker is fairly sure and mainly wants confirmation.",
-            "emotionContext": "Doubtful"
+            "hint": "The speaker isn't asking. Listen for a low, dry sound.",
+            "explanation": "A low fall on 'lot' makes the comment sound wry, as if many small puzzles have clicked into place.",
+            "pitchRule": "📉 A dry, low fall can carry a wry realization.",
+            "emotionContext": "Wry"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L100_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "You haven't introduced him to your parents yet, have you?",
-            "textToSpeak": "You haven't introduced him to your parents yet, have you?",
+            "word": "Only twenty people came?",
+            "textToSpeak": "Only twenty people came?",
             "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
+                "High rise — surprised echo",
+                "Falling — flat summary"
             ],
-            "correctAnswer": "Rising Intonation (Checking Tag Question)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                2,
-                1,
-                0,
-                3
-            ],
-            "hint": "This sentence ends with the tag 'have you?' The speaker sounds genuinely curious about a big relationship step. Listen to the pitch on the tag.",
-            "explanation": "Checking tags rise in pitch when the speaker truly wants to know about a significant, uncertain step. The voice climbs on 'have you,' since meeting the parents is a milestone that can't be assumed.",
-            "pitchRule": "📈 Pitch rises on a tag question when the speaker genuinely doesn't know the answer.",
-            "emotionContext": "Neutral"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L100_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "Your family always gathers for the holidays, doesn't it.",
-            "textToSpeak": "Your family always gathers for the holidays, doesn't it.",
-            "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
+            "correctAnswer": "High rise — surprised echo",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
                 1,
-                0,
-                0
+                2,
+                3,
+                4
             ],
-            "hint": "This sentence ends with the tag 'doesn't it.' The speaker sounds confident about a long-standing tradition. Listen to the pitch on the tag.",
-            "explanation": "Confirming tags fall in pitch when the speaker already knows a tradition holds true. The voice drops on 'doesn't it,' since a yearly gathering is treated as settled, repeated knowledge.",
-            "pitchRule": "📉 Pitch falls on a tag question when the speaker is fairly sure and mainly wants confirmation.",
+            "hint": "The speaker heard the number and is reacting. Listen to the last word.",
+            "explanation": "A high rise shows that the number was much lower than expected. The falling ending would just repeat it.",
+            "pitchRule": "📈 An echo about a number is high when the number is a surprise.",
             "emotionContext": "Surprised"
         },
         {
-            "id": "ACC_INTONATIONMIMIC_L100_Q3",
-            "instruction": "Identify the intonation",
+            "id": "ACC_INTONATIONMIMIC_L100_Q2",
+            "instruction": "Your partner asks you to check whether the oven is off.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This decision won't change your relationship, will it?",
-            "textToSpeak": "This decision won't change your relationship, will it?",
+            "word": "The oven is off, right?",
+            "textToSpeak": "The oven is off, right?",
             "options": [
-                "Falling Intonation (Confirming Tag Question)",
-                "Rising Intonation (Checking Tag Question)"
+                "Falling — expecting agreement",
+                "Rising — genuinely unsure"
             ],
-            "correctAnswer": "Rising Intonation (Checking Tag Question)",
+            "correctAnswer": "Rising — genuinely unsure",
             "correctAnswerIndex": 1,
             "intonationMap": [
+                1,
+                1,
+                2,
+                4
+            ],
+            "hint": "You are worried you forgot. Decide which tag sounds sincere.",
+            "explanation": "A rise shows that you actually need to know. A fall would suggest you were sure.",
+            "pitchRule": "📈 A tag with a rise asks a sincere question.",
+            "emotionContext": "Anxious"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L100_Q3",
+            "instruction": "A friend describes an amazing concert.",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "That sounds incredible.",
+            "textToSpeak": "That sounds incredible.",
+            "options": [
+                "Rising — asking",
+                "Wide fall — impressed"
+            ],
+            "correctAnswer": "Wide fall — impressed",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                3,
                 2,
                 1,
-                0,
-                3
+                0
             ],
-            "hint": "This sentence ends with the tag 'will it?' The speaker sounds genuinely hopeful but unsure about the future. Listen to the pitch on the tag.",
-            "explanation": "Checking tags rise in pitch when the speaker truly wants reassurance about an uncertain outcome. The voice climbs on 'will it' - the result of a big decision can't simply be assumed, completing this tier's practice with tag questions.",
-            "pitchRule": "📈 Pitch rises on a tag question when the speaker genuinely doesn't know the answer.",
-            "emotionContext": "Determined"
+            "hint": "The friend has shared something exciting. Which ending shows real interest?",
+            "explanation": "A wide fall on 'incredible' shows that you are impressed. A rise would ask for more information.",
+            "pitchRule": "🎉 A wide fall on the adjective shows genuine admiration.",
+            "emotionContext": "Impressed"
         }
     ]
 }

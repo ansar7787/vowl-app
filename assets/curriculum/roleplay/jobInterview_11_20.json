@@ -4,633 +4,633 @@
     "levels": "11-20",
     "quests": [
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that draws the clearest, most specific link to this role.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How would you describe your personality?",
+            "interviewerQuestion": "How does your past experience relate to this role?",
             "options": [
-                "I don't really think about my personality.",
-                "I'm complicated, it's hard to explain.",
-                "I'm outgoing, dependable, and enjoy solving problems."
+                "In my last job I tested new features before release, which lines up closely with the QA responsibilities in this posting.",
+                "I've had a lot of different jobs, so I'm sure something will apply.",
+                "My last job wasn't really similar, but I think the skills would transfer okay, since a lot of it comes down to being reliable and learning quickly on the job."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "A few clear, positive personality traits work best.",
-            "explanation": "Naming a few clear, positive traits gives the interviewer a quick, useful picture of who you are.",
+            "hint": "Naming a specific overlapping responsibility beats a general claim that skills 'should' transfer.",
+            "explanation": "Pointing to a concrete, matching responsibility gives the interviewer something real to evaluate. Vague assumptions about transferable skills, with no example, are much less convincing.",
             "id": "ji_l11_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "impressed",
+                "unconvinced",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which answer names the closest real match to the job's core task?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What three words would you use to describe yourself?",
+            "interviewerQuestion": "What part of your background do you think applies most here?",
             "options": [
-                "I can't pick just three words.",
-                "Organized, reliable, and enthusiastic.",
-                "Normal, average, and quiet."
+                "None of my jobs were really sales-related, if I'm honest.",
+                "I spent a summer doing phone sales for a local business, so I already understand the rhythm of outbound calls and handling objections.",
+                "I haven't done sales exactly, but I'm good with people."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Choose specific, positive words rather than vague ones.",
-            "explanation": "Specific, positive words are more memorable and useful to an interviewer than vague or unenthusiastic ones.",
+            "professionalismRating": 4,
+            "hint": "A precise, even partial, match to the role's core task beats a general people-skills claim.",
+            "explanation": "A specific, even if partial, match to the role's main task shows the interviewer real relevance. A general claim about being good with people, or admitting no overlap, gives them far less to work with.",
             "id": "ji_l11_q2",
             "interviewerReaction": [
                 "disappointed",
                 "impressed",
-                "disappointed"
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that gives the interviewer a concrete example to evaluate.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do others usually describe your personality?",
+            "interviewerQuestion": "Which of your past projects is most relevant to this design role?",
             "options": [
-                "People often say I'm easy to work with and good at staying positive.",
-                "I'm not sure what others think of me.",
-                "People say I can be a bit difficult sometimes."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Positive feedback from others adds credibility to your answer.",
-            "explanation": "Sharing positive feedback from others adds credibility, since it's not just your own opinion of yourself.",
-            "id": "ji_l11_q3",
-            "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "What do you know about our company?",
-            "options": [
-                "Not much, honestly, I didn't have time to look it up.",
-                "I know you're a growing company known for excellent customer service in this industry.",
-                "I know you're a company, and you're hiring."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Employers expect candidates to have researched the company beforehand.",
-            "explanation": "Showing you've researched the company demonstrates genuine interest and preparation, both important qualities.",
-            "id": "ji_l12_q1",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "What made you interested in our company specifically?",
-            "options": [
-                "It was just one of many companies I applied to.",
-                "I don't know much about the company, but the job sounded fine.",
-                "I admire your reputation for innovation and would love to contribute to that."
+                "I've mostly done schoolwork, nothing really client-facing.",
+                "I don't have a specific project in mind, but I'm creative and I've always had an eye for what looks good and what doesn't, so I think I'd pick it up fast.",
+                "I redesigned the layout for my university's event flyers last year, which is close to the kind of visual work this role needs."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "A specific reason connected to the company shows genuine interest.",
-            "explanation": "A specific reason tied to the company's reputation or values shows real interest, not just a general job search.",
-            "id": "ji_l12_q2",
+            "professionalismRating": 4,
+            "hint": "Pick a concrete project example, even a small or informal one.",
+            "explanation": "A specific past project, even a small one, gives the interviewer something to evaluate directly. A vague claim of creativity without any example is much weaker.",
+            "id": "ji_l11_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "neutral",
+                "unconvinced",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that is specific and shows flexibility.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How familiar are you with what we do here?",
+            "interviewerQuestion": "What does your availability look like?",
             "options": [
-                "I've read about your recent projects and I'm impressed by your growth in the industry.",
-                "I haven't really looked into it that much.",
-                "I know you sell things, but not much more."
+                "I can work most days, but I'd rather not do weekends if possible, since that's when I usually have family commitments.",
+                "I'm available weekdays and most weekends, and I'm happy to adjust if the schedule needs it.",
+                "I'm not totally sure yet, it depends on some things."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Mentioning something specific you learned shows genuine preparation.",
-            "explanation": "Mentioning something specific, like recent projects, proves you did real research rather than a quick guess.",
-            "id": "ji_l12_q3",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "A specific and flexible answer reassures an employer who needs to build a schedule.",
+            "explanation": "A specific, flexible answer makes scheduling easy for the employer. A conditional preference is workable but less convenient, and an unclear answer creates real uncertainty for a schedule-dependent role.",
+            "id": "ji_l12_q1",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "neutral",
+                "reassured",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which response answers the scheduling question directly and usefully?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle deadlines?",
+            "interviewerQuestion": "Would you be able to work occasional evening shifts?",
             "options": [
-                "I plan ahead and break large tasks into smaller steps to stay on track.",
-                "I usually finish things at the last minute.",
-                "Deadlines stress me out a lot."
+                "I hadn't really thought about evenings, since the posting didn't say anything about them and I assumed it was daytime only.",
+                "Yes, evenings work fine for me, and I can confirm any specific days in advance.",
+                "I could, but I'd need a lot of notice ahead of time, ideally a couple of weeks, so I can rearrange other things."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "A planning strategy shows you can manage time effectively.",
-            "explanation": "Describing a planning strategy shows you can manage time effectively and consistently meet deadlines.",
-            "id": "ji_l13_q1",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "A direct yes with a small practical detail is more useful than a conditional or unconsidered answer.",
+            "explanation": "A direct, specific yes with a practical note gives the employer confidence in planning. A conditional answer adds friction, and admitting you hadn't considered it suggests limited preparation.",
+            "id": "ji_l12_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "concerned",
+                "reassured",
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that gives the employer something concrete to plan around.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What do you do when a deadline feels tight?",
+            "interviewerQuestion": "How many hours a week are you looking to work?",
             "options": [
-                "I just work faster and hope it's enough.",
-                "I usually miss it and explain later.",
-                "I prioritize the most important tasks and ask for help if I need it."
+                "I haven't figured out an exact number yet, since it depends on my classes and I don't have next term's schedule yet.",
+                "As many as you'll give me, I guess. I'm pretty open, and I'd rather have too many hours than too few.",
+                "I'm looking for around 20 hours a week, and I can be flexible with which days those fall on."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Prioritizing tasks and being willing to ask for help are strong strategies.",
-            "explanation": "Prioritizing tasks and being willing to ask for help shows both organization and good judgment under pressure.",
+            "professionalismRating": 3,
+            "hint": "A concrete number with some flexibility is easier to plan around than an open-ended answer.",
+            "explanation": "A concrete number paired with flexibility helps the employer plan realistically. An open-ended 'as many as possible' can sound unconsidered, and having no number at all leaves them guessing.",
+            "id": "ji_l12_q3",
+            "interviewerReaction": [
+                "waiting for more",
+                "uncertain",
+                "impressed"
+            ]
+        },
+        {
+            "instruction": "Choose the description that is specific enough to actually picture.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Can you describe one of your main responsibilities in your last role?",
+            "options": [
+                "I don't remember all the details, but it was mostly office work.",
+                "I did a lot of admin stuff, calendars and things like that.",
+                "I managed the shared calendar for a team of eight, which meant scheduling meetings and resolving conflicts when times overlapped."
+            ],
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "A structured description with a concrete detail is easier to evaluate than a general summary.",
+            "explanation": "A structured description with a concrete detail, like team size, is far easier to assess than a general summary or a vague recollection.",
+            "id": "ji_l13_q1",
+            "interviewerReaction": [
+                "unconvinced",
+                "neutral",
+                "impressed"
+            ]
+        },
+        {
+            "instruction": "Which answer actually walks through the steps of the task?",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Walk me through a typical task you handled at your last job.",
+            "options": [
+                "It's hard to explain, you'd really have to see it.",
+                "Each morning I checked incoming shipments against the order list and flagged any discrepancies before they went to the floor.",
+                "Mostly just moving boxes around, nothing too complicated."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Describe the actual steps of a task, not just a general label for it.",
+            "explanation": "Walking through the real steps of a task shows genuine understanding of the job. A dismissive description or an evasive answer gives the interviewer nothing to assess.",
             "id": "ji_l13_q2",
             "interviewerReaction": [
                 "disappointed",
-                "disappointed",
-                "impressed"
+                "interested",
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that gives a clear, structured picture of the day.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Have you ever had to manage multiple deadlines at once?",
+            "interviewerQuestion": "What did a normal day look like in your last position?",
             "options": [
-                "No, I've never had more than one thing to do at a time.",
-                "Yes, I made a schedule and focused on the highest-priority tasks first.",
-                "Yes, and it was a mess, but I got through it somehow."
+                "Pretty standard stuff, nothing too special.",
+                "I ran morning activities for a small group of kids, then handled check-ins with parents at pickup.",
+                "Every day was different, so it's hard to say exactly, but I was always busy and there was always something to do."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "A specific method for managing multiple deadlines shows real experience.",
-            "explanation": "Describing a specific method, like making a schedule, shows real experience handling competing priorities.",
+            "professionalismRating": 4,
+            "hint": "Give a concrete structure with two or three parts.",
+            "explanation": "A short, structured walk-through of the day shows organization and clarity. Saying every day is different, or calling it standard, without detail, doesn't help the interviewer picture your work.",
             "id": "ji_l13_q3",
             "interviewerReaction": [
-                "disappointed",
+                "unconvinced",
                 "impressed",
-                "disappointed"
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer with the most active, specific learning method.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What do you like to do outside of work?",
+            "interviewerQuestion": "How do you handle learning a new system or tool quickly?",
             "options": [
-                "I enjoy hiking and reading, which help me recharge and stay focused.",
-                "I don't really do anything interesting.",
-                "That's kind of personal, isn't it?"
+                "I usually start by using it for a small real task, since I learn faster by doing than by reading documentation first.",
+                "I take my time and try to read everything before I start, because I don't like making mistakes on systems I don't know yet.",
+                "I don't love learning new systems, but I manage eventually."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "A simple, genuine answer helps build rapport with the interviewer.",
-            "explanation": "A simple, genuine answer helps build rapport and shows you have a healthy, well-rounded life outside of work.",
+            "professionalismRating": 4,
+            "hint": "An active, specific learning method shows more agility than a cautious or reluctant one.",
+            "explanation": "A concrete, active learning method shows real confidence in adapting quickly. A slow, cautious approach is safe but shows less agility, and reluctance undercuts confidence altogether.",
             "id": "ji_l14_q1",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "neutral",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which response shows the most initiative when a whole system changes suddenly?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Do you have any hobbies?",
+            "interviewerQuestion": "What would you do if your team switched to a completely new booking system overnight?",
             "options": [
-                "Not really, I mostly just relax at home.",
-                "I play the guitar and volunteer at a local community center on weekends.",
-                "Why does that matter for this job?"
+                "I'd ask a coworker who already knows it for a quick walkthrough, then start using it on simple bookings first.",
+                "I'd try to avoid using it until I absolutely had to, and stick with the old workarounds I already know for as long as possible.",
+                "I'd probably just wait until I got a proper training session."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Hobbies that show initiative or community involvement can leave a good impression.",
-            "explanation": "Hobbies that show initiative, like volunteering, can leave a great impression beyond just your work skills.",
+            "hint": "An active, resourceful approach beats waiting passively for training.",
+            "explanation": "Seeking a quick informal walkthrough and starting with simple cases shows real initiative. Waiting for formal training, or avoiding the new system, slows down the whole team.",
             "id": "ji_l14_q2",
             "interviewerReaction": [
-                "disappointed",
                 "impressed",
-                "disappointed"
+                "concerned",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer backed by a real example of self-directed learning.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you like to spend your free time?",
+            "interviewerQuestion": "How comfortable are you picking up new software on the job?",
             "options": [
-                "I usually just watch TV and don't do much else.",
-                "I'd rather not talk about my personal life.",
-                "I like cooking new recipes and spending time with family."
+                "It usually takes me a little while, but I get there.",
+                "I'd need someone to show me most things step by step.",
+                "Very comfortable — I taught myself spreadsheet formulas last year just by experimenting with a real project."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "A warm, simple answer works well for this kind of rapport-building question.",
-            "explanation": "A warm, simple answer helps the interviewer connect with you as a person, building rapport early in the conversation.",
+            "professionalismRating": 4,
+            "hint": "A real example of teaching yourself something is the strongest evidence of learning agility.",
+            "explanation": "A real example of self-directed learning is much stronger proof than a general statement about pace, or an answer that leans heavily on needing others to walk you through it.",
             "id": "ji_l14_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "neutral",
+                "uncertain",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer where feedback actually led to a real change.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What would your ideal workday look like?",
+            "interviewerQuestion": "Tell me about a time you received feedback on your work.",
             "options": [
-                "Honestly, as little work as possible.",
-                "A mix of focused individual work and time collaborating with my team.",
-                "I don't really think about that."
+                "My manager once told me I was rushing through customer interactions, so I slowed down and my feedback scores improved after that.",
+                "I don't really remember getting specific feedback before.",
+                "I usually just say thanks and move on without changing much."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "A balanced answer that includes both focus and teamwork works well.",
-            "explanation": "Describing a balanced mix of focus and teamwork shows you understand how real workplaces function.",
+            "hint": "Show that the feedback actually led to a specific change in what you did.",
+            "explanation": "A real example where feedback led to a specific change shows you actually apply it. Not recalling any feedback, or acknowledging it without acting on it, both suggest less growth.",
             "id": "ji_l15_q1",
             "interviewerReaction": [
-                "disappointed",
                 "impressed",
-                "disappointed"
+                "uncertain",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which answer describes an actual process for using feedback, not just a feeling about it?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you like to structure your day at work?",
+            "interviewerQuestion": "How do you usually respond when someone edits or critiques your work?",
             "options": [
-                "I start with my most important tasks in the morning when I'm most focused.",
-                "I don't really plan, I just go with the flow.",
-                "I do the easy tasks first and save the hard ones for later."
+                "I accept it, even if I don't always agree with it.",
+                "I look at the specific changes, ask questions if I don't understand the reasoning, and try to apply the same thinking next time.",
+                "It can be a little discouraging, but I get over it."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Starting with priorities shows strong time management.",
-            "explanation": "Starting with your most important tasks shows strong time management and self-awareness about your own energy levels.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Describe a concrete process, not just an emotional reaction.",
+            "explanation": "A clear process for understanding and applying feedback, including asking questions, shows genuine growth. Passive acceptance or focusing on how it feels doesn't demonstrate the same active learning.",
             "id": "ji_l15_q2",
             "interviewerReaction": [
+                "neutral",
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response with the most concrete plan for improvement.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What does a productive day look like to you?",
+            "interviewerQuestion": "How would you react if a supervisor listened to one of your calls and pointed out something to improve?",
             "options": [
-                "A day where nothing goes wrong, I guess.",
-                "A day where I don't have too much to do.",
-                "A day where I complete my key tasks and help move a project forward."
+                "I'd want the specific example, and I'd practice that exact situation so it doesn't happen the same way again.",
+                "I'd probably feel a bit defensive at first, but I'd come around after a day or so and try to take the advice on board.",
+                "I'd just try to be more careful going forward."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Connect productivity to concrete outcomes, not just avoiding problems.",
-            "explanation": "Connecting productivity to concrete outcomes shows you think in terms of results, which employers value.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Specificity about how you'd actually improve matters more than a general intention.",
+            "explanation": "Asking for a specific example and practicing it directly targets the improvement. Vague intentions to be more careful lack a real plan, and starting from defensiveness is a weaker first instinct.",
             "id": "ji_l15_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "reassured",
+                "uncertain",
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that reports the error instead of waiting or self-correcting quietly.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What do you think makes a good employee?",
+            "interviewerQuestion": "What would you do if you noticed you'd made an error in a customer's transaction after they'd already left?",
             "options": [
-                "Someone who never makes mistakes.",
-                "Someone who is reliable, communicates well, and takes ownership of their work.",
-                "Someone who just does what they're told."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Reliability, communication, and ownership are core workplace qualities.",
-            "explanation": "Reliability, communication, and ownership are core qualities every employer looks for in a strong employee.",
-            "id": "ji_l16_q1",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "What qualities do you think are important in this role?",
-            "options": [
-                "Attention to detail and the ability to work well with a team.",
-                "I'm not sure, I haven't thought about it.",
-                "Just showing up on time, really."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Think about qualities directly relevant to the job you're applying for.",
-            "explanation": "Naming qualities directly relevant to the job shows you understand what the role actually requires.",
-            "id": "ji_l16_q2",
-            "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "What separates a good employee from an average one?",
-            "options": [
-                "I don't think there's much difference, honestly.",
-                "A good employee just works longer hours.",
-                "A good employee takes initiative instead of waiting to be told what to do."
+                "I'd probably just make a mental note to be more careful next time, since it was small and the customer already left happy.",
+                "I'd wait to see if it caused a problem before saying anything.",
+                "I'd report it to my manager right away and follow whatever process we have for correcting it."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Initiative is a quality that stands out to employers.",
-            "explanation": "Initiative is a quality that consistently stands out to employers, since it shows independent thinking and motivation.",
-            "id": "ji_l16_q3",
+            "hint": "Prompt reporting is more responsible than waiting or only self-correcting privately.",
+            "explanation": "Reporting an error immediately, even a small one, shows accountability and lets it be properly fixed. Waiting, or only privately resolving to be more careful, can let a real problem go unaddressed.",
+            "id": "ji_l16_q1",
             "interviewerReaction": [
+                "concerned",
                 "disappointed",
-                "disappointed",
-                "impressed"
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which response corrects the record instead of just hoping it goes unnoticed?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle making a mistake at work?",
+            "interviewerQuestion": "If you entered the wrong number into a report that had already been sent, what would you do?",
             "options": [
-                "I take responsibility, fix the issue, and learn from it for next time.",
-                "I try not to bring attention to it.",
-                "I usually blame the situation or bad luck."
+                "I'd fix it quietly in case anyone looks at it again, so the file is right even if nobody notices the earlier version.",
+                "I'd assume it probably won't matter much, since most people skim reports and rarely check the individual numbers anyway.",
+                "I'd let the person who received it know as soon as I noticed, along with the corrected version."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Taking responsibility and learning from mistakes shows maturity.",
-            "explanation": "Taking responsibility and learning from a mistake shows maturity and a growth mindset, which employers respect.",
-            "id": "ji_l17_q1",
+            "hint": "Openly correcting the record beats a quiet fix or assuming the error doesn't matter.",
+            "explanation": "Proactively notifying the recipient with a correction prevents decisions being made on wrong information. A quiet fix leaves outdated information circulating, and assuming it's fine risks real consequences.",
+            "id": "ji_l16_q2",
             "interviewerReaction": [
-                "impressed",
+                "concerned",
                 "disappointed",
+                "reassured"
+            ]
+        },
+        {
+            "instruction": "Choose the most direct and accountable way to handle the mix-up.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "What would you do if you gave a guest the wrong information about something, like a menu item or a policy?",
+            "options": [
+                "I'd let a manager handle it if it came up.",
+                "I'd correct it with them directly as soon as I realized, and apologize for the mix-up.",
+                "I'd hope they don't come back and ask about it again, and if they do I'd just say I must have misspoken earlier."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Direct, immediate correction is the most responsible option.",
+            "explanation": "Correcting the guest yourself, promptly, shows real ownership of the mistake. Hoping it goes unnoticed avoids responsibility, and passing it off to a manager without acting yourself adds unnecessary delay.",
+            "id": "ji_l16_q3",
+            "interviewerReaction": [
+                "uncertain",
+                "impressed",
                 "disappointed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that addresses the root cause, not just the symptom.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What do you do after you realize you've made an error?",
+            "interviewerQuestion": "What would you do if you noticed a product was frequently out of stock during your shifts?",
             "options": [
-                "I wait to see if anyone notices first.",
-                "I let the right people know quickly and work on a solution.",
-                "I try to fix it quietly without telling anyone."
+                "I'd assume someone else has already noticed it.",
+                "I'd just tell customers it's out and let them figure out alternatives.",
+                "I'd mention it to my manager with the pattern I noticed, so it could be looked into for reordering."
+            ],
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Flagging a pattern to the right person is more useful than reacting case by case.",
+            "explanation": "Noticing and reporting a pattern helps the business fix the actual cause. Simply informing customers doesn't solve anything, and assuming someone else will handle it means it might never get addressed.",
+            "id": "ji_l17_q1",
+            "interviewerReaction": [
+                "disappointed",
+                "neutral",
+                "impressed"
+            ]
+        },
+        {
+            "instruction": "Which response checks for a simple cause before escalating?",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "If the printer kept jamming every week and it was slowing your team down, what would you do?",
+            "options": [
+                "I'd complain about it to coworkers, since it's not really my job to fix.",
+                "I'd look into whether it's something simple like the paper type, and if not, report it so it can get serviced.",
+                "I'd just avoid using that printer when I could."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Communicating errors quickly is more professional than hiding them.",
-            "explanation": "Communicating a mistake quickly and honestly is far more professional than trying to hide it, which can make things worse.",
+            "professionalismRating": 4,
+            "hint": "Try a simple check first, then escalate if that doesn't solve it.",
+            "explanation": "A quick check followed by proper escalation actually solves the problem. Avoiding the printer is a workaround, not a fix, and complaining without action doesn't help anyone.",
             "id": "ji_l17_q2",
             "interviewerReaction": [
                 "disappointed",
                 "impressed",
-                "disappointed"
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that looks for the underlying cause of the repeated confusion.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me how you've grown from a past mistake.",
+            "interviewerQuestion": "If several customers mentioned the same confusing part of a process, what would you do?",
             "options": [
-                "I don't really remember making any big mistakes.",
-                "I try not to think about my past mistakes.",
-                "I once missed a detail on a report, so now I always double-check my work before submitting it."
+                "I'd figure it's probably just a few confused customers.",
+                "I'd note the pattern and suggest to my supervisor that the process might need clearer instructions.",
+                "I'd just keep explaining it to each customer individually, since it only takes a minute and they usually understand right away."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "A specific example plus a lasting change shows real growth.",
-            "explanation": "A specific example paired with a lasting change in behavior shows genuine growth, not just an apology.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Look for the root cause, not just repeated individual fixes.",
+            "explanation": "Surfacing a pattern to someone who can fix the process addresses the root cause. Repeating the same explanation over and over only treats the symptom, and dismissing it risks ongoing frustration.",
             "id": "ji_l17_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "concerned",
+                "impressed",
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names something specific about how you work best.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What is your dream job?",
+            "interviewerQuestion": "What kind of work environment helps you do your best work?",
             "options": [
-                "Honestly, not having to work at all.",
-                "I haven't really thought about it.",
-                "A role where I can keep growing my skills while making a real impact, much like this one."
+                "I do well with clear expectations and a bit of independence to figure out the details myself.",
+                "Somewhere friendly, I guess, that's really the main thing for me. If people are nice and welcoming, everything else tends to work out.",
+                "I don't really have a preference, anywhere is fine."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Connecting your dream job to the role you're interviewing for is a smart move.",
-            "explanation": "Connecting your dream job to the actual role shows genuine enthusiasm for the position you're applying to.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Name something specific about how you operate, not just a general mood.",
+            "explanation": "Naming a specific working condition shows self-awareness about how you operate. A vague preference like 'friendly,' or no preference at all, tells the interviewer very little.",
             "id": "ji_l18_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "interested",
+                "neutral",
+                "unconvinced"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which answer shows self-knowledge without sounding rigid?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "If you could have any job, what would it be?",
+            "interviewerQuestion": "Do you prefer a more structured environment or a flexible, fast-changing one?",
             "options": [
-                "Something similar to this role, where I can use my skills to solve real problems.",
-                "Something completely different from this field.",
-                "I'd probably just travel instead of working."
+                "I like things pretty structured, but I can adjust if needed, as long as I get a bit of time to get used to the changes.",
+                "I haven't really worked anywhere fast-paced before, so I'm not sure, and I'd have to try it before saying which I prefer.",
+                "I actually enjoy some change and ambiguity, as long as priorities are communicated clearly."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "It's best to keep your answer relevant to the job you're applying for.",
-            "explanation": "Keeping your answer relevant to the job you're applying for shows the interviewer you're genuinely invested in this path.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Be honest about your preference, but connect it to something adaptable.",
+            "explanation": "A clear preference paired with an adaptable condition shows self-knowledge without sounding rigid. A cautious 'I can adjust' is fine but less specific, and having no basis for an opinion offers little.",
             "id": "ji_l18_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "neutral",
+                "uncertain",
+                "pleased"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that goes beyond the obvious 'friendly team' answer.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Where would you like your career to eventually lead?",
+            "interviewerQuestion": "What matters most to you in a team you work with?",
             "options": [
-                "I don't really plan that far ahead.",
-                "I'd like to grow into a role with more responsibility in this field over time.",
-                "Somewhere with much less work, ideally."
+                "People who give honest feedback — I'd rather hear what's not working than have everyone just agree with me.",
+                "People who are easy to get along with, mostly.",
+                "I haven't thought much about what matters to me in a team."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "A goal that shows ambition within the same field works well.",
-            "explanation": "A goal that shows ambition within the same field reassures the employer that you're building a real career, not just passing through.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Pick something specific and slightly unexpected rather than the most obvious answer.",
+            "explanation": "A specific, thoughtful preference like valuing honest feedback shows real depth. A generic 'easy to get along with' is common but forgettable, and no answer at all suggests limited reflection.",
             "id": "ji_l18_q3",
             "interviewerReaction": [
-                "disappointed",
                 "impressed",
-                "disappointed"
+                "neutral",
+                "unconvinced"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the habit that shows real care about clarity and tone in email.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How would your friends describe you?",
+            "interviewerQuestion": "How do you make sure your emails to colleagues come across professionally?",
             "options": [
-                "I'm not sure, you'd have to ask them.",
-                "They'd say I'm dependable and always willing to help when needed.",
-                "Probably that I'm a bit lazy sometimes."
+                "I keep them short and specific about what I need, and I always reread before sending.",
+                "I don't think about it too much, I just type what I'm thinking.",
+                "I try to sound friendly, so I usually add a lot of exclamation points and emojis, because I don't want anything to sound cold."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Positive traits from others' perspective add credibility.",
-            "explanation": "Sharing positive traits from a friend's perspective adds credibility, since it's an outside view of your character.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Think about clarity and a final check, not just a friendly tone.",
+            "explanation": "Clarity and a quick review before sending prevent miscommunication. Overusing casual elements like emojis can undercut professionalism in most workplaces, and skipping review risks careless errors.",
             "id": "ji_l19_q1",
             "interviewerReaction": [
-                "disappointed",
                 "impressed",
-                "disappointed"
+                "concerned",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which priority actually serves the customer best in writing?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What would your best friend say is your best quality?",
+            "interviewerQuestion": "What's important to you when writing to a customer in a chat or email?",
             "options": [
-                "They'd probably say I'm a great listener and always keep my word.",
-                "I honestly don't know.",
-                "They'd probably say I talk too much."
+                "Keeping it upbeat, even if the answer is a bit indirect, because I'd rather leave customers feeling good than frustrated.",
+                "Getting a reply out fast is usually my main priority, because customers get annoyed if they have to wait for an answer.",
+                "Making sure the message actually answers their question clearly, without unnecessary jargon."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Choose a quality that's also valuable in a workplace.",
-            "explanation": "Choosing a quality that's also valuable at work, like being a great listener, connects your personal life to professional skills.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Clarity of the actual answer matters more than speed or tone alone.",
+            "explanation": "A clear, direct answer to the customer's real question is the core job of the message. Prioritizing tone over substance, or speed over accuracy, can leave the customer without what they actually needed.",
             "id": "ji_l19_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "neutral",
+                "concerned",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the habit that compensates for tone being harder to read in text.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do people who know you well describe your work ethic?",
+            "interviewerQuestion": "How do you handle written communication with a remote team where tone can be easy to misread?",
             "options": [
-                "I've never really asked anyone about that.",
-                "They'd probably say I procrastinate a lot.",
-                "They'd say I always follow through on what I commit to."
-            ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Following through on commitments is a strong, specific trait to highlight.",
-            "explanation": "Following through on commitments is a strong, specific trait that directly reassures an employer about your reliability.",
-            "id": "ji_l19_q3",
-            "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "What are your salary expectations?",
-            "options": [
-                "I'll take whatever you're willing to pay.",
-                "I'm looking for a fair salary based on my experience and the market rate for this role.",
-                "I need at least double what I made before, no matter what."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "A reasonable, research-based answer works better than an extreme one.",
-            "explanation": "A reasonable, research-based answer shows you understand your value without seeming unwilling to discuss it or overly demanding.",
-            "id": "ji_l20_q1",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Do you have a specific salary range in mind?",
-            "options": [
-                "I haven't really thought about a number.",
-                "Just give me your highest offer.",
-                "Based on my research, I'd expect a range that reflects the responsibilities of this role."
-            ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Mentioning research shows you've prepared for this common question.",
-            "explanation": "Mentioning research shows you've prepared thoughtfully for a question that many candidates find difficult.",
-            "id": "ji_l20_q2",
-            "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "How much are you hoping to earn in this role?",
-            "options": [
-                "I'd like a salary that reflects both my experience and the value I can bring to the team.",
-                "I really don't have a number in mind at all.",
-                "As much as possible, obviously."
+                "I try to be a bit more explicit in writing than I would be in person, since tone doesn't always come across.",
+                "I try to keep messages really short so there's less room for misunderstanding.",
+                "I just write normally and assume people will understand what I mean."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Framing salary around the value you bring sounds professional and confident.",
-            "explanation": "Framing your salary expectations around the value you bring sounds professional and shows confidence without being unreasonable.",
-            "id": "ji_l20_q3",
+            "professionalismRating": 4,
+            "hint": "Think about what actually helps when tone cues are missing, not just brevity.",
+            "explanation": "Being more explicit in writing compensates for the tone cues lost in text, which is especially useful on remote teams. Assuming understanding, or cutting messages so short that context disappears, both increase the risk of being misread.",
+            "id": "ji_l19_q3",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain",
+                "uncertain"
+            ]
+        },
+        {
+            "instruction": "Choose the summary that combines a few specific points with confidence.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "In one or two sentences, why should we consider you for this role?",
+            "options": [
+                "I'm a hard worker and I really want this job. I'll do whatever it takes and I promise I won't let you down, and I'll be grateful for the chance to prove myself.",
+                "I'm not sure how to sum it up, there's a lot to say.",
+                "I bring relevant hands-on experience, a genuine interest in this kind of work, and a track record of showing up reliably."
+            ],
+            "correctAnswerIndex": 2,
+            "professionalismRating": 5,
+            "hint": "Combine a couple of specific points into one confident summary.",
+            "explanation": "Combining a few specific, concrete points into a short summary is far more convincing than a generic claim or an inability to summarize at all.",
+            "id": "ji_l20_q1",
+            "interviewerReaction": [
+                "neutral",
+                "unconvinced",
+                "impressed"
+            ]
+        },
+        {
+            "instruction": "Which pitch is confident and specific rather than self-deprecating?",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "If you had to pitch yourself in just a few seconds, what would you say?",
+            "options": [
+                "I'm honestly not great at selling myself like this, I get nervous, and I'd rather let my work speak for itself.",
+                "I learn fast, I follow through on what I commit to, and I genuinely want to grow in this field.",
+                "I'd probably just repeat what's already on my resume, since that covers my jobs and dates in more detail than I could remember."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "A short, confident pitch beats self-deprecation or simply repeating the resume.",
+            "explanation": "A short, confident pitch that highlights a few real qualities shows you can summarize your own value clearly. Undercutting yourself, or just repeating the resume, wastes the opportunity.",
+            "id": "ji_l20_q2",
+            "interviewerReaction": [
+                "concerned",
+                "impressed",
+                "neutral"
+            ]
+        },
+        {
+            "instruction": "Choose the closing thought that ties the whole conversation together.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Looking back at everything we've discussed, is there anything you want to add about your fit for this role?",
+            "options": [
+                "Just that everything we've talked about, my background, my interest in the role, and how I work, all point to me being ready to contribute quickly.",
+                "I hope what I've said was enough, it's hard to know.",
+                "Not really, I think I've said everything already."
+            ],
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Tie the whole conversation together into one confident closing thought.",
+            "explanation": "Briefly tying the conversation together into one confident closing thought reinforces your fit. Saying nothing more, or expressing uncertainty about your own answers, is a weaker way to end.",
+            "id": "ji_l20_q3",
+            "interviewerReaction": [
+                "pleased",
+                "uncertain",
+                "neutral"
             ]
         }
     ]

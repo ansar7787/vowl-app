@@ -4,633 +4,633 @@
     "levels": "171-180",
     "quests": [
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that answers the new information directly and adaptably, without flagging the inconsistency.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you manage competing priorities from the board and the team?",
+            "interviewerQuestion": "Earlier I mentioned this role is mostly independent work. Actually, let me ask this directly: how do you feel about being in constant collaboration with five other departments daily?",
             "options": [
-                "I try to balance the expectations of both groups as fairly as I can.",
-                "I translate the board's priorities into terms the team can act on, and I bring the team's realities back to the board, so both sides operate from shared understanding.",
-                "I communicate clearly with both the board and the team about priorities."
+                "Oh, okay, um, I guess that changes things a little bit from what I was expecting based on what you said before. but I haven't really examined that closely.",
+                "Wait, that's a bit different from what you said earlier about it being mostly independent, so I'm a little confused about which one is actually accurate.",
+                "That actually sounds appealing too, I'm comfortable adapting either way, independent work when needed and heavy daily collaboration when that's what the role actually calls for."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Actively translating between the two groups builds shared understanding more effectively than balancing expectations or general communication alone.",
-            "explanation": "Actively translating priorities between the board and the team builds genuine shared understanding on both sides, while trying to balance expectations fairly or communicating clearly with each group alone doesn't create that same real alignment.",
+            "hint": "Respond to the new information directly and adaptably, without drawing attention to the apparent inconsistency.",
+            "explanation": "Responding to the new information directly and adaptably shows real flexibility without making the moment awkward. Pointing out the inconsistency puts the interviewer on the spot unnecessarily, and visibly recalibrating your expectations suggests the new information threw you off more than it should.",
             "id": "ji_l171_q1",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "uncertain",
+                "pleased"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that answers the actual new information confidently.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you had to reconcile board expectations with what your team could realistically deliver.",
+            "interviewerQuestion": "I said earlier this role doesn't involve much travel. Let me actually clarify: it's about 30% travel. How do you feel about that?",
             "options": [
-                "I presented the board with an honest picture of trade-offs, backed by data, which helped them adjust expectations rather than the team overpromising.",
-                "I explained the team's constraints as clearly as I could.",
-                "I worked with the team to push toward what the board expected."
+                "Oh, that's a pretty different number than what you mentioned before, so I want to make sure I understand which one is actually correct.",
+                "That's completely manageable for me, I've traveled that much in past roles without it being a problem, so that doesn't change my interest at all.",
+                "Oh, okay, that's a bit more than I was expecting based on what you'd said earlier, so let me think about that for a second. though I wouldn't stake much on that being right."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Presenting honest, data-backed trade-offs to the board is stronger than explaining constraints alone or pushing the team to meet unrealistic expectations.",
-            "explanation": "Presenting honest, data-backed trade-offs helps the board adjust expectations based on reality, while explaining constraints alone or pushing the team to meet unrealistic expectations doesn't resolve the underlying mismatch as effectively.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Respond to the actual new information confidently, rather than flagging the discrepancy or visibly recalculating your interest.",
+            "explanation": "Responding to the actual new information confidently keeps the conversation moving productively. Flagging the discrepancy puts unnecessary attention on the interviewer's own inconsistency, and visibly needing a moment to recalculate suggests the number is more concerning than it likely is.",
             "id": "ji_l171_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain",
+                "reassured",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that responds confidently to the corrected information.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you protect your team from unrealistic expectations set above them?",
+            "interviewerQuestion": "Earlier I mentioned the team is quite small. Actually, I should clarify, you'd be joining a team of around twenty. Does that change anything for you?",
             "options": [
-                "I do my best to shield the team from unnecessary pressure.",
-                "I try to negotiate more reasonable timelines when possible.",
-                "I proactively manage expectations upward with clear, evidence-based communication, rather than letting the team absorb the pressure of an unrealistic target."
+                "That's a pretty big difference from what you said earlier, so I'm curious which of those two numbers is actually accurate. even if I haven't fully thought it through.",
+                "Oh, okay, that's a lot bigger than what I was picturing based on what you said before, let me think about that for a moment.",
+                "Not at all, I'm comfortable working on a team of that size, and honestly a larger team can bring more variety of perspective, which I'd welcome."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Proactively managing expectations upward with evidence addresses the root cause better than shielding the team or negotiating timelines alone.",
-            "explanation": "Proactively managing expectations upward with clear, evidence-based communication addresses the root cause of unrealistic pressure, while simply shielding the team or negotiating timelines alone doesn't change the underlying expectations being set.",
+            "professionalismRating": 4,
+            "hint": "Respond confidently to the actual, corrected information, rather than dwelling on the discrepancy or visibly reconsidering.",
+            "explanation": "Responding confidently to the corrected information keeps the conversation forward-moving and shows genuine adaptability. Dwelling on which number is accurate puts the interviewer on the spot, and visibly needing to reconsider suggests the new information unsettled you more than it should.",
             "id": "ji_l171_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "uncertain",
+                "uncertain",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that immediately offers a real, measurable proxy instead of explaining why measurement is hard.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle disagreement with the CEO?",
+            "interviewerQuestion": "Prove it. Give me a hard number right now for how much you improved team morale.",
             "options": [
-                "I share my concerns respectfully, given their position.",
-                "I raise my perspective and trust their judgment on the final call.",
-                "I present my perspective directly and confidently, backed by evidence, while remaining fully respectful of their ultimate authority to decide."
+                "I don't really have a specific number for that, but I know things felt a lot better on the team overall. but plenty of people might disagree with me there.",
+                "That's a good question, morale is honestly hard to measure precisely, so it's tough to give you an exact number on something like that.",
+                "I don't have a hard number for morale specifically, since it's not something we formally measured, but I can point to a concrete proxy: voluntary turnover on my team dropped to zero over the eighteen months I led it, down from two departures the year before."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Presenting your view directly and confidently, with evidence, shows stronger leadership than deference framed mainly around their position or authority.",
-            "explanation": "Presenting your perspective directly and confidently with evidence, while still respecting their authority, shows genuine leadership, while framing your input mainly around their position or simply trusting their judgment doesn't demonstrate that same confident, substantive engagement.",
+            "hint": "When a direct number genuinely doesn't exist, immediately offer a real, measurable proxy instead of explaining why measurement is hard.",
+            "explanation": "Immediately offering a real, measurable proxy respects the demand for hard evidence even when the exact metric requested doesn't exist. Explaining why morale is hard to measure stalls instead of answering, and a vague sense of things 'feeling better' gives no evidence at all.",
             "id": "ji_l172_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "unconvinced",
+                "losing interest",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that substitutes a genuine measurable proxy for the requested metric.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you disagreed with your CEO on an important decision.",
+            "interviewerQuestion": "Give me a specific number for how much your presence improved the team culture. I want data, not a feeling.",
             "options": [
-                "I made my case with clear data and a well-reasoned argument, and once the CEO decided differently, I fully committed to executing that decision with the team.",
-                "I voiced my concerns and ultimately deferred to their decision.",
-                "I raised the issue and made sure my perspective was heard."
+                "I don't have a number, but I definitely think the culture improved while I was there. even if I can't be fully certain about it.",
+                "There's no direct culture metric I tracked, so let me give you the closest real data point: our internal survey's 'I'd recommend this team to a friend' score rose from 60% to 85% during my time there.",
+                "Culture is a bit of an abstract thing to put a specific number on, so it's tough to give you exact data for something like that."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Fully committing to executing the final decision is a stronger, more complete answer than simply deferring or ensuring your view was heard.",
-            "explanation": "Fully committing to executing the final decision, after making a substantive case, shows real organizational maturity, while simply deferring or ensuring your view was heard doesn't demonstrate that same complete follow-through.",
+            "hint": "Substitute a genuine measurable proxy for the requested metric, rather than explaining the difficulty of measuring the original concept.",
+            "explanation": "Substituting a genuine measurable proxy directly answers the spirit of a demanding request for data. Explaining the abstractness of the concept avoids providing any real evidence, and a personal impression with no number fails the explicit request entirely.",
             "id": "ji_l172_q2",
             "interviewerReaction": [
+                "unconvinced",
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "losing interest"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that offers the closest real, tracked figure available as a substitute.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you maintain your credibility after disagreeing publicly with executive leadership?",
+            "interviewerQuestion": "I want a real number: how much did your leadership specifically increase client satisfaction? Not an estimate, an actual figure.",
             "options": [
-                "I try to express disagreement respectfully and constructively.",
-                "I make sure my disagreement was always about the issue, professionally expressed, and I demonstrate full support for the final decision going forward.",
-                "I focus on maintaining a good working relationship afterward."
+                "I don't have an exact figure, but clients definitely seemed happier while I was managing those accounts. though I recognize that might not hold up.",
+                "Client satisfaction can be influenced by a lot of different factors, so it's genuinely hard to isolate my specific leadership's exact impact on a number like that.",
+                "The actual figure I have is our client renewal rate, which rose from 70% to 92% during the two years I managed that account portfolio, which is the clearest real data point tied to client satisfaction I can point to."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Combining issue-focused disagreement with full follow-through support maintains credibility more than respectful expression or relationship focus alone.",
-            "explanation": "Combining issue-focused, professional disagreement with full follow-through support maintains credibility through consistent, principled behavior, while respectful expression or simply maintaining the relationship afterward alone doesn't provide that same complete demonstration of maturity.",
+            "hint": "Offer the closest real, tracked figure available as a substitute, rather than explaining why isolating the exact number is difficult.",
+            "explanation": "Offering the closest real, tracked figure directly answers the spirit of a demanding request for an actual number. Explaining the difficulty of isolating your specific impact avoids giving any figure at all, and a vague impression of clients seeming happier fails the explicit request for data.",
             "id": "ji_l172_q3",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "unconvinced",
+                "losing interest",
+                "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that responds to each of the three unrelated questions directly and briefly, in order.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you navigate a hostile takeover situation?",
+            "interviewerQuestion": "Quick series, different topics each time, ready? One: favorite project. Two: biggest pet peeve at work. Three: last book you read.",
             "options": [
-                "I stay focused on the organization's core value and long-term interests, communicating honestly with employees rather than letting uncertainty breed rumor and fear.",
-                "I make sure leadership presents a united, confident front.",
-                "I focus on maintaining business operations as usual."
+                "One: redesigning our onboarding flow. Two: meetings that could have been an email. Three: a book on decision-making under uncertainty.",
+                "Okay, let me think through those one at a time, there's a lot to cover across three pretty different topics like that.",
+                "Um, favorite project, a book, and something about work, I think, let me try to remember all three. though I'm genuinely unsure how it would actually play out."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Honest, proactive communication with employees addresses uncertainty more directly than a united front or business-as-usual focus alone.",
-            "explanation": "Honest, proactive communication with employees directly addresses the uncertainty a hostile takeover creates, while presenting a united front or focusing on business as usual alone doesn't fill that same information gap that fuels rumor and fear.",
+            "professionalismRating": 4,
+            "hint": "Answer each of the three unrelated questions directly and briefly, in order, without needing extra processing time.",
+            "explanation": "Answering each unrelated question directly and briefly, in order, shows real mental agility across topic jumps. Needing time to process the range of topics slows down a format built for speed, and losing track of the actual questions asked undermines confidence unnecessarily.",
             "id": "ji_l173_q1",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "pleased",
+                "losing interest",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that gives a direct, brief answer to each of the three unrelated prompts, in order.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you helped your organization navigate a period of significant external threat.",
+            "interviewerQuestion": "Same format, jumping around: one, a skill you want to build. Two, your ideal Sunday. Three, a tool you couldn't work without.",
             "options": [
-                "I worked closely with leadership to develop our response strategy.",
-                "I made sure employees heard directly from leadership regularly, with honest updates, rather than relying on external news to shape their understanding of the situation.",
-                "I focused on keeping the organization stable and focused."
+                "One: public speaking. Two: a slow morning and a long walk. Three: a good project management app, I use Asana daily.",
+                "Okay, those are pretty different from each other, let me take a second to think through each one properly before answering.",
+                "Um, a skill, a Sunday thing, and a tool, right, let me see if I can remember all three of those. or that's at least what comes to mind right now."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Ensuring employees hear directly from leadership addresses the information vacuum more concretely than strategy development or a general focus on stability.",
-            "explanation": "Ensuring employees hear directly and regularly from leadership fills the information vacuum that external uncertainty creates, while working on response strategy or focusing generally on stability doesn't provide that same direct, ongoing reassurance.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Give a direct, brief answer to each of the three unrelated prompts, in order, without extra processing time.",
+            "explanation": "Giving a direct, brief answer to each unrelated prompt, in order, handles a genuine topic-jumping format smoothly. Taking time to think through each one slows the pace the format is testing, and struggling to recall the actual questions undermines composure.",
             "id": "ji_l173_q2",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "pleased",
+                "losing interest",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that gives a direct, brief answer to each unrelated prompt in order, matching the requested pace.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you keep employees focused during a period of organizational uncertainty like a takeover threat?",
+            "interviewerQuestion": "Keep up with me here: one, a habit you're proud of. Two, something that annoys you outside of work. Three, your go-to productivity trick.",
             "options": [
-                "I try to reassure them that leadership is handling the situation.",
-                "I encourage the team to stay focused on their regular responsibilities.",
-                "I keep the team anchored in their day-to-day purpose and impact, since a sense of meaningful work provides stability that broader uncertainty can't easily disrupt."
+                "Okay, a habit, something annoying, and a trick, I think, let me try to keep those straight. or that's the impression I have, anyway.",
+                "One: a nightly five-minute planning routine. Two: slow walkers in a hurry-up crowd. Three: time-blocking my calendar in advance.",
+                "Those are three pretty unrelated things, so let me take a moment to go through them one at a time carefully."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Anchoring the team in meaningful purpose provides deeper stability than reassurance about leadership or simply focusing on regular responsibilities.",
-            "explanation": "Anchoring the team in their meaningful, day-to-day purpose provides genuine psychological stability, while reassuring them that leadership is handling things or simply encouraging focus on regular responsibilities doesn't offer that same deeper sense of grounding.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Give a direct, brief answer to each unrelated prompt in order, matching the requested pace.",
+            "explanation": "Giving a direct, brief answer to each prompt in order matches the requested fast pace and shows real mental agility. Taking a moment to methodically address each one undercuts the speed being tested, and admitting difficulty keeping the questions straight undermines composure.",
             "id": "ji_l173_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "uncertain",
+                "pleased",
+                "losing interest"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that corrects the misquote clearly and specifically, restating your actual position.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you communicate a controversial strategic pivot?",
+            "interviewerQuestion": "So earlier you said you don't really like working with data. Is that right?",
             "options": [
-                "I communicate the new direction clearly and confidently.",
-                "I make sure to address concerns as they come up.",
-                "I explain the reasoning honestly, including the trade-offs we considered, so people understand it as a thoughtful decision rather than an arbitrary one."
+                "Actually, that's not quite what I said, I mentioned I prefer roles where data supports decisions rather than being the entire focus, but I do enjoy working with it in that context.",
+                "I guess that's close enough to what I meant, though I might have phrased it a little differently at the time.",
+                "Oh, did I say that? I don't really remember saying it quite like that, but okay. but I'd want to think about it more before committing to that."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Explaining trade-offs honestly builds understanding of the decision's rationale more than confident communication or reactive concern-handling alone.",
-            "explanation": "Explaining trade-offs honestly shows people the pivot was a thoughtful decision, not an arbitrary one, while confident communication of the new direction or simply reacting to concerns as they arise doesn't provide that same transparent rationale.",
+            "hint": "Correct the misquote clearly and specifically, restating your actual position, rather than accepting the mischaracterization or reacting with confusion.",
+            "explanation": "Correcting the misquote clearly and restating your actual position sets the record straight without conflict. Accepting a mischaracterization 'close enough' lets an inaccurate impression stand, and reacting with confusion instead of correcting it leaves the misquote unaddressed.",
             "id": "ji_l174_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "reassured",
+                "uncertain",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that restates your actual, more precise original point clearly.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you led a significant, unpopular strategic change.",
+            "interviewerQuestion": "You mentioned before that you weren't a fan of your last manager. That's a bit concerning, can you elaborate?",
             "options": [
-                "I walked the organization through exactly why our previous approach was no longer working, using clear evidence, before introducing the new direction.",
-                "I communicated the change clearly and answered questions honestly.",
-                "I made the case for why the new direction was necessary."
+                "Just to clarify, what I said was that our communication styles were different, not that I disliked him, and it's actually a difference I learned a lot from navigating.",
+                "Oh, I didn't mean it quite like that, I don't really remember exactly what I said though. but that's admittedly a bit of a simplification.",
+                "I mean, I guess that's roughly what I meant, though it's probably a bit stronger than how I'd put it myself."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Establishing why the old approach no longer worked, with evidence, builds a stronger foundation than clear communication or a general case for the new direction alone.",
-            "explanation": "Establishing clearly why the previous approach was no longer working, with evidence, creates a stronger foundation for accepting change, while clear communication of the new direction or a general case for its necessity alone doesn't provide that same grounding in why change was needed.",
+            "hint": "Restate your actual, more precise original point clearly, rather than half-accepting the stronger mischaracterization or claiming not to recall your own words.",
+            "explanation": "Restating your actual, more precise point clearly corrects a mischaracterization that could otherwise raise unnecessary concern. Half-accepting the stronger version lets the inaccurate framing stand, and claiming not to recall your own recent words undermines your credibility unnecessarily.",
             "id": "ji_l174_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "reassured",
+                "concerned",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that corrects the mischaracterization precisely with the actual, more accurate version.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you get buy-in for a strategic pivot that some people strongly oppose?",
+            "interviewerQuestion": "Didn't you say you struggled to meet deadlines in your last role? That seems like it could be an issue here.",
             "options": [
-                "I communicate the reasoning as clearly and thoroughly as I can.",
-                "I engage directly with the strongest critics first, since understanding and responding to the toughest objections often does more to build genuine buy-in than broad messaging.",
-                "I give people time to adjust to the new direction."
+                "I mean, I guess there might have been a moment like that, though I wouldn't necessarily describe it as a general struggle overall.",
+                "Oh, I don't think I meant to say it like that, though I'm not totally sure exactly what I said at this point. or so it seems to me, anyway.",
+                "I don't think I said that, actually, what I described was one specific instance where I flagged a deadline risk early and we adjusted the timeline together, which is a bit different from a general struggle with deadlines."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Directly engaging the strongest critics is a more targeted strategy than broad, clear communication or simply allowing time to adjust.",
-            "explanation": "Directly engaging the strongest critics addresses the most substantive objections head-on, which often builds broader buy-in, while broad, clear communication or simply giving people time to adjust doesn't provide that same targeted, credibility-building engagement.",
+            "hint": "Correct the mischaracterization precisely with the actual, more accurate version of what happened, rather than partially conceding it or claiming uncertainty about your own words.",
+            "explanation": "Correcting the mischaracterization precisely, with the actual and more accurate account, directly addresses a concerning misquote. Partially conceding the exaggerated version leaves room for the wrong impression to persist, and claiming uncertainty about your own recent words undermines your credibility unnecessarily.",
             "id": "ji_l174_q3",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "concerned",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that resolves the apparent contradiction immediately and specifically, respecting the time pressure.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you lead a team through an industry downturn?",
+            "interviewerQuestion": "[Interrupting] Actually, wait. Didn't you just say you love working independently? [Tone sharpens] Because that's not what your resume shows, it's full of team projects. Explain that, quickly, we're short on time.",
             "options": [
-                "I focus the team on what we can control, make hard decisions early rather than delaying them, and are transparent about the realities we're facing.",
-                "I try to keep morale up while making necessary adjustments.",
-                "I focus on protecting the team as much as possible during the downturn."
+                "Oh, I see what you mean, I guess that might look a little inconsistent, I'm not totally sure how to explain it quickly. but that's a rough guess more than anything solid.",
+                "Quickly: I enjoy independent execution within team projects, meaning I often own a specific piece and drive it myself, even inside a larger team effort. That's consistent with both what I said and what's on my resume.",
+                "Sorry, let me think about how to explain that, there's actually a good reason for it, I just need a second to put it clearly."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Making hard decisions early, paired with transparency, is more decisive than a general focus on morale or protection alone.",
-            "explanation": "Making hard decisions early, rather than delaying them, paired with genuine transparency, shows decisive leadership during a downturn, while a general focus on morale or trying to protect the team as much as possible alone doesn't address the harder strategic choices a downturn requires.",
+            "hint": "Resolve the apparent contradiction immediately and specifically, respecting the stated time pressure, rather than stalling or conceding an inconsistency.",
+            "explanation": "Resolving the apparent contradiction immediately, with a specific distinction, respects the real time pressure while fully answering the challenge. Needing a moment to think undercuts the requested speed, and conceding a possible inconsistency without resolving it fails to actually explain anything.",
             "id": "ji_l175_q1",
             "interviewerReaction": [
-                "impressed",
                 "disappointed",
-                "disappointed"
+                "impressed",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that resolves the apparent tension immediately and specifically, honoring the stated urgency.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you led your team through a difficult industry-wide slowdown.",
+            "interviewerQuestion": "[Sharply] Hold on, that contradicts what you told me five minutes ago about preferring stability. [Pivots] Never mind, quickly: are you the kind of person who thrives on change or not?",
             "options": [
-                "I worked to keep the team motivated despite the challenging conditions.",
-                "I focused on finding new opportunities within the changing market.",
-                "I made the tough calls early, even though they were unpopular, which positioned us far better than competitors who waited too long to act."
+                "Quickly: yes, I thrive on change within a stable foundation, like a consistent team and clear goals, that's not a contradiction, it's actually the specific combination I work best in.",
+                "Sorry, let me think about that for a second, I don't think it's really a contradiction, I just need to explain it a bit more clearly.",
+                "Oh, I see what you mean, that does sound a little inconsistent, I'm not sure how to quickly clear that up. though it's only a loose impression, really."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Making tough, unpopular calls early is a stronger example of decisive leadership than a general focus on motivation or opportunity-finding alone.",
-            "explanation": "Making tough, unpopular calls early shows decisive leadership that positions the organization ahead of slower-moving competitors, while a general focus on motivation or simply looking for new opportunities alone doesn't demonstrate that same timely, strategic decisiveness.",
+            "hint": "Resolve the apparent tension immediately and specifically, honoring the stated urgency, rather than stalling or conceding a contradiction.",
+            "explanation": "Resolving the apparent tension immediately with a specific, real distinction honors the stated urgency while fully answering. Needing time to think undercuts the requested speed, and conceding possible inconsistency without resolving it fails to actually clarify anything.",
             "id": "ji_l175_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "impressed",
+                "uncertain",
+                "disappointed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that resolves the apparent contradiction immediately with a specific distinction, respecting the urgency.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you make difficult resource decisions during an industry downturn?",
+            "interviewerQuestion": "[Cutting in] Wait, no, that's not lining up with what you said before about needing autonomy. [Sharp tone] Quickly, before we run out of time: autonomy or structure, which do you actually need more?",
             "options": [
-                "I look for the most cost-effective ways to reduce spending.",
-                "I base decisions on which parts of the business will matter most when the downturn ends, not just on what's easiest to cut right now.",
-                "I try to make decisions that are as fair as possible across the organization."
+                "Quickly: autonomy in how I execute, structure in what the goals are, both are true at once, and that's exactly the balance I look for in a role.",
+                "Oh, I see the issue, that probably does sound a bit contradictory, I'm not sure I can clear it up that quickly. though it's hard to know for sure without being in it.",
+                "Sorry, give me a second, I don't think those two things are actually in conflict, I just need to explain the reasoning behind it."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Basing decisions on long-term relevance is more strategic than short-term cost-effectiveness or general fairness alone.",
-            "explanation": "Basing decisions on what will matter most when the downturn ends shows genuine strategic foresight, while focusing mainly on cost-effectiveness or general fairness alone doesn't account for that same longer-term positioning.",
+            "hint": "Resolve the apparent contradiction immediately with a specific distinction, respecting the urgency, rather than stalling or conceding inconsistency.",
+            "explanation": "Resolving the apparent contradiction immediately, with a specific and real distinction, respects the urgency while fully answering the challenge. Asking for a second to think undercuts the requested speed at exactly the wrong moment, and conceding the appearance of contradiction without resolving it fails to actually clarify anything.",
             "id": "ji_l175_q3",
             "interviewerReaction": [
-                "disappointed",
                 "impressed",
-                "disappointed"
+                "disappointed",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names a specific, disciplined first move rather than a generic priority.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle whistleblowing or compliance concerns?",
+            "interviewerQuestion": "If you were VP of this department, what's the first thing you'd prioritize, and why?",
             "options": [
-                "I make sure concerns are addressed promptly and appropriately.",
-                "I follow our established compliance procedures carefully.",
-                "I take every concern seriously, investigate it thoroughly and impartially, and make sure the person who raised it never faces retaliation for doing so."
+                "I'd probably want to make some improvements to team morale and communication, since those things tend to make a big difference in how a department runs overall.",
+                "I'm not sure, I haven't really thought about it from that kind of higher-level perspective before.",
+                "I'd prioritize understanding where the biggest bottleneck actually is before changing anything, since I've seen departments waste resources fixing the wrong problem first. I'd spend the first month diagnosing before acting."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Explicitly protecting the person who raised the concern from retaliation is a more complete response than promptness or procedure alone.",
-            "explanation": "Explicitly protecting the person who raised the concern from retaliation addresses a critical dimension of trust in the process, while promptness or simply following established procedures alone doesn't guarantee that same protection and psychological safety.",
+            "hint": "Name a specific, disciplined first move, like diagnosis before action, rather than a generic priority or admitting you haven't considered the question.",
+            "explanation": "Naming a specific, disciplined approach, diagnosing before acting, shows real strategic thinking beyond your current level. A generic priority like morale could apply to almost any leadership question, and admitting you haven't thought about it at all misses a chance to demonstrate any strategic instinct.",
             "id": "ji_l176_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "neutral",
+                "unconvinced",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names one specific, structural change with real reasoning.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you handled a serious compliance concern raised by an employee.",
+            "interviewerQuestion": "Think bigger picture for a second: if you were setting strategy for this whole team next year, what's the one thing you'd change?",
             "options": [
-                "I made sure the concern was investigated thoroughly and fairly.",
-                "I investigated the concern with full independence from the people involved, and I made sure the employee who raised it felt genuinely supported throughout the process.",
-                "I followed the appropriate steps to address the situation."
+                "That's a tough one to answer without being more familiar with the team's actual current strategy. though I could easily be wrong about that.",
+                "I'd shift from measuring individual output to measuring team-level outcomes, since I've noticed individual metrics sometimes create competition that actually slows down collaborative work that matters more.",
+                "I'd probably focus on making sure everyone has clear goals and feels supported, since that tends to help most teams perform better overall."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Ensuring independence from those involved and genuine support for the whistleblower is stronger than general thoroughness or procedural correctness alone.",
-            "explanation": "Ensuring investigative independence and genuine support for the whistleblower addresses both fairness and psychological safety, while general thoroughness or simply following appropriate steps alone doesn't provide that same complete, trust-building response.",
+            "professionalismRating": 4,
+            "hint": "Name one specific, structural change with real reasoning behind it, rather than a generic leadership platitude or deferring the question.",
+            "explanation": "Naming one specific, structural change, with real reasoning tied to an actual observed problem, shows genuine strategic thinking. A generic statement about clear goals and support could apply to any team, and deferring the question entirely misses the chance to show any strategic instinct at all.",
             "id": "ji_l176_q2",
             "interviewerReaction": [
-                "disappointed",
+                "unconvinced",
                 "impressed",
-                "disappointed"
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that names a specific, non-obvious metric with real reasoning for why it's overlooked.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you build a culture where employees feel safe raising concerns?",
+            "interviewerQuestion": "Step into a director mindset for a moment: what metric would you actually care about most, that most people in this role overlook?",
             "options": [
-                "I make sure that when concerns are raised, people visibly see them taken seriously and acted on, since demonstrated follow-through builds far more trust than stated policy.",
-                "I communicate clearly that all concerns are welcome and valued.",
-                "I make sure our reporting channels are easy to access and use."
+                "I'd probably care a lot about customer satisfaction scores, since those tend to be a good general indicator of how well things are going overall.",
+                "I'm not sure, I'd probably need more context about the business to answer that one properly. or at least that's my instinct here.",
+                "I'd care most about time-to-value for new customers, not just conversion rate, since a customer who converts but doesn't see value quickly usually churns, and that's a slower-moving problem most people overlook while celebrating the initial sale."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Visible follow-through on raised concerns builds trust more than stated openness or accessible channels alone.",
-            "explanation": "Visible follow-through on raised concerns builds genuine trust through demonstrated action, while communicating that concerns are welcome or simply making reporting channels accessible alone doesn't provide that same tangible proof that speaking up actually leads to change.",
+            "hint": "Name a specific, non-obvious metric with real reasoning for why it's overlooked, rather than a commonly cited metric or deferring the question.",
+            "explanation": "Naming a specific, non-obvious metric with clear reasoning for why it's overlooked shows genuine strategic depth. Citing a commonly discussed metric like satisfaction scores doesn't demonstrate the 'overlooked' insight the question specifically asked for, and deferring the question avoids attempting any real answer.",
             "id": "ji_l176_q3",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "neutral",
+                "unconvinced",
+                "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that leads with genuine curiosity about the cause and commits to a specific follow-up plan.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you manage reputational risk?",
+            "interviewerQuestion": "Imagine you're managing someone whose performance has clearly dropped over the last month. Walk me through how you'd actually handle that.",
             "options": [
-                "I proactively identify where our actions might not match our stated values, since that gap is usually the real source of reputational vulnerability.",
-                "I monitor how our organization is perceived externally.",
-                "I make sure our communications are consistent and accurate."
+                "I'd talk to them about it at some point and see how things go from there.",
+                "I'd start with a private, curious conversation, not an accusatory one, asking what's changed, since a performance dip often has a cause worth understanding before jumping to consequences. From there, I'd set clear, specific expectations together and check in again in two weeks.",
+                "I'd probably just remind them of their responsibilities and let them know I expect things to improve going forward."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Proactively identifying gaps between actions and values addresses the root cause more directly than external monitoring or communication consistency alone.",
-            "explanation": "Proactively identifying gaps between actions and stated values addresses the actual root cause of reputational vulnerability, while monitoring external perception or ensuring consistent communication alone doesn't get at that same underlying source of risk.",
+            "hint": "Lead with genuine curiosity about the cause before consequences, and commit to a specific follow-up plan, rather than a vague reminder or an unspecific intention to talk.",
+            "explanation": "Leading with genuine curiosity about the cause, then setting specific expectations and a concrete follow-up, shows real leadership judgment. A generic reminder of responsibilities skips understanding what's actually going on, and a vague intention to talk 'at some point' shows no real plan at all.",
             "id": "ji_l177_q1",
             "interviewerReaction": [
+                "unconvinced",
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that investigates the specific cause behind the pattern and addresses it directly.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you helped protect your organization's reputation before an issue became public.",
+            "interviewerQuestion": "Say a team member consistently misses smaller deadlines, though the work itself is good quality. How would you actually manage that?",
             "options": [
-                "I flagged a potential issue and worked to address it quickly.",
-                "I identified a practice that didn't align with our public commitments and pushed to fix it internally before it could become an external liability.",
-                "I made sure our practices were reviewed regularly for consistency."
+                "I'd address the pattern directly but constructively, asking what's making the timing hard, since good quality work with consistent lateness often points to a specific bottleneck, like unclear priorities, rather than a lack of care.",
+                "I'd keep an eye on it and bring it up if it keeps happening for much longer. but honestly, I haven't really put that to the test.",
+                "I'd probably just tell them that deadlines matter and ask them to be more mindful about hitting them going forward."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Identifying a specific misalignment and fixing it proactively is a stronger example than a general flag or routine review alone.",
-            "explanation": "Identifying a specific misalignment between practice and public commitment, then fixing it proactively, shows real foresight, while a general flag on a potential issue or routine reviews alone doesn't demonstrate that same targeted, preventive action.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Investigate the specific cause behind the pattern and address it directly, rather than issuing a general reminder or passively monitoring.",
+            "explanation": "Investigating the specific cause behind a real pattern, and addressing it directly, shows genuine management judgment rather than a surface-level fix. A general reminder about deadlines mattering doesn't address why they're being missed, and passively monitoring without acting delays a fixable problem.",
             "id": "ji_l177_q2",
             "interviewerReaction": [
-                "disappointed",
                 "impressed",
-                "disappointed"
+                "disappointed",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that focuses on specific behaviors and concrete impact rather than vague personality feedback.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you decide which reputational risks deserve the most attention?",
+            "interviewerQuestion": "What if someone on your team is technically skilled but creates tension with almost everyone else? How would you actually approach that as their manager?",
             "options": [
-                "I consider how likely each risk is to become public.",
-                "I weigh the potential severity of each risk's impact.",
-                "I focus on risks tied to our core values, since a breach there does far more lasting damage than an operational misstep unrelated to what we claim to stand for."
+                "I'd probably just talk to them generally about being a better team player and see if that helps improve things.",
+                "I'd try to manage it as best I can and hope things get better with time. though someone else might see it differently.",
+                "I'd have a direct, private conversation focused on specific behaviors and their impact, not personality, since vague feedback about being 'difficult' rarely leads to real change, but concrete examples usually do."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Focusing on risks tied to core values is a more strategic filter than likelihood of exposure or general severity alone.",
-            "explanation": "Focusing on risks tied to core values recognizes that value-related breaches do disproportionate, lasting damage, while considering likelihood of exposure or general severity alone doesn't capture that same distinction between types of reputational harm.",
+            "hint": "Focus on specific behaviors and concrete impact rather than vague personality feedback or passive hope.",
+            "explanation": "Focusing on specific behaviors and their concrete impact gives feedback the person can actually act on, unlike vague personality-based feedback. A general nudge to 'be a better team player' doesn't name anything actionable, and hoping things improve passively avoids the management responsibility the question is testing.",
             "id": "ji_l177_q3",
             "interviewerReaction": [
-                "disappointed",
+                "uncertain",
                 "disappointed",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that holds your position with specific evidence while staying genuinely open.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you decide to sunset a beloved product or initiative?",
+            "interviewerQuestion": "A senior VP pushes back hard on your recommendation in a meeting, in front of your whole team. How do you actually handle that in the moment?",
             "options": [
-                "I consider the data carefully before making the final call.",
-                "I base the decision on objective evidence about its future viability, while being honest with the team about the emotional difficulty of letting go of something meaningful.",
-                "I make sure the decision is communicated with care and respect."
+                "I'd try to stay calm and see how the rest of the conversation goes from there.",
+                "I'd probably just defer to them in the moment, since pushing back further on a VP in front of the team could come across as difficult to work with.",
+                "I'd acknowledge their perspective genuinely, then calmly restate the specific data behind my recommendation, offering to go deeper on it after the meeting if useful, rather than either backing down immediately or getting defensive in front of the team."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Combining objective evidence with honest acknowledgment of emotional difficulty is more complete than data consideration or careful communication alone.",
-            "explanation": "Combining objective evidence with honest acknowledgment of the emotional difficulty addresses both the rational and human dimensions of the decision, while considering data carefully or communicating with care alone doesn't provide that same complete, empathetic approach.",
+            "hint": "Hold your position with specific evidence while staying genuinely open, rather than deferring immediately or offering only a vague intention to stay calm.",
+            "explanation": "Holding your position with specific evidence, while genuinely acknowledging their view, shows real composure and conviction under real stakeholder pressure. Deferring immediately abandons a recommendation that may well be sound, and a vague intention to 'stay calm' doesn't actually describe any real response.",
             "id": "ji_l178_q1",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "concerned",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that states the specific risk clearly, then respects their authority to decide once informed.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you had to end something the team was deeply attached to.",
+            "interviewerQuestion": "A key stakeholder insists on a change to your project that you believe will hurt the outcome. They outrank you significantly. What do you actually do?",
             "options": [
-                "I explained clearly why continuing no longer served our broader goals, while genuinely honoring what the team had built and the effort it represented.",
-                "I communicated the decision honestly and answered their questions.",
-                "I gave the team space to process the news appropriately."
+                "I'd lay out the specific risk I see clearly and concisely, then, if they still want to proceed after hearing it, I'd document my concern and move forward professionally, since ultimately it's their call to make with full information.",
+                "I'd probably just go along with what they want, since they outrank me and it's not really my place to push back too hard.",
+                "I'd try to bring it up if I get the chance, though it can be a little intimidating to push back on someone senior."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Explaining strategic reasoning while genuinely honoring the team's effort is more complete than honest communication or processing space alone.",
-            "explanation": "Explaining the strategic reasoning while genuinely honoring the team's effort addresses both the rational case and the emotional significance of the work, while honest communication or simply giving space to process alone doesn't provide that same complete acknowledgment.",
+            "hint": "State the specific risk clearly, then respect their authority to decide once informed, rather than silently complying or hesitating to raise it at all.",
+            "explanation": "Stating the specific risk clearly, then respecting their final authority once informed, balances honest input with professional deference. Silently complying without raising the concern at all wastes valuable expertise, and hesitating to bring it up due to intimidation lets a real risk go unaddressed.",
             "id": "ji_l178_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "reassured",
+                "concerned",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that states your reasoning clearly and lets the decision go up the chain confidently if needed.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you know when it's time to end an initiative people are emotionally invested in?",
+            "interviewerQuestion": "An important client stakeholder threatens to escalate to your CEO if you don't do exactly what they're asking, which you know isn't the right call. What's your move?",
             "options": [
-                "I look at whether the initiative is still meeting its original goals.",
-                "I consider how much further investment would be required to succeed.",
-                "I ask whether continued investment is genuinely justified by future potential, rather than by the emotional or sunk cost already invested."
+                "I'd calmly explain my reasoning and the risk of their request directly to them first, and if they still want to escalate after that, I'd support that process transparently rather than trying to prevent it, since a well-reasoned position should hold up at any level.",
+                "I'd probably just do what they're asking to avoid the situation escalating any further than it already has.",
+                "That would be a stressful situation, and I'd probably try to find some kind of middle ground if I could. even though I haven't tested that assumption."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Explicitly separating future potential from sunk cost is a more disciplined framework than checking original goals or estimating further investment alone.",
-            "explanation": "Explicitly separating future potential from sunk cost avoids a common decision-making trap, while checking whether original goals are being met or estimating further investment required alone doesn't provide that same disciplined safeguard against emotional attachment.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "State your reasoning clearly and let the decision go up the chain confidently if needed, rather than capitulating under threat or vaguely seeking a compromise.",
+            "explanation": "Stating your reasoning clearly and confidently allowing escalation if needed shows real conviction that doesn't buckle under a threat. Capitulating simply to avoid escalation abandons a professional judgment you believe is right, and vaguely seeking a middle ground without a clear position doesn't actually address the substance of the disagreement.",
             "id": "ji_l178_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "reassured",
+                "concerned",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that commits to a real decision using clear criteria and takes personal responsibility for delivering hard news.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you navigate a leadership transition?",
+            "interviewerQuestion": "You have a budget that can fund one of two initiatives, not both, and both teams are counting on it. How do you actually decide?",
             "options": [
-                "I make sure the transition is handled smoothly and professionally.",
-                "I focus on maintaining continuity of purpose and clear communication, since uncertainty during a transition often causes more disruption than the change in leadership itself.",
-                "I work to build trust with the team as quickly as possible."
+                "That would be a tough decision, and I'd probably need more information before deciding which one to actually pick.",
+                "I'd evaluate both against the same clear criteria, like expected impact and time to results, make the call based on that analysis, and personally explain the reasoning to the team that doesn't get funded, rather than leaving that to someone else.",
+                "I'd probably try to find a way to fund both partially, so that neither team is left with nothing at all."
             ],
             "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Focusing on continuity of purpose and clear communication addresses the real source of disruption more directly than general smoothness or trust-building alone.",
-            "explanation": "Focusing on continuity of purpose and clear communication directly addresses the uncertainty that's often more disruptive than the leadership change itself, while general smoothness or simply working to build trust quickly doesn't provide that same targeted stability.",
+            "hint": "Commit to a real decision using clear criteria, and take personal responsibility for delivering the hard news, rather than splitting resources thin or deferring the decision.",
+            "explanation": "Committing to a real decision using clear criteria, and personally delivering the hard news, shows real accountability under a genuinely difficult trade-off. Splitting the budget thin often satisfies neither initiative properly, and deferring the decision for more information avoids the actual test of making a hard call with real stakes.",
             "id": "ji_l179_q1",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "reassured",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that commits to a clear-criteria decision and takes responsibility for handling it with care.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you helped your organization through a leadership transition.",
+            "interviewerQuestion": "You need to cut costs, and the only realistic way is reducing headcount on one team. How do you actually approach that decision?",
             "options": [
-                "I made sure the outgoing and incoming leaders communicated jointly early on, which gave the organization a clear, unified sense of continuity rather than uncertainty.",
-                "I made sure to communicate the transition clearly to everyone involved.",
-                "I focused on supporting the new leader as they got up to speed."
+                "I'd look at which team's function has the most viable path to being restructured or automated without losing critical capability, make the decision based on that analysis, and handle the actual conversations with real care and as much notice as possible.",
+                "I'd probably try to spread the cuts a little across multiple teams instead, so no single team takes the full impact.",
+                "That would be a really difficult decision to make, and I'm honestly not sure how I'd approach something like that. even though that's a bit of a hunch on my end."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "A joint communication from outgoing and incoming leaders provides stronger continuity than general clear communication or support for the new leader alone.",
-            "explanation": "A joint communication from outgoing and incoming leaders provides a genuinely unified sense of continuity, while general clear communication about the transition or simply supporting the new leader alone doesn't create that same reassuring, coordinated signal.",
+            "hint": "Commit to a clear-criteria decision and take responsibility for handling it with care, rather than diffusing the impact thinly or admitting you don't know how to approach it.",
+            "explanation": "Committing to a clear-criteria decision, and taking real responsibility for handling it with care, shows genuine leadership under a genuinely hard organizational decision. Spreading cuts thinly across teams often creates more overall damage than a decisive, targeted choice, and admitting you don't know how to approach it avoids the test entirely.",
             "id": "ji_l179_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "reassured",
+                "concerned",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that commits to weighing the real trade-off explicitly and communicating it transparently.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you support your team through uncertainty caused by a change in leadership?",
+            "interviewerQuestion": "A major client wants a custom feature that would take resources away from your core product roadmap for a quarter. How do you actually decide whether to do it?",
             "options": [
-                "I encourage the team to stay patient during the transition period.",
-                "I try to keep the team informed as the transition unfolds.",
-                "I make sure the team's day-to-day priorities and expectations remain clear and stable, even while bigger organizational questions are still being resolved."
+                "I'd probably try to find a way to do a smaller version of the feature so we don't have to fully choose between the two options.",
+                "I'd weigh the client's actual revenue and strategic value against the roadmap delay's cost to other customers, make the call transparently with leadership input if it's a close call, and communicate the trade-off clearly to whichever side loses out.",
+                "That would be a tough call, and I'd need a lot more information before I could really say how I'd decide. though I can't point to anything concrete backing that up."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Commit to weighing the real trade-off explicitly and communicating it transparently, rather than compromising into a diluted version or deferring the decision entirely.",
+            "explanation": "Weighing the real trade-off explicitly, with transparent communication to whichever side loses out, shows genuine decision-making under real organizational stakes. A diluted compromise version often satisfies neither the client nor the roadmap well, and deferring the decision for more information avoids actually making the hard call being tested.",
+            "id": "ji_l179_q3",
+            "interviewerReaction": [
+                "concerned",
+                "reassured",
+                "uncertain"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that looks for flexibility in terms other than price directly.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "A vendor won't move on price, but you need the deal to work within your budget. How do you actually approach that negotiation?",
+            "options": [
+                "I'd try to negotiate as best I could and see what happens in the conversation.",
+                "I'd probably just push back harder on the price and hope they eventually come down to something closer to our budget.",
+                "I'd look for value beyond price, like extended payment terms, added services, or a longer initial commitment in exchange for a modest discount, since a rigid price often has more flexibility around it than the number itself suggests."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Keeping day-to-day priorities clear and stable is more concrete support than encouraging patience or general updates alone.",
-            "explanation": "Keeping day-to-day priorities clear and stable gives the team something concrete to hold onto during broader uncertainty, while encouraging patience or providing general updates alone doesn't offer that same practical, immediate stability.",
-            "id": "ji_l179_q3",
+            "hint": "Look for flexibility in terms other than price directly, rather than pushing harder on the same fixed number or offering no real strategy.",
+            "explanation": "Looking for flexibility in terms beyond the price itself shows real negotiation skill when a number is genuinely fixed. Pushing harder on the same fixed price ignores that it's already been stated as non-negotiable, and having no real strategy fails to demonstrate any actual approach to the negotiation.",
+            "id": "ji_l180_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "unconvinced",
+                "uncertain",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that understands their actual incentives and offers genuine reciprocity.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle a legacy you're proud of being challenged?",
+            "interviewerQuestion": "You need another team to prioritize your project, but they have their own competing deadlines. How do you actually negotiate that?",
             "options": [
-                "I listen carefully to the concerns being raised.",
-                "I stay genuinely open to the possibility that circumstances have changed, and I evaluate the challenge on its actual merits rather than defending the legacy out of attachment.",
-                "I try to understand the reasoning behind the challenge."
+                "I'd probably just explain why my project is important and hope that's enough to convince them to prioritize it over their own work.",
+                "I'd find out what's actually driving their current priorities, then look for a way to reframe my request in terms of something they also care about, or offer something in return, like helping unblock one of their tasks, rather than just asking them to deprioritize their own work.",
+                "I'd try to talk to them about it and see if we can work something out somehow. though that's really just my own read on it."
             ],
             "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Genuine openness to evaluating merits, despite personal attachment, is a more complete response than listening or understanding reasoning alone.",
-            "explanation": "Genuine openness to evaluating the challenge on its actual merits, despite personal attachment, shows real intellectual honesty, while listening carefully or understanding the reasoning alone doesn't guarantee that same willingness to set attachment aside.",
-            "id": "ji_l180_q1",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time something you built was challenged by new leadership or circumstances.",
-            "options": [
-                "I listened to the new perspective and considered it carefully.",
-                "I explained the reasoning behind the original approach.",
-                "I set aside my personal attachment and asked honestly whether the original approach still served the organization's current needs, which it turned out it no longer fully did."
-            ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Honestly setting aside attachment to reassess current fit is a stronger example than careful listening or explaining original reasoning alone.",
-            "explanation": "Honestly setting aside personal attachment to reassess current fit shows genuine intellectual humility, while listening carefully to a new perspective or simply explaining the original reasoning alone doesn't demonstrate that same willingness to change your own conclusion.",
+            "hint": "Understand their actual incentives and offer genuine reciprocity, rather than simply asserting your own priority's importance or having no concrete approach.",
+            "explanation": "Understanding their actual incentives and offering genuine reciprocity shows real negotiation skill in a cross-team resource conflict. Simply explaining your own priority's importance doesn't address what actually motivates the other team, and having no concrete approach fails to demonstrate any real negotiation strategy.",
             "id": "ji_l180_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "uncertain",
+                "impressed",
+                "unconvinced"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that looks for flexibility in the total package and stays transparent about real limits.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you respond when someone questions a decision you're personally proud of?",
+            "interviewerQuestion": "A candidate you really want to hire is asking for a salary above your approved range. How do you actually handle that negotiation?",
             "options": [
-                "I treat the challenge as valuable information rather than a personal attack, and I let the strength of the current evidence guide my response, not my past investment.",
-                "I try to remain open-minded and hear them out fully.",
-                "I explain my original reasoning and see how they respond."
+                "I'd probably just tell them the range is fixed and see if they're willing to accept it anyway.",
+                "I'd see what flexibility exists in the total package beyond base salary, like a signing bonus, faster review cycle, or additional equity, and if the gap is still real, I'd be transparent about the actual ceiling rather than implying more flexibility than truly exists.",
+                "I'd try to work something out with them, though I'm not totally sure exactly how that conversation would go. at least that's roughly how I'd think about it."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Letting current evidence guide your response, rather than past investment, is more disciplined than general open-mindedness or explaining past reasoning alone.",
-            "explanation": "Letting current evidence guide your response, rather than past investment, shows real discipline and objectivity, while general open-mindedness or simply explaining your original reasoning alone doesn't provide that same safeguard against being swayed by pride in past work.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Look for flexibility in the total package and stay transparent about real limits, rather than a flat refusal or an unclear approach.",
+            "explanation": "Looking for flexibility in the total package while staying transparent about real limits shows genuine negotiation skill balanced with honesty. A flat refusal to discuss anything beyond the stated range misses real options that might exist, and an unclear sense of how the conversation would go fails to demonstrate any actual negotiation approach.",
             "id": "ji_l180_q3",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain",
+                "reassured",
+                "uncertain"
             ]
         }
     ]

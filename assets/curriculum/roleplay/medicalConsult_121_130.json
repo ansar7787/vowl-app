@@ -1,637 +1,637 @@
 {
-    "gameType": "medicalConsult",
-    "batchIndex": 13,
-    "levels": "121-130",
-    "quests": [
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I've had this recurring tightness in my calves after short walks, which eases quickly once I stop, and I've also had some mild swelling around my ankles in the evenings.\"",
-            "symptoms": [
-                "Cramp",
-                "Leg Pain",
-                "Swollen Ankles",
-                "Weakness"
-            ],
-            "correctAnswer": "Leg Pain, Swollen Ankles",
-            "hint": "One symptom is tightness during walking, and the other appears later, in the evenings.",
-            "explanation": "Tightness in the calves is Leg Pain, and evening puffiness is Swollen Ankles.",
-            "id": "mc_l121_q1",
-            "medicalVocab": [
-                "Leg Pain, Swollen Ankles",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I've had this persistent pressure behind my eyes that builds throughout the day, and I've noticed I squint more than I used to, even indoors.\"",
-            "symptoms": [
-                "Headache",
-                "Eye Strain",
-                "Sinus Pressure",
-                "Light Sensitivity"
-            ],
-            "correctAnswer": "Sinus Pressure, Light Sensitivity",
-            "hint": "Pressure that builds through the day, located behind the eyes and nose, has a specific term.",
-            "explanation": "Building pressure behind the eyes is Sinus Pressure, and squinting even indoors is Light Sensitivity.",
-            "id": "mc_l121_q2",
-            "medicalVocab": [
-                "Sinus Pressure, Light Sensitivity",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"I've had this dull ache in my hip that's become more noticeable since I switched to a standing desk, and I've also had some stiffness in my lower back by the end of the day.\"",
-            "symptoms": [
-                "Hip Pain",
-                "Back Pain",
-                "Leg Pain",
-                "Joint Stiffness"
-            ],
-            "correctAnswer": "Hip Pain, Back Pain",
-            "hint": "One symptom is in the hip, and the other is separately in the lower back.",
-            "explanation": "A new ache from the standing desk is Hip Pain, and evening tightness is Back Pain.",
-            "id": "mc_l121_q3",
-            "medicalVocab": [
-                "Hip Pain, Back Pain",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"I've had this recurring sensation of my heart skipping every so often, mostly in the evenings when I'm winding down, and I've started to dread it happening.\"",
-            "symptoms": [
-                "Heart Palpitations",
-                "Racing Heartbeat",
-                "Anxiety",
-                "Insomnia"
-            ],
-            "correctAnswer": "Heart Palpitations, Anxiety",
-            "hint": "One symptom is the physical sensation, and the other is the worry it now causes.",
-            "explanation": "A skipping heartbeat is Heart Palpitations, and dreading it happening again is Anxiety.",
-            "id": "mc_l122_q1",
-            "medicalVocab": [
-                "Heart Palpitations, Anxiety",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The nurse's intake note reads: \"Patient scheduled for a routine follow-up reports ongoing joint pain in the knees and hips, now accompanied by noticeable morning stiffness lasting nearly an hour.\"",
-            "symptoms": [
-                "Knee Pain",
-                "Joint Pain",
-                "Swelling",
-                "Joint Stiffness"
-            ],
-            "correctAnswer": "Joint Pain, Joint Stiffness",
-            "hint": "The note names both the ongoing pain and a new difficulty moving in the mornings.",
-            "explanation": "Ongoing pain in the knees and hips is Joint Pain, and an hour of morning tightness is Joint Stiffness.",
-            "id": "mc_l122_q2",
-            "medicalVocab": [
-                "Joint Pain, Joint Stiffness",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've had this persistent ringing that's become more noticeable in quiet rooms, and I've started avoiding concerts because loud noise makes it worse afterward,\" the patient tells the doctor.",
-            "symptoms": [
-                "Ringing in the Ears",
-                "Hearing Loss",
-                "Earache",
-                "Sensitivity to Sound"
-            ],
-            "correctAnswer": "Ringing in the Ears, Sensitivity to Sound",
-            "hint": "One symptom is a sound the patient hears, and the other is a reaction to loud noise.",
-            "explanation": "Noticeable ringing in quiet rooms is Ringing in the Ears, and avoiding loud noise points to Sensitivity to Sound.",
-            "id": "mc_l122_q3",
-            "medicalVocab": [
-                "Ringing in the Ears, Sensitivity to Sound",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I've had this persistent low mood that's lasted longer than my usual rough patches, and I've also noticed I'm sleeping far more than I used to.\"",
-            "symptoms": [
-                "Low Mood",
-                "Fatigue",
-                "Oversleeping",
-                "Insomnia"
-            ],
-            "correctAnswer": "Low Mood, Oversleeping",
-            "hint": "One symptom is emotional, and the other is the opposite of trouble falling asleep.",
-            "explanation": "A longer-than-usual low mood is Low Mood, and sleeping far more than before is Oversleeping.",
-            "id": "mc_l123_q1",
-            "medicalVocab": [
-                "Low Mood, Oversleeping",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I've had this persistent soreness along my shin bone that's worsened since I increased my training mileage, and I've noticed some mild swelling directly over the sore spot.\"",
-            "symptoms": [
-                "Shin Splints",
-                "Swelling",
-                "Leg Pain",
-                "Cramp"
-            ],
-            "correctAnswer": "Shin Splints, Swelling",
-            "hint": "The exact bone location and the training detail point to a specific term, plus a visible sign.",
-            "explanation": "Soreness along the shin from more mileage is Shin Splints, and puffiness there is Swelling.",
-            "id": "mc_l123_q2",
-            "medicalVocab": [
-                "Shin Splints, Swelling",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"I've had this recurring discomfort in my upper stomach on and off this week, and I've also had some heartburn most evenings.\"",
-            "symptoms": [
-                "Stomach Ache",
-                "Nausea",
-                "Bloating",
-                "Heartburn"
-            ],
-            "correctAnswer": "Stomach Ache, Heartburn",
-            "hint": "One symptom is general discomfort, and the other is a specific burning feeling in the evenings.",
-            "explanation": "On-and-off discomfort is a Stomach Ache, and the evening burning is Heartburn.",
-            "id": "mc_l123_q3",
-            "medicalVocab": [
-                "Stomach Ache, Heartburn",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"I've had this persistent dryness in my mouth that's made eating dry foods difficult, and I've noticed my voice sounds different by the end of long conversations.\"",
-            "symptoms": [
-                "Sore Throat",
-                "Difficulty Swallowing",
-                "Dry Mouth",
-                "Hoarse Voice"
-            ],
-            "correctAnswer": "Dry Mouth, Hoarse Voice",
-            "hint": "One symptom is about moisture in the mouth, and the other is about the voice later in the day.",
-            "explanation": "Dryness that affects eating is Dry Mouth, and the voice change later on is a Hoarse Voice.",
-            "id": "mc_l124_q1",
-            "medicalVocab": [
-                "Dry Mouth, Hoarse Voice",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The nurse's intake note reads: \"Patient reports a two-week history of intermittent chest discomfort at rest, associated with occasional dizziness when standing.\"",
-            "symptoms": [
-                "Racing Heartbeat",
-                "Chest Pain",
-                "Fatigue",
-                "Dizziness"
-            ],
-            "correctAnswer": "Chest Pain, Dizziness",
-            "hint": "The note names a chest symptom at rest and a separate symptom linked to standing up.",
-            "explanation": "Chest discomfort at rest is Chest Pain, and unsteadiness on standing is Dizziness.",
-            "id": "mc_l124_q2",
-            "medicalVocab": [
-                "Chest Pain, Dizziness",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My father's had this persistent hoarseness for almost a month now, and he's mentioned some difficulty swallowing certain foods,\" the patient tells the doctor.",
-            "symptoms": [
-                "Sore Throat",
-                "Hoarse Voice",
-                "Difficulty Swallowing",
-                "Lump in Throat"
-            ],
-            "correctAnswer": "Hoarse Voice, Difficulty Swallowing",
-            "hint": "One symptom is about the voice, and the other is about eating specific foods.",
-            "explanation": "A month of hoarseness is a Hoarse Voice, and trouble with certain foods is Difficulty Swallowing.",
-            "id": "mc_l124_q3",
-            "medicalVocab": [
-                "Hoarse Voice, Difficulty Swallowing",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I've had this persistent feeling of my ears being blocked since my last flight, and everyday sounds seem muffled on that side.\"",
-            "symptoms": [
-                "Ear Fullness",
-                "Earache",
-                "Ringing in the Ears",
-                "Hearing Loss"
-            ],
-            "correctAnswer": "Ear Fullness, Hearing Loss",
-            "hint": "One symptom is a blocked feeling, and the other is a change in how clearly things sound.",
-            "explanation": "A blocked feeling since the flight is Ear Fullness, and muffled sound is Hearing Loss.",
-            "id": "mc_l125_q1",
-            "medicalVocab": [
-                "Ear Fullness, Hearing Loss",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I've had this persistent tightness in my throat that seems to come on specifically when I'm nervous about something, and my hands have been a little shaky at those same moments.\"",
-            "symptoms": [
-                "Anxiety",
-                "Throat Tightness",
-                "Trembling",
-                "Hoarse Voice"
-            ],
-            "correctAnswer": "Throat Tightness, Trembling",
-            "hint": "One symptom is a physical feeling in the throat, and the other is a shaking movement in the hands.",
-            "explanation": "Tightness tied to nervousness is Throat Tightness, and shaky hands at the same time are Trembling.",
-            "id": "mc_l125_q2",
-            "medicalVocab": [
-                "Throat Tightness, Trembling",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"I've had this recurring wave of nausea that hits mid-morning most days, easing by lunchtime, and I've also noticed I'm more tired than my usual baseline.\"",
-            "symptoms": [
-                "Loss of Appetite",
-                "Dizziness",
-                "Nausea",
-                "Fatigue"
-            ],
-            "correctAnswer": "Nausea, Fatigue",
-            "hint": "One symptom is a wave of sickness at a specific time, and the other is about overall energy.",
-            "explanation": "Mid-morning waves of sickness are Nausea, and lower energy overall is Fatigue.",
-            "id": "mc_l125_q3",
-            "medicalVocab": [
-                "Nausea, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"I've had this persistent itching on my scalp that's worse after I wash my hair, and I've also had some redness spreading to my forehead.\"",
-            "symptoms": [
-                "Scalp Itching",
-                "Rash",
-                "Dry Skin",
-                "Hair Loss"
-            ],
-            "correctAnswer": "Scalp Itching, Rash",
-            "hint": "One symptom is a feeling, and the other is a visible change spreading beyond the scalp.",
-            "explanation": "Itching worse after washing is Scalp Itching, and spreading redness is a Rash.",
-            "id": "mc_l126_q1",
-            "medicalVocab": [
-                "Scalp Itching, Rash",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The nurse's intake note reads: \"Patient reports persistent fatigue over the past month, now accompanied by noticeable hair thinning and increased sensitivity to cold.\"",
-            "symptoms": [
-                "Fatigue",
-                "Weakness",
-                "Hair Loss",
-                "Chills"
-            ],
-            "correctAnswer": "Fatigue, Hair Loss",
-            "hint": "The note names low energy and a separate, visible change in the hair.",
-            "explanation": "A month of low energy is Fatigue, and noticeable thinning is Hair Loss.",
-            "id": "mc_l126_q2",
-            "medicalVocab": [
-                "Fatigue, Hair Loss",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've had this dull throbbing on one side of my head that's worse with movement, and bright light has made it unbearable both times it's happened,\" the patient tells the doctor.",
-            "symptoms": [
-                "Headache",
-                "Migraine",
-                "Dizziness",
-                "Light Sensitivity"
-            ],
-            "correctAnswer": "Migraine, Light Sensitivity",
-            "hint": "A one-sided throb that worsens with movement points to a more specific term than a plain headache.",
-            "explanation": "A one-sided throb worse with movement is a Migraine, paired with severe Light Sensitivity.",
-            "id": "mc_l126_q3",
-            "medicalVocab": [
-                "Migraine, Light Sensitivity",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I've had this persistent tightness in my jaw that's worse in the mornings, and I've also had a dull headache most mornings as a result.\"",
-            "symptoms": [
-                "Toothache",
-                "Jaw Pain",
-                "Headache",
-                "Neck Pain"
-            ],
-            "correctAnswer": "Jaw Pain, Headache",
-            "hint": "One symptom is in the jaw joint itself, and the other is the resulting head pain.",
-            "explanation": "Morning jaw tightness is Jaw Pain, and the resulting pain is a Headache.",
-            "id": "mc_l127_q1",
-            "medicalVocab": [
-                "Jaw Pain, Headache",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I've had this recurring soreness in my lower back that radiates slightly into my hip, worse after long periods of sitting.\"",
-            "symptoms": [
-                "Back Pain",
-                "Leg Pain",
-                "Joint Stiffness",
-                "Hip Pain"
-            ],
-            "correctAnswer": "Back Pain, Hip Pain",
-            "hint": "One symptom starts in the back, and the other is where it spreads to.",
-            "explanation": "Soreness from sitting is Back Pain, and the spread into the hip is Hip Pain.",
-            "id": "mc_l127_q2",
-            "medicalVocab": [
-                "Back Pain, Hip Pain",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"I've had this persistent low-level anxiety before big meetings that's started affecting my sleep the night before.\"",
-            "symptoms": [
-                "Low Mood",
-                "Fatigue",
-                "Anxiety",
-                "Insomnia"
-            ],
-            "correctAnswer": "Anxiety, Insomnia",
-            "hint": "One symptom is the worry itself, and the other is its effect on sleep.",
-            "explanation": "Anxiety before meetings is Anxiety, and the resulting sleep trouble is Insomnia.",
-            "id": "mc_l127_q3",
-            "medicalVocab": [
-                "Anxiety, Insomnia",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"I've had this persistent swelling in my fingers that's made my rings uncomfortably tight, and I've also felt thirstier than usual this week.\"",
-            "symptoms": [
-                "Swelling",
-                "Joint Stiffness",
-                "Excessive Thirst",
-                "Fatigue"
-            ],
-            "correctAnswer": "Swelling, Excessive Thirst",
-            "hint": "One symptom is visible puffiness, and the other is a constant feeling.",
-            "explanation": "Tight rings point to Swelling in the fingers, and feeling thirstier than usual is Excessive Thirst.",
-            "id": "mc_l128_q1",
-            "medicalVocab": [
-                "Swelling, Excessive Thirst",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The nurse's intake note reads: \"Patient reports a three-day history of sore throat and hoarseness, now improving, with no fever reported at any point.\"",
-            "symptoms": [
-                "Sore Throat",
-                "Hoarse Voice",
-                "Cough",
-                "Fever"
-            ],
-            "correctAnswer": "Sore Throat, Hoarse Voice",
-            "hint": "The note explicitly says no fever was reported - that rules out one option.",
-            "explanation": "The note names a Sore Throat and Hoarse Voice, while ruling out Fever.",
-            "id": "mc_l128_q2",
-            "medicalVocab": [
-                "Sore Throat, Hoarse Voice",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My daughter's had this persistent cough that gets worse when she runs around outside, and she seems to breathe faster than the other kids during recess, according to her teacher,\" the patient tells the doctor.",
-            "symptoms": [
-                "Wheezing",
-                "Cough",
-                "Chest Pain",
-                "Shortness of Breath"
-            ],
-            "correctAnswer": "Cough, Shortness of Breath",
-            "hint": "One symptom is the cough itself, and the other is about breathing during activity.",
-            "explanation": "A cough worse with running is Cough, and breathing faster than peers points to Shortness of Breath.",
-            "id": "mc_l128_q3",
-            "medicalVocab": [
-                "Cough, Shortness of Breath",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I've had this bruise on my shin from bumping the coffee table about a week ago, and I've also had some mild swelling around it.\"",
-            "symptoms": [
-                "Bruise",
-                "Cut",
-                "Swelling",
-                "Leg Pain"
-            ],
-            "correctAnswer": "Bruise, Swelling",
-            "hint": "One symptom is a color change, and the other is puffiness around the same spot.",
-            "explanation": "The mark from bumping the table is a Bruise, and the puffiness around it is Swelling.",
-            "id": "mc_l129_q1",
-            "medicalVocab": [
-                "Bruise, Swelling",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I've had this persistent dry patch of skin on my elbows that cream doesn't seem to fix, and I've noticed some cracking at the edges.\"",
-            "symptoms": [
-                "Rash",
-                "Itching",
-                "Dry Skin",
-                "Cracked Skin"
-            ],
-            "correctAnswer": "Dry Skin, Cracked Skin",
-            "hint": "One symptom is about texture, and the other is a step beyond that - the skin splitting.",
-            "explanation": "A dry patch is Dry Skin, and splitting at the edges is Cracked Skin.",
-            "id": "mc_l129_q2",
-            "medicalVocab": [
-                "Dry Skin, Cracked Skin",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"I've had this persistent feeling of fullness in my stomach even after small meals, and I've also had less appetite than usual this week.\"",
-            "symptoms": [
-                "Bloating",
-                "Nausea",
-                "Constipation",
-                "Loss of Appetite"
-            ],
-            "correctAnswer": "Bloating, Loss of Appetite",
-            "hint": "One symptom is fullness after eating little, and the other is about wanting to eat less.",
-            "explanation": "Fullness after small meals is Bloating, and eating less overall is Loss of Appetite.",
-            "id": "mc_l129_q3",
-            "medicalVocab": [
-                "Bloating, Loss of Appetite",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"I've had this persistent soreness in my wrist that's worse first thing in the morning, and I've noticed some swelling around the joint by midday.\"",
-            "symptoms": [
-                "Wrist Pain",
-                "Swelling",
-                "Joint Stiffness",
-                "Numbness"
-            ],
-            "correctAnswer": "Wrist Pain, Swelling",
-            "hint": "One symptom is pain in the morning, and the other develops later in the day.",
-            "explanation": "Morning wrist soreness is Wrist Pain, and midday puffiness is Swelling.",
-            "id": "mc_l130_q1",
-            "medicalVocab": [
-                "Wrist Pain, Swelling",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The nurse's intake note reads: \"Patient presents for a routine check-up, reporting no new symptoms except mild seasonal sneezing and occasional watery eyes.\"",
-            "symptoms": [
-                "Runny Nose",
-                "Sneezing",
-                "Itchy Eyes",
-                "Watery Eyes"
-            ],
-            "correctAnswer": "Sneezing, Watery Eyes",
-            "hint": "The note names the two mild, seasonal symptoms specifically.",
-            "explanation": "The note describes seasonal Sneezing and occasional Watery Eyes.",
-            "id": "mc_l130_q2",
-            "medicalVocab": [
-                "Sneezing, Watery Eyes",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've had this persistent heaviness in my legs by the afternoon that wasn't there a few months ago, and I've also noticed some visible swelling around my ankles most evenings,\" the patient tells the doctor.",
-            "symptoms": [
-                "Cramp",
-                "Leg Pain",
-                "Swollen Ankles",
-                "Fatigue"
-            ],
-            "correctAnswer": "Leg Pain, Swollen Ankles",
-            "hint": "One symptom is heaviness during the day, and the other is visible in the evenings.",
-            "explanation": "New afternoon heaviness is Leg Pain, and visible evening puffiness is Swollen Ankles.",
-            "id": "mc_l130_q3",
-            "medicalVocab": [
-                "Leg Pain, Swollen Ankles",
-                "Symptom",
-                "Patient"
-            ]
-        }
-    ]
+  "gameType": "medicalConsult",
+  "batchIndex": 13,
+  "levels": "121-130",
+  "quests": [
+    {
+      "instruction": "Identify which daily activity the symptom is affecting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My lower back is killing me. It's been hard to focus on anything at my desk for more than a few minutes.\"",
+      "symptoms": [
+        "Daily Tasks",
+        "Walking",
+        "Sleeping",
+        "Working / Concentrating"
+      ],
+      "correctAnswer": "Working / Concentrating",
+      "hint": "Which everyday activity has become harder for this patient?",
+      "explanation": "The patient says the problem is getting in the way of work and concentration. Functional impact is about what the patient can no longer do easily, not just how the symptom feels.",
+      "id": "mc_l121_q1",
+      "medicalVocab": [
+        "Back Pain",
+        "Functional Impact",
+        "Daily Activities"
+      ]
+    },
+    {
+      "instruction": "Select the statement that best summarizes the impact on the patient's life.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"There's a twinge low in my back sometimes. I've been limping a bit because it hurts to put full weight down.\"",
+      "symptoms": [
+        "The symptom is mainly interfering with the patient's breathing during activity.",
+        "The symptom is mainly interfering with the patient's eating.",
+        "The symptom is mainly interfering with the patient's walking.",
+        "The symptom is mainly interfering with the patient's everyday tasks."
+      ],
+      "correctAnswer": "The symptom is mainly interfering with the patient's walking.",
+      "hint": "Match the summary to the precise activity the patient described.",
+      "explanation": "The patient's second sentence is about walking. A useful summary restates the effect in neutral clinical language without adding anything the patient did not say.",
+      "id": "mc_l121_q2",
+      "medicalVocab": [
+        "Back Pain",
+        "Summary",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Now that duration is known, identify the activity most affected.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My lower back is killing me. It's been going on for about two weeks now. I keep waking up because of it, so I'm not sleeping through the night.\"",
+      "symptoms": [
+        "Household Chores",
+        "Sleeping",
+        "Daily Tasks",
+        "Working / Concentrating"
+      ],
+      "correctAnswer": "Sleeping",
+      "hint": "Combine how long this has lasted with what the patient says it interferes with.",
+      "explanation": "Two weeks of a symptom that keeps interfering with sleep is a meaningful pattern to record. Timing and impact together tell you more than either one alone.",
+      "id": "mc_l121_q3",
+      "medicalVocab": [
+        "Back Pain",
+        "Duration",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Identify which daily activity the symptom is affecting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My fingers feel stiff and sore. I've had to cut my usual workouts short because of it.\"",
+      "symptoms": [
+        "Breathing During Activity",
+        "Walking",
+        "Exercising",
+        "Socializing"
+      ],
+      "correctAnswer": "Exercising",
+      "hint": "Listen for what the patient can no longer do easily, not how the symptom feels.",
+      "explanation": "The patient says the problem is getting in the way of exercise. Functional impact is about what the patient can no longer do easily, not just how the symptom feels.",
+      "id": "mc_l122_q1",
+      "medicalVocab": [
+        "Joint Pain",
+        "Functional Impact",
+        "Daily Activities"
+      ]
+    },
+    {
+      "instruction": "Select the statement that best summarizes the impact on the patient's life.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My knuckles feel swollen and sore after staying still for a while. Even getting dressed in the morning has become more difficult.\"",
+      "symptoms": [
+        "The symptom is mainly interfering with the patient's breathing during activity.",
+        "The symptom is mainly interfering with the patient's social activities.",
+        "The symptom is mainly interfering with the patient's sleep.",
+        "The symptom is mainly interfering with the patient's everyday tasks."
+      ],
+      "correctAnswer": "The symptom is mainly interfering with the patient's everyday tasks.",
+      "hint": "Watch out for options that name a nearby but different area of daily life.",
+      "explanation": "The patient's second sentence is about everyday tasks. A useful summary restates the effect in neutral clinical language without adding anything the patient did not say.",
+      "id": "mc_l122_q2",
+      "medicalVocab": [
+        "Joint Pain",
+        "Summary",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Now that duration is known, identify the activity most affected.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My fingers feel stiff and sore. It's been going on for about two weeks now. It's been hard to focus on anything at my desk for more than a few minutes.\"",
+      "symptoms": [
+        "Working / Concentrating",
+        "Daily Tasks",
+        "Speaking",
+        "Eating"
+      ],
+      "correctAnswer": "Working / Concentrating",
+      "hint": "Timing plus effect: which activity is being affected over these two weeks?",
+      "explanation": "Two weeks of a symptom that keeps interfering with work and concentration is a meaningful pattern to record. Timing and impact together tell you more than either one alone.",
+      "id": "mc_l122_q3",
+      "medicalVocab": [
+        "Joint Pain",
+        "Duration",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Identify which daily activity the symptom is affecting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My arms feel really sore. I've been limping a bit because it hurts to put full weight down.\"",
+      "symptoms": [
+        "Walking",
+        "Working / Concentrating",
+        "Household Chores",
+        "Exercising"
+      ],
+      "correctAnswer": "Walking",
+      "hint": "Think about the daily routine being disrupted.",
+      "explanation": "The patient says the problem is getting in the way of walking. Functional impact is about what the patient can no longer do easily, not just how the symptom feels.",
+      "id": "mc_l123_q1",
+      "medicalVocab": [
+        "Muscle Soreness",
+        "Functional Impact",
+        "Daily Activities"
+      ]
+    },
+    {
+      "instruction": "Select the statement that best summarizes the impact on the patient's life.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"Climbing stairs makes my thighs burn more than usual. I keep waking up because of it, so I'm not sleeping through the night.\"",
+      "symptoms": [
+        "The symptom is mainly interfering with the patient's everyday tasks.",
+        "The symptom is mainly interfering with the patient's breathing during activity.",
+        "The symptom is mainly interfering with the patient's sleep.",
+        "The symptom is mainly interfering with the patient's household chores."
+      ],
+      "correctAnswer": "The symptom is mainly interfering with the patient's sleep.",
+      "hint": "A good summary sticks to what the patient actually said.",
+      "explanation": "The patient's second sentence is about sleep. A useful summary restates the effect in neutral clinical language without adding anything the patient did not say.",
+      "id": "mc_l123_q2",
+      "medicalVocab": [
+        "Muscle Soreness",
+        "Summary",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Now that duration is known, identify the activity most affected.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My arms feel really sore. It's been going on for about two weeks now. Even getting dressed in the morning has become more difficult.\"",
+      "symptoms": [
+        "Speaking",
+        "Eating",
+        "Household Chores",
+        "Daily Tasks"
+      ],
+      "correctAnswer": "Daily Tasks",
+      "hint": "Read the duration and the last sentence together before choosing.",
+      "explanation": "Two weeks of a symptom that keeps interfering with everyday tasks is a meaningful pattern to record. Timing and impact together tell you more than either one alone.",
+      "id": "mc_l123_q3",
+      "medicalVocab": [
+        "Muscle Soreness",
+        "Duration",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Identify which daily activity the symptom is affecting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel exhausted. It's been hard to focus on anything at my desk for more than a few minutes.\"",
+      "symptoms": [
+        "Socializing",
+        "Working / Concentrating",
+        "Walking",
+        "Speaking"
+      ],
+      "correctAnswer": "Working / Concentrating",
+      "hint": "Which everyday activity has become harder for this patient?",
+      "explanation": "The patient says the problem is getting in the way of work and concentration. Functional impact is about what the patient can no longer do easily, not just how the symptom feels.",
+      "id": "mc_l124_q1",
+      "medicalVocab": [
+        "Fatigue",
+        "Functional Impact",
+        "Daily Activities"
+      ]
+    },
+    {
+      "instruction": "Select the statement that best summarizes the impact on the patient's life.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I drag myself through the whole afternoon no matter how much I sleep. I've had to cut my usual workouts short because of it.\"",
+      "symptoms": [
+        "The symptom is mainly interfering with the patient's everyday tasks.",
+        "The symptom is mainly interfering with the patient's speaking.",
+        "The symptom is mainly interfering with the patient's social activities.",
+        "The symptom is mainly interfering with the patient's exercise."
+      ],
+      "correctAnswer": "The symptom is mainly interfering with the patient's exercise.",
+      "hint": "Match the summary to the precise activity the patient described.",
+      "explanation": "The patient's second sentence is about exercise. A useful summary restates the effect in neutral clinical language without adding anything the patient did not say.",
+      "id": "mc_l124_q2",
+      "medicalVocab": [
+        "Fatigue",
+        "Summary",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Now that duration is known, identify the activity most affected.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel exhausted. It's been going on for about two weeks now. Even simple chores around the house feel like too much right now.\"",
+      "symptoms": [
+        "Household Chores",
+        "Speaking",
+        "Working / Concentrating",
+        "Exercising"
+      ],
+      "correctAnswer": "Household Chores",
+      "hint": "Combine how long this has lasted with what the patient says it interferes with.",
+      "explanation": "Two weeks of a symptom that keeps interfering with household chores is a meaningful pattern to record. Timing and impact together tell you more than either one alone.",
+      "id": "mc_l124_q3",
+      "medicalVocab": [
+        "Fatigue",
+        "Duration",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Identify which daily activity the symptom is affecting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I keep waking up in the middle of the night. Even getting dressed in the morning has become more difficult.\"",
+      "symptoms": [
+        "Daily Tasks",
+        "Exercising",
+        "Sleeping",
+        "Working / Concentrating"
+      ],
+      "correctAnswer": "Daily Tasks",
+      "hint": "Listen for what the patient can no longer do easily, not how the symptom feels.",
+      "explanation": "The patient says the problem is getting in the way of everyday tasks. Functional impact is about what the patient can no longer do easily, not just how the symptom feels.",
+      "id": "mc_l125_q1",
+      "medicalVocab": [
+        "Insomnia",
+        "Functional Impact",
+        "Daily Activities"
+      ]
+    },
+    {
+      "instruction": "Select the statement that best summarizes the impact on the patient's life.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I keep watching the clock tick by, hour after hour. I've had to cut my usual workouts short because of it.\"",
+      "symptoms": [
+        "The symptom is mainly interfering with the patient's everyday tasks.",
+        "The symptom is mainly interfering with the patient's speaking.",
+        "The symptom is mainly interfering with the patient's exercise.",
+        "The symptom is mainly interfering with the patient's social activities."
+      ],
+      "correctAnswer": "The symptom is mainly interfering with the patient's exercise.",
+      "hint": "Watch out for options that name a nearby but different area of daily life.",
+      "explanation": "The patient's second sentence is about exercise. A useful summary restates the effect in neutral clinical language without adding anything the patient did not say.",
+      "id": "mc_l125_q2",
+      "medicalVocab": [
+        "Insomnia",
+        "Summary",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Now that duration is known, identify the activity most affected.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I keep waking up in the middle of the night. It's been going on for about two weeks now. It's been hard to focus on anything at my desk for more than a few minutes.\"",
+      "symptoms": [
+        "Working / Concentrating",
+        "Eating",
+        "Sleeping",
+        "Household Chores"
+      ],
+      "correctAnswer": "Working / Concentrating",
+      "hint": "Timing plus effect: which activity is being affected over these two weeks?",
+      "explanation": "Two weeks of a symptom that keeps interfering with work and concentration is a meaningful pattern to record. Timing and impact together tell you more than either one alone.",
+      "id": "mc_l125_q3",
+      "medicalVocab": [
+        "Insomnia",
+        "Duration",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Identify which daily activity the symptom is affecting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel lightheaded a lot lately. I keep waking up because of it, so I'm not sleeping through the night.\"",
+      "symptoms": [
+        "Eating",
+        "Speaking",
+        "Exercising",
+        "Sleeping"
+      ],
+      "correctAnswer": "Sleeping",
+      "hint": "Think about the daily routine being disrupted.",
+      "explanation": "The patient says the problem is getting in the way of sleep. Functional impact is about what the patient can no longer do easily, not just how the symptom feels.",
+      "id": "mc_l126_q1",
+      "medicalVocab": [
+        "Dizziness",
+        "Functional Impact",
+        "Daily Activities"
+      ]
+    },
+    {
+      "instruction": "Select the statement that best summarizes the impact on the patient's life.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I have to grab onto something because the room seems to sway. It's been hard to focus on anything at my desk for more than a few minutes.\"",
+      "symptoms": [
+        "The symptom is mainly interfering with the patient's sleep.",
+        "The symptom is mainly interfering with the patient's everyday tasks.",
+        "The symptom is mainly interfering with the patient's work and concentration.",
+        "The symptom is mainly interfering with the patient's breathing during activity."
+      ],
+      "correctAnswer": "The symptom is mainly interfering with the patient's work and concentration.",
+      "hint": "A good summary sticks to what the patient actually said.",
+      "explanation": "The patient's second sentence is about work and concentration. A useful summary restates the effect in neutral clinical language without adding anything the patient did not say.",
+      "id": "mc_l126_q2",
+      "medicalVocab": [
+        "Dizziness",
+        "Summary",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Now that duration is known, identify the activity most affected.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel lightheaded a lot lately. It's been going on for about two weeks now. Even simple chores around the house feel like too much right now.\"",
+      "symptoms": [
+        "Exercising",
+        "Working / Concentrating",
+        "Eating",
+        "Household Chores"
+      ],
+      "correctAnswer": "Household Chores",
+      "hint": "Read the duration and the last sentence together before choosing.",
+      "explanation": "Two weeks of a symptom that keeps interfering with household chores is a meaningful pattern to record. Timing and impact together tell you more than either one alone.",
+      "id": "mc_l126_q3",
+      "medicalVocab": [
+        "Dizziness",
+        "Duration",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Identify which daily activity the symptom is affecting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel short of breath a lot lately. I have to slow down and catch my breath doing things that used to be easy.\"",
+      "symptoms": [
+        "Working / Concentrating",
+        "Breathing During Activity",
+        "Speaking",
+        "Socializing"
+      ],
+      "correctAnswer": "Breathing During Activity",
+      "hint": "Which everyday activity has become harder for this patient?",
+      "explanation": "The patient says the problem is getting in the way of breathing during activity. Functional impact is about what the patient can no longer do easily, not just how the symptom feels.",
+      "id": "mc_l127_q1",
+      "medicalVocab": [
+        "Shortness of Breath",
+        "Functional Impact",
+        "Daily Activities"
+      ]
+    },
+    {
+      "instruction": "Select the statement that best summarizes the impact on the patient's life.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I get winded doing things that used to be easy for me. I've had to cut my usual workouts short because of it.\"",
+      "symptoms": [
+        "The symptom is mainly interfering with the patient's work and concentration.",
+        "The symptom is mainly interfering with the patient's exercise.",
+        "The symptom is mainly interfering with the patient's speaking.",
+        "The symptom is mainly interfering with the patient's social activities."
+      ],
+      "correctAnswer": "The symptom is mainly interfering with the patient's exercise.",
+      "hint": "Match the summary to the precise activity the patient described.",
+      "explanation": "The patient's second sentence is about exercise. A useful summary restates the effect in neutral clinical language without adding anything the patient did not say.",
+      "id": "mc_l127_q2",
+      "medicalVocab": [
+        "Shortness of Breath",
+        "Summary",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Now that duration is known, identify the activity most affected.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel short of breath a lot lately. It's been going on for about two weeks now. My voice gives out partway through longer conversations.\"",
+      "symptoms": [
+        "Working / Concentrating",
+        "Daily Tasks",
+        "Speaking",
+        "Socializing"
+      ],
+      "correctAnswer": "Speaking",
+      "hint": "Combine how long this has lasted with what the patient says it interferes with.",
+      "explanation": "Two weeks of a symptom that keeps interfering with speaking is a meaningful pattern to record. Timing and impact together tell you more than either one alone.",
+      "id": "mc_l127_q3",
+      "medicalVocab": [
+        "Shortness of Breath",
+        "Duration",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Identify which daily activity the symptom is affecting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My chest has been hurting quite a bit. I've had to cut my usual workouts short because of it.\"",
+      "symptoms": [
+        "Walking",
+        "Speaking",
+        "Exercising",
+        "Socializing"
+      ],
+      "correctAnswer": "Exercising",
+      "hint": "Listen for what the patient can no longer do easily, not how the symptom feels.",
+      "explanation": "The patient says the problem is getting in the way of exercise. Functional impact is about what the patient can no longer do easily, not just how the symptom feels.",
+      "id": "mc_l128_q1",
+      "medicalVocab": [
+        "Chest Pain",
+        "Functional Impact",
+        "Daily Activities"
+      ]
+    },
+    {
+      "instruction": "Select the statement that best summarizes the impact on the patient's life.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"It's a tight, squeezing feeling under my breastbone. I keep waking up because of it, so I'm not sleeping through the night.\"",
+      "symptoms": [
+        "The symptom is mainly interfering with the patient's eating.",
+        "The symptom is mainly interfering with the patient's sleep.",
+        "The symptom is mainly interfering with the patient's speaking.",
+        "The symptom is mainly interfering with the patient's work and concentration."
+      ],
+      "correctAnswer": "The symptom is mainly interfering with the patient's sleep.",
+      "hint": "Watch out for options that name a nearby but different area of daily life.",
+      "explanation": "The patient's second sentence is about sleep. A useful summary restates the effect in neutral clinical language without adding anything the patient did not say.",
+      "id": "mc_l128_q2",
+      "medicalVocab": [
+        "Chest Pain",
+        "Summary",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Now that duration is known, identify the activity most affected.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My chest has been hurting quite a bit. It's been going on for about two weeks now. Even getting dressed in the morning has become more difficult.\"",
+      "symptoms": [
+        "Speaking",
+        "Daily Tasks",
+        "Socializing",
+        "Sleeping"
+      ],
+      "correctAnswer": "Daily Tasks",
+      "hint": "Timing plus effect: which activity is being affected over these two weeks?",
+      "explanation": "Two weeks of a symptom that keeps interfering with everyday tasks is a meaningful pattern to record. Timing and impact together tell you more than either one alone.",
+      "id": "mc_l128_q3",
+      "medicalVocab": [
+        "Chest Pain",
+        "Duration",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Identify which daily activity the symptom is affecting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"There's a rash on my leg. Even simple chores around the house feel like too much right now.\"",
+      "symptoms": [
+        "Sleeping",
+        "Exercising",
+        "Eating",
+        "Household Chores"
+      ],
+      "correctAnswer": "Household Chores",
+      "hint": "Think about the daily routine being disrupted.",
+      "explanation": "The patient says the problem is getting in the way of household chores. Functional impact is about what the patient can no longer do easily, not just how the symptom feels.",
+      "id": "mc_l129_q1",
+      "medicalVocab": [
+        "Skin Rash",
+        "Functional Impact",
+        "Daily Activities"
+      ]
+    },
+    {
+      "instruction": "Select the statement that best summarizes the impact on the patient's life.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"It looks different from the rest of my skin nearby. I keep waking up because of it, so I'm not sleeping through the night.\"",
+      "symptoms": [
+        "The symptom is mainly interfering with the patient's sleep.",
+        "The symptom is mainly interfering with the patient's speaking.",
+        "The symptom is mainly interfering with the patient's eating.",
+        "The symptom is mainly interfering with the patient's social activities."
+      ],
+      "correctAnswer": "The symptom is mainly interfering with the patient's sleep.",
+      "hint": "A good summary sticks to what the patient actually said.",
+      "explanation": "The patient's second sentence is about sleep. A useful summary restates the effect in neutral clinical language without adding anything the patient did not say.",
+      "id": "mc_l129_q2",
+      "medicalVocab": [
+        "Skin Rash",
+        "Summary",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Now that duration is known, identify the activity most affected.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"There's a rash on my leg. It's been going on for about two weeks now. It's been hard to focus on anything at my desk for more than a few minutes.\"",
+      "symptoms": [
+        "Breathing During Activity",
+        "Working / Concentrating",
+        "Exercising",
+        "Socializing"
+      ],
+      "correctAnswer": "Working / Concentrating",
+      "hint": "Read the duration and the last sentence together before choosing.",
+      "explanation": "Two weeks of a symptom that keeps interfering with work and concentration is a meaningful pattern to record. Timing and impact together tell you more than either one alone.",
+      "id": "mc_l129_q3",
+      "medicalVocab": [
+        "Skin Rash",
+        "Duration",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Identify which daily activity the symptom is affecting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My skin has been so itchy. Even simple chores around the house feel like too much right now.\"",
+      "symptoms": [
+        "Walking",
+        "Household Chores",
+        "Working / Concentrating",
+        "Breathing During Activity"
+      ],
+      "correctAnswer": "Household Chores",
+      "hint": "Which everyday activity has become harder for this patient?",
+      "explanation": "The patient says the problem is getting in the way of household chores. Functional impact is about what the patient can no longer do easily, not just how the symptom feels.",
+      "id": "mc_l130_q1",
+      "medicalVocab": [
+        "Itching",
+        "Functional Impact",
+        "Daily Activities"
+      ]
+    },
+    {
+      "instruction": "Select the statement that best summarizes the impact on the patient's life.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"It's this crawling, prickly feeling that gets worse at night. I've been avoiding get-togethers because I don't feel up to it.\"",
+      "symptoms": [
+        "The symptom is mainly interfering with the patient's social activities.",
+        "The symptom is mainly interfering with the patient's household chores.",
+        "The symptom is mainly interfering with the patient's work and concentration.",
+        "The symptom is mainly interfering with the patient's walking."
+      ],
+      "correctAnswer": "The symptom is mainly interfering with the patient's social activities.",
+      "hint": "Match the summary to the precise activity the patient described.",
+      "explanation": "The patient's second sentence is about social activities. A useful summary restates the effect in neutral clinical language without adding anything the patient did not say.",
+      "id": "mc_l130_q2",
+      "medicalVocab": [
+        "Itching",
+        "Summary",
+        "Functional Impact"
+      ]
+    },
+    {
+      "instruction": "Now that duration is known, identify the activity most affected.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My skin has been so itchy. It's been going on for about two weeks now. It's been hard to focus on anything at my desk for more than a few minutes.\"",
+      "symptoms": [
+        "Working / Concentrating",
+        "Speaking",
+        "Household Chores",
+        "Sleeping"
+      ],
+      "correctAnswer": "Working / Concentrating",
+      "hint": "Combine how long this has lasted with what the patient says it interferes with.",
+      "explanation": "Two weeks of a symptom that keeps interfering with work and concentration is a meaningful pattern to record. Timing and impact together tell you more than either one alone.",
+      "id": "mc_l130_q3",
+      "medicalVocab": [
+        "Itching",
+        "Duration",
+        "Functional Impact"
+      ]
+    }
+  ]
 }

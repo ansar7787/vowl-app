@@ -8,68 +8,68 @@
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "It is required by international treaty that all disputed borders be formally recognized by neighboring governments.",
-            "sentence": "It is required by international treaty that all disputed borders be formally recognized by neighboring governments.",
+            "question": "By the time the inquiry concludes, investigators will have interviewed nearly two hundred witnesses.",
+            "sentence": "By the time the inquiry concludes, investigators will have interviewed nearly two hundred witnesses.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for be plus a past participle (recognized) after that, a passive subjunctive pattern.",
-            "explanation": "This is passive voice: disputed borders (receiver) be recognized uses the passive subjunctive, with be rather than are. In active, this would flip to: International treaty requires that neighboring governments formally recognize all disputed borders.",
-            "grammarRule": "Subjunctive Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Identify the tense - future perfect - then find the doer before will have interviewed.",
+            "explanation": "Investigators is the doer of will have interviewed, future perfect active, describing something that will be complete before a future point (by the time the inquiry concludes). Passive version: By the time the inquiry concludes, nearly two hundred witnesses will have been interviewed by investigators.",
+            "grammarRule": "Future Perfect Active",
+            "activeVoice": "By the time the inquiry concludes, investigators will have interviewed nearly two hundred witnesses.",
+            "passiveVoice": "By the time the inquiry concludes, nearly two hundred witnesses will have been interviewed by investigators."
         },
         {
             "id": "vs_l191_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The tribunal ordered that the corporation pay full compensation to every affected community within the region.",
-            "sentence": "The tribunal ordered that the corporation pay full compensation to every affected community within the region.",
+            "question": "The vaccine's safety data must have been reviewed thoroughly before regulators granted approval.",
+            "sentence": "The vaccine's safety data must have been reviewed thoroughly before regulators granted approval.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "The subjunctive base form pay (not pays) follows ordered that. Find the doer before pay.",
-            "explanation": "This is active voice: the corporation (the doer) is ordered to pay compensation, using the subjunctive base form pay. In passive, this would flip to: It was ordered that full compensation be paid by the corporation to every affected community within the region.",
-            "grammarRule": "Subjunctive Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Identify the layers here - modal, perfect, passive. Look for must have been plus a past participle.",
+            "explanation": "The vaccine's safety data (receiver) must have been reviewed - a modal perfect passive expressing a confident assumption about a completed past process, with no specific reviewer named. Active form: Someone must have thoroughly reviewed the vaccine's safety data before regulators granted approval.",
+            "grammarRule": "Perfect Modal Passive",
+            "activeVoice": "Someone must have thoroughly reviewed the vaccine's safety data before regulators granted approval.",
+            "passiveVoice": "The vaccine's safety data must have been reviewed thoroughly before regulators granted approval."
         },
         {
             "id": "vs_l191_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "It is required by international maritime law that the agreement be ratified within eighteen months of signing.",
-            "sentence": "It is required by international maritime law that the agreement be ratified within eighteen months of signing.",
+            "question": "Analysts who had studied the market for decades still failed to predict the sudden downturn.",
+            "sentence": "Analysts who had studied the market for decades still failed to predict the sudden downturn.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for be plus a past participle (ratified) after that, a passive subjunctive pattern.",
-            "explanation": "This is passive voice: the agreement (receiver) be ratified uses the passive subjunctive, with be rather than is. In active, this would flip to: International maritime law requires that every signatory nation ratify the agreement within eighteen months of signing.",
-            "grammarRule": "Subjunctive Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Two clauses appear here. Focus on the main clause: still failed to predict the sudden downturn.",
+            "explanation": "Analysts is the doer of failed in the main clause, active voice, even though the relative clause who had studied the market for decades is also active. Passive version of the main clause: The sudden downturn still wasn't predicted by analysts who had studied the market for decades.",
+            "grammarRule": "Active with Active Relative Clause",
+            "activeVoice": "Analysts who had studied the market for decades still failed to predict the sudden downturn.",
+            "passiveVoice": "The sudden downturn still wasn't predicted by analysts who had studied the market for decades."
         },
         {
             "id": "vs_l192_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The economic collapse should have been foreseen given how many analysts had quietly raised early concerns.",
-            "sentence": "The economic collapse should have been foreseen given how many analysts had quietly raised early concerns.",
+            "question": "The outbreak is believed to have been contained, though officials admit it could still resurface.",
+            "sentence": "The outbreak is believed to have been contained, though officials admit it could still resurface.",
             "options": [
                 "Active",
                 "Passive"
@@ -77,39 +77,39 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for should have been plus a past participle (foreseen), a layered modal perfect passive.",
-            "explanation": "This is passive voice: the economic collapse (receiver) should have been foreseen, combining a modal, a perfect aspect, and passive voice. In active, this would flip to: Officials should have foreseen the economic collapse given how many analysts had quietly raised early concerns.",
-            "grammarRule": "Layered Modal Perfect Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Multiple layers appear here. Focus on the core reported claim: to have been contained.",
+            "explanation": "The outbreak (subject of the report) is believed to have been contained - a reporting passive nested with a perfect passive infinitive, with no health authority explicitly named. Active form: Health authorities believe that someone contained the outbreak, though officials admit it could still resurface.",
+            "grammarRule": "Reported Statement Passive (Perfect)",
+            "activeVoice": "Health authorities believe that someone contained the outbreak, though officials admit it could still resurface.",
+            "passiveVoice": "The outbreak is believed to have been contained, though officials admit it could still resurface."
         },
         {
             "id": "vs_l192_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The experimental new treatment must have been carefully monitored given the remarkably consistent patient outcomes reported.",
-            "sentence": "The experimental new treatment must have been carefully monitored given the remarkably consistent patient outcomes reported.",
+            "question": "Regulators expect the new safety standards to be adopted industry-wide within two years.",
+            "sentence": "Regulators expect the new safety standards to be adopted industry-wide within two years.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for must have been plus a past participle (monitored), a layered modal perfect passive.",
-            "explanation": "This is passive voice: the treatment (receiver) must have been monitored, combining a modal, a perfect aspect, and passive voice. In active, this would flip to: Doctors must have carefully monitored the experimental new treatment given the remarkably consistent patient outcomes reported.",
-            "grammarRule": "Layered Modal Perfect Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer right before expect.",
+            "explanation": "Regulators is the doer of expect, an active reporting verb, even though the clause it introduces, to be adopted, is a passive infinitive. Passive version of the main clause: The new safety standards are expected to be adopted industry-wide within two years by regulators.",
+            "grammarRule": "Reported Statement Active",
+            "activeVoice": "Regulators expect the new safety standards to be adopted industry-wide within two years.",
+            "passiveVoice": "The new safety standards are expected to be adopted industry-wide within two years by regulators."
         },
         {
             "id": "vs_l192_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Early warning signs must have been quietly dismissed by senior officials despite mounting internal evidence of risk.",
-            "sentence": "Early warning signs must have been quietly dismissed by senior officials despite mounting internal evidence of risk.",
+            "question": "The missing shipment is thought to have been rerouted accidentally during the system outage.",
+            "sentence": "The missing shipment is thought to have been rerouted accidentally during the system outage.",
             "options": [
                 "Active",
                 "Passive"
@@ -117,19 +117,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for must have been plus a past participle (dismissed), a layered modal perfect passive.",
-            "explanation": "This is passive voice: early warning signs (receiver) must have been dismissed by senior officials, the agent named after by, combining a modal, a perfect aspect, and passive voice. In active, this would flip to: Senior officials must have quietly dismissed early warning signs despite mounting internal evidence of risk.",
-            "grammarRule": "Layered Modal Perfect Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Multiple layers appear here. Focus on the core reported claim: to have been rerouted.",
+            "explanation": "The missing shipment (subject of the report) is thought to have been rerouted - a reporting passive with a perfect passive infinitive, with no specific handler named. Active form: Logistics staff think that the system accidentally rerouted the missing shipment during the outage.",
+            "grammarRule": "Reported Statement Passive (Perfect)",
+            "activeVoice": "Logistics staff think that the system accidentally rerouted the missing shipment during the outage.",
+            "passiveVoice": "The missing shipment is thought to have been rerouted accidentally during the system outage."
         },
         {
             "id": "vs_l193_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The finalist applicants all seemed remarkably composed despite the intense pressure of the final competitive interview round.",
-            "sentence": "The finalist applicants all seemed remarkably composed despite the intense pressure of the final competitive interview round.",
+            "question": "Hasn't the panel that was convened specifically for this purpose reached a verdict yet?",
+            "sentence": "Hasn't the panel that was convened specifically for this purpose reached a verdict yet?",
             "options": [
                 "Active",
                 "Passive"
@@ -137,19 +137,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Try inserting 'very' before composed. Linking verbs like seemed signal an adjective, not passive voice.",
-            "explanation": "This is active voice: seemed is a linking verb, and composed is a predicate adjective describing the applicants, not a true passive participle here.",
-            "grammarRule": "Advanced Voice Ambiguity",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Focus on the main clause: hasn't the panel ... reached a verdict. The relative clause that was convened is a separate structure.",
+            "explanation": "The panel is the doer of reached in the main clause, negative present perfect active question, even though the relative clause that was convened specifically for this purpose is passive. Passive version of the main clause: Hasn't a verdict been reached yet by the panel that was convened specifically for this purpose?",
+            "grammarRule": "Active with Passive Relative Clause (Question)",
+            "activeVoice": "Hasn't the panel that was convened specifically for this purpose reached a verdict yet?",
+            "passiveVoice": "Hasn't a verdict been reached yet by the panel that was convened specifically for this purpose?"
         },
         {
             "id": "vs_l193_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The final competitive interview round was intentionally designed by recruiters to thoroughly test composure under pressure.",
-            "sentence": "The final competitive interview round was intentionally designed by recruiters to thoroughly test composure under pressure.",
+            "question": "Why weren't the structural flaws that engineers had identified years earlier ever addressed?",
+            "sentence": "Why weren't the structural flaws that engineers had identified years earlier ever addressed?",
             "options": [
                 "Active",
                 "Passive"
@@ -157,19 +157,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus a past participle (designed), followed by by naming who performed the action.",
-            "explanation": "This is genuinely passive voice: the interview round (receiver) was designed by recruiters, the agent named after by. Unlike the adjective trap above, was here functions as the true passive auxiliary.",
-            "grammarRule": "Advanced Voice Ambiguity",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Focus on the main clause: weren't the structural flaws ... ever addressed. The relative clause had identified is a separate structure.",
+            "explanation": "The structural flaws (receiver) weren't addressed in the main clause, negative passive question, even though the relative clause that engineers had identified is active. Active version of the main clause: Why didn't anyone ever address the structural flaws that engineers had identified years earlier?",
+            "grammarRule": "Passive with Active Relative Clause (Question)",
+            "activeVoice": "Why didn't anyone ever address the structural flaws that engineers had identified years earlier?",
+            "passiveVoice": "Why weren't the structural flaws that engineers had identified years earlier ever addressed?"
         },
         {
             "id": "vs_l193_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The entire boardroom grew noticeably tense as the quarterly figures were gradually revealed one by one.",
-            "sentence": "The entire boardroom grew noticeably tense as the quarterly figures were gradually revealed one by one.",
+            "question": "Doesn't the fact that the funds were never properly accounted for trouble anyone on this committee?",
+            "sentence": "Doesn't the fact that the funds were never properly accounted for trouble anyone on this committee?",
             "options": [
                 "Active",
                 "Passive"
@@ -177,39 +177,39 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Look at the main clause: the boardroom grew tense. Grew is a linking verb here, making the main clause active despite the embedded passive clause.",
-            "explanation": "The main clause is active: grew is a linking verb, and tense is a predicate adjective describing the boardroom, not a passive participle. The embedded clause figures were gradually revealed is passive, but it does not change the main clause voice.",
-            "grammarRule": "Advanced Voice Ambiguity",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Focus on the main clause: doesn't the fact ... trouble anyone. The embedded clause were never accounted for is a separate structure.",
+            "explanation": "The fact is the doer of trouble in the main clause, negative present-tense active question, even though the embedded clause it introduces, the funds were never properly accounted for, is a passive prepositional verb. Since trouble takes an object, anyone, a passive version of the main clause is possible: Isn't anyone on this committee troubled by the fact that the funds were never properly accounted for?",
+            "grammarRule": "Active with Embedded Passive Clause (Question)",
+            "activeVoice": "Doesn't the fact that the funds were never properly accounted for trouble anyone on this committee?",
+            "passiveVoice": "Isn't anyone on this committee troubled by the fact that the funds were never properly accounted for?"
         },
         {
             "id": "vs_l194_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The researcher who had spent years compiling the dataset eventually uncovered a pattern that surprised everyone.",
-            "sentence": "The researcher who had spent years compiling the dataset eventually uncovered a pattern that surprised everyone.",
+            "question": "Neither the auditors nor the chief financial officer had been told about the discrepancy before the board meeting.",
+            "sentence": "Neither the auditors nor the chief financial officer had been told about the discrepancy before the board meeting.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Look at the main clause: the researcher uncovered a pattern. Both relative clauses simply add detail without changing the main voice.",
-            "explanation": "The main clause is active: the researcher (the doer) uncovered a pattern directly. The relative clauses who had spent years compiling the dataset and that surprised everyone each add detail but do not change the main clause voice.",
-            "grammarRule": "Complex Embedded Clause Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Check agreement here: neither...nor agrees with the noun closest to the verb, chief financial officer, hence had, not have. Look for had been plus a past participle.",
+            "explanation": "Neither the auditors nor the chief financial officer (receiver) had been told - the verb agrees with chief financial officer, the noun closest to it, even though auditors is plural. No one is named as responsible. Active form: Nobody had told neither the auditors nor the chief financial officer about the discrepancy before the board meeting.",
+            "grammarRule": "Passive with Neither/Nor Agreement",
+            "activeVoice": "Nobody had told the auditors or the chief financial officer about the discrepancy before the board meeting.",
+            "passiveVoice": "Neither the auditors nor the chief financial officer had been told about the discrepancy before the board meeting."
         },
         {
             "id": "vs_l194_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "A pattern that surprised everyone was eventually uncovered by the researcher who had compiled the dataset.",
-            "sentence": "A pattern that surprised everyone was eventually uncovered by the researcher who had compiled the dataset.",
+            "question": "She and her longtime research partner were finally credited jointly for the discovery decades later.",
+            "sentence": "She and her longtime research partner were finally credited jointly for the discovery decades later.",
             "options": [
                 "Active",
                 "Passive"
@@ -217,19 +217,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look at the main clause: a pattern was uncovered. Notice the subject receives the action in the main clause here.",
-            "explanation": "The main clause is passive: a pattern (receiver) was uncovered by the researcher, the agent named after by. The relative clauses that surprised everyone and who had compiled the dataset each add detail without changing the main clause voice.",
-            "grammarRule": "Complex Embedded Clause Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "She and her longtime research partner is the subject here - check whether they performed the crediting or received it.",
+            "explanation": "She and her longtime research partner (receiver) were credited - even as subject pronouns, they receive the action, which is what makes this passive despite the subject-case forms. No specific institution is named. Active form: The scientific community finally credited her and her longtime research partner jointly for the discovery decades later.",
+            "grammarRule": "Passive with Pronoun Case (Compound Subject)",
+            "activeVoice": "The scientific community finally credited her and her longtime research partner jointly for the discovery decades later.",
+            "passiveVoice": "She and her longtime research partner were finally credited jointly for the discovery decades later."
         },
         {
             "id": "vs_l194_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The massive dataset that the researcher had spent years compiling ultimately revealed a pattern nobody expected.",
-            "sentence": "The massive dataset that the researcher had spent years compiling ultimately revealed a pattern nobody expected.",
+            "question": "He and the two junior partners have quietly managed this account through several difficult years.",
+            "sentence": "He and the two junior partners have quietly managed this account through several difficult years.",
             "options": [
                 "Active",
                 "Passive"
@@ -237,79 +237,79 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Look at the main clause: the dataset revealed a pattern. Revealed is an active verb here, even though the relative clause describes long, careful compiling.",
-            "explanation": "The main clause is active: the dataset (the doer, in a broad sense) revealed a pattern directly, using the active verb revealed. The relative clause that the researcher had spent years compiling simply identifies which dataset.",
-            "grammarRule": "Complex Embedded Clause Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Notice he and the two junior partners is a compound subject, correctly plural for have managed. Find the doer right before have managed.",
+            "explanation": "He and the two junior partners is the doer of have managed, a compound subject taking the plural verb form, present perfect active. Passive version: This account has been quietly managed through several difficult years by him and the two junior partners.",
+            "grammarRule": "Active with Compound Subject and Pronoun Case",
+            "activeVoice": "He and the two junior partners have quietly managed this account through several difficult years.",
+            "passiveVoice": "This account has been quietly managed through several difficult years by him and the two junior partners."
         },
         {
             "id": "vs_l195_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The founding charter demands that every member state uphold fundamental human rights within its own borders.",
-            "sentence": "The founding charter demands that every member state uphold fundamental human rights within its own borders.",
+            "question": "The safety complaints that had been looked into for months were ultimately dismissed without explanation.",
+            "sentence": "The safety complaints that had been looked into for months were ultimately dismissed without explanation.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "The subjunctive base form uphold (not upholds) follows demands that. Find the doer before uphold.",
-            "explanation": "This is active voice: every member state (the doer) is required to uphold rights, using the subjunctive base form uphold. In passive, this would flip to: It is demanded that fundamental human rights be upheld by every member state within its own borders.",
-            "grammarRule": "Subjunctive Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Two clauses appear here. Focus on the main clause: were ultimately dismissed without explanation.",
+            "explanation": "The safety complaints (receiver) were dismissed in the main clause, passive voice, even though the relative clause describing them, had been looked into, is itself a passive prepositional verb. Active version of the main clause: Someone ultimately dismissed the safety complaints that had been looked into for months, without explanation.",
+            "grammarRule": "Passive with Prepositional Verb in Relative Clause",
+            "activeVoice": "Someone ultimately dismissed the safety complaints that had been looked into for months, without explanation.",
+            "passiveVoice": "The safety complaints that had been looked into for months were ultimately dismissed without explanation."
         },
         {
             "id": "vs_l195_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The auditors recommended that the firm restructure its entire accounting practices before the next fiscal year.",
-            "sentence": "The auditors recommended that the firm restructure its entire accounting practices before the next fiscal year.",
+            "question": "A single overlooked clause, unlike everything else in the contract, could not be agreed to by either side.",
+            "sentence": "A single overlooked clause, unlike everything else in the contract, could not be agreed to by either side.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "The subjunctive base form restructure (not restructures) follows recommended that. Find the doer before restructure.",
-            "explanation": "This is active voice: the firm (the doer) is advised to restructure its practices, using the subjunctive base form restructure. In passive, this would flip to: It was recommended that the entire accounting practices be restructured by the firm before the next fiscal year.",
-            "grammarRule": "Subjunctive Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Several noun phrases appear here: clause, contract, sides. Only one is the true subject. Look for could not be agreed to as one unit.",
+            "explanation": "A single overlooked clause (receiver) - unlike everything else in the contract is a modifying phrase, not the subject - could not be agreed to is the real modal passive verb, keeping to attached to agreed. Active form: Either side could not agree to a single overlooked clause, unlike everything else in the contract.",
+            "grammarRule": "Prepositional Verb Passive (Modal, Multiple Noun Phrases)",
+            "activeVoice": "Either side could not agree to a single overlooked clause, unlike everything else in the contract.",
+            "passiveVoice": "A single overlooked clause, unlike everything else in the contract, could not be agreed to by either side."
         },
         {
             "id": "vs_l195_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "It is demanded by the founding charter that fundamental human rights be upheld within every member state.",
-            "sentence": "It is demanded by the founding charter that fundamental human rights be upheld within every member state.",
+            "question": "The elderly residents, who have relied on this clinic for decades, will finally receive a dedicated new wing.",
+            "sentence": "The elderly residents, who have relied on this clinic for decades, will finally receive a dedicated new wing.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for be plus a past participle (upheld) after that, a passive subjunctive pattern.",
-            "explanation": "This is passive voice: fundamental human rights (receiver) be upheld uses the passive subjunctive, with be rather than is. In active, this would flip to: The founding charter demands that every member state uphold fundamental human rights within its own borders.",
-            "grammarRule": "Subjunctive Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Two clauses appear here. Focus on the main clause: will finally receive a dedicated new wing.",
+            "explanation": "The elderly residents is the doer of will receive in the main clause, active voice, even though the relative clause who have relied on this clinic for decades contains a prepositional verb, rely on. Passive version of the main clause: A dedicated new wing will finally be received by the elderly residents, who have relied on this clinic for decades.",
+            "grammarRule": "Active with Prepositional Verb Relative Clause",
+            "activeVoice": "The elderly residents, who have relied on this clinic for decades, will finally receive a dedicated new wing.",
+            "passiveVoice": "A dedicated new wing will finally be received by the elderly residents, who have relied on this clinic for decades."
         },
         {
             "id": "vs_l196_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The financial crisis should have been prevented given how clearly the underlying risks had been documented.",
-            "sentence": "The financial crisis should have been prevented given how clearly the underlying risks had been documented.",
+            "question": "The evidence that had been carefully preserved for years was almost destroyed by a single clerical mistake.",
+            "sentence": "The evidence that had been carefully preserved for years was almost destroyed by a single clerical mistake.",
             "options": [
                 "Active",
                 "Passive"
@@ -317,19 +317,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for should have been plus a past participle (prevented), a layered modal perfect passive.",
-            "explanation": "This is passive voice: the financial crisis (receiver) should have been prevented, combining a modal, a perfect aspect, and passive voice. In active, this would flip to: Regulators should have prevented the financial crisis given how clearly the underlying risks had been documented.",
-            "grammarRule": "Layered Modal Perfect Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Two passive structures appear here. Check both: had been preserved (relative clause) and was almost destroyed (main clause). Are both correctly formed?",
+            "explanation": "The evidence (receiver) was destroyed in the main clause, correctly formed simple past passive, and the relative clause had been carefully preserved is a correctly formed past perfect passive - both hold up under close inspection despite the sentence's length. Active version of the main clause: A single clerical mistake almost destroyed the evidence that had been carefully preserved for years.",
+            "grammarRule": "Passive with Passive Relative Clause (Structure Check)",
+            "activeVoice": "A single clerical mistake almost destroyed the evidence that had been carefully preserved for years.",
+            "passiveVoice": "The evidence that had been carefully preserved for years was almost destroyed by a single clerical mistake."
         },
         {
             "id": "vs_l196_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The peace agreement must have been extensively negotiated given how comprehensively it addressed every major grievance.",
-            "sentence": "The peace agreement must have been extensively negotiated given how comprehensively it addressed every major grievance.",
+            "question": "Officials who had repeatedly assured the public that the water was safe were later shown to have known otherwise.",
+            "sentence": "Officials who had repeatedly assured the public that the water was safe were later shown to have known otherwise.",
             "options": [
                 "Active",
                 "Passive"
@@ -337,39 +337,39 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for must have been plus a past participle (negotiated), a layered modal perfect passive.",
-            "explanation": "This is passive voice: the peace agreement (receiver) must have been negotiated, combining a modal, a perfect aspect, and passive voice. In active, this would flip to: Negotiators must have extensively negotiated the peace agreement given how comprehensively it addressed every major grievance.",
-            "grammarRule": "Layered Modal Perfect Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Two clauses appear here. Focus on the main clause: were later shown to have known otherwise.",
+            "explanation": "Officials (receiver, in a sense) were shown in the main clause, passive voice, even though the relative clause who had repeatedly assured the public is active. Active version of the main clause: New evidence later showed that officials who had repeatedly assured the public that the water was safe had known otherwise.",
+            "grammarRule": "Passive with Active Relative Clause",
+            "activeVoice": "New evidence later showed that officials who had repeatedly assured the public that the water was safe had known otherwise.",
+            "passiveVoice": "Officials who had repeatedly assured the public that the water was safe were later shown to have known otherwise."
         },
         {
             "id": "vs_l196_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Every major grievance must have been extensively addressed by negotiators for the peace agreement to succeed so comprehensively.",
-            "sentence": "Every major grievance must have been extensively addressed by negotiators for the peace agreement to succeed so comprehensively.",
+            "question": "The two competing labs, despite years of public rivalry, quietly agreed to share their unpublished data.",
+            "sentence": "The two competing labs, despite years of public rivalry, quietly agreed to share their unpublished data.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for must have been plus a past participle (addressed), a layered modal perfect passive.",
-            "explanation": "This is passive voice: every major grievance (receiver) must have been addressed by negotiators, the agent named after by, combining a modal, a perfect aspect, and passive voice. In active, this would flip to: Negotiators must have extensively addressed every major grievance for the peace agreement to succeed so comprehensively.",
-            "grammarRule": "Layered Modal Perfect Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Focus on the main clause: quietly agreed to share their unpublished data.",
+            "explanation": "The two competing labs is the doer of agreed in the main clause, active voice, and agree to describes a mutual decision without a clear receiver to promote into a passive subject in this context - this kind of reciprocal agreement typically stays active.",
+            "grammarRule": "Active (No Natural Passive)",
+            "activeVoice": "The two competing labs, despite years of public rivalry, quietly agreed to share their unpublished data.",
+            "passiveVoice": "No natural passive form exists here; mutual agreements like this typically stay active."
         },
         {
             "id": "vs_l197_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The senior board members all appeared distinctly uneasy throughout the entire emergency shareholder meeting yesterday afternoon.",
-            "sentence": "The senior board members all appeared distinctly uneasy throughout the entire emergency shareholder meeting yesterday afternoon.",
+            "question": "A retired engineer, working entirely on his own time, ultimately diagnosed the flaw that three official inquiries had missed.",
+            "sentence": "A retired engineer, working entirely on his own time, ultimately diagnosed the flaw that three official inquiries had missed.",
             "options": [
                 "Active",
                 "Passive"
@@ -377,19 +377,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Try inserting 'very' before uneasy. Linking verbs like appeared signal an adjective, not passive voice.",
-            "explanation": "This is active voice: appeared is a linking verb, and uneasy is a predicate adjective describing the board members, not a true passive participle.",
-            "grammarRule": "Advanced Voice Ambiguity",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "The engineer's individual persistence is the whole point here. Find the doer right before diagnosed.",
+            "explanation": "A retired engineer is the doer of diagnosed, and active voice is clearly the right choice since crediting this one determined individual, especially in contrast to three official inquiries that failed, is the entire purpose of the sentence. Passive version: The flaw that three official inquiries had missed was ultimately diagnosed by a retired engineer, working entirely on his own time.",
+            "grammarRule": "Voice Choice - Active Preferred (Individual Credit)",
+            "activeVoice": "A retired engineer, working entirely on his own time, ultimately diagnosed the flaw that three official inquiries had missed.",
+            "passiveVoice": "The flaw that three official inquiries had missed was ultimately diagnosed by a retired engineer, working entirely on his own time."
         },
         {
             "id": "vs_l197_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The entire emergency shareholder meeting was hastily arranged by executives following weeks of visibly mounting unease.",
-            "sentence": "The entire emergency shareholder meeting was hastily arranged by executives following weeks of visibly mounting unease.",
+            "question": "The city's entire water supply was contaminated for weeks before anyone thought to test it.",
+            "sentence": "The city's entire water supply was contaminated for weeks before anyone thought to test it.",
             "options": [
                 "Active",
                 "Passive"
@@ -397,39 +397,39 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus a past participle (arranged), followed by by naming who performed the action.",
-            "explanation": "This is genuinely passive voice: the meeting (receiver) was arranged by executives, the agent named after by. Unlike the adjective trap above, was here functions as the true passive auxiliary.",
-            "grammarRule": "Advanced Voice Ambiguity",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "The exact cause and responsible party are unknown here - the extended contamination itself is the point. Look for was plus a past participle.",
+            "explanation": "The city's entire water supply (receiver) was contaminated - passive voice fits since the cause is genuinely unknown at this point in the story, and forcing an active sentence would require inventing a doer that hasn't been identified. Active form, once a cause is found: Aging pipes contaminated the city's entire water supply for weeks before anyone thought to test it.",
+            "grammarRule": "Voice Choice - Passive Preferred (Agent Unknown)",
+            "activeVoice": "Aging pipes may have contaminated the city's entire water supply for weeks before anyone thought to test it.",
+            "passiveVoice": "The city's entire water supply was contaminated for weeks before anyone thought to test it."
         },
         {
             "id": "vs_l197_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The entire research laboratory grew eerily quiet as the final results slowly appeared on every monitor screen.",
-            "sentence": "The entire research laboratory grew eerily quiet as the final results slowly appeared on every monitor screen.",
+            "question": "The findings, though disputed by a vocal minority of experts, have since been confirmed by several independent studies.",
+            "sentence": "The findings, though disputed by a vocal minority of experts, have since been confirmed by several independent studies.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Look at the main clause: the laboratory grew quiet. Grew is a linking verb here, making the main clause active despite the embedded clause about results appearing.",
-            "explanation": "The main clause is active: grew is a linking verb, and quiet is a predicate adjective describing the laboratory, not a passive participle. The clause results slowly appeared is also active, since appeared is intransitive here.",
-            "grammarRule": "Advanced Voice Ambiguity",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "The findings' credibility over time is the ongoing focus here, not any single group. Look for have been plus a past participle.",
+            "explanation": "The findings (receiver) have been confirmed - passive voice keeps the sentence's focus on the findings' growing credibility, even though both the disputing minority and the confirming studies are named. Active form: Several independent studies have since confirmed the findings, though a vocal minority of experts disputed them.",
+            "grammarRule": "Voice Choice - Topic Continuity (Complex Sentence)",
+            "activeVoice": "Several independent studies have since confirmed the findings, though a vocal minority of experts disputed them.",
+            "passiveVoice": "The findings, though disputed by a vocal minority of experts, have since been confirmed by several independent studies."
         },
         {
             "id": "vs_l198_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The advocate who had championed the cause for decades finally witnessed the reform that changed everything.",
-            "sentence": "The advocate who had championed the cause for decades finally witnessed the reform that changed everything.",
+            "question": "The whistleblower, whose identity had been fiercely protected for over a year, finally agreed to testify publicly.",
+            "sentence": "The whistleblower, whose identity had been fiercely protected for over a year, finally agreed to testify publicly.",
             "options": [
                 "Active",
                 "Passive"
@@ -437,19 +437,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Look at the main clause: the advocate witnessed the reform. Both relative clauses simply add detail without changing the main voice.",
-            "explanation": "The main clause is active: the advocate (the doer) witnessed the reform directly. The relative clauses who had championed the cause for decades and that changed everything each add detail but do not change the main clause voice.",
-            "grammarRule": "Complex Embedded Clause Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Focus on the main clause: finally agreed to testify publicly.",
+            "explanation": "The whistleblower is the doer of agreed in the main clause, active voice, even though the relative clause whose identity had been fiercely protected is a correctly formed past perfect passive. Since agree to testify describes a personal decision without a clear receiver, no natural passive version of the main clause exists here.",
+            "grammarRule": "Active (No Natural Passive in Main Clause)",
+            "activeVoice": "The whistleblower, whose identity had been fiercely protected for over a year, finally agreed to testify publicly.",
+            "passiveVoice": "No natural passive form exists for the main clause; agree to testify describes a personal decision and typically stays active."
         },
         {
             "id": "vs_l198_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The reform that changed everything was finally witnessed by the advocate who had championed the cause.",
-            "sentence": "The reform that changed everything was finally witnessed by the advocate who had championed the cause.",
+            "question": "The region's water crisis, long dismissed as exaggerated by officials, was finally acknowledged after independent testing confirmed the contamination.",
+            "sentence": "The region's water crisis, long dismissed as exaggerated by officials, was finally acknowledged after independent testing confirmed the contamination.",
             "options": [
                 "Active",
                 "Passive"
@@ -457,19 +457,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look at the main clause: the reform was witnessed. Notice the subject receives the action in the main clause here.",
-            "explanation": "The main clause is passive: the reform (receiver) was witnessed by the advocate, the agent named after by. The relative clauses that changed everything and who had championed the cause each add detail without changing the main clause voice.",
-            "grammarRule": "Complex Embedded Clause Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Multiple structures appear here. Focus on the main clause: was finally acknowledged after independent testing confirmed the contamination.",
+            "explanation": "The region's water crisis (receiver) was acknowledged in the main clause, passive voice, even though the inserted phrase, long dismissed as exaggerated, is a reduced passive clause, and the final clause, independent testing confirmed, is active. Active version of the main clause: Officials finally acknowledged the region's water crisis, long dismissed as exaggerated, after independent testing confirmed the contamination.",
+            "grammarRule": "Passive with Reduced Passive Clause and Active Final Clause",
+            "activeVoice": "Officials finally acknowledged the region's water crisis, long dismissed as exaggerated, after independent testing confirmed the contamination.",
+            "passiveVoice": "The region's water crisis, long dismissed as exaggerated by officials, was finally acknowledged after independent testing confirmed the contamination."
         },
         {
             "id": "vs_l198_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The important cause that the advocate had championed for decades ultimately produced reform nobody thought possible.",
-            "sentence": "The important cause that the advocate had championed for decades ultimately produced reform nobody thought possible.",
+            "question": "The two former rivals, having quietly rebuilt trust over several years, eventually co-authored the very paper that ended their dispute.",
+            "sentence": "The two former rivals, having quietly rebuilt trust over several years, eventually co-authored the very paper that ended their dispute.",
             "options": [
                 "Active",
                 "Passive"
@@ -477,19 +477,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Look at the main clause: the cause produced reform. Produced is an active verb here, even though the relative clause describes decades of championing.",
-            "explanation": "The main clause is active: the cause (the doer, in a broad sense) produced reform directly, using the active verb produced. The relative clause that the advocate had championed for decades simply identifies which cause.",
-            "grammarRule": "Complex Embedded Clause Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Focus on the main clause: eventually co-authored the very paper that ended their dispute.",
+            "explanation": "The two former rivals is the doer of co-authored in the main clause, active voice, even though the inserted phrase, having quietly rebuilt trust, is a perfect gerund, and the relative clause that ended their dispute is active. Passive version of the main clause: The very paper that ended their dispute was eventually co-authored by the two former rivals, having quietly rebuilt trust over several years.",
+            "grammarRule": "Active with Gerund Phrase and Relative Clause",
+            "activeVoice": "The two former rivals, having quietly rebuilt trust over several years, eventually co-authored the very paper that ended their dispute.",
+            "passiveVoice": "The very paper that ended their dispute was eventually co-authored by the two former rivals, having quietly rebuilt trust over several years."
         },
         {
             "id": "vs_l199_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The full assembly requires that every representative fully disclose any financial interests before the critical vote.",
-            "sentence": "The full assembly requires that every representative fully disclose any financial interests before the critical vote.",
+            "question": "It is now widely accepted that the collapse, initially blamed on a design flaw, resulted primarily from decades of neglect.",
+            "sentence": "It is now widely accepted that the collapse, initially blamed on a design flaw, resulted primarily from decades of neglect.",
             "options": [
                 "Active",
                 "Passive"
@@ -497,59 +497,39 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Notice disclose stays in its bare form after requires that, rather than becoming discloses.",
-            "explanation": "This is active voice: every representative (the doer) is required to disclose interests, using the subjunctive base form disclose. In passive, this would flip to: It is required that any financial interests be fully disclosed by every representative before the critical vote.",
-            "grammarRule": "Subjunctive Passive Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Multiple clauses appear here. Focus on the clause containing the true explanation: resulted primarily from decades of neglect.",
+            "explanation": "The collapse is the doer of resulted in this clause, active voice, and result from has no promotable object in the usual passive sense, so this particular clause has no passive counterpart - even though it is widely accepted is an impersonal reporting passive, and initially blamed is a reduced passive phrase.",
+            "grammarRule": "Active (No Passive Possible in Core Clause)",
+            "activeVoice": "It is now widely accepted that the collapse, initially blamed on a design flaw, resulted primarily from decades of neglect.",
+            "passiveVoice": "No passive form exists for the core clause - result from has no direct object here that can become a passive subject."
         },
         {
             "id": "vs_l199_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "It is required that all financial interests be fully disclosed before the assembly holds its critical vote.",
-            "sentence": "It is required that all financial interests be fully disclosed before the assembly holds its critical vote.",
+            "question": "The scholarship recipients, who had been notified only days before the ceremony, expressed genuine surprise at the announcement.",
+            "sentence": "The scholarship recipients, who had been notified only days before the ceremony, expressed genuine surprise at the announcement.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "The subjunctive be, not is or was, appears right after that here.",
-            "explanation": "This is passive voice: all financial interests (receiver) be disclosed uses the passive subjunctive, with be rather than is. In active, this would flip to: The assembly requires that every representative fully disclose all financial interests before it holds its critical vote.",
-            "grammarRule": "Subjunctive Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Two clauses appear here. Focus on the main clause: expressed genuine surprise at the announcement.",
+            "explanation": "The scholarship recipients is the doer of expressed in the main clause, active voice, even though the relative clause who had been notified only days before the ceremony is passive. Passive version of the main clause: Genuine surprise at the announcement was expressed by the scholarship recipients, who had been notified only days before the ceremony.",
+            "grammarRule": "Active with Passive Relative Clause",
+            "activeVoice": "The scholarship recipients, who had been notified only days before the ceremony, expressed genuine surprise at the announcement.",
+            "passiveVoice": "Genuine surprise at the announcement was expressed by the scholarship recipients, who had been notified only days before the ceremony."
         },
         {
             "id": "vs_l199_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Both exhausted negotiating teams remained cautiously hopeful even as the final overnight talks grew increasingly tense.",
-            "sentence": "Both exhausted negotiating teams remained cautiously hopeful even as the final overnight talks grew increasingly tense.",
-            "options": [
-                "Active",
-                "Passive"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Try inserting 'very' before hopeful and before tense. Linking verbs like remained and grew signal adjectives, not passive voice.",
-            "explanation": "This is active voice throughout: remained and grew are linking verbs, with hopeful and tense functioning as predicate adjectives, not true passive participles.",
-            "grammarRule": "Advanced Voice Ambiguity",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
-        },
-        {
-            "id": "vs_l200_q1",
-            "instruction": "FLIP THE VOICE TRANSMUTER",
-            "subtype": "voiceSwap",
-            "interactionType": "choice",
-            "question": "It is widely required that every learner practice this exact skill until it becomes second nature.",
-            "sentence": "It is widely required that every learner practice this exact skill until it becomes second nature.",
+            "question": "The funds that should have been distributed months earlier were finally released after sustained public pressure.",
+            "sentence": "The funds that should have been distributed months earlier were finally released after sustained public pressure.",
             "options": [
                 "Active",
                 "Passive"
@@ -557,51 +537,71 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for be plus a past participle (required) with it as a placeholder subject, then a subjunctive that clause.",
-            "explanation": "This final checkpoint reviews passive voice: it functions as a placeholder subject, with is widely required plus that reporting the expectation impersonally. In active, this would flip to: Experts widely require that every learner practice this exact skill until it becomes second nature.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Two passive structures appear here. Check both: should have been distributed (relative clause) and were finally released (main clause).",
+            "explanation": "The funds (receiver) were released in the main clause, correctly formed simple past passive, and the relative clause should have been distributed months earlier is a correctly formed modal perfect passive - both are grammatically sound. Active version of the main clause: Authorities finally released the funds that should have been distributed months earlier, after sustained public pressure.",
+            "grammarRule": "Passive with Modal Perfect Relative Clause",
+            "activeVoice": "Authorities finally released the funds that should have been distributed months earlier, after sustained public pressure.",
+            "passiveVoice": "The funds that should have been distributed months earlier were finally released after sustained public pressure."
+        },
+        {
+            "id": "vs_l200_q1",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "Capstone finale: A small, largely self-taught team of researchers, working with almost no funding, ultimately solved a problem that three well-funded institutions had abandoned as unsolvable.",
+            "sentence": "Capstone finale: A small, largely self-taught team of researchers, working with almost no funding, ultimately solved a problem that three well-funded institutions had abandoned as unsolvable.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "The team's remarkable achievement against well-funded competitors is the entire point. Find the doer right before solved.",
+            "explanation": "A small, largely self-taught team of researchers is the doer of solved, and active voice is unmistakably the right choice here, since crediting this specific underdog achievement against three well-funded institutions is exactly what the sentence exists to do. Passive version: A problem that three well-funded institutions had abandoned as unsolvable was ultimately solved by a small, largely self-taught team of researchers, working with almost no funding.",
+            "grammarRule": "Voice Choice - Active Preferred (Capstone Credit)",
+            "activeVoice": "A small, largely self-taught team of researchers, working with almost no funding, ultimately solved a problem that three well-funded institutions had abandoned as unsolvable.",
+            "passiveVoice": "A problem that three well-funded institutions had abandoned as unsolvable was ultimately solved by a small, largely self-taught team of researchers, working with almost no funding."
         },
         {
             "id": "vs_l200_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Dedicated learners must have steadily absorbed two hundred valuable lessons to finally reach this milestone.",
-            "sentence": "Dedicated learners must have steadily absorbed two hundred valuable lessons to finally reach this milestone.",
+            "question": "Capstone finale: It is now generally accepted that the missing funds, which should have been reported to regulators years earlier, were quietly moved through a chain of shell companies before anyone noticed.",
+            "sentence": "Capstone finale: It is now generally accepted that the missing funds, which should have been reported to regulators years earlier, were quietly moved through a chain of shell companies before anyone noticed.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before must have absorbed, then decide the voice.",
-            "explanation": "This final checkpoint reviews active voice: dedicated learners (the doer) must have performed the action absorbed directly on two hundred lessons, combining a modal and a perfect aspect. In passive, this would flip to: Two hundred valuable lessons must have been steadily absorbed by dedicated learners to finally reach this milestone.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Multiple layers appear here: a reporting structure, a modal perfect relative clause, and the core claim. Focus on the core claim: were quietly moved through a chain of shell companies.",
+            "explanation": "The missing funds (receiver) were moved - the core claim is passive, nested inside the impersonal reporting passive it is accepted and alongside the relative clause should have been reported, itself a modal perfect passive, showing how multiple passive layers can stack within a single mature sentence. Active version of the core claim: It is now generally accepted that someone quietly moved the missing funds, which should have been reported to regulators years earlier, through a chain of shell companies before anyone noticed.",
+            "grammarRule": "Passive Nested in Reporting Structure (Capstone)",
+            "activeVoice": "It is now generally accepted that someone quietly moved the missing funds, which should have been reported to regulators years earlier, through a chain of shell companies before anyone noticed.",
+            "passiveVoice": "It is now generally accepted that the missing funds, which should have been reported to regulators years earlier, were quietly moved through a chain of shell companies before anyone noticed."
         },
         {
             "id": "vs_l200_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Every dedicated learner today should feel genuinely proud after completing this entire two hundred level journey.",
-            "sentence": "Every dedicated learner today should feel genuinely proud after completing this entire two hundred level journey.",
+            "question": "Capstone finale: The engineers who had warned regulators for years were finally vindicated, though the disaster that proved them right could easily have been prevented.",
+            "sentence": "Capstone finale: The engineers who had warned regulators for years were finally vindicated, though the disaster that proved them right could easily have been prevented.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Try inserting 'very' before proud. Linking verbs like feel signal an adjective, not passive voice, marking a fitting close to this entire course.",
-            "explanation": "This final milestone reviews active voice one last time: feel is a linking verb, and proud is a predicate adjective, not a passive participle. After two hundred levels of practice, this learner has genuinely earned the right to feel it.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Several clauses appear here. Focus on the main clause: were finally vindicated.",
+            "explanation": "The engineers (receiver) were vindicated in the main clause, passive voice, even though the relative clause who had warned regulators for years is active, the clause that proved them right is active with no promotable object, and the final clause could easily have been prevented is a modal perfect passive of its own - a fitting final test of judging each clause on its own terms rather than by a single surface pattern. Active version of the main clause: The disaster finally vindicated the engineers who had warned regulators for years, though it could easily have been prevented.",
+            "grammarRule": "Passive with Multiple Mixed Clauses (Capstone)",
+            "activeVoice": "The disaster finally vindicated the engineers who had warned regulators for years, though it could easily have been prevented.",
+            "passiveVoice": "The engineers who had warned regulators for years were finally vindicated, though the disaster that proved them right could easily have been prevented."
         }
     ]
 }

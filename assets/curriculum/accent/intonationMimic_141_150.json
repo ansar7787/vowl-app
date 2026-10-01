@@ -5,376 +5,376 @@
     "quests": [
         {
             "id": "ACC_INTONATIONMIMIC_L141_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "A colleague proposes a plan in a meeting, and you disagree politely.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The presentation was fine, but it could be better.",
-            "textToSpeak": "The presentation was fine, but it could be better.",
+            "word": "I see it a little differently, actually.",
+            "textToSpeak": "I see it a little differently, actually.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Softened, lifted 'actually' — polite disagreement",
+                "Firm, sharp fall — blunt disagreement"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Softened, lifted 'actually' — polite disagreement",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
+                2,
                 1,
-                0,
-                2
+                3
             ],
-            "hint": "This sentence gives a mixed opinion using 'but.' Listen to the pitch on 'fine' - does it just fall, or dip and lift slightly before continuing?",
-            "explanation": "When a speaker hedges or holds back full approval, the pitch falls and then lifts slightly on 'fine,' signaling there's more to the opinion. This fall-rise pattern shows reservation rather than a complete, definite judgment.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Curious"
+            "hint": "The words are mild. Listen to whether the ending closes the discussion or opens it.",
+            "explanation": "A lift on 'actually' keeps the door open, so the disagreement sounds like an invitation to discuss. A sharp fall would end the exchange.",
+            "pitchRule": "🤝 Polite disagreement keeps the ending soft and slightly lifted.",
+            "emotionContext": "Diplomatic"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L141_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A teammate is confident about a number you think is wrong.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The presentation was excellent today.",
-            "textToSpeak": "The presentation was excellent today.",
+            "word": "I hear you, though I'd argue the data says otherwise.",
+            "textToSpeak": "I hear you, though I'd argue the data says otherwise.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Lift on 'you', firm fall on 'otherwise' — respectful but firm",
+                "Flat on 'you' and on 'otherwise' — dismissive tone"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Lift on 'you', firm fall on 'otherwise' — respectful but firm",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
+                3,
                 1,
                 0
             ],
-            "hint": "This sentence gives a clear, complete opinion. Listen to the pitch on 'today.'",
-            "explanation": "This is a definite statement with a single falling pitch at the end. The voice drops on 'today,' showing the opinion is complete with no hesitation.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Excited"
+            "hint": "You want to acknowledge the person and still hold your position. Where does the voice show respect?",
+            "explanation": "The first clause lifts in acknowledgement, and the firm fall on 'otherwise' delivers your position. A flat delivery would sound dismissive.",
+            "pitchRule": "🤝 Respect in the first half, firmness in the second.",
+            "emotionContext": "Firm"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L141_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You'd like to add a different perspective in a discussion.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Your report is good, but it's a bit long.",
-            "textToSpeak": "Your report is good, but it's a bit long.",
+            "word": "Could I offer a slightly different view?",
+            "textToSpeak": "Could I offer a slightly different view?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Falling — announcing disagreement",
+                "Rising — asking permission to disagree"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
+            "correctAnswer": "Rising — asking permission to disagree",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
                 1,
-                0,
-                2
+                2,
+                2,
+                4
             ],
-            "hint": "This sentence gives a mixed opinion using 'but.' Listen to the pitch on 'good' for a slight dip-and-lift rather than a plain fall.",
-            "explanation": "The fall-rise pattern on 'good' signals that the praise is incomplete. The speaker is hedging, hinting that a reservation is coming.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Doubtful"
+            "hint": "You aren't sure others want to hear this. Choose the ending that asks first.",
+            "explanation": "A rise on 'view' asks permission to speak, which is polite. A fall would announce the disagreement before anyone agreed to hear it.",
+            "pitchRule": "📈 Ask permission to disagree with a lift.",
+            "emotionContext": "Tactful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L142_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "A colleague asks whether you agree, and you aren't sure.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The team finished the project early.",
-            "textToSpeak": "The team finished the project early.",
+            "word": "Well... I'm not entirely sure about that.",
+            "textToSpeak": "Well... I'm not entirely sure about that.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Slow, level, lift on 'sure' — hesitant",
+                "Quick, firm fall — decisive"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Slow, level, lift on 'sure' — hesitant",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
                 2,
-                1,
-                0
+                3,
+                3
             ],
-            "hint": "This sentence states one clear fact. Listen to the pitch on 'early.'",
-            "explanation": "This is a definite statement, so the pitch falls once at the end, on 'early,' with no hesitation.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Neutral"
+            "hint": "Hesitation is heard in the pace, not just the pitch. Which delivery is slower?",
+            "explanation": "Slower speed, a level start, and a small lift show that the speaker is still deciding. A quick, firm fall would sound settled.",
+            "pitchRule": "🕒 Hesitation is slow, level and unfinished.",
+            "emotionContext": "Hesitant"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L142_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "You want to suggest a new day without sounding pushy.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The new intern is capable, but still learning.",
-            "textToSpeak": "The new intern is capable, but still learning.",
+            "word": "Um, maybe we could... try Thursday instead?",
+            "textToSpeak": "Um, maybe we could... try Thursday instead?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Falling, with no pauses — firm proposal",
+                "Rising, with pauses — tentative suggestion"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
+            "correctAnswer": "Rising, with pauses — tentative suggestion",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
                 1,
-                0,
-                2
+                2,
+                2,
+                3
             ],
-            "hint": "This sentence gives a mixed opinion using 'but.' Listen to the pitch on 'capable' for a dip-and-lift.",
-            "explanation": "The fall-rise pattern on 'capable' shows the speaker isn't giving full, unqualified praise. It signals a reservation about to follow.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Surprised"
+            "hint": "There are fillers and a pause in the sentence. Which ending goes with them?",
+            "explanation": "Fillers and a pause make the suggestion tentative, and the rise on 'instead' asks for agreement. A firm fall would contradict the hesitation.",
+            "pitchRule": "🕒📈 Pauses and a rise turn a proposal into a request for agreement.",
+            "emotionContext": "Tentative"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L142_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "Someone asks if you want the red or the blue design, and you have no preference.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Our sales increased significantly this quarter.",
-            "textToSpeak": "Our sales increased significantly this quarter.",
+            "word": "I mean... it depends, really.",
+            "textToSpeak": "I mean... it depends, really.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "High, wide fall — enthusiastic",
+                "Slow, level, small drop — noncommittal"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Slow, level, small drop — noncommittal",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
                 2,
                 1,
-                0
+                1
             ],
-            "hint": "This sentence gives one clear, positive fact. Listen to the pitch on 'quarter.'",
-            "explanation": "This is a definite statement with one falling pitch at the end, on 'quarter.'",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Determined"
+            "hint": "You are avoiding a decision. Which delivery avoids commitment?",
+            "explanation": "A slow, level start and a small drop give no clear signal, which is what noncommittal speech sounds like. A high, wide fall would show enthusiasm.",
+            "pitchRule": "🕒 Noncommittal speech has little pitch movement.",
+            "emotionContext": "Noncommittal"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L143_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend invites you out on a night you already have plans.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The meeting went okay, but nothing was decided.",
-            "textToSpeak": "The meeting went okay, but nothing was decided.",
+            "word": "I'd love to, but I've already got plans that night.",
+            "textToSpeak": "I'd love to, but I've already got plans that night.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Flat on 'love to' and on 'night' — cold refusal",
+                "Lift on 'love to', lower fall on 'night' — warm refusal"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
+            "correctAnswer": "Lift on 'love to', lower fall on 'night' — warm refusal",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
+                3,
                 1,
-                0,
-                2
+                0
             ],
-            "hint": "This sentence gives a lukewarm opinion using 'but.' Listen to the pitch on 'okay' for a dip-and-lift rather than a plain fall.",
-            "explanation": "The fall-rise on 'okay' signals hesitation. The speaker isn't fully satisfied, and the rising tail hints that a complaint is coming.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Curious"
+            "hint": "The refusal comes after a kind opening. How do the two halves differ?",
+            "explanation": "Warmth on 'love to' shows that the refusal is not personal. A flat delivery would sound cold.",
+            "pitchRule": "🤝 A warm opening softens the refusal that follows.",
+            "emotionContext": "Warm"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L143_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A colleague offers you an extra task, and you decline kindly.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The client signed the contract today.",
-            "textToSpeak": "The client signed the contract today.",
+            "word": "That's really kind of you, but I'll pass this time.",
+            "textToSpeak": "That's really kind of you, but I'll pass this time.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Warm lift on 'kind', gentle fall — soft refusal",
+                "Sharp fall on 'pass' — curt refusal"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Warm lift on 'kind', gentle fall — soft refusal",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
+                3,
                 1,
                 0
             ],
-            "hint": "This sentence gives one clear fact. Listen to the pitch on 'today.'",
-            "explanation": "This is a definite statement, so the pitch falls once at the end, on 'today.'",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Excited"
+            "hint": "You want to keep the relationship. Which delivery keeps things friendly?",
+            "explanation": "The gentle fall on 'time' softens the refusal and leaves the door open for next time. A sharp fall on 'pass' would sound abrupt.",
+            "pitchRule": "🤝 Gentle falls make refusals friendlier.",
+            "emotionContext": "Polite"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L143_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You need to cancel plans with a friend at the last minute.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "His idea is interesting, but it needs more detail.",
-            "textToSpeak": "His idea is interesting, but it needs more detail.",
+            "word": "I don't think I can make it, sorry.",
+            "textToSpeak": "I don't think I can make it, sorry.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Lowered, slower fall — apologetic refusal",
+                "Bright, quick fall — cheerful acceptance"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Lowered, slower fall — apologetic refusal",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
                 1,
-                0,
-                2
+                1,
+                0
             ],
-            "hint": "This sentence gives a mixed opinion using 'but.' Listen to the pitch on 'interesting' for a dip-and-lift.",
-            "explanation": "The fall-rise pattern on 'interesting' shows the praise is qualified. The speaker is holding back full approval.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Doubtful"
+            "hint": "You feel bad about canceling. Which delivery shows that?",
+            "explanation": "A lowered, slower fall shows that you regret the cancellation. A bright, quick fall would sound as if you did not care.",
+            "pitchRule": "🤝 Apology is lower and slower.",
+            "emotionContext": "Apologetic"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L144_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "You are hosting and want your neighbor to come.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This software update fixed the bug.",
-            "textToSpeak": "This software update fixed the bug.",
+            "word": "We're having a few people over on Saturday — you should come!",
+            "textToSpeak": "We're having a few people over on Saturday — you should come!",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Warm, high fall — inviting",
+                "Flat, low fall — merely informing"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Warm, high fall — inviting",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
-                2,
+                3,
+                4,
                 1,
                 0
             ],
-            "hint": "This sentence gives one clear, positive fact. Listen to the pitch on 'bug.'",
-            "explanation": "This is a definite statement with one falling pitch at the end, on 'bug.'",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Neutral"
+            "hint": "You really want them to come. Where does the warmth show?",
+            "explanation": "A high start and warm fall on 'come' sound like a real invitation. A flat delivery would sound like a notice.",
+            "pitchRule": "🎉 Invitations start high and end warm.",
+            "emotionContext": "Warm"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L144_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "You are opening the door to an invitation.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The design looks nice, but it's not very practical.",
-            "textToSpeak": "The design looks nice, but it's not very practical.",
+            "word": "Are you free on Friday evening?",
+            "textToSpeak": "Are you free on Friday evening?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Level rise — routine scheduling check",
+                "Bright rise — friendly invitation opener"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
+            "correctAnswer": "Bright rise — friendly invitation opener",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
                 1,
-                0,
-                2
+                2,
+                2,
+                4
             ],
-            "hint": "This sentence gives a mixed opinion using 'but.' Listen to the pitch on 'nice' for a dip-and-lift rather than a plain fall.",
-            "explanation": "The fall-rise on 'nice' signals reservation. The speaker likes one thing about it but is about to point out a problem.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Surprised"
+            "hint": "This question may lead to something nice. Which delivery hints at that?",
+            "explanation": "A bright, lifted rise makes the question sound like the start of an invitation. A level rise would sound like calendar admin.",
+            "pitchRule": "📈 A bright rise makes the question sound hopeful.",
+            "emotionContext": "Hopeful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L144_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You are trying to persuade a shy friend to join a hike.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "We hired the perfect candidate for this role.",
-            "textToSpeak": "We hired the perfect candidate for this role.",
+            "word": "Come along, it'll be fun.",
+            "textToSpeak": "Come along, it'll be fun.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Light, lifted fall — encouraging",
+                "Heavy, low fall — ordering"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Light, lifted fall — encouraging",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
+                3,
                 1,
                 0
             ],
-            "hint": "This sentence gives one clear, confident opinion. Listen to the pitch on 'role.'",
-            "explanation": "This is a definite statement, so the pitch falls once at the end, on 'role,' with no hesitation.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Determined"
+            "hint": "You want your friend to feel welcome, not pushed. Listen to the weight of the fall.",
+            "explanation": "A light, lifted fall makes the invitation feel easy. A heavy, low fall would sound like an order.",
+            "pitchRule": "🎉 A light fall makes a suggestion feel friendly.",
+            "emotionContext": "Encouraging"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L145_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "You see a coworker about to step on a wet floor.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The proposal sounds reasonable, but it's quite expensive.",
-            "textToSpeak": "The proposal sounds reasonable, but it's quite expensive.",
+            "word": "Watch out, the floor's wet.",
+            "textToSpeak": "Watch out, the floor's wet.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Gentle, rising — friendly suggestion",
+                "High start, sharp fall — urgent warning"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
+            "correctAnswer": "High start, sharp fall — urgent warning",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
+                3,
                 1,
                 0,
-                2
+                0
             ],
-            "hint": "This sentence gives a mixed opinion using 'but.' Listen to the pitch on 'reasonable' for a dip-and-lift.",
-            "explanation": "The fall-rise pattern on 'reasonable' shows the speaker's approval is qualified, hinting at a concern still to come.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Curious"
+            "hint": "The danger is immediate. Which delivery shows urgency?",
+            "explanation": "A high start and a sharp fall make the warning impossible to miss. A gentle rise would sound like small talk.",
+            "pitchRule": "⚠️ Urgent warnings start high and drop fast.",
+            "emotionContext": "Urgent"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L145_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A colleague is about to email a client without checking.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The deadline was met without any issues.",
-            "textToSpeak": "The deadline was met without any issues.",
+            "word": "You might want to double-check that before you send it.",
+            "textToSpeak": "You might want to double-check that before you send it.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "High, sharp fall on 'send' — urgent alarm about it",
+                "Stress on 'double-check', mild fall — friendly caution"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Stress on 'double-check', mild fall — friendly caution",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
-                2,
+                4,
                 1,
                 0
             ],
-            "hint": "This sentence gives one clear fact. Listen to the pitch on 'issues.'",
-            "explanation": "This is a definite statement with one falling pitch at the end, on 'issues.'",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Excited"
+            "hint": "There is no danger, only a possible mistake. Which delivery matches the level of risk?",
+            "explanation": "The stress on 'double-check' signals care, and the mild fall keeps the mood friendly. A sharp alarm would be an overreaction.",
+            "pitchRule": "⚠️ A mild warning stresses the verb and stays calm.",
+            "emotionContext": "Cautious"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L145_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend is about to open a suspicious package.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Her work is solid, but it lacks creativity.",
-            "textToSpeak": "Her work is solid, but it lacks creativity.",
+            "word": "I wouldn't touch that if I were you.",
+            "textToSpeak": "I wouldn't touch that if I were you.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Bright, rising — playful teasing",
+                "Low, firm fall — serious warning"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
+            "correctAnswer": "Low, firm fall — serious warning",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
                 1,
                 0,
-                2
+                0
             ],
-            "hint": "This sentence gives a mixed opinion using 'but.' Listen to the pitch on 'solid' for a dip-and-lift rather than a plain fall.",
-            "explanation": "The fall-rise on 'solid' signals hesitation. The speaker is holding back full praise before adding a criticism.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Doubtful"
+            "hint": "You are serious. Listen to the pitch height.",
+            "explanation": "A lower, firm fall signals seriousness and authority. A bright rise would turn it into a joke.",
+            "pitchRule": "⚠️ Serious warnings are lower and firmer.",
+            "emotionContext": "Serious"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L146_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "Your friend is about to start a big exam.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The budget was approved this morning.",
-            "textToSpeak": "The budget was approved this morning.",
+            "word": "You've got this.",
+            "textToSpeak": "You've got this.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Warm, steady fall — encouraging",
+                "Flat, quick fall — indifferent"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Warm, steady fall — encouraging",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
@@ -382,346 +382,346 @@
                 1,
                 0
             ],
-            "hint": "This sentence gives one clear fact. Listen to the pitch on 'morning.'",
-            "explanation": "This is a definite statement, so the pitch falls once at the end, on 'morning.'",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Neutral"
+            "hint": "You want to boost their confidence. Which delivery sounds supportive?",
+            "explanation": "A warm, steady fall makes the words sound sincere. A flat, quick delivery would sound like a brush-off.",
+            "pitchRule": "💪 Encouragement is warm and steady.",
+            "emotionContext": "Encouraging"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L146_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A teammate is tempted to quit the last kilometer.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The plan makes sense, but the timing feels wrong.",
-            "textToSpeak": "The plan makes sense, but the timing feels wrong.",
+            "word": "Don't give up now, you're so close.",
+            "textToSpeak": "Don't give up now, you're so close.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Level on 'so', flat ending — resigned acceptance",
+                "Lifted on 'so', warm fall — urgent encouragement"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
+            "correctAnswer": "Lifted on 'so', warm fall — urgent encouragement",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
+                4,
                 1,
-                0,
-                2
+                0
             ],
-            "hint": "This sentence gives a mixed opinion using 'but.' Listen to the pitch on 'sense' for a dip-and-lift.",
-            "explanation": "The fall-rise pattern on 'sense' shows the speaker's agreement is incomplete, signaling a concern is coming.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Surprised"
+            "hint": "The finish line is near. Which word carries the push?",
+            "explanation": "A lift on 'so' adds energy to the sentence, and the warm fall makes it supportive. A level delivery would sound resigned.",
+            "pitchRule": "💪 Energy on 'so' urges a friend forward.",
+            "emotionContext": "Encouraging"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L146_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "A colleague nervously shows you her first attempt at a presentation.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Our new office opens next month.",
-            "textToSpeak": "Our new office opens next month.",
+            "word": "That was a great first attempt, honestly.",
+            "textToSpeak": "That was a great first attempt, honestly.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Warm rise-fall on 'great' — genuine praise",
+                "Level, low on 'first attempt' — faint praise"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Warm rise-fall on 'great' — genuine praise",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
-                2,
                 1,
+                3,
+                4,
                 0
             ],
-            "hint": "This sentence gives one clear fact. Listen to the pitch on 'month.'",
-            "explanation": "This is a definite statement with one falling pitch at the end, on 'month.'",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Determined"
+            "hint": "The word 'honestly' signals sincerity. Where is the warmth?",
+            "explanation": "A peak on 'great' shows that you mean it. A low delivery on 'first attempt' would suggest 'but it needs a lot of work'.",
+            "pitchRule": "💪 Real praise puts the peak on the praising word.",
+            "emotionContext": "Supportive"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L147_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend spells a name wrong in a message.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The product works well, but it's not perfect yet.",
-            "textToSpeak": "The product works well, but it's not perfect yet.",
+            "word": "Actually, I think it's spelled with two Ls.",
+            "textToSpeak": "Actually, I think it's spelled with two Ls.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Light lift on 'actually', firm on 'two' — gentle correction",
+                "Sharp fall on 'actually' and 'two' — blunt correction"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Light lift on 'actually', firm on 'two' — gentle correction",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                1,
-                0,
-                2
+                3,
+                4,
+                0
             ],
-            "hint": "This sentence gives a mixed opinion using 'but.' Listen to the pitch on 'well' for a dip-and-lift rather than a plain fall.",
-            "explanation": "The fall-rise on 'well' signals reservation. The speaker is hedging before mentioning a flaw.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Curious"
+            "hint": "You want to correct without embarrassing. Which delivery sounds gentle?",
+            "explanation": "A light lift on 'actually' softens the correction, and firm stress on 'two' points to the fix. A sharp fall throughout would sound blunt.",
+            "pitchRule": "🤝 A light opener and stress on the fix make a friendly correction.",
+            "emotionContext": "Tactful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L147_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A colleague points at the wrong document.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The merger was finalized last week.",
-            "textToSpeak": "The merger was finalized last week.",
+            "word": "Sorry, I think you mean the second one.",
+            "textToSpeak": "Sorry, I think you mean the second one.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Lift on 'sorry', fall on 'one' — polite redirection",
+                "Fall on 'sorry', flat to the end — impatient"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Lift on 'sorry', fall on 'one' — polite redirection",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
+                3,
                 1,
                 0
             ],
-            "hint": "This sentence gives one clear fact. Listen to the pitch on 'week.'",
-            "explanation": "This is a definite statement, so the pitch falls once at the end, on 'week.'",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Excited"
+            "hint": "You need to redirect without hurting feelings. Where does the softness sit?",
+            "explanation": "A lift on 'sorry' shows respect, and the fall on 'one' makes the redirection clear. An impatient delivery would show irritation.",
+            "pitchRule": "🤝 A lifted 'sorry' cushions the correction.",
+            "emotionContext": "Polite"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L147_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "A junior colleague nearly has the right answer.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The training was useful, but a bit too short.",
-            "textToSpeak": "The training was useful, but a bit too short.",
+            "word": "That's not quite right, but you're close.",
+            "textToSpeak": "That's not quite right, but you're close.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Flat fall on 'right' and 'close' — discouraging tone",
+                "Stress on 'quite', warm fall on 'close' — encouraging correction"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
+            "correctAnswer": "Stress on 'quite', warm fall on 'close' — encouraging correction",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
+                3,
                 1,
-                0,
-                2
+                0
             ],
-            "hint": "This sentence gives a mixed opinion using 'but.' Listen to the pitch on 'useful' for a dip-and-lift.",
-            "explanation": "The fall-rise pattern on 'useful' shows the speaker's praise is qualified, hinting at a complaint still to come.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Doubtful"
+            "hint": "You correct and encourage in one sentence. Which part receives the warmth?",
+            "explanation": "The stress on 'quite' points to the gap, and the warm fall on 'close' shows encouragement. A flat delivery would discourage.",
+            "pitchRule": "🤝💪 Correct the gap, then warm the ending.",
+            "emotionContext": "Encouraging"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L148_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend is blaming himself for a failed project.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The CEO announced record profits.",
-            "textToSpeak": "The CEO announced record profits.",
+            "word": "It's not your fault.",
+            "textToSpeak": "It's not your fault.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Bright rise — surprised",
+                "Low, slow fall — comforting"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Low, slow fall — comforting",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
-                2,
                 1,
+                0,
                 0
             ],
-            "hint": "This sentence gives one clear, positive fact. Listen to the pitch on 'profits.'",
-            "explanation": "This is a definite statement with one falling pitch at the end, on 'profits.'",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Neutral"
+            "hint": "He needs comfort. Which delivery is calm and slow?",
+            "explanation": "A low, slow fall makes the sentence sound steady and sincere. A bright rise would sound surprised or questioning.",
+            "pitchRule": "💛 Comfort is low, slow and falling.",
+            "emotionContext": "Reassuring"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L148_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "Your colleague is overwhelmed by a new project.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This strategy could work, but it carries some risk.",
-            "textToSpeak": "This strategy could work, but it carries some risk.",
+            "word": "We'll figure it out together.",
+            "textToSpeak": "We'll figure it out together.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Warm fall — supportive",
+                "Flat fall — routine"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Warm fall — supportive",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
+                2,
                 1,
-                0,
-                2
+                0
             ],
-            "hint": "This sentence gives a mixed opinion using 'but.' Listen to the pitch on 'work' for a dip-and-lift rather than a plain fall.",
-            "explanation": "The fall-rise on 'work' signals hesitation. The speaker isn't fully confident and is about to add a caution.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Surprised"
+            "hint": "You want your colleague to feel supported. Which delivery is warm?",
+            "explanation": "A warm fall on 'together' shows that you mean it. A flat delivery would sound like a cliché.",
+            "pitchRule": "💛 A warm fall on 'together' signals support.",
+            "emotionContext": "Supportive"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L148_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend is anxious about a hospital visit.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The conference attracted record attendance.",
-            "textToSpeak": "The conference attracted record attendance.",
+            "word": "Take all the time you need.",
+            "textToSpeak": "Take all the time you need.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Quick, sharp fall — impatient",
+                "Slow, gentle fall — patient"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Slow, gentle fall — patient",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
                 2,
                 1,
                 0
             ],
-            "hint": "This sentence gives one clear fact. Listen to the pitch on 'attendance.'",
-            "explanation": "This is a definite statement, so the pitch falls once at the end, on 'attendance.'",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Determined"
+            "hint": "The friend needs space. Which pace suits the message?",
+            "explanation": "A slower pace and gentle fall show patience. A quick, sharp delivery would suggest you were in a hurry.",
+            "pitchRule": "💛 Patience is slow and gentle.",
+            "emotionContext": "Patient"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L149_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "You are giving careful advice on a business proposal.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The candidate did well, but lacked real experience.",
-            "textToSpeak": "The candidate did well, but lacked real experience.",
+            "word": "It could be a good idea, but I'd want to see the numbers.",
+            "textToSpeak": "It could be a good idea, but I'd want to see the numbers.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Firm fall on 'idea' and 'numbers' — definite rejection",
+                "Slight lift on 'idea', firm fall on 'numbers' — cautious"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
+            "correctAnswer": "Slight lift on 'idea', firm fall on 'numbers' — cautious",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
+                3,
                 1,
-                0,
-                2
+                0
             ],
-            "hint": "This sentence gives a mixed opinion using 'but.' Listen to the pitch on 'well' for a dip-and-lift.",
-            "explanation": "The fall-rise pattern on 'well' shows the speaker's praise is incomplete, signaling a concern about experience.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Curious"
+            "hint": "You aren't saying no, and you aren't saying yes. How do the two halves relate?",
+            "explanation": "The first half lifts because a condition follows, and the firm fall on 'numbers' shows what you need. It sounds cautious, not negative.",
+            "pitchRule": "🤝 Cautious advice lifts on the opening and firms up on the condition.",
+            "emotionContext": "Cautious"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L149_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend asks whether to accept a job offer.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "We completed the audit without any problems.",
-            "textToSpeak": "We completed the audit without any problems.",
+            "word": "I'd probably wait, but it's your call.",
+            "textToSpeak": "I'd probably wait, but it's your call.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Lift on 'wait', gentle fall on 'call' — advice, then respect",
+                "Firm fall on 'wait' and 'call' — an order to obey"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Lift on 'wait', gentle fall on 'call' — advice, then respect",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
+                3,
                 1,
                 0
             ],
-            "hint": "This sentence gives one clear fact. Listen to the pitch on 'problems.'",
-            "explanation": "This is a definite statement with one falling pitch at the end, on 'problems.'",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Excited"
+            "hint": "You offer an opinion but leave the decision to your friend. Where does the voice soften?",
+            "explanation": "The lift on 'wait' shows that your advice is not the last word, and the gentle fall on 'call' hands the decision back. Two firm falls would sound like an order.",
+            "pitchRule": "🤝 Advice plus respect uses a lift and a gentle fall.",
+            "emotionContext": "Supportive"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L149_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "A colleague asks which of two ideas you prefer, and you are undecided.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The office renovation looks great, but it ran over budget.",
-            "textToSpeak": "The office renovation looks great, but it ran over budget.",
+            "word": "Honestly, I could go either way.",
+            "textToSpeak": "Honestly, I could go either way.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "High, wide fall — decided",
+                "Level, slow, small drop — undecided"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
+            "correctAnswer": "Level, slow, small drop — undecided",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
+                2,
                 1,
-                0,
-                2
+                1
             ],
-            "hint": "This sentence gives a mixed opinion using 'but.' Listen to the pitch on 'great' for a dip-and-lift rather than a plain fall.",
-            "explanation": "The fall-rise on 'great' signals reservation. The speaker likes the result but is about to mention a downside.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Doubtful"
+            "hint": "You haven't chosen. Listen to how little the pitch moves.",
+            "explanation": "A slow, level delivery with a small drop shows that no option stands out. A high, wide fall would show a decision.",
+            "pitchRule": "🕒 Being undecided keeps the pitch level.",
+            "emotionContext": "Noncommittal"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L150_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend asks you to join a spontaneous trip, and you can't.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The negotiation ended successfully today.",
-            "textToSpeak": "The negotiation ended successfully today.",
+            "word": "I'd love to, but I can't get the time off.",
+            "textToSpeak": "I'd love to, but I can't get the time off.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Flat on 'love to' and on 'off' — cold refusal",
+                "Lift on 'love to', lower fall on 'off' — warm refusal"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                2,
-                2,
-                1,
-                0
-            ],
-            "hint": "This sentence gives one clear, positive fact. Listen to the pitch on 'today.'",
-            "explanation": "This is a definite statement with no hedging, so the pitch falls just once at the end, on 'today.'",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Neutral"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L150_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "The feedback was mostly positive, but a few concerns remain.",
-            "textToSpeak": "The feedback was mostly positive, but a few concerns remain.",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
-            ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
+            "correctAnswer": "Lift on 'love to', lower fall on 'off' — warm refusal",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
+                3,
                 1,
-                0,
-                2
+                0
             ],
-            "hint": "This sentence gives a mixed opinion using 'but.' Listen to the pitch on 'positive' for a dip-and-lift.",
-            "explanation": "The fall-rise pattern on 'positive' shows the speaker's praise is qualified, hinting at remaining concerns.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Surprised"
+            "hint": "Recall how refusals are softened. Which delivery is kind?",
+            "explanation": "Warmth in the first half and a gentler fall in the second make the refusal feel considerate. A flat delivery would sound cold.",
+            "pitchRule": "🤝 Soften a refusal by starting warm.",
+            "emotionContext": "Warm"
         },
         {
-            "id": "ACC_INTONATIONMIMIC_L150_Q3",
-            "instruction": "Identify the intonation",
+            "id": "ACC_INTONATIONMIMIC_L150_Q2",
+            "instruction": "A colleague is about to click 'send' on an email with a mistake.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This quarter's results exceeded our expectations.",
-            "textToSpeak": "This quarter's results exceeded our expectations.",
+            "word": "Hang on, I think there's an error in that.",
+            "textToSpeak": "Hang on, I think there's an error in that.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "High start, quick fall — urgent but friendly",
+                "Low, flat fall with no urgency — bored tone"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "High start, quick fall — urgent but friendly",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
+                3,
                 2,
                 1,
                 0
             ],
-            "hint": "This sentence gives one clear, confident fact. Listen to the pitch on 'expectations.'",
-            "explanation": "This is a definite statement with one falling pitch at the end, on 'expectations,' completing this tier's practice with fall-rise hedging.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Determined"
+            "hint": "You need to stop them quickly, without alarming them. Which delivery does both?",
+            "explanation": "A high start gets attention, and a quick fall keeps the tone light. A low, flat delivery would be ignored.",
+            "pitchRule": "⚠️ An urgent, friendly warning starts high and falls quickly.",
+            "emotionContext": "Urgent"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L150_Q3",
+            "instruction": "A friend has just finished a difficult training session.",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "Look at you, that was seriously impressive.",
+            "textToSpeak": "Look at you, that was seriously impressive.",
+            "options": [
+                "Wide rise-fall on 'seriously' — genuine admiration",
+                "Narrow, quick fall on 'seriously' — polite nod"
+            ],
+            "correctAnswer": "Wide rise-fall on 'seriously' — genuine admiration",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                1,
+                3,
+                4,
+                0
+            ],
+            "hint": "You are amazed. Where does the emotion sit?",
+            "explanation": "A wide peak on 'seriously' shows that you mean it. A narrow fall would sound polite but distant.",
+            "pitchRule": "💪 Admiration puts a wide peak on the intensifier.",
+            "emotionContext": "Impressed"
         }
     ]
 }

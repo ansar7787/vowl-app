@@ -5,512 +5,512 @@
     "quests": [
         {
             "id": "sva_l51_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Nothing ___ ever easy at the start of a new project.",
-            "hint": "'Nothing' is singular - use the singular form of 'be'.",
-            "explanation": "'Nothing' is a singular indefinite pronoun. 'Nothing is ever easy' - the verb is always singular with 'nothing'.",
+            "question": "Everyone in the office ___ excited about the new project.",
+            "hint": "'Everyone' refers to a whole group, but grammatically it's treated as one unit - singular.",
+            "explanation": "'Everyone' always takes a singular verb, even though it refers to many people at once. The verb here is 'is'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "'Everyone' / 'everybody' takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l51_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Everything on these shelves ___ half price today.",
-            "hint": "'Everything' is singular - even though it refers to many items.",
-            "explanation": "'Everything' is always singular, regardless of how many items it refers to. 'Everything is half price' - not 'are'.",
+            "question": "Everybody at the reunion ___ ready for the group photo.",
+            "hint": "Don't let the size of the reunion fool you - 'everybody' is still singular.",
+            "explanation": "'Everybody' is singular, so the verb takes -s: 'seems'.",
             "options": [
-                "are",
-                "is"
+                "seem",
+                "seems"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "seems",
+            "grammarRule": "'Everyone' / 'everybody' takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l51_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Few people ___ that this problem has an easy solution.",
-            "hint": "'Few people' is plural - use the base form of the verb.",
-            "explanation": "'Few people' is plural. 'Few' indicates a small number and takes a plural verb: 'few people believe'.",
-            "options": [
-                "believe",
-                "believes"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "believe",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l52_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Many a student ___ struggled with this concept.",
-            "hint": "'Many a' is followed by a singular noun and takes a singular verb.",
-            "explanation": "'Many a' is a fixed formal expression followed by a singular noun. Despite the meaning of 'many', the verb is always singular: 'many a student has struggled'.",
+            "question": "Everyone on the team ___ a role to play in the presentation.",
+            "hint": "Even though a whole team is involved, 'everyone' is still one grammatical unit.",
+            "explanation": "'Everyone' is singular, so the verb takes -s: 'has'.",
             "options": [
                 "have",
                 "has"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "'Everyone' / 'everybody' takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l52_q1",
+            "instruction": "CHOOSE THE CORRECT VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Someone in this building ___ left the lights on again.",
+            "hint": "'Someone' points to one unspecified person - always singular.",
+            "explanation": "'Someone' is singular, so the verb takes -s: 'has'.",
+            "options": [
+                "have",
+                "has"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "has",
+            "grammarRule": "'Someone' / 'somebody' takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l52_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "A great many students ___ signed up for the new course.",
-            "hint": "'A great many students' is plural - 'students' controls the verb.",
-            "explanation": "'A great many' is always followed by a plural noun and takes a plural verb: 'a great many students have signed up'.",
+            "question": "Somebody at the front desk ___ always available to help you.",
+            "hint": "'Somebody' works exactly like 'someone' for agreement purposes.",
+            "explanation": "'Somebody' is singular, so the verb takes -s: 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "'Someone' / 'somebody' takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l52_q3",
+            "instruction": "CHOOSE THE CORRECT VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Someone from HR ___ these forms every Friday.",
+            "hint": "Focus on 'someone', not the department name that follows it.",
+            "explanation": "'Someone' is the singular subject; 'from HR' just describes which person. The verb takes -s: 'reviews'.",
+            "options": [
+                "review",
+                "reviews"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "reviews",
+            "grammarRule": "'Someone' / 'somebody' takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l53_q1",
+            "instruction": "CHOOSE THE CORRECT VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Anybody who arrives late ___ to wait outside.",
+            "hint": "'Anybody' behaves just like 'someone' and 'everyone' - always singular.",
+            "explanation": "'Anybody' is singular, so the verb takes -s: 'has'.",
+            "options": [
+                "have",
+                "has"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "has",
+            "grammarRule": "'Anyone' / 'anybody' takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l53_q2",
+            "instruction": "CHOOSE THE CORRECT VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Anyone with a valid ticket ___ allowed inside.",
+            "hint": "The phrase 'with a valid ticket' describes 'anyone' - it doesn't change its number.",
+            "explanation": "'Anyone' is singular, so the verb is 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "'Anyone' / 'anybody' takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l53_q3",
+            "instruction": "CHOOSE THE CORRECT VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Does anybody here ___ the answer to this question?",
+            "hint": "Remember: after 'does', the main verb goes back to its base form.",
+            "explanation": "'Anybody' is singular, which is why the question uses 'does'. Since 'does' already shows the agreement, the main verb stays in its base form: 'know', not 'knows'.",
+            "options": [
+                "knows",
+                "know"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "know",
+            "grammarRule": "'Anyone' / 'anybody' takes a singular verb, and the base form follows 'does'",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l54_q1",
+            "instruction": "CHOOSE THE CORRECT VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "No one in the meeting ___ the final decision.",
+            "hint": "'No one' means 'not a single person' - that's a singular idea.",
+            "explanation": "'No one' is singular, so the verb takes -s: 'remembers'.",
+            "options": [
+                "remember",
+                "remembers"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "remembers",
+            "grammarRule": "'No one' / 'nobody' takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l54_q2",
+            "instruction": "CHOOSE THE CORRECT VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Nobody on this street ___ what happened last night.",
+            "hint": "'Nobody' works the same way as 'no one' for agreement.",
+            "explanation": "'Nobody' is singular, so the verb takes -s: 'knows'.",
+            "options": [
+                "know",
+                "knows"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "knows",
+            "grammarRule": "'No one' / 'nobody' takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l54_q3",
+            "instruction": "CHOOSE THE CORRECT VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "No one ___ perfect, but we can still improve.",
+            "hint": "Even standing alone, 'no one' is still grammatically singular.",
+            "explanation": "'No one' is singular, so the verb is 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "'No one' / 'nobody' takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l55_q1",
+            "instruction": "CHOOSE THE CORRECT VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Something about this contract ___ suspicious to me.",
+            "hint": "'Something' refers to one unspecified thing - always singular.",
+            "explanation": "'Something' is singular, so the verb takes -s: 'seems'.",
+            "options": [
+                "seem",
+                "seems"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "seems",
+            "grammarRule": "'Something' / 'everything' / 'nothing' takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l55_q2",
+            "instruction": "CHOOSE THE CORRECT VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Everything in these boxes ___ fragile.",
+            "hint": "Even though the boxes contain many items, 'everything' is still one grammatical unit.",
+            "explanation": "'Everything' is singular, so the verb is 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "'Something' / 'everything' / 'nothing' takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l55_q3",
+            "instruction": "CHOOSE THE CORRECT VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Nothing on the menu ___ my dietary restrictions.",
+            "hint": "'Nothing' rules out every option, but it's still a singular subject.",
+            "explanation": "'Nothing' is singular, so the verb takes -s: 'fits'.",
+            "options": [
+                "fit",
+                "fits"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "fits",
+            "grammarRule": "'Something' / 'everything' / 'nothing' takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l56_q1",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Much of the information ___ classified.",
+            "hint": "'Much' describes an uncountable amount, so treat it as singular, just like 'water' or 'information'.",
+            "explanation": "'Much of the information' is singular because 'much' refers to an uncountable amount. The verb takes -s: 'remains'.",
+            "options": [
+                "remain",
+                "remains"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "remains",
+            "grammarRule": "'Much' (uncountable amount) takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l56_q2",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Much of the equipment in this lab ___ replacement.",
+            "hint": "'Much' pairs with things you can't count individually, like 'equipment' - keep the verb singular.",
+            "explanation": "'Much of the equipment' is singular, so the verb takes -s: 'needs'.",
+            "options": [
+                "need",
+                "needs"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "needs",
+            "grammarRule": "'Much' (uncountable amount) takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l56_q3",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Much of what she said ___ sense to me.",
+            "hint": "'What she said' isn't a list of countable items, so 'much' here stays singular.",
+            "explanation": "'Much of what she said' is treated as singular, so the verb takes -s: 'makes'.",
+            "options": [
+                "makes",
+                "make"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "makes",
+            "grammarRule": "'Much' (uncountable amount) takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l57_q1",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Little of the original building ___ after the fire.",
+            "hint": "'Little' works like 'much' - it's used with uncountable ideas and takes a singular verb.",
+            "explanation": "'Little of the original building' is singular, so the verb takes -s: 'remains'.",
+            "options": [
+                "remains",
+                "remain"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "remains",
+            "grammarRule": "'Little' (uncountable amount) takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l57_q2",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Little of his advice ___ practical in the real world.",
+            "hint": "'Advice' can't be counted individually, so 'little' here is singular.",
+            "explanation": "'Little of his advice' is singular, so the verb takes -s: 'seems'.",
+            "options": [
+                "seem",
+                "seems"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "seems",
+            "grammarRule": "'Little' (uncountable amount) takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l57_q3",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Little of the data collected so far ___ conclusive.",
+            "hint": "Even with a long description of the data, 'little' still takes a singular verb.",
+            "explanation": "'Little of the data' is singular, so the verb takes -s: 'looks'.",
+            "options": [
+                "look",
+                "looks"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "looks",
+            "grammarRule": "'Little' (uncountable amount) takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l58_q1",
+            "instruction": "SPOT THE CONTRAST",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Few of the applicants ___ the required experience.",
+            "hint": "Compare 'few' with 'little' from the last level - 'few' is used with countable things and is plural.",
+            "explanation": "'Few' is used with countable nouns like 'applicants', and it takes a plural verb: 'have'.",
             "options": [
                 "have",
                 "has"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "have",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l52_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Each student in the class ___ a copy of the textbook.",
-            "hint": "'Each student' is singular - 'each' always makes the subject singular.",
-            "explanation": "'Each' always takes a singular verb, no matter how many students there are. 'Each student has a copy' - not 'have'.",
-            "options": [
-                "have",
-                "has"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l53_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Either of these routes ___ you to the city centre.",
-            "hint": "'Either' as a subject pronoun is singular.",
-            "explanation": "When 'either' stands alone as a subject (not part of 'either…or'), it is singular and takes a singular verb: 'either takes'.",
-            "options": [
-                "takes",
-                "take"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "takes",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l53_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Neither of the reports ___ complete.",
-            "hint": "'Neither' as a subject pronoun is singular.",
-            "explanation": "When 'neither' stands alone as a subject, it is singular and takes a singular verb: 'neither of the reports is complete'.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l53_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "A lot of effort ___ needed to master a language.",
-            "hint": "'A lot of effort' - 'effort' is uncountable, so the verb is singular.",
-            "explanation": "'Effort' is uncountable. When 'a lot of' precedes an uncountable noun, the verb is singular: 'a lot of effort is needed'.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l54_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "A lot of students ___ struggling with the new curriculum.",
-            "hint": "'A lot of students' - 'students' is plural, so the verb is plural.",
-            "explanation": "When 'a lot of' precedes a countable plural noun, the verb is plural: 'a lot of students are struggling'.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l54_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Plenty of time ___ still available before the deadline.",
-            "hint": "'Plenty of time' - 'time' is uncountable, so the verb is singular.",
-            "explanation": "When 'plenty of' precedes an uncountable noun like 'time', the verb is singular: 'plenty of time is available'.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l54_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Plenty of seats ___ still available for tonight's show.",
-            "hint": "'Plenty of seats' - 'seats' is countable and plural, so the verb is plural.",
-            "explanation": "When 'plenty of' precedes a countable plural noun like 'seats', the verb is plural: 'plenty of seats are available'.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l55_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "More than one student ___ failed to complete the assignment.",
-            "hint": "'More than one' always takes a singular verb.",
-            "explanation": "'More than one', despite meaning several, always takes a singular verb. 'More than one student has failed' - this is a fixed grammatical convention.",
-            "options": [
-                "has",
-                "have"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l55_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The number of complaints ___ increased significantly.",
-            "hint": "The phrase 'the number of' is singular - it counts as one thing.",
-            "explanation": "Remember: 'the number of' is singular (it describes one total), while 'a number of' is plural (meaning 'several'). 'The number of complaints has increased'.",
-            "options": [
-                "have",
-                "has"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l55_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "A number of issues ___ raised during the meeting.",
-            "hint": "'A number of' means 'several' and takes a plural verb.",
-            "explanation": "'A number of' means 'several' and always takes a plural verb. 'A number of issues were raised' - not 'was raised'.",
-            "options": [
-                "were",
-                "was"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l56_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The rest of the money ___ donated to charity.",
-            "hint": "'The rest of the money' - 'money' is uncountable, so the verb is singular.",
-            "explanation": "'Money' is uncountable. 'The rest of the money was donated' - the verb is singular because the noun is uncountable.",
-            "options": [
-                "were",
-                "was"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l56_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The rest of the staff ___ offered voluntary redundancy.",
-            "hint": "'The rest of the staff' (individuals) is plural here - plural verb.",
-            "explanation": "Here, 'the rest of the staff' refers to the individual employees, not the group as a unit. 'Staff members were offered' - plural verb for plural individuals.",
-            "options": [
-                "were",
-                "was"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l56_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Much of the damage ___ already repaired.",
-            "hint": "'Much of the damage' - 'damage' is uncountable, so the verb is singular.",
-            "explanation": "'Damage' is uncountable. 'Much of the damage was repaired' - uncountable nouns take singular verbs, even with 'much of'.",
-            "options": [
-                "were",
-                "was"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l57_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Much of what he said ___ true.",
-            "hint": "'Much of what he said' is a singular noun phrase - singular verb.",
-            "explanation": "The subject here is 'much of what he said', which functions as a singular noun phrase. It takes a singular verb: 'was true'.",
-            "options": [
-                "was",
-                "were"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l57_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Many of the recommendations ___ accepted.",
-            "hint": "'Many of the recommendations' - 'recommendations' is plural, so the verb is plural.",
-            "explanation": "'Many of' followed by a plural noun takes a plural verb. 'Many of the recommendations were accepted'.",
-            "options": [
-                "was",
-                "were"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l57_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Few of the options ___ realistic given our budget.",
-            "hint": "'Few of the options' - 'options' is plural, and 'few' is also plural.",
-            "explanation": "'Few' refers to a small plural number. 'Few of the options are realistic' - plural noun and plural indefinite pronoun both signal a plural verb.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l58_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Not one of the solutions ___ adequate.",
-            "hint": "'Not one' is singular - it picks out a single item from a group.",
-            "explanation": "'Not one' acts like 'none' in singular usage. 'Not one of the solutions is adequate' - the verb is singular.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "grammarRule": "'Few' (countable amount) takes a plural verb",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l58_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CONTRAST",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Somebody in the audience ___ shouting.",
-            "hint": "'Somebody' is singular - even in an audience of thousands.",
-            "explanation": "'Somebody' is always singular. 'Somebody was shouting' - the verb is singular even though there may be many people in the audience.",
+            "question": "Few of his friends ___ where he moved.",
+            "hint": "'Friends' can be counted one by one, which is why 'few' here is plural.",
+            "explanation": "'Few of his friends' is plural, so the verb stays in the base form: 'know'.",
             "options": [
-                "was",
-                "were"
+                "know",
+                "knows"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswer": "know",
+            "grammarRule": "'Few' (countable amount) takes a plural verb",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l58_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CONTRAST",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Everyone except the late arrivals ___ seated.",
-            "hint": "'Everyone' is the subject - it is always singular.",
-            "explanation": "The subject is 'everyone', which is always singular. The phrase 'except the late arrivals' does not change the subject. 'Everyone was seated'.",
-            "options": [
-                "were",
-                "was"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l59_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Either of the two doctors ___ available to see you.",
-            "hint": "'Either of' as a subject is singular - it refers to one at a time.",
-            "explanation": "'Either of' followed by a plural noun is still singular in standard English. 'Either of the two doctors is available' - not 'are'.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l59_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Neither of the medications ___ working effectively.",
-            "hint": "'Neither of' as a subject is singular in formal English.",
-            "explanation": "'Neither of' followed by a plural noun is treated as singular in formal English. 'Neither of the medications is working'.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l59_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Both of the candidates ___ well prepared.",
-            "hint": "'Both of' is always plural - 'both' refers to two things together.",
-            "explanation": "'Both of' is always plural. 'Both of the candidates are well prepared' - unlike 'either' and 'neither', 'both' always takes a plural verb.",
+            "question": "Few of the tickets ___ still available.",
+            "hint": "Tickets are countable items, so 'few' takes the plural verb form here.",
+            "explanation": "'Few of the tickets' is plural, so the verb is 'are'.",
             "options": [
                 "are",
                 "is"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "grammarRule": "'Few' (countable amount) takes a plural verb",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l59_q1",
+            "instruction": "SPOT THE CONTRAST",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Several of the employees ___ requested remote work options.",
+            "hint": "'Several' is always used with countable nouns and takes a plural verb.",
+            "explanation": "'Several of the employees' is plural, so the verb is 'have'.",
+            "options": [
+                "have",
+                "has"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "have",
+            "grammarRule": "'Several' / 'many' takes a plural verb",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l59_q2",
+            "instruction": "SPOT THE CONTRAST",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Many of the reviews ___ overwhelmingly positive.",
+            "hint": "'Many' behaves just like 'several' for agreement - both are plural.",
+            "explanation": "'Many of the reviews' is plural, so the verb is 'are'.",
+            "options": [
+                "are",
+                "is"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "are",
+            "grammarRule": "'Several' / 'many' takes a plural verb",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l59_q3",
+            "instruction": "SPOT THE CONTRAST",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Several of the paintings ___ from the same collection.",
+            "hint": "Paintings can be counted individually, so 'several' takes the plural verb form.",
+            "explanation": "'Several of the paintings' is plural, so the verb stays in the base form: 'come'.",
+            "options": [
+                "come",
+                "comes"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "come",
+            "grammarRule": "'Several' / 'many' takes a plural verb",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l60_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Enough food ___ prepared for the whole group.",
-            "hint": "'Food' is uncountable - singular verb with 'enough'.",
-            "explanation": "'Food' is uncountable, so 'enough food was prepared' is correct. Uncountable nouns take singular verbs regardless of the quantity word before them.",
+            "question": "Everyone at the conference ___ a badge for security.",
+            "hint": "Bring back the key trap from this stage: 'everyone' sounds like a crowd, but it's grammatically singular.",
+            "explanation": "'Everyone' is singular, so the verb takes -s: 'wears', even though it refers to a whole conference of people.",
             "options": [
-                "were",
-                "was"
+                "wears",
+                "wear"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "wears",
+            "grammarRule": "'Everyone' / 'everybody' takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l60_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Enough chairs ___ arranged for all the guests.",
-            "hint": "'Chairs' is countable and plural - plural verb with 'enough'.",
-            "explanation": "'Chairs' is a countable plural noun, so 'enough chairs were arranged' is correct. Plural countable nouns take plural verbs.",
+            "question": "Few of the guests ___ interested in staying past midnight.",
+            "hint": "Contrast this with 'everyone' - 'few' is countable and plural.",
+            "explanation": "'Few of the guests' is plural, so the verb stays in the base form: 'seem'.",
             "options": [
-                "were",
-                "was"
+                "seem",
+                "seems"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswer": "seem",
+            "grammarRule": "'Few' (countable amount) takes a plural verb",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l60_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The amount of paperwork ___ overwhelming.",
-            "hint": "'The amount of' with an uncountable noun takes a singular verb.",
-            "explanation": "'The amount of' is similar to 'the number of' - it is singular. 'The amount of paperwork was overwhelming'. Compare with 'the number of reports was high'.",
+            "question": "Much of the excitement ___ from the surprise ending.",
+            "hint": "As a final check, remember that 'much' pairs with uncountable ideas and stays singular.",
+            "explanation": "'Much of the excitement' is singular, so the verb takes -s: 'comes'.",
             "options": [
-                "were",
-                "was"
+                "come",
+                "comes"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "comes",
+            "grammarRule": "'Much' (uncountable amount) takes a singular verb",
             "subjectType": "Singular"
         }
     ]

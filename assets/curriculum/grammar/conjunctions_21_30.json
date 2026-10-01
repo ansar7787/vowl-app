@@ -8,18 +8,18 @@
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "I haven't seen my cousins ___ they moved to another city.",
+            "question": "___ the highway was closed for repairs, commuters took nearly twice as long to get home.",
             "options": [
-                "while",
-                "since",
-                "because",
-                "although"
+                "So",
+                "When",
+                "But",
+                "Because"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "since",
-            "hint": "The move marks the starting point of a period without seeing them.",
-            "explanation": "'Since' introduces the starting point of a period that continues to now — the move began the time apart.",
-            "grammarRule": "Subordinating Conjunctions",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Because",
+            "hint": "The closed highway is the reason for the longer journey, and this reason is being placed at the very front of the sentence.",
+            "explanation": "The road closure explains the delay, and unlike a coordinating conjunction, 'because' can open the sentence with the reason before the main result.",
+            "grammarRule": "Subordinating Conjunctions — Reason",
             "conjunctionPurpose": "Reason"
         },
         {
@@ -27,94 +27,94 @@
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "Call me ___ you land at the airport.",
+            "question": "The picnic was moved indoors ___ the forecast suddenly turned to rain.",
             "options": [
-                "as soon as",
-                "until",
                 "so",
-                "although"
+                "because",
+                "while",
+                "or"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as soon as",
-            "hint": "The call should happen immediately, with no delay after landing.",
-            "explanation": "'As soon as' means immediately after — the call should follow landing without delay.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Addition"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "because",
+            "hint": "The changed forecast is what's explaining the sudden move indoors.",
+            "explanation": "The rain forecast is the reason the picnic location changed, and 'because' introduces that explanation after the main clause.",
+            "grammarRule": "Subordinating Conjunctions — Reason",
+            "conjunctionPurpose": "Reason"
         },
         {
             "id": "cj_l21_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "The math problem looked impossible, ___ she solved it in minutes.",
+            "question": "___ the printer ran out of toner halfway through, half the handouts came out blank.",
             "options": [
-                "so",
-                "because",
-                "yet",
-                "and"
+                "Until",
+                "Because",
+                "So",
+                "And"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "yet",
-            "hint": "An unexpected, impressive outcome follows a difficult setup.",
-            "explanation": "'Yet' shows surprising contrast — a problem that looked impossible was still solved quickly.",
-            "grammarRule": "Coordinating Conjunctions",
-            "conjunctionPurpose": "Contrast"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Because",
+            "hint": "The toner problem is the reason behind the blank pages, and it's stated first.",
+            "explanation": "The out-of-toner printer is the reason for the blank handouts, and placing 'because' at the start sets up that reason before the result.",
+            "grammarRule": "Subordinating Conjunctions — Reason",
+            "conjunctionPurpose": "Reason"
         },
         {
             "id": "cj_l22_q1",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "She has neither the time ___ the energy to redecorate the house.",
+            "question": "___ the store had already sold out of tickets, we ordered pizza and stayed in instead.",
             "options": [
-                "or",
-                "and",
-                "but",
-                "nor"
+                "Although",
+                "If",
+                "So",
+                "Since"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "nor",
-            "hint": "'Neither' always pairs with one exact word to exclude two things.",
-            "explanation": "'Neither...nor' rules out both items together — she lacks both time and energy.",
-            "grammarRule": "Correlative Conjunctions",
-            "conjunctionPurpose": "Addition"
+            "correctAnswer": "Since",
+            "hint": "The sold-out tickets are a known fact that explains the change of plans, stated up front.",
+            "explanation": "The sold-out tickets are treated as an established fact that leads to the decision to stay in, which 'since' introduces at the start of the sentence.",
+            "grammarRule": "Subordinating Conjunctions — Reason",
+            "conjunctionPurpose": "Reason"
         },
         {
             "id": "cj_l22_q2",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "I'll finish the marathon ___ it takes me six hours.",
+            "question": "___ most employees prefer working from home on Fridays, the office keeps a lighter meeting schedule that day.",
             "options": [
-                "because",
-                "so",
-                "unless",
-                "even if"
+                "Unless",
+                "Although",
+                "Since",
+                "If"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "even if",
-            "hint": "Finishing is guaranteed no matter how long it takes.",
-            "explanation": "'Even if' shows the result stays the same regardless of a possible condition — finishing is certain either way.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Result"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Since",
+            "hint": "The employees' preference is a settled fact that explains the office's scheduling choice.",
+            "explanation": "The known preference for working from home is the accepted background reason for the lighter schedule, which 'since' presents as a given fact.",
+            "grammarRule": "Subordinating Conjunctions — Reason",
+            "conjunctionPurpose": "Reason"
         },
         {
             "id": "cj_l22_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "Our flight was delayed ___ a storm was approaching the airport.",
+            "question": "___ the bridge was under construction, drivers had to take a longer route through downtown.",
             "options": [
-                "because",
-                "while",
-                "so",
-                "although"
+                "Unless",
+                "So",
+                "Since",
+                "While"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "A specific weather event explains the delay.",
-            "explanation": "'Because' introduces the direct reason for the delay — the approaching storm.",
-            "grammarRule": "Subordinating Conjunctions",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Since",
+            "hint": "The construction is a known, ongoing situation that explains the detour, stated at the start.",
+            "explanation": "The ongoing construction is the accepted reason drivers were rerouted, and 'since' opens the sentence with that established cause.",
+            "grammarRule": "Subordinating Conjunctions — Reason",
             "conjunctionPurpose": "Reason"
         },
         {
@@ -122,456 +122,456 @@
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "___ the flight ___ the hotel were booked through the same website.",
+            "question": "___ the shop was already closing, the assistant let us finish browsing quickly.",
             "options": [
-                "Not only / but",
-                "Either / or",
-                "Both / and",
-                "Neither / nor"
+                "If",
+                "As",
+                "So",
+                "When"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Both / and",
-            "hint": "Two travel bookings share one connecting pair — inclusion, not choice or exclusion.",
-            "explanation": "'Both...and' includes two items together — the flight and the hotel were booked the same way.",
-            "grammarRule": "Correlative Conjunctions",
-            "conjunctionPurpose": "Addition"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "As",
+            "hint": "The closing time is quietly explaining why the assistant hurried things along.",
+            "explanation": "The shop's closing time is a light, background reason for the assistant's rushed kindness, which 'as' introduces in a softer way than a heavier reason word would.",
+            "grammarRule": "Subordinating Conjunctions — Reason",
+            "conjunctionPurpose": "Reason"
         },
         {
             "id": "cj_l23_q2",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "The window seat gives you a view, ___ the aisle seat gives you easy access.",
+            "question": "___ the roads were icy that morning, the school delayed opening by an hour.",
             "options": [
-                "while",
-                "because",
-                "so",
-                "until"
+                "So",
+                "Unless",
+                "When",
+                "As"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Two seat types are being compared, each with its own advantage.",
-            "explanation": "'While' contrasts two related facts — one seat offers a view, the other offers convenience.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Contrast"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "As",
+            "hint": "The icy roads are the quiet background reason for the delay, mentioned first.",
+            "explanation": "The icy conditions are the reason behind the delayed opening, and 'as' introduces that explanation smoothly at the start of the sentence.",
+            "grammarRule": "Subordinating Conjunctions — Reason",
+            "conjunctionPurpose": "Reason"
         },
         {
             "id": "cj_l23_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "You'll need a visa ___ you're staying longer than ninety days.",
+            "question": "___ the microphone wasn't working, the host switched to shouting the announcements instead.",
             "options": [
-                "because",
-                "so",
-                "if",
-                "when"
+                "Unless",
+                "As",
+                "But",
+                "Until"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "if",
-            "hint": "The visa requirement depends on the length of the stay.",
-            "explanation": "'If' introduces the condition that triggers the visa requirement — staying past ninety days.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Connection"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "As",
+            "hint": "The broken microphone is the reason for the host's quick change of plan.",
+            "explanation": "The faulty microphone explains why the host switched methods, and 'as' presents that reason in a light, matter-of-fact way.",
+            "grammarRule": "Subordinating Conjunctions — Reason",
+            "conjunctionPurpose": "Reason"
         },
         {
             "id": "cj_l24_q1",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "The crowd cheered ___ the runners crossed the finish line.",
+            "question": "___ you leave now, you'll catch the earlier train.",
             "options": [
-                "so",
-                "because",
-                "as",
-                "although"
+                "When",
+                "If",
+                "Because",
+                "Since"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "as",
-            "hint": "Two things happened together, at the very same moment.",
-            "explanation": "'As' can show two events happening at the same time — the cheering and the finishing happened together.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Addition"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "If",
+            "hint": "Leaving now isn't certain — it's just one possible choice that would lead to catching the train.",
+            "explanation": "Leaving now is a possibility, not a fact, so 'if' sets up that condition rather than treating it as something definitely happening.",
+            "grammarRule": "Subordinating Conjunctions — Condition",
+            "conjunctionPurpose": "Condition"
         },
         {
             "id": "cj_l24_q2",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "The store was having a huge sale, ___ I bought two jackets.",
+            "question": "___ the weather holds up, we'll have the barbecue outside.",
             "options": [
-                "or",
-                "although",
-                "so",
-                "but"
+                "Unless",
+                "Because",
+                "When",
+                "If"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "so",
-            "hint": "The sale directly influenced the shopping decision.",
-            "explanation": "'So' introduces a result — the big sale led to buying more items.",
-            "grammarRule": "Coordinating Conjunctions",
-            "conjunctionPurpose": "Result"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "If",
+            "hint": "The weather could go either way, so the outdoor plan depends on one uncertain possibility.",
+            "explanation": "Whether the weather holds is uncertain, and 'if' introduces that uncertain possibility the outdoor plan depends on.",
+            "grammarRule": "Subordinating Conjunctions — Condition",
+            "conjunctionPurpose": "Condition"
         },
         {
             "id": "cj_l24_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "You can't return the item ___ you have the receipt.",
+            "question": "___ the invoice arrives by Friday, accounting can process the payment the same week.",
             "options": [
-                "and",
-                "when",
-                "unless",
-                "because"
+                "Unless",
+                "As",
+                "So",
+                "If"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "unless",
-            "hint": "The receipt is the one requirement for a return.",
-            "explanation": "'Unless' means 'except if' — a return depends on having this one document.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Connection"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "If",
+            "hint": "The invoice arriving on time is just one possible scenario the payment schedule depends on.",
+            "explanation": "Early arrival of the invoice is a condition, not a guaranteed fact, and 'if' sets up that dependent possibility.",
+            "grammarRule": "Subordinating Conjunctions — Condition",
+            "conjunctionPurpose": "Condition"
         },
         {
             "id": "cj_l25_q1",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "The new phone not only runs faster ___ also has a better camera.",
+            "question": "___ the flight gets delayed, we should land by six.",
             "options": [
-                "so",
-                "or",
-                "and",
-                "but"
+                "If",
+                "When",
+                "Unless",
+                "Because"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "but",
-            "hint": "'Not only' always pairs with one specific word to add an extra positive point.",
-            "explanation": "'Not only...but also' adds a second impressive feature to the first — speed and camera quality.",
-            "grammarRule": "Correlative Conjunctions",
-            "conjunctionPurpose": "Contrast"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Unless",
+            "hint": "The landing time holds true only if one particular thing does NOT happen.",
+            "explanation": "The six o'clock landing depends on the delay not happening, and 'unless' expresses exactly that negative condition.",
+            "grammarRule": "Subordinating Conjunctions — Condition",
+            "conjunctionPurpose": "Condition"
         },
         {
             "id": "cj_l25_q2",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "The video wouldn't load ___ my internet connection was too slow.",
+            "question": "___ you register before midnight, you'll lose your spot in the workshop.",
             "options": [
-                "although",
-                "while",
-                "so",
-                "because"
+                "If",
+                "Unless",
+                "While",
+                "So"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "because",
-            "hint": "A slow connection explains the loading problem.",
-            "explanation": "'Because' gives the direct reason for a problem — the slow connection caused the loading issue.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Reason"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Unless",
+            "hint": "Keeping the spot depends on one action NOT being skipped.",
+            "explanation": "Losing the spot happens only if registering is skipped, and 'unless' is what expresses that missing-action condition.",
+            "grammarRule": "Subordinating Conjunctions — Condition",
+            "conjunctionPurpose": "Condition"
         },
         {
             "id": "cj_l25_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "You can use the free version, ___ you can upgrade for extra features.",
+            "question": "___ someone cancels, the concert is completely sold out tonight.",
             "options": [
-                "but",
-                "or",
-                "and",
-                "so"
+                "When",
+                "Unless",
+                "Because",
+                "So"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "or",
-            "hint": "Two account options are offered — only one applies at a time.",
-            "explanation": "'Or' presents two alternatives — staying with the free version, or upgrading for more features.",
-            "grammarRule": "Coordinating Conjunctions",
-            "conjunctionPurpose": "Connection"
+            "correctAnswer": "Unless",
+            "hint": "There's only one thing that could open up a ticket, and it hasn't happened yet.",
+            "explanation": "A ticket only becomes available if a cancellation happens, and 'unless' names that one exception to being sold out.",
+            "grammarRule": "Subordinating Conjunctions — Condition",
+            "conjunctionPurpose": "Condition"
         },
         {
             "id": "cj_l26_q1",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "Employees receive a bonus ___ they meet their yearly targets.",
+            "question": "___ the museum offers a student discount, I'll bring my ID just in case.",
             "options": [
-                "but",
-                "so",
-                "unless",
-                "when"
+                "If",
+                "Unless",
+                "So",
+                "Because"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "when",
-            "hint": "The bonus is tied to a specific achievement.",
-            "explanation": "'When' introduces the situation that triggers the bonus — reaching yearly targets.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Connection"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "If",
+            "hint": "The discount is a possible perk, and the ID is just a precaution for that possibility.",
+            "explanation": "The discount may or may not exist, so 'if' sets up that open possibility, with the ID as backup for it.",
+            "grammarRule": "Subordinating Conjunctions — Condition",
+            "conjunctionPurpose": "Condition"
         },
         {
             "id": "cj_l26_q2",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "Send the report to your manager ___ you leave the office.",
+            "question": "___ the museum offers a discount, I'll skip the guided tour this time.",
             "options": [
-                "and",
-                "so",
-                "until",
-                "before"
+                "Unless",
+                "When",
+                "As",
+                "So"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "before",
-            "hint": "One task should be finished ahead of leaving.",
-            "explanation": "'Before' places sending the report earlier in time than leaving.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Connection"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Unless",
+            "hint": "Only the absence of a discount would make the speaker skip the tour.",
+            "explanation": "Skipping the tour depends on the discount not being offered, which is the negative condition 'unless' captures.",
+            "grammarRule": "Subordinating Conjunctions — Condition",
+            "conjunctionPurpose": "Condition"
         },
         {
             "id": "cj_l26_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "She answered emails ___ prepared the meeting notes all morning.",
+            "question": "___ the babysitter cancels last minute, we're still planning to go out tonight.",
             "options": [
-                "and",
-                "because",
-                "but",
-                "so"
+                "So",
+                "Because",
+                "Unless",
+                "While"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Two separate tasks were both completed during the same morning.",
-            "explanation": "'And' links two tasks the same person completed — answering emails and preparing notes.",
-            "grammarRule": "Coordinating Conjunctions",
-            "conjunctionPurpose": "Addition"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Unless",
+            "hint": "Only one particular problem would change tonight's plan.",
+            "explanation": "The night out only changes if the babysitter cancels, and 'unless' introduces that single exception to the plan.",
+            "grammarRule": "Subordinating Conjunctions — Condition",
+            "conjunctionPurpose": "Condition"
         },
         {
             "id": "cj_l27_q1",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "___ the medicine tasted awful, it worked quickly.",
+            "question": "___ the tide comes in, the small beach disappears completely.",
             "options": [
-                "So",
-                "Although",
-                "Unless",
-                "Because"
+                "When",
+                "If",
+                "Because",
+                "Until"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Although",
-            "hint": "A bad quality is acknowledged, but the result was still positive.",
-            "explanation": "'Although' introduces a concession — despite the bad taste, the medicine was effective.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Connection"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "When",
+            "hint": "This isn't a possibility — it's something that reliably happens at a certain point every day.",
+            "explanation": "The tide's arrival is a regular, certain event, not a mere possibility, so 'when' fits better than a conditional word like 'if'.",
+            "grammarRule": "Subordinating Conjunctions — Time",
+            "conjunctionPurpose": "Time"
         },
         {
             "id": "cj_l27_q2",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "He has felt much better ___ he started jogging every morning.",
+            "question": "___ customers complain about slow service, the manager personally apologizes.",
             "options": [
-                "while",
-                "since",
-                "although",
-                "because"
+                "If",
+                "So",
+                "When",
+                "Unless"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "since",
-            "hint": "Starting a new habit marks the beginning of an ongoing change.",
-            "explanation": "'Since' marks the starting point of a change that continues now — jogging began the improvement.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Reason"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "When",
+            "hint": "This describes something that happens every time a certain situation occurs, not a rare chance.",
+            "explanation": "The apology is a routine reaction that happens every time complaints occur, which 'when' expresses as a general time pattern.",
+            "grammarRule": "Subordinating Conjunctions — Time",
+            "conjunctionPurpose": "Time"
         },
         {
             "id": "cj_l27_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "Keep a bottle of water nearby ___ you get thirsty during the workout.",
+            "question": "___ the alarm goes off at dawn, the whole farm starts moving at once.",
             "options": [
-                "so",
-                "in case",
-                "although",
-                "because"
+                "Because",
+                "Unless",
+                "When",
+                "So"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "in case",
-            "hint": "You're preparing for something that might happen, not something guaranteed.",
-            "explanation": "'In case' introduces a precaution for a possible situation — the water is ready if thirst happens.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Connection"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "When",
+            "hint": "The alarm marks the exact moment everything springs into motion, every single day.",
+            "explanation": "The alarm's sound is the regular trigger moment for the farm's activity, and 'when' points to that recurring point in time.",
+            "grammarRule": "Subordinating Conjunctions — Time",
+            "conjunctionPurpose": "Time"
         },
         {
             "id": "cj_l28_q1",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "___ you take the medicine now, ___ the fever will get worse.",
+            "question": "___ the mechanic checked the brakes, I waited in the small lobby.",
             "options": [
-                "Either / or",
-                "Neither / nor",
-                "Not only / but",
-                "Whether / or"
+                "Before",
+                "Until",
+                "After",
+                "While"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Either / or",
-            "hint": "One action prevents a worsening outcome — two alternative paths are presented.",
-            "explanation": "'Either...or' presents two alternative outcomes — taking the medicine now, or facing a worse fever.",
-            "grammarRule": "Correlative Conjunctions",
-            "conjunctionPurpose": "Connection"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "While",
+            "hint": "The waiting and the checking were both happening during the same stretch of time.",
+            "explanation": "The waiting overlapped with the whole brake check rather than coming before or after it, which is the simultaneous meaning of 'while'.",
+            "grammarRule": "Subordinating Conjunctions — Time",
+            "conjunctionPurpose": "Time"
         },
         {
             "id": "cj_l28_q2",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "Grandpa tells the same stories every year ___ we always laugh at them.",
+            "question": "___ negotiations continued behind closed doors, reporters gathered outside the building.",
             "options": [
-                "while",
-                "so",
-                "although",
-                "because"
+                "While",
+                "Until",
+                "Before",
+                "After"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "because",
-            "hint": "Our reaction is the reason he keeps repeating the stories.",
-            "explanation": "'Because' gives the reason behind a habit — our laughter is why he repeats the stories.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Reason"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "While",
+            "hint": "Both scenes were unfolding at the same time, just in different places.",
+            "explanation": "The gathering reporters and the ongoing talks were happening at once, in parallel, which 'while' is used to show.",
+            "grammarRule": "Subordinating Conjunctions — Time",
+            "conjunctionPurpose": "Time"
         },
         {
             "id": "cj_l28_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "We can celebrate at home ___ book a table at a restaurant.",
+            "question": "___ the bread finishes baking, could you set the table?",
             "options": [
-                "so",
-                "or",
-                "but",
-                "and"
+                "While",
+                "After",
+                "Until",
+                "Before"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "or",
-            "hint": "Two celebration options are offered — only one will be chosen.",
-            "explanation": "'Or' presents two alternatives — the family will choose one way to celebrate.",
-            "grammarRule": "Coordinating Conjunctions",
-            "conjunctionPurpose": "Connection"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "While",
+            "hint": "The table can be set during the same time the bread is still in the oven.",
+            "explanation": "Setting the table can happen at the same time the bread bakes rather than needing to wait, which is why 'while' works here.",
+            "grammarRule": "Subordinating Conjunctions — Time",
+            "conjunctionPurpose": "Time"
         },
         {
             "id": "cj_l29_q1",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "She knits ___ she watches her favorite shows.",
+            "question": "Sign the delivery slip ___ the courier leaves.",
             "options": [
                 "until",
-                "so",
-                "because",
-                "while"
+                "after",
+                "while",
+                "before"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "while",
-            "hint": "Two activities happen together, filling the same block of time.",
-            "explanation": "'While' shows two actions occurring at the same time — knitting and watching happen together.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Addition"
+            "correctAnswer": "before",
+            "hint": "The signature needs to happen first, while the courier is still there.",
+            "explanation": "The signing has to happen earlier than the courier's departure, which 'before' establishes.",
+            "grammarRule": "Subordinating Conjunctions — Time",
+            "conjunctionPurpose": "Time"
         },
         {
             "id": "cj_l29_q2",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "We'll miss the opening scene ___ we don't leave for the cinema now.",
+            "question": "The band took a short break ___ the first set ended.",
             "options": [
-                "because",
-                "when",
-                "if",
-                "so"
+                "before",
+                "while",
+                "after",
+                "unless"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "if",
-            "hint": "Missing the scene depends on one condition: leaving late.",
-            "explanation": "'If' introduces the condition — missing the opening depends on a late departure.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Connection"
+            "correctAnswer": "after",
+            "hint": "The break came once that part of the show was already over.",
+            "explanation": "The break followed the completed first set, which is the later-time meaning carried by 'after'.",
+            "grammarRule": "Subordinating Conjunctions — Time",
+            "conjunctionPurpose": "Time"
         },
         {
             "id": "cj_l29_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "The concert tickets sold out fast, ___ we bought ours a month early.",
+            "question": "The shop keeps its lights on ___ the last customer leaves.",
             "options": [
-                "although",
-                "so",
-                "or",
-                "but"
+                "until",
+                "after",
+                "before",
+                "when"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "so",
-            "hint": "Fast selling directly explains an early decision.",
-            "explanation": "'So' introduces a result — the fast-selling tickets led to buying early.",
-            "grammarRule": "Coordinating Conjunctions",
-            "conjunctionPurpose": "Result"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "until",
+            "hint": "The lights stay on right up to one final stopping point.",
+            "explanation": "The lights staying on continues up to the moment the last customer goes, which is the endpoint 'until' marks.",
+            "grammarRule": "Subordinating Conjunctions — Time",
+            "conjunctionPurpose": "Time"
         },
         {
             "id": "cj_l30_q1",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "___ you practice, ___ better you get.",
+            "question": "The trip got cancelled ___ the passport office lost her application.",
             "options": [
-                "Both / and",
-                "The more / the",
-                "As / as",
-                "So much / that"
+                "so",
+                "unless",
+                "because",
+                "while"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The more / the",
-            "hint": "This pattern matches one increasing degree to another, in parallel.",
-            "explanation": "'The...the' compares two increasing degrees — more practice leads to more improvement.",
-            "grammarRule": "Correlative Conjunctions",
-            "conjunctionPurpose": "Connection"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "because",
+            "hint": "The lost paperwork is the direct reason the trip fell through.",
+            "explanation": "The lost application is the reason the trip was cancelled, which 'because' introduces here.",
+            "grammarRule": "Subordinating Conjunctions — Reason",
+            "conjunctionPurpose": "Reason"
         },
         {
             "id": "cj_l30_q2",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "The neighborhood feels safer ___ a new streetlight was installed.",
+            "question": "___ the internet connection improves, the video call keeps freezing.",
             "options": [
-                "while",
-                "because",
-                "so",
-                "although"
+                "Unless",
+                "If",
+                "Because",
+                "When"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "because",
-            "hint": "A specific change explains the improved feeling.",
-            "explanation": "'Because' introduces the reason for a change — the new streetlight is why it feels safer.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Reason"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Unless",
+            "hint": "The freezing carries on, except in the one case where something specific improves.",
+            "explanation": "The freezing continues as long as the connection doesn't get better, and 'unless' introduces that missing condition.",
+            "grammarRule": "Subordinating Conjunctions — Condition",
+            "conjunctionPurpose": "Condition"
         },
         {
             "id": "cj_l30_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "Volunteers gather at the park ___ the cleanup event is announced.",
+            "question": "___ she reviewed the budget, her assistant answered the phones.",
             "options": [
-                "unless",
-                "so",
-                "but",
-                "when"
+                "While",
+                "Before",
+                "Since",
+                "Until"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "when",
-            "hint": "Gathering happens at one specific, triggered moment.",
-            "explanation": "'When' introduces the exact time volunteers gather — right after the announcement.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Connection"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "While",
+            "hint": "Both tasks were happening at the same time, handled by two different people.",
+            "explanation": "The budget review and the phone answering overlapped in time rather than one following the other, which 'while' expresses.",
+            "grammarRule": "Subordinating Conjunctions — Time",
+            "conjunctionPurpose": "Time"
         }
     ]
 }

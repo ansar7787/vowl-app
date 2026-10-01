@@ -1,637 +1,637 @@
 {
-    "gameType": "medicalConsult",
-    "batchIndex": 15,
-    "levels": "141-150",
-    "quests": [
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"There's a tenderness that flares up on my right side every so often, and my stomach has felt properly bloated by most evenings this week.\"",
-            "symptoms": [
-                "Side Pain",
-                "Stomach Ache",
-                "Bloating",
-                "Nausea"
-            ],
-            "correctAnswer": "Side Pain, Bloating",
-            "hint": "One symptom is on the side of the body, and the other is fullness in the evenings.",
-            "explanation": "Tenderness that flares on the side is Side Pain, and evening fullness is Bloating.",
-            "id": "mc_l141_q1",
-            "medicalVocab": [
-                "Side Pain, Bloating",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I've had this persistent stiffness through my hands each morning that's started lasting well over an hour before it eases, and I've noticed some visible puffiness in my knuckles most days now.\"",
-            "symptoms": [
-                "Joint Stiffness",
-                "Swelling",
-                "Joint Pain",
-                "Numbness"
-            ],
-            "correctAnswer": "Joint Stiffness, Swelling",
-            "hint": "One symptom is about difficulty moving in the morning, and the other is visible puffiness.",
-            "explanation": "Over an hour of morning stiffness is Joint Stiffness, and visible knuckle puffiness is Swelling.",
-            "id": "mc_l141_q2",
-            "medicalVocab": [
-                "Joint Stiffness, Swelling",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"I've had this persistent low hum of worry that's been hard to shake for the past few weeks, and I've noticed I'm more forgetful than I used to be, misplacing things constantly.\"",
-            "symptoms": [
-                "Low Mood",
-                "Anxiety",
-                "Brain Fog",
-                "Fatigue"
-            ],
-            "correctAnswer": "Anxiety, Brain Fog",
-            "hint": "One symptom is an ongoing emotional state, and the other is about memory and focus.",
-            "explanation": "A hard-to-shake worry is Anxiety, and increased forgetfulness is Brain Fog.",
-            "id": "mc_l141_q3",
-            "medicalVocab": [
-                "Anxiety, Brain Fog",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"My scalp has felt intensely itchy for nearly two weeks now, and I've noticed a fair bit more hair coming out when I shower.\"",
-            "symptoms": [
-                "Scalp Itching",
-                "Dry Skin",
-                "Rash",
-                "Hair Loss"
-            ],
-            "correctAnswer": "Scalp Itching, Hair Loss",
-            "hint": "One symptom is a feeling on the scalp, and the other is a change in the hair.",
-            "explanation": "Intense itching on the scalp is Scalp Itching, and increased shedding is Hair Loss.",
-            "id": "mc_l142_q1",
-            "medicalVocab": [
-                "Scalp Itching, Hair Loss",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The nurse's intake note reads: \"Patient, referred by their GP for specialist review, describes six months of intermittent joint pain affecting multiple joints symmetrically, with associated fatigue and no reported fever.\"",
-            "symptoms": [
-                "Joint Stiffness",
-                "Joint Pain",
-                "Fever",
-                "Fatigue"
-            ],
-            "correctAnswer": "Joint Pain, Fatigue",
-            "hint": "The note explicitly says no fever was reported - that rules out one option.",
-            "explanation": "The note names Joint Pain across multiple joints and associated Fatigue, while ruling out Fever.",
-            "id": "mc_l142_q2",
-            "medicalVocab": [
-                "Joint Pain, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've had this recurring tightness in my throat that seems to come on specifically when I'm presenting at work, and I've noticed my voice shakes a little during those moments,\" the patient tells the doctor.",
-            "symptoms": [
-                "Hoarse Voice",
-                "Trembling",
-                "Throat Tightness",
-                "Anxiety"
-            ],
-            "correctAnswer": "Throat Tightness, Anxiety",
-            "hint": "One symptom is physical, and the other is the emotional trigger tied to public speaking.",
-            "explanation": "Tightness while presenting is Throat Tightness, linked to underlying Anxiety.",
-            "id": "mc_l142_q3",
-            "medicalVocab": [
-                "Throat Tightness, Anxiety",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"My whole body has felt sore and worn out since the weekend hike, and my sleep has been genuinely poor because of how uncomfortable I am.\"",
-            "symptoms": [
-                "Muscle Soreness",
-                "Weakness",
-                "Fatigue",
-                "Insomnia"
-            ],
-            "correctAnswer": "Muscle Soreness, Insomnia",
-            "hint": "One symptom is general soreness in the muscles, and the other is its effect on sleep.",
-            "explanation": "Soreness after the hike is Muscle Soreness, and the resulting sleep trouble is Insomnia.",
-            "id": "mc_l143_q1",
-            "medicalVocab": [
-                "Muscle Soreness, Insomnia",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I've had this persistent dry cough that's lingered for nearly six weeks now, well past my last cold, and I've started noticing I'm more breathless during my regular swim sessions.\"",
-            "symptoms": [
-                "Wheezing",
-                "Persistent Cough",
-                "Chest Pain",
-                "Shortness of Breath"
-            ],
-            "correctAnswer": "Persistent Cough, Shortness of Breath",
-            "hint": "One symptom has lasted six weeks, and the other happens during regular exercise.",
-            "explanation": "Six weeks of coughing is a Persistent Cough, and breathlessness while swimming is Shortness of Breath.",
-            "id": "mc_l143_q2",
-            "medicalVocab": [
-                "Persistent Cough, Shortness of Breath",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"I've had this persistent sensation of pins and needles in both feet that's become more noticeable over the past several months, and I've also had some difficulty with balance on uneven ground.\"",
-            "symptoms": [
-                "Pins and Needles",
-                "Dizziness",
-                "Numbness",
-                "Weakness"
-            ],
-            "correctAnswer": "Pins and Needles, Dizziness",
-            "hint": "One symptom is a specific tingling sensation, and the other is about balance.",
-            "explanation": "Months of tingling in both feet is Pins and Needles, and balance trouble is Dizziness.",
-            "id": "mc_l143_q3",
-            "medicalVocab": [
-                "Pins and Needles, Dizziness",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"I've had this recurring low-grade fever that seems to spike in the evenings specifically, and I've noticed some night sweats that leave my sheets damp.\"",
-            "symptoms": [
-                "Chills",
-                "Excessive Sweating",
-                "Fever",
-                "Night Sweats"
-            ],
-            "correctAnswer": "Fever, Night Sweats",
-            "hint": "One symptom is about temperature, and the other is sweating specifically during sleep.",
-            "explanation": "An evening fever spike is Fever, and damp sheets from sweating overnight is Night Sweats.",
-            "id": "mc_l144_q1",
-            "medicalVocab": [
-                "Fever, Night Sweats",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The nurse's intake note reads: \"Patient reports a three-month history of unintentional changes in bowel habits, alternating between loose stools and constipation, without reported blood or significant pain.\"",
-            "symptoms": [
-                "Diarrhea",
-                "Stomach Ache",
-                "Constipation",
-                "Bloating"
-            ],
-            "correctAnswer": "Diarrhea, Constipation",
-            "hint": "The note explicitly denies blood or significant pain - that rules out one strong-sounding option.",
-            "explanation": "Alternating loose stools and difficulty are Diarrhea and Constipation; significant pain was denied.",
-            "id": "mc_l144_q2",
-            "medicalVocab": [
-                "Diarrhea, Constipation",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've had this persistent soreness across both shoulders that seems worse after longer days, and I've noticed I'm clenching my jaw without realizing it, according to my partner,\" the patient tells the doctor.",
-            "symptoms": [
-                "Neck Pain",
-                "Shoulder Pain",
-                "Jaw Pain",
-                "Tension Headache"
-            ],
-            "correctAnswer": "Shoulder Pain, Jaw Pain",
-            "hint": "One symptom is in the shoulders, and the other is a habit noticed by someone else.",
-            "explanation": "Soreness after long days is Shoulder Pain, and unconscious clenching points to Jaw Pain.",
-            "id": "mc_l144_q3",
-            "medicalVocab": [
-                "Shoulder Pain, Jaw Pain",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I've had this persistent feeling of my heart racing for no clear reason, several times a week now, and I've also noticed I'm more anxious in general lately.\"",
-            "symptoms": [
-                "Racing Heartbeat",
-                "Heart Palpitations",
-                "Anxiety",
-                "Insomnia"
-            ],
-            "correctAnswer": "Racing Heartbeat, Anxiety",
-            "hint": "One symptom is the heart's speed, and the other is a general emotional state.",
-            "explanation": "A heart racing for no clear reason is a Racing Heartbeat, alongside general Anxiety.",
-            "id": "mc_l145_q1",
-            "medicalVocab": [
-                "Racing Heartbeat, Anxiety",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I've had this persistent tenderness in my lower abdomen that's been present for about ten days now, along with a noticeable decrease in my appetite.\"",
-            "symptoms": [
-                "Bloating",
-                "Nausea",
-                "Stomach Ache",
-                "Loss of Appetite"
-            ],
-            "correctAnswer": "Stomach Ache, Loss of Appetite",
-            "hint": "One symptom is tenderness that has lasted ten days, and the other is about eating less.",
-            "explanation": "Ten days of tenderness is a Stomach Ache, and eating less is Loss of Appetite.",
-            "id": "mc_l145_q2",
-            "medicalVocab": [
-                "Stomach Ache, Loss of Appetite",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"I've had this persistent ringing that's become a near-constant presence, and I've noticed I'm avoiding social situations because following conversations in groups has become exhausting.\"",
-            "symptoms": [
-                "Ear Fullness",
-                "Ringing in the Ears",
-                "Fatigue",
-                "Hearing Loss"
-            ],
-            "correctAnswer": "Ringing in the Ears, Hearing Loss",
-            "hint": "One symptom is a constant sound, and the other is difficulty following speech in groups.",
-            "explanation": "Near-constant ringing is Ringing in the Ears, and struggling with group conversation points to Hearing Loss.",
-            "id": "mc_l145_q3",
-            "medicalVocab": [
-                "Ringing in the Ears, Hearing Loss",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"I've had this persistent soreness in my wrist that's worsened despite wearing a brace at night, and I've noticed the numbness in my fingers is now waking me up.\"",
-            "symptoms": [
-                "Wrist Pain",
-                "Numbness",
-                "Pins and Needles",
-                "Insomnia"
-            ],
-            "correctAnswer": "Wrist Pain, Numbness",
-            "hint": "One symptom is pain in the joint, and the other is a loss of feeling severe enough to wake the patient.",
-            "explanation": "Soreness despite a brace is Wrist Pain, and finger numbness waking the patient is Numbness.",
-            "id": "mc_l146_q1",
-            "medicalVocab": [
-                "Wrist Pain, Numbness",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The nurse's intake note reads: \"Patient reports four weeks of persistent low mood with associated sleep disturbance, describing both difficulty falling asleep and early morning waking.\"",
-            "symptoms": [
-                "Low Mood",
-                "Fatigue",
-                "Brain Fog",
-                "Insomnia"
-            ],
-            "correctAnswer": "Low Mood, Insomnia",
-            "hint": "The note names an emotional symptom and a specific sleep pattern.",
-            "explanation": "Four weeks of low mood is Low Mood, and disrupted sleep patterns point to Insomnia.",
-            "id": "mc_l146_q2",
-            "medicalVocab": [
-                "Low Mood, Insomnia",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've had this dull, nagging ache across my lower back most of the day, and I've noticed I'm more short-tempered than usual because of how tired the discomfort makes me,\" the patient tells the doctor.",
-            "symptoms": [
-                "Cramp",
-                "Back Pain",
-                "Low Mood",
-                "Fatigue"
-            ],
-            "correctAnswer": "Back Pain, Low Mood",
-            "hint": "One symptom is pain in a specific location, and the other is an emotional shift.",
-            "explanation": "A dull, all-day ache is Back Pain, and increased irritability points to Low Mood.",
-            "id": "mc_l146_q3",
-            "medicalVocab": [
-                "Back Pain, Low Mood",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I've had this persistent discomfort behind my breastbone most evenings that rises into my throat, and I've also noticed I'm more fatigued than usual, possibly from the disrupted sleep.\"",
-            "symptoms": [
-                "Heartburn",
-                "Acid Reflux",
-                "Insomnia",
-                "Fatigue"
-            ],
-            "correctAnswer": "Acid Reflux, Fatigue",
-            "hint": "Discomfort that rises from the chest into the throat has a more precise term than plain heartburn.",
-            "explanation": "Evening discomfort rising into the throat is Acid Reflux, plus the resulting Fatigue.",
-            "id": "mc_l147_q1",
-            "medicalVocab": [
-                "Acid Reflux, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I've had this persistent soreness in both knees that's made my usual hiking difficult this season, and I've noticed a grinding sensation that wasn't there a year ago.\"",
-            "symptoms": [
-                "Swelling",
-                "Cramp",
-                "Knee Pain",
-                "Joint Stiffness"
-            ],
-            "correctAnswer": "Knee Pain, Joint Stiffness",
-            "hint": "One symptom is pain limiting activity, and the other is a new grinding feeling in the joint.",
-            "explanation": "Soreness limiting hiking is Knee Pain, and a new grinding sensation points to Joint Stiffness.",
-            "id": "mc_l147_q2",
-            "medicalVocab": [
-                "Knee Pain, Joint Stiffness",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"I've had this persistent itching across my scalp that's worse after washing, and I've noticed a few new red bumps appearing near my hairline.\"",
-            "symptoms": [
-                "Scalp Itching",
-                "Dry Skin",
-                "Hair Loss",
-                "Rash"
-            ],
-            "correctAnswer": "Scalp Itching, Rash",
-            "hint": "One symptom is a feeling on the scalp, and the other is a visible change nearby.",
-            "explanation": "Itching worse after washing is Scalp Itching, and the new bumps are a Rash.",
-            "id": "mc_l147_q3",
-            "medicalVocab": [
-                "Scalp Itching, Rash",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"My Achilles has felt sore and tight after my usual training runs lately, and I've noticed a sudden, sharp cramp in my calf most nights since.\"",
-            "symptoms": [
-                "Muscle Soreness",
-                "Ankle Pain",
-                "Cramp",
-                "Swelling"
-            ],
-            "correctAnswer": "Muscle Soreness, Cramp",
-            "hint": "One symptom is soreness from training, and the other is a sudden, tight muscle feeling.",
-            "explanation": "Soreness after runs is Muscle Soreness, and the sudden nighttime tightness is a Cramp.",
-            "id": "mc_l148_q1",
-            "medicalVocab": [
-                "Muscle Soreness, Cramp",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The nurse's intake note reads: \"Patient reports two weeks of persistent nausea and reduced appetite, denies any recent changes in medication.\"",
-            "symptoms": [
-                "Nausea",
-                "Loss of Appetite",
-                "Fatigue",
-                "Bloating"
-            ],
-            "correctAnswer": "Nausea, Loss of Appetite",
-            "hint": "The note names two clear symptoms and rules out a possible medication-related cause.",
-            "explanation": "The note describes Nausea and reduced appetite (Loss of Appetite), unrelated to any medication change.",
-            "id": "mc_l148_q2",
-            "medicalVocab": [
-                "Nausea, Loss of Appetite",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've had this persistent low-grade headache that's present most days now, and I've noticed I'm gritting my teeth during the day without meaning to, which my dentist mentioned last visit,\" the patient tells the doctor.",
-            "symptoms": [
-                "Headache",
-                "Tension Headache",
-                "Jaw Pain",
-                "Toothache"
-            ],
-            "correctAnswer": "Tension Headache, Jaw Pain",
-            "hint": "A daily, low-grade headache linked to jaw clenching has a more specific name.",
-            "explanation": "A near-daily headache linked to clenching is a Tension Headache, plus resulting Jaw Pain.",
-            "id": "mc_l148_q3",
-            "medicalVocab": [
-                "Tension Headache, Jaw Pain",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I've had this persistent soreness in my lower back that's become a near-daily presence, and I've also had some stiffness that takes longer to ease each morning.\"",
-            "symptoms": [
-                "Muscle Soreness",
-                "Weakness",
-                "Back Pain",
-                "Joint Stiffness"
-            ],
-            "correctAnswer": "Back Pain, Joint Stiffness",
-            "hint": "One symptom is daily pain, and the other is about difficulty moving each morning.",
-            "explanation": "Near-daily soreness is Back Pain, and slower-to-ease mornings point to Joint Stiffness.",
-            "id": "mc_l149_q1",
-            "medicalVocab": [
-                "Back Pain, Joint Stiffness",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I've had this persistent itching across my torso that's worse at night, and I've noticed some faint red lines where I've been scratching in my sleep.\"",
-            "symptoms": [
-                "Dry Skin",
-                "Itching",
-                "Insomnia",
-                "Rash"
-            ],
-            "correctAnswer": "Itching, Rash",
-            "hint": "One symptom is the itching itself, and the other is the visible mark it has left.",
-            "explanation": "Nighttime itching is Itching, and the marks left from scratching are a Rash.",
-            "id": "mc_l149_q2",
-            "medicalVocab": [
-                "Itching, Rash",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"I've had this persistent lightheadedness that's become more frequent over the past month, and I've noticed my heart flutters noticeably right beforehand.\"",
-            "symptoms": [
-                "Vertigo",
-                "Dizziness",
-                "Heart Palpitations",
-                "Racing Heartbeat"
-            ],
-            "correctAnswer": "Dizziness, Heart Palpitations",
-            "hint": "One symptom is lightheadedness, and the other is a fluttering feeling just before it.",
-            "explanation": "More frequent lightheadedness is Dizziness, and the fluttering beforehand is Heart Palpitations.",
-            "id": "mc_l149_q3",
-            "medicalVocab": [
-                "Dizziness, Heart Palpitations",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"The side of my thumbnail has gone red and it's tender whenever I press on it, and I've noticed a small bruise on the same finger from where I caught it in a drawer.\"",
-            "symptoms": [
-                "Ingrown Nail",
-                "Swelling",
-                "Cut",
-                "Bruise"
-            ],
-            "correctAnswer": "Ingrown Nail, Bruise",
-            "hint": "One symptom is at the edge of the nail, and the other is a mark from the drawer.",
-            "explanation": "Redness at the nail's edge is an Ingrown Nail, and the mark from the drawer is a Bruise.",
-            "id": "mc_l150_q1",
-            "medicalVocab": [
-                "Ingrown Nail, Bruise",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The nurse's intake note reads: \"Patient, reviewed for ongoing management, reports stable but persistent fatigue over several months, with intermittent low mood.\"",
-            "symptoms": [
-                "Fatigue",
-                "Insomnia",
-                "Low Mood",
-                "Weakness"
-            ],
-            "correctAnswer": "Fatigue, Low Mood",
-            "hint": "The note names an ongoing energy symptom alongside an emotional one.",
-            "explanation": "Months of stable but persistent tiredness is Fatigue, alongside intermittent Low Mood.",
-            "id": "mc_l150_q2",
-            "medicalVocab": [
-                "Fatigue, Low Mood",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've had this persistent congestion that's lingered well past my cold, along with a heavy feeling across my cheeks that's worse when I bend forward,\" the patient tells the doctor.",
-            "symptoms": [
-                "Stuffy Nose",
-                "Sinus Pressure",
-                "Runny Nose",
-                "Headache"
-            ],
-            "correctAnswer": "Stuffy Nose, Sinus Pressure",
-            "hint": "One symptom is blockage, and the other is heaviness specifically across the cheeks.",
-            "explanation": "Lingering congestion is a Stuffy Nose, and heaviness across the cheeks is Sinus Pressure.",
-            "id": "mc_l150_q3",
-            "medicalVocab": [
-                "Stuffy Nose, Sinus Pressure",
-                "Symptom",
-                "Patient"
-            ]
-        }
-    ]
+  "gameType": "medicalConsult",
+  "batchIndex": 15,
+  "levels": "141-150",
+  "quests": [
+    {
+      "instruction": "Select the summary that accurately reflects what the patient said.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"There's a pressure right in the middle of my chest. It started a few days ago. It's been happening two or three times a week. It's mostly on one side. It seems worse after certain activities.\"",
+      "symptoms": [
+        "The patient reports that it happens about once a month, that it is mostly on one side, and that it began a few days ago.",
+        "The patient reports that it happens two or three times a week, that it is mostly on one side, and that it began a few days ago.",
+        "The patient reports that it happens two or three times a week, that it is on both sides equally, and that it began a few days ago.",
+        "The patient reports that it happens two or three times a week, that it is mostly on one side, and that it began several months ago."
+      ],
+      "correctAnswer": "The patient reports that it happens two or three times a week, that it is mostly on one side, and that it began a few days ago.",
+      "hint": "Compare every detail in each summary with what the patient actually said.",
+      "explanation": "Only one summary keeps every detail the way the patient gave it. The others quietly change one fact, which is exactly the kind of error that creeps into notes when details are not checked.",
+      "id": "mc_l141_q1",
+      "medicalVocab": [
+        "Chest Pain",
+        "Summary",
+        "Accuracy"
+      ]
+    },
+    {
+      "instruction": "Identify the detail that has NOT been covered yet.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"There's a pressure right in the middle of my chest. It started a few days ago. It's been happening two or three times a week. It's mostly on one side. It seems worse after certain activities.\"",
+      "symptoms": [
+        "How severe it feels",
+        "What brings it on or worsens it",
+        "How often it happens",
+        "When it started"
+      ],
+      "correctAnswer": "How severe it feels",
+      "hint": "Cross off what the patient has already told you. What is left?",
+      "explanation": "The patient never mentioned how severe it feels, while the other three were all stated. Spotting the gap is what tells you where to ask next.",
+      "id": "mc_l141_q2",
+      "medicalVocab": [
+        "Chest Pain",
+        "Missing Information",
+        "Gap"
+      ]
+    },
+    {
+      "instruction": "Given everything mentioned, select the most useful next question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Reviewing what the patient has shared: \"There's a pressure right in the middle of my chest. It started a few days ago. It's been happening two or three times a week. It's mostly on one side. It seems worse after certain activities.\"",
+      "symptoms": [
+        "When did you first notice this?",
+        "Is there anything that seems to bring it on or make it worse?",
+        "How would you describe how bad it feels?",
+        "Can you show me exactly where you feel it?"
+      ],
+      "correctAnswer": "How would you describe how bad it feels?",
+      "hint": "Look for the question about the one thing that has not been asked or answered yet.",
+      "explanation": "Since how severe it feels has not come up, asking about it adds new information. The other questions ask about details the patient already gave.",
+      "id": "mc_l141_q3",
+      "medicalVocab": [
+        "Chest Pain",
+        "Follow-up Question",
+        "Clarification"
+      ]
+    },
+    {
+      "instruction": "Select the summary that accurately reflects what the patient said.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My skin looks blotchy and slightly raised in a few spots. It seems worse after certain activities. It started a few days ago. It's been making it harder to concentrate at work. It's been happening two or three times a week.\"",
+      "symptoms": [
+        "The patient reports that it seems worse after certain activities, that it makes concentrating at work harder, and that it began several months ago.",
+        "The patient reports that it only happens when completely at rest, that it makes concentrating at work harder, and that it began a few days ago.",
+        "The patient reports that it seems worse after certain activities, that it has no effect on daily activities, and that it began a few days ago.",
+        "The patient reports that it seems worse after certain activities, that it makes concentrating at work harder, and that it began a few days ago."
+      ],
+      "correctAnswer": "The patient reports that it seems worse after certain activities, that it makes concentrating at work harder, and that it began a few days ago.",
+      "hint": "Three summaries are almost right. Find the one with no altered detail.",
+      "explanation": "Only one summary keeps every detail the way the patient gave it. The others quietly change one fact, which is exactly the kind of error that creeps into notes when details are not checked.",
+      "id": "mc_l142_q1",
+      "medicalVocab": [
+        "Skin Rash",
+        "Summary",
+        "Accuracy"
+      ]
+    },
+    {
+      "instruction": "Identify the detail that has NOT been covered yet.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"My skin looks blotchy and slightly raised in a few spots. It seems worse after certain activities. It started a few days ago. It's been making it harder to concentrate at work. It's been happening two or three times a week.\"",
+      "symptoms": [
+        "Effect on daily life",
+        "When it started",
+        "What brings it on or worsens it",
+        "Where it is felt"
+      ],
+      "correctAnswer": "Where it is felt",
+      "hint": "Three topics have been covered. Which one has not come up at all?",
+      "explanation": "The patient never mentioned where it is felt, while the other three were all stated. Spotting the gap is what tells you where to ask next.",
+      "id": "mc_l142_q2",
+      "medicalVocab": [
+        "Skin Rash",
+        "Missing Information",
+        "Gap"
+      ]
+    },
+    {
+      "instruction": "Given everything mentioned, select the most useful next question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Reviewing what the patient has shared: \"My skin looks blotchy and slightly raised in a few spots. It seems worse after certain activities. It started a few days ago. It's been making it harder to concentrate at work. It's been happening two or three times a week.\"",
+      "symptoms": [
+        "How often has this been happening?",
+        "Can you show me exactly where you feel it?",
+        "Is there anything that seems to bring it on or make it worse?",
+        "Has this been affecting your daily activities?"
+      ],
+      "correctAnswer": "Can you show me exactly where you feel it?",
+      "hint": "Most of the picture is complete. Which question would fill in the last piece?",
+      "explanation": "Since where it is felt has not come up, asking about it adds new information. The other questions ask about details the patient already gave.",
+      "id": "mc_l142_q3",
+      "medicalVocab": [
+        "Skin Rash",
+        "Follow-up Question",
+        "Clarification"
+      ]
+    },
+    {
+      "instruction": "Select the summary that accurately reflects what the patient said.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"There's no rash to see, but the itch is driving me crazy. Each time, it lasts about twenty minutes or so. It started a few days ago. It seems worse after certain activities. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "The patient reports that it began a few days ago, that it feels fairly mild, and that each episode lasts about twenty minutes.",
+        "The patient reports that it began a few days ago, that it feels fairly mild, and that each episode lasts several hours.",
+        "The patient reports that it began several months ago, that it feels fairly mild, and that each episode lasts about twenty minutes.",
+        "The patient reports that it began a few days ago, that it feels extremely severe, and that each episode lasts about twenty minutes."
+      ],
+      "correctAnswer": "The patient reports that it began a few days ago, that it feels fairly mild, and that each episode lasts about twenty minutes.",
+      "hint": "Look for the summary where nothing has been quietly changed.",
+      "explanation": "Only one summary keeps every detail the way the patient gave it. The others quietly change one fact, which is exactly the kind of error that creeps into notes when details are not checked.",
+      "id": "mc_l143_q1",
+      "medicalVocab": [
+        "Itching",
+        "Summary",
+        "Accuracy"
+      ]
+    },
+    {
+      "instruction": "Identify the detail that has NOT been covered yet.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"There's no rash to see, but the itch is driving me crazy. Each time, it lasts about twenty minutes or so. It started a few days ago. It seems worse after certain activities. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "When it started",
+        "How long each episode lasts",
+        "Effect on daily life",
+        "What brings it on or worsens it"
+      ],
+      "correctAnswer": "Effect on daily life",
+      "hint": "Scan the statement for each topic; one of them is missing.",
+      "explanation": "The patient never mentioned effect on daily life, while the other three were all stated. Spotting the gap is what tells you where to ask next.",
+      "id": "mc_l143_q2",
+      "medicalVocab": [
+        "Itching",
+        "Missing Information",
+        "Gap"
+      ]
+    },
+    {
+      "instruction": "Given everything mentioned, select the most useful next question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Reviewing what the patient has shared: \"There's no rash to see, but the itch is driving me crazy. Each time, it lasts about twenty minutes or so. It started a few days ago. It seems worse after certain activities. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "Is there anything that seems to bring it on or make it worse?",
+        "Has this been affecting your daily activities?",
+        "How would you describe how bad it feels?",
+        "When did you first notice this?"
+      ],
+      "correctAnswer": "Has this been affecting your daily activities?",
+      "hint": "Avoid questions whose answers the patient has already given.",
+      "explanation": "Since effect on daily life has not come up, asking about it adds new information. The other questions ask about details the patient already gave.",
+      "id": "mc_l143_q3",
+      "medicalVocab": [
+        "Itching",
+        "Follow-up Question",
+        "Clarification"
+      ]
+    },
+    {
+      "instruction": "Select the summary that accurately reflects what the patient said.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"There's a persistent pain deep inside my ear. I've also felt a bit more tired than usual alongside it. It's been happening two or three times a week. It's mostly on one side. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "The patient reports that it is on both sides equally, that it happens two or three times a week, and that there is some extra tiredness with it.",
+        "The patient reports that it is mostly on one side, that it happens about once a month, and that there is some extra tiredness with it.",
+        "The patient reports that it is mostly on one side, that it happens two or three times a week, and that there is some extra tiredness with it.",
+        "The patient reports that it is mostly on one side, that it happens two or three times a week, and that there are no other symptoms at all."
+      ],
+      "correctAnswer": "The patient reports that it is mostly on one side, that it happens two or three times a week, and that there is some extra tiredness with it.",
+      "hint": "Compare every detail in each summary with what the patient actually said.",
+      "explanation": "Only one summary keeps every detail the way the patient gave it. The others quietly change one fact, which is exactly the kind of error that creeps into notes when details are not checked.",
+      "id": "mc_l144_q1",
+      "medicalVocab": [
+        "Earache",
+        "Summary",
+        "Accuracy"
+      ]
+    },
+    {
+      "instruction": "Identify the detail that has NOT been covered yet.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"There's a persistent pain deep inside my ear. I've also felt a bit more tired than usual alongside it. It's been happening two or three times a week. It's mostly on one side. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "Other symptoms alongside it",
+        "Where it is felt",
+        "How often it happens",
+        "Effect on daily life"
+      ],
+      "correctAnswer": "Effect on daily life",
+      "hint": "Cross off what the patient has already told you. What is left?",
+      "explanation": "The patient never mentioned effect on daily life, while the other three were all stated. Spotting the gap is what tells you where to ask next.",
+      "id": "mc_l144_q2",
+      "medicalVocab": [
+        "Earache",
+        "Missing Information",
+        "Gap"
+      ]
+    },
+    {
+      "instruction": "Given everything mentioned, select the most useful next question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Reviewing what the patient has shared: \"There's a persistent pain deep inside my ear. I've also felt a bit more tired than usual alongside it. It's been happening two or three times a week. It's mostly on one side. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "Can you show me exactly where you feel it?",
+        "How often has this been happening?",
+        "Has this been affecting your daily activities?",
+        "How would you describe how bad it feels?"
+      ],
+      "correctAnswer": "Has this been affecting your daily activities?",
+      "hint": "Look for the question about the one thing that has not been asked or answered yet.",
+      "explanation": "Since effect on daily life has not come up, asking about it adds new information. The other questions ask about details the patient already gave.",
+      "id": "mc_l144_q3",
+      "medicalVocab": [
+        "Earache",
+        "Follow-up Question",
+        "Clarification"
+      ]
+    },
+    {
+      "instruction": "Select the summary that accurately reflects what the patient said.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I hear a low buzzing that seems to come from inside my head. It's been happening two or three times a week. Each time, it lasts about twenty minutes or so. It's been making it harder to concentrate at work. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "The patient reports that it has no effect on daily activities, that it feels fairly mild, and that each episode lasts about twenty minutes.",
+        "The patient reports that it makes concentrating at work harder, that it feels fairly mild, and that each episode lasts about twenty minutes.",
+        "The patient reports that it makes concentrating at work harder, that it feels extremely severe, and that each episode lasts about twenty minutes.",
+        "The patient reports that it makes concentrating at work harder, that it feels fairly mild, and that each episode lasts several hours."
+      ],
+      "correctAnswer": "The patient reports that it makes concentrating at work harder, that it feels fairly mild, and that each episode lasts about twenty minutes.",
+      "hint": "Three summaries are almost right. Find the one with no altered detail.",
+      "explanation": "Only one summary keeps every detail the way the patient gave it. The others quietly change one fact, which is exactly the kind of error that creeps into notes when details are not checked.",
+      "id": "mc_l145_q1",
+      "medicalVocab": [
+        "Ringing in the Ears",
+        "Summary",
+        "Accuracy"
+      ]
+    },
+    {
+      "instruction": "Identify the detail that has NOT been covered yet.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"I hear a low buzzing that seems to come from inside my head. It's been happening two or three times a week. Each time, it lasts about twenty minutes or so. It's been making it harder to concentrate at work. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "When it started",
+        "How severe it feels",
+        "How long each episode lasts",
+        "Effect on daily life"
+      ],
+      "correctAnswer": "When it started",
+      "hint": "Three topics have been covered. Which one has not come up at all?",
+      "explanation": "The patient never mentioned when it started, while the other three were all stated. Spotting the gap is what tells you where to ask next.",
+      "id": "mc_l145_q2",
+      "medicalVocab": [
+        "Ringing in the Ears",
+        "Missing Information",
+        "Gap"
+      ]
+    },
+    {
+      "instruction": "Given everything mentioned, select the most useful next question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Reviewing what the patient has shared: \"I hear a low buzzing that seems to come from inside my head. It's been happening two or three times a week. Each time, it lasts about twenty minutes or so. It's been making it harder to concentrate at work. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "How long does it usually last each time?",
+        "How would you describe how bad it feels?",
+        "When did you first notice this?",
+        "How often has this been happening?"
+      ],
+      "correctAnswer": "When did you first notice this?",
+      "hint": "Most of the picture is complete. Which question would fill in the last piece?",
+      "explanation": "Since when it started has not come up, asking about it adds new information. The other questions ask about details the patient already gave.",
+      "id": "mc_l145_q3",
+      "medicalVocab": [
+        "Ringing in the Ears",
+        "Follow-up Question",
+        "Clarification"
+      ]
+    },
+    {
+      "instruction": "Select the summary that accurately reflects what the patient said.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My eyes feel strained and things blur at the edges. It seems worse after certain activities. It's fairly mild, more annoying than painful. It's been making it harder to concentrate at work. Each time, it lasts about twenty minutes or so.\"",
+      "symptoms": [
+        "The patient reports that it seems worse after certain activities, that it feels fairly mild, and that each episode lasts about twenty minutes.",
+        "The patient reports that it seems worse after certain activities, that it feels extremely severe, and that each episode lasts about twenty minutes.",
+        "The patient reports that it only happens when completely at rest, that it feels fairly mild, and that each episode lasts about twenty minutes.",
+        "The patient reports that it seems worse after certain activities, that it feels fairly mild, and that each episode lasts several hours."
+      ],
+      "correctAnswer": "The patient reports that it seems worse after certain activities, that it feels fairly mild, and that each episode lasts about twenty minutes.",
+      "hint": "Look for the summary where nothing has been quietly changed.",
+      "explanation": "Only one summary keeps every detail the way the patient gave it. The others quietly change one fact, which is exactly the kind of error that creeps into notes when details are not checked.",
+      "id": "mc_l146_q1",
+      "medicalVocab": [
+        "Blurred Vision",
+        "Summary",
+        "Accuracy"
+      ]
+    },
+    {
+      "instruction": "Identify the detail that has NOT been covered yet.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"My eyes feel strained and things blur at the edges. It seems worse after certain activities. It's fairly mild, more annoying than painful. It's been making it harder to concentrate at work. Each time, it lasts about twenty minutes or so.\"",
+      "symptoms": [
+        "Other symptoms alongside it",
+        "Effect on daily life",
+        "How severe it feels",
+        "How long each episode lasts"
+      ],
+      "correctAnswer": "Other symptoms alongside it",
+      "hint": "Scan the statement for each topic; one of them is missing.",
+      "explanation": "The patient never mentioned other symptoms alongside it, while the other three were all stated. Spotting the gap is what tells you where to ask next.",
+      "id": "mc_l146_q2",
+      "medicalVocab": [
+        "Blurred Vision",
+        "Missing Information",
+        "Gap"
+      ]
+    },
+    {
+      "instruction": "Given everything mentioned, select the most useful next question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Reviewing what the patient has shared: \"My eyes feel strained and things blur at the edges. It seems worse after certain activities. It's fairly mild, more annoying than painful. It's been making it harder to concentrate at work. Each time, it lasts about twenty minutes or so.\"",
+      "symptoms": [
+        "How would you describe how bad it feels?",
+        "Have you noticed anything else alongside this?",
+        "Has this been affecting your daily activities?",
+        "Is there anything that seems to bring it on or make it worse?"
+      ],
+      "correctAnswer": "Have you noticed anything else alongside this?",
+      "hint": "Avoid questions whose answers the patient has already given.",
+      "explanation": "Since other symptoms alongside it has not come up, asking about it adds new information. The other questions ask about details the patient already gave.",
+      "id": "mc_l146_q3",
+      "medicalVocab": [
+        "Blurred Vision",
+        "Follow-up Question",
+        "Clarification"
+      ]
+    },
+    {
+      "instruction": "Select the summary that accurately reflects what the patient said.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"There's this heavy, blocked feeling across my cheeks and forehead. It seems worse after certain activities. It started a few days ago. I've also felt a bit more tired than usual alongside it. It's been happening two or three times a week.\"",
+      "symptoms": [
+        "The patient reports that there is some extra tiredness with it, that it happens about once a month, and that it seems worse after certain activities.",
+        "The patient reports that there is some extra tiredness with it, that it happens two or three times a week, and that it only happens when completely at rest.",
+        "The patient reports that there are no other symptoms at all, that it happens two or three times a week, and that it seems worse after certain activities.",
+        "The patient reports that there is some extra tiredness with it, that it happens two or three times a week, and that it seems worse after certain activities."
+      ],
+      "correctAnswer": "The patient reports that there is some extra tiredness with it, that it happens two or three times a week, and that it seems worse after certain activities.",
+      "hint": "Compare every detail in each summary with what the patient actually said.",
+      "explanation": "Only one summary keeps every detail the way the patient gave it. The others quietly change one fact, which is exactly the kind of error that creeps into notes when details are not checked.",
+      "id": "mc_l147_q1",
+      "medicalVocab": [
+        "Sinus Congestion",
+        "Summary",
+        "Accuracy"
+      ]
+    },
+    {
+      "instruction": "Identify the detail that has NOT been covered yet.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"There's this heavy, blocked feeling across my cheeks and forehead. It seems worse after certain activities. It started a few days ago. I've also felt a bit more tired than usual alongside it. It's been happening two or three times a week.\"",
+      "symptoms": [
+        "How often it happens",
+        "Other symptoms alongside it",
+        "Effect on daily life",
+        "When it started"
+      ],
+      "correctAnswer": "Effect on daily life",
+      "hint": "Cross off what the patient has already told you. What is left?",
+      "explanation": "The patient never mentioned effect on daily life, while the other three were all stated. Spotting the gap is what tells you where to ask next.",
+      "id": "mc_l147_q2",
+      "medicalVocab": [
+        "Sinus Congestion",
+        "Missing Information",
+        "Gap"
+      ]
+    },
+    {
+      "instruction": "Given everything mentioned, select the most useful next question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Reviewing what the patient has shared: \"There's this heavy, blocked feeling across my cheeks and forehead. It seems worse after certain activities. It started a few days ago. I've also felt a bit more tired than usual alongside it. It's been happening two or three times a week.\"",
+      "symptoms": [
+        "Has this been affecting your daily activities?",
+        "When did you first notice this?",
+        "How often has this been happening?",
+        "Have you noticed anything else alongside this?"
+      ],
+      "correctAnswer": "Has this been affecting your daily activities?",
+      "hint": "Look for the question about the one thing that has not been asked or answered yet.",
+      "explanation": "Since effect on daily life has not come up, asking about it adds new information. The other questions ask about details the patient already gave.",
+      "id": "mc_l147_q3",
+      "medicalVocab": [
+        "Sinus Congestion",
+        "Follow-up Question",
+        "Clarification"
+      ]
+    },
+    {
+      "instruction": "Select the summary that accurately reflects what the patient said.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"There's this drip that won't let up. It's been making it harder to concentrate at work. I've also felt a bit more tired than usual alongside it. It's fairly mild, more annoying than painful. It started a few days ago.\"",
+      "symptoms": [
+        "The patient reports that it began a few days ago, that it has no effect on daily activities, and that there is some extra tiredness with it.",
+        "The patient reports that it began several months ago, that it makes concentrating at work harder, and that there is some extra tiredness with it.",
+        "The patient reports that it began a few days ago, that it makes concentrating at work harder, and that there is some extra tiredness with it.",
+        "The patient reports that it began a few days ago, that it makes concentrating at work harder, and that there are no other symptoms at all."
+      ],
+      "correctAnswer": "The patient reports that it began a few days ago, that it makes concentrating at work harder, and that there is some extra tiredness with it.",
+      "hint": "Three summaries are almost right. Find the one with no altered detail.",
+      "explanation": "Only one summary keeps every detail the way the patient gave it. The others quietly change one fact, which is exactly the kind of error that creeps into notes when details are not checked.",
+      "id": "mc_l148_q1",
+      "medicalVocab": [
+        "Runny Nose",
+        "Summary",
+        "Accuracy"
+      ]
+    },
+    {
+      "instruction": "Identify the detail that has NOT been covered yet.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"There's this drip that won't let up. It's been making it harder to concentrate at work. I've also felt a bit more tired than usual alongside it. It's fairly mild, more annoying than painful. It started a few days ago.\"",
+      "symptoms": [
+        "Effect on daily life",
+        "What brings it on or worsens it",
+        "How severe it feels",
+        "Other symptoms alongside it"
+      ],
+      "correctAnswer": "What brings it on or worsens it",
+      "hint": "Three topics have been covered. Which one has not come up at all?",
+      "explanation": "The patient never mentioned what brings it on or worsens it, while the other three were all stated. Spotting the gap is what tells you where to ask next.",
+      "id": "mc_l148_q2",
+      "medicalVocab": [
+        "Runny Nose",
+        "Missing Information",
+        "Gap"
+      ]
+    },
+    {
+      "instruction": "Given everything mentioned, select the most useful next question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Reviewing what the patient has shared: \"There's this drip that won't let up. It's been making it harder to concentrate at work. I've also felt a bit more tired than usual alongside it. It's fairly mild, more annoying than painful. It started a few days ago.\"",
+      "symptoms": [
+        "Have you noticed anything else alongside this?",
+        "How would you describe how bad it feels?",
+        "Is there anything that seems to bring it on or make it worse?",
+        "Has this been affecting your daily activities?"
+      ],
+      "correctAnswer": "Is there anything that seems to bring it on or make it worse?",
+      "hint": "Most of the picture is complete. Which question would fill in the last piece?",
+      "explanation": "Since what brings it on or worsens it has not come up, asking about it adds new information. The other questions ask about details the patient already gave.",
+      "id": "mc_l148_q3",
+      "medicalVocab": [
+        "Runny Nose",
+        "Follow-up Question",
+        "Clarification"
+      ]
+    },
+    {
+      "instruction": "Select the summary that accurately reflects what the patient said.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I noticed a puffiness on one side of my neck. I've also felt a bit more tired than usual alongside it. It's been making it harder to concentrate at work. It's fairly mild, more annoying than painful. It started a few days ago.\"",
+      "symptoms": [
+        "The patient reports that it makes concentrating at work harder, that there is some extra tiredness with it, and that it began several months ago.",
+        "The patient reports that it has no effect on daily activities, that there is some extra tiredness with it, and that it began a few days ago.",
+        "The patient reports that it makes concentrating at work harder, that there are no other symptoms at all, and that it began a few days ago.",
+        "The patient reports that it makes concentrating at work harder, that there is some extra tiredness with it, and that it began a few days ago."
+      ],
+      "correctAnswer": "The patient reports that it makes concentrating at work harder, that there is some extra tiredness with it, and that it began a few days ago.",
+      "hint": "Look for the summary where nothing has been quietly changed.",
+      "explanation": "Only one summary keeps every detail the way the patient gave it. The others quietly change one fact, which is exactly the kind of error that creeps into notes when details are not checked.",
+      "id": "mc_l149_q1",
+      "medicalVocab": [
+        "Swollen Glands",
+        "Summary",
+        "Accuracy"
+      ]
+    },
+    {
+      "instruction": "Identify the detail that has NOT been covered yet.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"I noticed a puffiness on one side of my neck. I've also felt a bit more tired than usual alongside it. It's been making it harder to concentrate at work. It's fairly mild, more annoying than painful. It started a few days ago.\"",
+      "symptoms": [
+        "Other symptoms alongside it",
+        "How long each episode lasts",
+        "How severe it feels",
+        "Effect on daily life"
+      ],
+      "correctAnswer": "How long each episode lasts",
+      "hint": "Scan the statement for each topic; one of them is missing.",
+      "explanation": "The patient never mentioned how long each episode lasts, while the other three were all stated. Spotting the gap is what tells you where to ask next.",
+      "id": "mc_l149_q2",
+      "medicalVocab": [
+        "Swollen Glands",
+        "Missing Information",
+        "Gap"
+      ]
+    },
+    {
+      "instruction": "Given everything mentioned, select the most useful next question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Reviewing what the patient has shared: \"I noticed a puffiness on one side of my neck. I've also felt a bit more tired than usual alongside it. It's been making it harder to concentrate at work. It's fairly mild, more annoying than painful. It started a few days ago.\"",
+      "symptoms": [
+        "How would you describe how bad it feels?",
+        "Has this been affecting your daily activities?",
+        "When did you first notice this?",
+        "How long does it usually last each time?"
+      ],
+      "correctAnswer": "How long does it usually last each time?",
+      "hint": "Avoid questions whose answers the patient has already given.",
+      "explanation": "Since how long each episode lasts has not come up, asking about it adds new information. The other questions ask about details the patient already gave.",
+      "id": "mc_l149_q3",
+      "medicalVocab": [
+        "Swollen Glands",
+        "Follow-up Question",
+        "Clarification"
+      ]
+    },
+    {
+      "instruction": "Select the summary that accurately reflects what the patient said.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"It's a burning that starts in my chest and creeps up toward my throat. It started a few days ago. It's been happening two or three times a week. I've also felt a bit more tired than usual alongside it. It's been making it harder to concentrate at work.\"",
+      "symptoms": [
+        "The patient reports that there is some extra tiredness with it, that it makes concentrating at work harder, and that it happens two or three times a week.",
+        "The patient reports that there is some extra tiredness with it, that it makes concentrating at work harder, and that it happens about once a month.",
+        "The patient reports that there is some extra tiredness with it, that it has no effect on daily activities, and that it happens two or three times a week.",
+        "The patient reports that there are no other symptoms at all, that it makes concentrating at work harder, and that it happens two or three times a week."
+      ],
+      "correctAnswer": "The patient reports that there is some extra tiredness with it, that it makes concentrating at work harder, and that it happens two or three times a week.",
+      "hint": "Compare every detail in each summary with what the patient actually said.",
+      "explanation": "Only one summary keeps every detail the way the patient gave it. The others quietly change one fact, which is exactly the kind of error that creeps into notes when details are not checked.",
+      "id": "mc_l150_q1",
+      "medicalVocab": [
+        "Acid Reflux",
+        "Summary",
+        "Accuracy"
+      ]
+    },
+    {
+      "instruction": "Identify the detail that has NOT been covered yet.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"It's a burning that starts in my chest and creeps up toward my throat. It started a few days ago. It's been happening two or three times a week. I've also felt a bit more tired than usual alongside it. It's been making it harder to concentrate at work.\"",
+      "symptoms": [
+        "Effect on daily life",
+        "How often it happens",
+        "Other symptoms alongside it",
+        "How severe it feels"
+      ],
+      "correctAnswer": "How severe it feels",
+      "hint": "Cross off what the patient has already told you. What is left?",
+      "explanation": "The patient never mentioned how severe it feels, while the other three were all stated. Spotting the gap is what tells you where to ask next.",
+      "id": "mc_l150_q2",
+      "medicalVocab": [
+        "Acid Reflux",
+        "Missing Information",
+        "Gap"
+      ]
+    },
+    {
+      "instruction": "Given everything mentioned, select the most useful next question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Reviewing what the patient has shared: \"It's a burning that starts in my chest and creeps up toward my throat. It started a few days ago. It's been happening two or three times a week. I've also felt a bit more tired than usual alongside it. It's been making it harder to concentrate at work.\"",
+      "symptoms": [
+        "How would you describe how bad it feels?",
+        "When did you first notice this?",
+        "Has this been affecting your daily activities?",
+        "Have you noticed anything else alongside this?"
+      ],
+      "correctAnswer": "How would you describe how bad it feels?",
+      "hint": "Look for the question about the one thing that has not been asked or answered yet.",
+      "explanation": "Since how severe it feels has not come up, asking about it adds new information. The other questions ask about details the patient already gave.",
+      "id": "mc_l150_q3",
+      "medicalVocab": [
+        "Acid Reflux",
+        "Follow-up Question",
+        "Clarification"
+      ]
+    }
+  ]
 }

@@ -1,307 +1,307 @@
 {
-    "gameType": "yesNoSpeaking",
-    "batchIndex": 14,
-    "levels": "131-140",
-    "quests": [
-        {
-            "id": "SPK_YESNOSPEAKING_L131_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Don't just catch the main idea -- listen for the key detail too, written here as \"negotiation\".",
-            "explanation": "\"litigation\" replaced \"negotiation\" in the key detail. In longer, more complex sentences, that's exactly where changes tend to hide.",
-            "prompt": "The corporate merger was finally finalized after months of difficult negotiation.",
-            "sampleAnswer": "The corporate merger was finally finalized after months of difficult litigation.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L131_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Longer sentences hide their changes in the details. Watch for the descriptive clause -- right now, \"housing\".",
-            "explanation": "This question tests your attention to the descriptive clause. Here it was \"housing\", not \"travel\" -- a small difference with a real effect on meaning.",
-            "prompt": "Employees who relocate for this senior position receive a generous housing allowance.",
-            "sampleAnswer": "Employees who relocate for this senior position receive a generous travel allowance.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L131_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The overall meaning is close either way. What matters is the reported detail: \"avoided\", as written.",
-            "explanation": "Notice that only the reported detail changed: \"avoided\" became \"planned\". Everything surrounding it was identical.",
-            "prompt": "The CEO publicly confirmed that layoffs had been avoided again this quarter.",
-            "sampleAnswer": "The CEO publicly confirmed that layoffs had been planned again this quarter.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L132_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Slow down and listen past the main clause -- the text reads \"stolen\" in the key detail.",
-            "explanation": "The sentence structure is the same in both versions. The actual difference sits in the key detail: \"stolen\" versus \"leaked\".",
-            "prompt": "The security vulnerability was patched quickly before any customer data was stolen.",
-            "sampleAnswer": "The security vulnerability was patched quickly before any customer data was leaked.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L132_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Hold the whole sentence in mind, especially the descriptive clause, which currently reads \"files\".",
-            "explanation": "Both versions sound similar at a glance, but the descriptive clause tells the real story: \"files\", not \"passwords\".",
-            "prompt": "Users who ignored the update warning lost some important saved files.",
-            "sampleAnswer": "Users who ignored the update warning lost some important saved passwords.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L132_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This one rewards careful listening to the reported detail -- the text has it as \"older\".",
-            "explanation": "The two versions differ in just one place, the reported detail: \"older\" versus \"newer\". The rest of the sentence stays identical.",
-            "prompt": "The developer explained that the bug had affected only the older devices.",
-            "sampleAnswer": "The developer explained that the bug had affected only the newer devices.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L133_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This sentence has more than one part -- listen closely to the key detail, currently \"migrating birds\".",
-            "explanation": "\"nesting turtles\" replaced \"migrating birds\" in the key detail. In longer, more complex sentences, that's exactly where changes tend to hide.",
-            "prompt": "The coastal wildlife reserve was expanded to protect the migrating birds.",
-            "sampleAnswer": "The coastal wildlife reserve was expanded to protect the nesting turtles.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L133_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The key detail is tucked inside the sentence. Focus on the descriptive clause: the text says \"slow recovery\".",
-            "explanation": "This question tests your attention to the descriptive clause. Here it was \"slow recovery\", not \"steady decline\" -- a small difference with a real effect on meaning.",
-            "prompt": "Scientists who studied the coral reef closely reported a slow recovery.",
-            "sampleAnswer": "Scientists who studied the coral reef closely reported a steady decline.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L133_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Don't just catch the main idea -- listen for the reported detail too, written here as \"dropped\".",
-            "explanation": "Notice that only the reported detail changed: \"dropped\" became \"risen\". Everything surrounding it was identical.",
-            "prompt": "The report showed that emissions had dropped for the third year running.",
-            "sampleAnswer": "The report showed that emissions had risen for the third year running.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L134_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Longer sentences hide their changes in the details. Watch for the key detail -- right now, \"most vulnerable patients\".",
-            "explanation": "The sentence structure is the same in both versions. The actual difference sits in the key detail: \"most vulnerable patients\" versus \"youngest patients only\".",
-            "prompt": "The new vaccine was distributed first to the most vulnerable patients.",
-            "sampleAnswer": "The new vaccine was distributed first to the youngest patients only.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L134_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The overall meaning is close either way. What matters is the descriptive clause: \"pay\", as written.",
-            "explanation": "Both versions sound similar at a glance, but the descriptive clause tells the real story: \"pay\", not \"training\".",
-            "prompt": "Nurses who worked the overnight shift were given some well-earned extra pay.",
-            "sampleAnswer": "Nurses who worked the overnight shift were given some well-earned extra training.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L134_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Slow down and listen past the main clause -- the text reads \"improved\" in the reported detail.",
-            "explanation": "The two versions differ in just one place, the reported detail: \"improved\" versus \"worsened\". The rest of the sentence stays identical.",
-            "prompt": "The follow-up report confirmed that recovery times had improved significantly this quarter.",
-            "sampleAnswer": "The follow-up report confirmed that recovery times had worsened significantly this quarter.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L135_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Hold the whole sentence in mind, especially the key detail, which currently reads \"later\".",
-            "explanation": "\"earlier\" replaced \"later\" in the key detail. In longer, more complex sentences, that's exactly where changes tend to hide.",
-            "prompt": "The final election results were announced later than officials had expected.",
-            "sampleAnswer": "The final election results were announced earlier than officials had expected.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L135_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This one rewards careful listening to the descriptive clause -- the text has it as \"vague\".",
-            "explanation": "This question tests your attention to the descriptive clause. Here it was \"vague\", not \"detailed\" -- a small difference with a real effect on meaning.",
-            "prompt": "Reporters who repeatedly questioned the mayor received only vague answers overall.",
-            "sampleAnswer": "Reporters who repeatedly questioned the mayor received only detailed answers overall.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L135_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This sentence has more than one part -- listen closely to the reported detail, currently \"badly exaggerated\".",
-            "explanation": "Notice that only the reported detail changed: \"badly exaggerated\" became \"fully confirmed\". Everything surrounding it was identical.",
-            "prompt": "The spokesperson firmly insisted that the rumors had been badly exaggerated.",
-            "sampleAnswer": "The spokesperson firmly insisted that the rumors had been fully confirmed.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L136_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The key detail is tucked inside the sentence. Focus on the key detail: the text says \"department\".",
-            "explanation": "The sentence structure is the same in both versions. The actual difference sits in the key detail: \"department\" versus \"client\".",
-            "prompt": "The invoice was mistakenly sent to the wrong department last week.",
-            "sampleAnswer": "The invoice was mistakenly sent to the wrong client last week.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L136_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Don't just catch the main idea -- listen for the descriptive clause too, written here as \"quietly updated\".",
-            "explanation": "Both versions sound similar at a glance, but the descriptive clause tells the real story: \"quietly updated\", not \"accidentally deleted\".",
-            "prompt": "The assistant who organized the shared files also quietly updated the database.",
-            "sampleAnswer": "The assistant who organized the shared files also accidentally deleted the database.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L136_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Longer sentences hide their changes in the details. Watch for the time clause -- right now, \"resolved itself\".",
-            "explanation": "The two versions differ in just one place, the time clause: \"resolved itself\" versus \"gotten worse\". The rest of the sentence stays identical.",
-            "prompt": "By the time IT finally responded, the issue had already resolved itself.",
-            "sampleAnswer": "By the time IT finally responded, the issue had already gotten worse.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L137_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The overall meaning is close either way. What matters is the key detail: \"canceled\", as written.",
-            "explanation": "\"extended\" replaced \"canceled\" in the key detail. In longer, more complex sentences, that's exactly where changes tend to hide.",
-            "prompt": "The travel itinerary was adjusted after the second scheduled stop was canceled.",
-            "sampleAnswer": "The travel itinerary was adjusted after the second scheduled stop was extended.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L137_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Slow down and listen past the main clause -- the text reads \"baggage claim\" in the descriptive clause.",
-            "explanation": "This question tests your attention to the descriptive clause. Here it was \"baggage claim\", not \"airport security\" -- a small difference with a real effect on meaning.",
-            "prompt": "Travelers who packed relatively light avoided the long baggage claim line.",
-            "sampleAnswer": "Travelers who packed relatively light avoided the long airport security line.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L137_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Hold the whole sentence in mind, especially the reported detail, which currently reads \"reopened\".",
-            "explanation": "Notice that only the reported detail changed: \"reopened\" became \"closed\". Everything surrounding it was identical.",
-            "prompt": "The guide mentioned earlier that the museum had reopened after renovations.",
-            "sampleAnswer": "The guide mentioned earlier that the museum had closed after renovations.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L138_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This one rewards careful listening to the key detail -- the text has it as \"practical exercises\".",
-            "explanation": "The sentence structure is the same in both versions. The actual difference sits in the key detail: \"practical exercises\" versus \"written exams\".",
-            "prompt": "The entire curriculum was recently updated to include more practical exercises.",
-            "sampleAnswer": "The entire curriculum was recently updated to include more written exams.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L138_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This sentence has more than one part -- listen closely to the descriptive clause, currently \"one more honest chance\".",
-            "explanation": "Both versions sound similar at a glance, but the descriptive clause tells the real story: \"one more honest chance\", not \"a noticeably lower grade\".",
-            "prompt": "Students who missed the original deadline were given one more honest chance.",
-            "sampleAnswer": "Students who missed the original deadline were given a noticeably lower grade.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L138_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The key detail is tucked inside the sentence. Focus on the reported detail: the text says \"safety\".",
-            "explanation": "The two versions differ in just one place, the reported detail: \"safety\" versus \"budget\". The rest of the sentence stays identical.",
-            "prompt": "The principal explained that the policy had changed mainly for safety reasons.",
-            "sampleAnswer": "The principal explained that the policy had changed mainly for budget reasons.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L139_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Don't just catch the main idea -- listen for the descriptive clause too, written here as \"volunteering at the shelter\".",
-            "explanation": "\"traveling around the country\" replaced \"volunteering at the shelter\" in the descriptive clause. In longer, more complex sentences, that's exactly where changes tend to hide.",
-            "prompt": "My neighbor, who just retired last spring, started volunteering at the shelter.",
-            "sampleAnswer": "My neighbor, who just retired last spring, started traveling around the country.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L139_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Longer sentences hide their changes in the details. Watch for the time clause -- right now, \"passed\".",
-            "explanation": "This question tests your attention to the time clause. Here it was \"passed\", not \"begun\" -- a small difference with a real effect on meaning.",
-            "prompt": "By the time we finally got home, the storm had already passed.",
-            "sampleAnswer": "By the time we finally got home, the storm had already begun.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L139_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The overall meaning is close either way. What matters is the reported detail: \"completely\", as written.",
-            "explanation": "Notice that only the reported detail changed: \"completely\" became \"briefly\". Everything surrounding it was identical.",
-            "prompt": "She admitted afterward that she had completely forgotten about the appointment.",
-            "sampleAnswer": "She admitted afterward that she had briefly forgotten about the appointment.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L140_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Slow down and listen past the main clause -- the text reads \"recalled\" in the key detail.",
-            "explanation": "The sentence structure is the same in both versions. The actual difference sits in the key detail: \"recalled\" versus \"redesigned\".",
-            "prompt": "The popular product was recalled after several serious safety complaints.",
-            "sampleAnswer": "The popular product was redesigned after several serious safety complaints.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L140_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Hold the whole sentence in mind, especially the descriptive clause, which currently reads \"checkout line\".",
-            "explanation": "Both versions sound similar at a glance, but the descriptive clause tells the real story: \"checkout line\", not \"membership fee\".",
-            "prompt": "Shoppers who registered online in advance skipped the checkout line entirely.",
-            "sampleAnswer": "Shoppers who registered online in advance skipped the membership fee entirely.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L140_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "This one rewards careful listening to the reported detail -- the text has it as \"extended\".",
-            "explanation": "The two versions differ in just one place, the reported detail: \"extended\" versus \"reduced\". The rest of the sentence stays identical.",
-            "prompt": "The company confirmed that the warranty had been extended to five full years.",
-            "sampleAnswer": "The company confirmed that the warranty had been reduced to five full years.",
-            "followUpQuestion": "Why do you think that?"
-        }
-    ]
+  "gameType": "yesNoSpeaking",
+  "batchIndex": 14,
+  "levels": "131-140",
+  "quests": [
+    {
+      "id": "SPK_YESNOSPEAKING_L131_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Two clauses in the perfect form: one positive and one negative.",
+      "explanation": "You heard exactly what was written. \"Already\" goes with the positive clause, and \"hasn't\" with the negative one.",
+      "prompt": "I've already sent the documents, but the manager hasn't confirmed receipt.",
+      "sampleAnswer": "I've already sent the documents, but the manager hasn't confirmed receipt.",
+      "followUpQuestion": "Say what you have already done and what you haven't done yet at work or school."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L131_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Look at the short adverb between \"had\" and the verb.",
+      "explanation": "Just started means the concert was only beginning, and already started suggests we missed more of it. Both are past, but the feeling changes.",
+      "prompt": "By the time we got to the stadium, the concert had just started.",
+      "sampleAnswer": "By the time we got to the stadium, the concert had already started.",
+      "followUpQuestion": "Say when you arrived and what was happening by then."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L131_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A period of time is measured from a starting point.",
+      "explanation": "Exactly the same. \"Since\" points to a starting moment, and \"has been working\" shows it is continuing.",
+      "prompt": "She has been working at the same company since she left university.",
+      "sampleAnswer": "She has been working at the same company since she left university.",
+      "followUpQuestion": "Say how long she has been in her job, using since."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L132_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The starting point of the wait is given by a time word.",
+      "explanation": "Ten and two are different clock times. Waiting since ten means a much longer, more annoying delay.",
+      "prompt": "We've been waiting for the plumber since two o'clock, and he still hasn't called.",
+      "sampleAnswer": "We've been waiting for the plumber since ten o'clock, and he still hasn't called.",
+      "followUpQuestion": "Complain about a wait, and say how long it has been."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L132_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A deadline is described with \"by\" and a future perfect form.",
+      "explanation": "\"Will have finished\" shows that the work will be complete at that point in the future.",
+      "prompt": "By next Friday, I will have finished all three chapters of my thesis.",
+      "sampleAnswer": "By next Friday, I will have finished all three chapters of my thesis.",
+      "followUpQuestion": "Say what you will have finished by the end of the week."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L132_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "How is the cooking described: a moment, or an activity in progress?",
+      "explanation": "Started cooking means the power cut came at the very beginning, while was cooking means it happened in the middle.",
+      "prompt": "I started cooking dinner when the power went out, so we ate cold sandwiches.",
+      "sampleAnswer": "I was cooking dinner when the power went out, so we ate cold sandwiches.",
+      "followUpQuestion": "Retell what you were doing when the power went out."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L133_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A question with \"yet\" checks for progress.",
+      "explanation": "\"Yet\" is used in questions and negatives to ask whether something has happened.",
+      "prompt": "Have you finished the report yet, or do you need another day?",
+      "sampleAnswer": "Have you finished the report yet, or do you need another day?",
+      "followUpQuestion": "Ask a colleague about progress, using yet."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L133_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The sentence includes two past events. Which came first?",
+      "explanation": "Nothing was altered in this one. \"Had already left\" is the earlier event, and \"got\" is the later one.",
+      "prompt": "They had already left when I got to the station, so I took a taxi.",
+      "sampleAnswer": "They had already left when I got to the station, so I took a taxi.",
+      "followUpQuestion": "Explain what had happened before you arrived."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L133_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A frequency word appears early. How often?",
+      "explanation": "Never means zero times and rarely means very few times. The speaker's surprise is stronger with one of them.",
+      "prompt": "I've rarely seen so many people in this shop on a Monday.",
+      "sampleAnswer": "I've never seen so many people in this shop on a Monday.",
+      "followUpQuestion": "Say how often you see something unusual, in a full sentence."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L134_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A duration and a contrast: how long has she been learning?",
+      "explanation": "Three months feels natural for a beginner, and three years feels like a long time. The word \"still\" adds surprise.",
+      "prompt": "She's been learning the violin for three months, but she still can't read music.",
+      "sampleAnswer": "She's been learning the violin for three years, but she still can't read music.",
+      "followUpQuestion": "Compare her progress with what you might expect after that time."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L134_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The sentence includes a time, a state and a consequence.",
+      "explanation": "\"Was still sleeping\" shows she hadn't woken up at the time of the call.",
+      "prompt": "When I called her, she was still sleeping, so I left a message.",
+      "sampleAnswer": "When I called her, she was still sleeping, so I left a message.",
+      "followUpQuestion": "Say what someone was doing when you called them."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L134_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A long sentence looks ahead to a completed task.",
+      "explanation": "\"By the time\" is followed by the present tense even when it refers to the future.",
+      "prompt": "By the time the results are published, we will have interviewed all the candidates.",
+      "sampleAnswer": "By the time the results are published, we will have interviewed all the candidates.",
+      "followUpQuestion": "Predict what will have been completed by a date you choose."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L135_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A decision is not final. A key word signals this.",
+      "explanation": "The recording follows the text word for word. \"Yet\" appears at the end of the clause in a negative sentence, and \"whether\" introduces the two options.",
+      "prompt": "I haven't decided yet whether to accept the offer or stay where I am.",
+      "sampleAnswer": "I haven't decided yet whether to accept the offer or stay where I am.",
+      "followUpQuestion": "Say a decision you still haven't made, and why."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L135_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A verb form describes the state of the shop when they arrived.",
+      "explanation": "Had closed means the shop was shut, and was closing means it was in the process. Could you still go in? Only one version allows it.",
+      "prompt": "The shop was already closing when we got there, so we went home.",
+      "sampleAnswer": "The shop had already closed when we got there, so we went home.",
+      "followUpQuestion": "Say what you saw when you arrived somewhere late."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L135_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A situation continues over a long period. Listen for the verb form.",
+      "explanation": "They are identical. \"Have been trying\" shows the effort has continued up to now.",
+      "prompt": "I've been trying to reach him all morning, but his phone keeps going to voicemail.",
+      "sampleAnswer": "I've been trying to reach him all morning, but his phone keeps going to voicemail.",
+      "followUpQuestion": "Describe your own attempt to reach someone."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L136_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A repeated complaint has a source at the end.",
+      "explanation": "Neighbours and street are different sources of noise, so the solution would be different too.",
+      "prompt": "Ever since she moved, she has been complaining about the noise from the neighbours.",
+      "sampleAnswer": "Ever since she moved, she has been complaining about the noise from the street.",
+      "followUpQuestion": "Complain about a noise, and say how long it has bothered you."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L136_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A future task will be finished by a certain time. Which room?",
+      "explanation": "The living room and the kitchen are different jobs, and the friend returning would walk into another room.",
+      "prompt": "We'll have finished painting the living room by the time you come back on Sunday.",
+      "sampleAnswer": "We'll have finished painting the kitchen by the time you come back on Sunday.",
+      "followUpQuestion": "Tell a visitor what will be finished before they return."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L136_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A moment of realisation happens in the middle of a walk.",
+      "explanation": "\"I'd left\" is a contraction of \"I had left\", which shows the keys were forgotten earlier.",
+      "prompt": "I was walking home when I realised I'd left my keys at the office.",
+      "sampleAnswer": "I was walking home when I realised I'd left my keys at the office.",
+      "followUpQuestion": "Tell the story of the moment you realised you'd forgotten something."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L137_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The worry is linked to how long ago the person called.",
+      "explanation": "Since Monday might only be a couple of days, but since last week is longer and the worry seems more serious.",
+      "prompt": "He hasn't called since Monday, and I'm starting to worry.",
+      "sampleAnswer": "He hasn't called since last week, and I'm starting to worry.",
+      "followUpQuestion": "Say how worried you would be, and what you would do next."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L137_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Two events are close together. Who was late?",
+      "explanation": "Text and audio match. \"Had just pulled out\" happened first, and \"reached\" came right after.",
+      "prompt": "The train had just pulled out of the station when I reached the platform.",
+      "sampleAnswer": "The train had just pulled out of the station when I reached the platform.",
+      "followUpQuestion": "Say who missed what, and how close it was."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L137_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The intention is expressed with a verb in the middle.",
+      "explanation": "Texting and calling are different ways of contacting someone. The friend would expect a different message.",
+      "prompt": "I've been meaning to text you, but I keep forgetting to do it.",
+      "sampleAnswer": "I've been meaning to call you, but I keep forgetting to do it.",
+      "followUpQuestion": "Tell a friend what you've been meaning to do."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L138_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A question checks the situation now and compares it with an earlier time.",
+      "explanation": "\"Still\" and \"has changed\" show that the speaker is comparing then and now.",
+      "prompt": "Is the project still on schedule, or has something changed since Monday?",
+      "sampleAnswer": "Is the project still on schedule, or has something changed since Monday?",
+      "followUpQuestion": "Ask about the state of a project, and compare it with an earlier time."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L138_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "An intention is followed by new information.",
+      "explanation": "They are identical. \"Was going to\" shows a plan in the past that didn't happen.",
+      "prompt": "I was going to email you, but then I heard you were on holiday.",
+      "sampleAnswer": "I was going to email you, but then I heard you were on holiday.",
+      "followUpQuestion": "Explain what you had planned, and why it changed."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L138_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A period of time is introduced by a small word before the number.",
+      "explanation": "Almost twenty means slightly less than twenty, and over twenty means slightly more. The difference is a matter of accuracy.",
+      "prompt": "They've lived in this neighbourhood for almost twenty years, and they still love it.",
+      "sampleAnswer": "They've lived in this neighbourhood for over twenty years, and they still love it.",
+      "followUpQuestion": "Say how long someone you know has lived where they live."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L139_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A deadline is followed by the result that will be achieved.",
+      "explanation": "This is a straight match. \"By six o'clock\" gives the limit, and \"will have finished\" says the roof will be complete.",
+      "prompt": "By six o'clock tomorrow, the builders will have finished the whole roof.",
+      "sampleAnswer": "By six o'clock tomorrow, the builders will have finished the whole roof.",
+      "followUpQuestion": "Say what will be finished by tomorrow evening, as if you were the builder."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L139_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A frustrated speaker uses one small adverb near the start.",
+      "explanation": "Already suggests the speaker is annoyed that it took so many tries, and only says two isn't many. Both sound natural.",
+      "prompt": "I've only told him twice, but he hasn't done anything about it.",
+      "sampleAnswer": "I've already told him twice, but he hasn't done anything about it.",
+      "followUpQuestion": "Say something you have told someone more than once."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L139_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The weather interrupts lunch. Listen to what the weather does.",
+      "explanation": "Stopped raining is good news and started to pour is bad news for people who are outside.",
+      "prompt": "We were having lunch outside when it suddenly stopped raining.",
+      "sampleAnswer": "We were having lunch outside when it suddenly started to pour.",
+      "followUpQuestion": "Describe a change in the weather that surprised you."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L140_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A time expression explains why the speaker was so tired.",
+      "explanation": "All night is a single, very long night, and all week describes a whole week. The reason for falling asleep sounds different.",
+      "prompt": "I'd been studying all week, so I fell asleep during the exam.",
+      "sampleAnswer": "I'd been studying all night, so I fell asleep during the exam.",
+      "followUpQuestion": "Explain why you were tired, using the past perfect."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L140_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Two pieces of news are packed together.",
+      "explanation": "No change. \"Has just told\" means very recently, and \"has accepted\" says the decision is made.",
+      "prompt": "She's just told me she has accepted a job in another city.",
+      "sampleAnswer": "She's just told me she has accepted a job in another city.",
+      "followUpQuestion": "Share some news you have only just heard."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L140_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The time is the moment that starts the mystery.",
+      "explanation": "Since the meeting started or ended points to a different time of disappearance, which changes the questions people ask.",
+      "prompt": "Nobody has seen the manager since the meeting started, and his phone is switched off.",
+      "sampleAnswer": "Nobody has seen the manager since the meeting ended, and his phone is switched off.",
+      "followUpQuestion": "Say when you last saw someone, and how you felt."
+    }
+  ]
 }

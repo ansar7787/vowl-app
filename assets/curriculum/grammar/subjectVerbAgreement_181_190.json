@@ -5,513 +5,513 @@
     "quests": [
         {
             "id": "sva_l181_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE CLAUSE",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "More than one approach ___ required to solve this complex problem.",
-            "hint": "'More than one' always takes a singular verb - a fixed grammatical convention.",
-            "explanation": "'More than one', despite conveying a plural meaning, always takes a singular verb. 'More than one approach is required' - this is a fixed rule in standard English.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l181_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "More than two approaches ___ required to solve this complex problem.",
-            "hint": "When 'more than' modifies a number greater than 'one', the noun is plural and takes a plural verb.",
-            "explanation": "Unlike 'more than one', 'more than two' (or any other number) uses a plural noun with a plural verb. 'More than two approaches are required' - because 'two approaches' is grammatically plural.",
+            "question": "The terms outlined in this contract ___ binding upon signature.",
+            "hint": "'Outlined in this contract' describes the terms - find the true plural subject.",
+            "explanation": "'The terms' is plural, so the verb is 'are'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "grammarRule": "Plural subject in the simple present",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l181_q2",
+            "instruction": "COMPLETE THE CLAUSE",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Neither party ___ permitted to disclose confidential information.",
+            "hint": "Think about how many parties 'neither party' refers to at a time.",
+            "explanation": "'Neither party' is singular, so the verb is 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "'Neither' takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l181_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE CLAUSE",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The average salary of employees at this level ___ risen significantly.",
-            "hint": "'The average salary' is singular - 'of employees at this level' is a modifier.",
-            "explanation": "'The average salary' is the singular subject; 'of employees at this level' is a prepositional modifier. 'The average salary has risen significantly'.",
+            "question": "The attorney representing both defendants ___ requested an extension.",
+            "hint": "'Representing both defendants' describes the attorney - it doesn't change the subject's number.",
+            "explanation": "'The attorney' is singular, so the verb takes -s: 'has'.",
             "options": [
-                "has",
-                "have"
+                "have",
+                "has"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "A long descriptive noun phrase still has one true head noun that determines agreement",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l182_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE FINDING",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The average salaries of employees at this level ___ risen significantly.",
-            "hint": "'The average salaries' is plural - 'of employees at this level' is a modifier.",
-            "explanation": "'The average salaries' is the plural subject. 'The average salaries have risen significantly' - plural verb for a plural subject.",
+            "question": "The samples collected from this experiment ___ still being analyzed.",
+            "hint": "Check whether 'samples' is one item or many before choosing the verb.",
+            "explanation": "'The samples' is plural, so the verb is 'are'.",
             "options": [
-                "has",
-                "have"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "have",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswer": "are",
+            "grammarRule": "Plural subject in the simple present",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l182_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE FINDING",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The mean score across all test groups ___ higher than expected.",
-            "hint": "'The mean score' is singular - 'across all test groups' is a modifier.",
-            "explanation": "'The mean score' is the singular subject. The phrase 'across all test groups' tells us where the data came from but doesn't change the subject. 'The mean score was higher than expected'.",
+            "question": "Each variable in this study ___ carefully controlled.",
+            "hint": "Consider whether 'each' looks at the variables together or one at a time.",
+            "explanation": "'Each variable' is singular, so the verb is 'is'.",
             "options": [
-                "was",
-                "were"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "is",
+            "grammarRule": "'Each' + singular noun takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l182_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE FINDING",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The mean scores across all test groups ___ higher than expected.",
-            "hint": "'The mean scores' is plural - 'across all test groups' is a modifier.",
-            "explanation": "'The mean scores' is the plural subject. 'The mean scores were higher than expected' - plural verb for a plural subject.",
+            "question": "The hypothesis proposed by the researchers ___ untested.",
+            "hint": "Identify the head noun and set aside the phrase describing who proposed it.",
+            "explanation": "'The hypothesis' is singular, so the verb takes -s: 'remains'.",
             "options": [
-                "was",
-                "were"
+                "remain",
+                "remains"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "remains",
+            "grammarRule": "A long descriptive noun phrase still has one true head noun that determines agreement",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l183_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE ENTRY",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The total cost of all the materials and labour ___ estimated at two million pounds.",
-            "hint": "'The total cost' is singular - 'of all the materials and labour' is a modifier.",
-            "explanation": "'The total cost' is the singular subject. Even though 'materials and labour' contains an 'and', the head noun is 'cost', which is singular. 'The total cost was estimated'.",
+            "question": "The Amazon rainforest, home to millions of species, ___ nine countries.",
+            "hint": "The appositive between the commas describes the rainforest - it doesn't add a new subject.",
+            "explanation": "'The Amazon rainforest' is singular, so the verb takes -s: 'spans'.",
             "options": [
-                "was",
-                "were"
+                "spans",
+                "span"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "spans",
+            "grammarRule": "Appositive phrase does not change the number of the subject it renames",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l183_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE ENTRY",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The total costs of all the materials and labour ___ estimated at two million pounds.",
-            "hint": "'The total costs' is plural - 'of all the materials and labour' is a modifier.",
-            "explanation": "'The total costs' is the plural subject. 'The total costs were estimated at two million pounds' - plural verb for a plural head noun.",
+            "question": "Coral reefs around the world ___ increasingly vulnerable to rising ocean temperatures.",
+            "hint": "'Coral reefs' is already plural - match the verb to that.",
+            "explanation": "'Coral reefs' is plural, so the verb stays in the base form: 'become'.",
             "options": [
-                "was",
-                "were"
+                "becomes",
+                "become"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswer": "become",
+            "grammarRule": "Plural subject in the simple present",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l183_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE ENTRY",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The net result of all these interventions ___ a modest improvement.",
-            "hint": "'The net result' is singular - 'of all these interventions' is a prepositional modifier.",
-            "explanation": "'The net result' is the singular subject. 'Of all these interventions' is a modifier. 'The net result was a modest improvement'.",
+            "question": "Neither volcanic activity nor tectonic shifts ___ fully understood by scientists yet.",
+            "hint": "Find the two nouns joined by 'nor' and see which one sits next to the verb.",
+            "explanation": "The noun closer to the verb is 'tectonic shifts', which is plural, so the verb is 'are'.",
             "options": [
-                "was",
-                "were"
+                "are",
+                "is"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswer": "are",
+            "grammarRule": "'Neither...nor' agreement follows the noun closer to the verb",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l184_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE REPORT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The net results of all these interventions ___ modest improvements.",
-            "hint": "'The net results' is plural - 'of all these interventions' is a modifier.",
-            "explanation": "'The net results' is the plural subject. 'The net results were modest improvements' - plural verb.",
+            "question": "Officials from the ministry ___ expected to announce new measures today.",
+            "hint": "Find the subject and ask whether the phrase about the ministry alters it.",
+            "explanation": "'Officials' is plural, so the verb is 'are'.",
             "options": [
-                "was",
-                "were"
+                "are",
+                "is"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "are",
+            "grammarRule": "Plural subject in the simple present",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l184_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE REPORT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The majority of funding for both projects ___ provided by private investors.",
-            "hint": "'The majority of funding' - 'funding' is uncountable, so the verb is singular.",
-            "explanation": "'Funding' is uncountable. When 'the majority of' precedes an uncountable noun, the verb is singular. 'The majority of funding was provided by private investors'.",
+            "question": "The number of cases reported in this region ___ each week.",
+            "hint": "Is this sentence about the cases themselves, or the count of them?",
+            "explanation": "'The number of cases' is singular, so the verb takes -s: 'rises'.",
             "options": [
-                "was",
-                "were"
+                "rise",
+                "rises"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "rises",
+            "grammarRule": "'The number of' + plural noun takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l184_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE REPORT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The majority of grants for both projects ___ provided by private investors.",
-            "hint": "'The majority of grants' - 'grants' is countable and plural, so the verb is plural.",
-            "explanation": "'Grants' is a countable plural noun. When 'the majority of' precedes a countable plural noun, the verb is plural. 'The majority of grants were provided by private investors'.",
+            "question": "Residents living near the affected area ___ growing increasingly concerned.",
+            "hint": "Identify the head noun - does the phrase about the affected area change it?",
+            "explanation": "'Residents' is plural, so the verb is 'are'.",
             "options": [
-                "was",
-                "were"
+                "are",
+                "is"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "are",
+            "grammarRule": "A long descriptive noun phrase still has one true head noun that determines agreement",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l185_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE CONVERSATION",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The overall quality of the products and services provided ___ excellent.",
-            "hint": "'The overall quality' is the singular head noun - the long modifier doesn't change that.",
-            "explanation": "'The overall quality' is the singular head noun. 'Of the products and services provided' is a long modifier. 'The overall quality was excellent' - singular verb.",
+            "question": "\"Hey, do you know if my brother and his roommate ___ coming to the barbecue?\"",
+            "hint": "Two people joined by 'and' always form a plural subject, even in casual speech.",
+            "explanation": "'My brother and his roommate' is a compound subject, so it's plural. The verb is 'are'.",
             "options": [
-                "was",
-                "were"
+                "are",
+                "is"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswer": "are",
+            "grammarRule": "Compound subject joined by 'and' takes a plural verb",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l185_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE CONVERSATION",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The overall qualities of the products and services provided ___ excellent.",
-            "hint": "'The overall qualities' is plural - the long modifier doesn't change that.",
-            "explanation": "'The overall qualities' is the plural head noun. 'The overall qualities were excellent' - plural verb, regardless of the modifier.",
+            "question": "\"Honestly, everyone at that party ___ having such a good time.\"",
+            "hint": "Casual speech doesn't change the rules: how does 'everyone' behave?",
+            "explanation": "'Everyone' is singular, so the verb is 'is'.",
             "options": [
-                "was",
-                "were"
+                "are",
+                "is"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "is",
+            "grammarRule": "'Everyone' / 'everybody' takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l185_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE CONVERSATION",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The full extent of the damage caused by the flood ___ not yet known.",
-            "hint": "'The full extent' is singular - the long phrase is a modifier.",
-            "explanation": "'The full extent' is the singular head noun. Everything else ('of the damage caused by the flood') is a modifier. 'The full extent is not yet known'.",
+            "question": "\"I think either my sister or my cousins ___ bringing dessert tonight.\"",
+            "hint": "With 'either...or', check the noun closest to the verb.",
+            "explanation": "The noun closer to the verb is 'my cousins', which is plural, so the verb is 'are'.",
             "options": [
-                "is",
-                "are"
+                "are",
+                "is"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswer": "are",
+            "grammarRule": "'Either...or' agreement follows the noun closer to the verb",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l186_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE AD",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The full extents of the damage caused in both regions ___ not yet known.",
-            "hint": "'The full extents' is plural - the long phrase is a modifier.",
-            "explanation": "'The full extents' is the plural head noun. 'The full extents are not yet known' - plural verb for a plural subject.",
+            "question": "Every purchase made this weekend ___ a free gift.",
+            "hint": "Consider whether 'every' treats purchases together or one at a time.",
+            "explanation": "'Every purchase' is singular, so the verb takes -s: 'includes'.",
             "options": [
-                "is",
-                "are"
+                "include",
+                "includes"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "includes",
+            "grammarRule": "'Every' + singular noun takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l186_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE AD",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The combination of factors that ___ led to this outcome is difficult to unravel.",
-            "hint": "Inside the relative clause, 'that' refers to 'factors' (plural).",
-            "explanation": "Inside the relative clause 'that have led to this outcome', 'that' refers to 'factors', which is plural. The verb inside is 'have'. The main verb 'is' agrees with 'the combination' (singular).",
+            "question": "Our new collection, along with several limited-edition pieces, ___ available starting Monday.",
+            "hint": "The limited-edition pieces mentioned after 'along with' don't add a second subject.",
+            "explanation": "The original subject is 'our new collection', which is singular. The verb is 'is'.",
             "options": [
-                "have",
-                "has"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "have",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "is",
+            "grammarRule": "'Along with' does not change the number of the original subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l186_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE AD",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The combination of factors that ___ led to this outcome are difficult to unravel.",
-            "hint": "Inside the relative clause, 'that' still refers to 'factors' (plural); here the main verb agrees with 'factors'.",
-            "explanation": "In this sentence, the main verb 'are' agrees semantically with 'factors' (plural) rather than with 'the combination'. Inside the relative clause, 'that have led' still uses 'have' because 'that' refers to 'factors'.",
+            "question": "Customers who sign up today ___ an exclusive discount.",
+            "hint": "Identify who 'who sign up today' describes, then find the main subject.",
+            "explanation": "'Customers' is plural, so the verb stays in the base form: 'receive'.",
             "options": [
-                "has",
-                "have"
+                "receives",
+                "receive"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "have",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswer": "receive",
+            "grammarRule": "The main verb agrees with the main subject, not a distractor noun inside the relative clause",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l187_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE STATEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "A wealth of information ___ available to today's researchers.",
-            "hint": "'A wealth of' is a fixed expression that always takes a singular verb, regardless of the noun that follows.",
-            "explanation": "'A wealth of' is an idiomatic quantity expression that is always singular, unlike 'a number of'. 'A wealth of information is available' is correct.",
+            "question": "Sixty percent of the company's revenue ___ from international sales.",
+            "hint": "Check whether 'revenue' is countable like 'employees', or one whole amount.",
+            "explanation": "'Revenue' is treated as a singular, uncountable noun here, so 'sixty percent of the company's revenue' takes a singular verb: 'comes'.",
             "options": [
-                "is",
-                "are"
+                "come",
+                "comes"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "comes",
+            "grammarRule": "Percentage + 'of' + singular/uncountable noun takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l187_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE STATEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "A handful of dedicated volunteers ___ responsible for the entire event.",
-            "hint": "'A handful of' with a plural countable noun takes a plural verb, unlike 'a wealth of'.",
-            "explanation": "'A handful of' functions like 'a number of' - when followed by a plural countable noun, it takes a plural verb. 'A handful of dedicated volunteers are responsible' is correct.",
+            "question": "The board of directors ___ meeting to discuss its merger proposal.",
+            "hint": "'The board of directors' names one governing body, even though it has many members.",
+            "explanation": "'The board of directors' is a singular collective noun, so the verb is 'is'.",
             "options": [
                 "is",
                 "are"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "Collective noun takes a singular verb when acting as one unit",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l187_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE STATEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The body of evidence supporting this hypothesis ___ grown substantially.",
-            "hint": "'The body of evidence' is singular - 'body' is the head noun.",
-            "explanation": "'The body of evidence' is singular - 'body' is the head noun. 'The body of evidence has grown substantially' - not 'have grown'.",
+            "question": "Neither the shareholders nor the CEO ___ satisfied with this quarter's results.",
+            "hint": "Compare the two nouns after 'neither' and 'nor' - which one is next to the verb?",
+            "explanation": "The noun closer to the verb is 'the CEO', which is singular, so the verb is 'is'.",
             "options": [
-                "has",
-                "have"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "is",
+            "grammarRule": "'Neither...nor' agreement follows the noun closer to the verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l188_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE FINDING",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The bodies of evidence supporting this hypothesis ___ grown substantially.",
-            "hint": "'The bodies of evidence' is plural - 'bodies' is the head noun.",
-            "explanation": "'The bodies of evidence' is plural - 'bodies' is the head noun. 'The bodies of evidence have grown substantially' - plural verb.",
+            "question": "The number of endangered species ___ every year.",
+            "hint": "Is this sentence about the species themselves, or the count of them?",
+            "explanation": "'The number of endangered species' is singular, so the verb takes -s: 'grows'.",
             "options": [
-                "has",
-                "have"
+                "grows",
+                "grow"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "have",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "grows",
+            "grammarRule": "'The number of' + plural noun takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l188_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE FINDING",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "What these studies collectively ___ shown is that nutrition affects cognitive function.",
-            "hint": "Inside the 'what' clause, 'these studies' is plural - auxiliary inside agrees.",
-            "explanation": "Inside the subject clause 'what these studies collectively have shown', the subject is 'these studies', which is plural. The auxiliary inside the clause is 'have'.",
-            "options": [
-                "have",
-                "has"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "have",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l188_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "What this study ___ shown is that nutrition affects cognitive function.",
-            "hint": "Inside the 'what' clause, 'this study' is singular - auxiliary inside agrees.",
-            "explanation": "Inside the subject clause 'what this study has shown', the subject is 'this study', which is singular. The auxiliary inside the clause is 'has'.",
+            "question": "Each ecosystem in this region ___ its own delicate balance.",
+            "hint": "Consider whether 'each' looks at ecosystems together or one at a time.",
+            "explanation": "'Each ecosystem' is singular, so the verb takes -s: 'has'.",
             "options": [
                 "have",
                 "has"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "'Each' + singular noun takes a singular verb",
             "subjectType": "Singular"
         },
         {
-            "id": "sva_l189_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "id": "sva_l188_q3",
+            "instruction": "COMPLETE THE FINDING",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The parameters within which all future decisions ___ to be made remain contested.",
-            "hint": "Inside the relative clause, 'which' refers to 'the parameters' (plural).",
-            "explanation": "Inside the relative clause 'within which all future decisions are to be made', 'which' refers to 'the parameters', which is plural. The verb inside is 'are'.",
+            "question": "Rising sea levels, along with extreme weather events, ___ coastal communities worldwide.",
+            "hint": "The extreme weather events mentioned after 'along with' don't add a second subject.",
+            "explanation": "The original subject is 'rising sea levels', which is plural. The verb stays in the base form: 'threaten'.",
+            "options": [
+                "threaten",
+                "threatens"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "threaten",
+            "grammarRule": "'Along with' does not change the number of the original subject",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l189_q1",
+            "instruction": "COMPLETE THE DESCRIPTION",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The exhibit featuring works from several local artists ___ open through the end of the month.",
+            "hint": "Identify the head noun and set aside the phrase describing what it features.",
+            "explanation": "'The exhibit' is singular, so the verb takes -s: 'remains'.",
+            "options": [
+                "remain",
+                "remains"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "remains",
+            "grammarRule": "A long descriptive noun phrase still has one true head noun that determines agreement",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l189_q2",
+            "instruction": "COMPLETE THE DESCRIPTION",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Neither the sculptures nor the paintings ___ for sale at this gallery.",
+            "hint": "In a 'neither...nor' pair, position matters - which noun is nearest the blank?",
+            "explanation": "The noun closer to the verb is 'the paintings', which is plural, so the verb is 'are'.",
             "options": [
                 "are",
                 "is"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l189_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The parameter within which this decision ___ to be made remains contested.",
-            "hint": "Inside the relative clause, 'which' refers to 'the parameter' (singular).",
-            "explanation": "Inside the relative clause, 'which' refers to 'the parameter', which is singular. The verb inside is 'is': 'within which this decision is to be made'.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "grammarRule": "'Neither...nor' agreement follows the noun closer to the verb",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l189_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE DESCRIPTION",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Among the reasons cited for the failure ___ the lack of resources and poor planning.",
-            "hint": "The real subject is 'the lack of resources and poor planning' (compound, plural).",
-            "explanation": "In this inverted sentence, the real subject is 'the lack of resources and poor planning' - a compound subject joined by 'and', which is plural. 'Among the reasons cited were the lack of resources and poor planning'.",
+            "question": "Each performance in this festival ___ a different cultural tradition.",
+            "hint": "Consider whether 'each' looks at performances together or one at a time.",
+            "explanation": "'Each performance' is singular, so the verb takes -s: 'celebrates'.",
             "options": [
-                "were",
-                "was"
+                "celebrate",
+                "celebrates"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "celebrates",
+            "grammarRule": "'Each' + singular noun takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l190_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Among the reasons cited for the failure ___ the lack of clear leadership.",
-            "hint": "The real subject is 'the lack of clear leadership' (singular).",
-            "explanation": "In this inverted sentence, the real subject is 'the lack of clear leadership', which is singular. 'Among the reasons cited was the lack of clear leadership'.",
+            "question": "The committee overseeing this merger ___ its decision by Friday.",
+            "hint": "'Overseeing this merger' describes the committee - the subject stays a singular collective noun.",
+            "explanation": "'The committee' is singular, so the verb takes -s: 'makes'.",
             "options": [
-                "were",
-                "was"
+                "make",
+                "makes"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "makes",
+            "grammarRule": "Collective noun takes a singular verb when acting as one unit",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l190_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Not one of the measures that ___ proposed in the report has been implemented.",
-            "hint": "Inside the relative clause, 'that' refers to 'the measures' (plural).",
-            "explanation": "Inside the relative clause 'that were proposed in the report', 'that' refers to 'the measures', which is plural. The verb inside the clause is 'were'. The main verb 'has been' agrees with 'not one' (singular).",
+            "question": "Neither the researchers nor the funding agency ___ ready to comment publicly.",
+            "hint": "Check which of the two nouns joined by 'nor' comes last before the verb.",
+            "explanation": "The noun closer to the verb is 'the funding agency', which is singular, so the verb is 'is'.",
             "options": [
-                "were",
-                "was"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "is",
+            "grammarRule": "'Neither...nor' agreement follows the noun closer to the verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l190_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Not one of the conclusions that ___ reached in the study has been challenged.",
-            "hint": "Inside the relative clause, 'that' refers to 'the conclusions' (plural).",
-            "explanation": "Inside the relative clause 'that were reached in the study', 'that' refers to 'the conclusions', which is plural. The verb inside is 'were'. The main verb 'has been' agrees with 'not one' (singular).",
+            "question": "A number of small businesses in this district ___ with the new regulations.",
+            "hint": "Think about what 'a number of' signals about the businesses: a single count, or several separate ones?",
+            "explanation": "'A number of small businesses' is plural, so the verb stays in the base form: 'struggle'.",
             "options": [
-                "was",
-                "were"
+                "struggles",
+                "struggle"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswer": "struggle",
+            "grammarRule": "'A number of' + plural noun takes a plural verb",
+            "subjectType": "Plural"
         }
     ]
 }

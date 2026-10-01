@@ -8,23 +8,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'writing' as used in the sentence below?",
-            "targetWord": "writing",
-            "sentence": "The antique writing desk in the corner of the study had belonged to her grandmother.",
+            "question": "In this context, what part of speech is 'attached'?",
+            "targetWord": "attached",
+            "sentence": "Hi team, please review the attached draft before Thursday's call, and let me know if you spot any errors.",
             "options": [
-                "Noun",
-                "Adjective",
                 "Verb",
-                "Adverb"
+                "Adjective",
+                "Adverb",
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Can you paraphrase this as 'a desk for writing'? That points to a purpose-naming noun, not a describing adjective.",
-            "explanation": "'Writing' is a noun (a gerund) here, not a true adjective - it modifies 'desk' the way a noun can (like 'a coffee cup'), meaning 'a desk for writing'. Test: you can't say 'a very writing desk', confirming it isn't a true adjective. Compare: 'good writing requires practice' (gerund as subject) vs. 'a writing desk' (gerund as noun modifier) - both are nouns.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "This word, though it comes from a verb, describes the condition of the draft. What kind of draft should the team review?",
+            "explanation": "'Attached' functions as an adjective here, modifying 'draft' and describing that it was included with the email.",
+            "grammarRule": "Participial adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb form",
+                "adjective form"
             ]
         },
         {
@@ -32,23 +32,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'solipsism' as used in the sentence below?",
-            "targetWord": "solipsism",
-            "sentence": "His philosophical position had begun to border dangerously on solipsism.",
+            "question": "In that same sentence, what part of speech is 'if'?",
+            "targetWord": "if",
+            "sentence": "Hi team, please review the attached draft before Thursday's call, and let me know if you spot any errors.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Preposition",
+                "Conjunction",
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Philosophical nouns name theoretical positions. What does 'solipsism' name?",
-            "explanation": "'Solipsism' is a noun - it names the philosophical view that only one's own mind can be known to exist. It follows 'on' (a preposition), confirming it is a noun.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Conjunction",
+            "hint": "This word introduces a condition. Under what condition should the reader let the sender know?",
+            "explanation": "'If' is a subordinating conjunction here, introducing the condition under which the reader should reply — spotting any errors.",
+            "grammarRule": "Subordinating conjunction introducing a conditional clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related conjunction (unless)"
             ]
         },
         {
@@ -56,23 +56,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'obfuscate' as used in the sentence below?",
-            "targetWord": "obfuscate",
-            "sentence": "The lengthy technical jargon in the document seemed deliberately designed to obfuscate the key meaning.",
+            "question": "Which grammatical category fits 'errors' in that same sentence?",
+            "targetWord": "errors",
+            "sentence": "Hi team, please review the attached draft before Thursday's call, and let me know if you spot any errors.",
             "options": [
-                "Noun",
+                "Adverb",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Formal verbs describe deliberately making things unclear. What does the jargon seem designed to do?",
-            "explanation": "'Obfuscate' is a verb - it follows 'to' as an infinitive and means to deliberately make something unclear. 'Obfuscation' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Noun",
+            "hint": "Set aside what you know about this word in general. What might the reader spot in the draft?",
+            "explanation": "'Errors' is a noun here, naming the mistakes the reader might find — it functions as the direct object of 'spot'.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "plural form"
             ]
         },
         {
@@ -80,23 +80,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'swimming' as used in the sentence below?",
-            "targetWord": "swimming",
-            "sentence": "The rooftop swimming pool was only accessible to residents of the exclusive apartment building.",
+            "question": "What grammatical job does 'Running' do in this text exchange?",
+            "targetWord": "Running",
+            "sentence": "\"Running 10 min late, traffic's terrible!\" \"No worries, we haven't started yet.\"",
             "options": [
-                "Noun",
                 "Adjective",
+                "Adverb",
                 "Verb",
-                "Adverb"
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Can you paraphrase this as 'a pool for swimming'? That points to a purpose-naming noun, not a describing adjective.",
-            "explanation": "'Swimming' is a noun (a gerund) here, not a true adjective - it modifies 'pool' the way a noun can (like 'a tennis court'), meaning 'a pool for swimming'. Test: you can't say 'a very swimming pool', confirming it isn't a true adjective. Compare: 'swimming is good exercise' (gerund as subject) vs. 'a swimming pool' (gerund as noun modifier) - both are nouns.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Verb",
+            "hint": "In casual texting, the subject 'I'm' is often dropped. What is the sender doing right now, in an ongoing sense?",
+            "explanation": "'Running' functions as part of the verb here — short for 'I'm running' — describing the sender's ongoing lateness, even though the subject and 'is' are left out in this casual text message.",
+            "grammarRule": "Verb in the present progressive tense (subject omitted)",
             "transformations": [
-                "noun form",
-                "verb form"
+                "gerund use",
+                "progressive verb use"
             ]
         },
         {
@@ -104,23 +104,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'hegemony' as used in the sentence below?",
-            "targetWord": "hegemony",
-            "sentence": "The essay examines the role of cultural hegemony in shaping both public discourse and belief.",
+            "question": "Which part of speech is 'terrible' as it is used here?",
+            "targetWord": "terrible",
+            "sentence": "\"Running 10 min late, traffic's terrible!\" \"No worries, we haven't started yet.\"",
             "options": [
+                "Adjective",
                 "Noun",
                 "Verb",
-                "Adjective",
                 "Adverb"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Political nouns name dominant influence over others. What does 'hegemony' name?",
-            "explanation": "'Hegemony' is a noun - it names the dominant influence or authority of one group over others. It follows 'cultural'.",
-            "grammarRule": "Nouns",
+            "correctAnswer": "Adjective",
+            "hint": "Think about the job it performs here. What quality does 'terrible' give the traffic?",
+            "explanation": "'Terrible' is an adjective here, describing the traffic's condition, following the linking verb 'is' (shortened to 's).",
+            "grammarRule": "Predicate adjective after a linking verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "positive form",
+                "superlative form"
             ]
         },
         {
@@ -128,23 +128,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'exacerbate' as used in the sentence below?",
-            "targetWord": "exacerbate",
-            "sentence": "Poor and short-sighted urban planning can significantly exacerbate inequality by restricting access to resources.",
+            "question": "Identify the part of speech of 'worries' in this context.",
+            "targetWord": "worries",
+            "sentence": "\"Running 10 min late, traffic's terrible!\" \"No worries, we haven't started yet.\"",
             "options": [
+                "Adverb",
                 "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Verb"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe making a problem worse. What can poor urban planning do?",
-            "explanation": "'Exacerbate' is a verb - it follows the modal 'can'. 'Exacerbation' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Noun",
+            "hint": "Think about the job it performs here. What does the reply say there's none of?",
+            "explanation": "'Worries' is a noun here, naming the concerns the second speaker says are unnecessary — it functions as the object in the phrase 'no worries'.",
+            "grammarRule": "Common noun functioning as an object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular form",
+                "plural form"
             ]
         },
         {
@@ -152,23 +152,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'reading' as used in the sentence below?",
-            "targetWord": "reading",
-            "sentence": "The recommended reading list for this course extends to over forty primary academic titles.",
+            "question": "What part of speech is 'Due to' in this notice?",
+            "targetWord": "Due to",
+            "sentence": "Due to scheduled maintenance, the elevator will be out of service from 9 AM until noon; please use the stairs during this time.",
             "options": [
-                "Noun",
-                "Adjective",
+                "Conjunction",
                 "Verb",
-                "Adverb"
+                "Preposition",
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Can you paraphrase this as 'a list for reading'? That points to a purpose-naming noun, not a describing adjective.",
-            "explanation": "'Reading' is a noun (a gerund) here, not a true adjective - it modifies 'list' the way a noun can (like 'a shopping list'), meaning 'a list for reading'. Test: you can't say 'a very reading list', confirming it isn't a true adjective. Compare: 'reading widely improves vocabulary' (gerund as subject) vs. 'a reading list' (gerund as noun modifier) - both are nouns.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Preposition",
+            "hint": "This expression introduces a reason at the start of the notice. What caused the elevator to go out of service?",
+            "explanation": "'Due to' functions as a compound preposition here, introducing the reason for the elevator being out of service.",
+            "grammarRule": "Compound preposition introducing a reason phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related conjunction (because)"
             ]
         },
         {
@@ -176,23 +176,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'ontology' as used in the sentence below?",
-            "targetWord": "ontology",
-            "sentence": "Ontology addresses fundamental questions about what entities genuinely exist and in what categories.",
+            "question": "Staying with that notice, which category describes 'until'?",
+            "targetWord": "until",
+            "sentence": "Due to scheduled maintenance, the elevator will be out of service from 9 AM until noon; please use the stairs during this time.",
             "options": [
                 "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
+                "Conjunction",
+                "Preposition",
+                "Verb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Philosophical nouns name branches of study. What does 'ontology' name here?",
-            "explanation": "'Ontology' is a noun - it names the branch of philosophy concerned with the nature of existence and reality. It is the subject of the sentence. The suffix '-logy' means 'the study of'.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Preposition",
+            "hint": "This word is followed by a simple time word, not a clause. What time does the out-of-service period end?",
+            "explanation": "'Until' is a preposition here, introducing the time word 'noon' rather than a full clause.",
+            "grammarRule": "Preposition introducing an ending point in time",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "conjunction use"
             ]
         },
         {
@@ -200,23 +200,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'encumber' as used in the sentence below?",
-            "targetWord": "encumber",
-            "sentence": "Excessive bureaucratic regulation can genuinely encumber both innovation and commercial development.",
+            "question": "Back in that same notice, what kind of word is 'please'?",
+            "targetWord": "please",
+            "sentence": "Due to scheduled maintenance, the elevator will be out of service from 9 AM until noon; please use the stairs during this time.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
+                "Interjection",
+                "Noun",
                 "Adverb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe placing obstacles on something. What can excessive regulation do?",
-            "explanation": "'Encumber' is a verb - it follows the modal 'can'. 'Encumbrance' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adverb",
+            "hint": "This word softens a command without naming an action itself. What effect does 'please' have on the instruction?",
+            "explanation": "'Please' functions as an adverb here, softening the request to use the stairs — it makes the instruction sound more polite without changing its meaning.",
+            "grammarRule": "Adverb softening a command",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adverb use",
+                "interjection use"
             ]
         },
         {
@@ -224,9 +224,273 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'interesting' as used in the sentence below?",
-            "targetWord": "interesting",
-            "sentence": "What is genuinely interesting is not what people say openly, but what they leave unsaid.",
+            "question": "How is 'assembling' functioning in this sentence?",
+            "targetWord": "assembling",
+            "sentence": "Before assembling the shelf, make sure all screws are sorted, since missing pieces can delay the process significantly.",
+            "options": [
+                "Verb",
+                "Noun",
+                "Adjective",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Noun",
+            "hint": "This '-ing' word names an activity and follows the preposition 'Before.' What should happen before the shelf is put together?",
+            "explanation": "'Assembling' is a gerund here, functioning as the object of the preposition 'Before' — it names the task that comes after checking the screws.",
+            "grammarRule": "Gerund functioning as the object of a preposition",
+            "transformations": [
+                "gerund use",
+                "verb use"
+            ]
+        },
+        {
+            "id": "pos_l164_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Now consider 'since' in that same sentence. What part of speech is it?",
+            "targetWord": "since",
+            "sentence": "Before assembling the shelf, make sure all screws are sorted, since missing pieces can delay the process significantly.",
+            "options": [
+                "Verb",
+                "Preposition",
+                "Noun",
+                "Conjunction"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Conjunction",
+            "hint": "This word introduces a reason for sorting the screws first. Why is it important to sort the screws?",
+            "explanation": "'Since' functions as a subordinating conjunction here, meaning 'because' — it introduces the reason missing pieces could cause delays.",
+            "grammarRule": "Subordinating conjunction introducing a reason clause",
+            "transformations": [
+                "conjunction use",
+                "preposition use (time)"
+            ]
+        },
+        {
+            "id": "pos_l164_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "And in that same sentence, what part of speech is 'significantly'?",
+            "targetWord": "significantly",
+            "sentence": "Before assembling the shelf, make sure all screws are sorted, since missing pieces can delay the process significantly.",
+            "options": [
+                "Verb",
+                "Adjective",
+                "Adverb",
+                "Noun"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "Ask how it connects to the words near it. How much could missing pieces delay the process?",
+            "explanation": "'Significantly' is a degree adverb modifying the verb 'delay', showing how serious the possible setback could be.",
+            "grammarRule": "Degree adverb modifying a verb",
+            "transformations": [
+                "adjective form",
+                "adverb form"
+            ]
+        },
+        {
+            "id": "pos_l165_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which part of speech does 'helpful' represent in this review?",
+            "targetWord": "helpful",
+            "sentence": "The staff were incredibly helpful, though the wait time was longer than expected, which was a bit disappointing.",
+            "options": [
+                "Adverb",
+                "Adjective",
+                "Noun",
+                "Verb"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "Think about the job it performs here. What quality does 'helpful' give the staff?",
+            "explanation": "'Helpful' is an adjective here, describing the staff's behavior, following the linking verb 'were'.",
+            "grammarRule": "Predicate adjective after a linking verb",
+            "transformations": [
+                "positive form",
+                "comparative form"
+            ]
+        },
+        {
+            "id": "pos_l165_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Staying with that review, which category describes 'though'?",
+            "targetWord": "though",
+            "sentence": "The staff were incredibly helpful, though the wait time was longer than expected, which was a bit disappointing.",
+            "options": [
+                "Conjunction",
+                "Noun",
+                "Verb",
+                "Preposition"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Conjunction",
+            "hint": "This word introduces a contrast with the positive first half of the sentence. What contrast does it set up?",
+            "explanation": "'Though' is a subordinating conjunction here, introducing a clause that contrasts with the praise given to the staff — the service was good, but the wait was long.",
+            "grammarRule": "Subordinating conjunction introducing a contrast clause",
+            "transformations": [
+                "conjunction use",
+                "related conjunction (although)"
+            ]
+        },
+        {
+            "id": "pos_l165_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "In the same review, what role does 'which' play?",
+            "targetWord": "which",
+            "sentence": "The staff were incredibly helpful, though the wait time was longer than expected, which was a bit disappointing.",
+            "options": [
+                "Conjunction",
+                "Verb",
+                "Pronoun",
+                "Noun"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Pronoun",
+            "hint": "This word refers back to the entire situation of waiting longer than expected, not just one noun. What does 'which' refer to here?",
+            "explanation": "'Which' is a relative pronoun referring back to the whole idea of the wait being longer than expected — the same whole-clause pattern seen several times earlier in this course.",
+            "grammarRule": "Relative pronoun referring to a whole clause",
+            "transformations": [
+                "relative use",
+                "interrogative use"
+            ]
+        },
+        {
+            "id": "pos_l166_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Classify 'to confirm' as it appears in this voicemail.",
+            "targetWord": "to confirm",
+            "sentence": "Hi, this is Dr. Alvarez's office calling to confirm your appointment tomorrow at three; please call back if you need to reschedule.",
+            "options": [
+                "Verb",
+                "Adjective",
+                "Noun",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adverb",
+            "hint": "This 'to + verb' phrase explains why the office is calling, modifying the verb 'calling.' Why is the office calling?",
+            "explanation": "'To confirm' is an infinitive functioning as an adverb here, showing the purpose of the call.",
+            "grammarRule": "Infinitive of purpose modifying a verb",
+            "transformations": [
+                "infinitive use",
+                "gerund use"
+            ]
+        },
+        {
+            "id": "pos_l166_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which grammatical category fits 'to reschedule' in that same voicemail?",
+            "targetWord": "to reschedule",
+            "sentence": "Hi, this is Dr. Alvarez's office calling to confirm your appointment tomorrow at three; please call back if you need to reschedule.",
+            "options": [
+                "Noun",
+                "Adjective",
+                "Verb",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "This 'to + verb' phrase names what the listener might need, acting as the object of 'need.' What might the listener need to do?",
+            "explanation": "'To reschedule' is an infinitive here, functioning as the object of 'need' — it names the action the listener might require.",
+            "grammarRule": "Infinitive functioning as a direct object",
+            "transformations": [
+                "infinitive use",
+                "gerund use"
+            ]
+        },
+        {
+            "id": "pos_l166_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Looking at the same voicemail, how is 'back' functioning?",
+            "targetWord": "back",
+            "sentence": "Hi, this is Dr. Alvarez's office calling to confirm your appointment tomorrow at three; please call back if you need to reschedule.",
+            "options": [
+                "Verb",
+                "Adjective",
+                "Noun",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adverb",
+            "hint": "This word shows the direction of the return call. Which direction does 'back' point to?",
+            "explanation": "'Back' functions as an adverb here, showing the direction of the requested call — a return call to the office. This is the same word seen earlier in this course as a noun (body part) and an adjective (back entrance).",
+            "grammarRule": "Direction adverb modifying a verb",
+            "transformations": [
+                "noun use",
+                "adjective use"
+            ]
+        },
+        {
+            "id": "pos_l167_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "In this post, 'moved' is functioning as a:",
+            "targetWord": "moved",
+            "sentence": "Just moved into the neighborhood and already loving the friendly vibe here!",
+            "options": [
+                "Verb",
+                "Adjective",
+                "Adverb",
+                "Noun"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Verb",
+            "hint": "In this casual post, the subject 'I' is left out. What did the poster do?",
+            "explanation": "'Moved' is a verb here, describing the poster's action of relocating — short for 'I just moved'.",
+            "grammarRule": "Action verb in past tense (subject omitted)",
+            "transformations": [
+                "base form",
+                "past-tense form"
+            ]
+        },
+        {
+            "id": "pos_l167_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Within that same post, 'loving' is functioning as a:",
+            "targetWord": "loving",
+            "sentence": "Just moved into the neighborhood and already loving the friendly vibe here!",
+            "options": [
+                "Verb",
+                "Adverb",
+                "Noun",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Verb",
+            "hint": "This '-ing' word combines with an omitted 'am' to form the main verb. What is the poster doing right now, in an ongoing sense?",
+            "explanation": "'Loving' functions as part of the verb here, short for 'I'm already loving' — the present progressive tense with the subject and 'am' omitted in this casual style.",
+            "grammarRule": "Verb in the present progressive tense (subject omitted)",
+            "transformations": [
+                "gerund use",
+                "progressive verb use"
+            ]
+        },
+        {
+            "id": "pos_l167_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "And in that same post, what part of speech is 'friendly'?",
+            "targetWord": "friendly",
+            "sentence": "Just moved into the neighborhood and already loving the friendly vibe here!",
             "options": [
                 "Noun",
                 "Adjective",
@@ -235,276 +499,12 @@
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "Adjective",
-            "hint": "Adjectives can describe what captures attention. What does 'interesting' describe here?",
-            "explanation": "'Interesting' is an adjective - it follows the linking verb 'is' as a predicate adjective. Compare: 'the book interests her' (verb) vs. 'the book is interesting' (adjective).",
-            "grammarRule": "Adjectives",
+            "hint": "Remember that '-ly' words are not automatically adverbs. What quality does 'friendly' give the vibe?",
+            "explanation": "'Friendly' is an adjective here, describing the neighborhood's atmosphere — the same '-ly' adjective pattern taught earlier in this course.",
+            "grammarRule": "Attributive adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l164_q2",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'epistemology' as used in the sentence below?",
-            "targetWord": "epistemology",
-            "sentence": "Epistemology raises the fundamental question: not what we know, but how we know that we know it.",
-            "options": [
-                "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Philosophical nouns name branches of inquiry. What does 'epistemology' name?",
-            "explanation": "'Epistemology' is a noun - it names the branch of philosophy that studies the nature and limits of human knowledge. It is the subject. The prefix 'epistem-' comes from Greek for knowledge.",
-            "grammarRule": "Nouns",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l164_q3",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'inculcate' as used in the sentence below?",
-            "targetWord": "inculcate",
-            "sentence": "The stated goal of the programme was to inculcate a genuine love of learning before the age of seven.",
-            "options": [
-                "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Educational verbs describe instilling values. What was the goal of the programme?",
-            "explanation": "'Inculcate' is a verb - it follows 'to' as an infinitive and means to instil an attitude through persistent repetition. 'Inculcation' is the noun form.",
-            "grammarRule": "Verbs",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l165_q1",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'following' as used in the sentence below?",
-            "targetWord": "following",
-            "sentence": "Following the remarkable discovery, the entire archaeological site was immediately closed to the public.",
-            "options": [
-                "Preposition",
-                "Noun",
-                "Adjective",
-                "Verb"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Preposition",
-            "hint": "'Following' looks like a verb form, but does it introduce a noun phrase or a clause here?",
-            "explanation": "'Following' is a preposition - it introduces the noun phrase 'the remarkable discovery' and means 'after'. Compare: 'who is following us?' (verb) vs. 'following the discovery' (preposition = after).",
-            "grammarRule": "Prepositions",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l165_q2",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'tautology' as used in the sentence below?",
-            "targetWord": "tautology",
-            "sentence": "Saying 'a true fact' is a tautology - all facts are by definition true, making 'true' redundant.",
-            "options": [
-                "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Linguistic nouns name types of errors in language. What does 'tautology' name?",
-            "explanation": "'Tautology' is a noun - it names the unnecessary repetition of meaning using different words. It follows 'a'. Examples: 'past history', 'free gift', 'end result'.",
-            "grammarRule": "Nouns",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l165_q3",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'proliferate' as used in the sentence below?",
-            "targetWord": "proliferate",
-            "sentence": "Misinformation tends to proliferate most rapidly in social environments of uncertainty and fear.",
-            "options": [
-                "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe the rapid spread of something. What does misinformation tend to do?",
-            "explanation": "'Proliferate' is a verb - it is the main verb in the sentence. 'Proliferation' is the noun form.",
-            "grammarRule": "Verbs",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l166_q1",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'given' as used in the sentence below?",
-            "targetWord": "given",
-            "sentence": "Given the scale of the available evidence, the most logical conclusion seems entirely clear.",
-            "options": [
-                "Preposition",
-                "Noun",
-                "Adjective",
-                "Verb"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Preposition",
-            "hint": "'Given' functions like 'considering' or 'taking into account'. Is it introducing a noun phrase?",
-            "explanation": "'Given' is a preposition - it introduces the noun phrase 'the scale of the available evidence' and means 'considering'. Participle-derived prepositions (given, following, including, regarding) introduce noun phrases.",
-            "grammarRule": "Prepositions",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l166_q2",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'paradox' as used in the sentence below?",
-            "targetWord": "paradox",
-            "sentence": "The central paradox of the information age is that we have more data yet less genuine understanding.",
-            "options": [
-                "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Abstract nouns name seemingly contradictory truths. What does 'paradox' name?",
-            "explanation": "'Paradox' is a noun - it names a statement that seems contradictory but contains a deeper truth. It follows 'The central'.",
-            "grammarRule": "Nouns",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l166_q3",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'abate' as used in the sentence below?",
-            "targetWord": "abate",
-            "sentence": "The intensity of the destructive storm began to abate towards dawn, allowing rescuers to move in.",
-            "options": [
-                "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe something becoming less intense. What did the storm begin to do?",
-            "explanation": "'Abate' is a verb - it follows 'began to'. 'Abatement' is the noun form. Reduction verbs (abate, diminish, subside, wane) describe decreasing in strength.",
-            "grammarRule": "Verbs",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l167_q1",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'considering' as used in the sentence below?",
-            "targetWord": "considering",
-            "sentence": "Considering the enormous scale of the challenge, the initial results were reasonably encouraging.",
-            "options": [
-                "Preposition",
-                "Noun",
-                "Adjective",
-                "Verb"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Preposition",
-            "hint": "Does 'considering' introduce a noun phrase (preposition) or a full clause here?",
-            "explanation": "'Considering' is a preposition - it introduces the noun phrase 'the enormous scale of the challenge' and means 'taking into account'. Compare: 'she is considering the offer' (verb) vs. 'considering the offer, she agreed' (preposition).",
-            "grammarRule": "Prepositions",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l167_q2",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'efficacy' as used in the sentence below?",
-            "targetWord": "efficacy",
-            "sentence": "Clinical trials are designed to rigorously test the safety and efficacy of new medical treatments.",
-            "options": [
-                "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Medical nouns name the effectiveness of treatments. What does 'efficacy' name?",
-            "explanation": "'Efficacy' is a noun - it names the ability to produce the desired result. It is coordinated with 'safety', confirming it is a noun. 'Efficacious' is the adjective form.",
-            "grammarRule": "Nouns",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l167_q3",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'galvanising' as used in the sentence below?",
-            "targetWord": "galvanising",
-            "sentence": "The global financial crisis had the unexpected effect of galvanising communities to work together.",
-            "options": [
-                "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "This '-ing' word follows the preposition 'of'. What part of speech usually follows a preposition?",
-            "explanation": "'Galvanising' is a noun here - a gerund functioning as the object of the preposition 'of' ('the effect of galvanising communities'). Even though it keeps a verb's meaning and can take its own object ('communities'), a gerund itself always functions as a noun.",
-            "grammarRule": "Nouns",
-            "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "comparative form"
             ]
         },
         {
@@ -512,23 +512,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'regarding' as used in the sentence below?",
-            "targetWord": "regarding",
-            "sentence": "Regarding your recent formal request, I am pleased to confirm that all arrangements are now in place.",
+            "question": "Which grammatical category best describes 'who' here?",
+            "targetWord": "who",
+            "sentence": "Employees who fail to submit timesheets by Friday will not be paid until the following cycle, regardless of the reason.",
             "options": [
-                "Preposition",
-                "Noun",
                 "Verb",
-                "Adjective"
+                "Noun",
+                "Pronoun",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Preposition",
-            "hint": "'Regarding' introduces the topic of communication. Is it a preposition or a verb here?",
-            "explanation": "'Regarding' is a preposition - it introduces the noun phrase 'your recent formal request' and means 'on the subject of' or 'concerning'. Compare: 'she was regarding him closely' (verb) vs. 'regarding your request' (preposition).",
-            "grammarRule": "Prepositions",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Pronoun",
+            "hint": "This word introduces a clause identifying which employees are meant. Which employees won't be paid on time?",
+            "explanation": "'Who' is a relative pronoun introducing the clause 'who fail to submit timesheets by Friday', identifying which employees the policy affects.",
+            "grammarRule": "Relative pronoun introducing a descriptive clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "subject form",
+                "object form (whom)"
             ]
         },
         {
@@ -536,23 +536,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'volatility' as used in the sentence below?",
-            "targetWord": "volatility",
-            "sentence": "Financial markets displayed extreme and unprecedented volatility during the first months of the crisis.",
+            "question": "Now consider 'to submit' in that same notice. What part of speech is it?",
+            "targetWord": "to submit",
+            "sentence": "Employees who fail to submit timesheets by Friday will not be paid until the following cycle, regardless of the reason.",
             "options": [
-                "Noun",
                 "Verb",
                 "Adjective",
+                "Noun",
                 "Adverb"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "Noun",
-            "hint": "Abstract nouns name levels of instability. What does 'volatility' name?",
-            "explanation": "'Volatility' is a noun - it names the quality of being highly unstable. It follows 'extreme and unprecedented'. The suffix '-ity' forms abstract nouns.",
-            "grammarRule": "Nouns",
+            "hint": "This 'to + verb' phrase names what certain employees don't do, acting as the object of 'fail.' What do these employees fail to do?",
+            "explanation": "'To submit' is an infinitive here, functioning as the object of 'fail' — it names the required action some employees don't complete.",
+            "grammarRule": "Infinitive functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "infinitive use",
+                "gerund use"
             ]
         },
         {
@@ -560,23 +560,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'attenuate' as used in the sentence below?",
-            "targetWord": "attenuate",
-            "sentence": "Distance and physical barriers tend to attenuate the strength of wireless signals considerably.",
+            "question": "In that same notice, what part of speech is 'regardless of'?",
+            "targetWord": "regardless of",
+            "sentence": "Employees who fail to submit timesheets by Friday will not be paid until the following cycle, regardless of the reason.",
             "options": [
-                "Noun",
+                "Conjunction",
+                "Preposition",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Scientific verbs describe reducing the strength of something. What does distance do to signals?",
-            "explanation": "'Attenuate' is a verb - it follows 'tend to' as an infinitive and means to reduce strength or intensity. 'Attenuation' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswer": "Preposition",
+            "hint": "This expression means 'no matter.' What doesn't change the outcome, according to the sentence?",
+            "explanation": "'Regardless of' functions as a compound preposition here, introducing the phrase that shows the payment delay applies no matter the excuse.",
+            "grammarRule": "Compound preposition introducing an unaffected condition",
             "transformations": [
-                "noun form",
-                "verb form"
+                "preposition use",
+                "related conjunction (even if)"
             ]
         },
         {
@@ -584,23 +584,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'barring' as used in the sentence below?",
-            "targetWord": "barring",
-            "sentence": "Barring any completely unforeseen complications, the entire project should be completed as planned.",
+            "question": "The word 'confusing' is being used as which grammatical category?",
+            "targetWord": "confusing",
+            "sentence": "Although the new policy seemed confusing at first, most employees adapted quickly, and productivity actually increased within the first month.",
             "options": [
-                "Preposition",
                 "Noun",
                 "Verb",
+                "Adverb",
                 "Adjective"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Preposition",
-            "hint": "'Barring' introduces an exception. Is it a preposition or a verb here?",
-            "explanation": "'Barring' is a preposition - it introduces the noun phrase 'any unforeseen complications' and means 'except for' or 'unless there are'. Compare: 'barring entry' (verb = blocking) vs. 'barring any problems' (preposition = except for).",
-            "grammarRule": "Prepositions",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "Look at what this word does in this exact sentence. What quality did the policy have at first?",
+            "explanation": "'Confusing' is an adjective here, describing the policy's initial impression, following the linking verb 'seemed'.",
+            "grammarRule": "Predicate adjective after a linking verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb form",
+                "adjective form"
             ]
         },
         {
@@ -608,23 +608,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'subjectivity' as used in the sentence below?",
-            "targetWord": "subjectivity",
-            "sentence": "All forms of artistic criticism involve an unavoidable and inherent degree of personal subjectivity.",
+            "question": "Back in that same memo, what kind of word is 'adapted'?",
+            "targetWord": "adapted",
+            "sentence": "Although the new policy seemed confusing at first, most employees adapted quickly, and productivity actually increased within the first month.",
             "options": [
                 "Noun",
+                "Adverb",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Abstract nouns name qualities of personal perspective. What does 'subjectivity' name?",
-            "explanation": "'Subjectivity' is a noun - it names the quality of being based on personal feelings rather than facts. It follows 'of'. The suffix '-ity' forms abstract nouns.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Verb",
+            "hint": "Notice what the word is attached to. What action did they take?",
+            "explanation": "'Adapted' is a verb here, describing the employees' action of adjusting to the new policy.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -632,23 +632,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'coalesce' as used in the sentence below?",
-            "targetWord": "coalesce",
-            "sentence": "The various strands of evidence gradually began to coalesce into a single coherent and unified theory.",
+            "question": "And in that same memo, what part of speech is 'actually'?",
+            "targetWord": "actually",
+            "sentence": "Although the new policy seemed confusing at first, most employees adapted quickly, and productivity actually increased within the first month.",
             "options": [
                 "Noun",
-                "Verb",
                 "Adjective",
+                "Verb",
                 "Adverb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Verbs describe separate elements combining. What did the evidence begin to do?",
-            "explanation": "'Coalesce' is a verb - it follows 'began to'. 'Coalescence' is the noun form. Merging verbs (coalesce, converge, combine) describe coming together.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adverb",
+            "hint": "Remember from an earlier lesson that this word can emphasize the truth of a statement. What does 'actually' emphasize here?",
+            "explanation": "'Actually' is a sentence adverb here, emphasizing that productivity genuinely increased, despite the initial confusion — the same pattern seen in an earlier lesson about a manager closing early.",
+            "grammarRule": "Sentence adverb expressing emphasis",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "adverb use"
             ]
         },
         {
@@ -656,23 +656,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'save' as used in the sentence below?",
-            "targetWord": "save",
-            "sentence": "All the original data was carefully preserved, save for a few files lost in the catastrophic system crash.",
+            "question": "How is 'to back up' functioning in this message?",
+            "targetWord": "to back up",
+            "sentence": "Please remember to back up your files before the system update tonight, since anything left unsaved could be lost, and IT will not be able to recover it afterward.",
             "options": [
-                "Preposition",
+                "Adjective",
                 "Noun",
-                "Verb",
-                "Adjective"
+                "Adverb",
+                "Verb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Preposition",
-            "hint": "'Save' introduces an exception. Is this formal preposition meaning 'except for', or is it the common verb?",
-            "explanation": "'Save' is a preposition - in this formal/literary usage, it means 'except for'. It introduces the noun phrase 'a few files'. Compare: 'save your work' (verb) vs. 'all was well, save for one problem' (formal preposition = except for).",
-            "grammarRule": "Prepositions",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Noun",
+            "hint": "This 'to + verb' phrase names what the reader should remember, acting as the object of 'remember.' What should the reader remember to do?",
+            "explanation": "'To back up' is an infinitive here, functioning as the object of 'remember' — it names the important task before the update.",
+            "grammarRule": "Infinitive functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "infinitive use",
+                "gerund use"
             ]
         },
         {
@@ -680,23 +680,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'provenance' as used in the sentence below?",
-            "targetWord": "provenance",
-            "sentence": "The auction house was ultimately unable to establish the provenance of the painting to the buyer's satisfaction.",
+            "question": "In that same message, what part of speech is 'unsaved'?",
+            "targetWord": "unsaved",
+            "sentence": "Please remember to back up your files before the system update tonight, since anything left unsaved could be lost, and IT will not be able to recover it afterward.",
             "options": [
                 "Noun",
+                "Adverb",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Art and historical nouns name records of origin. What does 'provenance' name?",
-            "explanation": "'Provenance' is a noun - it names the documented origin and history of ownership of an artwork. It follows 'the', confirming it is a noun.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "This word describes the condition of something left behind. What condition might files be in if not backed up?",
+            "explanation": "'Unsaved' functions as an adjective here, describing the state of files that weren't saved before the update — similar to other participial adjectives like 'broken' or 'exhausted' from earlier lessons.",
+            "grammarRule": "Participial adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb form",
+                "adjective form"
             ]
         },
         {
@@ -704,23 +704,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'obviate' as used in the sentence below?",
-            "targetWord": "obviate",
-            "sentence": "Better advance planning at the outset would have helped to obviate the need for costly later corrections.",
+            "question": "Within that same message, 'afterward' is functioning as a:",
+            "targetWord": "afterward",
+            "sentence": "Please remember to back up your files before the system update tonight, since anything left unsaved could be lost, and IT will not be able to recover it afterward.",
             "options": [
-                "Noun",
                 "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Formal verbs describe preventing a problem from arising. What would better planning have helped do?",
-            "explanation": "'Obviate' is a verb - it follows 'to' as an infinitive and means to anticipate and prevent a difficulty before it arises. 'Obviation' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "Set aside what you know about this word in general. When would IT be unable to recover the files?",
+            "explanation": "'Afterward' is a time adverb modifying the verb phrase 'will not be able to recover', showing that the problem occurs after the update.",
+            "grammarRule": "Time adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adverb use",
+                "related preposition (after)"
             ]
         }
     ]

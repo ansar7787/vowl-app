@@ -1,787 +1,787 @@
 {
-    "gameType": "branchingDialogue",
-    "batchIndex": 19,
-    "levels": "181-190",
-    "quests": [
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'What is the most difficult thing to teach medical students and why?'",
-            "options": [
-                "The most difficult thing is teaching clinical judgment for patients with multiple comorbidities.",
-                "Teaching students to communicate difficult diagnoses with genuine compassion is always a challenge.",
-                "Tolerating real uncertainty with a suffering patient in front of you - resisting the urge to close on a diagnosis too early just to relieve your own discomfort. That can't come from a textbook."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name the specific discomfort being tolerated, and why it resists curriculum teaching.",
-            "explanation": "Naming the specific discomfort, and why it can only be earned through supervised experience, identifies exactly what's hardest to teach. 'Clinical judgment for patients with multiple comorbidities' is a real, teachable challenge. 'Communicating difficult diagnoses with compassion' is also teachable, unlike the specific tolerance this answer names.",
-            "id": "bd_l181_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'What is the hardest commercial decision you can be asked to make?'",
-            "options": [
-                "Deciding whether to lay off loyal staff during a genuine downturn is always brutal.",
-                "It's the one where the commercially correct choice and the ethically correct choice are genuinely different, and you know it - most 'ethical' business decisions actually cost nothing.",
-                "The hardest commercial decision is one involving significant uncertainty where the right answer is genuinely unclear."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name the specific structure of genuine cost, not uncertainty or a single hard example.",
-            "explanation": "Naming the specific structure - clarity that ethics and profit diverge, and genuine cost - identifies what makes a decision truly hard. 'Significant uncertainty where the right answer is unclear' describes a different kind of difficulty, about not knowing rather than knowing and paying. 'Laying off loyal staff' is one hard example, not the general structure.",
-            "id": "bd_l181_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'What is the most important thing you've learned about communication under pressure?'",
-            "options": [
-                "Staying calm on the radio is the single most important communication skill in an emergency.",
-                "The most important thing is to communicate clearly and concisely with standard phraseology.",
-                "Under real pressure people actually communicate less, especially about the things that most need saying - that you don't understand what's happening, that you made an error."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name the counter-intuitive pattern under pressure, not the official communication standard.",
-            "explanation": "Naming the counter-intuitive pattern - less communication of exactly what's needed most - identifies the real training gap. 'Communicate clearly and concisely with standard phraseology' is the official answer this response builds beyond. 'Staying calm on the radio' addresses tone, not the specific content gap being described.",
-            "id": "bd_l181_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'What does a long career in command teach about the nature of authority?'",
-            "options": [
-                "Authority comes from the position and must be exercised with wisdom and consistency.",
-                "Authority has two sources people rarely separate - formal authority from rank, which compels, and actual authority from your judgment and care, which makes people genuinely want to follow.",
-                "The best commanders I've served under earned respect long before they earned rank."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name two distinct sources of authority and what each specifically produces.",
-            "explanation": "Naming two distinct sources, and what each specifically produces, gives real analytical precision. 'Authority comes from the position and must be exercised with wisdom' conflates the two sources into one. 'The best commanders earned respect before rank' is an observation consistent with the insight but doesn't name the underlying distinction.",
-            "id": "bd_l182_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'What is the most important thing that working in intelligence has taught you about the nature of evidence?'",
-            "options": [
-                "Evidence only speaks once it's interpreted, and interpretation always starts from a hypothesis you already hold - the real discipline is noticing the assumptions shaping how you're reading what you have.",
-                "Evidence must be carefully evaluated for reliability, validity, and completeness to be useful.",
-                "The best analysts I've known are relentless about double-checking their own sources."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name the role of prior hypothesis in interpretation, not evaluation criteria.",
-            "explanation": "Naming the role of prior hypothesis in interpretation identifies a genuinely deep insight about evidence itself. 'Carefully evaluated for reliability, validity, and completeness' describes what to do with evidence without this insight. 'Relentless about double-checking sources' addresses source verification, a different and narrower concern.",
-            "id": "bd_l182_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'What is the most important thing cooking has taught you about creativity?'",
-            "options": [
-                "Creativity isn't mainly about generating new ideas, it's about knowing existing things precisely enough to see the exact gap where something new actually fits.",
-                "Creativity in cooking comes from using good ingredients and being willing to experiment.",
-                "The most creative chefs I know still spend most of their time studying the classics."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Reframe creativity as depth of knowledge, not generation of ideas or willingness to try.",
-            "explanation": "Reframing creativity as depth of knowledge finding a gap, rather than idea generation, gives a precise, counter-intuitive mechanism. 'Good ingredients and willingness to experiment' describes conditions for good cooking without this specific insight. 'The most creative chefs study the classics' is consistent with the insight but doesn't state the mechanism itself.",
-            "id": "bd_l182_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'What is the single most important reform that would most improve health outcomes globally?'",
-            "options": [
-                "Investing heavily in preventative care would save far more lives than treating illness later.",
-                "Making clean water and basic sanitation genuinely universal - not the exciting answer, but the gap between what works and what's actually available is largest right here.",
-                "Achieving universal health coverage so everyone can access care without financial hardship."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name the specific, unglamorous intervention with the largest known gap.",
-            "explanation": "Naming the specific intervention, with the reasoning about the size of the gap, gives an evidence-based, counter-intuitive answer. 'Universal health coverage without financial hardship' addresses treatment access rather than prevention. 'Investing in preventative care generally' is too broad to identify the single most important reform.",
-            "id": "bd_l183_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'What is the most important thing that has changed in how business works in your career?'",
-            "options": [
-                "The most important change has been the transformation brought by technology and digital platforms.",
-                "Information asymmetry has basically collapsed as an advantage - customers can check prices and alternatives instantly now. What replaced it is trust and judgment.",
-                "Customers today are far more price-sensitive than they were when I started out."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name the specific competitive shift and what replaced the old advantage.",
-            "explanation": "Naming the specific shift, and what replaced the old advantage, identifies the precise change rather than its cause. 'The transformation brought by technology and digital platforms' names the mechanism without the specific competitive implication. 'Customers are more price-sensitive now' names a symptom, not the underlying shift in what creates advantage.",
-            "id": "bd_l183_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'What is the most important question aviation has not yet answered?'",
-            "options": [
-                "How to transfer an experienced pilot's actual judgement, not their knowledge or procedures, into the systems that will eventually replace them.",
-                "How to make automated systems more transparent to the pilots relying on them.",
-                "The most important question is how to fully eliminate the remaining causes of fatal accidents."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name the specific unanswered question about transferring tacit judgement, not general safety goals.",
-            "explanation": "Naming the specific challenge of transferring tacit judgement, distinct from knowledge, identifies a genuinely unanswered and urgent question. 'How to fully eliminate the remaining causes of fatal accidents' is the general safety improvement goal. 'Making automated systems more transparent to pilots' addresses a related but different, narrower design question.",
-            "id": "bd_l183_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'What would you say to someone considering a career of service to something larger than themselves?'",
-            "options": [
-                "Make sure your family understands what you're signing up for before you commit.",
-                "Service to something larger than yourself is one of the most meaningful things you can do.",
-                "Three things - make sure the cause is actually worthy of the commitment, bring your whole self rather than treating it as self-sacrifice, and be honest that the cost is real."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Give three specific, honest pieces of guidance, not an inspirational statement.",
-            "explanation": "Giving three specific pieces of honest guidance addresses what someone actually needs to hear before committing. 'One of the most meaningful things you can do' is inspirational but offers no actual guidance. 'Make sure your family understands' names one true consideration, not the fuller set of guidance.",
-            "id": "bd_l184_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'What is the last thing you would want someone who is just starting in intelligence work to understand?'",
-            "options": [
-                "Learn to compartmentalise early, or the different parts of your life will bleed into each other.",
-                "The most important thing is to understand the responsibility you're taking on and take it seriously.",
-                "The work will change you, and how it changes you is mostly in your control if you notice it happening - the shifts are small and invisible in the moment."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name the specific mechanism of gradual, controllable change, not general responsibility.",
-            "explanation": "Naming the specific mechanism - small, noticeable increments - and the practice that catches them gives genuinely actionable insight. 'Understand the responsibility and take it seriously' is important but generic advice. 'Learn to compartmentalise early' is a different, narrower coping strategy, not the reflective practice being described.",
-            "id": "bd_l184_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'What is the most important thing that cooking has taught you about the relationship between work and meaning?'",
-            "options": [
-                "Work done with passion and skill is intrinsically meaningful and produces its own satisfaction.",
-                "The most meaningful jobs are usually the ones where you can see who you're helping.",
-                "Work becomes meaningful when it closes a loop - a direct, visible line between your effort and its effect on another person. Cooking closes that loop as directly as any work can."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name the specific mechanism - a closed loop - not a general statement about passion.",
-            "explanation": "Naming the specific mechanism of a closed feedback loop identifies why cooking is distinctively meaningful. 'Passion and skill produce their own satisfaction' is a general statement without this specific mechanism. 'Jobs where you can see who you're helping' is close but doesn't name the loop mechanism precisely.",
-            "id": "bd_l184_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'What is the most honest thing you can say about death after a career working with patients who are dying?'",
-            "options": [
-                "It's both far less frightening and far more present than most people's relationship with it suggests. The ones who die most peacefully usually let its reality quietly shape ordinary choices.",
-                "You never fully get used to it, no matter how many times you've seen it.",
-                "Death is the natural end of life, and medicine's role is to ensure people die with dignity."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Give the honest dual account, plus the specific pattern behind composure.",
-            "explanation": "Giving the honest dual account, plus the specific pattern behind who dies with composure, is genuinely earned insight. 'Medicine's role is to ensure people die with dignity' describes medicine's role, not an honest personal account of death. 'You never fully get used to it' is honest but generic, without the specific insight about integration.",
-            "id": "bd_l185_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'What do you believe is the most important unfinished project of commercial civilisation?'",
-            "options": [
-                "Making the system that's produced extraordinary progress for some work with comparable effectiveness for everyone - whether it genuinely does that is still, honestly, unresolved.",
-                "Closing the gap between the best-resourced and worst-resourced businesses in any given market.",
-                "The most important unfinished project is achieving sustainable development that preserves the natural world."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name the specific commercial question, not a related but different unfinished project.",
-            "explanation": "Naming the specific commercial question, and being honest about its unresolved status, gives a precise, earned answer. 'Sustainable development that preserves the natural world' is a different, important, but not specifically commercial unfinished project. 'Closing the resource gap between businesses' names a narrower, more tactical concern.",
-            "id": "bd_l185_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'What is the most important thing aviation has given to human civilisation beyond transportation?'",
-            "options": [
-                "The discovery that human spatial instincts, built for the ground, are systematically wrong in three dimensions - that finding reshaped medicine and safety engineering well beyond aviation itself.",
-                "It taught engineers just how much redundancy is really needed to keep people safe.",
-                "Aviation has given civilisation the gift of connectivity and the ability to experience other cultures."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name the specific, unexpected discovery, not the transportation benefit or a narrower lesson.",
-            "explanation": "Naming the specific, unexpected discovery about human perception identifies something genuinely beyond transportation. 'The gift of connectivity and experience of other cultures' describes the transportation benefit itself, which the question explicitly excludes. 'How much redundancy is needed to keep people safe' names a narrower engineering lesson, not this broader discovery.",
-            "id": "bd_l185_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'What is the most honest thing you can say about war?'",
-            "options": [
-                "War is a profound human tragedy that should always be a last resort.",
-                "It's simultaneously the worst and the most revealing thing people do - worst because its cost falls hardest on those with the least say in it, most revealing because it strips away pretence, fast.",
-                "Every war I've fought in has changed how I think about the next one."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Give the dual honest account, not a moral position or a personal anecdote.",
-            "explanation": "Giving the dual honest account - both worst and most revealing, with reasons for each - is the honest reflection this question asks for. 'A profound human tragedy that should always be a last resort' is a moral position, not an honest personal account. 'Every war has changed how I think about the next' is personal but doesn't give the dual account being asked for.",
-            "id": "bd_l186_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'What do you most want people to understand about the world that they probably don't?'",
-            "options": [
-                "Most institutions are far less coordinated internally than outsiders tend to assume.",
-                "The world is far more complex and interconnected than most people realise from daily life.",
-                "Most of what looks like conspiracy is actually just coordination - it happens naturally, without anyone deciding anything, whenever aligned interests get rewarded the same way."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name the specific distinction between conspiracy and coordination.",
-            "explanation": "Naming the specific distinction between conspiracy and coordination, with concrete examples, gives real analytical insight. 'Far more complex and interconnected than most people realise' is a general statement without this specific distinction. 'Institutions are less coordinated internally than assumed' actually contradicts the point about coordination happening naturally.",
-            "id": "bd_l186_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'What is the deepest thing you have learned from a lifetime of feeding people?'",
-            "options": [
-                "The best meals I've ever cooked were for people I genuinely loved.",
-                "People's hunger is never only for food - it's for presence, for the specific attention that goes into making something for them, not just anyone.",
-                "Food is a universal language that connects people across all cultures and backgrounds."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name the specific, deeper hunger, not a general cultural claim.",
-            "explanation": "Naming the specific, deeper hunger for personal attention identifies the deepest lesson this question asks for. 'A universal language that connects people across cultures' is true but is the general, less specific version. 'The best meals I've cooked were for people I loved' is a personal anecdote, not the general insight.",
-            "id": "bd_l186_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'What is the question you most wish medicine could answer that it currently cannot?'",
-            "options": [
-                "Why two people with identical diagnoses and identical treatment respond so differently. Answering that would change medicine more than anything since antibiotics.",
-                "Why placebo effects are sometimes almost as powerful as the treatments themselves.",
-                "How to prevent the major chronic diseases that cause so much suffering and premature death."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name the specific question about individual variation, not a related but different unanswered question.",
-            "explanation": "Naming the specific question about individual response variation identifies the precise unanswered question with the largest impact. 'How to prevent major chronic diseases' is a different, also important, but not the most specifically unanswered question. 'Why placebo effects are sometimes powerful' names a narrower, related mystery.",
-            "id": "bd_l187_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'What do you believe matters most that is most consistently undervalued by the people you've worked with?'",
-            "options": [
-                "Loyalty from long-serving staff is worth far more than most leaders ever acknowledge.",
-                "The thing most consistently undervalued is long-term thinking, sacrificed to short-term pressure.",
-                "Genuine curiosity about the people you work with as people, not as outputs to manage - it's rare, and it creates environments where everyone works better."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name the specific relational quality, not a thinking style or a related HR observation.",
-            "explanation": "Naming the specific relational quality, and why it's structurally hard to credit, identifies precisely what's undervalued. 'Long-term thinking, sacrificed to short-term pressure' names a different, cognitive quality rather than a relational one. 'Loyalty from long-serving staff' names a related but distinct undervalued asset.",
-            "id": "bd_l187_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'What do you believe will be most important for the next generation of pilots that wasn't important for yours?'",
-            "options": [
-                "Learning to work alongside AI systems as genuine partners, not just tools.",
-                "The most important thing will be mastering the increasingly sophisticated technology that defines the future.",
-                "Keeping genuine manual flying skill alive in a career where automation makes it almost never necessary - until the one moment it's needed catastrophically."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name the specific challenge automation's success creates, not mastering the technology itself.",
-            "explanation": "Naming the specific challenge that automation's success creates - atrophying skills needed catastrophically - identifies a genuinely novel professional problem. 'Mastering the increasingly sophisticated technology' names the challenge automation creates, not the challenge of its success. 'Working alongside AI as genuine partners' is a related but different framing about collaboration.",
-            "id": "bd_l187_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'What is the most important question that leadership asks of a person?'",
-            "options": [
-                "Whether the people you lead would follow you into a genuinely dangerous situation.",
-                "Whether you have the judgment, courage, and integrity to lead effectively under pressure.",
-                "When doing the right thing costs you personally, what do you actually do? This one is hard because the answer is obvious, and paying for it is the actual test."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name the specific question and why its difficulty differs from other hard questions.",
-            "explanation": "Naming the specific question, and explaining precisely why its difficulty differs from other hard leadership questions, gives genuine insight. 'Whether you have the judgment, courage, and integrity' describes the required qualities without naming the specific question. 'Whether people would follow you into danger' is a related but different test, about trust rather than personal cost.",
-            "id": "bd_l188_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'What do you most wish you had understood about loyalty at the beginning of your career?'",
-            "options": [
-                "How important it is to build trust slowly, through consistent behaviour rather than claims.",
-                "That loyalty to an institution isn't the same as loyalty to the purpose it exists for - when the two diverge, staying loyal to the institution alone is comfort dressed up as virtue.",
-                "That the people who recruit you rarely tell you the full picture up front."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name the specific distinction between institution and purpose.",
-            "explanation": "Naming the specific distinction between institution and purpose identifies exactly what's easy to conflate early in a career. 'Build trust slowly through consistent behaviour' is a valuable but different early-career lesson. 'Recruiters rarely tell you the full picture' names a separate, more cynical observation, not this specific distinction.",
-            "id": "bd_l188_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'What is the single most important lesson from your career that has nothing to do with food?'",
-            "options": [
-                "Perfection is the enemy of the possible - chasing it can be a way of avoiding the vulnerability of offering something genuinely good that might still fall short.",
-                "Nothing teaches humility quite like a dish coming back to the kitchen untouched.",
-                "The most important lesson is the discipline, hard work, and consistency required in everything."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name the specific psychological function perfectionism serves, not general discipline.",
-            "explanation": "Naming the specific psychological function - perfectionism as avoidance of vulnerability - gives genuine, transferable insight. 'Discipline, hard work, and consistency required in everything' describes what cooking requires without this specific psychological insight. 'A dish coming back untouched teaches humility' is a specific anecdote, not the general lesson.",
-            "id": "bd_l188_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'What is the most important question that remains open at the end of your career in medicine?'",
-            "options": [
-                "How bidirectional the link really is between mental and physical health - we understand how the mind affects the body, far less how the body genuinely shapes the mind.",
-                "Why some patients recover from nearly identical injuries so much faster than others.",
-                "How to translate advances in basic science into better treatments for patients more quickly."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name the specific open scientific question, not a translational or narrower clinical one.",
-            "explanation": "Naming the specific open question about bidirectionality identifies the precise gap in current understanding. 'How to translate basic science into treatments more quickly' is about translational speed, a different kind of challenge. 'Why some patients recover faster from similar injuries' names a narrower, related clinical mystery.",
-            "id": "bd_l189_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'What would you tell someone who asked whether commercial success and a good life are compatible?'",
-            "options": [
-                "Plenty of wealthy people I've known are genuinely miserable underneath it all.",
-                "They're compatible, but not automatically correlated - assuming one leads to the other is one of the most consistent sources of disappointment I've seen in successful people.",
-                "Commercial success and a good life are compatible - success gives you the resources to live well."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name the specific gap between compatibility and correlation.",
-            "explanation": "Naming the specific gap between mere compatibility and actual correlation identifies exactly where the common assumption fails. 'Success gives you the resources to live well' is precisely the conflation this answer identifies as a source of disappointment. 'Plenty of wealthy people are genuinely miserable' is an observation without the underlying distinction.",
-            "id": "bd_l189_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'What is the most important thing that will be true about aviation in fifty years that we cannot fully see now?'",
-            "options": [
-                "Passenger aircraft will likely be faster and far more comfortable than anything flying now.",
-                "Aviation will have become far more sustainable and environmentally responsible than it is today.",
-                "The question of what humans are actually for in aviation will finally be answered - not that we're unnecessary, but genuinely different from now."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name the specific unresolved question about the human role, not sustainability or comfort.",
-            "explanation": "Naming the specific unresolved question about the human role, and why its answer matters, identifies the most significant unseen change. 'Far more sustainable and environmentally responsible' is an important but different, more predictable future development. 'Faster and more comfortable aircraft' names a technical improvement, not the deeper question about humans' role.",
-            "id": "bd_l189_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'What single question should every leader ask at the end of each day?'",
-            "options": [
-                "Did I complete everything on my agenda and meet all my commitments today?",
-                "Did I make the decisions I'll be proud of in ten years, or just the ones that were easiest today?",
-                "Did I perform my leadership role to the standard expected of me?"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "The question that tests long-term integrity against short-term comfort is the deepest daily leadership test.",
-            "explanation": "This question creates a clear test between long-term integrity and short-term comfort. 'Did I complete everything on my agenda' is an operational question about productivity. 'Did I perform to the standard expected' evaluates against external expectations rather than personal values.",
-            "id": "bd_l190_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'What is the hardest thing to teach someone who is naturally talented?'",
-            "options": [
-                "The hardest thing is teaching them to work well alongside people who are less naturally gifted.",
-                "Talent doesn't protect you from the specific failures it causes - overconfidence right at the edge of your competence, and expecting success to keep coming easily.",
-                "The hardest thing is teaching discipline and rigorous attention to operational detail."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name the specific failure modes talent itself creates.",
-            "explanation": "Naming the specific failure modes that talent itself creates identifies precisely what's hardest to teach a naturally gifted person. 'Teaching discipline and rigorous attention to detail' is a real challenge but not the hardest one. 'Working alongside less gifted people' is an important but different interpersonal challenge.",
-            "id": "bd_l190_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'What does cooking teach about simplicity and mastery?'",
-            "options": [
-                "Mastery produces simplicity - not the simplicity of not knowing better, but of knowing exactly which parts are necessary, and having the confidence to leave the rest out.",
-                "Simple dishes are actually harder to cook well because there's nowhere to hide any flaw.",
-                "Great cooking needs both a simple concept and real complexity in the execution."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Distinguish two kinds of simplicity - inexperience versus mastery.",
-            "explanation": "Distinguishing the simplicity of inexperience from the simplicity of mastery makes a precise, earned distinction. 'Simple dishes are harder to cook well' is true but doesn't capture the relationship between simplicity and mastery. 'Simple concept, complex execution' describes one style without the deeper relationship being named.",
-            "id": "bd_l190_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        }
-    ]
+  "gameType": "branchingDialogue",
+  "batchIndex": 19,
+  "levels": "181-190",
+  "quests": [
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "your manager and a client",
+      "scene": "Your manager asks you to send the client a final report by 5pm. At 3pm you find an error in one table. Fixing it will take until 6pm, and the client has a board meeting at 9am tomorrow.",
+      "options": [
+        "I'll send it at 5 as planned and correct the table in a follow-up email tomorrow morning.",
+        "I found an error in table 3 and want to fix it properly. Can I send the corrected report by 6:30 tonight, and can you let the client know now that it's coming a little later than planned?",
+        "I'll stay quiet about the error and just work faster so it still goes out at 5."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When accuracy and a deadline conflict, tell the people affected early and offer a specific new time.",
+      "explanation": "The client's board meeting makes accuracy matter more than punctuality. Telling your manager now lets her manage expectations, and a firm time gives the client something to plan around. A wrong report or silent rush increases the risk.",
+      "id": "bd_l181_q1",
+      "consequencePreviews": [
+        "In this moment, sending known-wrong data before a board meeting risks the client using it.",
+        "As a result, you disclose the error, give a firm new time and ask your manager to manage the client's expectation.",
+        "In this moment, rushing to hide the problem risks more mistakes and leaves nobody informed."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend and your partner",
+      "scene": "You promised your partner a quiet evening tonight. A close friend has just texted that she's had bad news and asks if you can come over.",
+      "options": [
+        "Sorry, I can't tonight. I already have plans.",
+        "I'll be right there. Don't worry, I'll tell my partner something came up.",
+        "Let me speak to my partner first. I'll call you back in ten minutes to say how much time I can give you tonight."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When two people need you, consult before committing and give each a clear reply soon.",
+      "explanation": "Checking with your partner honours the prior promise, and a definite call-back reassures your friend. Leaving without a word or refusing blindly both damage one relationship unnecessarily.",
+      "id": "bd_l181_q2",
+      "consequencePreviews": [
+        "Here, you refuse without knowing how serious it is, which may abandon a friend in need.",
+        "Realistically, you drop your partner without consulting them, which may hurt the relationship.",
+        "Here, you take both commitments seriously and buy a few minutes to find a fair arrangement."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a team, a supplier and your budget",
+      "scene": "Your team needs a rush order of parts. The usual supplier can deliver by Friday at double the price. A cheaper supplier you haven't used could deliver Monday. Friday would avoid a penalty clause; Monday would trigger it, costing about the same as the extra fee.",
+      "options": [
+        "Let's ask the usual supplier whether they'll split the premium, and in parallel ask the new supplier for references. If neither works by noon, I'd go with Friday for reliability.",
+        "Just pay the double price, it's the easiest option and I don't want to spend time on this, in hindsight, I hadn't fully worked out how it'd play out, but I'm not totally set on it — and I'm honestly still working out how I feel about the whole thing.",
+        "Go with the cheaper new supplier. Saving money matters most, I guess, I hadn't really thought it through, so let me know if that's off — and I'm honestly still working out how I feel about the whole thing."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When options have hidden costs, compare the real totals, test for a better deal and set a decision time.",
+      "explanation": "The penalty makes the cheap option no cheaper. Exploring a split premium costs a phone call, and a noon cut-off prevents delay. Choosing on price alone ignores the penalty, and paying blindly skips a possible saving.",
+      "id": "bd_l181_q3",
+      "consequencePreviews": [
+        "In this moment, you compare the options fairly, explore a better deal and set a decision rule with a deadline.",
+        "In this moment, you pay the full premium without testing whether it can be reduced.",
+        "Here, the savings are cancelled by the penalty and add the risk of an untested supplier."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a doctor and your elderly parent",
+      "scene": "Your father has a treatment decision to make. The doctor explains two options quickly, using technical terms. Your father nods but looks confused, and the doctor says she has five minutes left.",
+      "options": [
+        "Thank you, doctor. We'll go with whichever you think is best.",
+        "Can you explain everything again from the beginning, slowly, so we understand every detail?",
+        "Doctor, could you give us the main difference between the two options in plain words, and tell us which side effects matter most day to day? Then we'll take the leaflet home to decide."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When time is short and someone looks lost during a medical explanation, ask for the single most important distinction in everyday language and bring a handout away to review later.",
+      "explanation": "You need the essentials, not the whole explanation. Asking for the main difference and daily impact fits the time and helps your father weigh his own values. Blind deferral and a full repeat both fail.",
+      "id": "bd_l182_q1",
+      "consequencePreviews": [
+        "As a result, deferring entirely may hide your father's own preferences and leaves the confusion unresolved.",
+        "A full repeat can't fit into five minutes and leaves no time for the decision.",
+        "You ask for plain language and the key trade-off, respecting the time limit and your father's confusion."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a landlord, a tenant and a repair firm",
+      "scene": "You're a tenant. A pipe burst overnight. The landlord says the repair firm will come 'sometime this week'. Your flat is flooding slowly, and your neighbour's ceiling may be affected.",
+      "options": [
+        "This can't wait until sometime this week. Water is coming through and it may reach the flat below. Can you authorise me to call an emergency plumber today, and confirm in writing that you'll cover the cost?",
+        "I'll wait for the repair firm and mop as much as I can in the meantime, in hindsight, I said that fairly quickly, so it's worth double-checking — and I probably should have asked a few more questions before saying anything.",
+        "I'll call a plumber myself now and send you the bill."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "In an emergency involving other people, state the consequence, propose an action and get authorisation in writing.",
+      "explanation": "Written authorisation protects you financially, and naming the neighbour makes the urgency concrete. Waiting invites damage, and acting without agreement risks the bill.",
+      "id": "bd_l182_q2",
+      "consequencePreviews": [
+        "As a result, you state the urgency and consequence, propose a solution and ask for written confirmation.",
+        "Realistically, waiting risks serious damage and liability for the neighbour.",
+        "In this moment, acting alone may leave you unable to recover the cost and could breach the lease."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a team lead, an employee returning from leave and a tight deadline",
+      "scene": "An employee has just returned from a long illness. A big deadline is looming and the team is stretched. Your manager suggests giving her the hardest module because she's the most skilled.",
+      "options": [
+        "Yes, give it to her. She's the best person, and we can't afford to be sentimental, if I'm being honest, I was just going with my gut on that one, so let me know if that's off — and I probably should have asked a few more questions before saying anything.",
+        "She may want to ease in, so I'd like to ask her first what she feels ready for. If she's willing, we could give her the module in a way that includes a colleague as backup.",
+        "No, she shouldn't do any hard work yet. Let's give it to someone else, I mean, I said that fairly quickly, so feel free to push back — and I know that's not the most thought-out response, but it's where my head's at right now."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When workload and wellbeing conflict, ask the person and design support instead of deciding for them.",
+      "explanation": "She knows her own capacity, and a backup covers the risk. Assigning the task without asking is unfair, and shielding her by decision can be patronising.",
+      "id": "bd_l182_q3",
+      "consequencePreviews": [
+        "As a result, ignoring her recovery could harm her and the project if she struggles.",
+        "In this moment, you protect her wellbeing and autonomy while still using her skills and meeting the deadline.",
+        "Here, deciding for her removes her choice and may sideline her unnecessarily."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a client, your team and a rumour",
+      "scene": "A client asks you privately, 'I heard your company might be sold. Is that true?' You've heard the rumour but have no confirmation, and you're not allowed to discuss company strategy.",
+      "options": [
+        "I can't comment on company plans, and I don't have any confirmed information. What I can promise is that your project team and support arrangements are unchanged, and I'll tell you straight away if that changes.",
+        "I've heard it too, and honestly I think it's probably true.",
+        "That's completely false. There are no plans to sell."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When you can't confirm or discuss something, say so plainly and reassure about what you can speak to.",
+      "explanation": "Honesty about limits keeps trust. Reassuring about the project addresses his real worry. Confirming a rumour or denying it both claim knowledge you don't have.",
+      "id": "bd_l183_q1",
+      "consequencePreviews": [
+        "Realistically, you neither confirm nor deny, stay honest about limits and reassure on what is within your control.",
+        "You may notice that speculating spreads an unconfirmed rumour and breaches your obligations.",
+        "As a result, denying what you can't verify is dishonest and risky if it turns out to be true."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend, an ex and a mutual acquaintance",
+      "scene": "A friend asks whether you know why her ex has been unfriended by everyone at a party. You do know, because he confided in you, and he asked you to keep it private.",
+      "options": [
+        "No idea at all. I haven't heard anything about it, I suppose, I said that fairly quickly, so feel free to push back — and I probably should have asked a few more questions before saying anything.",
+        "I do know something, but it was told to me in confidence, so I'd rather not say. If you want to find out, I think he'd be the person to ask.",
+        "Well, I shouldn't tell you, but he lost a lot of money on a bad investment and blamed everyone, actually, I hadn't weighed all the details, but I'm not totally set on it."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "You can keep a confidence honestly by saying you know but won't share.",
+      "explanation": "Saying it's confidential is truthful and respects both people. Pretending ignorance is a lie, and leaking it violates a promise.",
+      "id": "bd_l183_q2",
+      "consequencePreviews": [
+        "As a result, lying to avoid the topic damages trust if she later discovers you knew.",
+        "Here, you protect his confidence honestly and don't pretend ignorance.",
+        "You may notice that revealing a confidence while saying you shouldn't still breaks his trust."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a journalist, your employer and a leak",
+      "scene": "A journalist phones you. She says a colleague has told her about unsafe practices at your workplace, and asks you to confirm. You do believe the concern is real, but you haven't reported it internally yet.",
+      "options": [
+        "Yes, it's true, and it's been going on for months. Here's what I know, looking back, I hadn't checked how that would actually land, so I could be wrong — and I haven't really run it past anyone else yet.",
+        "There's nothing wrong here at all. Please don't call me again, if I'm being honest, I hadn't really thought it through, but that could easily change — and I know that's not the most thought-out response, but it's where my head's at right now.",
+        "I'm not able to speak on behalf of the company. If there are safety concerns, there are proper channels, and I intend to use them. I'd need to take advice before speaking to the press."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When a serious concern meets the press, avoid both confirming and denying and commit to the proper channel.",
+      "explanation": "Your duty is to get the safety issue corrected through channels that protect you and others. Speaking to the press first can weaken the case, and denying it is untrue.",
+      "id": "bd_l183_q3",
+      "consequencePreviews": [
+        "Here, confirming to a journalist before using internal channels risks your job and the quality of the case.",
+        "Here, denying a concern you believe is real is dishonest and leaves the safety issue unaddressed.",
+        "Here, you don't confirm to the press, commit to raising the issue properly and protect your position."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a group booking a table",
+      "scene": "You're booking a restaurant for twelve colleagues. Two are vegetarian, one has a nut allergy, one dislikes loud places, and the budget is $40 per head.",
+      "options": [
+        "A table for twelve, please. We'll sort out the food on the day, thinking about it now, I said that fairly quickly, but that could easily change — and to be fair I only heard about this a few minutes ago myself.",
+        "We're twelve. Two vegetarian, one severe nut allergy, and we'd like a quieter corner. Our budget is $40 each including a drink. Could you suggest a set menu that covers all that?",
+        "Table for twelve. Everyone is a bit fussy, so do you have anything for everyone? Is that reasonable, or am I off base? Honestly, I hadn't stopped to think it all the way through — and there's a decent chance I'd see it differently after sleeping on it."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When booking for a group, state all hard constraints, especially safety and budget, in the first message.",
+      "explanation": "Restaurants can plan only with facts. Naming the allergy is essential, and the budget avoids awkwardness later. Deferring details is risky, and 'fussy' tells them nothing.",
+      "id": "bd_l184_q1",
+      "consequencePreviews": [
+        "In this moment, leaving out the allergy and budget risks a dangerous or expensive surprise.",
+        "As a result, you give every constraint at once and ask for a solution.",
+        "The vague message doesn't identify the safety issue or the budget."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a travel agent and two travellers",
+      "scene": "You and a friend are planning a trip. She wants a cheap, adventurous trip; you want comfort and a fixed itinerary. You have three days to book before prices rise.",
+      "options": [
+        "Let's each list our three must-haves, then see where they overlap. If we can agree a mid-priced base with one adventurous day, we can book by Thursday.",
+        "We'll just do it your way. I don't want to argue about it.",
+        "Comfort is essential for me, so we'll go for the luxury option or I'm not going, I mean, I hadn't checked how that would actually land, so it's worth double-checking."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When preferences clash under a deadline, compare priorities and look for a combined plan.",
+      "explanation": "Ranked must-haves make trade-offs visible, and a deadline keeps you moving. Silent surrender and ultimatums both avoid the real conversation.",
+      "id": "bd_l184_q2",
+      "consequencePreviews": [
+        "As a result, you reveal priorities, find overlap and keep the deadline in view.",
+        "You may notice that giving in without saying what matters builds resentment on the trip.",
+        "The ultimatum ends the negotiation and may lose the trip altogether."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a wedding planner, two families and a budget",
+      "scene": "You're organising a wedding for your cousin. One family wants a large guest list, the other wants a small ceremony. The budget covers eighty guests, and the venue needs an answer by Friday.",
+      "options": [
+        "Let's split it down the middle: forty guests from each family, no exceptions.",
+        "The couple should just decide themselves, and the families will have to accept it.",
+        "Could we sit down together tomorrow with the numbers, and each family name their must-invite people first? Then we can see how close we get to eighty and decide what to do about the rest."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "With two groups and a fixed limit, use a transparent process where each names their priorities.",
+      "explanation": "A shared meeting with priorities and numbers makes the limit feel objective. Making the couple choose or imposing a fixed split creates resentment.",
+      "id": "bd_l184_q3",
+      "consequencePreviews": [
+        "Realistically, a rigid split ignores differing family sizes and could offend both.",
+        "Realistically, pushing it onto the couple avoids the conflict and puts them under pressure.",
+        "Realistically, you give both families a fair process, use the budget as the shared limit and respect the deadline."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a colleague and a customer complaint",
+      "scene": "A customer complains loudly in the shop that a product failed. A colleague says quietly, 'Don't refund it, it's out of warranty.' The customer is recording on his phone and the shop is busy.",
+      "options": [
+        "The warranty ran out last month, so there's nothing we can do about it.",
+        "I'm sorry it let you down. Let me take a proper look at it, and I'll see what we can do. Could you come to the counter so I can give you my full attention?",
+        "Fine, I'll refund it. Please just stop filming, if I'm being honest, I hadn't weighed all the details, but I'm not totally set on it — and a lot depends on details I haven't really looked into yet."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Under public pressure, acknowledge the problem, don't promise or refuse, and move it to a calmer place.",
+      "explanation": "You keep control by listening and relocating the conversation. Citing the warranty in public inflames it, and refunding under pressure sets a bad precedent.",
+      "id": "bd_l185_q1",
+      "consequencePreviews": [
+        "Realistically, a flat refusal in front of a camera escalates the situation.",
+        "As a result, you de-escalate publicly, take the problem seriously and move it to a calmer space without promising anything you can't deliver.",
+        "Here, conceding under pressure ignores the policy and encourages the tactic."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a driver and a police officer",
+      "scene": "You're stopped by a police officer, who says you were speeding. You believe you were within the limit, and you're already late to an important appointment.",
+      "options": [
+        "I wasn't speeding at all. You must have the wrong car. I don't have time for this.",
+        "Yes, sorry, I was speeding. Please just give me the ticket so I can go.",
+        "Good afternoon, officer. I wasn't aware I was over the limit. Could you tell me what speed you recorded and where? I'm happy to cooperate, and I'd like to note the details."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "In an official stop, stay polite, ask for the facts and avoid admitting or arguing.",
+      "explanation": "Courtesy and neutral questions preserve your options and keep the encounter short. Confrontation prolongs it, and admission weakens later challenge.",
+      "id": "bd_l185_q2",
+      "consequencePreviews": [
+        "As a result, arguing and rushing the officer escalates the stop and delays you more.",
+        "Realistically, admitting fault you don't believe in gives up your right to contest it.",
+        "Realistically, you are respectful, ask for factual details and keep your rights without arguing."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a hospital administrator, a patient's relative and a delayed test",
+      "scene": "A patient's daughter is upset because her father's test was delayed twice. The administrator's system shows a genuine lab backlog, but she's been told not to blame the lab. The daughter says, 'Is anyone actually looking after him?'",
+      "options": [
+        "I understand why you're worried, and I'm sorry for the delays. There is a backlog affecting tests, and I'm going to ask for your father's to be prioritised and come back to you by three with a time.",
+        "We're doing everything we can. These things happen in hospitals.",
+        "The lab is completely overwhelmed, and it's not our fault that the tests are late."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "With an anxious relative, acknowledge feelings, say the real cause plainly and give a time for action.",
+      "explanation": "Honest, non-defensive information plus a specific commitment rebuilds trust. Platitudes don't answer her question, and blaming shifts attention from her father.",
+      "id": "bd_l185_q3",
+      "consequencePreviews": [
+        "You acknowledge the emotion, tell the truth about the cause without blaming and commit to a concrete action.",
+        "Here, generic reassurance offers no information and can sound dismissive.",
+        "In this moment, blaming another department sounds defensive and doesn't help the patient."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "two colleagues asking for different things",
+      "scene": "Colleague A asks you for the sales data by noon for a client pitch. Colleague B asks you for the same data, reformatted, by noon for a board report. You can only do one properly before noon.",
+      "options": [
+        "I can do only one properly by noon. Could the two of you tell me quickly which is more critical? If you can't agree, I'll ask our manager to decide, and I'll do the other by two.",
+        "I'll do the one that came first and tell the other person I'm sorry.",
+        "I'll try to do both by noon. It'll be a rush, but I'll manage, to be fair, I wasn't considering every angle, so feel free to push back — and to be fair I only heard about this a few minutes ago myself."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When two pressing asks land on you at once, be transparent with both requesters and let the people involved, or someone above you, settle which comes first.",
+      "explanation": "Transparency lets the people affected weigh the consequences. Arrival order isn't a principle, and overpromising leads to failing both.",
+      "id": "bd_l186_q1",
+      "consequencePreviews": [
+        "Realistically, you are open about the constraint, ask them to prioritise and give the second a firm time.",
+        "As a result, order of arrival may not reflect importance and the other loses out unnecessarily.",
+        "Here, trying both risks two poor results and no warning."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "your boss and your partner",
+      "scene": "Your boss asks you to travel next week for a client meeting. It's your partner's birthday that week, and you promised to take the day off. The client meeting could be online.",
+      "options": [
+        "I'll cancel my plans. The client is more important, and my partner will understand, in hindsight, that was more of a first reaction, so feel free to push back — and I haven't really run it past anyone else yet.",
+        "I'd like to make the client meeting a success. Would it be possible to hold it online, or move it by a day? I have a family commitment on the 14th that I'd like to keep.",
+        "I can't go that week. I have a personal commitment."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When work conflicts with a personal commitment, name the commitment and offer workable alternatives.",
+      "explanation": "Options like an online meeting show you're serious about work. Cancelling automatically loses something you'd promised, and a flat refusal ignores the boss's need.",
+      "id": "bd_l186_q2",
+      "consequencePreviews": [
+        "Here, you sacrifice a promise without exploring alternatives.",
+        "In this moment, you state your constraint plainly and propose options that meet the business need.",
+        "A flat refusal without options may sound unhelpful and unwilling."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a mentor, a mentee and a company policy",
+      "scene": "Your mentee tells you in confidence that she's planning to leave the company in three months. Your manager, who is also her manager, asks you, 'Is she happy? Should we be worried about her leaving?'",
+      "options": [
+        "No, she seems perfectly happy. I wouldn't worry about her, thinking about it now, I hadn't checked how that would actually land, so I could be wrong — and a lot depends on details I haven't really looked into yet, and I probably should have asked a few more questions before saying anything.",
+        "Honestly, yes, I think she is planning to leave soon.",
+        "I'd like to keep our mentoring conversations private, as that's what makes them useful. If you're concerned about retention, I'd suggest asking her directly in your one-to-one, and I'm happy to encourage that."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Protect confidences honestly by saying they're private and pointing to the proper channel.",
+      "explanation": "Honest refusal preserves both her trust and your integrity. Disclosing betrays her, and false reassurance is dishonest.",
+      "id": "bd_l186_q3",
+      "consequencePreviews": [
+        "As a result, lying to protect her creates a false picture and may come back to you.",
+        "As a result, breaking her confidence destroys trust in you and may harm her.",
+        "Realistically, you protect the mentee's confidence honestly and redirect the manager to an appropriate channel."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a landlord and an incomplete application",
+      "scene": "You're applying to rent a flat. The agent asks for references. You have a good one from a previous landlord, but your current landlord is angry with you over a dispute and may give a poor reference.",
+      "options": [
+        "I'll send the previous landlord's reference now. For my current landlord, I should be honest that we had a disagreement about the deposit, so I'd like to explain it briefly and offer my employer's reference too.",
+        "I'll give you both landlords' details, and I'm sure it'll be fine, I guess, I hadn't fully worked out how it'd play out, so take it with a grain of salt — and honestly the whole situation caught me a bit off guard, and to be fair I only heard about this a few minutes ago myself.",
+        "I'd rather only give the first one. The other landlord isn't relevant, to be honest, I was going more on instinct than anything, so there might be a better way to handle it — and there's a decent chance I'd see it differently after sleeping on it."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When a weakness may surface anyway, state it first and offer counter-evidence.",
+      "explanation": "Disclosing the dispute yourself controls the story and shows honesty. Ignoring it leaves the agent surprised, and omitting the landlord invites suspicion.",
+      "id": "bd_l187_q1",
+      "consequencePreviews": [
+        "In this moment, you are upfront about a known risk and supply strong alternatives.",
+        "Realistically, ignoring the risk leaves the agent to discover the dispute unprepared.",
+        "As a result, hiding the current landlord looks suspicious and may lose the flat."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "an interviewer and a gap in your CV",
+      "scene": "In an interview, the interviewer notices a nine-month gap on your CV, when you cared for a sick relative. You'd prefer not to share private family details.",
+      "options": [
+        "It was a very difficult time. My relative was ill, the doctors were confusing, and I had to sort out everything, it was really hard, to be honest, I hadn't checked how that would actually land.",
+        "That's private and I'd rather not discuss it, to be fair, it wasn't a fully considered answer, so there might be a better way to handle it — and I haven't really run it past anyone else yet.",
+        "I took time out for a family health matter, which is resolved now. During that time I kept up my skills with an online course, and I'm ready to commit fully to this role."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Answer a sensitive CV question with a brief truthful reason and a pivot to your readiness.",
+      "explanation": "A short, honest line respects your privacy and answers the concern. Refusal seems evasive, and over-sharing takes over the interview.",
+      "id": "bd_l187_q2",
+      "consequencePreviews": [
+        "In this moment, the lengthy personal account overshares and turns attention to hardship rather than fit.",
+        "In this moment, refusing may sound evasive and raises more questions than it answers.",
+        "Here, you give a brief, truthful reason without oversharing and bring the focus to your readiness."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a potential business partner and a past failure",
+      "scene": "A potential partner asks, 'Have you started a company before?' You founded one that failed and closed with unpaid supplier debts, which you've since repaid.",
+      "options": [
+        "No, this would be my first company.",
+        "Yes, one that closed in 2021. I made some mistakes about cash planning, and I repaid all suppliers in full afterwards. What I learned from it is exactly why I'd want us to set clear financial controls from day one.",
+        "I did have one, but it failed because of the economy, and it wasn't really my fault."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When asked about a failure, be truthful, take ownership and show what you learned.",
+      "explanation": "Partners expect honesty and want to see learning. Owning the error and the repayment builds credibility. Denial is dangerous, and blame looks evasive.",
+      "id": "bd_l187_q3",
+      "consequencePreviews": [
+        "Here, lying about it is likely to be discovered and would end the partnership.",
+        "As a result, you are honest about the failure, show accountability and link it to a benefit for the partnership.",
+        "Here, blaming external factors avoids ownership and may raise doubts about your judgement."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a project team and a client change",
+      "scene": "Halfway through a project, the client asks for a major change and says it's 'small and should be quick'. It would affect three modules and require retesting. The deadline and price are fixed by contract.",
+      "options": [
+        "Sure, it should be fine. We'll fit it in.",
+        "That's outside the contract. We can't do it.",
+        "We can certainly look at this. It touches three modules and needs retesting, so I'd like to give you a proper estimate by tomorrow, with options: include it with a later date, or keep the date and add it in phase two."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "For a 'small' change that isn't, explain the impact briefly, promise an estimate and offer options.",
+      "explanation": "Options protect the schedule while showing willingness to help. Accepting blindly leads to overruns, and refusal ignores a paying client.",
+      "id": "bd_l188_q1",
+      "consequencePreviews": [
+        "In this moment, accepting without assessment risks delivery and unpaid work.",
+        "You may notice that the flat refusal ignores the client's need and damages the relationship.",
+        "In this moment, you neither refuse nor accept blindly; you give a timeline for an estimate and offer trade-offs."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a neighbour, a council and a planning notice",
+      "scene": "A planning notice shows your neighbour's proposed extension will block light to your kitchen. You're on good terms with her and don't want a feud, but you must object to the council within fourteen days.",
+      "options": [
+        "I saw the plans for the extension, and I'm worried about the light to my kitchen. I'd like to talk before I respond to the council. Could we look at the drawings together this week, and see if the roof height can change?",
+        "I'll just quietly send my objection to the council and say nothing to her.",
+        "I won't object. It's not worth falling out over the extension."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "With a neighbour and a hard deadline, talk to them first about a specific fix, then use the formal route if needed.",
+      "explanation": "Speaking first respects her and might solve the issue. The deadline keeps you covered. Secret objections feel like betrayal, and silence sacrifices your kitchen.",
+      "id": "bd_l188_q2",
+      "consequencePreviews": [
+        "You address her directly first, keep the deadline in mind and propose a specific compromise.",
+        "Here, objecting behind her back may damage the relationship when she finds out.",
+        "As a result, staying silent gives up your legitimate interest before you've explored a compromise."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a union representative, staff and management",
+      "scene": "You're a staff representative. Management proposes a pay freeze to avoid layoffs. Staff are angry and want to reject it, but you think a short freeze might be the best option. A vote is tomorrow.",
+      "options": [
+        "We should reject it. Management can't be trusted, and we should show them we're serious, I mean, I was going more on instinct than anything, so it's worth double-checking — and I probably should have asked a few more questions before saying anything.",
+        "I understand the anger. I'd like to set out what management has committed to in writing, including no layoffs for twelve months and a review in six, so we vote on facts. I'll also say plainly what I think and why.",
+        "We must accept the freeze. It's the only way to save jobs, so please just vote yes."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When representing a divided group, put facts and commitments in front of them and be open about your own view.",
+      "explanation": "A vote based on written commitments is more legitimate. Stating your view honestly respects the members. Following anger or pushing one answer both undermine informed choice.",
+      "id": "bd_l188_q3",
+      "consequencePreviews": [
+        "You follow the mood rather than the evidence, which may lead to worse outcomes.",
+        "As a result, you acknowledge feelings, put verified facts before the vote and are honest about your own view.",
+        "Realistically, pushing your view without the facts feels like pressure and may backfire."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a colleague, an assessor and a mistake",
+      "scene": "During an audit, the assessor asks a question about a procedure. You realise you made a mistake in a record last month that nobody has noticed. Your colleague looks at you and shakes her head slightly.",
+      "options": [
+        "Before we go on, I need to flag that the record for the 12th has an error I made. I've prepared the correction and I can show you what I've changed and how I'll prevent it again.",
+        "Nothing to report. Everything's in order as far as I know, honestly, I wasn't considering every angle, though I'm open to changing my mind — and a lot depends on details I haven't really looked into yet.",
+        "I think there might be a small issue somewhere, but I'll check later, honestly, I hadn't checked how that would actually land, though I'm open to changing my mind — and I haven't really run it past anyone else yet."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "If you know about an error during an audit, disclose it clearly with the fix and prevention plan.",
+      "explanation": "Voluntary disclosure is treated far more leniently than concealment. A specific fix shows control. Silence is a breach of trust, and vagueness is neither honest nor useful.",
+      "id": "bd_l189_q1",
+      "consequencePreviews": [
+        "In this moment, you voluntarily disclose and correct the error and offer a preventive step, which is more credible than being found out.",
+        "Concealing a known error in an audit is a serious integrity risk.",
+        "Here, the vague hint neither corrects nor explains, and sounds evasive."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend, a group and a shared secret",
+      "scene": "A friend confides she's been offered a new job abroad and hasn't told anyone. Later, at a group dinner, another friend asks you directly, 'Do you know if she's thinking of moving?'",
+      "options": [
+        "Yes, she's got a job offer in Berlin. Please don't tell her I said so, I suppose, I was just going with my gut on that one.",
+        "You'd have to ask her about her plans, that's really hers to share. Has she said something to you?",
+        "No, I've no idea what you're talking about, actually, I hadn't checked how that would actually land, so feel free to push back."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "To protect a secret without lying, redirect: say it's theirs to share.",
+      "explanation": "Redirecting is honest and protective. Telling the news or denying it both compromise integrity.",
+      "id": "bd_l189_q2",
+      "consequencePreviews": [
+        "Disclosing her news betrays a confidence.",
+        "Realistically, you neither lie nor reveal, and turn the question back.",
+        "A direct lie may harm trust when the truth appears."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a team, a senior sponsor and a failing pilot",
+      "scene": "A pilot project you led is underperforming. The sponsor, who championed it, is presenting it as a success at a conference next week and asks you to send 'the headline numbers'. The real numbers are poor.",
+      "options": [
+        "Of course. I'll pick the best figures and send them over this afternoon, I guess, I hadn't weighed all the details, so feel free to push back — and there's a decent chance I'd see it differently after sleeping on it, and I probably should have asked a few more questions before saying anything.",
+        "I won't send anything. This pilot has failed, and you shouldn't be presenting it.",
+        "I'm happy to send them, but I'm concerned that the headline numbers alone would give a misleading picture. Could we present the real results along with what we've learned and the changes we're making? I think that's a stronger story."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When asked to spin results, offer an honest presentation that keeps the sponsor's goals in view.",
+      "explanation": "You keep your integrity and give the sponsor a path that is defensible. Cherry-picking damages credibility, and outright refusal misses the chance to fix the framing.",
+      "id": "bd_l189_q3",
+      "consequencePreviews": [
+        "Realistically, selecting flattering numbers misleads a public audience and implicates you.",
+        "Here, the blunt refusal and verdict overlooks that a truthful presentation could still be valuable.",
+        "As a result, you refuse to mislead but offer a truthful, constructive framing that serves the sponsor's interests too."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a customer, a delivery driver and a locked building",
+      "scene": "A delivery driver phones as he arrives. He says the building entrance is locked and he has three more deliveries with a tight window. You're in a meeting and can't leave for ten minutes.",
+      "options": [
+        "Just wait there. I'll be out as soon as I can, thinking about it now, I hadn't weighed all the details, though I'd want to think it over more — and I probably should have asked a few more questions before saying anything.",
+        "Can you just leave it outside the door? What would you do instead? Honestly, I hadn't really planned past that point — and honestly the whole situation caught me a bit off guard.",
+        "Thanks for calling. Could you leave it with the concierge at the desk on the left, and I'll collect it in about ten minutes? If that's not possible, could you come back at two? I'll be at the door."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Under mutual time pressure, give two clear options with times, not open requests.",
+      "explanation": "Two concrete options let him choose the one that fits his route. Waiting costs him, and leaving the parcel outside exposes it.",
+      "id": "bd_l190_q1",
+      "consequencePreviews": [
+        "Realistically, asking him to wait ignores his tight schedule and may lead to a failed delivery.",
+        "You may notice that leaving it unattended risks theft and probably isn't allowed.",
+        "As a result, you give a clear first option and a fallback with times, respecting his schedule and yours."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a sibling, a parent and a family emergency",
+      "scene": "Your father has been taken ill, and your siblings are in different countries. Your sister messages the family chat: 'Someone needs to decide about the operation tonight. I think we should say yes.' You're the nearest to the hospital.",
+      "options": [
+        "I'm at the hospital in twenty minutes. I'll speak to the doctors and to Dad if he's able, then call you both with what I learn. Please keep your phones on, and let's decide together before I sign anything.",
+        "I'll go and sign whatever the doctor says is best. There's no time to discuss it, thinking about it now, I hadn't really thought it through, though I'm open to changing my mind — and I haven't really run it past anyone else yet.",
+        "I don't want to be the one to decide. Someone else will have to do it, I mean, I wasn't considering every angle, so feel free to push back — and I haven't really run it past anyone else yet, and I probably should have asked a few more questions before saying anything."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "In a family emergency, take on the practical role, gather facts and keep everyone informed before big decisions.",
+      "explanation": "You are geographically the best placed, so acting as the eyes and ears is right, but decisions should be shared. Signing alone or refusing responsibility both fail the family.",
+      "id": "bd_l190_q2",
+      "consequencePreviews": [
+        "You take responsibility for the practical step, gather facts and keep everyone in the decision.",
+        "As a result, deciding alone removes your siblings and may not reflect your father's wishes.",
+        "Here, withdrawing leaves the family without the person who is in a position to act."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a team leader, a new hire and a crisis",
+      "scene": "Your server goes down an hour before a major client demo. The new hire, who only started last week, thinks she knows the cause but is nervous about speaking. The senior engineer is unreachable.",
+      "options": [
+        "We need someone experienced to handle this. Let's keep trying to reach the senior engineer.",
+        "Let's hear it, we've got nothing to lose. Tell me what you think and how sure you are. If it's low-risk to try, we'll test it in the staging copy first, and I'll take responsibility for the call.",
+        "Just go ahead and fix it however you think best. I trust you completely."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "During an emergency, welcome input regardless of seniority, gauge how confident the person is, try it out in a low-risk way first, and own the outcome yourself.",
+      "explanation": "Time is short, so use every resource but limit risk with a staging test. Accountability protects the new hire. Insisting on seniority wastes time, and blind delegation is reckless.",
+      "id": "bd_l190_q3",
+      "consequencePreviews": [
+        "In this moment, dismissing the new hire wastes valuable time and a potentially right answer.",
+        "As a result, you invite her idea, ask for confidence level, manage risk with a safe test and take accountability.",
+        "Here, handing over unchecked control in a crisis puts both of you at risk."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    }
+  ]
 }

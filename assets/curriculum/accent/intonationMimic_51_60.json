@@ -8,720 +8,720 @@
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Please restart your phone after the update.",
-            "textToSpeak": "Please restart your phone after the update.",
+            "word": "After the meeting, I'll email you.",
+            "textToSpeak": "After the meeting, I'll email you.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rise on 'meeting', fall on 'you'",
+                "Fall on 'meeting', fall on 'you'"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Rise on 'meeting', fall on 'you'",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
+                3,
                 1,
                 0
             ],
-            "hint": "This sentence gives a tech instruction. Listen to the pitch on 'update.'",
-            "explanation": "Instructions fall in pitch, just like statements. The pitch drops on 'update' to close the instruction.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Curious"
+            "hint": "The sentence has an opening phrase and a main clause. Listen for the boundary between them.",
+            "explanation": "The opening phrase 'after the meeting' prepares the main idea, so the voice lifts slightly on 'meeting'. Falling there would split the sentence into two statements.",
+            "pitchRule": "↗️📉 Introductory phrases lift; the main clause falls.",
+            "emotionContext": "Helpful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L51_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A colleague explains the plan for Thursday. Which pattern fits?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Is your laptop still under warranty?",
-            "textToSpeak": "Is your laptop still under warranty?",
+            "word": "On Thursday morning, we'll meet the clients.",
+            "textToSpeak": "On Thursday morning, we'll meet the clients.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Fall on 'morning', fall on 'clients'",
+                "Rise on 'morning', fall on 'clients'"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rise on 'morning', fall on 'clients'",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
-                3
-            ],
-            "hint": "This question expects 'yes' or 'no.' Listen to the pitch on 'warranty.'",
-            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'warranty' as the speaker checks a fact.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Excited"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L51_Q3",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "This app uses very little battery.",
-            "textToSpeak": "This app uses very little battery.",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                2,
-                2,
+                3,
                 1,
                 0
             ],
-            "hint": "This sentence describes a feature of the app. Listen to the pitch on 'battery.'",
-            "explanation": "Statements end with falling intonation. The pitch drops on 'battery,' completing the description.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Doubtful"
+            "hint": "A time phrase begins the sentence. Notice how the voice treats the end of the phrase.",
+            "explanation": "The time phrase is only the setup, so it lifts on 'morning'. The plan itself falls on 'clients', where the thought is complete.",
+            "pitchRule": "↗️📉 A time phrase at the start does not end the thought.",
+            "emotionContext": "Neutral"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L51_Q3",
+            "instruction": "You want to sound organized in a presentation. Which pattern will you use?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "In this section, I'll explain the process.",
+            "textToSpeak": "In this section, I'll explain the process.",
+            "options": [
+                "Fall on 'section', fall on 'process'",
+                "Rise on 'section', fall on 'process'"
+            ],
+            "correctAnswer": "Rise on 'section', fall on 'process'",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                2,
+                3,
+                1,
+                0
+            ],
+            "hint": "The opener tells listeners where you are. Decide where your voice should pause.",
+            "explanation": "Lift on 'section' to hold the listeners, then fall on 'process' to finish the point. It sounds structured and clear.",
+            "pitchRule": "↗️📉 Signposting phrases lift before the main message.",
+            "emotionContext": "Confident"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L52_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Where did you download that application?",
-            "textToSpeak": "Where did you download that application?",
+            "word": "I'll call you when I land,",
+            "textToSpeak": "I'll call you when I land,",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling — thought complete",
+                "Rising — more to say"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising — more to say",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                3,
                 2,
-                1,
-                0
+                2,
+                3,
+                3
             ],
-            "hint": "This question starts with 'Where' and asks for a source. Listen to the pitch on 'application.'",
-            "explanation": "Wh-questions fall at the end. The pitch drops on 'application,' since specific information is requested.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Neutral"
+            "hint": "The sentence ends with a comma. Consider whether the speaker is done.",
+            "explanation": "With a lift on 'land', the speaker signals they are adding something, such as 'and then we can eat'. A fall would close the thought.",
+            "pitchRule": "↗️ A rise at a comma shows the thought continues.",
+            "emotionContext": "Reassuring"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L52_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend gives you a complete answer about their plan. Which pattern fits?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Does this charger work with your tablet?",
-            "textToSpeak": "Does this charger work with your tablet?",
+            "word": "I'll message you once I'm through customs.",
+            "textToSpeak": "I'll message you once I'm through customs.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling — thought complete",
+                "Rising — more to say"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                1,
-                1,
-                2,
-                3
-            ],
-            "hint": "This question expects 'yes' or 'no.' Listen to the pitch on 'tablet.'",
-            "explanation": "The rising pitch on 'tablet' shows this is a Yes/No question checking compatibility.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Surprised"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L52_Q3",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "Why is my phone running so slowly?",
-            "textToSpeak": "Why is my phone running so slowly?",
-            "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Falling — thought complete",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
+                2,
                 2,
                 1,
                 0
             ],
-            "hint": "This question begins with 'Why' and asks for a reason. Listen to the pitch on 'slowly.'",
-            "explanation": "Wh-questions end with falling intonation. The pitch drops on 'slowly,' marking a request for an explanation.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Determined"
+            "hint": "This time there is no comma or continuation. What does the fall communicate?",
+            "explanation": "The thought is complete, so the pitch falls on 'customs'. The listener knows they can respond.",
+            "pitchRule": "📉 A completed thought falls, and the listener may respond.",
+            "emotionContext": "Reassuring"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L52_Q3",
+            "instruction": "You need to tell a colleague what you'll do first, but you have more to say. Which pattern will you use?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "Once I've reviewed the numbers,",
+            "textToSpeak": "Once I've reviewed the numbers,",
+            "options": [
+                "Rising — more to say",
+                "Falling — thought complete"
+            ],
+            "correctAnswer": "Rising — more to say",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                2,
+                2,
+                3,
+                3
+            ],
+            "hint": "You started a sentence that isn't finished. Decide what the voice should do.",
+            "explanation": "'Once I've reviewed the numbers' needs a result clause, so the pitch stays up on 'numbers'. Falling would leave the listener waiting.",
+            "pitchRule": "↗️ Dependent clauses rise because the main clause is still to come.",
+            "emotionContext": "Thoughtful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L53_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Connect the cable before turning on the screen.",
-            "textToSpeak": "Connect the cable before turning on the screen.",
+            "word": "I called my brother, Tom.",
+            "textToSpeak": "I called my brother, Tom.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rise on 'brother' — the speaker is addressing Tom",
+                "Level on 'brother' — Tom is the brother"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Rise on 'brother' — the speaker is addressing Tom",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
+                3,
                 1,
                 0
             ],
-            "hint": "This sentence gives step-by-step instructions. Listen to the pitch on 'screen.'",
-            "explanation": "Instructions fall in pitch like statements. The pitch drops on 'screen' to close the instruction.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Curious"
+            "hint": "Listen closely to the pause after 'brother'. It changes who is being talked to.",
+            "explanation": "A pause and a lift after 'brother' can make 'Tom' a person spoken to. Without that boundary, 'Tom' is just the name of the brother.",
+            "pitchRule": "↗️ A boundary can change who a name refers to.",
+            "emotionContext": "Neutral"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L53_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A teacher is reading aloud a sentence to a class. Which pattern fits?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Did the software update finish installing?",
-            "textToSpeak": "Did the software update finish installing?",
+            "word": "Let's eat, Grandma.",
+            "textToSpeak": "Let's eat, Grandma.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "No boundary — eating Grandma",
+                "Rise on 'eat' — speaking to Grandma"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rise on 'eat' — speaking to Grandma",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
-                3
-            ],
-            "hint": "This question can be answered with 'yes' or 'no.' Notice the pitch on 'installing.'",
-            "explanation": "Yes/No questions rise in pitch at the end, so the voice climbs on 'installing.'",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Excited"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L53_Q3",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "The new camera takes amazing photos.",
-            "textToSpeak": "The new camera takes amazing photos.",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                2,
-                2,
+                3,
                 1,
                 0
             ],
-            "hint": "This sentence gives an opinion about a product. Listen to the pitch on 'photos.'",
-            "explanation": "Statements end with falling intonation. The pitch drops on 'photos,' completing the opinion.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Doubtful"
+            "hint": "This sentence is famous for a reason. Listen for whether there is a break before 'Grandma'.",
+            "explanation": "A lift and pause after 'eat' separate the invitation from the name. Without the boundary, the meaning becomes dramatically different.",
+            "pitchRule": "↗️ The boundary tells us who is being addressed.",
+            "emotionContext": "Amused"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L53_Q3",
+            "instruction": "You want to mention a friend's name in a group message. Which pattern will you use?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "I saw the director, Nadia, yesterday.",
+            "textToSpeak": "I saw the director, Nadia, yesterday.",
+            "options": [
+                "Fall on 'director', fall on 'Nadia'",
+                "Lift on 'director', lift on 'Nadia'"
+            ],
+            "correctAnswer": "Lift on 'director', lift on 'Nadia'",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                2,
+                3,
+                2,
+                3
+            ],
+            "hint": "The name in the middle is extra information. Decide how to fit it into the sentence.",
+            "explanation": "'Nadia' is an aside, so the voice lifts slightly before and after it. The final fall on 'yesterday' closes the sentence.",
+            "pitchRule": "↗️📉 Extra information sits inside its own group and lifts before and after it.",
+            "emotionContext": "Casual"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L54_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "What password does the wifi router need?",
-            "textToSpeak": "What password does the wifi router need?",
+            "word": "My sister, who lives in Oslo, is visiting.",
+            "textToSpeak": "My sister, who lives in Oslo, is visiting.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Lift on 'sister', lift on 'Oslo', fall on 'visiting'",
+                "Fall on 'sister', fall on 'Oslo', fall on 'visiting'"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Lift on 'sister', lift on 'Oslo', fall on 'visiting'",
             "correctAnswerIndex": 0,
             "intonationMap": [
+                2,
                 3,
                 2,
-                1,
                 0
             ],
-            "hint": "This question starts with 'What' and asks for specific information. Listen to the pitch on 'need.'",
-            "explanation": "Wh-questions end with falling intonation. The pitch drops on 'need,' marking a request for details.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Neutral"
+            "hint": "The middle phrase is extra detail. Listen to how the voice enters and exits it.",
+            "explanation": "The extra clause is spoken as a side note, so both edges lift slightly. The final fall on 'visiting' belongs to the main sentence.",
+            "pitchRule": "↗️📉 A side note lifts at its edges and doesn't take the final fall.",
+            "emotionContext": "Excited"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L54_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A manager mentions a change with extra information in the middle. Which pattern fits?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Is your account protected with two-step verification?",
-            "textToSpeak": "Is your account protected with two-step verification?",
+            "word": "The office, which we rent from the university, is closing.",
+            "textToSpeak": "The office, which we rent from the university, is closing.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Lift on 'office', lift on 'university', fall on 'closing'",
+                "Fall on 'office', fall on 'university', fall on 'closing'"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Lift on 'office', lift on 'university', fall on 'closing'",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
-                1,
                 2,
-                3
+                3,
+                2,
+                0
             ],
-            "hint": "This question expects 'yes' or 'no.' Listen to the pitch on 'verification.'",
-            "explanation": "The rising pitch on 'verification' shows this is a Yes/No question checking security.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Surprised"
+            "hint": "The extra detail is 'which we rent from the university'. Find where the main message continues.",
+            "explanation": "Two lifts frame the detail and one fall finishes the news. The main message is only complete on 'closing'.",
+            "pitchRule": "↗️📉 The main clause waits for the fall until its last word.",
+            "emotionContext": "Concerned"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L54_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You describe a coworker to a new hire. Which pattern will you use?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "How much storage does this laptop have?",
-            "textToSpeak": "How much storage does this laptop have?",
+            "word": "Amira, who runs the design team, will show you around.",
+            "textToSpeak": "Amira, who runs the design team, will show you around.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Fall on 'Amira', fall on 'team', fall on 'around'",
+                "Lift on 'Amira', lift on 'team', fall on 'around'"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Lift on 'Amira', lift on 'team', fall on 'around'",
+            "correctAnswerIndex": 1,
             "intonationMap": [
+                2,
                 3,
                 2,
-                1,
                 0
             ],
-            "hint": "This question begins with 'How much' and asks for an amount. Listen to the pitch on 'have.'",
-            "explanation": "Wh-questions fall at the end. The pitch drops on 'have,' since a specific number is requested.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Determined"
+            "hint": "A name, some detail, then an action. Decide where the sentence is really complete.",
+            "explanation": "The detail about the design team is background, so it stays lifted. The fall on 'around' gives the main information.",
+            "pitchRule": "↗️📉 Background information lifts; the main action falls.",
+            "emotionContext": "Welcoming"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L55_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Back up your files before the update.",
-            "textToSpeak": "Back up your files before the update.",
+            "word": "Honestly, I think we should wait.",
+            "textToSpeak": "Honestly, I think we should wait.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Fall on 'Honestly', fall on 'wait'",
+                "Lift on 'Honestly', fall on 'wait'"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Lift on 'Honestly', fall on 'wait'",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
-                2,
+                3,
                 1,
                 0
             ],
-            "hint": "This sentence is a safety instruction for technology. Listen to the pitch on 'update.'",
-            "explanation": "Instructions fall in pitch just like statements. The pitch drops on 'update' to close the advice.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Curious"
+            "hint": "One word opens the sentence before the main message. Listen to it separately.",
+            "explanation": "'Honestly' is a small thought group of its own, so it lifts slightly. It signals a candid opinion, and the main clause falls on 'wait'.",
+            "pitchRule": "↗️📉 Discourse markers lift and hand over to the main clause.",
+            "emotionContext": "Serious"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L55_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "Someone starts a story in a meeting. Which pattern fits?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Is this website safe to use?",
-            "textToSpeak": "Is this website safe to use?",
+            "word": "Actually, that reminds me of something.",
+            "textToSpeak": "Actually, that reminds me of something.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Fall on 'Actually', fall on 'something'",
+                "Lift on 'Actually', fall on 'something'"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Lift on 'Actually', fall on 'something'",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
-                3
-            ],
-            "hint": "This question expects 'yes' or 'no.' Notice the pitch on 'use.'",
-            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'use' as the speaker checks safety.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Excited"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L55_Q3",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "My smartwatch tracks my daily steps.",
-            "textToSpeak": "My smartwatch tracks my daily steps.",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                2,
-                2,
+                3,
                 1,
                 0
             ],
-            "hint": "This sentence describes a device feature. Listen to the pitch on 'steps.'",
-            "explanation": "Statements end with falling intonation. The pitch drops on 'steps,' completing the description.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Doubtful"
+            "hint": "The first word is a signal that a new thought is starting. How does it end?",
+            "explanation": "'Actually' lifts to introduce the new point. The fall on 'something' closes the idea and invites a follow-up.",
+            "pitchRule": "↗️📉 A lifted opener keeps the sentence linked.",
+            "emotionContext": "Thoughtful"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L55_Q3",
+            "instruction": "You want to give a mild correction politely. Which pattern will you use?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "Well, it depends on the budget.",
+            "textToSpeak": "Well, it depends on the budget.",
+            "options": [
+                "Lift on 'Well', fall on 'budget'",
+                "Fall on 'Well', fall on 'budget'"
+            ],
+            "correctAnswer": "Lift on 'Well', fall on 'budget'",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                2,
+                3,
+                1,
+                0
+            ],
+            "hint": "The word 'well' softens what follows. Decide how much separation it needs.",
+            "explanation": "'Well' works as a soft start, and a slight lift keeps it attached to the main clause. It sounds thoughtful rather than dismissive.",
+            "pitchRule": "↗️📉 A lifted 'well' sounds careful; a fall on it sounds abrupt.",
+            "emotionContext": "Careful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L56_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Which browser loads pages the fastest?",
-            "textToSpeak": "Which browser loads pages the fastest?",
+            "word": "The woman in the red coat is waiting at the door.",
+            "textToSpeak": "The woman in the red coat is waiting at the door.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Group: 'the woman' | 'in the red coat is waiting at the door'",
+                "Group: 'the woman in the red coat' | 'is waiting at the door'"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Group: 'the woman in the red coat' | 'is waiting at the door'",
+            "correctAnswerIndex": 1,
             "intonationMap": [
+                2,
                 3,
                 2,
-                1,
                 0
             ],
-            "hint": "This question begins with 'Which' and asks for a specific answer. Listen to the pitch on 'fastest.'",
-            "explanation": "Wh-questions end with falling intonation. The pitch drops on 'fastest,' marking a request for comparison.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
+            "hint": "Find the subject. It is long, so it helps to imagine where a speaker takes a breath.",
+            "explanation": "A long subject sits in its own thought group, which ends slightly lifted at 'coat'. The predicate is a second group that ends with the fall.",
+            "pitchRule": "↗️📉 Long subjects are grouped as one chunk before the verb.",
             "emotionContext": "Neutral"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L56_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "An announcer reads a message at the airport. Which pattern fits?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Did you reset your forgotten password?",
-            "textToSpeak": "Did you reset your forgotten password?",
+            "word": "Passengers travelling to Madrid should proceed to gate twelve.",
+            "textToSpeak": "Passengers travelling to Madrid should proceed to gate twelve.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Group: 'Passengers' | 'travelling to Madrid should proceed to gate twelve'",
+                "Group: 'Passengers travelling to Madrid' | 'should proceed to gate twelve'"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Group: 'Passengers travelling to Madrid' | 'should proceed to gate twelve'",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
-                3
+                3,
+                2,
+                0
             ],
-            "hint": "This question can be answered with 'yes' or 'no.' Listen to the pitch on 'password.'",
-            "explanation": "The rising pitch on 'password' shows this is a Yes/No question checking an action.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Surprised"
+            "hint": "The announcement names a group of people, then an instruction. Where is the natural break?",
+            "explanation": "The description of the group is one chunk, followed by the instruction. This helps the audience understand who the message is for.",
+            "pitchRule": "↗️📉 Group the 'who' first, then the 'what to do'.",
+            "emotionContext": "Formal"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L56_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You are giving a colleague a status update. Which pattern will you use?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Who fixed the broken printer yesterday?",
-            "textToSpeak": "Who fixed the broken printer yesterday?",
+            "word": "The document we sent last week needs one more review.",
+            "textToSpeak": "The document we sent last week needs one more review.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Group: 'The document we sent last week' | 'needs one more review'",
+                "Group: 'The document' | 'we sent last week needs one more review'"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Group: 'The document we sent last week' | 'needs one more review'",
             "correctAnswerIndex": 0,
             "intonationMap": [
+                2,
                 3,
                 2,
-                1,
                 0
             ],
-            "hint": "This question starts with 'Who' and asks for a name. Listen to the pitch on 'yesterday.'",
-            "explanation": "Wh-questions fall at the end. The pitch drops on 'yesterday,' since a specific answer is requested.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Determined"
+            "hint": "The subject includes a small relative clause. Decide how to keep it together.",
+            "explanation": "'The document we sent last week' stays as one unit, then a short lift, then the main verb phrase falls. Breaking after 'document' makes the meaning hard to follow.",
+            "pitchRule": "↗️📉 Keep a modified subject in one chunk.",
+            "emotionContext": "Businesslike"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L57_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Charge your headphones overnight before the trip.",
-            "textToSpeak": "Charge your headphones overnight before the trip.",
+            "word": "I wanted to go, but I was too tired.",
+            "textToSpeak": "I wanted to go, but I was too tired.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Fall on 'go', fall on 'tired'",
+                "Lift on 'go', fall on 'tired'"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Lift on 'go', fall on 'tired'",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
-                2,
+                3,
                 1,
                 0
             ],
-            "hint": "This sentence gives travel-prep advice. Listen to the pitch on 'trip.'",
-            "explanation": "Instructions fall in pitch like statements. The pitch drops on 'trip' to close the advice.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Curious"
+            "hint": "The two parts contrast with each other. Listen to how the first part hands over to the second.",
+            "explanation": "The first clause lifts on 'go' because 'but' is coming. The fall on 'tired' completes the contrast.",
+            "pitchRule": "↗️📉 A clause before 'but' lifts because the contrast follows.",
+            "emotionContext": "Apologetic"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L57_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend explains why plans fell through. Which pattern fits?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Is the new update available for download?",
-            "textToSpeak": "Is the new update available for download?",
+            "word": "We could try again next week, or maybe skip it.",
+            "textToSpeak": "We could try again next week, or maybe skip it.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Fall on 'week', fall on 'it'",
+                "Lift on 'week', fall on 'it'"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Lift on 'week', fall on 'it'",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
-                3
-            ],
-            "hint": "This question expects 'yes' or 'no.' Notice the pitch on 'download.'",
-            "explanation": "Yes/No questions rise in pitch at the end, so the voice climbs on 'download.'",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Excited"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L57_Q3",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "This keyboard is louder than my old one.",
-            "textToSpeak": "This keyboard is louder than my old one.",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                2,
-                2,
+                3,
                 1,
                 0
             ],
-            "hint": "This sentence compares two devices. Listen to the pitch on 'one.'",
-            "explanation": "Statements end with falling intonation. The pitch drops on 'one,' completing the comparison.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Doubtful"
+            "hint": "'Or maybe' introduces a second possibility. Notice how the first half ends.",
+            "explanation": "The first idea lifts on 'week' because an alternative follows. The fall on 'it' finishes the decision-making.",
+            "pitchRule": "↗️📉 The first alternative lifts, the last falls.",
+            "emotionContext": "Uncertain"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L57_Q3",
+            "instruction": "You're explaining a delay to a customer. Which pattern will you use?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "The order shipped on time, but it got stuck at customs.",
+            "textToSpeak": "The order shipped on time, but it got stuck at customs.",
+            "options": [
+                "Fall on 'time', fall on 'customs'",
+                "Lift on 'time', fall on 'customs'"
+            ],
+            "correctAnswer": "Lift on 'time', fall on 'customs'",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                2,
+                3,
+                1,
+                0
+            ],
+            "hint": "The message has good news and bad news. Decide which part ends the sentence.",
+            "explanation": "The good news lifts on 'time' because the problem follows. The bad news falls on 'customs', which is the key point.",
+            "pitchRule": "↗️📉 Lift after the good news, drop on the problem.",
+            "emotionContext": "Apologetic"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L58_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "What features does the new phone include?",
-            "textToSpeak": "What features does the new phone include?",
+            "word": "The train, as usual, was late.",
+            "textToSpeak": "The train, as usual, was late.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Lift on 'train', lift on 'usual', fall on 'late'",
+                "Fall on 'train', fall on 'usual', fall on 'late'"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Lift on 'train', lift on 'usual', fall on 'late'",
             "correctAnswerIndex": 0,
             "intonationMap": [
+                2,
                 3,
                 2,
-                1,
                 0
             ],
-            "hint": "This question starts with 'What' and asks for details. Listen to the pitch on 'include.'",
-            "explanation": "Wh-questions end with falling intonation. The pitch drops on 'include,' marking a request for information.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Neutral"
+            "hint": "The middle phrase adds attitude. Listen to how the voice steps in and out of it.",
+            "explanation": "'As usual' is a side comment that carries irritation. It has its own small group, and the fall on 'late' finishes the main message.",
+            "pitchRule": "↗️📉 Side comments sit between lifts and let the main clause finish with a fall.",
+            "emotionContext": "Annoyed"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L58_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A coworker shares mixed news. Which pattern fits?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Does this device support wireless charging?",
-            "textToSpeak": "Does this device support wireless charging?",
+            "word": "The results, surprisingly, were better than expected.",
+            "textToSpeak": "The results, surprisingly, were better than expected.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Lift on 'results', lift on 'surprisingly', fall on 'expected'",
+                "Fall on 'results', fall on 'surprisingly', fall on 'expected'"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Lift on 'results', lift on 'surprisingly', fall on 'expected'",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
-                1,
                 2,
-                3
+                3,
+                2,
+                0
             ],
-            "hint": "This question expects 'yes' or 'no.' Listen to the pitch on 'charging.'",
-            "explanation": "The rising pitch on 'charging' shows this is a Yes/No question checking a feature.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Surprised"
+            "hint": "'Surprisingly' interrupts the sentence. Decide how strongly it separates from the rest.",
+            "explanation": "The interruptor is short and lifted at both sides. The fall on 'expected' closes the news.",
+            "pitchRule": "↗️📉 Interrupting adverbs create a mini group inside the sentence.",
+            "emotionContext": "Pleased"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L58_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You want to add a personal comment inside a statement. Which pattern will you use?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "How often should I update this software?",
-            "textToSpeak": "How often should I update this software?",
+            "word": "My flight, if I'm honest, was terrible.",
+            "textToSpeak": "My flight, if I'm honest, was terrible.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Lift on 'flight', lift on 'honest', fall on 'terrible'",
+                "Fall on 'flight', fall on 'honest', fall on 'terrible'"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Lift on 'flight', lift on 'honest', fall on 'terrible'",
             "correctAnswerIndex": 0,
             "intonationMap": [
+                2,
                 3,
                 2,
-                1,
                 0
             ],
-            "hint": "This question begins with 'How often' and asks for frequency. Listen to the pitch on 'software.'",
-            "explanation": "Wh-questions fall at the end. The pitch drops on 'software,' since a specific answer is requested.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Determined"
+            "hint": "The comment 'if I'm honest' is extra. Decide where the sentence is really done.",
+            "explanation": "The aside is spoken lower and lifted at its edges. The word 'terrible' carries the fall and the main emotion.",
+            "pitchRule": "↗️📉 Asides don't take the final fall; the main clause does.",
+            "emotionContext": "Frank"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L59_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Close every app before restarting the device.",
-            "textToSpeak": "Close every app before restarting the device.",
+            "word": "She said she'd call me back.",
+            "textToSpeak": "She said she'd call me back.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Break after 'said' — lifts on 'said'",
+                "Single group — falls on 'back'"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Single group — falls on 'back'",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
                 2,
                 1,
                 0
             ],
-            "hint": "This sentence gives a troubleshooting instruction. Listen to the pitch on 'device.'",
-            "explanation": "Instructions fall in pitch just like statements. The pitch drops on 'device' to close the instruction.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Curious"
+            "hint": "Notice how quickly the reported speech follows the word 'said'. Is there a break?",
+            "explanation": "Reported speech has no boundary after 'said', so the sentence flows as a single group. The fall on 'back' finishes it.",
+            "pitchRule": "📉 Reported speech usually flows as one unit.",
+            "emotionContext": "Neutral"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L59_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend quotes what someone said. Which pattern fits?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Is your internet connection working properly?",
-            "textToSpeak": "Is your internet connection working properly?",
+            "word": "He said, \"I'm leaving tomorrow.\"",
+            "textToSpeak": "He said, \"I'm leaving tomorrow.\"",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Lift on 'said', fall on 'tomorrow'",
+                "Single group — falls on 'tomorrow'"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                1,
-                1,
-                2,
-                3
-            ],
-            "hint": "This question expects 'yes' or 'no.' Notice the pitch on 'properly.'",
-            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'properly' as the speaker checks a problem.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Excited"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L59_Q3",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "The screen cracked after a small fall.",
-            "textToSpeak": "The screen cracked after a small fall.",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Lift on 'said', fall on 'tomorrow'",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
+                3,
                 1,
                 0
             ],
-            "hint": "This sentence describes what happened to a device. Listen to the pitch on 'fall.'",
-            "explanation": "Statements end with falling intonation. The pitch drops on 'fall,' completing the description.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Doubtful"
+            "hint": "Direct quotation often includes a tiny pause. Listen for it.",
+            "explanation": "Directly quoted speech is introduced by a short lifted phrase, then the quote falls on 'tomorrow'. The lift sets up the quote.",
+            "pitchRule": "↗️📉 A lifted 'he said' introduces a quotation.",
+            "emotionContext": "Serious"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L59_Q3",
+            "instruction": "You want to add a doubtful comment. Which pattern will you use?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "I think, though, that we should ask first.",
+            "textToSpeak": "I think, though, that we should ask first.",
+            "options": [
+                "Fall on 'think', fall on 'though', fall on 'first'",
+                "Lift on 'think', lift on 'though', fall on 'first'"
+            ],
+            "correctAnswer": "Lift on 'think', lift on 'though', fall on 'first'",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                2,
+                3,
+                2,
+                0
+            ],
+            "hint": "Two small pieces open the sentence. Decide how to keep them attached to the main idea.",
+            "explanation": "'I think' and 'though' are small groups that lift and prepare the main message. It sounds diplomatic rather than blunt.",
+            "pitchRule": "↗️📉 Diplomatic sentences use several small lifts before the main idea.",
+            "emotionContext": "Tactful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L60_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Why does this app keep crashing?",
-            "textToSpeak": "Why does this app keep crashing?",
+            "word": "When the alarm went off, everyone left the building.",
+            "textToSpeak": "When the alarm went off, everyone left the building.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Lift on 'off', fall on 'building'",
+                "Fall on 'off', fall on 'building'"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Lift on 'off', fall on 'building'",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
                 2,
+                3,
                 1,
                 0
             ],
-            "hint": "This question begins with 'Why' and asks for a reason. Listen to the pitch on 'crashing.'",
-            "explanation": "Wh-questions end with falling intonation. The pitch drops on 'crashing,' marking a request for an explanation.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
+            "hint": "There are two events. Listen to how the first is presented.",
+            "explanation": "The first clause lifts on 'off' as the setup, and the fall on 'building' finishes the main event.",
+            "pitchRule": "↗️📉 Time clauses at the start lift before the main event.",
             "emotionContext": "Neutral"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L60_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend gives a long explanation. Which pattern fits the middle of it?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Did the technician fix your computer?",
-            "textToSpeak": "Did the technician fix your computer?",
+            "word": "If you leave now, you'll miss the traffic, but you won't get breakfast.",
+            "textToSpeak": "If you leave now, you'll miss the traffic, but you won't get breakfast.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Lift on 'now', lift on 'traffic', fall on 'breakfast'",
+                "Fall on 'now', fall on 'traffic', fall on 'breakfast'"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Lift on 'now', lift on 'traffic', fall on 'breakfast'",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
-                1,
                 2,
-                3
+                3,
+                2,
+                0
             ],
-            "hint": "This question can be answered with 'yes' or 'no.' Listen to the pitch on 'computer.'",
-            "explanation": "The rising pitch on 'computer' shows this is a Yes/No question seeking confirmation.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Surprised"
+            "hint": "Three parts appear in one sentence. Find which ones are waiting for the next.",
+            "explanation": "The first two parts lift because each leads into the next. Only the final part, 'breakfast', closes the thought.",
+            "pitchRule": "↗️📉 Long sentences use small lifts to keep the listener oriented.",
+            "emotionContext": "Practical"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L60_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You tell a colleague your decision after considering the options. Which pattern will you use?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Which settings control the screen brightness?",
-            "textToSpeak": "Which settings control the screen brightness?",
+            "word": "After thinking it over, I've decided to accept the offer.",
+            "textToSpeak": "After thinking it over, I've decided to accept the offer.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Lift on 'over', fall on 'offer'",
+                "Fall on 'over', fall on 'offer'"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Lift on 'over', fall on 'offer'",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
                 2,
+                3,
                 1,
                 0
             ],
-            "hint": "This question starts with 'Which' and asks for specific information. Listen to the pitch on 'brightness.'",
-            "explanation": "Wh-questions fall at the end. The pitch drops on 'brightness,' since a specific answer is requested.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Determined"
+            "hint": "You have an opening phrase and a decision. Decide which part carries the news.",
+            "explanation": "'After thinking it over' lifts to introduce your decision. The fall on 'offer' announces it with clarity.",
+            "pitchRule": "↗️📉 Let the news land on the fall, not on the setup.",
+            "emotionContext": "Decisive"
         }
     ]
 }

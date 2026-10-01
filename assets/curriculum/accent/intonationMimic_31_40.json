@@ -8,301 +8,301 @@
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "What time does the market close?",
-            "textToSpeak": "What time does the market close?",
+            "word": "Would you like tea or coffee?",
+            "textToSpeak": "Would you like tea or coffee?",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Rise on both (Open Yes/No Question)",
+                "Rise on A, fall on B (Choice Question)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                3,
-                2,
-                1,
-                0
-            ],
-            "hint": "This question starts with 'What time' and asks for a specific hour. Listen to the pitch on 'close.'",
-            "explanation": "Wh-questions end with falling intonation. The pitch drops on 'close,' marking a request for specific information.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Curious"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L31_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "Do you have this shirt in blue?",
-            "textToSpeak": "Do you have this shirt in blue?",
-            "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rise on A, fall on B (Choice Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
-                2,
-                3
-            ],
-            "hint": "This question expects 'yes' or 'no.' Listen to the pitch on 'blue.'",
-            "explanation": "The rising pitch on 'blue' shows this is a Yes/No question checking availability.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Excited"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L31_Q3",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "Where can I find fresh vegetables?",
-            "textToSpeak": "Where can I find fresh vegetables?",
-            "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
                 3,
-                2,
                 1,
                 0
             ],
-            "hint": "This question begins with 'Where' and asks for a location. Listen to the pitch on 'vegetables.'",
-            "explanation": "Wh-questions fall at the end. The pitch drops on 'vegetables,' since the speaker wants directions, not yes or no.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Doubtful"
+            "hint": "The speaker offers two specific drinks. Listen to 'tea' and 'coffee' separately: do they end the same way?",
+            "explanation": "With a choice between two named items, the voice lifts on the first option and falls on the last. The fall on 'coffee' tells you the list is complete.",
+            "pitchRule": "↗️📉 In a choice question, lift on the first option and drop on the last.",
+            "emotionContext": "Friendly"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L31_Q2",
+            "instruction": "A new classmate wants to know whether you have any siblings at all. Which pattern fits?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "Do you have any brothers or sisters?",
+            "textToSpeak": "Do you have any brothers or sisters?",
+            "options": [
+                "Rise on both (Open Yes/No Question)",
+                "Rise on A, fall on B (Choice Question)"
+            ],
+            "correctAnswer": "Rise on both (Open Yes/No Question)",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                1,
+                2,
+                2,
+                4
+            ],
+            "hint": "The speaker doesn't offer two fixed answers. They ask whether you have any brothers or sisters in general.",
+            "explanation": "This is a general question and 'yes' or 'no' is the answer, so both nouns keep the voice up. The rise on 'sisters' shows the question is still open.",
+            "pitchRule": "📈 If a yes-or-no answer is expected, keep the pitch up on both items.",
+            "emotionContext": "Curious"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L31_Q3",
+            "instruction": "You and a friend are deciding how to travel to another city. Which pattern will you use?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "Should we take the train or drive?",
+            "textToSpeak": "Should we take the train or drive?",
+            "options": [
+                "Rise on both (Open Yes/No Question)",
+                "Rise on A, fall on B (Choice Question)"
+            ],
+            "correctAnswer": "Rise on A, fall on B (Choice Question)",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                1,
+                3,
+                1,
+                0
+            ],
+            "hint": "You are asking your friend to pick one of two options. Decide how your voice should mark the second option.",
+            "explanation": "You offer two ways to travel and expect one choice, so the pitch rises on 'train' and falls on 'drive'. The fall shows there are no other options.",
+            "pitchRule": "↗️📉 A fall on the second option tells the listener to pick one.",
+            "emotionContext": "Neutral"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L32_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Is this jacket on sale today?",
-            "textToSpeak": "Is this jacket on sale today?",
+            "word": "Is the meeting on Monday or Tuesday?",
+            "textToSpeak": "Is the meeting on Monday or Tuesday?",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Rise on A, fall on B (Choice Question)",
+                "Rise on both (Open Yes/No Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                1,
-                1,
-                2,
-                3
-            ],
-            "hint": "This question can be answered with 'yes' or 'no.' Notice the pitch on 'today.'",
-            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'today' as the shopper checks a price.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Neutral"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L32_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "How much does this bag cost?",
-            "textToSpeak": "How much does this bag cost?",
-            "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Rise on A, fall on B (Choice Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
+                1,
                 3,
-                2,
                 1,
                 0
             ],
-            "hint": "This question starts with 'How much' and asks for a price. Listen to the pitch on 'cost.'",
-            "explanation": "Wh-questions end with falling intonation. The pitch drops on 'cost,' marking a request for specific information.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Surprised"
+            "hint": "The speaker knows it's one of two days. Follow the voice on 'Monday' and on 'Tuesday'.",
+            "explanation": "Two named days are offered as options, so the pitch rises on 'Monday' and falls on 'Tuesday'. The answer will be one of them.",
+            "pitchRule": "↗️📉 A fall on the last option marks the alternatives as complete.",
+            "emotionContext": "Uncertain"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L32_Q2",
+            "instruction": "A café waiter asks a general question about refreshments. Which pattern fits?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "Would you like something to eat or drink?",
+            "textToSpeak": "Would you like something to eat or drink?",
+            "options": [
+                "Rise on both (Open Yes/No Question)",
+                "Rise on A, fall on B (Choice Question)"
+            ],
+            "correctAnswer": "Rise on both (Open Yes/No Question)",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                1,
+                2,
+                2,
+                4
+            ],
+            "hint": "The waiter isn't limiting you to one thing. Think about whether 'eat' and 'drink' are opposed choices.",
+            "explanation": "Here 'eat or drink' covers anything you might want, so both parts rise and the sentence stays open. The waiter is asking whether you want anything at all.",
+            "pitchRule": "📈 Keep both parts rising when the question is about 'any of these'.",
+            "emotionContext": "Polite"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L32_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You are booking a table by phone and the host asks how you'll pay the deposit. Which pattern will you use to repeat the options?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Do you accept credit cards here?",
-            "textToSpeak": "Do you accept credit cards here?",
+            "word": "Will you pay by card or transfer?",
+            "textToSpeak": "Will you pay by card or transfer?",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Rise on both (Open Yes/No Question)",
+                "Rise on A, fall on B (Choice Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rise on A, fall on B (Choice Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
+                3,
                 1,
-                2,
-                3
+                0
             ],
-            "hint": "This question expects 'yes' or 'no.' Listen to the pitch on 'here.'",
-            "explanation": "The pitch rises on 'here' because this is a Yes/No question checking store policy.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Determined"
+            "hint": "The host mentions two payment options and needs one answer. Listen for the drop on the last word.",
+            "explanation": "Two payment methods are named and you must pick one. The rise on 'card' and the fall on 'transfer' mark them as the only two options.",
+            "pitchRule": "↗️📉 Two options, one answer: rise on the first, fall on the second.",
+            "emotionContext": "Formal"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L33_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Which aisle has the bread?",
-            "textToSpeak": "Which aisle has the bread?",
+            "word": "I meant to call you yesterday,",
+            "textToSpeak": "I meant to call you yesterday,",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising — thought continues",
+                "Falling — thought finished"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Rising — thought continues",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
                 2,
-                1,
-                0
+                2,
+                3,
+                3
             ],
-            "hint": "This question begins with 'Which' and asks for a specific location. Listen to the pitch on 'bread.'",
-            "explanation": "Wh-questions fall at the end. The pitch drops on 'bread,' since the shopper wants real directions.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Curious"
+            "hint": "The sentence ends with a comma and clearly has something to follow. Listen for how the speaker leaves the thought open.",
+            "explanation": "A rise or level ending after 'yesterday' signals that the speaker has more to say, probably an excuse. A falling ending would end the thought.",
+            "pitchRule": "↗️ A non-final rise tells the listener: wait, I'm not finished.",
+            "emotionContext": "Apologetic"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L33_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A colleague asks if the report is done. Which pattern fits your reply?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Is the bakery still open?",
-            "textToSpeak": "Is the bakery still open?",
+            "word": "I finished the report before lunch.",
+            "textToSpeak": "I finished the report before lunch.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling — thought finished",
+                "Rising — thought continues"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                1,
-                1,
-                2,
-                3
-            ],
-            "hint": "This question can be answered with 'yes' or 'no.' Notice the pitch on 'open.'",
-            "explanation": "Yes/No questions rise in pitch at the end, so the voice climbs on 'open.'",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Excited"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L33_Q3",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "What flavor of ice cream do you want?",
-            "textToSpeak": "What flavor of ice cream do you want?",
-            "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Falling — thought finished",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
+                2,
                 2,
                 1,
                 0
             ],
-            "hint": "This question starts with 'What' and asks for a choice in detail. Listen to the pitch on 'want.'",
-            "explanation": "Wh-questions end with falling intonation. The pitch drops on 'want,' marking a genuine request for information.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Doubtful"
+            "hint": "This reply gives a complete answer. Notice whether the speaker seems to have more to say.",
+            "explanation": "The reply is complete, so the pitch falls on 'lunch'. Nothing else is expected.",
+            "pitchRule": "📉 A finished answer ends with a fall.",
+            "emotionContext": "Calm"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L33_Q3",
+            "instruction": "You want to start a plan for tomorrow but you're not done speaking. Which pattern will you use?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "If it rains tomorrow,",
+            "textToSpeak": "If it rains tomorrow,",
+            "options": [
+                "Rising — thought continues",
+                "Falling — thought finished"
+            ],
+            "correctAnswer": "Rising — thought continues",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                1,
+                2,
+                2,
+                3
+            ],
+            "hint": "This is the opening part of a longer sentence. Decide whether you're finished speaking.",
+            "explanation": "The 'if' clause needs a result, so the pitch stays up on 'tomorrow'. The listener waits for what will happen.",
+            "pitchRule": "↗️ A conditional opening ends with a rise because the result is still to come.",
+            "emotionContext": "Thoughtful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L34_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Does this store sell fresh fish?",
-            "textToSpeak": "Does this store sell fresh fish?",
+            "word": "When I get home, I'll call you.",
+            "textToSpeak": "When I get home, I'll call you.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Fall on 'home', fall on 'you'",
+                "Rise on 'home', fall on 'you'"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rise on 'home', fall on 'you'",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
-                3
-            ],
-            "hint": "This question expects 'yes' or 'no.' Listen to the pitch on 'fish.'",
-            "explanation": "The rising pitch on 'fish' shows this is a Yes/No question checking what is available.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Neutral"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L34_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "Why is the milk so expensive today?",
-            "textToSpeak": "Why is the milk so expensive today?",
-            "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
                 3,
-                2,
                 1,
                 0
             ],
-            "hint": "This question begins with 'Why' and asks for a reason. Listen to the pitch on 'today.'",
-            "explanation": "Wh-questions fall at the end. The pitch drops on 'today,' since the speaker wants an explanation.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Surprised"
+            "hint": "There are two parts here. Listen to the pause after 'home' and how the voice sounds before it.",
+            "explanation": "The first clause is only the setup, so the voice rises on 'home'. The final fall on 'you' finishes the sentence. Treating both as finished would sound like two separate sentences.",
+            "pitchRule": "↗️📉 Lift at the end of the first clause, fall at the end of the second.",
+            "emotionContext": "Reassuring"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L34_Q2",
+            "instruction": "Your colleague plans the afternoon schedule. Which pattern fits?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "After the presentation, we can grab lunch.",
+            "textToSpeak": "After the presentation, we can grab lunch.",
+            "options": [
+                "Fall on 'presentation', fall on 'lunch'",
+                "Rise on 'presentation', fall on 'lunch'"
+            ],
+            "correctAnswer": "Rise on 'presentation', fall on 'lunch'",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                2,
+                3,
+                1,
+                0
+            ],
+            "hint": "A time phrase comes first, then the main plan. Compare how each part ends.",
+            "explanation": "The opening phrase 'after the presentation' is not the whole idea, so the pitch rises on 'presentation'. It falls on 'lunch', where the plan is complete.",
+            "pitchRule": "↗️📉 A time phrase at the start ends with a lift before the main clause.",
+            "emotionContext": "Friendly"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L34_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You explain why the office lights were still on. Which pattern will you use?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Did you bring the shopping list?",
-            "textToSpeak": "Did you bring the shopping list?",
+            "word": "Although it was late, they kept working.",
+            "textToSpeak": "Although it was late, they kept working.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Fall on 'late', fall on 'working'",
+                "Rise on 'late', fall on 'working'"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rise on 'late', fall on 'working'",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
-                3
+                3,
+                1,
+                0
             ],
-            "hint": "This question can be answered with 'yes' or 'no.' Notice the pitch on 'list.'",
-            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'list' as the speaker checks a fact.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Determined"
+            "hint": "The first part sets up a contrast. Decide whether you stop there or continue.",
+            "explanation": "'Although it was late' leads into the main point, so the pitch rises on 'late'. Falling there would break the contrast in two.",
+            "pitchRule": "↗️ The 'although' clause rises, because the surprise is still coming.",
+            "emotionContext": "Neutral"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L35_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Where did you buy that delicious cheese?",
-            "textToSpeak": "Where did you buy that delicious cheese?",
+            "word": "That's everything on my list.",
+            "textToSpeak": "That's everything on my list.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling — thought finished",
+                "Rising — thought continues"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Falling — thought finished",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 3,
@@ -310,418 +310,418 @@
                 1,
                 0
             ],
-            "hint": "This question starts with 'Where' and asks for a specific place. Listen to the pitch on 'cheese.'",
-            "explanation": "Wh-questions end with falling intonation. The pitch drops on 'cheese,' marking a request for details.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Curious"
+            "hint": "The speaker has just finished a long errand. Listen to how definite the ending sounds.",
+            "explanation": "The speaker is closing the topic, so the pitch falls on 'list'. The fall sounds like a small sigh of relief.",
+            "pitchRule": "📉 A full fall says 'that is all', with nothing to follow.",
+            "emotionContext": "Relieved"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L35_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "You start listing your plan at a meeting. Which pattern fits your opening?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Is there a discount for students?",
-            "textToSpeak": "Is there a discount for students?",
+            "word": "First, I need to check the schedule,",
+            "textToSpeak": "First, I need to check the schedule,",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling — thought finished",
+                "Rising — thought continues"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising — thought continues",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
+                2,
+                3,
                 3
             ],
-            "hint": "This question expects 'yes' or 'no.' Listen to the pitch on 'students.'",
-            "explanation": "The pitch rises on 'students' because this is a Yes/No question checking a policy.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Excited"
+            "hint": "The sentence starts with 'first', which promises more. Notice how the voice keeps going.",
+            "explanation": "'First' opens a sequence, so the voice stays up on 'schedule'. The listener knows other steps are coming.",
+            "pitchRule": "↗️ 'First' signals more to come, and the pitch stays open to match.",
+            "emotionContext": "Determined"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L35_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "A cashier hands you your bag and asks a final question. Which pattern will you use to say it?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "How many apples do we need?",
-            "textToSpeak": "How many apples do we need?",
+            "word": "Anything else?",
+            "textToSpeak": "Anything else?",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising — invites more",
+                "Falling — closes the sale"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Rising — invites more",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
-                2,
                 1,
-                0
+                1,
+                2,
+                4
             ],
-            "hint": "This question begins with 'How many' and asks for a number. Listen to the pitch on 'need.'",
-            "explanation": "Wh-questions fall at the end. The pitch drops on 'need,' since a specific quantity is being requested.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Doubtful"
+            "hint": "The cashier is offering one last chance to buy. Choose the ending that sounds like an open invitation.",
+            "explanation": "A rise on 'else' makes it a friendly offer to add something. Falling can sound as if the cashier wants to end the sale immediately.",
+            "pitchRule": "📈 A rise keeps the offer open, while a fall closes the conversation.",
+            "emotionContext": "Polite"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L36_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Do you sell organic vegetables here?",
-            "textToSpeak": "Do you sell organic vegetables here?",
+            "word": "Do you prefer the fish or the chicken?",
+            "textToSpeak": "Do you prefer the fish or the chicken?",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Rise on A, fall on B (Choice Question)",
+                "Rise on both (Open Yes/No Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                1,
-                1,
-                2,
-                3
-            ],
-            "hint": "This question can be answered with 'yes' or 'no.' Notice the pitch on 'here.'",
-            "explanation": "Yes/No questions rise in pitch at the end, so the voice climbs on 'here.'",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Neutral"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L36_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "What time does the supermarket open?",
-            "textToSpeak": "What time does the supermarket open?",
-            "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Rise on A, fall on B (Choice Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
+                1,
                 3,
-                2,
                 1,
                 0
             ],
-            "hint": "This question starts with 'What time' and asks for a specific hour. Listen to the pitch on 'open.'",
-            "explanation": "Wh-questions end with falling intonation. The pitch drops on 'open,' marking a request for information.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Surprised"
+            "hint": "There are two dishes on the table. Pay attention to how 'fish' ends compared with 'chicken'.",
+            "explanation": "Two dishes are presented and one must be chosen. The lift after 'fish' and the fall on 'chicken' mark the two alternatives.",
+            "pitchRule": "↗️📉 Alternatives are contrasted by a rise and a fall.",
+            "emotionContext": "Friendly"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L36_Q2",
+            "instruction": "A waiter offers you general help. Which pattern fits?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "Can I get you some water or anything?",
+            "textToSpeak": "Can I get you some water or anything?",
+            "options": [
+                "Rise on both (Open Yes/No Question)",
+                "Rise on A, fall on B (Choice Question)"
+            ],
+            "correctAnswer": "Rise on both (Open Yes/No Question)",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                1,
+                2,
+                2,
+                4
+            ],
+            "hint": "The waiter doesn't mean two exact options. 'Or anything' suggests any drink or extra.",
+            "explanation": "'Or anything' is a soft add-on, so the voice stays high on both parts. It invites you to ask for whatever you like.",
+            "pitchRule": "📈 'Or anything' keeps the ending open; the pitch does not fall.",
+            "emotionContext": "Helpful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L36_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You are choosing seats at a busy restaurant. Which pattern will you use?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Is this the last loaf of bread?",
-            "textToSpeak": "Is this the last loaf of bread?",
+            "word": "Would you rather stay here or move to the balcony?",
+            "textToSpeak": "Would you rather stay here or move to the balcony?",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Rise on both (Open Yes/No Question)",
+                "Rise on A, fall on B (Choice Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rise on A, fall on B (Choice Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
+                3,
                 1,
-                2,
-                3
+                0
             ],
-            "hint": "This question expects 'yes' or 'no.' Listen to the pitch on 'bread.'",
-            "explanation": "The rising pitch on 'bread' shows this is a Yes/No question checking availability.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Determined"
+            "hint": "You are asking your friend to pick one of two places. Choose the ending that marks the second place as final.",
+            "explanation": "You name two clear places, so the pitch rises on 'here' and falls on 'balcony'. The friend knows to pick one.",
+            "pitchRule": "↗️📉 The final fall shows the friend that no third option exists.",
+            "emotionContext": "Friendly"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L37_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "How much sugar does this recipe need?",
-            "textToSpeak": "How much sugar does this recipe need?",
+            "word": "I stayed home because I felt sick.",
+            "textToSpeak": "I stayed home because I felt sick.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising — thought continues",
+                "Falling — thought finished"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Falling — thought finished",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                3,
                 2,
+                3,
                 1,
                 0
             ],
-            "hint": "This question begins with 'How much' and asks for a quantity. Listen to the pitch on 'need.'",
-            "explanation": "Wh-questions fall at the end. The pitch drops on 'need,' since the speaker wants a specific amount.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Curious"
+            "hint": "This is a reason given for an action. Notice whether the explanation feels complete.",
+            "explanation": "The reason completes the story, so the pitch falls on 'sick'. There is nothing left to add.",
+            "pitchRule": "📉 Once the reason is given, the thought is complete and the voice falls.",
+            "emotionContext": "Sympathetic"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L37_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend asks why you missed the trip. You start to explain. Which pattern fits your first words?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Can I return this if it doesn't fit?",
-            "textToSpeak": "Can I return this if it doesn't fit?",
+            "word": "I stayed home,",
+            "textToSpeak": "I stayed home,",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling — thought finished",
+                "Rising — thought continues"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising — thought continues",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
+                2,
+                3,
                 3
             ],
-            "hint": "This question can be answered with 'yes' or 'no.' Notice the pitch on 'fit.'",
-            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'fit' as the shopper checks store policy.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Excited"
+            "hint": "You have not yet given the reason. Consider how a speaker sounds when about to explain.",
+            "explanation": "The pitch stays up on 'home' because the reason is about to follow. A fall would suggest you had nothing more to say.",
+            "pitchRule": "↗️ A short opening followed by a rise promises an explanation.",
+            "emotionContext": "Hesitant"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L37_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You're suggesting two ideas to a group. Which pattern will you use?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Where is the nearest grocery store?",
-            "textToSpeak": "Where is the nearest grocery store?",
+            "word": "We could go now, or we could wait until it stops raining.",
+            "textToSpeak": "We could go now, or we could wait until it stops raining.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Rise on 'now', fall on 'raining'",
+                "Fall on 'now', fall on 'raining'"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Rise on 'now', fall on 'raining'",
             "correctAnswerIndex": 0,
             "intonationMap": [
+                1,
                 3,
                 2,
-                1,
                 0
             ],
-            "hint": "This question starts with 'Where' and asks for a location. Listen to the pitch on 'store.'",
-            "explanation": "Wh-questions end with falling intonation. The pitch drops on 'store,' marking a request for directions.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Doubtful"
+            "hint": "The sentence offers two courses of action. Listen for the break after 'now.'",
+            "explanation": "The first option is only half of the choice, so it rises on 'now'. The whole sentence ends with a fall on 'raining' to mark the second option as final.",
+            "pitchRule": "↗️📉 In a two-part suggestion, the first half rises and the last half falls.",
+            "emotionContext": "Thoughtful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L38_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Did the price of coffee go up again?",
-            "textToSpeak": "Did the price of coffee go up again?",
+            "word": "Is that Sara with an H or without?",
+            "textToSpeak": "Is that Sara with an H or without?",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Rise on both (Open Yes/No Question)",
+                "Rise on A, fall on B (Choice Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rise on A, fall on B (Choice Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
-                2,
-                3
-            ],
-            "hint": "This question expects 'yes' or 'no.' Listen to the pitch on 'again.'",
-            "explanation": "The pitch rises on 'again' because this is a Yes/No question checking a fact.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Neutral"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L38_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "Which brand of rice do you prefer?",
-            "textToSpeak": "Which brand of rice do you prefer?",
-            "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
                 3,
-                2,
                 1,
                 0
             ],
-            "hint": "This question begins with 'Which' and asks for a specific choice. Listen to the pitch on 'prefer.'",
-            "explanation": "Wh-questions fall at the end. The pitch drops on 'prefer,' since a detailed answer is requested.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Surprised"
+            "hint": "A receptionist wants to spell your name correctly. Follow the voice on 'H' and on 'without.'",
+            "explanation": "Two spellings are offered, so the voice lifts on 'H' and falls on 'without'. The receptionist wants you to pick one.",
+            "pitchRule": "↗️📉 Spelling checks use a choice pattern: rise first, fall last.",
+            "emotionContext": "Careful"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L38_Q2",
+            "instruction": "A friend asks you to volunteer, and you begin to decline politely. Which pattern fits?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "Well, I'd love to help,",
+            "textToSpeak": "Well, I'd love to help,",
+            "options": [
+                "Rising — thought continues",
+                "Falling — thought finished"
+            ],
+            "correctAnswer": "Rising — thought continues",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                2,
+                2,
+                3,
+                3
+            ],
+            "hint": "The sentence sounds like the start of something. Ask yourself whether a refusal is coming.",
+            "explanation": "The rise on 'help' signals that a 'but' is coming. A falling ending would sound as if the speaker were simply agreeing.",
+            "pitchRule": "↗️ A warm opening with a rise prepares the listener for a refusal.",
+            "emotionContext": "Apologetic"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L38_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You are giving the start time for a training day. Which pattern will you use?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Is this fruit fresh enough to eat now?",
-            "textToSpeak": "Is this fruit fresh enough to eat now?",
+            "word": "We'll start at nine sharp.",
+            "textToSpeak": "We'll start at nine sharp.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling — thought finished",
+                "Rising — thought continues"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling — thought finished",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
-                1,
                 2,
-                3
+                3,
+                1,
+                0
             ],
-            "hint": "This question can be answered with 'yes' or 'no.' Notice the pitch on 'now.'",
-            "explanation": "Yes/No questions rise in pitch at the end, so the voice climbs on 'now.'",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Determined"
+            "hint": "The time is fixed, and you want people to arrive on time. Decide how your voice should end.",
+            "explanation": "The time is decided, so the pitch falls on 'sharp'. A rise would leave room for argument.",
+            "pitchRule": "📉 A fall on 'sharp' makes the time sound firm.",
+            "emotionContext": "Firm"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L39_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "What size shoes do you usually wear?",
-            "textToSpeak": "What size shoes do you usually wear?",
+            "word": "Would you like to pay now or later?",
+            "textToSpeak": "Would you like to pay now or later?",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Rise on both (Open Yes/No Question)",
+                "Rise on A, fall on B (Choice Question)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                3,
-                2,
-                1,
-                0
-            ],
-            "hint": "This question starts with 'What' and asks for specific details. Listen to the pitch on 'wear.'",
-            "explanation": "Wh-questions end with falling intonation. The pitch drops on 'wear,' marking a genuine request for information.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Curious"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L39_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "Does this market deliver to your house?",
-            "textToSpeak": "Does this market deliver to your house?",
-            "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rise on A, fall on B (Choice Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
-                2,
-                3
-            ],
-            "hint": "This question expects 'yes' or 'no.' Listen to the pitch on 'house.'",
-            "explanation": "The rising pitch on 'house' shows this is a Yes/No question checking a service.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Excited"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L39_Q3",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "Why did you choose this restaurant tonight?",
-            "textToSpeak": "Why did you choose this restaurant tonight?",
-            "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
                 3,
-                2,
                 1,
                 0
             ],
-            "hint": "This question begins with 'Why' and asks for a reason. Listen to the pitch on 'tonight.'",
-            "explanation": "Wh-questions fall at the end. The pitch drops on 'tonight,' since the speaker wants an explanation.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Doubtful"
+            "hint": "There are two timing options. Compare the ending of 'now' with the ending of 'later'.",
+            "explanation": "The clerk is asking for a single choice, so the voice rises on 'now' and falls on 'later'. The fall closes the option list.",
+            "pitchRule": "↗️📉 Two clear options need a rise and a fall to signal a choice.",
+            "emotionContext": "Polite"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L39_Q2",
+            "instruction": "A teacher ends an explanation and turns to the class. Which pattern fits?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "Have you got any questions or concerns?",
+            "textToSpeak": "Have you got any questions or concerns?",
+            "options": [
+                "Rise on both (Open Yes/No Question)",
+                "Rise on A, fall on B (Choice Question)"
+            ],
+            "correctAnswer": "Rise on both (Open Yes/No Question)",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                1,
+                2,
+                2,
+                4
+            ],
+            "hint": "The teacher isn't asking for one or the other. Think about the friendly invitation.",
+            "explanation": "The teacher is inviting any kind of question, so the voice stays up on both nouns. Falling on 'concerns' would sound like a choice between two.",
+            "pitchRule": "📈 'Questions or concerns' works as one open invitation and stays up.",
+            "emotionContext": "Encouraging"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L39_Q3",
+            "instruction": "You tell a friend what you saw when you arrived. Which pattern will you use?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "By the time I got there, everyone had left.",
+            "textToSpeak": "By the time I got there, everyone had left.",
+            "options": [
+                "Rise on 'there', fall on 'left'",
+                "Fall on 'there', fall on 'left'"
+            ],
+            "correctAnswer": "Rise on 'there', fall on 'left'",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                2,
+                3,
+                1,
+                0
+            ],
+            "hint": "The first part sets the time; the second part gives the surprise. Listen for the change after 'there.'",
+            "explanation": "The opening phrase gives the setting, so the pitch rises on 'there'. The falling ending on 'left' delivers the main point.",
+            "pitchRule": "↗️📉 Setting first with a rise, news second with a fall.",
+            "emotionContext": "Disappointed"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L40_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Is dinner ready to be served?",
-            "textToSpeak": "Is dinner ready to be served?",
+            "word": "Are you in the mood for pizza or pasta?",
+            "textToSpeak": "Are you in the mood for pizza or pasta?",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Rise on both (Open Yes/No Question)",
+                "Rise on A, fall on B (Choice Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rise on A, fall on B (Choice Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
-                2,
-                3
-            ],
-            "hint": "This question can be answered with 'yes' or 'no.' Notice the pitch on 'served.'",
-            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'served' as the speaker checks readiness.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Neutral"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L40_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "How long should I cook the rice?",
-            "textToSpeak": "How long should I cook the rice?",
-            "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
                 3,
-                2,
                 1,
                 0
             ],
-            "hint": "This question starts with 'How long' and asks for an amount of time. Listen to the pitch on 'rice.'",
-            "explanation": "Wh-questions end with falling intonation. The pitch drops on 'rice,' marking a request for cooking details.",
-            "pitchRule": "📉 Pitch falls at the end of a Wh-question, since it calmly requests information rather than a yes/no answer.",
-            "emotionContext": "Surprised"
+            "hint": "Two foods are named. Notice how the voice treats the second food.",
+            "explanation": "The two foods are alternatives, so the voice lifts on 'pizza' and falls on 'pasta'. The listener chooses one.",
+            "pitchRule": "↗️📉 The last item in a choice falls, showing it is the final option.",
+            "emotionContext": "Friendly"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L40_Q2",
+            "instruction": "You are describing what you have read so far and there is more to say. Which pattern fits?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "I've read the first chapter,",
+            "textToSpeak": "I've read the first chapter,",
+            "options": [
+                "Falling — thought finished",
+                "Rising — thought continues"
+            ],
+            "correctAnswer": "Rising — thought continues",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                2,
+                2,
+                3,
+                3
+            ],
+            "hint": "The sentence sounds unfinished. Decide what the speaker is likely to add.",
+            "explanation": "The rise on 'chapter' signals that the speaker will continue, perhaps with 'but not the rest'. A fall would close the topic.",
+            "pitchRule": "↗️ A rise on the last word hints at a 'but' or 'and' still to come.",
+            "emotionContext": "Hesitant"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L40_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend has just arrived at your place after a long trip. Which pattern will you use?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Did you season the soup already?",
-            "textToSpeak": "Did you season the soup already?",
+            "word": "Do you want to grab a snack or something?",
+            "textToSpeak": "Do you want to grab a snack or something?",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Rise on A, fall on B (Choice Question)",
+                "Rise on both (Open Yes/No Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rise on both (Open Yes/No Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
                 2,
-                3
+                2,
+                4
             ],
-            "hint": "This question expects 'yes' or 'no.' Listen to the pitch on 'already.'",
-            "explanation": "The pitch rises on 'already' because this is a Yes/No question checking progress.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Determined"
+            "hint": "You're making a general offer, not naming two options. Decide how open you want to sound.",
+            "explanation": "'Or something' opens the offer to anything, so both parts rise. It sounds relaxed and welcoming.",
+            "pitchRule": "📈 'Or something' keeps the offer open and casual.",
+            "emotionContext": "Warm"
         }
     ]
 }

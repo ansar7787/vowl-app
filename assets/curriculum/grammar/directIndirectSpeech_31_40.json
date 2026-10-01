@@ -1,637 +1,692 @@
 {
-    "gameType": "directIndirectSpeech",
-    "batchIndex": 4,
-    "levels": "31-40",
-    "quests": [
-        {
-            "id": "dis_l31_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I can speak three languages.'",
-            "options": [
-                "She said that she can speak three languages.",
-                "She said that I could speak three languages.",
-                "She said that she could speak three languages."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She said that she could speak three languages.",
-            "sentence": "She said, 'I can speak three languages.'",
-            "hint": "'Can' shifts to 'could' in reported speech.",
-            "explanation": "'Can' shifts to 'could', and 'I' becomes 'she'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l31_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: My grandpa said, 'Life is simpler here.'",
-            "options": [
-                "My grandpa said that life is simpler there.",
-                "My grandpa said that life was simpler there.",
-                "My grandpa said that life was simpler here."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "My grandpa said that life was simpler there.",
-            "sentence": "My grandpa said, 'Life is simpler here.'",
-            "hint": "'Here' shifts to 'there', and the tense shifts too.",
-            "explanation": "'Is' shifts to 'was', and 'here' shifts to 'there'.",
-            "grammarRule": "Time & Place Reference Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l31_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I have watched that film twice.'",
-            "options": [
-                "He said that he watched that film twice.",
-                "He said that he had watched that film twice.",
-                "He said that he has watched that film twice."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He said that he had watched that film twice.",
-            "sentence": "He said, 'I have watched that film twice.'",
-            "hint": "Present perfect shifts to past perfect, not to simple past.",
-            "explanation": "'Have watched' shifts to 'had watched' — not to simple past 'watched'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l32_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The doctor asked, 'Do you smoke?'",
-            "options": [
-                "The doctor asked if I smoke.",
-                "The doctor asked do I smoke.",
-                "The doctor asked if I smoked."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The doctor asked if I smoked.",
-            "sentence": "The doctor asked, 'Do you smoke?'",
-            "hint": "Yes/No questions are reported with 'if', and 'do' disappears.",
-            "explanation": "Yes/No questions use 'if'. The auxiliary 'do' is dropped, and 'smoke' shifts to 'smoked'.",
-            "grammarRule": "Reported Yes/No Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l32_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The mayor said, 'I will improve public transport.'",
-            "options": [
-                "The mayor said that he will improve public transport.",
-                "The mayor said that he would improve public transport.",
-                "The mayor said that I would improve public transport."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The mayor said that he would improve public transport.",
-            "sentence": "The mayor said, 'I will improve public transport.'",
-            "hint": "'Will' shifts to 'would' in reported speech.",
-            "explanation": "'Will' shifts to 'would', and 'I' becomes 'he'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l32_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The clerk said, 'Your receipt is in the bag.'",
-            "options": [
-                "The clerk said that my receipt was in the bag.",
-                "The clerk said that your receipt was in the bag.",
-                "The clerk said that my receipt is in the bag."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The clerk said that my receipt was in the bag.",
-            "sentence": "The clerk said, 'Your receipt is in the bag.'",
-            "hint": "'Your' shifts to match who is being spoken to.",
-            "explanation": "'Your' shifts to 'my', and 'is' shifts to 'was'.",
-            "grammarRule": "Pronoun & Possessive Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l33_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I have a meeting today.'",
-            "options": [
-                "She said that she had a meeting today.",
-                "She said that she had a meeting that day.",
-                "She said that she has a meeting that day."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "She said that she had a meeting that day.",
-            "sentence": "She said, 'I have a meeting today.'",
-            "hint": "'Today' shifts to 'that day', and the tense shifts too.",
-            "explanation": "'Have' shifts to 'had', and 'today' shifts to 'that day'.",
-            "grammarRule": "Time & Place Reference Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l33_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I can cook Italian food.'",
-            "options": [
-                "He said that I could cook Italian food.",
-                "He said that he can cook Italian food.",
-                "He said that he could cook Italian food."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "He said that he could cook Italian food.",
-            "sentence": "He said, 'I can cook Italian food.'",
-            "hint": "'Can' shifts to 'could' in reported speech.",
-            "explanation": "'Can' shifts to 'could', and 'I' becomes 'he'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l33_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: They said, 'We have tested the app.'",
-            "options": [
-                "They said that we had tested the app.",
-                "They said that they had tested the app.",
-                "They said that they have tested the app."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "They said that they had tested the app.",
-            "sentence": "They said, 'We have tested the app.'",
-            "hint": "Both the tense and the pronoun shift here.",
-            "explanation": "'Have tested' shifts to 'had tested', and 'we' shifts to 'they'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l34_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The trainer told me, 'Drink more water.'",
-            "options": [
-                "The trainer told me drink more water.",
-                "The trainer told me to drink more water.",
-                "The trainer told me that I drink more water."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The trainer told me to drink more water.",
-            "sentence": "The trainer told me, 'Drink more water.'",
-            "hint": "A command shifts to 'told + person + to + verb'.",
-            "explanation": "Commands are reported with 'told + object + to-infinitive'. 'Drink more water' becomes 'to drink more water'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l34_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: They said, 'We arrive tomorrow.'",
-            "options": [
-                "They said that they arrived the next day.",
-                "They said that we arrived the next day.",
-                "They said that they arrived tomorrow."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "They said that they arrived the next day.",
-            "sentence": "They said, 'We arrive tomorrow.'",
-            "hint": "'Tomorrow' shifts to 'the next day', and the pronoun shifts too.",
-            "explanation": "'Arrive' shifts to 'arrived', 'we' shifts to 'they', and 'tomorrow' shifts to 'the next day'.",
-            "grammarRule": "Time & Place Reference Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l34_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He asked, 'Do you want to watch a comedy?'",
-            "options": [
-                "He asked if I want to watch a comedy.",
-                "He asked if I wanted to watch a comedy.",
-                "He asked do I want to watch a comedy."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He asked if I wanted to watch a comedy.",
-            "sentence": "He asked, 'Do you want to watch a comedy?'",
-            "hint": "Yes/No questions are reported with 'if', and 'do' disappears.",
-            "explanation": "Yes/No questions use 'if'. The auxiliary 'do' is dropped, and 'want' shifts to 'wanted'.",
-            "grammarRule": "Reported Yes/No Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l35_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The developer said, 'I will fix that bug tonight.'",
-            "options": [
-                "The developer said that he would fix that bug tonight.",
-                "The developer said that he would fix that bug that night.",
-                "The developer said that he will fix that bug that night."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The developer said that he would fix that bug that night.",
-            "sentence": "The developer said, 'I will fix that bug tonight.'",
-            "hint": "Both 'will' and 'tonight' shift in reported speech.",
-            "explanation": "'Will' shifts to 'would', and 'tonight' shifts to 'that night'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l35_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: My aunt said, 'I am baking this cake for you.'",
-            "options": [
-                "My aunt said that she is baking that cake for me.",
-                "My aunt said that she was baking that cake for me.",
-                "My aunt said that she was baking this cake for me."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "My aunt said that she was baking that cake for me.",
-            "sentence": "My aunt said, 'I am baking this cake for you.'",
-            "hint": "'This' shifts to 'that', and the tense and pronoun shift too.",
-            "explanation": "'Am baking' shifts to 'was baking', 'you' shifts to 'me', and 'this' shifts to 'that'.",
-            "grammarRule": "Pronoun & Possessive Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l35_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I have submitted the proposal.'",
-            "options": [
-                "She said that she submitted the proposal.",
-                "She said that she had submitted the proposal.",
-                "She said that she has submitted the proposal."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "She said that she had submitted the proposal.",
-            "sentence": "She said, 'I have submitted the proposal.'",
-            "hint": "Present perfect shifts to past perfect, not to simple past.",
-            "explanation": "'Have submitted' (present perfect) shifts to 'had submitted' (past perfect).",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l36_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The referee said, 'I can see the whole field.'",
-            "options": [
-                "The referee said that I could see the whole field.",
-                "The referee said that he can see the whole field.",
-                "The referee said that he could see the whole field."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The referee said that he could see the whole field.",
-            "sentence": "The referee said, 'I can see the whole field.'",
-            "hint": "'Can' shifts to 'could' in reported speech.",
-            "explanation": "'Can' shifts to 'could', and 'I' becomes 'he'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l36_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'It will rain tomorrow.'",
-            "options": [
-                "She said that it would rain tomorrow.",
-                "She said that it would rain the next day.",
-                "She said that it will rain the next day."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "She said that it would rain the next day.",
-            "sentence": "She said, 'It will rain tomorrow.'",
-            "hint": "Both 'will' and 'tomorrow' shift together here.",
-            "explanation": "'Will' shifts to 'would', and 'tomorrow' shifts to 'the next day'.",
-            "grammarRule": "Time & Place Reference Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l36_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The clerk asked, 'Do you have a membership card?'",
-            "options": [
-                "The clerk asked do I have a membership card.",
-                "The clerk asked if I have a membership card.",
-                "The clerk asked if I had a membership card."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The clerk asked if I had a membership card.",
-            "sentence": "The clerk asked, 'Do you have a membership card?'",
-            "hint": "Yes/No questions are reported with 'if', and 'do' disappears.",
-            "explanation": "Yes/No questions use 'if'. The auxiliary 'do' is dropped, and 'have' shifts to 'had'.",
-            "grammarRule": "Reported Yes/No Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l37_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I have recovered fully.'",
-            "options": [
-                "He said that he has recovered fully.",
-                "He said that he had recovered fully.",
-                "He said that I had recovered fully."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He said that he had recovered fully.",
-            "sentence": "He said, 'I have recovered fully.'",
-            "hint": "Both the tense and pronoun shift here.",
-            "explanation": "'Have recovered' shifts to 'had recovered', and 'I' becomes 'he'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l37_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The librarian said, 'Your books are overdue.'",
-            "options": [
-                "The librarian said that my books were overdue.",
-                "The librarian said that your books were overdue.",
-                "The librarian said that my books are overdue."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The librarian said that my books were overdue.",
-            "sentence": "The librarian said, 'Your books are overdue.'",
-            "hint": "'Your' shifts to match who is being spoken to.",
-            "explanation": "'Your' shifts to 'my', and 'are' shifts to 'were'.",
-            "grammarRule": "Pronoun & Possessive Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l37_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: My brother said, 'I will help you move.'",
-            "options": [
-                "My brother said that he would help you move.",
-                "My brother said that he will help me move.",
-                "My brother said that he would help me move."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "My brother said that he would help me move.",
-            "sentence": "My brother said, 'I will help you move.'",
-            "hint": "Both 'will' and 'you' shift in reported speech.",
-            "explanation": "'Will' shifts to 'would', and 'you' shifts to 'me'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l38_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The supervisor told me, 'Finish the report by noon.'",
-            "options": [
-                "The supervisor told me finish the report by noon.",
-                "The supervisor told me that I finish the report by noon.",
-                "The supervisor told me to finish the report by noon."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The supervisor told me to finish the report by noon.",
-            "sentence": "The supervisor told me, 'Finish the report by noon.'",
-            "hint": "A command shifts to 'told + person + to + verb'.",
-            "explanation": "Commands are reported with 'told + object + to-infinitive'. 'Finish the report by noon' becomes 'to finish the report by noon'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l38_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The organizer said, 'The event is here.'",
-            "options": [
-                "The organizer said that the event was here.",
-                "The organizer said that the event was there.",
-                "The organizer said that the event is there."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The organizer said that the event was there.",
-            "sentence": "The organizer said, 'The event is here.'",
-            "hint": "'Here' shifts to 'there', and the tense shifts too.",
-            "explanation": "'Is' shifts to 'was', and 'here' shifts to 'there'.",
-            "grammarRule": "Time & Place Reference Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l38_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She asked, 'Do you need anything from the store?'",
-            "options": [
-                "She asked if I needed anything from the store.",
-                "She asked if I need anything from the store.",
-                "She asked do I need anything from the store."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She asked if I needed anything from the store.",
-            "sentence": "She asked, 'Do you need anything from the store?'",
-            "hint": "Yes/No questions are reported with 'if', and 'do' disappears.",
-            "explanation": "Yes/No questions use 'if'. The auxiliary 'do' is dropped, and 'need' shifts to 'needed'.",
-            "grammarRule": "Reported Yes/No Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l39_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The singer said, 'I can hit that high note.'",
-            "options": [
-                "The singer said that I could hit that high note.",
-                "The singer said that she could hit that high note.",
-                "The singer said that she can hit that high note."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The singer said that she could hit that high note.",
-            "sentence": "The singer said, 'I can hit that high note.'",
-            "hint": "'Can' shifts to 'could' in reported speech.",
-            "explanation": "'Can' shifts to 'could', and 'I' becomes 'she'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l39_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: They said, 'We have booked our flights.'",
-            "options": [
-                "They said that they had booked their flights.",
-                "They said that we had booked our flights.",
-                "They said that they have booked their flights."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "They said that they had booked their flights.",
-            "sentence": "They said, 'We have booked our flights.'",
-            "hint": "Both the tense, the pronoun, and the possessive shift here.",
-            "explanation": "'Have booked' shifts to 'had booked', 'we' shifts to 'they', and 'our' shifts to 'their'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l39_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The technician said, 'Your account is secure now.'",
-            "options": [
-                "The technician said that my account is secure now.",
-                "The technician said that your account was secure then.",
-                "The technician said that my account was secure then."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The technician said that my account was secure then.",
-            "sentence": "The technician said, 'Your account is secure now.'",
-            "hint": "'Your' and 'now' both shift, along with the tense.",
-            "explanation": "'Your' shifts to 'my', 'is' shifts to 'was', and 'now' shifts to 'then'.",
-            "grammarRule": "Pronoun & Possessive Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l40_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The captain said, 'I will guide the team.'",
-            "options": [
-                "The captain said that I would guide the team.",
-                "The captain said that he would guide the team.",
-                "The captain said that he will guide the team."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The captain said that he would guide the team.",
-            "sentence": "The captain said, 'I will guide the team.'",
-            "hint": "'Will' shifts to 'would' in reported speech.",
-            "explanation": "'Will' shifts to 'would', and 'I' becomes 'he'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l40_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I will meet you here tomorrow.'",
-            "options": [
-                "He said that he would meet me here tomorrow.",
-                "He said that he would meet me there the next day.",
-                "He said that he will meet me there the next day."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He said that he would meet me there the next day.",
-            "sentence": "He said, 'I will meet you here tomorrow.'",
-            "hint": "Three things shift together: the modal, the place word, and the time word.",
-            "explanation": "'Will' shifts to 'would', 'here' shifts to 'there', and 'tomorrow' shifts to 'the next day'.",
-            "grammarRule": "Time & Place Reference Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l40_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The interviewer asked, 'Do you have any questions?'",
-            "options": [
-                "The interviewer asked if I had any questions.",
-                "The interviewer asked if I have any questions.",
-                "The interviewer asked do I have any questions."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The interviewer asked if I had any questions.",
-            "sentence": "The interviewer asked, 'Do you have any questions?'",
-            "hint": "Yes/No questions are reported with 'if', and 'do' disappears.",
-            "explanation": "Yes/No questions use 'if'. The auxiliary 'do' is dropped, and 'have' shifts to 'had'.",
-            "grammarRule": "Reported Yes/No Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        }
-    ]
+  "gameType": "directIndirectSpeech",
+  "batchIndex": 4,
+  "levels": "31-40",
+  "quests": [
+    {
+      "id": "dis_l31_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Sofia asked, \"Do you like Italian food?\"",
+      "options": [
+        "Sofia asked that I liked Italian food.",
+        "Sofia asked whether I liked Italian food.",
+        "Sofia asked whether I like Italian food."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Sofia asked whether I liked Italian food.",
+      "sentence": "Sofia asked, \"Do you like Italian food?\"",
+      "hint": "Reported yes/no questions use 'if' or 'whether' instead of 'that', and drop the question word order.",
+      "explanation": "The auxiliary 'do' disappears, 'like' backshifts to 'liked', and 'whether' introduces the reported question.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "question word order → statement word order",
+        "'do' removed",
+        "'like' → 'liked'",
+        "'you' → 'I'"
+      ]
+    },
+    {
+      "id": "dis_l31_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The waiter asked, \"Would you like some water?\"",
+      "options": [
+        "The waiter asked would I like some water.",
+        "The waiter asked whether I would like some water.",
+        "The waiter asked if you would like some water."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The waiter asked whether I would like some water.",
+      "sentence": "The waiter asked, \"Would you like some water?\"",
+      "hint": "Keep the modal 'would' as it is, but change the word order to a statement.",
+      "explanation": "'Would' does not need to backshift further, but the inverted question order becomes normal statement order, and 'you' becomes 'I'.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "question word order → statement word order",
+        "'you' → 'I'"
+      ]
+    },
+    {
+      "id": "dis_l31_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Marcus asked, \"Are you coming to the party?\"",
+      "options": [
+        "Marcus asked if am I coming to the party.",
+        "Marcus asked whether I am coming to the party.",
+        "Marcus asked whether I was coming to the party."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Marcus asked whether I was coming to the party.",
+      "sentence": "Marcus asked, \"Are you coming to the party?\"",
+      "hint": "'Are' is part of the question — think about its past form and remove the inversion.",
+      "explanation": "'Are' backshifts to 'was', the inversion disappears, and 'you' becomes 'I'.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "'are' → 'was'",
+        "question word order → statement word order",
+        "'you' → 'I'"
+      ]
+    },
+    {
+      "id": "dis_l32_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The doctor asked, \"Are you feeling better?\"",
+      "options": [
+        "The doctor asked if I was feeling better.",
+        "The doctor asked was I feeling better.",
+        "The doctor asked if I am feeling better."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The doctor asked if I was feeling better.",
+      "sentence": "The doctor asked, \"Are you feeling better?\"",
+      "hint": "Backshift the continuous tense and remove the inverted word order.",
+      "explanation": "'Are feeling' backshifts to 'was feeling', and the question order becomes a statement; 'you' becomes 'I'.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "'are feeling' → 'was feeling'",
+        "question word order → statement word order",
+        "'you' → 'I'"
+      ]
+    },
+    {
+      "id": "dis_l32_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Elena asked, \"Is he working today?\"",
+      "options": [
+        "Elena asked if he is working that day.",
+        "Elena asked was he working today.",
+        "Elena asked if he was working that day."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Elena asked if he was working that day.",
+      "sentence": "Elena asked, \"Is he working today?\"",
+      "hint": "Check the continuous tense, the time word, and the sentence order all at once.",
+      "explanation": "'Is working' becomes 'was working', 'today' becomes 'that day', and normal word order replaces the inversion.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "'is working' → 'was working'",
+        "'today' → 'that day'",
+        "question word order → statement word order"
+      ]
+    },
+    {
+      "id": "dis_l32_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The customer asked, \"Are these seats available?\"",
+      "options": [
+        "The customer asked were those seats available.",
+        "The customer asked if these seats were available.",
+        "The customer asked if those seats were available."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The customer asked if those seats were available.",
+      "sentence": "The customer asked, \"Are these seats available?\"",
+      "hint": "The demonstrative changes too, alongside the tense and the word order.",
+      "explanation": "'Are' becomes 'were', 'these' becomes 'those', and question order becomes statement order.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "'are' → 'were'",
+        "'these' → 'those'",
+        "question word order → statement word order"
+      ]
+    },
+    {
+      "id": "dis_l33_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The teacher asked, \"Does she understand the lesson?\"",
+      "options": [
+        "The teacher asked if she understood the lesson.",
+        "The teacher asked does she understand the lesson.",
+        "The teacher asked if she understands the lesson."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The teacher asked if she understood the lesson.",
+      "sentence": "The teacher asked, \"Does she understand the lesson?\"",
+      "hint": "'Does' disappears entirely — the main verb carries the backshift instead.",
+      "explanation": "'Does understand' becomes 'understood'; the auxiliary 'does' is removed and question order becomes statement order.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "'does understand' → 'understood'",
+        "question word order → statement word order"
+      ]
+    },
+    {
+      "id": "dis_l33_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Hassan asked, \"Do they live nearby?\"",
+      "options": [
+        "Hassan asked whether they live nearby.",
+        "Hassan asked do they live nearby.",
+        "Hassan asked whether they lived nearby."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Hassan asked whether they lived nearby.",
+      "sentence": "Hassan asked, \"Do they live nearby?\"",
+      "hint": "Remove the auxiliary 'do' completely and backshift the main verb instead.",
+      "explanation": "'Do live' becomes 'lived'; 'do' is dropped completely and the inversion disappears.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "'do live' → 'lived'",
+        "question word order → statement word order"
+      ]
+    },
+    {
+      "id": "dis_l33_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The officer asked, \"Does this bus stop at the station?\"",
+      "options": [
+        "The officer asked whether that bus stopped at the station.",
+        "The officer asked whether this bus stopped at the station.",
+        "The officer asked does that bus stop at the station."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The officer asked whether that bus stopped at the station.",
+      "sentence": "The officer asked, \"Does this bus stop at the station?\"",
+      "hint": "Three items shift: the auxiliary disappears, the verb backshifts, and the demonstrative changes.",
+      "explanation": "'Does stop' becomes 'stopped', 'this' becomes 'that', and word order becomes a statement.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "'does stop' → 'stopped'",
+        "'this' → 'that'",
+        "question word order → statement word order"
+      ]
+    },
+    {
+      "id": "dis_l34_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The manager asked, \"Have you finished the report?\"",
+      "options": [
+        "The manager asked whether I have finished the report.",
+        "The manager asked had I finished the report.",
+        "The manager asked whether I had finished the report."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The manager asked whether I had finished the report.",
+      "sentence": "The manager asked, \"Have you finished the report?\"",
+      "hint": "'Have' backshifts the same way it does in ordinary statements.",
+      "explanation": "'Have finished' becomes 'had finished', word order becomes a statement, and 'you' becomes 'I'.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "'have finished' → 'had finished'",
+        "question word order → statement word order",
+        "'you' → 'I'"
+      ]
+    },
+    {
+      "id": "dis_l34_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Grace asked, \"Has he called the client yet?\"",
+      "options": [
+        "Grace asked had he called the client yet.",
+        "Grace asked if he has called the client yet.",
+        "Grace asked if he had called the client yet."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Grace asked if he had called the client yet.",
+      "sentence": "Grace asked, \"Has he called the client yet?\"",
+      "hint": "Focus on the present perfect auxiliary and the sentence order.",
+      "explanation": "'Has called' becomes 'had called'; the inversion disappears and normal statement order is used.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "'has called' → 'had called'",
+        "question word order → statement word order"
+      ]
+    },
+    {
+      "id": "dis_l34_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The nurse asked, \"Have your symptoms improved?\"",
+      "options": [
+        "The nurse asked whether my symptoms had improved.",
+        "The nurse asked have my symptoms improved.",
+        "The nurse asked whether your symptoms had improved."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The nurse asked whether my symptoms had improved.",
+      "sentence": "The nurse asked, \"Have your symptoms improved?\"",
+      "hint": "Along with the tense, notice the possessive pronoun change.",
+      "explanation": "'Your' becomes 'my', and 'have improved' becomes 'had improved'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'your' → 'my'",
+        "'have improved' → 'had improved'",
+        "question word order → statement word order"
+      ]
+    },
+    {
+      "id": "dis_l35_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The clerk asked, \"Can you show your ID?\"",
+      "options": [
+        "The clerk asked could I show my ID.",
+        "The clerk asked whether I can show my ID.",
+        "The clerk asked whether I could show my ID."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The clerk asked whether I could show my ID.",
+      "sentence": "The clerk asked, \"Can you show your ID?\"",
+      "hint": "'Can' backshifts to its past form even inside a question.",
+      "explanation": "'Can' becomes 'could', 'you'/'your' become 'I'/'my', and the order becomes a statement.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "'can' → 'could'",
+        "'you' → 'I'",
+        "'your' → 'my'",
+        "question word order → statement word order"
+      ]
+    },
+    {
+      "id": "dis_l35_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Omar asked, \"Will you join us for dinner?\"",
+      "options": [
+        "Omar asked whether I will join them for dinner.",
+        "Omar asked would I join us for dinner.",
+        "Omar asked whether I would join them for dinner."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Omar asked whether I would join them for dinner.",
+      "sentence": "Omar asked, \"Will you join us for dinner?\"",
+      "hint": "Both the modal and the object pronoun 'us' change here.",
+      "explanation": "'Will' becomes 'would', 'you' becomes 'I', and 'us' becomes 'them' since the reporter isn't part of that group.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'will' → 'would'",
+        "'you' → 'I'",
+        "'us' → 'them'",
+        "question word order → statement word order"
+      ]
+    },
+    {
+      "id": "dis_l35_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The teacher asked, \"Can anyone answer this question?\"",
+      "options": [
+        "The teacher asked could anyone answer that question.",
+        "The teacher asked whether anyone could answer that question.",
+        "The teacher asked whether anyone could answer this question."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The teacher asked whether anyone could answer that question.",
+      "sentence": "The teacher asked, \"Can anyone answer this question?\"",
+      "hint": "Check the modal, the demonstrative, and the word order together.",
+      "explanation": "'Can' becomes 'could', 'this' becomes 'that', and normal word order replaces the question form.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "'can' → 'could'",
+        "'this' → 'that'",
+        "question word order → statement word order"
+      ]
+    },
+    {
+      "id": "dis_l36_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Layla asked, \"Is it raining outside?\"",
+      "options": [
+        "Layla asked whether it was raining outside.",
+        "Layla asked is it raining outside.",
+        "Layla asked whether it is raining outside."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Layla asked whether it was raining outside.",
+      "sentence": "Layla asked, \"Is it raining outside?\"",
+      "hint": "Move the verb 'to be' back into normal statement position and backshift it.",
+      "explanation": "'Is' becomes 'was', and the inverted order 'is it' becomes the statement order 'it was'.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "'is' → 'was'",
+        "question word order → statement word order"
+      ]
+    },
+    {
+      "id": "dis_l36_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "A host asked a guest, \"Are your parents joining us tonight?\" Report this from the guest's point of view, about the host's group.",
+      "options": [
+        "The host asked whether my parents were joining them that night.",
+        "The host asked whether your parents were joining us that night.",
+        "The host asked were my parents joining them tonight."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The host asked whether my parents were joining them that night.",
+      "sentence": "The host asked, \"Are your parents joining us tonight?\"",
+      "hint": "Four things shift together: the possessive, the verb, the object pronoun, and the time word.",
+      "explanation": "'Your' becomes 'my', 'are joining' becomes 'were joining', 'us' becomes 'them', and 'tonight' becomes 'that night'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'your' → 'my'",
+        "'are joining' → 'were joining'",
+        "'us' → 'them'",
+        "'tonight' → 'that night'"
+      ]
+    },
+    {
+      "id": "dis_l36_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The inspector asked, \"Are the exits clearly marked?\"",
+      "options": [
+        "The inspector asked whether the exits are clearly marked.",
+        "The inspector asked were the exits clearly marked.",
+        "The inspector asked whether the exits were clearly marked."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The inspector asked whether the exits were clearly marked.",
+      "sentence": "The inspector asked, \"Are the exits clearly marked?\"",
+      "hint": "No pronoun here — just backshift the verb and remove the inversion.",
+      "explanation": "'Are' becomes 'were', and the inverted question becomes a statement.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "'are' → 'were'",
+        "question word order → statement word order"
+      ]
+    },
+    {
+      "id": "dis_l37_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Fatima asked, \"Don't you want any dessert?\"",
+      "options": [
+        "Fatima asked whether I didn't want any dessert.",
+        "Fatima asked whether I don't want any dessert.",
+        "Fatima asked don't I want any dessert."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Fatima asked whether I didn't want any dessert.",
+      "sentence": "Fatima asked, \"Don't you want any dessert?\"",
+      "hint": "Negative questions keep their negative form — only the auxiliary tense and word order change.",
+      "explanation": "'Don't want' backshifts to 'didn't want', and inverted order becomes statement order; 'you' becomes 'I'.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "'don't want' → 'didn't want'",
+        "question word order → statement word order",
+        "'you' → 'I'"
+      ]
+    },
+    {
+      "id": "dis_l37_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The critic asked, \"Isn't this film too long?\"",
+      "options": [
+        "The critic asked whether that film wasn't too long.",
+        "The critic asked isn't that film too long.",
+        "The critic asked whether this film wasn't too long."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The critic asked whether that film wasn't too long.",
+      "sentence": "The critic asked, \"Isn't this film too long?\"",
+      "hint": "Keep the negative meaning, but update the demonstrative and the verb tense.",
+      "explanation": "'Isn't' becomes 'wasn't', and 'this' becomes 'that'.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "'isn't' → 'wasn't'",
+        "'this' → 'that'",
+        "question word order → statement word order"
+      ]
+    },
+    {
+      "id": "dis_l37_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The teacher asked, \"Didn't you study for the test?\"",
+      "options": [
+        "The teacher asked didn't I study for the test.",
+        "The teacher asked whether I hadn't studied for the test.",
+        "The teacher asked whether I didn't study for the test."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The teacher asked whether I hadn't studied for the test.",
+      "sentence": "The teacher asked, \"Didn't you study for the test?\"",
+      "hint": "This negative past question backshifts one more step, just like ordinary past-simple statements do.",
+      "explanation": "'Didn't study' becomes 'hadn't studied', and the question word order becomes a statement; 'you' becomes 'I'.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "'didn't study' → 'hadn't studied'",
+        "question word order → statement word order",
+        "'you' → 'I'"
+      ]
+    },
+    {
+      "id": "dis_l38_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The agent asked, \"Will you be available tomorrow?\"",
+      "options": [
+        "The agent asked will I be available the next day.",
+        "The agent asked whether I would be available tomorrow.",
+        "The agent asked whether I would be available the next day."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The agent asked whether I would be available the next day.",
+      "sentence": "The agent asked, \"Will you be available tomorrow?\"",
+      "hint": "Combine the modal, the pronoun, and the time-word changes.",
+      "explanation": "'Will' becomes 'would', 'you' becomes 'I', and 'tomorrow' becomes 'the next day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'will' → 'would'",
+        "'you' → 'I'",
+        "'tomorrow' → 'the next day'"
+      ]
+    },
+    {
+      "id": "dis_l38_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Diego asked, \"Did you see this movie last week?\"",
+      "options": [
+        "Diego asked did I see this movie last week.",
+        "Diego asked whether I had seen that movie the previous week.",
+        "Diego asked whether I saw that movie the previous week."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Diego asked whether I had seen that movie the previous week.",
+      "sentence": "Diego asked, \"Did you see this movie last week?\"",
+      "hint": "Four separate items change: the tense, the demonstrative, and the time expression, plus the word order.",
+      "explanation": "'Did see' becomes 'had seen', 'this' becomes 'that', and 'last week' becomes 'the previous week'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'did see' → 'had seen'",
+        "'this' → 'that'",
+        "'last week' → 'the previous week'",
+        "question word order → statement word order"
+      ]
+    },
+    {
+      "id": "dis_l38_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The coordinator asked, \"Can we meet here tomorrow?\"",
+      "options": [
+        "The coordinator asked whether they could meet here tomorrow.",
+        "The coordinator asked could we meet there the next day.",
+        "The coordinator asked whether they could meet there the next day."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The coordinator asked whether they could meet there the next day.",
+      "sentence": "The coordinator asked, \"Can we meet here tomorrow?\"",
+      "hint": "Update the pronoun, the modal, the place word, and the time word all together.",
+      "explanation": "'We' becomes 'they', 'can' becomes 'could', 'here' becomes 'there', and 'tomorrow' becomes 'the next day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'we' → 'they'",
+        "'can' → 'could'",
+        "'here' → 'there'",
+        "'tomorrow' → 'the next day'"
+      ]
+    },
+    {
+      "id": "dis_l39_q1",
+      "instruction": "Convert to reported speech using 'whether + infinitive'",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Nadia asked herself, \"Should I take the job?\"",
+      "options": [
+        "Nadia wondered whether to take the job.",
+        "Nadia wondered whether should she take the job.",
+        "Nadia wondered if to take the job."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Nadia wondered whether to take the job.",
+      "sentence": "Nadia asked herself, \"Should I take the job?\"",
+      "hint": "'Whether' can be directly followed by a 'to' infinitive, but 'if' cannot.",
+      "explanation": "Only 'whether' allows the pattern 'whether + to-infinitive'; 'if' is not used this way, and the question inversion must be removed.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "'should I take' → 'to take'",
+        "'if' cannot precede an infinitive; 'whether' is used instead"
+      ]
+    },
+    {
+      "id": "dis_l39_q2",
+      "instruction": "Convert to reported speech using 'whether + infinitive'",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Marcus asked himself, \"Should I call her back?\"",
+      "options": [
+        "Marcus wondered whether to call her back.",
+        "Marcus wondered whether call her back.",
+        "Marcus wondered if to call her back."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Marcus wondered whether to call her back.",
+      "sentence": "Marcus asked himself, \"Should I call her back?\"",
+      "hint": "Drop 'should' entirely and replace it with a bare 'to' infinitive after 'whether'.",
+      "explanation": "'Whether + to-infinitive' replaces 'should I...'; 'if' cannot be followed directly by an infinitive.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "'should I call' → 'to call'"
+      ]
+    },
+    {
+      "id": "dis_l39_q3",
+      "instruction": "Convert to reported speech using 'whether + infinitive'",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "The team debated, \"Should we launch the product now or wait?\"",
+      "options": [
+        "The team debated if to launch the product then or wait.",
+        "The team debated whether to launch the product then or wait.",
+        "The team debated whether they should launch the product now or wait."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The team debated whether to launch the product then or wait.",
+      "sentence": "The team debated, \"Should we launch the product now or wait?\"",
+      "hint": "Combine the infinitive pattern with the correct time-word change.",
+      "explanation": "'Should we launch' becomes 'to launch', and 'now' becomes 'then', matching the required whether-infinitive pattern.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "'should we launch' → 'to launch'",
+        "'now' → 'then'"
+      ]
+    },
+    {
+      "id": "dis_l40_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The interviewer asked, \"Have you ever managed a team?\"",
+      "options": [
+        "The interviewer asked whether I had ever managed a team.",
+        "The interviewer asked whether I have ever managed a team.",
+        "The interviewer asked had I ever managed a team."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The interviewer asked whether I had ever managed a team.",
+      "sentence": "The interviewer asked, \"Have you ever managed a team?\"",
+      "hint": "Recall how present perfect and question order both change together.",
+      "explanation": "'Have managed' becomes 'had managed', word order becomes a statement, and 'you' becomes 'I'.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "'have managed' → 'had managed'",
+        "question word order → statement word order",
+        "'you' → 'I'"
+      ]
+    },
+    {
+      "id": "dis_l40_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The waiter asked, \"Would you like to see the dessert menu?\"",
+      "options": [
+        "The waiter asked whether I would like to see the dessert menu.",
+        "The waiter asked if I will like to see the dessert menu.",
+        "The waiter asked would I like to see the dessert menu."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The waiter asked whether I would like to see the dessert menu.",
+      "sentence": "The waiter asked, \"Would you like to see the dessert menu?\"",
+      "hint": "'Would' doesn't need to change again — focus on the word order and the pronoun.",
+      "explanation": "'Would' stays the same, but the inverted question becomes a statement, and 'you' becomes 'I'.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "question word order → statement word order",
+        "'you' → 'I'"
+      ]
+    },
+    {
+      "id": "dis_l40_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The recruiter asked, \"Can you start next month?\"",
+      "options": [
+        "The recruiter asked could I start the following month.",
+        "The recruiter asked whether I could start next month.",
+        "The recruiter asked whether I could start the following month."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The recruiter asked whether I could start the following month.",
+      "sentence": "The recruiter asked, \"Can you start next month?\"",
+      "hint": "This final review question combines the modal, the pronoun, and the time-word shift.",
+      "explanation": "'Can' becomes 'could', 'you' becomes 'I', and 'next month' becomes 'the following month'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'can' → 'could'",
+        "'you' → 'I'",
+        "'next month' → 'the following month'"
+      ]
+    }
+  ]
 }

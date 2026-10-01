@@ -5,136 +5,136 @@
     "quests": [
         {
             "id": "ACC_INTONATIONMIMIC_L111_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "You saw her sign the lease with your own eyes and are telling a friend.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "I enjoy painting, hiking, and photography.",
-            "textToSpeak": "I enjoy painting, hiking, and photography.",
+            "word": "She's the one who signed the lease.",
+            "textToSpeak": "She's the one who signed the lease.",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Rising — checking if it's true",
+                "Falling — stating a certain fact"
             ],
-            "correctAnswer": "Rising-Falling Intonation (List Pattern)",
+            "correctAnswer": "Falling — stating a certain fact",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
-                3,
+                2,
                 1,
                 0
             ],
-            "hint": "This sentence lists three hobbies. Listen to the pitch through all three.",
-            "explanation": "Non-final items rise slightly in a list. The pitch rises on 'painting' and 'hiking,' then falls on 'photography.'",
-            "pitchRule": "📈📉 Pitch rises on each item in a list except the last, which falls to show the list is complete.",
-            "emotionContext": "Curious"
+            "hint": "You are certain of this. Which ending keeps the information settled?",
+            "explanation": "A fall makes the sentence a statement of fact. A rise would turn it into a check on something you heard.",
+            "pitchRule": "📉 The same words are a fact with a fall and a check with a rise.",
+            "emotionContext": "Confident"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L111_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "You heard a rumor and can hardly believe it.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This movie won several awards.",
-            "textToSpeak": "This movie won several awards.",
+            "word": "He's already booked the venue?",
+            "textToSpeak": "He's already booked the venue?",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Rising — checking a rumor",
+                "Falling — stating a fact"
             ],
-            "correctAnswer": "Falling Intonation (Simple Statement)",
+            "correctAnswer": "Rising — checking a rumor",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
-                2,
                 1,
-                0
-            ],
-            "hint": "This sentence gives one simple fact. Listen to the pitch on 'awards.'",
-            "explanation": "This is a simple statement with one falling pitch at the end, on 'awards.'",
-            "pitchRule": "📉 Pitch falls once at the end of a simple statement, with no separate items to list.",
-            "emotionContext": "Excited"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L111_Q3",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "We watched a comedy, a drama, and a documentary.",
-            "textToSpeak": "We watched a comedy, a drama, and a documentary.",
-            "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
-            ],
-            "correctAnswer": "Rising-Falling Intonation (List Pattern)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                2,
-                3,
-                1,
-                0
-            ],
-            "hint": "This sentence lists three types of films. Listen to the pitch as each is named.",
-            "explanation": "Non-final items rise slightly in a list. The pitch rises on 'comedy' and 'drama,' then falls on 'documentary.'",
-            "pitchRule": "📈📉 Pitch rises on each item in a list except the last, which falls to show the list is complete.",
-            "emotionContext": "Doubtful"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L112_Q1",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "The concert starts at eight tonight.",
-            "textToSpeak": "The concert starts at eight tonight.",
-            "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
-            ],
-            "correctAnswer": "Falling Intonation (Simple Statement)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
                 2,
                 2,
-                1,
-                0
+                4
             ],
-            "hint": "This sentence gives one simple fact about timing. Listen to the pitch on 'tonight.'",
-            "explanation": "This is a simple statement, so the pitch falls once at the end, on 'tonight.'",
-            "pitchRule": "📉 Pitch falls once at the end of a simple statement, with no separate items to list.",
-            "emotionContext": "Neutral"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L112_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "She plays the piano, the guitar, and the violin.",
-            "textToSpeak": "She plays the piano, the guitar, and the violin.",
-            "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
-            ],
-            "correctAnswer": "Rising-Falling Intonation (List Pattern)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                2,
-                3,
-                1,
-                0
-            ],
-            "hint": "This sentence lists three instruments. Listen to the pitch through all three.",
-            "explanation": "Non-final items rise slightly in a list. The pitch rises on 'piano' and 'guitar,' then falls on 'violin.'",
-            "pitchRule": "📈📉 Pitch rises on each item in a list except the last, which falls to show the list is complete.",
+            "hint": "There is no 'do' or 'is' at the start, so the words alone don't reveal the question. What does the ending do?",
+            "explanation": "A rise makes the sentence a question about the rumor. A fall would sound like you already knew.",
+            "pitchRule": "📈 A rise makes a statement into a real question.",
             "emotionContext": "Surprised"
         },
         {
-            "id": "ACC_INTONATIONMIMIC_L112_Q3",
-            "instruction": "Identify the intonation",
+            "id": "ACC_INTONATIONMIMIC_L111_Q3",
+            "instruction": "You look at a group photo and think you recognize someone.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This game has incredible graphics.",
-            "textToSpeak": "This game has incredible graphics.",
+            "word": "That's your sister on the left?",
+            "textToSpeak": "That's your sister on the left?",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Rising — tentative identification",
+                "Falling — confident identification"
             ],
-            "correctAnswer": "Falling Intonation (Simple Statement)",
+            "correctAnswer": "Rising — tentative identification",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                1,
+                1,
+                2,
+                4
+            ],
+            "hint": "You are not sure who is who. Which ending sounds tentative?",
+            "explanation": "A rise makes the identification a guess that the listener can confirm. A fall would sound like knowledge.",
+            "pitchRule": "📈 A rise offers a guess and asks for confirmation.",
+            "emotionContext": "Curious"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L112_Q1",
+            "instruction": "You've checked the roster: Nora is on duty tonight.",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "Nora is on duty tonight.",
+            "textToSpeak": "Nora is on duty tonight.",
+            "options": [
+                "Fall-rise — hedging",
+                "Falling — certain"
+            ],
+            "correctAnswer": "Falling — certain",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                2,
+                2,
+                1,
+                0
+            ],
+            "hint": "You have the schedule in front of you. Decide how definite your voice should be.",
+            "explanation": "A clean fall means 'I've checked, and it's true'. A fall-rise would suggest you were guessing.",
+            "pitchRule": "📉 A clean fall signals certainty.",
+            "emotionContext": "Confident"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L112_Q2",
+            "instruction": "You think the password is on the fridge but you're not certain.",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "The Wi-Fi password is on the fridge, I think.",
+            "textToSpeak": "The Wi-Fi password is on the fridge, I think.",
+            "options": [
+                "Fall-rise on 'think' — hedging",
+                "Falling on 'think' — certain"
+            ],
+            "correctAnswer": "Fall-rise on 'think' — hedging",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                2,
+                1,
+                0,
+                2
+            ],
+            "hint": "The phrase 'I think' is in the words. Does the melody agree with it?",
+            "explanation": "A fall-rise on 'think' matches the doubt in the words. A firm fall would contradict the hedge.",
+            "pitchRule": "↘️↗️ A hedge in the words is matched by a fall-rise in the melody.",
+            "emotionContext": "Unsure"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L112_Q3",
+            "instruction": "Your client asks about the delivery date, and you know the workload well.",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "We'll be done by five.",
+            "textToSpeak": "We'll be done by five.",
+            "options": [
+                "Falling — firm promise",
+                "Fall-rise — tentative estimate"
+            ],
+            "correctAnswer": "Falling — firm promise",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
@@ -142,95 +142,95 @@
                 1,
                 0
             ],
-            "hint": "This sentence gives one opinion. Listen to the pitch on 'graphics.'",
-            "explanation": "This is a simple statement with one falling pitch at the end, on 'graphics.'",
-            "pitchRule": "📉 Pitch falls once at the end of a simple statement, with no separate items to list.",
-            "emotionContext": "Determined"
+            "hint": "You are making a commitment. Which ending will the client trust?",
+            "explanation": "A fall on 'five' turns the sentence into a promise. A fall-rise would sound like an estimate.",
+            "pitchRule": "📉 A firm promise ends with a firm fall.",
+            "emotionContext": "Confident"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L113_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "A colleague shares a surprising claim, and you are curious about their evidence.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "He collects stamps, coins, and old postcards.",
-            "textToSpeak": "He collects stamps, coins, and old postcards.",
+            "word": "What makes you say that?",
+            "textToSpeak": "What makes you say that?",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Falling — genuine question",
+                "Rise-fall with stress on 'you' — challenge"
             ],
-            "correctAnswer": "Rising-Falling Intonation (List Pattern)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling — genuine question",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
                 3,
+                2,
                 1,
                 0
             ],
-            "hint": "This sentence lists three collectible items. Listen to the pitch as each is named.",
-            "explanation": "Non-final items rise slightly in a list. The pitch rises on 'stamps' and 'coins,' then falls on 'postcards.'",
-            "pitchRule": "📈📉 Pitch rises on each item in a list except the last, which falls to show the list is complete.",
+            "hint": "You want to know the reason. Listen for a calm, falling ending.",
+            "explanation": "A gentle fall makes it a real request for reasons. If the pitch peaked on 'you' and dropped sharply, it would sound like a challenge.",
+            "pitchRule": "📉 A calm fall keeps a 'why' question friendly.",
             "emotionContext": "Curious"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L113_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend suggests a costly holiday, and you doubt it's realistic.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The museum has a new art exhibit.",
-            "textToSpeak": "The museum has a new art exhibit.",
+            "word": "And who's going to pay for that?",
+            "textToSpeak": "And who's going to pay for that?",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Even start, gentle fall on 'pay' — neutral query",
+                "High start, sharp fall on 'pay' — challenge"
             ],
-            "correctAnswer": "Falling Intonation (Simple Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "High start, sharp fall on 'pay' — challenge",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
-                2,
+                3,
+                3,
                 1,
                 0
             ],
-            "hint": "This sentence gives one simple fact. Listen to the pitch on 'exhibit.'",
-            "explanation": "This is a simple statement, so the pitch falls once at the end, on 'exhibit.'",
-            "pitchRule": "📉 Pitch falls once at the end of a simple statement, with no separate items to list.",
-            "emotionContext": "Excited"
+            "hint": "You are not seeking information. What is the question really doing?",
+            "explanation": "The high start and sharp fall on 'pay' make it a challenge rather than a request for information. A neutral query would be even and calm.",
+            "pitchRule": "📉 A sharp fall on a key word can turn a question into a challenge.",
+            "emotionContext": "Skeptical"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L113_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "Your manager hands you an enormous task, and you're indignant.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "We visited the zoo, the aquarium, and the park.",
-            "textToSpeak": "We visited the zoo, the aquarium, and the park.",
+            "word": "You want me to do all of it?",
+            "textToSpeak": "You want me to do all of it?",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Low, mild rise on 'all' — neutral check",
+                "High rise with stress on 'all' — indignant challenge"
             ],
-            "correctAnswer": "Rising-Falling Intonation (List Pattern)",
+            "correctAnswer": "High rise with stress on 'all' — indignant challenge",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
-                3,
                 1,
-                0
+                3,
+                4,
+                4
             ],
-            "hint": "This sentence lists three places visited. Listen to the pitch through all three.",
-            "explanation": "Non-final items rise slightly in a list. The pitch rises on 'zoo' and 'aquarium,' then falls on 'park.'",
-            "pitchRule": "📈📉 Pitch rises on each item in a list except the last, which falls to show the list is complete.",
-            "emotionContext": "Doubtful"
+            "hint": "You don't want an answer, you want to object. Which word carries the objection?",
+            "explanation": "Stress on 'all' and a high rise shows that you consider the request unreasonable. A low rise would simply check.",
+            "pitchRule": "📈 A very high rise can turn a check into an objection.",
+            "emotionContext": "Indignant"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L114_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "Your friend is nervous before an interview.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This band released a new album.",
-            "textToSpeak": "This band released a new album.",
+            "word": "It'll be fine.",
+            "textToSpeak": "It'll be fine.",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Low, slow fall — reassuring",
+                "Fall-rise — doubtful"
             ],
-            "correctAnswer": "Falling Intonation (Simple Statement)",
+            "correctAnswer": "Low, slow fall — reassuring",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
@@ -238,490 +238,490 @@
                 1,
                 0
             ],
-            "hint": "This sentence gives one piece of news. Listen to the pitch on 'album.'",
-            "explanation": "This is a simple statement with one falling pitch at the end, on 'album.'",
-            "pitchRule": "📉 Pitch falls once at the end of a simple statement, with no separate items to list.",
-            "emotionContext": "Neutral"
+            "hint": "You want your friend to relax. Listen to the pace and the fall.",
+            "explanation": "A low, slow fall communicates calm and stability. A fall-rise would leave a trace of doubt.",
+            "pitchRule": "📉 Reassurance is slow and low, with a settled fall.",
+            "emotionContext": "Reassuring"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L114_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "You privately think your friend's plan will fail.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "My hobbies include reading, cooking, and gardening.",
-            "textToSpeak": "My hobbies include reading, cooking, and gardening.",
+            "word": "Yeah, I'm sure it'll all work out.",
+            "textToSpeak": "Yeah, I'm sure it'll all work out.",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Fall-rise on 'out' — implied doubt",
+                "Slow fall — sincere reassurance"
             ],
-            "correctAnswer": "Rising-Falling Intonation (List Pattern)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Fall-rise on 'out' — implied doubt",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                3,
                 1,
-                0
+                0,
+                2
             ],
-            "hint": "This sentence lists three hobbies. Listen to the pitch as each is named.",
-            "explanation": "Non-final items rise slightly in a list. The pitch rises on 'reading' and 'cooking,' then falls on 'gardening.'",
-            "pitchRule": "📈📉 Pitch rises on each item in a list except the last, which falls to show the list is complete.",
-            "emotionContext": "Surprised"
+            "hint": "The words are positive, but you don't believe them. Which delivery reveals this?",
+            "explanation": "A fall-rise on 'out' hints at a 'but'. A slow fall would sound sincere.",
+            "pitchRule": "↘️↗️ Positive words with a fall-rise may signal private doubt.",
+            "emotionContext": "Doubtful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L114_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "A new colleague is anxious about a system, and you're calm.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The theater added extra evening shows.",
-            "textToSpeak": "The theater added extra evening shows.",
+            "word": "Don't worry, I've done this before.",
+            "textToSpeak": "Don't worry, I've done this before.",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Sharp fall — impatient",
+                "Gentle fall — reassuring"
             ],
-            "correctAnswer": "Falling Intonation (Simple Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Gentle fall — reassuring",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
                 2,
                 1,
                 0
             ],
-            "hint": "This sentence gives one simple fact. Listen to the pitch on 'shows.'",
-            "explanation": "This is a simple statement, so the pitch falls once at the end, on 'shows.'",
-            "pitchRule": "📉 Pitch falls once at the end of a simple statement, with no separate items to list.",
-            "emotionContext": "Determined"
+            "hint": "You want the colleague to feel safe. Listen to how the voice lands.",
+            "explanation": "A gentle fall makes the sentence supportive. A sharp fall would sound as if you were tired of the question.",
+            "pitchRule": "📉 A gentle fall makes reassurance feel supportive.",
+            "emotionContext": "Reassuring"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L115_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "A waiter asks how many are in your party, and you imply that it's difficult.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "On weekends, I like swimming, cycling, and jogging.",
-            "textToSpeak": "On weekends, I like swimming, cycling, and jogging.",
+            "word": "Well, it's quite a large group.",
+            "textToSpeak": "Well, it's quite a large group.",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Falling — simple description",
+                "Fall-rise — implies a problem"
             ],
-            "correctAnswer": "Rising-Falling Intonation (List Pattern)",
+            "correctAnswer": "Fall-rise — implies a problem",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
-                3,
                 1,
-                0
+                0,
+                2
             ],
-            "hint": "This sentence lists three weekend activities. Listen to the pitch through all three.",
-            "explanation": "Non-final items rise slightly in a list. The pitch rises on 'swimming' and 'cycling,' then falls on 'jogging.'",
-            "pitchRule": "📈📉 Pitch rises on each item in a list except the last, which falls to show the list is complete.",
-            "emotionContext": "Curious"
+            "hint": "The words describe, but 'well' hints at something more. Listen to the ending.",
+            "explanation": "A fall-rise leaves room for an unspoken 'so it might be hard'. A plain fall would only describe.",
+            "pitchRule": "↘️↗️ A fall-rise can carry an unspoken 'but'.",
+            "emotionContext": "Hesitant"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L115_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "You've been asked how the food was, and it wasn't good.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This show has a huge fan following.",
-            "textToSpeak": "This show has a huge fan following.",
+            "word": "I've had better.",
+            "textToSpeak": "I've had better.",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Fall-rise — implies it wasn't good",
+                "Warm, wide fall — sincere praise of the meal"
             ],
-            "correctAnswer": "Falling Intonation (Simple Statement)",
+            "correctAnswer": "Fall-rise — implies it wasn't good",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
                 1,
-                0
+                0,
+                2
             ],
-            "hint": "This sentence gives one opinion. Listen to the pitch on 'following.'",
-            "explanation": "This is a simple statement with one falling pitch at the end, on 'following.'",
-            "pitchRule": "📉 Pitch falls once at the end of a simple statement, with no separate items to list.",
-            "emotionContext": "Excited"
+            "hint": "The comparison is the clue. What does 'better' imply about this meal?",
+            "explanation": "A fall-rise on 'better' implies that this meal was not up to standard. A warm fall would sound like praise.",
+            "pitchRule": "↘️↗️ A comparison with a fall-rise implies disappointment.",
+            "emotionContext": "Disappointed"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L115_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend defends a colleague who failed at a task.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "We sang, danced, and laughed all night.",
-            "textToSpeak": "We sang, danced, and laughed all night.",
+            "word": "He did try.",
+            "textToSpeak": "He did try.",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Warm fall on 'try' — plain praise of the effort",
+                "Fall-rise on 'try' — implies 'but it wasn't enough'"
             ],
-            "correctAnswer": "Rising-Falling Intonation (List Pattern)",
+            "correctAnswer": "Fall-rise on 'try' — implies 'but it wasn't enough'",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
-                3,
                 1,
-                0
+                0,
+                2
             ],
-            "hint": "This sentence lists three actions from the night. Listen to the pitch as each is named.",
-            "explanation": "Non-final items rise slightly in a list. The pitch rises on 'sang' and 'danced,' then falls on 'laughed.'",
-            "pitchRule": "📈📉 Pitch rises on each item in a list except the last, which falls to show the list is complete.",
-            "emotionContext": "Doubtful"
+            "hint": "The word 'did' sets up a contrast. What is left unsaid?",
+            "explanation": "A fall-rise on 'try' invites the listener to complete 'but he didn't succeed'. A firm fall would praise the effort.",
+            "pitchRule": "↘️↗️ The unspoken 'but' hides in a fall-rise.",
+            "emotionContext": "Sympathetic"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L116_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "You have just struggled with a badly designed form on the company website.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The festival attracts thousands of visitors.",
-            "textToSpeak": "The festival attracts thousands of visitors.",
+            "word": "Why would anyone design it that way?",
+            "textToSpeak": "Why would anyone design it that way?",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Rising, light — genuine puzzlement about the design",
+                "Falling, stress on 'anyone' — rhetorical complaint"
             ],
-            "correctAnswer": "Falling Intonation (Simple Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Falling, stress on 'anyone' — rhetorical complaint",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
-                2,
+                4,
                 1,
                 0
             ],
-            "hint": "This sentence gives one simple fact. Listen to the pitch on 'visitors.'",
-            "explanation": "This is a simple statement, so the pitch falls once at the end, on 'visitors.'",
-            "pitchRule": "📉 Pitch falls once at the end of a simple statement, with no separate items to list.",
-            "emotionContext": "Neutral"
+            "hint": "Notice whether the speaker is looking for an answer or just expressing a view.",
+            "explanation": "Stress on 'anyone' and a fall show that the speaker is complaining, not asking. A light rise would suggest that someone could explain the design.",
+            "pitchRule": "😠 Stress on 'anyone' makes a question a complaint.",
+            "emotionContext": "Exasperated"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L116_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "You're a manager and politely but clearly setting a deadline.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "She enjoys knitting, baking, and pottery.",
-            "textToSpeak": "She enjoys knitting, baking, and pottery.",
+            "word": "It would be great if the report were ready by noon.",
+            "textToSpeak": "It would be great if the report were ready by noon.",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Rise on 'noon' — tentative suggestion",
+                "Fall on 'noon' — polite but firm"
             ],
-            "correctAnswer": "Rising-Falling Intonation (List Pattern)",
+            "correctAnswer": "Fall on 'noon' — polite but firm",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
-                3,
+                2,
                 1,
                 0
             ],
-            "hint": "This sentence lists three creative hobbies. Listen to the pitch through all three.",
-            "explanation": "Non-final items rise slightly in a list. The pitch rises on 'knitting' and 'baking,' then falls on 'pottery.'",
-            "pitchRule": "📈📉 Pitch rises on each item in a list except the last, which falls to show the list is complete.",
-            "emotionContext": "Surprised"
+            "hint": "The words are indirect but the deadline is real. Which ending makes that clear?",
+            "explanation": "A fall on 'noon' keeps the polite words but marks the deadline as firm. A rise would give the listener a way out.",
+            "pitchRule": "📉 A falling ending gives a polite sentence authority.",
+            "emotionContext": "Professional"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L116_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "Your colleagues are being noisy and you're tired.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This director makes excellent thrillers.",
-            "textToSpeak": "This director makes excellent thrillers.",
+            "word": "Some of us are trying to work.",
+            "textToSpeak": "Some of us are trying to work.",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Fall with stress on 'trying' — pointed complaint",
+                "Light rise on 'work' — friendly remark to them"
             ],
-            "correctAnswer": "Falling Intonation (Simple Statement)",
+            "correctAnswer": "Fall with stress on 'trying' — pointed complaint",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
+                4,
                 1,
                 0
             ],
-            "hint": "This sentence gives one opinion. Listen to the pitch on 'thrillers.'",
-            "explanation": "This is a simple statement with one falling pitch at the end, on 'thrillers.'",
-            "pitchRule": "📉 Pitch falls once at the end of a simple statement, with no separate items to list.",
-            "emotionContext": "Determined"
+            "hint": "This is a complaint in disguise. Where is the complaint?",
+            "explanation": "Stress on 'trying' and a sharp fall show that the speaker is annoyed. A friendly remark would be lighter and rising.",
+            "pitchRule": "📉 A pointed complaint places stress on the verb and falls sharply.",
+            "emotionContext": "Irritated"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L117_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "You've tasted the new soup and you're not impressed.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Our team plays soccer, basketball, and volleyball.",
-            "textToSpeak": "Our team plays soccer, basketball, and volleyball.",
+            "word": "It's not bad.",
+            "textToSpeak": "It's not bad.",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Fall-rise — faint praise",
+                "Falling — genuine approval"
             ],
-            "correctAnswer": "Rising-Falling Intonation (List Pattern)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Fall-rise — faint praise",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                3,
                 1,
-                0
+                0,
+                2
             ],
-            "hint": "This sentence lists three sports. Listen to the pitch as each is named.",
-            "explanation": "Non-final items rise slightly in a list. The pitch rises on 'soccer' and 'basketball,' then falls on 'volleyball.'",
-            "pitchRule": "📈📉 Pitch rises on each item in a list except the last, which falls to show the list is complete.",
-            "emotionContext": "Curious"
+            "hint": "The sentence is a compliment, but is it a warm one? Listen to the ending.",
+            "explanation": "A fall-rise makes 'not bad' a lukewarm remark meaning 'it's okay'. A fall would sound like approval.",
+            "pitchRule": "↘️↗️ A fall-rise often turns praise into a reservation.",
+            "emotionContext": "Lukewarm"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L117_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "The cake looks plain, but it turns out to be delicious.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The orchestra performed beautifully tonight.",
-            "textToSpeak": "The orchestra performed beautifully tonight.",
+            "word": "Not bad at all!",
+            "textToSpeak": "Not bad at all!",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Rise-fall — genuine praise",
+                "Fall-rise — faint praise"
             ],
-            "correctAnswer": "Falling Intonation (Simple Statement)",
+            "correctAnswer": "Rise-fall — genuine praise",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
-                2,
                 1,
+                3,
+                4,
                 0
             ],
-            "hint": "This sentence gives one simple opinion. Listen to the pitch on 'tonight.'",
-            "explanation": "This is a simple statement with no items to list, so the pitch falls just once at the end, on 'tonight.'",
-            "pitchRule": "📉 Pitch falls once at the end of a simple statement, with no separate items to list.",
-            "emotionContext": "Excited"
+            "hint": "This time, the emphasis is on 'at all'. Notice the peak.",
+            "explanation": "A rise-fall with a peak on 'all' turns a small phrase into real admiration. A fall-rise would suggest the opposite.",
+            "pitchRule": "🎉 A peak plus 'at all' shows genuine surprise and praise.",
+            "emotionContext": "Pleased"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L117_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You've read a colleague's first draft and think it needs work.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "He likes chess, puzzles, and video games.",
-            "textToSpeak": "He likes chess, puzzles, and video games.",
+            "word": "It's fine for a first draft.",
+            "textToSpeak": "It's fine for a first draft.",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Clean fall on 'draft' — plain approval of the draft",
+                "Fall-rise on 'draft' — implies more work is needed"
             ],
-            "correctAnswer": "Rising-Falling Intonation (List Pattern)",
+            "correctAnswer": "Fall-rise on 'draft' — implies more work is needed",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
-                3,
                 1,
-                0
+                0,
+                2
             ],
-            "hint": "This sentence lists three pastimes. Listen to the pitch through all three.",
-            "explanation": "Non-final items rise slightly in a list. The pitch rises on 'chess' and 'puzzles,' then falls on 'video games.'",
-            "pitchRule": "📈📉 Pitch rises on each item in a list except the last, which falls to show the list is complete.",
-            "emotionContext": "Doubtful"
+            "hint": "The qualifier 'for a first draft' limits the praise. Listen to how the sentence ends.",
+            "explanation": "A fall-rise on 'draft' implies 'but it's not there yet'. A fall would make the sentence a complete approval.",
+            "pitchRule": "↘️↗️ A qualified praise with a fall-rise implies more work.",
+            "emotionContext": "Diplomatic"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L118_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "You warmly want your friend to join the group trip.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This podcast covers interesting true stories.",
-            "textToSpeak": "This podcast covers interesting true stories.",
+            "word": "You should come with us.",
+            "textToSpeak": "You should come with us.",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Flat fall — polite formality",
+                "Warm rise-fall — sincere invitation"
             ],
-            "correctAnswer": "Falling Intonation (Simple Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Warm rise-fall — sincere invitation",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
-                2,
                 1,
+                3,
+                4,
                 0
             ],
-            "hint": "This sentence gives one simple opinion. Listen to the pitch on 'stories.'",
-            "explanation": "This is a simple statement with one falling pitch at the end, on 'stories.'",
-            "pitchRule": "📉 Pitch falls once at the end of a simple statement, with no separate items to list.",
-            "emotionContext": "Neutral"
+            "hint": "You really want them there. Listen to the warmth in the middle of the sentence.",
+            "explanation": "A warm rise-fall on 'come' makes the invitation genuine. A flat fall would sound as if you were merely being polite.",
+            "pitchRule": "🎉 A warm peak makes an invitation feel real.",
+            "emotionContext": "Warm"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L118_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "You're worried about a colleague's cough that won't go away.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "We tried surfing, kayaking, and snorkeling.",
-            "textToSpeak": "We tried surfing, kayaking, and snorkeling.",
+            "word": "You really should see a doctor.",
+            "textToSpeak": "You really should see a doctor.",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Firm fall with stress on 'should' — serious advice",
+                "Light rise with a smile on 'doctor' — casual idea"
             ],
-            "correctAnswer": "Rising-Falling Intonation (List Pattern)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Firm fall with stress on 'should' — serious advice",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                3,
+                4,
                 1,
                 0
             ],
-            "hint": "This sentence lists three water activities. Listen to the pitch as each is named.",
-            "explanation": "Non-final items rise slightly in a list. The pitch rises on 'surfing' and 'kayaking,' then falls on 'snorkeling.'",
-            "pitchRule": "📈📉 Pitch rises on each item in a list except the last, which falls to show the list is complete.",
-            "emotionContext": "Surprised"
+            "hint": "You are serious. Which word carries the seriousness?",
+            "explanation": "A firm fall with stress on 'should' makes the advice sound serious. A light rise would sound like small talk.",
+            "pitchRule": "📉 Serious advice puts weight on 'should' and falls firmly.",
+            "emotionContext": "Concerned"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L118_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You want a shy colleague to sit with your group at lunch.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The actor gave an amazing performance.",
-            "textToSpeak": "The actor gave an amazing performance.",
+            "word": "Why don't you join us?",
+            "textToSpeak": "Why don't you join us?",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Falling — asking for reasons",
+                "Rising — friendly invitation"
             ],
-            "correctAnswer": "Falling Intonation (Simple Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising — friendly invitation",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
-                2,
                 1,
-                0
+                2,
+                2,
+                4
             ],
-            "hint": "This sentence gives one opinion. Listen to the pitch on 'performance.'",
-            "explanation": "This is a simple statement, so the pitch falls once at the end, on 'performance.'",
-            "pitchRule": "📉 Pitch falls once at the end of a simple statement, with no separate items to list.",
-            "emotionContext": "Determined"
+            "hint": "This is not a real 'why' question. Which ending suggests an invitation?",
+            "explanation": "A rise on 'us' makes the phrase a friendly suggestion. A fall would ask for the reasons for not joining.",
+            "pitchRule": "📈 A rise turns 'why don't you' into an invitation.",
+            "emotionContext": "Friendly"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L119_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "You disagree with the plan but decide to give in.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Their playlist mixes pop, jazz, and rock.",
-            "textToSpeak": "Their playlist mixes pop, jazz, and rock.",
+            "word": "Fine, we can do it your way.",
+            "textToSpeak": "Fine, we can do it your way.",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Warm fall — cheerful agreement",
+                "Flat fall — reluctant agreement"
             ],
-            "correctAnswer": "Rising-Falling Intonation (List Pattern)",
+            "correctAnswer": "Flat fall — reluctant agreement",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
-                3,
                 1,
+                0,
                 0
             ],
-            "hint": "This sentence lists three music genres. Listen to the pitch through all three.",
-            "explanation": "Non-final items rise slightly in a list. The pitch rises on 'pop' and 'jazz,' then falls on 'rock.'",
-            "pitchRule": "📈📉 Pitch rises on each item in a list except the last, which falls to show the list is complete.",
-            "emotionContext": "Curious"
+            "hint": "The word 'fine' can go either way. Which delivery matches the situation?",
+            "explanation": "A flat fall suggests that you have not really changed your mind. A warm fall would sound cheerful.",
+            "pitchRule": "😐 A flat fall signals reluctant agreement.",
+            "emotionContext": "Resigned"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L119_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend suggests a spontaneous weekend trip and you are happy.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This series has a surprising final episode.",
-            "textToSpeak": "This series has a surprising final episode.",
+            "word": "Sure, why not.",
+            "textToSpeak": "Sure, why not.",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Flat, narrow fall — reluctant, unwilling yes",
+                "Bright, wide fall — enthusiastic yes"
             ],
-            "correctAnswer": "Falling Intonation (Simple Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Bright, wide fall — enthusiastic yes",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
+                3,
                 2,
                 1,
                 0
             ],
-            "hint": "This sentence gives one opinion. Listen to the pitch on 'episode.'",
-            "explanation": "This is a simple statement with one falling pitch at the end, on 'episode.'",
-            "pitchRule": "📉 Pitch falls once at the end of a simple statement, with no separate items to list.",
-            "emotionContext": "Excited"
+            "hint": "You like the idea. Which delivery makes that clear?",
+            "explanation": "A bright, wide fall shows real willingness. A flat fall would suggest reluctance.",
+            "pitchRule": "🎉 A bright, wide fall makes 'why not' sound like 'yes!'.",
+            "emotionContext": "Enthusiastic"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L119_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "Someone pushes you to accept a gift you didn't want.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "I packed my camera, my sketchbook, and a novel.",
-            "textToSpeak": "I packed my camera, my sketchbook, and a novel.",
+            "word": "Okay, if you insist.",
+            "textToSpeak": "Okay, if you insist.",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Fall-rise on 'insist' — polite reluctance",
+                "Bright fall — pleased acceptance"
             ],
-            "correctAnswer": "Rising-Falling Intonation (List Pattern)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Fall-rise on 'insist' — polite reluctance",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                3,
                 1,
-                0
+                0,
+                2
             ],
-            "hint": "This sentence lists three items packed for a trip. Listen to the pitch as each is named.",
-            "explanation": "Non-final items rise slightly in a list. The pitch rises on 'camera' and 'sketchbook,' then falls on 'novel.'",
-            "pitchRule": "📈📉 Pitch rises on each item in a list except the last, which falls to show the list is complete.",
-            "emotionContext": "Doubtful"
+            "hint": "You do not want to refuse rudely. Listen to the last word.",
+            "explanation": "A fall-rise on 'insist' shows polite reluctance and leaves room for the other person to relent. A bright fall would sound like acceptance.",
+            "pitchRule": "↘️↗️ Polite reluctance often ends with a fall-rise.",
+            "emotionContext": "Reluctant"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L120_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "You have asked your teenager to tidy their room again and again.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The comedian's new special is hilarious.",
-            "textToSpeak": "The comedian's new special is hilarious.",
+            "word": "How many times do I have to ask?",
+            "textToSpeak": "How many times do I have to ask?",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Sharp, falling — rhetorical frustration",
+                "Rising, even — a real counting question"
             ],
-            "correctAnswer": "Falling Intonation (Simple Statement)",
+            "correctAnswer": "Sharp, falling — rhetorical frustration",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
-                2,
-                1,
-                0
-            ],
-            "hint": "This sentence gives one opinion. Listen to the pitch on 'hilarious.'",
-            "explanation": "This is a simple statement, so the pitch falls once at the end, on 'hilarious.'",
-            "pitchRule": "📉 Pitch falls once at the end of a simple statement, with no separate items to list.",
-            "emotionContext": "Neutral"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L120_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "We explored the old town, the harbor, and the castle.",
-            "textToSpeak": "We explored the old town, the harbor, and the castle.",
-            "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
-            ],
-            "correctAnswer": "Rising-Falling Intonation (List Pattern)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                2,
+                3,
                 3,
                 1,
                 0
             ],
-            "hint": "This sentence lists three places explored. Listen to the pitch through all three.",
-            "explanation": "Non-final items rise slightly in a list. The pitch rises on 'old town' and 'harbor,' then falls on 'castle.'",
-            "pitchRule": "📈📉 Pitch rises on each item in a list except the last, which falls to show the list is complete.",
-            "emotionContext": "Surprised"
+            "hint": "Does the speaker expect the teenager to answer with a number?",
+            "explanation": "A sharp fall tells the listener that the 'question' is a complaint with an obvious answer: too many times. A rise would invite a number.",
+            "pitchRule": "😠 A falling 'how many times' is a complaint, not a count.",
+            "emotionContext": "Frustrated"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L120_Q2",
+            "instruction": "Your friend wants a raise but avoids asking, and you nudge them.",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "You could try asking.",
+            "textToSpeak": "You could try asking.",
+            "options": [
+                "Flat fall — dismissive",
+                "Gentle rise-fall — encouraging"
+            ],
+            "correctAnswer": "Gentle rise-fall — encouraging",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                1,
+                3,
+                4,
+                0
+            ],
+            "hint": "You want to help. Which delivery sounds supportive?",
+            "explanation": "A gentle rise-fall adds warmth to a suggestion. A flat fall would sound as if you didn't care.",
+            "pitchRule": "🎉 A gentle peak makes a suggestion sound encouraging.",
+            "emotionContext": "Encouraging"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L120_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You watched a colleague give a chaotic presentation.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This author writes wonderful mystery novels.",
-            "textToSpeak": "This author writes wonderful mystery novels.",
+            "word": "That was one way to do it.",
+            "textToSpeak": "That was one way to do it.",
             "options": [
-                "Falling Intonation (Simple Statement)",
-                "Rising-Falling Intonation (List Pattern)"
+                "Fall-rise — implies criticism",
+                "Falling — neutral summary"
             ],
-            "correctAnswer": "Falling Intonation (Simple Statement)",
+            "correctAnswer": "Fall-rise — implies criticism",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
                 1,
-                0
+                0,
+                2
             ],
-            "hint": "This sentence gives one opinion. Listen to the pitch on 'novels.'",
-            "explanation": "This is a simple statement with one falling pitch at the end, on 'novels,' completing this tier's practice with list intonation.",
-            "pitchRule": "📉 Pitch falls once at the end of a simple statement, with no separate items to list.",
-            "emotionContext": "Determined"
+            "hint": "The sentence has a hidden meaning. What do you think the speaker means?",
+            "explanation": "A fall-rise on 'it' leaves an unspoken criticism hanging. A plain fall would only summarize.",
+            "pitchRule": "↘️↗️ Ambiguous comments use a fall-rise to hint at criticism.",
+            "emotionContext": "Wry"
         }
     ]
 }

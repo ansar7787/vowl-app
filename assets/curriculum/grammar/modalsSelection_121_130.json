@@ -8,570 +8,570 @@
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "The treaty provisions ___ be interpreted narrowly so as not to undermine their purpose.",
+            "question": "Since neither party initialled the amendment, that clause ___ actually be legally binding.",
             "options": [
-                "must",
-                "could",
-                "shall",
-                "might"
+                "should",
+                "might",
+                "can't",
+                "must"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "shall",
-            "hint": "Legal documents specify binding interpretations.",
-            "explanation": "Treaty language favours 'shall' for binding obligations - it reads as more precise and less negotiable than 'must' in formal legal drafting.",
-            "grammarRule": "Formal Suggestions (shall)",
-            "modalMeaning": "3"
+            "correctAnswer": "can't",
+            "hint": "A missing formal requirement makes one outcome highly unlikely.",
+            "explanation": "'Can't' expresses a confident negative conclusion, since the missing initials make legal enforceability highly unlikely.",
+            "grammarRule": "Complex Context: Legal",
+            "modalMeaning": "8"
         },
         {
             "id": "ms_l121_q2",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "The defendant ___ have acted under duress, which would significantly affect the verdict.",
+            "question": "Under this clause, either party ___ terminate the agreement with thirty days' written notice.",
             "options": [
-                "must",
+                "would",
+                "might",
                 "should",
-                "may",
-                "can"
+                "may"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "may",
-            "hint": "Duress is a legal defence - it is possible, not certain.",
-            "explanation": "Duress is a recognised legal defence that courts must weigh, not dismiss outright. 'May have acted' keeps the claim open as a real possibility rather than a settled fact.",
-            "grammarRule": "Formal Permission (may)",
-            "modalMeaning": "3"
+            "hint": "This is a formal contractual right, precisely worded.",
+            "explanation": "'May' expresses a formally granted contractual right, precise legal language for describing entitlements.",
+            "grammarRule": "Complex Context: Legal",
+            "modalMeaning": "4"
         },
         {
             "id": "ms_l121_q3",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "The commission ___ have initiated an independent inquiry - the conflict of interest was glaring.",
+            "question": "Given the ambiguous wording, a court ___ interpret this clause quite differently than the parties intended.",
             "options": [
-                "can",
-                "might",
-                "would",
-                "should"
+                "could",
+                "should",
+                "must",
+                "would"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "should",
-            "hint": "A glaring conflict of interest demands an independent inquiry.",
-            "explanation": "A conflict of interest this obvious is hard to justify overlooking. 'Should have initiated' points to the independent inquiry that was owed but never opened.",
-            "grammarRule": "Advice & Expectation (should/ought)",
-            "modalMeaning": "2"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "could",
+            "hint": "This is a real, concerning possibility raised by unclear drafting.",
+            "explanation": "'Could' expresses a genuine risk created by ambiguous contract language, a realistic legal concern rather than a certainty.",
+            "grammarRule": "Complex Context: Legal",
+            "modalMeaning": "4"
         },
         {
             "id": "ms_l122_q1",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "All parties ___ be given an equal opportunity to present their case before a decision is made.",
+            "question": "The blood tests are normal but the scan shows inflammation, so the cause ___ still be something the tests can't detect.",
             "options": [
+                "should",
                 "must",
-                "might",
                 "would",
-                "could"
+                "might"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "must",
-            "hint": "Fair process requires equal opportunity - mandatory.",
-            "explanation": "Fair hearings don't work if only some parties get a say. 'Must be given' reflects how non-negotiable this baseline requirement is.",
-            "grammarRule": "Obligation & Deduction (must)",
-            "modalMeaning": "3"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "might",
+            "hint": "Conflicting results leave the explanation genuinely open.",
+            "explanation": "'Might' fits genuinely conflicting diagnostic evidence, keeping the explanation appropriately open rather than confirmed.",
+            "grammarRule": "Complex Context: Medical Diagnosis",
+            "modalMeaning": "4"
         },
         {
             "id": "ms_l122_q2",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "Had the intervention come earlier, the outcome ___ have been substantially different.",
+            "question": "Since the symptoms improved right after stopping the medication, the drug ___ have been the underlying cause.",
             "options": [
-                "must",
-                "could",
-                "can",
-                "shall"
+                "might",
+                "would",
+                "should",
+                "must"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "could",
-            "hint": "Earlier action opens up outcomes that later action can no longer reach.",
-            "explanation": "Timing often shapes what's still achievable. 'Could have been substantially different' points to the alternative outcome that earlier intervention would have made possible.",
-            "grammarRule": "Ability & Permission (can/could)",
-            "modalMeaning": "1"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "must",
+            "hint": "A clear cause-and-effect pattern supports a fairly confident conclusion.",
+            "explanation": "'Must have' expresses confident deduction supported by a clear before-and-after pattern linking the medication to the symptoms.",
+            "grammarRule": "Complex Context: Medical Diagnosis",
+            "modalMeaning": "13"
         },
         {
             "id": "ms_l122_q3",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "The evidence ___ be considered in its totality rather than selectively.",
+            "question": "Given the family history, the specialist ___ recommend additional screening as a precaution.",
             "options": [
-                "would",
-                "might",
+                "should",
                 "must",
-                "could"
+                "would",
+                "might"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "must",
-            "hint": "Complete evidence review is a legal and analytical obligation.",
-            "explanation": "Cherry-picking evidence skews any analysis. 'Must be considered' reflects the requirement to weigh everything together, not just the convenient parts.",
-            "grammarRule": "Obligation & Deduction (must)",
-            "modalMeaning": "3"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "might",
+            "hint": "This is one likely, though not certain, next step the specialist could suggest.",
+            "explanation": "'Might' expresses a reasonable possibility about what the specialist could recommend, without confirming the decision has been made.",
+            "grammarRule": "Complex Context: Medical Diagnosis",
+            "modalMeaning": "4"
         },
         {
             "id": "ms_l123_q1",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "The regulator ___ have imposed stricter sanctions - the violations were repeated and serious.",
+            "question": "The log timestamps are all in a different time zone than expected, so the server ___ have been misconfigured from the start.",
             "options": [
-                "can",
-                "should",
+                "must",
                 "might",
-                "would"
+                "would",
+                "should"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "should",
-            "hint": "Repeated serious violations demand stricter sanctions.",
-            "explanation": "Sanctions are meant to scale with the severity of what they're responding to. Repeated, serious violations call for a stronger response than what 'should have imposed' suggests was actually given.",
-            "grammarRule": "Advice & Expectation (should/ought)",
-            "modalMeaning": "3"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "must",
+            "hint": "A specific technical detail supports a confident explanation.",
+            "explanation": "'Must have' expresses confident deduction from a specific, verifiable technical clue, the mismatched time zone.",
+            "grammarRule": "Complex Context: Technology Forensic",
+            "modalMeaning": "13"
         },
         {
             "id": "ms_l123_q2",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "Without the coalition's support, the resolution ___ not have passed at the United Nations.",
+            "question": "Two unrelated systems failed within seconds of each other, so the outage ___ have a single shared root cause.",
             "options": [
-                "would",
+                "might",
+                "should",
                 "must",
-                "can",
-                "shall"
+                "would"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "would",
-            "hint": "Losing the coalition's backing likely doomed the vote's chances.",
-            "explanation": "'Would not have passed' is the result clause of a third conditional. Without the coalition's support, the resolution's failure at the vote would have been the natural outcome.",
-            "grammarRule": "Offers & Habits (would)",
-            "modalMeaning": "2"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "must",
+            "hint": "A precise, unlikely coincidence in timing strongly suggests one shared explanation.",
+            "explanation": "'Must have' expresses confident deduction, since such a precise coincidence in timing strongly implies a single underlying cause.",
+            "grammarRule": "Complex Context: Technology Forensic",
+            "modalMeaning": "13"
         },
         {
             "id": "ms_l123_q3",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "The oversight body ___ conduct a full investigation whenever a serious complaint is received.",
+            "question": "It's too early to say for certain, but the vulnerability ___ have existed in the code for years without being noticed.",
             "options": [
-                "must",
-                "would",
                 "might",
-                "could"
+                "must",
+                "should",
+                "would"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "must",
-            "hint": "A mandatory regulatory process - always required.",
-            "explanation": "Oversight bodies aren't meant to pick and choose which complaints deserve a full look. 'Must conduct' reflects that this step is automatic, not discretionary.",
-            "grammarRule": "Obligation & Deduction (must)",
-            "modalMeaning": "3"
+            "correctAnswer": "might",
+            "hint": "This is a real possibility, though explicitly described as uncertain.",
+            "explanation": "'Might have' fits an explicitly uncertain possibility, appropriate before a full technical investigation is complete.",
+            "grammarRule": "Complex Context: Technology Forensic",
+            "modalMeaning": "13"
         },
         {
             "id": "ms_l124_q1",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "The minister ___ have disclosed the personal benefit before casting his vote - it was a clear conflict.",
+            "question": "Given how thin the evidence is for the main claim, reviewers ___ ask for additional data before acceptance.",
             "options": [
-                "would",
-                "can",
+                "will",
                 "should",
+                "must",
                 "might"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "should",
-            "hint": "Personal benefit in a vote = mandatory disclosure.",
-            "explanation": "Voting on something you personally benefit from, without saying so, is a textbook conflict of interest. 'Should have disclosed' names the step that was skipped.",
-            "grammarRule": "Advice & Expectation (should/ought)",
-            "modalMeaning": "2"
+            "hint": "This is reasonable editorial advice, not a guaranteed outcome.",
+            "explanation": "'Should' expresses reasonable editorial expectations given weak supporting evidence, without predicting the exact outcome.",
+            "grammarRule": "Complex Context: Academic Peer Review",
+            "modalMeaning": "16"
         },
         {
             "id": "ms_l124_q2",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "If the legislation had been drafted more precisely, the ambiguities ___ have been avoided.",
+            "question": "Since two independent labs reproduced the exact same result, the finding ___ be reliable.",
             "options": [
-                "can",
                 "must",
-                "shall",
-                "would"
+                "should",
+                "would",
+                "might"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "would",
-            "hint": "Sloppier drafting tends to leave more room for dispute later.",
-            "explanation": "Vague wording in legislation tends to generate arguments about what it really means. 'Would have been avoided' points to the ambiguity that sharper drafting would have prevented.",
-            "grammarRule": "Offers & Habits (would)",
-            "modalMeaning": "2"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "must",
+            "hint": "Independent replication is strong scientific evidence supporting confidence.",
+            "explanation": "'Must' expresses strong scientific confidence, since independent replication is one of the most convincing forms of evidence.",
+            "grammarRule": "Complex Context: Academic Peer Review",
+            "modalMeaning": "8"
         },
         {
             "id": "ms_l124_q3",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "Counsel ___ not make statements that they know to be false to the court.",
+            "question": "If the methodology section is unclear, other researchers ___ struggle to replicate the study at all.",
             "options": [
                 "could",
-                "might",
-                "had",
-                "must"
+                "must",
+                "would",
+                "should"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "must",
-            "hint": "Truthfulness to the court is a fundamental legal obligation.",
-            "explanation": "Lying to a court isn't a grey area - it's treated as a serious breach of legal ethics. 'Must not make' reflects how firm this rule is.",
-            "grammarRule": "Obligation & Deduction (must)",
-            "modalMeaning": "3"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "could",
+            "hint": "This is a real risk raised by a specific weakness in the paper.",
+            "explanation": "'Could' expresses a genuine, well-founded risk tied directly to a specific weakness (unclear methodology).",
+            "grammarRule": "Complex Context: Academic Peer Review",
+            "modalMeaning": "4"
         },
         {
             "id": "ms_l125_q1",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "The arbitration panel ___ have given greater weight to the precedent established in similar cases.",
+            "question": "Half the guests haven't confirmed yet, so the final headcount ___ change quite a bit before the deadline.",
             "options": [
-                "might",
-                "would",
+                "must",
                 "should",
-                "can"
+                "could",
+                "would"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "should",
-            "hint": "Precedent usually carries real weight in how similar cases get decided.",
-            "explanation": "Precedent exists to keep similar cases decided in similar ways. 'Should have given greater weight' suggests the panel leaned too little on that established guidance.",
-            "grammarRule": "Advice & Expectation (should/ought)",
-            "modalMeaning": "2"
+            "correctAnswer": "could",
+            "hint": "With so many unconfirmed responses, real change is genuinely likely.",
+            "explanation": "'Could' expresses a realistic likelihood of change, grounded in the specific fact that half the guests haven't confirmed.",
+            "grammarRule": "Complex Context: Event Planning",
+            "modalMeaning": "4"
         },
         {
             "id": "ms_l125_q2",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "The reforms ___ have been implemented in phases rather than all at once - the disruption was severe.",
+            "question": "Given the venue's strict rules, the caterer ___ finish setup at least two hours before doors open.",
             "options": [
-                "should",
-                "can",
+                "might",
                 "would",
-                "might"
+                "should",
+                "must"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "should",
-            "hint": "Severe disruption suggests phased implementation was needed.",
-            "explanation": "Sudden, sweeping changes tend to cause more disruption than a staged rollout. 'Should have been implemented in phases' points to the gentler approach that wasn't taken.",
-            "grammarRule": "Advice & Expectation (should/ought)",
-            "modalMeaning": "2"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "must",
+            "hint": "This is a firm requirement enforced by the venue.",
+            "explanation": "'Must' expresses a firm requirement enforced externally by the venue's own strict rules.",
+            "grammarRule": "Complex Context: Event Planning",
+            "modalMeaning": "8"
         },
         {
             "id": "ms_l125_q3",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "Under the terms of the agreement, neither party ___ seek to renegotiate the key provisions.",
+            "question": "If the weather turns bad, the outdoor ceremony ___ have to move indoors at the last minute.",
             "options": [
-                "may",
-                "would",
+                "must",
+                "should",
                 "might",
-                "could"
+                "would"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "may",
-            "hint": "A contract clause stating what is not permitted under the agreement.",
-            "explanation": "'May not seek to renegotiate' is a formal way of saying this action isn't permitted. In contract language, 'may not' expresses a firm restriction on what a party is allowed to do.",
-            "grammarRule": "Formal Permission (may)",
-            "modalMeaning": "2"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "would",
+            "hint": "This is the natural result within a hypothetical weather scenario.",
+            "explanation": "'Would' fits the result clause of a conditional about a possible future scenario (bad weather), describing the likely necessary reaction.",
+            "grammarRule": "Complex Context: Event Planning",
+            "modalMeaning": "14"
         },
         {
             "id": "ms_l126_q1",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "The company ___ have maintained better records of its environmental impact over the past decade.",
+            "question": "Since three analysts independently reached the same estimate, the forecast ___ be fairly accurate.",
             "options": [
-                "can",
+                "should",
+                "must",
                 "would",
-                "might",
-                "should"
+                "might"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "should",
-            "hint": "Poor records indicate a missed obligation.",
-            "explanation": "A decade is a long time to leave gaps in a company's environmental records. 'Should have maintained' points squarely at that ongoing shortfall.",
-            "grammarRule": "Advice & Expectation (should/ought)",
-            "modalMeaning": "2"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "must",
+            "hint": "Independent agreement among experts supports a confident conclusion.",
+            "explanation": "'Must' expresses confidence justified by independent agreement among multiple financial analysts.",
+            "grammarRule": "Complex Context: Financial",
+            "modalMeaning": "8"
         },
         {
             "id": "ms_l126_q2",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "Without the community's resistance, the development ___ have proceeded without any environmental assessment.",
+            "question": "If interest rates rise again next quarter, monthly repayments ___ increase noticeably for variable-rate borrowers.",
             "options": [
                 "must",
-                "shall",
-                "can",
+                "might",
+                "should",
                 "would"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "would",
-            "hint": "Community pushback can force a review that might not have happened otherwise.",
-            "explanation": "Developers don't always volunteer extra scrutiny of their own accord. 'Would have proceeded' pictures the unchecked outcome that community resistance prevented.",
-            "grammarRule": "Offers & Habits (would)",
-            "modalMeaning": "2"
+            "hint": "This is a fairly direct, near-automatic consequence of the stated condition.",
+            "explanation": "'Would' fits the near-automatic result of a stated financial condition, describing a predictable mechanical outcome.",
+            "grammarRule": "Complex Context: Financial",
+            "modalMeaning": "16"
         },
         {
             "id": "ms_l126_q3",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "The medical board ___ have revoked the licence far sooner given the number of patient complaints.",
+            "question": "Given the current uncertainty in the market, investors ___ want to diversify their portfolios more than usual.",
             "options": [
                 "should",
                 "might",
-                "would",
-                "can"
+                "must",
+                "would"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "should",
-            "hint": "Multiple patient complaints demanded earlier action.",
-            "explanation": "A pattern of repeated patient complaints is exactly the kind of signal a licensing board is meant to act on. 'Should have revoked' points to how much later the response came.",
-            "grammarRule": "Advice & Expectation (should/ought)",
-            "modalMeaning": "2"
+            "hint": "This is sound, cautious financial advice given genuine uncertainty.",
+            "explanation": "'Should' offers sensible financial advice appropriate to genuine market uncertainty, without guaranteeing an outcome.",
+            "grammarRule": "Complex Context: Financial",
+            "modalMeaning": "16"
         },
         {
             "id": "ms_l127_q1",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "The treaty ___ not be construed to limit the inherent rights of indigenous peoples.",
+            "question": "Given that only one anonymous source made the claim, readers ___ treat the story with some caution.",
             "options": [
-                "might",
-                "had",
-                "could",
-                "shall"
+                "should",
+                "must",
+                "would",
+                "might"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "shall",
-            "hint": "Legal prohibition in a treaty - binding and formal.",
-            "explanation": "Indigenous rights protections in treaty law are usually framed as untouchable. 'Shall not be construed' gives that protection the binding, formal weight treaty language requires.",
-            "grammarRule": "Formal Suggestions (shall)",
-            "modalMeaning": "2"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "should",
+            "hint": "This is responsible journalistic advice given weak sourcing.",
+            "explanation": "'Should' offers responsible advice to readers, appropriate when a claim rests on a single, unverified source.",
+            "grammarRule": "Complex Context: Journalism",
+            "modalMeaning": "16"
         },
         {
             "id": "ms_l127_q2",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "If the warnings had been more clearly communicated, many investors ___ have avoided significant losses.",
+            "question": "Since the photo's metadata shows a date before the event occurred, it ___ have been taken somewhere else entirely.",
             "options": [
-                "shall",
                 "must",
-                "might",
-                "can"
+                "would",
+                "should",
+                "might"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "might",
-            "hint": "Clearer warnings would likely have helped, but not every loss could have been avoided.",
-            "explanation": "Warnings only work if investors act on them, and not everyone would have. 'Might have avoided' keeps the improved outcome realistic rather than guaranteed.",
-            "grammarRule": "Possibility (might)",
-            "modalMeaning": "1"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "must",
+            "hint": "A specific technical detail supports a confident conclusion.",
+            "explanation": "'Must have' expresses confident deduction from verifiable technical evidence, the mismatched photo metadata.",
+            "grammarRule": "Complex Context: Journalism",
+            "modalMeaning": "13"
         },
         {
             "id": "ms_l127_q3",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "The central bank ___ have raised interest rates earlier to prevent the inflationary spiral.",
+            "question": "Without further confirmation, this detail ___ turn out to be inaccurate, so we should hold off publishing it.",
             "options": [
                 "should",
-                "can",
-                "might",
+                "must",
+                "could",
                 "would"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "should",
-            "hint": "Delayed rate rises allowed inflation to spiral.",
-            "explanation": "Inflation rarely spirals without some earlier missed opportunity to contain it. 'Should have raised interest rates earlier' points to that window that passed.",
-            "grammarRule": "Advice & Expectation (should/ought)",
-            "modalMeaning": "2"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "could",
+            "hint": "This is a genuine, responsible concern about unverified information.",
+            "explanation": "'Could' expresses a genuine, responsible concern about an unverified detail, justifying editorial caution.",
+            "grammarRule": "Complex Context: Journalism",
+            "modalMeaning": "4"
         },
         {
             "id": "ms_l128_q1",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "The auditor ___ not issue an unqualified opinion without verifying all material transactions.",
+            "question": "Since the readings spiked at the same time across every station, the cause ___ be regional rather than local.",
             "options": [
-                "might",
+                "would",
+                "should",
                 "must",
-                "had",
-                "could"
+                "might"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "must",
-            "hint": "Verification of material transactions is a core audit obligation.",
-            "explanation": "Verification isn't optional before signing off on an audit opinion - it's the whole basis for one. 'Must not issue' reflects that this is a strict professional rule, not a guideline.",
-            "grammarRule": "Obligation & Deduction (must)",
-            "modalMeaning": "3"
+            "hint": "A simultaneous pattern across multiple locations supports a confident conclusion.",
+            "explanation": "'Must' expresses confident deduction from a consistent pattern observed across multiple independent monitoring stations.",
+            "grammarRule": "Complex Context: Environmental Science",
+            "modalMeaning": "8"
         },
         {
             "id": "ms_l128_q2",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "Had the clinical trial been larger, the results ___ have been more statistically robust.",
+            "question": "If current emission trends continue unchanged, average temperatures ___ rise further over the coming decades.",
             "options": [
-                "must",
-                "shall",
-                "can",
-                "would"
+                "might",
+                "should",
+                "will",
+                "must"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "would",
-            "hint": "Bigger sample sizes generally make statistical findings more trustworthy.",
-            "explanation": "Small trials tend to produce shakier statistics. 'Would have been more statistically robust' points to the stronger evidence that a larger trial would have provided.",
-            "grammarRule": "Offers & Habits (would)",
-            "modalMeaning": "3"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "will",
+            "hint": "This is a strong scientific projection based on established modelling.",
+            "explanation": "'Will' expresses a confident scientific projection, appropriate given well-established climate modelling under a stated condition.",
+            "grammarRule": "Complex Context: Environmental Science",
+            "modalMeaning": "9"
         },
         {
             "id": "ms_l128_q3",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "The independent assessor ___ have declared any prior relationship with the organisations being evaluated.",
+            "question": "Given the limited sample area, this single study ___ not fully represent the wider ecosystem.",
             "options": [
-                "should",
-                "might",
+                "must",
                 "would",
-                "can"
+                "should",
+                "might"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "should",
-            "hint": "Prior relationships create a conflict of interest requiring disclosure.",
-            "explanation": "Independence is the whole point of an outside assessment, so any hidden prior relationship undermines it. 'Should have declared' names that missing disclosure.",
-            "grammarRule": "Advice & Expectation (should/ought)",
-            "modalMeaning": "2"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "might",
+            "hint": "This is a cautious, honest limitation acknowledged by careful researchers.",
+            "explanation": "'Might' expresses appropriate scientific caution about a known limitation, here a small sample area.",
+            "grammarRule": "Complex Context: Environmental Science",
+            "modalMeaning": "4"
         },
         {
             "id": "ms_l129_q1",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "The evidence presented ___ not be admissible if the proper chain of custody was not maintained.",
+            "question": "Given that two colleagues independently raised the same concern, management ___ take the complaint seriously.",
             "options": [
-                "might",
-                "had",
-                "could",
-                "may"
+                "must",
+                "should",
+                "would",
+                "might"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "may",
-            "hint": "Chain of custody affects admissibility - it is possible it will be excluded.",
-            "explanation": "Courts take chain-of-custody seriously precisely because broken links cast doubt on evidence. 'May not be admissible' keeps this as a real legal risk, not a certainty.",
-            "grammarRule": "Formal Permission (may)",
-            "modalMeaning": "2"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "should",
+            "hint": "This is strong, responsible advice given corroborated concerns.",
+            "explanation": "'Should' offers strong professional advice, appropriate when independent complaints corroborate each other.",
+            "grammarRule": "Complex Context: HR & Interpersonal",
+            "modalMeaning": "16"
         },
         {
             "id": "ms_l129_q2",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "Without the court's protective order, sensitive information ___ have been made public prematurely.",
+            "question": "Since he's never missed a deadline before, this one delay ___ just be an isolated, one-off issue.",
             "options": [
+                "might",
+                "should",
                 "would",
-                "can",
-                "must",
-                "shall"
+                "must"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "would",
-            "hint": "Court orders can keep sensitive information sealed from public view.",
-            "explanation": "Sensitive details rarely stay contained without something actively holding them back. 'Would have been made public' pictures the leak that the protective order prevented.",
-            "grammarRule": "Offers & Habits (would)",
-            "modalMeaning": "2"
+            "correctAnswer": "might",
+            "hint": "One exception to an otherwise reliable pattern supports a tentative, generous interpretation.",
+            "explanation": "'Might' offers a generous, tentative interpretation, appropriate when a single incident contrasts with someone's otherwise strong track record.",
+            "grammarRule": "Complex Context: HR & Interpersonal",
+            "modalMeaning": "4"
         },
         {
             "id": "ms_l129_q3",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "The negotiator ___ have built more trust before introducing the most contentious issues.",
+            "question": "If the tension between the two teams isn't addressed soon, it ___ affect the whole department's morale.",
             "options": [
                 "might",
-                "should",
+                "must",
                 "would",
-                "can"
+                "should"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "should",
-            "hint": "Introducing contentious issues too early is a negotiation error.",
-            "explanation": "Trust built early tends to make later, harder conversations easier. 'Should have built more trust' suggests the negotiator moved to contentious issues too soon.",
-            "grammarRule": "Advice & Expectation (should/ought)",
-            "modalMeaning": "2"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "would",
+            "hint": "This is a fairly likely knock-on effect of the stated condition.",
+            "explanation": "'Would' expresses the likely, fairly direct consequence of a stated condition, describing a natural chain of effects.",
+            "grammarRule": "Complex Context: HR & Interpersonal",
+            "modalMeaning": "16"
         },
         {
             "id": "ms_l130_q1",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "The contracting party ___ seek any variation to the agreed terms without written consent of all parties.",
+            "question": "Considering the security badge logs, the exit camera footage, and the visitor sign-in sheet all agree, the timeline ___ be accurate.",
             "options": [
-                "might",
-                "may",
-                "had",
-                "could"
+                "must",
+                "would",
+                "should",
+                "might"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "may",
-            "hint": "Contract clause: variation requires written consent.",
-            "explanation": "Contracts often lock in their own terms unless everyone agrees otherwise in writing. 'May not seek' expresses that restriction as a firm condition of the agreement.",
-            "grammarRule": "Formal Permission (may)",
-            "modalMeaning": "2"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "must",
+            "hint": "Three independent sources of evidence together support strong confidence.",
+            "explanation": "'Must' expresses strong confidence justified by three independent, agreeing sources of evidence, a hallmark of solid deduction.",
+            "grammarRule": "Integrated Complex Context Mastery",
+            "modalMeaning": "8"
         },
         {
             "id": "ms_l130_q2",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "Had the structural analysis been more thorough, the fault lines ___ have been detected earlier.",
+            "question": "If the pilot program hadn't shown early promise, the full rollout ___ never have received approval.",
             "options": [
                 "must",
-                "can",
-                "shall",
-                "would"
+                "should",
+                "would",
+                "could"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "would",
-            "hint": "A more careful analysis tends to catch problems that a rushed one misses.",
-            "explanation": "Structural flaws don't always announce themselves - they need careful analysis to surface. 'Would have been detected earlier' points to the earlier warning a thorough analysis would have given.",
-            "grammarRule": "Offers & Habits (would)",
-            "modalMeaning": "2"
+            "hint": "This is the imagined outcome of an unreal past condition.",
+            "explanation": "'Would' completes the third conditional naturally, describing the imagined outcome that was avoided thanks to the pilot's early success.",
+            "grammarRule": "Integrated Complex Context Mastery",
+            "modalMeaning": "16"
         },
         {
             "id": "ms_l130_q3",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "The regulator ___ have intervened before the bank's capital ratios fell to such dangerous levels.",
+            "question": "Given how many unresolved questions remain, the panel ___ postpone its final ruling until next month.",
             "options": [
-                "might",
-                "can",
                 "should",
+                "might",
+                "must",
                 "would"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "should",
-            "hint": "Dangerously low capital ratios required earlier intervention.",
-            "explanation": "Waiting until capital ratios hit dangerous territory is waiting too long by most regulatory standards. 'Should have intervened' points to that delayed response.",
-            "grammarRule": "Advice & Expectation (should/ought)",
-            "modalMeaning": "2"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "might",
+            "hint": "This is one reasonable, though uncertain, possible next step.",
+            "explanation": "'Might' expresses a genuine but uncertain possible outcome, appropriate when many questions remain unresolved.",
+            "grammarRule": "Integrated Complex Context Mastery",
+            "modalMeaning": "4"
         }
     ]
 }

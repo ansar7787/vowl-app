@@ -1,577 +1,577 @@
 {
-    "gameType": "conditionals",
-    "batchIndex": 8,
-    "levels": "71-80",
-    "quests": [
-        {
-            "id": "cl_l71_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the report is not submitted by noon,",
-            "options": [
-                "the meeting will be postponed.",
-                "the meeting would be postponed.",
-                "the meeting would have been postponed.",
-                "the meeting is postponed."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the meeting will be postponed.",
-            "hint": "Missing the noon deadline is a real risk - first conditional for the real consequence.",
-            "explanation": "First conditional = real future consequences. Missing a noon deadline is genuinely possible. If the report isn't submitted (present simple), the meeting will be postponed (will + infinitive - the real, expected consequence). 'Would be postponed' makes it imaginary.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l71_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she had the opportunity to relocate,",
-            "options": [
-                "she would take it without hesitation.",
-                "she would have taken it.",
-                "she takes it.",
-                "she will take it."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "she would take it without hesitation.",
-            "hint": "She doesn't currently have a relocation opportunity - second conditional.",
-            "explanation": "Second conditional = imaginary present. She doesn't have a relocation opportunity (past simple 'had' = imaginary). If she did (imaginary), she would take it without hesitation (would + infinitive). 'Would have taken' is 3rd conditional - past imaginary.",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 2
-        },
-        {
-            "id": "cl_l71_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If they had followed the quality checklist,",
-            "options": [
-                "the product defect would never have occurred.",
-                "the defect would never occur.",
-                "the defect never occurs.",
-                "the defect will never occur."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the product defect would never have occurred.",
-            "hint": "Past perfect = checklist wasn't followed - third conditional for a quality control lesson.",
-            "explanation": "Third conditional = unreal past. They didn't follow the checklist (past perfect = the missed standard practice). If they had (imaginary), the defect would never have occurred (would never have + past participle - the prevented quality failure).",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l72_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the legislation passes this session,",
-            "options": [
-                "workers will gain new legal protections.",
-                "workers would gain new protections.",
-                "workers would have gained protections.",
-                "workers gain new protections."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "workers will gain new legal protections.",
-            "hint": "Legislation passing is a real political possibility - first conditional for the real legal outcome.",
-            "explanation": "First conditional = real future political events. Legislation can genuinely pass. If it does (present simple), workers will gain new legal protections (will + infinitive - the real legal change for real people). 'Would gain' implies the legislation passing is just imaginary.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l72_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If he took a five-minute break every hour,",
-            "options": [
-                "his productivity would actually increase.",
-                "his productivity would have increased.",
-                "his productivity actually increases.",
-                "his productivity will actually increase."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "his productivity would actually increase.",
-            "hint": "He works without breaks - second conditional for an unreal present work habit.",
-            "explanation": "Second conditional = imaginary present. He doesn't take regular breaks (past simple 'took' = imaginary - not his current pattern). If he did (imaginary), his productivity would actually increase (would + infinitive - the counterintuitive imagined benefit). Breaks boost productivity.",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 2
-        },
-        {
-            "id": "cl_l72_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the company's biggest supplier goes out of business,",
-            "options": [
-                "production will be delayed significantly.",
-                "production would be delayed.",
-                "production would have been delayed.",
-                "production is delayed."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "production will be delayed significantly.",
-            "hint": "Losing a key supplier is a real risk with a real knock-on effect.",
-            "explanation": "First conditional = real future business risks. Suppliers can genuinely fail. If this one does (present simple), production will be delayed significantly (will + infinitive - the real, expected disruption). 'Would be delayed' implies the risk is only imaginary, but supplier failure is a real possibility.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l73_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If he were a native English speaker,",
-            "options": [
-                "he would express himself more naturally.",
-                "he would have expressed himself better.",
-                "he expresses himself more naturally.",
-                "he will express himself more naturally."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "he would express himself more naturally.",
-            "hint": "'Were' signals he isn't a native speaker - second conditional for a language ability wish.",
-            "explanation": "Second conditional = imaginary present. He is not a native speaker (subjunctive 'were' = unreal). If he were (imaginary), he would express himself more naturally (would + infinitive - the imagined fluency). A language learning scenario about the limits of acquired language.",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 2
-        },
-        {
-            "id": "cl_l73_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If they hadn't misjudged the market demand,",
-            "options": [
-                "they would have ordered sufficient stock.",
-                "they order sufficient stock.",
-                "they would order sufficient stock.",
-                "they will order sufficient stock."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "they would have ordered sufficient stock.",
-            "hint": "Negative past perfect = they DID misjudge - third conditional for a retail planning failure.",
-            "explanation": "Third conditional with NEGATIVE if-clause: They DID misjudge demand (negative past perfect = the reverse). If they HADN'T (imaginary - accurate forecasting), they would have ordered sufficient stock (would have + past participle - the prevented stockout).",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l73_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she attends the leadership workshop,",
-            "options": [
-                "she will gain practical management tools.",
-                "she would gain practical tools.",
-                "she would have gained tools.",
-                "she gains practical management tools."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "she will gain practical management tools.",
-            "hint": "Attending the workshop is a real possibility - first conditional for the real learning outcome.",
-            "explanation": "First conditional = real future professional development. She can genuinely attend. If she does (present simple), she will gain practical management tools (will + infinitive - the real, expected learning benefit). 'Would gain' implies attendance is just imaginary.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l74_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the city invested in better cycling infrastructure,",
-            "options": [
-                "fewer people would drive to work.",
-                "fewer people would have driven.",
-                "fewer people drive to work.",
-                "fewer people will drive to work."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "fewer people would drive to work.",
-            "hint": "Better cycling infrastructure is a real but currently absent policy choice - second conditional.",
-            "explanation": "Second conditional = imaginary present policy. The city doesn't currently have adequate cycling infrastructure (past simple 'invested' = hypothetical). If it did invest (imaginary), fewer people would drive (would + infinitive - the imagined modal shift). A transport planning hypothesis.",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 2
-        },
-        {
-            "id": "cl_l74_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she hadn't built such a strong professional network,",
-            "options": [
-                "she would find it much harder to get a new role now.",
-                "she finds it harder now.",
-                "she would have found it harder.",
-                "she will find it harder now."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "she would find it much harder to get a new role now.",
-            "hint": "Negative past perfect + present job search - mixed conditional about career investment.",
-            "explanation": "Mixed conditional: If + past perfect negative, would + find (present difficulty). She DID build a strong network (negative past perfect = the reverse). If she HADN'T (imaginary), she would find it much harder to get a role NOW (would + infinitive - present job market disadvantage she'd face).",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l74_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the temperature stays above thirty degrees all week,",
-            "options": [
-                "water demand will increase sharply.",
-                "water demand would increase.",
-                "water demand would have increased.",
-                "water demand increases sharply."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "water demand will increase sharply.",
-            "hint": "High temperatures this week are a real weather risk - first conditional for the resource impact.",
-            "explanation": "First conditional = real future weather scenarios. Sustained high temperatures can genuinely happen. If they do (present simple), water demand will increase sharply (will + infinitive - the real, expected infrastructure consequence). A real environmental management scenario.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l75_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she weren't so detail-oriented,",
-            "options": [
-                "the quality of her reports would suffer.",
-                "the quality would have suffered.",
-                "the quality suffers.",
-                "the quality will suffer."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the quality of her reports would suffer.",
-            "hint": "'Weren't detail-oriented' = she IS - second conditional about a positive real trait.",
-            "explanation": "Second conditional = imaginary present. She IS detail-oriented (subjunctive 'weren't' = the reverse). If she weren't (imaginary - a less careful version), the quality of her reports would suffer (would + infinitive - the imagined negative consequence). Highlights the value of a real positive trait.",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 2
-        },
-        {
-            "id": "cl_l75_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If they had acted on the customer feedback sooner,",
-            "options": [
-                "the product would have been far more successful.",
-                "the product would be more successful.",
-                "the product is more successful.",
-                "the product will be more successful."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the product would have been far more successful.",
-            "hint": "Past perfect = delayed response to feedback - third conditional for a product development regret.",
-            "explanation": "Third conditional = unreal past. They didn't act on feedback quickly (past perfect = the timely response that didn't happen). If they had (imaginary), the product would have been far more successful (would have + past participle - the missed commercial outcome).",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l75_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the government introduces carbon pricing,",
-            "options": [
-                "businesses will be incentivised to reduce emissions.",
-                "businesses would be incentivised.",
-                "businesses would have been incentivised.",
-                "businesses are incentivised."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "businesses will be incentivised to reduce emissions.",
-            "hint": "Carbon pricing is a real policy possibility - first conditional for the real environmental incentive.",
-            "explanation": "First conditional = real future policy decisions. Carbon pricing is genuinely being introduced globally. If this government does it (present simple), businesses will be incentivised to reduce emissions (will + infinitive - the real, expected behaviour change). An important environmental policy scenario.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l76_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she hadn't been so persistent,",
-            "options": [
-                "she would never have become the first woman to lead the firm.",
-                "she never becomes the first woman.",
-                "she wouldn't become the first.",
-                "she won't become the first."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "she would never have become the first woman to lead the firm.",
-            "hint": "Negative past perfect = she WAS persistent - third conditional about a historical achievement.",
-            "explanation": "Third conditional with NEGATIVE if-clause: She WAS persistent (negative past perfect = the reverse). If she HADN'T been (imaginary), she would never have become the first woman to lead the firm (would never have + past participle - the missed historic achievement). Persistence breaks barriers.",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l76_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the servers aren't upgraded soon,",
-            "options": [
-                "the system will fail under peak load.",
-                "the system would fail.",
-                "the system would have failed.",
-                "the system fails under peak load."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the system will fail under peak load.",
-            "hint": "Failing to upgrade is a real, imminent risk - first conditional for the real technical consequence.",
-            "explanation": "First conditional = real future technical risks. Server upgrades can genuinely be delayed. If they aren't upgraded (present simple - a real possible failure to act), the system will fail under peak load (will + infinitive - the real, expected technical breakdown). An urgent IT warning.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l76_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the pilot scheme had demonstrated clear benefits,",
-            "options": [
-                "it would have been rolled out nationally.",
-                "it would be rolled out nationally.",
-                "it is rolled out nationally.",
-                "it will be rolled out nationally."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "it would have been rolled out nationally.",
-            "hint": "Past perfect = pilot didn't produce clear evidence - third conditional for a policy rollout regret.",
-            "explanation": "Third conditional = unreal past. The pilot didn't demonstrate clear enough benefits (past perfect = the missing evidence). If it had (imaginary), it would have been rolled out nationally (would have + passive past participle - the missed policy expansion). Strong evidence drives policy decisions.",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l77_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she had chosen to specialise in data science earlier,",
-            "options": [
-                "she would be commanding a much higher salary now.",
-                "she would have commanded a higher salary.",
-                "she commands a higher salary now.",
-                "she will command a higher salary."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "she would be commanding a much higher salary now.",
-            "hint": "Past perfect + present salary - mixed conditional about a career specialisation decision.",
-            "explanation": "Mixed conditional: If + past perfect (unreal past choice), would + be (present financial consequence). She didn't specialise early enough. If she had (imaginary), she would be commanding a much higher salary NOW (would + infinitive - the present income she'd have). Past decision → present earnings.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l77_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the report is published before the deadline,",
-            "options": [
-                "the team will receive a performance bonus.",
-                "the team would receive a bonus.",
-                "the team would have received a bonus.",
-                "the team receives a bonus."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the team will receive a performance bonus.",
-            "hint": "Publishing before the deadline is a real, achievable outcome - first conditional.",
-            "explanation": "First conditional = real future performance outcomes. The team can genuinely meet the deadline. If the report is published on time (present simple), the team will receive a performance bonus (will + infinitive - the real reward for meeting the target).",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l77_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If he weren't so resistant to feedback,",
-            "options": [
-                "he would improve much faster.",
-                "he would have improved faster.",
-                "he improves much faster.",
-                "he will improve much faster."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "he would improve much faster.",
-            "hint": "He IS resistant to feedback - second conditional for an unreal present attitude.",
-            "explanation": "Second conditional = imaginary present. He IS resistant to feedback (subjunctive 'weren't' = the reverse of his actual attitude). If he weren't (imaginary - a more open version), he would improve much faster (would + infinitive - the imagined development benefit).",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 2
-        },
-        {
-            "id": "cl_l78_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If he had submitted his application before the early deadline,",
-            "options": [
-                "he would have had a much stronger chance of a place.",
-                "he would have more chance.",
-                "he has more chance.",
-                "he will have more chance."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "he would have had a much stronger chance of a place.",
-            "hint": "Past perfect means he missed the early deadline - third conditional for a missed admissions advantage.",
-            "explanation": "Third conditional = unreal past. He submitted after the early deadline had passed (past perfect = the earlier submission that didn't happen). If he had applied earlier (imaginary), he would have had a much stronger chance of a place (would have + past participle - the missed advantage). Early applications are judged against a smaller pool.",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l78_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the company reduces its carbon footprint,",
-            "options": [
-                "it will qualify for government green subsidies.",
-                "it would qualify.",
-                "it would have qualified.",
-                "it qualifies."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "it will qualify for government green subsidies.",
-            "hint": "Reducing carbon footprint is a real business decision - first conditional for the real financial benefit.",
-            "explanation": "First conditional = real future business and environmental decisions. Companies can genuinely reduce their carbon footprint. If this one does (present simple), it will qualify for green subsidies (will + infinitive - the real, available financial incentive). A practical green business benefit.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l78_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she hadn't relocated to the capital,",
-            "options": [
-                "she would never have had access to such career opportunities.",
-                "she never has such opportunities.",
-                "she would never have access.",
-                "she won't have such opportunities."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "she would never have had access to such career opportunities.",
-            "hint": "Negative past perfect = she DID relocate - third conditional recognising a brave life decision.",
-            "explanation": "Third conditional with NEGATIVE if-clause: She DID relocate (negative past perfect = the reverse). If she HADN'T (imaginary - she stayed home), she would never have had access to such career opportunities (would never have + past participle - the missed professional development). Location shapes opportunity.",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l79_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the energy prices remain high,",
-            "options": [
-                "many households will struggle to heat their homes.",
-                "many households would struggle.",
-                "many households would have struggled.",
-                "many households struggle."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "many households will struggle to heat their homes.",
-            "hint": "High energy prices are a real ongoing risk - first conditional for the real social impact.",
-            "explanation": "First conditional = real future economic scenarios. Energy prices can genuinely remain elevated. If they do (present simple), many households will struggle to heat their homes (will + infinitive - the real, expected social consequence). A practical energy policy scenario.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l79_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If he had documented his processes more clearly,",
-            "options": [
-                "handover to the new colleague would have been much smoother.",
-                "the handover would be smoother.",
-                "the handover is smoother.",
-                "the handover will be smoother."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "handover to the new colleague would have been much smoother.",
-            "hint": "Past perfect = poor documentation - third conditional for a knowledge transfer lesson.",
-            "explanation": "Third conditional = unreal past. He didn't document his processes well (past perfect = the missed professional discipline). If he had (imaginary), the handover would have been much smoother (would have + past participle - the prevented knowledge transfer problem).",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l79_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the new hire speaks three languages,",
-            "options": [
-                "she will be an enormous asset to the international team.",
-                "she would be an asset.",
-                "she would have been an asset.",
-                "she is an asset."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "she will be an enormous asset to the international team.",
-            "hint": "Speaking three languages is a real, verifiable skill - first conditional for the real team value.",
-            "explanation": "First conditional = real, verifiable future conditions. If she speaks three languages (present simple - a real fact about her), she will be an enormous asset (will + infinitive - the real, expected value she brings). 'Would be' implies this is just imaginary - a multilingual hire is a real advantage.",
-            "grammarRule": "First Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l80_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If they hadn't launched the product in peak season,",
-            "options": [
-                "they would never have reached such a wide audience.",
-                "they never reach such a wide audience.",
-                "they would never reach it.",
-                "they won't reach such a wide audience."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "they would never have reached such a wide audience.",
-            "hint": "Negative past perfect = they DID launch in peak season - third conditional about a smart marketing choice.",
-            "explanation": "Third conditional with NEGATIVE if-clause: They DID launch in peak season (negative past perfect = the reverse). If they HADN'T (imaginary - wrong timing), they would never have reached such a wide audience (would never have + past participle - the missed market reach). Timing is everything in product launches.",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l80_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If he hadn't consulted a structural engineer before buying the house,",
-            "options": [
-                "he would have missed serious foundation problems.",
-                "he misses the problems.",
-                "he would miss the problems.",
-                "he will miss the problems."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "he would have missed serious foundation problems.",
-            "hint": "Negative past perfect means he DID get the inspection - third conditional validating a smart property decision.",
-            "explanation": "Third conditional with a negative if-clause: he DID consult an engineer (negative past perfect = the reverse). If he hadn't (imaginary - no inspection), he would have missed serious foundation problems (would have + past participle - the costly mistake avoided). A professional inspection before buying property is always worth it.",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l80_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the charity hadn't received the emergency grant,",
-            "options": [
-                "it would have been forced to close.",
-                "it is forced to close.",
-                "it would be forced to close.",
-                "it will be forced to close."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "it would have been forced to close.",
-            "hint": "Negative past perfect = grant WAS received - third conditional acknowledging crucial funding.",
-            "explanation": "Third conditional with NEGATIVE if-clause: The charity DID receive the grant (negative past perfect = the reverse). If it HADN'T (imaginary), it would have been forced to close (would have + past participle - the prevented organisational failure). Emergency funding can save vital organisations.",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        }
-    ]
+  "gameType": "conditionals",
+  "batchIndex": 8,
+  "levels": "71-80",
+  "quests": [
+    {
+      "id": "cl_l71_q1",
+      "instruction": "COMPLETE THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If we had left the hotel ten minutes earlier,",
+      "options": [
+        "we wouldn't have missed the last train.",
+        "we wouldn't miss the last train.",
+        "we don't miss the last train.",
+        "we won't miss the last train."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "we wouldn't have missed the last train.",
+      "hint": "A real-feeling travel scenario, unreal past.",
+      "explanation": "They didn't leave earlier, so this imagines the reverse past action and the missed train it would have prevented.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l71_q2",
+      "instruction": "COMPLETE THE LINK",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the taxi hadn't gotten stuck in traffic,",
+      "options": [
+        "we make it to the gate on time.",
+        "we will make it to the gate on time.",
+        "we might make it to the gate on time.",
+        "we might have made it to the gate on time."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "we might have made it to the gate on time.",
+      "hint": "An uncertain imagined past outcome, using 'might have'.",
+      "explanation": "'Might have' expresses genuine past uncertainty — even without the traffic, arriving on time wasn't guaranteed, which fits real travel unpredictability.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l71_q3",
+      "instruction": "PICK THE NATURAL RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If I had printed my boarding pass the night before,",
+      "options": [
+        "the check-in process would have gone much more smoothly.",
+        "the check-in process goes much more smoothly.",
+        "the check-in process will go much more smoothly.",
+        "the check-in process would go much more smoothly."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the check-in process would have gone much more smoothly.",
+      "hint": "A realistic missed preparation step.",
+      "explanation": "The boarding pass wasn't printed in advance, so this imagines the different past action and its smoother imagined result.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l72_q1",
+      "instruction": "MATCH THE OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the vendor had delivered the parts on schedule,",
+      "options": [
+        "production doesn't fall behind.",
+        "production wouldn't fall behind.",
+        "production won't fall behind.",
+        "production wouldn't have fallen behind."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "production wouldn't have fallen behind.",
+      "hint": "A supply-chain counterfactual, unreal past.",
+      "explanation": "The delivery was late, so this imagines the reverse past event and the delay it would have prevented.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l72_q2",
+      "instruction": "SELECT THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the team had flagged the issue earlier,",
+      "options": [
+        "the deadline could be pushed back in time.",
+        "the deadline will be pushed back in time.",
+        "the deadline could have been pushed back in time.",
+        "the deadline is pushed back in time."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the deadline could have been pushed back in time.",
+      "hint": "A missed chance, with 'could have' expressing a lost possibility.",
+      "explanation": "'Could have been' expresses a possibility that existed in the past but wasn't taken, fitting a missed opportunity rather than a certain outcome.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l72_q3",
+      "instruction": "LINK THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If I had started the assignment over the weekend,",
+      "options": [
+        "I won't have to pull an all-nighter.",
+        "I wouldn't have had to pull an all-nighter.",
+        "I don't have to pull an all-nighter.",
+        "I wouldn't have to pull an all-nighter."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "I wouldn't have had to pull an all-nighter.",
+      "hint": "A realistic student time-management scenario.",
+      "explanation": "The assignment wasn't started earlier, so this imagines the reverse past action and the late night it would have avoided.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l73_q1",
+      "instruction": "COMPLETE THE IDEA",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the board had approved the merger,",
+      "options": [
+        "the two companies would have combined their resources.",
+        "the two companies combine their resources.",
+        "the two companies would combine their resources.",
+        "the two companies will combine their resources."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the two companies would have combined their resources.",
+      "hint": "A neutral corporate counterfactual about a past decision.",
+      "explanation": "The merger wasn't approved, so this imagines the different past decision and its business consequence.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l73_q2",
+      "instruction": "CHOOSE THE RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If she had accepted the transfer,",
+      "options": [
+        "she would have relocated to the branch overseas.",
+        "she relocates to the branch overseas.",
+        "she will relocate to the branch overseas.",
+        "she would relocate to the branch overseas."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "she would have relocated to the branch overseas.",
+      "hint": "A neutral past career counterfactual.",
+      "explanation": "She didn't accept the transfer, so this imagines the reverse past decision and its result, without implying regret either way.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l73_q3",
+      "instruction": "FIND THE RIGHT OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the city had chosen the other contractor,",
+      "options": [
+        "the project will cost significantly less.",
+        "the project might have cost significantly less.",
+        "the project might cost significantly less.",
+        "the project costs significantly less."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the project might have cost significantly less.",
+      "hint": "An uncertain past alternative, using 'might have'.",
+      "explanation": "'Might have cost' expresses genuine uncertainty about an unrealized past alternative, rather than a guaranteed better outcome.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l74_q1",
+      "instruction": "CONNECT THE CONDITION",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the technician had tightened that bolt properly,",
+      "options": [
+        "the machine wouldn't have broken down mid-shift.",
+        "the machine won't break down mid-shift.",
+        "the machine doesn't break down mid-shift.",
+        "the machine wouldn't break down mid-shift."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the machine wouldn't have broken down mid-shift.",
+      "hint": "A workplace mistake, imagined as avoidable.",
+      "explanation": "The bolt wasn't tightened properly, so this imagines the reverse past action and the breakdown it would have prevented.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l74_q2",
+      "instruction": "FINISH THE CONDITIONAL",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If I had read the fine print,",
+      "options": [
+        "I don't sign such an unfavorable contract.",
+        "I wouldn't sign such an unfavorable contract.",
+        "I won't sign such an unfavorable contract.",
+        "I wouldn't have signed such an unfavorable contract."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "I wouldn't have signed such an unfavorable contract.",
+      "hint": "A real-feeling past mistake, imagined as avoided.",
+      "explanation": "The fine print wasn't read, so this imagines the reverse past action and the bad decision it would have prevented.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l74_q3",
+      "instruction": "COMPLETE THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the chef had tasted the sauce before serving it,",
+      "options": [
+        "he will notice it needs more seasoning.",
+        "he would notice it needed more seasoning.",
+        "he would have noticed it needed more seasoning.",
+        "he notices it needs more seasoning."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "he would have noticed it needed more seasoning.",
+      "hint": "A neutral kitchen counterfactual.",
+      "explanation": "The chef didn't taste it first, so this imagines the different past action and what he would have noticed.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l75_q1",
+      "instruction": "COMPLETE THE LINK",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If our connecting flight had been on the same airline,",
+      "options": [
+        "we recheck our luggage more easily.",
+        "we would recheck our luggage more easily.",
+        "we will recheck our luggage more easily.",
+        "we would have rechecked our luggage more easily."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "we would have rechecked our luggage more easily.",
+      "hint": "A neutral travel counterfactual about logistics.",
+      "explanation": "The flights weren't on the same airline, so this imagines a different past circumstance and its practical result.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l75_q2",
+      "instruction": "PICK THE NATURAL RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the ferry had run on its usual schedule,",
+      "options": [
+        "we reach the island by lunchtime.",
+        "we would reach the island by lunchtime.",
+        "we would have reached the island by lunchtime.",
+        "we will reach the island by lunchtime."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "we would have reached the island by lunchtime.",
+      "hint": "A neutral travel delay counterfactual.",
+      "explanation": "The ferry didn't run on schedule, so this imagines the normal past schedule and its expected result.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l75_q3",
+      "instruction": "MATCH THE OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If we had rented a car instead of relying on buses,",
+      "options": [
+        "we will explore more of the countryside.",
+        "we could have explored more of the countryside.",
+        "we could explore more of the countryside.",
+        "we explore more of the countryside."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "we could have explored more of the countryside.",
+      "hint": "A missed opportunity, with 'could have' expressing lost possibility.",
+      "explanation": "'Could have explored' expresses an opportunity that existed but wasn't taken, fitting a neutral travel reflection rather than a certainty.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l76_q1",
+      "instruction": "SELECT THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the manager had approved the budget in March,",
+      "options": [
+        "the campaign would have launched before the competitor's.",
+        "the campaign launches before the competitor's.",
+        "the campaign would launch before the competitor's.",
+        "the campaign will launch before the competitor's."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the campaign would have launched before the competitor's.",
+      "hint": "A business timing counterfactual with real stakes.",
+      "explanation": "The budget wasn't approved in March, so this imagines the different past decision and its competitive consequence.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l76_q2",
+      "instruction": "LINK THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the report had included the regional data,",
+      "options": [
+        "the executives won't ask so many follow-up questions.",
+        "the executives wouldn't have asked so many follow-up questions.",
+        "the executives wouldn't ask so many follow-up questions.",
+        "the executives don't ask so many follow-up questions."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the executives wouldn't have asked so many follow-up questions.",
+      "hint": "An avoidable past gap in a report.",
+      "explanation": "The data was missing, so this imagines the reverse past action and the extra questions it would have prevented.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l76_q3",
+      "instruction": "COMPLETE THE IDEA",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If she had delegated more of the project,",
+      "options": [
+        "she doesn't burn out so quickly.",
+        "she wouldn't have burned out so quickly.",
+        "she won't burn out so quickly.",
+        "she wouldn't burn out so quickly."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "she wouldn't have burned out so quickly.",
+      "hint": "A realistic workplace counterfactual about workload.",
+      "explanation": "She didn't delegate enough, so this imagines the reverse past action and the burnout it would have prevented.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l77_q1",
+      "instruction": "CHOOSE THE RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If he had attended the review session,",
+      "options": [
+        "he might have answered that question correctly.",
+        "he might answer that question correctly.",
+        "he answers that question correctly.",
+        "he will answer that question correctly."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "he might have answered that question correctly.",
+      "hint": "An uncertain past outcome, using 'might have'.",
+      "explanation": "'Might have answered' expresses genuine uncertainty about a missed past opportunity, not a guaranteed result.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l77_q2",
+      "instruction": "FIND THE RIGHT OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If I had organized my notes earlier in the term,",
+      "options": [
+        "revision wouldn't feel so overwhelming.",
+        "revision won't feel so overwhelming.",
+        "revision wouldn't have felt so overwhelming.",
+        "revision doesn't feel so overwhelming."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "revision wouldn't have felt so overwhelming.",
+      "hint": "A realistic study-habits counterfactual.",
+      "explanation": "The notes weren't organized earlier, so this imagines the reverse past action and the stress it would have reduced.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l77_q3",
+      "instruction": "CONNECT THE CONDITION",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the class had covered that chapter before the test,",
+      "options": [
+        "more students would pass.",
+        "more students would have passed.",
+        "more students pass.",
+        "more students will pass."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "more students would have passed.",
+      "hint": "A neutral academic counterfactual about outcomes.",
+      "explanation": "The chapter wasn't covered before the test, so this imagines the different past curriculum decision and its result.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l78_q1",
+      "instruction": "FINISH THE CONDITIONAL",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the gallery had accepted her early work,",
+      "options": [
+        "her career might take a very different path.",
+        "her career will take a very different path.",
+        "her career might have taken a very different path.",
+        "her career takes a very different path."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "her career might have taken a very different path.",
+      "hint": "An uncertain, reflective past counterfactual.",
+      "explanation": "'Might have taken' fits a reflective, uncertain speculation about a past turning point, rather than a certain result.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l78_q2",
+      "instruction": "COMPLETE THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the startup had secured that first round of funding,",
+      "options": [
+        "it would hire a much bigger team from the start.",
+        "it would have hired a much bigger team from the start.",
+        "it hires a much bigger team from the start.",
+        "it will hire a much bigger team from the start."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "it would have hired a much bigger team from the start.",
+      "hint": "A neutral business counterfactual about an early decision.",
+      "explanation": "The funding round didn't happen, so this imagines the different past outcome and its effect on hiring.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l78_q3",
+      "instruction": "COMPLETE THE LINK",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If he had auditioned for the second show,",
+      "options": [
+        "he has two chances instead of one.",
+        "he will have two chances instead of one.",
+        "he would have had two chances instead of one.",
+        "he would have two chances instead of one."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "he would have had two chances instead of one.",
+      "hint": "A neutral missed opportunity, not framed as regret.",
+      "explanation": "He didn't audition for the second show, so this imagines the different past choice and its straightforward result.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l79_q1",
+      "instruction": "PICK THE NATURAL RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the contract had specified the currency clearly,",
+      "options": [
+        "the two sides wouldn't have disputed the final payment.",
+        "the two sides won't dispute the final payment.",
+        "the two sides don't dispute the final payment.",
+        "the two sides wouldn't dispute the final payment."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the two sides wouldn't have disputed the final payment.",
+      "hint": "An avoidable past legal misunderstanding.",
+      "explanation": "The contract was unclear, so this imagines the reverse past action and the dispute it would have prevented.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l79_q2",
+      "instruction": "MATCH THE OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the instructions had included a diagram,",
+      "options": [
+        "fewer customers would call for help.",
+        "fewer customers call for help.",
+        "fewer customers will call for help.",
+        "fewer customers would have called for help."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "fewer customers would have called for help.",
+      "hint": "A neutral customer-service counterfactual.",
+      "explanation": "The diagram was missing, so this imagines the different past design choice and its effect on support calls.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l79_q3",
+      "instruction": "SELECT THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the interpreter had been in the room from the start,",
+      "options": [
+        "the early confusion will be avoided entirely.",
+        "the early confusion could have been avoided entirely.",
+        "the early confusion could be avoided entirely.",
+        "the early confusion is avoided entirely."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the early confusion could have been avoided entirely.",
+      "hint": "A missed opportunity, with 'could have been avoided' expressing lost possibility.",
+      "explanation": "'Could have been avoided' expresses a real, lost possibility from the past, fitting a scenario where the outcome wasn't guaranteed even with the fix.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l80_q1",
+      "instruction": "LINK THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the airline had rebooked us on the earlier flight,",
+      "options": [
+        "we wouldn't spend the night at the airport.",
+        "we won't spend the night at the airport.",
+        "we don't spend the night at the airport.",
+        "we wouldn't have spent the night at the airport."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "we wouldn't have spent the night at the airport.",
+      "hint": "A realistic travel-disruption counterfactual, capstone level.",
+      "explanation": "The rebooking didn't happen, so this imagines the reverse past action and the inconvenience it would have prevented.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l80_q2",
+      "instruction": "COMPLETE THE IDEA",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the committee had reviewed the proposal twice,",
+      "options": [
+        "they will catch the budgeting error.",
+        "they might catch the budgeting error.",
+        "they might have caught the budgeting error.",
+        "they catch the budgeting error."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "they might have caught the budgeting error.",
+      "hint": "An uncertain past outcome, using 'might have'.",
+      "explanation": "'Might have caught' fits a genuinely uncertain past possibility, not a guaranteed discovery, even with the extra review.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    },
+    {
+      "id": "cl_l80_q3",
+      "instruction": "CHOOSE THE RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the factory had upgraded its equipment a year earlier,",
+      "options": [
+        "output would have increased well before the contract renewal.",
+        "output increases well before the contract renewal.",
+        "output would increase well before the contract renewal.",
+        "output will increase well before the contract renewal."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "output would have increased well before the contract renewal.",
+      "hint": "A business timing counterfactual, mastery-level detail.",
+      "explanation": "The upgrade didn't happen a year earlier, so this imagines the different past timeline and its effect on output, using past perfect + would have + past participle.",
+      "grammarRule": "Third Conditional",
+      "conditionalType": 3
+    }
+  ]
 }

@@ -1,637 +1,706 @@
 {
-    "gameType": "directIndirectSpeech",
-    "batchIndex": 17,
-    "levels": "161-170",
-    "quests": [
-        {
-            "id": "dis_l161_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I wish I had more time.'",
-            "options": [
-                "He said that he wished he had more time.",
-                "He said that he wished he has more time.",
-                "He said that he wishes he had more time."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He said that he wished he had more time.",
-            "sentence": "He said, 'I wish I had more time.'",
-            "hint": "'Wish' shifts back like a normal verb, but the unreal 'had' inside stays exactly the same.",
-            "explanation": "'Wish' shifts to 'wished', but 'had' (expressing a present unreal wish) doesn't shift any further.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l161_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The theorist postulated, 'Dark matter interacts weakly with light.'",
-            "options": [
-                "The theorist postulated that dark matter interacted weakly with light.",
-                "The theorist postulated that dark matter interacts weakly with light.",
-                "The theorist postulated that dark matter had interacted weakly with light."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The theorist postulated that dark matter interacted weakly with light.",
-            "sentence": "The theorist postulated, 'Dark matter interacts weakly with light.'",
-            "hint": "Shift the verb back one simple step, not further; 'postulated' reports a proposed theory.",
-            "explanation": "Present simple 'interacts' shifts to past simple 'interacted' — one step back, not to past perfect.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l161_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'The proposal that we submitted was rejected.'",
-            "options": [
-                "She said that the proposal that they had submitted was rejected.",
-                "She said that the proposal that they submitted had been rejected.",
-                "She said that the proposal that they had submitted had been rejected."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She said that the proposal that they had submitted had been rejected.",
-            "sentence": "She said, 'The proposal that we submitted was rejected.'",
-            "hint": "Two verbs are already past in the original sentence, so both push one step further back: the relative-clause verb and the main verb.",
-            "explanation": "'Submitted' shifts to 'had submitted', and 'was rejected' shifts to 'had been rejected' — both already past, so both shift one step further.",
-            "grammarRule": "Mixed/Complex Transformation",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l162_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The second witness corroborated, 'The car was speeding.'",
-            "options": [
-                "The second witness corroborated that the car had been speeding.",
-                "The second witness corroborated that the car has been speeding.",
-                "The second witness corroborated that the car was speeding."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The second witness corroborated that the car had been speeding.",
-            "sentence": "The second witness corroborated, 'The car was speeding.'",
-            "hint": "This past continuous shifts even further back, to past perfect continuous.",
-            "explanation": "'Was speeding' (already past) shifts back further to 'had been speeding'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l162_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I wish I had studied medicine.'",
-            "options": [
-                "She said that she wished she had studied medicine.",
-                "She said that she wishes she had studied medicine.",
-                "She said that she wished she has studied medicine."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said that she wished she had studied medicine.",
-            "sentence": "She said, 'I wish I had studied medicine.'",
-            "hint": "'Wish' shifts back like a normal verb, but the unreal 'had studied' inside stays exactly the same.",
-            "explanation": "'Wish' shifts to 'wished', but 'had studied' (expressing regret about the past) doesn't shift any further.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l162_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The president reiterated, 'We will not negotiate with terrorists.'",
-            "options": [
-                "The president reiterated that they would not negotiate with terrorists.",
-                "The president reiterated that they will not negotiate with terrorists.",
-                "The president reiterated that we would not negotiate with terrorists."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The president reiterated that they would not negotiate with terrorists.",
-            "sentence": "The president reiterated, 'We will not negotiate with terrorists.'",
-            "hint": "Both the modal and the pronoun shift here; 'reiterated' reports something stated again for emphasis.",
-            "explanation": "'Will' shifts to 'would', and 'we' shifts to 'they'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l163_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'The colleague who trained me retired.'",
-            "options": [
-                "He said that the colleague who had trained him retired.",
-                "He said that the colleague who had trained him had retired.",
-                "He said that the colleague who trained him had retired."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He said that the colleague who had trained him had retired.",
-            "sentence": "He said, 'The colleague who trained me retired.'",
-            "hint": "Watch both verbs here — the one inside the relative clause and the main verb — since both were already past and both shift further.",
-            "explanation": "'Trained' shifts to 'had trained', and 'retired' shifts to 'had retired' — both already past, so both shift one step further.",
-            "grammarRule": "Mixed/Complex Transformation",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l163_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The institute said, 'The vaccine is manufactured under strict conditions.'",
-            "options": [
-                "The institute said that the vaccine was manufactured under strict conditions.",
-                "The institute said that the vaccine is manufactured under strict conditions.",
-                "The institute said that the vaccine had been manufactured under strict conditions."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The institute said that the vaccine was manufactured under strict conditions.",
-            "sentence": "The institute said, 'The vaccine is manufactured under strict conditions.'",
-            "hint": "Notice the passive form here — it shifts back exactly one tense, like any other present-tense verb.",
-            "explanation": "'Is manufactured' (present simple passive) shifts to 'was manufactured' (past simple passive) — one step back.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l163_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The plaintiff's lawyer alleged, 'The company destroyed key documents.'",
-            "options": [
-                "The plaintiff's lawyer alleged that the company has destroyed key documents.",
-                "The plaintiff's lawyer alleged that the company had destroyed key documents.",
-                "The plaintiff's lawyer alleged that the company destroyed key documents."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The plaintiff's lawyer alleged that the company had destroyed key documents.",
-            "sentence": "The plaintiff's lawyer alleged, 'The company destroyed key documents.'",
-            "hint": "This past verb shifts even further back, to past perfect.",
-            "explanation": "'Destroyed' (past simple) shifts to 'had destroyed' (past perfect).",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l164_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The astronomer postulated, 'The star will eventually collapse.'",
-            "options": [
-                "The astronomer postulated that the star would eventually collapse.",
-                "The astronomer postulated that the star had eventually collapsed.",
-                "The astronomer postulated that the star will eventually collapse."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The astronomer postulated that the star would eventually collapse.",
-            "sentence": "The astronomer postulated, 'The star will eventually collapse.'",
-            "hint": "'Will' shifts to 'would', not further, in reported speech.",
-            "explanation": "'Will' shifts to 'would' — a modal shift, not a full past-perfect shift.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l164_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: They said, 'We wish we had more resources.'",
-            "options": [
-                "They said that they wished they have more resources.",
-                "They said that they wished they had more resources.",
-                "They said that they wish they had more resources."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "They said that they wished they had more resources.",
-            "sentence": "They said, 'We wish we had more resources.'",
-            "hint": "'Wish' shifts back like a normal verb, but the unreal 'had' inside stays exactly the same.",
-            "explanation": "'Wish' shifts to 'wished', but 'had' (expressing a present unreal wish) doesn't shift any further.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l164_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She asked, 'Do you know why the theory was rejected?'",
-            "options": [
-                "She asked whether I knew why the theory was rejected.",
-                "She asked if I know why the theory was rejected.",
-                "She asked whether I knew why the theory had been rejected."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She asked whether I knew why the theory had been rejected.",
-            "sentence": "She asked, 'Do you know why the theory was rejected?'",
-            "hint": "This has two layers: a yes/no question about knowing, and a wh-question inside it — both shift.",
-            "explanation": "'Know' shifts to 'knew' (whether-question), and 'was rejected' (already past) shifts back further to 'had been rejected' (embedded wh-question).",
-            "grammarRule": "Mixed/Complex Transformation",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l165_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: They said, 'The building that we designed won an award.'",
-            "options": [
-                "They said that the building that they designed had won an award.",
-                "They said that the building that they had designed won an award.",
-                "They said that the building that they had designed had won an award."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "They said that the building that they had designed had won an award.",
-            "sentence": "They said, 'The building that we designed won an award.'",
-            "hint": "This sentence has two already-past verbs: one in the relative clause, one as the main verb. Both shift one step further back.",
-            "explanation": "'Designed' shifts to 'had designed', and 'won' shifts to 'had won' — both already past, so both shift one step further.",
-            "grammarRule": "Mixed/Complex Transformation",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l165_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The forensic report corroborated, 'The fire started in the kitchen.'",
-            "options": [
-                "The forensic report corroborated that the fire has started in the kitchen.",
-                "The forensic report corroborated that the fire started in the kitchen.",
-                "The forensic report corroborated that the fire had started in the kitchen."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The forensic report corroborated that the fire had started in the kitchen.",
-            "sentence": "The forensic report corroborated, 'The fire started in the kitchen.'",
-            "hint": "Since this verb was already in the past, it moves one step further, to past perfect.",
-            "explanation": "'Started' (past simple) shifts to 'had started' (past perfect).",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l165_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The ministry said, 'New regulations are being drafted.'",
-            "options": [
-                "The ministry said that new regulations were being drafted.",
-                "The ministry said that new regulations had been drafted.",
-                "The ministry said that new regulations are being drafted."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The ministry said that new regulations were being drafted.",
-            "sentence": "The ministry said, 'New regulations are being drafted.'",
-            "hint": "This is a present continuous passive; shift it back one step to past continuous passive.",
-            "explanation": "'Are being drafted' (present continuous passive) shifts to 'were being drafted' (past continuous passive).",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l166_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The CEO reiterated, 'Our commitment to quality has not changed.'",
-            "options": [
-                "The CEO reiterated that our commitment to quality had not changed.",
-                "The CEO reiterated that their commitment to quality has not changed.",
-                "The CEO reiterated that their commitment to quality had not changed."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The CEO reiterated that their commitment to quality had not changed.",
-            "sentence": "The CEO reiterated, 'Our commitment to quality has not changed.'",
-            "hint": "Both the tense and the possessive word shift here.",
-            "explanation": "'Has not changed' shifts to 'had not changed', and 'our' shifts to 'their'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l166_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'If the alarm had worked, we would have escaped sooner.'",
-            "options": [
-                "He said that if the alarm worked, they would escape sooner.",
-                "He said that if the alarm has worked, they would have escaped sooner.",
-                "He said that if the alarm had worked, they would have escaped sooner."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "He said that if the alarm had worked, they would have escaped sooner.",
-            "sentence": "He said, 'If the alarm had worked, we would have escaped sooner.'",
-            "hint": "This is a hypothetical about the past — it's already at its final form; only the pronoun changes.",
-            "explanation": "Third conditional sentences don't shift further back; only 'we' shifts to 'they'.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l166_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The economist postulated, 'Automation will reshape the labor market.'",
-            "options": [
-                "The economist postulated that automation would reshape the labor market.",
-                "The economist postulated that automation had reshaped the labor market.",
-                "The economist postulated that automation will reshape the labor market."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The economist postulated that automation would reshape the labor market.",
-            "sentence": "The economist postulated, 'Automation will reshape the labor market.'",
-            "hint": "'Will' shifts to 'would', not further, in reported speech.",
-            "explanation": "'Will' shifts to 'would' — a modal shift, not a full past-perfect shift.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l167_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'The article that I wrote was published.'",
-            "options": [
-                "She said that the article that she had written had been published.",
-                "She said that the article that she had written was published.",
-                "She said that the article that she wrote had been published."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said that the article that she had written had been published.",
-            "sentence": "She said, 'The article that I wrote was published.'",
-            "hint": "Two verbs shift here, both an extra step further back: the verb inside the relative clause, and the main verb.",
-            "explanation": "'Wrote' shifts to 'had written', and 'was published' shifts to 'had been published' — both already past, so both shift one step further.",
-            "grammarRule": "Mixed/Complex Transformation",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l167_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: Independent auditors corroborated, 'The company's earnings were accurately reported.'",
-            "options": [
-                "Independent auditors corroborated that the company's earnings had been accurately reported.",
-                "Independent auditors corroborated that the company's earnings were accurately reported.",
-                "Independent auditors corroborated that the company's earnings have been accurately reported."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Independent auditors corroborated that the company's earnings had been accurately reported.",
-            "sentence": "Independent auditors corroborated, 'The company's earnings were accurately reported.'",
-            "hint": "An already-past passive form like this shifts an extra step to past perfect passive.",
-            "explanation": "'Were reported' (past simple passive) shifts to 'had been reported' (past perfect passive).",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l167_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The board asked, 'Has the acquisition been finalized?'",
-            "options": [
-                "The board asked whether the acquisition has been finalized.",
-                "The board asked has the acquisition been finalized.",
-                "The board asked whether the acquisition had been finalized."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The board asked whether the acquisition had been finalized.",
-            "sentence": "The board asked, 'Has the acquisition been finalized?'",
-            "hint": "'Whether' reports the question, with statement word order and shifted tense.",
-            "explanation": "'Whether' introduces the question, word order becomes statement order, and 'has been finalized' shifts to 'had been finalized'.",
-            "grammarRule": "Reported Yes/No Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l168_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The spokesperson reiterated, 'We have nothing to hide.'",
-            "options": [
-                "The spokesperson reiterated that they have nothing to hide.",
-                "The spokesperson reiterated that we had nothing to hide.",
-                "The spokesperson reiterated that they had nothing to hide."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The spokesperson reiterated that they had nothing to hide.",
-            "sentence": "The spokesperson reiterated, 'We have nothing to hide.'",
-            "hint": "Both the tense and the pronoun shift here.",
-            "explanation": "'Have' shifts to 'had', and 'we' shifts to 'they'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l168_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I wish I had accepted the offer.'",
-            "options": [
-                "He said that he wished he has accepted the offer.",
-                "He said that he wishes he had accepted the offer.",
-                "He said that he wished he had accepted the offer."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "He said that he wished he had accepted the offer.",
-            "sentence": "He said, 'I wish I had accepted the offer.'",
-            "hint": "'Wish' shifts back like a normal verb, but the unreal 'had accepted' inside stays exactly the same.",
-            "explanation": "'Wish' shifts to 'wished', but 'had accepted' (expressing regret about the past) doesn't shift any further.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l168_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The regulator warned banks, 'Don't misrepresent your risk exposure.'",
-            "options": [
-                "The regulator warned banks don't misrepresent their risk exposure.",
-                "The regulator warned banks to not misrepresent their risk exposure.",
-                "The regulator warned banks not to misrepresent their risk exposure."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The regulator warned banks not to misrepresent their risk exposure.",
-            "sentence": "The regulator warned banks, 'Don't misrepresent your risk exposure.'",
-            "hint": "Negative commands shift to 'warned + people + not to + verb', and 'your' shifts too.",
-            "explanation": "Negative commands use 'warned + object + not to + infinitive'. 'Don't misrepresent' becomes 'not to misrepresent', and 'your' becomes 'their'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l169_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'The strategy that we adopted worked well.'",
-            "options": [
-                "He said that the strategy that they adopted had worked well.",
-                "He said that the strategy that they had adopted had worked well.",
-                "He said that the strategy that they had adopted worked well."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He said that the strategy that they had adopted had worked well.",
-            "sentence": "He said, 'The strategy that we adopted worked well.'",
-            "hint": "Both the relative-clause verb and the main verb were already past, so both move one step further back in reported speech.",
-            "explanation": "'Adopted' shifts to 'had adopted', and 'worked' shifts to 'had worked' — both already past, so both shift one step further.",
-            "grammarRule": "Mixed/Complex Transformation",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l169_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The philosopher postulated, 'Free will is an illusion.'",
-            "options": [
-                "The philosopher postulated that free will was an illusion.",
-                "The philosopher postulated that free will had been an illusion.",
-                "The philosopher postulated that free will is an illusion."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The philosopher postulated that free will was an illusion.",
-            "sentence": "The philosopher postulated, 'Free will is an illusion.'",
-            "hint": "This only needs a single step back in time, not two.",
-            "explanation": "Present simple 'is' shifts to past simple 'was' — one step back, not to past perfect.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l169_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The office said, 'Requests are handled on a first-come basis.'",
-            "options": [
-                "The office said that requests are handled on a first-come basis.",
-                "The office said that requests were handled on a first-come basis.",
-                "The office said that requests had been handled on a first-come basis."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The office said that requests were handled on a first-come basis.",
-            "sentence": "The office said, 'Requests are handled on a first-come basis.'",
-            "hint": "This is a passive sentence; shift the verb back one simple step.",
-            "explanation": "'Are handled' (present simple passive) shifts to 'were handled' (past simple passive) — one step back.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l170_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: Multiple sources corroborated, 'The minister knew about the leak.'",
-            "options": [
-                "Multiple sources corroborated that the minister had known about the leak.",
-                "Multiple sources corroborated that the minister has known about the leak.",
-                "Multiple sources corroborated that the minister knew about the leak."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Multiple sources corroborated that the minister had known about the leak.",
-            "sentence": "Multiple sources corroborated, 'The minister knew about the leak.'",
-            "hint": "An already-past verb like this one shifts an extra step back to past perfect.",
-            "explanation": "'Knew' (past simple) shifts to 'had known' (past perfect).",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l170_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I wish things were different.'",
-            "options": [
-                "She said that she wishes things were different.",
-                "She said that she wished things are different.",
-                "She said that she wished things were different."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She said that she wished things were different.",
-            "sentence": "She said, 'I wish things were different.'",
-            "hint": "'Wish' shifts back like a normal verb, but the unreal 'were' inside stays exactly the same.",
-            "explanation": "'Wish' shifts to 'wished', but 'were' (expressing a present unreal wish) doesn't shift any further.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l170_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: They said, 'The policy that we introduced reduced costs.'",
-            "options": [
-                "They said that the policy that they introduced had reduced costs.",
-                "They said that the policy that they had introduced had reduced costs.",
-                "They said that the policy that they had introduced reduced costs."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "They said that the policy that they had introduced had reduced costs.",
-            "sentence": "They said, 'The policy that we introduced reduced costs.'",
-            "hint": "Two verbs are already past in the original sentence, so both push one step further back: the relative-clause verb and the main verb.",
-            "explanation": "'Introduced' shifts to 'had introduced', and 'reduced' shifts to 'had reduced' — both already past, so both shift one step further.",
-            "grammarRule": "Mixed/Complex Transformation",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        }
-    ]
+  "gameType": "directIndirectSpeech",
+  "batchIndex": 17,
+  "levels": "161-170",
+  "quests": [
+    {
+      "id": "dis_l161_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Ken texted, \"Running 10 mins late, sorry!\"",
+      "options": [
+        "Ken texted that he was running 10 minutes late and apologized.",
+        "Ken texted that he was running 10 minutes late and apologizes.",
+        "Ken texted that he is running 10 minutes late and apologizes."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Ken texted that he was running 10 minutes late and apologized.",
+      "sentence": "Ken texted, \"Running 10 mins late, sorry!\"",
+      "hint": "Even casual texts follow the same backshift rules as spoken sentences.",
+      "explanation": "'Running late' becomes 'was running late', and the apology is captured with 'apologized'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'running' → 'was running'",
+        "'sorry' → 'apologized'"
+      ]
+    },
+    {
+      "id": "dis_l161_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Beatriz texted her friend, \"Can you pick me up at 6 tonight?\"",
+      "options": [
+        "Beatriz texted her friend asking whether she could pick her up at 6 that night.",
+        "Beatriz texted her friend asking whether she can pick her up at 6 tonight.",
+        "Beatriz texted her friend asking could she pick her up at 6 that night."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Beatriz texted her friend asking whether she could pick her up at 6 that night.",
+      "sentence": "Beatriz texted her friend, \"Can you pick me up at 6 tonight?\"",
+      "hint": "Combine the modal backshift, the word order, and the time-word change.",
+      "explanation": "'Can' becomes 'could', 'tonight' becomes 'that night', and the question order becomes a statement.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'can' → 'could'",
+        "'tonight' → 'that night'",
+        "question word order → statement word order"
+      ]
+    },
+    {
+      "id": "dis_l161_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Wanjiru texted, \"On my way, be there in 15!\"",
+      "options": [
+        "Wanjiru texted that she was on her way and will be there in 15 minutes.",
+        "Wanjiru texted that she is on her way and will be there in 15 minutes.",
+        "Wanjiru texted that she was on her way and would be there in 15 minutes."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Wanjiru texted that she was on her way and would be there in 15 minutes.",
+      "sentence": "Wanjiru texted, \"On my way, be there in 15!\"",
+      "hint": "Casual, fragmented texts still need full backshift when reported formally.",
+      "explanation": "The implied 'am' becomes 'was', and 'be there' (an implied future) becomes 'would be there'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'on my way' → 'was on her way'",
+        "'be there' → 'would be there'"
+      ]
+    },
+    {
+      "id": "dis_l162_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The email said, \"We regret to inform you that your application was unsuccessful this time.\"",
+      "options": [
+        "The email said that they regretted to inform me that my application had been unsuccessful this time.",
+        "The email said that they regretted to inform me that my application had been unsuccessful that time.",
+        "The email said that they regret to inform me that my application was unsuccessful that time."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The email said that they regretted to inform me that my application had been unsuccessful that time.",
+      "sentence": "The email said, \"We regret to inform you that your application was unsuccessful this time.\"",
+      "hint": "Formal email language backshifts the same way as spoken language, including the possessive and time word.",
+      "explanation": "'Regret' becomes 'regretted', 'was unsuccessful' becomes 'had been unsuccessful', 'your' becomes 'my', and 'this time' becomes 'that time'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'regret' → 'regretted'",
+        "'was unsuccessful' → 'had been unsuccessful'",
+        "'your' → 'my'",
+        "'this time' → 'that time'"
+      ]
+    },
+    {
+      "id": "dis_l162_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The email said, \"Please find attached the invoice for last month's services.\"",
+      "options": [
+        "The email said to find attached the invoice for last month's services.",
+        "The email told to find attached the invoice for the previous month's services.",
+        "The email said to find attached the invoice for the previous month's services."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The email said to find attached the invoice for the previous month's services.",
+      "sentence": "The email said, \"Please find attached the invoice for last month's services.\"",
+      "hint": "This polite instruction inside an email still backshifts the time expression.",
+      "explanation": "'Please find attached...' becomes 'said to find attached', and 'last month's' becomes 'the previous month's'.",
+      "grammarRule": "Reported Request",
+      "changesList": [
+        "imperative → 'said to'",
+        "'last month's' → 'the previous month's'"
+      ]
+    },
+    {
+      "id": "dis_l162_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The email said, \"We will process your refund within 5 business days.\"",
+      "options": [
+        "The email said that they will process my refund within 5 business days.",
+        "The email said that we would process your refund within 5 business days.",
+        "The email said that they would process my refund within 5 business days."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The email said that they would process my refund within 5 business days.",
+      "sentence": "The email said, \"We will process your refund within 5 business days.\"",
+      "hint": "Standard business language still follows the pronoun, possessive, and modal rules.",
+      "explanation": "'We' becomes 'they', 'your' becomes 'my', and 'will process' becomes 'would process'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'we' → 'they'",
+        "'your' → 'my'",
+        "'will process' → 'would process'"
+      ]
+    },
+    {
+      "id": "dis_l163_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The interviewer said, \"Tell me about a time when you solved a difficult problem.\"",
+      "options": [
+        "The interviewer told me to tell her about a time when I solved a difficult problem.",
+        "The interviewer asked me to tell her about a time when I had solved a difficult problem.",
+        "The interviewer asked me to tell her about a time when I solved a difficult problem."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The interviewer asked me to tell her about a time when I had solved a difficult problem.",
+      "sentence": "The interviewer said, \"Tell me about a time when you solved a difficult problem.\"",
+      "hint": "This is a polite invitation to share an example, and the earlier event inside it backshifts one more step.",
+      "explanation": "The imperative 'Tell me...' becomes 'asked me to tell', and 'solved' becomes 'had solved' since it describes a past event within the story.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "imperative → 'asked + object + to'",
+        "'solved' → 'had solved'"
+      ]
+    },
+    {
+      "id": "dis_l163_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The candidate said, \"I believe I would be a strong fit because I have five years of relevant experience.\"",
+      "options": [
+        "The candidate said that she believed she will be a strong fit because she had five years of relevant experience.",
+        "The candidate said that she believes she would be a strong fit because she has five years of relevant experience.",
+        "The candidate said that she believed she would be a strong fit because she had five years of relevant experience."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The candidate said that she believed she would be a strong fit because she had five years of relevant experience.",
+      "sentence": "The candidate said, \"I believe I would be a strong fit because I have five years of relevant experience.\"",
+      "hint": "'Would' stays the same since it's already a past-time form, but the other verbs still backshift.",
+      "explanation": "'Believe' becomes 'believed', 'have' becomes 'had', and 'would' remains unchanged.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'believe' → 'believed'",
+        "'have' → 'had'",
+        "'would' stays unchanged"
+      ]
+    },
+    {
+      "id": "dis_l163_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The recruiter said, \"We'll be in touch by the end of this week with our decision.\"",
+      "options": [
+        "The recruiter said that they will be in touch by the end of this week with their decision.",
+        "The recruiter said that we would be in touch by the end of that week with our decision.",
+        "The recruiter said that they would be in touch by the end of that week with their decision."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The recruiter said that they would be in touch by the end of that week with their decision.",
+      "sentence": "The recruiter said, \"We'll be in touch by the end of this week with our decision.\"",
+      "hint": "Combine the pronoun, the possessive, the modal, and the time-word change.",
+      "explanation": "'We'/'our' become 'they'/'their', 'we'll be' becomes 'would be', and 'this week' becomes 'that week'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'we' → 'they'",
+        "'our' → 'their'",
+        "'we'll be' → 'would be'",
+        "'this week' → 'that week'"
+      ]
+    },
+    {
+      "id": "dis_l164_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The chair said, \"Let's move on to the next item on the agenda.\"",
+      "options": [
+        "The chair suggested moving on to the next item on the agenda.",
+        "The chair told moving on to the next item on the agenda.",
+        "The chair suggested to move on to the next item on the agenda."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The chair suggested moving on to the next item on the agenda.",
+      "sentence": "The chair said, \"Let's move on to the next item on the agenda.\"",
+      "hint": "Recall the gerund pattern that follows 'suggested'.",
+      "explanation": "'Let's move on...' becomes 'suggested moving on', following the gerund pattern.",
+      "grammarRule": "Gerund Structure",
+      "changesList": [
+        "'let's move on' → 'suggested moving on'"
+      ]
+    },
+    {
+      "id": "dis_l164_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: A participant said, \"I think we should postpone this decision until we have more data.\"",
+      "options": [
+        "A participant said that she thought they should postpone that decision until they had more data.",
+        "A participant said that she thought they should postpone this decision until they had more data.",
+        "A participant said that she thinks they should postpone that decision until they have more data."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "A participant said that she thought they should postpone that decision until they had more data.",
+      "sentence": "A participant said, \"I think we should postpone this decision until we have more data.\"",
+      "hint": "Combine the tense backshift, the pronoun, and the demonstrative, but leave 'should' unchanged.",
+      "explanation": "'Think' becomes 'thought', 'we' becomes 'they', 'this' becomes 'that', 'have' becomes 'had', and 'should' stays the same.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'think' → 'thought'",
+        "'we' → 'they'",
+        "'this' → 'that'",
+        "'have' → 'had'",
+        "'should' stays unchanged"
+      ]
+    },
+    {
+      "id": "dis_l164_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The manager said, \"Can everyone send me their updates here by end of day today?\"",
+      "options": [
+        "The manager asked whether everyone can send her their updates here by end of day today.",
+        "The manager asked could everyone send her their updates there by the end of that day.",
+        "The manager asked whether everyone could send her their updates there by the end of that day."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The manager asked whether everyone could send her their updates there by the end of that day.",
+      "sentence": "The manager said, \"Can everyone send me their updates here by end of day today?\"",
+      "hint": "This question combines the modal, the place word, the time word, and the correct word order.",
+      "explanation": "'Can' becomes 'could', 'here' becomes 'there', and 'today' becomes 'that day'; the question order becomes a statement.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'can' → 'could'",
+        "'here' → 'there'",
+        "'today' → 'that day'",
+        "question word order → statement word order"
+      ]
+    },
+    {
+      "id": "dis_l165_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The receptionist said, \"Check-out is at 11 AM tomorrow.\"",
+      "options": [
+        "The receptionist said that check-out was at 11 AM the next day.",
+        "The receptionist said that check-out is at 11 AM tomorrow.",
+        "The receptionist said that check-out was at 11 AM tomorrow."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The receptionist said that check-out was at 11 AM the next day.",
+      "sentence": "The receptionist said, \"Check-out is at 11 AM tomorrow.\"",
+      "hint": "This standard hotel policy still backshifts like any other statement.",
+      "explanation": "'Is' becomes 'was', and 'tomorrow' becomes 'the next day'.",
+      "grammarRule": "Time Expression Shift",
+      "changesList": [
+        "'is' → 'was'",
+        "'tomorrow' → 'the next day'"
+      ]
+    },
+    {
+      "id": "dis_l165_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The guest said, \"Could you send someone to fix the air conditioning in my room?\"",
+      "options": [
+        "The guest asked could someone be sent to fix the air conditioning in her room.",
+        "The guest asked whether someone could be sent to fix the air conditioning in her room.",
+        "The guest asked whether someone could be sent to fix the air conditioning in my room."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The guest asked whether someone could be sent to fix the air conditioning in her room.",
+      "sentence": "The guest said, \"Could you send someone to fix the air conditioning in my room?\"",
+      "hint": "Recall the passive structure needed here — 'send someone' becomes 'someone could be sent'.",
+      "explanation": "The request restructures around the person being sent, and 'my' becomes 'her'; the question order becomes a statement.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'could you send' → 'whether someone could be sent'",
+        "'my' → 'her'",
+        "question word order → statement word order"
+      ]
+    },
+    {
+      "id": "dis_l165_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The hotel manager said, \"We upgraded your room here for free because of the inconvenience.\"",
+      "options": [
+        "The hotel manager said that we had upgraded your room here for free because of the inconvenience.",
+        "The hotel manager said that they upgraded my room there for free because of the inconvenience.",
+        "The hotel manager said that they had upgraded my room there for free because of the inconvenience."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The hotel manager said that they had upgraded my room there for free because of the inconvenience.",
+      "sentence": "The hotel manager said, \"We upgraded your room here for free because of the inconvenience.\"",
+      "hint": "Combine the past-perfect backshift with the pronoun, possessive, and place-word changes.",
+      "explanation": "'We' becomes 'they', 'your' becomes 'my', 'upgraded' becomes 'had upgraded', and 'here' becomes 'there'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'we' → 'they'",
+        "'your' → 'my'",
+        "'upgraded' → 'had upgraded'",
+        "'here' → 'there'"
+      ]
+    },
+    {
+      "id": "dis_l166_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The host said, \"Your table will be ready in about ten minutes.\"",
+      "options": [
+        "The host said that my table will be ready in about ten minutes.",
+        "The host said that my table would be ready in about ten minutes.",
+        "The host said that your table would be ready in about ten minutes."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The host said that my table would be ready in about ten minutes.",
+      "sentence": "The host said, \"Your table will be ready in about ten minutes.\"",
+      "hint": "Combine the possessive and modal changes.",
+      "explanation": "'Your' becomes 'my', and 'will be' becomes 'would be'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'your' → 'my'",
+        "'will be' → 'would be'"
+      ]
+    },
+    {
+      "id": "dis_l166_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The chef came out and said, \"I hope you're enjoying the meal I prepared for you tonight.\"",
+      "options": [
+        "The chef said that he hoped we were enjoying the meal he prepared for us that night.",
+        "The chef said that he hoped we were enjoying the meal he had prepared for us that night.",
+        "The chef said that he hopes we are enjoying the meal he prepared for us tonight."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The chef said that he hoped we were enjoying the meal he had prepared for us that night.",
+      "sentence": "The chef said, \"I hope you're enjoying the meal I prepared for you tonight.\"",
+      "hint": "Several verbs backshift here at different levels — check which ones move an extra step.",
+      "explanation": "'Hope' becomes 'hoped', 'are enjoying' becomes 'were enjoying', 'prepared' (a finished earlier action) becomes 'had prepared', and 'tonight' becomes 'that night'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'hope' → 'hoped'",
+        "'are enjoying' → 'were enjoying'",
+        "'prepared' → 'had prepared'",
+        "'tonight' → 'that night'"
+      ]
+    },
+    {
+      "id": "dis_l166_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The waiter said, \"We're out of the salmon today, but the chef recommends the sea bass.\"",
+      "options": [
+        "The waiter said that they were out of the salmon that day but that the chef recommended the sea bass.",
+        "The waiter said that they are out of the salmon today but that the chef recommends the sea bass.",
+        "The waiter said that they were out of the salmon today but that the chef recommends the sea bass."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The waiter said that they were out of the salmon that day but that the chef recommended the sea bass.",
+      "sentence": "The waiter said, \"We're out of the salmon today, but the chef recommends the sea bass.\"",
+      "hint": "This combines the pronoun, the tense, and the time-word change across two connected clauses.",
+      "explanation": "'We're' becomes 'they were', 'recommends' becomes 'recommended', and 'today' becomes 'that day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'we're' → 'they were'",
+        "'recommends' → 'recommended'",
+        "'today' → 'that day'"
+      ]
+    },
+    {
+      "id": "dis_l167_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The store clerk said, \"This item is on sale until the end of the month.\"",
+      "options": [
+        "The store clerk said that that item was on sale until the end of the month.",
+        "The store clerk said that this item was on sale until the end of the month.",
+        "The store clerk said that that item is on sale until the end of the month."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The store clerk said that that item was on sale until the end of the month.",
+      "sentence": "The store clerk said, \"This item is on sale until the end of the month.\"",
+      "hint": "Combine the demonstrative and tense changes.",
+      "explanation": "'This' becomes 'that', and 'is' becomes 'was'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'this' → 'that'",
+        "'is' → 'was'"
+      ]
+    },
+    {
+      "id": "dis_l167_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The customer said, \"I bought this here yesterday, and it's already broken.\"",
+      "options": [
+        "The customer said that she had bought this here yesterday and that it is already broken.",
+        "The customer said that she had bought that there the day before and that it was already broken.",
+        "The customer said that she bought that there the day before and that it was already broken."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The customer said that she had bought that there the day before and that it was already broken.",
+      "sentence": "The customer said, \"I bought this here yesterday, and it's already broken.\"",
+      "hint": "This combines a past-perfect backshift, a demonstrative, a place word, a time word, and a present-tense backshift.",
+      "explanation": "'Bought' becomes 'had bought', 'this'/'here'/'yesterday' shift to 'that'/'there'/'the day before', and 'is' becomes 'was'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'bought' → 'had bought'",
+        "'this' → 'that'",
+        "'here' → 'there'",
+        "'yesterday' → 'the day before'",
+        "'is' → 'was'"
+      ]
+    },
+    {
+      "id": "dis_l167_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The manager said, \"We can offer you store credit or a full refund today.\"",
+      "options": [
+        "The manager said that they could offer me store credit or a full refund that day.",
+        "The manager said that they can offer me store credit or a full refund today.",
+        "The manager said that we could offer you store credit or a full refund that day."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The manager said that they could offer me store credit or a full refund that day.",
+      "sentence": "The manager said, \"We can offer you store credit or a full refund today.\"",
+      "hint": "Combine the pronoun, the object pronoun, the modal, and the time word.",
+      "explanation": "'We' becomes 'they', 'you' becomes 'me', 'can' becomes 'could', and 'today' becomes 'that day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'we' → 'they'",
+        "'you' → 'me'",
+        "'can' → 'could'",
+        "'today' → 'that day'"
+      ]
+    },
+    {
+      "id": "dis_l168_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The conductor said, \"This train terminates here; please change here for connections.\"",
+      "options": [
+        "The conductor said that this train terminates here and asked passengers to change here for connections.",
+        "The conductor said that that train terminated there and asked passengers to change there for connections.",
+        "The conductor said that that train terminated here and asked passengers to change there for connections."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The conductor said that that train terminated there and asked passengers to change there for connections.",
+      "sentence": "The conductor said, \"This train terminates here; please change here for connections.\"",
+      "hint": "Both instances of 'here' change, along with the demonstrative and the tense.",
+      "explanation": "'This' becomes 'that', 'terminates' becomes 'terminated', and both instances of 'here' become 'there'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'this' → 'that'",
+        "'terminates' → 'terminated'",
+        "'here' → 'there' (both instances)"
+      ]
+    },
+    {
+      "id": "dis_l168_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The driver said, \"We should arrive at the station in about twenty minutes.\"",
+      "options": [
+        "The driver said that they would arrive at the station in about twenty minutes.",
+        "The driver said that we should arrive at the station in about twenty minutes.",
+        "The driver said that they should arrive at the station in about twenty minutes."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The driver said that they should arrive at the station in about twenty minutes.",
+      "sentence": "The driver said, \"We should arrive at the station in about twenty minutes.\"",
+      "hint": "'Should' stays the same here — only the pronoun changes.",
+      "explanation": "'We' becomes 'they', and 'should' remains unchanged since it's already a past-compatible modal.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'we' → 'they'",
+        "'should' stays unchanged"
+      ]
+    },
+    {
+      "id": "dis_l168_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The airline app said, \"Your flight has been delayed by two hours due to weather conditions today.\"",
+      "options": [
+        "The airline app said that your flight had been delayed by two hours due to weather conditions today.",
+        "The airline app said that my flight had been delayed by two hours due to weather conditions that day.",
+        "The airline app said that my flight has been delayed by two hours due to weather conditions that day."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The airline app said that my flight had been delayed by two hours due to weather conditions that day.",
+      "sentence": "The airline app said, \"Your flight has been delayed by two hours due to weather conditions today.\"",
+      "hint": "Combine the possessive, the present-perfect backshift, and the time word.",
+      "explanation": "'Your' becomes 'my', 'has been delayed' becomes 'had been delayed', and 'today' becomes 'that day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'your' → 'my'",
+        "'has been delayed' → 'had been delayed'",
+        "'today' → 'that day'"
+      ]
+    },
+    {
+      "id": "dis_l169_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The app notification said, \"Your subscription will renew automatically tomorrow.\"",
+      "options": [
+        "The app notification said that my subscription will renew automatically the next day.",
+        "The app notification said that my subscription would renew automatically the next day.",
+        "The app notification said that your subscription would renew automatically tomorrow."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The app notification said that my subscription would renew automatically the next day.",
+      "sentence": "The app notification said, \"Your subscription will renew automatically tomorrow.\"",
+      "hint": "Combine the possessive, the modal, and the time-word change.",
+      "explanation": "'Your' becomes 'my', 'will renew' becomes 'would renew', and 'tomorrow' becomes 'the next day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'your' → 'my'",
+        "'will renew' → 'would renew'",
+        "'tomorrow' → 'the next day'"
+      ]
+    },
+    {
+      "id": "dis_l169_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The chatbot said, \"I'm unable to process your request right now; please try again later.\"",
+      "options": [
+        "The chatbot said that it was unable to process my request right then and asked me to try again later.",
+        "The chatbot said that it is unable to process my request right now and asked me to try again later.",
+        "The chatbot said that it was unable to process your request right now and asked me to try again later."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The chatbot said that it was unable to process my request right then and asked me to try again later.",
+      "sentence": "The chatbot said, \"I'm unable to process your request right now; please try again later.\"",
+      "hint": "Combine the pronoun 'I'/'it', the possessive, the time word 'right now', and the reported instruction.",
+      "explanation": "'I' becomes 'it', 'your' becomes 'my', 'right now' becomes 'right then', and 'please try again' becomes 'asked me to try again'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'I' → 'it'",
+        "'your' → 'my'",
+        "'right now' → 'right then'",
+        "imperative → 'asked + object + to'"
+      ]
+    },
+    {
+      "id": "dis_l169_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The website said, \"We have updated our privacy policy; please review the changes here today.\"",
+      "options": [
+        "The website said that they had updated their privacy policy and told users to review the changes here today.",
+        "The website said that they had updated their privacy policy and asked users to review the changes there that day.",
+        "The website said that they updated their privacy policy and asked users to review the changes there that day."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The website said that they had updated their privacy policy and asked users to review the changes there that day.",
+      "sentence": "The website said, \"We have updated our privacy policy; please review the changes here today.\"",
+      "hint": "Combine the present-perfect backshift, the pronoun, the possessive, the reporting-verb pattern, the place word, and the time word.",
+      "explanation": "'We'/'our' become 'they'/'their', 'have updated' becomes 'had updated', the request becomes 'asked...to review', and 'here'/'today' become 'there'/'that day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'we' → 'they'",
+        "'our' → 'their'",
+        "'have updated' → 'had updated'",
+        "imperative → 'asked + object + to'",
+        "'here' → 'there'",
+        "'today' → 'that day'"
+      ]
+    },
+    {
+      "id": "dis_l170_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The bank's text message said, \"A payment of $50 was made from your account today.\"",
+      "options": [
+        "The bank's text message said that a payment of $50 had been made from your account today.",
+        "The bank's text message said that a payment of $50 had been made from my account that day.",
+        "The bank's text message said that a payment of $50 was made from my account that day."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The bank's text message said that a payment of $50 had been made from my account that day.",
+      "sentence": "The bank's text message said, \"A payment of $50 was made from your account today.\"",
+      "hint": "This review question backshifts a completed past action one more step, along with the possessive and time word.",
+      "explanation": "'Was made' becomes 'had been made', 'your' becomes 'my', and 'today' becomes 'that day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'was made' → 'had been made'",
+        "'your' → 'my'",
+        "'today' → 'that day'"
+      ]
+    },
+    {
+      "id": "dis_l170_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The travel agent said, \"I can get you a better rate if you book here today instead of waiting.\"",
+      "options": [
+        "The travel agent said that she could get me a better rate if I booked there that day instead of waiting.",
+        "The travel agent said that she could get me a better rate if I booked here today instead of waiting.",
+        "The travel agent said that she can get me a better rate if I book here today instead of waiting."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The travel agent said that she could get me a better rate if I booked there that day instead of waiting.",
+      "sentence": "The travel agent said, \"I can get you a better rate if you book here today instead of waiting.\"",
+      "hint": "This combines a modal, two pronouns, a conditional clause, a place word, and a time word.",
+      "explanation": "'Can' becomes 'could', 'you' becomes 'me'/'I', 'book' becomes 'booked', 'here' becomes 'there', and 'today' becomes 'that day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'can' → 'could'",
+        "'you' → 'me'/'I'",
+        "'book' → 'booked'",
+        "'here' → 'there'",
+        "'today' → 'that day'"
+      ]
+    },
+    {
+      "id": "dis_l170_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The customer support email said, \"Thank you for reaching out. We will investigate your issue and get back to you here within 48 hours.\"",
+      "options": [
+        "The customer support email thanked me for reaching out and said that they will investigate my issue and get back to me here within 48 hours.",
+        "The customer support email thanked me for reaching out and said that they would investigate my issue and get back to me there within 48 hours.",
+        "The customer support email thanked me for reaching out and said that we would investigate your issue and get back to you here within 48 hours."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The customer support email thanked me for reaching out and said that they would investigate my issue and get back to me there within 48 hours.",
+      "sentence": "The customer support email said, \"Thank you for reaching out. We will investigate your issue and get back to you here within 48 hours.\"",
+      "hint": "This final review question combines a thanks, a modal, two pronoun sets, a possessive, and a place word.",
+      "explanation": "'We'/'your'/'you' become 'they'/'my'/'me', 'will investigate' becomes 'would investigate', and 'here' becomes 'there'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'thank you' → 'thanked me'",
+        "'we' → 'they'",
+        "'your' → 'my'",
+        "'you' → 'me'",
+        "'will investigate' → 'would investigate'",
+        "'here' → 'there'"
+      ]
+    }
+  ]
 }

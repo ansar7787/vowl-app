@@ -1,787 +1,787 @@
 {
-    "gameType": "branchingDialogue",
-    "batchIndex": 5,
-    "levels": "41-50",
-    "quests": [
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I'd like to run a second round of tests, as the initial results were inconclusive. How do you feel about that?'",
-            "options": [
-                "I completely understand. Whatever tests you think necessary - I'd rather know for certain.",
-                "I was hoping the first round would have been enough, to be honest.",
-                "Inconclusive test results are very common in modern diagnostic medicine."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "When more medical testing is recommended, express full, calm cooperation.",
-            "explanation": "'Whatever tests you think necessary - I'd rather know for certain' shows mature, cooperative trust in the medical process. 'Inconclusive results are very common' is a general fact. 'I was hoping the first round would be enough' expresses mild resistance to a reasonable medical recommendation.",
-            "id": "bd_l41_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'This particular piece has attracted interest from several serious collectors. You should act quickly.'",
-            "options": [
-                "If other collectors are interested, perhaps the price should reflect that.",
-                "I understand the time pressure, but I still need to verify the provenance documentation before committing.",
-                "Rare pieces do attract a lot of competitive interest from serious collectors."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Under sales pressure, maintain your due diligence standards and state what you need before acting.",
-            "explanation": "'I understand the time pressure, but I need to verify the provenance documentation before committing' resists pressure tactics while maintaining legitimate standards. 'Rare pieces attract competitive interest' is a general observation. 'If others are interested the price should reflect that' suggests a price increase, which is the opposite of the buyer's interest.",
-            "id": "bd_l41_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'We've just crossed into international airspace. Shall I brief the passengers on the current local conditions at our destination?'",
-            "options": [
-                "Passengers are generally very curious about conditions at their destination.",
-                "Passengers tend to appreciate updates from the flight deck.",
-                "Yes - let them know the local time, current weather conditions, and temperature at the destination."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "In a professional aviation context, give specific, actionable instructions for passenger communication.",
-            "explanation": "'Let them know the local time, current weather, and temperature at the destination' gives three specific, useful items for a passenger briefing. 'Passengers are generally curious about their destination' is true but doesn't give direction. 'Passengers appreciate updates from the flight deck' is a general statement rather than a specific instruction.",
-            "id": "bd_l41_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I need someone to lead the new training initiative for the junior crew. Would you be willing to take that on?'",
-            "options": [
-                "I'd be glad to. I have some ideas for making the programme more hands-on and practical than the previous one.",
-                "That's quite a significant time commitment on top of my existing responsibilities.",
-                "Training initiatives are very important for crew development overall."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Accept a meaningful assignment with enthusiasm and add immediate value with an improvement idea.",
-            "explanation": "'I'd be glad to. I have some ideas for making the programme more hands-on and practical' accepts with confidence and immediately shows you'll bring value. 'Training is important for development' is a general statement. 'It's a significant time commitment on top of my responsibilities' sounds reluctant and focuses on the burden rather than the opportunity.",
-            "id": "bd_l42_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I need you to act as a translator in this next meeting. The subject will be sensitive. Can you keep it professional throughout?'",
-            "options": [
-                "Professional translators always maintain strict confidentiality as a matter of course.",
-                "I'll do my best, but I should warn you that I'm not a fully trained professional interpreter.",
-                "Without question. I'll translate accurately and with complete discretion, regardless of how sensitive the content becomes."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Commit fully to a professional task and address any relevant limitations honestly.",
-            "explanation": "'I'll translate accurately and with complete discretion, regardless of how sensitive the content becomes' is a full, confident professional commitment. 'Professional translators always maintain confidentiality' speaks about translators in general, not about your specific commitment. 'I'll do my best, but I should warn you I'm not a trained interpreter' is honest about limitations but may undermine confidence in a sensitive situation.",
-            "id": "bd_l42_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'We've just received a delivery of very high-quality, seasonal truffles. How should we feature them on tonight's menu?'",
-            "options": [
-                "Truffles are versatile and can be incorporated across multiple courses.",
-                "Seasonal truffles are a genuinely premium luxury ingredient.",
-                "I'd keep it simple to let the truffle shine - perhaps a delicate tagliatelle or a risotto, finished with fresh shavings at the table for maximum visual impact."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "When given a premium ingredient, recommend a preparation that showcases it at its best.",
-            "explanation": "'Keep it simple - tagliatelle or a risotto, finished with fresh shavings at the table' demonstrates real culinary understanding of how to let a premium ingredient shine. 'Truffles are a premium ingredient' is a general statement. 'Truffles are versatile across multiple courses' is true but doesn't give specific menu direction.",
-            "id": "bd_l42_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'You've mentioned that you've been experiencing dizziness. Is it constant, or does it come and go?'",
-            "options": [
-                "Dizziness can have a wide variety of different causes and triggers.",
-                "It comes and goes - mainly when I stand up too quickly or turn my head suddenly.",
-                "It started about a week ago and has been bothering me since then."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Give precise clinical details about the pattern of a symptom - constant vs. intermittent, triggers.",
-            "explanation": "'It comes and goes - mainly when I stand up too quickly or turn my head suddenly' gives the pattern (intermittent) and identifies specific triggers, which is exactly the clinical detail needed. 'Dizziness has many causes' is a general fact. 'It started a week ago' gives duration but doesn't answer the constant vs. intermittent question that was asked.",
-            "id": "bd_l43_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I notice you've been looking at our premium collection. Those prices reflect exceptional craftsmanship.'",
-            "options": [
-                "I can see the quality. What materials and techniques go into this particular piece?",
-                "I was actually just looking - I don't usually spend at this level.",
-                "Premium pricing is only justified when quality is truly exceptional."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Show genuine appreciation for craftsmanship and ask a specific, knowledgeable follow-up question.",
-            "explanation": "'I can see the quality. What materials and techniques go into this particular piece?' shows appreciation and demonstrates genuine interest. 'Premium pricing is only justified when quality is truly exceptional' is a challenging statement that creates an adversarial tone. 'I was just looking - I don't usually spend at this level' deflects without engaging.",
-            "id": "bd_l43_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'Our estimated arrival has been brought forward by twenty minutes due to strong tailwinds. Would you like me to announce this to the passengers?'",
-            "options": [
-                "That's entirely your call to make as captain.",
-                "Yes please - passengers always appreciate good news, especially when it's early arrival.",
-                "Tailwinds are the result of upper-level jet stream patterns at altitude."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "In a professional context, make a clear decision and give a brief, sound reason.",
-            "explanation": "'Yes please - passengers always appreciate good news, especially early arrival' makes a clear, positive decision with a sensible rationale. 'Tailwinds are the result of jet stream patterns' is interesting but not relevant to the question of whether to announce the change. 'That's your call' avoids making a recommendation when one was clearly sought.",
-            "id": "bd_l43_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'We've identified a potential security vulnerability in our navigation systems. What's the priority here?'",
-            "options": [
-                "The immediate priority is to isolate the affected system and prevent any exploitation while we assess the full scope and arrange for a fix.",
-                "I'd recommend bringing in an external cybersecurity specialist to evaluate it.",
-                "Security vulnerabilities in navigation systems can have severe operational consequences."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "When a security vulnerability is identified, state the immediate operational priority clearly.",
-            "explanation": "'Isolate the affected system immediately and prevent exploitation while we assess and arrange a fix' identifies the correct immediate priority: contain, assess, then repair. 'Security vulnerabilities can have severe consequences' is a general statement about risk. 'Bring in a cybersecurity specialist' is an important long-term step but not the immediate priority.",
-            "id": "bd_l44_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'My informant has gone silent. This could mean they've been compromised. How do you assess the risk?'",
-            "options": [
-                "I'd assess the risk as high. We should assume compromise until proven otherwise and immediately review what intelligence the informant had access to.",
-                "Informants going silent is one of the highest-risk signals in any field operation.",
-                "It could also simply mean they've been unable to make contact safely."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "In a high-stakes security context, assess risk conservatively and state the safest operational assumption.",
-            "explanation": "'Assume compromise until proven otherwise and immediately review what intelligence they had access to' takes the safest operational assumption and moves to mitigate the risk. 'Informants going silent is one of the highest-risk signals' is a general statement. 'It could simply mean they couldn't make contact safely' is also true but less actionable as an immediate response.",
-            "id": "bd_l44_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'A food critic from a major publication is dining with us tonight. How do you prepare the team?'",
-            "options": [
-                "Food critics can either significantly help or seriously damage a restaurant's reputation.",
-                "I'd brief the team on the importance of consistency tonight - the same high standards we apply every day. I'd also ensure our very best server is managing their table.",
-                "I'd tell everyone to try a little harder than usual tonight."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Prepare your team for a high-stakes scenario with specific, actionable instructions.",
-            "explanation": "'Brief on consistency - the same high standards every day, plus our best server managing their table' is specific and actionable. 'Food critics can make or break a restaurant' is true but offers no guidance. 'Tell everyone to try a little harder than usual' implies that standards are lower on other occasions.",
-            "id": "bd_l44_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'Your recovery is ahead of schedule - well done. Are you still following the prescribed exercises?'",
-            "options": [
-                "Recovery exercises can be quite tedious over a long period of time.",
-                "I've been doing most of them - perhaps not as consistently as I should be.",
-                "Yes, every day without exception. I've been very motivated, knowing the progress was happening."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Confirm compliance with a medical programme honestly and share your motivation.",
-            "explanation": "'Yes, every day without exception. I've been very motivated, knowing the progress was happening' confirms full compliance and shares genuine motivation. 'Recovery exercises can be tedious' is a general complaint. 'Most of them - perhaps not as consistently as I should be' is honest but reveals partial non-compliance.",
-            "id": "bd_l45_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'We're about to close the bidding on this piece. This is your last opportunity.'",
-            "options": [
-                "I'd like to place one final bid at twelve hundred - and that's my absolute ceiling.",
-                "I'll need just two more minutes to make my final decision.",
-                "Final bids are always the most pressure-filled part of any auction."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "When it's your last chance, commit to a specific final bid or withdraw clearly.",
-            "explanation": "'One final bid at twelve hundred - that's my absolute ceiling' is decisive, specific, and sets a clear limit. 'Final bids are always the most pressure-filled' makes a general observation rather than bidding. 'I'll need two more minutes' is a delay when the timing has been explicitly stated.",
-            "id": "bd_l45_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I'd like to offer you our complimentary day room while you wait for your connecting flight. It's the least we can do for the inconvenience.'",
-            "options": [
-                "I suppose a day room is better than nothing, at least.",
-                "Day rooms are of course much more comfortable than airport gate areas.",
-                "That is very generous - thank you so much. I really appreciate that gesture."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Accept a generous offer with genuine, warm appreciation.",
-            "explanation": "'That is very generous - thank you so much. I really appreciate that gesture' accepts the gesture with warmth and genuine gratitude. 'Day rooms are more comfortable than gate areas' makes a comparison rather than a warm acknowledgment. 'A day room is better than nothing' is a barely-concealed complaint that diminishes a generous gesture.",
-            "id": "bd_l45_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'We've had a breakthrough in the investigation. How would you like to proceed from here?'",
-            "options": [
-                "Breakthroughs at this stage of an investigation are very significant.",
-                "With this new development, I'd immediately move to verify the key finding, then brief the full team and reassess our operational timeline.",
-                "This is certainly very positive and encouraging news for the whole team."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "When given a positive update, state a specific, action-oriented next step.",
-            "explanation": "'Immediately verify the key finding, brief the full team, and reassess the operational timeline' gives three specific, actionable next steps. 'Breakthroughs at this stage are very significant' is a general observation. 'This is very positive and encouraging news' is celebratory but doesn't move the operation forward.",
-            "id": "bd_l46_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I need you to photograph this document without being seen. Can you do that discreetly?'",
-            "options": [
-                "Yes. I'll use my phone's silent mode, keep it angled below the desk line, and be ready to cover it instantly if anyone approaches.",
-                "Covert photography requires very specific training and the right equipment.",
-                "I'll do my best, though I've never done anything quite like this before."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "When given a covert task, describe the specific technique you'll use to execute it successfully.",
-            "explanation": "'Silent mode, keep it below the desk line, ready to cover it instantly if anyone approaches' describes a specific, practical covert technique. 'Covert photography requires specific training' is a general statement. 'I'll do my best though I've never done this before' raises doubts about competence at the worst possible moment.",
-            "id": "bd_l46_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I want to create a tasting menu that tells a story. How would you structure it?'",
-            "options": [
-                "I'd build it as a seasonal journey - starting light and local in spring, building to rich and complex by the third course, then lifting with a bright, refreshing dessert as a final chapter.",
-                "Tasting menus are a wonderful format for showcasing a chef's range of technique.",
-                "Storytelling through food is one of the most creative forms of culinary expression."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Give a specific, structured response that directly addresses the creative brief.",
-            "explanation": "'Start light and local, build to rich and complex, then lift with a bright refreshing dessert as a final chapter' provides a specific, vivid structure. 'Tasting menus are wonderful for showcasing range' is a general endorsement. 'Storytelling through food is very creative' is a compliment rather than a structured answer.",
-            "id": "bd_l46_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I'd like to explore whether your symptoms could have a psychological component. How do you feel about that possibility?'",
-            "options": [
-                "Psychological factors are increasingly recognised in modern physical medicine.",
-                "I'm open to exploring all possible causes - I want to understand what's happening to me.",
-                "I'd prefer to focus on purely physical causes before considering anything psychological."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Respond to a sensitive medical suggestion with openness and a focus on understanding.",
-            "explanation": "'I'm open to exploring all possible causes - I want to understand what's happening to me' is the most constructive, open response that serves your health. 'Psychological factors are increasingly recognised in modern medicine' is a general statement. 'I'd prefer to focus on purely physical causes first' creates an artificial barrier to a thorough medical assessment.",
-            "id": "bd_l47_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I have an exclusive piece that hasn't even been listed publicly yet. I'm showing it to select clients only.'",
-            "options": [
-                "Exclusive pre-market access is a compelling commercial proposition for any serious buyer.",
-                "I'm very interested in seeing it. What can you tell me about it before we meet?",
-                "I appreciate the trust, but I'd want to know why you're offering it to me specifically."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "When given an exclusive offer, show interest while asking a clarifying question that helps you assess the opportunity.",
-            "explanation": "'I appreciate the trust, but I'd want to know why you're offering it to me specifically' is smart - it gathers context before committing to interest. 'Exclusive pre-market access is compelling' is a general statement. 'I'm very interested. What can you tell me?' shows interest immediately but misses the opportunity to understand why you've been selected.",
-            "id": "bd_l47_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'We've just received a slight route adjustment from air traffic control. It'll add about fifteen minutes to our flight time.'",
-            "options": [
-                "Roger that. I'll update the fuel calculations and revise our ETA for the destination.",
-                "Will the passengers need to be informed about this change in arrival time?",
-                "Route adjustments from ATC are a completely normal part of commercial aviation."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "In a professional aviation context, confirm receipt and immediately describe the next operational steps.",
-            "explanation": "'Roger that. I'll update the fuel calculations and revise our ETA for the destination' is the correct, professional response - confirming the change and immediately executing the follow-up tasks. 'Route adjustments are a normal part of aviation' is general. 'Will the passengers need to be informed?' is a good follow-up question, but the immediate operational tasks should come first.",
-            "id": "bd_l47_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I want to overhaul our training programme completely. What principles should guide the redesign?'",
-            "options": [
-                "I'd start by consulting the crew on what they feel is currently missing from the programme.",
-                "Training programme redesigns generally require careful planning and sufficient resources.",
-                "The redesign should be guided by three principles: relevance to actual operational scenarios, immediate practical application, and regular assessment to measure retention and performance improvement."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Give clear, specific design principles when asked for strategic guidance on a programme redesign.",
-            "explanation": "'Three principles: relevance to operational scenarios, immediate practical application, regular assessment for retention' gives concrete, actionable design criteria. 'Redesigns require careful planning and resources' is a general statement. 'Start by consulting the crew' is a good process step but doesn't answer the question about guiding principles.",
-            "id": "bd_l48_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'My cover has potentially been compromised. What immediate steps do you recommend?'",
-            "options": [
-                "Cover compromises are one of the most serious risks in undercover work.",
-                "Immediately assume the worst: cease all contact with assets, activate your extraction protocol, and don't return to any location associated with the cover.",
-                "First, try to assess how much of your cover has actually been compromised."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "In a potential security compromise, recommend the most conservative, protective course of action.",
-            "explanation": "'Assume the worst: cease contact with assets, activate extraction protocol, and don't return to any associated locations' is the safest, most conservative protective response. 'Cover compromises are one of the most serious risks' is a general statement. 'First, try to assess how much has been compromised' is logical but may take too long if the situation is genuinely urgent.",
-            "id": "bd_l48_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I've been approached to appear on a cooking television programme. What are the potential benefits and risks?'",
-            "options": [
-                "Many chefs have used television very successfully to grow their restaurants.",
-                "Television appearances can significantly raise a chef's public profile and business visibility.",
-                "The benefits include massive brand exposure and new customer acquisition. The risk is that one poor performance reaches a much larger audience than a quiet bad night in your own restaurant."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Give a balanced, specific analysis of both the upsides and the genuine risks.",
-            "explanation": "'Massive brand exposure and new customer acquisition are the benefits. One poor performance reaching a huge audience is the risk' gives a genuinely balanced, specific analysis. 'Television appearances can significantly raise your profile' describes one upside without addressing any risks. 'Many chefs have used television successfully' is a general example without a balanced assessment.",
-            "id": "bd_l48_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I need to discuss your long-term treatment plan with you. Do you have any concerns or questions before we begin?'",
-            "options": [
-                "I'd like to know if my condition will eventually fully resolve.",
-                "Long-term treatment plans are very important for managing chronic conditions.",
-                "Yes - I'd like to understand the long-term side effects and what success looks like over time."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Before entering a complex medical discussion, ask the most clinically important questions upfront.",
-            "explanation": "'I'd like to understand the long-term side effects and what success looks like over time' asks the two most practically important questions for managing a long-term treatment. 'Long-term treatment plans are important for managing chronic conditions' is a general fact. 'I'd like to know if my condition will fully resolve' is one important question but misses the equally important side effects question.",
-            "id": "bd_l49_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I'd like to establish a regular supply agreement with your firm. What terms would you need to make this work?'",
-            "options": [
-                "Regular supply agreements can be very beneficial for both parties involved.",
-                "We'd need a minimum order commitment of five hundred units per quarter, fixed pricing for twelve months, and a seventy-two-hour delivery guarantee.",
-                "I'd need to review this proposal with my commercial team before we discuss any terms."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "When asked to set terms for a commercial agreement, state specific, concrete requirements.",
-            "explanation": "'Minimum five hundred units per quarter, fixed pricing for twelve months, and a seventy-two-hour delivery guarantee' gives three specific, concrete commercial requirements. 'Regular supply agreements are beneficial for both parties' is a general statement. 'I need to review with my team first' is appropriate for complex negotiations, but when explicitly asked for terms, you can share your initial requirements.",
-            "id": "bd_l49_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'We're approaching our destination. Would you like me to give the cabin crew their final preparation instructions?'",
-            "options": [
-                "The cabin crew are experienced professionals who know the landing procedures very well.",
-                "Yes - instruct them to begin the cabin safety check, secure all loose items, and prepare for landing within the next twenty minutes.",
-                "Cabin crew preparation for landing is a critical part of the arrival procedure."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Give specific, timed instructions to professional crew during a pre-landing sequence.",
-            "explanation": "'Begin the cabin safety check, secure all loose items, and prepare for landing in twenty minutes' gives three specific, timed instructions. 'Cabin crew preparation is a critical part of arrival' is true but doesn't give direction. 'The cabin crew are experienced professionals who know the procedures' is also true but delegates without providing specific instruction.",
-            "id": "bd_l49_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I need your honest assessment of our readiness for this mission. Hold nothing back.'",
-            "options": [
-                "Mission readiness involves so many interdependent factors that it's genuinely difficult to give a single assessment.",
-                "I believe the team is as ready as it is ever going to be, Captain.",
-                "Our core strengths are solid: crew training is at a high level and equipment is fully operational. The primary gap is our limited intelligence on the target area - I'd want at least forty-eight more hours on that before committing."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Give a balanced, honest assessment that identifies both strengths and specific gaps.",
-            "explanation": "'Core strengths are solid - training is high, equipment operational. Primary gap is limited intelligence on the target - I'd want forty-eight more hours' gives a specific, balanced, honest assessment. 'The team is as ready as it will ever be' is encouraging but lacks specific analysis. 'Mission readiness is difficult to assess in a single statement' avoids the question when a direct assessment was specifically requested.",
-            "id": "bd_l50_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'This operation has been authorised at the highest level. Are you fully committed?'",
-            "options": [
-                "Completely. I understand the stakes and I'm fully committed to the mission's success.",
-                "I'm committed, though I reserve the right to raise concerns through proper channels if issues arise.",
-                "High-level authorisation significantly increases an operation's legitimacy and resources."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Express full commitment to an authorised mission clearly and without hesitation.",
-            "explanation": "'Completely. I understand the stakes and I'm fully committed to the mission's success' is a clear, unambiguous declaration of commitment. 'High-level authorisation increases legitimacy' is an observation about authority, not a personal commitment. 'I'm committed, though I reserve the right to raise concerns' adds an unnecessary qualification at the moment of commitment.",
-            "id": "bd_l50_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'After fifteen years, I'm thinking of closing the restaurant and retiring. How do you feel about that?'",
-            "options": [
-                "Fifteen years of running a restaurant is an enormous achievement that deserves the greatest respect.",
-                "That's a deeply personal decision, and I completely respect it - but I'd be sad to see something so special come to an end.",
-                "Restaurant closures are very common in the hospitality industry, unfortunately."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Respond to significant personal news with genuine emotion and appropriate respect for the person's autonomy.",
-            "explanation": "'That's a deeply personal decision, I completely respect it - but I'd be sad to see something so special end' honours the decision while expressing genuine feeling. 'Fifteen years is an enormous achievement' acknowledges the milestone but doesn't respond to the emotional weight of the news. 'Restaurant closures are common in the industry' is coldly impersonal about a very personal and emotional announcement.",
-            "id": "bd_l50_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        }
-    ]
+  "gameType": "branchingDialogue",
+  "batchIndex": 5,
+  "levels": "41-50",
+  "quests": [
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a clothing shop assistant",
+      "scene": "You're trying to find a jacket in a smaller size. An assistant asks: 'Can I help you find anything?'",
+      "options": [
+        "I'm just looking, thanks.",
+        "Do you have this in a smaller size, or a different colour, or maybe a different style altogether, I'm not really sure what I want yet.",
+        "Yes, please — do you have this jacket in a size small?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When you do want help, name the specific item and detail you need rather than deflecting or giving too many options at once.",
+      "explanation": "Naming the exact item and size gives the assistant everything they need to help you immediately. Saying you're just looking, when you actually want help, means missing out on a fast solution. Piling on multiple open possibilities makes it hard for the assistant to know where to even start.",
+      "id": "bd_l41_q1",
+      "consequencePreviews": [
+        "As a result, you miss the chance to get quick help with something you actually needed.",
+        "You may notice that the request is so broad that the assistant doesn't have a clear starting point to help you.",
+        "As a result, the assistant can check stock right away, since you've named exactly what you need."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a hardware store employee",
+      "scene": "You need a specific type of screw but don't know its exact name. An employee asks: 'What are you looking for today?'",
+      "options": [
+        "I'm not sure of the name, but it's for hanging a mirror on drywall — could you point me to the right section?",
+        "A screw, actually, it wasn't a fully considered answer, so let me know if that's off — and a lot depends on details I haven't really looked into yet.",
+        "I need some kind of hardware, not totally sure what exactly, maybe screws, maybe something else, I'll know it when I see it."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When you don't know the technical name for something, describe what you're trying to do instead — it often works just as well.",
+      "explanation": "Describing your purpose lets the employee use their expertise to find the right product, even without you knowing the technical term. Saying just 'a screw' is too vague, since there are many types for different purposes. A vague, wandering answer doesn't give the employee anything concrete to work with either.",
+      "id": "bd_l41_q2",
+      "consequencePreviews": [
+        "In this moment, the employee can use your actual purpose to recommend the correct product, even without the technical name.",
+        "Here, the answer is too general for the employee to actually narrow down what you need.",
+        "In this moment, the vague, open-ended answer makes it hard for the employee to actually guide you to the right product."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "an electronics store employee who seems distracted",
+      "scene": "You need a specific replacement cable, but the employee helping you seems distracted, checking their phone between customers.",
+      "options": [
+        "Hi, sorry, um, I was wondering if maybe you might possibly have some kind of cable.",
+        "Excuse me — I need a USB-C to HDMI cable, about two metres long. Do you have that in stock?",
+        "Are you even listening? I need help here."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "With a distracted listener, a short, specific, confidently stated request cuts through better than heavy hedging or confrontation.",
+      "explanation": "A clear, specific, confidently stated request is the easiest thing for a distracted person to actually process and act on. Excessive hedging adds noise that makes the actual request harder to catch, especially with someone who's only half listening. Directly calling out their distraction may get their attention, but it risks unnecessary friction when a clear, confident request would likely have worked just as well.",
+      "id": "bd_l41_q3",
+      "consequencePreviews": [
+        "As a result, the excessive hedging makes the request hard to follow, especially for someone who's only half paying attention.",
+        "Realistically, the clear, specific request cuts through the distraction and gets you a direct answer.",
+        "You may notice that calling out their distraction directly may create unnecessary tension instead of simply getting your request across."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a market stall seller",
+      "scene": "At a market stall, you ask the price of a scarf and the seller says it's $40. You think that's a bit high for what it is.",
+      "options": [
+        "That's expensive.",
+        "Forty dollars? That's outrageous for a scarf, you're clearly overcharging tourists.",
+        "Would you be able to do $30 for it?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "A negotiation moves forward faster when you propose a specific counter-price rather than just commenting on the cost.",
+      "explanation": "Proposing a specific price gives the seller something concrete to respond to, which is how negotiations actually move forward. Saying it's 'expensive' shares an opinion but doesn't invite a counter-offer. Accusing the seller of overcharging is likely to shut down the negotiation rather than open it up.",
+      "id": "bd_l42_q1",
+      "consequencePreviews": [
+        "As a result, you express an opinion but don't actually propose a number the seller can respond to.",
+        "You may notice that the accusation is likely to make the seller defensive rather than open to negotiating.",
+        "As a result, you open a friendly negotiation with a clear, specific counter-offer."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a car salesperson",
+      "scene": "A car salesperson quotes you a price that's above your budget. You're genuinely interested in the car but need a better deal.",
+      "options": [
+        "That's way too expensive for me.",
+        "I like the car, but that's above what I budgeted. Is there any flexibility on the price, or on things like the warranty package?",
+        "I'll think about it and get back to you."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When a quoted cost exceeds your budget but you still want the item, say so plainly and ask whether there's any room to adjust the terms.",
+      "explanation": "Naming your genuine interest and directly asking about flexibility keeps the negotiation open on price and on other value-adding factors. Simply saying it's too expensive states a limit but doesn't invite the salesperson to negotiate with you. Walking away without asking about flexibility misses a real chance to get closer to your budget.",
+      "id": "bd_l42_q2",
+      "consequencePreviews": [
+        "The comment expresses your limit but doesn't invite the salesperson to actually negotiate.",
+        "As a result, you express genuine interest while opening a real negotiation on multiple fronts.",
+        "You leave without attempting a negotiation that might have gotten you closer to your budget."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a freelance contractor quoting a project",
+      "scene": "A contractor quotes $3,000 for a project. You have a firm budget of $2,200 and generally like their portfolio, but you also know you could get other quotes if needed.",
+      "options": [
+        "Your portfolio is exactly what I'm looking for, but my budget's firm at $2,200 — is there a version of this project that could fit that, even with a smaller scope?",
+        "That's more than I wanted to spend, but okay, let's go ahead, thinking about it now, it wasn't a fully considered answer, so let me know if that's off — and I probably should have asked a few more questions before saying anything.",
+        "$3,000 seems high, I could probably find someone cheaper elsewhere."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When your budget is firm but you value the person's work, be specific about the number and invite a solution, rather than agreeing anyway or implying you'll go elsewhere.",
+      "explanation": "Being specific about your firm number, while genuinely praising their work, invites a real solution instead of a standoff. Agreeing anyway abandons your stated budget and could set an uncomfortable precedent for future negotiations. Hinting that you'd go elsewhere can come across as a pressure tactic rather than a genuine invitation to problem-solve together.",
+      "id": "bd_l42_q3",
+      "consequencePreviews": [
+        "In this moment, you keep the relationship warm while being honest about your real limit and offering a workable path forward.",
+        "As a result, you agree to a price above your firm budget, giving up your negotiating position entirely.",
+        "As a result, the comparison to other options may come across as a threat rather than an invitation to find a workable solution together."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a shoe store employee",
+      "scene": "You ask an employee if a particular shoe is in stock in your size. They say: 'Let me check the back.'",
+      "options": [
+        "Alright.",
+        "Thanks, I'll wait right here.",
+        "How long is that going to take? I don't have all day."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When someone goes to check on something for you, a short reply confirming you'll wait keeps things simple and easy.",
+      "explanation": "Confirming you'll wait and where you'll be makes it easy for the employee to find you again. A bare 'okay' is fine but doesn't clarify whether you'll actually be around when they return. Pushing about the timing adds pressure to a routine, reasonable request that hasn't actually taken very long yet.",
+      "id": "bd_l43_q1",
+      "consequencePreviews": [
+        "The reply is fine but gives no indication of whether you'll actually be there when they return.",
+        "The employee knows exactly where to find you when they come back with an answer.",
+        "The impatient tone adds unnecessary pressure to a completely normal, routine request."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a restaurant host",
+      "scene": "You arrive at a restaurant without a reservation. The host says: 'It'll be about a 20 minute wait, is that alright?'",
+      "options": [
+        "That's fine, we'll wait — is there somewhere we could sit while we wait?",
+        "20 minutes? That's a really long time.",
+        "Sure, that's fine."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When accepting a wait time, a practical follow-up question can make the experience easier for you.",
+      "explanation": "Accepting the wait and asking a useful follow-up question shows you're genuinely fine with it and improves your own experience. Commenting that 20 minutes is long doesn't clarify whether you're staying or leaving. A flat 'fine' technically accepts but misses an easy chance to make the wait itself more comfortable.",
+      "id": "bd_l43_q2",
+      "consequencePreviews": [
+        "As a result, you accept the wait and ask a practical follow-up that makes the wait more comfortable.",
+        "Here, the comment expresses frustration without clarifying whether you'll actually wait or leave.",
+        "In this moment, the short answer accepts the wait but doesn't engage with any of the practical details that might help."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a tailor giving a longer timeline than expected",
+      "scene": "You bring in trousers for a simple hem alteration. The tailor says: 'That'll be ready in a week.' You need them for an event in three days.",
+      "options": [
+        "Okay, I'll figure something else out.",
+        "A week is way too long for a simple hem.",
+        "A week won't work for me, unfortunately — I need them by Thursday for an event. Is there any way to speed that up, even for a small fee?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When a stated timeline doesn't work for your actual deadline, say so specifically and ask about options, rather than giving up or just criticizing.",
+      "explanation": "Explaining your actual deadline and asking about options gives the tailor a real chance to offer a rush service or another solution. Simply giving up misses that possibility entirely, when a fair question might have solved the problem. Criticizing the timeline without stating your real deadline doesn't give the tailor the information they'd need to help you.",
+      "id": "bd_l43_q3",
+      "consequencePreviews": [
+        "You give up on a solution that the tailor might genuinely have been able to offer, like a rush service.",
+        "Here, the comment criticizes the timeline without actually stating your deadline or asking for a solution.",
+        "Here, you explain your real constraint clearly and offer flexibility, giving the tailor a real chance to help."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a customer service agent processing an exchange",
+      "scene": "You bought a shirt that turned out to be the wrong size. You bring it back with the receipt.",
+      "options": [
+        "This doesn't fit.",
+        "Hi, I'd like to exchange this for a size medium, please — here's the receipt.",
+        "I bought this here last week, and it's the wrong size."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When you want a product swapped for a different variant, say exactly what you need and bring proof of purchase.",
+      "explanation": "Stating exactly what you want and having the receipt ready makes the exchange quick and easy for both of you. Saying only that it doesn't fit describes the problem but leaves the actual request unclear. Rambling through uncertainty about your receipt and the store's policy buries a request that could have been stated simply.",
+      "id": "bd_l44_q1",
+      "consequencePreviews": [
+        "You may notice that the statement describes the problem but doesn't clearly say what you'd like done about it.",
+        "In this moment, the agent has everything they need to process a smooth exchange right away.",
+        "The rambling explanation buries the simple, clear request under unnecessary uncertainty."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a phone company representative",
+      "scene": "You call to report that your new phone, bought a week ago, has a cracked screen that appeared without you dropping it. You want a replacement, not a repair.",
+      "options": [
+        "My screen is cracked.",
+        "This phone is defective and it's honestly ridiculous that this happened after just one week, I want this dealt with properly.",
+        "I'd like to request a replacement rather than a repair — the screen cracked on its own within the first week, and it's still under the return policy."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When you want a specific outcome (like a replacement, not a repair), state that outcome directly along with the key supporting fact.",
+      "explanation": "Stating your specific desired outcome and the key fact that supports it gives the representative exactly what they need to process your request correctly. Simply describing the problem risks the representative offering a repair instead of the replacement you actually want. Expressing frustration without stating the specific outcome you want leaves the representative to guess at what would actually resolve things.",
+      "id": "bd_l44_q2",
+      "consequencePreviews": [
+        "Realistically, the representative may assume a repair is fine, since you never actually stated you wanted a replacement.",
+        "As a result, the frustration is understandable, but the actual request — a replacement — never gets clearly stated.",
+        "As a result, you clearly state your specific request and the key fact that supports it, making the case easy to process."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a store manager during a disputed return",
+      "scene": "You're trying to return a blender that stopped working after two uses, but you've lost the receipt. The store manager says returns without a receipt are 'usually not possible.'",
+      "options": [
+        "I understand receipts are usually required — is there another way to verify the purchase, like the card I paid with, or the store's own records?",
+        "Well, I don't have it, so I guess there's nothing you can do.",
+        "That's ridiculous, a broken product should always be returnable, receipt or not."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When a stated policy blocks your request, acknowledge it and propose a specific alternative rather than giving up or arguing the policy itself.",
+      "explanation": "Acknowledging the policy and proposing a specific alternative keeps the manager engaged in solving the problem with you, not against you. Giving up assumes there's no other option, when the card payment or store records might genuinely have worked. Arguing that the policy itself is wrong is unlikely to get you anywhere and can make the manager less inclined to help.",
+      "id": "bd_l44_q3",
+      "consequencePreviews": [
+        "In this moment, you acknowledge the policy while proposing a reasonable alternative, which keeps the conversation solution-focused.",
+        "Realistically, you give up on a solution that might genuinely have been available, like verifying the purchase another way.",
+        "Realistically, the confrontational tone may make the manager less willing to look for a flexible solution."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a restaurant host taking a reservation over the phone",
+      "scene": "You call a restaurant to book a table. The host asks: 'How many people, and what time were you thinking?'",
+      "options": [
+        "Just a table sometime this weekend, we're flexible.",
+        "A table for four, please, around 7:30 on Saturday if that's available.",
+        "We're thinking maybe four people, or possibly five if my cousin comes."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When booking, give a specific number, day, and time — it's much faster than leaving everything open.",
+      "explanation": "Giving specific numbers and a time lets the host check availability and confirm your table in one step. Saying you're 'flexible' sounds easy-going but actually creates more work, since the host still needs specifics. Listing every possible variation makes it hard for the host to pin down an actual booking.",
+      "id": "bd_l45_q1",
+      "consequencePreviews": [
+        "In this moment, the vague answer means the host still has to ask follow-up questions to actually book anything.",
+        "Here, the host has exactly what they need to check availability and confirm your booking.",
+        "In this moment, the many open possibilities make it hard for the host to actually confirm a specific booking."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a hotel booking agent",
+      "scene": "You're booking a hotel room over the phone. The agent asks: 'Would you like a single or double room, and for how many nights?'",
+      "options": [
+        "A double room for three nights, checking in this Friday.",
+        "Well, it depends on whether my partner can get time off work.",
+        "I'm not totally sure yet, I guess, I hadn't fully worked out how it'd play out."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Booking calls go faster when you give clear, specific answers to the direct questions you're asked.",
+      "explanation": "Giving clear, specific answers to both questions lets the agent complete your booking efficiently. Saying you're not sure yet stalls the booking, since these are details only you can decide. Explaining multiple possible scenarios leaves the agent unable to actually reserve anything concrete for you.",
+      "id": "bd_l45_q2",
+      "consequencePreviews": [
+        "As a result, the agent has all the key details to complete your booking in one go.",
+        "Here, the uncertainty across multiple details makes it hard for the agent to actually secure a room for you.",
+        "Here, the agent can't actually process a booking without these basic details."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "an event venue coordinator",
+      "scene": "You're booking a venue for a company event. The coordinator asks: 'What's your expected guest count, and do you need catering included?' Your numbers aren't finalized yet, but you have a realistic range.",
+      "options": [
+        "I'm not sure yet, I'll get back to you.",
+        "It could be anywhere from 40 to 100 people honestly, we haven't really finalized the guest list, and catering, maybe, we'll see.",
+        "We're expecting somewhere between 60 and 75 guests, and yes, we'd like catering included — I can confirm the exact number by next week."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When exact numbers aren't final, a realistic range plus a clear answer on other questions is more useful than total uncertainty or an overly wide guess.",
+      "explanation": "A realistic, narrower range plus a clear yes on catering and a timeline for the final number gives the coordinator enough to actually start planning. Saying you're not sure yet, with no range at all, stalls the booking process unnecessarily. An extremely wide range and a vague answer on catering leave the coordinator with almost nothing concrete to work from.",
+      "id": "bd_l45_q3",
+      "consequencePreviews": [
+        "You may notice that without even a rough range, the coordinator can't start checking availability or catering options for you.",
+        "The extremely wide range and vague answer on catering make it hard for the coordinator to plan anything concrete.",
+        "As a result, you give the coordinator a workable range and a clear timeline for the final number, which is enough to move forward."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a waiter taking your order",
+      "scene": "A waiter asks: 'How would you like your steak cooked?'",
+      "options": [
+        "Medium, please.",
+        "However is normal, I guess.",
+        "I've had steak cooked so many different ways over the years, medium-rare, medium, sometimes well done if I'm being cautious, it really depends on my mood that day."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "For a simple preference question, a short, direct answer is the clearest and most useful response.",
+      "explanation": "A short, direct answer is exactly what the waiter needs to relay to the kitchen accurately. 'However is normal' doesn't actually specify a preference, which the waiter still needs. Talking through your general steak history never actually answers the specific question being asked tonight.",
+      "id": "bd_l46_q1",
+      "consequencePreviews": [
+        "The waiter gets a clear, specific answer they can pass straight to the kitchen.",
+        "You may notice that the vague answer leaves the waiter unsure exactly what to tell the kitchen.",
+        "Realistically, the lengthy answer never actually lands on a clear choice for tonight's order."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a barista customizing your drink",
+      "scene": "A barista asks: 'What kind of milk would you like in that — whole, oat, or almond?'",
+      "options": [
+        "Whichever's easiest for you.",
+        "Oat milk, please.",
+        "I've been trying to cut back on dairy lately."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "A simple choice question deserves a simple, direct answer, even if you have more to say about it.",
+      "explanation": "A direct answer to a simple choice question is the fastest, clearest way to get your drink made correctly. Deferring to what's 'easiest' for the barista doesn't actually answer the question they need answered. A long explanation about your dietary habits buries the actual answer inside unnecessary detail.",
+      "id": "bd_l46_q2",
+      "consequencePreviews": [
+        "Here, the barista still doesn't know which milk to actually use, since you didn't state a preference.",
+        "As a result, the barista gets a clear choice and can make your drink exactly as you want it.",
+        "Realistically, the long explanation eventually gives a hint of a preference but makes the barista work to find it."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a sommelier at a nice restaurant",
+      "scene": "The sommelier asks: 'Would you like a wine pairing recommendation, or do you already have something in mind?' You genuinely don't know much about wine but don't want to seem completely lost.",
+      "options": [
+        "Oh, I know wine pretty well, surprise me with something interesting.",
+        "Just bring whatever's popular, I guess.",
+        "I'd actually love a recommendation — I don't know much about wine, so I'm happy to trust your suggestion for the meal."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Being honest that you'd like a recommendation, rather than pretending to know more than you do, gets you better help.",
+      "explanation": "Being honest about wanting a recommendation lets the sommelier actually do their job well and match something to your meal and taste. Asking for something 'popular' is vague and doesn't help the sommelier pair it to your specific dish. Pretending to have more wine knowledge than you do risks getting a recommendation that doesn't actually suit you.",
+      "id": "bd_l46_q3",
+      "consequencePreviews": [
+        "Realistically, implying more wine knowledge than you actually have could lead to a recommendation that doesn't suit your real preferences.",
+        "The vague answer doesn't give the sommelier anything specific to work with for pairing it to your actual meal.",
+        "As a result, you get expert help exactly where you need it, and the honesty makes the sommelier's job easier too."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a delivery company tracking agent",
+      "scene": "You call about a package that was marked 'delivered' but never arrived. The agent asks: 'Can you confirm the tracking number and delivery address?'",
+      "options": [
+        "I don't have that information on me right now, actually, it wasn't a fully considered answer.",
+        "Sure, the tracking number is TR4492810, and the delivery address is 14 Willow Street.",
+        "This is really frustrating, your delivery service has messed this up before too."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When an agent asks for specific reference details, having them ready and giving them clearly speeds up the whole process.",
+      "explanation": "Providing the exact details requested lets the agent immediately start investigating your specific case. Saying you don't have the information stalls the process, since these details are usually necessary to look into a delivery. Expressing frustration is understandable but doesn't give the agent anything they can actually act on.",
+      "id": "bd_l47_q1",
+      "consequencePreviews": [
+        "Realistically, without these details, the agent can't actually investigate the missing package.",
+        "Realistically, the agent has exactly what they need to investigate the missing package right away.",
+        "Here, the frustration is understandable, but it doesn't provide the specific information the agent actually needs to help."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "an insurance claims agent",
+      "scene": "You're filing a claim after a minor car accident. The agent asks: 'Can you walk me through what happened, step by step?'",
+      "options": [
+        "It was honestly such a stressful day, I was already running late, and then this happens, I couldn't believe it, my heart was racing so fast—",
+        "Someone hit my car.",
+        "Sure — I was stopped at a red light when the car behind me didn't brake in time and hit my rear bumper. No one was hurt, but there's damage to both cars."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When reporting an incident for a claim, give a clear, factual sequence of what happened rather than a vague summary or an emotional account.",
+      "explanation": "A clear, factual sequence gives the agent exactly what's needed to process your claim accurately. 'Someone hit my car' is far too brief for the level of detail an insurance claim actually requires. Focusing on how stressful the moment felt, without the facts, doesn't give the agent the information they need to help you.",
+      "id": "bd_l47_q2",
+      "consequencePreviews": [
+        "The emotional account doesn't give the agent the factual sequence of events they actually need for the claim.",
+        "Here, the claim needs more detail than this to actually be processed properly.",
+        "The agent gets a clear, complete account that's easy to process for your claim."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a bank fraud department agent",
+      "scene": "You call to report a suspicious transaction. The agent asks: 'When did you first notice the charge, and have you made any purchases with this card recently that you don't recognize?'",
+      "options": [
+        "I noticed it this morning when checking my statement — it's a $340 charge from a store I've never used, and I haven't made any purchases I don't recognize besides that one.",
+        "I'm honestly really worried about this, is my whole account compromised, should I be panicking right now?",
+        "There's a weird charge on my account, admittedly, I hadn't fully worked out how it'd play out, but I'm not totally set on it — and I know that's not the most thought-out response, but it's where my head's at right now."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "For a fraud report, precise details — timing, amount, what's unfamiliar — help the agent act quickly and accurately.",
+      "explanation": "Precise, factual details give the agent what they need to investigate and secure your account quickly. Saying only that there's 'a weird charge' is too vague for the agent to act on efficiently. Expressing worry, while understandable, doesn't move the investigation forward the way specific facts do.",
+      "id": "bd_l47_q3",
+      "consequencePreviews": [
+        "In this moment, the agent gets a precise timeline and detail that lets them act quickly to secure your account.",
+        "In this moment, the anxious question doesn't provide the factual details the agent actually needs to start investigating.",
+        "In this moment, the agent needs more specific detail than this to actually investigate and secure your account."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a gym receptionist",
+      "scene": "You want to cancel your gym membership. The receptionist asks: 'Can I ask why you're cancelling? Just for our records.'",
+      "options": [
+        "Sure — I'm relocating for work next month, so I won't be able to use this location anymore.",
+        "Honestly, this gym has really gone downhill, the equipment's outdated, it's always crowded.",
+        "I'd rather not say."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "For a routine, low-stakes question about your reasons, a brief, honest answer usually works better than declining or over-explaining.",
+      "explanation": "A brief, honest answer satisfies a routine question without creating any unnecessary tension. Declining to answer a low-stakes, standard question can feel like an overreaction to something simple. Listing extensive complaints goes well beyond what a quick, routine question actually called for.",
+      "id": "bd_l48_q1",
+      "consequencePreviews": [
+        "Realistically, you give a clear, honest reason that satisfies the request without any awkwardness.",
+        "As a result, the lengthy list of complaints goes further than a simple, routine question actually called for.",
+        "Declining a routine, low-stakes question may create unnecessary friction in an otherwise simple process."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a subscription service's cancellation chat agent",
+      "scene": "You're cancelling a streaming subscription. The chat agent asks: 'Before you go, is there anything we could improve to keep you as a subscriber?'",
+      "options": [
+        "Not really.",
+        "Honestly, the price increase was the main reason — if that changes in future, I'd consider coming back.",
+        "This service has honestly been declining for a while, the app is buggy, customer support takes forever to respond."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When asked for feedback on why you're leaving, one clear, specific reason is usually more useful than no answer or an extensive list.",
+      "explanation": "One clear, specific reason gives the company genuinely useful feedback without turning the moment into a lengthy complaint session. A vague 'not really' technically answers but misses a chance to give feedback that might actually matter to them. An extensive list of every complaint goes further than the specific question asked, even if all the points might be valid.",
+      "id": "bd_l48_q2",
+      "consequencePreviews": [
+        "You may notice that the company misses out on useful feedback that could have actually been relevant to their question.",
+        "Realistically, you give specific, useful feedback that's genuinely relevant to the company's question.",
+        "You may notice that the lengthy list of complaints goes beyond what the specific question about improvement actually asked for."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a phone company retention agent trying to keep you as a customer",
+      "scene": "You call to cancel your phone plan because a competitor is offering a better deal. The retention agent says: 'Before you cancel, I might be able to offer you a discount — can I ask what the other provider is offering?' You're not obligated to share, but doing so might get you a better deal here.",
+      "options": [
+        "I'd rather not get into the details, I just want to cancel, I suppose, I said that fairly quickly, but that could easily change — and to be fair I only heard about this a few minutes ago myself.",
+        "They're offering way better deals than you, it's honestly not close.",
+        "Sure — they're offering the same data plan for $15 less a month. If you can get close to that, I'd genuinely consider staying."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Sharing a specific competing offer, if you're comfortable doing so, gives you the best chance at a genuinely better deal in return.",
+      "explanation": "Sharing the specific number gives the agent a real target to try to match, which is genuinely in your interest if you want a better deal. Declining to share any details is your right, but it removes any chance of the agent making a competitive offer. A vague claim that the other deal is 'way better' doesn't give the agent anything concrete to respond to.",
+      "id": "bd_l48_q3",
+      "consequencePreviews": [
+        "Realistically, you may miss out on a better deal, since the agent has nothing specific to try to match.",
+        "Here, the vague comparison doesn't give the agent a specific number to actually try to match or beat.",
+        "Here, you share exactly enough to give the agent a real chance to make a competitive offer."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coffee shop cashier processing a large order",
+      "scene": "You're ordering five different drinks for your office. The cashier asks: 'Do you want to pay separately or all together?'",
+      "options": [
+        "Just do whatever's easier for you, in fairness, it wasn't a fully considered answer.",
+        "Together I think, or maybe separate, actually let's just see how it goes.",
+        "All together, please — one card for the whole order."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "For a simple payment question with a clear choice, a direct, specific answer keeps the transaction smooth for everyone in line.",
+      "explanation": "A direct, specific answer lets the cashier process a fairly large order smoothly and quickly. Wavering between options mid-sentence risks slowing down the transaction and the line behind you. Deferring to 'whatever's easier' still requires an actual decision, which only you can really make here.",
+      "id": "bd_l49_q1",
+      "consequencePreviews": [
+        "Realistically, the cashier still needs an actual decision, since 'easier' depends on details only you can confirm, like which card to use.",
+        "Realistically, the uncertain answer could slow down the transaction and confuse how the order gets rung up.",
+        "In this moment, the cashier can process the whole transaction quickly and correctly in one go."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a pharmacy technician processing multiple prescriptions",
+      "scene": "You're picking up three prescriptions. The technician asks: 'Would you like to pick these up together, or as each one becomes ready?'",
+      "options": [
+        "Not sure, whatever's standard I guess.",
+        "Together, please — I'd rather make one trip if that works.",
+        "I really don't want to have to come back here multiple times, this pharmacy is always so busy and the parking is terrible."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "A specific answer to a scheduling choice helps the other person plan, more than a vague deferral or an unrelated complaint.",
+      "explanation": "A clear, specific answer gives the technician exactly what they need to plan your pickup properly. Deferring to what's 'standard' doesn't actually state your preference, which is genuinely up to you here. Complaining about the pharmacy in general doesn't answer the specific scheduling question you were asked.",
+      "id": "bd_l49_q2",
+      "consequencePreviews": [
+        "Here, the vague answer doesn't actually state a preference, which the technician still needs from you.",
+        "Realistically, the technician has a clear preference to work with, which helps them plan the pickup properly.",
+        "The complaint about the pharmacy doesn't clearly state your actual preference for how to receive the prescriptions."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a moving company coordinator finalizing logistics",
+      "scene": "A moving company coordinator asks: 'Do you want the team to pack fragile items themselves for an extra fee, or would you prefer to pack those yourself to save money?' You're on a budget but genuinely worried about breaking anything valuable.",
+      "options": [
+        "I'd like to save money where I can, but for anything genuinely fragile — like the glassware and artwork — I'd rather pay for the team to pack those specifically.",
+        "I'm really worried about anything breaking during the move, it would be devastating if something valuable got damaged, if I'm being honest, I hadn't stopped to think it all the way through.",
+        "Whatever's cheaper, I guess."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When a decision has two competing priorities, a split answer that addresses both is often clearer than picking one extreme or only expressing a worry.",
+      "explanation": "A split answer that names your budget priority and your specific fragile-item concern gives the coordinator something concrete and genuinely useful to plan around. Choosing purely on cost ignores a real worry you clearly have about breakage. Expressing your worry without actually deciding leaves the coordinator without an answer to the practical question they asked.",
+      "id": "bd_l49_q3",
+      "consequencePreviews": [
+        "As a result, you give a nuanced but clear answer that balances your budget with your real concern, which the coordinator can actually act on.",
+        "The worry is expressed clearly, but no actual decision is made about which packing option to choose.",
+        "Choosing based only on cost risks damage to valuable items you were actually worried about protecting."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a dry cleaner",
+      "scene": "You drop off a stained jacket. The dry cleaner says: 'I should mention, this stain might not come out completely — do you still want us to try?'",
+      "options": [
+        "Yes, please go ahead and try — I appreciate you being upfront about it.",
+        "It better come out, I paid good money for this jacket, if I'm being honest, I said that fairly quickly.",
+        "I don't know, what do you think I should do?"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When someone's honest about a limitation, make your own decision clearly rather than pushing the choice back to them or ignoring their honesty.",
+      "explanation": "Deciding clearly and acknowledging their honesty respects both the information they gave you and your own right to choose. Asking what they think you should do puts a decision back on them that's genuinely yours to make. Pressuring them about the outcome isn't fair, since they were upfront that success wasn't guaranteed.",
+      "id": "bd_l50_q1",
+      "consequencePreviews": [
+        "Here, you give a clear answer and acknowledge their honesty, which makes for a smooth, respectful exchange.",
+        "As a result, the comment puts pressure on an outcome the dry cleaner already said isn't guaranteed, which isn't fair to them.",
+        "Here, the decision is genuinely yours to make, so turning it back to them may leave things unresolved."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a travel agent explaining a non-refundable ticket",
+      "scene": "A travel agent says: 'Just to be clear, this fare is non-refundable, even for emergencies. Are you still okay to proceed?'",
+      "options": [
+        "Sure, whatever, let's just book it, admittedly, I hadn't weighed all the details.",
+        "Yes, I understand — I'm okay to proceed with the non-refundable fare.",
+        "Non-refundable seems risky, what if something comes up?"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When someone flags an important risk clearly, confirm your decision explicitly, rather than dismissing it casually or leaving it unresolved.",
+      "explanation": "Explicitly confirming that you understand and accept the risk shows the agent you've made an informed decision. Dismissing it with 'whatever' doesn't demonstrate real understanding of a risk that was specifically flagged for a reason. Raising a worry without deciding leaves the booking unresolved, when the agent specifically needed a clear answer to proceed.",
+      "id": "bd_l50_q2",
+      "consequencePreviews": [
+        "As a result, the casual dismissal doesn't clearly show you've actually understood the risk being explained to you.",
+        "You confirm your decision clearly, having genuinely understood the risk involved.",
+        "As a result, raising a worry without actually deciding leaves the booking stuck, when a clear decision was what was needed."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a surgeon's assistant explaining a minor but real risk before a procedure",
+      "scene": "A surgeon's assistant says: 'This is a routine procedure, but as with any procedure, there's a small risk of infection. Do you have any questions before we go ahead?'",
+      "options": [
+        "Infection? That sounds really concerning, are you sure this procedure is actually safe?",
+        "Alright, thank you, in hindsight, I hadn't fully worked out how it'd play out, so I could be wrong — and there's a decent chance I'd see it differently after sleeping on it.",
+        "That makes sense, thank you for explaining. What are the signs of infection I should watch for afterwards?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When someone discloses a small, routine risk and invites questions, a calm, practical follow-up question makes the most of that opening.",
+      "explanation": "A calm response plus a practical follow-up question makes good use of an opening to genuinely prepare yourself. A bare 'okay' accepts the information but misses a natural chance to ask something useful. Reacting with alarm to a disclosed, routine risk may overstate a risk the assistant specifically described as small.",
+      "id": "bd_l50_q3",
+      "consequencePreviews": [
+        "Realistically, the alarmed reaction to a disclosed, routine risk may not reflect how genuinely small that risk actually is.",
+        "In this moment, you accept the information, but the moment offered a real chance to ask something useful about aftercare that goes unused.",
+        "In this moment, you accept the information calmly and ask a genuinely useful follow-up question that helps you prepare."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    }
+  ]
 }

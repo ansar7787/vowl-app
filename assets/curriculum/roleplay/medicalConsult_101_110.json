@@ -1,637 +1,637 @@
 {
-    "gameType": "medicalConsult",
-    "batchIndex": 11,
-    "levels": "101-110",
-    "quests": [
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I've had this recurring pressure in my chest that comes and goes with no clear pattern, and I get winded doing things that used to be easy.\"",
-            "symptoms": [
-                "Chest Pain",
-                "Racing Heartbeat",
-                "Fatigue",
-                "Shortness of Breath"
-            ],
-            "correctAnswer": "Chest Pain, Shortness of Breath",
-            "hint": "One symptom is a feeling in the chest, and the other is about breathing during activity.",
-            "explanation": "Recurring chest pressure is Chest Pain, and getting winded easily is Shortness of Breath.",
-            "id": "mc_l101_q1",
-            "medicalVocab": [
-                "Chest Pain, Shortness of Breath",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The doctor asks the patient to describe their pain, and the patient says: \"It's a burning sensation that starts in my chest and creeps up into my throat, worse when I lie down after eating, and I've also had a hoarse voice most mornings.\"",
-            "symptoms": [
-                "Heartburn",
-                "Acid Reflux",
-                "Hoarse Voice",
-                "Sore Throat"
-            ],
-            "correctAnswer": "Acid Reflux, Hoarse Voice",
-            "hint": "The burning rising up to the throat is more precise than simple chest burning alone.",
-            "explanation": "Burning that rises to the throat is Acid Reflux, a more precise term, plus the separate symptom Hoarse Voice.",
-            "id": "mc_l101_q2",
-            "medicalVocab": [
-                "Acid Reflux, Hoarse Voice",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My knees have been catching and locking up when I try to straighten them fully, and there's a grinding feeling too, and my lower back has been sore from compensating,\" the patient tells the doctor.",
-            "symptoms": [
-                "Knee Pain",
-                "Joint Stiffness",
-                "Back Pain",
-                "Cramp"
-            ],
-            "correctAnswer": "Knee Pain, Back Pain",
-            "hint": "One symptom is centered in the knees, and the other is a separate result in the back.",
-            "explanation": "Catching and locking in the knees is Knee Pain, and the resulting ache is Back Pain.",
-            "id": "mc_l101_q3",
-            "medicalVocab": [
-                "Knee Pain, Back Pain",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I've been getting these waves of heat that spread up from my chest to my face, several times a day, and they leave me drenched.\"",
-            "symptoms": [
-                "Hot Flashes",
-                "Excessive Sweating",
-                "Fever",
-                "Night Sweats"
-            ],
-            "correctAnswer": "Hot Flashes, Excessive Sweating",
-            "hint": "One symptom is the wave of heat itself, and the other is what it causes.",
-            "explanation": "Sudden waves of heat during the day are Hot Flashes, and being drenched afterward is Excessive Sweating.",
-            "id": "mc_l102_q1",
-            "medicalVocab": [
-                "Hot Flashes, Excessive Sweating",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"My concentration has really slipped at work, and I've also had trouble falling asleep even when I'm exhausted.\"",
-            "symptoms": [
-                "Fatigue",
-                "Low Mood",
-                "Brain Fog",
-                "Insomnia"
-            ],
-            "correctAnswer": "Brain Fog, Insomnia",
-            "hint": "One symptom is about focus during the day, and the other is about falling asleep at night.",
-            "explanation": "Slipping concentration is Brain Fog, and trouble falling asleep despite exhaustion is Insomnia.",
-            "id": "mc_l102_q2",
-            "medicalVocab": [
-                "Brain Fog, Insomnia",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"My hands have felt a bit weaker than usual these past few days, and I've had some stiffness in my fingers in the morning,\" the patient tells the doctor.",
-            "symptoms": [
-                "Numbness",
-                "Weakness",
-                "Cramp",
-                "Joint Stiffness"
-            ],
-            "correctAnswer": "Weakness, Joint Stiffness",
-            "hint": "One symptom is about strength, and the other is about morning stiffness in the joints.",
-            "explanation": "Weaker hands point to Weakness, and morning stiffness in the fingers is Joint Stiffness.",
-            "id": "mc_l102_q3",
-            "medicalVocab": [
-                "Weakness, Joint Stiffness",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I've had this nagging cough that's worse at night, and it's been keeping me from getting a full night's sleep.\"",
-            "symptoms": [
-                "Cough",
-                "Wheezing",
-                "Insomnia",
-                "Fatigue"
-            ],
-            "correctAnswer": "Cough, Insomnia",
-            "hint": "One symptom is the cough itself, and the other is its effect on sleep.",
-            "explanation": "A cough worse at night is Cough, and the resulting disrupted sleep is Insomnia.",
-            "id": "mc_l103_q1",
-            "medicalVocab": [
-                "Cough, Insomnia",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The doctor asks about recent changes, and the patient says: \"My skin has been noticeably drier than usual, especially on my shins, and I've felt the cold more than everyone else in my house.\"",
-            "symptoms": [
-                "Cracked Skin",
-                "Dry Skin",
-                "Fatigue",
-                "Chills"
-            ],
-            "correctAnswer": "Dry Skin, Chills",
-            "hint": "One symptom is about skin texture, and the other is about feeling cold more than others.",
-            "explanation": "Drier skin than usual is Dry Skin, and feeling cold more than others is Chills.",
-            "id": "mc_l103_q2",
-            "medicalVocab": [
-                "Dry Skin, Chills",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've had some on-and-off swelling in my ankles by the end of the day, and I've also had some mild back pain from being on my feet all day,\" the patient tells the doctor.",
-            "symptoms": [
-                "Swollen Ankles",
-                "Leg Pain",
-                "Cramp",
-                "Back Pain"
-            ],
-            "correctAnswer": "Swollen Ankles, Back Pain",
-            "hint": "One symptom is in the ankles by evening, and the other is in the back from standing.",
-            "explanation": "Evening swelling is Swollen Ankles, and soreness from standing all day is Back Pain.",
-            "id": "mc_l103_q3",
-            "medicalVocab": [
-                "Swollen Ankles, Back Pain",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I've had this gnawing discomfort in my stomach a few hours after meals, and antacids don't seem to help much anymore, and I've also felt bloated most of the day.\"",
-            "symptoms": [
-                "Heartburn",
-                "Stomach Ache",
-                "Bloating",
-                "Nausea"
-            ],
-            "correctAnswer": "Stomach Ache, Bloating",
-            "hint": "One symptom is discomfort a few hours after eating, and the other is fullness throughout the day.",
-            "explanation": "Gnawing discomfort after meals is a Stomach Ache, and all-day fullness is Bloating.",
-            "id": "mc_l104_q1",
-            "medicalVocab": [
-                "Stomach Ache, Bloating",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"My hearing seems fine day to day, but I've started asking people to repeat themselves in noisy rooms specifically, and I've also had this faint ringing that comes and goes.\"",
-            "symptoms": [
-                "Hearing Loss",
-                "Ringing in the Ears",
-                "Ear Fullness",
-                "Dizziness"
-            ],
-            "correctAnswer": "Hearing Loss, Ringing in the Ears",
-            "hint": "One symptom shows up specifically in noisy settings, and the other is a sound the patient hears.",
-            "explanation": "Needing repeats in noisy rooms points to early Hearing Loss, plus the separate symptom Ringing in the Ears.",
-            "id": "mc_l104_q2",
-            "medicalVocab": [
-                "Hearing Loss, Ringing in the Ears",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"I've had this persistent itch on my lower legs that's worse at night, with no visible rash that I can see, and I've also had some trouble sleeping because of it.\"",
-            "symptoms": [
-                "Rash",
-                "Dry Skin",
-                "Itching",
-                "Insomnia"
-            ],
-            "correctAnswer": "Itching, Insomnia",
-            "hint": "The patient specifically says there's no visible rash - that rules out one tempting option.",
-            "explanation": "An itch with no visible rash is simply Itching, and the resulting sleep loss is Insomnia.",
-            "id": "mc_l104_q3",
-            "medicalVocab": [
-                "Itching, Insomnia",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I've had this deep ache in both hips that's worse first thing in the morning, easing somewhat as the day goes on, and I've also noticed some stiffness in my hands.\"",
-            "symptoms": [
-                "Hip Pain",
-                "Joint Stiffness",
-                "Leg Pain",
-                "Weakness"
-            ],
-            "correctAnswer": "Hip Pain, Joint Stiffness",
-            "hint": "One symptom is centered in the hips, and the other is in the hands.",
-            "explanation": "Morning ache in both hips is Hip Pain, and the separate hand symptom is Joint Stiffness.",
-            "id": "mc_l105_q1",
-            "medicalVocab": [
-                "Hip Pain, Joint Stiffness",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The doctor asks about sleep, and the patient says: \"I fall asleep fine, but I wake up multiple times a night and can't always tell why, and I've been dragging through my afternoons as a result.\"",
-            "symptoms": [
-                "Brain Fog",
-                "Insomnia",
-                "Low Mood",
-                "Fatigue"
-            ],
-            "correctAnswer": "Insomnia, Fatigue",
-            "hint": "One symptom is about the sleep itself, and the other is the daytime result.",
-            "explanation": "Waking up repeatedly at night is Insomnia, and dragging through afternoons is Fatigue.",
-            "id": "mc_l105_q2",
-            "medicalVocab": [
-                "Insomnia, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've had this odd sensation like my heart pauses for a beat before racing to catch up, a few times a day, and I've felt a bit more anxious than usual because of it,\" the patient tells the doctor.",
-            "symptoms": [
-                "Heart Palpitations",
-                "Racing Heartbeat",
-                "Dizziness",
-                "Anxiety"
-            ],
-            "correctAnswer": "Heart Palpitations, Anxiety",
-            "hint": "One symptom is the heart sensation itself, and the other is the emotional reaction.",
-            "explanation": "A pausing, catching-up heartbeat is Heart Palpitations, and the worry it causes is Anxiety.",
-            "id": "mc_l105_q3",
-            "medicalVocab": [
-                "Heart Palpitations, Anxiety",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I've had this crawling sensation in my legs that only happens in the evening, making it hard to sit still through a movie, and I've also had trouble falling asleep because of it.\"",
-            "symptoms": [
-                "Cramp",
-                "Numbness",
-                "Restless Legs",
-                "Insomnia"
-            ],
-            "correctAnswer": "Restless Legs, Insomnia",
-            "hint": "One symptom is an urge to move in the evening, and the other is its effect at bedtime.",
-            "explanation": "An evening urge to move the legs is Restless Legs, and the resulting sleep trouble is Insomnia.",
-            "id": "mc_l106_q1",
-            "medicalVocab": [
-                "Restless Legs, Insomnia",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"My voice has been noticeably different for a couple of weeks now, rougher than my normal cold-related hoarseness, and I've also had a mild, persistent cough.\"",
-            "symptoms": [
-                "Hoarse Voice",
-                "Sore Throat",
-                "Cough",
-                "Loss of Voice"
-            ],
-            "correctAnswer": "Hoarse Voice, Cough",
-            "hint": "One symptom is about how the voice sounds, and the other is a separate, ongoing cough.",
-            "explanation": "A rougher-than-usual voice is a Hoarse Voice, plus a separate Persistent Cough, described simply as a Cough.",
-            "id": "mc_l106_q2",
-            "medicalVocab": [
-                "Hoarse Voice, Cough",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"I've had these brief spells where the room tilts and I have to grab something to steady myself, lasting maybe thirty seconds, and afterward I usually feel a bit nauseous.\"",
-            "symptoms": [
-                "Dizziness",
-                "Vertigo",
-                "Nausea",
-                "Headache"
-            ],
-            "correctAnswer": "Vertigo, Nausea",
-            "hint": "The room actually tilting is more specific than general unsteadiness.",
-            "explanation": "The room tilting is Vertigo, a precise type of Dizziness, followed by Nausea.",
-            "id": "mc_l106_q3",
-            "medicalVocab": [
-                "Vertigo, Nausea",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I've had this constant low hum of anxiety that I can't quite place, along with a racing mind at bedtime that keeps me up.\"",
-            "symptoms": [
-                "Anxiety",
-                "Low Mood",
-                "Fatigue",
-                "Insomnia"
-            ],
-            "correctAnswer": "Anxiety, Insomnia",
-            "hint": "One symptom is an ongoing emotional state, and the other is about a racing mind at night.",
-            "explanation": "A constant, hard-to-place worry is Anxiety, and a racing mind at bedtime causes Insomnia.",
-            "id": "mc_l107_q1",
-            "medicalVocab": [
-                "Anxiety, Insomnia",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The doctor asks about the cough, and the patient says: \"It's dry, comes in fits, and gets worse when I laugh or lie down flat, and my throat feels raw afterward from all the coughing.\"",
-            "symptoms": [
-                "Wheezing",
-                "Hoarse Voice",
-                "Cough",
-                "Sore Throat"
-            ],
-            "correctAnswer": "Cough, Sore Throat",
-            "hint": "One symptom is the cough itself, and the other is the result of coughing so much.",
-            "explanation": "A dry, fit-like cough is Cough, and the raw feeling afterward is Sore Throat.",
-            "id": "mc_l107_q2",
-            "medicalVocab": [
-                "Cough, Sore Throat",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've had this puffiness around my eyes every morning that fades by midday, and I've also felt unusually thirsty,\" the patient tells the doctor.",
-            "symptoms": [
-                "Puffy Eyes",
-                "Watery Eyes",
-                "Excessive Thirst",
-                "Dry Mouth"
-            ],
-            "correctAnswer": "Puffy Eyes, Excessive Thirst",
-            "hint": "One symptom is about the eyes in the morning, and the other is a constant feeling.",
-            "explanation": "Morning puffiness is Puffy Eyes, and constant thirst is Excessive Thirst.",
-            "id": "mc_l107_q3",
-            "medicalVocab": [
-                "Puffy Eyes, Excessive Thirst",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I've had this tender lump under my jaw that's been there about a week, and I've felt run down the whole time.\"",
-            "symptoms": [
-                "Jaw Pain",
-                "Swollen Glands",
-                "Fever",
-                "Fatigue"
-            ],
-            "correctAnswer": "Swollen Glands, Fatigue",
-            "hint": "One symptom is a lump under the jaw, and the other is low energy.",
-            "explanation": "A tender lump under the jaw is Swollen Glands, and feeling run down is Fatigue.",
-            "id": "mc_l108_q1",
-            "medicalVocab": [
-                "Swollen Glands, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"My fingers turn white then blue in the cold, then bright red as they warm back up, which is new for me, and I've also noticed some mild stiffness in those same fingers.\"",
-            "symptoms": [
-                "Numbness",
-                "Cold Hands and Feet",
-                "Joint Stiffness",
-                "Swelling"
-            ],
-            "correctAnswer": "Cold Hands and Feet, Joint Stiffness",
-            "hint": "One symptom is about color and temperature, and the other is about moving the fingers.",
-            "explanation": "Color changes in the cold fit Cold Hands and Feet, plus separate Joint Stiffness in the fingers.",
-            "id": "mc_l108_q2",
-            "medicalVocab": [
-                "Cold Hands and Feet, Joint Stiffness",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"I've had this dull throb in one temple that shows up most afternoons, and everyday sounds have started to feel too loud.\"",
-            "symptoms": [
-                "Migraine",
-                "Sensitivity to Sound",
-                "Tension Headache",
-                "Ringing in the Ears"
-            ],
-            "correctAnswer": "Migraine, Sensitivity to Sound",
-            "hint": "A one-sided throb combined with a reaction to sound points to a more specific type of headache.",
-            "explanation": "A one-sided throb with sound sensitivity fits Migraine more precisely than a general Tension Headache.",
-            "id": "mc_l108_q3",
-            "medicalVocab": [
-                "Migraine, Sensitivity to Sound",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I've had this persistent soreness at the back of my throat that's not quite pain, more like irritation, and I've been clearing my throat all day.\"",
-            "symptoms": [
-                "Hoarse Voice",
-                "Sore Throat",
-                "Cough",
-                "Dry Mouth"
-            ],
-            "correctAnswer": "Sore Throat, Cough",
-            "hint": "One symptom is the irritation itself, and the other is the repeated action it causes.",
-            "explanation": "Ongoing throat irritation is a Sore Throat, and constant throat-clearing is a form of Cough.",
-            "id": "mc_l109_q1",
-            "medicalVocab": [
-                "Sore Throat, Cough",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The doctor asks how long the swelling has lasted, and the patient says: \"About five days now, and it's spread from my ankle up toward my shin a little, and I've had some mild discomfort when I walk on it.\"",
-            "symptoms": [
-                "Swelling",
-                "Bruise",
-                "Leg Pain",
-                "Ankle Pain"
-            ],
-            "correctAnswer": "Swelling, Ankle Pain",
-            "hint": "One symptom is about size, and the other is about pain while walking.",
-            "explanation": "Five days of spreading puffiness is Swelling, and discomfort while walking is Ankle Pain.",
-            "id": "mc_l109_q2",
-            "medicalVocab": [
-                "Swelling, Ankle Pain",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "\"I've had these episodes of feeling suddenly overheated and sweaty, then chilled a few minutes later, several times a day,\" the patient tells the doctor.",
-            "symptoms": [
-                "Hot Flashes",
-                "Chills",
-                "Fever",
-                "Night Sweats"
-            ],
-            "correctAnswer": "Hot Flashes, Chills",
-            "hint": "One symptom is sudden heat, and the other is the chill that follows.",
-            "explanation": "Sudden overheating fits Hot Flashes, and the chill afterward fits Chills.",
-            "id": "mc_l109_q3",
-            "medicalVocab": [
-                "Hot Flashes, Chills",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"I've had this persistent dryness in my eyes that artificial tears barely touch anymore, and my vision blurs by late afternoon.\"",
-            "symptoms": [
-                "Itchy Eyes",
-                "Dry Eyes",
-                "Eye Strain",
-                "Blurred Vision"
-            ],
-            "correctAnswer": "Dry Eyes, Blurred Vision",
-            "hint": "One symptom is about moisture, and the other is about clarity later in the day.",
-            "explanation": "Dryness that tears don't fix is Dry Eyes, and unclear sight later on is Blurred Vision.",
-            "id": "mc_l110_q1",
-            "medicalVocab": [
-                "Dry Eyes, Blurred Vision",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"I've noticed distinct patches of hair thinning on my scalp, not just general shedding, over the past couple of months, and I've also felt more fatigued than usual during this time.\"",
-            "symptoms": [
-                "Hair Loss",
-                "Scalp Itching",
-                "Fatigue",
-                "Weakness"
-            ],
-            "correctAnswer": "Hair Loss, Fatigue",
-            "hint": "One symptom is about hair, and the other is about energy over the same period.",
-            "explanation": "Distinct thinning patches are Hair Loss, occurring alongside separate Fatigue.",
-            "id": "mc_l110_q2",
-            "medicalVocab": [
-                "Hair Loss, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the two symptoms that best match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"I've had this ache deep in my ear that gets worse when I yawn or chew, along with some fullness on that same side.\"",
-            "symptoms": [
-                "Jaw Pain",
-                "Hearing Loss",
-                "Earache",
-                "Ear Fullness"
-            ],
-            "correctAnswer": "Earache, Ear Fullness",
-            "hint": "One symptom is pain triggered by jaw movement, and the other is a blocked feeling.",
-            "explanation": "Ear pain that worsens with chewing is an Earache, and the blocked feeling is Ear Fullness.",
-            "id": "mc_l110_q3",
-            "medicalVocab": [
-                "Earache, Ear Fullness",
-                "Symptom",
-                "Patient"
-            ]
-        }
-    ]
+  "gameType": "medicalConsult",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "instruction": "Select the category that matches what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I keep waking up drenched in sweat. Last time I took something similar, I had an unexpected reaction.\"",
+      "symptoms": [
+        "Missed Medication",
+        "Previous Evaluation",
+        "Current Medication",
+        "Previous Reaction"
+      ],
+      "correctAnswer": "Previous Reaction",
+      "hint": "Is this about a medicine they take regularly, one that is new, one they skipped, or an allergy or test?",
+      "explanation": "This statement is an example of Previous Reaction, since the patient is specifically describing that situation rather than a different medication-related detail.",
+      "id": "mc_l101_q1",
+      "medicalVocab": [
+        "Night Sweats",
+        "Previous Reaction",
+        "Medication"
+      ]
+    },
+    {
+      "instruction": "Select the most useful follow-up question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I keep waking up drenched in sweat. I wonder if this started around the time I began a new prescription.\"",
+      "symptoms": [
+        "Have you mentioned this to the doctor or pharmacist who prescribed it?",
+        "Have you checked with a pharmacist whether these are meant to be taken together?",
+        "Could this medication be related to what you're experiencing now?",
+        "How long have you been taking that supplement, and did anything change around when you started it?"
+      ],
+      "correctAnswer": "Have you mentioned this to the doctor or pharmacist who prescribed it?",
+      "hint": "Choose the question that follows directly from the medication detail the patient just gave.",
+      "explanation": "Since this is Possible Side Effect, the most useful next step is a question that follows up on that specific detail rather than a generic medication question.",
+      "id": "mc_l101_q2",
+      "medicalVocab": [
+        "Night Sweats",
+        "Possible Side Effect",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Two medication details are mentioned. Select the one most relevant to note first.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I wake up two or three times a night having to change my shirt. I only started a new prescription about two weeks ago. On top of that, I've been taking regular medication for another condition for a few years now.\"",
+      "symptoms": [
+        "Herbal or Supplement Use",
+        "Current Medication",
+        "Recently Started Medication",
+        "Combination of Medications"
+      ],
+      "correctAnswer": "Recently Started Medication",
+      "hint": "Two details are given; decide which one is most closely tied to the current symptom.",
+      "explanation": "Both Recently Started Medication and Current Medication are mentioned, but Recently Started Medication is the detail most directly relevant to note first given the timing of the current symptom.",
+      "id": "mc_l101_q3",
+      "medicalVocab": [
+        "Night Sweats",
+        "Recently Started Medication",
+        "Medication"
+      ]
+    },
+    {
+      "instruction": "Identify what the patient is describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My head has been pounding really badly. I only started a new prescription about two weeks ago.\"",
+      "symptoms": [
+        "Current Medication",
+        "Recently Started Medication",
+        "Possible Side Effect",
+        "Herbal or Supplement Use"
+      ],
+      "correctAnswer": "Recently Started Medication",
+      "hint": "Work out exactly which medication-related situation the patient is describing.",
+      "explanation": "This statement is an example of Recently Started Medication, since the patient is specifically describing that situation rather than a different medication-related detail.",
+      "id": "mc_l102_q1",
+      "medicalVocab": [
+        "Headache",
+        "Recently Started Medication",
+        "Medication"
+      ]
+    },
+    {
+      "instruction": "Choose the best question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My head has been pounding really badly. I have a known allergy, so I always mention it before starting anything new.\"",
+      "symptoms": [
+        "Can you describe exactly what happened during that earlier reaction?",
+        "What kind of reaction did you have when you were first diagnosed with that allergy?",
+        "How long have you been taking that supplement, and did anything change around when you started it?",
+        "Did this begin around the same time you started the new medication?"
+      ],
+      "correctAnswer": "What kind of reaction did you have when you were first diagnosed with that allergy?",
+      "hint": "A strong follow-up picks up the exact thread the patient introduced.",
+      "explanation": "Since this is Known Allergy, the most useful next step is a question that follows up on that specific detail rather than a generic medication question.",
+      "id": "mc_l102_q2",
+      "medicalVocab": [
+        "Headache",
+        "Known Allergy",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Two medication details are mentioned. Select the one most relevant to note first.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"It feels like someone's squeezing the sides of my head. Last time I took something similar, I had an unexpected reaction. On top of that, I've been taking regular medication for another condition for a few years now.\"",
+      "symptoms": [
+        "Previous Reaction",
+        "Combination of Medications",
+        "Previous Evaluation",
+        "Current Medication"
+      ],
+      "correctAnswer": "Previous Reaction",
+      "hint": "Think about which medication-related detail you would note first, and why.",
+      "explanation": "Both Previous Reaction and Current Medication are mentioned, but Previous Reaction is the detail most directly relevant to note first given the timing of the current symptom.",
+      "id": "mc_l102_q3",
+      "medicalVocab": [
+        "Headache",
+        "Previous Reaction",
+        "Medication"
+      ]
+    },
+    {
+      "instruction": "Select the category that matches what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My throat has been really sore. Last time I took something similar, I had an unexpected reaction.\"",
+      "symptoms": [
+        "Previous Evaluation",
+        "Recently Started Medication",
+        "Missed Medication",
+        "Previous Reaction"
+      ],
+      "correctAnswer": "Previous Reaction",
+      "hint": "Sort the statement: existing, new, missed, reaction, allergy or previous testing?",
+      "explanation": "This statement is an example of Previous Reaction, since the patient is specifically describing that situation rather than a different medication-related detail.",
+      "id": "mc_l103_q1",
+      "medicalVocab": [
+        "Sore Throat",
+        "Previous Reaction",
+        "Medication"
+      ]
+    },
+    {
+      "instruction": "Select the most useful follow-up question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My throat has been really sore. I've been taking regular medication for another condition for a few years now.\"",
+      "symptoms": [
+        "Could this medication be related to what you're experiencing now?",
+        "How have you felt since that dose was changed?",
+        "What kind of reaction did you have when you were first diagnosed with that allergy?",
+        "How long have you been taking that supplement, and did anything change around when you started it?"
+      ],
+      "correctAnswer": "Could this medication be related to what you're experiencing now?",
+      "hint": "Think about what you would need to know next about this specific detail.",
+      "explanation": "Since this is Current Medication, the most useful next step is a question that follows up on that specific detail rather than a generic medication question.",
+      "id": "mc_l103_q2",
+      "medicalVocab": [
+        "Sore Throat",
+        "Current Medication",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Two medication details are mentioned. Select the one most relevant to note first.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"It stings whenever I drink anything cold. I've also been taking an herbal supplement alongside my usual routine. On top of that, I'm currently taking a few different medications together.\"",
+      "symptoms": [
+        "Combination of Medications",
+        "Previous Evaluation",
+        "Herbal or Supplement Use",
+        "Recently Started Medication"
+      ],
+      "correctAnswer": "Herbal or Supplement Use",
+      "hint": "Both matter, but one relates more directly to why the patient is here today.",
+      "explanation": "Both Herbal or Supplement Use and Combination of Medications are mentioned, but Herbal or Supplement Use is the detail most directly relevant to note first given the timing of the current symptom.",
+      "id": "mc_l103_q3",
+      "medicalVocab": [
+        "Sore Throat",
+        "Herbal or Supplement Use",
+        "Medication"
+      ]
+    },
+    {
+      "instruction": "Identify what the patient is describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I can't stop coughing. I actually forgot to take my usual medication for a couple of days.\"",
+      "symptoms": [
+        "Missed Medication",
+        "Herbal or Supplement Use",
+        "Recently Started Medication",
+        "Previous Reaction"
+      ],
+      "correctAnswer": "Missed Medication",
+      "hint": "Is this about a medicine they take regularly, one that is new, one they skipped, or an allergy or test?",
+      "explanation": "This statement is an example of Missed Medication, since the patient is specifically describing that situation rather than a different medication-related detail.",
+      "id": "mc_l104_q1",
+      "medicalVocab": [
+        "Cough",
+        "Missed Medication",
+        "Medication"
+      ]
+    },
+    {
+      "instruction": "Choose the best question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I can't stop coughing. I only started a new prescription about two weeks ago.\"",
+      "symptoms": [
+        "Have you checked with a pharmacist whether these are meant to be taken together?",
+        "Have you noticed a difference on the days you miss a dose?",
+        "How long have you been taking that supplement, and did anything change around when you started it?",
+        "Did this begin around the same time you started the new medication?"
+      ],
+      "correctAnswer": "Did this begin around the same time you started the new medication?",
+      "hint": "Choose the question that follows directly from the medication detail the patient just gave.",
+      "explanation": "Since this is Recently Started Medication, the most useful next step is a question that follows up on that specific detail rather than a generic medication question.",
+      "id": "mc_l104_q2",
+      "medicalVocab": [
+        "Cough",
+        "Recently Started Medication",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Two medication details are mentioned. Select the one most relevant to note first.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"There's this dry, tickly feeling in my throat that sets off a coughing fit. I've been taking regular medication for another condition for a few years now. On top of that, last time I took something similar, I had an unexpected reaction.\"",
+      "symptoms": [
+        "Previous Reaction",
+        "Recently Started Medication",
+        "Current Medication",
+        "Dose Change"
+      ],
+      "correctAnswer": "Current Medication",
+      "hint": "Two details are given; decide which one is most closely tied to the current symptom.",
+      "explanation": "Both Current Medication and Previous Reaction are mentioned, but Current Medication is the detail most directly relevant to note first given the timing of the current symptom.",
+      "id": "mc_l104_q3",
+      "medicalVocab": [
+        "Cough",
+        "Current Medication",
+        "Medication"
+      ]
+    },
+    {
+      "instruction": "Select the category that matches what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I think I have a temperature. I only started a new prescription about two weeks ago.\"",
+      "symptoms": [
+        "Current Medication",
+        "Previous Reaction",
+        "Known Allergy",
+        "Recently Started Medication"
+      ],
+      "correctAnswer": "Recently Started Medication",
+      "hint": "Work out exactly which medication-related situation the patient is describing.",
+      "explanation": "This statement is an example of Recently Started Medication, since the patient is specifically describing that situation rather than a different medication-related detail.",
+      "id": "mc_l105_q1",
+      "medicalVocab": [
+        "Fever",
+        "Recently Started Medication",
+        "Medication"
+      ]
+    },
+    {
+      "instruction": "Select the most useful follow-up question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I think I have a temperature. My usual dose was recently adjusted by my doctor.\"",
+      "symptoms": [
+        "Have you noticed a difference on the days you miss a dose?",
+        "How have you felt since that dose was changed?",
+        "Have you mentioned this to the doctor or pharmacist who prescribed it?",
+        "Can you describe exactly what happened during that earlier reaction?"
+      ],
+      "correctAnswer": "How have you felt since that dose was changed?",
+      "hint": "A strong follow-up picks up the exact thread the patient introduced.",
+      "explanation": "Since this is Dose Change, the most useful next step is a question that follows up on that specific detail rather than a generic medication question.",
+      "id": "mc_l105_q2",
+      "medicalVocab": [
+        "Fever",
+        "Dose Change",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Two medication details are mentioned. Select the one most relevant to note first.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My skin feels warm to the touch and I've been sweating through my clothes. I'm currently taking a few different medications together. On top of that, I've been taking regular medication for another condition for a few years now.\"",
+      "symptoms": [
+        "Dose Change",
+        "Combination of Medications",
+        "Current Medication",
+        "Missed Medication"
+      ],
+      "correctAnswer": "Combination of Medications",
+      "hint": "Think about which medication-related detail you would note first, and why.",
+      "explanation": "Both Combination of Medications and Current Medication are mentioned, but Combination of Medications is the detail most directly relevant to note first given the timing of the current symptom.",
+      "id": "mc_l105_q3",
+      "medicalVocab": [
+        "Fever",
+        "Combination of Medications",
+        "Medication"
+      ]
+    },
+    {
+      "instruction": "Identify what the patient is describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My belly has been cramping all afternoon. Last time I took something similar, I had an unexpected reaction.\"",
+      "symptoms": [
+        "Previous Reaction",
+        "Herbal or Supplement Use",
+        "Combination of Medications",
+        "Possible Side Effect"
+      ],
+      "correctAnswer": "Previous Reaction",
+      "hint": "Sort the statement: existing, new, missed, reaction, allergy or previous testing?",
+      "explanation": "This statement is an example of Previous Reaction, since the patient is specifically describing that situation rather than a different medication-related detail.",
+      "id": "mc_l106_q1",
+      "medicalVocab": [
+        "Stomach Ache",
+        "Previous Reaction",
+        "Medication"
+      ]
+    },
+    {
+      "instruction": "Choose the best question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My belly has been cramping all afternoon. I only started a new prescription about two weeks ago.\"",
+      "symptoms": [
+        "What kind of reaction did you have when you were first diagnosed with that allergy?",
+        "Did this begin around the same time you started the new medication?",
+        "Have you noticed a difference on the days you miss a dose?",
+        "Can you describe exactly what happened during that earlier reaction?"
+      ],
+      "correctAnswer": "Did this begin around the same time you started the new medication?",
+      "hint": "Think about what you would need to know next about this specific detail.",
+      "explanation": "Since this is Recently Started Medication, the most useful next step is a question that follows up on that specific detail rather than a generic medication question.",
+      "id": "mc_l106_q2",
+      "medicalVocab": [
+        "Stomach Ache",
+        "Recently Started Medication",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Two medication details are mentioned. Select the one most relevant to note first.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"It's an ache that sits just below my ribs, off to one side. I've also been taking an herbal supplement alongside my usual routine. On top of that, my usual dose was recently adjusted by my doctor.\"",
+      "symptoms": [
+        "Combination of Medications",
+        "Dose Change",
+        "Herbal or Supplement Use",
+        "Recently Started Medication"
+      ],
+      "correctAnswer": "Herbal or Supplement Use",
+      "hint": "Both matter, but one relates more directly to why the patient is here today.",
+      "explanation": "Both Herbal or Supplement Use and Dose Change are mentioned, but Herbal or Supplement Use is the detail most directly relevant to note first given the timing of the current symptom.",
+      "id": "mc_l106_q3",
+      "medicalVocab": [
+        "Stomach Ache",
+        "Herbal or Supplement Use",
+        "Medication"
+      ]
+    },
+    {
+      "instruction": "Select the category that matches what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel like I'm going to be sick. I wonder if this started around the time I began a new prescription.\"",
+      "symptoms": [
+        "Previous Evaluation",
+        "Possible Side Effect",
+        "Combination of Medications",
+        "Recently Started Medication"
+      ],
+      "correctAnswer": "Possible Side Effect",
+      "hint": "Is this about a medicine they take regularly, one that is new, one they skipped, or an allergy or test?",
+      "explanation": "This statement is an example of Possible Side Effect, since the patient is specifically describing that situation rather than a different medication-related detail.",
+      "id": "mc_l107_q1",
+      "medicalVocab": [
+        "Nausea",
+        "Possible Side Effect",
+        "Medication"
+      ]
+    },
+    {
+      "instruction": "Select the most useful follow-up question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel like I'm going to be sick. I've been taking regular medication for another condition for a few years now.\"",
+      "symptoms": [
+        "Can you describe exactly what happened during that earlier reaction?",
+        "What kind of reaction did you have when you were first diagnosed with that allergy?",
+        "Could this medication be related to what you're experiencing now?",
+        "Have you checked with a pharmacist whether these are meant to be taken together?"
+      ],
+      "correctAnswer": "Could this medication be related to what you're experiencing now?",
+      "hint": "Choose the question that follows directly from the medication detail the patient just gave.",
+      "explanation": "Since this is Current Medication, the most useful next step is a question that follows up on that specific detail rather than a generic medication question.",
+      "id": "mc_l107_q2",
+      "medicalVocab": [
+        "Nausea",
+        "Current Medication",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Two medication details are mentioned. Select the one most relevant to note first.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"There's this queasy wave that hits me whenever I stand up too fast. I've also been taking an herbal supplement alongside my usual routine. On top of that, I actually had some tests done for this a few months ago.\"",
+      "symptoms": [
+        "Combination of Medications",
+        "Possible Side Effect",
+        "Herbal or Supplement Use",
+        "Previous Evaluation"
+      ],
+      "correctAnswer": "Herbal or Supplement Use",
+      "hint": "Two details are given; decide which one is most closely tied to the current symptom.",
+      "explanation": "Both Herbal or Supplement Use and Previous Evaluation are mentioned, but Herbal or Supplement Use is the detail most directly relevant to note first given the timing of the current symptom.",
+      "id": "mc_l107_q3",
+      "medicalVocab": [
+        "Nausea",
+        "Herbal or Supplement Use",
+        "Medication"
+      ]
+    },
+    {
+      "instruction": "Identify what the patient is describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My lower back has been really sore lately. I only started a new prescription about two weeks ago.\"",
+      "symptoms": [
+        "Recently Started Medication",
+        "Dose Change",
+        "Combination of Medications",
+        "Previous Evaluation"
+      ],
+      "correctAnswer": "Recently Started Medication",
+      "hint": "Work out exactly which medication-related situation the patient is describing.",
+      "explanation": "This statement is an example of Recently Started Medication, since the patient is specifically describing that situation rather than a different medication-related detail.",
+      "id": "mc_l108_q1",
+      "medicalVocab": [
+        "Back Pain",
+        "Recently Started Medication",
+        "Medication"
+      ]
+    },
+    {
+      "instruction": "Choose the best question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My lower back has been really sore lately. I wonder if this started around the time I began a new prescription.\"",
+      "symptoms": [
+        "Do you know what those earlier test results showed?",
+        "Have you noticed a difference on the days you miss a dose?",
+        "How long have you been taking that supplement, and did anything change around when you started it?",
+        "Have you mentioned this to the doctor or pharmacist who prescribed it?"
+      ],
+      "correctAnswer": "Have you mentioned this to the doctor or pharmacist who prescribed it?",
+      "hint": "A strong follow-up picks up the exact thread the patient introduced.",
+      "explanation": "Since this is Possible Side Effect, the most useful next step is a question that follows up on that specific detail rather than a generic medication question.",
+      "id": "mc_l108_q2",
+      "medicalVocab": [
+        "Back Pain",
+        "Possible Side Effect",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Two medication details are mentioned. Select the one most relevant to note first.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"It's an ache across my lower back. I actually forgot to take my usual medication for a couple of days. On top of that, my usual dose was recently adjusted by my doctor.\"",
+      "symptoms": [
+        "Missed Medication",
+        "Current Medication",
+        "Dose Change",
+        "Previous Evaluation"
+      ],
+      "correctAnswer": "Missed Medication",
+      "hint": "Think about which medication-related detail you would note first, and why.",
+      "explanation": "Both Missed Medication and Dose Change are mentioned, but Missed Medication is the detail most directly relevant to note first given the timing of the current symptom.",
+      "id": "mc_l108_q3",
+      "medicalVocab": [
+        "Back Pain",
+        "Missed Medication",
+        "Medication"
+      ]
+    },
+    {
+      "instruction": "Select the category that matches what the patient says.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My shoulder really hurts. I actually had some tests done for this a few months ago.\"",
+      "symptoms": [
+        "Current Medication",
+        "Missed Medication",
+        "Recently Started Medication",
+        "Previous Evaluation"
+      ],
+      "correctAnswer": "Previous Evaluation",
+      "hint": "Sort the statement: existing, new, missed, reaction, allergy or previous testing?",
+      "explanation": "This statement is an example of Previous Evaluation, since the patient is specifically describing that situation rather than a different medication-related detail.",
+      "id": "mc_l109_q1",
+      "medicalVocab": [
+        "Joint Pain",
+        "Previous Evaluation",
+        "Medication"
+      ]
+    },
+    {
+      "instruction": "Select the most useful follow-up question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My shoulder really hurts. I've been taking regular medication for another condition for a few years now.\"",
+      "symptoms": [
+        "Could this medication be related to what you're experiencing now?",
+        "What kind of reaction did you have when you were first diagnosed with that allergy?",
+        "How long have you been taking that supplement, and did anything change around when you started it?",
+        "Did this begin around the same time you started the new medication?"
+      ],
+      "correctAnswer": "Could this medication be related to what you're experiencing now?",
+      "hint": "Think about what you would need to know next about this specific detail.",
+      "explanation": "Since this is Current Medication, the most useful next step is a question that follows up on that specific detail rather than a generic medication question.",
+      "id": "mc_l109_q2",
+      "medicalVocab": [
+        "Joint Pain",
+        "Current Medication",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Two medication details are mentioned. Select the one most relevant to note first.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"It's not the muscle, it's more that the joint itself feels tender. Last time I took something similar, I had an unexpected reaction. On top of that, I'm currently taking a few different medications together.\"",
+      "symptoms": [
+        "Dose Change",
+        "Previous Reaction",
+        "Combination of Medications",
+        "Known Allergy"
+      ],
+      "correctAnswer": "Previous Reaction",
+      "hint": "Both matter, but one relates more directly to why the patient is here today.",
+      "explanation": "Both Previous Reaction and Combination of Medications are mentioned, but Previous Reaction is the detail most directly relevant to note first given the timing of the current symptom.",
+      "id": "mc_l109_q3",
+      "medicalVocab": [
+        "Joint Pain",
+        "Previous Reaction",
+        "Medication"
+      ]
+    },
+    {
+      "instruction": "Identify what the patient is describing.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My muscles feel so sore. I have a known allergy, so I always mention it before starting anything new.\"",
+      "symptoms": [
+        "Previous Evaluation",
+        "Previous Reaction",
+        "Recently Started Medication",
+        "Known Allergy"
+      ],
+      "correctAnswer": "Known Allergy",
+      "hint": "Is this about a medicine they take regularly, one that is new, one they skipped, or an allergy or test?",
+      "explanation": "This statement is an example of Known Allergy, since the patient is specifically describing that situation rather than a different medication-related detail.",
+      "id": "mc_l110_q1",
+      "medicalVocab": [
+        "Muscle Soreness",
+        "Known Allergy",
+        "Medication"
+      ]
+    },
+    {
+      "instruction": "Choose the best question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My muscles feel so sore. I've been taking regular medication for another condition for a few years now.\"",
+      "symptoms": [
+        "How long have you been taking that supplement, and did anything change around when you started it?",
+        "Have you noticed a difference on the days you miss a dose?",
+        "Have you checked with a pharmacist whether these are meant to be taken together?",
+        "Could this medication be related to what you're experiencing now?"
+      ],
+      "correctAnswer": "Could this medication be related to what you're experiencing now?",
+      "hint": "Choose the question that follows directly from the medication detail the patient just gave.",
+      "explanation": "Since this is Current Medication, the most useful next step is a question that follows up on that specific detail rather than a generic medication question.",
+      "id": "mc_l110_q2",
+      "medicalVocab": [
+        "Muscle Soreness",
+        "Current Medication",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Two medication details are mentioned. Select the one most relevant to note first.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"It's that deep, achy soreness you get a day or two after exercising harder than usual. Last time I took something similar, I had an unexpected reaction. On top of that, I actually forgot to take my usual medication for a couple of days.\"",
+      "symptoms": [
+        "Possible Side Effect",
+        "Current Medication",
+        "Previous Reaction",
+        "Missed Medication"
+      ],
+      "correctAnswer": "Previous Reaction",
+      "hint": "Two details are given; decide which one is most closely tied to the current symptom.",
+      "explanation": "Both Previous Reaction and Missed Medication are mentioned, but Previous Reaction is the detail most directly relevant to note first given the timing of the current symptom.",
+      "id": "mc_l110_q3",
+      "medicalVocab": [
+        "Muscle Soreness",
+        "Previous Reaction",
+        "Medication"
+      ]
+    }
+  ]
 }

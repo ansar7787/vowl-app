@@ -5,513 +5,513 @@
     "quests": [
         {
             "id": "sva_l11_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The train ___ the city centre every fifteen minutes.",
-            "hint": "One train is singular - the verb needs -s or -es.",
-            "explanation": "'The train' is singular, so the verb must be 'passes'. Verbs ending in -ss, -sh, -ch, -x, or -o add -es, not just -s.",
+            "question": "This charger ___ my phone fully in an hour.",
+            "hint": "'This' points to one singular item - check what that means for the verb.",
+            "explanation": "'This charger' is singular (one item), so the verb takes the -s ending: 'charges'. The demonstrative 'this' always signals a singular noun.",
             "options": [
-                "passes",
-                "pass"
+                "charges",
+                "charge"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "passes",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "charges",
+            "grammarRule": "Demonstrative 'this' with a singular subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l11_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Express trains ___ the city centre without stopping.",
-            "hint": "'Express trains' is plural - use the base form.",
-            "explanation": "'Express trains' is plural, so the verb is 'pass'. The base form is used for all plural subjects in the simple present.",
+            "question": "These chargers ___ multiple devices at once.",
+            "hint": "'These' always points to more than one thing.",
+            "explanation": "'These chargers' is plural, since 'these' signals more than one item. Plural subjects take the base verb form: 'charge'.",
             "options": [
-                "passes",
-                "pass"
+                "charges",
+                "charge"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "pass",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswer": "charge",
+            "grammarRule": "Demonstrative 'these' with a plural subject",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l11_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "My neighbour ___ her garden every weekend.",
-            "hint": "One neighbour is singular - the verb needs -s.",
-            "explanation": "'My neighbour' is singular (one person), so the verb takes -s: 'waters'. This is the standard rule for all singular third-person subjects.",
+            "question": "That printer in the corner ___ paper constantly.",
+            "hint": "Look past the extra description ('in the corner') to find the real subject.",
+            "explanation": "The subject is 'that printer', a singular noun; 'in the corner' just adds detail. Singular subjects need -s: 'jams'.",
             "options": [
-                "waters",
-                "water"
+                "jams",
+                "jam"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "waters",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "jams",
+            "grammarRule": "Demonstrative 'that' with a singular subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l12_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The museum ___ free admission on Sundays.",
-            "hint": "One museum is singular - add -s or -es to the verb.",
-            "explanation": "'The museum' is singular, so the verb is 'offers'. The -s ending signals agreement with a third-person singular subject.",
+            "question": "The doctor's office ___ new patients on Mondays.",
+            "hint": "The apostrophe-s belongs to 'doctor', but the real subject of the sentence is what follows it.",
+            "explanation": "The grammatical subject is 'office', not 'doctor'; the possessive 'doctor's' just modifies it. Since 'office' is singular, the verb takes -s: 'accepts'.",
             "options": [
-                "offer",
-                "offers"
+                "accept",
+                "accepts"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "offers",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "accepts",
+            "grammarRule": "Possessive noun phrase - agreement with the head noun, not the possessor",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l12_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Several museums in this city ___ free admission on Sundays.",
-            "hint": "Multiple museums is a plural subject - use the base form.",
-            "explanation": "'Several museums' is plural, so the verb stays as 'offer'. 'Several' signals a plural noun, and plural nouns take the base verb form.",
+            "question": "My parents' house ___ near the coast.",
+            "hint": "Even though 'parents' is plural, check what noun the sentence is actually about.",
+            "explanation": "'Parents'' is possessive and plural, but the head noun is 'house', which is singular. The verb agrees with 'house': 'sits'.",
             "options": [
-                "offer",
-                "offers"
+                "sit",
+                "sits"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "offer",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "sits",
+            "grammarRule": "Possessive noun phrase - agreement with the head noun, not the possessor",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l12_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "It ___ about twenty minutes to walk to the station.",
-            "hint": "'It' is always singular - add -s to the verb.",
-            "explanation": "The pronoun 'it' is always third-person singular, so the verb takes -s: 'it takes'. This applies even in expressions of time and distance.",
+            "question": "The company's policies ___ every year.",
+            "hint": "'Company's' is singular, but look at the noun it's describing before choosing the verb.",
+            "explanation": "The head noun here is 'policies', a plural noun, even though 'company's' looks singular. Plural head nouns take the base verb form: 'change'.",
             "options": [
-                "take",
-                "takes"
+                "change",
+                "changes"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "takes",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "change",
+            "grammarRule": "Possessive noun phrase - agreement with the head noun, not the possessor",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l13_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE QUESTION",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The company ___ its staff a bonus every December.",
-            "hint": "One company is singular - the verb needs -s.",
-            "explanation": "'The company' is singular, so the verb must be 'gives'. In subject-verb agreement, singular subjects take a verb with -s in the simple present.",
+            "question": "___ your brother speak French fluently?",
+            "hint": "Check whether the subject after the blank is singular or plural before choosing the auxiliary.",
+            "explanation": "'Your brother' is singular, so the question needs 'does': 'Does your brother speak French fluently?' 'Do' would only work with a plural subject or with I/you.",
             "options": [
-                "gives",
-                "give"
+                "Does",
+                "Do"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "gives",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "Does",
+            "grammarRule": "Auxiliary 'do/does' agreement with the subject in questions",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l13_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE QUESTION",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Both companies ___ their staff a bonus every December.",
-            "hint": "'Both companies' is plural - use the base form.",
-            "explanation": "'Both companies' is plural, so the verb is 'give'. 'Both' always introduces a plural subject, which takes the base verb form.",
+            "question": "___ your parents celebrate any special holidays?",
+            "hint": "'Parents' is plural - which auxiliary matches that?",
+            "explanation": "'Your parents' is plural, so the question uses 'do': 'Do your parents celebrate...?' 'Does' is reserved for singular subjects.",
             "options": [
-                "gives",
-                "give"
+                "Does",
+                "Do"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "give",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswer": "Do",
+            "grammarRule": "Auxiliary 'do/does' agreement with the subject in questions",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l13_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE QUESTION",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The toddler ___ all her vegetables at dinner.",
-            "hint": "One toddler is singular - add -s to the verb.",
-            "explanation": "'The toddler' is a singular noun, so the verb takes -s: 'eats'. The -s ending is the mark of third-person singular agreement.",
+            "question": "He ___ not usually check his messages after work.",
+            "hint": "This is a negative sentence - the auxiliary still has to agree with 'he'.",
+            "explanation": "'He' is singular, so the negative form needs 'does': 'does not check'. 'Do not' would only fit a plural subject or I/you/we/they.",
             "options": [
-                "eats",
-                "eat"
+                "does",
+                "do"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "eats",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "does",
+            "grammarRule": "Auxiliary 'do/does' agreement in negative sentences",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l14_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "This laptop ___ out of battery very quickly.",
-            "hint": "One laptop is singular - the verb needs -s.",
-            "explanation": "'This laptop' is singular, so the verb must be 'runs'. Singular nouns and pronouns in third person always take a verb with -s.",
+            "question": "The clinic ___ a new dentist starting next week.",
+            "hint": "Decide if the subject is one place or more than one before picking 'have' or 'has'.",
+            "explanation": "'The clinic' is singular, so the verb is 'has'. 'Have' is reserved for plural subjects and for I/you/we/they.",
             "options": [
-                "run",
-                "runs"
+                "have",
+                "has"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "runs",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "has",
+            "grammarRule": "'have/has' agreement in the simple present",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l14_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "These laptops ___ out of battery very quickly.",
-            "hint": "'These laptops' is plural - use the base form.",
-            "explanation": "'These laptops' is plural, so the verb stays as 'run'. No -s is added to verbs when the subject is plural.",
+            "question": "Most apartments in this building ___ a small balcony.",
+            "hint": "'Apartments' names more than one unit - which form matches that?",
+            "explanation": "'Most apartments' is plural, so the verb is 'have'. 'Has' would incorrectly suggest a single apartment.",
             "options": [
-                "run",
-                "runs"
+                "has",
+                "have"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "run",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "have",
+            "grammarRule": "'have/has' agreement in the simple present",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l14_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The baker ___ fresh croissants early every morning.",
-            "hint": "One baker is singular - add -s or -es to the verb.",
-            "explanation": "'The baker' is a singular noun, so the verb is 'makes'. The -s ending on the verb always signals a singular third-person subject.",
+            "question": "I ___ a dentist appointment this afternoon.",
+            "hint": "'I' is a special case - it doesn't follow the usual he/she/it pattern.",
+            "explanation": "Even though 'I' refers to one person, it never takes 'has'. The pronoun 'I' always pairs with 'have', just like 'we', 'you', and 'they'.",
             "options": [
-                "make",
-                "makes"
+                "have",
+                "has"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "makes",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "have",
+            "grammarRule": "'have' with the first-person pronoun 'I'",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l15_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE SENTENCE",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "My son ___ football for his school team.",
-            "hint": "One person ('my son') is singular - the verb needs -s.",
-            "explanation": "'My son' is singular (one person), so the verb takes -s: 'plays'. This is the fundamental subject-verb agreement rule in the simple present.",
+            "question": "The bridge ___ closed for repairs this week.",
+            "hint": "One bridge is singular - which form of 'be' matches that?",
+            "explanation": "'The bridge' is singular, so it pairs with 'is'. 'Are' is used only with plural subjects or with 'you/we/they'.",
             "options": [
-                "plays",
-                "play"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "plays",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "is",
+            "grammarRule": "'be' verb agreement (is/are) in the simple present",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l15_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE SENTENCE",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "My sons ___ football for different school teams.",
-            "hint": "More than one son is plural - use the base form.",
-            "explanation": "'My sons' is plural, so the verb is 'play'. When the subject is plural, the verb takes its base form with no -s ending.",
+            "question": "The results ___ available on the website now.",
+            "hint": "'Results' already looks plural - which 'be' form fits?",
+            "explanation": "'The results' is plural, so the verb is 'are'. 'Is' would only be correct with a singular subject.",
             "options": [
-                "plays",
-                "play"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "play",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswer": "are",
+            "grammarRule": "'be' verb agreement (is/are) in the simple present",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l15_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE SENTENCE",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The hotel ___ a complimentary breakfast to all guests.",
-            "hint": "One hotel is singular - add -s or -es to the verb.",
-            "explanation": "'The hotel' is singular, so the verb is 'provides'. Any single noun in third person requires the verb to have an -s ending.",
+            "question": "I ___ excited about the new project.",
+            "hint": "'I' takes its own special form of 'be' - not 'is' and not 'are'.",
+            "explanation": "The pronoun 'I' always pairs with 'am', a unique form used only with the first-person singular subject.",
             "options": [
-                "provides",
-                "provide"
+                "am",
+                "is"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "provides",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "am",
+            "grammarRule": "'be' verb agreement with the pronoun 'I'",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l16_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB FORM",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "She ___ yoga three times a week.",
-            "hint": "Pronouns like 'she' always take a verb with -s in the simple present.",
-            "explanation": "'She' is a third-person singular pronoun, so 'practises' is correct. The -s ending on the verb shows agreement with he, she, or it.",
+            "question": "Does the team ___ enough players for Saturday's match?",
+            "hint": "Once 'does' appears, the main verb goes back to its base form - no extra -s needed.",
+            "explanation": "'Does' already carries the singular agreement, so the following verb stays in its base form: 'have', not 'has'. This is a common trap when 'does' or 'do' introduces the sentence.",
             "options": [
-                "practise",
-                "practises"
+                "have",
+                "has"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "practises",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "have",
+            "grammarRule": "Base verb form after the auxiliary 'do/does'",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l16_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB FORM",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "They ___ yoga together every Saturday morning.",
-            "hint": "Plural pronouns like 'they' never add -s to the verb.",
-            "explanation": "'They' is always plural, so the verb must be 'practise'. Whenever the subject is 'we', 'you', or 'they', the verb takes its base form.",
+            "question": "Do the printers on this floor ___ enough paper?",
+            "hint": "After 'do', the main verb never takes -s, no matter the subject.",
+            "explanation": "Whether the subject is singular or plural, once 'do' or 'does' appears, the following verb stays in the base form. Here it's 'have', not 'has'.",
             "options": [
-                "practise",
-                "practises"
+                "have",
+                "has"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "practise",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswer": "have",
+            "grammarRule": "Base verb form after the auxiliary 'do/does'",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l16_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB FORM",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The library ___ an enormous collection of rare books.",
-            "hint": "One library is singular - the verb needs -s.",
-            "explanation": "'The library' is singular, so the verb must be 'holds'. Third-person singular subjects always require a verb with an -s ending.",
+            "question": "She doesn't ___ time to finish the report today.",
+            "hint": "The auxiliary 'doesn't' already shows the agreement - the verb after it stays in its base form.",
+            "explanation": "'Doesn't' (does not) already signals third-person singular agreement, so the verb that follows is the base form: 'have', never 'has'.",
             "options": [
-                "hold",
-                "holds"
+                "have",
+                "has"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "holds",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "have",
+            "grammarRule": "Base verb form after the negative auxiliary 'doesn't'",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l17_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The doctor ___ her patients for thirty minutes each.",
-            "hint": "A single doctor is one person - singular verbs end in -s.",
-            "explanation": "'The doctor' is a singular noun, so the verb is 'sees'. Adding -s to the verb marks it as third-person singular.",
+            "question": "Every weekend, my uncle ___ fishing at the lake.",
+            "hint": "Skip past the introductory phrase and find who performs the action.",
+            "explanation": "The phrase 'every weekend' just sets the time; the real subject is 'my uncle', which is singular. Singular subjects need -s: 'goes'.",
             "options": [
-                "sees",
-                "see"
+                "goes",
+                "go"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "sees",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "goes",
+            "grammarRule": "Locating the subject when a phrase comes before it",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l17_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The doctors at this clinic ___ patients all day.",
-            "hint": "Multiple doctors is a plural subject - use the base form.",
-            "explanation": "'The doctors' is plural, so the verb is 'see'. When the subject is plural, the verb takes its base form without -s.",
+            "question": "In most large cities, public transportation ___ crowded during rush hour.",
+            "hint": "The opening phrase names a place, not the subject - keep looking.",
+            "explanation": "'In most large cities' is an introductory phrase; the subject is 'public transportation', which is treated as singular. The verb takes -s: 'becomes'.",
             "options": [
-                "sees",
-                "see"
+                "become",
+                "becomes"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "see",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "becomes",
+            "grammarRule": "Locating the subject when a phrase comes before it",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l17_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "This song ___ on the radio every single morning.",
-            "hint": "One song is singular - add -s to the verb.",
-            "explanation": "'This song' is singular (one thing), so the verb takes -s: 'plays'. Singular subjects in third person always need a verb with -s.",
+            "question": "Once a month, the book club members ___ a new novel.",
+            "hint": "The time phrase at the start isn't the subject - look for who actually does the discussing.",
+            "explanation": "'Once a month' introduces the sentence, but the subject is 'the book club members', which is plural. Plural subjects take the base form: 'discuss'.",
             "options": [
-                "plays",
-                "play"
+                "discusses",
+                "discuss"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "plays",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "discuss",
+            "grammarRule": "Locating the subject when a phrase comes before it",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l18_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The football team ___ its home matches on Saturdays.",
-            "hint": "One team is singular - the verb needs -s.",
-            "explanation": "'The football team' is singular as a unit, so the verb is 'plays'. In American and standard English, team names take singular verbs.",
+            "question": "This student's essay ___ several strong arguments.",
+            "hint": "The possessive 'student's' isn't the subject - find the noun it's attached to.",
+            "explanation": "The subject is 'essay', a singular noun modified by the possessive 'this student's'. Singular subjects take -s: 'contains'.",
             "options": [
-                "play",
-                "plays"
+                "contains",
+                "contain"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "plays",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "contains",
+            "grammarRule": "Possessive noun phrase - agreement with the head noun",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l18_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The players ___ their home matches on Saturdays.",
-            "hint": "'The players' is plural - use the base form.",
-            "explanation": "'The players' is plural (many individuals), so the verb is 'play'. When we refer to the individuals rather than the team as a unit, the plural verb is used.",
+            "question": "Those employees' schedules ___ every two weeks.",
+            "hint": "Look at what comes after the possessive to find the true subject.",
+            "explanation": "The head noun is 'schedules', which is plural, so the verb stays in the base form: 'change', not 'changes'.",
             "options": [
-                "play",
-                "plays"
+                "changes",
+                "change"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "play",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "change",
+            "grammarRule": "Possessive noun phrase - agreement with the head noun",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l18_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "My cousin ___ for a major airline.",
-            "hint": "One cousin is singular - add -s to the verb.",
-            "explanation": "'My cousin' is singular (one person), so the verb takes -s: 'works'. Any singular noun in third person requires the -s ending on the verb.",
+            "question": "That manager's decisions ___ the whole department.",
+            "hint": "Identify whether the noun right before the verb is singular or plural.",
+            "explanation": "'Decisions' is the plural head noun, so the verb takes the base form: 'affect', not 'affects'.",
             "options": [
-                "work",
-                "works"
+                "affect",
+                "affects"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "works",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "affect",
+            "grammarRule": "Possessive noun phrase - agreement with the head noun",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l19_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE QUESTION",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The package ___ two to three days to arrive.",
-            "hint": "One package is singular - the verb needs -s.",
-            "explanation": "'The package' is singular, so the verb is 'takes'. Third-person singular subjects in simple present always require a verb with -s.",
+            "question": "___ the store still open at this hour?",
+            "hint": "Check if 'the store' is singular or plural before choosing 'is' or 'are'.",
+            "explanation": "'The store' is singular, so the question uses 'is': 'Is the store still open...?'",
             "options": [
-                "takes",
-                "take"
+                "Is",
+                "Are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "takes",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "Is",
+            "grammarRule": "'be' verb agreement (is/are) in questions",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l19_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE QUESTION",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "International packages ___ longer to arrive than local ones.",
-            "hint": "'International packages' is plural - use the base form.",
-            "explanation": "'International packages' is plural, so the verb is 'take'. The base form is always used for plural subjects in simple present.",
+            "question": "___ the new regulations already in effect?",
+            "hint": "'Regulations' is already plural in form - which question word matches?",
+            "explanation": "'The new regulations' is plural, so the question uses 'are': 'Are the new regulations already in effect?'",
             "options": [
-                "takes",
-                "take"
+                "Is",
+                "Are"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "take",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswer": "Are",
+            "grammarRule": "'be' verb agreement (is/are) in questions",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l19_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE QUESTION",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The receptionist ___ all incoming calls before noon.",
-            "hint": "One receptionist is singular - add -s or -es to the verb.",
-            "explanation": "'The receptionist' is singular, so the verb must be 'answers'. Verbs ending in -er, -en, or -s just add -s to form the third-person singular.",
+            "question": "___ we allowed to bring guests to the event?",
+            "hint": "'We' is always plural, no matter the situation.",
+            "explanation": "'We' is a plural pronoun, so the question form uses 'are': 'Are we allowed...?'",
             "options": [
-                "answers",
-                "answer"
+                "Is",
+                "Are"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "answers",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Are",
+            "grammarRule": "'be' verb agreement (is/are) in questions",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l20_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Every customer ___ a free sample at the door.",
-            "hint": "'Every customer' is treated as singular - the verb needs -s.",
-            "explanation": "'Every' always makes the noun singular, even though it refers to many people. So 'every customer receives' is correct, not 'receive'.",
+            "question": "These instructions ___ confusing to new employees.",
+            "hint": "Bring back the demonstrative rule: 'these' always signals a plural subject.",
+            "explanation": "'These instructions' is plural because of 'these', so the verb takes the base form: 'seem'.",
             "options": [
-                "receive",
-                "receives"
+                "seem",
+                "seems"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "receives",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "seem",
+            "grammarRule": "Demonstrative 'these' with a plural subject",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l20_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The customers ___ a free sample at the door.",
-            "hint": "'The customers' is plural - use the base form.",
-            "explanation": "'The customers' is plural, so the verb is 'receive'. The -s ending on 'receives' is only for singular subjects.",
+            "question": "___ your sister have a car, or does she take the bus?",
+            "hint": "Recall the do/does rule from earlier in this stage.",
+            "explanation": "'Your sister' is singular, so the question needs 'does': 'Does your sister have a car...?'",
             "options": [
-                "receive",
-                "receives"
+                "Do",
+                "Does"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "receive",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Does",
+            "grammarRule": "Auxiliary 'do/does' agreement with the subject in questions",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l20_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "She ___ the children to school every morning.",
-            "hint": "'She' is singular - add -s to the verb.",
-            "explanation": "The pronoun 'she' is always third-person singular, so the verb takes -s: 'drives'. This is the core rule for he, she, and it.",
+            "question": "My coworker's ideas ___ always practical and easy to apply.",
+            "hint": "Combine two skills: find the head noun, then pick the right form of 'be'.",
+            "explanation": "The subject is 'ideas' (plural), not 'coworker's'. Plural subjects pair with 'are', so 'are always practical' is correct.",
             "options": [
-                "drive",
-                "drives"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "drives",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswer": "are",
+            "grammarRule": "'be' verb agreement with a possessive noun phrase subject",
+            "subjectType": "Plural"
         }
     ]
 }

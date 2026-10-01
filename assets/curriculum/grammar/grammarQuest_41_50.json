@@ -5,543 +5,393 @@
     "quests": [
         {
             "id": "gq_l41_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I enjoy ___ to classical music.",
-            "options": [
-                "listening",
-                "listened",
-                "to listen",
-                "listen"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "listening",
-            "hint": "Some verbs are always followed by -ing.",
-            "explanation": "Verbs like enjoy, finish, mind, avoid, consider, keep are always followed by a gerund (-ing): I enjoy listening. Never 'enjoy to listen'. Other gerund verbs: suggest, recommend, deny, practise.",
-            "grammarRule": "Gerunds After Verbs"
+            "question": "I'd like ___ apple, please.",
+            "options": ["a", "some", "an", "any"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "an",
+            "hint": "You can count apples one by one, so this noun works with an article.",
+            "explanation": "Countable nouns like 'apple' can take 'a/an' because you can count them individually: an apple, two apples. 'Some' is used differently, mostly with uncountable nouns or plurals.",
+            "grammarRule": "Countable Nouns: Articles"
         },
         {
             "id": "gq_l41_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She finished ___ the report at midnight.",
-            "options": [
-                "write",
-                "to write",
-                "writing",
-                "writes"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "writing",
-            "hint": "'Finish' belongs to the group of verbs followed by -ing.",
-            "explanation": "Verbs like finish, enjoy, mind, avoid, deny, keep, and practise are always followed by a gerund (-ing), never an infinitive. She finished writing the report.",
-            "grammarRule": "Gerunds After Verbs"
+            "question": "I'd like ___ water, please.",
+            "options": ["some", "a", "an", "many"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "some",
+            "hint": "You can't count 'water' as one, two, three separate items.",
+            "explanation": "'Water' is uncountable, so it can't take 'a/an'; instead, we use 'some' for an unspecified quantity: some water, some rice, some advice.",
+            "grammarRule": "Uncountable Nouns: Quantity Words"
         },
         {
             "id": "gq_l41_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Would you mind ___ the window?",
-            "options": [
-                "open",
-                "to open",
-                "opening",
-                "opened"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "opening",
-            "hint": "'Mind' is always followed by -ing.",
-            "explanation": "'Mind' is always followed by a gerund: Would you mind opening the window? This means 'Would it bother you to open the window?' Never 'would you mind to open'.",
-            "grammarRule": "Gerunds After Verbs"
+            "question": "\u2014 Would you like a banana?\n\u2014 No thanks, but I'd like ___ bread if you have it.",
+            "options": ["a", "an", "many", "some"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "some",
+            "hint": "Bread isn't counted piece by piece the way a banana is.",
+            "explanation": "'Bread' is treated as uncountable in English, so it takes 'some' rather than 'a/an': some bread, not 'a bread'.",
+            "grammarRule": "Uncountable Nouns: Quantity Words"
         },
         {
             "id": "gq_l42_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She wants ___ a doctor when she grows up.",
-            "options": [
-                "to become",
-                "become",
-                "became",
-                "becoming"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "to become",
-            "hint": "'Want' is always followed by the infinitive.",
-            "explanation": "Verbs like want, need, hope, plan, decide, offer, agree, refuse are followed by the infinitive (to + base verb): She wants to become a doctor. Never 'wants becoming'.",
-            "grammarRule": "Infinitives After Verbs"
+            "question": "There are ___ cookies in the jar if you want one.",
+            "options": ["a", "an", "some", "many"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "some",
+            "hint": "This is a positive statement, simply saying that cookies exist.",
+            "explanation": "'Some' is the natural choice in affirmative statements about an unspecified quantity: there are some cookies. 'Any' would be used instead in questions and negatives.",
+            "grammarRule": "Some vs Any: Affirmative Statements"
         },
         {
             "id": "gq_l42_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "They decided ___ a new car.",
-            "options": [
-                "buying",
-                "buy",
-                "bought",
-                "to buy"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "to buy",
-            "hint": "'Decide' takes the infinitive form.",
-            "explanation": "'Decide to do something' is the correct pattern. Verbs followed by infinitive: decide, plan, hope, want, need, expect, choose, refuse, promise, agree. They decided to buy a new car.",
-            "grammarRule": "Infinitives After Verbs"
+            "question": "There aren't ___ cookies left; we ate them all.",
+            "options": ["some", "any", "much", "many"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "any",
+            "hint": "Look at the negative form 'aren't' right before the blank.",
+            "explanation": "Negative sentences use 'any' instead of 'some': there aren't any cookies left. 'Some' would sound unnatural paired with a negative verb.",
+            "grammarRule": "Some vs Any: Negative Statements"
         },
         {
             "id": "gq_l42_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "He refused ___ the question.",
-            "options": [
-                "answering",
-                "answered",
-                "to answer",
-                "answer"
-            ],
+            "question": "\u2014 Do you have ___ questions about the assignment?\n\u2014 No, none at all.",
+            "options": ["much", "many", "any", "some"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "to answer",
-            "hint": "'Refuse' must be followed by an infinitive.",
-            "explanation": "'Refuse + to + base verb': He refused to answer the question. Other verbs that always take infinitives: agree, offer, promise, manage, tend, appear. Never 'refused answering'.",
-            "grammarRule": "Infinitives After Verbs"
+            "correctAnswer": "any",
+            "hint": "This is a genuine yes/no question, not an offer.",
+            "explanation": "Ordinary questions use 'any', not 'some': do you have any questions? 'Some' would only be natural here in a special case, like making an offer.",
+            "grammarRule": "Some vs Any: Questions"
         },
         {
             "id": "gq_l43_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "MAKE THE SENTENCE WORK",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The bridge ___ in 1888.",
-            "options": [
-                "built",
-                "builds",
-                "was built",
-                "was building"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "was built",
-            "hint": "We focus on when it was built, not who built it.",
-            "explanation": "Simple past passive: was/were + past participle. The bridge was built in 1888. The agent (who built it) is unknown or unimportant. Use 'was' for singular, 'were' for plural.",
-            "grammarRule": "Passive Voice (Past Simple)"
+            "question": "Would you like ___ coffee before we start?",
+            "options": ["any", "much", "many", "some"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "some",
+            "hint": "This question is really an offer, not a request for information.",
+            "explanation": "When making offers, 'some' is used even in questions: Would you like some coffee? This is a special exception to the usual 'any in questions' rule.",
+            "grammarRule": "Some vs Any: Offers and Requests"
         },
         {
             "id": "gq_l43_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The windows ___ by the storm last night.",
-            "options": [
-                "broke",
-                "were broken",
-                "broken",
-                "was broken"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "were broken",
-            "hint": "'The windows' is plural - choose the correct passive form.",
-            "explanation": "For plural subjects in simple past passive, use 'were + past participle': The windows were broken by the storm. For singular: The window was broken by the storm.",
-            "grammarRule": "Passive Voice (Past Simple)"
+            "question": "Can I have ___ sugar for my tea, please?",
+            "options": ["much", "any", "many", "some"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "some",
+            "hint": "This is a polite request, similar to the offer in Question 1.",
+            "explanation": "Polite requests, like offers, use 'some' even though the sentence is a question: Can I have some sugar? This matches the pattern from asking 'Would you like some coffee?'",
+            "grammarRule": "Some vs Any: Offers and Requests"
         },
         {
             "id": "gq_l43_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She ___ for the crime she didn't commit.",
-            "options": [
-                "arrested",
-                "were arrested",
-                "was arrested",
-                "is arrested"
-            ],
+            "question": "\u2014 Is there ___ milk in the fridge?\n\u2014 Yes, plenty.",
+            "options": ["much", "some", "any", "many"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "was arrested",
-            "hint": "She is the object of the action, not the one performing it.",
-            "explanation": "'She was arrested' = someone arrested her (passive). 'She arrested' would mean she arrested someone else (active). Simple past passive: was/were + past participle.",
-            "grammarRule": "Passive Voice (Past Simple)"
+            "correctAnswer": "any",
+            "hint": "This is a real question asking for information, not an offer to give something.",
+            "explanation": "Unlike offers, this question genuinely asks whether milk exists, so it follows the normal rule and uses 'any': Is there any milk?",
+            "grammarRule": "Some vs Any: Questions"
         },
         {
             "id": "gq_l44_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "It's a beautiful day, ___?",
-            "options": [
-                "is it not",
-                "isn't",
-                "is it",
-                "isn't it"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "isn't it",
-            "hint": "Positive main clause → negative question tag.",
-            "explanation": "Question tags: positive main clause → negative tag. 'It's a beautiful day' is positive, so the tag is 'isn't it?'. Always match the auxiliary: 'it is' → 'isn't it'.",
-            "grammarRule": "Question Tags"
+            "question": "How ___ time do we have before the meeting starts?",
+            "options": ["much", "many", "a lot", "little"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "much",
+            "hint": "Can you count 'time' as one, two, three separate units?",
+            "explanation": "'Time' is uncountable, so questions about its quantity use 'much': how much time. 'Many' is reserved for countable nouns, like people or minutes counted individually.",
+            "grammarRule": "Much vs Many: Uncountable Nouns"
         },
         {
             "id": "gq_l44_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She didn't call you, ___?",
-            "options": [
-                "doesn't she",
-                "didn't she",
-                "did she",
-                "isn't she"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "did she",
-            "hint": "Negative main clause → positive tag.",
-            "explanation": "When the main clause is negative ('didn't call'), the question tag is positive: 'did she?' The tag repeats the auxiliary in its opposite form: didn't → did.",
-            "grammarRule": "Question Tags"
+            "question": "How ___ people are coming to the party?",
+            "options": ["much", "many", "a lot", "few"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "many",
+            "hint": "'People' can be counted one by one: one person, two people, three people.",
+            "explanation": "Countable nouns take 'many' in questions about quantity: how many people. This contrasts directly with 'how much time' from the last question.",
+            "grammarRule": "Much vs Many: Countable Nouns"
         },
         {
             "id": "gq_l44_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "They can swim, ___?",
-            "options": [
-                "could they",
-                "couldn't they",
-                "can they",
-                "can't they"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "can't they",
-            "hint": "Positive main clause with 'can' → negative tag.",
-            "explanation": "Positive main clause → negative tag: They can swim, can't they? The tag uses the same modal ('can') in negative form ('can't'). Subject becomes a pronoun: 'They' → 'they'.",
-            "grammarRule": "Question Tags"
+            "question": "\u2014 Do you have ___ money on you?\n\u2014 Not much, sorry.",
+            "options": ["much", "many", "a lot of", "few"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "much",
+            "hint": "'Money' isn't counted as separate units the way coins or bills are.",
+            "explanation": "'Money' is treated as uncountable in English, so it pairs with 'much' in questions: do you have much money? Even the reply 'not much' confirms this pattern.",
+            "grammarRule": "Much vs Many: Uncountable Nouns"
         },
         {
             "id": "gq_l45_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "He said he ___ tired.",
-            "options": [
-                "be",
-                "were",
-                "is",
-                "was"
-            ],
+            "question": "I don't have ___ time to explain right now \u2014 can we talk later?",
+            "options": ["many", "a lot", "little", "much"],
             "correctAnswerIndex": 3,
-            "correctAnswer": "was",
-            "hint": "In reported speech, present tense shifts to past.",
-            "explanation": "In reported speech, present tense shifts to past: 'I am tired' → 'He said he was tired.' This tense shift is called backshift. The reporting verb 'said' triggers the change.",
-            "grammarRule": "Reported Speech (Statements)"
+            "correctAnswer": "much",
+            "hint": "This is a negative sentence about an uncountable noun.",
+            "explanation": "'Much' is the natural quantity word for uncountable nouns in negative sentences: I don't have much time. Compare this with the next question, where the same idea appears in a positive sentence instead.",
+            "grammarRule": "Much vs Many: Negative Statements"
         },
         {
             "id": "gq_l45_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She told me she ___ a new job.",
-            "options": [
-                "find",
-                "has found",
-                "had found",
-                "have found"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "have found",
-            "hint": "Present perfect in direct speech becomes past perfect in reported speech.",
-            "explanation": "Backshift: present perfect ('has found') → past perfect ('had found'). 'She said, I have found a new job' → 'She told me she had found a new job.'",
-            "grammarRule": "Reported Speech (Statements)"
+            "question": "There are ___ tourists in the city this summer.",
+            "options": ["much", "many", "a lot of", "little"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "a lot of",
+            "hint": "This phrase works comfortably with both countable and uncountable nouns, unlike 'much' or 'many' alone.",
+            "explanation": "'A lot of' fits naturally in affirmative statements and works for both countable nouns (a lot of tourists) and uncountable ones (a lot of traffic), unlike 'many', which is countable-only.",
+            "grammarRule": "A Lot Of: Countable and Uncountable Nouns"
         },
         {
             "id": "gq_l45_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "They said they ___ arrive by 8 pm.",
-            "options": [
-                "would",
-                "should",
-                "can",
-                "will"
-            ],
+            "question": "\u2014 Did many people show up to the event?\n\u2014 Yes, ___ !",
+            "options": ["a lot", "many of", "much of", "a lot of the"],
             "correctAnswerIndex": 0,
-            "correctAnswer": "would",
-            "hint": "'Will' in direct speech becomes 'would' in reported speech.",
-            "explanation": "'Will' shifts to 'would' in reported speech: 'We will arrive' → 'They said they would arrive.' Other shifts: can → could, may → might, must → had to.",
-            "grammarRule": "Reported Speech (Statements)"
+            "correctAnswer": "a lot",
+            "hint": "The noun has already been mentioned, so this short answer doesn't repeat it.",
+            "explanation": "When the noun is left out because it's already understood, 'a lot' stands alone without 'of': Yes, a lot! Adding 'of' here would leave the phrase incomplete, since there's no noun following it.",
+            "grammarRule": "A Lot: Standalone Use"
         },
         {
             "id": "gq_l46_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She asked me where I ___.",
-            "options": [
-                "am living",
-                "do live",
-                "lived",
-                "live"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "lived",
-            "hint": "Reported questions use statement word order and backshift.",
-            "explanation": "Reported questions use statement word order (no inversion) and tense shift. 'Where do you live?' → 'She asked me where I lived.' No auxiliary (do/does) in reported questions.",
-            "grammarRule": "Reported Speech (Questions)"
+            "question": "I have ___ minutes before my train leaves.",
+            "options": ["few", "a few", "a little", "little"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "a few",
+            "hint": "'Minutes' can be counted one by one, and this means a small but existing amount.",
+            "explanation": "'A few' is used for a small quantity of countable nouns: a few minutes, a few friends. 'A little' would be used instead for uncountable nouns.",
+            "grammarRule": "A Few vs A Little"
         },
         {
             "id": "gq_l46_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "He asked if I ___ to the party.",
-            "options": [
-                "come",
-                "coming",
-                "was coming",
-                "am coming"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "was coming",
-            "hint": "Yes/no questions become 'if/whether' clauses with backshift.",
-            "explanation": "Yes/no questions become 'if/whether' clauses in reported speech: 'Are you coming?' → 'He asked if I was coming.' Tense shifts: am → was; is → was; are → were.",
-            "grammarRule": "Reported Speech (Questions)"
+            "question": "I have ___ time before my train leaves, so let's hurry.",
+            "options": ["a few", "few", "little", "a little"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "a little",
+            "hint": "'Time' can't be split into countable units here.",
+            "explanation": "'A little' pairs with uncountable nouns for a small existing amount: a little time. This matches 'a few minutes' from the last question but fits an uncountable noun instead.",
+            "grammarRule": "A Few vs A Little"
         },
         {
             "id": "gq_l46_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The teacher asked what we ___ for the holidays.",
-            "options": [
-                "plan",
-                "are planning",
-                "had been planned",
-                "were planning"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "were planning",
-            "hint": "Present continuous shifts to past continuous in reported speech.",
-            "explanation": "Present continuous → past continuous in reported speech: 'What are you planning?' → 'The teacher asked what we were planning.' Statement word order, no inversion.",
-            "grammarRule": "Reported Speech (Questions)"
+            "question": "\u2014 Do you want some rice?\n\u2014 Just ___ , please, I'm not very hungry.",
+            "options": ["a little", "few", "a few", "little"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "a little",
+            "hint": "'Rice' is treated as one uncountable mass, not individual countable grains here.",
+            "explanation": "Like 'time' or 'water', 'rice' takes 'a little' for a small amount: just a little, please. 'A few' would only work with a countable noun like 'a few grains'.",
+            "grammarRule": "A Few vs A Little"
         },
         {
             "id": "gq_l47_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She ___ for three hours - no wonder she's exhausted.",
-            "options": [
-                "had run",
-                "was running",
-                "has been running",
-                "has run"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "has been running",
-            "hint": "Three hours of duration with a visible result now.",
-            "explanation": "Present perfect continuous: have/has been + -ing. Used for actions that started in the past and have continued to now, especially when we can see the result. She has been running for three hours.",
-            "grammarRule": "Present Perfect Continuous"
+            "question": "She has ___ friends here; she feels quite lonely.",
+            "options": ["a few", "few", "a little", "little"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "few",
+            "hint": "The second half of the sentence tells you this isn't a happy amount.",
+            "explanation": "'Few' (without 'a') carries a negative feeling of 'almost none', matching 'feels lonely'. This is different from 'a few', which sounds more positive.",
+            "grammarRule": "Few vs A Few: Negative Meaning"
         },
         {
             "id": "gq_l47_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "How long ___ you waiting?",
-            "options": [
-                "are",
-                "were",
-                "have been",
-                "did"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "have been",
-            "hint": "'How long' with a still-ongoing action uses present perfect continuous.",
-            "explanation": "'How long have you been waiting?' asks about the duration of an ongoing action. Structure: How long + have/has + subject + been + -ing? 'Have been' is the correct auxiliary here.",
-            "grammarRule": "Present Perfect Continuous"
+            "question": "She has ___ friends here, so she's never bored.",
+            "options": ["few", "a little", "little", "a few"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "a few",
+            "hint": "This time, the second half of the sentence sounds positive, not sad.",
+            "explanation": "'A few' suggests a small but sufficient, positive amount, matching 'never bored'. Compare this with the previous question, where 'few' matched a lonelier feeling.",
+            "grammarRule": "A Few vs Few: Positive Meaning"
         },
         {
             "id": "gq_l47_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "They ___ all morning to fix the problem.",
-            "options": [
-                "tried again",
-                "tried",
-                "are trying",
-                "have been trying"
-            ],
+            "question": "\u2014 How's your soup?\n\u2014 I need to add salt, there's ___ in it right now.",
+            "options": ["a little", "a few", "few", "little"],
             "correctAnswerIndex": 3,
-            "correctAnswer": "have been trying",
-            "hint": "The activity started this morning and is still ongoing.",
-            "explanation": "Present perfect continuous shows an activity in progress from the past up to now: They have been trying all morning. The effort is ongoing; the problem is still not solved.",
-            "grammarRule": "Present Perfect Continuous"
+            "correctAnswer": "little",
+            "hint": "The complaint about needing more salt suggests almost none is there.",
+            "explanation": "'Little' (without 'a') expresses a negative sense of 'almost no salt', which explains the need to add more. 'A little' would instead suggest a small but adequate amount.",
+            "grammarRule": "Little vs A Little: Negative Meaning"
         },
         {
             "id": "gq_l48_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "When I arrived at the cinema, the film ___ already.",
-            "options": [
-                "has started",
-                "started",
-                "was starting",
-                "had already started"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "had already started",
-            "hint": "One past action happened before another past action.",
-            "explanation": "Past perfect: had + past participle. Used for the action that happened FIRST in the past. 'Had already started' = the film started before I arrived. Two events: film started (1st) → I arrived (2nd).",
-            "grammarRule": "Past Perfect"
+            "question": "___ student in the class passed the final exam.",
+            "options": ["Every", "All", "Some", "Each"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Every",
+            "hint": "This is a general statement about the group as a whole, not a focus on individuals one by one.",
+            "explanation": "'Every' fits general statements treating a group as a whole: every student passed. 'Each' would place more emphasis on the students individually.",
+            "grammarRule": "Each vs Every: General Statements"
         },
         {
             "id": "gq_l48_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She felt sick because she ___ too much at dinner.",
-            "options": [
-                "ate",
-                "was eating",
-                "had eaten",
-                "eats"
-            ],
+            "question": "The teacher handed ___ student their certificate, one by one.",
+            "options": ["Every", "All", "Each", "Some"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "had eaten",
-            "hint": "The eating (cause) happened before she felt sick.",
-            "explanation": "Use past perfect for the earlier action: She felt sick because she had eaten too much. The past perfect (had eaten) makes clear which action came first.",
-            "grammarRule": "Past Perfect"
+            "correctAnswer": "Each",
+            "hint": "'One by one' signals a focus on individuals, not the group as a whole.",
+            "explanation": "'Each' highlights individuals separately, which fits 'one by one': each student received a certificate personally, rather than the class as a single unit.",
+            "grammarRule": "Each vs Every: Individual Focus"
         },
         {
             "id": "gq_l48_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "By the time the guests arrived, we ___ the table.",
-            "options": [
-                "have set",
-                "had already set",
-                "set",
-                "were setting"
-            ],
+            "question": "\u2014 How often do you check your email?\n\u2014 ___ hour, pretty much.",
+            "options": ["Each", "Every", "All", "Some"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "had already set",
-            "hint": "'By the time' often signals past perfect.",
-            "explanation": "'By the time + simple past' triggers the past perfect: By the time the guests arrived, we had already set the table. The table setting (1st) was completed before the guests arrived (2nd).",
-            "grammarRule": "Past Perfect"
+            "correctAnswer": "Every",
+            "hint": "This describes a repeating routine, not a one-by-one focus.",
+            "explanation": "'Every' is the natural choice with time intervals describing routines: every hour, every day. 'Each' would sound unusual in this frequency context.",
+            "grammarRule": "Each vs Every: Time Intervals"
         },
         {
             "id": "gq_l49_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She knows every detail. She ___ have read the report.",
-            "options": [
-                "might",
-                "must",
-                "should",
-                "can't"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "must",
-            "hint": "Almost certain this is true - which modal shows near certainty?",
-            "explanation": "'Must' for logical deduction: 'She must have read the report' = we are almost certain she did. 'Might' = possible but uncertain. 'Can't' = almost certain it is NOT true.",
-            "grammarRule": "Modals of Deduction"
+            "question": "\u2014 Do we need ___ eggs?\n\u2014 Yes, we're almost out.",
+            "options": ["any", "many", "some", "much"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "any",
+            "hint": "This is a genuine question, not an offer, so recall the standard rule.",
+            "explanation": "This is an ordinary information question, so it uses 'any', not 'some': do we need any eggs? Offers and requests are the special exception, not this case.",
+            "grammarRule": "Some vs Any: Questions"
         },
         {
             "id": "gq_l49_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The light is off. He ___ be at home.",
-            "options": [
-                "might not",
-                "should",
-                "must",
-                "can't"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "can't",
-            "hint": "We're almost certain he is NOT at home.",
-            "explanation": "'Can't + be' expresses near certainty that something is NOT true: He can't be at home. 'Must be' = almost sure it IS true. 'Might be' = possible.",
-            "grammarRule": "Modals of Deduction"
+            "question": "\u2014 How ___ butter should I buy?\n\u2014 Just one pack should be fine.",
+            "options": ["many", "much", "a few", "few"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "much",
+            "hint": "Butter is measured in blocks or grams, not counted individually.",
+            "explanation": "'Butter' is uncountable, so 'much' fits the question about quantity: how much butter. 'Many' would only work with countable items, like eggs.",
+            "grammarRule": "Much vs Many: Uncountable Nouns"
         },
         {
             "id": "gq_l49_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I'm not sure where she is. She ___ be stuck in traffic.",
-            "options": [
-                "might",
-                "can't",
-                "should",
-                "must"
-            ],
+            "question": "\u2014 We don't have ___ vegetables left.\n\u2014 Let's add them to the shopping list.",
+            "options": ["many", "much", "a little", "little"],
             "correctAnswerIndex": 0,
-            "correctAnswer": "might",
-            "hint": "We're not sure - just suggesting a possibility.",
-            "explanation": "'Might' expresses possibility when we are not sure: She might be stuck in traffic = it's possible but not certain. Don't use 'must' when you're genuinely uncertain.",
-            "grammarRule": "Modals of Deduction"
+            "correctAnswer": "many",
+            "hint": "Vegetables are counted one by one, unlike butter in the last question.",
+            "explanation": "'Vegetables' is countable, so negative statements about quantity use 'many': we don't have many vegetables. This keeps the countable/uncountable distinction consistent throughout the shopping list.",
+            "grammarRule": "Much vs Many: Countable Nouns"
         },
         {
             "id": "gq_l50_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "It was ___ cold that we stayed indoors.",
-            "options": [
-                "such",
-                "so",
-                "too",
-                "very"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "so",
-            "hint": "Before an adjective without a noun, use 'so'.",
-            "explanation": "'So + adjective + that' expresses a result: It was so cold that we stayed indoors. Use 'so' before adjectives and adverbs alone. Use 'such' before noun phrases: such cold weather.",
-            "grammarRule": "So / Such"
+            "question": "This bag is ___ than that one, so I'll take it instead.",
+            "options": ["big", "more big", "bigger", "biggest"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "bigger",
+            "hint": "Short adjectives usually just add an ending to compare two things.",
+            "explanation": "Short, one-syllable adjectives form comparatives by adding '-er': big \u2192 bigger. 'More big' isn't correct English, since 'more' is reserved for longer adjectives.",
+            "grammarRule": "Comparative Adjectives: Short Adjectives"
         },
         {
             "id": "gq_l50_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "It was ___ a beautiful day that we went to the beach.",
-            "options": [
-                "such",
-                "so",
-                "very",
-                "too"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "such",
-            "hint": "Before 'a/an + adjective + noun', use 'such'.",
-            "explanation": "'Such + a/an + adjective + noun + that': It was such a beautiful day that we went to the beach. Use 'such' before noun phrases. Use 'so' before adjectives alone: It was so beautiful.",
-            "grammarRule": "So / Such"
+            "question": "Today is ___ than yesterday \u2014 turn on the fan.",
+            "options": ["hoter", "hotter", "more hot", "hottest"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "hotter",
+            "hint": "This short adjective ends in one vowel and one consonant \u2014 that consonant often doubles.",
+            "explanation": "Like 'stop \u2192 stopped', short adjectives ending in a single vowel + consonant double that consonant before '-er': hot \u2192 hotter, big \u2192 bigger.",
+            "grammarRule": "Comparative Adjectives: Spelling Rules"
         },
         {
             "id": "gq_l50_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She spoke ___ quietly that no one could hear her.",
-            "options": [
-                "so",
-                "too",
-                "such",
-                "very"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Before an adverb, use 'so'.",
-            "explanation": "'So + adverb + that' shows result: She spoke so quietly that no one could hear her. Before adverbs (quietly, fast, slowly), always use 'so', not 'such'. Such is used before nouns.",
-            "grammarRule": "So / Such"
+            "question": "\u2014 Do you need much sugar in your coffee?\n\u2014 Just ___ , a spoonful is enough.",
+            "options": ["few", "little", "a few", "a little"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "a little",
+            "hint": "Sugar in coffee is measured, not counted piece by piece \u2014 and a spoonful sounds like enough, not too little.",
+            "explanation": "Since sugar is uncountable and 'a spoonful is enough' sounds like a reasonable, positive amount, 'a little' fits, echoing the pattern practiced back in Level 46.",
+            "grammarRule": "A Few vs A Little"
         }
     ]
 }

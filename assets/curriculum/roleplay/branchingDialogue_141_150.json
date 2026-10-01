@@ -1,787 +1,787 @@
 {
-    "gameType": "branchingDialogue",
-    "batchIndex": 15,
-    "levels": "141-150",
-    "quests": [
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I need to design a global health surveillance system that can detect emerging pandemics quickly enough to enable meaningful prevention. What are the most important design elements?'",
-            "options": [
-                "Design a comprehensive reporting system that connects national health authorities and enables real-time data sharing.",
-                "Engage with the relevant policymakers and gather comprehensive evidence before making any recommendations.",
-                "I'd integrate animal and human health surveillance, since most pandemics start there, and fix the incentives - right now, early reporting punishes the countries that do it."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name the specific design elements, including the incentive problem, not just a reporting system.",
-            "explanation": "Naming animal-human integration and the incentive problem identifies what actually determines detection speed. 'A comprehensive reporting system with real-time data sharing' describes the standard approach without the elements that make it fast enough. 'Engage policymakers and gather evidence' is a general statement.",
-            "id": "bd_l141_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I'm being asked to give a keynote address to the annual conference of my industry. I want to say something genuinely worth hearing. What makes a keynote genuinely worth hearing?'",
-            "options": [
-                "Share a compelling personal story from your career that conveys your vision for the industry's future.",
-                "Rehearse extensively so the delivery feels natural and confident on the day.",
-                "It says something the audience doesn't already believe, says it specifically rather than generally, and is honest about the evidence that complicates it."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name the specific qualities of a genuinely worthwhile keynote, not a technique for delivering one.",
-            "explanation": "Naming novelty, specificity, and honesty about complicating evidence identifies the actual qualities that make a keynote memorable. 'Share a compelling personal story' is a technique, not the underlying qualities. 'Apply sound commercial judgment and consult advisers' is a general statement unrelated to the question.",
-            "id": "bd_l141_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I'm asked to evaluate whether a proposed new airspace management system for a major metropolitan area is ready for operational use. What evaluation framework do you apply?'",
-            "options": [
-                "I'd stress-test at peak load, not average, check every failure mode for new hazards, and test the actual human interface under real workload.",
-                "Conduct a comprehensive technical review against established certification standards for air traffic management systems.",
-                "Ensure the system meets all current national and international aviation regulations."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name specific evaluation elements, not a general certification review.",
-            "explanation": "Naming peak-load testing, failure modes, and the human interface gives real evaluation substance beyond a standard review. 'A comprehensive technical review against certification standards' names the category without the specific elements that matter. 'Follow SOPs and consult documentation' doesn't address evaluating a new system at all.",
-            "id": "bd_l141_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I need to debrief my team after a very difficult mission where we succeeded but some of our actions will be scrutinised. How do you create a genuinely useful debrief in a context of potential external scrutiny?'",
-            "options": [
-                "Make sure every action taken during the mission is clearly justified in the official report.",
-                "Ensure the debrief is properly documented so it serves as a formal record of the team's actions and reasoning.",
-                "I'd separate this debrief completely from any review process, and be explicit that it's for learning, not for producing a document someone else will read."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Separate the debrief from any review process to protect honesty.",
-            "explanation": "Separating the debrief from review, and naming its purpose explicitly, protects the honesty a genuine debrief needs. 'Ensure the debrief is properly documented as a formal record' conflates debrief with documentation, which is exactly what corrupts honest learning. 'Justify every action in the official report' turns the debrief into a defence before it even starts.",
-            "id": "bd_l142_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I'm advising on the design of a counter-disinformation programme for a democratic government. What are the most important design principles?'",
-            "options": [
-                "Design a rapid response system that can identify and rebut disinformation claims quickly and authoritatively.",
-                "Partner with technology platforms to remove disinformation content as quickly as it appears.",
-                "I'd focus on prebunking, not debunking, and keep government out of being the arbiter of truth - that role is itself a disinformation risk."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Prioritise prebunking and limiting government's role, not faster rebuttal.",
-            "explanation": "Choosing prebunking over debunking, and naming the government's own credibility risk, reflects sophisticated design thinking. 'A rapid response system that identifies and rebuts claims' is precisely the less effective, reactive approach this answer argues against. 'Partner with platforms to remove content quickly' raises its own censorship and trust concerns without addressing government credibility.",
-            "id": "bd_l142_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I've spent my career in professional kitchens. Now I want to think seriously about what professional cooking has cost me personally. How do you engage with that question honestly?'",
-            "options": [
-                "Honestly, it's cost me my body, most weekends, and relationships that deserved more time - and I won't dress that up as noble sacrifice.",
-                "Focus on passing your technique on to the next generation of chefs in your kitchen.",
-                "Reflect on the ways in which the demands of professional cooking have shaped your character and professional identity."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name the specific costs honestly, rather than reframing them as character-building.",
-            "explanation": "Naming specific real costs, and refusing to romanticise them, is genuine honesty rather than a polished professional narrative. 'Reflect on how cooking shaped your character' reframes losses as formative experiences, which sidesteps honesty. 'Invest in developing your team' doesn't address the personal question being asked at all.",
-            "id": "bd_l142_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I'm advising on the ethics of a medical artificial intelligence system that performs better than most clinicians on diagnostic accuracy but is a black box - no one can explain why it reaches its conclusions. What is the ethical issue and what resolves it?'",
-            "options": [
-                "Require independent validation of the system's accuracy across diverse patient populations before deployment.",
-                "The real issue isn't accuracy, it's explainability - without it, a clinician can't question the system, and medicine loses its own ability to self-correct.",
-                "Follow your institution's ethics framework and seek formal guidance from the appropriate oversight body."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name explainability specifically as the issue, not accuracy or process.",
-            "explanation": "Naming explainability as the real issue, and what it enables, precisely identifies the ethical concern. 'Require independent validation of accuracy across populations' addresses a different, though related, issue. 'Follow your institution's ethics framework' is a general statement that doesn't identify the issue at all.",
-            "id": "bd_l143_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I want to understand the deepest reason why some businesses create enduring value and some don't. What is your view?'",
-            "options": [
-                "Study which businesses in your sector have survived the longest and copy their model.",
-                "Enduring businesses have strong cultures, consistent strategy, excellent operational execution, and strong customer relationships.",
-                "Enduring businesses are built around genuine value creation - the ones that don't last are built around extraction, and that erodes trust eventually."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name the deepest distinction - value creation versus extraction - not the surface characteristics.",
-            "explanation": "Naming value creation versus extraction identifies the deepest cause, not just the visible characteristics. 'Strong cultures, consistent strategy, execution, and relationships' lists characteristics without identifying the underlying cause. 'Study long-surviving businesses and copy their model' offers a method, not an actual answer to the question.",
-            "id": "bd_l143_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'An aircraft I'm commanding has experienced a previously unknown failure mode that no procedure in our manual covers. I have seventy seconds to decide. What is the decision process?'",
-            "options": [
-                "Follow the abnormal procedures checklist in the closest analogous section of the flight manual.",
-                "I'd find the one action that buys the most time, not the one that solves it, communicate to ATC and cabin crew at once, then work the problem.",
-                "Declare an emergency immediately and request priority handling from air traffic control."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Prioritise buying time and communicating over trying to fully solve the problem immediately.",
-            "explanation": "Prioritising the action that buys time, then communicating, avoids the decision paralysis a genuinely novel failure creates. 'Follow the closest analogous checklist' is what you'd do for a known failure - by definition, no checklist covers this one. 'Follow published procedures and consult the manual' assumes a procedure exists when the scenario states none does.",
-            "id": "bd_l143_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I've been asked to write the doctrine for a new form of operation that doesn't exist yet. How do you write doctrine for the genuinely novel?'",
-            "options": [
-                "Consult widely with the relevant technical and operational experts and synthesise their views into coherent operational principles.",
-                "Base the doctrine closely on procedures used for the most similar existing type of operation.",
-                "I'd write around the human factors that don't change even when the operation does, and be explicit about what's known versus what's still speculation."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name specific design principles for writing about the genuinely unknown.",
-            "explanation": "Anchoring on enduring human factors, and being explicit about speculation, gives real principles for doctrine about the unknown. 'Consult widely with experts and synthesise their views' describes the process, not the design principles the doctrine itself needs. 'Conduct thorough pre-mission planning and briefing' doesn't address writing doctrine at all.",
-            "id": "bd_l144_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I want to understand what separates outstanding intelligence analysis from competent intelligence analysis. What is the specific quality of mind that makes the difference?'",
-            "options": [
-                "Outstanding analysts have better pattern recognition, more domain expertise, and greater comfort with working under pressure.",
-                "Assess how quickly candidates reach a confident conclusion when given a new case.",
-                "It's the discipline to hold a question open - competent analysts work the evidence they have, outstanding ones chase the evidence they're missing."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name the specific discipline of resisting premature closure, not general traits.",
-            "explanation": "Naming the specific discipline of resisting premature closure identifies the precise quality that separates outstanding from competent. 'Better pattern recognition, domain expertise, and comfort under pressure' describes general traits, not the specific quality. 'Assess how quickly candidates reach a confident conclusion' inverts the actual insight, since reaching conclusions quickly is the competent-analyst pattern, not the outstanding one.",
-            "id": "bd_l144_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I'm working on a cookbook that I hope will be the most important thing I ever produce. What would make it genuinely important rather than merely successful?'",
-            "options": [
-                "A successful cookbook reflects current taste - a genuinely important one changes how readers understand something fundamental about food, even if it sells less.",
-                "Create a cookbook that represents the best of your culinary philosophy and communicates your unique approach to food.",
-                "Focus on recipes that are accessible enough for home cooks of any skill level."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Draw the specific distinction between successful and important, rather than describing a good cookbook generally.",
-            "explanation": "Drawing the specific distinction, including that importance can cost sales, precisely answers what was asked. 'Represents the best of your philosophy and communicates your approach' describes what a successful cookbook does, not what makes one important. 'Recipes accessible for any skill level' addresses usability, not the distinction being asked about.",
-            "id": "bd_l144_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I've been asked to advise a global health organisation on their strategic priorities for the next decade. What approach to this advisory work ensures it produces genuine value rather than a document that is filed and ignored?'",
-            "options": [
-                "Most strategy documents get filed and ignored because they solved the comfortable problem, not the real one - I'd spend a third of my time just defining it properly.",
-                "Present the findings in a clear, well-designed document that senior leadership can act on.",
-                "Ensure the advisory process involves all key stakeholders and produces clear, actionable recommendations."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Prioritise problem definition explicitly, not stakeholder process or presentation.",
-            "explanation": "Naming problem definition as the actual lever, with a concrete time allocation, identifies the real mechanism. 'Involve all stakeholders and produce actionable recommendations' is the standard approach that tends to produce documents that get filed and ignored. 'Present findings in a clear, well-designed document' addresses presentation, not the underlying cause of irrelevance.",
-            "id": "bd_l145_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I want to create an organisation that will still be genuinely relevant in fifty years. What is the most important thing to design correctly from the start?'",
-            "options": [
-                "It's the relationship between purpose and governance - make changing the purpose hard and changing the strategy easy. Most organisations do the exact opposite.",
-                "Focus on hiring exceptional early talent who can grow into future leadership roles.",
-                "Design excellent founding governance, build a strong culture from the start, and invest in talent and systems."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name the specific governance principle, including the common inversion, not general good practices.",
-            "explanation": "Naming the specific principle - and the common inversion most organisations make - gives real design insight. 'Excellent governance, strong culture, and investment in talent and systems' names the right categories at too general a level. 'Hire exceptional early talent for future leadership' addresses people, not the structural design question being asked.",
-            "id": "bd_l145_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'Looking back over a long career flying, what is the most important thing you've learned about what it takes to remain genuinely excellent over decades rather than just competent?'",
-            "options": [
-                "The most important thing is continuous training, maintaining currency on the latest procedures, and developing strong crew resource management skills.",
-                "Competent pilots accumulate experience and stop learning from it - excellent ones deliberately stay curious, chasing the gaps their experience doesn't fill.",
-                "Focus on accumulating as many flight hours as possible across different aircraft types."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Distinguish genuine learning from experience accumulation specifically.",
-            "explanation": "Distinguishing genuine learning from mere experience accumulation identifies the specific, honest quality that sustains excellence. 'Continuous training, currency, and CRM skills' describes institutional mechanisms for competence, not what produces sustained excellence. 'Accumulate as many flight hours as possible' conflates quantity of experience with the quality of learning from it.",
-            "id": "bd_l145_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I want to create an institution that will continue to do important work for a hundred years after I'm no longer here. What are the most important design decisions?'",
-            "options": [
-                "Make the mission hard to change and the strategy easy - most institutions invert that. And treat outside criticism as intelligence, not a threat.",
-                "Design clear governance structures, establish a strong culture from the start, and build systems for leadership succession.",
-                "Secure sufficient funding and a strong founding team before launching the institution."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name the specific governance inversion and the stance toward external criticism.",
-            "explanation": "Naming the specific inversion, plus a concrete stance toward criticism, gives precise, actionable design decisions. 'Clear governance, strong culture, leadership succession systems' names the right categories generally, without the specific mechanisms. 'Consult senior advisers and gather intelligence before deciding' is a general statement unrelated to institutional design.",
-            "id": "bd_l146_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I've spent decades in intelligence work. What is the deepest thing you've learned about the nature of truth and how intelligence relates to it?'",
-            "options": [
-                "Most things that matter are genuinely uncertain, not from lack of information but because the systems are too complex - the danger is faking certainty instead of holding it honestly.",
-                "The deepest thing is that intelligence work requires building the most accurate picture possible from incomplete and often contradictory information.",
-                "Cross-reference every source against at least two independent channels before drawing conclusions."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name the deep insight about genuine uncertainty, not the task of building a picture.",
-            "explanation": "Naming genuine, irreducible uncertainty, and the danger of false certainty, is the deep philosophical insight this question asks for. 'Building the most accurate picture from incomplete information' describes the task, not the deeper learning about truth itself. 'Cross-reference sources before drawing conclusions' is a practical technique, not a reflection on truth.",
-            "id": "bd_l146_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I'm reflecting on what food has meant in my life beyond the professional dimension. What has a life devoted to food actually taught me about being human?'",
-            "options": [
-                "It's taught me that care itself is a form of love, and that every good meal is really a negotiation between what you had and what you wanted.",
-                "A life devoted to food teaches you about the connection between nourishment, creativity, and human community.",
-                "Focus on the specific techniques and ingredients that define your particular cuisine."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name the specific, personal insights, not a general statement about food's connections.",
-            "explanation": "Naming specific, personal insights - care as love, and meals as negotiation - gives genuine depth beyond a general statement. 'Teaches you about the connection between nourishment, creativity, and community' states a true but general conclusion without specific insight. 'Focus on techniques and ingredients that define your cuisine' addresses craft, not what food has taught about being human.",
-            "id": "bd_l146_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I've been asked to advise on a deeply difficult ethical question: whether a society is justified in restricting individual freedom significantly to prevent a public health catastrophe that would harm far more people. What is the principled framework for thinking about this?'",
-            "options": [
-                "Restrict freedoms only for the minimum time needed to bring the outbreak under control.",
-                "Proportionality, a clear end date, real independent review, equal application across groups, and full transparency about the evidence - powers that can't be questioned rarely get given back.",
-                "Apply established public health ethical frameworks to balance individual rights with collective wellbeing."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name specific, non-negotiable elements, not a general balancing framework.",
-            "explanation": "Naming five specific, non-negotiable elements, with the reasoning behind them, gives a real principled framework. 'Apply established public health frameworks to balance rights and wellbeing' is a general directive without specific elements. 'Restrict freedoms only for the minimum time needed' names one true element but misses the other four.",
-            "id": "bd_l147_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I'm facing a strategic decision where the most commercially attractive option significantly disadvantages a community that depends on our current operations. What does business ethics actually require in this situation?'",
-            "options": [
-                "Offer the affected community fair market compensation for the disruption to their livelihoods.",
-                "It requires genuine consultation with the community beforehand, real mitigation, not a gesture, and asking whether you'd be comfortable if the whole trade-off were made public.",
-                "Consider the long-term reputational and social licence implications of your decision alongside the commercial considerations."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name concrete ethical requirements, including a specific public-transparency test.",
-            "explanation": "Naming concrete requirements, including a specific transparency test, treats this as a genuine ethical question rather than a risk calculation. 'Consider reputational and social licence implications' reframes ethics as risk management, which is a different, weaker framework. 'Ensure compliance and reflect stated values' is a general statement that doesn't engage with the actual tension.",
-            "id": "bd_l147_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I want to write a history of commercial aviation that honestly addresses the industry's impact on climate change alongside its contributions to human progress. How do you hold that complexity?'",
-            "options": [
-                "Focus primarily on the technological achievements and leave climate questions to environmental historians.",
-                "Present the industry's contributions to human progress honestly and address the climate impact as a serious challenge now being addressed.",
-                "I'd hold both truths at once - aviation genuinely transformed human life, and it did real, knowing damage to the atmosphere in the process."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Hold both truths simultaneously rather than resolving the tension in the more comfortable direction.",
-            "explanation": "Holding both truths without resolving the tension is the intellectually honest approach this question calls for. 'Present contributions honestly and address climate as a challenge now being addressed' resolves the tension in the more comfortable direction. 'Focus on technological achievements and leave climate to historians' avoids the tension altogether rather than holding it.",
-            "id": "bd_l147_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I want to understand the deepest reason why some military commanders produce genuine strategic clarity and others produce strategic confusion even when they're equally intelligent. What is your view?'",
-            "options": [
-                "It's not intelligence, it's how they handle uncertainty - the ones who say 'we don't know, and here's how we're managing that' create real clarity.",
-                "Lead by example, maintain clear lines of command, and ensure accountability at every level of the organisation.",
-                "Strategic clarity comes from clear thinking, strong communication skills, and the ability to synthesise complex information into actionable direction."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name the relationship with uncertainty specifically, not general leadership qualities.",
-            "explanation": "Naming the relationship with uncertainty, with a concrete example of what honest clarity sounds like, identifies the specific, counter-intuitive cause. 'Clear thinking, communication skills, ability to synthesise' describes general leadership traits, not the specific quality. 'Lead by example and maintain clear command lines' is a general statement about leadership structure.",
-            "id": "bd_l148_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'What is the most important thing that a life in intelligence work teaches you about the nature of loyalty?'",
-            "options": [
-                "Intelligence work teaches that loyalty must be earned and maintained through consistent professional conduct and mutual trust.",
-                "The object of your loyalty matters more than how loyal you are - I've seen real loyalty misdirected at institutions and people that no longer deserved it.",
-                "Build relationships slowly and verify people's reliability before trusting them with anything sensitive."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name the object of loyalty as the key variable, not how loyalty is earned.",
-            "explanation": "Naming the object of loyalty as the key variable identifies the deeper, more specific learning. 'Loyalty must be earned and maintained through conduct and trust' describes loyalty from the receiving end, not the deeper insight about its object. 'Build relationships slowly and verify reliability' is practical tradecraft advice, not a reflection on loyalty's nature.",
-            "id": "bd_l148_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I've been given the opportunity to give the most important speech of my career to an audience of the most significant food professionals in the world. What do you say that is genuinely worth their time?'",
-            "options": [
-                "Share your culinary philosophy and what has driven your creative development over the course of your career.",
-                "Thank the organisers and share a story about your first professional kitchen experience.",
-                "Not the polished journey story - what's actually worth their time is the belief I hold that contradicts what this industry believes, and why."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Name what's genuinely worth saying, not the expected career retrospective.",
-            "explanation": "Naming a genuinely challenging, unexpected belief is what makes a speech actually worth an expert audience's time. 'Share your philosophy and creative development' is exactly the expected speech this answer argues against. 'Thank the organisers and share an early career story' is a pleasant opening, not a genuinely worthwhile talk.",
-            "id": "bd_l148_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I want to understand what the practice of medicine, at its most honest, requires of the person who practices it that is different from what it requires professionally.'",
-            "options": [
-                "Take regular breaks and ensure a healthy work-life balance to avoid professional burnout.",
-                "It's the willingness to sit with suffering you truly can't fix, and the honesty to admit when tiredness, not the patient, is shaping your decision.",
-                "Medicine requires continuous learning, genuine compassion, and the maintenance of professional standards over a career."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name specific personal requirements beyond professional competence.",
-            "explanation": "Naming specific personal requirements - sitting with unfixable suffering, honesty about non-clinical influences - goes beyond professional competence. 'Continuous learning, compassion, and maintaining standards' describes the professional requirements, which is a different question. 'Take regular breaks for work-life balance' is practical self-care advice, not the deeper personal requirement being asked about.",
-            "id": "bd_l149_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'After a long career in business, what do you believe most deeply about the relationship between commerce and human wellbeing?'",
-            "options": [
-                "At its best, commerce coordinates human effort and creates shared value - at its worst, it extracts value in ways that eventually undermine itself.",
-                "Maintain strong client relationships through consistent service delivery and regular proactive communication.",
-                "Commerce creates value that improves human wellbeing when it operates within appropriate regulatory frameworks and ethical guidelines."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Give the honest, dual account, rather than the conditional statement about regulation.",
-            "explanation": "Giving both the best and worst honestly, without hedging on regulation, is the deepest personal belief this question asks for. 'Creates value when operating within regulatory frameworks' describes the conditions rather than the underlying belief. 'Maintain strong client relationships through communication' addresses practice, not a belief about commerce and wellbeing.",
-            "id": "bd_l149_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'I've been asked to speak at the retirement ceremony for a colleague who has flown for forty years. They asked me specifically to say something true rather than something kind. What do you say?'",
-            "options": [
-                "Speak about their dedication to aviation, the colleagues they've flown with, and the passengers they've safely transported over forty years.",
-                "You adapted through the most transformative decades aviation has seen. And the rarer thing - the humility to stay genuinely worried you might be wrong - kept people safe.",
-                "Mention the specific aircraft types they've flown and the routes they've operated over the years."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Say something specifically true, not the kind, general tribute.",
-            "explanation": "Naming a specific true insight - adaptability and humility as what kept people safe - answers the request for truth over kindness. 'Speak about dedication, colleagues, and passengers' is exactly the kind, general tribute the colleague asked to avoid. 'Mention specific aircraft types and routes' is factual but not the deeper truth being asked for.",
-            "id": "bd_l149_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I'm coming to the end of my career. What is the most important thing to pass on to the next generation of leaders who will face challenges I can't imagine?'",
-            "options": [
-                "Focus on identifying and promoting the most naturally talented people in the organisation.",
-                "Not knowledge - that ages. It's the capacity to think clearly and stay true to your values when you genuinely don't know if you'll succeed.",
-                "Pass on the technical knowledge, strategic frameworks, and professional standards you've developed over your career."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name the enduring quality rather than the knowledge that will age.",
-            "explanation": "Naming the enduring quality - clarity and integrity under genuine uncertainty - identifies what actually transfers across changing circumstances. 'Pass on technical knowledge, frameworks, and standards' passes on exactly the things that age. 'Identify and promote the most naturally talented people' addresses selection, not what should be passed on.",
-            "id": "bd_l150_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'After a career in intelligence, what is the deepest thing you've learned about the relationship between knowledge and power?'",
-            "options": [
-                "Restrict access to sensitive information strictly on a need-to-know basis at all times.",
-                "The most dangerous thing in any system is power insulated from the knowledge that would constrain it - the people who preserve that knowledge do civilisation's real work.",
-                "Knowledge, when applied effectively, creates the ability to act decisively and with greater precision than would otherwise be possible."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Name the deep insight about power and constraining knowledge, not the tactical value of information.",
-            "explanation": "Naming power insulated from constraining knowledge as the danger is the deep, philosophically serious insight this question asks for. 'Knowledge creates the ability to act decisively and precisely' describes tactical value, not the deeper relationship between knowledge and power. 'Restrict access on a need-to-know basis' is an operational security rule, not a reflection on knowledge and power.",
-            "id": "bd_l150_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'After thirty years of cooking professionally, what is the single most honest thing you could say to a young person thinking about entering this profession?'",
-            "options": [
-                "The single most honest thing is that it is one of the most creatively fulfilling careers you can choose if you have genuine talent.",
-                "The single most honest thing is that the profession has changed significantly and offers many more opportunities now than it used to.",
-                "It's an exchange, not a gift - it'll take your body and your weekends, and give you back the specific joy of making something someone else remembers."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Give the honest, balanced account of both cost and reward, not just reassurance.",
-            "explanation": "Naming both the real cost and the real reward, honestly, gives a complete and balanced account. 'The profession has changed and offers more opportunities now' is reassuring rather than honest. 'One of the most creatively fulfilling careers with genuine talent' is encouraging but incomplete - it never names what it actually takes.",
-            "id": "bd_l150_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        }
-    ]
+  "gameType": "branchingDialogue",
+  "batchIndex": 15,
+  "levels": "141-150",
+  "quests": [
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker whose idea you think is weaker than an alternative",
+      "scene": "In a meeting, a coworker proposes an approach you think has real problems, and you have a stronger alternative in mind.",
+      "options": [
+        "That approach has some real problems.",
+        "I like the direction you're thinking in — I wonder if we could also look at an approach that handles the edge cases a bit differently. Want me to sketch it out?",
+        "Sure, that could work."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Diplomatic disagreement often starts by acknowledging the other person's idea before introducing your own alternative.",
+      "explanation": "Acknowledging their idea first, then offering your alternative, disagrees diplomatically while still getting your genuinely useful input heard. Stating the problems directly, without softening, may come across as more blunt than the collaborative setting calls for. Agreeing despite real concerns lets a weaker approach move forward, missing your valuable perspective.",
+      "id": "bd_l141_q1",
+      "consequencePreviews": [
+        "Realistically, the direct critique, without softening or offering an alternative, may feel more blunt than necessary for the setting.",
+        "Realistically, you soften your disagreement by acknowledging their idea first, which keeps the conversation collaborative.",
+        "Realistically, agreeing despite real concerns lets a weaker approach move forward without your genuinely useful input."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a classmate whose essay thesis you think needs work",
+      "scene": "A classmate shares their essay thesis with you, clearly proud of it, and you think it's actually a bit too broad to argue well.",
+      "options": [
+        "I can see where you're going with this — I wonder if narrowing it slightly might make it easier to argue convincingly. What if you focused on just the economic angle?",
+        "This thesis is too broad.",
+        "It's a good start!"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Diplomatic feedback on someone's proud work often works best when you acknowledge the direction first, then offer a specific, constructive suggestion.",
+      "explanation": "Acknowledging their direction and offering a specific, constructive suggestion delivers real feedback diplomatically. The blunt critique, without softening, may feel discouraging given how proud they clearly are of their work. Vague positive feedback avoids the real concern, which means the actual weakness goes unaddressed.",
+      "id": "bd_l141_q2",
+      "consequencePreviews": [
+        "As a result, you soften the critique by acknowledging their direction first, then offer a specific, constructive suggestion.",
+        "Realistically, the blunt critique, without any softening, may feel discouraging given how proud they clearly are of it.",
+        "In this moment, the vague, purely positive comment doesn't share your genuine concern, which could leave a real weakness unaddressed."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a senior colleague whose strategic proposal you believe has a significant flaw, in a setting where directness could be politically costly",
+      "scene": "A senior colleague, known for being sensitive to criticism, presents a strategic proposal in a meeting that you believe has a significant flaw around resource allocation.",
+      "options": [
+        "The resource allocation piece seems like it has a real flaw, I guess, I was just going with my gut on that one, but I'm not totally set on it — and a lot depends on details I haven't really looked into yet, and I know that's not the most thought-out response, but it's where my head's at right now.",
+        "This looks really solid overall.",
+        "This has a lot of strong elements — one thing I'd love to stress-test together is the resource allocation piece, just to make sure it holds up under different scenarios. Could we grab some time to dig into that?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When raising a real concern with someone senior and sensitive to criticism, frame it as a collaborative stress-test rather than a direct critique or staying silent.",
+      "explanation": "Framing the concern as a collaborative stress-test respects both the substance of your worry and the political sensitivity of the relationship. A direct critique, without softening, risks an outsized, politically costly reaction from someone known to be sensitive. Staying silent entirely avoids the political risk but lets a significant, real flaw go completely unaddressed.",
+      "id": "bd_l141_q3",
+      "consequencePreviews": [
+        "The direct critique, without softening, risks a politically costly reaction from someone known to be sensitive to criticism.",
+        "Withholding the genuine concern entirely avoids the political risk but lets a significant flaw go unaddressed.",
+        "You diplomatically acknowledge the strengths while framing your concern as a collaborative stress-test, respecting both the substance and the political sensitivity."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend asking to borrow money again, after a previous loan hasn't been repaid",
+      "scene": "A friend asks to borrow money again, while still owing you from a loan three months ago that hasn't been repaid or mentioned since.",
+      "options": [
+        "Sure, how much do you need? Is that reasonable, or am I off base? Honestly, I wasn't considering every angle — and to be fair I only heard about this a few minutes ago myself.",
+        "You still haven't paid me back from last time, so no.",
+        "I want to help where I can — I do want to mention the last loan is still outstanding, so I'd need that settled first before I could lend again."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When setting a financial boundary with a friend, reference the specific unresolved issue calmly and clearly, rather than agreeing anyway or being accusatory.",
+      "explanation": "Referencing the specific unresolved loan calmly, while expressing genuine willingness to help once it's settled, sets a fair boundary diplomatically. Agreeing again, without addressing the outstanding loan, risks establishing an unsustainable pattern. A blunt, somewhat accusatory refusal may create more tension than the situation actually requires for a reasonable boundary.",
+      "id": "bd_l142_q1",
+      "consequencePreviews": [
+        "In this moment, agreeing again, without addressing the outstanding loan, risks setting an unsustainable pattern.",
+        "In this moment, the blunt, somewhat accusatory framing may create more tension than necessary for a fair, reasonable boundary.",
+        "You set a clear, fair boundary diplomatically, referencing the specific unresolved issue without being accusatory."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a colleague who repeatedly asks to borrow your equipment and doesn't return it promptly",
+      "scene": "A colleague asks to borrow your laptop charger again, after keeping the last one for over a week without returning it until you asked.",
+      "options": [
+        "Sure, happy to lend it.",
+        "Happy to lend it — could you drop it back by end of day though? Last time it took a bit longer than I needed, so just want to make sure I have it when I need it.",
+        "You kept it for over a week last time, I'm not sure I want to lend it again."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When lending something again after a past issue, agree while diplomatically stating the specific expectation this time.",
+      "explanation": "Agreeing to help while diplomatically setting a specific expectation addresses the real, past issue without refusing outright. Agreeing with no condition at all risks the same delay happening again. Pointedly noting the past issue, without offering a path to actually lend it again, may come across more like a refusal than the diplomatic boundary that was likely intended.",
+      "id": "bd_l142_q2",
+      "consequencePreviews": [
+        "In this moment, agreeing without any condition risks the same pattern of delayed return happening again.",
+        "Here, you agree to help while diplomatically setting a clear expectation based on the specific past issue.",
+        "In this moment, the pointed comment about the past issue, without offering a way forward, may feel more like a refusal than the diplomatic boundary intended."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a business partner who wants to revisit a previously agreed-upon boundary around after-hours communication",
+      "scene": "A business partner says: 'I know we agreed on no work calls after 7pm, but could we make an exception tonight? It's kind of urgent.' This is the third 'exception' requested in two weeks.",
+      "options": [
+        "I get that tonight feels urgent — I do want to gently flag that this is the third exception in two weeks, so maybe we should revisit whether 7pm is actually realistic for us, rather than making exceptions each time?",
+        "Sure, let's hop on a call, actually, I hadn't weighed all the details, so there might be a better way to handle it — and there's a decent chance I'd see it differently after sleeping on it, and I haven't really run it past anyone else yet.",
+        "We agreed on no calls after 7pm, I'd rather stick to that, admittedly, I hadn't fully worked out how it'd play out, though I'm open to changing my mind — and there's a decent chance I'd see it differently after sleeping on it."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When a previously agreed boundary keeps getting quietly renegotiated through repeated 'exceptions,' diplomatically name the pattern and propose actually revisiting the boundary itself.",
+      "explanation": "Accommodating tonight while diplomatically naming the pattern of repeated exceptions opens an honest conversation about whether the boundary itself needs to change, rather than letting it quietly erode. Simply agreeing again, without naming the pattern, risks the boundary becoming meaningless through repeated exceptions. Firmly refusing upholds the letter of the boundary but misses that the pattern itself suggests a real conversation about revisiting it might be needed.",
+      "id": "bd_l142_q3",
+      "consequencePreviews": [
+        "Here, you accommodate the immediate situation diplomatically while raising the underlying pattern constructively, rather than letting the boundary quietly erode.",
+        "Here, agreeing again, without acknowledging the pattern, risks the boundary quietly eroding into something neither of you actually agreed to.",
+        "In this moment, the firm refusal upholds the boundary but doesn't address the pattern of repeated exceptions, which suggests the boundary itself might genuinely need revisiting."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who consistently talks about themselves without asking about you",
+      "scene": "During another long catch-up call, a friend has talked for twenty minutes about their life without once asking how you're doing, as has become a bit of a pattern.",
+      "options": [
+        "You've been talking about yourself this whole call and haven't asked about me once, I suppose, I was going more on instinct than anything, so let me know if that's off — and a lot depends on details I haven't really looked into yet.",
+        "That's interesting, I guess, I hadn't stopped to think it all the way through, but I'm not totally set on it — and I probably should have asked a few more questions before saying anything.",
+        "That sounds like a lot going on for you — I'd love to share a bit about my side too when there's a moment, there's actually been a lot happening for me lately as well."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When a conversation has become one-sided, gently redirecting toward balance often works better than staying passive or directly calling out the imbalance.",
+      "explanation": "Gently redirecting the conversation toward balance addresses the imbalance diplomatically, without making your friend feel accused. Staying passive doesn't redirect anything, so the same pattern is likely to simply continue in future calls. Directly calling out the imbalance, while accurate, may feel more confrontational than the gentler approach, especially if this is a first attempt to address it.",
+      "id": "bd_l143_q1",
+      "consequencePreviews": [
+        "Realistically, the direct callout, while accurate, may feel more confrontational than a gentler redirect would in the moment.",
+        "In this moment, the passive response doesn't redirect the conversation, so the imbalance is likely to simply continue.",
+        "Realistically, you gently redirect the conversation toward balance, without directly calling out the pattern in a way that could feel accusatory."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker who dominates team meetings, leaving little room for others",
+      "scene": "A coworker has spoken for the majority of another team meeting, again leaving little room for quieter team members to contribute.",
+      "options": [
+        "That's a great point — I'd love to hear what others think too, since we haven't heard from everyone yet. Maria, what's your take?",
+        "Interesting perspective.",
+        "You've been talking a lot, let's hear from other people."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "In a meeting where one person is dominating, gently redirecting the floor to someone specific is often more diplomatic than staying passive or calling out the dominance directly.",
+      "explanation": "Gently redirecting the floor to a specific person diplomatically opens space for others without singling anyone out negatively. A passive comment doesn't actually redirect anything, so the imbalance likely continues. Directly calling out the dominance, especially in front of the team, may feel more pointed and public than the gentler redirect achieves just as effectively.",
+      "id": "bd_l143_q2",
+      "consequencePreviews": [
+        "You gently redirect the floor to others, diplomatically making space without directly calling out the dominance.",
+        "The passive comment doesn't actually redirect the floor, so quieter team members likely still won't get a chance to speak.",
+        "Realistically, the direct callout, especially in front of the team, may feel more pointed than a gentle redirect toward another speaker."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a mentor whose advice sessions have started to feel more like a monologue about their own career than genuine mentorship, but you're wary of seeming ungrateful",
+      "scene": "During another mentorship session, your mentor has spent most of the hour recounting their own career stories, leaving little time to discuss the specific challenges you'd actually hoped to get advice on.",
+      "options": [
+        "That's a really interesting story.",
+        "I really value hearing about your experience — I'm also mindful of our time, and I have a specific challenge I'd love to get your take on if we have a few minutes left. Would now be a good time?",
+        "We're kind of running out of time, and I had some specific things I wanted to ask about."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When a mentorship session has drifted from your actual needs, express genuine appreciation first, then diplomatically redirect toward what you specifically need, rather than staying passive or redirecting abruptly.",
+      "explanation": "Expressing genuine appreciation, then diplomatically redirecting toward your specific need, respects the relationship while still getting the actual value you came for. Staying passive doesn't redirect the conversation, so the same pattern is likely to continue in future sessions. Redirecting abruptly, without acknowledging what they shared first, may feel more curt than the mentorship relationship probably calls for.",
+      "id": "bd_l143_q3",
+      "consequencePreviews": [
+        "In this moment, the passive response doesn't redirect toward your actual need, so the pattern is likely to continue in future sessions.",
+        "Here, you express genuine appreciation while diplomatically redirecting toward your actual need, respecting both the relationship and your own time.",
+        "As a result, the direct redirect, without first acknowledging the value of what they shared, may feel more abrupt than necessary given the mentorship relationship."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker who wants feedback on something you found genuinely underwhelming",
+      "scene": "A coworker asks: 'What did you think of my pitch?' You found the core idea genuinely underdeveloped, though the delivery was polished.",
+      "options": [
+        "Your delivery was really polished — I think the core idea could use a bit more development before it's ready to pitch further. Want to dig into that together?",
+        "Honestly, the core idea needs a lot more work, thinking about it now, it wasn't a fully considered answer, so I could be wrong — and I haven't really run it past anyone else yet.",
+        "It was good, looking back, that was more of a first reaction, so there might be a better way to handle it — and there's a decent chance I'd see it differently after sleeping on it."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Diplomatic honest feedback starts with a genuine strength, then names the real concern specifically, offering to help.",
+      "explanation": "Leading with a genuine strength, then naming the real concern and offering help, delivers honest feedback diplomatically and constructively. Vague positive feedback avoids the real issue entirely, which doesn't actually help your coworker improve. The blunt critique, without any acknowledgment first, may feel more discouraging than the situation calls for.",
+      "id": "bd_l144_q1",
+      "consequencePreviews": [
+        "As a result, you lead with a genuine strength before diplomatically naming the real concern, and you offer to help.",
+        "As a result, the blunt critique, without acknowledging any strength first, may feel more discouraging than necessary.",
+        "Realistically, the vague, purely positive response doesn't share your genuine concern, which could let a real weakness go unaddressed."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend asking for your opinion on their short story",
+      "scene": "A friend shares a short story and asks: 'Honestly, what do you think?' The writing itself is strong, but the ending feels rushed and unresolved.",
+      "options": [
+        "It's good!",
+        "The ending felt really rushed to me.",
+        "The writing itself is really strong, honestly — I think the ending could use a bit more space to land, it felt a little rushed to me. Want to talk through some ideas?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Diplomatic feedback on creative work names a genuine strength first, then the specific concern, and offers to help.",
+      "explanation": "Leading with genuine praise for the strong writing, then naming the specific concern and offering to help, gives honest, diplomatic, and constructive feedback. Vague praise avoids the real issue, which doesn't actually help your friend improve the story. The direct critique about the ending, without acknowledging the strong writing first, may feel more discouraging than the situation calls for.",
+      "id": "bd_l144_q2",
+      "consequencePreviews": [
+        "You may notice that the vague praise doesn't share your genuine, specific concern about the ending, which could leave a real issue unaddressed.",
+        "The direct critique, without acknowledging the genuinely strong writing first, may feel more discouraging than necessary.",
+        "You lead with genuine praise for the strong writing before diplomatically naming the specific concern and offering to help."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a close friend and talented amateur artist who's decided to quit their stable job to pursue art full time, and asks your honest opinion of their latest, weaker body of work right before this major life decision",
+      "scene": "Right after announcing they're quitting their job to pursue art full time, a close friend shows you their latest series and asks: 'Be honest, what do you think? I want to know before I make this decision.' This particular series is, honestly, noticeably weaker than their earlier work.",
+      "options": [
+        "This is great, you're definitely ready for this, to be honest, I was just going with my gut on that one, so take it with a grain of salt — and a lot depends on details I haven't really looked into yet, and I probably should have asked a few more questions before saying anything.",
+        "I can see the technical skill is still really there — honestly, I think this series feels less bold than your earlier work, maybe held back by outside pressure. I'd love to see what you make once the pressure's off, that's when your best work usually comes through.",
+        "Honestly, this series feels weaker than your earlier work, I mean, I was going more on instinct than anything, but I'm not totally set on it — and honestly the whole situation caught me a bit off guard, and a lot depends on details I haven't really looked into yet."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "For an honest assessment that matters for someone's major, real-world decision, be specific and honest, but frame it constructively around their genuine underlying skill, rather than empty praise or an unsoftened critique.",
+      "explanation": "Being honest and specific, while framing it constructively around their genuine underlying skill, respects both the importance of the moment and your friend's real ability. Empty praise, right before such a significant, risky decision, doesn't actually serve your friend's genuine interests, however kind it feels in the moment. The blunt assessment, without any constructive framing, risks being needlessly discouraging at a moment when your friend genuinely needs honest, useful guidance.",
+      "id": "bd_l144_q3",
+      "consequencePreviews": [
+        "In this moment, false encouragement, right before such a major, risky life decision, doesn't serve your friend's genuine interests, even though it feels kind in the moment.",
+        "Here, you give an honest, specific, and genuinely constructive assessment right when it matters most, framed in a way that's encouraging rather than discouraging about their real ability.",
+        "In this moment, the blunt assessment, without the constructive framing or acknowledgment of genuine skill, risks being needlessly discouraging right before a major decision."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a landlord who wants to raise rent significantly above market rate",
+      "scene": "Your landlord proposes a rent increase well above what similar units in the area are currently going for, and you want to push back without souring the relationship.",
+      "options": [
+        "Okay, I guess that works.",
+        "That increase is way too high, thinking about it now, I was just going with my gut on that one, so let me know if that's off — and honestly the whole situation caught me a bit off guard, and I'm honestly still working out how I feel about the whole thing.",
+        "I've really appreciated being a tenant here, and I want to keep that going — I did notice similar units nearby are going for less, so I was hoping we could find a number that works for both of us."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Diplomatically pushing back on a price increase works best when you affirm the relationship, present evidence, and invite a mutual solution.",
+      "explanation": "Affirming the relationship, presenting evidence, and inviting a mutual solution pushes back diplomatically while protecting the relationship. A direct objection, without any softening or evidence, may come across as more confrontational than necessary. Agreeing outright gives up a legitimate negotiating position without even trying to find a fairer number.",
+      "id": "bd_l145_q1",
+      "consequencePreviews": [
+        "In this moment, agreeing to an above-market increase, without pushing back at all, gives up a legitimate negotiating position.",
+        "As a result, the direct objection, without affirming the relationship or offering evidence, may come across as more confrontational than necessary.",
+        "As a result, you affirm the relationship first, then diplomatically introduce the evidence and invite a mutual solution."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a service provider who wants to charge you for work beyond the original quote",
+      "scene": "A contractor says the final bill will be 30% above the original quote, citing 'unforeseen complications' you're not entirely sure were communicated clearly at the time.",
+      "options": [
+        "That's way more than we agreed on.",
+        "I really appreciate the work you've done — I am a bit surprised by the increase though, could you walk me through what came up so I understand it fully?",
+        "Alright, if that's what it takes."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When a bill comes in higher than expected, affirm appreciation for the work while diplomatically asking for a clear explanation before agreeing or objecting.",
+      "explanation": "Affirming appreciation while diplomatically asking for an explanation gets you the information you need without assuming bad faith. A direct objection, before hearing their explanation, may come across as more confrontational than necessary. Agreeing without understanding the increase gives up a chance to actually verify whether the extra charge is genuinely fair.",
+      "id": "bd_l145_q2",
+      "consequencePreviews": [
+        "In this moment, the direct objection, without inviting an explanation first, may come across as more confrontational than necessary before you've even heard their side.",
+        "In this moment, you affirm appreciation for their work while diplomatically asking for the explanation you genuinely need.",
+        "In this moment, agreeing without understanding the increase gives up a chance to actually verify whether the extra charge is fair."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a longtime supplier who wants to significantly change payment terms mid-relationship, citing their own cash flow issues",
+      "scene": "A longtime, generally reliable supplier says: 'We need to move from net-60 to net-15 payment terms, effective immediately, due to cash flow issues on our end.' This would create real cash flow strain for your business too.",
+      "options": [
+        "I really value our long relationship, and I understand cash flow pressures — this would create some real strain on our end too though, could we look at a middle ground, like net-30, or a phased transition?",
+        "Net-15 is going to be really difficult for us.",
+        "Okay, we can make that work."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When a long-term collaborator proposes a shift that genuinely puts pressure on you, acknowledge the partnership and their circumstances while tactfully stating your own limit and offering a compromise.",
+      "explanation": "Affirming the relationship and their genuine pressure, while naming your own real constraint and proposing a middle ground, pushes back diplomatically without damaging a valued, long-term partnership. A direct objection, without acknowledging their situation, may come across as more confrontational than necessary given the relationship's history. Agreeing outright, without pushing back, could genuinely hurt your own business's cash flow, which isn't a sustainable solution for either side.",
+      "id": "bd_l145_q3",
+      "consequencePreviews": [
+        "As a result, you affirm the relationship and acknowledge their genuine pressure while diplomatically naming your own real constraint and proposing a mutual solution.",
+        "As a result, the direct objection, without acknowledging their situation or affirming the relationship, may come across as more confrontational than necessary for a valued, long-term partner.",
+        "As a result, agreeing to a change that creates real cash flow strain, without pushing back diplomatically, could genuinely hurt your own business."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend whose partner you have genuine, private reservations about",
+      "scene": "A friend asks: 'What do you honestly think of my new partner? Be real with me.' You have genuine reservations, but you also know they're clearly happy and it's early days.",
+      "options": [
+        "They seem great!",
+        "They seem to make you really happy, which I love seeing — I will say I haven't gotten to know them super well yet, so I'd love more time together before I form a fuller opinion.",
+        "Honestly, I have some concerns about them, admittedly, I was just going with my gut on that one, so it's worth double-checking — and to be fair I only heard about this a few minutes ago myself."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "For a genuinely early-stage concern about someone's new partner, diplomatic honesty means being truthful about your happiness for them while not overstating a premature judgment.",
+      "explanation": "Being honestly warm about their happiness, while diplomatically noting you need more time before forming a fuller opinion, is truthful without overstating a premature judgment. Being overly enthusiastic isn't fully honest, since you do have genuine reservations you're choosing to hide. Sharing specific concerns this early risks an unfair judgment based on limited time, which could strain the friendship unnecessarily.",
+      "id": "bd_l146_q1",
+      "consequencePreviews": [
+        "The overly enthusiastic response isn't fully honest, since you actually do have genuine reservations.",
+        "You share genuine warmth honestly while diplomatically holding back a premature, potentially unfair judgment.",
+        "Sharing specific concerns this early, before really getting to know the partner, risks an unfair judgment that could strain the friendship."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker asking for your opinion on a new hire you have mixed early impressions of",
+      "scene": "A coworker asks: 'What do you think of the new hire so far?' Your early impressions are mixed, and you don't think it's fair to form a firm judgment yet.",
+      "options": [
+        "Honestly, it's still early days for me to say for sure — I've seen some good signs, but I'd rather give it a bit more time before forming a solid opinion.",
+        "Honestly, I'm not sure they're a great fit, in fairness, I wasn't considering every angle, so take it with a grain of salt — and a lot depends on details I haven't really looked into yet.",
+        "They seem great so far, I suppose, I wasn't considering every angle, so it's worth double-checking — and I'm honestly still working out how I feel about the whole thing."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "For a genuinely uncertain early impression, diplomatic honesty means expressing the actual uncertainty rather than overstating either a positive or negative view.",
+      "explanation": "Expressing genuine, honest uncertainty, while noting some good early signs, is diplomatically honest without overstating a judgment either way. Claiming they seem great isn't fully honest about your actual, more mixed impressions. Stating a firm negative judgment this early risks being genuinely unfair to someone who's still settling into a new role.",
+      "id": "bd_l146_q2",
+      "consequencePreviews": [
+        "You share your genuinely tentative view honestly, diplomatically avoiding an unfairly premature judgment.",
+        "In this moment, sharing a firm negative judgment this early, before giving it fair time, risks being unfair to someone still settling in.",
+        "Here, the overly confident positive answer isn't fully honest about your actual, more mixed early impressions."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a close friend asking your honest opinion of their fiancé right before the wedding, where you have a specific, significant concern you've kept to yourself for a while",
+      "scene": "Just weeks before their wedding, a close friend asks: 'Be completely honest — do you think I'm making the right choice?' You've noticed, over the past year, a pattern where their fiancé seems to consistently minimize your friend's career ambitions, something that has genuinely worried you.",
+      "options": [
+        "Honestly, I don't think he really supports your career goals.",
+        "You two seem really happy together, I'm excited for you!",
+        "I want you to know I can see how happy you generally are, and I do care about you enough to be honest — I've noticed a pattern where he seems to downplay your career goals sometimes, and it's made me want to check that you feel fully supported there. Not saying don't marry him, just want you to have my honest perspective."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "For a genuine, significant concern about a life-changing decision, when someone explicitly asks for complete honesty, share the specific concern with care and clearly leave the decision to them, rather than withholding it or delivering it as an unsoftened judgment.",
+      "explanation": "Sharing the specific, genuine concern with care, and clearly leaving the decision to your friend, honors their explicit request for honesty while respecting their autonomy over their own life. Withholding the concern entirely, when they specifically asked for honesty, doesn't actually serve their genuine wellbeing, even though it avoids an uncomfortable conversation. Delivering the concern bluntly, without care or softening, risks it landing as a judgment of their decision rather than the honest, caring perspective they actually asked for.",
+      "id": "bd_l146_q3",
+      "consequencePreviews": [
+        "You may notice that the blunt, unsoftened statement, right before a wedding, risks feeling more like a judgment of the decision than the honest, caring perspective your friend actually asked for.",
+        "Realistically, withholding a genuine, significant concern, right when your friend specifically asked for honesty, doesn't actually serve them well, even though it avoids an uncomfortable moment.",
+        "Realistically, you honestly share the specific, genuine concern that's been weighing on you, framed with care rather than judgment, while clearly leaving the decision to them."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker who takes feedback personally and gets defensive easily",
+      "scene": "You need to tell a coworker, who's historically reacted defensively to feedback, that a report they wrote has several factual errors that need fixing before it goes out.",
+      "options": [
+        "There are several errors in this report, if I'm honest, I hadn't stopped to think it all the way through, so there might be a better way to handle it — and there's a decent chance I'd see it differently after sleeping on it.",
+        "It's fine, I'll just fix it myself, I suppose, I hadn't stopped to think it all the way through, so there might be a better way to handle it — and a lot depends on details I haven't really looked into yet.",
+        "This report has some really solid analysis — I did spot a few factual details that need double-checking before it goes out. Want to go through them together?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "With someone who reacts defensively to feedback, leading with genuine praise and framing corrections as collaborative tends to be more effective than a blunt statement or avoiding the conversation.",
+      "explanation": "Leading with genuine praise and framing the correction as a collaborative check makes it easier for someone sensitive to feedback to actually hear it. The direct statement, without softening, risks triggering a stronger defensive reaction than necessary. Quietly fixing it yourself avoids the conversation, but it means your coworker never learns about the errors, risking the same mistake happening again.",
+      "id": "bd_l147_q1",
+      "consequencePreviews": [
+        "Here, the direct statement, without any softening, risks a stronger defensive reaction from someone known to be sensitive to feedback.",
+        "In this moment, fixing it yourself avoids the difficult conversation but means your coworker never learns about the errors, risking a repeat.",
+        "As a result, you lead with genuine praise and frame the correction as a collaborative check, which tends to land better with someone sensitive to feedback."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a family member who is easily hurt by criticism, even when gently phrased",
+      "scene": "You need to mention to a family member, who tends to take things personally, that their cooking at the last family dinner was a bit too salty for most people's taste.",
+      "options": [
+        "Dinner was really lovely, thank you for hosting — I did notice it was a touch salty for some of us, might be worth going a little lighter next time.",
+        "It was a bit too salty.",
+        "It was great, no notes!"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "With someone sensitive to criticism, leading with genuine appreciation before gently naming specific feedback is more effective than a blunt statement or avoiding the feedback entirely.",
+      "explanation": "Leading with genuine appreciation before gently naming the specific feedback makes it easier for a sensitive person to actually hear it without feeling attacked. The direct statement, without any softening, may land harder than intended on someone known to take things personally. Withholding the feedback entirely avoids discomfort now but means the same minor issue is likely to happen again next time.",
+      "id": "bd_l147_q2",
+      "consequencePreviews": [
+        "In this moment, you lead with genuine appreciation before gently naming the specific, minor feedback.",
+        "As a result, the direct statement, without softening, may land harder than intended on someone known to be sensitive to criticism.",
+        "As a result, withholding the minor, genuinely useful feedback means it's likely to happen again next time."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a talented but historically volatile creative director whose work you need to give critical feedback on before a major client presentation",
+      "scene": "You need to tell a talented but historically volatile creative director, whose reactions to criticism have caused real tension before, that a key visual concept for tomorrow's major client presentation isn't landing well with the client's stated goals.",
+      "options": [
+        "This concept doesn't really address the client's goals.",
+        "This concept has some genuinely striking elements — I want to make sure it lands exactly right for tomorrow though, and I think it might be worth revisiting how it addresses the client's specific goals around accessibility. Want to work through it together before the deadline?",
+        "I'm sure it'll be fine for tomorrow."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "For high-stakes, critical feedback to someone historically sensitive to it, lead with genuine praise and frame the concern as a shared, deadline-driven priority, rather than stating it bluntly or avoiding it under pressure.",
+      "explanation": "Leading with genuine, specific praise and framing the concern as a shared priority for tomorrow's deadline respects both the real stakes and the person's sensitivity, making it more likely the feedback actually lands. The direct statement, without softening, risks an unproductive reaction right when there's no time to spare before the deadline. Avoiding the real concern entirely risks a genuinely problematic client presentation tomorrow, which is a serious risk given what's actually at stake.",
+      "id": "bd_l147_q3",
+      "consequencePreviews": [
+        "Realistically, the direct statement, without softening, risks a strong, potentially unproductive reaction right before a high-stakes deadline.",
+        "You lead with genuine, specific praise before framing the critical feedback as a shared, deadline-driven priority, which respects both the stakes and their sensitivity.",
+        "As a result, avoiding the real concern entirely risks a genuinely problematic presentation to the client tomorrow, which is a serious, high-stakes risk."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a neighbour whose noisy renovation has been going on for weeks",
+      "scene": "A neighbour's renovation noise has continued for several weeks, well past what they originally mentioned, and it's affecting your ability to work from home.",
+      "options": [
+        "How much longer is this renovation going to take?",
+        "I know renovations can run long, so I don't want to make a big deal of it — but the noise has been going on a bit past what I expected, and it's been tricky for my work-from-home days. Any sense of a new timeline?",
+        "This noise has been going on forever, it's honestly really disruptive."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When raising an ongoing issue with a neighbour, diplomatically acknowledge their situation, name the real impact on you, and ask for useful information.",
+      "explanation": "Acknowledging their situation, naming the real impact on your work, and asking a useful question raises the issue diplomatically while still getting the information you need. The direct question alone, without any softening, may come across as more abrupt than necessary for a neighbour relationship. The strong complaint, without any acknowledgment of their situation, risks more tension than the issue actually requires.",
+      "id": "bd_l148_q1",
+      "consequencePreviews": [
+        "In this moment, the direct question, without acknowledging their situation or the impact on you, may come across as more abrupt than necessary.",
+        "As a result, you diplomatically acknowledge their situation while clearly naming the real impact and asking for useful information.",
+        "As a result, the strong complaint, without softening, may create more tension with a neighbour than the situation actually requires."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker whose desk clutter has started spilling into your shared space",
+      "scene": "A coworker's desk items have gradually spread onto your side of a shared desk over the past couple of weeks, and it's starting to bother you.",
+      "options": [
+        "I know things get busy — I've noticed some of your stuff has spread onto my side of the desk lately, would you mind keeping it to your side when you get a chance?",
+        "Could you keep your stuff on your side of the desk? Should we think about it differently? Honestly, I hadn't checked how that would actually land — and I haven't really run it past anyone else yet.",
+        "Your stuff is all over my side of the desk, it's honestly pretty annoying."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "For a minor, everyday annoyance, acknowledge a reasonable cause diplomatically before making a clear, simple request.",
+      "explanation": "Acknowledging a reasonable cause before making a clear, simple request raises a minor issue diplomatically without making it a big deal. The direct request alone, without softening, may come across as more blunt than a minor issue like this needs. The frustrated framing risks more tension than a small, easily-fixed annoyance actually warrants.",
+      "id": "bd_l148_q2",
+      "consequencePreviews": [
+        "Here, you diplomatically acknowledge a reasonable cause before naming the specific issue and making a clear, simple request.",
+        "Here, the direct request, without any softening, may come across as more blunt than necessary for a minor, everyday issue.",
+        "In this moment, the frustrated framing, without softening, may create more tension than a minor, easily-fixed issue actually warrants."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a downstairs neighbour in a shared building whose ongoing, low-grade complaints about your normal household noise have started to feel excessive, but you want to maintain a peaceful relationship",
+      "scene": "A downstairs neighbour has left a third polite-but-pointed note this month about 'excessive noise,' though you believe your household activities have been entirely normal and within reasonable hours.",
+      "options": [
+        "Sorry about the noise, we'll try to keep it down.",
+        "We haven't been doing anything out of the ordinary, this seems like an overreaction, looking back, I hadn't fully worked out how it'd play out, so let me know if that's off — and to be fair I only heard about this a few minutes ago myself, and I know that's not the most thought-out response, but it's where my head's at right now.",
+        "I got your note, thanks for letting me know — I do want to mention we've been keeping to pretty normal hours and activity levels on our end, so I'm wondering if there might be a specific time or type of noise that's the real issue? Happy to talk it through so we're both comfortable."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When repeated complaints feel excessive relative to genuinely normal behavior, diplomatically acknowledge the neighbour's concern while honestly sharing your own perspective and inviting a specific conversation.",
+      "explanation": "Acknowledging their concern while honestly sharing your own perspective, and inviting a specific conversation, addresses a recurring issue diplomatically without simply capitulating to an unclear complaint. Apologizing without sharing your honest perspective risks setting an expectation of change for noise that may not actually be unreasonable. Directly dismissing the complaint as an overreaction, without diplomatic softening, risks escalating tension with someone you'll continue to live near.",
+      "id": "bd_l148_q3",
+      "consequencePreviews": [
+        "Realistically, simply apologizing, without sharing your own honest perspective, may set an expectation of ongoing behavior change for noise that may not actually be excessive.",
+        "Realistically, the direct dismissal, without diplomatic softening, risks escalating tension with a neighbour you'll continue living near.",
+        "Realistically, you diplomatically acknowledge their concern while honestly naming your own perspective and inviting a specific, constructive conversation."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker who consistently arrives late to shared meetings you organize",
+      "scene": "A coworker has arrived 10-15 minutes late to the last four meetings you've organized, without any explanation, and it's starting to affect the group's time.",
+      "options": [
+        "I know schedules get tight — I've noticed the last few meetings have started a bit late waiting on you, so I wanted to check if there's a better time that would work, or if there's something making it tricky to get there on time?",
+        "You've been late to the last four meetings.",
+        "It's fine, we'll just start without you next time."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When addressing a recurring, mildly frustrating pattern, diplomatically assume good intent, name the specific pattern, and genuinely invite a solution.",
+      "explanation": "Assuming good intent, naming the specific pattern, and genuinely inviting a solution addresses the issue diplomatically while leaving room for a reasonable explanation. The direct statement, without any softening, may come across as more accusatory than a collaborative conversation intends. Deciding to just start without them, without ever raising the issue directly, avoids the conversation but risks quiet resentment building instead.",
+      "id": "bd_l149_q1",
+      "consequencePreviews": [
+        "Realistically, you diplomatically assume good intent while naming the specific pattern and genuinely inviting a solution.",
+        "In this moment, the direct statement, without diplomatic softening or an invitation to solve it together, may feel more like an accusation than a collaborative conversation.",
+        "The passive-aggressive resolution doesn't actually address the pattern directly, which could create quiet resentment instead."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a client whose emails have become increasingly terse and slightly impatient in tone",
+      "scene": "A client's recent emails have become noticeably shorter and more impatient in tone compared to earlier in the project, though nothing specific has been said.",
+      "options": [
+        "Your emails have seemed pretty short and impatient lately.",
+        "I wanted to check in — I've noticed our recent exchanges have felt a bit more rushed, and I just want to make sure everything's on track from your end and that we're meeting your expectations well.",
+        "I'm sure everything's fine, I'll just keep going as planned."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When you notice a subtle but concerning shift in tone with a client, diplomatically name what you've noticed and genuinely invite them to share what's going on.",
+      "explanation": "Diplomatically naming the shift you've noticed, and genuinely checking in, opens space for the client to share a concern before it grows into something bigger. The direct observation about their tone, without softening, may feel more like an accusation than a genuine, caring check-in. Ignoring the shift entirely risks missing a real, developing concern that could affect the project down the line.",
+      "id": "bd_l149_q2",
+      "consequencePreviews": [
+        "Here, the direct observation, without diplomatic softening, may feel more like an accusation than the check-in it's probably meant to be.",
+        "As a result, you diplomatically name the shift you've noticed while genuinely inviting the client to share what might be going on.",
+        "As a result, ignoring the noticeable shift entirely risks missing a real, unaddressed concern the client might have about the project."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a longtime, valued employee whose performance has quietly started slipping over the past couple of months, in a way that could suggest a personal issue you want to approach with real sensitivity",
+      "scene": "A longtime employee, historically excellent, has shown a quiet but consistent decline in quality and engagement over the past two months, with no explanation offered and no obvious external cause you're aware of.",
+      "options": [
+        "Your performance has dropped off recently, is everything okay? What would you do instead? Honestly, I hadn't checked how that would actually land — and I haven't really run it past anyone else yet.",
+        "I'm sure things will pick back up, I'll just keep an eye on it for now.",
+        "I want to start by saying how much I've valued your work over the years — I have noticed some changes over the last couple of months though, and I wanted to check in, genuinely, on how you're doing, in case there's anything going on I should know about or anything I can help with."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "For a gradual slump in a long-serving staff member's output that might trace back to something personal, open by acknowledging their track record and contribution, then check in warmly, rather than leading with a warning or staying silent entirely.",
+      "explanation": "Affirming their history and value first, then gently and genuinely checking in, leads with real care rather than a performance evaluation, which matters given the possibility of a personal issue underneath. Leading directly with the performance framing, without affirming their history first, risks feeling more like a warning than the genuinely caring check-in that's actually needed here. Avoiding the conversation entirely, given how sustained the pattern has been, risks missing a real, potentially serious issue affecting someone who's clearly valued.",
+      "id": "bd_l149_q3",
+      "consequencePreviews": [
+        "The direct performance framing, without first affirming their history and value, risks feeling more like a warning than the genuinely caring check-in intended.",
+        "As a result, avoiding the conversation entirely, given how sustained and noticeable the pattern has been, risks missing a real, potentially serious issue affecting a valued employee.",
+        "Realistically, you diplomatically affirm their history and value before gently naming the pattern, leading with genuine care rather than a performance framing."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend group planning a trip where one friend's proposed budget excludes another friend who can't afford it, requiring a delicate conversation",
+      "scene": "In planning a group trip, one enthusiastic friend has proposed an itinerary that would cost significantly more than another friend in the group can comfortably afford, though this hasn't been said out loud yet, and you happen to know both sides.",
+      "options": [
+        "This all sounds great to me, I guess, I was just going with my gut on that one, so there might be a better way to handle it — and I probably should have asked a few more questions before saying anything.",
+        "I don't think everyone can actually afford this.",
+        "This itinerary sounds amazing — I do wonder if we should check in with everyone privately about budget comfort levels before we lock anything in, just so the plan works well for the whole group."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When you're aware of a sensitive issue (like a budget mismatch) that others in the group haven't voiced, diplomatically suggest a private way to surface it, rather than ignoring it or stating it publicly.",
+      "explanation": "Diplomatically suggesting a private check-in surfaces a real, sensitive issue without putting anyone on the spot or exposing private information. Going along without raising it at all risks a friend being quietly excluded or financially strained, which isn't fair to them either. Directly stating the concern in the group setting risks publicly exposing a friend's financial situation without their consent, which could feel embarrassing for them.",
+      "id": "bd_l150_q1",
+      "consequencePreviews": [
+        "As a result, going along without raising the budget concern risks a friend being quietly excluded or financially strained without anyone addressing it.",
+        "Here, the direct statement, in the group setting, risks publicly exposing a friend's financial situation without their consent.",
+        "In this moment, you diplomatically suggest a private, face-saving way to surface a sensitive budget issue without putting anyone on the spot."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a team where a well-liked colleague's underperformance is starting to burden others, and no one has addressed it directly out of fondness for them",
+      "scene": "A well-liked colleague's consistent underperformance has meant others on the team have been quietly picking up the slack for months, and it's starting to cause real frustration, though no one has said anything directly to the colleague out of a mix of fondness and discomfort.",
+      "options": [
+        "I think we should just keep helping Sam out as needed, actually, I hadn't checked how that would actually land, though I'm open to changing my mind — and a lot depends on details I haven't really looked into yet, and there's a decent chance I'd see it differently after sleeping on it.",
+        "I think we all care about Sam and don't want this to feel like an attack — but I also think the quiet extra effort from the rest of us isn't sustainable, and it might actually be kinder to Sam to address it directly and supportively, rather than letting resentment build quietly.",
+        "Sam really needs to step up, the rest of us are carrying too much."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When a team is avoiding an uncomfortable but genuinely necessary conversation out of fondness for someone, diplomatically name the real tension and frame honesty as ultimately kinder than continued avoidance.",
+      "explanation": "Naming the real tension diplomatically, and framing direct honesty as ultimately kinder than quiet resentment, moves the team toward addressing something that genuinely needs addressing. Continuing to quietly help avoids the uncomfortable conversation but lets an unsustainable pattern continue indefinitely. Bluntly stating that Sam needs to 'step up,' especially before any direct, supportive conversation has happened, risks feeling more like venting or gossip than a constructive step toward an actual solution.",
+      "id": "bd_l150_q2",
+      "consequencePreviews": [
+        "Realistically, continuing to quietly absorb the extra work avoids the uncomfortable conversation but lets a genuinely unsustainable pattern continue.",
+        "In this moment, you diplomatically name the real tension the team is avoiding, framing honesty as ultimately kinder than continued silence.",
+        "Realistically, the blunt framing, especially before a direct, supportive conversation with Sam has even happened, risks feeling more like team gossip than a constructive step forward."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a multigenerational family navigating a sensitive, high-stakes decision about a grandparent's end-of-life care preferences, where family members hold genuinely different views rooted in love",
+      "scene": "Your family is discussing a grandparent's end-of-life care preferences, and you can see that different family members — all acting out of genuine love — hold quite different views about what's best, with tension beginning to build as the conversation continues.",
+      "options": [
+        "I think we all clearly love Grandma and want what's best for her, even though we're seeing this differently right now — I wonder if the most important thing is actually making sure we understand what she herself wants, and centering the decision around that together.",
+        "I think we should do what the doctors are recommending, in hindsight, that was more of a first reaction, so feel free to push back — and I haven't really run it past anyone else yet, and I'm honestly still working out how I feel about the whole thing.",
+        "Everyone needs to calm down, we can't keep arguing about this, I guess, I said that fairly quickly, so feel free to push back — and I haven't really run it past anyone else yet, and I know that's not the most thought-out response, but it's where my head's at right now."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "For a genuinely difficult, emotionally significant family disagreement rooted in love for the same person, diplomatically acknowledge the shared care underneath the disagreement and redirect toward the most important, unifying consideration.",
+      "explanation": "Acknowledging the shared love underneath the disagreement, and redirecting toward centering the grandparent's own wishes, offers a genuinely unifying, diplomatic path through an emotionally difficult family moment. Deferring only to the doctors' recommendation, without acknowledging the family's differing views and emotional stakes, may not actually resolve the real tension in the room. Simply telling everyone to calm down addresses the tension on the surface but doesn't acknowledge the genuine love driving the disagreement or offer any constructive way forward together.",
+      "id": "bd_l150_q3",
+      "consequencePreviews": [
+        "In this moment, you diplomatically acknowledge the shared love underneath the disagreement while redirecting the family toward the most important, unifying consideration.",
+        "Deferring to one authority, without acknowledging the family's differing views or emotional stakes, may not actually resolve the underlying tension in the room.",
+        "The comment addresses the tension in the room but doesn't acknowledge the genuine love underneath it or redirect toward a unifying, constructive path forward."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    }
+  ]
 }

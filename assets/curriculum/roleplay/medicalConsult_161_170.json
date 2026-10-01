@@ -1,637 +1,637 @@
 {
-    "gameType": "medicalConsult",
-    "batchIndex": 17,
-    "levels": "161-170",
-    "quests": [
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"My knee has felt puffy for two days now, and it's stiff first thing every morning, easing only after I've moved around for a while.\"",
-            "symptoms": [
-                "Knee Pain",
-                "Swelling",
-                "Joint Stiffness",
-                "Cramp"
-            ],
-            "correctAnswer": "Knee Pain, Swelling, Joint Stiffness",
-            "hint": "Three symptoms: pain in the joint, visible puffiness, and morning stiffness.",
-            "explanation": "The patient reports Knee Pain, Swelling, and Joint Stiffness that eases with movement.",
-            "id": "mc_l161_q1",
-            "medicalVocab": [
-                "Knee Pain, Swelling, Joint Stiffness",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"My lower back has ached for weeks now, and my left foot has gone numb on several occasions, plus I've had real trouble finding a comfortable position to sleep in.\"",
-            "symptoms": [
-                "Back Pain",
-                "Leg Pain",
-                "Numbness",
-                "Insomnia"
-            ],
-            "correctAnswer": "Back Pain, Numbness, Insomnia",
-            "hint": "Three symptoms: back pain, a loss of feeling in the foot, and trouble sleeping.",
-            "explanation": "The patient describes Back Pain, Numbness in the foot, and resulting Insomnia.",
-            "id": "mc_l161_q2",
-            "medicalVocab": [
-                "Back Pain, Numbness, Insomnia",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"My wrist has been sore for about ten days, and my fingertips have gone numb on that side, and my grip has grown noticeably weaker when I try to open jars.\"",
-            "symptoms": [
-                "Wrist Pain",
-                "Numbness",
-                "Pins and Needles",
-                "Weakness"
-            ],
-            "correctAnswer": "Wrist Pain, Numbness, Weakness",
-            "hint": "Three symptoms: joint pain, numbness in the fingertips, and reduced grip strength.",
-            "explanation": "The patient reports Wrist Pain, Numbness in the fingertips, and Weakness in the grip.",
-            "id": "mc_l161_q3",
-            "medicalVocab": [
-                "Wrist Pain, Numbness, Weakness",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"My shoulders have felt tight for a week, and I've had trouble moving my neck freely, plus a dull headache has settled in most afternoons since.\"",
-            "symptoms": [
-                "Muscle Soreness",
-                "Shoulder Pain",
-                "Joint Stiffness",
-                "Neck Pain"
-            ],
-            "correctAnswer": "Shoulder Pain, Joint Stiffness, Neck Pain",
-            "hint": "Three symptoms: shoulder tightness, limited neck movement, and an afternoon headache.",
-            "explanation": "The patient describes Shoulder Pain, Joint Stiffness affecting neck movement, and Neck Pain.",
-            "id": "mc_l162_q1",
-            "medicalVocab": [
-                "Shoulder Pain, Joint Stiffness, Neck Pain",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The doctor asks about the symptoms, and the patient says: \"My hip has ached deep down for over a week now, sending a dull pain into my thigh, and it's kept me up several nights this week.\"",
-            "symptoms": [
-                "Hip Pain",
-                "Leg Pain",
-                "Joint Stiffness",
-                "Insomnia"
-            ],
-            "correctAnswer": "Hip Pain, Leg Pain, Insomnia",
-            "hint": "Three symptoms: hip pain, pain extending into the thigh, and disrupted sleep.",
-            "explanation": "The patient reports Hip Pain, Leg Pain from the ache extending down, and resulting Insomnia.",
-            "id": "mc_l162_q2",
-            "medicalVocab": [
-                "Hip Pain, Leg Pain, Insomnia",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The patient tells the nurse: \"My jaw has ached most evenings this week, along with a tight band of pain across my forehead, and my neck feels sore from tensing up all day.\"",
-            "symptoms": [
-                "Jaw Pain",
-                "Toothache",
-                "Tension Headache",
-                "Neck Pain"
-            ],
-            "correctAnswer": "Jaw Pain, Tension Headache, Neck Pain",
-            "hint": "Three symptoms: jaw ache, a band-like headache, and neck soreness from tension.",
-            "explanation": "The patient describes Jaw Pain, a Tension Headache, and resulting Neck Pain.",
-            "id": "mc_l162_q3",
-            "medicalVocab": [
-                "Jaw Pain, Tension Headache, Neck Pain",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I twisted my ankle on the trail yesterday, and it's swollen with a bruise spreading across the top of my foot.\"",
-            "symptoms": [
-                "Cramp",
-                "Ankle Pain",
-                "Swelling",
-                "Bruise"
-            ],
-            "correctAnswer": "Ankle Pain, Swelling, Bruise",
-            "hint": "Three symptoms: pain in the ankle, visible puffiness, and a mark on the skin.",
-            "explanation": "The patient reports Ankle Pain, Swelling, and a Bruise following the twist.",
-            "id": "mc_l163_q1",
-            "medicalVocab": [
-                "Ankle Pain, Swelling, Bruise",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"My shin has ached along the bone since I picked up running again, and it's swollen to the touch, plus I get a sharp cramp in my calf most nights.\"",
-            "symptoms": [
-                "Shin Splints",
-                "Leg Pain",
-                "Swelling",
-                "Cramp"
-            ],
-            "correctAnswer": "Shin Splints, Leg Pain, Swelling",
-            "hint": "Three symptoms: pain along the shin bone, general leg pain, and visible puffiness.",
-            "explanation": "The patient describes Shin Splints, Leg Pain, and Swelling since returning to running.",
-            "id": "mc_l163_q2",
-            "medicalVocab": [
-                "Shin Splints, Leg Pain, Swelling",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"My elbow has been sore since I picked tennis back up, and my whole arm feels weak by the end of a match, with real muscle soreness the next day.\"",
-            "symptoms": [
-                "Tennis Elbow",
-                "Wrist Pain",
-                "Weakness",
-                "Muscle Soreness"
-            ],
-            "correctAnswer": "Tennis Elbow, Weakness, Muscle Soreness",
-            "hint": "Three symptoms: elbow pain from the sport, arm weakness, and next-day muscle soreness.",
-            "explanation": "The patient reports Tennis Elbow, Weakness by the end of a match, and resulting Muscle Soreness.",
-            "id": "mc_l163_q3",
-            "medicalVocab": [
-                "Tennis Elbow, Weakness, Muscle Soreness",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"Pain shoots down the back of my leg whenever I sit for more than twenty minutes, and my foot has gone numb a few times, with my lower back aching the whole while.\"",
-            "symptoms": [
-                "Sciatica",
-                "Numbness",
-                "Leg Pain",
-                "Back Pain"
-            ],
-            "correctAnswer": "Sciatica, Numbness, Back Pain",
-            "hint": "Three symptoms: shooting pain down the leg, numbness in the foot, and back pain.",
-            "explanation": "The patient describes Sciatica, Numbness in the foot, and underlying Back Pain.",
-            "id": "mc_l164_q1",
-            "medicalVocab": [
-                "Sciatica, Numbness, Back Pain",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The doctor asks about the symptoms, and the patient says: \"My heel has hurt sharply every morning for the past week, and my foot has been stiff getting out of bed, plus it's swollen a little by the end of the day.\"",
-            "symptoms": [
-                "Ankle Pain",
-                "Foot Pain",
-                "Joint Stiffness",
-                "Swelling"
-            ],
-            "correctAnswer": "Foot Pain, Joint Stiffness, Swelling",
-            "hint": "Three symptoms: heel pain, morning stiffness, and end-of-day puffiness.",
-            "explanation": "The patient reports Foot Pain, Joint Stiffness in the morning, and evening Swelling.",
-            "id": "mc_l164_q2",
-            "medicalVocab": [
-                "Foot Pain, Joint Stiffness, Swelling",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The patient tells the nurse: \"My neck has been stiff and hard to turn since I slept awkwardly, and it hasn't improved after several days, plus I've had a dull headache the whole time.\"",
-            "symptoms": [
-                "Neck Pain",
-                "Stiff Neck",
-                "Headache",
-                "Shoulder Pain"
-            ],
-            "correctAnswer": "Neck Pain, Stiff Neck, Headache",
-            "hint": "Three symptoms: neck pain, difficulty turning the neck, and a resulting headache.",
-            "explanation": "The patient describes Neck Pain, a Stiff Neck, and a Headache since sleeping awkwardly.",
-            "id": "mc_l164_q3",
-            "medicalVocab": [
-                "Neck Pain, Stiff Neck, Headache",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"My cough has lingered nearly six weeks now, and I get properly out of breath on my usual walk, with a tightness settling in my chest by the end of it.\"",
-            "symptoms": [
-                "Persistent Cough",
-                "Shortness of Breath",
-                "Wheezing",
-                "Chest Pain"
-            ],
-            "correctAnswer": "Persistent Cough, Shortness of Breath, Chest Pain",
-            "hint": "Three symptoms: a long-lasting cough, breathlessness on a walk, and chest tightness.",
-            "explanation": "The patient reports a Persistent Cough, Shortness of Breath, and resulting Chest Pain.",
-            "id": "mc_l165_q1",
-            "medicalVocab": [
-                "Persistent Cough, Shortness of Breath, Chest Pain",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"My cough has had a whistling sound to it for days now, and I've been dragging by the afternoon, worn out from barely sleeping through the nighttime coughing.\"",
-            "symptoms": [
-                "Chest Pain",
-                "Cough",
-                "Wheezing",
-                "Fatigue"
-            ],
-            "correctAnswer": "Cough, Wheezing, Fatigue",
-            "hint": "Three symptoms: the cough itself, a whistling sound, and daytime tiredness.",
-            "explanation": "The patient describes a Cough, audible Wheezing, and resulting Fatigue.",
-            "id": "mc_l165_q2",
-            "medicalVocab": [
-                "Cough, Wheezing, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"My throat has felt raw for days, and my voice has gone rough as a result, plus I've developed this dry cough that flares whenever I try to talk for long.\"",
-            "symptoms": [
-                "Sore Throat",
-                "Hoarse Voice",
-                "Cough",
-                "Loss of Voice"
-            ],
-            "correctAnswer": "Sore Throat, Hoarse Voice, Cough",
-            "hint": "Three symptoms: throat pain, a rough voice, and a resulting cough.",
-            "explanation": "The patient reports a Sore Throat, a Hoarse Voice, and a resulting Cough.",
-            "id": "mc_l165_q3",
-            "medicalVocab": [
-                "Sore Throat, Hoarse Voice, Cough",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"My nose has felt blocked for a week now, with a heavy pressure building across my cheeks, and a dull headache has settled in most afternoons since.\"",
-            "symptoms": [
-                "Stuffy Nose",
-                "Loss of Smell",
-                "Sinus Pressure",
-                "Headache"
-            ],
-            "correctAnswer": "Stuffy Nose, Sinus Pressure, Headache",
-            "hint": "Three symptoms: nasal blockage, facial pressure, and a resulting headache.",
-            "explanation": "The patient describes a Stuffy Nose, Sinus Pressure, and a resulting Headache.",
-            "id": "mc_l166_q1",
-            "medicalVocab": [
-                "Stuffy Nose, Sinus Pressure, Headache",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The doctor asks about the symptoms, and the patient says: \"My nose has run constantly since the pollen count spiked, and I can't stop sneezing, plus my eyes have been watering right along with it.\"",
-            "symptoms": [
-                "Itchy Eyes",
-                "Runny Nose",
-                "Sneezing",
-                "Watery Eyes"
-            ],
-            "correctAnswer": "Runny Nose, Sneezing, Watery Eyes",
-            "hint": "Three symptoms: nasal discharge, repeated sneezing, and watery eyes.",
-            "explanation": "The patient reports a Runny Nose, Sneezing, and Watery Eyes linked to pollen.",
-            "id": "mc_l166_q2",
-            "medicalVocab": [
-                "Runny Nose, Sneezing, Watery Eyes",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The patient tells the nurse: \"I get out of breath doing things that never used to bother me, and my heart seems to race along with it, leaving me pretty wiped out afterward.\"",
-            "symptoms": [
-                "Shortness of Breath",
-                "Racing Heartbeat",
-                "Chest Pain",
-                "Fatigue"
-            ],
-            "correctAnswer": "Shortness of Breath, Racing Heartbeat, Fatigue",
-            "hint": "Three symptoms: breathlessness during easy tasks, heart speed, and resulting tiredness.",
-            "explanation": "The patient describes Shortness of Breath, a Racing Heartbeat, and resulting Fatigue.",
-            "id": "mc_l166_q3",
-            "medicalVocab": [
-                "Shortness of Breath, Racing Heartbeat, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"My stomach has felt tight and full for days, and I've barely wanted to eat because of it, even though nothing else feels obviously wrong.\"",
-            "symptoms": [
-                "Stomach Ache",
-                "Bloating",
-                "Loss of Appetite",
-                "Nausea"
-            ],
-            "correctAnswer": "Stomach Ache, Bloating, Loss of Appetite",
-            "hint": "Three symptoms: stomach discomfort, fullness, and reduced appetite.",
-            "explanation": "The patient reports a Stomach Ache, Bloating, and resulting Loss of Appetite.",
-            "id": "mc_l167_q1",
-            "medicalVocab": [
-                "Stomach Ache, Bloating, Loss of Appetite",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"My chest has felt heavy most evenings after meals, with a sour taste rising into my throat, and I've had a dry cough flare up on the worst nights, needing extra pillows just to fall asleep.\"",
-            "symptoms": [
-                "Acid Reflux",
-                "Heartburn",
-                "Insomnia",
-                "Cough"
-            ],
-            "correctAnswer": "Acid Reflux, Insomnia, Cough",
-            "hint": "Three symptoms: burning that rises into the throat, its effect on sleep, and a resulting cough.",
-            "explanation": "Rising burning after meals is Acid Reflux, needing pillows points to Insomnia, and the resulting Cough completes it.",
-            "id": "mc_l167_q2",
-            "medicalVocab": [
-                "Acid Reflux, Insomnia, Cough",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"My mornings have started with waves of nausea for two weeks straight, and smells I never noticed before have started bothering me, with my appetite dropping off as a result.\"",
-            "symptoms": [
-                "Bloating",
-                "Nausea",
-                "Loss of Smell",
-                "Loss of Appetite"
-            ],
-            "correctAnswer": "Nausea, Loss of Smell, Loss of Appetite",
-            "hint": "Three symptoms: morning sickness, a new reaction to smells, and reduced eating.",
-            "explanation": "The patient describes Nausea, a change pointing to Loss of Smell, and resulting Loss of Appetite.",
-            "id": "mc_l167_q3",
-            "medicalVocab": [
-                "Nausea, Loss of Smell, Loss of Appetite",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"My right side has ached low down for two days now, worse whenever I move, and I've had no appetite at all since it started, plus a low fever came on yesterday evening.\"",
-            "symptoms": [
-                "Side Pain",
-                "Loss of Appetite",
-                "Fever",
-                "Stomach Ache"
-            ],
-            "correctAnswer": "Side Pain, Loss of Appetite, Fever",
-            "hint": "The pain is described on one specific side, which has a more precise term than general stomach pain.",
-            "explanation": "Tenderness on one side is Side Pain, more precise than a general Stomach Ache, plus Loss of Appetite and Fever.",
-            "id": "mc_l168_q1",
-            "medicalVocab": [
-                "Side Pain, Loss of Appetite, Fever",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The doctor asks about the symptoms, and the patient says: \"I've had loose stools since the picnic on Saturday, and my stomach has cramped on and off since, leaving me pretty drained by the end of each day.\"",
-            "symptoms": [
-                "Diarrhea",
-                "Stomach Ache",
-                "Bloating",
-                "Fatigue"
-            ],
-            "correctAnswer": "Diarrhea, Stomach Ache, Fatigue",
-            "hint": "Three symptoms: bathroom changes, cramping pain, and resulting tiredness.",
-            "explanation": "The patient reports Diarrhea, a resulting Stomach Ache, and Fatigue.",
-            "id": "mc_l168_q2",
-            "medicalVocab": [
-                "Diarrhea, Stomach Ache, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The patient tells the nurse: \"I haven't been able to go properly in nearly a week, and my stomach has felt full and tight the whole time, with almost no appetite to speak of.\"",
-            "symptoms": [
-                "Constipation",
-                "Nausea",
-                "Bloating",
-                "Loss of Appetite"
-            ],
-            "correctAnswer": "Constipation, Bloating, Loss of Appetite",
-            "hint": "Three symptoms: a bathroom difficulty, fullness, and reduced eating.",
-            "explanation": "The patient describes Constipation, Bloating, and resulting Loss of Appetite.",
-            "id": "mc_l168_q3",
-            "medicalVocab": [
-                "Constipation, Bloating, Loss of Appetite",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "Patient says: \"I've had this burning feeling in my chest most evenings for weeks now, and my stomach feels bloated most of the day, leaving me pretty low on energy by dinnertime.\"",
-            "symptoms": [
-                "Heartburn",
-                "Bloating",
-                "Fatigue",
-                "Nausea"
-            ],
-            "correctAnswer": "Heartburn, Bloating, Fatigue",
-            "hint": "Three symptoms: evening burning, daytime fullness, and resulting tiredness.",
-            "explanation": "The patient reports Heartburn, Bloating, and resulting Fatigue.",
-            "id": "mc_l169_q1",
-            "medicalVocab": [
-                "Heartburn, Bloating, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "At the clinic, the patient says: \"My ringing has become nearly constant now, and I've started avoiding restaurants because group conversation is exhausting to follow, plus loud rooms leave the ringing noticeably worse afterward.\"",
-            "symptoms": [
-                "Ringing in the Ears",
-                "Hearing Loss",
-                "Ear Fullness",
-                "Sensitivity to Sound"
-            ],
-            "correctAnswer": "Ringing in the Ears, Hearing Loss, Sensitivity to Sound",
-            "hint": "Three symptoms: a constant sound, difficulty following speech, and a reaction to loud rooms.",
-            "explanation": "The patient describes Ringing in the Ears, Hearing Loss shown through struggling to follow speech, and Sensitivity to Sound.",
-            "id": "mc_l169_q2",
-            "medicalVocab": [
-                "Ringing in the Ears, Hearing Loss, Sensitivity to Sound",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "During the check-up, the patient explains: \"My ear has felt oddly blocked since the flight landed, with a sharp ache whenever I chew, and everything sounds muffled on that side.\"",
-            "symptoms": [
-                "Ear Fullness",
-                "Ringing in the Ears",
-                "Earache",
-                "Hearing Loss"
-            ],
-            "correctAnswer": "Ear Fullness, Earache, Hearing Loss",
-            "hint": "Three symptoms: a blocked feeling, sharp pain, and muffled hearing.",
-            "explanation": "The patient reports Ear Fullness, an Earache when chewing, and Hearing Loss on that side.",
-            "id": "mc_l169_q3",
-            "medicalVocab": [
-                "Ear Fullness, Earache, Hearing Loss",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "In the exam room, the patient says: \"My eyes have felt gritty and dry by the end of long workdays, and I've needed deliberate blinking just to keep things in focus, with a dull headache alongside it most days.\"",
-            "symptoms": [
-                "Eye Strain",
-                "Dry Eyes",
-                "Blurred Vision",
-                "Headache"
-            ],
-            "correctAnswer": "Dry Eyes, Blurred Vision, Headache",
-            "hint": "Three symptoms: dryness in the eyes, needing effort to focus, and a resulting headache.",
-            "explanation": "The patient describes Dry Eyes, Blurred Vision needing deliberate blinking, and a resulting Headache.",
-            "id": "mc_l170_q1",
-            "medicalVocab": [
-                "Dry Eyes, Blurred Vision, Headache",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The doctor asks about the symptoms, and the patient says: \"My eyelid has been twitching on and off for nearly two weeks now, and concentrating at work has become genuinely difficult, with irritability creeping in from the poor sleep.\"",
-            "symptoms": [
-                "Eye Twitching",
-                "Fatigue",
-                "Brain Fog",
-                "Insomnia"
-            ],
-            "correctAnswer": "Eye Twitching, Brain Fog, Insomnia",
-            "hint": "Three symptoms: an involuntary movement, a focus problem, and its underlying cause at night.",
-            "explanation": "The patient reports Eye Twitching, resulting Brain Fog at work, and underlying Insomnia.",
-            "id": "mc_l170_q2",
-            "medicalVocab": [
-                "Eye Twitching, Brain Fog, Insomnia",
-                "Symptom",
-                "Patient"
-            ]
-        },
-        {
-            "instruction": "Select the three symptoms that match what the patient describes.",
-            "subtype": "medicalConsult",
-            "interactionType": "dialogue",
-            "prompt": "The patient tells the nurse: \"My eyes have looked puffy every morning this week, and I've been needing the bathroom far more often than usual, even overnight, leaving me pretty worn out by midday.\"",
-            "symptoms": [
-                "Watery Eyes",
-                "Puffy Eyes",
-                "Frequent Urination",
-                "Fatigue"
-            ],
-            "correctAnswer": "Puffy Eyes, Frequent Urination, Fatigue",
-            "hint": "Three symptoms: morning appearance, nighttime bathroom trips, and daytime tiredness.",
-            "explanation": "The patient describes Puffy Eyes, Frequent Urination overnight, and resulting Fatigue.",
-            "id": "mc_l170_q3",
-            "medicalVocab": [
-                "Puffy Eyes, Frequent Urination, Fatigue",
-                "Symptom",
-                "Patient"
-            ]
-        }
-    ]
+  "gameType": "medicalConsult",
+  "batchIndex": 17,
+  "levels": "161-170",
+  "quests": [
+    {
+      "instruction": "Identify what is unclear about the patient's description.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My nose just won't stop dripping, but it doesn't really hurt exactly, but it's still awful somehow.\"",
+      "symptoms": [
+        "Whether it is actually happening is unclear",
+        "The description sounds contradictory",
+        "The exact quality of the symptom is unclear",
+        "What triggers this, if anything, is unclear"
+      ],
+      "correctAnswer": "The description sounds contradictory",
+      "hint": "The uncertainty is in the patient's added remark. What exactly is unclear?",
+      "explanation": "The added remark shows that the description sounds contradictory, which is different from the other kinds of uncertainty listed.",
+      "id": "mc_l161_q1",
+      "medicalVocab": [
+        "Runny Nose",
+        "Ambiguity",
+        "Clarify"
+      ]
+    },
+    {
+      "instruction": "Select the best clarifying question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"My nose just won't stop dripping, but it doesn't really hurt exactly, but it's still awful somehow.\"",
+      "symptoms": [
+        "Can you put your hand on the spot where it bothers you the most?",
+        "Could you describe exactly what it feels like, maybe compare it to something familiar?",
+        "Can you tell me about the last time you clearly noticed it happening?",
+        "You mentioned it doesn't hurt but is still awful — can you help me understand what you mean?"
+      ],
+      "correctAnswer": "You mentioned it doesn't hurt but is still awful — can you help me understand what you mean?",
+      "hint": "A good clarifying question aims at the exact gap, not at general background.",
+      "explanation": "Since the description sounds contradictory, the clarifying question that targets exactly that gap is the most useful one to ask.",
+      "id": "mc_l161_q2",
+      "medicalVocab": [
+        "Runny Nose",
+        "Clarification",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Given the fuller picture, select the best clarifying question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I keep needing to wipe my nose every few minutes. Actually, it's been on and off for so long I've lost track of when it really began.\"",
+      "symptoms": [
+        "Compared to a week ago, would you say this is generally better, worse, or about the same?",
+        "Can you tell me about the last time you clearly noticed it happening?",
+        "You mentioned it doesn't hurt but is still awful — can you help me understand what you mean?",
+        "Looking back, when do you think you first noticed this, even roughly?"
+      ],
+      "correctAnswer": "Looking back, when do you think you first noticed this, even roughly?",
+      "hint": "The new remark adds a fresh uncertainty. Which question would resolve it?",
+      "explanation": "The new remark introduces when this actually started is unclear, so the clarifying question addressing that specific gap is correct.",
+      "id": "mc_l161_q3",
+      "medicalVocab": [
+        "Runny Nose",
+        "Clarification",
+        "Uncertainty"
+      ]
+    },
+    {
+      "instruction": "Choose the most appropriate professional response.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I've got a lump on the side of my neck. Something about this feels different and more serious than my usual episodes.\"",
+      "symptoms": [
+        "Recommend a specific over-the-counter treatment so the patient can manage it at home.",
+        "Take the patient's own sense that this feels different seriously and encourage prompt evaluation.",
+        "Reassure the patient that this is almost certainly nothing to worry about and move along.",
+        "Suggest the patient simply rest more and check back in a month if nothing has improved."
+      ],
+      "correctAnswer": "Take the patient's own sense that this feels different seriously and encourage prompt evaluation.",
+      "hint": "Ask how this differs from the patient's normal experience. Do not try to diagnose.",
+      "explanation": "When a patient describes something notably different, sudden, rapidly worsening, or unusually severe, the appropriate response is to encourage prompt evaluation rather than reassure, delay, or self-treat.",
+      "id": "mc_l162_q1",
+      "medicalVocab": [
+        "Swollen Glands",
+        "Escalation",
+        "Urgency"
+      ]
+    },
+    {
+      "instruction": "Choose the most proportionate response.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"It hurts a bit when I turn my neck or swallow. It's no different from the other times, I just wanted to get it checked.\"",
+      "symptoms": [
+        "Announce a specific serious diagnosis based on this one sentence alone.",
+        "Say the symptom does not matter and skip any further questions about it.",
+        "Reassure the patient that the pattern sounds familiar, and keep asking about timing and what helps.",
+        "Stop the consultation and treat this as an emergency requiring immediate escalation."
+      ],
+      "correctAnswer": "Reassure the patient that the pattern sounds familiar, and keep asking about timing and what helps.",
+      "hint": "Is anything new, sudden or worsening in this statement?",
+      "explanation": "Urgency depends on change: something new, sudden, worsening, or unusually severe. When a patient describes a stable, familiar pattern, the proportionate response is calm, routine information gathering, not alarm.",
+      "id": "mc_l162_q2",
+      "medicalVocab": [
+        "Swollen Glands",
+        "Proportionate Response",
+        "Stable Pattern"
+      ]
+    },
+    {
+      "instruction": "Identify the appropriate response despite the routine-sounding start.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My neck feels tender under my jaw, and honestly, I've never had it feel quite this intense, and it isn't settling down.\"",
+      "symptoms": [
+        "Encourage the patient to seek prompt in-person evaluation given the unusual intensity.",
+        "Treat this the same as a routine, everyday complaint and carry on with no further action.",
+        "Suggest the patient try to push through and ignore it for the time being.",
+        "Wait until the next scheduled visit before bringing any of this up with the patient."
+      ],
+      "correctAnswer": "Encourage the patient to seek prompt in-person evaluation given the unusual intensity.",
+      "hint": "One phrase in this sentence changes how seriously it should be taken.",
+      "explanation": "Although the sentence starts routinely, the added phrase signals a meaningful change that warrants encouraging prompt evaluation rather than treating it as routine.",
+      "id": "mc_l162_q3",
+      "medicalVocab": [
+        "Swollen Glands",
+        "Urgency",
+        "Recognition"
+      ]
+    },
+    {
+      "instruction": "Identify what is unclear about the patient's description.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"There's a burning sensation that rises up my throat, but it's kind of hard to describe, honestly.\"",
+      "symptoms": [
+        "Whether it is actually happening is unclear",
+        "What triggers this, if anything, is unclear",
+        "The exact quality of the symptom is unclear",
+        "Whether this is improving or worsening overall is unclear"
+      ],
+      "correctAnswer": "The exact quality of the symptom is unclear",
+      "hint": "Focus on the vague part of the sentence and ask what information it leaves out.",
+      "explanation": "The added remark shows that the exact quality of the symptom is unclear, which is different from the other kinds of uncertainty listed.",
+      "id": "mc_l163_q1",
+      "medicalVocab": [
+        "Acid Reflux",
+        "Ambiguity",
+        "Clarify"
+      ]
+    },
+    {
+      "instruction": "Select the best clarifying question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"There's a burning sensation that rises up my throat, but it's kind of hard to describe, honestly.\"",
+      "symptoms": [
+        "Compared to a week ago, would you say this is generally better, worse, or about the same?",
+        "Could you describe exactly what it feels like, maybe compare it to something familiar?",
+        "You mentioned it doesn't hurt but is still awful — can you help me understand what you mean?",
+        "Can you put your hand on the spot where it bothers you the most?"
+      ],
+      "correctAnswer": "Could you describe exactly what it feels like, maybe compare it to something familiar?",
+      "hint": "Choose the question that would make the patient's vague remark clearer.",
+      "explanation": "Since the exact quality of the symptom is unclear, the clarifying question that targets exactly that gap is the most useful one to ask.",
+      "id": "mc_l163_q2",
+      "medicalVocab": [
+        "Acid Reflux",
+        "Clarification",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Given the fuller picture, select the best clarifying question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I get this sour taste at the back of my mouth some evenings. Actually, sometimes it's there, sometimes I'm honestly not sure if I'm imagining it.\"",
+      "symptoms": [
+        "Can you tell me about the last time you clearly noticed it happening?",
+        "You mentioned it doesn't hurt but is still awful — can you help me understand what you mean?",
+        "Looking back, is there anything that tends to happen right before this starts?",
+        "Can you point to specifically what feels different from normal?"
+      ],
+      "correctAnswer": "Can you tell me about the last time you clearly noticed it happening?",
+      "hint": "Think about what the patient's latest, vaguer comment leaves unanswered.",
+      "explanation": "The new remark introduces whether it is actually happening is unclear, so the clarifying question addressing that specific gap is correct.",
+      "id": "mc_l163_q3",
+      "medicalVocab": [
+        "Acid Reflux",
+        "Clarification",
+        "Uncertainty"
+      ]
+    },
+    {
+      "instruction": "Choose the most appropriate professional response.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My stomach feels so bloated. Something about this feels different and more serious than my usual episodes.\"",
+      "symptoms": [
+        "Reassure the patient that this is almost certainly nothing to worry about and move along.",
+        "Suggest the patient simply rest more and check back in a month if nothing has improved.",
+        "Change the subject and return to routine questions about the patient's general health.",
+        "Take the patient's own sense that this feels different seriously and encourage prompt evaluation."
+      ],
+      "correctAnswer": "Take the patient's own sense that this feels different seriously and encourage prompt evaluation.",
+      "hint": "Words about change, speed or intensity matter more than guessing a cause.",
+      "explanation": "When a patient describes something notably different, sudden, rapidly worsening, or unusually severe, the appropriate response is to encourage prompt evaluation rather than reassure, delay, or self-treat.",
+      "id": "mc_l164_q1",
+      "medicalVocab": [
+        "Bloating",
+        "Escalation",
+        "Urgency"
+      ]
+    },
+    {
+      "instruction": "Choose the most proportionate response.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My waistband feels tight by the end of most days. It's no different from the other times, I just wanted to get it checked.\"",
+      "symptoms": [
+        "Reassure the patient that the pattern sounds familiar, and keep asking about timing and what helps.",
+        "Say the symptom does not matter and skip any further questions about it.",
+        "Tell the patient to go to the emergency department immediately, whatever else they report.",
+        "Stop the consultation and treat this as an emergency requiring immediate escalation."
+      ],
+      "correctAnswer": "Reassure the patient that the pattern sounds familiar, and keep asking about timing and what helps.",
+      "hint": "Think about the difference between a familiar pattern and a changing one.",
+      "explanation": "Urgency depends on change: something new, sudden, worsening, or unusually severe. When a patient describes a stable, familiar pattern, the proportionate response is calm, routine information gathering, not alarm.",
+      "id": "mc_l164_q2",
+      "medicalVocab": [
+        "Bloating",
+        "Proportionate Response",
+        "Stable Pattern"
+      ]
+    },
+    {
+      "instruction": "Identify the appropriate response despite the routine-sounding start.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel puffed up after every meal, and honestly, it came on very suddenly and it's much worse than anything I've felt before.\"",
+      "symptoms": [
+        "Encourage the patient to seek prompt in-person evaluation, since this differs from their usual pattern.",
+        "Assume it will resolve on its own without asking the patient anything further.",
+        "Wait until the next scheduled visit before bringing any of this up with the patient.",
+        "Treat this the same as a routine, everyday complaint and carry on with no further action."
+      ],
+      "correctAnswer": "Encourage the patient to seek prompt in-person evaluation, since this differs from their usual pattern.",
+      "hint": "The sentence starts routinely but does not stay routine. Where does it change?",
+      "explanation": "Although the sentence starts routinely, the added phrase signals a meaningful change that warrants encouraging prompt evaluation rather than treating it as routine.",
+      "id": "mc_l164_q3",
+      "medicalVocab": [
+        "Bloating",
+        "Urgency",
+        "Recognition"
+      ]
+    },
+    {
+      "instruction": "Identify what is unclear about the patient's description.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I've had to run to the bathroom all day, but sometimes it's there, sometimes I'm honestly not sure if I'm imagining it.\"",
+      "symptoms": [
+        "Whether this is improving or worsening overall is unclear",
+        "Whether it is actually happening is unclear",
+        "When this actually started is unclear",
+        "Exactly where the patient feels this is unclear"
+      ],
+      "correctAnswer": "Whether it is actually happening is unclear",
+      "hint": "Which piece of information does the patient's wording fail to give you?",
+      "explanation": "The added remark shows that whether it is actually happening is unclear, which is different from the other kinds of uncertainty listed.",
+      "id": "mc_l165_q1",
+      "medicalVocab": [
+        "Diarrhea",
+        "Ambiguity",
+        "Clarify"
+      ]
+    },
+    {
+      "instruction": "Select the best clarifying question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"I've had to run to the bathroom all day, but sometimes it's there, sometimes I'm honestly not sure if I'm imagining it.\"",
+      "symptoms": [
+        "Looking back, when do you think you first noticed this, even roughly?",
+        "Can you point to specifically what feels different from normal?",
+        "Looking back, is there anything that tends to happen right before this starts?",
+        "Can you tell me about the last time you clearly noticed it happening?"
+      ],
+      "correctAnswer": "Can you tell me about the last time you clearly noticed it happening?",
+      "hint": "Match the question to the specific thing that was unclear.",
+      "explanation": "Since whether it is actually happening is unclear, the clarifying question that targets exactly that gap is the most useful one to ask.",
+      "id": "mc_l165_q2",
+      "medicalVocab": [
+        "Diarrhea",
+        "Clarification",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Given the fuller picture, select the best clarifying question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I get cramping right before I need to rush to the bathroom. Actually, it's kind of hard to describe, honestly.\"",
+      "symptoms": [
+        "Can you put your hand on the spot where it bothers you the most?",
+        "You mentioned it doesn't hurt but is still awful — can you help me understand what you mean?",
+        "Could you describe exactly what it feels like, maybe compare it to something familiar?",
+        "Can you point to specifically what feels different from normal?"
+      ],
+      "correctAnswer": "Could you describe exactly what it feels like, maybe compare it to something familiar?",
+      "hint": "Pick the question that addresses the newest gap in the description.",
+      "explanation": "The new remark introduces the exact quality of the symptom is unclear, so the clarifying question addressing that specific gap is correct.",
+      "id": "mc_l165_q3",
+      "medicalVocab": [
+        "Diarrhea",
+        "Clarification",
+        "Uncertainty"
+      ]
+    },
+    {
+      "instruction": "Choose the most appropriate professional response.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel constipated. Something about this feels different and more serious than my usual episodes.\"",
+      "symptoms": [
+        "Tell the patient this is definitely the same as their usual episodes and needs no follow-up.",
+        "Suggest the patient simply rest more and check back in a month if nothing has improved.",
+        "Take the patient's own sense that this feels different seriously and encourage prompt evaluation.",
+        "Change the subject and return to routine questions about the patient's general health."
+      ],
+      "correctAnswer": "Take the patient's own sense that this feels different seriously and encourage prompt evaluation.",
+      "hint": "Consider what the patient is telling you about how unusual this is.",
+      "explanation": "When a patient describes something notably different, sudden, rapidly worsening, or unusually severe, the appropriate response is to encourage prompt evaluation rather than reassure, delay, or self-treat.",
+      "id": "mc_l166_q1",
+      "medicalVocab": [
+        "Constipation",
+        "Escalation",
+        "Urgency"
+      ]
+    },
+    {
+      "instruction": "Choose the most proportionate response.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel full and heavy in my lower stomach most of the time. It's no different from the other times, I just wanted to get it checked.\"",
+      "symptoms": [
+        "Announce a specific serious diagnosis based on this one sentence alone.",
+        "Stop the consultation and treat this as an emergency requiring immediate escalation.",
+        "Tell the patient to go to the emergency department immediately, whatever else they report.",
+        "Reassure the patient that the pattern sounds familiar, and keep asking about timing and what helps."
+      ],
+      "correctAnswer": "Reassure the patient that the pattern sounds familiar, and keep asking about timing and what helps.",
+      "hint": "Look for signs of change; if there are none, what is the proportionate response?",
+      "explanation": "Urgency depends on change: something new, sudden, worsening, or unusually severe. When a patient describes a stable, familiar pattern, the proportionate response is calm, routine information gathering, not alarm.",
+      "id": "mc_l166_q2",
+      "medicalVocab": [
+        "Constipation",
+        "Proportionate Response",
+        "Stable Pattern"
+      ]
+    },
+    {
+      "instruction": "Identify the appropriate response despite the routine-sounding start.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I haven't been able to go to the bathroom in days, and honestly, I've never had it feel quite this intense, and it isn't settling down.\"",
+      "symptoms": [
+        "Suggest the patient try to push through and ignore it for the time being.",
+        "Assume it will resolve on its own without asking the patient anything further.",
+        "Encourage the patient to seek prompt in-person evaluation given the unusual intensity.",
+        "Treat this the same as a routine, everyday complaint and carry on with no further action."
+      ],
+      "correctAnswer": "Encourage the patient to seek prompt in-person evaluation given the unusual intensity.",
+      "hint": "Look for the words that signal change, intensity or something new.",
+      "explanation": "Although the sentence starts routinely, the added phrase signals a meaningful change that warrants encouraging prompt evaluation rather than treating it as routine.",
+      "id": "mc_l166_q3",
+      "medicalVocab": [
+        "Constipation",
+        "Urgency",
+        "Recognition"
+      ]
+    },
+    {
+      "instruction": "Identify what is unclear about the patient's description.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My hand feels numb, but it's kind of hard to describe, honestly.\"",
+      "symptoms": [
+        "Exactly where the patient feels this is unclear",
+        "Whether it is actually happening is unclear",
+        "The exact quality of the symptom is unclear",
+        "What exactly the patient is experiencing is unclear"
+      ],
+      "correctAnswer": "The exact quality of the symptom is unclear",
+      "hint": "The uncertainty is in the patient's added remark. What exactly is unclear?",
+      "explanation": "The added remark shows that the exact quality of the symptom is unclear, which is different from the other kinds of uncertainty listed.",
+      "id": "mc_l167_q1",
+      "medicalVocab": [
+        "Numbness",
+        "Ambiguity",
+        "Clarify"
+      ]
+    },
+    {
+      "instruction": "Select the best clarifying question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"My hand feels numb, but it's kind of hard to describe, honestly.\"",
+      "symptoms": [
+        "Can you put your hand on the spot where it bothers you the most?",
+        "Could you describe exactly what it feels like, maybe compare it to something familiar?",
+        "Can you point to specifically what feels different from normal?",
+        "Compared to a week ago, would you say this is generally better, worse, or about the same?"
+      ],
+      "correctAnswer": "Could you describe exactly what it feels like, maybe compare it to something familiar?",
+      "hint": "A good clarifying question aims at the exact gap, not at general background.",
+      "explanation": "Since the exact quality of the symptom is unclear, the clarifying question that targets exactly that gap is the most useful one to ask.",
+      "id": "mc_l167_q2",
+      "medicalVocab": [
+        "Numbness",
+        "Clarification",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Given the fuller picture, select the best clarifying question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"It's like my hand has fallen asleep and just won't wake up. Actually, I guess it's everywhere and nowhere at the same time, if that makes sense.\"",
+      "symptoms": [
+        "Can you tell me about the last time you clearly noticed it happening?",
+        "Can you put your hand on the spot where it bothers you the most?",
+        "Could you describe exactly what it feels like, maybe compare it to something familiar?",
+        "Can you point to specifically what feels different from normal?"
+      ],
+      "correctAnswer": "Can you put your hand on the spot where it bothers you the most?",
+      "hint": "The new remark adds a fresh uncertainty. Which question would resolve it?",
+      "explanation": "The new remark introduces exactly where the patient feels this is unclear, so the clarifying question addressing that specific gap is correct.",
+      "id": "mc_l167_q3",
+      "medicalVocab": [
+        "Numbness",
+        "Clarification",
+        "Uncertainty"
+      ]
+    },
+    {
+      "instruction": "Choose the most appropriate professional response.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My leg keeps tingling. It's spread to a new area since this morning and it wasn't like that before.\"",
+      "symptoms": [
+        "Suggest the patient simply rest more and check back in a month if nothing has improved.",
+        "Recommend a specific over-the-counter treatment so the patient can manage it at home.",
+        "Change the subject and return to routine questions about the patient's general health.",
+        "Encourage the patient to seek prompt in-person evaluation given this new spread."
+      ],
+      "correctAnswer": "Encourage the patient to seek prompt in-person evaluation given this new spread.",
+      "hint": "Ask how this differs from the patient's normal experience. Do not try to diagnose.",
+      "explanation": "When a patient describes something notably different, sudden, rapidly worsening, or unusually severe, the appropriate response is to encourage prompt evaluation rather than reassure, delay, or self-treat.",
+      "id": "mc_l168_q1",
+      "medicalVocab": [
+        "Tingling",
+        "Escalation",
+        "Urgency"
+      ]
+    },
+    {
+      "instruction": "Choose the most proportionate response.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My fingertips buzz faintly whenever I've been typing for a while. It's the same as my usual pattern, and it settles with rest like it always does.\"",
+      "symptoms": [
+        "Reassure the patient that the pattern sounds familiar, and keep asking about timing and what helps.",
+        "Announce a specific serious diagnosis based on this one sentence alone.",
+        "Say the symptom does not matter and skip any further questions about it.",
+        "Tell the patient to go to the emergency department immediately, whatever else they report."
+      ],
+      "correctAnswer": "Reassure the patient that the pattern sounds familiar, and keep asking about timing and what helps.",
+      "hint": "Is anything new, sudden or worsening in this statement?",
+      "explanation": "Urgency depends on change: something new, sudden, worsening, or unusually severe. When a patient describes a stable, familiar pattern, the proportionate response is calm, routine information gathering, not alarm.",
+      "id": "mc_l168_q2",
+      "medicalVocab": [
+        "Tingling",
+        "Proportionate Response",
+        "Stable Pattern"
+      ]
+    },
+    {
+      "instruction": "Identify the appropriate response despite the routine-sounding start.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My hands feel tingly, and honestly, it's stopping me from doing almost anything today, far more than any previous episode.\"",
+      "symptoms": [
+        "Treat this the same as a routine, everyday complaint and carry on with no further action.",
+        "Encourage the patient to seek prompt in-person evaluation given the severe impact described.",
+        "Suggest the patient try to push through and ignore it for the time being.",
+        "Assume it will resolve on its own without asking the patient anything further."
+      ],
+      "correctAnswer": "Encourage the patient to seek prompt in-person evaluation given the severe impact described.",
+      "hint": "One phrase in this sentence changes how seriously it should be taken.",
+      "explanation": "Although the sentence starts routinely, the added phrase signals a meaningful change that warrants encouraging prompt evaluation rather than treating it as routine.",
+      "id": "mc_l168_q3",
+      "medicalVocab": [
+        "Tingling",
+        "Urgency",
+        "Recognition"
+      ]
+    },
+    {
+      "instruction": "Identify what is unclear about the patient's description.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My heart skips a beat sometimes, but it's kind of hard to describe, honestly.\"",
+      "symptoms": [
+        "What exactly the patient is experiencing is unclear",
+        "The description sounds contradictory",
+        "The exact quality of the symptom is unclear",
+        "Exactly where the patient feels this is unclear"
+      ],
+      "correctAnswer": "The exact quality of the symptom is unclear",
+      "hint": "Focus on the vague part of the sentence and ask what information it leaves out.",
+      "explanation": "The added remark shows that the exact quality of the symptom is unclear, which is different from the other kinds of uncertainty listed.",
+      "id": "mc_l169_q1",
+      "medicalVocab": [
+        "Palpitations",
+        "Ambiguity",
+        "Clarify"
+      ]
+    },
+    {
+      "instruction": "Select the best clarifying question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"My heart skips a beat sometimes, but it's kind of hard to describe, honestly.\"",
+      "symptoms": [
+        "Could you describe exactly what it feels like, maybe compare it to something familiar?",
+        "Can you tell me about the last time you clearly noticed it happening?",
+        "You mentioned it doesn't hurt but is still awful — can you help me understand what you mean?",
+        "Compared to a week ago, would you say this is generally better, worse, or about the same?"
+      ],
+      "correctAnswer": "Could you describe exactly what it feels like, maybe compare it to something familiar?",
+      "hint": "Choose the question that would make the patient's vague remark clearer.",
+      "explanation": "Since the exact quality of the symptom is unclear, the clarifying question that targets exactly that gap is the most useful one to ask.",
+      "id": "mc_l169_q2",
+      "medicalVocab": [
+        "Palpitations",
+        "Clarification",
+        "Follow-up Question"
+      ]
+    },
+    {
+      "instruction": "Given the fuller picture, select the best clarifying question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My pulse races for no clear reason and then settles. Actually, I don't know if it's connected to anything I've done, it just sort of happens.\"",
+      "symptoms": [
+        "You mentioned it doesn't hurt but is still awful — can you help me understand what you mean?",
+        "Compared to a week ago, would you say this is generally better, worse, or about the same?",
+        "Can you put your hand on the spot where it bothers you the most?",
+        "Looking back, is there anything that tends to happen right before this starts?"
+      ],
+      "correctAnswer": "Looking back, is there anything that tends to happen right before this starts?",
+      "hint": "Think about what the patient's latest, vaguer comment leaves unanswered.",
+      "explanation": "The new remark introduces what triggers this, if anything, is unclear, so the clarifying question addressing that specific gap is correct.",
+      "id": "mc_l169_q3",
+      "medicalVocab": [
+        "Palpitations",
+        "Clarification",
+        "Uncertainty"
+      ]
+    },
+    {
+      "instruction": "Choose the most appropriate professional response.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My ankles are so puffy. It's stopping me from doing almost anything today, far more than any previous episode.\"",
+      "symptoms": [
+        "Recommend a specific over-the-counter treatment so the patient can manage it at home.",
+        "Tell the patient this is definitely the same as their usual episodes and needs no follow-up.",
+        "Suggest the patient simply rest more and check back in a month if nothing has improved.",
+        "Encourage the patient to seek prompt in-person evaluation given the severe impact described."
+      ],
+      "correctAnswer": "Encourage the patient to seek prompt in-person evaluation given the severe impact described.",
+      "hint": "Words about change, speed or intensity matter more than guessing a cause.",
+      "explanation": "When a patient describes something notably different, sudden, rapidly worsening, or unusually severe, the appropriate response is to encourage prompt evaluation rather than reassure, delay, or self-treat.",
+      "id": "mc_l170_q1",
+      "medicalVocab": [
+        "Swollen Ankles",
+        "Escalation",
+        "Urgency"
+      ]
+    },
+    {
+      "instruction": "Choose the most proportionate response.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"By the end of the day, my socks leave deep marks on my ankles. It's no different from the other times, I just wanted to get it checked.\"",
+      "symptoms": [
+        "Note that nothing has changed, then carry on gathering the usual details in a calm, unhurried way.",
+        "Stop the consultation and treat this as an emergency requiring immediate escalation.",
+        "Announce a specific serious diagnosis based on this one sentence alone.",
+        "Tell the patient to go to the emergency department immediately, whatever else they report."
+      ],
+      "correctAnswer": "Note that nothing has changed, then carry on gathering the usual details in a calm, unhurried way.",
+      "hint": "Think about the difference between a familiar pattern and a changing one.",
+      "explanation": "Urgency depends on change: something new, sudden, worsening, or unusually severe. When a patient describes a stable, familiar pattern, the proportionate response is calm, routine information gathering, not alarm.",
+      "id": "mc_l170_q2",
+      "medicalVocab": [
+        "Swollen Ankles",
+        "Proportionate Response",
+        "Stable Pattern"
+      ]
+    },
+    {
+      "instruction": "Identify the appropriate response despite the routine-sounding start.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My feet have swollen up, and honestly, it's spread to a new area since this morning and it wasn't like that before.\"",
+      "symptoms": [
+        "Encourage the patient to seek prompt in-person evaluation given this new spread.",
+        "Treat this the same as a routine, everyday complaint and carry on with no further action.",
+        "Suggest the patient try to push through and ignore it for the time being.",
+        "Wait until the next scheduled visit before bringing any of this up with the patient."
+      ],
+      "correctAnswer": "Encourage the patient to seek prompt in-person evaluation given this new spread.",
+      "hint": "The sentence starts routinely but does not stay routine. Where does it change?",
+      "explanation": "Although the sentence starts routinely, the added phrase signals a meaningful change that warrants encouraging prompt evaluation rather than treating it as routine.",
+      "id": "mc_l170_q3",
+      "medicalVocab": [
+        "Swollen Ankles",
+        "Urgency",
+        "Recognition"
+      ]
+    }
+  ]
 }

@@ -1,577 +1,577 @@
 {
-    "gameType": "prepositionChoice",
-    "batchIndex": 1,
-    "levels": "1-10",
-    "quests": [
-        {
-            "id": "pc_l1_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "The milk is ___ the fridge.",
-            "options": [
-                "under",
-                "on",
-                "in",
-                "at"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "in",
-            "hint": "Use this when something is enclosed inside a space.",
-            "explanation": "'In' is used for something enclosed within a space, like a fridge, a box, or a room.",
-            "grammarRule": "Prepositions of Place",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l1_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "Your phone is ___ the desk.",
-            "options": [
-                "at",
-                "under",
-                "on",
-                "in"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "on",
-            "hint": "Use this for something resting on a flat surface.",
-            "explanation": "'On' shows contact with a surface: on the desk, on the wall, on the floor.",
-            "grammarRule": "Prepositions of Place",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l1_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "Meet me ___ the bus stop.",
-            "options": [
-                "in",
-                "at",
-                "under",
-                "on"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "at",
-            "hint": "Use this for an exact point, not a large area.",
-            "explanation": "'At' marks a specific point, like a bus stop, a door, or a corner.",
-            "grammarRule": "Prepositions of Place",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l2_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "The cat is sleeping ___ the chair.",
-            "options": [
-                "above",
-                "on",
-                "under",
-                "between"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "under",
-            "hint": "Think of the opposite of 'above'.",
-            "explanation": "'Under' means in a lower position, directly beneath something else.",
-            "grammarRule": "Prepositions of Place",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l2_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "The clock hangs ___ the fireplace.",
-            "options": [
-                "under",
-                "above",
-                "into",
-                "at"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "above",
-            "hint": "Use this for a higher position, usually without touching.",
-            "explanation": "'Above' describes a higher position, often without contact, unlike 'on'.",
-            "grammarRule": "Prepositions of Place",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l2_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "The garden is ___ the two houses.",
-            "options": [
-                "between",
-                "behind",
-                "near",
-                "next to"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "between",
-            "hint": "Use this when talking about exactly two things.",
-            "explanation": "'Between' shows something in the middle of two people or objects: between the houses, between us.",
-            "grammarRule": "Prepositions of Place",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l3_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "The bakery is ___ the bank.",
-            "options": [
-                "next to",
-                "into",
-                "from",
-                "above"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "next to",
-            "hint": "Right beside, with no space between.",
-            "explanation": "'Next to' means directly beside something, with nothing in between.",
-            "grammarRule": "Prepositions of Place",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l3_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "A tall tree grows ___ our house.",
-            "options": [
-                "behind",
-                "into",
-                "above",
-                "through"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "behind",
-            "hint": "Think of the opposite of 'in front of'.",
-            "explanation": "'Behind' shows a position at the back of something.",
-            "grammarRule": "Prepositions of Place",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l3_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "The teacher stood ___ the class.",
-            "options": [
-                "in front of",
-                "under",
-                "behind",
-                "between"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "in front of",
-            "hint": "Facing the group, at the front.",
-            "explanation": "'In front of' means positioned before or facing something, the opposite of 'behind'.",
-            "grammarRule": "Prepositions of Place",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l4_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "There is a small cafe ___ the park.",
-            "options": [
-                "above",
-                "into",
-                "near",
-                "through"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "near",
-            "hint": "Close by, but not touching.",
-            "explanation": "'Near' means close to something in distance, without necessarily touching it.",
-            "grammarRule": "Prepositions of Place",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l4_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "She sat ___ her best friend at the concert.",
-            "options": [
-                "beside",
-                "into",
-                "from",
-                "above"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "beside",
-            "hint": "Right at the side of a person.",
-            "explanation": "'Beside' means at the side of someone or something, similar to 'next to'.",
-            "grammarRule": "Prepositions of Place",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l4_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "Every morning, I walk ___ school.",
-            "options": [
-                "in",
-                "to",
-                "from",
-                "at"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "to",
-            "hint": "Shows the destination of a movement.",
-            "explanation": "'To' points toward a destination: walk to school, drive to work.",
-            "grammarRule": "Prepositions of Movement",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l5_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "The children ran ___ the swimming pool.",
-            "options": [
-                "into",
-                "in",
-                "at",
-                "to"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "into",
-            "hint": "Movement that ends inside something.",
-            "explanation": "'Into' shows movement toward the inside of a place, not just being there.",
-            "grammarRule": "Prepositions of Movement",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l5_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "This train comes ___ Chicago.",
-            "options": [
-                "of",
-                "from",
-                "since",
-                "at"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "from",
-            "hint": "Shows the starting point of something.",
-            "explanation": "'From' marks the origin or starting point of something.",
-            "grammarRule": "Prepositions of Movement",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l5_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "My brother is really interested ___ video games.",
-            "options": [
-                "on",
-                "in",
-                "for",
-                "at"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "in",
-            "hint": "This adjective always pairs with the same short word for a hobby.",
-            "explanation": "'Interested in' is a fixed pair: we say interested in a subject, never interested at or for.",
-            "grammarRule": "Dependent Prepositions: Adjectives",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l6_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "My sister is very good ___ chess.",
-            "options": [
-                "for",
-                "at",
-                "with",
-                "in"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "at",
-            "hint": "Use this to talk about a skill or ability.",
-            "explanation": "'Good at' describes skill in an activity: good at cooking, good at sports.",
-            "grammarRule": "Dependent Prepositions: Adjectives",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l6_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "Many people are afraid ___ the dark.",
-            "options": [
-                "of",
-                "at",
-                "from",
-                "to"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "of",
-            "hint": "This word links a feeling of fear to its cause.",
-            "explanation": "'Afraid of' connects the feeling of fear to what causes it.",
-            "grammarRule": "Dependent Prepositions: Adjectives",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l6_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "Please listen ___ the safety instructions.",
-            "options": [
-                "to",
-                "for",
-                "at",
-                "on"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "to",
-            "hint": "Use this after this verb when paying attention with your ears.",
-            "explanation": "'Listen to' is the standard pairing: we listen to music, listen to advice, listen to a teacher.",
-            "grammarRule": "Dependent Prepositions: Verbs",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l7_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "Look ___ that beautiful sunset!",
-            "options": [
-                "to",
-                "in",
-                "for",
-                "at"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "at",
-            "hint": "Use this to direct someone's eyes toward something.",
-            "explanation": "'Look at' directs attention to something visible right now.",
-            "grammarRule": "Dependent Prepositions: Verbs",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l7_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "We waited ___ the bus for twenty minutes.",
-            "options": [
-                "to",
-                "at",
-                "on",
-                "for"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "for",
-            "hint": "Use this when something hasn't arrived yet.",
-            "explanation": "'Wait for' shows you are expecting someone or something to arrive.",
-            "grammarRule": "Dependent Prepositions: Verbs",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l7_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "My birthday is ___ July.",
-            "options": [
-                "on",
-                "in",
-                "since",
-                "at"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "in",
-            "hint": "Use this for months and years.",
-            "explanation": "'In' is used for longer time periods like months, years, and seasons.",
-            "grammarRule": "Prepositions of Time",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l8_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "The party starts ___ Saturday evening.",
-            "options": [
-                "on",
-                "since",
-                "in",
-                "at"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "on",
-            "hint": "Use this for days of the week.",
-            "explanation": "'On' is used with specific days: on Monday, on Saturday, on my birthday.",
-            "grammarRule": "Prepositions of Time",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l8_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "The movie begins ___ 7:30 sharp.",
-            "options": [
-                "at",
-                "by",
-                "in",
-                "on"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "at",
-            "hint": "Use this for an exact clock time.",
-            "explanation": "'At' is used for precise times: at 7:30, at noon, at midnight.",
-            "grammarRule": "Prepositions of Time",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l8_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "This old guitar belongs ___ my grandfather.",
-            "options": [
-                "of",
-                "for",
-                "with",
-                "to"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "to",
-            "hint": "Shows who owns something.",
-            "explanation": "'Belong to' shows ownership: this belongs to me, that belongs to her.",
-            "grammarRule": "Dependent Prepositions: Verbs",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l9_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "My aunt has been married ___ an engineer for ten years.",
-            "options": [
-                "to",
-                "with",
-                "of",
-                "for"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "to",
-            "hint": "Not the word you'd expect -- this one pairs differently in English.",
-            "explanation": "In English, we say married to someone, never married with someone.",
-            "grammarRule": "Dependent Prepositions: Adjectives",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l9_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "This bracelet is made ___ pure silver.",
-            "options": [
-                "with",
-                "of",
-                "from",
-                "by"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "of",
-            "hint": "Use this when the original material is still visible in the final object.",
-            "explanation": "'Made of' is used when the material is clearly recognizable in the finished item, like silver in a bracelet.",
-            "grammarRule": "Dependent Prepositions: Adjectives",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l9_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "The basket was full ___ fresh strawberries.",
-            "options": [
-                "of",
-                "with",
-                "for",
-                "in"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "of",
-            "hint": "Use this to describe a container holding a lot of one thing.",
-            "explanation": "'Full of' shows a container or space holding a large amount of something.",
-            "grammarRule": "Dependent Prepositions: Adjectives",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l10_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "Her parents are so proud ___ her graduation.",
-            "options": [
-                "with",
-                "for",
-                "about",
-                "of"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "of",
-            "hint": "This links a feeling of satisfaction to its cause.",
-            "explanation": "'Proud of' connects a feeling of pride to its cause, like an achievement.",
-            "grammarRule": "Dependent Prepositions: Adjectives",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l10_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "I'm getting tired ___ this rainy weather.",
-            "options": [
-                "at",
-                "with",
-                "from",
-                "of"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "of",
-            "hint": "Use this when you've had enough of something.",
-            "explanation": "'Tired of' shows annoyance after too much of something, unlike 'tired from', which shows physical exhaustion.",
-            "grammarRule": "Dependent Prepositions: Adjectives",
-            "prepositionCategory": "Time/Place"
-        },
-        {
-            "id": "pc_l10_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "choice",
-            "question": "This small town is famous ___ its cheese.",
-            "options": [
-                "about",
-                "for",
-                "of",
-                "with"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "for",
-            "hint": "This shows the reason something is well known.",
-            "explanation": "'Famous for' introduces the reason for someone or something's fame.",
-            "grammarRule": "Dependent Prepositions: Adjectives",
-            "prepositionCategory": "Time/Place"
-        }
-    ]
+  "gameType": "prepositionChoice",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "pc_l1_q1",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "My notebook is ___ my backpack, along with my pens.",
+      "options": [
+        "on",
+        "at",
+        "in",
+        "above"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "in",
+      "hint": "Something fully enclosed inside a container calls for this word.",
+      "explanation": "'In' is used when something is enclosed inside a space, like a backpack, a box, or a drawer.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l1_q2",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "There's a coffee stain ___ the carpet.",
+      "options": [
+        "on",
+        "in",
+        "under",
+        "at"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "on",
+      "hint": "Think about contact with a flat surface, not something enclosed.",
+      "explanation": "'On' describes contact with a surface — a stain sits on the carpet, not inside it.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l1_q3",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "Turn left ___ the traffic light.",
+      "options": [
+        "in",
+        "on",
+        "near",
+        "at"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "at",
+      "hint": "This word marks an exact point, not a wide area.",
+      "explanation": "'At' marks a precise point in space, such as a traffic light, a doorway, or a corner.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l2_q1",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "The recycling bin sits ___ the kitchen sink, tucked inside the cabinet there.",
+      "options": [
+        "above",
+        "under",
+        "next to",
+        "in"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "under",
+      "hint": "The clue about the cabinet tells you this is a lower position, not beside the sink.",
+      "explanation": "'Under' shows a position directly below something else. The mention of the cabinet confirms the bin is beneath the sink, not next to it.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l2_q2",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "The spice rack is mounted on the wall, ___ the stove, just below the extractor fan.",
+      "options": [
+        "above",
+        "next to",
+        "under",
+        "between"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "above",
+      "hint": "It's positioned higher than the stove but lower than the fan.",
+      "explanation": "'Above' fits because the rack sits higher than the stove yet still under the fan — 'next to' wouldn't match that vertical description.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l2_q3",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "The bread box sits ___ the toaster, both on the kitchen counter.",
+      "options": [
+        "under",
+        "above",
+        "next to",
+        "into"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "next to",
+      "hint": "They're on the same surface, side by side.",
+      "explanation": "'Next to' means directly beside something, with nothing in between — here, two items sharing the same counter.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l3_q1",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "My backpack is ___ my chair, hanging on a hook.",
+      "options": [
+        "beside",
+        "behind",
+        "above",
+        "between"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "behind",
+      "hint": "Picture the back of the chair, not the front or the side.",
+      "explanation": "'Behind' places something at the back of another object, like a bag hanging behind a chair.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l3_q2",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "The whiteboard is ___ the students' desks, so everyone can see it while writing notes.",
+      "options": [
+        "between",
+        "behind",
+        "near",
+        "in front of"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "in front of",
+      "hint": "This is the opposite of 'behind'.",
+      "explanation": "'In front of' means positioned before or facing something — the class faces the whiteboard while it's positioned ahead of them.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l3_q3",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "A tall bookshelf stands ___ the classroom door.",
+      "options": [
+        "beside",
+        "into",
+        "above",
+        "behind"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "beside",
+      "hint": "Right at the side, similar to 'next to'.",
+      "explanation": "'Beside' means at the side of something, close to it — here, a bookshelf next to the door.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l4_q1",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "There's a pharmacy ___ the train station, about a five-minute walk away.",
+      "options": [
+        "between",
+        "near",
+        "into",
+        "above"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "near",
+      "hint": "Close by, though not necessarily right beside it.",
+      "explanation": "'Near' shows something is close in distance without touching or being right next to it — a short walk still counts as near.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l4_q2",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "The mailbox stands ___ two tall lampposts.",
+      "options": [
+        "near",
+        "around",
+        "between",
+        "beside"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "between",
+      "hint": "This word needs exactly two things, one on each side.",
+      "explanation": "'Between' describes a position with one thing on each side — here, a lamppost on either side of the mailbox.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l4_q3",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "Several food trucks were parked ___ the square, facing in every direction.",
+      "options": [
+        "between",
+        "above",
+        "into",
+        "around"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "around",
+      "hint": "Think of things scattered on every side of a central spot.",
+      "explanation": "'Around' shows a position surrounding something, like trucks scattered on all sides of a square.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l5_q1",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "The manager's office is ___ the store, past the fitting rooms.",
+      "options": [
+        "inside",
+        "outside",
+        "above",
+        "beside"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "inside",
+      "hint": "This describes the interior of the building, not its entrance.",
+      "explanation": "'Inside' emphasizes being within the interior of a place, such as an office located within a store.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l5_q2",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "A line of customers was waiting ___ the shop, right by the door, before it opened.",
+      "options": [
+        "inside",
+        "near",
+        "outside",
+        "under"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "outside",
+      "hint": "The opposite of 'inside' — beyond the building's walls.",
+      "explanation": "'Outside' places something beyond the boundary of a building. The detail 'right by the door' confirms it's not just somewhere nearby.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l5_q3",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "The discounted items are ___ the bottom shelf.",
+      "options": [
+        "in",
+        "on",
+        "at",
+        "between"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "on",
+      "hint": "A shelf is a surface, not an enclosed space.",
+      "explanation": "'On' is used for items resting on a surface, such as a shelf.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l6_q1",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "Please check in ___ the front desk when you arrive.",
+      "options": [
+        "in",
+        "near",
+        "above",
+        "at"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "at",
+      "hint": "This word treats the desk as a specific point, not a surface or a container.",
+      "explanation": "'At' marks a specific point of reference, such as a reception desk where visitors check in.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l6_q2",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "All the client files are ___ that gray cabinet.",
+      "options": [
+        "under",
+        "in",
+        "near",
+        "on"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "in",
+      "hint": "The files are enclosed, not resting on top.",
+      "explanation": "'In' fits enclosed spaces like a cabinet, a drawer, or a folder.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l6_q3",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "Her name tag is pinned ___ her jacket.",
+      "options": [
+        "on",
+        "near",
+        "above",
+        "into"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "on",
+      "hint": "Something attached to the surface of clothing.",
+      "explanation": "'On' describes something attached to or resting on a surface, including a piece of clothing.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l7_q1",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "The bus shelter is ___ the newsstand, hidden from anyone walking straight up the street.",
+      "options": [
+        "near",
+        "above",
+        "behind",
+        "into"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "behind",
+      "hint": "Picture the newsstand blocking the view of it from the front.",
+      "explanation": "'Behind' places the shelter at the back of the newsstand. The detail about being hidden from view rules out a more general word like 'near'.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l7_q2",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "I always stand ___ the ticket machine while I wait for the train.",
+      "options": [
+        "under",
+        "above",
+        "around",
+        "next to"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "next to",
+      "hint": "Right beside it, not underneath or surrounding it.",
+      "explanation": "'Next to' shows a position directly beside the ticket machine.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l7_q3",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "We sheltered ___ the station's glass canopy during the rain.",
+      "options": [
+        "on",
+        "under",
+        "beside",
+        "into"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "under",
+      "hint": "A canopy covers you from above, so you'd be positioned beneath it.",
+      "explanation": "'Under' describes being beneath something that covers or shelters you, like a canopy.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l8_q1",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "A row of flags flew ___ the entrance gate.",
+      "options": [
+        "above",
+        "under",
+        "beside",
+        "into"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "above",
+      "hint": "Flags on tall poles are usually higher than a gate, not touching it.",
+      "explanation": "'Above' shows a higher position, often without contact, like flags flying over a gate.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l8_q2",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "A narrow path runs ___ the pond and the playground.",
+      "options": [
+        "beside",
+        "around",
+        "above",
+        "between"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "between",
+      "hint": "Two landmarks are named, one on each side of the path.",
+      "explanation": "'Between' fits because the path has the pond on one side and the playground on the other.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l8_q3",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "Tourists often take photos ___ the old fountain.",
+      "options": [
+        "behind",
+        "under",
+        "in front of",
+        "between"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "in front of",
+      "hint": "People usually face what they're photographing.",
+      "explanation": "'In front of' places the tourists facing the fountain, the natural spot for a photo.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l9_q1",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "She left her umbrella ___ the coat rack.",
+      "options": [
+        "beside",
+        "into",
+        "above",
+        "between"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "beside",
+      "hint": "Right next to an object, touching or almost touching.",
+      "explanation": "'Beside' shows the umbrella positioned right next to the coat rack.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l9_q2",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "Small candles were placed ___ the table for the birthday dinner.",
+      "options": [
+        "into",
+        "around",
+        "above",
+        "beside"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "around",
+      "hint": "Multiple items are spread on different sides of one central object.",
+      "explanation": "'Around' shows objects surrounding something, like candles arranged around a table.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l9_q3",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "On warm evenings, we prefer to sit ___ the restaurant, on the terrace.",
+      "options": [
+        "inside",
+        "under",
+        "between",
+        "outside"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "outside",
+      "hint": "The terrace is beyond the building's walls.",
+      "explanation": "'Outside' places the seating beyond the restaurant's interior, such as on a terrace.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l10_q1",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "The security guard's desk is ___ the main entrance, right where visitors sign in.",
+      "options": [
+        "between",
+        "in",
+        "at",
+        "above"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "at",
+      "hint": "Think of the entrance as one specific point, not an enclosed area.",
+      "explanation": "'At' treats the entrance as a specific point of reference, distinct from 'in', which would suggest being enclosed within it.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l10_q2",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "The old oak tree stands ___ our house, so close its branches touch the roof.",
+      "options": [
+        "near",
+        "next to",
+        "around",
+        "above"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "next to",
+      "hint": "The detail about touching branches shows real closeness, not just general nearness.",
+      "explanation": "'Next to' fits the detail about the branches touching the roof — 'near' would allow more distance, which the sentence rules out.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    },
+    {
+      "id": "pc_l10_q3",
+      "instruction": "CHOOSE THE CORRECT PREPOSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "choice",
+      "question": "The children's playground is ___ the school and the public library, an easy walk from both.",
+      "options": [
+        "beside",
+        "between",
+        "around",
+        "outside"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "between",
+      "hint": "Two named places surround the location described.",
+      "explanation": "'Between' is correct because the playground has the school on one side and the library on the other.",
+      "grammarRule": "Prepositions of Place",
+      "prepositionCategory": "Place"
+    }
+  ]
 }

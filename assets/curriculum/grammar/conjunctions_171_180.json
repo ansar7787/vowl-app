@@ -8,37 +8,37 @@
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "___ platform the company selects, migrating existing data will take several months.",
+            "question": "The election results shocked pollsters, ___ every major survey had predicted a comfortable win for the incumbent.",
             "options": [
-                "So",
-                "Because",
-                "Whichever",
-                "Although"
+                "so",
+                "although",
+                "because",
+                "until"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Whichever",
-            "hint": "This word means 'no matter which', introducing a choice among specific options.",
-            "explanation": "'Whichever' means 'no matter which' — regardless of the specific platform chosen, migration will take months.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Connection"
+            "correctAnswer": "because",
+            "hint": "Look at the order of ideas: is the second clause explaining the shock, describing a result of it, or contradicting it?",
+            "explanation": "The wrong predictions are the explanation for the shock, which is what 'because' introduces. 'So' would need the surveys mentioned first as the cause; 'although' would require an actual contradiction, but there isn't one here — the surveys and the shock agree perfectly.",
+            "grammarRule": "Subordinating Conjunctions — Reason",
+            "conjunctionPurpose": "Reason"
         },
         {
             "id": "cj_l171_q2",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "The upgrade improves performance ___ it removes the most common bottlenecks in the system.",
+            "question": "Ridership dropped for the third straight month, ___ the transit authority is now considering fare cuts to win riders back.",
             "options": [
+                "although",
                 "because",
                 "unless",
-                "insofar as",
-                "although"
+                "so"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "insofar as",
-            "hint": "This formal phrase sets a specific limit on how far the improvement extends.",
-            "explanation": "'Insofar as' means 'to the extent that' — the improvement is limited to removing these specific bottlenecks.",
-            "grammarRule": "Subordinating Conjunctions",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "so",
+            "hint": "The drop is mentioned first as the cause — check which word correctly introduces what came after it.",
+            "explanation": "The dropping ridership is stated first as the cause, and 'so' introduces the resulting decision. 'Because' would wrongly reverse that order, and 'although' would require a contradiction that isn't present.",
+            "grammarRule": "Coordinating Conjunctions — Result",
             "conjunctionPurpose": "Result"
         },
         {
@@ -46,246 +46,246 @@
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "The rollout succeeded ___ engineers had already resolved every issue found in testing.",
+            "question": "The reviewers praised the film's visuals, ___ they were harshly critical of its pacing and dialogue.",
             "options": [
-                "although",
-                "while",
+                "so",
                 "because",
-                "so"
+                "unless",
+                "although"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "because",
-            "hint": "Thorough preparation explains the smooth rollout.",
-            "explanation": "'Because' gives the direct reason for a result — resolved issues caused the successful rollout.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Reason"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "although",
+            "hint": "Check whether the second half is explaining, resulting from, or pushing back against the first half.",
+            "explanation": "Praise and harsh criticism sit in real tension here, which is what 'although' is built to express. 'Because' and 'so' would both require a cause-and-effect link between the visuals and the pacing, but no such link exists.",
+            "grammarRule": "Subordinating Conjunctions — Concession",
+            "conjunctionPurpose": "Concession"
         },
         {
             "id": "cj_l172_q1",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "___ takes over the department will inherit a talented but overworked team.",
+            "question": "___ the quarterly numbers come in below forecast, the board has already prepared a contingency plan.",
             "options": [
-                "Whoever",
-                "Although",
-                "So",
-                "Because"
+                "If",
+                "When",
+                "Unless",
+                "So"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Whoever",
-            "hint": "This word doubles as the subject of the verb right after it, and means 'no matter who'.",
-            "explanation": "'Whoever' means 'no matter who' and also functions as the subject of 'takes over' — the other options cannot serve as a subject this way.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Addition"
+            "correctAnswer": "If",
+            "hint": "Is a low quarter a sure thing, something the plan only kicks in without, or just one open possibility?",
+            "explanation": "Missing the forecast is still an open, uncertain possibility, which 'if' introduces. 'When' would wrongly treat it as a certainty, and 'unless' would flip the meaning, suggesting the plan activates only when the numbers don't come in low.",
+            "grammarRule": "Subordinating Conjunctions — Condition",
+            "conjunctionPurpose": "Condition"
         },
         {
             "id": "cj_l172_q2",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "The old system rewarded individual output, ___ the new one measures team collaboration instead.",
+            "question": "The alarm won't disarm ___ you enter the correct code within thirty seconds.",
             "options": [
-                "until",
-                "whereas",
-                "because",
+                "when",
+                "if",
+                "unless",
                 "so"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "whereas",
-            "hint": "Two systems are being formally contrasted.",
-            "explanation": "'Whereas' formally contrasts two related facts — two systems measuring two different things.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Contrast"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "unless",
+            "hint": "The alarm stays armed except for one specific positive action — figure out which word matches that structure.",
+            "explanation": "The disarming fails without that one positive action, which is exactly the negative-condition logic 'unless' captures. 'If' would need the clause rephrased as a negative ('if you don't enter'), and 'when' would wrongly suggest the code entry is a certainty rather than a requirement.",
+            "grammarRule": "Subordinating Conjunctions — Condition",
+            "conjunctionPurpose": "Condition"
         },
         {
             "id": "cj_l172_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "Team leads now hold shorter daily check-ins ___ issues surface before they escalate.",
+            "question": "The fireworks always start ___ the sun fully sets, rain or shine.",
             "options": [
-                "although",
-                "because",
+                "if",
+                "when",
                 "unless",
-                "so that"
+                "so"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "so that",
-            "hint": "Holding shorter check-ins has one clear, intended purpose.",
-            "explanation": "'So that' introduces a purpose — the shorter check-ins are meant to catch issues early.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Result"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "when",
+            "hint": "The phrase 'always' and 'rain or shine' tell you this isn't a maybe — it's a sure, repeating event.",
+            "explanation": "'Always' and 'rain or shine' confirm this is a certain, recurring trigger, not a possibility, which rules out 'if'. 'Unless' makes no sense here since nothing is being excluded.",
+            "grammarRule": "Subordinating Conjunctions — Time",
+            "conjunctionPurpose": "Time"
         },
         {
             "id": "cj_l173_q1",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "Painful ___ the treatment was, most patients said it was worth the long-term relief.",
+            "question": "The witness kept glancing at the door ___ she answered the prosecutor's questions.",
             "options": [
-                "though",
-                "because",
-                "although",
+                "when",
+                "while",
+                "as",
                 "so"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "though",
-            "hint": "This word can directly follow a fronted adjective — its closest relative usually cannot fit this exact pattern.",
-            "explanation": "'Though' can follow a fronted adjective in this inverted pattern — 'although' does not fit this specific structure as naturally.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Connection"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "while",
+            "hint": "The glancing happened repeatedly, stretched across the whole time she was talking — not at one single instant.",
+            "explanation": "The repeated glancing overlapped with the whole stretch of questioning, which is exactly what 'while' expresses. 'When' would wrongly suggest a single instant, and 'as' risks reading as a reason here rather than simultaneous time.",
+            "grammarRule": "Subordinating Conjunctions — Time",
+            "conjunctionPurpose": "Time"
         },
         {
             "id": "cj_l173_q2",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "The two treatments produce similar results, ___ one requires a much shorter recovery time.",
+            "question": "The power flickered ___ the storm's first lightning strike hit the transformer.",
             "options": [
-                "so",
-                "because",
-                "although",
-                "save that"
+                "while",
+                "as",
+                "when",
+                "so"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "save that",
-            "hint": "Meaning 'except that', this phrase isolates the one detail that differs.",
-            "explanation": "'Save that' means 'except that' — it introduces the single specific difference between two similar treatments.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Connection"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "when",
+            "hint": "The flicker was one sharp, single event tied to one exact strike, not a stretch of overlapping time.",
+            "explanation": "The flicker happened at the precise instant of the strike, a single trigger point, which 'when' captures. 'While' would wrongly suggest an ongoing overlap for what is really a one-time event.",
+            "grammarRule": "Subordinating Conjunctions — Time",
+            "conjunctionPurpose": "Time"
         },
         {
             "id": "cj_l173_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "___ early detection improves outcomes significantly, screening is now recommended annually.",
+            "question": "___ the deadline was already tight, the manager decided not to add any new requirements.",
             "options": [
-                "Although",
-                "Unless",
-                "Given that",
-                "Because"
+                "While",
+                "When",
+                "So",
+                "As"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Given that",
-            "hint": "An accepted fact is the basis for a health recommendation.",
-            "explanation": "'Given that' introduces an accepted fact as the basis for a decision — better outcomes from early detection justify the recommendation.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Connection"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "As",
+            "hint": "The tight deadline is quietly explaining the decision, not describing something happening alongside it.",
+            "explanation": "The tight deadline is the light, background reason behind the decision, which 'as' introduces here. 'When' doesn't fit since the deadline being tight isn't a single triggering moment, and 'while' would misleadingly suggest a comparison or overlap rather than a reason.",
+            "grammarRule": "Subordinating Conjunctions — Reason",
+            "conjunctionPurpose": "Reason"
         },
         {
             "id": "cj_l174_q1",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "___ has the new drug reduced symptoms, but it has also lowered the relapse rate significantly.",
+            "question": "___ the results had already been peer-reviewed twice, the journal still requested a third independent review.",
             "options": [
-                "Provided that",
+                "Because",
                 "Even though",
-                "Given that",
-                "Not only"
+                "Even if",
+                "So"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Not only",
-            "hint": "Placed first in the sentence, this phrase forces the subject and helper verb to swap places.",
-            "explanation": "'Not only' at the front of a sentence triggers inversion — here matched with 'has' for the present perfect tense.",
-            "grammarRule": "Correlative Conjunctions",
-            "conjunctionPurpose": "Connection"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Even though",
+            "hint": "The two earlier reviews already happened — this is a settled fact, not a maybe still being considered.",
+            "explanation": "The two completed reviews are an established fact, and 'even though' introduces a concession about that fact. 'Even if' would wrongly treat the review status as still uncertain, and 'because' would nonsensically claim the reviews caused the request for a third one.",
+            "grammarRule": "Subordinating Conjunctions — Concession",
+            "conjunctionPurpose": "Concession"
         },
         {
             "id": "cj_l174_q2",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "The pilot clinic served a small population, ___ the full program will reach the entire region.",
+            "question": "___ the pilot fails initial safety checks, engineers plan to retest the modified design within a week.",
             "options": [
-                "until",
-                "whereas",
-                "because",
-                "so"
+                "Even though",
+                "Even if",
+                "Because",
+                "So"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "whereas",
-            "hint": "Two phases of the same program are being formally contrasted.",
-            "explanation": "'Whereas' formally contrasts two related facts — two phases with two different scales.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Contrast"
+            "correctAnswer": "Even if",
+            "hint": "Whether the pilot fails is still completely unknown — this hasn't happened yet.",
+            "explanation": "The failure is still an unknown future possibility, which 'even if' introduces as a hypothetical concession. 'Even though' would wrongly claim the failure has already happened, and 'because' doesn't fit since there's no direct cause-and-effect link intended here.",
+            "grammarRule": "Subordinating Conjunctions — Concession",
+            "conjunctionPurpose": "Concession"
         },
         {
             "id": "cj_l174_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "The side effects were mild, ___ the doctor still monitored him closely for a week.",
+            "question": "The revenue targets were missed again this quarter, ___ leadership remains confident about next year's guidance.",
             "options": [
-                "and",
-                "so",
+                "even though",
+                "even if",
                 "because",
-                "but"
+                "unless"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "but",
-            "hint": "A minor detail didn't remove the need for caution.",
-            "explanation": "'But' introduces a contrast — mild side effects didn't stop careful monitoring.",
-            "grammarRule": "Coordinating Conjunctions",
-            "conjunctionPurpose": "Contrast"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "even though",
+            "hint": "The missed targets already happened — this is a done fact the confidence is standing up against.",
+            "explanation": "The missed targets are a completed, real event, which 'even though' introduces as the fact behind this concession. 'Even if' would wrongly suggest the miss hasn't actually happened, and 'because' would illogically claim the miss is causing the confidence.",
+            "grammarRule": "Subordinating Conjunctions — Concession",
+            "conjunctionPurpose": "Concession"
         },
         {
             "id": "cj_l175_q1",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "___ the announcement finally comes, markets are expected to react sharply.",
+            "question": "___ the quarterly report had already circulated to all board members beforehand, the CFO skipped a detailed walkthrough during the meeting.",
             "options": [
-                "Whenever",
-                "Because",
-                "So",
-                "Although"
+                "Unless",
+                "Since",
+                "Although",
+                "So"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Whenever",
-            "hint": "This word means 'no matter when', introducing a time that isn't yet known.",
-            "explanation": "'Whenever' means 'no matter when' — regardless of the exact timing, the reaction is expected to be strong.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Connection"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Since",
+            "hint": "The phrase 'already circulated... beforehand' marks this as known background, not fresh news.",
+            "explanation": "'Already circulated beforehand' frames this as accepted background context rather than new information, which is exactly the role 'since' plays. 'Because' would present it as the sentence's central point, which doesn't match this backgrounded framing.",
+            "grammarRule": "Subordinating Conjunctions — Reason",
+            "conjunctionPurpose": "Reason"
         },
         {
             "id": "cj_l175_q2",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "The policy will succeed ___ neighboring countries also commit to similar targets.",
+            "question": "The intern's badge failed at the security gate ___ IT had not yet added her to the new access system.",
             "options": [
                 "unless",
-                "to the extent that",
+                "because",
                 "although",
-                "because"
+                "so"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "to the extent that",
-            "hint": "This formal phrase sets a specific limit on how far the policy's success extends.",
-            "explanation": "'To the extent that' means the same as 'insofar as' — success is tied specifically to shared commitment from neighbors.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Result"
+            "correctAnswer": "because",
+            "hint": "This explanation is the actual news of the sentence — the reader is finding this out for the first time.",
+            "explanation": "This is presented as newly discovered, central information explaining the failure, which is exactly the direct role 'because' plays. 'Since' would sound odd here because it typically frames already-known background, not a fresh discovery like this one.",
+            "grammarRule": "Subordinating Conjunctions — Reason",
+            "conjunctionPurpose": "Reason"
         },
         {
             "id": "cj_l175_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "Talks stalled ___ neither delegation was willing to compromise on the key demand.",
+            "question": "___ the summit's opening session ran long, organizers trimmed ten minutes from every afternoon panel.",
             "options": [
-                "because",
-                "while",
-                "although",
-                "so"
+                "As",
+                "Unless",
+                "Although",
+                "So"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "A refusal to compromise explains the stalled talks.",
-            "explanation": "'Because' gives the direct reason for a result — the lack of compromise caused the stall.",
-            "grammarRule": "Subordinating Conjunctions",
+            "correctAnswer": "As",
+            "hint": "This is a small, routine scheduling adjustment, not a heavily emphasized reason.",
+            "explanation": "This minor operational adjustment fits the light, low-emphasis register of 'as' better than the heavier 'because' or the more substantial background framing of 'since'.",
+            "grammarRule": "Subordinating Conjunctions — Reason",
             "conjunctionPurpose": "Reason"
         },
         {
@@ -293,285 +293,285 @@
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "___ unlikely the scenario, emergency planners still prepare a detailed response for it.",
+            "question": "___ the west campus relies almost entirely on solar power, the east campus still depends heavily on the municipal grid.",
             "options": [
-                "However",
-                "Because",
+                "But",
                 "So",
-                "Although"
+                "Whereas",
+                "Because"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "However",
-            "hint": "This word means 'no matter how' when placed directly before an adjective.",
-            "explanation": "'However' can mean 'no matter how' before an adjective — different from the linking-adverb 'however' used with a semicolon.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Contrast"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Whereas",
+            "hint": "This sentence needs to open with the comparison, which only one of these words can naturally do here.",
+            "explanation": "Opening a sentence with a comparison between two facts calls for a subordinating word, and 'whereas' is built to start a sentence this way, unlike the coordinating 'but', which cannot open a sentence like this.",
+            "grammarRule": "Subordinating Conjunctions — Comparison",
+            "conjunctionPurpose": "Comparison"
         },
         {
             "id": "cj_l176_q2",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "___ that the technology was unproven, several cities agreed to pilot the new transit system.",
+            "question": "The city council approved the budget unanimously, ___ several residents voiced strong objections during the same meeting.",
             "options": [
-                "Notwithstanding",
-                "Unless",
-                "So",
-                "Because"
+                "whereas",
+                "while",
+                "so",
+                "but"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Notwithstanding",
-            "hint": "This legal-sounding phrase works like 'although', but fits formal or official writing best.",
-            "explanation": "'Notwithstanding that' introduces a formal concession — despite being unproven, several cities still agreed to the pilot.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Addition"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "but",
+            "hint": "A unanimous vote makes the pushback that follows feel like a genuine surprise, not just a side-by-side comparison.",
+            "explanation": "The word 'unanimously' sets up a strong expectation of agreement, making the objections a real surprise, which 'but' captures better than a plain side-by-side comparison word.",
+            "grammarRule": "Coordinating Conjunctions — Contrast",
+            "conjunctionPurpose": "Contrast"
         },
         {
             "id": "cj_l176_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "___ longer the delegates negotiated, ___ less likely a compromise seemed.",
+            "question": "Junior researchers are required to submit quarterly progress reports, ___ senior researchers submit findings only at the end of each project.",
             "options": [
-                "So / that",
-                "As / as",
-                "Both / and",
-                "The / the"
+                "but",
+                "whereas",
+                "so",
+                "because"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "The / the",
-            "hint": "This structure pairs one rising degree with a matching rising degree.",
-            "explanation": "'The...the' shows that one change causes a matching change — more time led to less optimism.",
-            "grammarRule": "Correlative Conjunctions",
-            "conjunctionPurpose": "Connection"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "whereas",
+            "hint": "This reads like formal institutional policy comparing two staff tiers, not a moment of surprise.",
+            "explanation": "The parallel phrasing describing two policies for two staff groups reads like a formal document, which fits the precise comparison role of 'whereas' rather than the more surprise-driven 'but'.",
+            "grammarRule": "Subordinating Conjunctions — Comparison",
+            "conjunctionPurpose": "Comparison"
         },
         {
             "id": "cj_l177_q1",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "___ the inquiry ultimately concludes, public trust in the institution has already suffered.",
+            "question": "The airline rebooked every affected passenger within the hour ___ the cancellation had already triggered a wave of complaints on social media.",
             "options": [
-                "Whatever",
-                "So",
-                "Although",
-                "Because"
+                "so",
+                "so that",
+                "although",
+                "because"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Whatever",
-            "hint": "This word doubles as part of the clause right after it, and means 'no matter what'.",
-            "explanation": "'Whatever' means 'no matter what' — regardless of the inquiry's conclusion, the damage to trust has already happened.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Connection"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "because",
+            "hint": "The complaints already happened before the rebooking — check which word fits that order as an explanation.",
+            "explanation": "The already-existing complaints are the reason for the fast rebooking, which 'because' introduces even in second position. 'So that' would wrongly imply a future goal, but the complaints are described as already having happened.",
+            "grammarRule": "Subordinating Conjunctions — Reason",
+            "conjunctionPurpose": "Reason"
         },
         {
             "id": "cj_l177_q2",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "Local newspapers once covered council meetings in detail, ___ most now barely mention them.",
+            "question": "The cancellation triggered a wave of angry posts, ___ the airline rebooked every affected passenger within the hour.",
             "options": [
-                "whereas",
                 "so",
                 "because",
-                "until"
+                "so that",
+                "although"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "whereas",
-            "hint": "Two eras of local journalism are being formally contrasted.",
-            "explanation": "'Whereas' formally contrasts two related facts — two very different levels of local coverage.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Contrast"
+            "correctAnswer": "so",
+            "hint": "The posts are mentioned first as the cause — check which word introduces what actually followed.",
+            "explanation": "The angry posts are stated first as the cause, and 'so' introduces the airline's reactive response that followed. 'So that' would wrongly frame this as a forward-looking goal rather than an already-happening reaction.",
+            "grammarRule": "Coordinating Conjunctions — Result",
+            "conjunctionPurpose": "Result"
         },
         {
             "id": "cj_l177_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "The correction ran on the front page ___ the original error had been so widely shared.",
+            "question": "The airline streamlined its rebooking process ___ future disruptions wouldn't trigger the same backlash.",
             "options": [
-                "while",
                 "because",
                 "so",
-                "although"
+                "although",
+                "so that"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "because",
-            "hint": "The scale of the mistake explains the prominent correction.",
-            "explanation": "'Because' gives the direct reason for a decision — the widely shared error caused the front-page correction.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Reason"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "so that",
+            "hint": "The word 'wouldn't' signals a hoped-for future outcome, not something that has already happened.",
+            "explanation": "The word 'wouldn't' marks this as a forward-looking intended goal, which 'so that' introduces. 'So' and 'because' would both treat this as an already-settled fact rather than a hoped-for future purpose.",
+            "grammarRule": "Subordinating Conjunctions — Purpose",
+            "conjunctionPurpose": "Purpose"
         },
         {
             "id": "cj_l178_q1",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "Reluctant ___ they were, most residents eventually accepted the new parking rules.",
+            "question": "The food truck will stay parked at the stadium later than usual ___ the game runs into overtime.",
             "options": [
-                "although",
-                "though",
-                "because",
+                "if",
+                "unless",
+                "even if",
                 "so"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "though",
-            "hint": "This word can directly follow a fronted adjective — its closest relative usually cannot fit this exact pattern.",
-            "explanation": "Only 'though' fits directly after a fronted adjective like this; 'although' needs a different word order.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Connection"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "if",
+            "hint": "The later hours genuinely depend on this one thing actually happening, not on it failing to happen.",
+            "explanation": "Staying later genuinely depends on overtime actually happening, a true dependency, which 'if' introduces. 'Unless' would reverse the meaning entirely, and 'even if' would wrongly suggest the outcome doesn't depend on overtime at all.",
+            "grammarRule": "Subordinating Conjunctions — Condition",
+            "conjunctionPurpose": "Condition"
         },
         {
             "id": "cj_l178_q2",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "The two neighborhoods face similar challenges, ___ one has far less access to public transport.",
+            "question": "The clinic won't extend its hours ___ demand justifies the extra staffing costs.",
             "options": [
-                "so",
-                "although",
-                "save that",
-                "because"
+                "unless",
+                "if",
+                "even if",
+                "so"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "save that",
-            "hint": "This formal phrase means 'except', introducing the one point of difference.",
-            "explanation": "'Save that' means 'except that' — it introduces the single specific difference between two similar neighborhoods.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Connection"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "unless",
+            "hint": "The normal hours hold firm except for one specific thing that would need to happen first.",
+            "explanation": "The hours stay unchanged unless this one condition is met, which is the negative-condition logic 'unless' expresses. 'If' would need the clause rephrased as a negative to keep the same meaning.",
+            "grammarRule": "Subordinating Conjunctions — Condition",
+            "conjunctionPurpose": "Condition"
         },
         {
             "id": "cj_l178_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "Parking complaints kept rising, ___ the council finally reviewed the entire permit system.",
+            "question": "The clinic plans to extend its hours for the holiday season, ___ demand ends up lower than projected.",
             "options": [
-                "but",
-                "although",
-                "or",
+                "unless",
+                "if",
+                "even if",
                 "so"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "so",
-            "hint": "Ongoing complaints directly led to an official review.",
-            "explanation": "'So' introduces a result — persistent complaints caused the council to act.",
-            "grammarRule": "Coordinating Conjunctions",
-            "conjunctionPurpose": "Result"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "even if",
+            "hint": "The plan stays fixed no matter which way that future possibility actually goes.",
+            "explanation": "The extension plan holds regardless of whether demand ends up low, which 'even if' shows as that unaffected outcome. 'If' would wrongly suggest the plan actually depends on low demand, the opposite of what's intended.",
+            "grammarRule": "Subordinating Conjunctions — Concession",
+            "conjunctionPurpose": "Concession"
         },
         {
             "id": "cj_l179_q1",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "___ did the new policy reduce complaints, but it also freed up spaces for residents.",
+            "question": "You're welcome to bring ___ a dessert or a side dish — whatever's easier for you.",
             "options": [
-                "Given that",
-                "Not only",
-                "Even though",
-                "Provided that"
+                "whether",
+                "neither",
+                "although",
+                "either"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Not only",
-            "hint": "This opening phrase is the only one of the four that flips the normal subject-verb order.",
-            "explanation": "Fronting 'not only' forces the subject and helper verb to swap places — none of the other options behave this way.",
-            "grammarRule": "Correlative Conjunctions",
-            "conjunctionPurpose": "Addition"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "either",
+            "hint": "This is a friendly invitation offering two real options, not an expression of doubt.",
+            "explanation": "This is a plain, friendly offer of two options, which is exactly what 'either... or' expresses. 'Whether' would sound like uncertainty rather than an invitation, and 'neither' would wrongly deny both options.",
+            "grammarRule": "Correlative Conjunctions — Alternatives",
+            "conjunctionPurpose": "Alternative"
         },
         {
             "id": "cj_l179_q2",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "___ most complaints came from a single street, officials focused their response there first.",
+            "question": "I honestly can't tell ___ she's joking or completely serious right now.",
             "options": [
-                "Given that",
-                "Unless",
-                "Although",
-                "Because"
+                "either",
+                "neither",
+                "whether",
+                "although"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Given that",
-            "hint": "An accepted fact is the basis for where officials focused first.",
-            "explanation": "'Given that' introduces an accepted fact as the basis for a decision — the concentration of complaints justified the focus.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Connection"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "whether",
+            "hint": "This expresses genuine confusion between two possibilities, not an offer to choose one.",
+            "explanation": "Not being able to tell which of two things is true is a classic case for 'whether', which expresses that uncertainty. 'Either' would sound like offering a choice rather than admitting confusion.",
+            "grammarRule": "Correlative Conjunctions — Alternatives",
+            "conjunctionPurpose": "Alternative"
         },
         {
             "id": "cj_l179_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "The new rules help ___ they free up spaces near the school during drop-off times.",
+            "question": "___ the printer nor the scanner has worked properly since the power outage.",
             "options": [
-                "insofar as",
-                "unless",
-                "although",
-                "because"
+                "Neither",
+                "Either",
+                "Whether",
+                "Although"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "insofar as",
-            "hint": "This formal phrase sets a specific limit on how far the new rules help.",
-            "explanation": "'Insofar as' means 'to the extent that' — the benefit is limited to this specific time and location.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Addition"
+            "correctAnswer": "Neither",
+            "hint": "Both machines are broken here, and 'nor' later in the sentence has already chosen its one required partner.",
+            "explanation": "'Nor' only ever completes a pair that starts with 'neither', confirming both machines are broken together. 'Either' would need 'or', not 'nor', to complete its pair.",
+            "grammarRule": "Correlative Conjunctions — Paired Negation",
+            "conjunctionPurpose": "Pairing"
         },
         {
             "id": "cj_l180_q1",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "___ drafts the final report will need to reconcile several conflicting sets of data.",
+            "question": "The quarterly forecast missed the mark for the second year running, ___ the CFO is under mounting pressure to explain the gap to shareholders.",
             "options": [
-                "So",
-                "Although",
-                "Whoever",
-                "Because"
+                "because",
+                "although",
+                "so",
+                "unless"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Whoever",
-            "hint": "This word doubles as the subject of the verb right after it, and means 'no matter who'.",
-            "explanation": "'Whoever' means 'no matter who' and also functions as the subject of 'drafts' — the other options cannot serve as a subject this way.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Addition"
+            "correctAnswer": "so",
+            "hint": "The missed forecast is the cause; check which word introduces the pressure that followed from it.",
+            "explanation": "The missed forecast is the cause, and the mounting pressure is what followed from it, which 'so' introduces. 'Because' would wrongly reverse that direction.",
+            "grammarRule": "Coordinating Conjunctions — Result",
+            "conjunctionPurpose": "Result"
         },
         {
             "id": "cj_l180_q2",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "___ that early estimates were overly optimistic, the final results still exceeded the revised targets.",
+            "question": "___ the new hire had zero experience in the industry, she outperformed every benchmark within her first quarter.",
             "options": [
-                "So",
-                "Notwithstanding",
                 "Because",
-                "Unless"
+                "So",
+                "Unless",
+                "Although"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Notwithstanding",
-            "hint": "In formal writing, this phrase concedes a fact while the main outcome still stands.",
-            "explanation": "'Notwithstanding that' introduces a formal concession — despite overly optimistic early estimates, the final results still exceeded expectations.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Addition"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Although",
+            "hint": "Zero experience should have meant a slow start — check whether that's actually what happened.",
+            "explanation": "No prior experience makes outperforming every benchmark genuinely surprising, which 'although' introduces as that concession. 'Because' would nonsensically claim the lack of experience caused the strong results.",
+            "grammarRule": "Subordinating Conjunctions — Concession",
+            "conjunctionPurpose": "Concession"
         },
         {
             "id": "cj_l180_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "choice",
-            "question": "The initial estimate assumed steady conditions, ___ the final figures reflect several unexpected disruptions.",
+            "question": "The negotiations remain fragile, ___ either side walks away entirely, which now seems increasingly likely.",
             "options": [
-                "whereas",
-                "so",
-                "because",
-                "until"
+                "even if",
+                "if",
+                "unless",
+                "so"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "whereas",
-            "hint": "Two sets of figures are being formally contrasted.",
-            "explanation": "'Whereas' formally contrasts two related facts — two estimates shaped by two different circumstances.",
-            "grammarRule": "Subordinating Conjunctions",
-            "conjunctionPurpose": "Contrast"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "unless",
+            "hint": "The fragile status only holds up as long as one particular worst-case outcome doesn't happen — and that outcome now looks close.",
+            "explanation": "The fragile status depends on a full walkaway not happening, and 'unless' introduces that negative condition, especially with 'increasingly likely' signaling real risk. 'Even if' would wrongly suggest the fragile status continues no matter what, contradicting that real risk.",
+            "grammarRule": "Subordinating Conjunctions — Condition",
+            "conjunctionPurpose": "Condition"
         }
     ]
 }

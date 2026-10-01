@@ -6,661 +6,653 @@
         {
             "id": "SPK_DIALOGUEROLEPLAY_L101_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Give a backup plan: working out at home.",
-            "explanation": "Repeating the condition, 'if it rains', mirrors the question's structure naturally.",
-            "partnerDialogue": "If it rains tomorrow, what will you do instead of jogging?",
-            "sampleAnswer": "If it rains, I'll just work out at home.",
+            "instruction": "Make an indirect request at work.",
+            "hint": "Use the question about your early finish to raise a favor, and offer something back.",
+            "explanation": "Requests sound reasonable when you offer to compensate. The colleague or manager can say yes without feeling used.",
+            "partnerDialogue": "You're packing up early today. Everything okay?",
+            "sampleAnswer": "Fine, actually. I was hoping I could leave early on Friday and work extra on Monday.",
             "acceptedSynonyms": [
-                "work out at home",
-                "i'll just exercise at home",
-                "home workout instead",
-                "stay in and work out"
+                "fine, actually. i was hoping i could leave early on friday and work extra on monday",
+                "all fine. i wanted to ask if i could leave at four on friday. i'll make up the time",
+                "yes, thanks. would it be possible to finish early on friday? i'll catch up afterwards",
+                "all fine, i wanted to ask if i could leave at four on friday"
             ],
-            "correctAnswer": "If it rains, I'll just work out at home.",
             "smartReplies": [
-                "If it rains, I'll just work out at home.",
-                "I'll just switch to a home workout.",
-                "If it's raining, I'll exercise indoors instead."
+                "All fine. I wanted to ask if I could leave at four on Friday. I'll make up the time.",
+                "Fine, actually. I was hoping I could leave early on Friday and work extra on Monday.",
+                "Yes, thanks. Would it be possible to finish early on Friday? I'll catch up afterwards."
             ],
+            "correctAnswer": "Fine, actually. I was hoping I could leave early on Friday and work extra on Monday.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L101_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Confirm yes, and say when you can retake it.",
-            "explanation": "Giving a specific timeframe, next week, makes the answer clear and reassuring.",
-            "partnerDialogue": "If you fail this quiz, will you be able to retake it?",
-            "sampleAnswer": "Yes, if I fail, I can retake it next week.",
+            "instruction": "Ask a favor from hotel staff.",
+            "hint": "Seize the opening to ask for something extra, with your reason.",
+            "explanation": "\"Would it be possible...?\" is more flexible than \"Can I...?\" and makes a no easier to accept.",
+            "partnerDialogue": "Was there anything else you needed?",
+            "sampleAnswer": "One thing: is there any chance of a later checkout tomorrow? Our flight is at seven.",
             "acceptedSynonyms": [
-                "retake it next week",
-                "yes, next week i can",
-                "i can retake next week",
-                "next week, if needed"
+                "one thing: is there any chance of a later checkout tomorrow? our flight is at seven",
+                "actually, yes. would it be possible to have a late checkout? my flight isn't until the evening",
+                "yes, could we possibly stay in the room until three? our flight's late"
             ],
-            "correctAnswer": "Yes, if I fail, I can retake it next week.",
             "smartReplies": [
-                "Yes, if I fail, I can retake it next week.",
-                "If I fail, I can retake it next week.",
-                "Yes, there's a retake option next week."
+                "One thing: is there any chance of a later checkout tomorrow? Our flight is at seven.",
+                "Actually, yes. Would it be possible to have a late checkout? My flight isn't until the evening.",
+                "Yes, could we possibly stay in the room until three? Our flight's late."
             ],
+            "correctAnswer": "One thing: is there any chance of a later checkout tomorrow? Our flight is at seven.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L101_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Suggest a backup: a smaller pilot project.",
-            "explanation": "Offering a specific, scaled-down alternative shows practical, forward-thinking planning.",
-            "partnerDialogue": "If the client rejects this proposal, what's our backup plan?",
-            "sampleAnswer": "If they reject it, we'll offer a smaller pilot project.",
+            "instruction": "Ask for academic help.",
+            "hint": "Explain what you need without sounding lazy.",
+            "explanation": "Show that you've already tried by mentioning the difficulty you had.",
+            "partnerDialogue": "Ah, you wanted to see me?",
+            "sampleAnswer": "I hoped you might suggest some books on my topic. I can't find much.",
             "acceptedSynonyms": [
-                "offer a smaller pilot",
-                "a smaller pilot project",
-                "we'd propose a pilot instead",
-                "scale it down to a pilot"
+                "i hoped you might suggest some books on my topic. i can't find much",
+                "yes. could you recommend some reading for my thesis? i've struggled to find good sources",
+                "thank you for your time. could you point me towards some sources? i'm a bit stuck",
+                "i hoped you might suggest some books on my topic. i cannot find much"
             ],
-            "correctAnswer": "If they reject it, we'll offer a smaller pilot project.",
             "smartReplies": [
-                "If they reject it, we'll offer a smaller pilot project.",
-                "We'd fall back on a smaller pilot project.",
-                "If it's rejected, we'll scale it down to a pilot."
+                "Yes. Could you recommend some reading for my thesis? I've struggled to find good sources.",
+                "I hoped you might suggest some books on my topic. I can't find much.",
+                "Thank you for your time. Could you point me towards some sources? I'm a bit stuck."
             ],
+            "correctAnswer": "I hoped you might suggest some books on my topic. I can't find much.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L102_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Suggest a backup: the next available flight.",
-            "explanation": "'Next available flight' is a practical, realistic response to a common travel disruption.",
-            "partnerDialogue": "If our flight gets cancelled, what's our backup plan?",
-            "sampleAnswer": "If it's cancelled, we'll look for the next available flight.",
+            "instruction": "Ask what jargon means.",
+            "hint": "Ask about a business expression and guess its meaning.",
+            "explanation": "Guessing the meaning, then asking to confirm, is faster than asking \"What does that mean?\"",
+            "partnerDialogue": "We'll touch base offline.",
+            "sampleAnswer": "Just so I'm clear, you mean after the meeting, right?",
             "acceptedSynonyms": [
-                "next available flight",
-                "look for another flight",
-                "book the next flight out",
-                "find the soonest flight"
+                "just so i'm clear, you mean after the meeting, right",
+                "could you explain \"offline\"? do you want to talk after this",
+                "sorry, what do you mean by \"offline\"? do you mean outside the meeting",
+                "just so i am clear, you mean after the meeting, right"
             ],
-            "correctAnswer": "If it's cancelled, we'll look for the next available flight.",
             "smartReplies": [
-                "If it's cancelled, we'll look for the next available flight.",
-                "We'd book the next available flight.",
-                "If that happens, we'll find another flight quickly."
+                "Could you explain \"offline\"? Do you want to talk after this?",
+                "Sorry, what do you mean by \"offline\"? Do you mean outside the meeting?",
+                "Just so I'm clear, you mean after the meeting, right?"
             ],
+            "correctAnswer": "Just so I'm clear, you mean after the meeting, right?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L102_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you'd explain your reasons calmly.",
-            "explanation": "'Calmly' shows a mature, respectful way to handle potential family disagreement.",
-            "partnerDialogue": "If your parents disagree with your decision, what will you do?",
-            "sampleAnswer": "If they disagree, I'll explain my reasons calmly.",
+            "instruction": "Check an idiom.",
+            "hint": "Show you understand the idiom and agree.",
+            "explanation": "Explaining an idiom in your own words proves you understand it, then add your opinion.",
+            "partnerDialogue": "It's a bit of a long shot, but worth a try.",
+            "sampleAnswer": "A long shot means unlikely to work, right? Still, I agree we should try.",
             "acceptedSynonyms": [
-                "explain my reasons calmly",
-                "calmly explain why",
-                "talk it through calmly",
-                "stay calm and explain"
+                "a long shot means unlikely to work, right? still, i agree we should try",
+                "got it: unlikely, but worth trying. i'm in",
+                "so you don't expect it to work, but we should try"
             ],
-            "correctAnswer": "If they disagree, I'll explain my reasons calmly.",
             "smartReplies": [
-                "If they disagree, I'll explain my reasons calmly.",
-                "I'd calmly explain my reasoning to them.",
-                "If that happens, I'll talk it through calmly."
+                "Got it: unlikely, but worth trying. I'm in.",
+                "A long shot means unlikely to work, right? Still, I agree we should try.",
+                "So you don't expect it to work, but we should try?"
             ],
+            "correctAnswer": "A long shot means unlikely to work, right? Still, I agree we should try.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L102_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Confirm yes, and give the exchange window.",
-            "explanation": "A specific policy detail, thirty days, gives a genuinely useful shopping answer.",
-            "partnerDialogue": "If this doesn't fit, can I exchange it later?",
-            "sampleAnswer": "Yes, if it doesn't fit, you can exchange it within thirty days.",
+            "instruction": "Clarify a vague plan.",
+            "hint": "Find out when \"later\" is.",
+            "explanation": "Vague phrases like \"circle back\" need a follow-up about time, or nothing happens.",
+            "partnerDialogue": "Let's circle back on this.",
+            "sampleAnswer": "Just checking, are we leaving this for now? Shall I put it on next week's agenda?",
             "acceptedSynonyms": [
-                "exchange within thirty days",
-                "yes, thirty days to exchange",
-                "thirty-day exchange window",
-                "you have thirty days"
+                "just checking, are we leaving this for now? shall i put it on next week's agenda",
+                "so you'd like to postpone it? should i plan for next week",
+                "do you mean we'll discuss it again later? when, roughly"
             ],
-            "correctAnswer": "Yes, if it doesn't fit, you can exchange it within thirty days.",
             "smartReplies": [
-                "Yes, if it doesn't fit, you can exchange it within thirty days.",
-                "If it doesn't fit, you can exchange it within thirty days.",
-                "Yes, you'll have thirty days to exchange it."
+                "So you'd like to postpone it? Should I plan for next week?",
+                "Just checking, are we leaving this for now? Shall I put it on next week's agenda?",
+                "Do you mean we'll discuss it again later? When, roughly?"
             ],
+            "correctAnswer": "Just checking, are we leaving this for now? Shall I put it on next week's agenda?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L103_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Suggest a backup dish: grilled salmon.",
-            "explanation": "Naming a specific alternative dish gives a clear, easy backup plan.",
-            "partnerDialogue": "If the kitchen runs out of the special, what should we order instead?",
-            "sampleAnswer": "If that happens, I'll just go with the grilled salmon.",
+            "instruction": "Summarize a complex message.",
+            "hint": "Restate the key points in one short sentence.",
+            "explanation": "Summarizing shows understanding and gives the speaker a chance to correct you.",
+            "partnerDialogue": "So basically the system will be down from midnight until six, but only for users in the north region unless the update finishes early.",
+            "sampleAnswer": "In short, north users lose access overnight, maybe not all night. Correct?",
             "acceptedSynonyms": [
-                "go with the grilled salmon",
-                "i'll order the salmon instead",
-                "salmon as a backup",
-                "the grilled salmon works too"
+                "in short, north users lose access overnight, maybe not all night. correct",
+                "so it'll be down overnight, only for the north, unless it finishes sooner. did i get that right",
+                "let me check: overnight downtime, north region only, and it could end early",
+                "so it will be down overnight, only for the north"
             ],
-            "correctAnswer": "If that happens, I'll just go with the grilled salmon.",
             "smartReplies": [
-                "If that happens, I'll just go with the grilled salmon.",
-                "I'll switch to the grilled salmon instead.",
-                "In that case, the salmon works for me."
+                "So it'll be down overnight, only for the north, unless it finishes sooner. Did I get that right?",
+                "In short, north users lose access overnight, maybe not all night. Correct?",
+                "Let me check: overnight downtime, north region only, and it could end early?"
             ],
+            "correctAnswer": "In short, north users lose access overnight, maybe not all night. Correct?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L103_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Suggest rolling back to the previous version.",
-            "explanation": "'Roll back' is useful, specific technical vocabulary for undoing a failed update.",
-            "partnerDialogue": "Suppose the update fails again — what should we try next?",
-            "sampleAnswer": "If it fails, we'll roll back to the previous version.",
+            "instruction": "Reflect a friend's dilemma.",
+            "hint": "Show you understand their trade-off.",
+            "explanation": "Reflect the tension in their message. It shows you listened, and it helps them think.",
+            "partnerDialogue": "I can't decide. I want the job, but the commute is two hours and the pay's only slightly higher.",
+            "sampleAnswer": "It sounds like you like the work, but the extra travel isn't worth the money.",
             "acceptedSynonyms": [
-                "roll back to the previous version",
-                "revert to the old version",
-                "go back to the last version",
-                "undo the update"
+                "it sounds like you like the work, but the extra travel isn't worth the money",
+                "so you like the job, but the commute and the small raise make it doubtful",
+                "if i understand, the role is great, but the trade-offs are big",
+                "it sounds like you like the work, but the extra travel is not worth the money"
             ],
-            "correctAnswer": "If it fails, we'll roll back to the previous version.",
             "smartReplies": [
-                "If it fails, we'll roll back to the previous version.",
-                "We'd revert to the previous version.",
-                "If that happens, let's undo the update."
+                "So you like the job, but the commute and the small raise make it doubtful?",
+                "If I understand, the role is great, but the trade-offs are big.",
+                "It sounds like you like the work, but the extra travel isn't worth the money."
             ],
+            "correctAnswer": "It sounds like you like the work, but the extra travel isn't worth the money.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L103_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Recommend seeing a specialist.",
-            "explanation": "'If it continues' repeats the question's condition, which is a natural, clear way to answer.",
-            "partnerDialogue": "If the pain doesn't go away, what should I do next?",
-            "sampleAnswer": "If it continues, you should see a specialist.",
+            "instruction": "Confirm the rule in plain terms.",
+            "hint": "Check what the rule really allows.",
+            "explanation": "A vague rule is easier to pin down with a concrete example and a check: \"Is that right?\"",
+            "partnerDialogue": "The lease says no pets, but small animals in cages are tolerated at our discretion.",
+            "sampleAnswer": "So caged animals are usually okay, but not cats or dogs?",
             "acceptedSynonyms": [
-                "see a specialist",
-                "you should see a specialist",
-                "consult a specialist then",
-                "visit a specialist if it continues"
+                "so caged animals are usually okay, but not cats or dogs",
+                "just to be clear: a small pet in a cage is probably allowed",
+                "do you mean a hamster would be fine, but a dog or cat wouldn't"
             ],
-            "correctAnswer": "If it continues, you should see a specialist.",
             "smartReplies": [
-                "If it continues, you should see a specialist.",
-                "If it keeps up, a specialist would be wise.",
-                "You should consult a specialist if it persists."
+                "Just to be clear: a small pet in a cage is probably allowed?",
+                "So caged animals are usually okay, but not cats or dogs?",
+                "Do you mean a hamster would be fine, but a dog or cat wouldn't?"
             ],
+            "correctAnswer": "So caged animals are usually okay, but not cats or dogs?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L104_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Confirm yes, and explain the automatic transfer.",
-            "explanation": "'Transfer automatically' reassures the listener no extra action is needed on their part.",
-            "partnerDialogue": "What if the concert gets postponed? Will our tickets still be valid?",
-            "sampleAnswer": "Yes, if it's postponed, the tickets transfer automatically.",
+            "instruction": "Recommend for different tastes.",
+            "hint": "Give options that match different interests.",
+            "explanation": "A recommendation is more useful when it's tailored: \"If you like..., go...\".",
+            "partnerDialogue": "We're visiting your country next month. Where should we go?",
+            "sampleAnswer": "Tell me what you enjoy. For history, I'd say the old capital. For beaches, the coast.",
             "acceptedSynonyms": [
-                "tickets transfer automatically",
-                "yes, automatically transferred",
-                "tickets stay valid automatically",
-                "no action needed, they transfer"
+                "tell me what you enjoy. for history, i'd say the old capital. for beaches, the coast",
+                "don't miss the north if you like nature. it's less crowded too",
+                "it depends what you like. if you enjoy food, go south. for quiet, try the mountains",
+                "tell me what you enjoy. for history, i would say the old capital. for beaches, the coast"
             ],
-            "correctAnswer": "Yes, if it's postponed, the tickets transfer automatically.",
             "smartReplies": [
-                "Yes, if it's postponed, the tickets transfer automatically.",
-                "If it's postponed, the tickets transfer automatically.",
-                "Yes, no action needed — they transfer automatically."
+                "Don't miss the north if you like nature. It's less crowded too.",
+                "It depends what you like. If you enjoy food, go south. For quiet, try the mountains.",
+                "Tell me what you enjoy. For history, I'd say the old capital. For beaches, the coast."
             ],
+            "correctAnswer": "Tell me what you enjoy. For history, I'd say the old capital. For beaches, the coast.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L104_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Name two things you'd do: reading or learning.",
-            "explanation": "Offering two options, reading or learning, shows genuine, thoughtful reflection.",
-            "partnerDialogue": "What would you do if you had an extra hour every day?",
-            "sampleAnswer": "I'd probably spend it reading or learning something new.",
+            "instruction": "Recommend without naming a title.",
+            "hint": "Suggest a type of book and explain why.",
+            "explanation": "Recommendations can describe a type of thing plus how it made you feel.",
+            "partnerDialogue": "Any book you'd recommend? I read mostly thrillers.",
+            "sampleAnswer": "You might enjoy a psychological thriller. The one I read last month kept me guessing until the end.",
             "acceptedSynonyms": [
-                "reading or learning something new",
-                "probably read or learn",
-                "spend it reading",
-                "learning something new, probably"
+                "you might enjoy a psychological thriller. the one i read last month kept me guessing until the end",
+                "try a classic mystery. they're slower, but really clever",
+                "look for something set in one small town. those are usually gripping"
             ],
-            "correctAnswer": "I'd probably spend it reading or learning something new.",
             "smartReplies": [
-                "I'd probably spend it reading or learning something new.",
-                "Probably reading, or learning something new.",
-                "I'd likely spend it on a book or a new skill."
+                "You might enjoy a psychological thriller. The one I read last month kept me guessing until the end.",
+                "Try a classic mystery. They're slower, but really clever.",
+                "Look for something set in one small town. Those are usually gripping."
             ],
+            "correctAnswer": "You might enjoy a psychological thriller. The one I read last month kept me guessing until the end.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L104_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you'd talk to them honestly first.",
-            "explanation": "'Before going to the teacher' shows a fair, direct approach before escalating a problem.",
-            "partnerDialogue": "How would you handle it if your group partner stopped helping?",
-            "sampleAnswer": "I'd talk to them honestly before going to the teacher.",
+            "instruction": "Refer a professional.",
+            "hint": "Recommend a dentist with details that matter.",
+            "explanation": "When recommending a service, mention the quality that matters most to the person asking.",
+            "partnerDialogue": "I'm looking for a good dentist. Do you know anyone?",
+            "sampleAnswer": "I go to a small clinic near the station. They're gentle and explain everything. I can send the details.",
             "acceptedSynonyms": [
-                "talk to them honestly first",
-                "address it directly before escalating",
-                "speak with them before the teacher",
-                "have an honest talk first"
+                "i go to a small clinic near the station. they're gentle and explain everything. i can send the details",
+                "mine's excellent. really careful, but a bit booked up. want the number",
+                "i'm happy with mine. she's patient and never rushes. i'll text you her details"
             ],
-            "correctAnswer": "I'd talk to them honestly before going to the teacher.",
             "smartReplies": [
-                "I'd talk to them honestly before going to the teacher.",
-                "I'd have an honest talk with them first.",
-                "I'd address it directly before involving the teacher."
+                "Mine's excellent. Really careful, but a bit booked up. Want the number?",
+                "I go to a small clinic near the station. They're gentle and explain everything. I can send the details.",
+                "I'm happy with mine. She's patient and never rushes. I'll text you her details."
             ],
+            "correctAnswer": "I go to a small clinic near the station. They're gentle and explain everything. I can send the details.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L105_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you'd address it privately first.",
-            "explanation": "'Privately before...' shows a professional, measured approach to a workplace conflict.",
-            "partnerDialogue": "What would you do if a coworker took credit for your idea?",
-            "sampleAnswer": "I'd address it privately before raising it with the manager.",
+            "instruction": "Answer a personal question honestly.",
+            "hint": "Answer the \"misunderstood\" question with a positive twist.",
+            "explanation": "A personal question is a chance to show self-awareness and humor.",
+            "partnerDialogue": "What's something people often misunderstand about you?",
+            "sampleAnswer": "That I'm slow. I just prefer to think before I answer.",
             "acceptedSynonyms": [
-                "address it privately first",
-                "talk to them privately before escalating",
-                "handle it one-on-one first",
-                "raise it quietly before involving the manager"
+                "that i'm slow. i just prefer to think before i answer",
+                "people think i'm serious, but i actually joke a lot once i'm comfortable",
+                "that i'm shy. i just listen first, but once i know people, i talk a lot",
+                "that i am slow. i just prefer to think before i answer"
             ],
-            "correctAnswer": "I'd address it privately before raising it with the manager.",
             "smartReplies": [
-                "I'd address it privately before raising it with the manager.",
-                "I'd bring it up with them privately first.",
-                "I'd talk to them one-on-one before escalating."
+                "People think I'm serious, but I actually joke a lot once I'm comfortable.",
+                "That I'm slow. I just prefer to think before I answer.",
+                "That I'm shy. I just listen first, but once I know people, I talk a lot."
             ],
+            "correctAnswer": "That I'm slow. I just prefer to think before I answer.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L105_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you'd contact the embassy immediately.",
-            "explanation": "'Right away' shows the urgency needed in a real travel emergency.",
-            "partnerDialogue": "Imagine you lost your passport abroad — what's your first move?",
-            "sampleAnswer": "I'd contact the embassy right away.",
+            "instruction": "Answer without knowing much.",
+            "hint": "Say what little you know and ask why they're asking.",
+            "explanation": "Admit the limits of your knowledge and turn it into a helpful next step.",
+            "partnerDialogue": "Do you happen to know anything about the noise from the building site?",
+            "sampleAnswer": "Not really. I heard it's for a new car park, but I'm not sure. Why?",
             "acceptedSynonyms": [
-                "contact the embassy right away",
-                "call the embassy immediately",
-                "go straight to the embassy",
-                "reach the embassy first"
+                "not really. i heard it's for a new car park, but i'm not sure. why",
+                "no idea, sorry. i could ask the caretaker if you want",
+                "i only know they started last week. is it bothering you",
+                "not really. i heard it is for a new car park, but i am not sure. why"
             ],
-            "correctAnswer": "I'd contact the embassy right away.",
             "smartReplies": [
-                "I'd contact the embassy right away.",
-                "I'd go straight to the embassy.",
-                "My first move would be contacting the embassy."
+                "Not really. I heard it's for a new car park, but I'm not sure. Why?",
+                "No idea, sorry. I could ask the caretaker if you want.",
+                "I only know they started last week. Is it bothering you?"
             ],
+            "correctAnswer": "Not really. I heard it's for a new car park, but I'm not sure. Why?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L105_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you'd suggest a compromise.",
-            "explanation": "'Works for everyone' shows a fair, balanced approach to resolving a family disagreement.",
-            "partnerDialogue": "What would you do if your siblings couldn't agree on the venue?",
-            "sampleAnswer": "I'd suggest a compromise that works for everyone.",
+            "instruction": "Handle mistaken identity.",
+            "hint": "Politely correct someone who thinks you're someone else.",
+            "explanation": "Mistaken identity is awkward. A friendly correction plus a small joke or detail keeps it light.",
+            "partnerDialogue": "Sorry to ask, but are you a doctor? You look familiar.",
+            "sampleAnswer": "I'm not, I'm afraid. I get that quite a lot, though!",
             "acceptedSynonyms": [
-                "suggest a compromise",
-                "find a compromise for everyone",
-                "propose something fair",
-                "a solution that works for all"
+                "i'm not, i'm afraid. i get that quite a lot, though",
+                "no, i'm an engineer. you might have seen me on the train",
+                "no, i'm not. maybe you're thinking of someone else? i work in it",
+                "no, i'm not, maybe you're thinking of someone else",
+                "i am not, i am afraid. i get that quite a lot, though"
             ],
-            "correctAnswer": "I'd suggest a compromise that works for everyone.",
             "smartReplies": [
-                "I'd suggest a compromise that works for everyone.",
-                "I'd try to find something fair for everyone.",
-                "I'd propose a compromise both sides can accept."
+                "I'm not, I'm afraid. I get that quite a lot, though!",
+                "No, I'm an engineer. You might have seen me on the train.",
+                "No, I'm not. Maybe you're thinking of someone else? I work in IT."
             ],
+            "correctAnswer": "I'm not, I'm afraid. I get that quite a lot, though!",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L106_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you'd ask about ordering from another branch.",
-            "explanation": "Suggesting a specific solution, another branch, shows practical, resourceful thinking.",
-            "partnerDialogue": "How would you handle it if the store didn't have your size?",
-            "sampleAnswer": "I'd ask them to order it from another branch.",
+            "instruction": "Empathize and advise.",
+            "hint": "Show you understand the frustration, then suggest one practical step.",
+            "explanation": "Empathy before advice helps people accept it. Otherwise it feels like criticism.",
+            "partnerDialogue": "The client keeps changing the brief. It's driving me crazy.",
+            "sampleAnswer": "That sounds exhausting. Have you tried getting the changes in writing?",
             "acceptedSynonyms": [
-                "order it from another branch",
-                "ask about another branch",
-                "have it ordered from elsewhere",
-                "check another location"
+                "that sounds exhausting. have you tried getting the changes in writing",
+                "i know how that feels. could we agree on a final version and a deadline",
+                "ugh, that's tough. maybe set a limit on revisions",
+                "that sounds exhausting, have you tried getting the changes in writing"
             ],
-            "correctAnswer": "I'd ask them to order it from another branch.",
             "smartReplies": [
-                "I'd ask them to order it from another branch.",
-                "I'd check if another branch has it.",
-                "I'd have them order it from elsewhere."
+                "I know how that feels. Could we agree on a final version and a deadline?",
+                "Ugh, that's tough. Maybe set a limit on revisions?",
+                "That sounds exhausting. Have you tried getting the changes in writing?"
             ],
+            "correctAnswer": "That sounds exhausting. Have you tried getting the changes in writing?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L106_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you'd tell the server calmly and quickly.",
-            "explanation": "Combining 'calmly' with 'right away' shows how to handle a complaint politely but promptly.",
-            "partnerDialogue": "What would you do if you found a hair in your food?",
-            "sampleAnswer": "I'd calmly let the server know right away.",
+            "instruction": "Suggest a team solution.",
+            "hint": "Offer to join others in asking for training.",
+            "explanation": "Saying \"I'd join\" shows solidarity and makes the request sound like a shared one, not a complaint.",
+            "partnerDialogue": "The new software is so slow. Nobody knows how to use it.",
+            "sampleAnswer": "I agree. Should we raise it with the manager together?",
             "acceptedSynonyms": [
-                "calmly let the server know",
-                "tell the server right away, calmly",
-                "mention it politely and quickly",
-                "let them know calmly"
+                "i agree. should we raise it with the manager together",
+                "would a short guide help? i could write one for the team",
+                "maybe we should ask for training. i'd join, and i'm sure others would too"
             ],
-            "correctAnswer": "I'd calmly let the server know right away.",
             "smartReplies": [
-                "I'd calmly let the server know right away.",
-                "I'd politely mention it to the server at once.",
-                "I'd let the server know calmly and quickly."
+                "Would a short guide help? I could write one for the team.",
+                "Maybe we should ask for training. I'd join, and I'm sure others would too.",
+                "I agree. Should we raise it with the manager together?"
             ],
+            "correctAnswer": "I agree. Should we raise it with the manager together?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L106_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Name two urgent steps: passwords and two-factor authentication.",
-            "explanation": "Two clear urgent actions show a calm, prepared response to a security emergency.",
-            "partnerDialogue": "Suppose your account got hacked — what's your first step?",
-            "sampleAnswer": "I'd change my passwords and enable two-factor authentication immediately.",
+            "instruction": "Handle a delicate suggestion.",
+            "hint": "Suggest a direct conversation before escalating.",
+            "explanation": "Gossip helps no one. Encourage a direct chat and assume a good reason.",
+            "partnerDialogue": "I'm not sure Tom is pulling his weight on this project.",
+            "sampleAnswer": "I'd check whether he's overloaded before going to the manager.",
             "acceptedSynonyms": [
-                "change passwords, enable two-factor",
-                "update passwords and add two-factor",
-                "new passwords plus two-factor",
-                "secure the account immediately"
+                "i'd check whether he's overloaded before going to the manager",
+                "it might be worth talking to him first. maybe he doesn't know what's expected",
+                "have you spoken to him directly? there may be a reason",
+                "it might be worth talking to him first",
+                "i would check whether he's overloaded before going to the manager"
             ],
-            "correctAnswer": "I'd change my passwords and enable two-factor authentication immediately.",
             "smartReplies": [
-                "I'd change my passwords and enable two-factor authentication immediately.",
-                "I'd immediately update my passwords and add two-factor.",
-                "First, I'd secure the account with new passwords."
+                "It might be worth talking to him first. Maybe he doesn't know what's expected.",
+                "I'd check whether he's overloaded before going to the manager.",
+                "Have you spoken to him directly? There may be a reason."
             ],
+            "correctAnswer": "I'd check whether he's overloaded before going to the manager.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L107_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Name two fixes: less caffeine, a routine.",
-            "explanation": "Two practical suggestions give more useful advice than a single vague fix.",
-            "partnerDialogue": "What would you do if you couldn't sleep for several nights?",
-            "sampleAnswer": "I'd try cutting caffeine and sticking to a routine.",
+            "instruction": "Give a two-minute summary.",
+            "hint": "Give status, risk, and next step in one breath.",
+            "explanation": "Managers like a summary in three parts: where we are, what could go wrong, what's next.",
+            "partnerDialogue": "Can you summarize where we are in two minutes?",
+            "sampleAnswer": "Sure. Design is done, testing starts Monday, and the only risk is the supplier's delay.",
             "acceptedSynonyms": [
-                "cut caffeine, keep a routine",
-                "less caffeine and more routine",
-                "cutting caffeine helps",
-                "stick to a sleep routine"
+                "sure. design is done, testing starts monday, and the only risk is the supplier's delay",
+                "we're two weeks in, the main work is done, and i need approval for phase two",
+                "in short: on schedule, one delivery risk, and i need your decision on budget"
             ],
-            "correctAnswer": "I'd try cutting caffeine and sticking to a routine.",
             "smartReplies": [
-                "I'd try cutting caffeine and sticking to a routine.",
-                "I'd cut back on caffeine and keep a routine.",
-                "Less caffeine, and a more consistent routine."
+                "We're two weeks in, the main work is done, and I need approval for phase two.",
+                "In short: on schedule, one delivery risk, and I need your decision on budget.",
+                "Sure. Design is done, testing starts Monday, and the only risk is the supplier's delay."
             ],
+            "correctAnswer": "Sure. Design is done, testing starts Monday, and the only risk is the supplier's delay.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L107_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you'd try a recommended show instead.",
-            "explanation": "Mentioning a recommendation source, the writers, makes the answer feel specific and real.",
-            "partnerDialogue": "How would you cope if your favorite show got cancelled?",
-            "sampleAnswer": "I'd probably start something new the writers recommended.",
+            "instruction": "Deflect a rumor.",
+            "hint": "Avoid confirming or denying.",
+            "explanation": "You don't have to answer everything. \"I'd rather not comment\" is a polite way to close a topic.",
+            "partnerDialogue": "I heard you're leaving. Is that true?",
+            "sampleAnswer": "I'm exploring options, but nothing's final. I'll tell you first.",
             "acceptedSynonyms": [
-                "start something the writers recommended",
-                "try a recommended show instead",
-                "follow the writers' next project",
-                "watch what the writers suggest"
+                "i'm exploring options, but nothing's final. i'll tell you first",
+                "i'd rather not comment until i know for sure",
+                "it's not decided yet. i'd rather not say more until it is",
+                "i am exploring options, but nothing's final. i will tell you first"
             ],
-            "correctAnswer": "I'd probably start something new the writers recommended.",
             "smartReplies": [
-                "I'd probably start something new the writers recommended.",
-                "I'd try whatever the writers work on next.",
-                "Probably something new by the same writers."
+                "I'd rather not comment until I know for sure.",
+                "It's not decided yet. I'd rather not say more until it is.",
+                "I'm exploring options, but nothing's final. I'll tell you first."
             ],
+            "correctAnswer": "I'm exploring options, but nothing's final. I'll tell you first.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L107_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Name a habit to change: phone before bed.",
-            "explanation": "Naming a specific, relatable habit makes a hypothetical answer feel genuine.",
-            "partnerDialogue": "If you could change one habit, what would it be?",
-            "sampleAnswer": "I'd stop checking my phone right before bed.",
+            "instruction": "Request development.",
+            "hint": "Turn praise into a request for growth.",
+            "explanation": "After praise, \"Actually...\" is a natural time to ask for something.",
+            "partnerDialogue": "You've been doing great work. Anything you need from me?",
+            "sampleAnswer": "Thanks. If possible, I'd like clearer goals for next quarter.",
             "acceptedSynonyms": [
-                "stop checking my phone before bed",
-                "no phone before bed",
-                "quit scrolling at bedtime",
-                "put the phone away at night"
+                "thanks. if possible, i'd like clearer goals for next quarter",
+                "thank you. actually, i'd love more responsibility. could we talk about leading a project",
+                "that means a lot. i'd like some training in budgeting, if possible",
+                "thanks. if possible, i would like clearer goals for next quarter"
             ],
-            "correctAnswer": "I'd stop checking my phone right before bed.",
             "smartReplies": [
-                "I'd stop checking my phone right before bed.",
-                "I'd put my phone away before bed.",
-                "No more scrolling right before sleep."
+                "Thank you. Actually, I'd love more responsibility. Could we talk about leading a project?",
+                "Thanks. If possible, I'd like clearer goals for next quarter.",
+                "That means a lot. I'd like some training in budgeting, if possible."
             ],
+            "correctAnswer": "Thanks. If possible, I'd like clearer goals for next quarter.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L108_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Name an elective: art, with a reason.",
-            "explanation": "'Always wanted to try' gives a personal, genuine reason behind the hypothetical choice.",
-            "partnerDialogue": "Suppose you had to choose one elective — which would it be?",
-            "sampleAnswer": "I'd choose art, it's something I've always wanted to try.",
+            "instruction": "Open a networking chat.",
+            "hint": "State your reason for being there and return the question.",
+            "explanation": "A networking answer needs a reason and a question to keep things moving.",
+            "partnerDialogue": "So, what brings you here tonight?",
+            "sampleAnswer": "A colleague suggested it. I'm hoping to meet people in logistics. What about you?",
             "acceptedSynonyms": [
-                "choose art, always wanted to try",
-                "art, i've always wanted it",
-                "probably art",
-                "art class, for sure"
+                "a colleague suggested it. i'm hoping to meet people in logistics. what about you",
+                "i'm looking to expand my network. and you",
+                "curiosity, mostly. i'm new to the industry and want to learn",
+                "a colleague suggested it. i am hoping to meet people in logistics. what about you"
             ],
-            "correctAnswer": "I'd choose art, it's something I've always wanted to try.",
             "smartReplies": [
-                "I'd choose art, it's something I've always wanted to try.",
-                "Probably art — I've always wanted to try it.",
-                "Art, definitely, something new for me."
+                "I'm looking to expand my network. And you?",
+                "A colleague suggested it. I'm hoping to meet people in logistics. What about you?",
+                "Curiosity, mostly. I'm new to the industry and want to learn."
             ],
+            "correctAnswer": "A colleague suggested it. I'm hoping to meet people in logistics. What about you?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L108_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Name one priority: team communication.",
-            "explanation": "Naming a specific priority makes a leadership answer sound genuinely thoughtful.",
-            "partnerDialogue": "If you got promoted, what would you change first?",
-            "sampleAnswer": "I'd focus on improving communication between teams.",
+            "instruction": "Close and follow up.",
+            "hint": "Agree to stay in touch and suggest how.",
+            "explanation": "Answer \"Let's stay in touch\" with a concrete channel so it doesn't stay vague.",
+            "partnerDialogue": "It was great meeting you. Let's stay in touch.",
+            "sampleAnswer": "Absolutely. Do you have a card, or shall I find you on LinkedIn?",
             "acceptedSynonyms": [
-                "improving communication between teams",
-                "focus on team communication",
-                "better communication first",
-                "team communication would come first"
+                "absolutely. do you have a card, or shall i find you on linkedin",
+                "i'd like that. what's the best way to reach you",
+                "definitely. i'll send you a message tomorrow"
             ],
-            "correctAnswer": "I'd focus on improving communication between teams.",
             "smartReplies": [
-                "I'd focus on improving communication between teams.",
-                "I'd start by improving team communication.",
-                "Better communication between teams, first and foremost."
+                "Absolutely. Do you have a card, or shall I find you on LinkedIn?",
+                "I'd like that. What's the best way to reach you?",
+                "Definitely. I'll send you a message tomorrow."
             ],
+            "correctAnswer": "Absolutely. Do you have a card, or shall I find you on LinkedIn?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L108_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Name a city, with a reason.",
-            "explanation": "'Unforgettable' gives a strong, personal reason behind the hypothetical choice.",
-            "partnerDialogue": "Imagine revisiting any city — which would you choose?",
-            "sampleAnswer": "I'd go back to Kyoto, it was unforgettable.",
+            "instruction": "Share credit.",
+            "hint": "Accept praise but credit the team.",
+            "explanation": "Sharing credit sounds humble, and colleagues appreciate it.",
+            "partnerDialogue": "You must be the one who helped with the launch!",
+            "sampleAnswer": "A small part. Everyone contributed a lot.",
             "acceptedSynonyms": [
-                "kyoto, it was unforgettable",
-                "back to kyoto",
-                "definitely kyoto again",
-                "kyoto, without question"
+                "a small part. everyone contributed a lot",
+                "partly. it was a real team effort, though",
+                "i was one of the team. sam did most of the work, honestly",
+                "i was one of the team"
             ],
-            "correctAnswer": "I'd go back to Kyoto, it was unforgettable.",
             "smartReplies": [
-                "I'd go back to Kyoto, it was unforgettable.",
-                "Kyoto, without a doubt — it was unforgettable.",
-                "Definitely Kyoto again, it left a real impression."
+                "Partly. It was a real team effort, though.",
+                "A small part. Everyone contributed a lot.",
+                "I was one of the team. Sam did most of the work, honestly."
             ],
+            "correctAnswer": "A small part. Everyone contributed a lot.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L109_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Describe the kind of place, not just a name.",
-            "explanation": "Describing features, beaches and mountains, works well even without naming an exact destination.",
-            "partnerDialogue": "If you could plan the perfect family trip, where would you go?",
-            "sampleAnswer": "I'd choose somewhere with both beaches and mountains.",
+            "instruction": "Respond to a hesitant question.",
+            "hint": "Give a balanced answer with a \"well\" pause.",
+            "explanation": "\"Well,\" at the start of a sentence gives you a beat to think and often signals a \"but\" is coming.",
+            "partnerDialogue": "So, um, how's the new flat?",
+            "sampleAnswer": "Honestly, I love it. Well, except for the neighbours!",
             "acceptedSynonyms": [
-                "beaches and mountains",
-                "somewhere with both beaches and mountains",
-                "a mix of beach and mountains",
-                "beach and mountain destination"
+                "honestly, i love it. well, except for the neighbours",
+                "not bad. a bit noisy, though. the street's busy",
+                "it's good, actually. well, the kitchen's small, but the location is great"
             ],
-            "correctAnswer": "I'd choose somewhere with both beaches and mountains.",
             "smartReplies": [
-                "I'd choose somewhere with both beaches and mountains.",
-                "Somewhere with beaches and mountains, ideally.",
-                "I'd pick a place that has both options."
+                "Honestly, I love it. Well, except for the neighbours!",
+                "Not bad. A bit noisy, though. The street's busy.",
+                "It's good, actually. Well, the kitchen's small, but the location is great."
             ],
+            "correctAnswer": "Honestly, I love it. Well, except for the neighbours!",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L109_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Name one item you'd upgrade.",
-            "explanation": "Naming a specific item, a laptop, gives a hypothetical spending answer real substance.",
-            "partnerDialogue": "Say you had a bigger budget — what would you buy first?",
-            "sampleAnswer": "I'd probably upgrade my laptop first.",
+            "instruction": "Help a speaker who lost their thread.",
+            "hint": "Remind them gently where they were.",
+            "explanation": "Helping a speaker who lost their place should feel natural, not corrective.",
+            "partnerDialogue": "Sorry, where was I? Oh yes, the budget. Right.",
+            "sampleAnswer": "You'd just mentioned the budget. Go on.",
             "acceptedSynonyms": [
-                "upgrade my laptop first",
-                "probably a new laptop",
-                "my laptop would come first",
-                "a better laptop first"
+                "you'd just mentioned the budget. go on",
+                "you were about to mention the cuts, i think",
+                "no problem. you were saying the budget's been cut",
+                "no problem, you were saying the budget's been cut"
             ],
-            "correctAnswer": "I'd probably upgrade my laptop first.",
             "smartReplies": [
-                "I'd probably upgrade my laptop first.",
-                "Probably a new laptop, first of all.",
-                "My laptop would be the first upgrade."
+                "You'd just mentioned the budget. Go on.",
+                "You were about to mention the cuts, I think.",
+                "No problem. You were saying the budget's been cut?"
             ],
+            "correctAnswer": "You'd just mentioned the budget. Go on.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L109_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Name a cuisine, with a reason.",
-            "explanation": "Explaining the reason, so much variety, makes a confident choice feel well thought out.",
-            "partnerDialogue": "If you could only eat one cuisine forever, what would you pick?",
-            "sampleAnswer": "I'd pick Italian, there's so much variety.",
+            "instruction": "Invite a friend to finish a thought.",
+            "hint": "Encourage them to say what's behind \"but\".",
+            "explanation": "A sentence that trails off needs an open invitation (\"Go on\") so the speaker feels safe to continue.",
+            "partnerDialogue": "I mean, it's fine, I guess, but...",
+            "sampleAnswer": "Sounds like there's a \"but\". What is it?",
             "acceptedSynonyms": [
-                "italian, so much variety",
-                "pick italian for the variety",
-                "italian, definitely",
-                "italian food, hands down"
+                "sounds like there's a \"but\". what is it",
+                "but something's bothering you? i'm listening",
+                "but what? go on, you can say it",
+                "sounds like there is a \"but\". what is it"
             ],
-            "correctAnswer": "I'd pick Italian, there's so much variety.",
             "smartReplies": [
-                "I'd pick Italian, there's so much variety.",
-                "Italian, easily — there's so much variety.",
-                "Definitely Italian, for the sheer variety."
+                "But something's bothering you? I'm listening.",
+                "Sounds like there's a \"but\". What is it?",
+                "But what? Go on, you can say it."
             ],
+            "correctAnswer": "Sounds like there's a \"but\". What is it?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L110_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Describe the app's purpose.",
-            "explanation": "Focusing on the app's purpose, not just a name, shows genuine, thoughtful creativity.",
-            "partnerDialogue": "Suppose you could design an app — what problem would it solve?",
-            "sampleAnswer": "I'd build something to help people manage their screen time.",
+            "instruction": "Answer a personal question lightly.",
+            "hint": "Answer the price question but show you noticed it was personal.",
+            "explanation": "Acknowledging that a question is personal, then answering, shows social awareness.",
+            "partnerDialogue": "Do you mind if I ask what you paid for it?",
+            "sampleAnswer": "I'd rather not say, but it wasn't cheap. Are you thinking of buying one?",
             "acceptedSynonyms": [
-                "help manage screen time",
-                "an app for screen time",
-                "reduce screen time problems",
-                "manage phone usage better"
+                "i'd rather not say, but it wasn't cheap. are you thinking of buying one",
+                "around two hundred. why? are you looking for one",
+                "it's a bit personal, but it was around two hundred. why, are you interested",
+                "i would rather not say, but it was not cheap. are you thinking of buying one"
             ],
-            "correctAnswer": "I'd build something to help people manage their screen time.",
             "smartReplies": [
-                "I'd build something to help people manage their screen time.",
-                "Something to help people manage their screen time.",
-                "An app that helps people cut down on screen time."
+                "Around two hundred. Why? Are you looking for one?",
+                "It's a bit personal, but it was around two hundred. Why, are you interested?",
+                "I'd rather not say, but it wasn't cheap. Are you thinking of buying one?"
             ],
+            "correctAnswer": "I'd rather not say, but it wasn't cheap. Are you thinking of buying one?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L110_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say yes, and give a specific number of workouts.",
-            "explanation": "'A few more workouts a week' turns a vague yes into a concrete, specific plan.",
-            "partnerDialogue": "If you had more free time, would you exercise more?",
-            "sampleAnswer": "Definitely, I'd add a few more workouts a week.",
+            "instruction": "Accept a comment.",
+            "hint": "Answer a comment on your appearance simply.",
+            "explanation": "A short, warm reply to a personal comment avoids awkward over-explaining.",
+            "partnerDialogue": "I hope you don't mind my saying, you look different. Did you change something?",
+            "sampleAnswer": "Just my hair. I wasn't sure about it, honestly.",
             "acceptedSynonyms": [
-                "a few more workouts a week",
-                "definitely, more workouts",
-                "add extra workouts weekly",
-                "yes, more sessions each week"
+                "just my hair. i wasn't sure about it, honestly",
+                "only the haircut. nice of you to notice",
+                "well spotted. i got new glasses",
+                "just my hair. i was not sure about it, honestly"
             ],
-            "correctAnswer": "Definitely, I'd add a few more workouts a week.",
             "smartReplies": [
-                "Definitely, I'd add a few more workouts a week.",
-                "Definitely — a few extra workouts each week.",
-                "Yes, I'd fit in more workouts weekly."
+                "Only the haircut. Nice of you to notice.",
+                "Just my hair. I wasn't sure about it, honestly.",
+                "Well spotted. I got new glasses."
             ],
+            "correctAnswer": "Just my hair. I wasn't sure about it, honestly.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L110_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Name the type of author you'd choose.",
-            "explanation": "Referring to a specific series, even without naming it directly, makes the wish feel genuine.",
-            "partnerDialogue": "Imagine meeting any author — who would you choose?",
-            "sampleAnswer": "I'd love to meet the writer of that mystery series.",
+            "instruction": "Respond to a generalization.",
+            "hint": "Agree partly and add your own view.",
+            "explanation": "Instead of saying \"I disagree\", agree with part and offer your own experience.",
+            "partnerDialogue": "Isn't it awful how people are always on their phones?",
+            "sampleAnswer": "It can be, though I use mine a lot for work. Do you feel it's getting worse?",
             "acceptedSynonyms": [
-                "writer of that mystery series",
-                "the mystery series author",
-                "that mystery novelist",
-                "author of the mystery books"
+                "it can be, though i use mine a lot for work. do you feel it's getting worse",
+                "sometimes, yes. but i'm guilty of it too. what annoys you most",
+                "true in restaurants, but phones are useful too",
+                "it can be, though i use mine a lot for work. do you feel it is getting worse"
             ],
-            "correctAnswer": "I'd love to meet the writer of that mystery series.",
             "smartReplies": [
-                "I'd love to meet the writer of that mystery series.",
-                "The author of that mystery series, definitely.",
-                "I'd choose the writer behind that mystery series."
+                "Sometimes, yes. But I'm guilty of it too. What annoys you most?",
+                "True in restaurants, but phones are useful too.",
+                "It can be, though I use mine a lot for work. Do you feel it's getting worse?"
             ],
+            "correctAnswer": "It can be, though I use mine a lot for work. Do you feel it's getting worse?",
             "emotionTag": "Neutral"
         }
     ]

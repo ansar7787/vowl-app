@@ -1,787 +1,787 @@
 {
-    "gameType": "branchingDialogue",
-    "batchIndex": 9,
-    "levels": "81-90",
-    "quests": [
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I'm running a team meeting where two strong personalities always dominate. How do you ensure all voices are heard?'",
-            "options": [
-                "You should ask the dominant people to be quiet so others can speak.",
-                "Dominant personalities in meetings are a common challenge in team leadership.",
-                "I'd use structured turn-taking - two minutes each, and I'd specifically invite whoever hasn't spoken yet, by name."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Structure inclusion as a procedure, not a personal request.",
-            "explanation": "Structured turn-taking makes inclusion a procedure, not something dependent on any one intervention. 'Ask the dominant people to be quiet' creates embarrassment and resentment. 'A common challenge in team leadership' is a general statement.",
-            "id": "bd_l81_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I've discovered that a colleague is taking credit for my work in briefings I don't attend. How do I address this?'",
-            "options": [
-                "I'd have a private, honest conversation first - name the specific instance and ask how we ensure accurate attribution going forward.",
-                "Start attending every briefing to prevent it from happening again.",
-                "Credit-stealing is one of the most corrosive behaviours in any professional environment."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Address attribution directly and privately before taking any other action.",
-            "explanation": "A direct, specific conversation gives the colleague a chance to explain and correct, and names exactly what happened. 'Start attending every briefing' treats the symptom, not the cause. 'One of the most corrosive behaviours' is a general statement.",
-            "id": "bd_l81_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'One of my best kitchen team members has just handed in their notice to go to a competitor. What is the most important conversation to have?'",
-            "options": [
-                "I'd have a genuine exit conversation - not to change their mind, but to understand honestly what we're missing.",
-                "Try to match whatever the competitor has offered them to keep them.",
-                "Good staff departures are always a significant blow to any kitchen operation."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Use the departure as information for the future, not a retention attempt.",
-            "explanation": "An honest exit conversation produces real, usable information about what the kitchen is missing. 'Try to match whatever they offered' is reactive and often doesn't work. 'Always a significant blow' is a general statement.",
-            "id": "bd_l81_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I've just received critical feedback on my research methodology from a peer reviewer. My first reaction is defensive. How do you manage that?'",
-            "options": [
-                "Peer review feedback, even critical, is a fundamental part of the scientific process.",
-                "You should immediately rebut any feedback you believe is incorrect.",
-                "I'd read it twice - once for the emotional reaction, and again asking what might actually be right - before responding."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Separate the emotional reaction from the analytical response, with a specific timing discipline.",
-            "explanation": "Reading twice, with a real gap before responding, is a practical discipline for managing defensiveness. 'Immediately rebut incorrect feedback' leaves no room for reflection. 'A fundamental part of the scientific process' is a general statement.",
-            "id": "bd_l82_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'A customer is making unreasonable demands and threatening to leave. I've already offered everything within my authority. What now?'",
-            "options": [
-                "I've offered everything I'm authorised to - I'm happy to escalate this to my manager if you'd like.",
-                "Some customers are simply impossible to satisfy regardless of what you offer.",
-                "Give them what they want to keep the relationship - the cost is less than losing them."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Name the limit of your authority clearly, and offer escalation.",
-            "explanation": "Naming the limit honestly, and offering a real next step, is calm and non-escalatory. 'Give them what they want' rewards unreasonable demands and sets a precedent. 'Some customers are simply impossible' is a general deflection.",
-            "id": "bd_l82_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'My co-pilot consistently second-guesses my decisions out loud in front of the cabin crew. How do you address it?'",
-            "options": [
-                "Ignore it - cabin crew know that co-pilots sometimes disagree with captains.",
-                "When you disagree with me in front of the crew, it creates uncertainty with safety implications - raise it with me directly first.",
-                "Second-guessing in front of crew is a crew resource management issue."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Frame it as a safety concern, and offer a genuine channel for input.",
-            "explanation": "Framing it as a safety issue, while genuinely inviting input through the right channel, addresses both the risk and the relationship. 'Ignore it' allows the safety issue to continue. 'A crew resource management issue' is a general statement.",
-            "id": "bd_l82_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'A team member has misunderstood a critical instruction and taken the wrong action. What do you say to them?'",
-            "options": [
-                "I'd correct the situation first, then have a private conversation about what went wrong.",
-                "Misunderstandings under pressure are common and should be handled sensitively.",
-                "Start with the facts - what was the instruction, and what's your understanding of it?"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Correct the situation first, then investigate the communication gap privately.",
-            "explanation": "Fixing the operational issue before the learning conversation is the right sequence under time pressure. 'Start with the facts' is the right question, but it should come after the situation is corrected. 'Misunderstandings under pressure are common' is a general statement.",
-            "id": "bd_l83_q1",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I need to ask a sensitive question in an interview without making the subject feel accused. How do you frame it?'",
-            "options": [
-                "Ask the question indirectly so they don't realise you're investigating them.",
-                "Framing sensitive questions without accusation is one of the most important interview skills.",
-                "I'd frame it gently - 'In situations like this, people sometimes do X. Has that happened in your case?'"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Use a normalisation frame that gives the subject permission, without deception.",
-            "explanation": "Normalising the behaviour first reduces the sense of accusation and makes disclosure feel ordinary. 'Ask indirectly so they don't realise' is deceptive in a way that can be legally problematic. 'One of the most important interview skills' is a general statement.",
-            "id": "bd_l83_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'A supplier wants to deliver twice a week instead of daily. This would affect freshness for some ingredients. How do you negotiate?'",
-            "options": [
-                "Twice-weekly works for most items, but I need daily delivery on fish and fresh herbs - that's non-negotiable.",
-                "Accept the change - the supplier is a partner and flexibility goes both ways.",
-                "Ingredient freshness is one of the most important factors in any restaurant's quality."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Be specific about which items require daily delivery, rather than a blanket answer.",
-            "explanation": "Naming the specific items that need daily delivery negotiates from a clear quality position. 'Accept the change' concedes on a quality issue without negotiating. 'One of the most important factors' is a general statement.",
-            "id": "bd_l83_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'A patient keeps missing follow-up appointments. This is affecting their treatment outcomes. What do you do?'",
-            "options": [
-                "Patient non-adherence to follow-up is a significant clinical and ethical challenge.",
-                "Send a formal letter noting that missed appointments may result in discharge from your care.",
-                "I've noticed you've missed your last few appointments - I'm not here to judge, I just want to understand what's getting in the way."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Identify the specific barrier before taking any formal action.",
-            "explanation": "A direct, non-judgmental question aimed at the actual barrier is patient-centred and specific. 'A formal letter noting possible discharge' is premature and punitive before the reason is even known. 'A significant clinical and ethical challenge' is a general statement.",
-            "id": "bd_l84_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I need to give a presentation to a potential investor who I know is sceptical of our business model. How do you open?'",
-            "options": [
-                "Addressing investor scepticism requires careful preparation and strong evidence.",
-                "I'd open by naming it directly - there are legitimate questions about scalability, and I want to address them head-on today.",
-                "Lead with your strongest revenue figures to establish credibility before addressing any concerns."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Address scepticism directly at the start rather than delaying it.",
-            "explanation": "Naming the scepticism up front builds trust by showing confidence and self-awareness. 'Lead with revenue figures first' delays the real issue and can look evasive. 'Requires careful preparation and strong evidence' is a general statement.",
-            "id": "bd_l84_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'We're approaching the end of our permitted duty hours and there's one more flight to complete. What do you do?'",
-            "options": [
-                "We're at the limit of our duty hours and can't accept this rotation - that's regulatory, not discretionary.",
-                "Duty hour regulations exist to prevent fatigue accidents in commercial aviation.",
-                "Complete the flight if you feel fit to fly and let operations document the exemption."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "State the regulatory limit clearly and unambiguously.",
-            "explanation": "A clear, unambiguous statement that this is regulatory, not a judgement call, is the correct response. 'Complete the flight if you feel fit' substitutes a subjective feeling for an objective rule. 'Regulations exist to prevent fatigue accidents' is a general statement.",
-            "id": "bd_l84_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'A team member has come to me saying they're struggling to keep up with the workload but they don't want me to tell anyone. What do you do?'",
-            "options": [
-                "Workload management and team welfare are both important leadership responsibilities.",
-                "Keep their confidence completely - if you share it you'll lose their trust permanently.",
-                "I hear you, and I want to help - but I need to be honest that if this affects performance, I have a responsibility beyond this chat."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Honour the confidence while being transparent about the limits of confidentiality.",
-            "explanation": "Holding both the trust and the professional responsibility, and naming both honestly, is the mature response. 'Keep their confidence completely' risks a real performance issue never being addressed. 'Both important leadership responsibilities' is a general statement.",
-            "id": "bd_l85_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I'm being asked to brief a new external partner on our operation. What information is appropriate to share?'",
-            "options": [
-                "External partner briefings require careful judgement about information boundaries.",
-                "Only what's operationally necessary for their specific role - if it doesn't help them do the job, it doesn't get shared.",
-                "Share enough context that they understand the full picture - partners work better with context."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Apply the need-to-know principle strictly.",
-            "explanation": "Applying a clear, testable need-to-know rule is the correct information-security principle here. 'Share enough context for the full picture' directly violates need-to-know. 'Requires careful judgement about information boundaries' is a general statement.",
-            "id": "bd_l85_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I need to fire a kitchen employee whose attitude is affecting the whole team, but their technical skills are excellent. How do you make that decision?'",
-            "options": [
-                "Excellent technical skills are too rare to let go of - find a way to manage the attitude problem around them.",
-                "Technical skill that damages the whole team isn't an asset, it's a liability - documented, unchanged, that's grounds to let them go.",
-                "Balancing individual technical excellence with team culture is one of the hardest HR decisions in any kitchen."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Weigh team-wide impact against individual skill, with clear conditions for the decision.",
-            "explanation": "Naming the conditions - clearly communicated, documented, unchanged - makes this a principled, defensible decision. 'Too rare to let go of' prioritises one person's skill over the whole team's functioning. 'One of the hardest HR decisions' is a general statement.",
-            "id": "bd_l85_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I've been asked to write a reference for a colleague who is competent but not exceptional. How do you write it honestly?'",
-            "options": [
-                "Write the strongest possible reference - they'll need every advantage they can get.",
-                "I'd write about specific genuine strengths with real examples, and stay accurate rather than inflating it with vague praise.",
-                "Reference writing for competent but non-exceptional colleagues is always uncomfortable."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Write with honest specificity rather than inflated praise.",
-            "explanation": "Specific, accurate strengths are more useful and more honest than vague superlatives. 'Write the strongest possible reference' inflates beyond what's true. 'Always uncomfortable' is a general statement.",
-            "id": "bd_l86_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'My most profitable product line has started declining. Do I invest to revive it or redirect resources to newer lines?'",
-            "options": [
-                "Redirect resources to newer lines - declining products rarely recover no matter what you invest.",
-                "Declining product lines always require careful portfolio management decisions.",
-                "I'd diagnose the cause first - preference change, competition, or under-investment each point to a different answer."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Diagnose the cause of the decline before deciding where to put resources.",
-            "explanation": "Diagnosing the actual cause is the correct analytical step before any resource decision. 'Redirect resources - declining products rarely recover' assumes the cause without checking. 'Always require careful portfolio management' is a general statement.",
-            "id": "bd_l86_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'A trainee first officer is technically ready but very anxious in real operations. How do you develop their confidence?'",
-            "options": [
-                "Building confidence in trainee pilots is an important aspect of their professional development.",
-                "Tell them that anxiety is normal and will pass with more experience.",
-                "I'd expose them gradually, right at the edge of their comfort zone, and debrief one thing they did well after every flight."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Give a specific, evidence-based method for building confidence, not just reassurance.",
-            "explanation": "Progressive exposure plus a specific debrief habit builds confidence through real evidence. 'Anxiety is normal and will pass' is reassurance with no actual mechanism. 'An important aspect of professional development' is a general statement.",
-            "id": "bd_l86_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'I need to communicate a significant change to the team that I personally disagree with. How do you do that with integrity?'",
-            "options": [
-                "Tell the team honestly that you disagree with the decision - they'll respect your honesty.",
-                "Communicating decisions you personally disagree with is one of the most challenging aspects of leadership.",
-                "I'd communicate it fully and clearly, without editorialising - questions are welcome, but not my personal disagreement."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Communicate with commitment while allowing questions, without sharing your own disagreement.",
-            "explanation": "Communicating fully while keeping personal disagreement out preserves the decision's legitimacy and your role. 'Tell the team you disagree' undermines both. 'One of the most challenging aspects of leadership' is a general statement.",
-            "id": "bd_l87_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I've been asked to evaluate two competing intelligence assessments of the same situation. They reach opposite conclusions. How do you adjudicate?'",
-            "options": [
-                "I'd evaluate the methodology before the conclusions - source access, analytical rigour, and how testable the assumptions are.",
-                "Competing intelligence assessments are a common challenge in analytical work.",
-                "Go with the assessment from the analyst with the better track record."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Adjudicate on methodology, not on analyst reputation.",
-            "explanation": "Judging methodology and assumptions directly is a principled way to adjudicate two conclusions. 'Go with the better track record' substitutes reputation for actually evaluating this assessment. 'A common challenge in analytical work' is a general statement.",
-            "id": "bd_l87_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I want to introduce a tasting menu but some of my regular guests strongly prefer à la carte. How do you manage this transition?'",
-            "options": [
-                "Menu format decisions always have significant implications for both guests and kitchen operations.",
-                "I'd complement, not replace - run it on specific days, and tell my loyal regulars personally before the public announcement.",
-                "Replace à la carte completely - running two menus creates operational complexity."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Complement rather than replace, and inform loyal guests personally first.",
-            "explanation": "Keeping both options, and telling loyal guests personally, protects the relationship while still evolving the menu. 'Replace à la carte completely' solves an operational problem by alienating loyal guests. 'Always have significant implications' is a general statement.",
-            "id": "bd_l87_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I've been asked to serve on an ethics committee for a major research institution. What is the most important thing to understand before accepting?'",
-            "options": [
-                "Ethics committees serve an essential function in protecting research participants and standards.",
-                "I'd want to know if the committee has real authority to reject research, or if it's only advisory.",
-                "Understand the time commitment and the specific areas of expertise they're looking for."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Understand the committee's real authority before accepting a governance role.",
-            "explanation": "Knowing whether the role has real authority or is purely advisory is the key pre-acceptance question. 'Understand the time commitment and expertise needed' covers only logistics. 'Serve an essential function' is a general statement.",
-            "id": "bd_l88_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'I've been told by a reliable source that a major competitor is about to be acquired by a multinational. How does this change my strategy?'",
-            "options": [
-                "Competitor acquisition intelligence significantly affects competitive strategy.",
-                "I wouldn't act on unconfirmed intelligence - I'd think through the implications, but wait for confirmation before changing strategy.",
-                "Position for the new competitive landscape immediately - early movers have the advantage."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Prepare mentally, but don't act until the information is confirmed.",
-            "explanation": "Preparing without pre-empting is a disciplined response to unconfirmed intelligence. 'Position immediately - early movers have the advantage' acts on information that isn't confirmed yet. 'Significantly affects competitive strategy' is a general statement.",
-            "id": "bd_l88_q2",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'Our airline is launching a new route to a destination that is politically unstable. What specific preparations would you recommend?'",
-            "options": [
-                "I'd brief the crew fully on political conditions and no-go zones, and set clear criteria for when the captain can abort the route.",
-                "Consult with the airline's security team and follow their risk assessment.",
-                "Political instability at a destination creates significant operational risk for airline routes."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Give specific preparations rather than delegating entirely to another team.",
-            "explanation": "Naming actual preparations - the briefing content and clear abort criteria - is specific operational planning. 'Consult with security and follow their assessment' delegates without specifying anything. 'Creates significant operational risk' is a general statement.",
-            "id": "bd_l88_q3",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Captain Hektor says: 'A junior crew member has raised a safety concern to me that three senior officers previously dismissed. What do you do?'",
-            "options": [
-                "Respect the judgment of the senior officers who reviewed it - they have more experience.",
-                "I'd investigate it independently - seniority doesn't make a dismissal correct, and how I handle this sends a signal to the whole crew.",
-                "Junior crew members raising safety concerns is a positive aspect of any safety culture."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Investigate independently of seniority, and consider the cultural signal.",
-            "explanation": "Investigating on the merits, regardless of who dismissed it before, protects both safety and the culture that encourages people to speak up. 'Respect the judgment of senior officers' uses seniority as a substitute for investigation. 'A positive aspect of any safety culture' is a general statement.",
-            "id": "bd_l89_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Agent Nyx says: 'I've been asked to create a training module on ethical decision-making for new field agents. What's the most important thing to include?'",
-            "options": [
-                "The most important part isn't the frameworks - it's teaching them exactly how to report a concern up the chain when it matters.",
-                "Include a comprehensive review of the ethical rules and standards they must follow.",
-                "Ethical decision-making training for field agents is a critical part of their preparation."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Focus on the practical reporting mechanism, not just rules and frameworks.",
-            "explanation": "Naming the specific, often-missing element - how to actually report a concern - identifies the real gap. 'A comprehensive review of rules and standards' is necessary but not sufficient on its own. 'A critical part of their preparation' is a general statement.",
-            "id": "bd_l89_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Chef O-Ring says: 'I want to create a kitchen culture where mistakes are used as learning opportunities rather than causes for blame. How do you actually build that?'",
-            "options": [
-                "A learning culture in the kitchen is essential for developing both skills and safety.",
-                "Announce clearly at a team meeting that mistakes are learning opportunities and won't be punished.",
-                "The culture is set by how you respond to the first real mistake - stay specific and non-punitive, and ask what needs to change."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Culture is built by your response to a real mistake, not an announcement.",
-            "explanation": "Naming the actual mechanism - your response to the first real mistake - is more accurate than any policy statement. 'Announce it at a team meeting' is words, not the behaviour that actually builds culture. 'Essential for developing skills and safety' is a general statement.",
-            "id": "bd_l89_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Dr. Elara says: 'I've discovered that the evidence base supporting a treatment I've been using for years is weaker than I believed. What is my professional obligation?'",
-            "options": [
-                "Update your practice going forward, but there's no need to contact patients already successfully treated.",
-                "Evidence-based medicine requires clinicians to continuously update their practice as evidence evolves.",
-                "I'd update my practice immediately, inform any current patients on this treatment, and report the finding to my professional body."
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Cover your own practice, current patients, and the wider profession.",
-            "explanation": "Covering practice, current patients, and reporting outward gives a complete account of the professional obligation. 'No need to contact patients already treated' misses the duty to current patients specifically. 'Requires continuous updating' is a general statement.",
-            "id": "bd_l90_q1",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant",
-                "Polite & Appropriate"
-            ],
-            "consequenceScores": [
-                -1,
-                -1,
-                1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Merchant Kael says: 'A client has just told me they're going to breach a contract they have with us. What is the immediate priority?'",
-            "options": [
-                "I'd document the exact wording, date, and time immediately, and get legal advice before saying or confirming anything.",
-                "Contract breach notifications require an immediate and appropriate legal response.",
-                "Contact your solicitor immediately to begin breach of contract proceedings."
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Document precisely and seek legal advice before any further response.",
-            "explanation": "Precise documentation, followed by legal advice before any commitment, protects your legal position. 'Begin breach of contract proceedings immediately' is premature - advice should come before committing to a legal path. 'Require an immediate appropriate legal response' is a general statement.",
-            "id": "bd_l90_q2",
-            "consequencePreviews": [
-                "Polite & Appropriate",
-                "Awkward or Irrelevant",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                1,
-                -1,
-                -1
-            ]
-        },
-        {
-            "instruction": "Choose the best response.",
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Pilot Jax says: 'An air traffic control instruction seems inconsistent with our approved flight plan. What is the procedure?'",
-            "options": [
-                "Comply immediately with ATC instructions - they have the full picture of traffic in the airspace.",
-                "I'd acknowledge but hold off complying - 'This instruction seems inconsistent with our flight plan, we need clarification first.'",
-                "Inconsistencies between ATC instructions and approved flight plans are rare but significant."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Acknowledge without complying, and seek clarification when something seems inconsistent.",
-            "explanation": "Acknowledging while withholding compliance until clarified is the correct safety procedure here. 'Comply immediately - ATC has the full picture' is generally true, but not when an instruction appears to contradict the approved plan. 'Rare but significant' is a general statement.",
-            "id": "bd_l90_q3",
-            "consequencePreviews": [
-                "Awkward or Irrelevant",
-                "Polite & Appropriate",
-                "Awkward or Irrelevant"
-            ],
-            "consequenceScores": [
-                -1,
-                1,
-                -1
-            ]
-        }
-    ]
+  "gameType": "branchingDialogue",
+  "batchIndex": 9,
+  "levels": "81-90",
+  "quests": [
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a restaurant server",
+      "scene": "Your food arrives noticeably cold, even though the restaurant isn't busy.",
+      "options": [
+        "This is cold.",
+        "Excuse me, this came out cold — could you have it reheated or remade, please?",
+        "I can't believe this came out cold, this kitchen clearly doesn't care about quality."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When reporting a service problem, state the issue clearly and say exactly what you'd like done about it.",
+      "explanation": "Stating the problem and the specific fix you want gets the issue resolved quickly and clearly. Saying only 'this is cold' leaves the server unsure whether you want it reheated, remade, or something else. Harsh judgments about the kitchen don't get your food fixed any faster and may create unnecessary tension.",
+      "id": "bd_l81_q1",
+      "consequencePreviews": [
+        "As a result, you state the problem but don't say what you'd like done about it, so the server may not act immediately.",
+        "As a result, the server understands the specific problem and can fix it right away.",
+        "Realistically, the harsh judgment about the kitchen may create tension without actually getting your food fixed any faster."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a hotel front desk during your stay",
+      "scene": "You return to your room to find it hasn't been cleaned, even though housekeeping usually comes by early afternoon.",
+      "options": [
+        "Hi, my room hasn't been cleaned today — could someone come by sometime this evening?",
+        "My room's a mess, if I'm being honest, I said that fairly quickly, but I'm not totally set on it.",
+        "This is really unacceptable service for what I'm paying for this room, in hindsight, I hadn't checked how that would actually land."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When reporting a missed service, state exactly what happened and propose a timeframe that works for you.",
+      "explanation": "Explaining exactly what happened and proposing a timeframe gets the issue fixed in a way that actually works for your evening. 'My room's a mess' doesn't clarify that it's a missed cleaning versus something else. Expressing general dissatisfaction doesn't give the front desk the specific detail they need to actually solve the problem.",
+      "id": "bd_l81_q2",
+      "consequencePreviews": [
+        "The front desk gets a clear report and a workable timeframe to actually fix the issue.",
+        "Realistically, the vague statement doesn't clarify that housekeeping simply never came, or when you'd like it addressed.",
+        "In this moment, the complaint conveys frustration but doesn't clearly state the specific problem or what timeframe would work for a fix."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a landlord regarding a recurring maintenance issue",
+      "scene": "This is the third time this month you've had to report the same leaking pipe under your kitchen sink, which was supposedly fixed twice already.",
+      "options": [
+        "The sink is leaking again, I guess, I hadn't stopped to think it all the way through, so there might be a better way to handle it — and I'm honestly still working out how I feel about the whole thing, and I probably should have asked a few more questions before saying anything.",
+        "This is ridiculous, you clearly hired someone who has no idea what they're doing, I guess, I hadn't really thought it through, but that could easily change — and I'm honestly still working out how I feel about the whole thing.",
+        "This is the third time I'm reporting the same leak under the kitchen sink — the previous two fixes don't seem to have worked. Could we get someone who can properly diagnose the root cause this time?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When an issue keeps coming back even though it's supposedly been resolved before, point out that history directly and ask for something that actually gets to the bottom of it.",
+      "explanation": "Naming the pattern and asking for a proper diagnosis addresses the fact that quick fixes clearly haven't worked so far. Simply reporting the leak again, without mentioning the pattern, risks getting the same ineffective quick fix a third time. Criticizing the previous repair person sharply may create tension without necessarily leading to a more thorough, effective fix this time.",
+      "id": "bd_l81_q3",
+      "consequencePreviews": [
+        "You may notice that without mentioning it's the third time, the landlord may not realize the previous fixes didn't actually solve anything.",
+        "Here, the strong criticism of the previous repair person may create tension without actually leading to a better fix this time.",
+        "Realistically, you clearly state the pattern and ask for a solution that addresses the actual, recurring cause, not just another temporary patch."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "an online store's customer support chat",
+      "scene": "You ordered a jacket that arrived a completely different color than what was shown on the website.",
+      "options": [
+        "This isn't what I ordered, if I'm honest, I hadn't really thought it through, so let me know if that's off — and I probably should have asked a few more questions before saying anything.",
+        "I ordered the navy jacket, but I received it in grey — could I get it exchanged for the correct color?",
+        "Your website is misleading, this happens way too often with online shopping these days."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When reporting a mismatched order, state exactly what you ordered, what you received, and what resolution you want.",
+      "explanation": "Naming exactly what was ordered, what arrived, and the desired fix makes the exchange process fast and clear. Saying only that it's 'not what I ordered' leaves out the specific details support would need to actually process anything. A general comment about online shopping doesn't identify your specific order or what you want done about it.",
+      "id": "bd_l82_q1",
+      "consequencePreviews": [
+        "Here, the statement is accurate but doesn't specify what actually went wrong or what you'd like done about it.",
+        "In this moment, support gets exactly what went wrong and what resolution you're looking for.",
+        "In this moment, the general complaint about online shopping doesn't clearly state your specific order issue or desired resolution."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a furniture store's delivery coordination line",
+      "scene": "A delivery was scheduled for a specific 2-hour window, but no one showed up and no one called to explain.",
+      "options": [
+        "This is honestly the worst delivery service I've ever dealt with, completely unreliable.",
+        "My delivery never came.",
+        "My delivery was scheduled for 10am to 12pm today, and no one showed up or called — could you check what happened and reschedule?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When reporting a missed appointment or delivery, include the exact scheduled time to help the other side investigate quickly.",
+      "explanation": "Including the exact scheduled window gives the coordinator concrete details to investigate what went wrong. Simply saying it 'never came' is accurate but less useful without the specific time reference. Strong criticism of the service doesn't give the coordinator anything specific to act on to actually fix your situation.",
+      "id": "bd_l82_q2",
+      "consequencePreviews": [
+        "Realistically, the strong criticism doesn't provide the coordinator with the specific details needed to actually investigate the missed delivery.",
+        "Realistically, without the scheduled window, the coordinator has less to go on when investigating what actually happened.",
+        "In this moment, the coordinator gets the exact details needed to investigate and fix the missed delivery quickly."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a software company's support line after a paid upgrade broke your workflow",
+      "scene": "You paid for a premium upgrade that was supposed to add a feature, but instead it broke a different feature you rely on daily for work.",
+      "options": [
+        "Since upgrading to premium yesterday, the export function has stopped working entirely, and I rely on it daily for work — could you help me fix this urgently, or roll back the update?",
+        "The premium upgrade isn't working properly.",
+        "I paid for this and now nothing works, this is a complete waste of money."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When a paid product breaks something you depend on, name the specific broken feature, the urgency, and a possible path to resolution.",
+      "explanation": "Naming the specific broken feature, its urgency, and two possible solutions gives support exactly what they need to help you quickly. A vague report about the upgrade 'not working properly' doesn't specify what's actually broken. Expressing frustration about wasted money doesn't give support the specific, actionable information needed to actually fix your problem.",
+      "id": "bd_l82_q3",
+      "consequencePreviews": [
+        "You may notice that support gets a precise picture of what broke, why it's urgent, and two possible paths to a fix.",
+        "You may notice that the vague report doesn't specify which feature broke or how urgent the situation actually is for your work.",
+        "Here, the frustration is understandable, but it doesn't tell support which specific feature broke or how to actually help you."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker who took credit for your work in an email to the wider team",
+      "scene": "A coworker sent an email to the wider team describing a project as 'their initiative,' when it was actually something you proposed and largely built.",
+      "options": [
+        "Hey, I noticed the email described the project as your initiative — I actually proposed and built most of it, so could we send a follow-up that clarifies that?",
+        "I saw the email you sent to the team.",
+        "That's really not okay, you basically stole credit for my work in front of the whole team."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When someone misrepresents your contribution, name the specific issue clearly and propose a concrete fix, rather than being vague or accusatory.",
+      "explanation": "Naming the specific issue and proposing a concrete fix addresses the problem directly while keeping the conversation solvable. A vague comment about the email doesn't clearly state what's actually wrong or what you want to happen. A strong accusation, even if it feels justified, risks a defensive reaction that makes it harder to actually get the credit corrected.",
+      "id": "bd_l83_q1",
+      "consequencePreviews": [
+        "As a result, you raise the issue directly and propose a specific, fair fix, which protects your credit without escalating unnecessarily.",
+        "Here, the vague comment doesn't clearly state the actual issue or what you'd like done about it.",
+        "As a result, the strong accusation may put your coworker on the defensive, making a calm resolution harder to reach."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a group project partner who didn't complete their assigned section",
+      "scene": "The night before a group project is due, you discover a partner never completed their assigned section, despite saying they were 'almost done' earlier.",
+      "options": [
+        "I noticed your section isn't finished, admittedly, I was just going with my gut on that one, so it's worth double-checking — and I probably should have asked a few more questions before saying anything.",
+        "You said you were almost done, this is really unreliable of you, actually, I hadn't stopped to think it all the way through, so let me know if that's off — and a lot depends on details I haven't really looked into yet.",
+        "I just checked and your section isn't there yet — we're really tight on time now. Can you send me what you have, even if it's incomplete, so I can help pull it together?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When time is short and someone hasn't delivered, name the problem and move immediately to a practical solution.",
+      "explanation": "Naming the problem and immediately proposing a practical next step is what actually matters given the tight deadline. Simply flagging that the section isn't finished doesn't move you any closer to actually solving tonight's real problem. Focusing on their reliability, while understandable, doesn't help get the project submitted on time, which is the priority right now.",
+      "id": "bd_l83_q2",
+      "consequencePreviews": [
+        "Realistically, the statement flags the problem but doesn't move toward the urgent solution you actually need tonight.",
+        "You may notice that focusing on their reliability, rather than the urgent solution needed, doesn't help get the project finished in time.",
+        "As a result, you address the problem directly and immediately move toward a solution given the real time pressure."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a business partner who made a significant financial decision without consulting you",
+      "scene": "You discover your business partner spent a significant amount from the shared account on new equipment without discussing it with you first, as your partnership agreement requires.",
+      "options": [
+        "I noticed some new equipment showed up, in fairness, I hadn't fully worked out how it'd play out, so feel free to push back — and a lot depends on details I haven't really looked into yet, and I probably should have asked a few more questions before saying anything.",
+        "I saw the equipment purchase come through — that's a significant amount, and our agreement says we discuss spending like this together first. Can we talk through what happened and how we handle bigger decisions going forward?",
+        "You can't just spend our money without asking me, that's a serious breach of trust."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When a partner breaches an agreed process on something significant, name the specific issue and the agreement clearly, then move toward a constructive conversation about the future.",
+      "explanation": "Naming the specific issue, the breach of your agreement, and proposing a forward-looking conversation addresses the real problem while keeping the business relationship workable. A vague observation about the equipment doesn't address the actual issue — the broken process. A strong accusation about trust, while the underlying concern is valid, may escalate tension in a relationship where a calm, direct conversation could achieve the same resolution.",
+      "id": "bd_l83_q3",
+      "consequencePreviews": [
+        "The vague observation doesn't address the actual issue — that this was a decision that should have involved you first.",
+        "You name the specific issue and the agreement it breaches, then move constructively toward preventing it happening again.",
+        "Here, the strong, accusatory framing may escalate tension in a business relationship where a calm, direct conversation might resolve things just as effectively."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a gym member frustrated about broken equipment",
+      "scene": "You approach the gym manager because a treadmill has been broken for three weeks with no repair in sight.",
+      "options": [
+        "The treadmill's still broken, actually, I hadn't checked how that would actually land, but that could easily change — and there's a decent chance I'd see it differently after sleeping on it.",
+        "This gym is falling apart, nothing ever gets fixed around here, if I'm being honest, I wasn't considering every angle, so I could be wrong.",
+        "The treadmill by the window has been out of order for three weeks now — is there an update on when it'll be fixed?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When following up on an unresolved issue, mention how long it's been outstanding and ask for a specific update.",
+      "explanation": "Mentioning the three-week timeframe and asking for an update gives the manager a clear, specific reason to prioritize checking. Simply noting it's 'still broken' doesn't convey how overdue the fix actually is. A broad complaint about the gym doesn't identify the specific equipment or ask for the specific information you actually want.",
+      "id": "bd_l84_q1",
+      "consequencePreviews": [
+        "You may notice that without mentioning how long it's been broken, the manager may not realize how overdue a fix actually is.",
+        "The broad complaint about the gym doesn't identify the specific issue or ask for the specific update you actually want.",
+        "The manager gets a specific timeframe and location, making it easy to check the status and respond usefully."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "an apartment building manager about a persistent noise issue",
+      "scene": "You've mentioned loud noise from the apartment above you twice already, and it's continued late into the night again this week.",
+      "options": [
+        "The noise from upstairs is happening again.",
+        "I've mentioned this twice already, but the noise from upstairs is still happening late at night — could we look at a more lasting solution, like speaking with them directly or checking the lease terms?",
+        "This building's management clearly doesn't take noise complaints seriously at all."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When a problem has been reported before without resolution, reference that history and propose a more substantial next step.",
+      "explanation": "Referencing the repeated reports and proposing a substantial next step moves a stalled issue toward actual resolution. Simply reporting the noise again, without the history, risks getting the same ineffective response as before. Broadly criticizing management doesn't reference the specific pattern or suggest what should actually happen next.",
+      "id": "bd_l84_q2",
+      "consequencePreviews": [
+        "As a result, without noting it's a repeated issue, the manager may not realize previous attempts to address it haven't worked.",
+        "As a result, you clearly reference the pattern and propose concrete next steps, moving the issue toward an actual resolution.",
+        "As a result, the broad criticism of management doesn't reference the specific pattern or propose an actual next step to resolve it."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a city council office about an unresolved infrastructure issue affecting your street",
+      "scene": "A pothole on your street, reported twice through the city's official system over two months, has caused a third vehicle to be damaged this week, including your own car.",
+      "options": [
+        "I've reported this pothole twice through your system over the past two months, and it's now caused damage to three vehicles, including mine. Could you tell me the actual timeline for repair, and how residents can file for damage compensation?",
+        "There's a pothole on my street that's been there a while, to be honest, I was just going with my gut on that one, so feel free to push back — and a lot depends on details I haven't really looked into yet, and honestly the whole situation caught me a bit off guard.",
+        "This city clearly doesn't care about basic road maintenance, it's honestly embarrassing."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "For a long-unresolved issue with real consequences, reference the documented history, state the impact clearly, and ask for specific, actionable information.",
+      "explanation": "Referencing the documented history, stating the real impact, and asking for two specific pieces of information gives the council office everything needed to actually respond meaningfully. A vague report loses the documented pattern that shows this is a genuinely overdue issue. Broad criticism of the city doesn't reference your specific, documented case or get you the concrete answers you actually need.",
+      "id": "bd_l84_q3",
+      "consequencePreviews": [
+        "You establish the documented pattern, the real consequences, and ask for two specific, actionable pieces of information.",
+        "Here, the vague report doesn't convey the documented history or the real, escalating consequences of the delay.",
+        "You may notice that the broad criticism doesn't reference the specific, documented history or ask for the concrete information you actually need."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who often cancels last minute, doing it again",
+      "scene": "A friend texts twenty minutes before you're supposed to meet: 'Sorry, can't make it today, something came up.' This is the fourth time this has happened.",
+      "options": [
+        "No worries about today — but this is the fourth time recently, and I wanted to check if everything's okay, or if we should just plan things differently going forward.",
+        "That's okay, no problem.",
+        "You always cancel last minute, it's honestly really disrespectful of my time."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When a pattern of cancellations has built up, address it calmly and with genuine curiosity, rather than staying silent or accusing.",
+      "explanation": "Accepting today's cancellation while raising the pattern with genuine curiosity opens space for an honest conversation without blame. Simply saying it's okay again means the pattern is likely to continue unaddressed. A strong accusation, even if understandable, risks a defensive reaction that makes it harder to actually understand what's going on.",
+      "id": "bd_l85_q1",
+      "consequencePreviews": [
+        "In this moment, you accept today's cancellation calmly while raising the real, ongoing pattern in a caring, non-accusatory way.",
+        "Here, letting the pattern go unaddressed yet again likely means it will simply continue.",
+        "Here, the strong accusation may put your friend on the defensive rather than opening a genuine conversation about what's going on."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a business partner who consistently misses agreed deadlines",
+      "scene": "Your business partner has missed the agreed deadline for their part of a joint proposal for the third time this quarter, again without much warning.",
+      "options": [
+        "The deadline was missed again.",
+        "This is the third missed deadline this quarter, and it's starting to affect our credibility with clients. Can we sit down and figure out what's causing this and how to fix it?",
+        "I can't keep working with someone this unreliable, if I'm honest, I hadn't checked how that would actually land, but that could easily change — and honestly the whole situation caught me a bit off guard."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When a business pattern is genuinely damaging, name the pattern and its impact clearly, and propose working through the cause together before escalating further.",
+      "explanation": "Naming the pattern, its real business impact, and proposing to work through the cause together gives the partnership a genuine chance to actually fix the problem. Simply noting the deadline was missed again doesn't convey how seriously this is starting to matter. Jumping to questioning the whole partnership skips a real opportunity to first understand and solve what's actually causing the pattern.",
+      "id": "bd_l85_q2",
+      "consequencePreviews": [
+        "As a result, without naming the pattern or its impact, your partner may not realize how seriously this is starting to affect the business.",
+        "You name the pattern and its real business impact clearly, while proposing a genuine, collaborative path to solving it.",
+        "You may notice that the comment escalates toward ending the partnership rather than actually trying to understand and solve the underlying issue first."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a long-term client who has started making increasingly unreasonable demands outside the agreed contract scope",
+      "scene": "A long-term client, valuable but increasingly demanding, emails: 'Can you also add this whole new feature set by Friday? It should be quick since you know the project well.' This is well beyond the agreed scope and timeline.",
+      "options": [
+        "Sure, we'll get that done by Friday.",
+        "This is outside our contract, we can't just keep adding things for free.",
+        "We'd genuinely like to help with this — it is outside our current agreed scope though, and a build of this size realistically needs proper time. Could we put together a scoped quote and timeline for it as an addition?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When a valued client makes an out-of-scope request, respond professionally by naming the scope issue and proposing a proper path forward, rather than agreeing to unreasonable terms or refusing bluntly.",
+      "explanation": "Naming the scope issue professionally and proposing a proper quote and timeline protects the business relationship while being honest about what's realistic. Agreeing to unreasonable terms sets a precedent that could be hard to walk back with a client who's likely to ask again. A blunt refusal, while technically accurate, risks damaging a valuable, long-term relationship when a more professional path was clearly available.",
+      "id": "bd_l85_q3",
+      "consequencePreviews": [
+        "You may notice that agreeing to unreasonable, unscoped work sets a precedent that could be difficult to walk back with a valuable, long-term client.",
+        "As a result, the blunt refusal is accurate but risks damaging a valuable relationship when a professional path to a fair solution was available instead.",
+        "As a result, you protect the business relationship and the agreement while being clear and professional about the real scope and effort involved."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a customer service agent who has already offered a standard, unsatisfying solution",
+      "scene": "You've been offered a $10 credit for a package that arrived damaged, but you believe you're entitled to a full replacement based on the company's stated policy.",
+      "options": [
+        "That's not enough, I want more, I guess, it wasn't a fully considered answer, so let me know if that's off — and I know that's not the most thought-out response, but it's where my head's at right now.",
+        "I appreciate the credit, but based on your policy for damaged items, I believe I'm entitled to a full replacement — could you check that for me?",
+        "This is such a scam, you people never actually honor your own policies."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When you believe a company's own policy entitles you to more, reference the specific policy calmly rather than making a vague demand or an accusation.",
+      "explanation": "Referencing the specific policy calmly gives the agent concrete grounds to actually correct or escalate the offer. A vague demand for 'more' doesn't give the agent anything specific to check against. Accusing the company of being a scam may reduce the agent's willingness to help, even if your underlying claim about the policy is completely valid.",
+      "id": "bd_l86_q1",
+      "consequencePreviews": [
+        "The vague demand doesn't reference any specific policy that would give the agent grounds to change the original offer.",
+        "As a result, you stay polite while clearly stating your understanding of the policy, which gives the agent grounds to actually escalate or correct the offer.",
+        "Realistically, the accusation may make the agent less willing to help, even though your underlying claim about the policy may be entirely valid."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "an insurance adjuster who has denied part of your claim",
+      "scene": "Your insurance claim was partially denied, and you believe the denied portion is actually covered based on a specific clause in your policy.",
+      "options": [
+        "I don't think this decision is right, honestly, I hadn't stopped to think it all the way through, so feel free to push back — and a lot depends on details I haven't really looked into yet.",
+        "This is completely unfair, insurance companies always find ways to avoid paying out, actually, I hadn't really planned past that point, so it's worth double-checking.",
+        "I noticed the water damage portion was denied — I believe that's covered under section 4.2 of my policy, could you take another look at that specific clause?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When you disagree with a rejected claim, point to the exact rule or wording that backs you up, rather than a vague complaint or a general accusation.",
+      "explanation": "Referencing the specific clause gives the adjuster something concrete to actually reconsider in your case. A vague objection doesn't point to anything the adjuster could specifically review. A general accusation about insurance companies doesn't address your specific policy or claim, so it doesn't move your actual dispute forward.",
+      "id": "bd_l86_q2",
+      "consequencePreviews": [
+        "The vague objection doesn't reference anything specific the adjuster could actually reconsider.",
+        "The general accusation doesn't reference your specific policy or claim, so it doesn't move the actual dispute forward.",
+        "As a result, you reference the exact clause, giving the adjuster something specific and concrete to reconsider."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a bank representative who has denied your fee refund request based on a misapplied policy",
+      "scene": "You were charged an overdraft fee that you believe was applied incorrectly, since your account had a grace period clause that should have prevented it. The representative has already said 'the fee stands.'",
+      "options": [
+        "I understand fees are usually final, but my account has a 24-hour grace period clause under the premium tier, which I believe should have applied here — could you check that specific clause against this transaction?",
+        "I still don't think this fee is right.",
+        "Banks always find ways to squeeze extra fees out of customers, it's ridiculous, in fairness, I hadn't stopped to think it all the way through, but that could easily change — and there's a decent chance I'd see it differently after sleeping on it."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When you think a rule was applied incorrectly to your situation, point to the exact wording and ask for your case to be reviewed against it.",
+      "explanation": "Naming the exact clause and asking for it to be checked gives the representative concrete, specific grounds to actually investigate and correct the error. Vague pushback doesn't reference anything the representative can specifically look into. A general accusation about banks doesn't address your specific account terms or move you any closer to an actual resolution.",
+      "id": "bd_l86_q3",
+      "consequencePreviews": [
+        "In this moment, you calmly reference the exact clause and ask for a specific check, giving the representative real grounds to correct the error.",
+        "The vague pushback doesn't reference the specific clause that would actually give the representative grounds to investigate further.",
+        "You may notice that the general accusation doesn't reference your specific account terms, so it doesn't move the dispute toward an actual resolution."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a neighbour whose dog has damaged your garden",
+      "scene": "Your neighbour's dog has gotten into your garden and damaged several plants you'd been growing for months. You want it resolved without ruining the relationship.",
+      "options": [
+        "Hi, I wanted to mention — your dog got into my garden and damaged some plants I've been growing. Would you be able to check the fence on your side? I'd love to avoid this happening again.",
+        "Your dog keeps getting into my garden.",
+        "Your dog destroyed my garden, you really need to control your pet better, to be fair, I hadn't weighed all the details, so let me know if that's off — and there's a decent chance I'd see it differently after sleeping on it."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When raising a problem with a neighbour, state it calmly, mention the impact, and propose a specific, practical solution.",
+      "explanation": "Stating the issue calmly, mentioning the real impact, and proposing a specific fix (checking the fence) keeps things solvable and friendly. Simply saying the dog 'keeps getting in' doesn't mention the damage or suggest a concrete next step. An accusatory tone about their pet control may create unnecessary tension over what could be a simple fence issue.",
+      "id": "bd_l87_q1",
+      "consequencePreviews": [
+        "In this moment, you raise the issue calmly and constructively, protecting both the garden and the neighbourly relationship.",
+        "In this moment, the statement raises the issue but doesn't mention the damage or propose an actual solution, like checking the fence.",
+        "As a result, the accusatory tone may create tension with a neighbour over something that might be an easily fixable fence gap."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker whose loud phone calls are disrupting your focus",
+      "scene": "A coworker regularly takes personal calls at their desk quite loudly, which makes it hard for you to concentrate in the open office.",
+      "options": [
+        "It's a bit noisy over here sometimes, if I'm honest, I hadn't fully worked out how it'd play out, so it's worth double-checking.",
+        "Hey, would you mind taking personal calls in the breakout room? It's a bit hard to focus when they're right at the desk.",
+        "Your phone calls are really distracting, could you keep it down?"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When a coworker's habit affects your focus, name the specific behavior and suggest a concrete alternative location or solution.",
+      "explanation": "Naming the specific behavior and suggesting the breakout room gives your coworker an easy, concrete way to fix the issue. A vague comment about noise doesn't clearly connect the problem to their specific calls. Asking them to 'keep it down' is direct but doesn't offer the practical alternative that would actually solve the underlying issue.",
+      "id": "bd_l87_q2",
+      "consequencePreviews": [
+        "The vague comment doesn't clearly connect the noise to your coworker's calls or ask for any specific change.",
+        "As a result, you raise the issue directly but kindly, with a specific, reasonable request that's easy to act on.",
+        "You may notice that the request is fairly direct but doesn't offer a specific alternative, like the breakout room, that would actually solve the problem."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a close friend whose venting has started to feel one-sided and draining",
+      "scene": "A close friend has been going through a hard time and has been calling you almost daily to vent for long stretches. You care about them, but you've noticed you're feeling emotionally drained, and the calls rarely leave room for you to share anything of your own.",
+      "options": [
+        "I'm always here for you, don't worry.",
+        "I can't keep having these long calls every day, it's honestly exhausting.",
+        "I care about you a lot and I'm glad you feel you can talk to me — I've noticed I've been feeling pretty drained lately though, so could we maybe set a bit of a time limit on our calls, or find another way to balance things?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When a close relationship starts to feel exhausting and unequal, pair genuine warmth with an honest boundary, and suggest a way to make things more sustainable.",
+      "explanation": "Expressing genuine care alongside your honest limit, and proposing a balanced solution, protects both the friendship and your own wellbeing. Reassuring them without ever mentioning your own limit risks real burnout building up over time. Stating your limit directly, without pairing it with reassurance, risks landing harder than intended on a friend who's already going through something difficult.",
+      "id": "bd_l87_q3",
+      "consequencePreviews": [
+        "Realistically, reassuring your friend without mentioning your own limit protects the friendship in the moment but risks genuine burnout over time.",
+        "Here, the direct statement is honest but, without the reassurance of care, might land harder than intended on a friend already going through a hard time.",
+        "As a result, you express genuine care while honestly naming your own limit, and you propose a solution that protects both the friendship and yourself."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a food delivery app support chat",
+      "scene": "Your delivery arrived missing two of the five items you ordered and paid for.",
+      "options": [
+        "My order arrived missing two items — the fries and the drink. Could I get a refund for those, or have them sent separately?",
+        "This app always messes up orders, it's honestly useless at this point.",
+        "Some stuff is missing from my order, looking back, I hadn't stopped to think it all the way through, so it's worth double-checking."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When reporting a missing item, name exactly what's missing and state your preferred resolution.",
+      "explanation": "Naming the exact missing items and your preferred resolution lets support process a precise, fast fix. A vague 'some stuff is missing' likely means an extra step to clarify before anything can actually happen. A general complaint about the app doesn't identify what's specifically missing or what you'd like done about it.",
+      "id": "bd_l88_q1",
+      "consequencePreviews": [
+        "Realistically, support gets the exact missing items and your preferred resolution, making the fix fast and precise.",
+        "In this moment, the general complaint doesn't identify the specific missing items or the resolution you're actually looking for.",
+        "You may notice that without naming the specific items, support may need to ask a follow-up question before they can actually help."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a print shop that made an error on a business order",
+      "scene": "You ordered 200 business cards, but they arrived with a typo in the phone number that wasn't in the file you approved.",
+      "options": [
+        "This is completely unprofessional, I can't believe you got this wrong, to be fair, it wasn't a fully considered answer, so it's worth double-checking.",
+        "There's a mistake on these cards, in hindsight, it wasn't a fully considered answer, but I'm not totally set on it — and I probably should have asked a few more questions before saying anything.",
+        "The phone number on these cards is wrong, but it was correct in the file I approved — could you reprint the order at no charge?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When disputing an error, be specific about what's wrong and clarify whose mistake it was, since that affects the fair resolution.",
+      "explanation": "Being specific about the error and clarifying it wasn't your mistake gives the shop clear grounds to reprint at no charge. A vague statement about a 'mistake' doesn't clarify what's wrong or whose fault it actually was. A harsh judgment about professionalism doesn't specify the error or the resolution you're seeking, which slows down an otherwise simple fix.",
+      "id": "bd_l88_q2",
+      "consequencePreviews": [
+        "Here, the harsh judgment doesn't clarify the specific error or what resolution you're actually asking for.",
+        "You may notice that the vague statement doesn't clarify what the mistake is or whether it was actually your error or theirs.",
+        "Here, the shop gets a precise account of the error and a clear, fair request for resolution."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a contractor whose finished renovation doesn't match the agreed specifications",
+      "scene": "A completed kitchen renovation used a different, cheaper countertop material than what was specified and agreed to in your signed contract.",
+      "options": [
+        "These aren't the countertops I wanted.",
+        "The contract specifies quartz for the countertops, but laminate was installed instead — I'd like this corrected to match what we agreed, at no additional cost given this was a deviation from the signed contract.",
+        "This is completely unacceptable, you've ruined my entire kitchen."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When a contractor deviates from a signed contract, reference the specific contract term and state a fair resolution grounded in that agreement.",
+      "explanation": "Referencing the specific contract term and stating a fair, grounded resolution gives you real leverage, since this is a documented breach, not just a preference. Saying these 'aren't the countertops I wanted' sounds like a matter of taste rather than a contractual issue, which weakens your position. A strong emotional reaction, without referencing the contract, doesn't establish the same clear, fair grounds for a resolution.",
+      "id": "bd_l88_q3",
+      "consequencePreviews": [
+        "As a result, without referencing the signed contract, the statement sounds more like a personal preference than a documented breach of agreement.",
+        "As a result, you clearly reference the contract, name the specific discrepancy, and state a fair, well-grounded resolution.",
+        "Here, the strong reaction doesn't reference the contract or state a specific, fair resolution, which weakens your actual negotiating position."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who borrowed something and returned it damaged",
+      "scene": "A friend returns a camera lens they borrowed with a visible scratch on it that wasn't there before.",
+      "options": [
+        "Hey, I noticed there's a scratch on the lens that wasn't there before — did something happen while you had it?",
+        "Thanks for bringing it back, actually, I was going more on instinct than anything, so there might be a better way to handle it.",
+        "You scratched my lens, that's really careless of you, in fairness, I wasn't considering every angle, but I'm not totally set on it."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When something borrowed comes back damaged, raise it calmly and with curiosity rather than staying silent or assuming the worst.",
+      "explanation": "Raising the damage calmly and with curiosity gives your friend a fair chance to explain, while still making sure the issue doesn't go unaddressed. Saying nothing about the damage avoids an awkward moment now but risks quiet resentment building over time. Directly accusing them of carelessness assumes the worst before you've actually heard what happened.",
+      "id": "bd_l89_q1",
+      "consequencePreviews": [
+        "Realistically, you raise the issue calmly and curiously, giving your friend room to explain before assuming the worst.",
+        "As a result, not mentioning the damage at all means the issue goes unaddressed, which could lead to quiet resentment later.",
+        "In this moment, the direct accusation assumes carelessness before your friend has had a chance to explain what actually happened."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a roommate who broke a shared kitchen appliance and didn't mention it",
+      "scene": "You discover the blender is broken, and you later find out your roommate broke it a few days ago but never said anything.",
+      "options": [
+        "The blender's broken, I guess, I hadn't stopped to think it all the way through, so feel free to push back — and I'm honestly still working out how I feel about the whole thing.",
+        "I noticed the blender's broken — I saw it happened a few days ago, want to talk about replacing it together?",
+        "You broke the blender and didn't even bother telling me, that's really inconsiderate."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When something breaks and isn't mentioned, raise both the damage and the lack of communication together, in a way that opens a practical conversation.",
+      "explanation": "Raising both the damage and the missing communication opens a fair, practical conversation about what to do next. Mentioning only the broken blender misses the more significant issue of it not being reported to you. A strong accusation risks a defensive reaction, making it harder to get to the practical, shared solution you actually need.",
+      "id": "bd_l89_q2",
+      "consequencePreviews": [
+        "Here, mentioning only the damage misses the more important issue — that it wasn't reported to you when it happened.",
+        "Realistically, you raise both the damage and the fact it wasn't mentioned, in a way that opens a fair, practical conversation.",
+        "Here, the strong accusation may make your roommate defensive before you've had a chance to actually solve the practical problem together."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a close friend who has quietly started excluding you from group plans after a past disagreement",
+      "scene": "You've noticed that since a disagreement a month ago, a close friend has quietly stopped inviting you to group hangouts they're organizing, though nothing was ever explicitly said about it.",
+      "options": [
+        "It's fine, I'm sure it's nothing.",
+        "You've clearly been avoiding me since we argued, that's pretty immature.",
+        "I've noticed I haven't been included in a few things lately, and I have a feeling it might be connected to our disagreement last month. I really value our friendship — could we actually talk about what happened?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When you suspect a past disagreement has quietly affected a friendship, name the pattern honestly and connect it to the likely cause, inviting an open conversation rather than dismissing it or accusing.",
+      "explanation": "Naming the pattern honestly, connecting it to the likely cause, and expressing that you value the friendship opens a genuine path toward repair. Dismissing your own observation as 'probably nothing' avoids the discomfort now but leaves a real issue unresolved between you. Calling the behavior 'immature' adds a judgment that may make your friend defensive, which works against the honest conversation you actually want to have.",
+      "id": "bd_l89_q3",
+      "consequencePreviews": [
+        "Realistically, dismissing your own observation avoids the discomfort now but leaves a real rift in the friendship unaddressed.",
+        "You may notice that the accusatory, judgmental framing may put your friend on the defensive, making an honest repair conversation harder to have.",
+        "As a result, you name the pattern honestly, connect it to the likely cause, and open a genuine path to repairing the friendship."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a utility company after receiving an unusually high bill",
+      "scene": "Your electricity bill this month is nearly three times higher than usual, with no obvious change in your usage.",
+      "options": [
+        "My bill seems really high this month, if I'm honest, I hadn't really planned past that point, so I could be wrong — and to be fair I only heard about this a few minutes ago myself.",
+        "This is outrageous, you're clearly overcharging customers to make more money.",
+        "This month's bill is about three times my usual amount, and I haven't changed how I use electricity — could you check if there's been a meter reading error?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When disputing an unusual bill, give a specific comparison to your normal amount and suggest a likely, checkable cause.",
+      "explanation": "Giving a specific comparison and suggesting a likely cause (a meter error) gives the representative a clear, checkable starting point. A vague statement about the bill being 'high' doesn't give them a specific comparison to investigate. Accusing the company of deliberately overcharging is a serious claim without evidence, and it may make the representative less inclined to help you look into it properly.",
+      "id": "bd_l90_q1",
+      "consequencePreviews": [
+        "Realistically, the vague statement doesn't give the representative a specific comparison or a likely cause to investigate.",
+        "As a result, the accusation of deliberate overcharging is a serious claim that isn't supported by evidence and may reduce the representative's willingness to help.",
+        "Realistically, the representative gets a clear, specific report that points directly toward a likely, checkable cause."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a subscription box company after receiving damaged items for the second time",
+      "scene": "For the second month in a row, your subscription box arrived with items damaged in transit, despite the first complaint being 'resolved.'",
+      "options": [
+        "This is the second month in a row items have arrived damaged, even after the last complaint was marked resolved — could we look at whether the packaging itself needs changing, not just a one-time replacement?",
+        "My items arrived damaged again this month.",
+        "This subscription is a joke, it's never worth the money."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When the same problem recurs despite a previous 'fix,' reference the pattern explicitly and ask for a solution that addresses the root cause.",
+      "explanation": "Referencing the pattern explicitly and asking about the root cause (the packaging) pushes for a real fix rather than another temporary patch. Simply reporting this month's damage again risks the same cycle of one-off replacements without ever solving the underlying issue. A broad dismissal of the subscription doesn't reference the specific pattern or ask for the actual fix that would solve your problem.",
+      "id": "bd_l90_q2",
+      "consequencePreviews": [
+        "You clearly reference the pattern and ask for a real fix to the root cause, not just another temporary replacement.",
+        "In this moment, without mentioning it happened last month too, the company may treat this as an isolated issue rather than a real pattern.",
+        "In this moment, the broad dismissal doesn't reference the specific, repeated packaging issue or ask for an actual fix."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "instruction": "Choose the best response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a property management company about a security issue that was reported and dismissed",
+      "scene": "You reported a broken lock on the building's main entrance three weeks ago and were told it was 'not a priority.' Since then, you've noticed unfamiliar people getting into the building without buzzing in.",
+      "options": [
+        "The lock on the front door is still broken, admittedly, I was going more on instinct than anything, so it's worth double-checking — and to be fair I only heard about this a few minutes ago myself, and there's a decent chance I'd see it differently after sleeping on it.",
+        "I reported the broken main entrance lock three weeks ago and was told it wasn't a priority — since then, I've personally seen people getting in without buzzing, which is a real security concern for everyone in the building. Could this be escalated and fixed urgently?",
+        "This building's security is a joke, something bad is going to happen eventually, honestly, I wasn't considering every angle, so I could be wrong — and a lot depends on details I haven't really looked into yet, and there's a decent chance I'd see it differently after sleeping on it."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When a previously dismissed report turns out to have real consequences, reference the earlier dismissal, provide specific evidence, and push clearly for urgent action.",
+      "explanation": "Referencing the previous dismissal, providing specific evidence of the actual risk, and clearly asking for urgency gives the management company real, documented grounds to finally act. Simply reporting the broken lock again risks the same 'not a priority' response as before. A dramatic prediction about something bad happening doesn't reference the documented history or the specific evidence that would actually justify urgent action.",
+      "id": "bd_l90_q3",
+      "consequencePreviews": [
+        "In this moment, without mentioning the previous dismissal or the security risk you've actually witnessed, this is likely to be deprioritized again.",
+        "Realistically, you reference the dismissed report, provide direct evidence of the actual risk, and push firmly for it to be treated with the urgency it deserves.",
+        "The dramatic prediction doesn't reference the previous report or the specific evidence that would justify urgent action."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ]
+    }
+  ]
 }

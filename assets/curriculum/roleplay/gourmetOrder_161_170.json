@@ -7,643 +7,139 @@
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Had I known the seared foie gras would be this popular, I'd have booked earlier — regardless, I'll have it, along with the Chilean sea bass and the baked Alaska.",
+            "prompt": "Hello, I'd like to place an order for pickup, please: a large pepperoni pizza and a Greek salad.",
             "options": [
-                "Seared Foie Gras",
-                "Chilean Sea Bass",
-                "Baked Alaska",
-                "Crème Brûlée"
+                "Pepperoni Pizza",
+                "Greek Salad",
+                "Cheese Pizza",
+                "Caesar Salad"
             ],
-            "correctAnswer": "Seared Foie Gras, Chilean Sea Bass, Baked Alaska",
-            "hint": "A hypothetical regret about not booking sooner doesn't change the actual order that follows.",
-            "explanation": "‘Had I known…’ is a formal conditional structure describing an imagined past. Despite the regret expressed, the customer still confirms all three dishes clearly.",
+            "correctAnswer": "Pepperoni Pizza, Greek Salad",
+            "hint": "On the phone, the greeting and purpose come before the food.",
+            "explanation": "'I'd like to place an order' is a standard phone opener and immediately tells the restaurant what you need.",
             "id": "go_l161_q1",
             "menuItems": [
-                "Seared Foie Gras",
-                "Chilean Sea Bass",
-                "Baked Alaska",
-                "Crème Brûlée"
+                "Pepperoni Pizza",
+                "Greek Salad",
+                "Cheese Pizza",
+                "Caesar Salad"
             ],
             "menuPrices": [
+                "$16.00",
                 "$8.50",
-                "$20.50",
-                "$10.00",
-                "$2.00"
+                "$14.00",
+                "$8.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Whichever of the two mains proves more popular tonight, I'll have the Kobe beef regardless, preceded by the consommé, and followed by the profiteroles.",
+            "prompt": "Hi - is this the right number to order takeaway? Great. Could I have the chicken korma and two naans?",
             "options": [
-                "Consommé",
-                "Kobe Beef",
-                "Profiteroles",
-                "Bisque"
+                "Chicken Korma",
+                "Naan",
+                "Garlic Naan",
+                "Chicken Tikka"
             ],
-            "correctAnswer": "Consommé, Kobe Beef, Profiteroles",
-            "hint": "The main course is named in the middle of the sentence, but listen for all three courses regardless of order.",
-            "explanation": "‘Preceded by’ and ‘followed by’ describe what comes before and after the main course — useful formal vocabulary for organizing a multi-course order.",
+            "correctAnswer": "Chicken Korma, Naan",
+            "hint": "A quick check of the number comes first.",
+            "explanation": "Confirming you've called the right place avoids wasted time, especially if numbers are similar.",
             "id": "go_l161_q2",
             "menuItems": [
-                "Consommé",
-                "Kobe Beef",
-                "Profiteroles",
-                "Bisque"
+                "Chicken Korma",
+                "Naan",
+                "Garlic Naan",
+                "Chicken Tikka"
             ],
             "menuPrices": [
-                "$5.75",
-                "$19.25",
-                "$18.00",
-                "$19.25"
+                "$13.00",
+                "$3.00",
+                "$3.50",
+                "$13.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "It was suggested that I try the langoustine, which I'm inclined to do, alongside the duck l'orange and, to conclude, the napoleon.",
+            "prompt": "Server: Thanks for calling Luigi's, can I take your order? Customer: Yes, one lasagna and one spaghetti and meatballs.",
             "options": [
-                "Langoustine",
-                "Duck l'Orange",
-                "Napoleon",
-                "Profiteroles"
+                "Lasagna",
+                "Ravioli",
+                "Spaghetti and Meatballs",
+                "Fettuccine"
             ],
-            "correctAnswer": "Langoustine, Duck l'Orange, Napoleon",
-            "hint": "A recommendation from someone else is mentioned, followed by the customer's willingness to accept it.",
-            "explanation": "‘It was suggested that…’ uses the passive voice, common in formal English when the source of a suggestion isn't specified. A ‘napoleon’ is a layered pastry with cream, also called a millefeuille.",
+            "correctAnswer": "Lasagna, Spaghetti and Meatballs",
+            "hint": "The server's greeting includes a direct offer to take the order.",
+            "explanation": "Phone servers usually open with the restaurant name; you can answer directly with the items.",
             "id": "go_l161_q3",
             "menuItems": [
-                "Langoustine",
-                "Duck l'Orange",
-                "Napoleon",
-                "Profiteroles"
+                "Lasagna",
+                "Ravioli",
+                "Spaghetti and Meatballs",
+                "Fettuccine"
             ],
             "menuPrices": [
-                "$21.75",
-                "$6.00",
-                "$20.50",
-                "$18.00"
+                "$14.00",
+                "$13.00",
+                "$13.00",
+                "$14.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Assuming the kitchen can still accommodate a late booking, I'd like the white asparagus, the john dory, and the tarte tatin, exactly as originally planned.",
+            "prompt": "Server: Pickup or delivery? Customer: Delivery, please - the pad thai and the spring rolls.",
             "options": [
-                "White Asparagus",
-                "John Dory",
-                "Tarte Tatin",
-                "Apple Crumble"
+                "Pad Thai",
+                "Pad See Ew",
+                "Egg Rolls",
+                "Spring Rolls"
             ],
-            "correctAnswer": "White Asparagus, John Dory, Tarte Tatin",
-            "hint": "A conditional assumption about timing comes first, but the order itself remains unchanged from what was planned.",
-            "explanation": "‘Assuming X…’ introduces a condition the customer hopes is true. ‘John Dory’ is a distinctively shaped white fish, prized for its delicate flavor.",
+            "correctAnswer": "Pad Thai, Spring Rolls",
+            "hint": "The choice between pickup and delivery is asked before or during the order.",
+            "explanation": "'Pickup or delivery?' is a standard phone question, and the answer determines the next steps like address or timing.",
             "id": "go_l162_q1",
             "menuItems": [
-                "White Asparagus",
-                "John Dory",
-                "Tarte Tatin",
-                "Apple Crumble"
+                "Pad Thai",
+                "Pad See Ew",
+                "Egg Rolls",
+                "Spring Rolls"
             ],
             "menuPrices": [
-                "$2.00",
-                "$9.75",
-                "$4.50",
-                "$20.50"
+                "$12.00",
+                "$12.00",
+                "$5.50",
+                "$5.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Not being overly familiar with the menu, I'll trust your judgment entirely for the starter, though I know I want the branzino and the gougères.",
+            "prompt": "Is there a delivery fee? Server: Three dollars within two miles. Customer: That's fine - I'll take delivery, then: the burger meal and the milkshake.",
             "options": [
-                "Starter",
-                "Branzino",
-                "Gougères",
-                "Amuse-Bouche"
+                "Burger Meal",
+                "Soda",
+                "Milkshake",
+                "Chicken Meal"
             ],
-            "correctAnswer": "Starter, Branzino, Gougères",
-            "hint": "The customer defers on just the starter, while stating clear preferences for two other items.",
-            "explanation": "‘Not being overly familiar with…’ is a formal way to admit uncertainty. ‘Gougères’ are small, savory choux pastries made with cheese, often served as a starter or snack.",
+            "correctAnswer": "Burger Meal, Milkshake",
+            "hint": "A fee question is asked and accepted.",
+            "explanation": "Asking about fees before ordering is sensible, and 'that's fine' shows acceptance.",
             "id": "go_l162_q2",
             "menuItems": [
-                "Starter",
-                "Branzino",
-                "Gougères",
-                "Amuse-Bouche"
+                "Burger Meal",
+                "Soda",
+                "Milkshake",
+                "Chicken Meal"
             ],
             "menuPrices": [
-                "$19.25",
-                "$11.25",
-                "$12.50",
-                "$12.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "For an event of this scale, catering has arranged the morel mushrooms, the squab, and the petit fours to be served to all two hundred guests.",
-            "options": [
-                "Morel Mushrooms",
-                "Squab",
-                "Petit Fours",
-                "Profiteroles"
-            ],
-            "correctAnswer": "Morel Mushrooms, Squab, Petit Fours",
-            "hint": "A large-scale event explains why a fixed menu is being served to everyone at once.",
-            "explanation": "‘Petit fours’ are tiny, bite-sized cakes or pastries, often served at the end of a formal event. Large events frequently rely on one set menu for practicality.",
-            "id": "go_l162_q3",
-            "menuItems": [
-                "Morel Mushrooms",
-                "Squab",
-                "Petit Fours",
-                "Profiteroles"
-            ],
-            "menuPrices": [
-                "$16.50",
                 "$10.00",
-                "$15.25",
-                "$18.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Were it not for a prior commitment, I'd have lingered over the black truffle risotto longer — still, the turbot and the cherries jubilee will suit me well.",
-            "options": [
-                "Black Truffle Risotto",
-                "Turbot",
-                "Cherries Jubilee",
-                "Floating Island"
-            ],
-            "correctAnswer": "Black Truffle Risotto, Turbot, Cherries Jubilee",
-            "hint": "A hypothetical regret about time doesn't prevent the customer from confirming a full order.",
-            "explanation": "‘Were it not for…’ is a formal, somewhat literary conditional meaning ‘if it weren't for.’ Despite the time pressure, all three courses are still clearly ordered.",
-            "id": "go_l163_q1",
-            "menuItems": [
-                "Black Truffle Risotto",
-                "Turbot",
-                "Cherries Jubilee",
-                "Floating Island"
-            ],
-            "menuPrices": [
-                "$7.25",
-                "$8.50",
-                "$3.25",
-                "$5.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Insofar as the kitchen permits substitutions, I'd like the vichyssoise swapped in place of the usual starter, followed by the Kobe beef, and the napoleon.",
-            "options": [
-                "Vichyssoise",
-                "Kobe Beef",
-                "Napoleon",
-                "Consommé"
-            ],
-            "correctAnswer": "Vichyssoise, Kobe Beef, Napoleon",
-            "hint": "A substitution is requested for the starter, using notably formal connecting language.",
-            "explanation": "‘Insofar as…’ is a formal way of saying ‘to the extent that.’ ‘Vichyssoise’ is a chilled, creamy leek and potato soup.",
-            "id": "go_l163_q2",
-            "menuItems": [
-                "Vichyssoise",
-                "Kobe Beef",
-                "Napoleon",
-                "Consommé"
-            ],
-            "menuPrices": [
-                "$19.25",
-                "$19.25",
-                "$20.50",
-                "$5.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "It having been a particularly demanding week, I've decided to treat myself to the seared foie gras, the john dory, and the baked Alaska.",
-            "options": [
-                "Seared Foie Gras",
-                "John Dory",
-                "Baked Alaska",
-                "Crème Brûlée"
-            ],
-            "correctAnswer": "Seared Foie Gras, John Dory, Baked Alaska",
-            "hint": "A difficult week explains the customer's decision to order something especially indulgent.",
-            "explanation": "‘It having been…’ is a formal, slightly old-fashioned construction explaining a reason. ‘Treat myself to…’ shows self-indulgence as a reward.",
-            "id": "go_l163_q3",
-            "menuItems": [
-                "Seared Foie Gras",
-                "John Dory",
-                "Baked Alaska",
-                "Crème Brûlée"
-            ],
-            "menuPrices": [
-                "$8.50",
-                "$9.75",
-                "$10.00",
-                "$2.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Notwithstanding the late hour, we'll still take the langoustine, the branzino, and the profiteroles, if the kitchen is willing.",
-            "options": [
-                "Langoustine",
-                "Branzino",
-                "Profiteroles",
-                "Napoleon"
-            ],
-            "correctAnswer": "Langoustine, Branzino, Profiteroles",
-            "hint": "‘Notwithstanding’ is a formal way of saying ‘despite,’ acknowledging a potential obstacle.",
-            "explanation": "‘Notwithstanding the late hour’ means ‘despite how late it is,’ a formal way to request something even when it might be inconvenient for the kitchen.",
-            "id": "go_l164_q1",
-            "menuItems": [
-                "Langoustine",
-                "Branzino",
-                "Profiteroles",
-                "Napoleon"
-            ],
-            "menuPrices": [
-                "$21.75",
-                "$11.25",
-                "$18.00",
-                "$20.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Had I known the Chilean sea bass would be this popular, I'd have booked earlier — regardless, I'll have it, along with the consommé and the tarte tatin.",
-            "options": [
-                "Chilean Sea Bass",
-                "Consommé",
-                "Tarte Tatin",
-                "Bisque"
-            ],
-            "correctAnswer": "Chilean Sea Bass, Consommé, Tarte Tatin",
-            "hint": "This hypothetical-regret structure returns once more with new dishes.",
-            "explanation": "This structure continues to describe an imagined alternative past, without changing what's actually being ordered now.",
-            "id": "go_l164_q2",
-            "menuItems": [
-                "Chilean Sea Bass",
-                "Consommé",
-                "Tarte Tatin",
-                "Bisque"
-            ],
-            "menuPrices": [
-                "$20.50",
-                "$5.75",
-                "$4.50",
-                "$19.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Whichever of the two mains proves more popular tonight, I'll have the duck l'orange regardless, preceded by the gougères, and followed by the napoleon.",
-            "options": [
-                "Gougères",
-                "Duck l'Orange",
-                "Napoleon",
-                "Profiteroles"
-            ],
-            "correctAnswer": "Gougères, Duck l'Orange, Napoleon",
-            "hint": "The main course is again named before the starter — listen for the order things are actually spoken.",
-            "explanation": "This structure continues to test attentive listening for content, regardless of how the sentence orders the courses.",
-            "id": "go_l164_q3",
-            "menuItems": [
-                "Gougères",
-                "Duck l'Orange",
-                "Napoleon",
-                "Profiteroles"
-            ],
-            "menuPrices": [
-                "$12.50",
-                "$6.00",
-                "$20.50",
-                "$18.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "It was suggested that I try the morel mushrooms, which I'm inclined to do, alongside the turbot and, to conclude, the cherries jubilee.",
-            "options": [
-                "Morel Mushrooms",
-                "Turbot",
-                "Cherries Jubilee",
-                "Floating Island"
-            ],
-            "correctAnswer": "Morel Mushrooms, Turbot, Cherries Jubilee",
-            "hint": "This passive-voice recommendation structure returns once more.",
-            "explanation": "This structure continues to describe accepting someone else's suggestion, phrased formally without naming who made it.",
-            "id": "go_l165_q1",
-            "menuItems": [
-                "Morel Mushrooms",
-                "Turbot",
-                "Cherries Jubilee",
-                "Floating Island"
-            ],
-            "menuPrices": [
-                "$16.50",
-                "$8.50",
-                "$3.25",
-                "$5.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Assuming the kitchen can still accommodate a late booking, I'd like the white asparagus, the Kobe beef, and the baked Alaska, exactly as originally planned.",
-            "options": [
-                "White Asparagus",
-                "Kobe Beef",
-                "Baked Alaska",
-                "Crème Brûlée"
-            ],
-            "correctAnswer": "White Asparagus, Kobe Beef, Baked Alaska",
-            "hint": "This conditional-assumption structure returns once more with a new set of dishes.",
-            "explanation": "This structure continues to describe hoping an original plan can still go ahead despite a late arrival.",
-            "id": "go_l165_q2",
-            "menuItems": [
-                "White Asparagus",
-                "Kobe Beef",
-                "Baked Alaska",
-                "Crème Brûlée"
-            ],
-            "menuPrices": [
-                "$2.00",
-                "$19.25",
-                "$10.00",
-                "$2.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Not being overly familiar with the menu, I'll trust your judgment entirely for the starter, though I know I want the john dory and the napoleon.",
-            "options": [
-                "Starter",
-                "John Dory",
-                "Napoleon",
-                "Amuse-Bouche"
-            ],
-            "correctAnswer": "Starter, John Dory, Napoleon",
-            "hint": "This deferred-starter structure returns once more.",
-            "explanation": "This structure continues to show a customer confident about two courses while leaving one decision to the server's judgment.",
-            "id": "go_l165_q3",
-            "menuItems": [
-                "Starter",
-                "John Dory",
-                "Napoleon",
-                "Amuse-Bouche"
-            ],
-            "menuPrices": [
-                "$19.25",
-                "$9.75",
-                "$20.50",
-                "$12.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "For an event of this scale, catering has arranged the vichyssoise, the squab, and the profiteroles to be served to all two hundred guests.",
-            "options": [
-                "Vichyssoise",
-                "Squab",
-                "Profiteroles",
-                "Petit Fours"
-            ],
-            "correctAnswer": "Vichyssoise, Squab, Profiteroles",
-            "hint": "This large-event structure returns once more with a new fixed menu.",
-            "explanation": "This structure continues to describe a practical, fixed menu chosen for a sizable formal event.",
-            "id": "go_l166_q1",
-            "menuItems": [
-                "Vichyssoise",
-                "Squab",
-                "Profiteroles",
-                "Petit Fours"
-            ],
-            "menuPrices": [
-                "$19.25",
-                "$10.00",
-                "$18.00",
-                "$15.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Were it not for a prior commitment, I'd have lingered over the seared foie gras longer — still, the branzino and the napoleon will suit me well.",
-            "options": [
-                "Seared Foie Gras",
-                "Branzino",
-                "Napoleon",
-                "Profiteroles"
-            ],
-            "correctAnswer": "Seared Foie Gras, Branzino, Napoleon",
-            "hint": "This hypothetical-regret structure returns once more.",
-            "explanation": "This structure continues to show a wistful acknowledgment of limited time without changing the actual order placed.",
-            "id": "go_l166_q2",
-            "menuItems": [
-                "Seared Foie Gras",
-                "Branzino",
-                "Napoleon",
-                "Profiteroles"
-            ],
-            "menuPrices": [
-                "$8.50",
-                "$11.25",
-                "$20.50",
-                "$18.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Insofar as the kitchen permits substitutions, I'd like the consommé swapped in place of the usual starter, followed by the langoustine, and the tarte tatin.",
-            "options": [
-                "Consommé",
-                "Langoustine",
-                "Tarte Tatin",
-                "Bisque"
-            ],
-            "correctAnswer": "Consommé, Langoustine, Tarte Tatin",
-            "hint": "This substitution-request structure returns once more.",
-            "explanation": "This structure continues to use formal connecting language to describe a specific, polite menu substitution.",
-            "id": "go_l166_q3",
-            "menuItems": [
-                "Consommé",
-                "Langoustine",
-                "Tarte Tatin",
-                "Bisque"
-            ],
-            "menuPrices": [
-                "$5.75",
-                "$21.75",
-                "$4.50",
-                "$19.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "It having been a particularly demanding week, I've decided to treat myself to the black truffle risotto, the duck l'orange, and the cherries jubilee.",
-            "options": [
-                "Black Truffle Risotto",
-                "Duck l'Orange",
-                "Cherries Jubilee",
-                "Floating Island"
-            ],
-            "correctAnswer": "Black Truffle Risotto, Duck l'Orange, Cherries Jubilee",
-            "hint": "This self-treat structure returns once more with a fresh set of indulgent dishes.",
-            "explanation": "This structure continues to explain an especially generous order as a reward after a hard week.",
-            "id": "go_l167_q1",
-            "menuItems": [
-                "Black Truffle Risotto",
-                "Duck l'Orange",
-                "Cherries Jubilee",
-                "Floating Island"
-            ],
-            "menuPrices": [
-                "$7.25",
-                "$6.00",
-                "$3.25",
-                "$5.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Notwithstanding the late hour, we'll still take the morel mushrooms, the turbot, and the baked Alaska, if the kitchen is willing.",
-            "options": [
-                "Morel Mushrooms",
-                "Turbot",
-                "Baked Alaska",
-                "Crème Brûlée"
-            ],
-            "correctAnswer": "Morel Mushrooms, Turbot, Baked Alaska",
-            "hint": "This ‘despite the hour’ structure returns once more.",
-            "explanation": "This structure continues to politely acknowledge a potential inconvenience for the kitchen while still making the request.",
-            "id": "go_l167_q2",
-            "menuItems": [
-                "Morel Mushrooms",
-                "Turbot",
-                "Baked Alaska",
-                "Crème Brûlée"
-            ],
-            "menuPrices": [
-                "$16.50",
-                "$8.50",
-                "$10.00",
-                "$2.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Had I known the white asparagus would be this popular, I'd have booked earlier — regardless, I'll have it, along with the Kobe beef and the profiteroles.",
-            "options": [
-                "White Asparagus",
-                "Kobe Beef",
-                "Profiteroles",
-                "Napoleon"
-            ],
-            "correctAnswer": "White Asparagus, Kobe Beef, Profiteroles",
-            "hint": "This hypothetical-regret structure appears once more with new dishes.",
-            "explanation": "This structure continues to combine an imagined alternative past with a firm, unchanged order in the present.",
-            "id": "go_l167_q3",
-            "menuItems": [
-                "White Asparagus",
-                "Kobe Beef",
-                "Profiteroles",
-                "Napoleon"
-            ],
-            "menuPrices": [
-                "$2.00",
-                "$19.25",
-                "$18.00",
-                "$20.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Whichever of the two mains proves more popular tonight, I'll have the squab regardless, preceded by the vichyssoise, and followed by the napoleon.",
-            "options": [
-                "Vichyssoise",
-                "Squab",
-                "Napoleon",
-                "Consommé"
-            ],
-            "correctAnswer": "Vichyssoise, Squab, Napoleon",
-            "hint": "This reordered comparison structure returns once more.",
-            "explanation": "This structure continues to test careful listening, since the main course is again named before the starter.",
-            "id": "go_l168_q1",
-            "menuItems": [
-                "Vichyssoise",
-                "Squab",
-                "Napoleon",
-                "Consommé"
-            ],
-            "menuPrices": [
-                "$19.25",
-                "$10.00",
-                "$20.50",
-                "$5.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "It was suggested that I try the seared foie gras, which I'm inclined to do, alongside the john dory and, to conclude, the tarte tatin.",
-            "options": [
-                "Seared Foie Gras",
-                "John Dory",
-                "Tarte Tatin",
-                "Baked Alaska"
-            ],
-            "correctAnswer": "Seared Foie Gras, John Dory, Tarte Tatin",
-            "hint": "This passive-voice recommendation structure makes another appearance.",
-            "explanation": "This structure continues to describe a suggestion the customer is happy to accept, without naming who gave it.",
-            "id": "go_l168_q2",
-            "menuItems": [
-                "Seared Foie Gras",
-                "John Dory",
-                "Tarte Tatin",
-                "Baked Alaska"
-            ],
-            "menuPrices": [
-                "$8.50",
-                "$9.75",
-                "$4.50",
+                "$2.75",
+                "$5.00",
                 "$10.00"
             ]
         },
@@ -651,196 +147,700 @@
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Assuming the kitchen can still accommodate a late booking, I'd like the langoustine, the duck l'orange, and the cherries jubilee, exactly as originally planned.",
+            "prompt": "Do you deliver to my area? Yes. Then I'd like the family pizza and a two-liter soda, delivered.",
             "options": [
-                "Langoustine",
-                "Duck l'Orange",
-                "Cherries Jubilee",
-                "Floating Island"
+                "Family Pizza",
+                "Bottled Water",
+                "Large Pizza",
+                "Two-Liter Soda"
             ],
-            "correctAnswer": "Langoustine, Duck l'Orange, Cherries Jubilee",
-            "hint": "This conditional-assumption structure appears once more.",
-            "explanation": "This structure continues to describe hope that an original dinner plan will still be honored despite arriving later than expected.",
+            "correctAnswer": "Family Pizza, Two-Liter Soda",
+            "hint": "Availability of delivery is confirmed first.",
+            "explanation": "'Do you deliver to...?' checks the service area before you commit to an order.",
+            "id": "go_l162_q3",
+            "menuItems": [
+                "Family Pizza",
+                "Bottled Water",
+                "Large Pizza",
+                "Two-Liter Soda"
+            ],
+            "menuPrices": [
+                "$22.00",
+                "$2.00",
+                "$16.00",
+                "$4.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Delivery to 42 Maple Street, apartment 3B. The order is the chicken curry and two rice.",
+            "options": [
+                "Rice",
+                "Chicken Curry",
+                "Vegetable Curry",
+                "Naan"
+            ],
+            "correctAnswer": "Rice, Chicken Curry",
+            "hint": "The address is given but the items are what count.",
+            "explanation": "When giving an address, say the street number first, then the street name and apartment.",
+            "id": "go_l163_q1",
+            "menuItems": [
+                "Rice",
+                "Chicken Curry",
+                "Vegetable Curry",
+                "Naan"
+            ],
+            "menuPrices": [
+                "$3.00",
+                "$13.00",
+                "$12.00",
+                "$3.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Server: What's the address? Customer: 118 Oak Avenue - that's O-A-K. Two cheeseburgers and a fries, please.",
+            "options": [
+                "Fries",
+                "Cheeseburger",
+                "Onion Rings",
+                "Chicken Burger"
+            ],
+            "correctAnswer": "Fries, Cheeseburger",
+            "hint": "A spelled word makes the address clearer.",
+            "explanation": "Spelling short street names avoids mistakes over the phone.",
+            "id": "go_l163_q2",
+            "menuItems": [
+                "Fries",
+                "Cheeseburger",
+                "Onion Rings",
+                "Chicken Burger"
+            ],
+            "menuPrices": [
+                "$3.00",
+                "$9.00",
+                "$3.50",
+                "$9.50"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Customer: It's the building with the blue door, next to the pharmacy - the buzzer says Kim. And I'll have the bibimbap and the kimchi pancake.",
+            "options": [
+                "Kimchi Pancake",
+                "Bulgogi",
+                "Bibimbap",
+                "Japchae"
+            ],
+            "correctAnswer": "Kimchi Pancake, Bibimbap",
+            "hint": "Landmarks help a driver find a building.",
+            "explanation": "Describing a landmark and the buzzer name is a helpful way to give directions when the address alone isn't clear.",
+            "id": "go_l163_q3",
+            "menuItems": [
+                "Kimchi Pancake",
+                "Bulgogi",
+                "Bibimbap",
+                "Japchae"
+            ],
+            "menuPrices": [
+                "$8.00",
+                "$15.00",
+                "$13.00",
+                "$12.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Server: Can I have a phone number in case the driver needs to reach you? Customer: 555-0142. The order is the veggie pizza and a garden salad.",
+            "options": [
+                "Garden Salad",
+                "Meat Pizza",
+                "Caesar Salad",
+                "Veggie Pizza"
+            ],
+            "correctAnswer": "Garden Salad, Veggie Pizza",
+            "hint": "A phone number is requested for delivery, not for the order.",
+            "explanation": "Drivers often call if they can't find you, so giving a reachable number is standard.",
+            "id": "go_l164_q1",
+            "menuItems": [
+                "Garden Salad",
+                "Meat Pizza",
+                "Caesar Salad",
+                "Veggie Pizza"
+            ],
+            "menuPrices": [
+                "$7.00",
+                "$15.00",
+                "$8.00",
+                "$14.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Customer: The name is Hussain - H-U-S-S-A-I-N. And it's the lamb kebab plate and a side of hummus.",
+            "options": [
+                "Hummus",
+                "Tzatziki",
+                "Lamb Kebab Plate",
+                "Chicken Kebab Plate"
+            ],
+            "correctAnswer": "Hummus, Lamb Kebab Plate",
+            "hint": "Spelling a name is common on the phone.",
+            "explanation": "Give letters clearly and slowly; it prevents wrong names on the order and receipt.",
+            "id": "go_l164_q2",
+            "menuItems": [
+                "Hummus",
+                "Tzatziki",
+                "Lamb Kebab Plate",
+                "Chicken Kebab Plate"
+            ],
+            "menuPrices": [
+                "$4.00",
+                "$3.50",
+                "$17.00",
+                "$16.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the guest's final order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Server: Let me repeat the number: five five five, oh one four two? Customer: Almost - five five five, oh one four three. The order stays: the tacos and the rice.",
+            "options": [
+                "Rice",
+                "Beans",
+                "Burrito",
+                "Tacos"
+            ],
+            "correctAnswer": "Rice, Tacos",
+            "hint": "Numbers are read back digit by digit.",
+            "explanation": "Saying 'oh' for zero and reading digits one at a time is standard for phone numbers in English.",
+            "id": "go_l164_q3",
+            "menuItems": [
+                "Rice",
+                "Beans",
+                "Burrito",
+                "Tacos"
+            ],
+            "menuPrices": [
+                "$3.00",
+                "$3.00",
+                "$10.50",
+                "$10.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "How long will delivery take? Server: Around forty-five minutes. Customer: That's fine - I'll have the roast chicken dinner and a coleslaw.",
+            "options": [
+                "Fish Dinner",
+                "Roast Chicken Dinner",
+                "Coleslaw",
+                "Fries"
+            ],
+            "correctAnswer": "Roast Chicken Dinner, Coleslaw",
+            "hint": "An estimated time is given and accepted.",
+            "explanation": "'Around' or 'about' is used for estimates, and you can accept the wait before ordering.",
+            "id": "go_l165_q1",
+            "menuItems": [
+                "Fish Dinner",
+                "Roast Chicken Dinner",
+                "Coleslaw",
+                "Fries"
+            ],
+            "menuPrices": [
+                "$17.00",
+                "$16.00",
+                "$3.00",
+                "$3.50"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Server: There's a twenty-dollar minimum for delivery, and your pizza is fifteen. Customer: Then I'll add a garlic bread and a soda to reach it.",
+            "options": [
+                "Soda",
+                "Pizza",
+                "Calzone",
+                "Garlic Bread"
+            ],
+            "correctAnswer": "Soda, Pizza, Garlic Bread",
+            "hint": "A minimum order requires adding items.",
+            "explanation": "A 'delivery minimum' is the smallest order value they'll deliver; adding items is a common solution.",
+            "id": "go_l165_q2",
+            "menuItems": [
+                "Soda",
+                "Pizza",
+                "Calzone",
+                "Garlic Bread"
+            ],
+            "menuPrices": [
+                "$2.75",
+                "$15.00",
+                "$14.00",
+                "$4.50"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Customer: Can you deliver by seven thirty? Server: We can't promise that - it's busy. Customer: Then I'll pick it up instead: the ribs and the corn.",
+            "options": [
+                "Chicken",
+                "Corn",
+                "Ribs",
+                "Coleslaw"
+            ],
+            "correctAnswer": "Corn, Ribs",
+            "hint": "A delivery time can't be guaranteed, so the customer switches to pickup.",
+            "explanation": "'Instead' shows a change of service; the order is the same but collected in person.",
+            "id": "go_l165_q3",
+            "menuItems": [
+                "Chicken",
+                "Corn",
+                "Ribs",
+                "Coleslaw"
+            ],
+            "menuPrices": [
+                "$16.00",
+                "$3.00",
+                "$21.00",
+                "$3.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Server: So that's one large margherita, one Caesar salad, and delivery to Maple Street? Customer: Yes, that's right.",
+            "options": [
+                "Pepperoni Pizza",
+                "Caesar Salad",
+                "Greek Salad",
+                "Margherita Pizza"
+            ],
+            "correctAnswer": "Caesar Salad, Margherita Pizza",
+            "hint": "A phone read-back covers items and address.",
+            "explanation": "Confirming the address and items together is the phone equivalent of checking a receipt.",
+            "id": "go_l166_q1",
+            "menuItems": [
+                "Pepperoni Pizza",
+                "Caesar Salad",
+                "Greek Salad",
+                "Margherita Pizza"
+            ],
+            "menuPrices": [
+                "$16.00",
+                "$8.50",
+                "$8.50",
+                "$15.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the guest's final order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Server: Just to confirm - two chicken tikka, one lamb rogan josh, and three naans? Customer: Two naans, actually, not three.",
+            "options": [
+                "Naan",
+                "Chicken Korma",
+                "Chicken Tikka",
+                "Lamb Rogan Josh"
+            ],
+            "correctAnswer": "Naan, Chicken Tikka, Lamb Rogan Josh",
+            "hint": "One quantity is corrected without changing the dishes.",
+            "explanation": "Correcting a number with 'not three' keeps the rest of the confirmation intact.",
+            "id": "go_l166_q2",
+            "menuItems": [
+                "Naan",
+                "Chicken Korma",
+                "Chicken Tikka",
+                "Lamb Rogan Josh"
+            ],
+            "menuPrices": [
+                "$3.00",
+                "$14.00",
+                "$14.00",
+                "$16.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Server: Your total is thirty-two fifty, ready in half an hour. Customer: Thanks - so that's the two sandwiches and the soup.",
+            "options": [
+                "Salad",
+                "Chowder",
+                "Soup",
+                "Sandwich"
+            ],
+            "correctAnswer": "Soup, Sandwich",
+            "hint": "The customer double-checks what's included in the total.",
+            "explanation": "Restating your order after hearing the total is a quick way to be sure nothing is missing.",
+            "id": "go_l166_q3",
+            "menuItems": [
+                "Salad",
+                "Chowder",
+                "Soup",
+                "Sandwich"
+            ],
+            "menuPrices": [
+                "$7.00",
+                "$6.00",
+                "$5.00",
+                "$9.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the guest's final order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Hi, I called five minutes ago about a pizza - could I change it to a large? Also add a garlic bread.",
+            "options": [
+                "Wings",
+                "Large Pizza",
+                "Garlic Bread",
+                "Small Pizza"
+            ],
+            "correctAnswer": "Large Pizza, Garlic Bread",
+            "hint": "A call-back changes an existing order.",
+            "explanation": "Mentioning when you called helps the restaurant find your order and update it.",
+            "id": "go_l167_q1",
+            "menuItems": [
+                "Wings",
+                "Large Pizza",
+                "Garlic Bread",
+                "Small Pizza"
+            ],
+            "menuPrices": [
+                "$9.00",
+                "$16.00",
+                "$4.50",
+                "$11.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the guest's final order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Hello, it's Amy again. I gave the wrong address - it's 24 Pine Road, not 42. Please keep the order the same: the burrito bowl and the chips.",
+            "options": [
+                "Guacamole",
+                "Burrito Bowl",
+                "Taco Bowl",
+                "Chips"
+            ],
+            "correctAnswer": "Burrito Bowl, Chips",
+            "hint": "The address changes; the food doesn't.",
+            "explanation": "'Keep the order the same' tells the staff you're only fixing the address.",
+            "id": "go_l167_q2",
+            "menuItems": [
+                "Guacamole",
+                "Burrito Bowl",
+                "Taco Bowl",
+                "Chips"
+            ],
+            "menuPrices": [
+                "$4.00",
+                "$10.50",
+                "$10.50",
+                "$3.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the guest's final order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Can I cancel the soup, please, but keep the sandwich? And could you add a bag of chips?",
+            "options": [
+                "Salad",
+                "Chips",
+                "Sandwich",
+                "Soup"
+            ],
+            "correctAnswer": "Chips, Sandwich",
+            "hint": "One item is cancelled, one stays, one is added.",
+            "explanation": "'Cancel' removes an item, and 'keep' confirms what stays.",
+            "id": "go_l167_q3",
+            "menuItems": [
+                "Salad",
+                "Chips",
+                "Sandwich",
+                "Soup"
+            ],
+            "menuPrices": [
+                "$7.00",
+                "$1.50",
+                "$8.00",
+                "$5.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Could you leave it at the door and ring the bell? It's the pasta and the garlic bread.",
+            "options": [
+                "Bruschetta",
+                "Garlic Bread",
+                "Lasagna",
+                "Pasta"
+            ],
+            "correctAnswer": "Garlic Bread, Pasta",
+            "hint": "Delivery instructions describe how to hand over the food.",
+            "explanation": "'Leave it at the door' is a common instruction; you may add 'ring the bell' or 'text me.'",
+            "id": "go_l168_q1",
+            "menuItems": [
+                "Bruschetta",
+                "Garlic Bread",
+                "Lasagna",
+                "Pasta"
+            ],
+            "menuPrices": [
+                "$7.00",
+                "$4.00",
+                "$14.00",
+                "$13.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Please don't knock - there's a baby sleeping. Just text me when you're outside. The order is the noodle soup and the dumplings.",
+            "options": [
+                "Spring Rolls",
+                "Fried Rice",
+                "Noodle Soup",
+                "Dumplings"
+            ],
+            "correctAnswer": "Noodle Soup, Dumplings",
+            "hint": "A reason is given for an unusual instruction.",
+            "explanation": "Explaining why you want no knocking helps the driver understand and respond kindly.",
+            "id": "go_l168_q2",
+            "menuItems": [
+                "Spring Rolls",
+                "Fried Rice",
+                "Noodle Soup",
+                "Dumplings"
+            ],
+            "menuPrices": [
+                "$5.00",
+                "$10.00",
+                "$11.00",
+                "$7.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "The gate code is 4-2-1-9. Could the driver call from the gate? And it's the chicken salad and a sparkling water.",
+            "options": [
+                "Still Water",
+                "Caesar Salad",
+                "Sparkling Water",
+                "Chicken Salad"
+            ],
+            "correctAnswer": "Sparkling Water, Chicken Salad",
+            "hint": "Access details are given for the driver.",
+            "explanation": "Gate codes and calling instructions are practical extras for apartment complexes or gated homes.",
             "id": "go_l168_q3",
             "menuItems": [
-                "Langoustine",
-                "Duck l'Orange",
-                "Cherries Jubilee",
-                "Floating Island"
+                "Still Water",
+                "Caesar Salad",
+                "Sparkling Water",
+                "Chicken Salad"
             ],
             "menuPrices": [
-                "$21.75",
-                "$6.00",
-                "$3.25",
-                "$5.75"
+                "$2.50",
+                "$9.00",
+                "$3.00",
+                "$9.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Not being overly familiar with the menu, I'll trust your judgment entirely for the starter, though I know I want the branzino and the profiteroles.",
+            "prompt": "Hi, I ordered forty minutes ago and it hasn't arrived - the pad thai and the spring rolls. Could you check where the driver is?",
             "options": [
-                "Starter",
-                "Branzino",
-                "Profiteroles",
-                "Amuse-Bouche"
+                "Pad Thai",
+                "Spring Rolls",
+                "Pad See Ew",
+                "Egg Rolls"
             ],
-            "correctAnswer": "Starter, Branzino, Profiteroles",
-            "hint": "This deferred-starter structure makes another appearance.",
-            "explanation": "This structure continues to combine humility about menu knowledge with confidence about two specific choices.",
+            "correctAnswer": "Pad Thai, Spring Rolls",
+            "hint": "A delivery delay is reported with the time and the order.",
+            "explanation": "Giving how long you've waited plus the order contents helps the restaurant trace your delivery.",
             "id": "go_l169_q1",
             "menuItems": [
-                "Starter",
-                "Branzino",
-                "Profiteroles",
-                "Amuse-Bouche"
+                "Pad Thai",
+                "Spring Rolls",
+                "Pad See Ew",
+                "Egg Rolls"
             ],
             "menuPrices": [
-                "$19.25",
-                "$11.25",
-                "$18.00",
-                "$12.50"
+                "$12.00",
+                "$5.00",
+                "$12.00",
+                "$5.50"
             ]
         },
         {
-            "instruction": "Tap the items to fulfill the customer's order.",
+            "instruction": "Tap the items to fulfill the guest's final order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "For an event of this scale, catering has arranged the morel mushrooms, the Kobe beef, and the baked Alaska to be served to all two hundred guests.",
+            "prompt": "My delivery arrived, but the soup spilled and the bag's soaked. I ordered the chowder and the bread. Could you send another?",
             "options": [
-                "Morel Mushrooms",
-                "Kobe Beef",
-                "Baked Alaska",
-                "Napoleon"
+                "Chowder",
+                "Bread",
+                "Crackers",
+                "Bisque"
             ],
-            "correctAnswer": "Morel Mushrooms, Kobe Beef, Baked Alaska",
-            "hint": "This large-event structure returns once more with a new set menu.",
-            "explanation": "This structure continues to describe a large-scale catered event where every guest receives the same fixed menu.",
+            "correctAnswer": "Chowder, Bread",
+            "hint": "The problem is damage, not a missing item.",
+            "explanation": "Describing the damage clearly ('spilled', 'soaked') supports a request for a replacement.",
             "id": "go_l169_q2",
             "menuItems": [
-                "Morel Mushrooms",
-                "Kobe Beef",
-                "Baked Alaska",
-                "Napoleon"
+                "Chowder",
+                "Bread",
+                "Crackers",
+                "Bisque"
             ],
             "menuPrices": [
-                "$16.50",
-                "$19.25",
-                "$10.00",
-                "$20.50"
+                "$6.50",
+                "$2.50",
+                "$2.00",
+                "$6.50"
             ]
         },
         {
-            "instruction": "Tap the items to fulfill the customer's order.",
+            "instruction": "Tap the items to fulfill the guest's final order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Were it not for a prior commitment, I'd have lingered over the vichyssoise longer — still, the turbot and the napoleon will suit me well.",
+            "prompt": "The delivery came without the garlic bread, and the pizza is the wrong one - I ordered the veggie, this is pepperoni.",
             "options": [
-                "Vichyssoise",
-                "Turbot",
-                "Napoleon",
-                "Profiteroles"
+                "Veggie Pizza",
+                "Pepperoni Pizza",
+                "Garlic Bread",
+                "Breadsticks"
             ],
-            "correctAnswer": "Vichyssoise, Turbot, Napoleon",
-            "hint": "This hypothetical-regret structure appears once more, closing in on the end of this level range.",
-            "explanation": "This structure continues to show gracious acceptance of time limits without abandoning a complete, confident order.",
+            "correctAnswer": "Veggie Pizza, Garlic Bread",
+            "hint": "Two problems are listed together: one missing, one wrong.",
+            "explanation": "Listing problems clearly helps the restaurant fix them together with one call.",
             "id": "go_l169_q3",
             "menuItems": [
-                "Vichyssoise",
-                "Turbot",
-                "Napoleon",
-                "Profiteroles"
+                "Veggie Pizza",
+                "Pepperoni Pizza",
+                "Garlic Bread",
+                "Breadsticks"
             ],
             "menuPrices": [
-                "$19.25",
-                "$8.50",
-                "$20.50",
-                "$18.00"
+                "$14.00",
+                "$15.00",
+                "$4.50",
+                "$3.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Insofar as the kitchen permits substitutions, I'd like the consommé swapped in place of the usual starter, followed by the squab, and the cherries jubilee.",
+            "prompt": "Hi, I'd like delivery to 9 Elm Street: two large pizzas, one veggie and one pepperoni, and a garlic bread. Call me at 555-0199 when you're outside, and no need to ring the bell.",
             "options": [
-                "Consommé",
-                "Squab",
-                "Cherries Jubilee",
-                "Bisque"
+                "Veggie Pizza",
+                "Garlic Bread",
+                "Cheese Pizza",
+                "Pepperoni Pizza"
             ],
-            "correctAnswer": "Consommé, Squab, Cherries Jubilee",
-            "hint": "This substitution-request structure makes its final appearance in this set of levels.",
-            "explanation": "This sentence closes out this portion of the tier with the same formal, polite substitution language used throughout.",
+            "correctAnswer": "Veggie Pizza, Garlic Bread, Pepperoni Pizza",
+            "hint": "Order details, address, phone and instructions arrive in one message.",
+            "explanation": "This level combines items, address, contact details and handover instructions in one phone call.",
             "id": "go_l170_q1",
             "menuItems": [
-                "Consommé",
-                "Squab",
-                "Cherries Jubilee",
-                "Bisque"
+                "Veggie Pizza",
+                "Garlic Bread",
+                "Cheese Pizza",
+                "Pepperoni Pizza"
             ],
             "menuPrices": [
-                "$5.75",
-                "$10.00",
-                "$3.25",
-                "$19.25"
+                "$16.00",
+                "$4.50",
+                "$15.00",
+                "$17.00"
             ]
         },
         {
-            "instruction": "Tap the items to fulfill the customer's order.",
+            "instruction": "Tap the items to fulfill the guest's final order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "It having been a particularly demanding week, I've decided to treat myself to the black truffle risotto, the branzino, and the petit fours.",
+            "prompt": "Server: So that's the butter chicken, the rice, and a naan, delivered to Lake Road by eight? Customer: Make that two naans, and the delivery's actually to Lake Street.",
             "options": [
-                "Black Truffle Risotto",
-                "Branzino",
-                "Petit Fours",
-                "Profiteroles"
+                "Butter Chicken",
+                "Garlic Naan",
+                "Rice",
+                "Naan"
             ],
-            "correctAnswer": "Black Truffle Risotto, Branzino, Petit Fours",
-            "hint": "This self-treat structure returns once more to close out this set of levels.",
-            "explanation": "This structure continues to explain a generous, well-earned order after a demanding stretch of work.",
+            "correctAnswer": "Butter Chicken, Rice, Naan",
+            "hint": "A quantity and an address are corrected together.",
+            "explanation": "Two corrections in one sentence are easier to follow if each has its own detail: 'two naans' and 'Lake Street.'",
             "id": "go_l170_q2",
             "menuItems": [
-                "Black Truffle Risotto",
-                "Branzino",
-                "Petit Fours",
-                "Profiteroles"
+                "Butter Chicken",
+                "Garlic Naan",
+                "Rice",
+                "Naan"
             ],
             "menuPrices": [
-                "$7.25",
-                "$11.25",
-                "$15.25",
-                "$18.00"
+                "$14.00",
+                "$3.50",
+                "$3.00",
+                "$3.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Notwithstanding the late hour, we'll still take the seared foie gras, the duck l'orange, and the baked Alaska, if the kitchen is willing.",
+            "prompt": "Hello, I ordered through your website but I think the payment failed. Could I give my order by phone instead? It's the burger meal, a Caesar salad, and a chocolate shake.",
             "options": [
-                "Seared Foie Gras",
-                "Duck l'Orange",
-                "Baked Alaska",
-                "Crème Brûlée"
+                "Burger Meal",
+                "Vanilla Shake",
+                "Chocolate Shake",
+                "Caesar Salad"
             ],
-            "correctAnswer": "Seared Foie Gras, Duck l'Orange, Baked Alaska",
-            "hint": "This ‘despite the hour’ structure makes its final appearance in this set of levels.",
-            "explanation": "This sentence closes out this portion of the tier, once again showing polite persistence despite a potential inconvenience for the kitchen.",
+            "correctAnswer": "Burger Meal, Chocolate Shake, Caesar Salad",
+            "hint": "A failed website order is repeated by phone.",
+            "explanation": "Explaining that an online payment failed prevents duplicate charges and starts a new order clearly.",
             "id": "go_l170_q3",
             "menuItems": [
-                "Seared Foie Gras",
-                "Duck l'Orange",
-                "Baked Alaska",
-                "Crème Brûlée"
+                "Burger Meal",
+                "Vanilla Shake",
+                "Chocolate Shake",
+                "Caesar Salad"
             ],
             "menuPrices": [
-                "$8.50",
-                "$6.00",
                 "$10.00",
-                "$2.00"
+                "$5.00",
+                "$5.00",
+                "$8.50"
             ]
         }
     ]

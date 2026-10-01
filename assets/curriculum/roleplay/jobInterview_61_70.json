@@ -4,633 +4,633 @@
     "levels": "61-70",
     "quests": [
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that gives a complete story: what happened, what you did, and how it turned out.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you failed at something.",
+            "interviewerQuestion": "Walk me through a situation where you helped a customer who had a problem.",
             "options": [
-                "The deadline was unrealistic to begin with, so it wasn't really my fault.",
-                "I try not to dwell on failures, so nothing specific comes to mind.",
-                "I once underestimated how long a project would take, so afterward I started building in extra time for unexpected issues."
+                "There was a customer whose order had come without a part, and she was really upset because she had a project planned for the weekend. It was a stressful day at the store and she was quite loud about it.",
+                "A customer's order arrived without the part she needed for a weekend project. I checked our stock, found one at another branch, had it couriered the same day, and she came back the next week to say it had saved her project.",
+                "A customer's order arrived without a part she needed. I checked our stock, found one at another branch, and arranged for it to be couriered to her that same afternoon. I also gave the courier her direct number so they could coordinate the drop-off themselves."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "A good answer names a real failure and explains what you changed because of it.",
-            "explanation": "Naming a real failure and the change it led to shows accountability, while blaming outside factors can come across as avoiding responsibility.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Imagine the interviewer taking notes: could they write down a beginning, a middle, and an end?",
+            "explanation": "A full story includes the problem, your specific steps, and what happened afterward. The second answer stops before the outcome, so the interviewer can't tell whether it worked, and the third spends its time on the mood of the day without saying what you did.",
             "id": "ji_l61_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "waiting for more",
+                "impressed",
+                "curious"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "The interviewer wants a real event, not a description of your habits. Choose the answer that gives one.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a time something didn't go as planned.",
+            "interviewerQuestion": "Can you give me an example of a time you caught a problem before it got bigger?",
             "options": [
-                "It happens sometimes, but I usually just move on without much analysis.",
-                "A marketing campaign I led underperformed, so I analyzed the data afterward and adjusted our approach for the next one.",
-                "Honestly, most of my projects tend to go pretty smoothly."
+                "While reconciling invoices I noticed a supplier billing us twice for the same delivery. I flagged it with proof, we got the credit, and I added a duplicate check to my monthly routine.",
+                "I'm always the sort of person who catches problems early, because I read everything carefully. At my last job people would often come to me to double-check things before they sent them off.",
+                "Once I noticed a supplier had billed us twice for the same delivery, and I told my manager straight away because I thought she should know about it."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Analyzing what went wrong and applying that lesson is stronger than simply moving on.",
-            "explanation": "Analyzing what went wrong and applying the lesson afterward shows real reflection, not just acceptance that things sometimes fail.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Ask which answer describes something that happened on a particular day rather than something you tend to do.",
+            "explanation": "A specific event with a visible result is what behavioral questions are looking for. The second answer describes a trait without any event, and the third gives an event and an action but never says what came of it.",
             "id": "ji_l61_q2",
             "interviewerReaction": [
-                "disappointed",
                 "impressed",
-                "disappointed"
+                "unconvinced",
+                "curious"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer whose result could be checked, in a story about your own role.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a professional setback you experienced.",
+            "interviewerQuestion": "Give me an example of a small improvement you made at work.",
             "options": [
-                "I lost a client due to slow response times, which taught me to build faster follow-up habits into my routine.",
-                "I've had setbacks, but they were mostly out of my control.",
-                "I don't really think of things as setbacks, more like bad luck."
+                "Our shift handover was a quick chat that people forgot. I made a one-page checklist and asked the team to try it for two weeks. Missed handovers dropped, and the manager rolled it out to the other shifts.",
+                "Our shift handovers were a mess, so I put together a checklist that covered everything people needed to pass on. I think it was a really good idea and I was happy with how it looked in the end.",
+                "We improved our shift handovers as a team. Everyone pitched in with ideas, we tried a checklist, and things got better for everyone over time."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Connecting a setback to a concrete habit you built afterward is the strongest kind of answer.",
-            "explanation": "Connecting a setback to a concrete habit you built afterward shows the kind of self-reflection interviewers are looking for.",
+            "professionalismRating": 4,
+            "hint": "Look for the answer where someone else could confirm the improvement.",
+            "explanation": "An outcome like fewer missed handovers or a manager adopting the idea is something others can verify. The second answer rates its own idea, and the third leans on 'we' and 'got better' without saying what you did or what changed.",
             "id": "ji_l61_q3",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "pleased",
+                "unconvinced",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "One answer spends most of its time on background. Choose the one that gets to your actions quickly.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle negative feedback?",
+            "interviewerQuestion": "Tell me about a busy day at work that went wrong and how you handled it.",
             "options": [
-                "I try to separate my emotions from the message and focus on what I can actually improve.",
-                "It's tough to hear, but I usually agree just to move the conversation along.",
-                "I typically ask for specific examples so I can decide whether the feedback is fair."
+                "It was a Friday, the weather had been terrible, the delivery was late, and two staff called in sick just as the lunch rush was starting, which our manager said was the worst timing she'd seen in years. and the whole thing felt like the kind of day that tests how a team pulls together when nothing is going to plan.",
+                "The team handled it well, and people stepped up. It was chaotic but we got through it,. even though I haven't tested that assumption.",
+                "Two staff called in sick during our lunch rush. I moved myself to the register, asked the kitchen to pause sandwich specials, and stayed for a double shift. We served everyone with about a five-minute delay."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "The strongest answer focuses on genuinely using feedback to improve, not just managing the conversation.",
-            "explanation": "Focusing on what you can improve shows real growth, while agreeing just to move on or judging the feedback's fairness both sidestep genuine self-reflection.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Notice how far into each answer you have to read before you learn what the speaker actually did.",
+            "explanation": "The strongest answer states the problem in one sentence and spends the rest on decisions and outcome. The second is nearly all setup with no action, and the third praises the team without saying what any person did.",
             "id": "ji_l62_q1",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "losing interest",
+                "uncertain",
+                "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that makes your own decision and its reasoning clear.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What do you do when you receive criticism you weren't expecting?",
+            "interviewerQuestion": "Describe a time you had to make a decision without your manager's input.",
             "options": [
-                "I usually feel caught off guard and need some time before I can respond well.",
-                "I try to explain my reasoning right away so they understand my side.",
-                "I take a moment to process it calmly, then ask questions to fully understand the concern."
+                "My supervisor was unreachable when a client asked to move a delivery date. I checked the schedule, offered a date two days later that didn't clash, confirmed it in writing, and told my supervisor as soon as she was back.",
+                "My manager was away, so I decided to just leave the request until she got back. The client was a little annoyed, but I didn't think it was my place to make a decision like that.",
+                "The decision was a really tricky one. There were a lot of factors, and the client had strong feelings. In the end it worked out fine, and my manager was happy with how it ended."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Pausing to understand fully, rather than immediately explaining yourself, tends to land better.",
-            "explanation": "Pausing to fully understand unexpected criticism shows composure, while immediately explaining your side can come across as defensive, even if unintentional.",
+            "hint": "A decision story should let the listener see the options you weighed.",
+            "explanation": "Naming the options, the choice, the record you kept, and the follow-up with your manager shows judgment. Waiting can be reasonable, but the second answer doesn't show a decision at all, and the third never says what was decided.",
             "id": "ji_l62_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "impressed",
+                "uncertain",
+                "unconvinced"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer where the interviewer can tell what YOU specifically did.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you respond when a manager questions your approach to a task?",
+            "interviewerQuestion": "Describe how you helped a new coworker get up to speed.",
             "options": [
-                "I usually just switch to their approach right away without asking questions.",
-                "I explain my reasoning, but I stay genuinely open to trying their suggested approach instead.",
-                "I explain my reasoning and generally stick with my original approach."
+                "We onboarded a new coworker together, and I was part of that. We showed her the systems, gave her some notes, and made sure she felt welcome, and she settled in nicely.",
+                "A new hire kept mixing up our returns codes, so I made a quick reference sheet and sat with her for her first three returns. She was handling them alone by the end of the week.",
+                "I'm patient with new people because I remember how hard it was when I started. I try to always make new coworkers feel comfortable and answer questions whenever they come up."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Balancing your own reasoning with real openness to another approach shows both confidence and flexibility.",
-            "explanation": "Balancing your reasoning with genuine openness shows both confidence and flexibility, while switching without question or holding firm both miss that balance.",
+            "professionalismRating": 3,
+            "hint": "Pay attention to the pronouns. Which answer tells you what one person did?",
+            "explanation": "Your own steps, a specific problem, and a clear outcome make the story yours. The second answer hides your part inside 'we', and the third describes an attitude rather than an occasion.",
             "id": "ji_l62_q3",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "pleased",
+                "unconvinced"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that shows a result you can measure or observe, not effort or pride.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you disagreed with your boss.",
+            "interviewerQuestion": "Describe something you achieved that you're proud of, and tell me how you know it actually worked.",
             "options": [
-                "I raised my concerns during a team meeting so others could weigh in too.",
-                "I usually keep disagreements with my boss to myself.",
-                "I disagreed with a decision, so I asked for a private conversation to share my concerns respectfully."
+                "I redesigned the stockroom layout, and picking got faster, which everyone appreciated. It was a big improvement overall and I'm really proud of what I did there.",
+                "I reorganized our stockroom by sales frequency. Picking time for online orders fell from about 12 minutes to 8, and two colleagues told me it made their shifts easier.",
+                "I reorganized our stockroom over a weekend, which took about 14 hours and a lot of heavy lifting. I was pretty exhausted afterward, but it looked so much tidier and the manager said it was impressive."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "A private, respectful conversation is generally the most appropriate way to raise concerns with a manager.",
-            "explanation": "A private conversation shows respect for your manager's position, while raising it publicly can put them on the spot, and staying silent misses a chance for healthy dialogue.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "The question has two parts. Check which answer handles the second one.",
+            "explanation": "Before-and-after numbers plus a colleague's reaction show how you know it worked. The second answer measures the effort and appearance instead of the effect, and the third claims an improvement without saying how big or how it was noticed.",
             "id": "ji_l63_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "unconvinced",
+                "impressed",
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that claims your part in a shared result accurately.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a time you pushed back on a decision from leadership.",
+            "interviewerQuestion": "What's the best result you've delivered in a team project?",
             "options": [
-                "I made my objection clear and made sure it was noted for the record.",
-                "I gathered data to support my concern, then presented it calmly as one option for them to consider.",
-                "I generally trust leadership's decisions, so I don't recall pushing back."
+                "Our team won an award for our project, and I was really glad to be part of it. It was a great group, and everyone worked hard for the result we got.",
+                "I basically won us the award, since the data section I built was what impressed the judges and the rest was just formatting.",
+                "Our group presentation won a faculty award. I built the data section the judges praised, and I trained two teammates on the charts."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Supporting your concern with evidence, framed as input rather than an objection, is usually most effective.",
-            "explanation": "Framing a concern as an option backed by evidence invites real dialogue, while treating it as a formal objection can come across as combative.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Think about how each answer would sound to a teammate who was listening.",
+            "explanation": "A specific contribution and an acknowledgement of helping others is accurate and generous. The second says nothing about what you did, and the third overclaims and dismisses colleagues' work.",
             "id": "ji_l63_q2",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "wary",
+                "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that shows the goal, what you did, and what happened.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle it when you think your manager is making a mistake?",
+            "interviewerQuestion": "Tell me about a goal you set for yourself at work and what came of it.",
             "options": [
-                "I share my perspective clearly, but I also stay open to the possibility that they see something I don't.",
-                "I usually let it play out, since it's ultimately their call to make.",
-                "I make sure to point it out directly so the mistake doesn't get repeated."
+                "My goal was to get promoted within a year, and I worked really hard toward it. I took on extra tasks and stayed late often, but the company restructured so it didn't happen.",
+                "I set a goal to be more productive, and I tried lots of techniques like to-do lists and time blocking. I learned a lot about myself and my habits along the way, which was valuable.",
+                "I wanted to cut my email response time from a day to a few hours. I blocked twice-daily inbox slots, and after a month my average reply time was under three hours."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "The strongest response combines honesty with genuine humility about your own view.",
-            "explanation": "Combining honesty with humility shows maturity, while staying silent avoids the issue and being overly direct can feel presumptuous.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "A goal is only a story once you can say whether you reached it.",
+            "explanation": "A clear target, a method, and a measured outcome make a complete goal story. The second never says what was achieved, and the third is honest but centered on effort and an outside event rather than a result you controlled.",
             "id": "ji_l63_q3",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "sympathetic",
+                "unconvinced",
+                "pleased"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that shows support without taking over.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you adapt to sudden change at work?",
+            "interviewerQuestion": "Tell me about a time you supported a teammate who was struggling.",
             "options": [
-                "I usually need some time to fully adjust before I can move forward effectively.",
-                "I take a moment to reassess the situation, then adjust my plan based on what's actually needed now.",
-                "I try to stick close to the original plan as much as possible."
+                "A colleague was falling behind, so I just took over her data entry entirely for two weeks. She was really relieved, and honestly the work got done much faster and more accurately. and I checked in with her every couple of days just to make sure she wasn't falling behind on anything else either.",
+                "A colleague was falling behind on data entry after a family emergency. I offered to take a batch and showed her a shortcut, and she kept ownership of the rest. She caught up in a week.",
+                "A colleague was going through a tough time, and I checked in on her often and made sure she knew I was there for her. I think she really appreciated having someone to talk to."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "The best answer shows quick, deliberate reassessment rather than resistance or a slow adjustment period.",
-            "explanation": "Quickly reassessing and adjusting shows genuine adaptability, while needing time to adjust or clinging to the original plan both suggest less flexibility.",
+            "professionalismRating": 4,
+            "hint": "Good support leaves the other person able to stand on their own afterward.",
+            "explanation": "Taking a share and teaching a shortcut helps now and later while keeping her in charge of her work. Taking over entirely solves the backlog but undermines her, and kindness without any practical help doesn't change the workload.",
             "id": "ji_l64_q1",
             "interviewerReaction": [
-                "disappointed",
+                "concerned",
                 "impressed",
-                "disappointed"
+                "sympathetic"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer where the disagreement leads to a better plan, not a winner.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time your role changed unexpectedly.",
+            "interviewerQuestion": "Describe a time you and a teammate wanted to approach a task differently.",
             "options": [
-                "When my department was restructured, I asked clarifying questions early so I could adjust to my new responsibilities quickly.",
-                "It was a difficult transition, but I eventually settled into the new role.",
-                "I mostly just waited for more guidance before making any changes myself."
+                "We didn't really disagree, we just worked in different ways. I did my part my way, she did hers her way, and we put it together at the end without too much trouble.",
+                "My partner wanted to draft the whole report first and I wanted an outline. We tried her approach for half a day, saw the gaps, then merged the two: outline first, drafts by section. It finished a day early.",
+                "We had different ideas, but I explained mine and she eventually came around, since mine was clearly more efficient. The project went well, and she said I'd been right about it."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Proactively seeking clarity is stronger than passively waiting or simply enduring the change.",
-            "explanation": "Proactively asking clarifying questions shows initiative during change, while waiting for guidance or simply enduring it shows a more passive approach.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Look for the story where both ideas were actually tested.",
+            "explanation": "Trying both approaches and combining the best of each shows collaboration and produced a measurable result. Winning the argument makes the story about being right, and working separately avoids the question of how you handled a difference.",
             "id": "ji_l64_q2",
             "interviewerReaction": [
+                "uncertain",
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "wary"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that shows how the team adapted, including what you personally proposed.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you respond when a project's direction changes midway through?",
+            "interviewerQuestion": "Tell me about a time your team had to change its plan halfway through.",
             "options": [
-                "It can be frustrating, but I go along with whatever the new direction requires.",
-                "I usually keep working on my original tasks until I get more specific direction.",
-                "I revisit the new goals with the team to make sure everyone understands the shift, then realign our work."
+                "Our client cut the event budget by a third with two weeks to go. I proposed dropping the live band, keeping the venue, and re-planned tasks with the team. The event ran on the reduced budget.",
+                "The client cut our budget suddenly, which was completely unreasonable, and the team was really stressed. We managed to pull off something decent, but it wasn't what any of us had hoped for. We ended up cutting a few smaller extras too, just to make sure nothing important was left exposed on the day.",
+                "We had to change plan halfway, so we all sat down and talked about it. Everyone shared ideas and it was a great team discussion, and we eventually agreed on a new direction together."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Realigning the whole team around new goals is a stronger response than passively complying or waiting.",
-            "explanation": "Realigning the team around new goals shows leadership during change, while passive compliance or continuing old tasks can slow the transition down.",
+            "hint": "Notice which answer tells you what was actually changed.",
+            "explanation": "A specific trade-off you proposed and a result within the new limit show adaptability. The second dwells on the unfairness and ends on disappointment, and the third describes a pleasant conversation without saying what was decided.",
             "id": "ji_l64_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "impressed",
+                "concerned",
+                "unconvinced"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that shows prioritization and communication, not just long hours.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you had too much on your plate.",
+            "interviewerQuestion": "Describe a situation with an extremely tight deadline.",
             "options": [
-                "I mapped out everything I was responsible for, then discussed with my manager which tasks could be delayed or reassigned.",
-                "I worked extra hours until everything got done.",
-                "I focused on the tasks I found most interesting and let the rest wait."
+                "A client moved a proposal deadline up by two days, so I worked until two in the morning both nights to get everything in. It was exhausting, but we sent it on time and nothing was left out.",
+                "A client moved a proposal deadline up by two days. I listed what had to be included, dropped the appendix, told my manager what I'd cut and why, and we sent it on time.",
+                "I'm good with deadlines because I thrive under pressure. When one gets tight, I just put my head down, focus, and get it done, and I've never missed one that mattered."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "The strongest answer involves clear communication about priorities, not just working harder or picking tasks by preference.",
-            "explanation": "Communicating clearly with your manager about priorities is more sustainable than simply working longer hours or choosing tasks based on personal interest.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Working harder is one response to a deadline. Consider what else a good employee could do.",
+            "explanation": "Deciding what to cut and telling your manager shows judgment and honesty about trade-offs. The second relies on overwork, which can't be repeated, and the third is a statement about yourself rather than a story.",
             "id": "ji_l65_q1",
             "interviewerReaction": [
+                "uncertain",
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "unconvinced"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that owns a missed deadline honestly and shows what changed.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a time you felt stretched too thin at work.",
+            "interviewerQuestion": "Has there ever been a time you missed a deadline?",
             "options": [
-                "I pushed through and completed everything, even though the quality wasn't my best.",
-                "I didn't say anything and just did what I could within the time I had.",
-                "I realized I couldn't do everything well, so I renegotiated a deadline on a lower-priority task to protect the quality of my main project."
+                "Once, on a monthly report. I'd underestimated the data cleaning. I told my manager the afternoon before, delivered a partial version on time and the rest the next morning, and I now add a day for cleaning.",
+                "Not that I can think of. I'm very careful about planning, so I usually finish early, and I make sure to stay ahead so nothing slips.",
+                "Once, yes, on a report, but it was because I was waiting on another department for figures they didn't send until the last minute, so it wasn't really in my hands."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Proactively renegotiating priorities protects quality better than silently pushing through.",
-            "explanation": "Proactively renegotiating a deadline protects the quality of your most important work, rather than sacrificing quality or staying silent about the overload.",
+            "hint": "Consider which answer would still sound believable after a few follow-up questions.",
+            "explanation": "A real miss, an early warning, a partial delivery, and a planning change show accountability. Claiming a perfect record sounds unlikely, and blaming another department may be true but leaves out anything you did or would do differently.",
             "id": "ji_l65_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "impressed",
+                "skeptical",
+                "wary"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that handled two competing deadlines by asking and telling, not guessing.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you know when you have too much work and need to speak up?",
+            "interviewerQuestion": "How did you handle it when two deadlines landed on the same day?",
             "options": [
-                "I usually only speak up once I'm at risk of missing a deadline.",
-                "When I notice quality starting to slip, I raise it early with specifics about what's on my plate.",
-                "I try to handle it quietly for as long as I can manage."
+                "I split my time evenly between the two and hoped to finish both. I ended up with two half-finished pieces at four o'clock, so I stayed until they were done.",
+                "I did the one that was due first and then moved on to the other. It was tight but manageable, and I didn't have to ask anyone for help with either one.",
+                "I asked my manager which mattered more to the client, did that first, and told the other requester it would come by evening. Both were delivered that day."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Speaking up early, before quality suffers, is stronger than waiting until a deadline is at risk.",
-            "explanation": "Raising the issue early, before quality suffers, shows self-awareness, while waiting until a deadline is at risk can leave less time to find a good solution.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 3,
+            "hint": "Think about who else was affected by the choice of order.",
+            "explanation": "Asking which task mattered more and informing the other requester makes the priority a shared decision. Splitting time evenly risked delivering neither, and doing the earlier one first ignores importance and keeps everyone else guessing.",
             "id": "ji_l65_q3",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "neutral",
+                "pleased"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that describes a genuine mistake, honestly owned, with a lasting change.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle projects with minimal guidance from your manager?",
+            "interviewerQuestion": "Describe a mistake you made at work.",
             "options": [
-                "I do my best to figure it out, though I sometimes wish I had more direction.",
-                "I clarify the end goal upfront, then make independent decisions along the way, checking in at key milestones.",
-                "I make my own decisions throughout and update my manager once it's finished."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Checking in at key milestones balances independence with keeping your manager informed.",
-            "explanation": "Checking in at key milestones balances independence with accountability, while working entirely alone or wishing for more guidance shows less initiative.",
-            "id": "ji_l66_q1",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a project you completed with very little oversight.",
-            "options": [
-                "I was given a loose brief for a report, so I set my own milestones and shared drafts periodically to stay aligned.",
-                "I completed it entirely on my own and presented the final result at the end.",
-                "I found it hard to stay on track without regular check-ins."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Sharing periodic drafts shows independence without losing alignment with expectations.",
-            "explanation": "Sharing periodic drafts shows you can work independently while still staying aligned, unlike waiting until the very end or struggling without regular oversight.",
-            "id": "ji_l66_q2",
-            "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "What's your approach when you're unsure how to proceed and no one is available to ask?",
-            "options": [
-                "I usually wait until someone becomes available before moving forward.",
-                "I pick whatever seems fastest so I don't fall behind schedule.",
-                "I make the most reasonable decision based on what I know, document my reasoning, and confirm it later."
+                "I once sent a client the wrong price list because the folder was disorganized and nobody had updated the old files. It was fixed the same day, though, so no harm was done.",
+                "I once worked too hard and cared too much about the quality of my work, which sometimes made me slower than my colleagues. I'm learning to balance things better now.",
+                "I once sent a client the wrong price list because I grabbed an old file. I called them within the hour, sent the correct one, and now I keep only one current version in a shared folder."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Making a reasoned decision and documenting it is stronger than waiting or optimizing purely for speed.",
-            "explanation": "Making a reasoned decision and documenting it keeps work moving responsibly, while waiting can cause delays and choosing speed alone can sacrifice quality.",
-            "id": "ji_l66_q3",
+            "hint": "One answer only pretends to be a mistake, and another places the cause somewhere else.",
+            "explanation": "A real error, quick disclosure, and a specific process change is what a mistake story should contain. Presenting a strength as a flaw sounds evasive, and blaming the folder avoids stating your own part.",
+            "id": "ji_l66_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "concerned",
+                "skeptical",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that takes responsibility for the effect on another person.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you had to give difficult feedback.",
+            "interviewerQuestion": "Tell me about a mistake that affected someone else.",
             "options": [
-                "I told a teammate their missed deadlines were affecting the group, and I offered to help them get back on track.",
-                "I mentioned it once, briefly, and let them handle it from there.",
-                "I asked our manager to bring it up instead, since it felt awkward coming from me."
+                "I made a mistake with the rota that affected a colleague, but she'd also misread the message I sent, so we were both partly at fault and it evened out.",
+                "I forgot to update the rota after a swap, and a colleague turned up for a shift she'd been taken off. I apologized, made up her lost time with a paid slot, and now I update the rota the moment a swap is agreed.",
+                "A colleague was affected once when I misread a schedule. It was a small thing, and she was fine about it in the end, so I didn't think it needed much discussion after that. I did apologize briefly at the time, but I didn't think it called for anything more than that given how minor it seemed."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 5,
+            "hint": "Consider what the other person would say happened if you asked them.",
+            "explanation": "Apologizing, repairing the harm, and changing the process shows you took the effect on her seriously. Minimizing the incident skips the repair, and sharing the blame turns an apology into a negotiation.",
+            "id": "ji_l66_q2",
+            "interviewerReaction": [
+                "wary",
+                "impressed",
+                "uncertain"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that corrects a public mistake calmly and builds a habit from it.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Tell me about a time you got something wrong in front of other people.",
+            "options": [
+                "I got a figure wrong in a meeting once and felt terrible about it afterward. I kept thinking about it for days, and I've been much more nervous about speaking up since then.",
+                "In a team meeting I quoted last quarter's figure as this quarter's. Someone spotted it and I corrected it on the spot, thanked them, and started checking sources before I present.",
+                "In a meeting I quoted the wrong figure, but it was such a minor detail that hardly anyone noticed, and I didn't feel a correction was worth interrupting the meeting for."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Think about what happens to the meeting, and to you, after each response.",
+            "explanation": "Correcting it immediately and adding a checking habit keeps the record right and turns the slip into a strength. Letting a wrong figure stand leaves others working from it, and dwelling on embarrassment tells the interviewer about your nerves rather than your response.",
+            "id": "ji_l66_q3",
+            "interviewerReaction": [
+                "sympathetic",
+                "impressed",
+                "concerned"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that shows listening, action, and follow-through with an upset customer.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Tell me about the most difficult customer you've dealt with.",
+            "options": [
+                "A man was furious about a repair that failed twice. I let him finish, apologized for the wait, booked a priority slot with the senior technician, and called him the day after. He left a good review.",
+                "A man was furious about a repair, and honestly the fault was his, because he'd ignored the instructions. I explained that politely but firmly, and he eventually accepted it.",
+                "A man was furious about a repair that failed twice, so I stayed calm, listened, and remained professional throughout. I refused to take it personally, and eventually he went away. and I made a point of not letting his tone affect how I treated the next customer who came up right after him."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Direct, supportive feedback is stronger than a vague mention or passing the responsibility to someone else.",
-            "explanation": "Direct, supportive feedback addresses the issue while offering help, unlike a vague mention or avoiding the conversation entirely.",
+            "professionalismRating": 4,
+            "hint": "Staying calm matters, but ask what changed for the customer.",
+            "explanation": "Listening, a concrete fix, and a follow-up call give the customer something real and produce a result. Staying calm alone doesn't solve anything, and proving the customer wrong may be accurate but rarely leaves him feeling helped.",
             "id": "ji_l67_q1",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "concerned",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that holds a policy while still helping the customer.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a time you had to tell someone their work needed improvement.",
+            "interviewerQuestion": "Tell me about a time a customer asked for something you couldn't give them.",
             "options": [
-                "I tried to keep it brief so the conversation wouldn't feel too uncomfortable.",
-                "I focused on specific examples and framed it around how we could improve the outcome together.",
-                "I was honest and direct, even though it was a difficult conversation."
+                "A guest wanted a refund outside our policy. I explained why I couldn't, offered a voucher I was allowed to give, and asked my manager to call her. She accepted the voucher.",
+                "A guest wanted a refund outside our policy, and I told her firmly that I couldn't do anything, since rules are rules and I didn't want to set a precedent for the hotel.",
+                "A guest wanted a refund outside our policy, so I gave it to her to avoid an argument. My manager wasn't thrilled but the guest left happy, which I felt mattered most."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Framing feedback around specific examples and a shared path forward tends to land better than brevity or bluntness alone.",
-            "explanation": "Framing feedback around specific examples and next steps makes it constructive, while keeping things too brief or overly blunt can leave the other person unclear on how to improve.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Consider what each answer does for the guest and for the hotel.",
+            "explanation": "Explaining the limit, offering what you were permitted to give, and involving a manager respects both policy and guest. A flat refusal leaves the guest with nothing, and breaking the policy to avoid conflict creates a problem for the next employee.",
             "id": "ji_l67_q2",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "pleased",
+                "concerned",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the example that's specific and proportionate, not dramatic.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you deliver feedback that might be hard for someone to hear?",
+            "interviewerQuestion": "Give me an example of a time you exceeded a customer's expectations.",
             "options": [
-                "I try to soften it as much as possible so it doesn't feel too harsh.",
-                "I get straight to the point so there's no confusion about the issue.",
-                "I choose a private moment, focus on behavior rather than character, and end with a clear path forward."
+                "I always go above and beyond for every customer. I treat each one like they're the only person in the store, and I've had lots of customers tell me I'm the best employee they've dealt with.",
+                "A customer mentioned she was buying a gift for her dad's retirement. I wrapped it properly, added a note card at no charge, and she came back the following month asking for me by name.",
+                "Once I drove forty minutes on my day off to deliver a customer's order because she was in a bind. She was extremely grateful, though my manager said I shouldn't do it again."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Balancing directness with focus on behavior and next steps tends to be the most effective approach.",
-            "explanation": "Focusing on behavior and offering a clear path forward makes feedback constructive, while over-softening can blur the message and being purely blunt can miss the supportive framing that helps it land well.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Extra effort is good, but the interviewer also wants to see judgment.",
+            "explanation": "A small, thoughtful extra that costs little and brings the customer back is the kind of habit that scales. A general claim isn't an example, and a dramatic personal sacrifice isn't repeatable and went against what the manager wanted.",
             "id": "ji_l67_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "unconvinced",
+                "pleased",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that resolves a disagreement directly, without a winner or a referee.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle a coworker who isn't pulling their weight on a project?",
+            "interviewerQuestion": "Describe a disagreement you once had with a coworker.",
             "options": [
-                "I'd quietly pick up their share of the work to keep the project on track.",
-                "I'd bring it to my manager's attention right away.",
-                "I'd talk to them directly first to understand what's going on before deciding on next steps."
+                "A coworker and I disagreed about how to split client calls. I asked to talk privately, listened to her constraints, and suggested alternating weeks. It worked and we've kept it since.",
+                "A coworker wanted to split client calls unevenly. I pushed back with the numbers to show my way was fairer, and she eventually gave in, and the schedule stayed the way I'd proposed.",
+                "A coworker and I disagreed about splitting client calls, and it got tense. I stayed professional, but eventually our manager stepped in and decided for us, which settled it."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "A direct conversation first usually leads to a better outcome than immediately escalating or quietly compensating.",
-            "explanation": "Talking directly first often uncovers the real issue, while quietly covering for them can enable the problem, and escalating immediately can feel like skipping a reasonable first step.",
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Think about who did the work of resolving the disagreement in each story.",
+            "explanation": "Talking privately, learning her constraints, and proposing a shared solution resolved it between the two of you. Handing it to a manager works but shows no resolution skills, and winning with numbers leaves the coworker giving in.",
             "id": "ji_l68_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time a team member wasn't contributing equally.",
-            "options": [
-                "I checked in privately to see if they needed support, and it turned out they were stuck and just needed help getting unstuck.",
-                "I mentioned it to the rest of the team so everyone was aware of the situation.",
-                "I focused on my own work and let the team figure it out collectively."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "A private, supportive check-in often reveals the real reason behind uneven contribution.",
-            "explanation": "A private, supportive check-in can uncover a fixable problem, while discussing it with the wider team or staying disengaged doesn't address the root cause directly.",
-            "id": "ji_l68_q2",
-            "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "wary",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that raises a scheduling conflict with a manager constructively.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What would you do if you noticed a teammate consistently missing their commitments?",
+            "interviewerQuestion": "Describe a time you and a manager saw something differently.",
             "options": [
-                "I'd document each instance in case it needed to be addressed later.",
-                "I'd raise it with them directly and ask how I could help them stay on track going forward.",
-                "I'd assume they have a good reason and let it go."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Addressing the pattern directly, with an offer to help, is more proactive than documenting quietly or assuming it will resolve itself.",
-            "explanation": "Addressing the pattern directly and offering support is proactive, while documenting quietly delays action and assuming it will resolve itself risks letting the issue continue.",
-            "id": "ji_l68_q3",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you had to learn a complex new system under pressure.",
-            "options": [
-                "It took me a while to get comfortable, but I eventually managed it.",
-                "I broke the system down into the features I needed immediately, mastered those first, and learned the rest as I went.",
-                "I relied heavily on a colleague to walk me through it as I worked."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Prioritizing the most immediately useful features shows an efficient, self-directed learning strategy.",
-            "explanation": "Prioritizing immediately useful features shows efficient self-directed learning, while needing time to adjust or relying heavily on someone else shows less independence under pressure.",
-            "id": "ji_l69_q1",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Describe a time you had to become proficient in a new tool with little training.",
-            "options": [
-                "I mostly learned by trial and error as issues came up.",
-                "I asked a lot of questions until I felt ready to use it.",
-                "I explored the tool's documentation myself and tested small tasks before applying it to real work."
+                "My manager and I clashed on deadlines, so I went to her boss to explain that the timelines were unrealistic, and he agreed to change them.",
+                "My manager and I clashed once over deadlines. I didn't say anything at the time, but I made my frustration known by doing exactly what was asked and nothing more. I didn't want to make a scene about it, so I just quietly kept doing things the way I thought was right instead.",
+                "My manager wanted reports Friday afternoon, which clashed with client calls. I asked if Monday morning would work, explained the calls, and she agreed to try it for a month."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Testing on low-risk tasks before real work shows a deliberate, low-risk learning approach.",
-            "explanation": "Testing on low-risk tasks first shows a deliberate approach, while pure trial and error on real work is riskier, and constant questions can lean too heavily on others.",
-            "id": "ji_l69_q2",
+            "hint": "Look at how each person in the story found out about the problem.",
+            "explanation": "Presenting the reason and an alternative to your manager directly gives her a chance to agree, which she did. Silent resentment is passive-aggressive, and going over her head can work but damages trust.",
+            "id": "ji_l68_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "wary",
+                "concerned",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that shows working around a difference in style by agreeing on something.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you approach mastering unfamiliar software quickly?",
+            "interviewerQuestion": "Tell me about a time you had to work with someone whose style was very different from yours.",
             "options": [
-                "I identify the core functions I'll use daily and focus my early practice there before exploring advanced features.",
-                "I try to learn every feature thoroughly before I start using it for real tasks.",
-                "I usually just start using it and pick things up along the way."
+                "I work with all kinds of people, and I'm easy to get along with. Differences in style never really bother me, since I focus on the work instead of on personalities.",
+                "A teammate liked long meetings, which I found a waste of time. I adapted by staying quiet and finishing my own work during them, which worked well enough for me.",
+                "A teammate liked long meetings while I prefer quick updates. We agreed on a short weekly call plus a shared notes doc, and both of us got what we needed."
+            ],
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "A working agreement is different from putting up with something.",
+            "explanation": "Naming the difference and agreeing on a structure that suits both shows adaptability. Quietly multitasking through meetings hides the problem, and a general statement about being easygoing isn't a story.",
+            "id": "ji_l68_q3",
+            "interviewerReaction": [
+                "unconvinced",
+                "concerned",
+                "pleased"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that finds a cause before fixing it and shows the effect.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Walk me through a problem you solved that you're proud of.",
+            "options": [
+                "Returns were piling up, so I looked into it and tried a few different things until something worked. It took some trial and error, but eventually I found a fix and the queue got smaller. and I tried a couple of small changes here and there before landing on something that seemed to work reasonably well.",
+                "Returns were piling up because customers couldn't find the form. I noticed most came from one confusing page, rewrote it with a step list, and the weekly returns queue dropped by about a third.",
+                "Returns were piling up, so I brought it up with my manager, who put a team together to look at it. I helped where I could, and the team came up with a good solution."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 5,
+            "hint": "A good problem-solving story shows how you knew what the problem actually was.",
+            "explanation": "Tracing the cause to one page and fixing that page shows analysis, and the drop in returns proves it. Trial and error suggests no diagnosis, and passing it to a team shows little about what you contributed.",
+            "id": "ji_l69_q1",
+            "interviewerReaction": [
+                "uncertain",
+                "impressed",
+                "unconvinced"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that tests an idea on a small scale and shares it.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Describe how you found a better way to do a task.",
+            "options": [
+                "I found a quicker way to do my weekly report, and it saved me about an hour. I just did it my way from then on, and nobody really noticed the difference.",
+                "I noticed we did some things in an outdated way, so I suggested we modernize the whole process. My manager said it wasn't the right time, but I still think it's a great idea.",
+                "I noticed we retyped order details into two systems. I found an export that fed the second one, tested it on ten orders, and got approval to switch."
+            ],
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Think about what makes a new idea safe for others to adopt.",
+            "explanation": "A small test and an approval before switching makes the improvement trustworthy and useful to the team. Proposing to modernize everything is vague and got a predictable answer, and keeping your shortcut to yourself helps only you.",
+            "id": "ji_l69_q2",
+            "interviewerReaction": [
+                "neutral",
+                "uncertain",
+                "impressed"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that shows initiative and checking your work when no instructions exist.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Tell me about a time you had to figure something out with no instructions.",
+            "options": [
+                "I was asked to set up our first customer survey with no template. I read two guides, sketched five questions, tested them on colleagues, revised, then sent it. We got 60 responses.",
+                "I was asked to set up a survey with no template, so I found a template online and used that, changing the logo. It went out that week and got a decent number of replies.",
+                "I was asked to set up a survey with no template, and I found it stressful because nobody could tell me what was expected, so I asked my manager to give me instructions."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Focusing early practice on daily-use functions is more efficient than trying to master everything or learning purely by chance.",
-            "explanation": "Focusing on core daily functions first gets you productive quickly, while trying to master every feature is slow and learning purely by chance can lead to gaps in your understanding.",
+            "professionalismRating": 4,
+            "hint": "Consider how much of the thinking was yours in each story.",
+            "explanation": "Researching, drafting, testing on colleagues, and revising shows a real process behind a result. Copying a template is sensible but shows little judgment, and asking for instructions misses the point that none existed.",
             "id": "ji_l69_q3",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "neutral",
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "You have only volunteer experience. Choose the strongest way to answer a question about leading.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle ambiguity in a task?",
+            "interviewerQuestion": "Describe a situation where you took the lead on something.",
             "options": [
-                "I do my best to interpret it and hope I understood correctly.",
-                "I ask clarifying questions where I can, then make reasonable assumptions and confirm them early.",
-                "I usually wait for more details before starting the task."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Confirming assumptions early avoids wasted effort better than guessing or waiting.",
-            "explanation": "Confirming your assumptions early prevents wasted work, while guessing without checking or waiting indefinitely both slow down progress.",
-            "id": "ji_l70_q1",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a time you were given an unclear assignment.",
-            "options": [
-                "I used my best judgment and adjusted based on feedback once I submitted it.",
-                "I asked a coworker what they thought it probably meant.",
-                "I outlined my understanding of the goal and shared it with my manager before diving into the work."
+                "I've never held a formal leadership position, so I don't really have an example for that. I've mostly been a team member and I've always been happy to support whoever is leading. I've been part of plenty of teams,. but I wouldn't swear to that.",
+                "I take the lead all the time. In every group I'm in, I'm the one who organizes things, sets direction, and makes sure that everyone knows what they should be doing.",
+                "In my volunteer group, our food drive was short of helpers. I made a rota, recruited six friends, and ran the sorting table on the day. We collected twice the previous year's amount."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Confirming your understanding with your manager directly is the most reliable way to reduce ambiguity.",
-            "explanation": "Confirming your understanding directly with your manager reduces the risk of wasted effort more reliably than guessing and adjusting later or relying on a coworker's guess.",
-            "id": "ji_l70_q2",
+            "professionalismRating": 4,
+            "hint": "Leading doesn't require a title. Look for the answer that describes an occasion.",
+            "explanation": "Informal leadership counts when you can describe what you organized and what it achieved. Saying you have no example ignores experience you do have, and claiming to lead in every group is a trait statement with no evidence.",
+            "id": "ji_l70_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "uncertain",
+                "unconvinced",
+                "pleased"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the story that actually answers the question about disagreeing with a change.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How comfortable are you working without clear instructions?",
+            "interviewerQuestion": "Tell me about a time you had to accept a change you didn't agree with.",
             "options": [
-                "I'm comfortable moving forward with reasonable assumptions, as long as I check in at key decision points.",
-                "I can manage it, though I generally prefer having clear instructions from the start.",
-                "I'm quite comfortable and usually don't feel the need to check in at all."
+                "Our store moved to a new till system I thought was slower. I said so to my manager once, then learned it properly and offered to train two colleagues. After a month the queues were shorter than before.",
+                "Our store moved to a new till system, which I thought was a bad idea. I told everyone I thought it was slow, and eventually most people agreed with me, though we had to use it anyway. A few of my coworkers felt the same way, and for a while there was a fair amount of grumbling about it on the floor.",
+                "Our store changed its opening hours, and it was a big change. I handled it well and adjusted my schedule, and I'm flexible so it didn't really bother me at all."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Checking in at key decision points balances comfort with ambiguity and staying aligned with expectations.",
-            "explanation": "Checking in at key decision points shows comfort with ambiguity while staying aligned, unlike preferring clear instructions upfront or working entirely without any check-ins.",
-            "id": "ji_l70_q3",
+            "hint": "Check whether each story contains both a disagreement and a response to it.",
+            "explanation": "Voicing the concern once, then committing and helping others adapt is what accepting a change looks like. Campaigning against the change spreads negativity, and the opening-hours story contains no disagreement, so it answers a different question.",
+            "id": "ji_l70_q2",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "concerned",
+                "uncertain"
+            ]
+        },
+        {
+            "instruction": "The interviewer is probing a story about a missed handover. Choose the follow-up answer that shows real learning.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Looking back on that, what would you do differently?",
+            "options": [
+                "I'd try to be more careful and pay closer attention next time. It was a lesson for me, and I'm sure I'll do better if anything like it happens again.",
+                "I'd confirm the handover in writing instead of relying on a chat. Since then I've sent a two-line summary at the end of each shift, and we haven't had a missed handover.",
+                "I'd probably do it exactly the same. I did what I could with the information I had, and the mistake came from other people not passing things on properly. It wasn't really anyone's fault in particular, these things happen sometimes when a few people are juggling a lot at once."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 5,
+            "hint": "A lesson is only real if it changed something you now do.",
+            "explanation": "A concrete new habit and evidence that it worked show learning. Saying you'd change nothing and blaming others avoids the question, and promising to be more careful is a good intention with no specific action attached.",
+            "id": "ji_l70_q3",
+            "interviewerReaction": [
+                "uncertain",
+                "impressed",
+                "concerned"
             ]
         }
     ]

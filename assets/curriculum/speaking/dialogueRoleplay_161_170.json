@@ -6,661 +6,663 @@
         {
             "id": "SPK_DIALOGUEROLEPLAY_L161_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and explain how efficiency crowds out presence.",
-            "explanation": "'Crowd out' vividly captures how one priority can push another valuable thing aside.",
-            "partnerDialogue": "Sometimes I wonder whether our obsession with productivity actually makes us less present.",
-            "sampleAnswer": "That's a fair point, chasing efficiency can crowd out the moments worth slowing down for.",
+            "instruction": "Slow down a rushed consensus.",
+            "hint": "The director assumes everyone agrees. Push back without sounding hostile.",
+            "explanation": "Doubting a \"consensus\"? Ask to hear more views rather than saying \"I disagree\".",
+            "partnerDialogue": "I think we all agree the rebrand is the right move, so let's just confirm and move on.",
+            "sampleAnswer": "Before we confirm, I'd like to make sure we've heard the concerns. Two people haven't spoken yet.",
             "acceptedSynonyms": [
-                "efficiency crowds out slower moments",
-                "fair point, chasing speed costs presence",
-                "true, productivity can push out mindfulness",
-                "efficiency often displaces genuine presence"
+                "before we confirm, i'd like to make sure we've heard the concerns. two people haven't spoken yet",
+                "could we take five minutes on the risks first? i'm not fully convinced we're aligned",
+                "i'm not sure we all do. would it be worth a quick round of views",
+                "before we confirm, i would like to make sure we've heard the concerns. two people have not spoken yet"
             ],
-            "correctAnswer": "That's a fair point, chasing efficiency can crowd out the moments worth slowing down for.",
             "smartReplies": [
-                "That's a fair point, chasing efficiency can crowd out the moments worth slowing down for.",
-                "Fair point — efficiency can crowd out presence.",
-                "True, chasing speed often costs us the moments that matter."
+                "Could we take five minutes on the risks first? I'm not fully convinced we're aligned.",
+                "Before we confirm, I'd like to make sure we've heard the concerns. Two people haven't spoken yet.",
+                "I'm not sure we all do. Would it be worth a quick round of views?"
             ],
+            "correctAnswer": "Before we confirm, I'd like to make sure we've heard the concerns. Two people haven't spoken yet.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L161_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Choose memorization, and explain why: recall over comprehension.",
-            "explanation": "'Recall over comprehension' precisely names the distinction the professor's question raises.",
-            "partnerDialogue": "The professor questioned whether grades truly reflect understanding or just memorization.",
-            "sampleAnswer": "I'd lean toward the latter, grades often reward recall over genuine comprehension.",
+            "instruction": "Give a mixed verdict.",
+            "hint": "You have reservations. Avoid a flat \"no\".",
+            "explanation": "\"I'll give it that\" and \"though\" let you praise and criticize in the same sentence.",
+            "partnerDialogue": "Everyone loves the new logo. Don't you?",
+            "sampleAnswer": "There's a lot to like. I do have reservations about the colors.",
             "acceptedSynonyms": [
-                "reward recall over comprehension",
-                "lean toward memorization, honestly",
-                "grades often just test recall",
-                "more about recall than understanding"
+                "there's a lot to like. i do have reservations about the colors",
+                "it's bold, i'll give it that. i'm not sure it reads well at small sizes, though",
+                "i like the concept. the execution, less so. the lettering feels cramped",
+                "there is a lot to like. i do have reservations about the colors"
             ],
-            "correctAnswer": "I'd lean toward the latter, grades often reward recall over genuine comprehension.",
             "smartReplies": [
-                "I'd lean toward the latter, grades often reward recall over genuine comprehension.",
-                "I'd say the latter — recall over real comprehension.",
-                "Probably memorization, grades rarely test true understanding."
+                "It's bold, I'll give it that. I'm not sure it reads well at small sizes, though.",
+                "I like the concept. The execution, less so. The lettering feels cramped.",
+                "There's a lot to like. I do have reservations about the colors."
             ],
+            "correctAnswer": "There's a lot to like. I do have reservations about the colors.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L161_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and contrast activity with real impact.",
-            "explanation": "'Activity over real impact' is a sharp, memorable way to critique flawed metrics.",
-            "partnerDialogue": "Leadership questioned whether our current metrics actually measure meaningful progress.",
-            "sampleAnswer": "That's worth revisiting, some metrics reward activity over real impact.",
+            "instruction": "Respectfully resist a senior.",
+            "hint": "You're asked to stay silent on something. Hold your ground gently.",
+            "explanation": "Show you heard the concern, and then explain the risk of silence. Offer a way to communicate it.",
+            "partnerDialogue": "You're not going to raise that with the client, right? It would only confuse them.",
+            "sampleAnswer": "Let me think about how to word it. I feel we should mention it.",
             "acceptedSynonyms": [
-                "reward activity over real impact",
-                "worth revisiting, metrics can mislead",
-                "some metrics measure busyness, not results",
-                "activity isn't the same as impact"
+                "let me think about how to word it. i feel we should mention it",
+                "i hear the concern. my worry is that if they find out later, it costs us more trust. could we find a way to phrase it simply",
+                "i'd rather flag it now. i can keep it short and non-technical",
+                "i hear the concern, but if they find out later it costs us more trust"
             ],
-            "correctAnswer": "That's worth revisiting, some metrics reward activity over real impact.",
             "smartReplies": [
-                "That's worth revisiting, some metrics reward activity over real impact.",
-                "Worth revisiting — some metrics reward busyness, not results.",
-                "Fair concern, activity isn't always the same as impact."
+                "I hear the concern. My worry is that if they find out later, it costs us more trust. Could we find a way to phrase it simply?",
+                "Let me think about how to word it. I feel we should mention it.",
+                "I'd rather flag it now. I can keep it short and non-technical."
             ],
+            "correctAnswer": "Let me think about how to word it. I feel we should mention it.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L162_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Give a balanced answer: depends on local management.",
-            "explanation": "This answer avoids taking a firm side, instead pointing to the real deciding factor.",
-            "partnerDialogue": "She wondered whether tourism ultimately preserves or erodes local culture.",
-            "sampleAnswer": "I think it depends heavily on how the local community manages it.",
+            "instruction": "Decode polite criticism.",
+            "hint": "The manager's word \"bold\" may hide doubt. Find out.",
+            "explanation": "When feedback is vague or too polite, ask a neutral question to find the real meaning.",
+            "partnerDialogue": "It's... quite a bold approach, this report.",
+            "sampleAnswer": "That sounds like you have reservations. Which parts should I reconsider?",
             "acceptedSynonyms": [
-                "depends on local community management",
-                "hinges on how it's managed locally",
-                "really depends on local control",
-                "up to how communities handle it"
+                "that sounds like you have reservations. which parts should i reconsider",
+                "bold in a good way, or bold as in risky? i'd like to hear what concerns you",
+                "i take it there's something you'd change. what stood out",
+                "bold in a good way, or bold as in risky"
             ],
-            "correctAnswer": "I think it depends heavily on how the local community manages it.",
             "smartReplies": [
-                "I think it depends heavily on how the local community manages it.",
-                "Really depends on how locals manage it.",
-                "It could go either way, depending on local control."
+                "Bold in a good way, or bold as in risky? I'd like to hear what concerns you.",
+                "That sounds like you have reservations. Which parts should I reconsider?",
+                "I take it there's something you'd change. What stood out?"
             ],
+            "correctAnswer": "That sounds like you have reservations. Which parts should I reconsider?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L162_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Give a balanced answer, favoring environment slightly.",
-            "explanation": "'A combination, though...' shows nuanced thinking rather than picking one extreme.",
-            "partnerDialogue": "She wondered whether birth order shapes personality more than environment does.",
-            "sampleAnswer": "I'd say it's likely a combination, though environment probably plays the larger role.",
+            "instruction": "Invite honesty from a friend.",
+            "hint": "A polite hesitation may mean they disliked it. Make honesty safe.",
+            "explanation": "Lighten the mood and promise you won't be offended. People can then say what they really think.",
+            "partnerDialogue": "Well, it's certainly... different.",
+            "sampleAnswer": "Ha, not a fan? Be honest. I won't be offended.",
             "acceptedSynonyms": [
-                "environment probably plays the larger role",
-                "likely a mix, environment matters more",
-                "both factor in, environment more so",
-                "a combination, leaning toward environment"
+                "ha, not a fan? be honest. i won't be offended",
+                "different as in good, or different as in strange",
+                "you didn't like it, did you? you can be honest. i'll cook something else",
+                "ha, not a fan? be honest. i will not be offended"
             ],
-            "correctAnswer": "I'd say it's likely a combination, though environment probably plays the larger role.",
             "smartReplies": [
-                "I'd say it's likely a combination, though environment probably plays the larger role.",
-                "Probably both, though environment matters more.",
-                "A mix of the two, leaning toward environment."
+                "Different as in good, or different as in strange?",
+                "Ha, not a fan? Be honest. I won't be offended.",
+                "You didn't like it, did you? You can be honest. I'll cook something else."
             ],
+            "correctAnswer": "Ha, not a fan? Be honest. I won't be offended.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L162_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Choose habit, but note quality reinforces it.",
-            "explanation": "'Reinforces it over time' shows how two factors can interact rather than compete.",
-            "partnerDialogue": "She questioned whether brand loyalty is really about quality or just habit.",
-            "sampleAnswer": "I'd say it's mostly habit, though quality does reinforce it over time.",
+            "instruction": "Take the hint kindly.",
+            "hint": "\"I'll try\" sounds like a no. Release them from pressure.",
+            "explanation": "A hedging person needs an easy way out. That keeps the friendship warm.",
+            "partnerDialogue": "I'll try to be there.",
+            "sampleAnswer": "Only if you feel like it. We'll miss you if not.",
             "acceptedSynonyms": [
-                "mostly habit, quality reinforces it",
-                "habit mainly, but quality helps too",
-                "largely habit, with quality supporting it",
-                "habit-driven, though quality plays a part"
+                "only if you feel like it. we'll miss you if not",
+                "understood. let me know closer to the time",
+                "no pressure at all. if you can make it, great, and if not, we'll catch up another time",
+                "only if you feel like it. we will miss you if not"
             ],
-            "correctAnswer": "I'd say it's mostly habit, though quality does reinforce it over time.",
             "smartReplies": [
-                "I'd say it's mostly habit, though quality does reinforce it over time.",
-                "Mostly habit, though quality helps sustain it.",
-                "Largely habit-driven, but quality plays a supporting role."
+                "Understood. Let me know closer to the time?",
+                "Only if you feel like it. We'll miss you if not.",
+                "No pressure at all. If you can make it, great, and if not, we'll catch up another time."
             ],
+            "correctAnswer": "Only if you feel like it. We'll miss you if not.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L163_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Validate the question, and mention food's evolution.",
-            "explanation": "'Evolved through contact and adaptation' gives historical context that supports the answer.",
-            "partnerDialogue": "She wondered aloud whether authenticity in cuisine is even a meaningful standard anymore.",
-            "sampleAnswer": "It's a fair question, food has always evolved through contact and adaptation.",
+            "instruction": "Predict with caution.",
+            "hint": "You can't be sure. Show uncertainty and give a factor.",
+            "explanation": "\"It might, provided...\" names a condition. It shows careful thinking.",
+            "partnerDialogue": "Do you think the merger will work?",
+            "sampleAnswer": "It might, provided the cultures are compatible. I'd say it's too early to tell.",
             "acceptedSynonyms": [
-                "food evolves through contact and adaptation",
-                "fair question, cuisine always changes",
-                "food has always adapted over time",
-                "authenticity shifts as food evolves"
+                "it might, provided the cultures are compatible. i'd say it's too early to tell",
+                "i'm cautiously optimistic, though a lot depends on how they manage the first year",
+                "hard to say. there are good reasons on paper, but integration is the tricky part",
+                "it might, provided the cultures are compatible. i would say it is too early to tell"
             ],
-            "correctAnswer": "It's a fair question, food has always evolved through contact and adaptation.",
             "smartReplies": [
-                "It's a fair question, food has always evolved through contact and adaptation.",
-                "Fair question — cuisine has always adapted over time.",
-                "Food's always changed through contact, so maybe not."
+                "It might, provided the cultures are compatible. I'd say it's too early to tell.",
+                "I'm cautiously optimistic, though a lot depends on how they manage the first year.",
+                "Hard to say. There are good reasons on paper, but integration is the tricky part."
             ],
+            "correctAnswer": "It might, provided the cultures are compatible. I'd say it's too early to tell.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L163_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Choose complexity, and explain why.",
-            "explanation": "'A problem worth solving' questions whether innovation is truly necessary or valuable.",
-            "partnerDialogue": "She questioned whether constant innovation actually improves daily life or just adds complexity.",
-            "sampleAnswer": "Often the latter, not every advancement solves a problem worth solving.",
+            "instruction": "Judge a person cautiously.",
+            "hint": "Too early to know. Express that positively.",
+            "explanation": "When judging a colleague, use time markers like \"so far\" and \"early days\".",
+            "partnerDialogue": "Is the new manager any good?",
+            "sampleAnswer": "From what I've seen so far, she seems capable. I'd want a few months before deciding.",
             "acceptedSynonyms": [
-                "not every advancement solves a real problem",
-                "often just adds complexity",
-                "usually the latter, unnecessary complexity",
-                "frequently complexity without real benefit"
+                "from what i've seen so far, she seems capable. i'd want a few months before deciding",
+                "it's early days, but she seems to listen, which is a good sign",
+                "too soon for me to say, honestly. first impressions are positive",
+                "from what i have seen so far, she seems capable. i would want a few months before deciding"
             ],
-            "correctAnswer": "Often the latter, not every advancement solves a problem worth solving.",
             "smartReplies": [
-                "Often the latter, not every advancement solves a problem worth solving.",
-                "Often just complexity, honestly.",
-                "More often than not, it's complexity without real benefit."
+                "It's early days, but she seems to listen, which is a good sign.",
+                "From what I've seen so far, she seems capable. I'd want a few months before deciding.",
+                "Too soon for me to say, honestly. First impressions are positive."
             ],
+            "correctAnswer": "From what I've seen so far, she seems capable. I'd want a few months before deciding.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L163_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and contrast symptoms with root causes.",
-            "explanation": "'Symptoms rather than underlying habits' clearly names the specific criticism being validated.",
-            "partnerDialogue": "She raised the question of whether modern medicine sometimes overlooks lifestyle as a root cause.",
-            "sampleAnswer": "That's a fair criticism, treatment often addresses symptoms rather than underlying habits.",
+            "instruction": "Talk about a forecast without claiming expertise.",
+            "hint": "Predict but admit the limits.",
+            "explanation": "Admitting your limits builds credibility. Use \"some indicators\" or \"I'm no expert\".",
+            "partnerDialogue": "Will house prices fall next year?",
+            "sampleAnswer": "I wouldn't bet on it. Experts seem divided.",
             "acceptedSynonyms": [
-                "addresses symptoms, not underlying habits",
-                "fair criticism, treats symptoms mainly",
-                "often symptom-focused, not root causes",
-                "treats effects more than root causes"
+                "i wouldn't bet on it. experts seem divided",
+                "some indicators suggest so, but i'm no expert",
+                "it's possible, but predicting is risky. i'd say it might stay flat, at least in our area",
+                "it's possible, but predicting is risky"
             ],
-            "correctAnswer": "That's a fair criticism, treatment often addresses symptoms rather than underlying habits.",
             "smartReplies": [
-                "That's a fair criticism, treatment often addresses symptoms rather than underlying habits.",
-                "Fair criticism — it's often symptom-focused, not root causes.",
-                "True, treatment rarely digs into the underlying habits."
+                "I wouldn't bet on it. Experts seem divided.",
+                "Some indicators suggest so, but I'm no expert.",
+                "It's possible, but predicting is risky. I'd say it might stay flat, at least in our area."
             ],
+            "correctAnswer": "I wouldn't bet on it. Experts seem divided.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L164_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Choose volume, and note quality hasn't changed.",
-            "explanation": "'Varies as widely as ever' suggests quantity increased without quality necessarily improving.",
-            "partnerDialogue": "She questioned whether streaming has improved storytelling or just increased volume.",
-            "sampleAnswer": "I'd say it's increased volume, quality still varies as widely as ever.",
+            "instruction": "Respond to a lower quote.",
+            "hint": "Show interest, then reframe value.",
+            "explanation": "Before cutting your price, find out whether the cheaper quote is a fair comparison.",
+            "partnerDialogue": "Your competitors quoted half your price.",
+            "sampleAnswer": "I can't match half, but let me show you where the value is.",
             "acceptedSynonyms": [
-                "increased volume, quality still varies",
-                "mostly more volume, not better quality",
-                "quantity's up, quality's unchanged",
-                "more content, not necessarily better"
+                "i can't match half, but let me show you where the value is",
+                "i appreciate you telling me. we compete on quality and support, so it's worth comparing like with like",
+                "that's useful to know. could you tell me what's included in their quote? we may be comparing different things",
+                "that's useful to know, could you tell me what's included in their quote",
+                "i cannot match half, but let me show you where the value is"
             ],
-            "correctAnswer": "I'd say it's increased volume, quality still varies as widely as ever.",
             "smartReplies": [
-                "I'd say it's increased volume, quality still varies as widely as ever.",
-                "Mostly more volume, quality hasn't really changed.",
-                "More content overall, but not necessarily better."
+                "I appreciate you telling me. We compete on quality and support, so it's worth comparing like with like.",
+                "That's useful to know. Could you tell me what's included in their quote? We may be comparing different things.",
+                "I can't match half, but let me show you where the value is."
             ],
+            "correctAnswer": "I can't match half, but let me show you where the value is.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L164_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Give a balanced answer, tied to individual differences.",
-            "explanation": "'Depends on the person' avoids a blanket judgment, respecting individual variation.",
-            "partnerDialogue": "She asked whether I thought minimalism was more about aesthetics than genuine simplicity.",
-            "sampleAnswer": "I'd say it depends on the person, for some it's truly about clarity, not style.",
+            "instruction": "Respond to a threat calmly.",
+            "hint": "Keep the relationship and ask for time.",
+            "explanation": "Under threat, show you take it seriously and offer a concrete action within a short time frame.",
+            "partnerDialogue": "If you don't pay by Friday, we'll stop delivery.",
+            "sampleAnswer": "I'd rather resolve this quickly. Let me find out exactly where the payment is.",
             "acceptedSynonyms": [
-                "depends on the person, some seek clarity",
-                "varies, for some it's genuine clarity",
-                "differs by person, not just style",
-                "some do it for real simplicity, not looks"
+                "i'd rather resolve this quickly. let me find out exactly where the payment is",
+                "understood. i want to keep things running. i'll confirm the payment today. could you hold delivery until i do",
+                "that's fair. let me check with finance now and get back to you within the hour",
+                "i would rather resolve this quickly. let me find out exactly where the payment is"
             ],
-            "correctAnswer": "I'd say it depends on the person, for some it's truly about clarity, not style.",
             "smartReplies": [
-                "I'd say it depends on the person, for some it's truly about clarity, not style.",
-                "Depends on the person, honestly.",
-                "Varies — for some it's genuinely about clarity, not looks."
+                "Understood. I want to keep things running. I'll confirm the payment today. Could you hold delivery until I do?",
+                "I'd rather resolve this quickly. Let me find out exactly where the payment is.",
+                "That's fair. Let me check with finance now and get back to you within the hour."
             ],
+            "correctAnswer": "I'd rather resolve this quickly. Let me find out exactly where the payment is.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L164_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Give a balanced answer: depends on framing.",
-            "explanation": "'How it's framed' points to the real variable that determines the outcome either way.",
-            "partnerDialogue": "She wondered aloud whether competition among students helps or undermines learning.",
-            "sampleAnswer": "It can do both, depending on how the competition is framed.",
+            "instruction": "Handle a journalist.",
+            "hint": "Avoid speculation without appearing evasive.",
+            "explanation": "\"I can't comment on speculation\" is a standard answer. Add what you can say.",
+            "partnerDialogue": "Is it true your company is planning layoffs?",
+            "sampleAnswer": "I'm not able to discuss that. I'd be happy to send you our press office contact.",
             "acceptedSynonyms": [
-                "depends on how it's framed",
-                "both, depending on the framing",
-                "can go either way, based on framing",
-                "framing determines whether it helps"
+                "i'm not able to discuss that. i'd be happy to send you our press office contact",
+                "i can't comment on speculation. what i can say is that we're committed to our employees and will share any official news",
+                "no comment on rumours, but our priority is our people",
+                "i am not able to discuss that. i would be happy to send you our press office contact"
             ],
-            "correctAnswer": "It can do both, depending on how the competition is framed.",
             "smartReplies": [
-                "It can do both, depending on how the competition is framed.",
-                "Could go either way, depending on the framing.",
-                "Both, really — it comes down to how it's presented."
+                "I can't comment on speculation. What I can say is that we're committed to our employees and will share any official news.",
+                "I'm not able to discuss that. I'd be happy to send you our press office contact.",
+                "No comment on rumours, but our priority is our people."
             ],
+            "correctAnswer": "I'm not able to discuss that. I'd be happy to send you our press office contact.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L165_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree cautiously, and suggest a fix: check-ins.",
-            "explanation": "'Intentional check-ins' offers a practical solution alongside the honest acknowledgment.",
-            "partnerDialogue": "He wondered whether remote work has quietly eroded our sense of shared purpose.",
-            "sampleAnswer": "It might have, though intentional check-ins seem to help bridge that gap.",
+            "instruction": "Object to a generalization.",
+            "hint": "Someone insults a group. Disagree calmly.",
+            "explanation": "Short, calm disagreement (\"I don't see it that way\") is more effective than a lecture.",
+            "partnerDialogue": "Those people never contribute anything.",
+            "sampleAnswer": "I'd disagree with that. I've worked with many and found them extremely committed.",
             "acceptedSynonyms": [
-                "check-ins help bridge that gap",
-                "might have, but check-ins help",
-                "possibly, though regular check-ins ease it",
-                "somewhat, intentional contact helps"
+                "i'd disagree with that. i've worked with many and found them extremely committed",
+                "that's a sweeping statement. i don't think it's fair",
+                "i don't see it that way, actually",
+                "i would disagree with that. i have worked with many and found them extremely committed"
             ],
-            "correctAnswer": "It might have, though intentional check-ins seem to help bridge that gap.",
             "smartReplies": [
-                "It might have, though intentional check-ins seem to help bridge that gap.",
-                "Possibly, though regular check-ins help close that gap.",
-                "Maybe so, but deliberate check-ins seem to ease it."
+                "That's a sweeping statement. I don't think it's fair.",
+                "I'd disagree with that. I've worked with many and found them extremely committed.",
+                "I don't see it that way, actually."
             ],
+            "correctAnswer": "I'd disagree with that. I've worked with many and found them extremely committed.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L165_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and contrast visitors with residents.",
-            "explanation": "'Curated for visitors rather than residents' vividly captures the change being described.",
-            "partnerDialogue": "There's an argument that overtourism has fundamentally changed how cities present themselves.",
-            "sampleAnswer": "That seems accurate, many places now feel curated for visitors rather than residents.",
+            "instruction": "Deflect a personal question.",
+            "hint": "Stay polite but avoid the topic.",
+            "explanation": "You may deflect a personal question with a light answer and a return question.",
+            "partnerDialogue": "So, are you two planning on having kids?",
+            "sampleAnswer": "Not sure yet. It's early days.",
             "acceptedSynonyms": [
-                "curated for visitors, not residents",
-                "accurate, cities feel staged for tourists",
-                "true, places cater to visitors now",
-                "many cities now serve tourists first"
+                "not sure yet. it's early days",
+                "it's a bit personal, but we're not in a rush. how about you",
+                "we're still figuring things out. how are your kids",
+                "it's a bit personal, but we're not in a rush",
+                "not sure yet. it is early days"
             ],
-            "correctAnswer": "That seems accurate, many places now feel curated for visitors rather than residents.",
             "smartReplies": [
-                "That seems accurate, many places now feel curated for visitors rather than residents.",
-                "Accurate, honestly — it feels staged for tourists now.",
-                "True, many cities cater to visitors over residents these days."
+                "It's a bit personal, but we're not in a rush. How about you?",
+                "We're still figuring things out. How are your kids?",
+                "Not sure yet. It's early days."
             ],
+            "correctAnswer": "Not sure yet. It's early days.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L165_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and note the balance shifts generationally.",
-            "explanation": "'Shifts with every generation' shows the tension is ongoing, not a one-time issue.",
-            "partnerDialogue": "There's a quiet tension between honoring tradition and allowing the family to evolve.",
-            "sampleAnswer": "That balance is delicate, and it shifts with every generation.",
+            "instruction": "Handle a delicate rumor.",
+            "hint": "Neither confirm nor deny.",
+            "explanation": "A revealed rumor calls for asking about the source or calmly playing it down.",
+            "partnerDialogue": "Your boss tells me you're thinking of leaving.",
+            "sampleAnswer": "I'm not sure where that came from. I'm happy at the moment. Are you enjoying the party?",
             "acceptedSynonyms": [
-                "shifts with every generation",
-                "delicate, and it changes each generation",
-                "true, each generation renegotiates it",
-                "that balance evolves over generations"
+                "i'm not sure where that came from. i'm happy at the moment. are you enjoying the party",
+                "that's news to me. perhaps a misunderstanding",
+                "i've been considering my options, like everyone. but nothing's decided",
+                "i am not sure where that came from. i am happy at the moment. are you enjoying the party"
             ],
-            "correctAnswer": "That balance is delicate, and it shifts with every generation.",
             "smartReplies": [
-                "That balance is delicate, and it shifts with every generation.",
-                "Delicate balance, and it changes each generation.",
-                "True, every generation seems to renegotiate that line."
+                "That's news to me. Perhaps a misunderstanding.",
+                "I'm not sure where that came from. I'm happy at the moment. Are you enjoying the party?",
+                "I've been considering my options, like everyone. But nothing's decided."
             ],
+            "correctAnswer": "I'm not sure where that came from. I'm happy at the moment. Are you enjoying the party?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L166_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and note simplicity itself gets marketed.",
-            "explanation": "'Even simplicity gets marketed' is an ironic, sharp observation about consumer culture.",
-            "partnerDialogue": "Some would argue that minimalism has become its own form of consumerism.",
-            "sampleAnswer": "That's a fair critique, even simplicity gets marketed and sold.",
+            "instruction": "Justify time and money.",
+            "hint": "Give evidence and a low-risk trial.",
+            "explanation": "Leaders are persuaded by numbers and by the ability to stop if it doesn't work.",
+            "partnerDialogue": "Convince me. Why is this worth two weeks?",
+            "sampleAnswer": "Because the current process loses us about ten hours a month. Two weeks fixes it permanently. I'd suggest we test one part first.",
             "acceptedSynonyms": [
-                "even simplicity gets marketed",
-                "fair critique, simplicity is sold too",
-                "true, minimalism becomes a product",
-                "ironically, simplicity is marketed too"
+                "because the current process loses us about ten hours a month. two weeks fixes it permanently. i'd suggest we test one part first",
+                "two weeks now saves us far more later. i can show you the numbers",
+                "it pays back within two months. if it doesn't, we can stop after one week",
+                "because the current process loses us about ten hours a month. two weeks fixes it permanently. i would suggest we test one part first"
             ],
-            "correctAnswer": "That's a fair critique, even simplicity gets marketed and sold.",
             "smartReplies": [
-                "That's a fair critique, even simplicity gets marketed and sold.",
-                "Fair critique — even simplicity becomes a product.",
-                "True, ironically, minimalism gets sold like everything else."
+                "Because the current process loses us about ten hours a month. Two weeks fixes it permanently. I'd suggest we test one part first.",
+                "Two weeks now saves us far more later. I can show you the numbers.",
+                "It pays back within two months. If it doesn't, we can stop after one week."
             ],
+            "correctAnswer": "Because the current process loses us about ten hours a month. Two weeks fixes it permanently. I'd suggest we test one part first.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L166_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Give a conditional answer: yes for some diners.",
-            "explanation": "'Part of what they're paying for' reframes cost to include the experience, not just food.",
-            "partnerDialogue": "There's a debate about whether fine dining justifies its cost through experience alone.",
-            "sampleAnswer": "For some diners, yes, the experience itself is part of what they're paying for.",
+            "instruction": "Encourage a reluctant relative.",
+            "hint": "Respect their choice and appeal to your feelings.",
+            "explanation": "Persuading family works better when you say why it matters to you, not why they're wrong.",
+            "partnerDialogue": "I'm not going to the doctor. I'm fine.",
+            "sampleAnswer": "You might be right. A quick check costs nothing, and then we can stop worrying.",
             "acceptedSynonyms": [
-                "experience is part of the payment",
-                "yes for some, they pay for experience",
-                "for some, the experience justifies it",
-                "the experience itself has value"
+                "you might be right. a quick check costs nothing, and then we can stop worrying",
+                "i hope you are. it would just put my mind at rest. would you go if i came with you",
+                "i'm not trying to force you. it'd mean a lot to me, that's all",
+                "i hope you are, it would just put my mind at rest"
             ],
-            "correctAnswer": "For some diners, yes, the experience itself is part of what they're paying for.",
             "smartReplies": [
-                "For some diners, yes, the experience itself is part of what they're paying for.",
-                "For some, definitely — the experience is part of the price.",
-                "Sometimes, if the atmosphere itself has real value."
+                "I hope you are. It would just put my mind at rest. Would you go if I came with you?",
+                "I'm not trying to force you. It'd mean a lot to me, that's all.",
+                "You might be right. A quick check costs nothing, and then we can stop worrying."
             ],
+            "correctAnswer": "You might be right. A quick check costs nothing, and then we can stop worrying.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L166_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and explain how: narrowing what we see.",
-            "explanation": "'Narrow what we even see' explains the specific mechanism behind the concern.",
-            "partnerDialogue": "There's growing concern that algorithms shape opinions more than people realize.",
-            "sampleAnswer": "That's a legitimate concern, personalization can quietly narrow what we even see.",
+            "instruction": "Respond to a neighbour's doubt.",
+            "hint": "Accept the worry and propose a limited test.",
+            "explanation": "Agree that the worry is valid, then suggest rules and a trial period.",
+            "partnerDialogue": "We don't want a shared garden. It'll just cause arguments.",
+            "sampleAnswer": "Fair. Perhaps we could agree who does what before we start.",
             "acceptedSynonyms": [
-                "narrows what we even see",
-                "legitimate, personalization limits our view",
-                "true, algorithms quietly filter our view",
-                "personalization shrinks what we're shown"
+                "fair. perhaps we could agree who does what before we start",
+                "that's a valid worry. what if we agreed simple rules first? we could try it for one season",
+                "i see the risk. maybe we could start with a small section and see how it goes",
+                "that's a valid worry, what if we agreed simple rules first"
             ],
-            "correctAnswer": "That's a legitimate concern, personalization can quietly narrow what we even see.",
             "smartReplies": [
-                "That's a legitimate concern, personalization can quietly narrow what we even see.",
-                "Legitimate concern — it quietly narrows our view.",
-                "True, algorithms filter more than most people realize."
+                "Fair. Perhaps we could agree who does what before we start.",
+                "That's a valid worry. What if we agreed simple rules first? We could try it for one season.",
+                "I see the risk. Maybe we could start with a small section and see how it goes."
             ],
+            "correctAnswer": "Fair. Perhaps we could agree who does what before we start.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L167_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree strongly, and mention the historical gap.",
-            "explanation": "'Hard to justify' expresses strong agreement through a specific, historical framing.",
-            "partnerDialogue": "More people are arguing that mental health deserves the same urgency as physical health.",
-            "sampleAnswer": "I completely agree, the historical gap in treatment has been hard to justify.",
+            "instruction": "Support a colleague in distress.",
+            "hint": "Offer space and presence, not solutions.",
+            "explanation": "For someone overwhelmed, don't fix. Offer a small choice and your presence.",
+            "partnerDialogue": "I can't do this anymore. Everything I do is wrong.",
+            "sampleAnswer": "That sounds heavy. Do you want to tell me what happened?",
             "acceptedSynonyms": [
-                "historical gap hard to justify",
-                "completely agree, the gap is unjustifiable",
-                "yes, treatment has long been unequal",
-                "agreed, the disparity is hard to defend"
+                "that sounds heavy. do you want to tell me what happened",
+                "that sounds exhausting. would you like to step outside for a few minutes? i'm here",
+                "i'm really sorry you're feeling like this. do you want to talk, or just need some air",
+                "that sounds exhausting, would you like to step outside"
             ],
-            "correctAnswer": "I completely agree, the historical gap in treatment has been hard to justify.",
             "smartReplies": [
-                "I completely agree, the historical gap in treatment has been hard to justify.",
-                "Completely agree — that gap has long been hard to defend.",
-                "Absolutely, the disparity has never really made sense."
+                "That sounds exhausting. Would you like to step outside for a few minutes? I'm here.",
+                "That sounds heavy. Do you want to tell me what happened?",
+                "I'm really sorry you're feeling like this. Do you want to talk, or just need some air?"
             ],
+            "correctAnswer": "That sounds heavy. Do you want to tell me what happened?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L167_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Choose nostalgia, and explain the studio perspective.",
-            "explanation": "'Safer investment' explains the studios' motivation from a business perspective.",
-            "partnerDialogue": "There's a debate about whether nostalgia drives more box office success than originality does.",
-            "sampleAnswer": "Often true, familiarity tends to feel like a safer investment for studios.",
+            "instruction": "Support an angry friend.",
+            "hint": "Let them speak before proposing anything.",
+            "explanation": "Anger needs a listener first. Ask what happened before you offer solutions.",
+            "partnerDialogue": "He's completely ruined my birthday!",
+            "sampleAnswer": "That sounds awful. Tell me what happened. I'm listening.",
             "acceptedSynonyms": [
-                "familiarity feels like a safer investment",
-                "often true, safer bet for studios",
-                "yes, studios favor safer, familiar bets",
-                "familiar stories feel lower-risk"
+                "that sounds awful. tell me what happened. i'm listening",
+                "i'm so sorry. do you want to vent, or plan something to fix the night",
+                "oh no. what did he do? take your time",
+                "that sounds awful, tell me what happened",
+                "that sounds awful. tell me what happened. i am listening"
             ],
-            "correctAnswer": "Often true, familiarity tends to feel like a safer investment for studios.",
             "smartReplies": [
-                "Often true, familiarity tends to feel like a safer investment for studios.",
-                "Often true — familiar stories feel like the safer bet.",
-                "Fair point, studios tend to favor lower-risk, familiar material."
+                "That sounds awful. Tell me what happened. I'm listening.",
+                "I'm so sorry. Do you want to vent, or plan something to fix the night?",
+                "Oh no. What did he do? Take your time."
             ],
+            "correctAnswer": "That sounds awful. Tell me what happened. I'm listening.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L167_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Validate, and contrast accomplishment with contentment.",
-            "explanation": "'Don't always move together' is a sharp, memorable way to describe this disconnect.",
-            "partnerDialogue": "I've noticed I measure my days by what I've accomplished rather than how I've felt.",
-            "sampleAnswer": "That's worth examining, accomplishment and contentment don't always move together.",
+            "instruction": "Serve a distressed customer.",
+            "hint": "Act fast and be kind.",
+            "explanation": "For someone in real distress, drop the policy speech. Take action and reassure.",
+            "partnerDialogue": "My mother is in hospital and you're telling me you can't cancel this?",
+            "sampleAnswer": "I'm so sorry. I'll take care of this immediately. You don't need to worry about it.",
             "acceptedSynonyms": [
-                "accomplishment and contentment differ",
-                "worth examining, they're not the same",
-                "true, achievement isn't always happiness",
-                "worth noticing, they diverge sometimes"
+                "i'm so sorry. i'll take care of this immediately. you don't need to worry about it",
+                "i'm very sorry to hear that. let me see what i can do right now. please give me a moment",
+                "that must be hard. i'll cancel it now and sort out the rest afterwards",
+                "i am so sorry. i will take care of this immediately. you do not need to worry about it"
             ],
-            "correctAnswer": "That's worth examining, accomplishment and contentment don't always move together.",
             "smartReplies": [
-                "That's worth examining, accomplishment and contentment don't always move together.",
-                "Worth examining — achievement and happiness aren't the same.",
-                "True, the two don't always line up the way we expect."
+                "I'm very sorry to hear that. Let me see what I can do right now. Please give me a moment.",
+                "I'm so sorry. I'll take care of this immediately. You don't need to worry about it.",
+                "That must be hard. I'll cancel it now and sort out the rest afterwards."
             ],
+            "correctAnswer": "I'm so sorry. I'll take care of this immediately. You don't need to worry about it.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L168_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Give a balanced answer: depends on integration.",
-            "explanation": "'Deliberately...integrated' points to intentional design as the key factor.",
-            "partnerDialogue": "People disagree about whether technology in classrooms enhances or distracts from learning.",
-            "sampleAnswer": "I think it depends entirely on how deliberately it's integrated into the lesson.",
+            "instruction": "Clarify what you actually said.",
+            "hint": "The client has misunderstood. Correct without blaming.",
+            "explanation": "Use \"Not quite\" and then restate the accurate version. Offer options where possible.",
+            "partnerDialogue": "So you're saying we can't have it until next year?",
+            "sampleAnswer": "I may have been unclear. The full version needs more time. There's a smaller option sooner.",
             "acceptedSynonyms": [
-                "depends on deliberate integration",
-                "hinges on how it's used in lessons",
-                "depends how thoughtfully it's used",
-                "really depends on the implementation"
+                "i may have been unclear. the full version needs more time. there's a smaller option sooner",
+                "not quite. i said the full version might take until next year, but a basic version could be ready in march",
+                "not exactly. there are two options, and one is available in the spring",
+                "i may have been unclear. the full version needs more time. there is a smaller option sooner"
             ],
-            "correctAnswer": "I think it depends entirely on how deliberately it's integrated into the lesson.",
             "smartReplies": [
-                "I think it depends entirely on how deliberately it's integrated into the lesson.",
-                "Really depends on how thoughtfully it's used in class.",
-                "It comes down to the implementation, honestly."
+                "I may have been unclear. The full version needs more time. There's a smaller option sooner.",
+                "Not quite. I said the full version might take until next year, but a basic version could be ready in March.",
+                "Not exactly. There are two options, and one is available in the spring."
             ],
+            "correctAnswer": "I may have been unclear. The full version needs more time. There's a smaller option sooner.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L168_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree strongly, and call for organizational action.",
-            "explanation": "'Organizations need to address directly' puts responsibility on a specific, actionable level.",
-            "partnerDialogue": "There's a growing concern that constant availability has blurred work-life boundaries entirely.",
-            "sampleAnswer": "It has, and I think that's something organizations need to address directly.",
+            "instruction": "Contradict gently.",
+            "hint": "Your memory differs. Ask rather than accuse.",
+            "explanation": "When memories differ, say \"I remember it differently\" and check, so nobody loses face.",
+            "partnerDialogue": "You told me you'd pay for dinner.",
+            "sampleAnswer": "I remember it differently. I think I said I'd get the next one. Have I got it wrong?",
             "acceptedSynonyms": [
-                "organizations need to address it",
-                "yes, and companies should act on this",
-                "agreed, employers should tackle this",
-                "true, and it needs institutional fixes"
+                "i remember it differently. i think i said i'd get the next one. have i got it wrong",
+                "hmm, i thought we'd agreed to split it. maybe i misunderstood",
+                "i might have said something, but i don't recall it. let's sort it out",
+                "i remember it differently. i think i said i would get the next one. have i got it wrong"
             ],
-            "correctAnswer": "It has, and I think that's something organizations need to address directly.",
             "smartReplies": [
-                "It has, and I think that's something organizations need to address directly.",
-                "It really has, and companies should tackle it directly.",
-                "Definitely, and employers need to take that seriously."
+                "Hmm, I thought we'd agreed to split it. Maybe I misunderstood?",
+                "I might have said something, but I don't recall it. Let's sort it out.",
+                "I remember it differently. I think I said I'd get the next one. Have I got it wrong?"
             ],
+            "correctAnswer": "I remember it differently. I think I said I'd get the next one. Have I got it wrong?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L168_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and contrast depth with ground covered.",
-            "explanation": "'Depth...reveals more' is a memorable way to favor quality experience over quantity.",
-            "partnerDialogue": "He implied that slow travel offers a more authentic experience than rushing between sights.",
-            "sampleAnswer": "I'd agree, depth often reveals more than covering more ground quickly.",
+            "instruction": "Clarify a misquote.",
+            "hint": "Correct the story and reduce damage.",
+            "explanation": "If you've been misquoted, restate what you actually said and offer to fix it.",
+            "partnerDialogue": "I heard you said the project's a mess.",
+            "sampleAnswer": "I said we're behind, not that it's a mess. Who told you?",
             "acceptedSynonyms": [
-                "depth reveals more than ground covered",
-                "agree, quality beats covering distance",
-                "yes, depth beats rushing around",
-                "slower travel shows more, truly"
+                "i said we're behind, not that it's a mess. who told you",
+                "that's not quite what i meant. i said there were problems, and i'm working on them",
+                "i did say it's challenging, but not that it's a mess. it might have been reworded. i'll clarify with the team",
+                "i did say it's challenging, but not that it's a mess",
+                "i said we are behind, not that it is a mess. who told you"
             ],
-            "correctAnswer": "I'd agree, depth often reveals more than covering more ground quickly.",
             "smartReplies": [
-                "I'd agree, depth often reveals more than covering more ground quickly.",
-                "Agreed — depth beats covering more ground quickly.",
-                "Yes, slowing down usually shows you more, not less."
+                "That's not quite what I meant. I said there were problems, and I'm working on them.",
+                "I said we're behind, not that it's a mess. Who told you?",
+                "I did say it's challenging, but not that it's a mess. It might have been reworded. I'll clarify with the team."
             ],
+            "correctAnswer": "I said we're behind, not that it's a mess. Who told you?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L169_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and contrast ambiguity with clarity.",
-            "explanation": "'Ambiguity...breeds resentment' explains the mechanism behind the original claim.",
-            "partnerDialogue": "He suggested that unspoken expectations cause more strain than open disagreements do.",
-            "sampleAnswer": "That's often true, ambiguity tends to breed more resentment than clarity does.",
+            "instruction": "Give honest feedback and keep the friendship.",
+            "hint": "You need to be truthful and supportive.",
+            "explanation": "Balance appreciation and honesty, and ask permission before giving criticism.",
+            "partnerDialogue": "I really need your honest opinion on my business plan.",
+            "sampleAnswer": "I admire you for trying. I do have concerns about the costs. Do you want to hear them?",
             "acceptedSynonyms": [
-                "ambiguity breeds more resentment",
-                "often true, unclear expectations hurt more",
-                "yes, vagueness causes more tension",
-                "unspoken issues fester more than clear ones"
+                "i admire you for trying. i do have concerns about the costs. do you want to hear them",
+                "i like your energy. my honest view is that the numbers look risky, so i'd test it on a small scale first. can i say why",
+                "it has potential. i'd be careful about one thing: cash flow. shall i explain"
             ],
-            "correctAnswer": "That's often true, ambiguity tends to breed more resentment than clarity does.",
             "smartReplies": [
-                "That's often true, ambiguity tends to breed more resentment than clarity does.",
-                "Often true — vagueness breeds more tension than clarity.",
-                "Agreed, unspoken issues tend to fester more."
+                "I like your energy. My honest view is that the numbers look risky, so I'd test it on a small scale first. Can I say why?",
+                "It has potential. I'd be careful about one thing: cash flow. Shall I explain?",
+                "I admire you for trying. I do have concerns about the costs. Do you want to hear them?"
             ],
+            "correctAnswer": "I admire you for trying. I do have concerns about the costs. Do you want to hear them?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L169_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and explain the mechanism: scarcity messaging.",
-            "explanation": "'Short-circuit careful decision-making' precisely names how urgency tactics work psychologically.",
-            "partnerDialogue": "He implied that sales tactics exploit urgency more than they offer real value.",
-            "sampleAnswer": "Often true, scarcity messaging is designed to short-circuit careful decision-making.",
+            "instruction": "Leave a meeting gracefully.",
+            "hint": "You must leave but want to remain helpful.",
+            "explanation": "If you must leave, offer a way to contribute so you don't seem uninterested.",
+            "partnerDialogue": "We've got so much still to cover. Can everyone stay a bit longer?",
+            "sampleAnswer": "I can stay until four, and I'll follow up by email on anything after that.",
             "acceptedSynonyms": [
-                "scarcity messaging short-circuits decisions",
-                "often true, urgency clouds judgment",
-                "yes, scarcity rushes decisions",
-                "urgency tactics bypass careful thinking"
+                "i can stay until four, and i'll follow up by email on anything after that",
+                "i'm afraid i've another commitment. let me share my thoughts beforehand",
+                "i'd like to, but i have to leave at four. could i send my comments in writing so i don't hold you up",
+                "i can stay until four, and i will follow up by email on anything after that"
             ],
-            "correctAnswer": "Often true, scarcity messaging is designed to short-circuit careful decision-making.",
             "smartReplies": [
-                "Often true, scarcity messaging is designed to short-circuit careful decision-making.",
-                "Often true — urgency tactics bypass careful thinking.",
-                "Fair point, scarcity messaging rushes people into deciding."
+                "I'm afraid I've another commitment. Let me share my thoughts beforehand.",
+                "I can stay until four, and I'll follow up by email on anything after that.",
+                "I'd like to, but I have to leave at four. Could I send my comments in writing so I don't hold you up?"
             ],
+            "correctAnswer": "I can stay until four, and I'll follow up by email on anything after that.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L169_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and note style overshadowing flavor.",
-            "explanation": "'Overshadow substance' captures how style can eclipse actual quality.",
-            "partnerDialogue": "He hinted that food trends often prioritize appearance over genuine flavor.",
-            "sampleAnswer": "That happens more than it should, presentation can overshadow substance.",
+            "instruction": "Decline to share a colleague's business.",
+            "hint": "Protect a colleague without lying.",
+            "explanation": "You can say \"It's not mine to share\" without lying, and point them to the person.",
+            "partnerDialogue": "Do you know why Sam is off today?",
+            "sampleAnswer": "I think you'd better ask Sam. I don't want to say something that isn't mine to share.",
             "acceptedSynonyms": [
-                "presentation overshadows substance",
-                "true, looks often beat taste now",
-                "happens too often, style over substance",
-                "appearance frequently trumps flavor"
+                "i think you'd better ask sam. i don't want to say something that isn't mine to share",
+                "i do, but it's not for me to say. i'd suggest checking with him",
+                "i'd rather not speculate. sam would be the best person to ask",
+                "i think you'd better ask sam. i do not want to say something that is not mine to share"
             ],
-            "correctAnswer": "That happens more than it should, presentation can overshadow substance.",
             "smartReplies": [
-                "That happens more than it should, presentation can overshadow substance.",
-                "Happens too often — style over substance.",
-                "True, looks can end up outweighing actual flavor."
+                "I do, but it's not for me to say. I'd suggest checking with him.",
+                "I think you'd better ask Sam. I don't want to say something that isn't mine to share.",
+                "I'd rather not speculate. Sam would be the best person to ask."
             ],
+            "correctAnswer": "I think you'd better ask Sam. I don't want to say something that isn't mine to share.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L170_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and note people accept it unthinkingly.",
-            "explanation": "'Without much thought' points out how automatic this trade-off has become.",
-            "partnerDialogue": "He implied that convenience features often come at the cost of privacy.",
-            "sampleAnswer": "That trade-off is real, and most people accept it without much thought.",
+            "instruction": "Answer honestly and kindly.",
+            "hint": "Someone asks if they disturb you. Tell the truth politely.",
+            "explanation": "When invited to be honest, say \"a little, if I'm honest\" and then make a polite request.",
+            "partnerDialogue": "Sorry, was I disturbing you?",
+            "sampleAnswer": "Slightly, yes. It's hard to read. Thanks for asking.",
             "acceptedSynonyms": [
-                "accept it without much thought",
-                "real trade-off, often unconsidered",
-                "true, and rarely questioned",
-                "people trade privacy thoughtlessly"
+                "slightly, yes. it's hard to read. thanks for asking",
+                "a little, if i'm honest. would you mind lowering your voice",
+                "only a bit. could you keep it down? thanks so much",
+                "slightly, yes. it is hard to read. thanks for asking"
             ],
-            "correctAnswer": "That trade-off is real, and most people accept it without much thought.",
             "smartReplies": [
-                "That trade-off is real, and most people accept it without much thought.",
-                "Real trade-off, and it rarely gets questioned.",
-                "True, and most people accept it pretty automatically."
+                "Slightly, yes. It's hard to read. Thanks for asking.",
+                "A little, if I'm honest. Would you mind lowering your voice?",
+                "Only a bit. Could you keep it down? Thanks so much."
             ],
+            "correctAnswer": "Slightly, yes. It's hard to read. Thanks for asking.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L170_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree partly, and mention repackaging at a premium.",
-            "explanation": "'Repackaged and sold at a premium' vividly describes how simple habits become products.",
-            "partnerDialogue": "He suggested that wellness culture sometimes commercializes basic self-care.",
-            "sampleAnswer": "That's true in places, simple habits get repackaged and sold at a premium.",
+            "instruction": "Explain a career gap.",
+            "hint": "Present it as a fact, and show what you gained.",
+            "explanation": "Be brief about the reason and focus on what you learned or did and how you're ready now.",
+            "partnerDialogue": "Your CV shows a gap in 2021. Can you tell me about it?",
+            "sampleAnswer": "I was relocating and retraining. I completed a course in data analysis, which I've applied since.",
             "acceptedSynonyms": [
-                "repackaged and sold at a premium",
-                "true, basics get sold at high prices",
-                "yes, simple habits become expensive products",
-                "self-care gets marked up and marketed"
+                "i was relocating and retraining. i completed a course in data analysis, which i've applied since",
+                "yes, i took a year to care for a family member, and i used the time to study part-time. i'm ready to be fully back at work",
+                "i was ill for part of that year, but i'm fully recovered. i also did some freelance work",
+                "i was relocating and retraining. i completed a course in data analysis, which i have applied since"
             ],
-            "correctAnswer": "That's true in places, simple habits get repackaged and sold at a premium.",
             "smartReplies": [
-                "That's true in places, simple habits get repackaged and sold at a premium.",
-                "True sometimes — basics get sold at a markup.",
-                "Fair point, self-care often gets marketed right back to us."
+                "Yes, I took a year to care for a family member, and I used the time to study part-time. I'm ready to be fully back at work.",
+                "I was ill for part of that year, but I'm fully recovered. I also did some freelance work.",
+                "I was relocating and retraining. I completed a course in data analysis, which I've applied since."
             ],
+            "correctAnswer": "I was relocating and retraining. I completed a course in data analysis, which I've applied since.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L170_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and contrast craft with enjoyment.",
-            "explanation": "'Craft and enjoyment don't always overlap' precisely explains the different standards each group uses.",
-            "partnerDialogue": "He implied that critics and general audiences are measuring entirely different things.",
-            "sampleAnswer": "That's accurate, craft and enjoyment don't always overlap in their judgments.",
+            "instruction": "Help a friend decide.",
+            "hint": "Don't advise. Ask a question that reveals their priorities.",
+            "explanation": "A good friend sometimes asks what they want, instead of telling them what to do.",
+            "partnerDialogue": "Do you think I should forgive him?",
+            "sampleAnswer": "It depends what you need. Do you want the friendship back, or do you just want peace of mind?",
             "acceptedSynonyms": [
-                "craft and enjoyment don't overlap",
-                "accurate, they judge different things",
-                "true, technical skill differs from fun",
-                "critics and fans value different things"
+                "it depends what you need. do you want the friendship back, or do you just want peace of mind",
+                "only you can decide, but what would forgiving change for you",
+                "i'd think about whether he's really sorry. what has he said"
             ],
-            "correctAnswer": "That's accurate, craft and enjoyment don't always overlap in their judgments.",
             "smartReplies": [
-                "That's accurate, craft and enjoyment don't always overlap in their judgments.",
-                "Accurate — technical skill and fun aren't always the same.",
-                "True, critics and audiences often value different things."
+                "It depends what you need. Do you want the friendship back, or do you just want peace of mind?",
+                "Only you can decide, but what would forgiving change for you?",
+                "I'd think about whether he's really sorry. What has he said?"
             ],
+            "correctAnswer": "It depends what you need. Do you want the friendship back, or do you just want peace of mind?",
             "emotionTag": "Neutral"
         }
     ]

@@ -7,503 +7,55 @@
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "What do you recommend? I'll trust you — I'll have the guacamole, the mole poblano, and the flan.",
+            "prompt": "I'll have a medium latte and a blueberry scone.",
             "options": [
-                "Guacamole",
-                "Mole Poblano",
-                "Flan",
-                "Churros"
+                "Medium Latte",
+                "Blueberry Scone",
+                "Small Latte",
+                "Cranberry Scone"
             ],
-            "correctAnswer": "Guacamole, Mole Poblano, Flan",
-            "hint": "The customer asks for a recommendation, then accepts three suggested dishes.",
-            "explanation": "‘I’ll trust you’ shows the customer is relying on the server's judgment. ‘Mole poblano’ is a rich Mexican sauce made with chocolate and chili peppers.",
+            "correctAnswer": "Medium Latte, Blueberry Scone",
+            "hint": "Size and flavor words both matter in a casual café order.",
+            "explanation": "Café orders often combine a drink size with a specific pastry flavor - both details need to match exactly.",
             "id": "go_l81_q1",
             "menuItems": [
-                "Guacamole",
-                "Mole Poblano",
-                "Flan",
-                "Churros"
+                "Medium Latte",
+                "Blueberry Scone",
+                "Small Latte",
+                "Cranberry Scone"
             ],
             "menuPrices": [
-                "$18.00",
-                "$10.00",
-                "$17.75",
-                "$10.00"
+                "$4.50",
+                "$3.25",
+                "$3.75",
+                "$3.25"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Is the tom yum soup spicy? Not too spicy, good, I'll have that, the pad krapow, and the mango sticky rice.",
+            "prompt": "Could I get a cappuccino and one of those chocolate croissants?",
             "options": [
-                "Tom Yum Soup",
-                "Pad Krapow",
-                "Mango Sticky Rice",
-                "Tom Kha Soup"
+                "Cappuccino",
+                "Chocolate Croissant",
+                "Plain Croissant",
+                "Latte"
             ],
-            "correctAnswer": "Tom Yum Soup, Pad Krapow, Mango Sticky Rice",
-            "hint": "The customer checks on spice level first, then confirms the full order.",
-            "explanation": "‘Tom yum’ is a hot and sour soup, so checking the spice level first is a natural, practical question. ‘Pad krapow’ is a stir-fried dish with Thai basil.",
+            "correctAnswer": "Cappuccino, Chocolate Croissant",
+            "hint": "'One of those' points to something visible in the display case, not a menu name spoken aloud.",
+            "explanation": "'One of those' is a natural way to order something you can see in a display case without knowing its exact name - context fills in the rest.",
             "id": "go_l81_q2",
             "menuItems": [
-                "Tom Yum Soup",
-                "Pad Krapow",
-                "Mango Sticky Rice",
-                "Tom Kha Soup"
+                "Cappuccino",
+                "Chocolate Croissant",
+                "Plain Croissant",
+                "Latte"
             ],
             "menuPrices": [
-                "$14.00",
-                "$13.75",
-                "$8.50",
-                "$19.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "We'll do family style — the samosas, the chicken korma, and the naan for the table.",
-            "options": [
-                "Samosas",
-                "Chicken Korma",
-                "Naan",
-                "Butter Chicken"
-            ],
-            "correctAnswer": "Samosas, Chicken Korma, Naan",
-            "hint": "‘Family style’ means the dishes will be placed in the middle for everyone to share.",
-            "explanation": "‘Family style’ is a way of eating where shared dishes are placed in the center of the table for everyone to serve themselves, common in Indian and Chinese dining.",
-            "id": "go_l81_q3",
-            "menuItems": [
-                "Samosas",
-                "Chicken Korma",
-                "Naan",
-                "Butter Chicken"
-            ],
-            "menuPrices": [
-                "$7.25",
-                "$3.25",
-                "$14.00",
-                "$15.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I'll have the hummus to start, and could you pair it with a wine? For my main, the lamb tagine, and the baklava for dessert.",
-            "options": [
-                "Hummus",
-                "Lamb Tagine",
-                "Baklava",
-                "Falafel"
-            ],
-            "correctAnswer": "Hummus, Lamb Tagine, Baklava",
-            "hint": "A wine pairing is requested, but it doesn't change the three food items ordered.",
-            "explanation": "‘Could you pair it with a wine?’ asks the server for a wine suggestion — a common request in restaurants with a wine list, but not a food item itself.",
-            "id": "go_l82_q1",
-            "menuItems": [
-                "Hummus",
-                "Lamb Tagine",
-                "Baklava",
-                "Falafel"
-            ],
-            "menuPrices": [
-                "$19.25",
-                "$14.00",
-                "$2.00",
-                "$15.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Just so I know, does the pad thai have peanuts? No? Great, I'll have that, the spring rolls, and the Thai iced tea.",
-            "options": [
-                "Pad Thai",
-                "Spring Rolls",
-                "Thai Iced Tea",
-                "Satay"
-            ],
-            "correctAnswer": "Pad Thai, Spring Rolls, Thai Iced Tea",
-            "hint": "An allergy-related question comes first, then the customer confirms their order.",
-            "explanation": "‘Just so I know…’ is a polite way to ask an important question, like checking for allergens, before finalizing an order.",
-            "id": "go_l82_q2",
-            "menuItems": [
-                "Pad Thai",
-                "Spring Rolls",
-                "Thai Iced Tea",
-                "Satay"
-            ],
-            "menuPrices": [
-                "$3.25",
-                "$3.25",
-                "$9.75",
-                "$16.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I've never had shakshuka before — I'll give it a try, along with the pita and the mint tea.",
-            "options": [
-                "Shakshuka",
-                "Pita",
-                "Mint Tea",
-                "Falafel"
-            ],
-            "correctAnswer": "Shakshuka, Pita, Mint Tea",
-            "hint": "The customer is trying something new for the first time.",
-            "explanation": "‘I’ve never had X before — I’ll give it a try’ is a natural way to express curiosity about an unfamiliar dish.",
-            "id": "go_l82_q3",
-            "menuItems": [
-                "Shakshuka",
-                "Pita",
-                "Mint Tea",
-                "Falafel"
-            ],
-            "menuPrices": [
-                "$5.75",
-                "$20.50",
-                "$16.50",
-                "$15.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Can we get the empanadas as an appetizer for the table, the churrasco for me, and the tres leches cake to share after?",
-            "options": [
-                "Empanadas",
-                "Churrasco",
-                "Tres Leches Cake",
-                "Flan"
-            ],
-            "correctAnswer": "Empanadas, Churrasco, Tres Leches Cake",
-            "hint": "One item is shared at the start, one is personal, and the last is shared again at the end.",
-            "explanation": "‘Churrasco’ refers to grilled meat, popular in South American cooking. ‘Tres leches cake’ is soaked in three types of milk, making it extra moist.",
-            "id": "go_l83_q1",
-            "menuItems": [
-                "Empanadas",
-                "Churrasco",
-                "Tres Leches Cake",
-                "Flan"
-            ],
-            "menuPrices": [
-                "$4.50",
-                "$20.50",
-                "$10.00",
-                "$17.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I keep hearing good things about the bibimbap. I'll try it, with the kimchi pancake and the sikhye.",
-            "options": [
-                "Bibimbap",
-                "Kimchi Pancake",
-                "Sikhye",
-                "Japchae"
-            ],
-            "correctAnswer": "Bibimbap, Kimchi Pancake, Sikhye",
-            "hint": "The customer decides to try a popular dish based on recommendations from others.",
-            "explanation": "‘I keep hearing good things about…’ shows the customer's decision is based on outside recommendations, not the menu alone. ‘Sikhye’ is a sweet, traditional Korean rice drink.",
-            "id": "go_l83_q2",
-            "menuItems": [
-                "Bibimbap",
-                "Kimchi Pancake",
-                "Sikhye",
-                "Japchae"
-            ],
-            "menuPrices": [
-                "$12.50",
-                "$16.50",
-                "$7.25",
-                "$16.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Let's order a bunch of small plates — the patatas bravas, the croquetas, and the pan con tomate.",
-            "options": [
-                "Patatas Bravas",
-                "Croquetas",
-                "Pan con Tomate",
-                "Gazpacho"
-            ],
-            "correctAnswer": "Patatas Bravas, Croquetas, Pan con Tomate",
-            "hint": "All three dishes are classic Spanish tapas meant for sharing.",
-            "explanation": "‘Croquetas’ are small, breaded, and fried rolls usually filled with ham or cheese. ‘Pan con tomate’ is simply bread rubbed with fresh tomato and olive oil.",
-            "id": "go_l83_q3",
-            "menuItems": [
-                "Patatas Bravas",
-                "Croquetas",
-                "Pan con Tomate",
-                "Gazpacho"
-            ],
-            "menuPrices": [
-                "$13.75",
-                "$5.75",
-                "$17.75",
-                "$5.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I'll defer to the chef's recommendation for the appetizer, then the duck breast, and the crème brûlée to finish.",
-            "options": [
-                "Chef's Recommendation",
-                "Duck Breast",
-                "Crème Brûlée",
-                "Foie Gras"
-            ],
-            "correctAnswer": "Chef's Recommendation, Duck Breast, Crème Brûlée",
-            "hint": "The customer lets the chef choose the first course instead of picking it themselves.",
-            "explanation": "‘I’ll defer to…’ means letting someone else make the decision. ‘The chef’s recommendation’ is selected as its own item since the exact dish isn't named.",
-            "id": "go_l84_q1",
-            "menuItems": [
-                "Chef's Recommendation",
-                "Duck Breast",
-                "Crème Brûlée",
-                "Foie Gras"
-            ],
-            "menuPrices": [
-                "$21.75",
-                "$14.00",
-                "$2.00",
-                "$10.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "What do you recommend for someone who loves spicy food? I'll go with the vindaloo, the garlic naan, and the mango lassi.",
-            "options": [
-                "Vindaloo",
-                "Garlic Naan",
-                "Mango Lassi",
-                "Korma"
-            ],
-            "correctAnswer": "Vindaloo, Garlic Naan, Mango Lassi",
-            "hint": "The customer describes their taste preference before receiving and accepting a recommendation.",
-            "explanation": "‘Vindaloo’ is one of the spiciest curries on a typical Indian menu, fitting the customer's request for something spicy. ‘Mango lassi’ is a cooling, yogurt-based drink that pairs well with spicy food.",
-            "id": "go_l84_q2",
-            "menuItems": [
-                "Vindaloo",
-                "Garlic Naan",
-                "Mango Lassi",
-                "Korma"
-            ],
-            "menuPrices": [
-                "$18.00",
-                "$16.50",
-                "$20.50",
-                "$8.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Is the som tum very sour? A little, that's fine, I'll have it, the larb, and the sticky rice.",
-            "options": [
-                "Som Tum",
-                "Larb",
-                "Sticky Rice",
-                "Pad Thai"
-            ],
-            "correctAnswer": "Som Tum, Larb, Sticky Rice",
-            "hint": "The customer checks on flavor intensity before confirming all three dishes.",
-            "explanation": "‘Som tum’ is a spicy green papaya salad known for its sour, tangy flavor. ‘Larb’ is a minced meat salad, another popular Thai and Laotian dish.",
-            "id": "go_l84_q3",
-            "menuItems": [
-                "Som Tum",
-                "Larb",
-                "Sticky Rice",
-                "Pad Thai"
-            ],
-            "menuPrices": [
-                "$15.25",
-                "$7.25",
-                "$6.00",
-                "$3.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Just so I know, does the pho have fish sauce in it? Yes? That's fine, I'll have that, the spring rolls, and a Vietnamese coffee.",
-            "options": [
-                "Pho",
-                "Spring Rolls",
-                "Vietnamese Coffee",
-                "Bun Cha"
-            ],
-            "correctAnswer": "Pho, Spring Rolls, Vietnamese Coffee",
-            "hint": "An ingredient question comes first, but it doesn't change the customer's mind.",
-            "explanation": "Confirming an ingredient, like fish sauce, helps a customer decide with confidence — here, the answer doesn't stop them from ordering.",
-            "id": "go_l85_q1",
-            "menuItems": [
-                "Pho",
-                "Spring Rolls",
-                "Vietnamese Coffee",
-                "Bun Cha"
-            ],
-            "menuPrices": [
-                "$17.75",
-                "$3.25",
-                "$15.25",
-                "$19.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I've never had bibimbap before — I'll give it a try, along with the mandu and the barley tea.",
-            "options": [
-                "Bibimbap",
-                "Mandu",
-                "Barley Tea",
-                "Japchae"
-            ],
-            "correctAnswer": "Bibimbap, Mandu, Barley Tea",
-            "hint": "The customer is curious about an unfamiliar Korean dish and its typical sides.",
-            "explanation": "‘Mandu’ are Korean dumplings, often filled with meat and vegetables. Barley tea is a common, mild drink served in many Korean restaurants.",
-            "id": "go_l85_q2",
-            "menuItems": [
-                "Bibimbap",
-                "Mandu",
-                "Barley Tea",
-                "Japchae"
-            ],
-            "menuPrices": [
-                "$12.50",
-                "$13.75",
-                "$15.25",
-                "$16.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Can we get the hummus as an appetizer for the table, the shawarma for me, and the baklava to share after?",
-            "options": [
-                "Hummus",
-                "Shawarma",
-                "Baklava",
-                "Falafel"
-            ],
-            "correctAnswer": "Hummus, Shawarma, Baklava",
-            "hint": "A shared starter and dessert bookend one personal main course.",
-            "explanation": "This sentence uses the same shared-personal-shared pattern from earlier levels, just with Middle Eastern dishes this time.",
-            "id": "go_l85_q3",
-            "menuItems": [
-                "Hummus",
-                "Shawarma",
-                "Baklava",
-                "Falafel"
-            ],
-            "menuPrices": [
-                "$19.25",
-                "$2.00",
-                "$2.00",
-                "$15.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I keep hearing good things about the birria tacos. I'll try them, with the elote and the agua de jamaica.",
-            "options": [
-                "Birria Tacos",
-                "Elote",
-                "Agua de Jamaica",
-                "Al Pastor Tacos"
-            ],
-            "correctAnswer": "Birria Tacos, Elote, Agua de Jamaica",
-            "hint": "The customer chooses a specific, trendy taco style along with two classic Mexican sides.",
-            "explanation": "‘Birria tacos’ are made with slow-braised meat and often served with a rich dipping broth. ‘Agua de jamaica’ is a refreshing drink made from hibiscus flowers.",
-            "id": "go_l86_q1",
-            "menuItems": [
-                "Birria Tacos",
-                "Elote",
-                "Agua de Jamaica",
-                "Al Pastor Tacos"
-            ],
-            "menuPrices": [
-                "$13.75",
-                "$7.25",
-                "$9.75",
-                "$6.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Let's order a bunch of small plates — the dumplings, the scallion pancakes, and the hot and sour soup.",
-            "options": [
-                "Dumplings",
-                "Scallion Pancakes",
-                "Hot and Sour Soup",
-                "Spring Rolls"
-            ],
-            "correctAnswer": "Dumplings, Scallion Pancakes, Hot and Sour Soup",
-            "hint": "Three shareable Chinese dishes are named together.",
-            "explanation": "‘Scallion pancakes’ are savory, flaky pancakes made with green onions, a popular starter alongside dumplings.",
-            "id": "go_l86_q2",
-            "menuItems": [
-                "Dumplings",
-                "Scallion Pancakes",
-                "Hot and Sour Soup",
-                "Spring Rolls"
-            ],
-            "menuPrices": [
-                "$17.75",
-                "$9.75",
-                "$4.50",
-                "$3.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I'll defer to the chef's recommendation for the soup, then the Peking duck, and the almond cookies to finish.",
-            "options": [
-                "Chef's Recommendation",
-                "Peking Duck",
-                "Almond Cookies",
-                "Hot and Sour Soup"
-            ],
-            "correctAnswer": "Chef's Recommendation, Peking Duck, Almond Cookies",
-            "hint": "Again, the first course is left up to the chef instead of being named directly.",
-            "explanation": "‘Peking duck’ is a famous Chinese dish known for its thin, crispy skin, traditionally carved and served with pancakes at the table.",
-            "id": "go_l86_q3",
-            "menuItems": [
-                "Chef's Recommendation",
-                "Peking Duck",
-                "Almond Cookies",
-                "Hot and Sour Soup"
-            ],
-            "menuPrices": [
-                "$21.75",
-                "$5.75",
-                "$8.50",
+                "$4.25",
+                "$3.75",
+                "$2.75",
                 "$4.50"
             ]
         },
@@ -511,279 +63,587 @@
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "What do you recommend for two people who want to share everything? I'll go with the sushi platter, the miso soup, and the mochi.",
+            "prompt": "Barista: For here or to go? Customer: For here, thanks. Just a flat white and a plain bagel.",
             "options": [
-                "Sushi Platter",
-                "Miso Soup",
-                "Mochi",
-                "Edamame"
+                "Flat White",
+                "Cortado",
+                "Plain Bagel",
+                "Everything Bagel"
             ],
-            "correctAnswer": "Sushi Platter, Miso Soup, Mochi",
-            "hint": "The customer explains their sharing plan before getting a recommendation.",
-            "explanation": "Describing your situation (‘for two people who want to share’) helps the server give a more useful recommendation.",
-            "id": "go_l87_q1",
+            "correctAnswer": "Flat White, Plain Bagel",
+            "hint": "The barista's question about seating is answered before the actual order.",
+            "explanation": "Café staff often ask about seating before or during an order - the answer doesn't change what's actually ordered, just where it's enjoyed.",
+            "id": "go_l81_q3",
             "menuItems": [
-                "Sushi Platter",
-                "Miso Soup",
-                "Mochi",
-                "Edamame"
+                "Flat White",
+                "Cortado",
+                "Plain Bagel",
+                "Everything Bagel"
+            ],
+            "menuPrices": [
+                "$4.50",
+                "$4.25",
+                "$2.75",
+                "$3.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Could I get a large oat milk latte with an extra shot, and a plain muffin?",
+            "options": [
+                "Large Oat Milk Latte with Extra Shot",
+                "Large Oat Milk Latte",
+                "Blueberry Muffin",
+                "Plain Muffin"
+            ],
+            "correctAnswer": "Large Oat Milk Latte with Extra Shot, Plain Muffin",
+            "hint": "Three modifiers (size, milk type, extra shot) all describe one drink.",
+            "explanation": "Coffee customization often stacks several modifiers onto one drink at once - size, milk alternative, and extra caffeine can all appear together.",
+            "id": "go_l82_q1",
+            "menuItems": [
+                "Large Oat Milk Latte with Extra Shot",
+                "Large Oat Milk Latte",
+                "Blueberry Muffin",
+                "Plain Muffin"
             ],
             "menuPrices": [
                 "$6.00",
-                "$13.75",
-                "$8.50",
-                "$20.50"
+                "$6.00",
+                "$3.25",
+                "$2.75"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Is the jerk chicken very hot? Medium hot, got it, I'll have it, the festival, and the rum cake.",
+            "prompt": "I'll have a vanilla latte, but could you go light on the syrup? And a slice of banana bread.",
             "options": [
-                "Jerk Chicken",
-                "Festival",
-                "Rum Cake",
-                "Curry Goat"
+                "Vanilla Latte (Light Syrup)",
+                "Pumpkin Bread",
+                "Banana Bread",
+                "Vanilla Latte (Regular Syrup)"
             ],
-            "correctAnswer": "Jerk Chicken, Festival, Rum Cake",
-            "hint": "The spice check comes first again, followed by two classic Caribbean sides.",
-            "explanation": "‘Festival’ is a slightly sweet, fried Jamaican dumpling, often served alongside jerk chicken. ‘Rum cake’ is a rich, moist cake soaked in rum syrup.",
+            "correctAnswer": "Vanilla Latte (Light Syrup), Banana Bread",
+            "hint": "'Go light on' reduces an ingredient's amount without removing it completely.",
+            "explanation": "'Go light on the syrup' is different from 'no syrup' - it asks for less, not none, which changes the final drink slightly.",
+            "id": "go_l82_q2",
+            "menuItems": [
+                "Vanilla Latte (Light Syrup)",
+                "Pumpkin Bread",
+                "Banana Bread",
+                "Vanilla Latte (Regular Syrup)"
+            ],
+            "menuPrices": [
+                "$4.75",
+                "$3.25",
+                "$3.00",
+                "$4.50"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Could I get a caramel macchiato with almond milk instead of regular, if that's possible? And a cinnamon roll.",
+            "options": [
+                "Caramel Macchiato with Almond Milk",
+                "Cinnamon Scone",
+                "Caramel Macchiato with Regular Milk",
+                "Cinnamon Roll"
+            ],
+            "correctAnswer": "Caramel Macchiato with Almond Milk, Cinnamon Roll",
+            "hint": "A softened, conditional request still results in a specific drink.",
+            "explanation": "Even a gently-phrased, conditional substitution request results in one clear, specific drink once accepted - the softening language doesn't change the outcome.",
+            "id": "go_l82_q3",
+            "menuItems": [
+                "Caramel Macchiato with Almond Milk",
+                "Cinnamon Scone",
+                "Caramel Macchiato with Regular Milk",
+                "Cinnamon Roll"
+            ],
+            "menuPrices": [
+                "$5.25",
+                "$3.25",
+                "$5.00",
+                "$3.50"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Could I have a plain croissant and an almond croissant, to share with my friend?",
+            "options": [
+                "Almond Croissant",
+                "Plain Croissant",
+                "Chocolate Croissant",
+                "Ham and Cheese Croissant"
+            ],
+            "correctAnswer": "Almond Croissant, Plain Croissant",
+            "hint": "Two different croissant flavors are ordered - both matter, even though they're the same type of pastry.",
+            "explanation": "Ordering two different flavors of the same pastry type means both flavor words are essential, even though the base item is identical.",
+            "id": "go_l83_q1",
+            "menuItems": [
+                "Almond Croissant",
+                "Plain Croissant",
+                "Chocolate Croissant",
+                "Ham and Cheese Croissant"
+            ],
+            "menuPrices": [
+                "$3.25",
+                "$2.75",
+                "$3.50",
+                "$4.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Is the cinnamon roll made fresh here, or shipped in? Made fresh, every morning - perfect, I'll have that, and a black coffee.",
+            "options": [
+                "Black Coffee",
+                "Cinnamon Roll",
+                "Latte",
+                "Danish"
+            ],
+            "correctAnswer": "Black Coffee, Cinnamon Roll",
+            "hint": "A question about freshness is answered before the pastry is ordered.",
+            "explanation": "Asking whether something is baked in-house is a realistic, useful café question that can affect a customer's decision.",
+            "id": "go_l83_q2",
+            "menuItems": [
+                "Black Coffee",
+                "Cinnamon Roll",
+                "Latte",
+                "Danish"
+            ],
+            "menuPrices": [
+                "$3.00",
+                "$4.00",
+                "$4.25",
+                "$3.75"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Could I get half a bagel with cream cheese instead of the whole thing? I'm not that hungry, and a green tea.",
+            "options": [
+                "Green Tea",
+                "Whole Bagel with Cream Cheese",
+                "Half Bagel with Cream Cheese",
+                "Black Tea"
+            ],
+            "correctAnswer": "Green Tea, Half Bagel with Cream Cheese",
+            "hint": "The customer explains why they want a smaller portion before the drink is added.",
+            "explanation": "'I'm not that hungry' explains a smaller order choice - the reason itself isn't tapped, but it helps you understand why a half portion was requested.",
+            "id": "go_l83_q3",
+            "menuItems": [
+                "Green Tea",
+                "Whole Bagel with Cream Cheese",
+                "Half Bagel with Cream Cheese",
+                "Black Tea"
+            ],
+            "menuPrices": [
+                "$3.25",
+                "$3.50",
+                "$2.25",
+                "$3.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Could I get the breakfast sandwich on a bagel instead of an English muffin, with bacon instead of sausage, and a large coffee?",
+            "options": [
+                "Large Coffee",
+                "Sausage Breakfast Muffin",
+                "Small Coffee",
+                "Bacon Breakfast Bagel"
+            ],
+            "correctAnswer": "Large Coffee, Bacon Breakfast Bagel",
+            "hint": "Two substitutions describe one sandwich - the bread and the meat both change from the default.",
+            "explanation": "Two separate substitutions on the same sandwich combine into a single, specific final order for that one item.",
+            "id": "go_l84_q1",
+            "menuItems": [
+                "Large Coffee",
+                "Sausage Breakfast Muffin",
+                "Small Coffee",
+                "Bacon Breakfast Bagel"
+            ],
+            "menuPrices": [
+                "$3.00",
+                "$5.50",
+                "$2.50",
+                "$6.50"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Could I get the egg sandwich with egg whites instead of whole eggs, and no cheese, and a fruit cup on the side?",
+            "options": [
+                "Fruit Cup",
+                "Yogurt Parfait",
+                "Egg White Sandwich (No Cheese)",
+                "Whole Egg Sandwich (No Cheese)"
+            ],
+            "correctAnswer": "Fruit Cup, Egg White Sandwich (No Cheese)",
+            "hint": "Two modifiers, egg type and a removal, both apply to the same sandwich.",
+            "explanation": "Health-conscious modifications like egg whites instead of whole eggs are common breakfast customizations, and they can combine with a simple removal.",
+            "id": "go_l84_q2",
+            "menuItems": [
+                "Fruit Cup",
+                "Yogurt Parfait",
+                "Egg White Sandwich (No Cheese)",
+                "Whole Egg Sandwich (No Cheese)"
+            ],
+            "menuPrices": [
+                "$3.00",
+                "$3.50",
+                "$6.00",
+                "$5.50"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Could you toast the bagel a little extra, well done, and could I get it with just butter, not cream cheese? And an orange juice.",
+            "options": [
+                "Orange Juice",
+                "Apple Juice",
+                "Bagel with Cream Cheese",
+                "Bagel with Butter"
+            ],
+            "correctAnswer": "Orange Juice, Bagel with Butter",
+            "hint": "A toasting preference and a spread substitution both describe the same bagel.",
+            "explanation": "Preparation preferences like 'extra toasted' can combine with a spread substitution on the very same item, all inside one natural request.",
+            "id": "go_l84_q3",
+            "menuItems": [
+                "Orange Juice",
+                "Apple Juice",
+                "Bagel with Cream Cheese",
+                "Bagel with Butter"
+            ],
+            "menuPrices": [
+                "$3.75",
+                "$3.50",
+                "$2.75",
+                "$2.50"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Hey, could I just grab an iced latte and one of those muffins up front?",
+            "options": [
+                "Hot Latte",
+                "Iced Latte",
+                "Muffin",
+                "Croissant"
+            ],
+            "correctAnswer": "Iced Latte, Muffin",
+            "hint": "Casual words like 'hey' and 'grab' don't change how clear or complete the order is.",
+            "explanation": "Casual language is completely normal in relaxed café settings and doesn't make an order any less valid or complete.",
+            "id": "go_l85_q1",
+            "menuItems": [
+                "Hot Latte",
+                "Iced Latte",
+                "Muffin",
+                "Croissant"
+            ],
+            "menuPrices": [
+                "$4.00",
+                "$4.50",
+                "$3.00",
+                "$2.75"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Yeah, I'll just do a small drip coffee, black, and, uh, a bagel, whatever you've got today.",
+            "options": [
+                "Large Drip Coffee",
+                "Small Drip Coffee (Black)",
+                "Everything Bagel",
+                "Bagel (Today's Selection)"
+            ],
+            "correctAnswer": "Small Drip Coffee (Black), Bagel (Today's Selection)",
+            "hint": "Filler words like 'uh' and 'yeah' are part of natural, hesitant speech, not extra information.",
+            "explanation": "Hesitations and filler words are completely normal in real spoken English and don't add or remove anything from the actual order.",
+            "id": "go_l85_q2",
+            "menuItems": [
+                "Large Drip Coffee",
+                "Small Drip Coffee (Black)",
+                "Everything Bagel",
+                "Bagel (Today's Selection)"
+            ],
+            "menuPrices": [
+                "$3.25",
+                "$2.75",
+                "$3.00",
+                "$2.50"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Could I get, like, a medium cold brew? And maybe a cookie too, if you've got the chocolate chip ones.",
+            "options": [
+                "Large Cold Brew",
+                "Chocolate Chip Cookie",
+                "Medium Cold Brew",
+                "Oatmeal Cookie"
+            ],
+            "correctAnswer": "Chocolate Chip Cookie, Medium Cold Brew",
+            "hint": "'Like' and 'maybe' soften the request casually but don't change what's actually being asked for.",
+            "explanation": "Casual filler words and softeners are common in relaxed spoken English; the actual request underneath stays clear.",
+            "id": "go_l85_q3",
+            "menuItems": [
+                "Large Cold Brew",
+                "Chocolate Chip Cookie",
+                "Medium Cold Brew",
+                "Oatmeal Cookie"
+            ],
+            "menuPrices": [
+                "$4.50",
+                "$2.50",
+                "$4.00",
+                "$2.25"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Could I get a medium coffee to go, and could you leave room for milk? And a muffin to go as well.",
+            "options": [
+                "Large Coffee",
+                "Muffin",
+                "Croissant",
+                "Medium Coffee"
+            ],
+            "correctAnswer": "Muffin, Medium Coffee",
+            "hint": "'Leave room for milk' is a preparation detail, not a separate item.",
+            "explanation": "'Leave room for milk' tells the barista not to fill the cup completely, so the customer can add milk - it's a note, not an extra item.",
+            "id": "go_l86_q1",
+            "menuItems": [
+                "Large Coffee",
+                "Muffin",
+                "Croissant",
+                "Medium Coffee"
+            ],
+            "menuPrices": [
+                "$3.50",
+                "$2.75",
+                "$3.00",
+                "$3.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Barista: For here or to go? Customer: To go, please - just a black coffee and a plain bagel, toasted.",
+            "options": [
+                "Latte",
+                "Toasted Everything Bagel",
+                "Black Coffee",
+                "Toasted Plain Bagel"
+            ],
+            "correctAnswer": "Black Coffee, Toasted Plain Bagel",
+            "hint": "The takeaway question is answered directly before the order is stated.",
+            "explanation": "Directly answering 'to go' before listing items is a common, efficient way to start a takeaway order.",
+            "id": "go_l86_q2",
+            "menuItems": [
+                "Latte",
+                "Toasted Everything Bagel",
+                "Black Coffee",
+                "Toasted Plain Bagel"
+            ],
+            "menuPrices": [
+                "$4.00",
+                "$3.00",
+                "$2.75",
+                "$2.50"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Could I get a large hot chocolate, to go, with a cup sleeve since it'll be hot? And a slice of pound cake, wrapped to go as well.",
+            "options": [
+                "Medium Hot Chocolate",
+                "Banana Bread",
+                "Pound Cake",
+                "Large Hot Chocolate"
+            ],
+            "correctAnswer": "Pound Cake, Large Hot Chocolate",
+            "hint": "Practical takeaway details, like a cup sleeve or wrapping, don't change which items are ordered.",
+            "explanation": "Practical takeaway requests are helpful details that don't add new menu items to the order.",
+            "id": "go_l86_q3",
+            "menuItems": [
+                "Medium Hot Chocolate",
+                "Banana Bread",
+                "Pound Cake",
+                "Large Hot Chocolate"
+            ],
+            "menuPrices": [
+                "$4.00",
+                "$3.75",
+                "$4.00",
+                "$4.50"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Could I get a cappuccino for me, and my friend will have a hot chocolate?",
+            "options": [
+                "Mocha",
+                "Cappuccino",
+                "Hot Chocolate",
+                "Latte"
+            ],
+            "correctAnswer": "Cappuccino, Hot Chocolate",
+            "hint": "Two different people are named, each with their own drink.",
+            "explanation": "Ordering for two people at once simply means tracking each person's separate choice - here, one drink per person.",
+            "id": "go_l87_q1",
+            "menuItems": [
+                "Mocha",
+                "Cappuccino",
+                "Hot Chocolate",
+                "Latte"
+            ],
+            "menuPrices": [
+                "$4.75",
+                "$4.25",
+                "$4.00",
+                "$4.50"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "I'll have the avocado toast, and could you get my friend the granola bowl? She's running a bit late but should be here soon.",
+            "options": [
+                "Yogurt Bowl",
+                "Avocado Toast",
+                "Avocado Bagel",
+                "Granola Bowl"
+            ],
+            "correctAnswer": "Avocado Toast, Granola Bowl",
+            "hint": "An explanation about timing doesn't change what either person actually ordered.",
+            "explanation": "Explaining that someone is running late is helpful context for the server, but it doesn't change the two food items already decided on.",
             "id": "go_l87_q2",
             "menuItems": [
-                "Jerk Chicken",
-                "Festival",
-                "Rum Cake",
-                "Curry Goat"
+                "Yogurt Bowl",
+                "Avocado Toast",
+                "Avocado Bagel",
+                "Granola Bowl"
             ],
             "menuPrices": [
-                "$19.25",
-                "$2.00",
-                "$16.50",
-                "$10.00"
+                "$6.50",
+                "$9.00",
+                "$8.50",
+                "$7.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "We'll do family style — the injera, the doro wat, and the misir wot for the table.",
+            "prompt": "My friend always gets the oat milk latte, so I'll order that for her, and I'll just have a plain black coffee.",
             "options": [
-                "Injera",
-                "Doro Wat",
-                "Misir Wot",
-                "Kitfo"
+                "Americano",
+                "Black Coffee",
+                "Oat Milk Latte",
+                "Almond Milk Latte"
             ],
-            "correctAnswer": "Injera, Doro Wat, Misir Wot",
-            "hint": "Three Ethiopian dishes are shared together in the family-style tradition.",
-            "explanation": "‘Injera’ is a spongy flatbread used to scoop up other dishes, like the spiced chicken stew ‘doro wat’ and the lentil dish ‘misir wot.’",
+            "correctAnswer": "Black Coffee, Oat Milk Latte",
+            "hint": "Knowing someone's usual order lets a customer order confidently on their behalf.",
+            "explanation": "Ordering a known regular choice for someone else is a realistic, common way friends help each other order without waiting for them to arrive.",
             "id": "go_l87_q3",
             "menuItems": [
-                "Injera",
-                "Doro Wat",
-                "Misir Wot",
-                "Kitfo"
+                "Americano",
+                "Black Coffee",
+                "Oat Milk Latte",
+                "Almond Milk Latte"
             ],
             "menuPrices": [
-                "$7.25",
-                "$4.50",
-                "$2.00",
-                "$21.75"
+                "$3.00",
+                "$2.75",
+                "$5.00",
+                "$5.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I've never had poutine before — I'll give it a try, along with the peameal bacon sandwich and the butter tart.",
+            "prompt": "Is the pumpkin spice latte still available, or is it out of season? Still available for one more week - great, I'll have one, with a slice of pumpkin bread.",
             "options": [
-                "Poutine",
-                "Peameal Bacon Sandwich",
-                "Butter Tart",
-                "Nanaimo Bar"
+                "Banana Bread",
+                "Pumpkin Bread",
+                "Regular Latte",
+                "Pumpkin Spice Latte"
             ],
-            "correctAnswer": "Poutine, Peameal Bacon Sandwich, Butter Tart",
-            "hint": "All three dishes are classic Canadian comfort foods, and the customer is trying them for the first time.",
-            "explanation": "‘Poutine’ is fries topped with cheese curds and gravy. A ‘butter tart’ is a small, sweet pastry filled with a buttery, syrupy filling.",
+            "correctAnswer": "Pumpkin Bread, Pumpkin Spice Latte",
+            "hint": "A seasonal availability question is answered before the order continues.",
+            "explanation": "Seasonal items often have a limited window of availability; checking on this is a realistic and useful question before ordering.",
             "id": "go_l88_q1",
             "menuItems": [
-                "Poutine",
-                "Peameal Bacon Sandwich",
-                "Butter Tart",
-                "Nanaimo Bar"
+                "Banana Bread",
+                "Pumpkin Bread",
+                "Regular Latte",
+                "Pumpkin Spice Latte"
             ],
             "menuPrices": [
-                "$20.50",
-                "$21.75",
                 "$3.25",
-                "$2.00"
+                "$3.50",
+                "$4.25",
+                "$5.25"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Just so I know, does the laksa contain shrimp paste? Yes? Perfect, I'll have that, the roti canai, and the teh tarik.",
+            "prompt": "Do you still have the summer berry lemonade, or has that been replaced already? It's been replaced with an apple cider - I'll try that instead, then, with a scone.",
             "options": [
-                "Laksa",
-                "Roti Canai",
-                "Teh Tarik",
-                "Nasi Lemak"
+                "Muffin",
+                "Summer Berry Lemonade",
+                "Apple Cider",
+                "Scone"
             ],
-            "correctAnswer": "Laksa, Roti Canai, Teh Tarik",
-            "hint": "An ingredient question is confirmed positively before the full order is placed.",
-            "explanation": "‘Laksa’ is a spicy noodle soup from Malaysia and Singapore. ‘Teh tarik’ means ‘pulled tea’ in Malay, referring to how the tea is stretched between two cups while pouring.",
+            "correctAnswer": "Apple Cider, Scone",
+            "hint": "An unavailable seasonal item leads directly to trying its replacement.",
+            "explanation": "When a seasonal item is replaced rather than simply out of stock, customers often try the new option right away.",
             "id": "go_l88_q2",
             "menuItems": [
-                "Laksa",
-                "Roti Canai",
-                "Teh Tarik",
-                "Nasi Lemak"
+                "Muffin",
+                "Summer Berry Lemonade",
+                "Apple Cider",
+                "Scone"
             ],
             "menuPrices": [
-                "$14.00",
-                "$12.50",
-                "$16.50",
-                "$11.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Can we get the spanakopita as an appetizer for the table, the moussaka for me, and the loukoumades to share after?",
-            "options": [
-                "Spanakopita",
-                "Moussaka",
-                "Loukoumades",
-                "Baklava"
-            ],
-            "correctAnswer": "Spanakopita, Moussaka, Loukoumades",
-            "hint": "A shared starter and shared dessert surround one personal main.",
-            "explanation": "‘Loukoumades’ are small, fried Greek doughnuts drizzled with honey — a lighter, shareable alternative to baklava.",
-            "id": "go_l88_q3",
-            "menuItems": [
-                "Spanakopita",
-                "Moussaka",
-                "Loukoumades",
-                "Baklava"
-            ],
-            "menuPrices": [
-                "$5.75",
-                "$14.00",
-                "$21.75",
-                "$2.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I keep hearing good things about the feijoada. I'll try it, with the pão de queijo and the brigadeiro.",
-            "options": [
-                "Feijoada",
-                "Pão de Queijo",
-                "Brigadeiro",
-                "Coxinha"
-            ],
-            "correctAnswer": "Feijoada, Pão de Queijo, Brigadeiro",
-            "hint": "A famous Brazilian stew is paired with a cheesy bread and a chocolate dessert.",
-            "explanation": "‘Feijoada’ is a hearty black bean and pork stew, considered Brazil's national dish. ‘Brigadeiro’ is a small, fudgy chocolate truffle rolled in sprinkles.",
-            "id": "go_l89_q1",
-            "menuItems": [
-                "Feijoada",
-                "Pão de Queijo",
-                "Brigadeiro",
-                "Coxinha"
-            ],
-            "menuPrices": [
-                "$15.25",
-                "$10.00",
-                "$4.50",
-                "$8.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Let's order a bunch of small plates — the vine leaves, the halloumi, and the taramasalata.",
-            "options": [
-                "Vine Leaves",
-                "Halloumi",
-                "Taramasalata",
-                "Spanakopita"
-            ],
-            "correctAnswer": "Vine Leaves, Halloumi, Taramasalata",
-            "hint": "Three shareable Greek starters are named together.",
-            "explanation": "‘Halloumi’ is a firm cheese that holds its shape when grilled or fried. ‘Taramasalata’ is a creamy dip made from fish roe.",
-            "id": "go_l89_q2",
-            "menuItems": [
-                "Vine Leaves",
-                "Halloumi",
-                "Taramasalata",
-                "Spanakopita"
-            ],
-            "menuPrices": [
-                "$12.50",
-                "$3.25",
-                "$10.00",
-                "$5.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I'll defer to the chef's recommendation for the starter, then the paella, and the crema catalana to finish.",
-            "options": [
-                "Chef's Recommendation",
-                "Paella",
-                "Crema Catalana",
-                "Gazpacho"
-            ],
-            "correctAnswer": "Chef's Recommendation, Paella, Crema Catalana",
-            "hint": "The starter is again left to the chef's choice, while the main and dessert are named directly.",
-            "explanation": "Letting the chef choose a starter shows trust in the kitchen — a phrase useful at any restaurant with a tasting or recommendation option.",
-            "id": "go_l89_q3",
-            "menuItems": [
-                "Chef's Recommendation",
-                "Paella",
-                "Crema Catalana",
-                "Gazpacho"
-            ],
-            "menuPrices": [
-                "$21.75",
-                "$17.75",
-                "$7.25",
-                "$5.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "What do you recommend for a first-time visit? I'll have the tonkotsu ramen, the gyoza, and the matcha ice cream.",
-            "options": [
-                "Tonkotsu Ramen",
-                "Gyoza",
-                "Matcha Ice Cream",
-                "Miso Ramen"
-            ],
-            "correctAnswer": "Tonkotsu Ramen, Gyoza, Matcha Ice Cream",
-            "hint": "The customer mentions this is their first visit, then accepts a recommended combination.",
-            "explanation": "‘Tonkotsu’ refers to a rich, creamy broth made from simmered pork bones — a specific style, different from miso ramen.",
-            "id": "go_l90_q1",
-            "menuItems": [
-                "Tonkotsu Ramen",
-                "Gyoza",
-                "Matcha Ice Cream",
-                "Miso Ramen"
-            ],
-            "menuPrices": [
-                "$4.50",
-                "$14.00",
-                "$7.25",
+                "$3.00",
+                "$4.00",
+                "$4.00",
                 "$3.25"
             ]
         },
@@ -791,56 +651,196 @@
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Is the harissa very strong? A little, I like that, I'll have it with the couscous, and the mint tea.",
+            "prompt": "Server: The limited-edition maple pecan latte just launched today, actually. Customer: Oh, perfect timing, then - I'll try that, and a cinnamon roll.",
             "options": [
-                "Harissa",
-                "Couscous",
-                "Mint Tea",
-                "Tagine"
+                "Cinnamon Scone",
+                "Pumpkin Spice Latte",
+                "Cinnamon Roll",
+                "Maple Pecan Latte"
             ],
-            "correctAnswer": "Harissa, Couscous, Mint Tea",
-            "hint": "The customer asks about a spicy condiment's strength before confirming the rest of the order.",
-            "explanation": "‘Harissa’ is a spicy North African chili paste, often served alongside couscous to add heat to the meal.",
-            "id": "go_l90_q2",
+            "correctAnswer": "Cinnamon Roll, Maple Pecan Latte",
+            "hint": "The server volunteers information about a brand-new item, which the customer decides to try.",
+            "explanation": "Baristas often mention new or limited-time items proactively; a customer reacting with interest leads naturally to trying it.",
+            "id": "go_l88_q3",
             "menuItems": [
-                "Harissa",
-                "Couscous",
-                "Mint Tea",
-                "Tagine"
+                "Cinnamon Scone",
+                "Pumpkin Spice Latte",
+                "Cinnamon Roll",
+                "Maple Pecan Latte"
             ],
             "menuPrices": [
-                "$7.25",
-                "$18.00",
-                "$16.50",
-                "$8.50"
+                "$3.25",
+                "$5.25",
+                "$3.50",
+                "$5.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "We'll do family style — the dim sum, the char siu, and the egg tarts for the table.",
+            "prompt": "Do I pay now at the counter, or will someone bring the bill to my table? At the counter, whenever you're ready - I'll pay now, then, for the latte and the muffin.",
             "options": [
-                "Dim Sum",
-                "Char Siu",
-                "Egg Tarts",
-                "Congee"
+                "Latte",
+                "Muffin",
+                "Cappuccino",
+                "Croissant"
             ],
-            "correctAnswer": "Dim Sum, Char Siu, Egg Tarts",
-            "hint": "Three classic Cantonese dishes are shared for the whole table.",
-            "explanation": "‘Char siu’ is a sweet, barbecued pork, often bright red in color. Egg tarts, with their flaky crust and creamy custard, are a beloved dim sum dessert.",
-            "id": "go_l90_q3",
+            "correctAnswer": "Latte, Muffin",
+            "hint": "A payment-timing question is answered, but it doesn't change which two items were already ordered.",
+            "explanation": "Understanding whether a café uses counter service or table service affects when you pay, not what you've already ordered.",
+            "id": "go_l89_q1",
             "menuItems": [
-                "Dim Sum",
-                "Char Siu",
-                "Egg Tarts",
-                "Congee"
+                "Latte",
+                "Muffin",
+                "Cappuccino",
+                "Croissant"
             ],
             "menuPrices": [
-                "$19.25",
-                "$15.25",
-                "$7.25",
-                "$15.25"
+                "$4.25",
+                "$3.00",
+                "$4.50",
+                "$3.25"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Should I order at the counter, or will someone come take my order at the table? At the table is fine here - I'll have a flat white and a croissant, then, whenever you're ready.",
+            "options": [
+                "Flat White",
+                "Croissant",
+                "Danish",
+                "Cortado"
+            ],
+            "correctAnswer": "Flat White, Croissant",
+            "hint": "Learning about the café's service style comes before the actual order is placed.",
+            "explanation": "Some cafés use full table service, while others expect you to order at the counter - clarifying this doesn't change what's ordered, just how.",
+            "id": "go_l89_q2",
+            "menuItems": [
+                "Flat White",
+                "Croissant",
+                "Danish",
+                "Cortado"
+            ],
+            "menuPrices": [
+                "$4.50",
+                "$3.25",
+                "$3.75",
+                "$4.25"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Is there a tip jar at the counter, or is tipping not expected here? There's a jar, but it's completely optional - I'll leave a little, then, for the coffee and the scone I ordered.",
+            "options": [
+                "Coffee",
+                "Tea",
+                "Scone",
+                "Muffin"
+            ],
+            "correctAnswer": "Coffee, Scone",
+            "hint": "A tipping-culture question doesn't change the two items already ordered earlier.",
+            "explanation": "Tipping customs vary between cafés and countries; asking about it is a realistic way to understand local expectations without affecting the order.",
+            "id": "go_l89_q3",
+            "menuItems": [
+                "Coffee",
+                "Tea",
+                "Scone",
+                "Muffin"
+            ],
+            "menuPrices": [
+                "$3.00",
+                "$2.75",
+                "$3.25",
+                "$3.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Could I get a large oat milk latte, extra hot, to go, and a toasted everything bagel with cream cheese on the side?",
+            "options": [
+                "Large Oat Milk Latte (Extra Hot)",
+                "Large Regular Latte",
+                "Plain Bagel with Cream Cheese",
+                "Everything Bagel with Cream Cheese"
+            ],
+            "correctAnswer": "Large Oat Milk Latte (Extra Hot), Everything Bagel with Cream Cheese",
+            "hint": "Several modifiers stack on the drink, while the bagel carries its own separate detail - two full items in total.",
+            "explanation": "This consolidates the unit's café skills: a heavily modified drink, a specific bagel with a side note, and a takeaway request, all in one order.",
+            "id": "go_l90_q1",
+            "menuItems": [
+                "Large Oat Milk Latte (Extra Hot)",
+                "Large Regular Latte",
+                "Plain Bagel with Cream Cheese",
+                "Everything Bagel with Cream Cheese"
+            ],
+            "menuPrices": [
+                "$6.00",
+                "$5.00",
+                "$3.25",
+                "$3.75"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Hey, could I just grab a medium iced coffee, room for cream, and my friend will have the same but decaf, both to go?",
+            "options": [
+                "Medium Iced Coffee",
+                "Small Decaf Iced Coffee",
+                "Medium Decaf Iced Coffee",
+                "Large Iced Coffee"
+            ],
+            "correctAnswer": "Medium Iced Coffee, Medium Decaf Iced Coffee",
+            "hint": "Two orders share almost everything except one key difference: caffeine.",
+            "explanation": "'The same but decaf' is an efficient way to order a near-identical drink for someone else, with just one modifier changed.",
+            "id": "go_l90_q2",
+            "menuItems": [
+                "Medium Iced Coffee",
+                "Small Decaf Iced Coffee",
+                "Medium Decaf Iced Coffee",
+                "Large Iced Coffee"
+            ],
+            "menuPrices": [
+                "$3.75",
+                "$3.00",
+                "$3.75",
+                "$4.25"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Barista: For here or to go? Customer: To go, thanks. Could I get a small cappuccino, extra shot, oat milk if you have it, and a chocolate croissant, warmed up if that's possible?",
+            "options": [
+                "Small Oat Milk Cappuccino with Extra Shot",
+                "Plain Croissant",
+                "Small Cappuccino (Regular)",
+                "Chocolate Croissant (Warmed)"
+            ],
+            "correctAnswer": "Small Oat Milk Cappuccino with Extra Shot, Chocolate Croissant (Warmed)",
+            "hint": "A takeaway answer, a heavily modified drink, and a softly-phrased pastry request all combine in one final café order.",
+            "explanation": "This final level brings together casual register, stacked modifiers, a conditional request, and a takeaway choice inside one realistic café exchange.",
+            "id": "go_l90_q3",
+            "menuItems": [
+                "Small Oat Milk Cappuccino with Extra Shot",
+                "Plain Croissant",
+                "Small Cappuccino (Regular)",
+                "Chocolate Croissant (Warmed)"
+            ],
+            "menuPrices": [
+                "$4.75",
+                "$2.75",
+                "$4.00",
+                "$3.50"
             ]
         }
     ]

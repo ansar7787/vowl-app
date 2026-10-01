@@ -1,547 +1,547 @@
 {
-    "gameType": "situationalResponse",
-    "batchIndex": 2,
-    "levels": "11-20",
-    "quests": [
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You forgot to bring your permission slip, and your teacher is asking for it now.",
-            "options": [
-                "Excited",
-                "Relieved",
-                "Happy",
-                "Guilty"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "You know you were responsible for something, and you did not do it.",
-            "explanation": "Forgetting something you were responsible for often makes you feel guilty.",
-            "id": "sr_l11_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel guilty in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You are sitting on an airplane for the very first time in your life.",
-            "options": [
-                "Nervous",
-                "Bored",
-                "Angry",
-                "Full"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "This is a brand-new experience high above the ground.",
-            "explanation": "Trying something completely new, like flying for the first time, often makes people feel nervous.",
-            "id": "sr_l11_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel nervous in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "Your favorite pair of headphones stops working and cannot be fixed.",
-            "options": [
-                "Relieved",
-                "Happy",
-                "Excited",
-                "Upset"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Something you use and love every day is now gone for good.",
-            "explanation": "Losing something you use and enjoy every day, with no way to fix it, makes you feel upset.",
-            "id": "sr_l11_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel upset in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You see a small child crying because he cannot find his parents in the shop.",
-            "options": [
-                "Concerned",
-                "Amused",
-                "Bored",
-                "Angry"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "A small child needs help and is clearly frightened.",
-            "explanation": "Seeing a lost, frightened child naturally makes you feel concerned.",
-            "id": "sr_l12_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel concerned in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You open the door and your friends all shout 'Surprise!'",
-            "options": [
-                "Bored",
-                "Surprised",
-                "Angry",
-                "Tired"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "You had no idea this was about to happen.",
-            "explanation": "When something completely unexpected happens, you feel surprised.",
-            "id": "sr_l12_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel surprised in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You finally finish a big school project you worked on for two weeks.",
-            "options": [
-                "Upset",
-                "Scared",
-                "Relieved",
-                "Bored"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "A long, stressful task is finally done.",
-            "explanation": "Completing a big project after a lot of hard work makes you feel relieved.",
-            "id": "sr_l12_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel relieved in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You wait in a very long, slow-moving line at the supermarket.",
-            "options": [
-                "Impatient",
-                "Excited",
-                "Proud",
-                "Hungry"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "You want to leave, but you cannot go yet.",
-            "explanation": "Standing in a long, slow line makes you feel impatient.",
-            "id": "sr_l13_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel impatient in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "Your friend tells you, 'That was such a great idea you had!'",
-            "options": [
-                "Embarrassed",
-                "Sad",
-                "Pleased",
-                "Angry"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Someone just said something kind and positive about you.",
-            "explanation": "Receiving a compliment from a friend makes you feel pleased.",
-            "id": "sr_l13_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel pleased in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A large spider suddenly runs across the floor of your bedroom.",
-            "options": [
-                "Relaxed",
-                "Delighted",
-                "Proud",
-                "Terrified"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Many people have a strong fear of spiders.",
-            "explanation": "Seeing a large spider unexpectedly makes many people feel terrified.",
-            "id": "sr_l13_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel terrified in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You accidentally drop a heavy book in a completely silent library.",
-            "options": [
-                "Calm",
-                "Embarrassed",
-                "Happy",
-                "Excited"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "A loud noise just made everyone in the room look at you.",
-            "explanation": "Making a loud noise in a quiet place makes you feel embarrassed.",
-            "id": "sr_l14_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel embarrassed in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "Your school team wins the regional championship after a very close match.",
-            "options": [
-                "Disappointed",
-                "Bored",
-                "Thrilled",
-                "Sad"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Your team worked so hard, and it just paid off.",
-            "explanation": "Winning a championship after hard work makes you feel thrilled - extremely excited and happy.",
-            "id": "sr_l14_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel thrilled in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You bite into what you think is an orange, but it turns out to be a whole lemon.",
-            "options": [
-                "Happy",
-                "Shocked",
-                "Proud",
-                "Relieved"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "The taste is much stronger and more sour than you expected.",
-            "explanation": "Biting into something unexpectedly sour makes you feel shocked.",
-            "id": "sr_l14_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel shocked in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "Your alarm goes off at 6 AM for an early class you almost forgot about.",
-            "options": [
-                "Sleepy",
-                "Excited",
-                "Proud",
-                "Angry"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "It is very early, and your body wants more rest.",
-            "explanation": "Waking up much earlier than usual naturally makes you feel sleepy.",
-            "id": "sr_l15_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel sleepy in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A classmate you barely know invites you to join their study group.",
-            "options": [
-                "Bored",
-                "Angry",
-                "Tired",
-                "Grateful"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Someone included you when they did not have to.",
-            "explanation": "When someone kindly includes you, you usually feel grateful.",
-            "id": "sr_l15_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel grateful in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You watch a movie where the main character dies at the very end.",
-            "options": [
-                "Sad",
-                "Excited",
-                "Proud",
-                "Amused"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "A character you cared about is gone.",
-            "explanation": "Watching a sad ending for a character you liked naturally makes you feel sad.",
-            "id": "sr_l15_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel sad in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "The electricity suddenly goes out in the middle of the night.",
-            "options": [
-                "Relaxed",
-                "Startled",
-                "Bored",
-                "Proud"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Everything goes dark without any warning.",
-            "explanation": "A sudden, unexpected change like the power going out makes you feel startled.",
-            "id": "sr_l16_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel startled in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You cook a full meal completely by yourself for the very first time.",
-            "options": [
-                "Sleepy",
-                "Angry",
-                "Sick",
-                "Proud"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "You tried something new, and it turned out well.",
-            "explanation": "Successfully doing something new and difficult by yourself makes you feel proud.",
-            "id": "sr_l16_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel proud in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You bump into an old friend on the street whom you have not seen in five years.",
-            "options": [
-                "Angry",
-                "Bored",
-                "Delighted",
-                "Sleepy"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "You did not expect to see this person again, and here they are.",
-            "explanation": "Unexpectedly meeting an old friend again usually makes you feel delighted.",
-            "id": "sr_l16_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel delighted in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You get a haircut, and you really do not like how it turned out.",
-            "options": [
-                "Pleased",
-                "Excited",
-                "Calm",
-                "Embarrassed"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "You have to show everyone a style you do not like.",
-            "explanation": "Getting a haircut you dislike often makes you feel embarrassed.",
-            "id": "sr_l17_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel embarrassed in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "Your family sets off on a long road trip to the mountains for the weekend.",
-            "options": [
-                "Bored",
-                "Excited",
-                "Sad",
-                "Angry"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Adventure and beautiful scenery are waiting for you.",
-            "explanation": "Starting a trip to a beautiful new place with your family usually makes you feel excited.",
-            "id": "sr_l17_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel excited in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "Your neighbor leaves a handwritten thank-you card in your mailbox.",
-            "options": [
-                "Confused",
-                "Annoyed",
-                "Touched",
-                "Scared"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Someone took the time to write something kind just for you.",
-            "explanation": "Receiving a handwritten card from someone makes you feel touched.",
-            "id": "sr_l17_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel touched in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You accidentally knock your drink off the table at a busy restaurant.",
-            "options": [
-                "Flustered",
-                "Happy",
-                "Proud",
-                "Excited"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "An accident just happened in public, and people noticed.",
-            "explanation": "Accidentally making a mess in public makes you feel flustered.",
-            "id": "sr_l18_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel flustered in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You sit on the beach and watch the sun slowly set over the ocean.",
-            "options": [
-                "Bored",
-                "Angry",
-                "Peaceful",
-                "Fearful"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "Beautiful, calm scenery can settle your mind.",
-            "explanation": "Watching a beautiful sunset like this often creates a feeling of peace.",
-            "id": "sr_l18_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel peaceful in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You apply to join a school club, but you are not chosen this time.",
-            "options": [
-                "Proud",
-                "Relieved",
-                "Excited",
-                "Discouraged"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "You tried, but you were not picked this time.",
-            "explanation": "Being turned down for something you applied for often makes you feel discouraged.",
-            "id": "sr_l18_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel discouraged in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "A stranger picks up the wallet you dropped and hands it back to you.",
-            "options": [
-                "Angry",
-                "Grateful",
-                "Bored",
-                "Scared"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Someone helped you without expecting anything back.",
-            "explanation": "When a stranger kindly helps you, you feel grateful.",
-            "id": "sr_l19_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel grateful in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "Today is your very first day at a new part-time job.",
-            "options": [
-                "Nervous",
-                "Confident",
-                "Bored",
-                "Angry"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "You do not know anyone yet, and everything is brand new.",
-            "explanation": "Starting a new job usually makes people feel a little nervous at first.",
-            "id": "sr_l19_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel nervous in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "After heavy rain, a bright rainbow suddenly appears across the sky.",
-            "options": [
-                "Afraid",
-                "Annoyed",
-                "Delighted",
-                "Impatient"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "A beautiful, colorful natural sight has just appeared.",
-            "explanation": "Seeing a rainbow appear unexpectedly makes most people feel delighted.",
-            "id": "sr_l19_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel delighted in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You say something without thinking, and it accidentally hurts your friend's feelings.",
-            "options": [
-                "Happy",
-                "Guilty",
-                "Excited",
-                "Relieved"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "You did not mean to hurt anyone, but you did.",
-            "explanation": "Accidentally hurting someone's feelings makes you feel guilty.",
-            "id": "sr_l20_q1",
-            "culturalNote": "In English-speaking cultures, openly showing you feel guilty in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You sit in the dentist's waiting room 45 minutes past your appointment time.",
-            "options": [
-                "Excited",
-                "Proud",
-                "Happy",
-                "Impatient"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "Time is passing slowly, and you just want it to be your turn.",
-            "explanation": "Waiting much longer than expected makes you feel impatient.",
-            "id": "sr_l20_q2",
-            "culturalNote": "In English-speaking cultures, openly showing you feel impatient in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "dialogue",
-            "scene": "You pass a very difficult exam after weeks of hard studying.",
-            "options": [
-                "Relieved",
-                "Disappointed",
-                "Angry",
-                "Scared"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "The stress and hard work have finally paid off.",
-            "explanation": "Passing a difficult exam after a lot of studying makes you feel relieved.",
-            "id": "sr_l20_q3",
-            "culturalNote": "In English-speaking cultures, openly showing you feel relieved in this context is completely natural and appropriate.",
-            "formalityScore": 50
-        }
-    ]
+  "gameType": "situationalResponse",
+  "batchIndex": 2,
+  "levels": "11-20",
+  "quests": [
+    {
+      "instruction": "Choose the most professional reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "At a job interview, the interviewer greets you: 'Good morning, I'm Ms. Okafor. Thanks for coming in.'",
+      "options": [
+        "Good morning, Ms. Okafor. Thank you for having me.",
+        "Hey, nice to meet you! Cool office.",
+        "Morning! Just call me Sam, there's really no need to be so formal with each other.",
+        "Hi. So, what do I need to do first?"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Match her level of formality; she hasn't invited first names.",
+      "explanation": "Using her title and thanking her mirrors her tone and shows respect. Overly casual replies or presuming first names can weaken a first impression before the interview starts.",
+      "id": "sr_l11_q1",
+      "culturalNote": "In many English-speaking workplaces, waiting for someone to offer their first name is safer in formal first meetings.",
+      "formalityScore": 85
+    },
+    {
+      "instruction": "Pick the most appropriate reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "At a work event, your manager Ms. Reyes joins you and your friend Jo, who has never met her. You need to introduce them.",
+      "options": [
+        "Jo, meet my boss.",
+        "This is Jo. She's just a friend, don't mind her.",
+        "Ms. Reyes, this is my friend Jo. Jo, Ms. Reyes is my manager.",
+        "Ms. Reyes, meet Jo. She's here with me."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "In introductions, give each person a name and a link to you.",
+      "explanation": "Naming both people and explaining how each connects to you lets them start talking. Vague or dismissive introductions leave one person unsure what to say.",
+      "id": "sr_l11_q2",
+      "culturalNote": "Traditionally the more senior person's name is said first; the key is that both names and roles are clear.",
+      "formalityScore": 65
+    },
+    {
+      "instruction": "Choose the most professional reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "You're emailing a professor you've never met to ask about joining her lab. Her name is Dr. Malik.",
+      "options": [
+        "Hi Malik, wanted to pick your brain about your lab.",
+        "To whom it may concern, I have a question about your lab and whether I could visit sometime soon.",
+        "Hey! Can you tell me about your lab?",
+        "Dear Dr. Malik, I'm a second-year student at Kent, writing to ask about your lab."
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "A first email needs the right title and a reason for writing.",
+      "explanation": "Using her title and stating who you are and why you're writing gets her attention politely. Casual or impersonal openers can seem careless.",
+      "id": "sr_l11_q3",
+      "culturalNote": "Academic emails typically use titles until invited otherwise, and state the purpose in the first line.",
+      "formalityScore": 80
+    },
+    {
+      "instruction": "What would you say?",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "You've chatted with a man at your gym twice, but his name has slipped your mind. He waves and approaches.",
+      "options": [
+        "Nice to see you again, buddy.",
+        "Have we met before?",
+        "You look really familiar. Did we meet at some point, maybe at the pool or something?",
+        "I'm sorry, your name has slipped my mind — could you remind me?"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Honesty about forgetting works better than pretending.",
+      "explanation": "Admitting it briefly and asking is respectful and quickly resolves the issue. Pretending or acting like you've never met can offend when you've actually talked.",
+      "id": "sr_l12_q1",
+      "culturalNote": "Most people are sympathetic about forgetting names; a quick admission is usually forgiven.",
+      "formalityScore": 35
+    },
+    {
+      "instruction": "Choose the best way to respond.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "In a meeting, a colleague mispronounces your name, Shanni, as 'Shan-eye.'",
+      "options": [
+        "That's not my name.",
+        "Just call me Sam, everyone does — it's simpler for everybody, and I don't mind at all.",
+        "It's actually 'Shah-NEE' — no worries, it's easy to mix up.",
+        "Don't worry, it's not important."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Correct it kindly so it doesn't happen again.",
+      "explanation": "A friendly correction avoids embarrassment and helps them get it right later. Ignoring it or offering a nickname means it will likely keep happening.",
+      "id": "sr_l12_q2",
+      "culturalNote": "Correcting pronunciation early is normal and usually appreciated.",
+      "formalityScore": 45
+    },
+    {
+      "instruction": "Pick the most appropriate reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A colleague named Anjali corrects you after you pronounced her name wrong at a team lunch.",
+      "options": [
+        "Whatever, close enough.",
+        "Oh, I've heard it said both ways.",
+        "Sorry, your name is really hard to say.",
+        "Sorry — Anjali, got it. Thanks for telling me."
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Thank her for the correction, don't defend the mistake.",
+      "explanation": "A brief apology and thanks acknowledge the error and show you'll try again. Excuses or blaming the name make her feel it was her fault.",
+      "id": "sr_l12_q3",
+      "culturalNote": "Names carry personal significance; getting them right is a basic courtesy.",
+      "formalityScore": 45
+    },
+    {
+      "instruction": "What would you say?",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "You've just moved into an apartment building and want to introduce yourself to the neighbor across the hall.",
+      "options": [
+        "Hello. Do you mind keeping the noise down?",
+        "I'm the new tenant. Which bins do we use?",
+        "Hi, I'm Lena from number 6 — just moved in. I brought some cookies to say hello.",
+        "Hi neighbour, I'm having a party next weekend, hope that's okay."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "A first meeting is about connection, not requests or warnings.",
+      "explanation": "Introducing yourself with a small gesture builds goodwill. Opening with a complaint, chore, or warning makes the first impression transactional or negative.",
+      "id": "sr_l13_q1",
+      "culturalNote": "Bringing a small gift when meeting neighbors is common in some places but not necessary everywhere.",
+      "formalityScore": 40
+    },
+    {
+      "instruction": "Choose the most natural response.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "You've just been added to a cycling club group chat with forty strangers. You want to say something first.",
+      "options": [
+        "Why was I added to this?",
+        "Hi.",
+        "Hi all, I'm Ben — thanks for adding me. Looking forward to the next ride.",
+        "So when is the next ride, where do we meet, and who is bringing the snacks and spare tubes?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Say hello and who you are before asking anything.",
+      "explanation": "Introducing yourself and showing enthusiasm makes you approachable. Jumping into logistics or questioning the invitation feels off.",
+      "id": "sr_l13_q2",
+      "culturalNote": "Group chats usually welcome short self-introductions; lurking silently can feel odd to others.",
+      "formalityScore": 25
+    },
+    {
+      "instruction": "Pick the most appropriate reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "You join a video call and the host says, 'Welcome — have we met?' You started on Monday.",
+      "options": [
+        "We haven't yet — I'm Tara, I joined the finance team on Monday.",
+        "I'm Tara.",
+        "Not really, I only joined to listen in today, so please don't worry about introducing me to anyone.",
+        "Yes, obviously, I sit two desks from you."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Answer the question, then give useful context about yourself.",
+      "explanation": "Giving your name and role helps the host and others place you. A bare name or sarcasm doesn't help, and claiming to be silent wastes the introduction.",
+      "id": "sr_l13_q3",
+      "culturalNote": "New joiners often introduce themselves with a role; it saves colleagues asking later.",
+      "formalityScore": 55
+    },
+    {
+      "instruction": "Choose the most natural response.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "At a wedding, the stranger sitting next to you asks, 'How do you know the bride?' You studied with her.",
+      "options": [
+        "Why do you ask?",
+        "Through friends.",
+        "That's a personal question.",
+        "We studied together years ago. How about you?"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Answer honestly and give the conversation somewhere to go.",
+      "explanation": "A direct answer plus a return question keeps small talk alive. Suspicion or vagueness stalls it.",
+      "id": "sr_l14_q1",
+      "culturalNote": "At weddings, 'How do you know the couple?' is a standard opener to find common ground.",
+      "formalityScore": 40
+    },
+    {
+      "instruction": "Pick the response that fits the situation.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "At a conference coffee break, two strangers are chatting and you'd like to join them.",
+      "options": [
+        "You two look busy, sorry.",
+        "Mind if I join you? I'm Dev, I work in logistics.",
+        "Are you talking about the keynote?",
+        "I'll stand here in case you need a third."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Ask permission, then say who you are.",
+      "explanation": "Asking politely and introducing yourself makes joining feel welcome. Hovering or guessing at their topic feels awkward.",
+      "id": "sr_l14_q2",
+      "culturalNote": "Conferences invite mingling; a short opener with your name and field is standard.",
+      "formalityScore": 50
+    },
+    {
+      "instruction": "What would you say?",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "At a party, a stranger asks 'What do you do?' You lost your job a month ago and are looking for design work.",
+      "options": [
+        "Nothing, really.",
+        "I'm unemployed right now, so there's really not much to tell about my work life.",
+        "That's a bit personal for a party.",
+        "I'm between jobs at the moment — looking into design roles."
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Be honest but frame it forward.",
+      "explanation": "Naming your search direction gives them something to respond to. Blunt or defensive answers close the topic.",
+      "id": "sr_l14_q3",
+      "culturalNote": "'Between jobs' is a common, non-defensive way to describe unemployment; it isn't dishonest.",
+      "formalityScore": 40
+    },
+    {
+      "instruction": "Choose the most natural response.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "Your friend's partner, Priya, arrives at your dinner party. You haven't met her before.",
+      "options": [
+        "Hi. Coats go on the bed.",
+        "You must be Priya — I've heard a lot about you. Let me take your coat.",
+        "Come in, dinner's not ready yet.",
+        "Are you the one who's vegetarian? I have to know before I plate everything up."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Welcome the person first, logistics second.",
+      "explanation": "Greeting her by name and offering to take her coat feels warm. Starting with logistics or diet questions feels impersonal.",
+      "id": "sr_l15_q1",
+      "culturalNote": "Hosts usually greet by name and offer coats as a way to make guests feel expected.",
+      "formalityScore": 35
+    },
+    {
+      "instruction": "Choose the best way to respond.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "You're meeting your partner's parents for the first time at their home.",
+      "options": [
+        "Hey Mr. and Mrs. Kaur, cool house!",
+        "It's really nice to meet you both. Thank you for having me.",
+        "So, what was Jay like as a kid? I bet there are some really embarrassing stories.",
+        "Hello. Where should I sit?"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "You are a guest and first impressions matter.",
+      "explanation": "Politeness and thanks show respect for their hospitality. Being overfamiliar or transactional makes a poor first impression.",
+      "id": "sr_l15_q2",
+      "culturalNote": "Meeting parents often calls for slightly more formality than you would use with friends.",
+      "formalityScore": 55
+    },
+    {
+      "instruction": "What would you say?",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "In a hostel kitchen, a traveler is cooking pasta as you walk in on your first evening.",
+      "options": [
+        "Smells great! I'm Kai, just arrived today.",
+        "Are you using both burners?",
+        "You're in my spot.",
+        "Do you always cook this late at night, or is tonight a special occasion?"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Start with something friendly, not something territorial.",
+      "explanation": "A compliment plus your name is inviting. Questions about the stove or territory feel confrontational.",
+      "id": "sr_l15_q3",
+      "culturalNote": "Hostel kitchens are social spaces; friendly openers are common.",
+      "formalityScore": 25
+    },
+    {
+      "instruction": "Choose the most natural response.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "Your class is doing introductions and you have thirty seconds to introduce yourself.",
+      "options": [
+        "Hello. I'm Yuki. That's all, I guess.",
+        "My name is Yuki Tanaka, I have two brothers, a dog, and I was born in 2004.",
+        "Hi everyone, I'm Yuki. I'm studying biology and I love cycling.",
+        "I don't like introductions, but I'm Yuki."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Give a name and one or two interesting details.",
+      "explanation": "A name and a couple of facts give classmates hooks for conversation. Too little or too much or a complaint doesn't help.",
+      "id": "sr_l16_q1",
+      "culturalNote": "Self-introductions usually balance brevity with a personal touch.",
+      "formalityScore": 45
+    },
+    {
+      "instruction": "Pick the most professional reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "You're calling a company you don't know about a job vacancy you saw online.",
+      "options": [
+        "Hi, is this the place that's hiring?",
+        "Good afternoon, my name is Sam Lee. I'm calling about the assistant vacancy — is now a good time?",
+        "Yes, hello, I want a job.",
+        "Hello, can I speak to whoever is in charge of the hiring there? I saw an advert online this morning and I'd like to ask about it."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "A professional call needs your name, your purpose, and a check on timing.",
+      "explanation": "Stating who you are, why you call, and checking timing respects the listener. The others are vague or blunt.",
+      "id": "sr_l16_q2",
+      "culturalNote": "Phone etiquette usually includes checking if it's a good time.",
+      "formalityScore": 75
+    },
+    {
+      "instruction": "What would you say?",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "Your friend introduces you as 'Lin, an engineer' to a new contact, but you're actually a designer.",
+      "options": [
+        "No, I'm not.",
+        "Actually, I'm a designer, though I work closely with engineers.",
+        "That's not true at all, you've got my job title completely wrong, I'm afraid.",
+        "Sure, something like that."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Correct it lightly so the new contact knows the truth.",
+      "explanation": "A light correction keeps things friendly and accurate. Blunt contradiction embarrasses your friend, and staying silent leaves a false impression.",
+      "id": "sr_l16_q3",
+      "culturalNote": "Small corrections during introductions are normal if made gently.",
+      "formalityScore": 40
+    },
+    {
+      "instruction": "Pick the most appropriate reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "You're alone in the elevator with the CEO of your company, whom you've never spoken to.",
+      "options": [
+        "Hey! Big boss!",
+        "Nice weather we're having, isn't it? Hopefully it stays like this all week.",
+        "Sorry, I'm not supposed to talk to you.",
+        "Good morning. I'm Hana from accounts — it's good to see you."
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Be brief, respectful, and introduce yourself.",
+      "explanation": "A polite greeting with your name and department is professional and appropriate. Jokes or silence miss the chance.",
+      "id": "sr_l17_q1",
+      "culturalNote": "Many CEOs appreciate brief, respectful acknowledgement rather than either avoidance or overfamiliarity.",
+      "formalityScore": 70
+    },
+    {
+      "instruction": "Choose the most professional reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "You arrive at a clinic's reception for a two o'clock appointment with Mr. Chen.",
+      "options": [
+        "I'm here for Chen.",
+        "Is Mr. Chen ready to see me yet, or should I just sit down and wait somewhere?",
+        "Hello, I have a two o'clock appointment with Mr. Chen.",
+        "I'm early, so I'll just wait here."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "State who you are here to see and when.",
+      "explanation": "Giving the time and full name lets reception find you quickly. Vague or presumptuous phrasing causes delay.",
+      "id": "sr_l17_q2",
+      "culturalNote": "Front-desk staff need the appointment time and the practitioner's name.",
+      "formalityScore": 65
+    },
+    {
+      "instruction": "Pick the most appropriate reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "It's your first time visiting Professor Adeyemi's office hours. You're in her Tuesday class.",
+      "options": [
+        "Hi, do you have a minute?",
+        "Hey prof, I'm Lucas from the Tuesday lecture, and I have a question about the last assignment.",
+        "Sorry to bother you, but...",
+        "Hello Professor Adeyemi, I'm Lucas from your Tuesday class — thanks for seeing me."
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Professors see many students; help them place you.",
+      "explanation": "Naming yourself and your class helps her place you quickly. Vague or apologetic openers don't.",
+      "id": "sr_l17_q3",
+      "culturalNote": "Titles are generally used with professors until they suggest otherwise.",
+      "formalityScore": 65
+    },
+    {
+      "instruction": "What would you say?",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "At a networking event, you've talked with someone for ten minutes and want to move on politely.",
+      "options": [
+        "Well, I have to go now.",
+        "Okay, bye.",
+        "It was great talking with you. I'm going to say hello to a few others — enjoy the evening.",
+        "Someone else is waving at me over there, so sorry, I really have to run right now, bye."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Leave gracefully with a friendly closing.",
+      "explanation": "A warm closing with a reason keeps the connection positive. Abrupt exits or excuses feel rude.",
+      "id": "sr_l18_q1",
+      "culturalNote": "Networking events expect people to circulate; a polite exit is normal.",
+      "formalityScore": 55
+    },
+    {
+      "instruction": "Choose the most professional reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "You've enjoyed a conversation with a potential mentor at a professional event and want to stay in touch.",
+      "options": [
+        "It'd be great to keep in touch — could I get your email?",
+        "Give me your number.",
+        "Do you have LinkedIn or something?",
+        "We should totally hang out sometime, I'll find you on social media or something like that."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Ask directly and respectfully for a contact method.",
+      "explanation": "A polite, specific request fits a professional connection. Demands or vague invitations don't.",
+      "id": "sr_l18_q2",
+      "culturalNote": "Email is often the default contact in professional first meetings.",
+      "formalityScore": 55
+    },
+    {
+      "instruction": "Pick the most appropriate reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "A senior client you've just met says, 'Please, call me Bill.'",
+      "options": [
+        "I'd prefer to keep calling you Mr. Harris.",
+        "Thank you, Bill. Please call me Ana.",
+        "Okay, Mr. Bill.",
+        "Sure, whatever you like."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Accept warmly and offer yours in return.",
+      "explanation": "Accepting and offering your own name signals mutual comfort. Refusing or mixing forms awkwardly signals discomfort.",
+      "id": "sr_l18_q3",
+      "culturalNote": "When someone invites first names, accepting is a sign of trust in many English-speaking settings.",
+      "formalityScore": 60
+    },
+    {
+      "instruction": "What would you say?",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "You run into an old friend at the supermarket after several years of no contact.",
+      "options": [
+        "You've changed a lot.",
+        "It's been ages! I'm so glad we ran into each other. How have you been?",
+        "Wow. I barely recognized you.",
+        "Do you still work at the same place, or did you finally change jobs like you always wanted?"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Lead with warmth, not observations about appearance.",
+      "explanation": "A warm reunion greeting opens the conversation positively. Comments on change can sound critical.",
+      "id": "sr_l19_q1",
+      "culturalNote": "Reunions usually open with warmth and an open question.",
+      "formalityScore": 30
+    },
+    {
+      "instruction": "Choose the most natural response.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "At your first badminton club session, the coach asks, 'Have you played before?' You've only played casually.",
+      "options": [
+        "Yes, I'm pretty good, I played a lot at school so you don't need to explain the rules.",
+        "Not really, I don't think I can.",
+        "A little — mostly casually, so I'll need some pointers.",
+        "That depends what you mean by played."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Give an honest level so he can help.",
+      "explanation": "An honest answer helps the coach place you. Overclaiming or evasion makes coaching harder.",
+      "id": "sr_l19_q2",
+      "culturalNote": "Coaches want an honest level; overselling can lead to a mismatch.",
+      "formalityScore": 40
+    },
+    {
+      "instruction": "Pick the most appropriate reply.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "At a formal gala, the host greets you at the door.",
+      "options": [
+        "Good evening. Thank you for the invitation — it's a lovely venue.",
+        "Hi, thanks. Where's the bar, and is there somewhere to leave our coats and bags?",
+        "Sorry we're late, traffic.",
+        "Am I dressed okay for this?"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "A guest's first words should thank and compliment.",
+      "explanation": "Thanking the host and complimenting the venue is gracious. Practical or self-focused comments miss the moment.",
+      "id": "sr_l19_q3",
+      "culturalNote": "Formal events call for polished greetings.",
+      "formalityScore": 80
+    },
+    {
+      "instruction": "What would you say?",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "You're meeting an online friend in person for the first time at a train station.",
+      "options": [
+        "You look a bit different from your photos, but I guess everyone does in real life.",
+        "So are we going to eat or what?",
+        "This is weird, isn't it?",
+        "Hi! It's so good to finally meet you in person."
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Express warmth about finally meeting.",
+      "explanation": "Expressing warmth sets a positive tone. Commenting on looks or awkwardness can make things uncomfortable.",
+      "id": "sr_l20_q1",
+      "culturalNote": "First in-person meetings after online friendships benefit from warmth.",
+      "formalityScore": 25
+    },
+    {
+      "instruction": "Choose the best way to respond.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "You're a teacher at parent evening and Mr. Silva arrives for his appointment.",
+      "options": [
+        "Good evening, Mr. Silva, thank you for coming. Please have a seat.",
+        "Hello, are you Marcus's dad?",
+        "Sit anywhere you like, I'll be with you shortly, I'm just finishing with another parent.",
+        "You're right on time — most parents are late."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Welcome parents by name and courteously.",
+      "explanation": "Greeting him by name and inviting him to sit feels respectful. Guessing identity or commenting on other parents doesn't.",
+      "id": "sr_l20_q2",
+      "culturalNote": "Parent-teacher meetings usually use formal titles.",
+      "formalityScore": 70
+    },
+    {
+      "instruction": "Pick the response that fits the situation.",
+      "subtype": "situationalResponse",
+      "interactionType": "dialogue",
+      "scene": "At a party, a stranger says quietly, 'I don't know anyone here.'",
+      "options": [
+        "Me neither — want to grab a drink and find a spot to talk?",
+        "That must be hard for you.",
+        "You should try meeting people.",
+        "I know pretty much everyone here, so just ask me if you want an introduction."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Match their honesty and offer company.",
+      "explanation": "Sharing the situation and inviting them creates connection. Pity or advice puts distance between you.",
+      "id": "sr_l20_q3",
+      "culturalNote": "Shared awkwardness is a good icebreaker.",
+      "formalityScore": 25
+    }
+  ]
 }

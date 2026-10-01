@@ -8,8 +8,8 @@
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "My name is Anna.",
-            "textToSpeak": "My name is Anna.",
+            "word": "I'm from Brazil.",
+            "textToSpeak": "I'm from Brazil.",
             "options": [
                 "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
@@ -22,206 +22,14 @@
                 1,
                 0
             ],
-            "hint": "This sentence shares basic information about the speaker. Listen for the pitch direction on the last word, 'Anna.'",
-            "explanation": "Simple statements that give information end with falling intonation. The pitch drops on the final word, 'Anna,' signaling that the sentence is complete.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Curious"
+            "hint": "The speaker is giving you a fact about themselves. Follow the voice on the last word, 'Brazil': does it step down or lift?",
+            "explanation": "The voice steps down on 'Brazil' because the information is finished. A falling ending sounds settled, like a spoken full stop.",
+            "pitchRule": "📉 A statement ends with the voice dropping, like a full stop you can hear.",
+            "emotionContext": "Friendly"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L1_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "Are you a teacher?",
-            "textToSpeak": "Are you a teacher?",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                1,
-                1,
-                2,
-                3
-            ],
-            "hint": "This question starts with 'Are' and can only be answered with 'yes' or 'no.' Listen to what happens to the pitch on 'teacher.'",
-            "explanation": "Yes/No questions usually rise in pitch at the end. Here, the voice rises on 'teacher' to invite a yes-or-no response.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Excited"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L1_Q3",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "I live in this city.",
-            "textToSpeak": "I live in this city.",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                2,
-                2,
-                1,
-                0
-            ],
-            "hint": "This is a fact about where the speaker lives. Notice whether the voice falls or rises on 'city.'",
-            "explanation": "Statements of fact end with falling intonation. The pitch drops on 'city,' showing the sentence is finished and certain.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Doubtful"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L2_Q1",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "Do you speak English?",
-            "textToSpeak": "Do you speak English?",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                1,
-                1,
-                2,
-                3
-            ],
-            "hint": "Questions beginning with 'Do' are usually Yes/No questions. Pay attention to the pitch on 'English.'",
-            "explanation": "Because this is a Yes/No question, the pitch rises on the last word, 'English,' inviting a simple yes-or-no answer.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Neutral"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L2_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "He works at a bank.",
-            "textToSpeak": "He works at a bank.",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                2,
-                2,
-                1,
-                0
-            ],
-            "hint": "This sentence states a fact about someone's job. Listen for the direction of pitch on 'bank.'",
-            "explanation": "This statement ends with falling intonation. The voice drops on 'bank' because the speaker is simply giving information.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Surprised"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L2_Q3",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "Is this your bag?",
-            "textToSpeak": "Is this your bag?",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                1,
-                1,
-                2,
-                3
-            ],
-            "hint": "This question can be answered with 'yes' or 'no.' Listen closely to the pitch on 'bag.'",
-            "explanation": "Yes/No questions rise at the end. The pitch goes up on 'bag' as the speaker checks a fact.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Determined"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L3_Q1",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "We are good friends.",
-            "textToSpeak": "We are good friends.",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                2,
-                2,
-                1,
-                0
-            ],
-            "hint": "This sentence describes a relationship. Does the pitch drop or climb on the word 'friends'?",
-            "explanation": "Statements end with a falling pitch. Here, the voice falls on 'friends,' marking the end of a complete idea.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Curious"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L3_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "Can I sit here?",
-            "textToSpeak": "Can I sit here?",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                1,
-                1,
-                2,
-                3
-            ],
-            "hint": "This is a polite request that expects 'yes' or 'no.' Listen to what the pitch does on 'here.'",
-            "explanation": "Yes/No questions, including polite requests like this one, rise in pitch at the end. The voice rises on 'here.'",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Excited"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L3_Q3",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "She is my sister.",
-            "textToSpeak": "She is my sister.",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                2,
-                2,
-                1,
-                0
-            ],
-            "hint": "This sentence introduces a family member. Notice the pitch on the last word, 'sister.'",
-            "explanation": "This is a simple statement, so the pitch falls on 'sister,' showing the speaker is finished sharing the fact.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Doubtful"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L4_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "A classmate wants to borrow something from you. Which pattern fits this sentence?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
             "word": "Do you have a pen?",
@@ -238,18 +46,138 @@
                 2,
                 3
             ],
-            "hint": "This question starts with 'Do you' and expects a short yes-or-no answer. Listen to the pitch on 'pen.'",
-            "explanation": "The rising pitch on 'pen' signals a Yes/No question, where the speaker expects a simple yes-or-no reply.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Neutral"
+            "hint": "The speaker doesn't know the answer yet and is waiting for you to say yes or no. Listen for that open, waiting sound at the end.",
+            "explanation": "The voice lifts on 'pen' because the speaker is asking and leaving the answer to you. The lift says: your turn.",
+            "pitchRule": "📈 A yes/no question ends with a lift that hands the turn to the listener.",
+            "emotionContext": "Curious"
         },
         {
-            "id": "ACC_INTONATIONMIMIC_L4_Q2",
+            "id": "ACC_INTONATIONMIMIC_L1_Q3",
+            "instruction": "You're ordering at a café. Which pattern will you use when you say this?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "I'd like a glass of water.",
+            "textToSpeak": "I'd like a glass of water.",
+            "options": [
+                "Falling Intonation (Statement)",
+                "Rising Intonation (Yes/No Question)"
+            ],
+            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                2,
+                3,
+                1,
+                0
+            ],
+            "hint": "You are telling the waiter what you want, not asking permission. Decide whether your voice should sound finished or open.",
+            "explanation": "An order stated politely still ends with a fall: your request is clear and the sentence is complete. Lifting on 'water' would make you sound unsure.",
+            "pitchRule": "📉 Say what you want, then let your voice land low on the last word.",
+            "emotionContext": "Polite"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L2_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This is my phone.",
-            "textToSpeak": "This is my phone.",
+            "word": "The bus leaves at eight.",
+            "textToSpeak": "The bus leaves at eight.",
+            "options": [
+                "Rising Intonation (Yes/No Question)",
+                "Falling Intonation (Statement)"
+            ],
+            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                2,
+                2,
+                1,
+                0
+            ],
+            "hint": "This sentence reports a fixed schedule. Compare how 'eight' sounds with the words before it.",
+            "explanation": "The pitch falls on 'eight' because the speaker is stating a fact, not checking it. Nothing is left open for the listener to answer.",
+            "pitchRule": "📉 A fact closes with a fall on its final stressed word.",
+            "emotionContext": "Neutral"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L2_Q2",
+            "instruction": "You sit down next to a stranger on a train. Which pattern fits?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "Is this seat taken?",
+            "textToSpeak": "Is this seat taken?",
+            "options": [
+                "Falling Intonation (Statement)",
+                "Rising Intonation (Yes/No Question)"
+            ],
+            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                1,
+                2,
+                2,
+                3
+            ],
+            "hint": "The speaker is waiting for a yes or no before sitting down. Listen to whether the voice sounds finished.",
+            "explanation": "The rise on 'taken' shows you are asking, not announcing. It also sounds friendlier, because the other person gets to decide.",
+            "pitchRule": "📈 Rise on the last word to invite a yes-or-no reply.",
+            "emotionContext": "Polite"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L2_Q3",
+            "instruction": "You're texting friends where to meet. Which pattern will you use to say this out loud?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "We're meeting in the lobby.",
+            "textToSpeak": "We're meeting in the lobby.",
+            "options": [
+                "Rising Intonation (Yes/No Question)",
+                "Falling Intonation (Statement)"
+            ],
+            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                2,
+                2,
+                1,
+                0
+            ],
+            "hint": "You already decided the place. Ask yourself: are you telling or asking?",
+            "explanation": "A plan that is already decided is told, not asked, so the voice falls on 'lobby'. Rising would sound as if the plan were still a suggestion.",
+            "pitchRule": "📉 A decided plan sounds decided when the voice falls at the end.",
+            "emotionContext": "Neutral"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L3_Q1",
+            "instruction": "Identify the intonation",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "Can you hear me?",
+            "textToSpeak": "Can you hear me?",
+            "options": [
+                "Rising Intonation (Yes/No Question)",
+                "Falling Intonation (Statement)"
+            ],
+            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                1,
+                1,
+                2,
+                3
+            ],
+            "hint": "This is a common question during a video call. Listen for whether the speaker sounds like they are waiting for an answer.",
+            "explanation": "The voice lifts on 'me' because the speaker really wants to know. The sentence cannot feel complete until the listener says yes or no.",
+            "pitchRule": "📈 A question that needs an answer usually ends on a rise.",
+            "emotionContext": "Concerned"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L3_Q2",
+            "instruction": "Your friend looks out of the window and comments. Which pattern fits?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "It's raining outside.",
+            "textToSpeak": "It's raining outside.",
             "options": [
                 "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
@@ -262,18 +190,66 @@
                 1,
                 0
             ],
-            "hint": "This sentence simply names an object. Listen for whether 'phone' rises or falls.",
-            "explanation": "Statements that identify something end with falling intonation. The pitch falls on 'phone' to close the sentence.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Surprised"
+            "hint": "The speaker is describing what they see, not asking you to confirm it. Which ending sounds like a description?",
+            "explanation": "Describing something you can see is a plain statement, so the pitch falls on 'outside'. The listener is not being asked anything.",
+            "pitchRule": "📉 When you simply report what you see, let your voice fall.",
+            "emotionContext": "Neutral"
         },
         {
-            "id": "ACC_INTONATIONMIMIC_L4_Q3",
+            "id": "ACC_INTONATIONMIMIC_L3_Q3",
+            "instruction": "You're at a bus stop and a driver pulls up. Which pattern will you use?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "Does this bus go downtown?",
+            "textToSpeak": "Does this bus go downtown?",
+            "options": [
+                "Rising Intonation (Yes/No Question)",
+                "Falling Intonation (Statement)"
+            ],
+            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                1,
+                1,
+                2,
+                4
+            ],
+            "hint": "You genuinely don't know the answer. Decide whether your voice should sound finished or open.",
+            "explanation": "You need information, so the pitch rises on 'downtown' and waits for a reply. A falling ending would sound like a statement, not a real question.",
+            "pitchRule": "📈 When you need an answer, leave your pitch high at the end.",
+            "emotionContext": "Curious"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L4_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Is the shop open?",
-            "textToSpeak": "Is the shop open?",
+            "word": "I study English every evening.",
+            "textToSpeak": "I study English every evening.",
+            "options": [
+                "Rising Intonation (Yes/No Question)",
+                "Falling Intonation (Statement)"
+            ],
+            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                2,
+                2,
+                1,
+                0
+            ],
+            "hint": "The speaker describes a habit. Notice where the pitch goes on 'evening'.",
+            "explanation": "A habit stated as fact falls on 'evening'. The speaker is not asking whether you agree, only reporting what they do.",
+            "pitchRule": "📉 Facts about your routine end with a falling voice.",
+            "emotionContext": "Proud"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L4_Q2",
+            "instruction": "A waiter comes to your table with a notepad. Which pattern fits what he says?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "Are you ready to order?",
+            "textToSpeak": "Are you ready to order?",
             "options": [
                 "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
@@ -282,46 +258,94 @@
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
+                2,
                 2,
                 3
             ],
-            "hint": "This question checks a fact and expects 'yes' or 'no.' Notice the pitch movement on 'open.'",
-            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'open' as the speaker checks information.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Determined"
+            "hint": "The waiter needs to hear yes or no before he can act. Listen for the waiting quality of the ending.",
+            "explanation": "He is asking for a decision, so the pitch rises on 'order'. A fall would sound like he had already decided for you.",
+            "pitchRule": "📈 A yes/no question rises because the speaker needs your answer.",
+            "emotionContext": "Polite"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L4_Q3",
+            "instruction": "You're helping your roommate look for something. Which pattern will you use?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "The keys are on the table.",
+            "textToSpeak": "The keys are on the table.",
+            "options": [
+                "Rising Intonation (Yes/No Question)",
+                "Falling Intonation (Statement)"
+            ],
+            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                2,
+                2,
+                1,
+                0
+            ],
+            "hint": "You are giving location information. Would you sound sure or unsure?",
+            "explanation": "Because you are certain, the pitch falls on 'table'. A rise would make your roommate wonder whether you were guessing.",
+            "pitchRule": "📉 A confident answer lands low on the last word.",
+            "emotionContext": "Helpful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L5_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "I am very tired.",
-            "textToSpeak": "I am very tired.",
+            "word": "Have you finished?",
+            "textToSpeak": "Have you finished?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Yes/No Question)",
+                "Falling Intonation (Statement)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Rising Intonation (Yes/No Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
-                2,
                 1,
-                0
+                1,
+                2,
+                3
             ],
-            "hint": "This sentence describes how the speaker feels. Listen to the pitch on 'tired.'",
-            "explanation": "This statement ends with falling intonation, with the pitch dropping on 'tired' to show the thought is complete.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
+            "hint": "This question waits for a yes or no. Listen to the ending of 'finished.'",
+            "explanation": "The pitch rises on 'finished' because the speaker is checking and needs an answer before moving on.",
+            "pitchRule": "📈 Short yes/no questions still rise: 'finished' lifts at the end.",
             "emotionContext": "Curious"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L5_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "At the end of a long day, a colleague asks how you feel. Which pattern fits your reply?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Are you hungry now?",
-            "textToSpeak": "Are you hungry now?",
+            "word": "I'm really tired today.",
+            "textToSpeak": "I'm really tired today.",
+            "options": [
+                "Rising Intonation (Yes/No Question)",
+                "Falling Intonation (Statement)"
+            ],
+            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                2,
+                3,
+                1,
+                0
+            ],
+            "hint": "This is a personal report, not a question. Which ending sounds like a closed sentence?",
+            "explanation": "The speaker reports a feeling, so the pitch peaks on 'tired' and then falls. Nothing is being asked.",
+            "pitchRule": "📉 Even a small peak on the key word ends in a fall when the idea is finished.",
+            "emotionContext": "Tired"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L5_Q3",
+            "instruction": "A customer looks confused in a shop. Which pattern will you use to offer help?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "Can I help you?",
+            "textToSpeak": "Can I help you?",
             "options": [
                 "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
@@ -334,66 +358,18 @@
                 2,
                 3
             ],
-            "hint": "This question expects a 'yes' or 'no' answer. Pay attention to the pitch on 'now.'",
-            "explanation": "Yes/No questions rise at the end, so the pitch goes up on 'now' to invite a short answer.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Excited"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L5_Q3",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "The weather is nice today.",
-            "textToSpeak": "The weather is nice today.",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                2,
-                2,
-                1,
-                0
-            ],
-            "hint": "This sentence comments on the weather. Notice the pitch direction on 'today.'",
-            "explanation": "Statements end with falling intonation. The voice falls on 'today,' showing the comment is complete.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Doubtful"
+            "hint": "You want to know if the person needs help. Choose the ending that invites a reply.",
+            "explanation": "An offer phrased as a question rises on 'you' so the customer can accept or decline. A fall can sound cold or abrupt.",
+            "pitchRule": "📈 A rising ending makes an offer sound open and friendly.",
+            "emotionContext": "Helpful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L6_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Do you like music?",
-            "textToSpeak": "Do you like music?",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                1,
-                1,
-                2,
-                3
-            ],
-            "hint": "This is a Yes/No question about a preference. Listen to the pitch on 'music.'",
-            "explanation": "The pitch rises on 'music' because Yes/No questions end with rising intonation.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Neutral"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L6_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "He is from Spain.",
-            "textToSpeak": "He is from Spain.",
+            "word": "Your coffee is ready.",
+            "textToSpeak": "Your coffee is ready.",
             "options": [
                 "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
@@ -406,66 +382,66 @@
                 1,
                 0
             ],
-            "hint": "This sentence gives information about where someone is from. Listen for the pitch on 'Spain.'",
-            "explanation": "This statement ends with falling intonation, with the pitch dropping on 'Spain' to mark the end of the fact.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Surprised"
+            "hint": "The barista is announcing something that is already true. Listen for how 'ready' ends.",
+            "explanation": "An announcement of a completed action falls on 'ready'. It tells you something rather than asking you anything.",
+            "pitchRule": "📉 Announcements close with a fall so they sound clear and final.",
+            "emotionContext": "Friendly"
         },
         {
-            "id": "ACC_INTONATIONMIMIC_L6_Q3",
-            "instruction": "Identify the intonation",
+            "id": "ACC_INTONATIONMIMIC_L6_Q2",
+            "instruction": "A coworker sees you leaving the office at noon. Which pattern fits their question?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Was the movie good?",
-            "textToSpeak": "Was the movie good?",
+            "word": "Want to join us for lunch?",
+            "textToSpeak": "Want to join us for lunch?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Yes/No Question)",
+                "Falling Intonation (Statement)"
             ],
             "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
                 1,
                 2,
                 3
             ],
-            "hint": "This question asks for an opinion but still expects 'yes' or 'no.' Notice the pitch on 'good.'",
-            "explanation": "Even opinion questions that can be answered with yes or no rise in pitch at the end, here on 'good.'",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Determined"
+            "hint": "This is an invitation, and the speaker hopes for a yes. Listen for whether the sentence sounds open.",
+            "explanation": "An invitation is a yes/no question, so the voice rises on 'lunch'. The lift also sounds warm and inviting.",
+            "pitchRule": "📈 A rise turns an invitation into a real choice for the listener.",
+            "emotionContext": "Friendly"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L6_Q3",
+            "instruction": "Someone asks about your weekend. Which pattern will you use for your answer?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "I don't have any plans tonight.",
+            "textToSpeak": "I don't have any plans tonight.",
+            "options": [
+                "Falling Intonation (Statement)",
+                "Rising Intonation (Yes/No Question)"
+            ],
+            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                2,
+                2,
+                1,
+                0
+            ],
+            "hint": "You are giving a simple answer, not asking about the other person's plans.",
+            "explanation": "Your answer closes with a fall on 'tonight'. Ending on a rise would sound like you were asking permission to have no plans.",
+            "pitchRule": "📉 A complete answer finishes low, even when it is negative.",
+            "emotionContext": "Relaxed"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L7_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "I have two brothers.",
-            "textToSpeak": "I have two brothers.",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                2,
-                2,
-                1,
-                0
-            ],
-            "hint": "This sentence states a fact about family. Listen to the pitch on 'brothers.'",
-            "explanation": "Statements end with falling intonation. The pitch falls on 'brothers,' showing the sentence is complete.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Curious"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L7_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "Do you need help?",
-            "textToSpeak": "Do you need help?",
+            "word": "Did you sleep well?",
+            "textToSpeak": "Did you sleep well?",
             "options": [
                 "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
@@ -478,18 +454,18 @@
                 2,
                 3
             ],
-            "hint": "This question offers help and expects 'yes' or 'no.' Listen to the pitch on 'help.'",
-            "explanation": "The rising pitch on 'help' marks this as a Yes/No question, inviting a simple answer.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Excited"
+            "hint": "The speaker doesn't know the answer and hopes it's a good one. Follow the voice on 'well.'",
+            "explanation": "The pitch lifts on 'well' because the speaker is inviting you to answer. The rise also softens the question and shows care.",
+            "pitchRule": "📈 A caring question often lifts a little more on the last word.",
+            "emotionContext": "Warm"
         },
         {
-            "id": "ACC_INTONATIONMIMIC_L7_Q3",
-            "instruction": "Identify the intonation",
+            "id": "ACC_INTONATIONMIMIC_L7_Q2",
+            "instruction": "You just left the cinema with a friend. Which pattern fits this comment?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "They live near the park.",
-            "textToSpeak": "They live near the park.",
+            "word": "That was a great movie.",
+            "textToSpeak": "That was a great movie.",
             "options": [
                 "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
@@ -498,46 +474,46 @@
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
+                3,
                 1,
                 0
             ],
-            "hint": "This sentence describes a location. Notice whether 'park' rises or falls.",
-            "explanation": "This is a statement, so the pitch falls on 'park' to close the sentence with certainty.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Doubtful"
+            "hint": "This is an opinion the speaker is happy to share. Is it offered as fact or asked as a question?",
+            "explanation": "The speaker gives an opinion confidently, so the pitch falls on 'movie'. A rising ending would ask the friend for agreement.",
+            "pitchRule": "📉 A confident opinion drops on the last stressed word.",
+            "emotionContext": "Pleased"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L7_Q3",
+            "instruction": "You're stuck in traffic and need a favor from a friend. Which pattern will you use?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "Can you send me the address?",
+            "textToSpeak": "Can you send me the address?",
+            "options": [
+                "Rising Intonation (Yes/No Question)",
+                "Falling Intonation (Statement)"
+            ],
+            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                1,
+                2,
+                2,
+                3
+            ],
+            "hint": "You are asking your friend for something. Decide whether your voice should sound open or closed.",
+            "explanation": "A request in question form rises on 'address' so the friend feels free to answer. It sounds polite instead of demanding.",
+            "pitchRule": "📈 A rising request sounds polite because it leaves room to answer.",
+            "emotionContext": "Polite"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L8_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Is your house far away?",
-            "textToSpeak": "Is your house far away?",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                1,
-                1,
-                2,
-                3
-            ],
-            "hint": "This question checks a fact about distance. Listen to the pitch on 'away.'",
-            "explanation": "Yes/No questions end with rising intonation. The pitch climbs on 'away' as the speaker checks information.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Neutral"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L8_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "This coffee is too hot.",
-            "textToSpeak": "This coffee is too hot.",
+            "word": "My flight lands at noon.",
+            "textToSpeak": "My flight lands at noon.",
             "options": [
                 "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
@@ -550,18 +526,18 @@
                 1,
                 0
             ],
-            "hint": "This sentence is a comment about the coffee. Listen for the pitch on 'hot.'",
-            "explanation": "Statements end with falling intonation. The voice drops on 'hot,' showing the comment is finished.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Surprised"
+            "hint": "This is travel information the speaker knows well. Listen to what happens to the pitch on 'noon.'",
+            "explanation": "The pitch falls on 'noon' because the speaker knows the time and is simply sharing it. The information is complete.",
+            "pitchRule": "📉 Known facts, such as travel times, end with a fall.",
+            "emotionContext": "Neutral"
         },
         {
-            "id": "ACC_INTONATIONMIMIC_L8_Q3",
-            "instruction": "Identify the intonation",
+            "id": "ACC_INTONATIONMIMIC_L8_Q2",
+            "instruction": "You're chatting with a new friend about family. Which pattern fits the question?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Can you hear me clearly?",
-            "textToSpeak": "Can you hear me clearly?",
+            "word": "Is your brother older than you?",
+            "textToSpeak": "Is your brother older than you?",
             "options": [
                 "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
@@ -570,22 +546,70 @@
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
+                2,
                 2,
                 3
             ],
-            "hint": "This question checks understanding and expects 'yes' or 'no.' Notice the pitch on 'clearly.'",
-            "explanation": "The pitch rises on 'clearly' because this is a Yes/No question checking for confirmation.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Determined"
+            "hint": "The speaker wants to learn something about you. Which ending leaves space for an answer?",
+            "explanation": "The rise on 'you' shows genuine interest. It would sound strange to end with a fall, as if the speaker already knew the answer.",
+            "pitchRule": "📈 Curiosity about another person sounds like a rising voice.",
+            "emotionContext": "Curious"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L8_Q3",
+            "instruction": "Your teacher asks how you get to school. Which pattern will you use?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "I usually walk to work.",
+            "textToSpeak": "I usually walk to work.",
+            "options": [
+                "Rising Intonation (Yes/No Question)",
+                "Falling Intonation (Statement)"
+            ],
+            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                2,
+                2,
+                1,
+                0
+            ],
+            "hint": "You are answering a question, not asking one. Choose the ending that sounds complete.",
+            "explanation": "A direct answer ends with a fall on 'work'. The listener hears that you have said everything you meant to say.",
+            "pitchRule": "📉 In an answer, a falling ending tells the listener you are done.",
+            "emotionContext": "Calm"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L9_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Our class starts at nine.",
-            "textToSpeak": "Our class starts at nine.",
+            "word": "Are these your keys?",
+            "textToSpeak": "Are these your keys?",
+            "options": [
+                "Falling Intonation (Statement)",
+                "Rising Intonation (Yes/No Question)"
+            ],
+            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                1,
+                1,
+                2,
+                4
+            ],
+            "hint": "The speaker holds up some keys and needs you to confirm. Listen for the waiting quality on 'keys.'",
+            "explanation": "The voice rises on 'keys' because the speaker needs you to say yes or no. It sounds as if they are holding the keys out to you.",
+            "pitchRule": "📈 A yes/no question rises as if the speaker is holding out an open hand.",
+            "emotionContext": "Curious"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L9_Q2",
+            "instruction": "A friend is warning you about a restaurant dish. Which pattern fits?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "The soup is very hot.",
+            "textToSpeak": "The soup is very hot.",
             "options": [
                 "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
@@ -594,22 +618,22 @@
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
+                3,
                 1,
                 0
             ],
-            "hint": "This sentence gives a time. Listen to the pitch on 'nine.'",
-            "explanation": "This statement ends with falling intonation, with the pitch dropping on 'nine' to show the fact is complete.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Curious"
+            "hint": "This sentence gives a warning as a plain fact. Is it a question or a statement?",
+            "explanation": "A warning about a fact falls on 'hot'. The pitch peaks on 'very' or 'hot' for emphasis and then closes downward.",
+            "pitchRule": "📉 Warnings usually fall: the speaker wants the message to be clear and final.",
+            "emotionContext": "Concerned"
         },
         {
-            "id": "ACC_INTONATIONMIMIC_L9_Q2",
-            "instruction": "Identify the intonation",
+            "id": "ACC_INTONATIONMIMIC_L9_Q3",
+            "instruction": "You're checking your neighbor's address for a delivery. Which pattern will you use?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Do you want some water?",
-            "textToSpeak": "Do you want some water?",
+            "word": "Do you live near the station?",
+            "textToSpeak": "Do you live near the station?",
             "options": [
                 "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
@@ -622,66 +646,18 @@
                 2,
                 3
             ],
-            "hint": "This is an offer that expects 'yes' or 'no.' Listen to the pitch on 'water.'",
-            "explanation": "Yes/No questions rise at the end, so the pitch goes up on 'water' to invite a short reply.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Excited"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L9_Q3",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "I forgot my umbrella today.",
-            "textToSpeak": "I forgot my umbrella today.",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                2,
-                2,
-                1,
-                0
-            ],
-            "hint": "This sentence admits a mistake. Notice the pitch direction on 'today.'",
-            "explanation": "Statements end with falling intonation. The pitch falls on 'today,' marking the end of the sentence.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Doubtful"
+            "hint": "You are asking, not telling. Choose the contour that expects a reply.",
+            "explanation": "You ask a yes/no question, so the pitch rises on 'station'. The lift is what turns the words into an invitation to answer.",
+            "pitchRule": "📈 Same grammar, different purpose: asking needs the rise.",
+            "emotionContext": "Curious"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L10_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Is it your birthday today?",
-            "textToSpeak": "Is it your birthday today?",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                1,
-                1,
-                2,
-                3
-            ],
-            "hint": "This question checks a fact and expects 'yes' or 'no.' Listen to the pitch on 'today.'",
-            "explanation": "The rising pitch on 'today' signals a Yes/No question, where the speaker expects a brief answer.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Neutral"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L10_Q2",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "We will meet tomorrow morning.",
-            "textToSpeak": "We will meet tomorrow morning.",
+            "word": "I forgot my umbrella.",
+            "textToSpeak": "I forgot my umbrella.",
             "options": [
                 "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
@@ -690,38 +666,62 @@
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
+                3,
                 1,
                 0
             ],
-            "hint": "This sentence makes a plan. Listen for the pitch on 'morning.'",
-            "explanation": "This is a statement, so the pitch falls on 'morning,' showing the plan is stated with certainty.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Surprised"
+            "hint": "The speaker admits something with a slight sigh. Notice whether the voice ends up or down.",
+            "explanation": "A confession of a small mistake is still a statement, so the pitch falls on 'umbrella'. The peak on 'forgot' carries the feeling.",
+            "pitchRule": "📉 A fall closes the thought even when the feeling is disappointed.",
+            "emotionContext": "Annoyed"
         },
         {
-            "id": "ACC_INTONATIONMIMIC_L10_Q3",
-            "instruction": "Identify the intonation",
+            "id": "ACC_INTONATIONMIMIC_L10_Q2",
+            "instruction": "Your friend had an exam yesterday. Which pattern fits their question to you?",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Did you sleep well last night?",
-            "textToSpeak": "Did you sleep well last night?",
+            "word": "Was the exam difficult?",
+            "textToSpeak": "Was the exam difficult?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Yes/No Question)",
+                "Falling Intonation (Statement)"
             ],
             "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
                 1,
                 2,
                 3
             ],
-            "hint": "This question expects 'yes' or 'no.' Notice the pitch movement on 'night.'",
-            "explanation": "Yes/No questions end with rising intonation. The pitch climbs on 'night' to invite a simple answer.",
-            "pitchRule": "📈 Pitch rises at the end of a Yes/No question to invite a yes-or-no answer.",
-            "emotionContext": "Determined"
+            "hint": "The speaker is asking for your experience. Ask yourself whether they already know the answer.",
+            "explanation": "The pitch rises on 'difficult' because the speaker is interested in your answer. It is a real yes/no question.",
+            "pitchRule": "📈 A real yes/no question ends higher than it began.",
+            "emotionContext": "Concerned"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L10_Q3",
+            "instruction": "You're telling a colleague about a family dinner. Which pattern will you use?",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "We had dinner with my grandparents.",
+            "textToSpeak": "We had dinner with my grandparents.",
+            "options": [
+                "Rising Intonation (Yes/No Question)",
+                "Falling Intonation (Statement)"
+            ],
+            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                2,
+                2,
+                1,
+                0
+            ],
+            "hint": "You are sharing what happened. The story is being reported, not checked.",
+            "explanation": "Reporting a past event ends with a fall on 'grandparents'. The listener hears that the sentence is complete and can respond to it.",
+            "pitchRule": "📉 Past events reported as news end with a fall.",
+            "emotionContext": "Warm"
         }
     ]
 }

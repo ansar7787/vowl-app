@@ -4,543 +4,636 @@
     "levels": "1-10",
     "quests": [
         {
-            "instruction": "Arrange the words to greet someone new warmly.",
+            "instruction": "Your neighbor is heading out to work as you step into the hallway at 8 a.m. Build your greeting.",
             "subtype": "socialSpark",
             "interactionType": "dialogue",
             "shuffledWords": [
-                "Nice",
-                "meet",
                 "you",
-                ".",
-                "to"
+                "are",
+                ",",
+                "?",
+                "morning",
+                "Good",
+                "how"
             ],
-            "correctAnswer": "Nice to meet you .",
-            "hint": "The sentence ends with 'you', right before the period.",
-            "explanation": "This is the standard, friendly phrase people use when meeting someone for the first time.",
+            "correctAnswer": "Good morning , how are you ?",
+            "hint": "Match the greeting to the time of day, then add a quick check-in.",
+            "explanation": "Pairing a time-of-day greeting with a check-in sounds warmer than a bare \"hi\" and gives the other person an easy way to answer.",
             "id": "ss_l1_q1",
-            "socialContext": "Train Station"
+            "socialContext": "Apartment Hallway"
         },
         {
-            "instruction": "Order the words to ask someone's name.",
+            "instruction": "You've just joined an online meeting at 7 p.m. and want to greet the whole group.",
             "subtype": "socialSpark",
             "interactionType": "dialogue",
             "shuffledWords": [
-                "your",
-                "?",
-                "name",
-                "What's"
+                ".",
+                "everyone",
+                ",",
+                "evening",
+                "Good"
             ],
-            "correctAnswer": "What's your name ?",
-            "hint": "Once you place 'What's' first, the other 3 words should start falling into place.",
-            "explanation": "'What's' is the contraction of 'What is', which sounds natural in everyday speech.",
+            "correctAnswer": "Good evening , everyone .",
+            "hint": "You're speaking to several people at once. Which single word covers all of them?",
+            "explanation": "\"Everyone\" greets a group in one go, and \"good evening\" sounds a little more polished than \"hi\", which suits a meeting.",
             "id": "ss_l1_q2",
-            "socialContext": "House Party"
+            "socialContext": "Video Call"
         },
         {
-            "instruction": "Put the words in order to ask the price of something.",
+            "instruction": "A classmate asks how it's going and you're doing okay. Build a reply that keeps things balanced.",
             "subtype": "socialSpark",
             "interactionType": "dialogue",
             "shuffledWords": [
-                "cost",
-                "much",
-                "this",
+                ",",
                 "How",
+                "you",
+                "bad",
                 "?",
-                "does"
-            ],
-            "correctAnswer": "How much does this cost ?",
-            "hint": "This 6-word sentence begins with 'How'.",
-            "explanation": "'How much' is used to ask about price, and 'does' is needed for the question form.",
-            "id": "ss_l1_q3",
-            "socialContext": "House Party"
-        },
-        {
-            "instruction": "Arrange the words to recommend a dish to a friend.",
-            "subtype": "socialSpark",
-            "interactionType": "dialogue",
-            "shuffledWords": [
-                "the",
-                "try",
-                "soup",
-                ".",
-                "You",
-                "should"
-            ],
-            "correctAnswer": "You should try the soup .",
-            "hint": "There are 6 words in total -- start by placing 'You' first.",
-            "explanation": "'Should' is a modal verb used to give friendly suggestions.",
-            "id": "ss_l2_q1",
-            "socialContext": "Train Station"
-        },
-        {
-            "instruction": "Order the words to ask to borrow notes.",
-            "subtype": "socialSpark",
-            "interactionType": "dialogue",
-            "shuffledWords": [
-                "?",
-                "I",
-                "your",
-                "borrow",
-                "notes",
-                "Can"
-            ],
-            "correctAnswer": "Can I borrow your notes ?",
-            "hint": "This sentence has 6 words -- spot 'Can' and 'notes' first, then fill in the middle.",
-            "explanation": "'Can I' is the standard way to politely ask for permission to use something.",
-            "id": "ss_l2_q2",
-            "socialContext": "Coffee Shop"
-        },
-        {
-            "instruction": "Put the words in order to say work was busy today.",
-            "subtype": "socialSpark",
-            "interactionType": "dialogue",
-            "shuffledWords": [
-                "Work",
-                "was",
-                "really",
-                "today",
-                ".",
-                "busy"
-            ],
-            "correctAnswer": "Work was really busy today .",
-            "hint": "The second word is 'was', right after 'Work'.",
-            "explanation": "'Today' at the end anchors the sentence to the present day.",
-            "id": "ss_l2_q3",
-            "socialContext": "House Party"
-        },
-        {
-            "instruction": "Arrange the words to say you're excited for a trip.",
-            "subtype": "socialSpark",
-            "interactionType": "dialogue",
-            "shuffledWords": [
-                "my",
-                "so",
-                "for",
-                "I'm",
-                ".",
-                "trip",
-                "excited"
-            ],
-            "correctAnswer": "I'm so excited for my trip .",
-            "hint": "The first word is 'I'm', out of 7 words total.",
-            "explanation": "'So' before an adjective makes the feeling sound stronger in casual speech.",
-            "id": "ss_l3_q1",
-            "socialContext": "Coffee Shop"
-        },
-        {
-            "instruction": "Order the words to say your phone battery is low.",
-            "subtype": "socialSpark",
-            "interactionType": "dialogue",
-            "shuffledWords": [
-                "phone",
-                "is",
-                "battery",
-                "My",
-                "low",
+                "thanks",
+                "about",
+                "Not",
                 "."
             ],
-            "correctAnswer": "My phone battery is low .",
-            "hint": "Look at how it starts -- 'My' comes first.",
-            "explanation": "This simple sentence follows subject ('battery') + verb ('is') + adjective ('low').",
-            "id": "ss_l3_q2",
-            "socialContext": "Office Breakroom"
+            "correctAnswer": "Not bad , thanks . How about you ?",
+            "hint": "Answer first, then hand the question back.",
+            "explanation": "Replying and then returning the question stops the exchange from feeling one-sided. \"Not bad\" is a relaxed way of saying things are fine.",
+            "id": "ss_l1_q3",
+            "socialContext": "Bus Stop"
         },
         {
-            "instruction": "Put the words in order to tell a friend to feel better.",
+            "instruction": "You're at a street festival and want to introduce yourself to a stranger. Say it naturally.",
             "subtype": "socialSpark",
             "interactionType": "dialogue",
             "shuffledWords": [
+                "I'm",
+                "the",
+                "I'm",
                 ".",
-                "hope",
-                "feel",
+                ".",
+                "to",
+                ",",
+                "neighborhood",
+                "Hi",
+                "new",
+                "Daniel"
+            ],
+            "correctAnswer": "Hi , I'm Daniel . I'm new to the neighborhood .",
+            "hint": "Give your name, then one small fact that gives the other person something to respond to.",
+            "explanation": "A name alone can end the conversation. Adding a small fact, like being new here, gives the listener an easy next question.",
+            "id": "ss_l2_q1",
+            "socialContext": "Community Event"
+        },
+        {
+            "instruction": "At a professional mixer, introduce yourself and say what you do.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "work",
+                "I",
+                "in",
+                ",",
+                ".",
+                "I'm",
+                "Mei",
+                "Hi",
+                ".",
+                "marketing"
+            ],
+            "correctAnswer": "Hi , I'm Mei . I work in marketing .",
+            "hint": "Think of the two pieces of information people usually want at a networking event: who you are and what you do.",
+            "explanation": "Two short sentences sound clearer and more natural than one long one, and \"I work in...\" is the standard way to mention your field.",
+            "id": "ss_l2_q2",
+            "socialContext": "Networking Event"
+        },
+        {
+            "instruction": "It's your first week and you spot someone you haven't spoken to. Introduce yourself without assuming anything.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "Sam",
+                "we've",
+                "think",
+                ".",
+                "I'm",
+                "I",
+                "met",
+                ".",
+                "don't"
+            ],
+            "correctAnswer": "I don't think we've met . I'm Sam .",
+            "hint": "You aren't certain you've met before, so soften the opening.",
+            "explanation": "\"I don't think we've met\" is a polite way to start when you aren't sure. It avoids the awkwardness of introducing yourself to someone who already knows you.",
+            "id": "ss_l2_q3",
+            "socialContext": "Office Kitchen"
+        },
+        {
+            "instruction": "Someone told you their name over loud music, but you missed it. Ask for it again politely.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "your",
+                "I",
+                "catch",
+                ".",
+                "Sorry",
+                "name",
+                ",",
+                "didn't"
+            ],
+            "correctAnswer": "Sorry , I didn't catch your name .",
+            "hint": "The speaker is admitting a small failure to hear, not asking a new question.",
+            "explanation": "Apologizing and saying \"catch\" (meaning to hear) is the natural way to ask for a repeated name without sounding careless.",
+            "id": "ss_l3_q1",
+            "socialContext": "Birthday Gathering"
+        },
+        {
+            "instruction": "Your new teacher has an unfamiliar name and you want to say it correctly. Ask about it.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
                 "you",
-                "better",
+                "?",
+                "do",
+                "name",
+                "pronounce",
+                "How",
+                "your"
+            ],
+            "correctAnswer": "How do you pronounce your name ?",
+            "hint": "You want to know the sound, not the spelling. Which question word fits?",
+            "explanation": "Asking about pronunciation shows respect. Most people appreciate the effort and would rather correct you once than hear it wrong for months.",
+            "id": "ss_l3_q2",
+            "socialContext": "Classroom"
+        },
+        {
+            "instruction": "You've just pronounced a classmate's name for the first time and you're not sure you got it. Check.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "?",
+                "your",
+                "name",
+                "say",
+                "Did",
+                "right",
                 "I"
             ],
-            "correctAnswer": "I hope you feel better .",
-            "hint": "Work backward: 'better' is the last word before the period.",
-            "explanation": "This warm, common phrase is used to wish someone a quick recovery.",
+            "correctAnswer": "Did I say your name right ?",
+            "hint": "You're asking for confirmation about something you just did. Think about which tense fits.",
+            "explanation": "The past tense \"Did I say...\" checks something that just happened. It invites a quick correction without making a big deal of it.",
             "id": "ss_l3_q3",
-            "socialContext": "Train Station"
+            "socialContext": "Study Group"
         },
         {
-            "instruction": "Arrange the words to say a game was fun.",
+            "instruction": "A colleague introduces you to your new deskmate. Give a warm, natural response.",
             "subtype": "socialSpark",
             "interactionType": "dialogue",
             "shuffledWords": [
-                "was",
-                "fun",
-                "really",
-                "That",
+                "nice",
+                "meet",
                 ".",
-                "game"
-            ],
-            "correctAnswer": "That game was really fun .",
-            "hint": "This one's 6 words long, ending in 'fun' -- read the meaning first, then decide what comes first.",
-            "explanation": "'Really' makes the adjective 'fun' feel stronger and more enthusiastic.",
-            "id": "ss_l4_q1",
-            "socialContext": "Library"
-        },
-        {
-            "instruction": "Order the words to ask how someone is doing.",
-            "subtype": "socialSpark",
-            "interactionType": "dialogue",
-            "shuffledWords": [
-                "?",
+                "to",
                 "you",
-                "How",
-                "today",
-                "are"
+                "really",
+                "It's"
             ],
-            "correctAnswer": "How are you today ?",
-            "hint": "Start with 'How'.",
-            "explanation": "This is one of the most common casual ways to ask about someone's wellbeing.",
+            "correctAnswer": "It's really nice to meet you .",
+            "hint": "A small word before \"nice\" makes your welcome sound more sincere.",
+            "explanation": "Adding \"really\" turns a routine phrase into something warmer, which matters when you'll see this person every day.",
+            "id": "ss_l4_q1",
+            "socialContext": "Coworking Space"
+        },
+        {
+            "instruction": "Your friend's partner says it's nice to meet you. You've heard plenty about them already. Reply.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "to",
+                "meet",
+                "lot",
+                ".",
+                "you",
+                ".",
+                "too",
+                "heard",
+                "you",
+                "about",
+                "I've",
+                "Nice",
+                "a"
+            ],
+            "correctAnswer": "Nice to meet you too . I've heard a lot about you .",
+            "hint": "Return the greeting first, then add something personal.",
+            "explanation": "\"Too\" mirrors the greeting, and \"I've heard a lot about you\" adds a friendly detail that signals interest.",
             "id": "ss_l4_q2",
-            "socialContext": "Library"
+            "socialContext": "Dinner With Friends"
         },
         {
-            "instruction": "Put the words in order to say where you're from.",
+            "instruction": "Someone says nice to meet you at a conference. Reply briefly and steer the conversation forward.",
             "subtype": "socialSpark",
             "interactionType": "dialogue",
             "shuffledWords": [
-                "I'm",
-                "Brazil",
-                "from",
-                "."
-            ],
-            "correctAnswer": "I'm from Brazil .",
-            "hint": "This is a 4-word statement ending in 'Brazil' -- find the subject first, then the verb.",
-            "explanation": "'I'm' is the contracted form of 'I am', used constantly in casual conversation.",
-            "id": "ss_l4_q3",
-            "socialContext": "Park"
-        },
-        {
-            "instruction": "Arrange the words to say you're just looking.",
-            "subtype": "socialSpark",
-            "interactionType": "dialogue",
-            "shuffledWords": [
-                "thanks",
-                ",",
-                "just",
-                "I'm",
-                "looking",
-                "."
-            ],
-            "correctAnswer": "I'm just looking , thanks .",
-            "hint": "This 6-word sentence begins with 'I'm'.",
-            "explanation": "This is the standard, polite reply when a shop assistant offers help you don't need yet.",
-            "id": "ss_l5_q1",
-            "socialContext": "Office Breakroom"
-        },
-        {
-            "instruction": "Order the words to ask for the check.",
-            "subtype": "socialSpark",
-            "interactionType": "dialogue",
-            "shuffledWords": [
+                "these",
+                "of",
+                "your",
+                "this",
+                "at",
                 "?",
-                "we",
-                "check",
+                "time",
+                "one",
+                "first",
+                "Is",
+                "Likewise",
+                "."
+            ],
+            "correctAnswer": "Likewise . Is this your first time at one of these ?",
+            "hint": "The first word answers the greeting. The rest opens a topic that both of you share.",
+            "explanation": "\"Likewise\" is a short, neutral reply to \"nice to meet you\". Following it with a question about the event gives you common ground right away.",
+            "id": "ss_l4_q3",
+            "socialContext": "Conference"
+        },
+        {
+            "instruction": "You want two of your friends to get to know each other. Introduce Tom to Ana.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "my",
+                "Ana",
+                "Tom",
+                "this",
+                ".",
+                "is",
                 ",",
+                "friend"
+            ],
+            "correctAnswer": "Ana , this is my friend Tom .",
+            "hint": "The listener's name comes first, like calling someone's attention.",
+            "explanation": "Addressing the first person by name before introducing the second makes it clear who you're talking to and feels smooth in a group.",
+            "id": "ss_l5_q1",
+            "socialContext": "Birthday Gathering"
+        },
+        {
+            "instruction": "Two colleagues are standing near you and you're not sure they know each other. Check, then introduce.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "is",
+                "from",
+                ".",
+                "two",
+                "Have",
+                "Priya",
+                "?",
+                "met",
+                "accounting",
+                ",",
+                "This",
+                "you"
+            ],
+            "correctAnswer": "Have you two met ? This is Priya , from accounting .",
+            "hint": "First find out whether an introduction is even needed.",
+            "explanation": "\"Have you two met?\" avoids introducing people who already know each other. Adding where someone works gives them something to talk about.",
+            "id": "ss_l5_q2",
+            "socialContext": "Office Kitchen"
+        },
+        {
+            "instruction": "A family member is meeting your boss for the first time. Introduce them in a slightly more respectful way.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                ",",
+                "Let",
+                "my",
+                "Carla",
+                "to",
+                "manager",
+                "me",
+                ".",
+                "introduce",
+                "you"
+            ],
+            "correctAnswer": "Let me introduce you to my manager , Carla .",
+            "hint": "The phrase sounds a bit more formal than \"this is\". Use it when the person you're introducing matters.",
+            "explanation": "\"Let me introduce you to...\" is a good step up in politeness. It shows respect for both people, especially when one has authority.",
+            "id": "ss_l5_q3",
+            "socialContext": "Company Picnic"
+        },
+        {
+            "instruction": "The café is full and there's an empty chair at a stranger's table. Ask before you sit.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "this",
+                "me",
+                "seat",
+                "Excuse",
+                "?",
+                "taken",
+                ",",
+                "is"
+            ],
+            "correctAnswer": "Excuse me , is this seat taken ?",
+            "hint": "First get their attention politely, then ask.",
+            "explanation": "\"Excuse me\" gets someone's attention without sounding demanding. A direct question then lets them answer with a simple yes or no.",
+            "id": "ss_l6_q1",
+            "socialContext": "Coffee Shop"
+        },
+        {
+            "instruction": "You forgot your phone and need to know the time. Ask the person next to you.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "time",
+                ",",
+                "bother",
                 "the",
                 "have",
-                "please",
-                "Can"
-            ],
-            "correctAnswer": "Can we have the check , please ?",
-            "hint": "There are 8 words in total -- start by placing 'Can' first.",
-            "explanation": "'Can we have' is the common, casual way to ask for the bill at a restaurant.",
-            "id": "ss_l5_q2",
-            "socialContext": "Office Breakroom"
-        },
-        {
-            "instruction": "Put the words in order to say you finished your homework.",
-            "subtype": "socialSpark",
-            "interactionType": "dialogue",
-            "shuffledWords": [
-                "homework",
-                "already",
-                "I",
-                "finished",
-                "my",
-                "."
-            ],
-            "correctAnswer": "I finished my homework already .",
-            "hint": "The second word is 'finished', right after 'I'.",
-            "explanation": "'Already' at the end emphasizes that the task is fully done.",
-            "id": "ss_l5_q3",
-            "socialContext": "Library"
-        },
-        {
-            "instruction": "Arrange the words to ask how someone's workday was.",
-            "subtype": "socialSpark",
-            "interactionType": "dialogue",
-            "shuffledWords": [
-                "?",
-                "How",
-                "at",
-                "your",
-                "day",
-                "work",
-                "was"
-            ],
-            "correctAnswer": "How was your day at work ?",
-            "hint": "The first word is 'How', out of 7 words total.",
-            "explanation": "'How was' asks someone to describe a past experience or feeling.",
-            "id": "ss_l6_q1",
-            "socialContext": "House Party"
-        },
-        {
-            "instruction": "Order the words to ask where someone is going.",
-            "subtype": "socialSpark",
-            "interactionType": "dialogue",
-            "shuffledWords": [
-                "going",
-                "are",
-                "?",
-                "you",
-                "this",
-                "Where",
-                "summer"
-            ],
-            "correctAnswer": "Where are you going this summer ?",
-            "hint": "The sentence ends with 'summer', right before the question mark.",
-            "explanation": "'Where' starts the question because we're asking about a place.",
-            "id": "ss_l6_q2",
-            "socialContext": "Office Breakroom"
-        },
-        {
-            "instruction": "Put the words in order to ask what show someone is watching.",
-            "subtype": "socialSpark",
-            "interactionType": "dialogue",
-            "shuffledWords": [
-                "watching",
-                "you",
-                "What",
-                "are",
-                "show",
-                "?"
-            ],
-            "correctAnswer": "What show are you watching ?",
-            "hint": "Once you place 'What' first, the other 5 words should start falling into place.",
-            "explanation": "The present continuous ('are watching') asks about an action happening right now.",
-            "id": "ss_l6_q3",
-            "socialContext": "Office Breakroom"
-        },
-        {
-            "instruction": "Arrange the words to say you slept well.",
-            "subtype": "socialSpark",
-            "interactionType": "dialogue",
-            "shuffledWords": [
-                "really",
-                "I",
-                "well",
-                ".",
-                "slept",
-                "last",
-                "night"
-            ],
-            "correctAnswer": "I slept really well last night .",
-            "hint": "This sentence has 7 words -- spot 'I' and 'night' first, then fill in the middle.",
-            "explanation": "'Well' describes how you slept, and 'last night' tells us when.",
-            "id": "ss_l7_q1",
-            "socialContext": "House Party"
-        },
-        {
-            "instruction": "Order the words to ask what music someone likes.",
-            "subtype": "socialSpark",
-            "interactionType": "dialogue",
-            "shuffledWords": [
-                "like",
-                "?",
                 "you",
                 "do",
-                "What",
-                "music"
-            ],
-            "correctAnswer": "What music do you like ?",
-            "hint": "This one's 6 words long, ending in 'like' -- read the meaning first, then decide what comes first.",
-            "explanation": "'What music' asks about a category, while 'do you like' completes the question.",
-            "id": "ss_l7_q2",
-            "socialContext": "Bus Stop"
-        },
-        {
-            "instruction": "Put the words in order to say a casual goodbye.",
-            "subtype": "socialSpark",
-            "interactionType": "dialogue",
-            "shuffledWords": [
                 "you",
-                "See",
-                "!",
-                "later"
-            ],
-            "correctAnswer": "See you later !",
-            "hint": "Look at how it starts -- 'See' comes first.",
-            "explanation": "This relaxed goodbye is used when you expect to see the person again soon.",
-            "id": "ss_l7_q3",
-            "socialContext": "Park"
-        },
-        {
-            "instruction": "Arrange the words to ask about someone's siblings.",
-            "subtype": "socialSpark",
-            "interactionType": "dialogue",
-            "shuffledWords": [
-                "siblings",
+                "Sorry",
                 "?",
-                "any",
-                "you",
-                "have",
-                "Do"
+                "to"
             ],
-            "correctAnswer": "Do you have any siblings ?",
-            "hint": "This is a question -- it starts with 'Do'.",
-            "explanation": "'Do you have' is the standard question form used with 'have' in the present simple.",
-            "id": "ss_l8_q1",
-            "socialContext": "Coffee Shop"
-        },
-        {
-            "instruction": "Order the words to ask for a bigger size.",
-            "subtype": "socialSpark",
-            "interactionType": "dialogue",
-            "shuffledWords": [
-                "have",
-                "size",
-                "a",
-                "Do",
-                "you",
-                "bigger",
-                "?"
-            ],
-            "correctAnswer": "Do you have a bigger size ?",
-            "hint": "Start with 'Do'.",
-            "explanation": "'Do you have' is the everyday way to ask if a shop carries something.",
-            "id": "ss_l8_q2",
-            "socialContext": "Library"
-        },
-        {
-            "instruction": "Put the words in order to say a meal was delicious.",
-            "subtype": "socialSpark",
-            "interactionType": "dialogue",
-            "shuffledWords": [
-                "delicious",
-                ".",
-                "really",
-                "was",
-                "That"
-            ],
-            "correctAnswer": "That was really delicious .",
-            "hint": "Work backward: 'delicious' is the last word before the period.",
-            "explanation": "'That' refers back to the meal you just finished eating.",
-            "id": "ss_l8_q3",
+            "correctAnswer": "Sorry to bother you , do you have the time ?",
+            "hint": "Apologize for the interruption before the question itself.",
+            "explanation": "\"Sorry to bother you\" acknowledges that you're interrupting a stranger. This kind of softener makes strangers more willing to help.",
+            "id": "ss_l6_q2",
             "socialContext": "Bus Stop"
         },
         {
-            "instruction": "Arrange the words to ask how a test went.",
-            "subtype": "socialSpark",
-            "interactionType": "dialogue",
-            "shuffledWords": [
-                "go",
-                "your",
-                "?",
-                "How",
-                "test",
-                "did"
-            ],
-            "correctAnswer": "How did your test go ?",
-            "hint": "There are 6 words in total -- start by placing 'How' first.",
-            "explanation": "'Did' shows this question is about something that already happened.",
-            "id": "ss_l9_q1",
-            "socialContext": "Bus Stop"
-        },
-        {
-            "instruction": "Order the words to say you're starting a new job.",
-            "subtype": "socialSpark",
-            "interactionType": "dialogue",
-            "shuffledWords": [
-                ".",
-                "soon",
-                "starting",
-                "new",
-                "a",
-                "job",
-                "I'm"
-            ],
-            "correctAnswer": "I'm starting a new job soon .",
-            "hint": "The sentence ends with 'soon', right before the period.",
-            "explanation": "'Soon' tells us this is a near-future plan, not something happening right now.",
-            "id": "ss_l9_q2",
-            "socialContext": "House Party"
-        },
-        {
-            "instruction": "Put the words in order to say you just got back from a trip.",
-            "subtype": "socialSpark",
-            "interactionType": "dialogue",
-            "shuffledWords": [
-                ".",
-                "I",
-                "got",
-                "from",
-                "just",
-                "back",
-                "Spain"
-            ],
-            "correctAnswer": "I just got back from Spain .",
-            "hint": "Once you place 'I' first, the other 6 words should start falling into place.",
-            "explanation": "'Just' shows the action finished very recently.",
-            "id": "ss_l9_q3",
-            "socialContext": "Coffee Shop"
-        },
-        {
-            "instruction": "Arrange the words to say you love a new song.",
-            "subtype": "socialSpark",
-            "interactionType": "dialogue",
-            "shuffledWords": [
-                "love",
-                "song",
-                "this",
-                ".",
-                "really",
-                "I"
-            ],
-            "correctAnswer": "I really love this song .",
-            "hint": "This 6-word sentence begins with 'I'.",
-            "explanation": "'Really' strengthens the verb 'love' in casual conversation.",
-            "id": "ss_l10_q1",
-            "socialContext": "Train Station"
-        },
-        {
-            "instruction": "Order the words to ask if someone needs anything.",
-            "subtype": "socialSpark",
-            "interactionType": "dialogue",
-            "shuffledWords": [
-                "anything",
-                "you",
-                "?",
-                "need",
-                "Do"
-            ],
-            "correctAnswer": "Do you need anything ?",
-            "hint": "This one's 5 words long, ending in 'anything' -- read the meaning first, then decide what comes first.",
-            "explanation": "This short question offers help without saying exactly what you can do.",
-            "id": "ss_l10_q2",
-            "socialContext": "Bus Stop"
-        },
-        {
-            "instruction": "Put the words in order to say you play an instrument.",
+            "instruction": "You're lost in a mall and need directions from a passerby. Ask politely.",
             "subtype": "socialSpark",
             "interactionType": "dialogue",
             "shuffledWords": [
                 "the",
-                "play",
-                "guitar",
-                "I",
-                "sometimes",
-                "."
+                "me",
+                "tell",
+                "me",
+                "is",
+                "?",
+                "Excuse",
+                "pharmacy",
+                "could",
+                ",",
+                "where",
+                "you"
             ],
-            "correctAnswer": "I play the guitar sometimes .",
-            "hint": "This sentence has 6 words -- spot 'I' and 'sometimes' first, then fill in the middle.",
-            "explanation": "'Sometimes' at the end shows this isn't something you do every day.",
+            "correctAnswer": "Excuse me , could you tell me where the pharmacy is ?",
+            "hint": "The question is embedded inside a request. Watch the word order after \"where\".",
+            "explanation": "Embedded questions like \"where the pharmacy is\" keep normal statement order, and \"could you tell me\" sounds more courteous than asking \"Where is...\" straight out.",
+            "id": "ss_l6_q3",
+            "socialContext": "Shopping Mall"
+        },
+        {
+            "instruction": "Your bus has arrived and the friendly conversation with a stranger has to end. Say goodbye.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "talking",
+                "nice",
+                ".",
+                "was",
+                "to",
+                "It",
+                "you"
+            ],
+            "correctAnswer": "It was nice talking to you .",
+            "hint": "This closing looks back at the conversation instead of forward at the future.",
+            "explanation": "A past-tense closing signals that the chat was enjoyable and that you're leaving on a warm note.",
+            "id": "ss_l7_q1",
+            "socialContext": "Bus Stop"
+        },
+        {
+            "instruction": "Your next class starts in two minutes and you're leaving a classmate you'll see again. Say goodbye.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "but",
+                "tomorrow",
+                ",",
+                "I",
+                ".",
+                "see",
+                "you",
+                "have",
+                "run",
+                "to"
+            ],
+            "correctAnswer": "I have to run , but see you tomorrow .",
+            "hint": "Give a reason to leave, then look ahead.",
+            "explanation": "\"I have to run\" is a natural, friendly way to explain why you're leaving quickly. Adding \"see you tomorrow\" shows that this isn't a rejection.",
+            "id": "ss_l7_q2",
+            "socialContext": "University Corridor"
+        },
+        {
+            "instruction": "You're leaving a dinner at a friend's house. Thank the host as you go.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "a",
+                "having",
+                "time",
+                "I",
+                "me",
+                ".",
+                "for",
+                "Thanks",
+                ".",
+                "great",
+                "had"
+            ],
+            "correctAnswer": "Thanks for having me . I had a great time .",
+            "hint": "The first sentence thanks them for the invitation, the second for the experience.",
+            "explanation": "\"Thanks for having me\" is the standard way for a guest to thank a host. The second sentence adds genuine appreciation.",
+            "id": "ss_l7_q3",
+            "socialContext": "Friend's Home"
+        },
+        {
+            "instruction": "A coworker says she's going hiking this weekend. Show a bit of enthusiasm.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                ",",
+                "Oh",
+                "!",
+                "that",
+                "sounds",
+                "fun",
+                "like"
+            ],
+            "correctAnswer": "Oh , that sounds like fun !",
+            "hint": "The reaction needs a short opener, then a comment on the plan.",
+            "explanation": "A short reaction like \"Oh\" makes you sound spontaneous, and \"sounds like fun\" is a flexible way of responding to plans.",
+            "id": "ss_l8_q1",
+            "socialContext": "Break Room"
+        },
+        {
+            "instruction": "A classmate tells you the exam has been moved to Friday, and this is news to you. React.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "idea",
+                "Oh",
+                "no",
+                "?",
+                "had",
+                "I",
+                ".",
+                "really"
+            ],
+            "correctAnswer": "Oh really ? I had no idea .",
+            "hint": "You're surprised and admitting it. Which verb pairs with \"no idea\"?",
+            "explanation": "\"I had no idea\" is a natural way to show surprise about new information. Beginning with \"Oh really?\" keeps the reaction light.",
+            "id": "ss_l8_q2",
+            "socialContext": "Classroom"
+        },
+        {
+            "instruction": "A coworker tells you the team lunch is canceled. Express your disappointment kindly.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "that's",
+                "was",
+                "I",
+                "to",
+                "shame",
+                ".",
+                ".",
+                "a",
+                ",",
+                "Oh",
+                "forward",
+                "looking",
+                "no",
+                "it"
+            ],
+            "correctAnswer": "Oh no , that's a shame . I was looking forward to it .",
+            "hint": "First react, then explain why it matters to you.",
+            "explanation": "\"That's a shame\" is a gentle, sympathetic reaction. Adding what you were expecting explains your feeling without complaining.",
+            "id": "ss_l8_q3",
+            "socialContext": "Office Kitchen"
+        },
+        {
+            "instruction": "A hotel receptionist has just helped you find your room key. Thank them warmly.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "for",
+                "so",
+                ".",
+                "help",
+                "your",
+                "Thank",
+                "you",
+                "much"
+            ],
+            "correctAnswer": "Thank you so much for your help .",
+            "hint": "A small word before \"much\" makes your gratitude stronger.",
+            "explanation": "\"So much\" turns a simple thanks into an emphatic one. That extra warmth matters when someone has gone out of their way for you.",
+            "id": "ss_l9_q1",
+            "socialContext": "Hotel Lobby"
+        },
+        {
+            "instruction": "A colleague thanks you for showing them how the coffee machine works. Respond.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "to",
+                ".",
+                "problem",
+                "help",
+                "happy",
+                ",",
+                "No",
+                "I'm"
+            ],
+            "correctAnswer": "No problem , I'm happy to help .",
+            "hint": "Downplay the effort so the other person doesn't feel indebted.",
+            "explanation": "\"No problem\" keeps things casual and tells the person the favor wasn't a burden. \"Happy to help\" adds warmth.",
+            "id": "ss_l9_q2",
+            "socialContext": "Office Kitchen"
+        },
+        {
+            "instruction": "It starts to rain and a stranger offers to share their umbrella. Accept and thank them.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "of",
+                "kind",
+                ",",
+                ".",
+                "that's",
+                "you",
+                "Thanks",
+                "really"
+            ],
+            "correctAnswer": "Thanks , that's really kind of you .",
+            "hint": "The thanks is short. The compliment about the person comes after.",
+            "explanation": "\"That's really kind of you\" praises the person's character, not just the action. It fits a favor from someone you don't know.",
+            "id": "ss_l9_q3",
+            "socialContext": "Street Corner"
+        },
+        {
+            "instruction": "On the first day of class, you're curious about a new classmate's background. Ask.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "originally",
+                "you",
+                "from",
+                "are",
+                "?",
+                "Where"
+            ],
+            "correctAnswer": "Where are you from originally ?",
+            "hint": "One word at the end shows you're asking about their roots, not only where they live now.",
+            "explanation": "\"Originally\" tells the listener you mean where they were born or grew up. Without it, the question could sound like you're asking where they live.",
+            "id": "ss_l10_q1",
+            "socialContext": "Language Class"
+        },
+        {
+            "instruction": "Someone asks where you're from. Give your hometown and mention how long you've been here.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "from",
+                "for",
+                "years",
+                "I've",
+                "but",
+                "here",
+                "I'm",
+                "two",
+                "lived",
+                ",",
+                ".",
+                "Lisbon"
+            ],
+            "correctAnswer": "I'm from Lisbon , but I've lived here for two years .",
+            "hint": "The sentence has two parts joined by a word that adds contrast.",
+            "explanation": "Giving your origin and then your current situation answers more than was asked, which keeps the conversation moving.",
+            "id": "ss_l10_q2",
+            "socialContext": "Networking Event"
+        },
+        {
+            "instruction": "You're chatting with a fellow traveler and want to know why they came. Ask casually.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "you",
+                "?",
+                "here",
+                "brings",
+                ",",
+                "what",
+                "So"
+            ],
+            "correctAnswer": "So , what brings you here ?",
+            "hint": "Think of a friendly, open way of asking for someone's reason without saying \"why\".",
+            "explanation": "\"What brings you here?\" is warmer than \"Why are you here?\" and invites a story instead of a short answer. \"So\" makes it feel like a natural continuation.",
             "id": "ss_l10_q3",
-            "socialContext": "Train Station"
+            "socialContext": "Hostel Common Room"
         }
     ]
 }

@@ -1,307 +1,307 @@
 {
-    "gameType": "yesNoSpeaking",
-    "batchIndex": 5,
-    "levels": "41-50",
-    "quests": [
-        {
-            "id": "SPK_YESNOSPEAKING_L41_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The rest of the sentence is fixed. What could differ is the subject -- shown here as \"mother\".",
-            "explanation": "Only one thing changed here: \"mother\" became \"father\". Small swaps like this are common in natural speech, so it pays to listen the whole way through.",
-            "prompt": "My mother is chopping vegetables for tonight's dinner.",
-            "sampleAnswer": "My father is chopping vegetables for tonight's dinner.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L41_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Train your ear on the main verb. The text says \"chopping\" -- that's usually where small changes hide.",
-            "explanation": "\"chopping\" and \"washing\" were the two options here. Catching the difference just takes attention to the main verb.",
-            "prompt": "My roommate is chopping vegetables for tonight's dinner.",
-            "sampleAnswer": "My roommate is washing vegetables for tonight's dinner.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L41_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Keep the rest in mind, but the detail worth checking is the object: the text reads \"vegetables\".",
-            "explanation": "Notice that \"potatoes\" replaced \"vegetables\". The rest of the sentence stayed exactly the same -- only the object changed.",
-            "prompt": "Her sister is chopping vegetables for tonight's dinner.",
-            "sampleAnswer": "Her sister is chopping potatoes for tonight's dinner.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L42_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "If something doesn't match, the difference is most likely in the subject, written here as \"brother\".",
-            "explanation": "This pair differs only in the subject: \"brother\" versus \"sister\". Training your ear to catch details like this is a core listening skill.",
-            "prompt": "My brother is updating the software on the laptop.",
-            "sampleAnswer": "My sister is updating the software on the laptop.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L42_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Everything else matches -- just listen closely for the main verb. Right now the text says \"updating\".",
-            "explanation": "The difference comes down to one detail: is it \"updating\" or \"deleting\"? Everything else matches word for word.",
-            "prompt": "The technician is updating the software on the laptop.",
-            "sampleAnswer": "The technician is deleting the software on the laptop.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L42_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The detail that might change is the object: the text says \"software\". Focus your ear there.",
-            "explanation": "The sentence is about \"software\", not \"files\". Everything else matches exactly.",
-            "prompt": "Her coworker is updating the software on the laptop.",
-            "sampleAnswer": "Her coworker is updating the files on the laptop.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L43_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Listen the whole way through, but pay special attention to the subject -- written here as \"The team\".",
-            "explanation": "Only one thing changed here: \"The team\" became \"My colleague\". Small swaps like this are common in natural speech, so it pays to listen the whole way through.",
-            "prompt": "The team is preparing a presentation for the client.",
-            "sampleAnswer": "My colleague is preparing a presentation for the client.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L43_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Today's key listening target is the main verb, currently \"preparing\" in the text.",
-            "explanation": "\"preparing\" and \"reviewing\" were the two options here. Catching the difference just takes attention to the main verb.",
-            "prompt": "The intern is preparing a presentation for the client.",
-            "sampleAnswer": "The intern is reviewing a presentation for the client.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L43_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The rest of the sentence is fixed. What could differ is the object -- shown here as \"presentation\".",
-            "explanation": "Notice that \"proposal\" replaced \"presentation\". The rest of the sentence stayed exactly the same -- only the object changed.",
-            "prompt": "Her assistant is preparing a presentation for the client.",
-            "sampleAnswer": "Her assistant is preparing a proposal for the client.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L44_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Train your ear on the subject. The text says \"passengers\" -- that's usually where small changes hide.",
-            "explanation": "This pair differs only in the subject: \"passengers\" versus \"travelers\". Training your ear to catch details like this is a core listening skill.",
-            "prompt": "The passengers are boarding the plane at gate twelve.",
-            "sampleAnswer": "The travelers are boarding the plane at gate twelve.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L44_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Keep the rest in mind, but the detail worth checking is the main verb: the text reads \"boarding\".",
-            "explanation": "The difference comes down to one detail: is it \"boarding\" or \"leaving\"? Everything else matches word for word.",
-            "prompt": "My coworkers are boarding the plane at gate twelve.",
-            "sampleAnswer": "My coworkers are leaving the plane at gate twelve.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L44_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "If something doesn't match, the difference is most likely in the object, written here as \"plane\".",
-            "explanation": "The sentence is about \"plane\", not \"bus\". Everything else matches exactly.",
-            "prompt": "Her classmates are boarding the plane at gate twelve.",
-            "sampleAnswer": "Her classmates are boarding the bus at gate twelve.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L45_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Everything else matches -- just listen closely for the subject. Right now the text says \"The chef\".",
-            "explanation": "Only one thing changed here: \"The chef\" became \"My father\". Small swaps like this are common in natural speech, so it pays to listen the whole way through.",
-            "prompt": "The chef is tasting the sauce before serving it.",
-            "sampleAnswer": "My father is tasting the sauce before serving it.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L45_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The detail that might change is the main verb: the text says \"tasting\". Focus your ear there.",
-            "explanation": "\"tasting\" and \"stirring\" were the two options here. Catching the difference just takes attention to the main verb.",
-            "prompt": "The cook is tasting the sauce before serving it.",
-            "sampleAnswer": "The cook is stirring the sauce before serving it.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L45_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Listen the whole way through, but pay special attention to the object -- written here as \"sauce\".",
-            "explanation": "Notice that \"soup\" replaced \"sauce\". The rest of the sentence stayed exactly the same -- only the object changed.",
-            "prompt": "Her brother is tasting the sauce before serving it.",
-            "sampleAnswer": "Her brother is tasting the soup before serving it.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L46_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Today's key listening target is the subject, currently \"sister\" in the text.",
-            "explanation": "This pair differs only in the subject: \"sister\" versus \"brother\". Training your ear to catch details like this is a core listening skill.",
-            "prompt": "My sister is streaming a movie on the tablet.",
-            "sampleAnswer": "My brother is streaming a movie on the tablet.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L46_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The rest of the sentence is fixed. What could differ is the main verb -- shown here as \"streaming\".",
-            "explanation": "The difference comes down to one detail: is it \"streaming\" or \"downloading\"? Everything else matches word for word.",
-            "prompt": "My roommate is streaming a movie on the tablet.",
-            "sampleAnswer": "My roommate is downloading a movie on the tablet.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L46_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Train your ear on the object. The text says \"movie\" -- that's usually where small changes hide.",
-            "explanation": "The sentence is about \"movie\", not \"podcast\". Everything else matches exactly.",
-            "prompt": "Her cousin is streaming a movie on the tablet.",
-            "sampleAnswer": "Her cousin is streaming a podcast on the tablet.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L47_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Keep the rest in mind, but the detail worth checking is the subject: the text reads \"nurse\".",
-            "explanation": "Only one thing changed here: \"nurse\" became \"doctor\". Small swaps like this are common in natural speech, so it pays to listen the whole way through.",
-            "prompt": "The nurse is measuring the patient's blood pressure right now.",
-            "sampleAnswer": "The doctor is measuring the patient's blood pressure right now.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L47_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "If something doesn't match, the difference is most likely in the main verb, written here as \"measuring\".",
-            "explanation": "\"measuring\" and \"recording\" were the two options here. Catching the difference just takes attention to the main verb.",
-            "prompt": "My aunt is measuring the patient's blood pressure right now.",
-            "sampleAnswer": "My aunt is recording the patient's blood pressure right now.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L47_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Everything else matches -- just listen closely for the object. Right now the text says \"blood pressure\".",
-            "explanation": "Notice that \"heart rate\" replaced \"blood pressure\". The rest of the sentence stayed exactly the same -- only the object changed.",
-            "prompt": "The paramedic is measuring the patient's blood pressure right now.",
-            "sampleAnswer": "The paramedic is measuring the patient's heart rate right now.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L48_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The detail that might change is the subject: the text says \"father\". Focus your ear there.",
-            "explanation": "This pair differs only in the subject: \"father\" versus \"mother\". Training your ear to catch details like this is a core listening skill.",
-            "prompt": "My father is comparing prices at two different stores.",
-            "sampleAnswer": "My mother is comparing prices at two different stores.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L48_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Listen the whole way through, but pay special attention to the main verb -- written here as \"comparing\".",
-            "explanation": "The difference comes down to one detail: is it \"comparing\" or \"negotiating\"? Everything else matches word for word.",
-            "prompt": "Our neighbor is comparing prices at two different stores.",
-            "sampleAnswer": "Our neighbor is negotiating prices at two different stores.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L48_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Today's key listening target is the object, currently \"prices\" in the text.",
-            "explanation": "The sentence is about \"prices\", not \"discounts\". Everything else matches exactly.",
-            "prompt": "The shopper is comparing prices at two different stores.",
-            "sampleAnswer": "The shopper is comparing discounts at two different stores.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L49_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The rest of the sentence is fixed. What could differ is the subject -- shown here as \"The professor\".",
-            "explanation": "Only one thing changed here: \"The professor\" became \"My teacher\". Small swaps like this are common in natural speech, so it pays to listen the whole way through.",
-            "prompt": "The professor is grading essays in the office.",
-            "sampleAnswer": "My teacher is grading essays in the office.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L49_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Train your ear on the main verb. The text says \"grading\" -- that's usually where small changes hide.",
-            "explanation": "\"grading\" and \"collecting\" were the two options here. Catching the difference just takes attention to the main verb.",
-            "prompt": "The assistant is grading essays in the office.",
-            "sampleAnswer": "The assistant is collecting essays in the office.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L49_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Keep the rest in mind, but the detail worth checking is the object: the text reads \"essays\".",
-            "explanation": "Notice that \"exams\" replaced \"essays\". The rest of the sentence stayed exactly the same -- only the object changed.",
-            "prompt": "Her tutor is grading essays in the office.",
-            "sampleAnswer": "Her tutor is grading exams in the office.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L50_Q1",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "If something doesn't match, the difference is most likely in the subject, written here as \"My grandparents\".",
-            "explanation": "This pair differs only in the subject: \"My grandparents\" versus \"Her parents\". Training your ear to catch details like this is a core listening skill.",
-            "prompt": "My grandparents are baking cookies for the holidays.",
-            "sampleAnswer": "Her parents are baking cookies for the holidays.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L50_Q2",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "Everything else matches -- just listen closely for the main verb. Right now the text says \"baking\".",
-            "explanation": "The difference comes down to one detail: is it \"baking\" or \"wrapping\"? Everything else matches word for word.",
-            "prompt": "Our neighbors are baking cookies for the holidays.",
-            "sampleAnswer": "Our neighbors are wrapping cookies for the holidays.",
-            "followUpQuestion": "Why do you think that?"
-        },
-        {
-            "id": "SPK_YESNOSPEAKING_L50_Q3",
-            "interactionType": "voice",
-            "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
-            "hint": "The detail that might change is the object: the text says \"cookies\". Focus your ear there.",
-            "explanation": "The sentence is about \"cookies\", not \"presents\". Everything else matches exactly.",
-            "prompt": "His aunts are baking cookies for the holidays.",
-            "sampleAnswer": "His aunts are baking presents for the holidays.",
-            "followUpQuestion": "Why do you think that?"
-        }
-    ]
+  "gameType": "yesNoSpeaking",
+  "batchIndex": 5,
+  "levels": "41-50",
+  "quests": [
+    {
+      "id": "SPK_YESNOSPEAKING_L41_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A price comes before the word for the currency. Hear every syllable of it.",
+      "explanation": "Same price in audio and text. In \"fifteen\" the stress falls on the last part of the word, which separates it from \"fifty\".",
+      "prompt": "The tickets cost fifteen dollars each for students.",
+      "sampleAnswer": "The tickets cost fifteen dollars each for students.",
+      "followUpQuestion": "Say the price of something you bought recently."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L41_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Numbers ending in -teen and -ty sound alike. Where does the stress fall?",
+      "explanation": "In fifty the first syllable is strong, and in fifteen the second one is. Thirty-five pounds of difference is a big surprise at the till.",
+      "prompt": "The total came to fifty pounds after the discount.",
+      "sampleAnswer": "The total came to fifteen pounds after the discount.",
+      "followUpQuestion": "Say a price that ends in -teen and another that ends in -ty."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L41_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Two numbers give the address: a floor, then a room.",
+      "explanation": "Twelve and twenty begin differently but both sound short when spoken fast. Visitors would knock on the wrong door.",
+      "prompt": "I'm on the third floor, room twelve.",
+      "sampleAnswer": "I'm on the third floor, room twenty.",
+      "followUpQuestion": "Give someone directions to a room you know."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L42_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Distance comes with a rough estimate at the start.",
+      "explanation": "You heard exactly what was written. \"About\" makes the number approximate, and \"five hundred\" is a normal way to say a distance in metres.",
+      "prompt": "The pharmacy is about five hundred metres from here.",
+      "sampleAnswer": "The pharmacy is about five hundred metres from here.",
+      "followUpQuestion": "Say how far your home is from the nearest shop."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L42_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Two details, day and time. Catch the day first.",
+      "explanation": "Tuesday and Thursday both start with a T sound and end in \"-day\", so they are easy to mix up. Turning up on the wrong day means missing the appointment.",
+      "prompt": "My appointment is on Tuesday at half past two.",
+      "sampleAnswer": "My appointment is on Thursday at half past two.",
+      "followUpQuestion": "Say the day and time of an appointment you have."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L42_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Listen for the approximate word and the length of the wait.",
+      "explanation": "You heard what was written. \"Nearly forty\" means just under forty, and \"minutes for the delivery\" tells you what the wait was for.",
+      "prompt": "We waited nearly forty minutes for the delivery.",
+      "sampleAnswer": "We waited nearly forty minutes for the delivery.",
+      "followUpQuestion": "Say how long you waited the last time you were in a queue."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L43_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Two quantities appear in this list. Hold on to both.",
+      "explanation": "Word for word the same. Recipes often give amounts in cups or grams, and a quantity comes before each ingredient.",
+      "prompt": "The recipe needs two cups of flour and one egg.",
+      "sampleAnswer": "The recipe needs two cups of flour and one egg.",
+      "followUpQuestion": "Say what you need to bake something simple."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L43_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "There's a distance and a habit: how far, and how often?",
+      "explanation": "Same sentences. \"Every other morning\" means every second day, which is often confused with \"every morning\".",
+      "prompt": "I run about three kilometres every other morning.",
+      "sampleAnswer": "I run about three kilometres every other morning.",
+      "followUpQuestion": "Say how far you walk on a normal day."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L43_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The sentence has an hour count and a minute count. Compare the minutes.",
+      "explanation": "Ten and twenty are both round numbers, but they leave you with a different film length and a different bedtime.",
+      "prompt": "The film lasts two hours and ten minutes.",
+      "sampleAnswer": "The film lasts two hours and twenty minutes.",
+      "followUpQuestion": "Ask how long a film or lesson lasts."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L44_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Two clock times mark the start and end. Hold both in mind.",
+      "explanation": "The finish time stays at ten. Starting at seven thirty means a whole hour less breakfast for an early riser.",
+      "prompt": "Breakfast is served from six thirty until ten.",
+      "sampleAnswer": "Breakfast is served from seven thirty until ten.",
+      "followUpQuestion": "Say when breakfast starts at your place."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L44_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A date is spoken with an ordinal: not three but third.",
+      "explanation": "Same date. In spoken English we say \"the third of March\", not \"March three\", in many countries.",
+      "prompt": "The concert is on the third of March.",
+      "sampleAnswer": "The concert is on the third of March.",
+      "followUpQuestion": "Say today's date out loud in words."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L44_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "An amount and a period. The period is at the very end.",
+      "explanation": "\"A month\" shows how often, and \"about\" makes the amount an estimate.",
+      "prompt": "She's saving about two hundred dollars a month.",
+      "sampleAnswer": "She's saving about two hundred dollars a month.",
+      "followUpQuestion": "Say something you would like to save money for."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L45_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Is it thirteen or thirty? Notice the stress in the number.",
+      "explanation": "Thirteen carries the stress on the second half, and that clue separates it from thirty.",
+      "prompt": "There are thirteen students in my evening class.",
+      "sampleAnswer": "There are thirteen students in my evening class.",
+      "followUpQuestion": "Say how many people are in your class or team."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L45_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A weight comes right after \"about\". Listen to the number and the unit.",
+      "explanation": "Two and twelve kilos are very different weights. The rest of the sentence still sounds sensible, so only the number tells you which parcel it is.",
+      "prompt": "The parcel weighs about two kilos, so I'll post it tomorrow.",
+      "sampleAnswer": "The parcel weighs about twelve kilos, so I'll post it tomorrow.",
+      "followUpQuestion": "Say how heavy your bag is today."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L45_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Two ordinal words describe the pay day. Listen to which position is used.",
+      "explanation": "Last and first are far apart in a month. An error here could leave you waiting nearly four weeks.",
+      "prompt": "I get paid on the last Friday of every month.",
+      "sampleAnswer": "I get paid on the first Friday of every month.",
+      "followUpQuestion": "Say when you get paid, or when you get pocket money."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L46_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A timetable sentence: how often does the bus arrive?",
+      "explanation": "Twenty and thirty share the same ending, so the first syllable is the clue. Missing it means waiting ten minutes longer at the stop.",
+      "prompt": "The bus comes every twenty minutes during rush hour.",
+      "sampleAnswer": "The bus comes every thirty minutes during rush hour.",
+      "followUpQuestion": "Say how often the bus or train comes near you."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L46_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Two details, a platform number and a time. Keep both.",
+      "explanation": "Correct. \"Quarter past nine\" is nine fifteen, and travellers use it all the time in stations.",
+      "prompt": "The train leaves from platform four at quarter past nine.",
+      "sampleAnswer": "The train leaves from platform four at quarter past nine.",
+      "followUpQuestion": "Read a departure time from a timetable, in words."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L46_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A journey time, plus a way of travelling.",
+      "explanation": "Nothing was altered in this one. \"On foot\" means walking, and \"about ten minutes\" is a natural rough estimate.",
+      "prompt": "It's about ten minutes on foot from the station.",
+      "sampleAnswer": "It's about ten minutes on foot from the station.",
+      "followUpQuestion": "Say how long it takes to get from your home to a park."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L47_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "An estimate followed by a quantity and a period.",
+      "explanation": "\"Around\" is a friendly alternative to \"about\" when the number isn't exact.",
+      "prompt": "He drinks around eight glasses of water a day.",
+      "sampleAnswer": "He drinks around eight glasses of water a day.",
+      "followUpQuestion": "Say how much water you drink in one day."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L47_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The amount ends in a syllable that makes it tricky. Which is it?",
+      "explanation": "Eighty is stressed early and eighteen late, and the difference amounts to a big financial gap for a tenant.",
+      "prompt": "The rent went up by eighty dollars this year.",
+      "sampleAnswer": "The rent went up by eighteen dollars this year.",
+      "followUpQuestion": "Say a number that ends in -teen and one that ends in -ty."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L47_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "This is an estimate of a waiting time.",
+      "explanation": "Half an hour and an hour are not the same wait. The person waiting will plan differently for each one.",
+      "prompt": "I'll be there in about half an hour.",
+      "sampleAnswer": "I'll be there in about an hour.",
+      "followUpQuestion": "Text a friend to say when you will arrive."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L48_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A list of features, each with a number. Follow the counts.",
+      "explanation": "Audio and text are identical. In lists, English puts \"and\" before the last item.",
+      "prompt": "We have three bedrooms, two bathrooms and a small garden.",
+      "sampleAnswer": "We have three bedrooms, two bathrooms and a small garden.",
+      "followUpQuestion": "Describe the rooms in your home in one sentence."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L48_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "A discount has two pieces of information: how much and when.",
+      "explanation": "\"Twenty percent\" is written with a percent sign but always spoken in words, and \"on Wednesdays\" says when the discount applies.",
+      "prompt": "The store gives a twenty percent discount on Wednesdays.",
+      "sampleAnswer": "The store gives a twenty percent discount on Wednesdays.",
+      "followUpQuestion": "Ask when there is a discount at a shop."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L48_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "One number describes the size of the queue. Compare its ending.",
+      "explanation": "A queue of thirty is a very long wait, but thirteen is manageable. Thirty has the stress at the start.",
+      "prompt": "The queue at the bank was about thirty people long.",
+      "sampleAnswer": "The queue at the bank was about thirteen people long.",
+      "followUpQuestion": "Say how long the last queue you stood in was."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L49_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Dates use ordinal numbers. Pay attention to the length of this one.",
+      "explanation": "Fifth is short and fifteenth is much longer. Ten days may be the difference between being ready and not.",
+      "prompt": "The exam is on the fifth of June.",
+      "sampleAnswer": "The exam is on the fifteenth of June.",
+      "followUpQuestion": "Say the date of an important event in your year."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L49_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The sentence includes two counts. Listen to each one separately.",
+      "explanation": "Two and three tables would be a different setup for a party. The chairs are the same, so you have to count each item.",
+      "prompt": "We need four chairs and two tables for Saturday.",
+      "sampleAnswer": "We need four chairs and three tables for Saturday.",
+      "followUpQuestion": "Say what you need for a small party."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L49_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "This announcement includes a delay and a line number.",
+      "explanation": "Numbers over twenty are made of two parts, like forty and five, and are usually written with a hyphen.",
+      "prompt": "There's a delay of about forty-five minutes on line two.",
+      "sampleAnswer": "There's a delay of about forty-five minutes on line two.",
+      "followUpQuestion": "Say what you would tell a friend about a delay."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L50_Q1",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "The number is followed by a unit. The last syllable is the clue.",
+      "explanation": "Sixteen and sixty are a classic pair. The stress falls on the second syllable in sixteen and on the first in sixty.",
+      "prompt": "She has lived in this building for about sixteen years.",
+      "sampleAnswer": "She has lived in this building for about sixty years.",
+      "followUpQuestion": "Practise two similar numbers aloud, one right after the other."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L50_Q2",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Directions with two steps. Listen to the order in which they come.",
+      "explanation": "The recording follows the text word for word. \"Second\" tells you which light to count, and \"then\" marks the next step.",
+      "prompt": "Turn right after the second traffic light, then go straight.",
+      "sampleAnswer": "Turn right after the second traffic light, then go straight.",
+      "followUpQuestion": "Give someone two steps to reach a place."
+    },
+    {
+      "id": "SPK_YESNOSPEAKING_L50_Q3",
+      "interactionType": "voice",
+      "instruction": "Listen and tilt to yes if the audio matches the text, or no if it doesn't.",
+      "hint": "Both ends of the class are in the sentence. Focus on the second time.",
+      "explanation": "Eleven and seven are quite different, and a class that ends at seven would be more of an evening than a morning event.",
+      "prompt": "The class starts at nine and finishes at eleven.",
+      "sampleAnswer": "The class starts at nine and finishes at seven.",
+      "followUpQuestion": "Say when your day starts and finishes."
+    }
+  ]
 }

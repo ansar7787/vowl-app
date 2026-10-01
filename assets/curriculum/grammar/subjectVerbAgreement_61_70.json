@@ -5,512 +5,512 @@
     "quests": [
         {
             "id": "sva_l61_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "There ___ a long queue outside the bakery.",
-            "hint": "In 'there is/are', find the real subject after the verb ('queue' is singular).",
-            "explanation": "In sentences starting with 'there', the verb agrees with the real subject that follows. 'A queue' is singular, so 'there is' is correct.",
+            "question": "The team ___ practicing for tomorrow's championship game.",
+            "hint": "Think of the team as one single unit working together (this course follows American usage for collective nouns).",
+            "explanation": "'The team' is a collective noun acting as one unit here, so it takes the singular verb 'is'. (This course follows standard American usage: a collective noun acting as one unit takes a singular verb.)",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "Collective noun 'team' takes a singular verb when acting as one unit",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l61_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "There ___ long queues outside the bakery every morning.",
-            "hint": "The real subject is 'queues' (plural) - verb agrees with it.",
-            "explanation": "The real subject is 'long queues', which is plural. So 'there are' is correct. The verb always agrees with the noun that follows 'there'.",
+            "question": "Our team ___ every game so far this season.",
+            "hint": "Even though a team has many players, it counts as one unit for the verb.",
+            "explanation": "'Our team' is treated as a single unit, so the verb takes -s: 'wins'.",
             "options": [
-                "is",
-                "are"
+                "win",
+                "wins"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "wins",
+            "grammarRule": "Collective noun 'team' takes a singular verb when acting as one unit",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l61_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "There ___ a doctor and two nurses on duty tonight.",
-            "hint": "When 'there' is followed by a list, the verb usually agrees with the first item.",
-            "explanation": "When 'there is/are' introduces a list, the verb traditionally agrees with the first item in the list. 'A doctor' is singular, so 'there is' is used.",
+            "question": "The rival team ___ a strong defense this year.",
+            "hint": "Treat 'the rival team' the same way you'd treat any single organization.",
+            "explanation": "'The rival team' acts as one unit, so the verb is 'has'.",
             "options": [
-                "is",
-                "are"
+                "has",
+                "have"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "has",
+            "grammarRule": "Collective noun 'team' takes a singular verb when acting as one unit",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l62_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "There ___ nurses and a doctor on duty tonight.",
-            "hint": "The first item after 'there' is 'nurses' (plural) - verb agrees with it.",
-            "explanation": "When 'there is/are' introduces a list, the verb agrees with the first noun. 'Nurses' is plural, so 'there are' is correct.",
+            "question": "My family ___ dinner together every Sunday.",
+            "hint": "A family sitting down together is still one household unit for grammar purposes.",
+            "explanation": "'My family' is a collective noun acting as one unit, so the verb takes -s: 'has'.",
             "options": [
-                "is",
-                "are"
+                "have",
+                "has"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "has",
+            "grammarRule": "Collective noun 'family' takes a singular verb when acting as one unit",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l62_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Here ___ the receipt for your purchase.",
-            "hint": "In 'here is/are', the verb agrees with the subject that follows ('receipt' is singular).",
-            "explanation": "Like 'there is/are', 'here is/are' inverts subject and verb. 'The receipt' is singular, so 'here is' is correct.",
+            "question": "The Patel family ___ in this neighborhood.",
+            "hint": "Even a family with many members is treated as one unit here.",
+            "explanation": "'The Patel family' acts as a single unit, so the verb takes -s: 'lives'.",
             "options": [
-                "is",
-                "are"
+                "live",
+                "lives"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "lives",
+            "grammarRule": "Collective noun 'family' takes a singular verb when acting as one unit",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l62_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Here ___ the documents you requested.",
-            "hint": "The real subject is 'documents' (plural) - use 'are'.",
-            "explanation": "In inverted 'here' sentences, the verb agrees with the real subject. 'The documents' is plural, so 'here are' is correct.",
+            "question": "Her family ___ a small restaurant downtown.",
+            "hint": "The family as a whole runs the restaurant together - one unit, one verb form.",
+            "explanation": "'Her family' is singular here, so the verb takes -s: 'owns'.",
             "options": [
-                "is",
-                "are"
+                "owns",
+                "own"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "owns",
+            "grammarRule": "Collective noun 'family' takes a singular verb when acting as one unit",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l63_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The manager ___ available for a quick call?",
-            "hint": "The subject is 'the manager' (singular) - the verb agrees with it.",
-            "explanation": "In questions, the verb still agrees with the subject. 'The manager' is singular, so 'is' is correct, not 'are'.",
+            "question": "The committee ___ a final decision by next Friday.",
+            "hint": "A committee acts as one decision-making body, even with several members.",
+            "explanation": "'The committee' is singular here, so the verb takes -s: 'makes'.",
             "options": [
-                "is",
-                "are"
+                "make",
+                "makes"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "makes",
+            "grammarRule": "Collective noun 'committee' takes a singular verb when acting as one unit",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l63_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The managers ___ available for a quick call?",
-            "hint": "The subject is 'the managers' (plural) - the verb agrees with it.",
-            "explanation": "'The managers' is plural, so 'are' is correct. Subject-verb agreement applies in questions just as in statements.",
+            "question": "The hiring committee ___ over one hundred applications this year.",
+            "hint": "The committee works together as one group when reviewing applications.",
+            "explanation": "'The hiring committee' is singular, so the verb takes -s: 'reviews'.",
             "options": [
-                "is",
-                "are"
+                "reviews",
+                "review"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "reviews",
+            "grammarRule": "Collective noun 'committee' takes a singular verb when acting as one unit",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l63_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Where ___ the remote control?",
-            "hint": "The subject is 'the remote control' (singular).",
-            "explanation": "In wh-questions, the verb still agrees with the subject. 'The remote control' is singular, so 'where is' is correct.",
+            "question": "The planning committee ___ every proposal carefully.",
+            "hint": "Picture the committee as a single team weighing every proposal together.",
+            "explanation": "'The planning committee' is singular, so the verb takes -s: 'considers'.",
             "options": [
-                "is",
-                "are"
+                "consider",
+                "considers"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "considers",
+            "grammarRule": "Collective noun 'committee' takes a singular verb when acting as one unit",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l64_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Where ___ my keys?",
-            "hint": "'My keys' is plural - the verb in this question agrees with them.",
-            "explanation": "'My keys' is plural, so 'where are my keys?' is correct. Even in questions, the verb must agree with the subject.",
+            "question": "The company ___ its headquarters to a new city next year.",
+            "hint": "A company acts as one organization, even though it employs many people.",
+            "explanation": "'The company' is singular, so the verb takes -s: 'moves'.",
             "options": [
-                "is",
-                "are"
+                "moves",
+                "move"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "moves",
+            "grammarRule": "Collective noun 'company' takes a singular verb when acting as one unit",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l64_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The student who got the highest marks ___ my nephew.",
-            "hint": "The subject is 'the student' (singular) - the relative clause doesn't change that.",
-            "explanation": "The subject is 'the student', not 'the highest marks'. The relative clause 'who got the highest marks' describes the student but doesn't affect the verb. 'The student is' is correct.",
+            "question": "This company ___ excellent customer service.",
+            "hint": "Think of the company as a single business entity providing a service.",
+            "explanation": "'This company' is singular, so the verb takes -s: 'provides'.",
             "options": [
-                "is",
-                "are"
+                "provides",
+                "provide"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "provides",
+            "grammarRule": "Collective noun 'company' takes a singular verb when acting as one unit",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l64_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The students who scored highest ___ from this class.",
-            "hint": "The subject is 'the students' (plural) - the relative clause doesn't change that.",
-            "explanation": "The subject is 'the students'. The relative clause 'who scored highest' adds information but doesn't change the agreement. 'The students are from this class'.",
+            "question": "The startup ___ enough funding to expand.",
+            "hint": "'Startup' is just another word for a young company - the same singular rule applies.",
+            "explanation": "'The startup' is singular, so the verb takes -s: 'has'.",
             "options": [
-                "is",
-                "are"
+                "have",
+                "has"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "has",
+            "grammarRule": "Collective noun 'company' takes a singular verb when acting as one unit",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l65_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The package that arrived this morning ___ on the counter.",
-            "hint": "The subject is 'the package' (singular) - the relative clause is extra information.",
-            "explanation": "The subject is 'the package'. The relative clause 'that arrived this morning' describes it but does not affect agreement. 'The package is on the counter'.",
+            "question": "The government ___ new regulations on data privacy.",
+            "hint": "A government acts as one body, even though it includes many officials.",
+            "explanation": "'The government' is singular here, so the verb takes -s: 'proposes'.",
+            "options": [
+                "propose",
+                "proposes"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "proposes",
+            "grammarRule": "Collective noun 'government' takes a singular verb when acting as one unit",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l65_q2",
+            "instruction": "CHOOSE THE CORRECT VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The local government ___ funding for the new park.",
+            "hint": "Picture the local government as one administrative unit.",
+            "explanation": "'The local government' is singular, so the verb takes -s: 'provides'.",
+            "options": [
+                "provides",
+                "provide"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "provides",
+            "grammarRule": "Collective noun 'government' takes a singular verb when acting as one unit",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l65_q3",
+            "instruction": "CHOOSE THE CORRECT VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The federal government ___ several agencies under this department.",
+            "hint": "Even overseeing several agencies, the government itself is still one entity.",
+            "explanation": "'The federal government' is singular, so the verb takes -s: 'oversees'.",
+            "options": [
+                "oversees",
+                "oversee"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "oversees",
+            "grammarRule": "Collective noun 'government' takes a singular verb when acting as one unit",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l66_q1",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The audience ___ loudly after the final scene.",
+            "hint": "An audience reacts together as one crowd, even with hundreds of people.",
+            "explanation": "'The audience' is singular here, so the verb takes -s: 'applauds'.",
+            "options": [
+                "applaud",
+                "applauds"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "applauds",
+            "grammarRule": "Collective noun 'audience' takes a singular verb when acting as one unit",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l66_q2",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The audience ___ silent during the entire performance.",
+            "hint": "The whole audience staying quiet together is still one unit.",
+            "explanation": "'The audience' is singular, so the verb takes -s: 'remains'.",
+            "options": [
+                "remains",
+                "remain"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "remains",
+            "grammarRule": "Collective noun 'audience' takes a singular verb when acting as one unit",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l66_q3",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "A large audience ___ the theater every weekend.",
+            "hint": "Even a large crowd of people counts as one audience for the verb.",
+            "explanation": "'A large audience' is singular, so the verb takes -s: 'fills'.",
+            "options": [
+                "fill",
+                "fills"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "fills",
+            "grammarRule": "Collective noun 'audience' takes a singular verb when acting as one unit",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l67_q1",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The staff ___ extra training this month.",
+            "hint": "'Staff' names the whole group of employees as one unit.",
+            "explanation": "'The staff' is singular here, so the verb takes -s: 'receives'.",
+            "options": [
+                "receive",
+                "receives"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "receives",
+            "grammarRule": "Collective noun 'staff' takes a singular verb when acting as one unit",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l67_q2",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Our staff ___ available around the clock.",
+            "hint": "Think of the staff as a single team that's always on call together.",
+            "explanation": "'Our staff' is singular, so the verb is 'is'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "Collective noun 'staff' takes a singular verb when acting as one unit",
             "subjectType": "Singular"
         },
         {
-            "id": "sva_l65_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "id": "sva_l67_q3",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The boxes that arrived this morning ___ on the counter.",
-            "hint": "The subject is 'the boxes' (plural) - the relative clause doesn't change that.",
-            "explanation": "The subject is 'the boxes'. The relative clause 'that arrived this morning' provides extra detail. Since 'boxes' is plural, 'are' is correct.",
+            "question": "The kitchen staff ___ every order carefully.",
+            "hint": "The kitchen staff works as one coordinated team, not as separate individuals here.",
+            "explanation": "'The kitchen staff' is singular, so the verb takes -s: 'prepares'.",
+            "options": [
+                "prepares",
+                "prepare"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "prepares",
+            "grammarRule": "Collective noun 'staff' takes a singular verb when acting as one unit",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l68_q1",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The class ___ a field trip next week.",
+            "hint": "A class of students moves and acts together as one group on a trip.",
+            "explanation": "'The class' is singular here, so the verb takes -s: 'takes'.",
+            "options": [
+                "take",
+                "takes"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "takes",
+            "grammarRule": "Collective nouns 'class' and 'group' take a singular verb when acting as one unit",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l68_q2",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "This group ___ weekly meetings to discuss progress.",
+            "hint": "'Group' works exactly like 'class' - one unit, one verb form.",
+            "explanation": "'This group' is singular, so the verb takes -s: 'holds'.",
+            "options": [
+                "holds",
+                "hold"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "holds",
+            "grammarRule": "Collective nouns 'class' and 'group' take a singular verb when acting as one unit",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l68_q3",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The study group ___ every Tuesday evening.",
+            "hint": "The study group gathers together as a single unit each week.",
+            "explanation": "'The study group' is singular, so the verb takes -s: 'meets'.",
+            "options": [
+                "meet",
+                "meets"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "meets",
+            "grammarRule": "Collective nouns 'class' and 'group' take a singular verb when acting as one unit",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l69_q1",
+            "instruction": "SPOT THE EXCEPTION",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The news ___ surprising to everyone in the room.",
+            "hint": "This word ends in -s and looks plural, but it names one body of information.",
+            "explanation": "'The news' looks plural because of its spelling, but it always takes a singular verb: 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "Nouns like 'news', 'mathematics', and 'physics' look plural but take a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l69_q2",
+            "instruction": "SPOT THE EXCEPTION",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Mathematics ___ many students at first.",
+            "hint": "Subject names ending in -ics, like this one, are usually singular, not plural.",
+            "explanation": "'Mathematics' looks plural but names a single subject, so the verb takes -s: 'challenges'.",
+            "options": [
+                "challenge",
+                "challenges"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "challenges",
+            "grammarRule": "Nouns like 'news', 'mathematics', and 'physics' look plural but take a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l69_q3",
+            "instruction": "SPOT THE EXCEPTION",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Physics ___ the fundamental laws of nature.",
+            "hint": "Don't let the -s ending on this subject name fool you into using a plural verb.",
+            "explanation": "'Physics' is a singular subject name despite its -s ending, so the verb takes -s: 'explains'.",
+            "options": [
+                "explains",
+                "explain"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "explains",
+            "grammarRule": "Nouns like 'news', 'mathematics', and 'physics' look plural but take a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l70_q1",
+            "instruction": "FIND THE CORRECT AGREEMENT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The police ___ investigating the incident downtown.",
+            "hint": "This word looks similar to the singular collective nouns you just practiced, but it works differently - check its meaning carefully.",
+            "explanation": "'The police' has no singular form and is always treated as plural, unlike collective nouns such as 'team' or 'committee'. The verb is 'are'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l65_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The CEO who started three companies ___ speaking tonight.",
-            "hint": "The subject is 'the CEO' (singular) - the relative clause is descriptive only.",
-            "explanation": "The subject is 'the CEO', not 'three companies'. The relative clause 'who started three companies' describes the CEO but does not affect agreement. 'The CEO is speaking'.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l66_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The series ___ renewed for another season.",
-            "hint": "'Series' is the same in singular and plural - here it refers to one show (singular).",
-            "explanation": "'Series' looks plural but can be singular. Here it refers to one television series, so the verb is singular: 'the series was renewed'.",
-            "options": [
-                "were",
-                "was"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l66_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The species ___ endangered due to habitat loss.",
-            "hint": "'Species' is the same in singular and plural - here it refers to one species.",
-            "explanation": "'Species' does not change in plural. Here it refers to one type of animal, so the verb is singular: 'the species is endangered'.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l66_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The news about the election ___ already spreading online.",
-            "hint": "'News' always takes a singular verb - it is an uncountable noun.",
-            "explanation": "'News' ends in -s but is always uncountable and singular. 'The news is spreading' - never 'are spreading'.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l67_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The means to solve this problem ___ not yet clear.",
-            "hint": "'Means' (method/way) can be singular or plural - here 'the means' refers to one approach.",
-            "explanation": "'Means' does not change form in the plural. When referring to a single method or approach, 'the means is' is correct. Context determines singular or plural.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l67_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The headquarters of the company ___ in Singapore.",
-            "hint": "'Headquarters' is treated as singular when referring to one location.",
-            "explanation": "'Headquarters' can be singular or plural. When referring to a single main office, 'headquarters is' is standard usage in formal English.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l67_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The mathematics involved in this problem ___ complex.",
-            "hint": "'Mathematics' is always singular - even when referring to calculations in a specific context.",
-            "explanation": "'Mathematics' always takes a singular verb, even when we mean the calculations of one specific problem. 'The mathematics is complex'.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l68_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Two weeks ___ a long time to wait for a response.",
-            "hint": "A period of time treated as a single unit takes a singular verb.",
-            "explanation": "When a period of time is treated as a single, unified amount, it takes a singular verb. 'Two weeks is a long time' - we think of it as one block of time.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l68_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Fifty dollars ___ too much to pay for that item.",
-            "hint": "A sum of money treated as one amount takes a singular verb.",
-            "explanation": "When an amount of money is considered as a single total, it takes a singular verb. 'Fifty dollars is too much' - we think of it as one price.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l68_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Five kilometres ___ quite a long distance to walk every day.",
-            "hint": "A distance expressed as a single measurement takes a singular verb.",
-            "explanation": "Distances and measurements treated as single amounts take singular verbs. 'Five kilometres is quite a long distance' - it is one measurement.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l69_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The TV show 'The Tudors' ___ a popular drama series.",
-            "hint": "A title - even if it looks plural - is treated as singular (one work).",
-            "explanation": "Titles of books, films, and programmes are treated as singular even if they look plural. 'The Tudors is a popular drama series' - it is one show.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l69_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Dickens's novel 'Great Expectations' ___ required reading for this course.",
-            "hint": "A book title is a single work - use a singular verb.",
-            "explanation": "The title of a single book takes a singular verb. 'Great Expectations is required reading' - it is one novel, despite the plural-looking title.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l69_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The United Nations ___ headquartered in New York.",
-            "hint": "Organisations with plural-looking names take a singular verb as one body.",
-            "explanation": "The United Nations acts as a single organisation, so it takes a singular verb: 'the United Nations is headquartered in New York'.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l70_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The United States ___ a federal republic with fifty states.",
-            "hint": "Country names that look plural take a singular verb - one country.",
-            "explanation": "'The United States' is the name of one country, so the verb is singular: 'the United States is a federal republic'.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "grammarRule": "'Police' is always plural, unlike singular collective nouns such as 'team' or 'committee'",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l70_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The Netherlands ___ known for its tulips and windmills.",
-            "hint": "'The Netherlands' is the name of one country - singular verb.",
-            "explanation": "Despite ending in -s and looking plural, 'the Netherlands' refers to a single country and takes a singular verb: 'is known'.",
+            "question": "The company ___ three new products next quarter.",
+            "hint": "Bring back the collective noun rule: one company, one verb form.",
+            "explanation": "'The company' is singular, so the verb takes -s: 'launches'.",
             "options": [
-                "is",
-                "are"
+                "launches",
+                "launch"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "launches",
+            "grammarRule": "Collective noun 'company' takes a singular verb when acting as one unit",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l70_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Physics ___ taught in all secondary schools here.",
-            "hint": "Academic subjects ending in -ics are always singular.",
-            "explanation": "Like 'mathematics' and 'economics', 'physics' ends in -s but refers to one subject area and always takes a singular verb: 'physics is taught'.",
+            "question": "The committee ___ its recommendation at today's meeting.",
+            "hint": "As a final check, treat the committee as one unified group.",
+            "explanation": "'The committee' is singular, so the verb takes -s: 'presents'.",
             "options": [
-                "are",
-                "is"
+                "present",
+                "presents"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "presents",
+            "grammarRule": "Collective noun 'committee' takes a singular verb when acting as one unit",
             "subjectType": "Singular"
         }
     ]

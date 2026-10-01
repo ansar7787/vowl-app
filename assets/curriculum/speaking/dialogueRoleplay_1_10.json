@@ -6,661 +6,671 @@
         {
             "id": "SPK_DIALOGUEROLEPLAY_L1_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Order a coffee politely.",
-            "explanation": "Adding 'please' after your order is a simple, polite way to ask for something in English.",
-            "partnerDialogue": "Hi! What would you like to drink?",
-            "sampleAnswer": "A coffee, please.",
+            "instruction": "Greet the speaker back.",
+            "hint": "Say hello and give your own name.",
+            "explanation": "Trading names straight after a greeting keeps the exchange balanced, so you are not only receiving information.",
+            "partnerDialogue": "Hi there! I'm Tom, I live next door.",
+            "sampleAnswer": "Nice to meet you. I'm Aisha.",
             "acceptedSynonyms": [
-                "a coffee",
-                "coffee please",
-                "i'd like a coffee",
-                "coffee, please"
+                "nice to meet you. i'm aisha",
+                "hi, tom. i'm aisha",
+                "hello, tom. my name is aisha",
+                "hi, i'm aisha",
+                "nice to meet you. i am aisha"
             ],
             "smartReplies": [
-                "A coffee, please.",
-                "I'd like a coffee.",
-                "Coffee, please."
+                "Hi, Tom. I'm Aisha.",
+                "Nice to meet you. I'm Aisha.",
+                "Hello, Tom. My name is Aisha."
             ],
-            "correctAnswer": "A coffee, please.",
+            "correctAnswer": "Nice to meet you. I'm Aisha.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L1_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you're doing well and thank them.",
-            "explanation": "'I'm good, thank you' is one of the most common replies to 'How are you' in English.",
-            "partnerDialogue": "Hi! How are you today?",
-            "sampleAnswer": "I'm good, thank you!",
+            "instruction": "Give the information asked for.",
+            "hint": "Tell the receptionist your first name and surname.",
+            "explanation": "When someone has just asked for your name, \"It's...\" sounds more natural than repeating \"My name is\".",
+            "partnerDialogue": "Welcome to Fit Gym. Can I have your name, please?",
+            "sampleAnswer": "It's Daniel Ortiz.",
             "acceptedSynonyms": [
-                "i'm good",
-                "good, thank you",
-                "i'm fine",
-                "doing well"
+                "it's daniel ortiz",
+                "sure, daniel ortiz",
+                "sure. it's daniel ortiz",
+                "daniel ortiz",
+                "it is daniel ortiz"
             ],
             "smartReplies": [
-                "I'm good, thank you!",
-                "I'm fine, thanks!",
-                "Good, thanks!"
+                "Sure, Daniel Ortiz.",
+                "It's Daniel Ortiz.",
+                "Sure. It's Daniel Ortiz."
             ],
-            "correctAnswer": "I'm good, thank you!",
+            "correctAnswer": "It's Daniel Ortiz.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L1_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say your name is Sam.",
-            "explanation": "'My name is...' is the simplest way to introduce yourself in English.",
-            "partnerDialogue": "Hi, what's your name?",
-            "sampleAnswer": "My name is Sam.",
+            "instruction": "Reply politely.",
+            "hint": "Say you are happy to meet them too.",
+            "explanation": "The little word \"too\" sends the same feeling back, so you don't just repeat their sentence.",
+            "partnerDialogue": "Nice to meet you.",
+            "sampleAnswer": "Pleased to meet you too.",
             "acceptedSynonyms": [
-                "my name is sam",
-                "i'm sam",
-                "sam",
-                "name is sam"
+                "pleased to meet you too",
+                "good to meet you, too",
+                "nice to meet you too",
+                "nice to meet you"
             ],
             "smartReplies": [
-                "My name is Sam.",
-                "I'm Sam.",
-                "Sam."
+                "Pleased to meet you too.",
+                "Good to meet you, too.",
+                "Nice to meet you too."
             ],
-            "correctAnswer": "My name is Sam.",
+            "correctAnswer": "Pleased to meet you too.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L2_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you need milk.",
-            "explanation": "'I need...' is a clear, simple way to ask a shop worker for help.",
-            "partnerDialogue": "Hello! Can I help you find something?",
-            "sampleAnswer": "Yes, I need some milk.",
+            "instruction": "Answer, then ask one question back.",
+            "hint": "Say you're fine and ask how they are.",
+            "explanation": "Returning the question (\"And you?\") keeps small talk moving. A bare answer can feel like the end of the conversation.",
+            "partnerDialogue": "Hey, how's it going?",
+            "sampleAnswer": "Not bad. And you?",
             "acceptedSynonyms": [
-                "need some milk",
-                "i need milk",
-                "looking for milk",
-                "some milk"
+                "not bad. and you",
+                "good, thanks. how are you",
+                "pretty good, thanks. and you",
+                "fine, and you"
             ],
             "smartReplies": [
-                "Yes, I need some milk.",
-                "I need some milk.",
-                "Milk, please."
+                "Not bad. And you?",
+                "Good, thanks. How are you?",
+                "Pretty good, thanks. And you?"
             ],
-            "correctAnswer": "Yes, I need some milk.",
+            "correctAnswer": "Not bad. And you?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L2_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree that it's hot.",
-            "explanation": "'Yes, it really is' is a short, natural way to agree with someone about the weather.",
-            "partnerDialogue": "It's very hot today, isn't it?",
-            "sampleAnswer": "Yes, it really is!",
+            "instruction": "Reply naturally.",
+            "hint": "Say you're okay and give a short reason.",
+            "explanation": "A short reason after \"I'm okay\" shows you understand the concern and calms the other person.",
+            "partnerDialogue": "You look tired. Are you okay?",
+            "sampleAnswer": "I'm fine, just tired. I went to bed late.",
             "acceptedSynonyms": [
-                "yes it is",
-                "really is",
-                "very hot",
-                "it is hot"
+                "i'm fine, just tired. i went to bed late",
+                "yes, a little. i didn't sleep well",
+                "yes, i'm okay. i went to bed late",
+                "i am fine, just tired. i went to bed late"
             ],
             "smartReplies": [
-                "Yes, it really is!",
-                "Yes, very hot!",
-                "It really is."
+                "Yes, a little. I didn't sleep well.",
+                "Yes, I'm okay. I went to bed late.",
+                "I'm fine, just tired. I went to bed late."
             ],
-            "correctAnswer": "Yes, it really is!",
+            "correctAnswer": "I'm fine, just tired. I went to bed late.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L2_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Tell them it's three o'clock.",
-            "explanation": "'It's three o'clock' is the standard way to tell someone the time in English.",
-            "partnerDialogue": "Excuse me, do you have the time?",
-            "sampleAnswer": "Sure, it's three o'clock.",
+            "instruction": "Answer with a short reply.",
+            "hint": "Say the weekend was nice and mention one thing you did.",
+            "explanation": "Answering a yes/no question plus one detail gives your partner something to react to.",
+            "partnerDialogue": "Did you have a good weekend?",
+            "sampleAnswer": "It was great, thanks. I saw a film.",
             "acceptedSynonyms": [
-                "it's three o'clock",
-                "three o'clock",
-                "sure, three",
-                "it's three"
+                "it was great, thanks. i saw a film",
+                "yes, it was nice. i visited my aunt",
+                "yes, thanks. i stayed home and rested"
             ],
             "smartReplies": [
-                "Sure, it's three o'clock.",
-                "It's three o'clock.",
-                "Three o'clock."
+                "It was great, thanks. I saw a film.",
+                "Yes, it was nice. I visited my aunt.",
+                "Yes, thanks. I stayed home and rested."
             ],
-            "correctAnswer": "Sure, it's three o'clock.",
+            "correctAnswer": "It was great, thanks. I saw a film.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L3_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you have one sister.",
-            "explanation": "'I have one sister' is a simple sentence pattern for talking about family.",
-            "partnerDialogue": "Do you have any brothers or sisters?",
-            "sampleAnswer": "Yes, I have one sister.",
+            "instruction": "Make a polite request.",
+            "hint": "Ask for some water.",
+            "explanation": "\"Could I have...\" plus \"please\" is softer than just naming the thing you want.",
+            "partnerDialogue": "Are you ready to order?",
+            "sampleAnswer": "Could I have some water first, please?",
             "acceptedSynonyms": [
-                "one sister",
-                "i have a sister",
-                "have one sister",
-                "yes, a sister"
+                "could i have some water first, please",
+                "can i have water first, please",
+                "some water first, please",
+                "just some water for now, please"
             ],
             "smartReplies": [
-                "Yes, I have one sister.",
-                "I have one sister.",
-                "One sister."
+                "Can I have water first, please?",
+                "Could I have some water first, please?",
+                "Some water first, please."
             ],
-            "correctAnswer": "Yes, I have one sister.",
+            "correctAnswer": "Could I have some water first, please?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L3_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you love pizza.",
-            "explanation": "'I love it' is a strong, simple way to show you really like something.",
-            "partnerDialogue": "Do you like pizza?",
-            "sampleAnswer": "Yes, I love it!",
+            "instruction": "Say what you are looking for.",
+            "hint": "Ask where the restroom is.",
+            "explanation": "English has several words for this room (restroom, toilet, bathroom). All are fine, and \"Excuse me\" is a good way to begin.",
+            "partnerDialogue": "Hi! Can I help you with something?",
+            "sampleAnswer": "Yes. Excuse me, where is the toilet?",
             "acceptedSynonyms": [
-                "i love it",
-                "love pizza",
-                "yes, i love it",
-                "really like it"
+                "yes. excuse me, where is the toilet",
+                "yes, where's the restroom, please",
+                "yes, please. where's the bathroom",
+                "where is the restroom"
             ],
             "smartReplies": [
-                "Yes, I love it!",
-                "I love pizza!",
-                "Yes, a lot!"
+                "Yes. Excuse me, where is the toilet?",
+                "Yes, where's the restroom, please?",
+                "Yes, please. Where's the bathroom?"
             ],
-            "correctAnswer": "Yes, I love it!",
+            "correctAnswer": "Yes. Excuse me, where is the toilet?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L3_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Point out that it's over there.",
-            "explanation": "'Right over there' is a simple, common phrase for showing someone a nearby place.",
-            "partnerDialogue": "Excuse me, where is the bathroom?",
-            "sampleAnswer": "It's right over there.",
+            "instruction": "Ask for what you need.",
+            "hint": "You forgot your pen. Ask to borrow one.",
+            "explanation": "\"Can I borrow...?\" is for something you will give back, so it fits a pen, not a snack.",
+            "partnerDialogue": "You look worried. What's the matter?",
+            "sampleAnswer": "My pen is gone. Could I borrow one?",
             "acceptedSynonyms": [
-                "over there",
-                "right there",
-                "it's there",
-                "right over there"
+                "my pen is gone. could i borrow one",
+                "i don't have a pen. can i use yours",
+                "i lost my pen. can i borrow yours"
             ],
             "smartReplies": [
-                "It's right over there.",
-                "Over there.",
-                "It's just there."
+                "I don't have a pen. Can I use yours?",
+                "My pen is gone. Could I borrow one?",
+                "I lost my pen. Can I borrow yours?"
             ],
-            "correctAnswer": "It's right over there.",
+            "correctAnswer": "My pen is gone. Could I borrow one?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L4_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you're a teacher.",
-            "explanation": "'I'm a...' plus a job name is the easiest way to say what you do.",
-            "partnerDialogue": "What do you do for work?",
-            "sampleAnswer": "I'm a teacher.",
+            "instruction": "Answer clearly.",
+            "hint": "Tell them the seat is free.",
+            "explanation": "A clear \"No\" here means \"not taken\". Adding \"go ahead\" avoids confusion.",
+            "partnerDialogue": "Excuse me, is this seat taken?",
+            "sampleAnswer": "No, it's free. Please sit.",
             "acceptedSynonyms": [
-                "i'm a teacher",
-                "a teacher",
-                "i teach",
-                "teacher"
+                "no, it's free. please sit",
+                "no, go ahead",
+                "no, nobody's sitting here",
+                "no, sit down",
+                "no, it is free. please sit"
             ],
             "smartReplies": [
-                "I'm a teacher.",
-                "I teach.",
-                "A teacher."
+                "No, it's free. Please sit.",
+                "No, go ahead.",
+                "No, nobody's sitting here."
             ],
-            "correctAnswer": "I'm a teacher.",
+            "correctAnswer": "No, it's free. Please sit.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L4_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Order a sandwich.",
-            "explanation": "'I'll have...' is a common, easy way to order food.",
-            "partnerDialogue": "What would you like to eat?",
-            "sampleAnswer": "I'll have a sandwich.",
+            "instruction": "Answer and add a little more.",
+            "hint": "Say the umbrella is yours and thank them.",
+            "explanation": "Adding thanks turns a yes/no answer into a friendly reply.",
+            "partnerDialogue": "Excuse me, is this your umbrella?",
+            "sampleAnswer": "Yes, it's mine. Thank you!",
             "acceptedSynonyms": [
-                "a sandwich",
-                "i'll have a sandwich",
-                "sandwich please",
-                "i want a sandwich"
+                "yes, it's mine. thank you",
+                "yes, it's mine. thanks so much",
+                "oh yes, that's mine. thank you",
+                "yes, it's mine",
+                "yes, it is mine. thank you"
             ],
             "smartReplies": [
-                "I'll have a sandwich.",
-                "A sandwich, please.",
-                "Just a sandwich."
+                "Yes, it's mine. Thank you!",
+                "Yes, it's mine. Thanks so much!",
+                "Oh yes, that's mine. Thank you!"
             ],
-            "correctAnswer": "I'll have a sandwich.",
+            "correctAnswer": "Yes, it's mine. Thank you!",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L4_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say goodbye and see you soon.",
-            "explanation": "'See you soon' is a warm, friendly way to end a conversation.",
-            "partnerDialogue": "I have to go now. Bye!",
-            "sampleAnswer": "Bye! See you soon.",
+            "instruction": "Be honest and ask for help.",
+            "hint": "Be honest about your level and ask for help understanding.",
+            "explanation": "\"A little\" is an honest answer. Asking for slower speech is a survival skill worth using every day.",
+            "partnerDialogue": "Do you speak English?",
+            "sampleAnswer": "Yes, but only a little. Slowly, please.",
             "acceptedSynonyms": [
-                "see you soon",
-                "bye, see you",
-                "see you later",
-                "goodbye"
+                "yes, but only a little. slowly, please",
+                "a little. please speak slowly",
+                "a little bit. slowly, please",
+                "a little"
             ],
             "smartReplies": [
-                "Bye! See you soon.",
-                "Bye! See you later.",
-                "See you soon!"
+                "A little. Please speak slowly.",
+                "Yes, but only a little. Slowly, please.",
+                "A little bit. Slowly, please."
             ],
-            "correctAnswer": "Bye! See you soon.",
+            "correctAnswer": "Yes, but only a little. Slowly, please.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L5_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say yes and thank them.",
-            "explanation": "'Yes, please, thank you' politely accepts an offer of help.",
-            "partnerDialogue": "Do you need any help?",
-            "sampleAnswer": "Yes, please, thank you.",
+            "instruction": "Answer with your country and one more detail.",
+            "hint": "Say which country you come from and the city.",
+            "explanation": "Adding a city gives the other person something more specific to ask about next.",
+            "partnerDialogue": "So, where are you from?",
+            "sampleAnswer": "Brazil. A city called Recife.",
             "acceptedSynonyms": [
-                "yes please",
-                "yes, thank you",
-                "please help",
-                "yes, thanks"
+                "brazil. a city called recife",
+                "i'm from brazil, near recife",
+                "i come from brazil. from recife",
+                "i'm from brazil"
             ],
             "smartReplies": [
-                "Yes, please, thank you.",
-                "Yes, please!",
-                "Yes, thanks."
+                "I'm from Brazil, near Recife.",
+                "I come from Brazil. From Recife.",
+                "Brazil. A city called Recife."
             ],
-            "correctAnswer": "Yes, please, thank you.",
+            "correctAnswer": "Brazil. A city called Recife.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L5_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you need a coat.",
-            "explanation": "'I need a coat' connects the cold weather to a simple, logical response.",
-            "partnerDialogue": "It's cold outside today.",
-            "sampleAnswer": "Yes, I need a coat.",
+            "instruction": "Spell it out.",
+            "hint": "Spell the surname Khan.",
+            "explanation": "Say each letter separately and slowly. Stress the letters that sound alike.",
+            "partnerDialogue": "How do you spell your last name?",
+            "sampleAnswer": "That's K-H-A-N.",
             "acceptedSynonyms": [
-                "need a coat",
-                "i need a coat",
-                "a coat",
-                "yes, a coat"
+                "that's k-h-a-n",
+                "it's k-h-a-n",
+                "k, h, a, n",
+                "k h a n",
+                "that is k-h-a-n"
             ],
             "smartReplies": [
-                "Yes, I need a coat.",
-                "I need a coat.",
-                "Yes, a coat!"
+                "It's K-H-A-N.",
+                "That's K-H-A-N.",
+                "K, H, A, N."
             ],
-            "correctAnswer": "Yes, I need a coat.",
+            "correctAnswer": "That's K-H-A-N.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L5_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you're twenty-five.",
-            "explanation": "'I'm ... years old' is the standard pattern for saying your age in English.",
-            "partnerDialogue": "How old are you?",
-            "sampleAnswer": "I'm twenty-five years old.",
+            "instruction": "Talk about your job.",
+            "hint": "Say you are a nurse and where you work.",
+            "explanation": "A job answer with \"I'm a...\" plus the workplace gives a complete picture in two short sentences.",
+            "partnerDialogue": "So, what do you do?",
+            "sampleAnswer": "I'm a nurse at a hospital.",
             "acceptedSynonyms": [
-                "twenty-five years old",
-                "i'm twenty-five",
-                "twenty-five",
-                "i am twenty-five"
+                "i'm a nurse at a hospital",
+                "i work as a nurse in a hospital",
+                "i'm a nurse. i work at a hospital",
+                "i'm a nurse",
+                "i am a nurse at a hospital"
             ],
             "smartReplies": [
-                "I'm twenty-five years old.",
-                "I'm twenty-five.",
-                "Twenty-five."
+                "I'm a nurse at a hospital.",
+                "I work as a nurse in a hospital.",
+                "I'm a nurse. I work at a hospital."
             ],
-            "correctAnswer": "I'm twenty-five years old.",
+            "correctAnswer": "I'm a nurse at a hospital.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L6_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say your favorite color is blue.",
-            "explanation": "'My favorite ... is ...' is an easy pattern for sharing preferences.",
-            "partnerDialogue": "What's your favorite color?",
-            "sampleAnswer": "My favorite color is blue.",
+            "instruction": "Respond politely.",
+            "hint": "The cashier hands you your change. Thank them.",
+            "explanation": "Adding \"very much\" or \"a lot\" makes thanks warmer than a quick \"thanks\".",
+            "partnerDialogue": "Here's your change, sir.",
+            "sampleAnswer": "Thanks a lot.",
             "acceptedSynonyms": [
-                "favorite color is blue",
-                "i like blue",
-                "blue",
-                "it's blue"
+                "thanks a lot",
+                "thank you. have a nice day",
+                "thank you very much",
+                "thanks"
             ],
             "smartReplies": [
-                "My favorite color is blue.",
-                "I like blue.",
-                "Blue."
+                "Thank you. Have a nice day.",
+                "Thank you very much.",
+                "Thanks a lot."
             ],
-            "correctAnswer": "My favorite color is blue.",
+            "correctAnswer": "Thanks a lot.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L6_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say yes, happily.",
-            "explanation": "'I'd love to' is a cheerful, common way to accept an invitation.",
-            "partnerDialogue": "Do you want to come to the park?",
-            "sampleAnswer": "Yes, I'd love to!",
+            "instruction": "React to a small accident.",
+            "hint": "Someone bumped into you. Tell them it's fine.",
+            "explanation": "English speakers use \"No problem\" or \"It's okay\" to show the mistake is small.",
+            "partnerDialogue": "Oh, sorry! I didn't see you.",
+            "sampleAnswer": "No worries. I'm fine.",
             "acceptedSynonyms": [
-                "i'd love to",
-                "yes, love to",
-                "sounds great",
-                "yes, i would"
+                "no worries. i'm fine",
+                "it's okay. no problem",
+                "that's all right",
+                "it's fine",
+                "no worries. i am fine"
             ],
             "smartReplies": [
-                "Yes, I'd love to!",
-                "I'd love to!",
-                "Sure, I'd love to!"
+                "It's okay. No problem.",
+                "That's all right.",
+                "No worries. I'm fine."
             ],
-            "correctAnswer": "Yes, I'd love to!",
+            "correctAnswer": "No worries. I'm fine.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L6_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you have a dog.",
-            "explanation": "'I have a...' is a simple pattern for talking about things you own.",
-            "partnerDialogue": "Do you have any pets?",
-            "sampleAnswer": "Yes, I have a dog.",
+            "instruction": "Respond to thanks.",
+            "hint": "A stranger thanks you for helping. Reply.",
+            "explanation": "\"You're welcome\" is right, but \"Happy to help\" sounds warmer and more natural in daily life.",
+            "partnerDialogue": "Thanks so much for helping me with these bags!",
+            "sampleAnswer": "No problem at all.",
             "acceptedSynonyms": [
-                "i have a dog",
-                "a dog",
-                "one dog",
-                "yes, a dog"
+                "no problem at all",
+                "you're welcome. happy to help",
+                "anytime. they weren't heavy",
+                "you're welcome"
             ],
             "smartReplies": [
-                "Yes, I have a dog.",
-                "I have a dog.",
-                "A dog."
+                "No problem at all.",
+                "You're welcome. Happy to help.",
+                "Anytime. They weren't heavy."
             ],
-            "correctAnswer": "Yes, I have a dog.",
+            "correctAnswer": "No problem at all.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L7_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Ask for water.",
-            "explanation": "'Just water, please' is a short, polite way to order a simple drink.",
-            "partnerDialogue": "Would you like something to drink?",
-            "sampleAnswer": "Just water, please.",
+            "instruction": "Choose one option.",
+            "hint": "Choose tea. Be polite.",
+            "explanation": "Name your choice first when you're given two options. It's the information the other person needs most.",
+            "partnerDialogue": "Would you like tea or coffee?",
+            "sampleAnswer": "Tea, please. No sugar.",
             "acceptedSynonyms": [
-                "just water",
-                "water please",
-                "some water",
-                "water, thanks"
+                "tea, please. no sugar",
+                "i'd like tea, please",
+                "tea for me, thanks",
+                "tea please"
             ],
             "smartReplies": [
-                "Just water, please.",
-                "Water, please.",
-                "Just water, thanks."
+                "Tea, please. No sugar.",
+                "I'd like tea, please.",
+                "Tea for me, thanks."
             ],
-            "correctAnswer": "Just water, please.",
+            "correctAnswer": "Tea, please. No sugar.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L7_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you like math best.",
-            "explanation": "'I like ... the most' is a clear way to name a top favorite.",
-            "partnerDialogue": "What's your favorite subject at school?",
-            "sampleAnswer": "I like math the most.",
+            "instruction": "Choose and give a reason.",
+            "hint": "Choose outside and say why.",
+            "explanation": "A short reason after your choice sounds natural and helps the waiter understand you.",
+            "partnerDialogue": "Would you like to sit inside or outside?",
+            "sampleAnswer": "I'd like to sit outside. The weather is nice.",
             "acceptedSynonyms": [
-                "i like math",
-                "math the most",
-                "favorite is math",
-                "math"
+                "i'd like to sit outside. the weather is nice",
+                "outside is better. it's a nice day",
+                "outside, please. it's sunny",
+                "i would like to sit outside. the weather is nice"
             ],
             "smartReplies": [
-                "I like math the most.",
-                "I like math.",
-                "Math."
+                "I'd like to sit outside. The weather is nice.",
+                "Outside is better. It's a nice day.",
+                "Outside, please. It's sunny."
             ],
-            "correctAnswer": "I like math the most.",
+            "correctAnswer": "I'd like to sit outside. The weather is nice.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L7_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Thank them for the compliment.",
-            "explanation": "'Thank you, that's kind' is a warm, simple way to accept a compliment.",
-            "partnerDialogue": "I really like your jacket!",
-            "sampleAnswer": "Thank you, that's kind!",
+            "instruction": "Choose one.",
+            "hint": "Pick the colour you prefer.",
+            "explanation": "For a choice between two things, \"the blue one\" avoids repeating the noun.",
+            "partnerDialogue": "Which do you like better, the red bag or the blue one?",
+            "sampleAnswer": "The blue one, I think.",
             "acceptedSynonyms": [
-                "thank you",
-                "that's kind",
-                "thanks a lot",
-                "thank you so much"
+                "the blue one, i think",
+                "blue, please",
+                "i like the blue one",
+                "the blue one"
             ],
             "smartReplies": [
-                "Thank you, that's kind!",
-                "Thank you so much!",
-                "Thanks!"
+                "Blue, please.",
+                "I like the blue one.",
+                "The blue one, I think."
             ],
-            "correctAnswer": "Thank you, that's kind!",
+            "correctAnswer": "The blue one, I think.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L8_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Confirm it's the right bus.",
-            "explanation": "'Yes, it is' is the simplest possible way to confirm something is correct.",
-            "partnerDialogue": "Excuse me, is this the bus to town?",
-            "sampleAnswer": "Yes, it is.",
+            "instruction": "Give the time.",
+            "hint": "Read the time aloud in a natural spoken way.",
+            "explanation": "\"Half past three\" and \"three thirty\" mean the same. Both are natural in speaking.",
+            "partnerDialogue": "Excuse me, do you know the time?",
+            "sampleAnswer": "Yes, it's half past three.",
             "acceptedSynonyms": [
-                "yes it is",
-                "that's right",
-                "yes",
-                "correct"
+                "yes, it's half past three",
+                "sure. it's three thirty",
+                "it's three thirty",
+                "it's half past three",
+                "yes, it is half past three"
             ],
             "smartReplies": [
-                "Yes, it is.",
-                "Yes, that's right.",
-                "Yes."
+                "Sure. It's three thirty.",
+                "Yes, it's half past three.",
+                "It's three thirty."
             ],
-            "correctAnswer": "Yes, it is.",
+            "correctAnswer": "Yes, it's half past three.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L8_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you play football.",
-            "explanation": "'I play...' is the everyday pattern for talking about sports you do.",
-            "partnerDialogue": "Do you play any sports?",
-            "sampleAnswer": "Yes, I play football.",
+            "instruction": "Give day and time.",
+            "hint": "Say the class is on Tuesday at six.",
+            "explanation": "English puts day before time: \"Tuesday at six\". Use \"on\" for days and \"at\" for clock times.",
+            "partnerDialogue": "When is the English class?",
+            "sampleAnswer": "Tuesday, at six o'clock.",
             "acceptedSynonyms": [
-                "i play football",
-                "play football",
-                "football",
-                "yes, football"
+                "tuesday, at six o'clock",
+                "the class is tuesday at six",
+                "it's on tuesday at six",
+                "tuesday at six"
             ],
             "smartReplies": [
-                "Yes, I play football.",
-                "I play football.",
-                "Football."
+                "Tuesday, at six o'clock.",
+                "The class is Tuesday at six.",
+                "It's on Tuesday at six."
             ],
-            "correctAnswer": "Yes, I play football.",
+            "correctAnswer": "Tuesday, at six o'clock.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L8_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you drink coffee every morning.",
-            "explanation": "'Every morning' is a simple, common phrase for describing a daily habit.",
-            "partnerDialogue": "Do you drink coffee or tea?",
-            "sampleAnswer": "I drink coffee every morning.",
+            "instruction": "Say yes and ask about the plan.",
+            "hint": "Say you're free on Saturday and ask what the plan is.",
+            "explanation": "Saying you're free is only half the reply. Asking about the plan shows interest.",
+            "partnerDialogue": "Are you free this Saturday?",
+            "sampleAnswer": "Yes, I am. What are we doing?",
             "acceptedSynonyms": [
-                "i drink coffee",
-                "coffee every morning",
-                "just coffee",
-                "i prefer coffee"
+                "yes, i am. what are we doing",
+                "yes, i'm free. what's the plan",
+                "saturday? yes, i'm free. what's up",
+                "yes, i'm free"
             ],
             "smartReplies": [
-                "I drink coffee every morning.",
-                "Coffee, usually.",
-                "Just coffee, every day."
+                "Yes, I'm free. What's the plan?",
+                "Saturday? Yes, I'm free. What's up?",
+                "Yes, I am. What are we doing?"
             ],
-            "correctAnswer": "I drink coffee every morning.",
+            "correctAnswer": "Yes, I am. What are we doing?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L9_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you read every day.",
-            "explanation": "'Every day' is a simple, useful phrase for describing a daily habit.",
-            "partnerDialogue": "Do you like reading books?",
-            "sampleAnswer": "Yes, I read every day.",
+            "instruction": "Ask about the price.",
+            "hint": "You want to know the price of a jacket.",
+            "explanation": "\"How much is...?\" for one item and \"How much are...?\" for more than one.",
+            "partnerDialogue": "Hello, can I help you?",
+            "sampleAnswer": "Yes, how much is this jacket?",
             "acceptedSynonyms": [
-                "read every day",
-                "i read a lot",
-                "every day",
-                "yes, i do"
+                "yes, how much is this jacket",
+                "yes, please. what's the price of this jacket",
+                "yes. how much is the jacket",
+                "how much is this jacket"
             ],
             "smartReplies": [
-                "Yes, I read every day.",
-                "I read every day.",
-                "Yes, every day."
+                "Yes, how much is this jacket?",
+                "Yes, please. What's the price of this jacket?",
+                "Yes. How much is the jacket?"
             ],
-            "correctAnswer": "Yes, I read every day.",
+            "correctAnswer": "Yes, how much is this jacket?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L9_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Give a simple phone number.",
-            "explanation": "Saying numbers one by one, slowly, is the clearest way to share a phone number.",
-            "partnerDialogue": "Can I have your phone number?",
-            "sampleAnswer": "Sure, it's five five five, one two three four.",
+            "instruction": "Refuse politely.",
+            "hint": "Refuse the offer and give a quick reason.",
+            "explanation": "After \"No, thanks\", a short reason keeps a refusal friendly.",
+            "partnerDialogue": "Would you like a bag with that?",
+            "sampleAnswer": "No, it's okay. I have one.",
             "acceptedSynonyms": [
-                "five five five",
-                "here's my number",
-                "sure, here it is",
-                "my number is"
+                "no, it's okay. i have one",
+                "no, thanks. i have my own",
+                "no, thank you. i brought a bag",
+                "no, thanks",
+                "no, it is okay. i have one"
             ],
             "smartReplies": [
-                "Sure, it's five five five, one two three four.",
-                "It's five five five, one two three four.",
-                "Sure, here it is."
+                "No, thanks. I have my own.",
+                "No, thank you. I brought a bag.",
+                "No, it's okay. I have one."
             ],
-            "correctAnswer": "Sure, it's five five five, one two three four.",
+            "correctAnswer": "No, it's okay. I have one.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L9_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you're a little hungry.",
-            "explanation": "'A little' softens a simple 'yes' answer to show a small amount.",
-            "partnerDialogue": "Are you hungry?",
-            "sampleAnswer": "Yes, a little.",
+            "instruction": "Choose how to pay.",
+            "hint": "Say you'll pay by card.",
+            "explanation": "Paying is a short exchange: give the one word the cashier needs, then \"please\".",
+            "partnerDialogue": "Cash or card?",
+            "sampleAnswer": "I'll pay by card.",
             "acceptedSynonyms": [
-                "a little",
-                "yes, a little",
-                "a bit",
-                "little bit hungry"
+                "i'll pay by card",
+                "by card, please",
+                "card, please",
+                "card",
+                "i will pay by card"
             ],
             "smartReplies": [
-                "Yes, a little.",
-                "A little, yes.",
-                "A bit."
+                "By card, please.",
+                "I'll pay by card.",
+                "Card, please."
             ],
-            "correctAnswer": "Yes, a little.",
+            "correctAnswer": "I'll pay by card.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L10_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you're visiting family.",
-            "explanation": "'I'm visiting...' is a simple present continuous pattern for near-future plans.",
-            "partnerDialogue": "What are you doing this weekend?",
-            "sampleAnswer": "I'm visiting my family.",
+            "instruction": "Meet someone new.",
+            "hint": "Greet your friend's friend by name.",
+            "explanation": "Using the person's name straight away helps you remember it and sounds friendly.",
+            "partnerDialogue": "Ali, this is my friend Lena.",
+            "sampleAnswer": "Nice to meet you, Lena.",
             "acceptedSynonyms": [
-                "visiting my family",
-                "i'm visiting family",
-                "seeing my family",
-                "visiting family"
+                "nice to meet you, lena",
+                "hi, lena. nice to meet you",
+                "hello, lena. good to meet you",
+                "nice to meet you"
             ],
             "smartReplies": [
-                "I'm visiting my family.",
-                "Visiting my family.",
-                "I'll visit my family."
+                "Hi, Lena. Nice to meet you.",
+                "Nice to meet you, Lena.",
+                "Hello, Lena. Good to meet you."
             ],
-            "correctAnswer": "I'm visiting my family.",
+            "correctAnswer": "Nice to meet you, Lena.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L10_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Thank them warmly for the gift.",
-            "explanation": "'Thank you so much' shows extra warmth compared to a simple 'thank you'.",
-            "partnerDialogue": "Here's a small gift for you!",
-            "sampleAnswer": "Wow, thank you so much!",
+            "instruction": "Give simple directions.",
+            "hint": "Tell them the stop is next to the bank.",
+            "explanation": "\"Next to\" is one of the easiest ways to place something for a stranger.",
+            "partnerDialogue": "Excuse me, where's the bus stop?",
+            "sampleAnswer": "Go straight. It's next to the bank.",
             "acceptedSynonyms": [
-                "thank you so much",
-                "thank you",
-                "wow, thanks",
-                "thanks a lot"
+                "go straight. it's next to the bank",
+                "the bus stop is next to the bank",
+                "it's over there, next to the bank",
+                "it's next to the bank",
+                "go straight. it is next to the bank"
             ],
             "smartReplies": [
-                "Wow, thank you so much!",
-                "Thank you so much!",
-                "Wow, thanks!"
+                "Go straight. It's next to the bank.",
+                "The bus stop is next to the bank.",
+                "It's over there, next to the bank."
             ],
-            "correctAnswer": "Wow, thank you so much!",
+            "correctAnswer": "Go straight. It's next to the bank.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L10_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Say you'll bring an umbrella.",
-            "explanation": "'I'll bring...' is a simple way to say what you will do to prepare.",
-            "partnerDialogue": "It might rain tomorrow.",
-            "sampleAnswer": "Okay, I'll bring an umbrella.",
+            "instruction": "Answer, but show you are not certain.",
+            "hint": "Answer, but show you're not completely sure.",
+            "explanation": "\"I think\" tells the listener you are not 100% sure, which is honest and polite.",
+            "partnerDialogue": "Excuse me, which floor is the pharmacy on?",
+            "sampleAnswer": "It's on the second floor, I think.",
             "acceptedSynonyms": [
-                "bring an umbrella",
-                "i'll bring an umbrella",
-                "take an umbrella",
-                "an umbrella"
+                "it's on the second floor, i think",
+                "second floor, i think",
+                "i think it's on the second floor",
+                "second floor",
+                "it is on the second floor, i think"
             ],
             "smartReplies": [
-                "Okay, I'll bring an umbrella.",
-                "I'll bring an umbrella.",
-                "I'll take an umbrella."
+                "It's on the second floor, I think.",
+                "Second floor, I think.",
+                "I think it's on the second floor."
             ],
-            "correctAnswer": "Okay, I'll bring an umbrella.",
+            "correctAnswer": "It's on the second floor, I think.",
             "emotionTag": "Neutral"
         }
     ]

@@ -1,577 +1,577 @@
 {
-    "gameType": "conditionals",
-    "batchIndex": 13,
-    "levels": "121-130",
-    "quests": [
-        {
-            "id": "cl_l121_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she had studied economics at university,",
-            "options": [
-                "she would be working in finance now.",
-                "she would have worked in finance.",
-                "she works in finance now.",
-                "she will work in finance now."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "she would be working in finance now.",
-            "hint": "Past perfect if-clause + present result - classic mixed conditional (3rd+2nd).",
-            "explanation": "Mixed conditional: If + past perfect (unreal past choice) → would + be (present consequence). She didn't study economics (past perfect = imaginary past). If she had (imaginary), she would be working in finance NOW (would + infinitive - present job). Key distinction: 'would have worked' (3rd conditional) gives a past result; 'would be working' gives a PRESENT result.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l121_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the weather had been better last summer,",
-            "options": [
-                "the harvest might have been significantly larger.",
-                "the harvest might be larger.",
-                "the harvest is larger.",
-                "the harvest will be larger."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the harvest might have been significantly larger.",
-            "hint": "Past perfect = poor weather - third conditional with 'might have' for an uncertain past outcome.",
-            "explanation": "Third conditional = unreal past. Last summer's weather was poor (past perfect = better weather that didn't happen). If it had been better (imaginary), the harvest might have been larger (might have + past participle). 'Might have' rather than 'would have' acknowledges that even good weather doesn't guarantee a large harvest - other factors matter.",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l121_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If I had taken that job in Berlin,",
-            "options": [
-                "I would be speaking German fluently today.",
-                "I would have spoken German fluently.",
-                "I speak German today.",
-                "I will speak German today."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "I would be speaking German fluently today.",
-            "hint": "Past perfect if-clause + present ability - mixed conditional showing how past affects present.",
-            "explanation": "Mixed conditional: If + past perfect → would + be (present skill). I didn't take the Berlin job. If I had (imaginary past), I would be speaking German fluently TODAY (would + infinitive - present linguistic ability). 'Would have spoken' (pure 3rd conditional) gives a past result; 'would be speaking' gives the current ability I'd have.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l122_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If you could redesign the city from scratch,",
-            "options": [
-                "what would you change first?",
-                "what would you have changed first?",
-                "what do you change first?",
-                "what will you change first?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "what would you change first?",
-            "hint": "Hypothetical ability 'could redesign' - second conditional question form.",
-            "explanation": "Second conditional = hypothetical present. 'Could redesign' signals an imaginary ability. The correct question form uses 'would': 'what would you change?' (would + infinitive - the imaginary choice). This is a second conditional question, not a third (no past perfect) or first (not a real future scenario).",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l122_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the company had maintained a cash reserve,",
-            "options": [
-                "it would still be operating today.",
-                "it would have still been operating.",
-                "it still operates today.",
-                "it will still be operating."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "it would still be operating today.",
-            "hint": "Past perfect + present business status - mixed conditional showing how past finance affects present.",
-            "explanation": "Mixed conditional: If + past perfect (unreal past financial discipline) → would + be (present business status). The company didn't keep a cash reserve. If it had (imaginary), it would still be operating TODAY (would + infinitive - present operational status). 'Would have still been operating' is pure 3rd conditional - past result.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l122_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she could choose any career,",
-            "options": [
-                "she would become a marine biologist.",
-                "she would have become a marine biologist.",
-                "she becomes a marine biologist.",
-                "she will become a marine biologist."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "she would become a marine biologist.",
-            "hint": "Hypothetical 'could choose' - second conditional for an imaginary free choice.",
-            "explanation": "Second conditional = imaginary present freedom. 'Could choose any career' signals she doesn't have total freedom in reality. If she could (imaginary), she would become a marine biologist (would + infinitive - the imagined choice). 'Would have become' is 3rd conditional (past imaginary) - not appropriate for a present 'what if'.",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 2
-        },
-        {
-            "id": "cl_l123_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If he had grown up speaking two languages,",
-            "options": [
-                "he would find it much easier to learn a third one now.",
-                "he would have found it easier.",
-                "he finds it easier now.",
-                "he will find it easier."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "he would find it much easier to learn a third one now.",
-            "hint": "Past perfect + present learning ability - mixed conditional about bilingual upbringing.",
-            "explanation": "Mixed conditional: If + past perfect (unreal bilingual childhood) → would + find (present ease). He grew up monolingual. If he had grown up bilingual (imaginary past), he would find it much easier to learn a third language NOW (would + infinitive - present cognitive advantage). Past → present ability.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l123_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the organisation had embraced diversity earlier,",
-            "options": [
-                "it would be in a stronger position today.",
-                "it would have been in a stronger position.",
-                "it is in a stronger position.",
-                "it will be in a stronger position."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "it would be in a stronger position today.",
-            "hint": "Past perfect + present competitive position - mixed conditional about DEI strategy.",
-            "explanation": "Mixed conditional: If + past perfect (unreal past strategy) → would + be (present standing). The organisation didn't embrace diversity early enough. If it had (imaginary), it would be in a stronger position TODAY (would + infinitive - present competitive strength). Past strategic choice → present competitive position.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l123_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If I had started this business ten years ago,",
-            "options": [
-                "I might have already retired by now.",
-                "I might already retire.",
-                "I already retire now.",
-                "I will already have retired."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "I might have already retired by now.",
-            "hint": "Past perfect + present life stage - mixed conditional with 'might have' for an imagined outcome.",
-            "explanation": "Mixed conditional: If + past perfect (earlier business start) → might have (present/past outcome). I didn't start ten years ago. If I had (imaginary), I might have already retired BY NOW (might have + past participle - a possible present life stage). 'Might have' acknowledges this isn't certain - business success isn't guaranteed.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l124_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If they had resolved the dispute sooner,",
-            "options": [
-                "both companies would still be partners today.",
-                "they would have still been partners.",
-                "they are still partners today.",
-                "they will still be partners."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "both companies would still be partners today.",
-            "hint": "Past perfect + present business relationship - mixed conditional about conflict resolution.",
-            "explanation": "Mixed conditional: If + past perfect (earlier resolution) → would + be (present partnership). The dispute dragged on. If it had been resolved sooner (imaginary), both companies would still be partners TODAY (would + infinitive - present relationship status). Past conflict resolution → present business relationship.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l124_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she could speak at the conference,",
-            "options": [
-                "she might choose to present her latest research.",
-                "she might have presented her research.",
-                "she presents her research.",
-                "she will present her research."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "she might choose to present her latest research.",
-            "hint": "Hypothetical ability - second conditional with 'might' for a possible but uncertain choice.",
-            "explanation": "Second conditional = hypothetical present. 'Could speak' signals an imaginary opportunity. If she could (imaginary), she might choose to present her research (might + infinitive - a possible but not certain choice). 'Might' rather than 'would' shows this is one possible option she might choose, not a certainty.",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 2
-        },
-        {
-            "id": "cl_l124_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the team had prepared a contingency plan,",
-            "options": [
-                "they would be handling this crisis much more calmly now.",
-                "they would have handled it more calmly.",
-                "they handle it more calmly.",
-                "they will handle it more calmly."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "they would be handling this crisis much more calmly now.",
-            "hint": "Past perfect + present crisis management - mixed conditional about planning.",
-            "explanation": "Mixed conditional: If + past perfect (unreal past preparation) → would + be (present crisis management). No contingency plan was made. If one had been (imaginary), they would be handling the crisis more calmly NOW (would + infinitive - present behaviour). Past preparation → present composure.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l125_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she had qualified as a lawyer instead,",
-            "options": [
-                "she could be earning twice her current salary.",
-                "she could have earned twice as much.",
-                "she earns twice as much.",
-                "she will earn twice as much."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "she could be earning twice her current salary.",
-            "hint": "Past perfect + present earning potential - mixed conditional with 'could be' for possibility.",
-            "explanation": "Mixed conditional with 'could': If + past perfect (different career path) → could + be (present earning possibility). She chose a different profession. If she had qualified as a lawyer (imaginary), she could be earning twice as much NOW (could + infinitive - a possible present income). 'Could be' is softer than 'would be' - legal salaries vary widely.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l125_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If I could live anywhere in the world,",
-            "options": [
-                "I would choose a small coastal town in Italy.",
-                "I would have chosen Italy.",
-                "I choose a small town in Italy.",
-                "I will choose Italy."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "I would choose a small coastal town in Italy.",
-            "hint": "Hypothetical freedom - second conditional for an imaginary life choice.",
-            "explanation": "Second conditional = imaginary freedom. 'Could live anywhere' signals an imaginary unconstrained choice. If I could (imaginary), I would choose a small coastal town in Italy (would + infinitive - the imagined ideal). 'Would have chosen' is 3rd conditional (past imaginary) - not appropriate for a present 'what if'.",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 2
-        },
-        {
-            "id": "cl_l125_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If he had taken better care of his health in his forties,",
-            "options": [
-                "he would be far more active in his seventies now.",
-                "he would have been more active.",
-                "he is more active now.",
-                "he will be more active."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "he would be far more active in his seventies now.",
-            "hint": "Past health habits + present vitality - mixed conditional about long-term health choices.",
-            "explanation": "Mixed conditional: If + past perfect (better health habits) → would + be (present physical condition). He didn't prioritise his health in his forties. If he had (imaginary), he would be far more active in his seventies NOW (would + infinitive - present physical ability). Past lifestyle → present health.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l126_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the building had been designed with accessibility in mind,",
-            "options": [
-                "wheelchair users would be able to access every floor today.",
-                "they would have been able to access it.",
-                "they can access every floor.",
-                "they will be able to access it."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "wheelchair users would be able to access every floor today.",
-            "hint": "Past design decision + present accessibility - mixed conditional about inclusive design.",
-            "explanation": "Mixed conditional: If + past perfect (inclusive design) → would + be able (present accessibility). The building wasn't designed accessibly. If it had been (imaginary), wheelchair users would be able to access every floor TODAY (would + infinitive - present physical accessibility). Inclusive design choices shape who can use buildings.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l126_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she could go back and change one decision,",
-            "options": [
-                "she would choose differently at that crossroads.",
-                "she would have chosen differently.",
-                "she chooses differently.",
-                "she will choose differently."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "she would choose differently at that crossroads.",
-            "hint": "Hypothetical time travel - second conditional for an imaginary revision of the past.",
-            "explanation": "Second conditional = imaginary present capacity. 'Could go back' signals a purely imaginary ability. If she could (imaginary), she would choose differently at that crossroads (would + infinitive - the imagined revision). 'Would have chosen' is 3rd conditional - but here the if-clause is 'could go back' (imaginary present ability), making this 2nd conditional.",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 2
-        },
-        {
-            "id": "cl_l126_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If I had taken the offer to join that early-stage startup,",
-            "options": [
-                "I might be financially independent by now.",
-                "I might have been financially independent.",
-                "I am financially independent now.",
-                "I will be financially independent."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "I might be financially independent by now.",
-            "hint": "Past career choice plus a present financial state - mixed conditional with 'might be' for an imagined present.",
-            "explanation": "Mixed conditional: If + past perfect (a different early career choice) leads to might + be (a present imagined state). I turned the offer down. If I had joined (imaginary), I might be financially independent by now (might + infinitive - a possible present outcome). 'Might' acknowledges that early-stage startups don't always succeed.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l127_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the treaty had been ratified by all signatories,",
-            "options": [
-                "the conflict might never have escalated.",
-                "the conflict would escalate.",
-                "the conflict never escalates.",
-                "the conflict would never escalate."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the conflict might never have escalated.",
-            "hint": "Past perfect = treaty not fully ratified - third conditional with 'might have' for a geopolitical outcome.",
-            "explanation": "Third conditional = unreal past. The treaty wasn't ratified by all parties (past perfect = full ratification that didn't happen). If it had been (imaginary), the conflict might never have escalated (might never have + past participle - the possibly prevented geopolitical crisis). 'Might' acknowledges that conflict can escalate for many reasons.",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l127_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If he could restructure the organisation,",
-            "options": [
-                "he would eliminate the middle management layer entirely.",
-                "he would have eliminated it.",
-                "he eliminates it.",
-                "he will eliminate it."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "he would eliminate the middle management layer entirely.",
-            "hint": "Hypothetical authority - second conditional for an imaginary leadership scenario.",
-            "explanation": "Second conditional = imaginary present authority. 'Could restructure' signals he doesn't currently have that authority. If he could (imaginary), he would eliminate the middle management layer (would + infinitive - the imagined bold restructuring decision). 'Would have eliminated' is 3rd conditional (past imaginary).",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 2
-        },
-        {
-            "id": "cl_l127_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the discovery had been made two decades earlier,",
-            "options": [
-                "medical treatment for the condition would be far more advanced today.",
-                "treatment would have been more advanced.",
-                "treatment is more advanced today.",
-                "treatment will be more advanced."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "medical treatment for the condition would be far more advanced today.",
-            "hint": "Past perfect + present medical state - mixed conditional about a scientific discovery.",
-            "explanation": "Mixed conditional: If + past perfect (earlier discovery) → would + be (present medical advancement). The discovery came too late. If it had been made earlier (imaginary), treatment would be far more advanced TODAY (would + infinitive - present medical capability). Earlier scientific breakthroughs → better present treatments.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l128_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she could advise her younger self,",
-            "options": [
-                "she would say to worry less and take more risks.",
-                "she would have said that.",
-                "she says that.",
-                "she will say that."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "she would say to worry less and take more risks.",
-            "hint": "Hypothetical conversation - second conditional for an imaginary piece of life advice.",
-            "explanation": "Second conditional = imaginary capacity to communicate across time. 'Could advise her younger self' signals an imaginary scenario. If she could (imaginary), she would say to worry less and take more risks (would + infinitive - the imagined wisdom she'd share). 'Would have said' is 3rd conditional - past imaginary.",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 2
-        },
-        {
-            "id": "cl_l128_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the expedition team had brought better equipment,",
-            "options": [
-                "they would still be alive today.",
-                "they would have survived.",
-                "they are alive today.",
-                "they will still be alive."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "they would still be alive today.",
-            "hint": "Past perfect + present survival - mixed conditional about a tragic expedition outcome.",
-            "explanation": "Mixed conditional: If + past perfect (better equipment) → would + be (present survival). They didn't bring adequate equipment. If they had (imaginary), they would still be alive TODAY (would + infinitive - present survival status). This powerful mixed conditional shows how past preparation decisions affect present reality.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l128_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If I could master one skill instantly,",
-            "options": [
-                "I would choose to become fluent in Mandarin.",
-                "I would have chosen Mandarin.",
-                "I choose Mandarin.",
-                "I will choose Mandarin."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "I would choose to become fluent in Mandarin.",
-            "hint": "Hypothetical superpower - second conditional for a fantasy skill acquisition.",
-            "explanation": "Second conditional = imaginary present ability. 'Could master instantly' is purely imaginary - no one can do this. If I could (imaginary), I would choose Mandarin (would + infinitive - the imagined priority). A classic hypothetical question in second conditional form.",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 2
-        },
-        {
-            "id": "cl_l129_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the original design specification had been followed,",
-            "options": [
-                "the software would be far more stable now.",
-                "it would have been more stable.",
-                "it is more stable now.",
-                "it will be more stable."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the software would be far more stable now.",
-            "hint": "Past perfect + present software quality - mixed conditional about technical adherence.",
-            "explanation": "Mixed conditional: If + past perfect (adhering to specification) → would + be (present software quality). The specification wasn't followed. If it had been (imaginary), the software would be far more stable NOW (would + infinitive - present technical quality). Past development discipline → present system stability.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l129_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the researcher hadn't questioned the prevailing theory,",
-            "options": [
-                "the breakthrough would never have happened.",
-                "the breakthrough would never happen.",
-                "the breakthrough never happens.",
-                "the breakthrough will never happen."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the breakthrough would never have happened.",
-            "hint": "Negative past perfect = researcher DID question it - third conditional about scientific courage.",
-            "explanation": "Third conditional with NEGATIVE if-clause: The researcher DID question the prevailing theory (negative past perfect = the reverse). If they HADN'T (imaginary - accepted the status quo), the breakthrough would never have happened (would never have + past participle - the missed scientific advance). Intellectual courage drives progress.",
-            "grammarRule": "Third Conditional",
-            "conditionalType": 3
-        },
-        {
-            "id": "cl_l129_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If she could redesign her entire career from the beginning,",
-            "options": [
-                "she would focus entirely on social entrepreneurship.",
-                "she would have focused on it.",
-                "she focuses on it.",
-                "she will focus on it."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "she would focus entirely on social entrepreneurship.",
-            "hint": "Hypothetical career restart - second conditional for an imaginary life revision.",
-            "explanation": "Second conditional = imaginary present freedom. 'Could redesign her career from scratch' is purely hypothetical. If she could (imaginary), she would focus on social entrepreneurship (would + infinitive - the imagined career priority). This is a 2nd conditional 'what if', not a 3rd conditional (no past perfect if-clause).",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 2
-        },
-        {
-            "id": "cl_l130_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If the peace talks had succeeded in the 1990s,",
-            "options": [
-                "the region might be much more stable today.",
-                "it might have been more stable.",
-                "it is more stable today.",
-                "it will be more stable."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the region might be much more stable today.",
-            "hint": "Past perfect + present geopolitical state - mixed conditional about diplomatic history.",
-            "explanation": "Mixed conditional: If + past perfect (successful talks) → might + be (present regional stability). The talks failed. If they had succeeded (imaginary), the region might be much more stable TODAY (might + infinitive - a possible present state). 'Might be' rather than 'would be' acknowledges that stability depends on many factors.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l130_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If he had chosen renewable energy investment a decade ago,",
-            "options": [
-                "his portfolio would be worth three times as much now.",
-                "it would have been worth more.",
-                "it is worth more now.",
-                "it will be worth more."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "his portfolio would be worth three times as much now.",
-            "hint": "Past investment decision + present portfolio value - mixed conditional about energy finance.",
-            "explanation": "Mixed conditional: If + past perfect (different investment choice) → would + be worth (present financial value). He didn't invest in renewables. If he had (imaginary), his portfolio would be worth three times as much NOW (would + infinitive - present asset value). Past investment → present wealth.",
-            "grammarRule": "Mixed Conditional",
-            "conditionalType": 1
-        },
-        {
-            "id": "cl_l130_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "subtype": "conditionals",
-            "interactionType": "choice",
-            "question": "If I could travel back in time to any era,",
-            "options": [
-                "I would choose the Renaissance period in Florence.",
-                "I would have chosen the Renaissance.",
-                "I choose the Renaissance.",
-                "I will choose the Renaissance."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "I would choose the Renaissance period in Florence.",
-            "hint": "Hypothetical time travel - second conditional for an imaginary historical choice.",
-            "explanation": "Second conditional = imaginary present ability. Time travel is purely hypothetical. If I could (imaginary), I would choose the Renaissance (would + infinitive - the imagined historical destination). 'Would have chosen' is 3rd conditional (past imaginary) - not appropriate when the if-clause contains 'could' (present imaginary ability).",
-            "grammarRule": "Second Conditional",
-            "conditionalType": 2
-        }
-    ]
+  "gameType": "conditionals",
+  "batchIndex": 13,
+  "levels": "121-130",
+  "quests": [
+    {
+      "id": "cl_l121_q1",
+      "instruction": "COMPLETE THE IDEA",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "Unless you finish the form today,",
+      "options": [
+        "you would have lost your spot in the program.",
+        "you will lose your spot in the program.",
+        "you lose your spot in the program.",
+        "you would lose your spot in the program."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "you will lose your spot in the program.",
+      "hint": "'Unless' means 'if...not' — a real, specific negative condition.",
+      "explanation": "'Unless' introduces the one exception that would prevent a result — here it functions like 'if you don't finish the form', so the real future result still needs will + base verb.",
+      "grammarRule": "Unless Condition",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l121_q2",
+      "instruction": "CONNECT THE CONDITION",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "Unless it rains tonight,",
+      "options": [
+        "the game would go ahead as planned.",
+        "the game goes ahead as planned.",
+        "the game would have gone ahead as planned.",
+        "the game will go ahead as planned."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the game will go ahead as planned.",
+      "hint": "'Unless' = 'if...not' — a real, specific negative condition about tonight's game.",
+      "explanation": "'Unless' introduces the single exception (rain) that would stop the game; since this is real and specific, will + base verb is correct.",
+      "grammarRule": "Unless Condition",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l121_q3",
+      "instruction": "LINK THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "Unless the flight is cancelled,",
+      "options": [
+        "we would land by nine.",
+        "we will land by nine.",
+        "we would have landed by nine.",
+        "we land by nine."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "we will land by nine.",
+      "hint": "A real, specific condition for this flight.",
+      "explanation": "'Unless' means 'if the flight isn't cancelled' — a real, specific possibility, so will + base verb is correct.",
+      "grammarRule": "Unless Condition",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l122_q1",
+      "instruction": "COMPLETE THE LINK",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "Unless you show a valid ID,",
+      "options": [
+        "security wouldn't let you into the building.",
+        "security wouldn't have let you into the building.",
+        "security won't let you into the building.",
+        "security doesn't let you into the building."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "security won't let you into the building.",
+      "hint": "A real, practical security rule.",
+      "explanation": "'Unless' means 'if you don't show ID' — a real, specific rule, so won't + base verb (negative first conditional) is correct.",
+      "grammarRule": "Unless Condition",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l122_q2",
+      "instruction": "SELECT THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "Unless the client signs by Friday,",
+      "options": [
+        "we would have had to cancel the contract.",
+        "we have to cancel the contract.",
+        "we would have to cancel the contract.",
+        "we will have to cancel the contract."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "we will have to cancel the contract.",
+      "hint": "A real, specific business deadline.",
+      "explanation": "'Unless' equals 'if the client doesn't sign' — a real business consequence, so will + base verb (with 'have to') is correct.",
+      "grammarRule": "Unless Condition",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l122_q3",
+      "instruction": "COMPLETE THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "Unless something changes drastically,",
+      "options": [
+        "the meeting would have stayed scheduled for Tuesday.",
+        "the meeting would stay scheduled for Tuesday.",
+        "the meeting stays scheduled for Tuesday.",
+        "the meeting will stay scheduled for Tuesday."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the meeting will stay scheduled for Tuesday.",
+      "hint": "A real, default expectation unless something changes.",
+      "explanation": "'Unless' introduces the one exception to an otherwise real, expected plan, so will + base verb is correct.",
+      "grammarRule": "Unless Condition",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l123_q1",
+      "instruction": "FIND THE RIGHT OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "Unless you back up your work regularly,",
+      "options": [
+        "you would have lost everything in a crash.",
+        "you could lose everything in a crash.",
+        "you lose everything in a crash.",
+        "you will lose everything in a crash."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "you could lose everything in a crash.",
+      "hint": "A real risk, softened with 'could'.",
+      "explanation": "'Unless' means 'if you don't back up' — a real risk, and 'could' expresses a real possible (not certain) consequence.",
+      "grammarRule": "Unless Condition",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l123_q2",
+      "instruction": "PICK THE NATURAL RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "Unless the doctor says otherwise,",
+      "options": [
+        "you continue taking the medication.",
+        "you should continue taking the medication.",
+        "you would have continued taking the medication.",
+        "you will continue taking the medication."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "you should continue taking the medication.",
+      "hint": "Real, practical medical advice.",
+      "explanation": "'Unless' means 'if the doctor doesn't say otherwise' — a real condition, and 'should' gives real, practical advice.",
+      "grammarRule": "Unless Condition",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l123_q3",
+      "instruction": "MATCH THE OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "Unless something unexpected comes up,",
+      "options": [
+        "I would have seen you at the usual time.",
+        "I would see you at the usual time.",
+        "I will see you at the usual time.",
+        "I see you at the usual time."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "I will see you at the usual time.",
+      "hint": "A real, default plan unless something changes.",
+      "explanation": "'Unless' introduces the one exception to an otherwise real plan, so will + base verb is correct.",
+      "grammarRule": "Unless Condition",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l124_q1",
+      "instruction": "FINISH THE CONDITIONAL",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "Unless she changed her mind completely,",
+      "options": [
+        "she won't take a job in another city.",
+        "she doesn't take a job in another city.",
+        "she wouldn't take a job in another city.",
+        "she wouldn't have taken a job in another city."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "she wouldn't take a job in another city.",
+      "hint": "'Unless' here combines with a hypothetical present situation.",
+      "explanation": "'Unless' can also pair with the second conditional to express a strong hypothetical exception; here 'wouldn't' fits the unlikely present scenario.",
+      "grammarRule": "Unless Condition (Hypothetical)",
+      "conditionalType": 2
+    },
+    {
+      "id": "cl_l124_q2",
+      "instruction": "CHOOSE THE RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "Unless the rules were completely rewritten,",
+      "options": [
+        "this kind of deal isn't allowed at all.",
+        "this kind of deal wouldn't have been allowed at all.",
+        "this kind of deal won't be allowed at all.",
+        "this kind of deal wouldn't be allowed at all."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "this kind of deal wouldn't be allowed at all.",
+      "hint": "An imagined, sweeping hypothetical change to the rules.",
+      "explanation": "This imagines an extreme, unreal change to the rules, so second conditional (wouldn't, from would + not) fits the hypothetical exception.",
+      "grammarRule": "Unless Condition (Hypothetical)",
+      "conditionalType": 2
+    },
+    {
+      "id": "cl_l124_q3",
+      "instruction": "COMPLETE THE IDEA",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "Unless I won the lottery tomorrow,",
+      "options": [
+        "I'm not able to afford that apartment.",
+        "I wouldn't be able to afford that apartment.",
+        "I wouldn't have been able to afford that apartment.",
+        "I won't be able to afford that apartment."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "I wouldn't be able to afford that apartment.",
+      "hint": "Winning the lottery is treated as unlikely — a hypothetical exception.",
+      "explanation": "Winning the lottery tomorrow is presented as an unlikely, imagined event, so second conditional (past simple + wouldn't) is correct.",
+      "grammarRule": "Unless Condition (Hypothetical)",
+      "conditionalType": 2
+    },
+    {
+      "id": "cl_l125_q1",
+      "instruction": "CONNECT THE CONDITION",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you don't confirm your seat by Friday,",
+      "options": [
+        "the airline would have released it to someone else.",
+        "the airline will release it to someone else.",
+        "the airline would release it to someone else.",
+        "the airline releases it to someone else."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the airline will release it to someone else.",
+      "hint": "'If...not' and 'unless' often express the same idea.",
+      "explanation": "'If you don't confirm' means the same as 'Unless you confirm' — both describe the single exception that avoids the negative result, so will + base verb fits the real future outcome.",
+      "grammarRule": "Negative Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l125_q2",
+      "instruction": "LINK THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the invoice isn't paid within thirty days,",
+      "options": [
+        "a late fee will apply automatically.",
+        "a late fee applies automatically.",
+        "a late fee would apply automatically.",
+        "a late fee would have applied automatically."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "a late fee will apply automatically.",
+      "hint": "'If...not' describes a real, specific business rule.",
+      "explanation": "This is a real, specific rule with a real consequence, so will + base verb is correct.",
+      "grammarRule": "Negative Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l125_q3",
+      "instruction": "COMPLETE THE LINK",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you don't wear safety goggles in the lab,",
+      "options": [
+        "you won't be allowed to use the equipment.",
+        "you wouldn't have been allowed to use the equipment.",
+        "you wouldn't be allowed to use the equipment.",
+        "you aren't allowed to use the equipment."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "you won't be allowed to use the equipment.",
+      "hint": "A real, specific safety rule in the lab.",
+      "explanation": "'If you don't wear' describes a real, specific rule, so won't + base verb (negative) is correct.",
+      "grammarRule": "Negative Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l126_q1",
+      "instruction": "SELECT THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the weather doesn't improve by noon,",
+      "options": [
+        "the outdoor ceremony will move indoors.",
+        "the outdoor ceremony moves indoors.",
+        "the outdoor ceremony would have moved indoors.",
+        "the outdoor ceremony would move indoors."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the outdoor ceremony will move indoors.",
+      "hint": "A real, specific plan depending on the weather.",
+      "explanation": "This is a real, specific possible event, so will + base verb is correct.",
+      "grammarRule": "Negative Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l126_q2",
+      "instruction": "COMPLETE THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If you don't hear back within a week,",
+      "options": [
+        "you should follow up by phone.",
+        "you would have followed up by phone.",
+        "you would follow up by phone.",
+        "you follow up by phone."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "you should follow up by phone.",
+      "hint": "Real, practical advice for a specific situation.",
+      "explanation": "'Should' gives real, practical advice appropriate for a genuine, likely situation.",
+      "grammarRule": "Negative Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l126_q3",
+      "instruction": "FIND THE RIGHT OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the numbers don't add up by the deadline,",
+      "options": [
+        "the accountant would have flagged the report for review.",
+        "the accountant will flag the report for review.",
+        "the accountant would flag the report for review.",
+        "the accountant flags the report for review."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the accountant will flag the report for review.",
+      "hint": "A real, specific business consequence.",
+      "explanation": "This is a real, specific expected outcome, so will + base verb is correct.",
+      "grammarRule": "Negative Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l127_q1",
+      "instruction": "PICK THE NATURAL RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "Unless you have a reservation,",
+      "options": [
+        "you don't guarantee a table on Saturdays.",
+        "you can't guarantee a table on Saturdays.",
+        "you couldn't have guaranteed a table on Saturdays.",
+        "you won't guarantee a table on Saturdays."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "you can't guarantee a table on Saturdays.",
+      "hint": "A real, practical restriction using 'can't'.",
+      "explanation": "'Unless' means 'if you don't have a reservation' — a real, practical restriction, so can't + base verb is correct.",
+      "grammarRule": "Unless Condition",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l127_q2",
+      "instruction": "MATCH THE OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "Unless a guardian signs the form,",
+      "options": [
+        "minors couldn't have joined the trip.",
+        "minors cannot join the trip.",
+        "minors don't join the trip.",
+        "minors won't join the trip."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "minors cannot join the trip.",
+      "hint": "A real, official rule using 'cannot'.",
+      "explanation": "This is a real, specific rule about who may join, so cannot + base verb is correct.",
+      "grammarRule": "Unless Condition",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l127_q3",
+      "instruction": "FINISH THE CONDITIONAL",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "Unless you present your receipt,",
+      "options": [
+        "the store won't process a refund.",
+        "the store doesn't process a refund.",
+        "the store wouldn't have processed a refund.",
+        "the store wouldn't process a refund."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the store won't process a refund.",
+      "hint": "A real store policy using 'won't'.",
+      "explanation": "'Unless' means 'if you don't present your receipt' — a real policy, so won't + base verb is correct.",
+      "grammarRule": "Unless Condition",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l128_q1",
+      "instruction": "CHOOSE THE RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "Unless both parties agree in writing,",
+      "options": [
+        "the contract isn't modified.",
+        "the contract cannot be modified.",
+        "the contract won't be modified.",
+        "the contract couldn't have been modified."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the contract cannot be modified.",
+      "hint": "A real, formal contractual rule.",
+      "explanation": "This is a real, official rule about contracts, so cannot + base verb (passive) is correct.",
+      "grammarRule": "Unless Condition",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l128_q2",
+      "instruction": "COMPLETE THE IDEA",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "Unless the fire department clears the building,",
+      "options": [
+        "residents wouldn't be allowed back inside.",
+        "residents wouldn't have been allowed back inside.",
+        "residents will not be allowed back inside.",
+        "residents aren't allowed back inside."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "residents will not be allowed back inside.",
+      "hint": "A real, official safety rule.",
+      "explanation": "This is a real, specific safety rule, so will not + base verb is correct.",
+      "grammarRule": "Unless Condition",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l128_q3",
+      "instruction": "CONNECT THE CONDITION",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "Unless you register in advance,",
+      "options": [
+        "you may not get a seat at the workshop.",
+        "you don't get a seat at the workshop.",
+        "you wouldn't get a seat at the workshop.",
+        "you wouldn't have gotten a seat at the workshop."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "you may not get a seat at the workshop.",
+      "hint": "A real, practical restriction using 'may not'.",
+      "explanation": "'May not' expresses a real, likely restriction resulting from not registering in advance.",
+      "grammarRule": "Unless Condition",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l129_q1",
+      "instruction": "LINK THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "Unless the results are confirmed by an independent lab,",
+      "options": [
+        "the journal wouldn't publish the study.",
+        "the journal wouldn't have published the study.",
+        "the journal will not publish the study.",
+        "the journal doesn't publish the study."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the journal will not publish the study.",
+      "hint": "A real, formal publishing rule.",
+      "explanation": "This is a real, official rule about publication, so will not + base verb is correct.",
+      "grammarRule": "Unless Condition",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l129_q2",
+      "instruction": "COMPLETE THE LINK",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "Unless the landlord approves it in writing,",
+      "options": [
+        "you don't make any structural changes to the apartment.",
+        "you wouldn't make any structural changes to the apartment.",
+        "you shouldn't make any structural changes to the apartment.",
+        "you wouldn't have made any structural changes to the apartment."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "you shouldn't make any structural changes to the apartment.",
+      "hint": "Real, practical advice about a restriction.",
+      "explanation": "'Shouldn't' gives real, practical advice about a genuine restriction.",
+      "grammarRule": "Unless Condition",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l129_q3",
+      "instruction": "SELECT THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "Unless the committee reaches a unanimous decision,",
+      "options": [
+        "the proposal goes to a second vote.",
+        "the proposal will go to a second vote.",
+        "the proposal would have gone to a second vote.",
+        "the proposal would go to a second vote."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the proposal will go to a second vote.",
+      "hint": "A real, specific procedural outcome.",
+      "explanation": "This is a real, specific expected outcome, so will + base verb is correct.",
+      "grammarRule": "Unless Condition",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l130_q1",
+      "instruction": "COMPLETE THE CONSEQUENCE",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "Unless you cancel within 24 hours,",
+      "options": [
+        "you are charged for the full reservation.",
+        "you will be charged for the full reservation.",
+        "you would have been charged for the full reservation.",
+        "you would be charged for the full reservation."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "you will be charged for the full reservation.",
+      "hint": "A real, specific cancellation policy.",
+      "explanation": "This is a real, specific policy consequence, so will + base verb (passive) is correct.",
+      "grammarRule": "Unless Condition",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l130_q2",
+      "instruction": "FIND THE RIGHT OUTCOME",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "If the seal isn't broken,",
+      "options": [
+        "you can still return the product for a full refund.",
+        "you still return the product for a full refund.",
+        "you would have still returned the product for a full refund.",
+        "you would still return the product for a full refund."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "you can still return the product for a full refund.",
+      "hint": "A real, practical permission using 'can'.",
+      "explanation": "'Can' expresses a real, genuine permission resulting from a real condition (the seal not being broken).",
+      "grammarRule": "Negative Conditional",
+      "conditionalType": 1
+    },
+    {
+      "id": "cl_l130_q3",
+      "instruction": "PICK THE NATURAL RESULT",
+      "subtype": "conditionals",
+      "interactionType": "choice",
+      "question": "Unless every board member is present,",
+      "options": [
+        "the vote wouldn't officially take place.",
+        "the vote wouldn't have officially taken place.",
+        "the vote doesn't officially take place.",
+        "the vote cannot officially take place."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "the vote cannot officially take place.",
+      "hint": "A real, formal procedural rule.",
+      "explanation": "This is a real, official rule about quorum, so cannot + base verb is correct.",
+      "grammarRule": "Unless Condition",
+      "conditionalType": 1
+    }
+  ]
 }

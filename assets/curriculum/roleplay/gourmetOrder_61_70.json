@@ -7,699 +7,783 @@
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "For my starter I think I'll go with the shrimp cocktail, and for my main, the ribeye, cooked medium-rare. And the tiramisu to finish.",
+            "prompt": "Is the mushroom risotto vegetarian? Great, I'll have that, and a side salad.",
             "options": [
-                "Shrimp Cocktail",
-                "Ribeye",
-                "Tiramisu",
-                "Cheesecake"
+                "Chicken Risotto",
+                "Mushroom Risotto",
+                "Side Salad",
+                "Caesar Salad"
             ],
-            "correctAnswer": "Shrimp Cocktail, Ribeye, Tiramisu",
-            "hint": "The steak's cooking temperature is mentioned, but it's just a detail about the main course, not a separate item.",
-            "explanation": "‘Medium-rare’ describes how the steak should be cooked — it doesn't change which three items to select. ‘I think I’ll go with…’ shows natural hesitation while deciding.",
+            "correctAnswer": "Mushroom Risotto, Side Salad",
+            "hint": "The customer checks a dish is vegetarian before ordering it.",
+            "explanation": "Asking 'Is this vegetarian?' is a simple, direct way to confirm a dish fits a dietary need before committing to it.",
             "id": "go_l61_q1",
             "menuItems": [
-                "Shrimp Cocktail",
-                "Ribeye",
-                "Tiramisu",
-                "Cheesecake"
+                "Chicken Risotto",
+                "Mushroom Risotto",
+                "Side Salad",
+                "Caesar Salad"
             ],
             "menuPrices": [
-                "$19.25",
-                "$20.50",
-                "$12.50",
-                "$21.75"
+                "$15.00",
+                "$14.00",
+                "$3.00",
+                "$3.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll have the calamari, and could you make the salmon well-done? I'll finish with the chocolate cake.",
+            "prompt": "Server: The veggie burger is vegetarian, but it's cooked on the same grill as the meat. Customer: That's fine for me, I'll have it, with fries.",
             "options": [
-                "Calamari",
-                "Salmon",
-                "Chocolate Cake",
-                "Cheesecake"
+                "Beef Burger",
+                "Veggie Burger",
+                "Onion Rings",
+                "Fries"
             ],
-            "correctAnswer": "Calamari, Salmon, Chocolate Cake",
-            "hint": "‘Well-done’ is a cooking instruction for the fish, not an extra course.",
-            "explanation": "Asking for fish to be ‘well-done’ means fully cooked through, with no translucent center. This request doesn't add a fourth item to the order.",
+            "correctAnswer": "Veggie Burger, Fries",
+            "hint": "The server volunteers a detail about shared cooking equipment, and the customer decides it's acceptable for them.",
+            "explanation": "Restaurants sometimes mention shared equipment even without being asked; the customer's own comfort level, not a medical guarantee, decides what happens next.",
             "id": "go_l61_q2",
             "menuItems": [
-                "Calamari",
-                "Salmon",
-                "Chocolate Cake",
-                "Cheesecake"
+                "Beef Burger",
+                "Veggie Burger",
+                "Onion Rings",
+                "Fries"
             ],
             "menuPrices": [
-                "$12.50",
-                "$20.50",
-                "$14.00",
-                "$21.75"
+                "$9.00",
+                "$8.50",
+                "$3.25",
+                "$3.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "My partner will have the goat cheese salad, and I'll have the lamb chops, with the crème brûlée to share.",
+            "prompt": "I don't eat meat, so I'll go with the eggplant parmesan instead of the chicken parmesan, and garlic bread.",
             "options": [
-                "Goat Cheese Salad",
-                "Lamb Chops",
-                "Crème Brûlée",
-                "Chocolate Mousse"
+                "Chicken Parmesan",
+                "Garlic Bread",
+                "Eggplant Parmesan",
+                "Breadsticks"
             ],
-            "correctAnswer": "Goat Cheese Salad, Lamb Chops, Crème Brûlée",
-            "hint": "Two different starters or mains might be expected, but read carefully — only one starter is named here.",
-            "explanation": "‘My partner will have…’ shows two people are ordering different mains, but this sentence only names one starter, one main, and one shared dessert.",
+            "correctAnswer": "Garlic Bread, Eggplant Parmesan",
+            "hint": "The customer explains their diet briefly, then chooses the vegetarian version of a familiar dish.",
+            "explanation": "Explaining a dietary habit in one short clause ('I don't eat meat') is a natural, polite way to justify choosing an alternative version of a dish.",
             "id": "go_l61_q3",
             "menuItems": [
-                "Goat Cheese Salad",
-                "Lamb Chops",
-                "Crème Brûlée",
-                "Chocolate Mousse"
+                "Chicken Parmesan",
+                "Garlic Bread",
+                "Eggplant Parmesan",
+                "Breadsticks"
             ],
             "menuPrices": [
-                "$3.25",
-                "$15.25",
+                "$14.00",
                 "$2.00",
-                "$12.50"
+                "$13.00",
+                "$2.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I have a shellfish allergy, so I'll go with the beet salad. For my main, the roast chicken. And the apple tart for dessert.",
+            "prompt": "Does the pancake batter have eggs or milk in it? No dairy or eggs at all - great, I'll have the pancakes and some fresh fruit.",
             "options": [
-                "Beet Salad",
-                "Roast Chicken",
-                "Apple Tart",
-                "Fruit Tart"
+                "Waffles",
+                "Fresh Fruit",
+                "Yogurt",
+                "Pancakes"
             ],
-            "correctAnswer": "Beet Salad, Roast Chicken, Apple Tart",
-            "hint": "The allergy explains the customer's choice, but doesn't change what needs to be selected.",
-            "explanation": "Mentioning an allergy helps explain why a customer avoids certain dishes, but the actual order is still just the three named items.",
+            "correctAnswer": "Fresh Fruit, Pancakes",
+            "hint": "Two ingredients are checked at once before the customer, who is vegan, decides to order.",
+            "explanation": "Vegan communication often involves checking more than one ingredient in a single question, since both eggs and dairy need to be ruled out.",
             "id": "go_l62_q1",
             "menuItems": [
-                "Beet Salad",
-                "Roast Chicken",
-                "Apple Tart",
-                "Fruit Tart"
+                "Waffles",
+                "Fresh Fruit",
+                "Yogurt",
+                "Pancakes"
             ],
             "menuPrices": [
-                "$7.25",
-                "$20.50",
-                "$11.25",
-                "$19.25"
+                "$8.50",
+                "$3.00",
+                "$3.50",
+                "$8.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Could I get the French onion soup? And for my main, the filet mignon — medium-rare, please. Then the panna cotta.",
+            "prompt": "I'm vegan, so could you check if the veggie soup uses a chicken broth base? If it's a vegetable broth, I'll have it with bread.",
             "options": [
-                "French Onion Soup",
-                "Filet Mignon",
-                "Panna Cotta",
-                "Crème Caramel"
+                "Chicken Soup",
+                "Crackers",
+                "Vegetable Soup",
+                "Bread"
             ],
-            "correctAnswer": "French Onion Soup, Filet Mignon, Panna Cotta",
-            "hint": "The steak's temperature is a cooking detail woven into the middle of the order.",
-            "explanation": "This sentence places the cooking instruction mid-order rather than at the end, but it's still just extra detail about the filet mignon, not a separate item.",
+            "correctAnswer": "Vegetable Soup, Bread",
+            "hint": "A conditional order is set up in advance, based on how the kitchen answers a broth question.",
+            "explanation": "Setting up a condition ('if it's X, I'll have it') is an efficient way to avoid a second round of questions once the kitchen confirms an ingredient.",
             "id": "go_l62_q2",
             "menuItems": [
-                "French Onion Soup",
-                "Filet Mignon",
-                "Panna Cotta",
-                "Crème Caramel"
+                "Chicken Soup",
+                "Crackers",
+                "Vegetable Soup",
+                "Bread"
             ],
             "menuPrices": [
-                "$10.00",
-                "$12.50",
-                "$3.25",
-                "$6.00"
+                "$4.50",
+                "$1.00",
+                "$5.00",
+                "$2.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll start with the bruschetta. For my main, could you cook the duck breast medium? And I'll finish with the lemon tart.",
+            "prompt": "Could I get the stir-fry without the egg and with tofu instead of chicken? And plain rice, no butter.",
             "options": [
-                "Bruschetta",
-                "Duck Breast",
-                "Lemon Tart",
-                "Chocolate Tart"
+                "Stir-fry with Chicken",
+                "Rice with Butter",
+                "Plain Rice",
+                "Stir-fry with Tofu"
             ],
-            "correctAnswer": "Bruschetta, Duck Breast, Lemon Tart",
-            "hint": "The question about cooking temperature is part of the main course request, not a fourth item.",
-            "explanation": "‘Could you cook the duck breast medium?’ is a polite way to specify doneness for meats other than steak, like duck.",
+            "correctAnswer": "Plain Rice, Stir-fry with Tofu",
+            "hint": "Two separate adjustments make one dish fit a vegan diet, plus a third detail applied to the side.",
+            "explanation": "Making a dish vegan can involve several changes at once - removing egg, substituting protein, and checking that a side has no dairy either.",
             "id": "go_l62_q3",
             "menuItems": [
-                "Bruschetta",
-                "Duck Breast",
-                "Lemon Tart",
-                "Chocolate Tart"
+                "Stir-fry with Chicken",
+                "Rice with Butter",
+                "Plain Rice",
+                "Stir-fry with Tofu"
             ],
             "menuPrices": [
-                "$13.75",
-                "$14.00",
-                "$18.00",
-                "$13.75"
+                "$13.00",
+                "$2.50",
+                "$2.50",
+                "$12.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "One of us will have the mushroom soup, and the other will have the seared scallops. We'll share the sticky toffee pudding.",
+            "prompt": "Does the Caesar salad dressing contain anchovies? It doesn't? Perfect, I'll have that, and an iced tea.",
             "options": [
-                "Mushroom Soup",
-                "Seared Scallops",
-                "Sticky Toffee Pudding",
-                "Chocolate Fondant"
+                "Lemonade",
+                "Caesar Salad",
+                "Iced Tea",
+                "Cobb Salad"
             ],
-            "correctAnswer": "Mushroom Soup, Seared Scallops, Sticky Toffee Pudding",
-            "hint": "Two different starters could appear, but here only one starter and one main are named for two people, plus a shared dessert.",
-            "explanation": "‘One of us… the other…’ is a natural way to describe two people ordering different dishes at the same table, while sharing dessert.",
+            "correctAnswer": "Caesar Salad, Iced Tea",
+            "hint": "A specific ingredient question is answered before the order is confirmed.",
+            "explanation": "Asking about one specific ingredient, like anchovies in a dressing, is a precise and useful way to check a dish without asking a broader dietary question.",
             "id": "go_l63_q1",
             "menuItems": [
-                "Mushroom Soup",
-                "Seared Scallops",
-                "Sticky Toffee Pudding",
-                "Chocolate Fondant"
+                "Lemonade",
+                "Caesar Salad",
+                "Iced Tea",
+                "Cobb Salad"
             ],
             "menuPrices": [
-                "$9.75",
-                "$7.25",
-                "$9.75",
-                "$6.00"
+                "$3.25",
+                "$8.00",
+                "$3.00",
+                "$9.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll go with the calamari to start. As for the main, I'll take the swordfish, and I'll finish with the coconut cream pie.",
+            "prompt": "Is there any peanut oil used to cook the noodles? None at all - great, I'll have the noodles and spring rolls.",
             "options": [
-                "Calamari",
-                "Swordfish",
-                "Coconut Cream Pie",
-                "Key Lime Pie"
+                "Egg Rolls",
+                "Noodles",
+                "Fried Rice",
+                "Spring Rolls"
             ],
-            "correctAnswer": "Calamari, Swordfish, Coconut Cream Pie",
-            "hint": "‘As for the main’ signals the customer is now moving on to their second course.",
-            "explanation": "‘As for…’ is a natural way to shift from one course to the next while ordering, similar to ‘for my main.’",
+            "correctAnswer": "Noodles, Spring Rolls",
+            "hint": "The customer checks a cooking ingredient, not just what's visibly in the dish.",
+            "explanation": "Ingredients aren't always visible in a finished dish - cooking oil, sauces, and seasonings can matter just as much as the main ingredients.",
             "id": "go_l63_q2",
             "menuItems": [
-                "Calamari",
-                "Swordfish",
-                "Coconut Cream Pie",
-                "Key Lime Pie"
+                "Egg Rolls",
+                "Noodles",
+                "Fried Rice",
+                "Spring Rolls"
             ],
             "menuPrices": [
-                "$12.50",
-                "$7.25",
-                "$7.25",
-                "$16.50"
+                "$5.50",
+                "$11.00",
+                "$10.00",
+                "$5.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "For the table, we'll start with the garlic bread. I'll have the seafood risotto for my main, and the panna cotta for dessert.",
+            "prompt": "Does the bread have sesame seeds in it anywhere, even in the dough? No? Good, I'll have the sandwich and chips.",
             "options": [
-                "Garlic Bread",
-                "Seafood Risotto",
-                "Panna Cotta",
-                "Tiramisu"
+                "Fries",
+                "Chips",
+                "Sandwich",
+                "Bagel"
             ],
-            "correctAnswer": "Garlic Bread, Seafood Risotto, Panna Cotta",
-            "hint": "‘For the table’ shows the starter will be shared, even though the main and dessert belong to just one person.",
-            "explanation": "‘For the table’ signals a shared starter, which is common when a group orders together, even if the rest of the order is personal.",
+            "correctAnswer": "Chips, Sandwich",
+            "hint": "The question specifically asks about a hidden location for an ingredient, not just the visible topping.",
+            "explanation": "Asking whether an ingredient appears 'anywhere, even in the dough' shows careful, specific questioning - useful when an ingredient could be hidden.",
             "id": "go_l63_q3",
             "menuItems": [
-                "Garlic Bread",
-                "Seafood Risotto",
-                "Panna Cotta",
-                "Tiramisu"
+                "Fries",
+                "Chips",
+                "Sandwich",
+                "Bagel"
             ],
             "menuPrices": [
-                "$16.50",
-                "$15.25",
-                "$3.25",
-                "$12.50"
+                "$3.00",
+                "$2.50",
+                "$7.50",
+                "$4.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll have the pâté, then the pork tenderloin — cooked through, please — and the crème caramel to finish.",
+            "prompt": "I have a shellfish allergy - does the jambalaya contain shrimp or crab? No shellfish? Good, I'll have that, with cornbread.",
             "options": [
-                "Pâté",
-                "Pork Tenderloin",
-                "Crème Caramel",
-                "Panna Cotta"
+                "Garlic Bread",
+                "Cornbread",
+                "Seafood Gumbo",
+                "Jambalaya"
             ],
-            "correctAnswer": "Pâté, Pork Tenderloin, Crème Caramel",
-            "hint": "‘Cooked through’ is a common request for pork, meaning no pink should remain.",
-            "explanation": "Unlike beef, pork is traditionally requested ‘cooked through’ for food safety, even though modern pork can safely be served slightly pink. This is just a cooking detail, not a new item.",
+            "correctAnswer": "Cornbread, Jambalaya",
+            "hint": "The customer states an allergy before asking a specific ingredient question about it.",
+            "explanation": "Stating an allergy up front ('I have a shellfish allergy') gives the server important context before the ingredient question that follows.",
             "id": "go_l64_q1",
             "menuItems": [
-                "Pâté",
-                "Pork Tenderloin",
-                "Crème Caramel",
-                "Panna Cotta"
+                "Garlic Bread",
+                "Cornbread",
+                "Seafood Gumbo",
+                "Jambalaya"
             ],
             "menuPrices": [
-                "$17.75",
-                "$14.00",
-                "$6.00",
-                "$3.25"
+                "$2.00",
+                "$2.50",
+                "$16.00",
+                "$14.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "For my starter, the wedge salad. For my main, could you make the burger medium? And for dessert, the s'mores.",
+            "prompt": "I'm allergic to tree nuts, so could you check if the pesto has pine nuts in it? If not, I'll have the pesto pasta, and a side salad.",
             "options": [
-                "Wedge Salad",
-                "Burger",
-                "S'mores",
-                "Chocolate Cake"
+                "Caesar Salad",
+                "Marinara Pasta",
+                "Pesto Pasta",
+                "Side Salad"
             ],
-            "correctAnswer": "Wedge Salad, Burger, S'mores",
-            "hint": "The cooking instruction for the burger patty sits in the middle of the order.",
-            "explanation": "Burgers, like steaks, can be cooked to different levels of doneness. ‘Medium’ here describes how the patty should be cooked.",
+            "correctAnswer": "Pesto Pasta, Side Salad",
+            "hint": "A single dish is ordered, but only if the kitchen confirms a specific ingredient is absent, plus one more separate item.",
+            "explanation": "This describes one conditional decision about the pasta, plus a second, unrelated item - both should be tapped once the condition is met.",
             "id": "go_l64_q2",
             "menuItems": [
-                "Wedge Salad",
-                "Burger",
-                "S'mores",
-                "Chocolate Cake"
+                "Caesar Salad",
+                "Marinara Pasta",
+                "Pesto Pasta",
+                "Side Salad"
             ],
             "menuPrices": [
-                "$3.25",
-                "$7.25",
-                "$12.50",
-                "$14.00"
+                "$3.50",
+                "$12.00",
+                "$13.00",
+                "$3.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll start with the shrimp bisque. My main will be the veal chop, rare if possible. And I'll finish with the profiteroles.",
+            "prompt": "Server: Just so you know, our kitchen does use peanut oil for some dishes, though not in the one you asked about. Customer: Thanks for letting me know - I'll still go with the salmon, then, and rice.",
             "options": [
-                "Shrimp Bisque",
-                "Veal Chop",
-                "Profiteroles",
-                "Éclair"
+                "Fried Rice",
+                "Peanut Noodles",
+                "Rice",
+                "Salmon"
             ],
-            "correctAnswer": "Shrimp Bisque, Veal Chop, Profiteroles",
-            "hint": "‘Rare if possible’ is a polite way to request a specific cooking temperature.",
-            "explanation": "‘If possible’ softens the request, making it sound more like a preference than a demand — a useful, polite phrase for any special request.",
+            "correctAnswer": "Rice, Salmon",
+            "hint": "The server volunteers general kitchen information as a courtesy, separate from the specific dish being ordered.",
+            "explanation": "A server sharing general kitchen practices is helpful context, but it doesn't change what's actually being ordered unless the customer decides otherwise.",
             "id": "go_l64_q3",
             "menuItems": [
-                "Shrimp Bisque",
-                "Veal Chop",
-                "Profiteroles",
-                "Éclair"
+                "Fried Rice",
+                "Peanut Noodles",
+                "Rice",
+                "Salmon"
             ],
             "menuPrices": [
-                "$12.50",
-                "$10.00",
-                "$18.00",
-                "$10.00"
+                "$3.50",
+                "$12.00",
+                "$3.00",
+                "$18.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "We'd like the calamari for the table, my partner's having the pork belly, and I'll have the sea bass.",
+            "prompt": "I have a severe peanut allergy - could you please check with the kitchen whether the pad thai sauce contains any peanut products at all? If it's completely peanut-free, I'll have it with a spring roll.",
             "options": [
-                "Calamari",
-                "Pork Belly",
-                "Sea Bass",
-                "Salmon"
+                "Pad Thai",
+                "Spring Roll",
+                "Peanut Noodles",
+                "Egg Roll"
             ],
-            "correctAnswer": "Calamari, Pork Belly, Sea Bass",
-            "hint": "This sentence names a shared starter and two different mains for two people.",
-            "explanation": "‘My partner’s having…’ is a short way of saying ‘my partner is having…’ This structure is common when two people at a table order different mains.",
+            "correctAnswer": "Pad Thai, Spring Roll",
+            "hint": "A conditional decision depends entirely on the kitchen's answer to a very specific safety question.",
+            "explanation": "For a severe allergy, asking the kitchen to check directly, rather than guessing from the menu description, is an important, realistic step before ordering.",
             "id": "go_l65_q1",
             "menuItems": [
-                "Calamari",
-                "Pork Belly",
-                "Sea Bass",
-                "Salmon"
+                "Pad Thai",
+                "Spring Roll",
+                "Peanut Noodles",
+                "Egg Roll"
             ],
             "menuPrices": [
+                "$12.00",
+                "$4.00",
                 "$12.50",
-                "$4.50",
-                "$10.00",
-                "$20.50"
+                "$4.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Could I get the onion soup? For my main, I'll have the strip steak, cooked medium, with the chocolate soufflé after.",
+            "prompt": "Server: I checked with the kitchen - they confirmed the wok is fully cleaned between orders and there's no peanut product in the sauce. Customer: That's reassuring, thank you - I'll have the pad thai, then, and a Thai iced tea.",
             "options": [
-                "Onion Soup",
-                "Strip Steak",
-                "Chocolate Soufflé",
-                "Chocolate Mousse"
+                "Pad Thai",
+                "Thai Iced Tea",
+                "Thai Iced Coffee",
+                "Pad See Ew"
             ],
-            "correctAnswer": "Onion Soup, Strip Steak, Chocolate Soufflé",
-            "hint": "All the usual course markers are here, but listen closely for the exact steak cut named.",
-            "explanation": "‘Strip steak’ is a specific cut, different from a ribeye or filet. Always listen for the exact cut named, since menus often list several.",
+            "correctAnswer": "Pad Thai, Thai Iced Tea",
+            "hint": "The server's confirmation, not just the customer's original question, is what finally unlocks the order.",
+            "explanation": "After a kitchen check, the server's reply is what actually resolves the situation - only after hearing confirmation does the customer commit to ordering.",
             "id": "go_l65_q2",
             "menuItems": [
-                "Onion Soup",
-                "Strip Steak",
-                "Chocolate Soufflé",
-                "Chocolate Mousse"
+                "Pad Thai",
+                "Thai Iced Tea",
+                "Thai Iced Coffee",
+                "Pad See Ew"
             ],
             "menuPrices": [
-                "$8.50",
-                "$16.50",
-                "$12.50",
-                "$12.50"
+                "$12.00",
+                "$3.00",
+                "$3.50",
+                "$12.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll have the burrata to start, the branzino for my main — please don't overcook it — and the affogato to finish.",
+            "prompt": "Server: We can definitely leave out peanuts, but I can't one hundred percent guarantee no cross-contact since we don't have a separate cooking area. Customer: I understand - in that case, I'll play it safe and go with the beef and broccoli instead, with rice.",
             "options": [
-                "Burrata",
-                "Branzino",
-                "Affogato",
-                "Tiramisu"
+                "Beef and Broccoli",
+                "Pad Thai",
+                "Rice",
+                "Fried Rice"
             ],
-            "correctAnswer": "Burrata, Branzino, Affogato",
-            "hint": "A polite request about cooking is tucked into the main course description.",
-            "explanation": "‘Please don’t overcook it’ is a polite way to ask for careful preparation, especially for delicate fish like branzino. ‘Affogato’ is a scoop of ice cream with a shot of hot espresso poured over it.",
+            "correctAnswer": "Beef and Broccoli, Rice",
+            "hint": "A realistic, honest limitation from the kitchen leads the customer to choose a different dish entirely for safety.",
+            "explanation": "Restaurants can rarely promise a completely allergen-free kitchen; hearing an honest limitation like this is a realistic reason for a customer to switch dishes out of caution.",
             "id": "go_l65_q3",
             "menuItems": [
-                "Burrata",
-                "Branzino",
-                "Affogato",
-                "Tiramisu"
+                "Beef and Broccoli",
+                "Pad Thai",
+                "Rice",
+                "Fried Rice"
             ],
             "menuPrices": [
-                "$11.25",
-                "$11.25",
-                "$17.75",
-                "$12.50"
+                "$16.00",
+                "$12.00",
+                "$3.00",
+                "$3.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'm allergic to shellfish, so I'll skip the seafood starter and have the garden salad instead. For my main, the roast chicken, and the apple crumble to finish.",
+            "prompt": "Could I get the burger on a gluten-free bun, and could you check that the fries aren't cooked in the same oil as the breaded chicken?",
             "options": [
-                "Garden Salad",
-                "Roast Chicken",
-                "Apple Crumble",
-                "Fruit Tart"
+                "Burger on Gluten-Free Bun",
+                "Regular Burger",
+                "Onion Rings",
+                "Fries"
             ],
-            "correctAnswer": "Garden Salad, Roast Chicken, Apple Crumble",
-            "hint": "The customer explains why they're avoiding one dish, then names their actual order.",
-            "explanation": "‘I’ll skip… and have… instead’ clearly shows a substitution. The seafood starter mentioned is not part of the final order — only the garden salad is.",
+            "correctAnswer": "Burger on Gluten-Free Bun, Fries",
+            "hint": "A bun substitution and a shared-equipment question both relate to the same gluten-free need.",
+            "explanation": "Gluten-free requests often involve both a direct substitution (the bun) and a question about shared cooking equipment (the fryer oil).",
             "id": "go_l66_q1",
             "menuItems": [
-                "Garden Salad",
-                "Roast Chicken",
-                "Apple Crumble",
-                "Fruit Tart"
+                "Burger on Gluten-Free Bun",
+                "Regular Burger",
+                "Onion Rings",
+                "Fries"
             ],
             "menuPrices": [
-                "$12.50",
-                "$20.50",
-                "$20.50",
-                "$19.25"
+                "$9.00",
+                "$8.50",
+                "$3.25",
+                "$3.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "For my starter, the beet and goat cheese salad. My main will be the halibut, and could you cook it just until it flakes? Then the lemon tart.",
+            "prompt": "Is there a dairy-free option for the mac and cheese, or should I just go with a different side altogether? I'll take the roasted vegetables instead, then, with my grilled chicken.",
             "options": [
-                "Beet and Goat Cheese Salad",
-                "Halibut",
-                "Lemon Tart",
-                "Chocolate Tart"
+                "Roasted Vegetables",
+                "Fried Chicken",
+                "Grilled Chicken",
+                "Mac and Cheese"
             ],
-            "correctAnswer": "Beet and Goat Cheese Salad, Halibut, Lemon Tart",
-            "hint": "‘Until it flakes’ describes exactly how the fish should be cooked, not a separate request.",
-            "explanation": "Fish is often described as done when it ‘flakes easily’ with a fork. This is simply a more descriptive way of requesting well-cooked fish.",
+            "correctAnswer": "Roasted Vegetables, Grilled Chicken",
+            "hint": "The customer considers two paths before settling on one clear alternative, alongside a main dish.",
+            "explanation": "Thinking through options out loud before deciding is natural; the dish named after 'then,' plus the main course, make up the real order.",
             "id": "go_l66_q2",
             "menuItems": [
-                "Beet and Goat Cheese Salad",
-                "Halibut",
-                "Lemon Tart",
-                "Chocolate Tart"
+                "Roasted Vegetables",
+                "Fried Chicken",
+                "Grilled Chicken",
+                "Mac and Cheese"
             ],
             "menuPrices": [
-                "$20.50",
-                "$5.75",
-                "$18.00",
-                "$13.75"
+                "$3.50",
+                "$13.00",
+                "$14.00",
+                "$4.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "My partner will have the mussels, and I'll have the steak frites, medium, with the crème brûlée to share.",
+            "prompt": "Could I have the pancakes made with a gluten-free flour blend if that's possible, and a side of turkey bacon?",
             "options": [
-                "Mussels",
-                "Steak Frites",
-                "Crème Brûlée",
-                "Panna Cotta"
+                "Gluten-Free Pancakes",
+                "Pork Bacon",
+                "Regular Pancakes",
+                "Turkey Bacon"
             ],
-            "correctAnswer": "Mussels, Steak Frites, Crème Brûlée",
-            "hint": "One starter, one main with a cooking instruction, and a shared dessert make up this order.",
-            "explanation": "‘Steak frites’ is steak served with French fries — a classic bistro dish. The cooking word ‘medium’ applies only to the steak.",
+            "correctAnswer": "Gluten-Free Pancakes, Turkey Bacon",
+            "hint": "'If that's possible' softens a request that depends on what the kitchen can actually do.",
+            "explanation": "Adding 'if that's possible' to a substitution request is realistic - some kitchens can accommodate an ingredient swap and some cannot.",
             "id": "go_l66_q3",
             "menuItems": [
-                "Mussels",
-                "Steak Frites",
-                "Crème Brûlée",
-                "Panna Cotta"
+                "Gluten-Free Pancakes",
+                "Pork Bacon",
+                "Regular Pancakes",
+                "Turkey Bacon"
             ],
             "menuPrices": [
-                "$14.00",
-                "$13.75",
-                "$2.00",
-                "$3.25"
+                "$9.00",
+                "$3.00",
+                "$8.00",
+                "$3.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll start with the French onion soup. For my main, I'd like the lamb rack, pink in the middle, please. And I'll finish with the chocolate torte.",
+            "prompt": "I have a severe nut allergy - I understand you can't guarantee zero traces, but could the kitchen at least avoid using any nut-based ingredients directly in my dish? I'll have the grilled chicken, then, with steamed rice.",
             "options": [
-                "French Onion Soup",
-                "Lamb Rack",
-                "Chocolate Torte",
-                "Chocolate Mousse"
+                "Steamed Rice",
+                "Grilled Chicken",
+                "Chicken Satay",
+                "Fried Rice"
             ],
-            "correctAnswer": "French Onion Soup, Lamb Rack, Chocolate Torte",
-            "hint": "‘Pink in the middle’ is another way to describe a cooking temperature, similar to ‘medium-rare.’",
-            "explanation": "‘Pink in the middle’ is a natural, descriptive way to request a cooking temperature without using the words ‘medium-rare’ directly.",
+            "correctAnswer": "Steamed Rice, Grilled Chicken",
+            "hint": "The customer acknowledges a limitation honestly before still asking for a reasonable precaution.",
+            "explanation": "Acknowledging that a restaurant can't guarantee zero traces, while still asking for a reasonable precaution, is realistic, respectful allergy communication, not a medical guarantee.",
             "id": "go_l67_q1",
             "menuItems": [
-                "French Onion Soup",
-                "Lamb Rack",
-                "Chocolate Torte",
-                "Chocolate Mousse"
+                "Steamed Rice",
+                "Grilled Chicken",
+                "Chicken Satay",
+                "Fried Rice"
             ],
             "menuPrices": [
-                "$10.00",
-                "$3.25",
+                "$3.00",
                 "$14.00",
-                "$12.50"
+                "$13.00",
+                "$3.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Could I get the escargot? And for my main, the duck confit — extra crispy skin, if you can. Then the crème caramel.",
+            "prompt": "Since I have celiac disease, could you check whether gluten-free items are prepared on a separate cutting board and grill, or whether everything shares the same equipment? Either way, I'll try the grilled salmon and a plain baked potato.",
             "options": [
-                "Escargot",
-                "Duck Confit",
-                "Crème Caramel",
-                "Panna Cotta"
+                "Baked Potato",
+                "Grilled Salmon",
+                "Loaded Potato",
+                "Fried Salmon"
             ],
-            "correctAnswer": "Escargot, Duck Confit, Crème Caramel",
-            "hint": "A request about texture, not temperature, appears in the middle of this order.",
-            "explanation": "‘Extra crispy skin’ is a texture request rather than a temperature request, but it works the same way — it's a detail about the main course, not a new item.",
+            "correctAnswer": "Baked Potato, Grilled Salmon",
+            "hint": "The customer asks a genuine question about kitchen practices but decides to order regardless of the answer.",
+            "explanation": "Asking about shared equipment is useful information-gathering, even when the customer has already decided to proceed with an order either way.",
             "id": "go_l67_q2",
             "menuItems": [
-                "Escargot",
-                "Duck Confit",
-                "Crème Caramel",
-                "Panna Cotta"
+                "Baked Potato",
+                "Grilled Salmon",
+                "Loaded Potato",
+                "Fried Salmon"
             ],
             "menuPrices": [
-                "$20.50",
-                "$16.50",
-                "$6.00",
-                "$3.25"
+                "$3.00",
+                "$18.00",
+                "$4.00",
+                "$17.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "One of us will have the burrata, and the other will have the octopus. We'll share the olive oil cake.",
+            "prompt": "Server: I'll let the kitchen know about the allergy and ask them to change gloves and use a clean pan, though I can't promise a completely allergen-free environment. Customer: That's exactly the kind of care I was hoping for - I'll have the stir-fry, then, no peanuts, with jasmine rice.",
             "options": [
-                "Burrata",
-                "Octopus",
-                "Olive Oil Cake",
-                "Cheesecake"
+                "Jasmine Rice",
+                "Peanut Stir-fry",
+                "Stir-fry",
+                "Fried Rice"
             ],
-            "correctAnswer": "Burrata, Octopus, Olive Oil Cake",
-            "hint": "Two different starters are named for two people, followed by one shared dessert.",
-            "explanation": "This is the same pattern as before, but now it's the starters that differ between the two diners, rather than the mains.",
+            "correctAnswer": "Jasmine Rice, Stir-fry",
+            "hint": "The server describes specific, realistic precautions rather than making an absolute promise.",
+            "explanation": "A server describing concrete steps, like changing gloves or using a clean pan, rather than an absolute guarantee, is realistic, honest restaurant communication about allergies.",
             "id": "go_l67_q3",
             "menuItems": [
-                "Burrata",
-                "Octopus",
-                "Olive Oil Cake",
-                "Cheesecake"
+                "Jasmine Rice",
+                "Peanut Stir-fry",
+                "Stir-fry",
+                "Fried Rice"
             ],
             "menuPrices": [
-                "$11.25",
-                "$9.75",
-                "$19.25",
-                "$21.75"
+                "$3.00",
+                "$13.50",
+                "$13.00",
+                "$3.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll go with the tuna tartare to start. As for the main, I'll take the venison, medium-rare, and I'll finish with the dark chocolate mousse.",
+            "prompt": "I don't eat pork for religious reasons, so I'll have the chicken version of the stew, please, with rice.",
             "options": [
-                "Tuna Tartare",
-                "Venison",
-                "Dark Chocolate Mousse",
-                "Chocolate Torte"
+                "Rice",
+                "Pork Stew",
+                "Mashed Potatoes",
+                "Chicken Stew"
             ],
-            "correctAnswer": "Tuna Tartare, Venison, Dark Chocolate Mousse",
-            "hint": "This entire order follows the familiar starter, main with temperature, dessert structure.",
-            "explanation": "‘Venison’ is deer meat, often served medium-rare like a fine cut of beef. The structure here should feel familiar from earlier levels, just with richer vocabulary.",
+            "correctAnswer": "Rice, Chicken Stew",
+            "hint": "The customer briefly explains a restriction before naming the appropriate alternative dish.",
+            "explanation": "Explaining a restriction in one short phrase ('for religious reasons') is a polite, common way to justify a dish choice without going into detail.",
             "id": "go_l68_q1",
             "menuItems": [
-                "Tuna Tartare",
-                "Venison",
-                "Dark Chocolate Mousse",
-                "Chocolate Torte"
+                "Rice",
+                "Pork Stew",
+                "Mashed Potatoes",
+                "Chicken Stew"
             ],
             "menuPrices": [
-                "$19.25",
-                "$2.00",
-                "$18.00",
-                "$14.00"
+                "$2.50",
+                "$12.00",
+                "$3.00",
+                "$13.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "For the table, we'll start with the flatbread. I'll have the short rib for my main — falling off the bone, please — and the bread pudding for dessert.",
+            "prompt": "I keep kosher, so could you tell me if the soup is made with a meat or vegetable stock? Vegetable - perfect, I'll have that, with challah.",
             "options": [
-                "Flatbread",
-                "Short Rib",
-                "Bread Pudding",
-                "Sticky Toffee Pudding"
+                "Challah",
+                "Garlic Bread",
+                "Soup",
+                "Chicken Soup"
             ],
-            "correctAnswer": "Flatbread, Short Rib, Bread Pudding",
-            "hint": "‘Falling off the bone’ describes how tender the meat should be after slow cooking.",
-            "explanation": "‘Falling off the bone’ is a common way to describe perfectly slow-cooked meat, so tender it separates from the bone with almost no effort.",
+            "correctAnswer": "Challah, Soup",
+            "hint": "The customer names their dietary practice, then asks a specific, relevant question tied to it.",
+            "explanation": "Naming a specific dietary practice helps a server understand exactly what to check, rather than guessing which ingredients might matter.",
             "id": "go_l68_q2",
             "menuItems": [
-                "Flatbread",
-                "Short Rib",
-                "Bread Pudding",
-                "Sticky Toffee Pudding"
+                "Challah",
+                "Garlic Bread",
+                "Soup",
+                "Chicken Soup"
             ],
             "menuPrices": [
-                "$5.75",
-                "$21.75",
-                "$13.75",
-                "$9.75"
+                "$2.50",
+                "$2.00",
+                "$5.00",
+                "$5.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll have the beet carpaccio, then the rack of pork — cooked through but still juicy — and the pear tart to finish.",
+            "prompt": "I'm trying to eat halal, so is the lamb from a halal butcher? It is - wonderful, I'll have the lamb curry and rice.",
             "options": [
-                "Beet Carpaccio",
-                "Rack of Pork",
-                "Pear Tart",
-                "Apple Tart"
+                "Rice",
+                "Naan",
+                "Chicken Curry",
+                "Lamb Curry"
             ],
-            "correctAnswer": "Beet Carpaccio, Rack of Pork, Pear Tart",
-            "hint": "The request balances two things — full cooking and juiciness — but it's still just detail about the pork.",
-            "explanation": "‘Cooked through but still juicy’ shows a customer being specific about both safety and quality. This detail doesn't change which three items to select.",
+            "correctAnswer": "Rice, Lamb Curry",
+            "hint": "A specific sourcing question, rather than an ingredient question, confirms the dish fits the customer's practice.",
+            "explanation": "Dietary questions aren't always about ingredients - sometimes they're about how or where the food was sourced or prepared.",
             "id": "go_l68_q3",
             "menuItems": [
-                "Beet Carpaccio",
-                "Rack of Pork",
-                "Pear Tart",
-                "Apple Tart"
+                "Rice",
+                "Naan",
+                "Chicken Curry",
+                "Lamb Curry"
             ],
             "menuPrices": [
-                "$17.75",
-                "$6.00",
-                "$3.25",
-                "$11.25"
+                "$2.50",
+                "$3.00",
+                "$13.00",
+                "$15.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I have a gluten sensitivity, so I'll start with the tomato soup. For my main, the grilled sea bream, and the flourless chocolate cake for dessert.",
+            "prompt": "Since I can't have dairy, could I get the pasta with olive oil and garlic instead of the cream sauce, and a side salad with no cheese?",
             "options": [
-                "Tomato Soup",
-                "Grilled Sea Bream",
-                "Flourless Chocolate Cake",
-                "Chocolate Torte"
+                "Pasta with Cream Sauce",
+                "Pasta with Olive Oil and Garlic",
+                "Side Salad",
+                "Caesar Salad"
             ],
-            "correctAnswer": "Tomato Soup, Grilled Sea Bream, Flourless Chocolate Cake",
-            "hint": "The dietary need explains the customer's dessert choice, without adding an extra item.",
-            "explanation": "‘Flourless’ tells you the cake contains no wheat flour, making it suitable for someone avoiding gluten. The dietary note is context, not a separate selection.",
+            "correctAnswer": "Pasta with Olive Oil and Garlic, Side Salad",
+            "hint": "A dietary restriction leads to both a sauce substitution and an ingredient removal on a second item.",
+            "explanation": "One restriction can affect more than one part of an order at once - here, both the pasta's sauce and the salad's topping change because of the same need.",
             "id": "go_l69_q1",
             "menuItems": [
-                "Tomato Soup",
-                "Grilled Sea Bream",
-                "Flourless Chocolate Cake",
-                "Chocolate Torte"
+                "Pasta with Cream Sauce",
+                "Pasta with Olive Oil and Garlic",
+                "Side Salad",
+                "Caesar Salad"
             ],
             "menuPrices": [
-                "$21.75",
-                "$5.75",
-                "$15.25",
+                "$13.00",
+                "$12.00",
+                "$3.00",
+                "$4.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Because of my gluten allergy, could the fish be grilled without the breading, and could I get rice instead of the dinner roll?",
+            "options": [
+                "Breaded Fish",
+                "Grilled Fish without Breading",
+                "Dinner Roll",
+                "Rice"
+            ],
+            "correctAnswer": "Grilled Fish without Breading, Rice",
+            "hint": "The restriction requires changing the preparation of one dish and substituting an entirely different side.",
+            "explanation": "A single restriction sometimes requires two different kinds of change: altering how one dish is cooked and swapping out an unrelated side item.",
+            "id": "go_l69_q2",
+            "menuItems": [
+                "Breaded Fish",
+                "Grilled Fish without Breading",
+                "Dinner Roll",
+                "Rice"
+            ],
+            "menuPrices": [
+                "$15.00",
+                "$16.00",
+                "$1.50",
+                "$2.50"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "I'm vegetarian, so instead of the meat lasagna, could I get the vegetable version, and could the garlic bread be made without the parmesan on top, since I'm also avoiding dairy today?",
+            "options": [
+                "Meat Lasagna",
+                "Garlic Bread without Parmesan",
+                "Vegetable Lasagna",
+                "Garlic Bread with Parmesan"
+            ],
+            "correctAnswer": "Garlic Bread without Parmesan, Vegetable Lasagna",
+            "hint": "Two separate dietary considerations - vegetarian and dairy-free - are explained together, each affecting a different item.",
+            "explanation": "Combining two dietary notes in one sentence is realistic; each one applies to a different part of the order, so both need to be tracked separately.",
+            "id": "go_l69_q3",
+            "menuItems": [
+                "Meat Lasagna",
+                "Garlic Bread without Parmesan",
+                "Vegetable Lasagna",
+                "Garlic Bread with Parmesan"
+            ],
+            "menuPrices": [
+                "$14.00",
+                "$2.50",
+                "$13.00",
+                "$3.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "For me, could you confirm the eggplant parmesan has no meat in the sauce? Great. And for my partner, who's allergic to shellfish, could you check the seafood linguine doesn't share a pan with anything else?",
+            "options": [
+                "Chicken Parmesan",
+                "Seafood Linguine",
+                "Shellfish-Free Pasta",
+                "Eggplant Parmesan"
+            ],
+            "correctAnswer": "Seafood Linguine, Eggplant Parmesan",
+            "hint": "Two different diners with two different dietary needs are handled in the same exchange.",
+            "explanation": "This level combines a vegetarian confirmation for one diner with an allergy-related question for a second diner - both need separate tracking.",
+            "id": "go_l70_q1",
+            "menuItems": [
+                "Chicken Parmesan",
+                "Seafood Linguine",
+                "Shellfish-Free Pasta",
+                "Eggplant Parmesan"
+            ],
+            "menuPrices": [
+                "$15.00",
+                "$19.00",
+                "$16.00",
                 "$14.00"
             ]
         },
@@ -707,140 +791,56 @@
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Could I get the endive salad? For my main, the bone-in ribeye, cooked medium, and the crema catalana after.",
+            "prompt": "My daughter can't have dairy, so could her mac and cheese be made with a dairy-free cheese if you have it? And I'll have the grilled salmon, no butter, for myself.",
             "options": [
-                "Endive Salad",
-                "Bone-In Ribeye",
-                "Crema Catalana",
-                "Flan"
+                "Regular Mac and Cheese",
+                "Fried Salmon",
+                "Dairy-Free Mac and Cheese",
+                "Grilled Salmon"
             ],
-            "correctAnswer": "Endive Salad, Bone-In Ribeye, Crema Catalana",
-            "hint": "‘Bone-in’ describes the cut of steak, while ‘medium’ describes how it's cooked — two details about one item.",
-            "explanation": "‘Bone-in ribeye’ is a specific style of steak cut that includes the rib bone, often prized for extra flavor. Both details belong to the same main course.",
-            "id": "go_l69_q2",
-            "menuItems": [
-                "Endive Salad",
-                "Bone-In Ribeye",
-                "Crema Catalana",
-                "Flan"
-            ],
-            "menuPrices": [
-                "$20.50",
-                "$2.00",
-                "$7.25",
-                "$17.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "My partner will have the clams, and I'll have the pork chop, well-done, with the almond cake to share.",
-            "options": [
-                "Clams",
-                "Pork Chop",
-                "Almond Cake",
-                "Olive Oil Cake"
-            ],
-            "correctAnswer": "Clams, Pork Chop, Almond Cake",
-            "hint": "Two different starters or mains might be expected — read carefully to see which item belongs to which diner and course.",
-            "explanation": "This sentence gives each diner a different starter/main pairing — clams for one, pork chop for the other — with one shared dessert at the end.",
-            "id": "go_l69_q3",
-            "menuItems": [
-                "Clams",
-                "Pork Chop",
-                "Almond Cake",
-                "Olive Oil Cake"
-            ],
-            "menuPrices": [
-                "$8.50",
-                "$16.50",
-                "$21.75",
-                "$19.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I'll start with the burrata, then the lamb shank — falling apart tender, if possible — and the tiramisu to finish.",
-            "options": [
-                "Burrata",
-                "Lamb Shank",
-                "Tiramisu",
-                "Panna Cotta"
-            ],
-            "correctAnswer": "Burrata, Lamb Shank, Tiramisu",
-            "hint": "‘Falling apart tender’ describes the ideal texture after slow braising.",
-            "explanation": "‘Falling apart tender’ is another way to describe meat that has been slow-cooked until extremely soft, similar to ‘falling off the bone.’",
-            "id": "go_l70_q1",
-            "menuItems": [
-                "Burrata",
-                "Lamb Shank",
-                "Tiramisu",
-                "Panna Cotta"
-            ],
-            "menuPrices": [
-                "$11.25",
-                "$3.25",
-                "$12.50",
-                "$3.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "For my starter, the seared tuna. My main will be the porterhouse, medium-rare, and for dessert, the crème brûlée.",
-            "options": [
-                "Seared Tuna",
-                "Porterhouse",
-                "Crème Brûlée",
-                "Panna Cotta"
-            ],
-            "correctAnswer": "Seared Tuna, Porterhouse, Crème Brûlée",
-            "hint": "‘Porterhouse’ is a large, specific cut of steak — listen carefully for the exact name.",
-            "explanation": "A ‘porterhouse’ steak combines two cuts in one — a strip steak and a filet — separated by a T-shaped bone, making it one of the largest steak cuts.",
+            "correctAnswer": "Dairy-Free Mac and Cheese, Grilled Salmon",
+            "hint": "One dietary accommodation is requested for a child, while the adult's own order includes a simple removal.",
+            "explanation": "Ordering for a child with a dietary need, alongside your own separate request, requires tracking two different people's requirements in one conversation.",
             "id": "go_l70_q2",
             "menuItems": [
-                "Seared Tuna",
-                "Porterhouse",
-                "Crème Brûlée",
-                "Panna Cotta"
+                "Regular Mac and Cheese",
+                "Fried Salmon",
+                "Dairy-Free Mac and Cheese",
+                "Grilled Salmon"
             ],
             "menuPrices": [
-                "$8.50",
-                "$4.50",
-                "$2.00",
-                "$3.25"
+                "$6.50",
+                "$18.50",
+                "$7.00",
+                "$18.00"
             ]
         },
         {
-            "instruction": "Tap the items to fulfill the customer's order.",
+            "instruction": "Tap the items to fulfill the guest's final order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "We're going to start with the calamari for the table, my partner's having the risotto, and I'll have the swordfish.",
+            "prompt": "Between the two of us, I'm vegan and she's gluten-free, so could I get the vegan mushroom risotto, and could her chicken be served without any breadcrumbs, alongside plain rice instead of pasta?",
             "options": [
-                "Calamari",
-                "Risotto",
-                "Swordfish",
-                "Sea Bass"
+                "Rice",
+                "Pasta",
+                "Chicken without Breadcrumbs",
+                "Vegan Mushroom Risotto"
             ],
-            "correctAnswer": "Calamari, Risotto, Swordfish",
-            "hint": "A shared starter is followed by two different mains for two different people.",
-            "explanation": "This combines a shared starter (‘for the table’) with two separate main courses — one for each diner — a common structure in real restaurant conversations.",
+            "correctAnswer": "Rice, Chicken without Breadcrumbs, Vegan Mushroom Risotto",
+            "hint": "Two different dietary needs shape three separate decisions across two people's dishes.",
+            "explanation": "This final level of the unit shows how two people with two different dietary restrictions can each require multiple adjustments within one shared conversation.",
             "id": "go_l70_q3",
             "menuItems": [
-                "Calamari",
-                "Risotto",
-                "Swordfish",
-                "Sea Bass"
+                "Rice",
+                "Pasta",
+                "Chicken without Breadcrumbs",
+                "Vegan Mushroom Risotto"
             ],
             "menuPrices": [
-                "$12.50",
-                "$6.00",
-                "$7.25",
-                "$10.00"
+                "$3.00",
+                "$3.50",
+                "$16.00",
+                "$14.00"
             ]
         }
     ]

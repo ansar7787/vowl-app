@@ -8,23 +8,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'close' as used in the sentence below?",
-            "targetWord": "close",
-            "sentence": "He held his precious manuscript extremely close, as if afraid someone might steal a glance at it.",
+            "question": "Identify the part of speech of 'whose' in this context.",
+            "targetWord": "whose",
+            "sentence": "The defendant, whose testimony had shifted twice already, struggled to explain the inconsistency convincingly.",
             "options": [
-                "Noun",
-                "Adjective",
                 "Verb",
-                "Adverb"
+                "Pronoun",
+                "Noun",
+                "Adjective"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adverb",
-            "hint": "'Close' was an adjective in level 190. Here, does it modify the verb 'held' or the noun 'manuscript'?",
-            "explanation": "'Close' is an adverb here - it modifies the verb 'held' and means 'closely' or 'near to him'. Compare: 'pay close attention' (adjective = describes attention) vs. 'held it close' (adverb = describes how he held it).",
-            "grammarRule": "Adverbs",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "This word shows possession within a descriptive clause. Whose testimony had shifted?",
+            "explanation": "'Whose' is a relative pronoun showing possession here — it introduces a clause describing 'the defendant' by identifying whose testimony had changed.",
+            "grammarRule": "Relative pronoun showing possession in a descriptive clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "relative use",
+                "interrogative use"
             ]
         },
         {
@@ -32,23 +32,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'incipient' as used in the sentence below?",
-            "targetWord": "incipient",
-            "sentence": "There are now incipient signs of a slow economic recovery, though analysts remain appropriately cautious.",
+            "question": "And in that same sentence, what part of speech is 'shifted'?",
+            "targetWord": "shifted",
+            "sentence": "The defendant, whose testimony had shifted twice already, struggled to explain the inconsistency convincingly.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
+                "Verb",
+                "Noun",
                 "Adverb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives can describe the very beginning stages of something. What does 'incipient' describe?",
-            "explanation": "'Incipient' is an adjective - it modifies 'signs' and means in an early, just-beginning stage of development. Stage adjectives (incipient, nascent, emerging, fledgling) describe things just starting to appear.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Verb",
+            "hint": "Think about the job it performs here. What had the testimony done?",
+            "explanation": "'Shifted' is a verb here, used in the past perfect tense ('had shifted') to describe a change that happened before the defendant's struggle to explain it.",
+            "grammarRule": "Verb in the past perfect tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-participle form"
             ]
         },
         {
@@ -56,23 +56,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'gainsay' as used in the sentence below?",
-            "targetWord": "gainsay",
-            "sentence": "No serious and objective observer could reasonably gainsay the compelling evidence that had been presented.",
+            "question": "In that same sentence, what part of speech is 'convincingly'?",
+            "targetWord": "convincingly",
+            "sentence": "The defendant, whose testimony had shifted twice already, struggled to explain the inconsistency convincingly.",
             "options": [
+                "Adjective",
                 "Noun",
                 "Verb",
-                "Adjective",
                 "Adverb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Formal verbs describe the act of denying or contradicting. What could no observer do?",
-            "explanation": "'Gainsay' is a verb - it follows the modal 'could' and means to deny or contradict. It is a formal literary word: 'one cannot gainsay the facts' = 'one cannot deny the facts'.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adverb",
+            "hint": "Look at what this word does in this exact sentence. How did the defendant fail to explain the inconsistency?",
+            "explanation": "'Convincingly' is a manner adverb modifying the verb 'explain', describing the persuasiveness (or lack of it) in the defendant's account.",
+            "grammarRule": "Manner adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "adverb form"
             ]
         },
         {
@@ -80,23 +80,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'run' as used in the sentence below?",
-            "targetWord": "run",
-            "sentence": "The acclaimed theatrical play had an enormously successful run of over two hundred performances.",
+            "question": "Based on how it is used here, 'Whether' is a:",
+            "targetWord": "Whether",
+            "sentence": "Whether an action is right often depends less on its outcome than on the intention behind it, which philosophers have debated for centuries.",
             "options": [
-                "Noun",
-                "Adjective",
+                "Conjunction",
                 "Verb",
-                "Adverb"
+                "Noun",
+                "Pronoun"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "'Run' is very commonly a verb. Here, what concept does it name as a noun?",
-            "explanation": "'Run' is a noun - it names a period of continuous performances of a play. 'Run' has many POS: verb (to run), noun (a ski run, a run of luck, a home run, a run of performances). It follows 'a successful'.",
-            "grammarRule": "Nouns",
+            "correctAnswer": "Conjunction",
+            "hint": "This word introduces a clause naming the question being discussed, rather than describing a noun. What question does the sentence explore?",
+            "explanation": "'Whether' is a subordinating conjunction here, introducing the noun clause 'an action is right', which functions as the subject of the sentence.",
+            "grammarRule": "Subordinating conjunction introducing a noun clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related conjunction (if)"
             ]
         },
         {
@@ -104,23 +104,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'nugatory' as used in the sentence below?",
-            "targetWord": "nugatory",
-            "sentence": "Without any enforcement mechanisms, the agreement was essentially nugatory from the very outset.",
+            "question": "In the same sentence, what role does 'than' play?",
+            "targetWord": "than",
+            "sentence": "Whether an action is right often depends less on its outcome than on the intention behind it, which philosophers have debated for centuries.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Preposition",
+                "Conjunction",
+                "Noun"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives can describe things that are of no value. What does 'nugatory' describe?",
-            "explanation": "'Nugatory' is an adjective - it follows the linking verb 'was' as a predicate adjective and means of no value, importance, or practical use. Worthlessness adjectives (nugatory, futile, inconsequential) describe things producing no meaningful result.",
-            "grammarRule": "Adjectives",
+            "correctAnswer": "Conjunction",
+            "hint": "This word connects two things being compared. What two things does the sentence compare?",
+            "explanation": "'Than' functions as a conjunction here, connecting the comparison between depending on 'outcome' and depending on 'intention'.",
+            "grammarRule": "Conjunction introducing a comparison",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related preposition use"
             ]
         },
         {
@@ -128,23 +128,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'inveigh' as used in the sentence below?",
-            "targetWord": "inveigh",
-            "sentence": "She was well known throughout the profession to inveigh passionately against any form of intellectual dishonesty.",
+            "question": "Within that same sentence, 'which' is functioning as a:",
+            "targetWord": "which",
+            "sentence": "Whether an action is right often depends less on its outcome than on the intention behind it, which philosophers have debated for centuries.",
             "options": [
-                "Noun",
+                "Pronoun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Conjunction",
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Formal verbs describe speaking out forcefully against something. What was she known to do?",
-            "explanation": "'Inveigh' is a verb - it follows 'to' as an infinitive and means to speak or write against something with great force. It is always followed by 'against'. 'Invective' is the related noun.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Pronoun",
+            "hint": "This word refers back to the entire idea of intention mattering more than outcome, not just one noun. What does 'which' refer to here?",
+            "explanation": "'Which' is a relative pronoun referring back to the whole idea expressed earlier in the sentence — the same whole-clause pattern practiced throughout this course.",
+            "grammarRule": "Relative pronoun referring to a whole clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "relative use",
+                "interrogative use"
             ]
         },
         {
@@ -152,23 +152,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'light' as used in the sentence below?",
-            "targetWord": "light",
-            "sentence": "In the light of these significant new findings, the committee is reconsidering its entire original position.",
+            "question": "Which category fits 'overlooked' in this sentence?",
+            "targetWord": "overlooked",
+            "sentence": "Looking back, I realize that the small kindnesses I overlooked then mattered more than anything I chased at the time.",
             "options": [
-                "Noun",
                 "Adjective",
+                "Noun",
                 "Verb",
                 "Adverb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "'Light' was an adjective in level 43 and verb in level 183. Here it is in a fixed phrase. What does it name?",
-            "explanation": "'Light' is a noun - in the idiom 'in the light of' (= considering / given), it names the metaphorical illumination cast by information. It is the object of the preposition 'in'. This idiom is common in formal academic writing.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Verb",
+            "hint": "Check the words directly around it for clues. What did the speaker do to those small kindnesses?",
+            "explanation": "'Overlooked' is a verb here, describing the speaker's past failure to notice the small kindnesses.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -176,23 +176,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'pusillanimous' as used in the sentence below?",
-            "targetWord": "pusillanimous",
-            "sentence": "The committee's timid and pusillanimous response to the scandal was widely seen as a shameless betrayal.",
+            "question": "What grammatical job does 'mattered' do in this sentence?",
+            "targetWord": "mattered",
+            "sentence": "Looking back, I realize that the small kindnesses I overlooked then mattered more than anything I chased at the time.",
             "options": [
                 "Noun",
-                "Verb",
                 "Adjective",
+                "Verb",
                 "Adverb"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives can describe a lack of courage. What does 'pusillanimous' describe?",
-            "explanation": "'Pusillanimous' is an adjective - it modifies 'response' and means showing a lack of courage; timid and cowardly. From Latin: pusillus (very small) + animus (spirit). Cowardice adjectives (pusillanimous, faint-hearted, spineless) describe timidity.",
-            "grammarRule": "Adjectives",
+            "correctAnswer": "Verb",
+            "hint": "Remember from an earlier lesson that this word can mean 'was important,' not just 'issues.' What does 'mattered' mean here?",
+            "explanation": "'Mattered' functions as a verb here, meaning 'was important' — the same word and meaning tested in an earlier lesson, now in its past-tense form.",
+            "grammarRule": "Action verb expressing importance",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "verb use"
             ]
         },
         {
@@ -200,23 +200,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'promulgated' as used in the sentence below?",
-            "targetWord": "promulgated",
-            "sentence": "The new financial rules were formally promulgated in the official government gazette without prior announcement.",
+            "question": "Which part of speech is 'anything' as it is used here?",
+            "targetWord": "anything",
+            "sentence": "Looking back, I realize that the small kindnesses I overlooked then mattered more than anything I chased at the time.",
             "options": [
-                "Noun",
                 "Verb",
+                "Noun",
                 "Adjective",
-                "Adverb"
+                "Pronoun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Formal legal verbs describe making something official and public. What happened to the new rules?",
-            "explanation": "'Promulgated' is a verb - it's the past participle of 'promulgate', appearing in a passive construction ('were formally promulgated') meaning to make a law or decree known publicly. 'Promulgation' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Pronoun",
+            "hint": "Let the sentence, not the spelling, decide. What did the speaker chase at the time?",
+            "explanation": "'Anything' is an indefinite pronoun here, referring to an unspecified thing or things the speaker pursued — it functions as the object of 'chased'.",
+            "grammarRule": "Indefinite pronoun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "singular use",
+                "related pronoun (everything)"
             ]
         },
         {
@@ -224,23 +224,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'conduct' as used in the sentence below?",
-            "targetWord": "conduct",
-            "sentence": "Independent external auditors were formally appointed to conduct a thorough review of all the accounts.",
+            "question": "The word 'Although' is being used as which grammatical category?",
+            "targetWord": "Although",
+            "sentence": "Although the sample size was small, the results suggest a correlation that warrants further investigation.",
             "options": [
                 "Noun",
-                "Adjective",
                 "Verb",
-                "Adverb"
+                "Preposition",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Verb",
-            "hint": "'Conduct' was a noun in level 122 ('professional conduct'). Here, is it an action word?",
-            "explanation": "'Conduct' is a verb here - it follows 'to' and means to carry out or manage a process. Compare: 'professional conduct' (noun = behaviour) vs. 'to conduct a survey' (verb = to carry out). Stress: CON-duct (n) vs. con-DUCT (v).",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Conjunction",
+            "hint": "This word introduces a clause that contrasts with the main claim. What limitation does it acknowledge?",
+            "explanation": "'Although' is a subordinating conjunction here, introducing a clause that contrasts with the main claim — the sample was small, yet the results are still meaningful.",
+            "grammarRule": "Subordinating conjunction introducing a contrast clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related preposition (despite)"
             ]
         },
         {
@@ -248,23 +248,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'aphorism' as used in the sentence below?",
-            "targetWord": "aphorism",
-            "sentence": "The lecture opened with a memorable aphorism that perfectly encapsulated the central theme of the day.",
+            "question": "Now consider 'suggest' in that same sentence. What part of speech is it?",
+            "targetWord": "suggest",
+            "sentence": "Although the sample size was small, the results suggest a correlation that warrants further investigation.",
             "options": [
-                "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Literary nouns name concise statements of general truth. What does 'aphorism' name?",
-            "explanation": "'Aphorism' is a noun - it names a short, concise statement expressing a general truth or clever observation. It follows 'a memorable'. Brevity-statement nouns (aphorism, maxim, proverb, axiom) name pithy expressions of wisdom.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Verb",
+            "hint": "Set aside what you know about this word in general. What do the results indicate?",
+            "explanation": "'Suggest' is a verb here, describing what the results indicate about a possible correlation.",
+            "grammarRule": "Action verb in present tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "-s form"
             ]
         },
         {
@@ -272,23 +272,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'vitiate' as used in the sentence below?",
-            "targetWord": "vitiate",
-            "sentence": "The undisclosed conflict of interest was found to vitiate the integrity of the entire research process.",
+            "question": "Which grammatical category fits 'that' in that same sentence?",
+            "targetWord": "that",
+            "sentence": "Although the sample size was small, the results suggest a correlation that warrants further investigation.",
             "options": [
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Pronoun",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Formal verbs describe making something faulty or invalid. What did the conflict of interest do?",
-            "explanation": "'Vitiate' is a verb - it follows 'to' as an infinitive and means to impair or make ineffective; to corrupt or invalidate. 'Vitiation' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Pronoun",
+            "hint": "This word introduces a clause describing one specific noun just before it. What does the clause 'that warrants further investigation' describe?",
+            "explanation": "'That' is a relative pronoun introducing a restrictive clause describing 'a correlation' — it tells us exactly which correlation is meant.",
+            "grammarRule": "Relative pronoun introducing a restrictive clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "relative use",
+                "demonstrative use"
             ]
         },
         {
@@ -296,23 +296,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'like' as used in the sentence below?",
-            "targetWord": "like",
-            "sentence": "It looks increasingly like the committee has made its decision without consulting any of the stakeholders.",
+            "question": "What role does 'but' play in this sentence?",
+            "targetWord": "but",
+            "sentence": "We must invest not only in infrastructure but also in the people who will maintain it for generations to come.",
             "options": [
-                "Preposition",
-                "Conjunction",
-                "Adverb",
-                "Verb"
+                "Adjective",
+                "Noun",
+                "Pronoun",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Conjunction",
-            "hint": "'Like' was a preposition in level 179. Here, does it introduce a full clause?",
-            "explanation": "'Like' is a conjunction (informal/colloquial) - it introduces the full clause 'the committee has made its decision'. Traditionally, 'as if' or 'as though' would be preferred in formal writing, but 'like' as a conjunction is increasingly accepted.",
-            "grammarRule": "Conjunctions",
+            "hint": "Remember the correlative word pattern from an earlier lesson. This word pairs with 'not only' to add a second area of investment. What role does it play here?",
+            "explanation": "'But' functions as part of the correlative conjunction 'not only...but also' here, pairing with 'not only' to add investing in people alongside infrastructure — the same pattern taught in an earlier lesson.",
+            "grammarRule": "Correlative conjunction pairing with 'not only'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related conjunction (and)"
             ]
         },
         {
@@ -320,23 +320,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'polysemy' as used in the sentence below?",
-            "targetWord": "polysemy",
-            "sentence": "Polysemy - the property of a single word having multiple related meanings - is a fundamental feature of language.",
+            "question": "And in that same sentence, what part of speech is 'who'?",
+            "targetWord": "who",
+            "sentence": "We must invest not only in infrastructure but also in the people who will maintain it for generations to come.",
             "options": [
+                "Pronoun",
                 "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
+                "Conjunction",
+                "Verb"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Linguistic nouns name properties of words. What does 'polysemy' name?",
-            "explanation": "'Polysemy' is a noun - it names the linguistic property of a single word having multiple related meanings (e.g., 'bank' = financial institution or river bank). It is the subject. The suffix '-semy' relates to meaning.",
-            "grammarRule": "Nouns",
+            "correctAnswer": "Pronoun",
+            "hint": "This word introduces a clause describing the people just mentioned. What will these people do?",
+            "explanation": "'Who' is a relative pronoun introducing the clause 'who will maintain it', describing the people the investment supports.",
+            "grammarRule": "Relative pronoun introducing a descriptive clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "subject form",
+                "object form (whom)"
             ]
         },
         {
@@ -344,23 +344,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'mutable' as used in the sentence below?",
-            "targetWord": "mutable",
-            "sentence": "The fundamentally mutable nature of living language means that dictionaries are always somewhat out of date.",
+            "question": "Back in that same sentence, what kind of word is 'to come'?",
+            "targetWord": "to come",
+            "sentence": "We must invest not only in infrastructure but also in the people who will maintain it for generations to come.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Adverb",
+                "Verb"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "Adjective",
-            "hint": "Adjectives can describe the capacity for change. What does 'mutable' describe here?",
-            "explanation": "'Mutable' is an adjective - it modifies 'nature' and means subject to or able to change. The prefix 'im-' would negate it ('immutable' = not subject to change). Changeability adjectives (mutable, immutable, fluid) describe the capacity for change.",
-            "grammarRule": "Adjectives",
+            "hint": "This 'to + verb' phrase describes which generations are meant, modifying the noun right before it. Which generations does the sentence refer to?",
+            "explanation": "'To come' functions as an adjective here, modifying 'generations' and describing those still in the future — a common idiomatic use of the infinitive as an adjective.",
+            "grammarRule": "Infinitive functioning as an adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "infinitive use",
+                "gerund use"
             ]
         },
         {
@@ -368,23 +368,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'enough' as used in the sentence below?",
-            "targetWord": "enough",
-            "sentence": "Interestingly enough, both independent researchers had reached exactly the same conclusion simultaneously.",
+            "question": "What part of speech is 'unremarkable' in this sentence?",
+            "targetWord": "unremarkable",
+            "sentence": "The sauce, though visually unremarkable, delivered a depth of flavor that lingered pleasantly long after the plate was cleared.",
             "options": [
                 "Adverb",
                 "Adjective",
-                "Noun",
-                "Determiner"
+                "Verb",
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Adverb",
-            "hint": "'Enough' can be an adverb, adjective, or determiner. Here, does it modify the adverb 'interestingly'?",
-            "explanation": "'Enough' is an adverb - it modifies the adverb 'interestingly' in 'interestingly enough', adding emphasis or irony. Postpositive adverbs like this ('strangely enough', 'oddly enough') follow and modify another adverb.",
-            "grammarRule": "Adverbs",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "This word, set off by commas, describes the sauce's appearance without a linking verb. What quality did the sauce lack visually?",
+            "explanation": "'Unremarkable' functions as an adjective here, describing the sauce's ordinary appearance — it appears in an interrupting phrase, similar to other participial and descriptive adjectives from earlier lessons.",
+            "grammarRule": "Adjective in an interrupting phrase",
             "transformations": [
-                "noun form",
-                "verb form"
+                "positive form",
+                "comparative form"
             ]
         },
         {
@@ -392,23 +392,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'peripatetic' as used in the sentence below?",
-            "targetWord": "peripatetic",
-            "sentence": "As a peripatetic music tutor, she visited twelve different schools across the county every week.",
+            "question": "Looking at the same sentence, how is 'that' functioning?",
+            "targetWord": "that",
+            "sentence": "The sauce, though visually unremarkable, delivered a depth of flavor that lingered pleasantly long after the plate was cleared.",
             "options": [
-                "Noun",
+                "Pronoun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives can describe someone who travels from place to place for work. What does 'peripatetic' describe?",
-            "explanation": "'Peripatetic' is an adjective - it modifies 'music tutor' and means travelling from place to place to work. From Greek: peri (around) + patein (to walk). Itinerancy adjectives (peripatetic, itinerant, nomadic) describe those who travel for work.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Pronoun",
+            "hint": "This word introduces a clause describing one specific noun just before it. What does the clause 'that lingered pleasantly' describe?",
+            "explanation": "'That' is a relative pronoun introducing a restrictive clause describing 'a depth of flavor' — it tells us exactly which depth is meant.",
+            "grammarRule": "Relative pronoun introducing a restrictive clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "relative use",
+                "demonstrative use"
             ]
         },
         {
@@ -416,23 +416,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'deracinated' as used in the sentence below?",
-            "targetWord": "deracinated",
-            "sentence": "Decades of enforced migration had effectively deracinated entire communities from their cultural heritage.",
+            "question": "Now consider 'pleasantly' in that same sentence. What part of speech is it?",
+            "targetWord": "pleasantly",
+            "sentence": "The sauce, though visually unremarkable, delivered a depth of flavor that lingered pleasantly long after the plate was cleared.",
             "options": [
+                "Adverb",
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Formal verbs describe uprooting from one's cultural home. What did enforced migration do?",
-            "explanation": "'Deracinated' is a verb - it's the past participle of 'deracinate', used in the past perfect ('had effectively deracinated'), meaning to uproot from one's social environment or cultural heritage. 'Deracination' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adverb",
+            "hint": "Let the sentence, not the spelling, decide. How did the flavor linger?",
+            "explanation": "'Pleasantly' is a manner adverb modifying the verb 'lingered', describing the enjoyable way the flavor remained.",
+            "grammarRule": "Manner adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "adverb form"
             ]
         },
         {
@@ -440,23 +440,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'enough' as used in the sentence below?",
-            "targetWord": "enough",
-            "sentence": "She was fortunate to have enough courage to speak the uncomfortable truth before the full committee.",
+            "question": "Classify 'Designed' as it appears in this sentence.",
+            "targetWord": "Designed",
+            "sentence": "Designed to withstand earthquakes, the building's unusual shape has puzzled visitors who expect function to follow form.",
             "options": [
+                "Verb",
                 "Adverb",
-                "Adjective",
                 "Noun",
-                "Determiner"
+                "Adjective"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Determiner",
-            "hint": "'Enough' was an adverb in level 196. Here it comes before a noun - does it describe a quality, or show a quantity?",
-            "explanation": "'Enough' is a determiner here - it comes before the noun 'courage' to show quantity, just like 'some', 'many', or 'every'. Compare: 'interestingly enough' (adverb = modifies another adverb) vs. 'enough courage' (determiner = shows quantity before a noun).",
-            "grammarRule": "Parts of Speech",
+            "correctAnswer": "Adjective",
+            "hint": "This word opens the sentence, describing the building's purpose without a linking verb. What was the building made to do?",
+            "explanation": "'Designed' functions as an adjective here, describing the building's engineered purpose — it begins a participial phrase that modifies 'the building' later in the sentence.",
+            "grammarRule": "Participial adjective modifying the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb form",
+                "adjective form"
             ]
         },
         {
@@ -464,23 +464,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'lexicon' as used in the sentence below?",
-            "targetWord": "lexicon",
-            "sentence": "The technical lexicon of modern medicine is largely derived from classical Latin and ancient Greek roots.",
+            "question": "In that same sentence, what part of speech is 'building's'?",
+            "targetWord": "building's",
+            "sentence": "Designed to withstand earthquakes, the building's unusual shape has puzzled visitors who expect function to follow form.",
             "options": [
-                "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Noun",
-            "hint": "Linguistic nouns name specialised vocabularies. What does 'lexicon' name here?",
-            "explanation": "'Lexicon' is a noun - it names the vocabulary used in a particular field or language. It follows 'The technical'. Vocabulary nouns (lexicon, vocabulary, terminology, jargon) name bodies of words.",
-            "grammarRule": "Nouns",
+            "hint": "Remember: a possessive form is still the same part of speech as its base word. What does 'building's' name here?",
+            "explanation": "'Building's' is a noun in its possessive form here, naming the structure that owns the unusual shape — it remains a noun despite functioning like a modifier.",
+            "grammarRule": "Possessive noun functioning as a modifier",
             "transformations": [
-                "noun form",
-                "verb form"
+                "possessive form",
+                "plural form"
             ]
         },
         {
@@ -488,23 +488,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'elucidate' as used in the sentence below?",
-            "targetWord": "elucidate",
-            "sentence": "The professor paused in her lecture to elucidate the complex theoretical framework before moving forward.",
+            "question": "Within that same sentence, 'puzzled' is functioning as a:",
+            "targetWord": "puzzled",
+            "sentence": "Designed to withstand earthquakes, the building's unusual shape has puzzled visitors who expect function to follow form.",
             "options": [
-                "Noun",
+                "Adverb",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Adjective"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "Verb",
-            "hint": "Formal verbs describe making complex things clearer. What did the professor pause to do?",
-            "explanation": "'Elucidate' is a verb - it follows 'to' as an infinitive and means to make something clear or easier to understand. 'Elucidation' is the noun form.",
-            "grammarRule": "Verbs",
+            "hint": "Set aside what you know about this word in general. What has the building's unusual shape done to visitors?",
+            "explanation": "'Puzzled' is a verb here, used in the present perfect tense ('has puzzled') to describe the effect of the building's shape on visitors.",
+            "grammarRule": "Verb in the present perfect tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-participle form"
             ]
         },
         {
@@ -512,23 +512,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'fast' as used in the sentence below?",
-            "targetWord": "fast",
-            "sentence": "She maintained her religious fast from before sunrise to after sunset throughout the entire month.",
+            "question": "Which grammatical category best describes 'observing' here?",
+            "targetWord": "observing",
+            "sentence": "Astronomers observing the distant galaxy noticed a faint signal that repeated every few hours, though its origin remains unexplained.",
             "options": [
-                "Noun",
                 "Adjective",
                 "Verb",
-                "Adverb"
+                "Adverb",
+                "Noun"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "'Fast' was an adjective in level 122 and verb in level 184. Here, what concept does it name?",
-            "explanation": "'Fast' is a noun - it names a period of abstaining from food, typically for religious reasons. Four POS for 'fast': adjective (a fast car), adverb (she ran fast), verb (to fast = to abstain), noun (breaking one's fast). It follows 'her religious'.",
-            "grammarRule": "Nouns",
+            "correctAnswer": "Adjective",
+            "hint": "This '-ing' word sits after the noun it describes. Which astronomers noticed the signal?",
+            "explanation": "'Observing' functions as an adjective here, modifying 'Astronomers' and describing which ones made the discovery — those watching the distant galaxy.",
+            "grammarRule": "Participial adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb form",
+                "adjective form"
             ]
         },
         {
@@ -536,23 +536,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'laconic' as used in the sentence below?",
-            "targetWord": "laconic",
-            "sentence": "His notably laconic two-word reply told the assembled journalists everything they needed to know.",
+            "question": "Staying with that sentence, which category describes 'that'?",
+            "targetWord": "that",
+            "sentence": "Astronomers observing the distant galaxy noticed a faint signal that repeated every few hours, though its origin remains unexplained.",
             "options": [
+                "Conjunction",
+                "Pronoun",
                 "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
+                "Verb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives can describe a very brief and direct style of expression. What does 'laconic' describe?",
-            "explanation": "'Laconic' is an adjective - it modifies 'reply' and means using very few words. From Laconia (Sparta), whose inhabitants were famously terse. Brevity adjectives (laconic, terse, curt, succinct) describe short expression.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "This word introduces a clause describing one specific noun just before it. What does the clause 'that repeated every few hours' describe?",
+            "explanation": "'That' is a relative pronoun introducing a restrictive clause describing 'a faint signal' — it tells us exactly which signal is meant.",
+            "grammarRule": "Relative pronoun introducing a restrictive clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "relative use",
+                "demonstrative use"
             ]
         },
         {
@@ -560,23 +560,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'impugn' as used in the sentence below?",
-            "targetWord": "impugn",
-            "sentence": "To formally impugn a witness's character, the defence must present credible and admissible evidence of bias.",
+            "question": "In the same sentence, what role does 'though' play?",
+            "targetWord": "though",
+            "sentence": "Astronomers observing the distant galaxy noticed a faint signal that repeated every few hours, though its origin remains unexplained.",
             "options": [
-                "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Preposition",
+                "Conjunction",
+                "Noun"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Legal verbs describe calling into question the honesty of something. What must the defence do?",
-            "explanation": "'Impugn' is a verb - it follows 'to' as an infinitive and means to dispute the truth, validity, or honesty of something. Challenge verbs (impugn, challenge, dispute, question) describe attacking credibility.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Conjunction",
+            "hint": "This word introduces a contrast at the end of the sentence. What remains unknown, despite the discovery?",
+            "explanation": "'Though' is a subordinating conjunction here, introducing a clause that contrasts with the discovery — the signal was found, yet its cause is still a mystery.",
+            "grammarRule": "Subordinating conjunction introducing a contrast clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "conjunction use",
+                "related conjunction (although)"
             ]
         },
         {
@@ -584,23 +584,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'fine' as used in the sentence below?",
-            "targetWord": "fine",
-            "sentence": "The regulatory court ultimately chose to fine the company three million pounds for the persistent safety violations.",
+            "question": "In this context, what part of speech is 'which'?",
+            "targetWord": "which",
+            "sentence": "The kitchen table, which Grandma polished every Sunday, still holds the faint scratches of a hundred forgotten meals.",
             "options": [
                 "Noun",
-                "Adjective",
-                "Verb",
-                "Adverb"
+                "Pronoun",
+                "Conjunction",
+                "Verb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Verb",
-            "hint": "'Fine' was an adjective in level 123. Here, is it an action word - imposing a financial penalty?",
-            "explanation": "'Fine' is a verb - it describes the action of imposing a financial penalty. Compare: 'fine porcelain' (adjective = high quality) vs. 'the court fined them' (verb = imposed a penalty).",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "This word introduces a clause describing one specific noun just before it. What does the clause 'which Grandma polished every Sunday' describe?",
+            "explanation": "'Which' is a relative pronoun introducing a descriptive clause describing 'the kitchen table' — the same table introduced much earlier in this course, when 'kitchen' was first shown functioning as an adjective.",
+            "grammarRule": "Relative pronoun introducing a descriptive clause",
             "transformations": [
-                "noun form",
-                "verb form"
+                "relative use",
+                "interrogative use"
             ]
         },
         {
@@ -608,23 +608,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'elision' as used in the sentence below?",
-            "targetWord": "elision",
-            "sentence": "The contraction 'won't' is a double elision - both the vowel of 'will' and the 'o' of 'not' are omitted.",
+            "question": "Which grammatical category fits 'polished' in that same sentence?",
+            "targetWord": "polished",
+            "sentence": "The kitchen table, which Grandma polished every Sunday, still holds the faint scratches of a hundred forgotten meals.",
             "options": [
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Linguistic nouns name the omission of sounds or letters. What does 'elision' name?",
-            "explanation": "'Elision' is a noun - it names the omission of a sound, syllable, or letter. It follows 'a double'. Linguistic omission nouns (elision, ellipsis, apocope, syncope) name different types of sound or letter omission.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Verb",
+            "hint": "Set aside what you know about this word in general. What action did she take?",
+            "explanation": "'Polished' is a verb here, describing Grandma's weekly action of cleaning and shining the table.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -632,23 +632,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'remonstrate' as used in the sentence below?",
-            "targetWord": "remonstrate",
-            "sentence": "She felt strongly compelled to remonstrate firmly with the board over the secretive way the decision had been made.",
+            "question": "Which grammatical category fits 'forgotten' in that same sentence?",
+            "targetWord": "forgotten",
+            "sentence": "The kitchen table, which Grandma polished every Sunday, still holds the faint scratches of a hundred forgotten meals.",
             "options": [
+                "Adverb",
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Formal verbs describe making a forceful objection. What did she feel compelled to do?",
-            "explanation": "'Remonstrate' is a verb - it follows 'to' as an infinitive and means to make a forceful protest or objection. 'Remonstrance' is the noun form.",
-            "grammarRule": "Verbs",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "This word, though it comes from a verb, describes the meals rather than naming an action. What quality do the meals have now?",
+            "explanation": "'Forgotten' functions as an adjective here, modifying 'meals' and describing that they are no longer remembered.",
+            "grammarRule": "Participial adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb form",
+                "adjective form"
             ]
         },
         {
@@ -656,23 +656,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'still' as used in the sentence below?",
-            "targetWord": "still",
-            "sentence": "Try to keep your writing hand perfectly still while I carefully remove the splinter from your finger.",
+            "question": "What kind of word is 'Well' in this sentence?",
+            "targetWord": "Well",
+            "sentence": "Well, after two hundred levels of noticing how a single word like 'light' can shift from noun to verb to adjective depending on what it's doing in a sentence, you've learned to ask not what a word is, but what it does.",
             "options": [
                 "Noun",
-                "Adjective",
                 "Adverb",
-                "Verb"
+                "Interjection",
+                "Adjective"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Adjective",
-            "hint": "'Still' was an adverb in level 128. Here, does it describe the state of the hand or modify a verb?",
-            "explanation": "'Still' is an adjective here - it follows the linking verb 'keep' as a predicate adjective describing the desired state of 'your hand' (motionless). Compare: 'still searching' (adverb = continuing) vs. 'keep still' (adjective = motionless).",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Interjection",
+            "hint": "Remember from an earlier lesson: this word can stand alone at the start of a sentence, expressing a reflective pause. What role does it play here?",
+            "explanation": "'Well' functions as an interjection here, signaling a thoughtful pause before this closing reflection — the same role it played in an earlier lesson on misconceptions.",
+            "grammarRule": "Interjection expressing a pause or reflection",
             "transformations": [
-                "noun form",
-                "verb form"
+                "interjection use",
+                "adjective use"
             ]
         },
         {
@@ -680,23 +680,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'syntax' as used in the sentence below?",
-            "targetWord": "syntax",
-            "sentence": "Understanding syntax - the rules governing how words are arranged to form meaningful sentences - is fundamental.",
+            "question": "Now consider 'noticing' in that same sentence. What part of speech is it?",
+            "targetWord": "noticing",
+            "sentence": "Well, after two hundred levels of noticing how a single word like 'light' can shift from noun to verb to adjective depending on what it's doing in a sentence, you've learned to ask not what a word is, but what it does.",
             "options": [
-                "Noun",
                 "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Noun"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Noun",
-            "hint": "Linguistic nouns name branches of grammar. What does 'syntax' name here?",
-            "explanation": "'Syntax' is a noun - it names the branch of linguistics concerned with sentence structure. It is the object of 'Understanding'. Linguistic branch nouns (syntax, morphology, phonology, semantics) name sub-disciplines of linguistics.",
-            "grammarRule": "Nouns",
+            "hint": "This '-ing' word names an activity and follows the preposition 'of.' What have you been doing across two hundred levels?",
+            "explanation": "'Noticing' is a gerund here, functioning as the object of the preposition 'of' — it names the ongoing skill built throughout this entire course.",
+            "grammarRule": "Gerund functioning as the object of a preposition",
             "transformations": [
-                "noun form",
-                "verb form"
+                "gerund use",
+                "verb use"
             ]
         },
         {
@@ -704,23 +704,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'presuppose' as used in the sentence below?",
-            "targetWord": "presuppose",
-            "sentence": "The central argument appears to presuppose the very conclusion it is attempting to prove - a logical fallacy.",
+            "question": "And what part of speech is the very last word, 'does', in that same sentence?",
+            "targetWord": "does",
+            "sentence": "Well, after two hundred levels of noticing how a single word like 'light' can shift from noun to verb to adjective depending on what it's doing in a sentence, you've learned to ask not what a word is, but what it does.",
             "options": [
-                "Noun",
+                "Adverb",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Adjective"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "Verb",
-            "hint": "Logical verbs describe assuming something as already true without proof. What does the argument appear to do?",
-            "explanation": "'Presuppose' is a verb - it follows 'to' as an infinitive and means to take for granted or assume as a precondition without justification. 'Presupposition' is the noun form. This describes the logical fallacy of begging the question.",
-            "grammarRule": "Verbs",
+            "hint": "This is the very last word tested in the entire course, and it captures the central lesson: a word's part of speech depends on what it does, not just what it is. What kind of word is 'does' itself, right here?",
+            "explanation": "'Does' is a verb here, completing the sentence's closing idea — fittingly, the final word tested in this course is itself a verb, showing an action, and it embodies the guiding principle taught from Level 1 onward: identify a word by its function in the sentence, not by assumption.",
+            "grammarRule": "Action verb completing a contrastive statement",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "-s form"
             ]
         }
     ]

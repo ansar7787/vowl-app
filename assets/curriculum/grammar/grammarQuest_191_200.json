@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "gq_l191_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which sentence demonstrates the highest level of syntactic complexity?",
+            "question": "Thank you for your proposal. ___ we appreciate the offer, we believe the terms could be more favorable to both parties.",
             "options": [
-                "The committee had a meeting because of the rain.",
-                "She left when it rained.",
-                "It rained.",
-                "Having anticipated that the situation, already precarious, might deteriorate further, the committee convened an emergency session."
+                "Because",
+                "So",
+                "While",
+                "And"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Having anticipated that the situation, already precarious, might deteriorate further, the committee convened an emergency session.",
-            "hint": "Expert-level writing integrates multiple embedded structures.",
-            "explanation": "Option C demonstrates the highest complexity: 'Having anticipated' (perfect participle clause) + 'that the situation' (embedded noun clause) + 'already precarious' (appositive adjective) + 'might deteriorate further' (modal + infinitive) - all nested within a single, grammatically controlled sentence.",
-            "grammarRule": "Syntactic Complexity / Inversion"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "While",
+            "hint": "The email politely contrasts appreciation with a request for better terms.",
+            "explanation": "'While' introduces a polite contrast in formal writing: while we appreciate it, we believe it could improve. This softens the pushback that follows.",
+            "grammarRule": "Negotiation: While (Contrast)"
         },
         {
             "id": "gq_l191_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'Scarcely had the ink dried on the agreement when the first violation occurred.' This exemplifies:",
+            "question": "___ you be willing to reconsider the pricing, we would be glad to move forward immediately.",
             "options": [
-                "Temporal inversion with negative adverb",
-                "A passive reporting structure",
-                "Past perfect continuous",
-                "A zero conditional"
+                "Should",
+                "Would",
+                "Could",
+                "Must"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Temporal inversion with negative adverb",
-            "hint": "Inversion after negative temporal adverbial 'scarcely'.",
-            "explanation": "'Scarcely had + subject + past participle + when' triggers inversion: Scarcely had the ink dried... This negative temporal adverbial forces subject-auxiliary inversion. It is equivalent to: Almost immediately after the ink had dried, a violation occurred.",
-            "grammarRule": "Syntactic Complexity / Inversion"
+            "correctAnswer": "Should",
+            "hint": "This formal opening replaces 'if you were willing' with an inverted structure.",
+            "explanation": "'Should you be willing' is the formal inverted first-conditional opener, common in negotiation emails to sound polished and non-confrontational.",
+            "grammarRule": "Negotiation: Inverted Conditional"
         },
         {
             "id": "gq_l191_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Little did the committee anticipate how contentious the proposal ___ become.",
+            "question": "\u2014 Can we meet halfway on this?\n\u2014 I think that ___ be a reasonable compromise for everyone involved.",
             "options": [
-                "would",
-                "should",
-                "did",
-                "will"
+                "will",
+                "must",
+                "should have",
+                "would"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "would",
-            "hint": "This describes an unfulfilled future expectation, viewed from a point in the past.",
-            "explanation": "'Would' expresses a future-in-the-past: from the committee's past viewpoint, they didn't anticipate how contentious it would later become. 'Little did + subject + verb' is inversion after a negative adverbial, matching 'rarely,' 'never,' and 'seldom'. 'Will' doesn't shift back for past reporting; 'did' and 'should' don't fit this meaning.",
-            "grammarRule": "Syntactic Complexity / Inversion"
+            "hint": "This is a hypothetical compromise being proposed, not yet agreed.",
+            "explanation": "'Would' expresses a tentative, hypothetical suggestion in negotiation: that would be reasonable, softer than a direct 'will'.",
+            "grammarRule": "Negotiation: Second Conditional (Implied)"
         },
         {
             "id": "gq_l192_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which sentence most effectively avoids a dangling participle?",
+            "question": "As you can see from the chart, sales ___ significantly over the past quarter.",
             "options": [
-                "The flowers were beautiful, walking through the park.",
-                "To walk through the park, the flowers are beautiful.",
-                "Walking through the park, I noticed the beautiful flowers.",
-                "Walking through the park, the flowers were beautiful."
+                "increased",
+                "have increased",
+                "are increasing",
+                "had increased"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Walking through the park, I noticed the beautiful flowers.",
-            "hint": "The participial phrase must share its subject with the main clause.",
-            "explanation": "'Walking through the park, I noticed the flowers.' = I was walking, and I noticed. The subject of 'walking' (I) matches the subject of the main clause (I). Options A, C, D have dangling participles - flowers, I, and flowers did not walk through the park.",
-            "grammarRule": "Dangling Participles / Subjunctive"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "have increased",
+            "hint": "The chart shows a change connected to right now, over an unfinished period ('this quarter').",
+            "explanation": "Present perfect fits a change over an ongoing period connected to now: have increased over the past quarter, a very common structure in presentations.",
+            "grammarRule": "Presentations: Present Perfect"
         },
         {
             "id": "gq_l192_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'The greater the investment in education, ___ for social mobility.' Complete correctly.",
+            "question": "This approach is far ___ effective than the one we used last year.",
             "options": [
-                "greater opportunities there are",
-                "the opportunities are greater",
-                "greater are the opportunities",
-                "the greater the opportunities"
+                "more",
+                "most",
+                "much",
+                "very"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "the greater the opportunities",
-            "hint": "Double comparative: 'the greater..., the greater...'",
-            "explanation": "The double comparative requires: 'The + comparative, the + comparative': The greater the investment in education, the greater the opportunities for social mobility. Both parts must use the same structure: 'the + comparative + noun phrase'.",
-            "grammarRule": "Dangling Participles / Subjunctive"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "more",
+            "hint": "'Far' intensifies a comparative, not a superlative.",
+            "explanation": "'Far more' intensifies a comparative adjective: far more effective. 'Far most' isn't correct English; intensifiers like 'far' only pair with comparatives.",
+            "grammarRule": "Presentations: Intensified Comparatives"
         },
         {
             "id": "gq_l192_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "In which sentence is the subjunctive used correctly?",
+            "question": "\u2014 Any questions so far?\n\u2014 Just one: ___ this strategy also apply to smaller teams?",
             "options": [
-                "It is important that he studies harder.",
-                "The board demanded that the CEO resigns.",
-                "She insisted that the report be submitted by noon.",
-                "We suggested that she should considers the offer."
+                "is",
+                "will",
+                "does",
+                "has"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "She insisted that the report be submitted by noon.",
-            "hint": "Mandative subjunctive: base form for all subjects after certain verbs.",
-            "explanation": "'Insisted that the report be submitted' - the subjunctive uses the base form 'be' (not 'is', not 'was') in formal English. The mandative subjunctive: insist/demand/suggest/recommend + that + subject + base verb. No '-s' for third person, no 'should' (optional), no modal 'would'.",
-            "grammarRule": "Dangling Participles / Subjunctive"
+            "correctAnswer": "does",
+            "hint": "This asks about a general applicability, not a one-time future event.",
+            "explanation": "'Does this strategy apply' asks about general applicability using simple present, appropriate for a question about how something generally works.",
+            "grammarRule": "Presentations: Simple Present Questions"
         },
         {
             "id": "gq_l193_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'Not only is the policy misguided, but it is also counterproductive.' The inversion in this sentence is triggered by:",
+            "question": "I understand you're frustrated that your order ___ arrived yet.",
             "options": [
-                "A negative adverb at the start",
-                "The word 'only'",
-                "'Not only...but also' correlative conjunction",
-                "'But it is also'"
+                "didn't",
+                "hasn't",
+                "doesn't",
+                "wasn't"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "A negative adverb at the start",
-            "hint": "'Not only' at the start of a sentence triggers subject-auxiliary inversion.",
-            "explanation": "'Not only + auxiliary + subject': Not only is the policy misguided... The inversion is triggered by 'Not only' beginning the sentence. The second clause ('but it is also counterproductive') does not invert. This is a formal emphatic structure.",
-            "grammarRule": "Inversion / Comment Clauses / Free Relatives"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "hasn't",
+            "hint": "The word 'yet' at the end is a strong signal for this specific tense.",
+            "explanation": "'Yet' pairs with present perfect negative: hasn't arrived yet, connecting the missing delivery to the present moment of the complaint.",
+            "grammarRule": "Customer Service: Present Perfect Negative"
         },
         {
             "id": "gq_l193_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which sentence correctly uses a comment clause?",
+            "question": "Had we been notified sooner, we ___ have resolved this before it became a problem.",
             "options": [
-                "She was, believing I, the most qualified candidate.",
-                "She was I believe the most qualified candidate.",
-                "She was, I believing, the most qualified candidate.",
-                "She was, I believe, the most qualified candidate."
+                "will",
+                "should",
+                "must",
+                "would"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "She was, I believe, the most qualified candidate.",
-            "hint": "Comment clauses are set off with commas and inserted parenthetically.",
-            "explanation": "Comment clauses (I believe, I think, it seems, one might argue) are inserted parenthetically into a sentence and set off with commas: She was, I believe, the most qualified candidate. They express the speaker's attitude without disrupting the main clause.",
-            "grammarRule": "Inversion / Comment Clauses / Free Relatives"
+            "correctAnswer": "would",
+            "hint": "This inverted structure needs its matching third-conditional result.",
+            "explanation": "'Had we been notified' is an inverted third conditional, so the result clause needs 'would have': we would have resolved this.",
+            "grammarRule": "Customer Service: Inverted Third Conditional"
         },
         {
             "id": "gq_l193_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ their limitations, the results provide a genuinely useful baseline for future research.",
+            "question": "\u2014 The representative told me it would be fixed by Friday.\n\u2014 I'm sorry ___ that didn't happen; let me personally look into it.",
             "options": [
-                "Whichever",
-                "Whatever",
-                "However",
-                "Whoever"
+                "for",
+                "of",
+                "that",
+                "about"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Whatever",
-            "hint": "This word combines with a noun phrase, not an adjective, to mean 'no matter what'.",
-            "explanation": "'Whatever + noun phrase' means 'no matter what... are/is': Whatever their limitations, the results are useful. 'However' combines with an adjective or adverb, not a noun (however limited); 'whichever' implies a choice among set options; 'whoever' refers to people.",
-            "grammarRule": "Inversion / Comment Clauses / Free Relatives"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "that",
+            "hint": "This word introduces the reason for the apology as a full clause.",
+            "explanation": "'Sorry that' introduces a full clause explaining the apology's cause: sorry that it didn't happen, distinct from 'sorry for/about' plus a noun.",
+            "grammarRule": "Customer Service: Sorry That + Clause"
         },
         {
             "id": "gq_l194_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which use of 'would' expresses a past habitual action?",
+            "question": "By the time we reached the gate, the flight ___ already departed.",
             "options": [
-                "I thought he would come.",
-                "In those days, we would walk miles to school.",
-                "I would like to help you.",
-                "Would you close the door?"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "In those days, we would walk miles to school.",
-            "hint": "'Would' + base verb for past habits in narrative contexts.",
-            "explanation": "'Would + base verb' expresses past habitual actions in formal/literary narrative: In those days, we would walk miles to school = we used to walk miles. This use of 'would' is similar to 'used to' but is more literary and formal.",
-            "grammarRule": "Past Habitual 'Would' / Concessive Inversion"
-        },
-        {
-            "id": "gq_l194_q2",
-            "instruction": "RESOLVE THE PATTERN",
-            "subtype": "grammarQuest",
-            "interactionType": "choice",
-            "question": "'Try as they might, they could not find a solution.' The structure 'try as they might' means:",
-            "options": [
-                "Although they tried as hard as they could",
-                "If they try very hard",
-                "When they tried hard",
-                "Even if they tried"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Although they tried as hard as they could",
-            "hint": "'Verb + as + subject + modal' = a concessive of effort.",
-            "explanation": "'Try as they might' = although they tried as hard as they could. This is a literary concessive inversion: Verb + as + subject + modal. It is equivalent to 'No matter how hard they tried' or 'Even though they tried hard'. Common in formal and literary English.",
-            "grammarRule": "Past Habitual 'Would' / Concessive Inversion"
-        },
-        {
-            "id": "gq_l194_q3",
-            "instruction": "RESOLVE THE PATTERN",
-            "subtype": "grammarQuest",
-            "interactionType": "choice",
-            "question": "Which sentence correctly uses 'were it not for'?",
-            "options": [
-                "Was it not for her support, I would fail.",
-                "Were it not for her support, I will fail.",
-                "Were not it for her support, I would fail.",
-                "Were it not for her support, I would fail."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Were it not for her support, I would fail.",
-            "hint": "'Were it not for + noun, subject + would + base verb' is a fixed formal conditional.",
-            "explanation": "'Were it not for + noun phrase, subject + would/could + base verb': Were it not for her support, I would fail. This is a fixed formal second conditional structure. Always 'were' (never 'was'), always 'would/could' in the result clause. No inversion in the result clause.",
-            "grammarRule": "Past Habitual 'Would' / Concessive Inversion"
-        },
-        {
-            "id": "gq_l195_q1",
-            "instruction": "RESOLVE THE PATTERN",
-            "subtype": "grammarQuest",
-            "interactionType": "choice",
-            "question": "'The report, long awaited and eagerly anticipated, finally appeared.' The commas here enclose:",
-            "options": [
-                "A conditional clause",
-                "A result clause",
-                "A non-defining appositive adjective phrase",
-                "A defining relative clause"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "A non-defining appositive adjective phrase",
-            "hint": "Two past participles form an appositive adjective phrase.",
-            "explanation": "'Long awaited and eagerly anticipated' is a non-defining appositive adjective phrase - it describes the report with additional information. It is set off with commas because it adds extra (non-essential) information. Both past participles are used adjectivally.",
-            "grammarRule": "Appositive Phrases / Emphatic Inversion"
-        },
-        {
-            "id": "gq_l195_q2",
-            "instruction": "RESOLVE THE PATTERN",
-            "subtype": "grammarQuest",
-            "interactionType": "choice",
-            "question": "Such is the complexity of the case ___ even experts remain divided.",
-            "options": [
-                "which",
-                "so",
-                "as",
-                "that"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "that",
-            "hint": "'Such is + noun' is completed by which conjunction before the result clause?",
-            "explanation": "'Such is the complexity...that' is a fixed emphatic inverted structure = 'The complexity is such that...': Such is the complexity of the case that even experts remain divided. 'As,' 'which,' and 'so' don't complete this specific fixed pattern.",
-            "grammarRule": "Appositive Phrases / Emphatic Inversion"
-        },
-        {
-            "id": "gq_l195_q3",
-            "instruction": "RESOLVE THE PATTERN",
-            "subtype": "grammarQuest",
-            "interactionType": "choice",
-            "question": "Which sentence demonstrates correct use of the past subjunctive in a formal wish?",
-            "options": [
-                "I wish he was here with us now.",
-                "Would that he were here with us now.",
-                "If only he would be here with us now.",
-                "I wish he would be here with us now."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Would that he were here with us now.",
-            "hint": "'Would that + subject + were' is a formal archaic wish structure.",
-            "explanation": "'Would that + subject + were...' is a formal/archaic expression of a wish: Would that he were here. This uses the past subjunctive 'were' (not 'was') and the construction 'would that' (= I wish). It is more literary than 'I wish he were here'.",
-            "grammarRule": "Appositive Phrases / Emphatic Inversion"
-        },
-        {
-            "id": "gq_l196_q1",
-            "instruction": "RESOLVE THE PATTERN",
-            "subtype": "grammarQuest",
-            "interactionType": "choice",
-            "question": "Compelling ___ it may initially appear, the evidence does not actually support the defendant's account.",
-            "options": [
-                "so",
-                "that",
-                "as",
-                "than"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "as",
-            "hint": "This formal inverted concessive structure echoes 'Simple as it may seem...'",
-            "explanation": "'Adjective + as + subject + verb' means 'although [subject] is [adjective]': Compelling as it may appear, the evidence doesn't hold up. This mirrors the pattern 'Simple as it may seem, the truth is often complex.' 'Than,' 'so,' and 'that' don't complete this inverted concessive structure.",
-            "grammarRule": "Concessive Inversion / Infinitive Complements"
-        },
-        {
-            "id": "gq_l196_q2",
-            "instruction": "RESOLVE THE PATTERN",
-            "subtype": "grammarQuest",
-            "interactionType": "choice",
-            "question": "The board does not ___ the market to recover before the next fiscal year.",
-            "options": [
-                "expect that",
-                "expect of",
-                "expect for",
-                "expect"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "expect",
-            "hint": "This verb takes an object directly followed by a to-infinitive, with no extra word in between.",
-            "explanation": "'Expect + object + to-infinitive': the board does not expect the market to recover. No preposition or conjunction goes between 'expect' and its object. The same pattern applies to want, believe, consider, and allow. 'Expect that' would need a full clause instead; 'expect for/of' aren't standard here.",
-            "grammarRule": "Concessive Inversion / Infinitive Complements"
-        },
-        {
-            "id": "gq_l196_q3",
-            "instruction": "RESOLVE THE PATTERN",
-            "subtype": "grammarQuest",
-            "interactionType": "choice",
-            "question": "Which sentence correctly forms a first conditional?",
-            "options": [
-                "If it would rain, the event will be cancelled.",
-                "It would be cancelled, if it rains.",
-                "If it rain, we cancel it.",
-                "If it rains tomorrow, the event will be cancelled."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "If it rains tomorrow, the event will be cancelled.",
-            "hint": "First conditional: if + present simple, followed by will + base verb.",
-            "explanation": "First conditional structure is: if + present simple (the condition), will + base verb (the result): If it rains tomorrow, the event will be cancelled. The other options misuse the base form ('if it rain'), reverse the natural clause order, or wrongly use 'would' in the if-clause.",
-            "grammarRule": "Concessive Inversion / Infinitive Complements"
-        },
-        {
-            "id": "gq_l197_q1",
-            "instruction": "RESOLVE THE PATTERN",
-            "subtype": "grammarQuest",
-            "interactionType": "choice",
-            "question": "What the committee failed to anticipate ___ the sheer scale of public opposition.",
-            "options": [
-                "were",
-                "have been",
-                "was",
-                "is"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "was",
-            "hint": "The whole 'what' clause acts as a single subject - is it singular or plural?",
-            "explanation": "'What the committee failed to anticipate' functions as a single, singular subject, so it takes 'was': What they failed to anticipate was the scale of opposition. This pattern always takes a singular verb, regardless of what follows. 'Were' wrongly treats it as plural; 'is'/'have been' shift incorrectly to present tense.",
-            "grammarRule": "Wh-Clause Subjects / Relative Pronouns"
-        },
-        {
-            "id": "gq_l197_q2",
-            "instruction": "RESOLVE THE PATTERN",
-            "subtype": "grammarQuest",
-            "interactionType": "choice",
-            "question": "___ remains to be done before the project can be considered complete.",
-            "options": [
-                "Much",
-                "A lot",
-                "Many",
-                "Plenty"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Much",
-            "hint": "In this formal, slightly literary register, which pronoun is most appropriate?",
-            "explanation": "In formal or literary register, 'much' functions as an economical pronoun subject: Much remains to be done. 'A lot' and 'plenty' are common in everyday speech but suit this formal register less well; 'many' is for countable plural nouns, not used as a standalone pronoun here.",
-            "grammarRule": "Wh-Clause Subjects / Relative Pronouns"
-        },
-        {
-            "id": "gq_l197_q3",
-            "instruction": "RESOLVE THE PATTERN",
-            "subtype": "grammarQuest",
-            "interactionType": "choice",
-            "question": "He met the manager, ___ turned out to be an old university friend.",
-            "options": [
-                "who",
-                "whom",
-                "which",
-                "that"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "who",
-            "hint": "This comma-separated relative clause refers to a person and needs a subject pronoun.",
-            "explanation": "'Who' is correct for a non-restrictive relative clause referring to a person in subject position: the manager, who turned out to be a friend. 'Which' is for things, not people; 'that' isn't used after a comma in non-restrictive clauses; 'whom' would only be needed for an object pronoun.",
-            "grammarRule": "Wh-Clause Subjects / Relative Pronouns"
-        },
-        {
-            "id": "gq_l198_q1",
-            "instruction": "RESOLVE THE PATTERN",
-            "subtype": "grammarQuest",
-            "interactionType": "choice",
-            "question": "Central to the committee's reasoning ___ the belief that transparency improves outcomes.",
-            "options": [
-                "have been",
-                "is",
-                "are",
+                "has",
+                "had",
+                "have",
                 "was"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "hint": "This is an inverted sentence - find the true subject after the verb to check agreement.",
-            "explanation": "'Central to the committee's reasoning is the belief...' inverts normal word order for emphasis. The true subject is 'the belief' (singular), so the verb is 'is', not 'are'. This mirrors the earlier pattern 'Central to the author's argument is the claim that...'",
-            "grammarRule": "Inverted Emphatic Structures / Fronting"
+            "correctAnswer": "had",
+            "hint": "One past event finished before another past event, our arrival at the gate.",
+            "explanation": "'By the time' signals past perfect: the flight had departed before we arrived, one past event completed before another.",
+            "grammarRule": "Travel: Past Perfect"
         },
         {
-            "id": "gq_l198_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "id": "gq_l194_q2",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Identify the rhetorical function of fronting in: 'This, above all else, we must remember.'",
+            "question": "She ___ have missed the announcement; she was wearing headphones the whole time.",
             "options": [
-                "To express a conditional",
-                "To introduce a new topic",
-                "To place extraordinary emphasis on 'this'",
-                "To avoid using the passive voice"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "To place extraordinary emphasis on 'this'",
-            "hint": "Fronting places the object at the start for maximum emphasis.",
-            "explanation": "'This' is fronted (moved to the start) for rhetorical emphasis: we must remember THIS above all else. Fronting inverts normal SVO order and draws maximum attention to the fronted element. Common in speeches and literary writing for dramatic effect.",
-            "grammarRule": "Inverted Emphatic Structures / Fronting"
-        },
-        {
-            "id": "gq_l198_q3",
-            "instruction": "RESOLVE THE PATTERN",
-            "subtype": "grammarQuest",
-            "interactionType": "choice",
-            "question": "Which best describes the function of 'do' in: 'He does understand the implications, but chooses to ignore them.'",
-            "options": [
-                "Emphatic 'do' to assert truth against a doubt or denial",
-                "Auxiliary for question formation",
-                "Habitual past marker",
-                "Substitutive 'do' replacing a verb phrase"
+                "must",
+                "might",
+                "can't",
+                "should"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Emphatic 'do' to assert truth against a doubt or denial",
-            "hint": "Emphatic 'do' asserts the reality of an action.",
-            "explanation": "Emphatic 'do/does/did' stresses that something is genuinely true, often contradicting a doubt: He DOES understand - he just ignores it. This is emphatic 'do' in present tense, third person singular. It adds stress and asserts truth against an implied or stated contradiction.",
-            "grammarRule": "Inverted Emphatic Structures / Fronting"
+            "correctAnswer": "must",
+            "hint": "The headphones make this conclusion almost certain.",
+            "explanation": "'Must have' draws a strong, near-certain conclusion from the evidence: she must have missed it, given the headphones.",
+            "grammarRule": "Travel: Modals of Past Deduction"
         },
         {
-            "id": "gq_l199_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "id": "gq_l194_q3",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "In academic discourse, the phrase 'it bears noting that' functions as:",
+            "question": "\u2014 Do you know what happened to our luggage?\n\u2014 I'm not sure, but it ___ still be on the previous flight.",
             "options": [
-                "A concessive clause",
-                "A cleft sentence",
-                "A meta-discourse marker drawing attention to important information",
-                "A passive reporting structure"
+                "must",
+                "can't",
+                "should",
+                "might"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "A meta-discourse marker drawing attention to important information",
-            "hint": "Meta-discourse markers guide readers through the argument.",
-            "explanation": "'It bears noting that' = it is worth pointing out that. This is a meta-discourse marker - language that comments on the discourse itself rather than on the content. Meta-discourse markers guide readers: it should be noted, as mentioned above, turning now to, it is worth emphasising.",
-            "grammarRule": "Discourse Markers / Hedging"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "might",
+            "hint": "The speaker is genuinely uncertain, just guessing at a possibility.",
+            "explanation": "'Might' expresses a real but uncertain possibility, fitting the speaker's own admission of not being sure.",
+            "grammarRule": "Travel: Modals of Possibility"
         },
         {
-            "id": "gq_l199_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "id": "gq_l195_q1",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'The study, for all its methodological rigour, fails to address ecological validity.' 'For all its' is equivalent to:",
+            "question": "Looking back, I wish I ___ taken that job offer when I had the chance.",
             "options": [
-                "Despite all its",
-                "Because of all its",
-                "Given that it has",
-                "In addition to all its"
+                "have",
+                "had",
+                "would have",
+                "did"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Despite all its",
-            "hint": "'For all its + noun' = despite all its - a formal concessive phrase.",
-            "explanation": "'For all its + noun' = despite all its: For all its rigour (= despite its rigour), the study fails to address... This is a formal concessive phrase. It acknowledges a positive quality while introducing a criticism. Very common in academic evaluation and literary criticism.",
-            "grammarRule": "Discourse Markers / Hedging"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "had",
+            "hint": "'Wish' about the past needs the same backshifted form as third conditional.",
+            "explanation": "'Wish I had taken' expresses regret about a past action, using past perfect after 'wish', the same backshift pattern as third conditional if-clauses.",
+            "grammarRule": "Reflection: Wish + Past Perfect"
         },
         {
-            "id": "gq_l199_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "id": "gq_l195_q2",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which sentence demonstrates the most sophisticated use of epistemic modality?",
+            "question": "I ___ been thinking about this decision for weeks, and I still don't have an answer.",
             "options": [
-                "X might possibly cause Y in some cases.",
-                "The results show that X causes Y.",
-                "The available evidence would appear to suggest a possible causal relationship between X and Y.",
-                "X could maybe cause Y."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The available evidence would appear to suggest a possible causal relationship between X and Y.",
-            "hint": "Expert epistemic modality stacks hedging layers appropriately.",
-            "explanation": "'The evidence would appear to suggest a possible causal relationship' = expert hedging: 'would appear' (conditional seeming), 'suggest' (not prove), 'possible' (uncertain adjective), 'causal relationship' (formal noun). This is appropriately cautious and precise. 'Might possibly' and 'could maybe' are redundant; 'show that X causes Y' is overclaimed.",
-            "grammarRule": "Discourse Markers / Hedging"
-        },
-        {
-            "id": "gq_l200_q1",
-            "instruction": "RESOLVE THE PATTERN",
-            "subtype": "grammarQuest",
-            "interactionType": "choice",
-            "question": "Rarely, if ever, ___ a policy achieve such broad consensus so quickly.",
-            "options": [
-                "did",
-                "does",
                 "has",
-                "will"
+                "had",
+                "was",
+                "have"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "does",
-            "hint": "'Rarely, if ever' at the start triggers inversion - which auxiliary fits a general truth?",
-            "explanation": "'Rarely, if ever' is a negative adverbial that triggers subject-auxiliary inversion, like 'rarely,' 'never,' and 'seldom': Rarely does a policy achieve such consensus. 'Does' fits a general, timeless statement. 'Did' would shift this to one specific past event; 'has' and 'will' don't fit the intended general-truth meaning.",
-            "grammarRule": "Inversion Mastery / Relative Clauses"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "have",
+            "hint": "The subject 'I' needs the matching present perfect continuous helper verb.",
+            "explanation": "'I' takes 'have' in present perfect continuous: have been thinking, emphasizing an ongoing mental process up to now.",
+            "grammarRule": "Reflection: Present Perfect Continuous"
         },
         {
-            "id": "gq_l200_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "id": "gq_l195_q3",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which best describes the difference between a defining and a non-defining relative clause?",
+            "question": "\u2014 Any regrets about the move?\n\u2014 If I ___ known how hard it would be, I might have reconsidered.",
             "options": [
-                "Defining clauses use 'who'; non-defining use 'which'.",
-                "Defining clauses identify which one; non-defining add extra information about something already identified.",
-                "Defining clauses are always shorter than non-defining clauses.",
-                "Defining clauses use commas; non-defining clauses do not."
+                "had",
+                "have",
+                "would have",
+                "did"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Defining clauses identify which one; non-defining add extra information about something already identified.",
-            "hint": "The key difference is the function of the clause in the sentence.",
-            "explanation": "Defining relative clauses (no commas) identify which person/thing is meant: The book that I recommended. Non-defining relative clauses (with commas) add extra information: My sister, who is a nurse, works nights. Without the defining clause, we don't know which; without the non-defining clause, we still know who.",
-            "grammarRule": "Inversion Mastery / Relative Clauses"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "had",
+            "hint": "This is a hypothetical about a past situation that cannot be changed now.",
+            "explanation": "'If I had known' is a third conditional if-clause, expressing an unreal past situation, paired here with 'might have reconsidered'.",
+            "grammarRule": "Reflection: Third Conditional"
         },
         {
-            "id": "gq_l200_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "id": "gq_l196_q1",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "So thoroughly reasoned ___ the proposal that not a single objection was raised.",
+            "question": "The data ___ collected over a six-month period.",
             "options": [
-                "has been",
-                "did",
+                "is",
+                "has",
                 "was",
                 "were"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "was",
-            "hint": "This inverted structure places the auxiliary before the subject for emphasis - which one fits a singular subject?",
-            "explanation": "'So + participle + was + subject + that' inverts for emphasis: So thoroughly reasoned was the proposal that no objection was raised (= The proposal was so thoroughly reasoned that...). This echoes the earlier pattern 'So severe is the damage that recovery may take decades.' 'Did,' 'has been,' and 'were' don't fit this inverted pattern with a singular subject.",
-            "grammarRule": "Inversion Mastery / Relative Clauses"
+            "hint": "The subject 'data' is treated as singular in this common usage, and the collection finished in the past.",
+            "explanation": "In this common usage, 'data' is treated as a singular collective subject: the data was collected, describing a completed past process.",
+            "grammarRule": "Reports: Passive Past Simple"
+        },
+        {
+            "id": "gq_l196_q2",
+            "instruction": "COMPLETE THE MESSAGE",
+            "subtype": "grammarQuest",
+            "interactionType": "choice",
+            "question": "These findings, ___ were presented at the conference, support our initial hypothesis.",
+            "options": [
+                "that",
+                "who",
+                "whose",
+                "which"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "which",
+            "hint": "The comma before and after this clause signals extra, non-essential information.",
+            "explanation": "Commas signal a non-defining relative clause, which requires 'which', never 'that': the findings, which were presented, support the hypothesis.",
+            "grammarRule": "Reports: Non-Defining Relative Clauses"
+        },
+        {
+            "id": "gq_l196_q3",
+            "instruction": "COMPLETE THE MESSAGE",
+            "subtype": "grammarQuest",
+            "interactionType": "choice",
+            "question": "\u2014 How reliable is this data?\n\u2014 It ___ be considered fully reliable, given the small sample size.",
+            "options": [
+                "must",
+                "can't",
+                "might",
+                "should"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "can't",
+            "hint": "The small sample size rules out full reliability.",
+            "explanation": "'Can't' expresses a strong negative conclusion based on evidence: can't be considered reliable, given the small sample size mentioned.",
+            "grammarRule": "Reports: Modals of Deduction"
+        },
+        {
+            "id": "gq_l197_q1",
+            "instruction": "COMPLETE THE MESSAGE",
+            "subtype": "grammarQuest",
+            "interactionType": "choice",
+            "question": "If you take this role, you ___ be leading a team of twelve by next quarter.",
+            "options": [
+                "would",
+                "are",
+                "will",
+                "were"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "will",
+            "hint": "This is a real, likely outcome of a real future possibility.",
+            "explanation": "First conditional describes a realistic future outcome: if you take the role, you will be leading a team, a genuine likely result.",
+            "grammarRule": "Promotion: First Conditional"
+        },
+        {
+            "id": "gq_l197_q2",
+            "instruction": "COMPLETE THE MESSAGE",
+            "subtype": "grammarQuest",
+            "interactionType": "choice",
+            "question": "I've ___ considering you for this position for a while now.",
+            "options": [
+                "been",
+                "was",
+                "have",
+                "had"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "been",
+            "hint": "This completes the present perfect continuous form after 've.",
+            "explanation": "'I've been considering' completes present perfect continuous, showing an ongoing thought process leading up to this conversation.",
+            "grammarRule": "Promotion: Present Perfect Continuous"
+        },
+        {
+            "id": "gq_l197_q3",
+            "instruction": "COMPLETE THE MESSAGE",
+            "subtype": "grammarQuest",
+            "interactionType": "choice",
+            "question": "\u2014 What would change day to day?\n\u2014 You ___ report directly to me instead of your current manager.",
+            "options": [
+                "will",
+                "are",
+                "were",
+                "would"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "would",
+            "hint": "This describes a hypothetical arrangement being discussed, not yet official.",
+            "explanation": "'Would' fits this hypothetical description of a not-yet-official arrangement: you would report to me, matching the question's own hypothetical tone.",
+            "grammarRule": "Promotion: Second Conditional (Implied)"
+        },
+        {
+            "id": "gq_l198_q1",
+            "instruction": "COMPLETE THE MESSAGE",
+            "subtype": "grammarQuest",
+            "interactionType": "choice",
+            "question": "In some cultures, it ___ considered impolite to refuse an invitation directly.",
+            "options": [
+                "is",
+                "was",
+                "has been",
+                "were"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "hint": "This is a general truth about cultural norms, true in general, not a one-time event.",
+            "explanation": "Present simple passive fits general truths about customs: it is considered impolite, a fact that holds generally, not just once.",
+            "grammarRule": "Cross-Cultural Communication: Present Simple Passive"
+        },
+        {
+            "id": "gq_l198_q2",
+            "instruction": "COMPLETE THE MESSAGE",
+            "subtype": "grammarQuest",
+            "interactionType": "choice",
+            "question": "___ you don't mind me asking, how is this typically handled in your office?",
+            "options": [
+                "Should",
+                "If",
+                "Would",
+                "Unless"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "If",
+            "hint": "This is a polite, cautious way of introducing a potentially sensitive question.",
+            "explanation": "'If you don't mind me asking' is a fixed polite opener for a possibly sensitive question, useful across cultural and professional contexts.",
+            "grammarRule": "Cross-Cultural Communication: Polite Conditional Opener"
+        },
+        {
+            "id": "gq_l198_q3",
+            "instruction": "COMPLETE THE MESSAGE",
+            "subtype": "grammarQuest",
+            "interactionType": "choice",
+            "question": "\u2014 How should I address my new manager?\n\u2014 It's usually best ___ formal until they suggest otherwise.",
+            "options": [
+                "staying",
+                "stay",
+                "to stay",
+                "stayed"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "to stay",
+            "hint": "'Best' pairs with the infinitive form of the following verb here.",
+            "explanation": "'Best to stay' takes the infinitive: it's best to stay formal, a natural structure for giving cautious cross-cultural advice.",
+            "grammarRule": "Cross-Cultural Communication: Infinitive After Best"
+        },
+        {
+            "id": "gq_l199_q1",
+            "instruction": "COMPLETE THE MESSAGE",
+            "subtype": "grammarQuest",
+            "interactionType": "choice",
+            "question": "___ the results had been shared earlier, the team could have adjusted the strategy in time.",
+            "options": [
+                "Had",
+                "Have",
+                "Did",
+                "Would"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Had",
+            "hint": "This drops 'if' and inverts the auxiliary and subject for a formal third conditional.",
+            "explanation": "'Had the results been shared' is an inverted third conditional, dropping 'if' entirely, common in formal analysis and reports.",
+            "grammarRule": "Review: Inverted Third Conditional"
+        },
+        {
+            "id": "gq_l199_q2",
+            "instruction": "COMPLETE THE MESSAGE",
+            "subtype": "grammarQuest",
+            "interactionType": "choice",
+            "question": "The proposal, ___ took months to prepare, was ultimately rejected by the board.",
+            "options": [
+                "that",
+                "who",
+                "which",
+                "whose"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "which",
+            "hint": "Commas around this clause signal extra, non-essential information about the proposal.",
+            "explanation": "Non-defining relative clauses require 'which', never 'that', signaled here by the surrounding commas.",
+            "grammarRule": "Review: Non-Defining Relative Clauses"
+        },
+        {
+            "id": "gq_l199_q3",
+            "instruction": "COMPLETE THE MESSAGE",
+            "subtype": "grammarQuest",
+            "interactionType": "choice",
+            "question": "\u2014 What's the update?\n\u2014 We're still waiting to hear ___ the client has approved the budget.",
+            "options": [
+                "that",
+                "what",
+                "which",
+                "whether"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "whether",
+            "hint": "This introduces an indirect yes/no question about approval.",
+            "explanation": "'Whether' introduces this indirect yes/no question as a noun clause: waiting to hear whether they approved it, reviewing this structure from Stage 7.",
+            "grammarRule": "Review: Noun Clauses with Whether"
+        },
+        {
+            "id": "gq_l200_q1",
+            "instruction": "COMPLETE THE MESSAGE",
+            "subtype": "grammarQuest",
+            "interactionType": "choice",
+            "question": "When I started this course, I ___ barely form a sentence in English.",
+            "options": [
+                "can",
+                "could",
+                "was able",
+                "would"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "could",
+            "hint": "This describes a general past ability, all the way back at the beginning of the journey.",
+            "explanation": "'Could' expresses general past ability: could barely form a sentence, describing a skill level that has since clearly changed, reviewing a structure from very early in this course.",
+            "grammarRule": "Mastery: Past Ability"
+        },
+        {
+            "id": "gq_l200_q2",
+            "instruction": "COMPLETE THE MESSAGE",
+            "subtype": "grammarQuest",
+            "interactionType": "choice",
+            "question": "___ I known then how far I would come, I might have believed it sooner.",
+            "options": [
+                "Have",
+                "Did",
+                "Had",
+                "Would"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Had",
+            "hint": "This inverted structure looks back on the entire journey from Level 1 to now.",
+            "explanation": "'Had I known' is an inverted third conditional, reflecting on a hypothetical past, drawing together the inversion and conditional skills built across the later stages of this course.",
+            "grammarRule": "Mastery: Inverted Third Conditional"
+        },
+        {
+            "id": "gq_l200_q3",
+            "instruction": "COMPLETE THE MESSAGE",
+            "subtype": "grammarQuest",
+            "interactionType": "choice",
+            "question": "Looking ahead, I know that fluency ___ built one conversation at a time, and I'm ready for what comes next.",
+            "options": [
+                "is",
+                "was",
+                "has",
+                "will"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "hint": "This is a general, lasting truth, the same simple structure practiced back at Level 1, now carrying the weight of everything learned since.",
+            "explanation": "This final answer returns to present simple passive, the simplest possible structure, echoing the very first grammar point of this entire 200-level journey: fluency is built one conversation at a time.",
+            "grammarRule": "Mastery: Present Simple Passive"
         }
     ]
 }

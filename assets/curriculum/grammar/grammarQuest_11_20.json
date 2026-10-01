@@ -5,543 +5,393 @@
     "quests": [
         {
             "id": "gq_l11_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I have three ___ in my bag.",
-            "options": [
-                "boxes",
-                "box",
-                "boxs",
-                "boxies"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "boxes",
-            "hint": "Nouns ending in -x, -ch, -sh, -ss add -es in the plural.",
-            "explanation": "Nouns ending in -x, -ch, -sh, -ss add '-es': box → boxes, watch → watches, dish → dishes, class → classes. Regular nouns just add '-s': book → books.",
-            "grammarRule": "Plural Nouns"
+            "question": "There are two ___ playing in the garden.",
+            "options": ["childs", "child", "children", "childrens"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "children",
+            "hint": "This word does not follow the regular add-an-s pattern at all.",
+            "explanation": "'Child' has a completely irregular plural: 'children'. It never becomes 'childs' or 'childrens' \u2014 those forms don't exist.",
+            "grammarRule": "Plural Nouns: Irregular Forms"
         },
         {
             "id": "gq_l11_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "There are two ___ in the garden.",
-            "options": [
-                "childs",
-                "children",
-                "child",
-                "childrens"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "children",
-            "hint": "'Child' has an irregular plural - it does not add -s.",
-            "explanation": "'Child' has the irregular plural 'children'. Other irregular plurals: man → men, woman → women, tooth → teeth, foot → feet, mouse → mice. These must be memorised.",
-            "grammarRule": "Plural Nouns"
+            "question": "I brushed all my ___ this morning.",
+            "options": ["teeth", "tooth", "tooths", "teeths"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "teeth",
+            "hint": "One is 'tooth' \u2014 what happens to the vowel sound in the plural?",
+            "explanation": "'Tooth' becomes 'teeth' in the plural, changing its vowel instead of adding an ending. 'Foot' works the same way: foot \u2192 feet.",
+            "grammarRule": "Plural Nouns: Irregular Forms"
         },
         {
             "id": "gq_l11_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She has five ___.",
-            "options": [
-                "photos",
-                "photoes",
-                "photo's",
-                "photoss"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "photos",
-            "hint": "Most nouns ending in a vowel + -o just add -s.",
-            "explanation": "Most nouns ending in -o add '-s': photo → photos, video → videos, piano → pianos. Some add '-es': potato → potatoes, tomato → tomatoes. 'Photos' is correct.",
-            "grammarRule": "Plural Nouns"
+            "question": "\u2014 Did you see the mouse in the kitchen?\n\u2014 Actually, there were two ___ !",
+            "options": ["mouses", "mice", "mouse", "micees"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "mice",
+            "hint": "This is another vowel-changing plural, like 'tooth' and 'teeth'.",
+            "explanation": "'Mouse' becomes 'mice' in the plural \u2014 there is no '-s' added at all. Learners often try 'mouses', but it isn't a real word in this sense.",
+            "grammarRule": "Plural Nouns: Irregular Forms"
         },
         {
             "id": "gq_l12_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Mount Everest is ___ than any other mountain.",
-            "options": [
-                "more tall",
-                "taller",
-                "tallest",
-                "most tall"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "taller",
-            "hint": "Short adjectives (one syllable) add -er for comparatives.",
-            "explanation": "Short adjectives add '-er' for comparatives: tall → taller, fast → faster, big → bigger. Always use 'than' after the comparative: taller than. Long adjectives use 'more': more interesting.",
-            "grammarRule": "Comparative Adjectives"
+            "question": "I saw a cat in the yard. ___ cat was black and white.",
+            "options": ["A", "An", "Some", "The"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "The",
+            "hint": "This cat was already mentioned in the sentence before \u2014 it's no longer new information.",
+            "explanation": "Once something has been introduced with 'a/an', we switch to 'the' when we mention it again, because both speakers now know exactly which one we mean.",
+            "grammarRule": "Articles: The for Specific Reference"
         },
         {
             "id": "gq_l12_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "This exam is ___ than I expected.",
-            "options": [
-                "more difficult",
-                "difficultest",
-                "difficulter",
-                "most difficult"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "more difficult",
-            "hint": "Long adjectives use 'more' for comparatives.",
-            "explanation": "Adjectives with three or more syllables use 'more' for comparatives: more difficult, more interesting, more expensive. Never 'difficulter' - that's a common error.",
-            "grammarRule": "Comparative Adjectives"
+            "question": "___ moon travels around the Earth.",
+            "options": ["A", "The", "An", "Some"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The",
+            "hint": "There is only one of this in the whole sky \u2014 it's a unique thing.",
+            "explanation": "'The' is used for things that are unique, like the moon, the sun, or the sky. Since there's only one moon, 'a moon' wouldn't make sense here.",
+            "grammarRule": "Articles: The for Unique Things"
         },
         {
             "id": "gq_l12_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Today is ___ day of the year.",
-            "options": [
-                "hot",
-                "hotter",
-                "hottest",
-                "the hottest"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "the hottest",
-            "hint": "Superlatives need 'the' before them.",
-            "explanation": "Superlatives say something is at the top level. One-syllable adjectives: add '-est' with 'the': the hottest, the tallest, the biggest. Note the doubled consonant in 'hottest' (consonant-vowel-consonant rule).",
-            "grammarRule": "Comparative Adjectives"
+            "question": "\u2014 I bought a book yesterday.\n\u2014 Oh really? Is ___ book any good?",
+            "options": ["a", "an", "the", "some"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "the",
+            "hint": "The listener already knows exactly which book you mean.",
+            "explanation": "Because the book was already mentioned, the second speaker refers back to that exact one using 'the', not 'a', which would suggest a different, unknown book.",
+            "grammarRule": "Articles: The for Specific Reference"
         },
         {
             "id": "gq_l13_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "My sister ___ speak four languages.",
-            "options": [
-                "able",
-                "can",
-                "cans",
-                "is can"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "can",
-            "hint": "Modal verbs never add -s for third person.",
-            "explanation": "'Can' is a modal verb and never changes form. We never say 'cans' or 'she cans'. It is always 'can' for all subjects: I can, she can, they can. Modal verbs are always followed by the base verb.",
-            "grammarRule": "Modal 'Can' (Ability)"
+            "question": "She ___ at home; she's at the gym.",
+            "options": ["isn't", "don't", "doesn't", "aren't"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "isn't",
+            "hint": "This sentence uses 'be', not 'do' \u2014 so the negative form of 'be' is needed.",
+            "explanation": "To make 'is' negative, add 'n't': isn't. 'Don't' and 'doesn't' belong to a completely different verb pattern and can't combine with 'be' here.",
+            "grammarRule": "Negation with Be"
         },
         {
             "id": "gq_l13_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ you swim?",
-            "options": [
-                "Have",
-                "Are",
-                "Do",
-                "Can"
-            ],
+            "question": "We ___ ready yet \u2014 give us five more minutes.",
+            "options": ["isn't", "don't", "wasn't", "aren't"],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Can",
-            "hint": "Use the modal verb to ask about ability.",
-            "explanation": "Use 'Can' to ask about ability: Can you swim? Don't say 'Do you can swim?' Modal verbs form questions by inverting with the subject: Can you...? Will she...? Should we...?",
-            "grammarRule": "Modal 'Can' (Ability)"
+            "correctAnswer": "aren't",
+            "hint": "The subject is plural, and the moment is now, not the past.",
+            "explanation": "'We' needs 'aren't', the negative of 'are'. 'Wasn't' would place this in the past, and 'isn't' doesn't match a plural subject.",
+            "grammarRule": "Negation with Be"
         },
         {
             "id": "gq_l13_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "He ___ lift heavy boxes at all.",
-            "options": [
-                "can't",
-                "cannot't",
-                "cans",
-                "can"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "can't",
-            "hint": "'At all' signals a negative meaning - use 'can't'.",
-            "explanation": "'Can't' = cannot. 'He can't lift heavy boxes at all' means he is completely unable to. 'At all' makes a negative stronger: I can't sleep at all. I don't understand it at all.",
-            "grammarRule": "Modal 'Can' (Ability)"
+            "question": "\u2014 Are you tired?\n\u2014 No, I ___ tired at all, just a bit hungry.",
+            "options": ["amn't", "aren't", "am not", "isn't"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "am not",
+            "hint": "There's a contracted form for this ('I'm not'), but no single word like 'amn't' in standard English.",
+            "explanation": "'I' pairs only with 'am', and its negative is 'am not' (or the contraction 'I'm not'). 'Amn't' isn't used in standard English, even though learners often guess it.",
+            "grammarRule": "Negation with Be"
         },
         {
             "id": "gq_l14_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She is wearing ___ dress.",
-            "options": [
-                "beautiful red a",
-                "a beautiful red",
-                "beautiful a red",
-                "a red beautiful"
-            ],
+            "question": "He ___ a car, so he takes the bus to work.",
+            "options": ["haven't", "doesn't have", "don't have", "not have"],
             "correctAnswerIndex": 1,
-            "correctAnswer": "a beautiful red",
-            "hint": "In English, the article comes first, then adjectives, then the noun.",
-            "explanation": "English word order for noun phrases: article (a/the) + adjectives + noun. So: a beautiful red dress. The adjective comes between the article and the noun. Never 'a dress beautiful'.",
-            "grammarRule": "Adjective Order"
+            "correctAnswer": "doesn't have",
+            "hint": "'He' needs the same helper verb it uses in questions: does.",
+            "explanation": "Negatives with 'have' as a main verb use do-support: doesn't have for he/she/it, don't have for I/you/we/they. 'Not have' alone is not a complete negative form.",
+            "grammarRule": "Negation with Have: Third-Person Singular"
         },
         {
             "id": "gq_l14_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The ___ gave an interesting lecture.",
-            "options": [
-                "teacher old",
-                "teacher the old",
-                "old teacher",
-                "old the teacher"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "old teacher",
-            "hint": "Adjectives come directly before the noun.",
-            "explanation": "Adjectives come before nouns: the old teacher, not 'the teacher old'. The article (the) comes before the adjective: the + old + teacher. This is the basic English noun phrase order.",
-            "grammarRule": "Adjective Order"
+            "question": "I ___ time to talk right now \u2014 can I call you later?",
+            "options": ["don't have", "doesn't have", "haven't", "not have"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "don't have",
+            "hint": "The subject here is 'I', which pairs with 'do', not 'does'.",
+            "explanation": "'I' takes 'don't have', following the same do-support pattern as other verbs: I don't have, you don't have, they don't have.",
+            "grammarRule": "Negation with Have: First Person"
         },
         {
             "id": "gq_l14_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "It was ___ night.",
-            "options": [
-                "a cold stormy dark",
-                "a dark cold stormy",
-                "a stormy cold dark",
-                "a cold dark stormy"
-            ],
+            "question": "\u2014 Does Emma have a pet?\n\u2014 No, she ___ any pets.",
+            "options": ["don't have", "haven't", "not have", "doesn't have"],
             "correctAnswerIndex": 3,
-            "correctAnswer": "a cold dark stormy",
-            "hint": "Multiple adjectives follow a general order: quality → temperature → general.",
-            "explanation": "English has a standard adjective order: cold (temperature) + dark (general description/light) + stormy (condition/weather): a cold, dark, stormy night. The general order is: opinion → size → age → temperature → colour → origin.",
-            "grammarRule": "Adjective Order"
+            "correctAnswer": "doesn't have",
+            "hint": "The question used 'does' because of 'Emma' \u2014 keep that same agreement in the answer.",
+            "explanation": "Since 'Emma' is third-person singular ('she'), the negative answer keeps the same agreement: she doesn't have. This mirrors the 'does' already used in the question.",
+            "grammarRule": "Negation with Have: Third-Person Singular"
         },
         {
             "id": "gq_l15_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ does she live?",
-            "options": [
-                "Where",
-                "What",
-                "When",
-                "Who"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Where",
-            "hint": "This question asks about a place.",
-            "explanation": "Question words: Where = place, When = time, What = thing or action, Who = person, Why = reason, How = manner. 'Where does she live?' asks about her location.",
-            "grammarRule": "Question Words"
+            "question": "___ you ready for the trip tomorrow?",
+            "options": ["Do", "Are", "Is", "Does"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Are",
+            "hint": "This question is about a state (being ready), not an action, and the subject is 'you'.",
+            "explanation": "Questions with 'be' simply move the verb before the subject: Are you ready? No extra 'do' or 'does' is needed, unlike with action verbs.",
+            "grammarRule": "Yes/No Questions with Be"
         },
         {
             "id": "gq_l15_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ is your favourite colour?",
-            "options": [
-                "When",
-                "Where",
-                "Who",
-                "What"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "What",
-            "hint": "This asks about a thing - which word is used for things?",
-            "explanation": "'What' asks about things, objects, ideas, or general information: What is your name? What colour do you like? What time is it? Use 'Who' for people: Who is that?",
-            "grammarRule": "Question Words"
+            "question": "___ this seat taken, or can I sit here?",
+            "options": ["Is", "Are", "Do", "Does"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Is",
+            "hint": "'This seat' is singular \u2014 which form of 'be' matches it?",
+            "explanation": "'This seat' is a singular subject, so the question starts with 'Is': Is this seat taken? 'Do/Does' would only be used with action verbs.",
+            "grammarRule": "Yes/No Questions with Be"
         },
         {
             "id": "gq_l15_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ did they arrive so late?",
-            "options": [
-                "Where",
-                "Who",
-                "When",
-                "Why"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Why",
-            "hint": "This question expects an answer explaining a reason.",
-            "explanation": "'Why' asks for a reason or cause: Why are you late? → Because I missed the bus. Don't confuse 'Why' (reason) with 'When' (time) or 'Where' (place).",
-            "grammarRule": "Question Words"
+            "question": "\u2014 ___ your parents home this weekend?\n\u2014 No, they're traveling until Monday.",
+            "options": ["Is", "Do", "Are", "Does"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Are",
+            "hint": "'Your parents' is more than one person.",
+            "explanation": "'Your parents' is plural, so the question uses 'Are': Are your parents home? This matches the answer 'they're', which is also plural.",
+            "grammarRule": "Yes/No Questions with Be"
         },
         {
             "id": "gq_l16_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She ___ eats breakfast.",
-            "options": [
-                "often always",
-                "always",
-                "never always",
-                "never"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "always",
-            "hint": "The sentence means she eats breakfast 100% of the time.",
-            "explanation": "Frequency adverbs: always (100%), usually (80%), often (60%), sometimes (40%), rarely (20%), never (0%). They go before the main verb but after 'be': She always eats breakfast. He is always late.",
-            "grammarRule": "Adverbs of Frequency"
+            "question": "___ you like coffee, or do you prefer tea?",
+            "options": ["Does", "Are", "Is", "Do"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Do",
+            "hint": "This is an action verb question, not a 'be' question \u2014 and the subject is 'you'.",
+            "explanation": "Action verbs like 'like' need a helper verb to form a question: do or does. 'You' takes 'do', so the question becomes 'Do you like...?'",
+            "grammarRule": "Yes/No Questions with Do/Does"
         },
         {
             "id": "gq_l16_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "He is ___ late for work.",
-            "options": [
-                "always",
-                "yet",
-                "never",
-                "ever"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "always",
-            "hint": "With the verb 'be', frequency adverbs come after it.",
-            "explanation": "With 'be', frequency adverbs come AFTER the verb: He is always late. He is never early. With other verbs, they come BEFORE: He always arrives late. He never misses a meeting.",
-            "grammarRule": "Adverbs of Frequency"
+            "question": "___ she work on Saturdays?",
+            "options": ["Do", "Does", "Is", "Are"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Does",
+            "hint": "'She' is third-person singular, so the helper verb changes.",
+            "explanation": "With he/she/it, the question helper becomes 'does' instead of 'do': Does she work? Notice the main verb stays as 'work', not 'works'.",
+            "grammarRule": "Yes/No Questions with Do/Does"
         },
         {
             "id": "gq_l16_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I ___ miss the bus - I'm always on time.",
-            "options": [
-                "sometimes",
-                "never",
-                "always",
-                "usually"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "never",
-            "hint": "If you're always on time, how often do you miss the bus?",
-            "explanation": "If you are 'always on time', you 'never' miss the bus. Never = 0% of the time. Always = 100%. The two parts of the sentence must be logically consistent.",
-            "grammarRule": "Adverbs of Frequency"
+            "question": "\u2014 ___ your brother speak French?\n\u2014 A little, yes.",
+            "options": ["Do", "Is", "Does", "Are"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Does",
+            "hint": "'Your brother' can be replaced with 'he'.",
+            "explanation": "'Your brother' = he, a third-person singular subject, so the question needs 'Does': Does your brother speak French?",
+            "grammarRule": "Yes/No Questions with Do/Does"
         },
         {
             "id": "gq_l17_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Look! The children ___ in the rain.",
-            "options": [
-                "played",
-                "play",
-                "plays",
-                "are playing"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "are playing",
-            "hint": "'Look!' signals something happening right now.",
-            "explanation": "Present continuous (am/is/are + -ing) describes actions happening right now. Signal words: look!, now, at the moment, currently. 'The children are playing' = they are doing it right now.",
-            "grammarRule": "Present Continuous"
+            "question": "___ is your favorite color?",
+            "options": ["What", "Who", "Where", "When"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "What",
+            "hint": "The answer to this question would be a thing, not a person or a place.",
+            "explanation": "'What' asks about things, ideas, or choices, such as a favorite color. 'Who' is reserved for people, and 'Where' for places.",
+            "grammarRule": "WH-Questions: What"
         },
         {
             "id": "gq_l17_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She ___ a book at the moment.",
-            "options": [
-                "reads",
-                "read",
-                "reading",
-                "is reading"
-            ],
+            "question": "___ is the nearest pharmacy, please?",
+            "options": ["What", "Who", "When", "Where"],
             "correctAnswerIndex": 3,
-            "correctAnswer": "is reading",
-            "hint": "'At the moment' tells you the action is happening now.",
-            "explanation": "'At the moment' signals present continuous. Form: subject + am/is/are + verb-ing. 'She is reading a book at the moment.' Not just 'reading' - you need the auxiliary 'is'.",
-            "grammarRule": "Present Continuous"
+            "correctAnswer": "Where",
+            "hint": "The answer would describe a location.",
+            "explanation": "'Where' asks about location or place. Since the pharmacy's location is what's needed here, 'Where' fits, not 'What' or 'When'.",
+            "grammarRule": "WH-Questions: Where"
         },
         {
             "id": "gq_l17_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I ___ to music while I cook.",
-            "options": [
-                "am listening",
-                "are listening",
-                "is listening",
-                "listening"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "am listening",
-            "hint": "Present continuous with 'I' uses 'am'.",
-            "explanation": "For present continuous: I + am, He/She/It + is, You/We/They + are. 'I am listening to music while I cook.' Never 'I is' or 'I are'.",
-            "grammarRule": "Present Continuous"
+            "question": "\u2014 ___ is that man over there?\n\u2014 That's my uncle, he's visiting for the week.",
+            "options": ["What", "Where", "Who", "Why"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Who",
+            "hint": "The answer names a person.",
+            "explanation": "'Who' asks about people. Since the answer identifies a person (uncle), 'Who' is the right question word, not 'What', which asks about things.",
+            "grammarRule": "WH-Questions: Who"
         },
         {
             "id": "gq_l18_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "MAKE THE SENTENCE WORK",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "They ___ visit their grandparents next weekend.",
-            "options": [
-                "are going to",
-                "going to",
-                "go to",
-                "will going to"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are going to",
-            "hint": "'Going to' needs a 'be' verb before it.",
-            "explanation": "'Going to' requires the verb 'be': I am going to, He is going to, They are going to. Use 'going to' for decided plans or intentions: They are going to visit their grandparents.",
-            "grammarRule": "Future with 'Going To'"
+            "question": "I ___ coffee in the morning, before breakfast.",
+            "options": ["drink always", "always drink", "am always drink", "drink am always"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "always drink",
+            "hint": "Frequency words like 'always' usually stand right before the main verb.",
+            "explanation": "With ordinary action verbs, frequency adverbs like 'always' go before the verb: I always drink coffee. There is no need for 'am' here, since 'drink' isn't a 'be' verb.",
+            "grammarRule": "Adverb Placement: Frequency Adverbs"
         },
         {
             "id": "gq_l18_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She ___ study medicine at university.",
-            "options": [
-                "going to",
-                "is going to",
-                "will going to",
-                "goes to"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is going to",
-            "hint": "She has already decided - use 'be going to' for pre-made plans.",
-            "explanation": "Use 'be going to' when a decision was made before the moment of speaking: She is going to study medicine. Use 'will' for spontaneous decisions: Oh, I'll help you! (decided right now).",
-            "grammarRule": "Future with 'Going To'"
+            "question": "He ___ late for meetings, and it annoys his manager.",
+            "options": ["always is", "always be", "be always", "is always"],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "is always",
+            "hint": "This sentence uses 'be' as the main verb \u2014 the rule is different from Question 1.",
+            "explanation": "With 'be', the frequency adverb comes after the verb, not before it: He is always late. This is the opposite order from action verbs like 'drink'.",
+            "grammarRule": "Adverb Placement: Frequency Adverbs with Be"
         },
         {
             "id": "gq_l18_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Look at those clouds! It ___ rain.",
-            "options": [
-                "goes to",
-                "is going to",
-                "going to",
-                "will going"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is going to",
-            "hint": "We can see clouds - visible evidence points to 'going to'.",
-            "explanation": "Use 'going to' when there is visible evidence for a prediction: Look at the clouds - it is going to rain! Use 'will' for general predictions with no visible evidence: I think it will rain tomorrow.",
-            "grammarRule": "Future with 'Going To'"
+            "question": "\u2014 Do you exercise much?\n\u2014 Yes, I ___ exercise on weekends.",
+            "options": ["usually", "am usually", "usually am", "be usually"],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "usually",
+            "hint": "'Exercise' here is an action verb, just like 'drink' earlier.",
+            "explanation": "Since 'exercise' is an action verb, the frequency word goes before it with no extra 'am' or 'be': I usually exercise. Compare with 'always drink' from earlier.",
+            "grammarRule": "Adverb Placement: Frequency Adverbs"
         },
         {
             "id": "gq_l19_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "CHOOSE WHAT FITS",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I was tired, ___ I went to bed early.",
-            "options": [
-                "or",
-                "however",
-                "so",
-                "but"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "so",
-            "hint": "The second clause shows a result of the first.",
-            "explanation": "'So' connects a cause and its result: I was tired, so I went to bed early. 'But' shows contrast. 'Because' explains a reason. 'Or' offers an alternative. 'So' = result.",
-            "grammarRule": "Coordinating Conjunctions"
+            "question": "The cat is hiding ___ the cardboard box.",
+            "options": ["between", "in", "behind", "under"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "in",
+            "hint": "A box is a container, so think about what's inside it.",
+            "explanation": "'In' describes something enclosed inside a space, like a box or a room. 'Under' or 'behind' would describe a different position relative to the box.",
+            "grammarRule": "Prepositions of Place"
         },
         {
             "id": "gq_l19_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "SPOT THE RIGHT PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She loves dancing, ___ she hates singing.",
-            "options": [
-                "and",
-                "because",
-                "but",
-                "so"
-            ],
+            "question": "The bank is ___ the pharmacy and the bakery.",
+            "options": ["behind", "next to", "between", "under"],
             "correctAnswerIndex": 2,
-            "correctAnswer": "but",
-            "hint": "These two ideas are opposite - which word shows contrast?",
-            "explanation": "'But' shows contrast between two ideas: She loves dancing, but she hates singing. Use 'and' to add similar ideas, 'because' for reasons, and 'so' for results.",
-            "grammarRule": "Coordinating Conjunctions"
+            "correctAnswer": "between",
+            "hint": "Two separate places are named \u2014 what preposition needs exactly two reference points?",
+            "explanation": "'Between' is used when something is positioned in the middle of two things: between the pharmacy and the bakery. 'Next to' would only work with one reference point.",
+            "grammarRule": "Prepositions of Place"
         },
         {
             "id": "gq_l19_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "He passed the exam ___ he studied hard.",
-            "options": [
-                "because",
-                "yet",
-                "but",
-                "however"
-            ],
+            "question": "\u2014 Where's the remote control?\n\u2014 It's ___ the sofa cushions, I think.",
+            "options": ["under", "between", "behind", "above"],
             "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "The second clause explains why he passed.",
-            "explanation": "'Because' introduces a reason: He passed because he studied hard. Don't confuse 'because' (conjunction + clause) with 'because of' (preposition + noun phrase: because of his hard work).",
-            "grammarRule": "Coordinating Conjunctions"
+            "correctAnswer": "under",
+            "hint": "Think about where a small object often slips when you sit down.",
+            "explanation": "'Under' describes something below another object, like a remote lost beneath sofa cushions. 'Above' would place it higher, which doesn't fit here.",
+            "grammarRule": "Prepositions of Place"
         },
         {
             "id": "gq_l20_q1",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "FIX THE GRAMMAR",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She ___ like spicy food.",
-            "options": [
-                "don't",
-                "doesn't",
-                "not",
-                "isn't"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "doesn't",
-            "hint": "Third person singular uses 'doesn't' in negative sentences.",
-            "explanation": "In simple present negative, use 'doesn't' for he/she/it and 'don't' for I/you/we/they. The main verb stays in base form: She doesn't like (not 'She doesn't likes').",
-            "grammarRule": "Negatives (Present Forms)"
+            "question": "Which sentence is correct?",
+            "options": ["She don't has a car.", "She not have a car.", "She isn't have a car.", "She doesn't have a car."],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "She doesn't have a car.",
+            "hint": "Only one option correctly combines 'she' with the right negative helper verb.",
+            "explanation": "The correct negative pattern is subject + doesn't + base verb: She doesn't have a car. The other options mix up 'don't/doesn't' or wrongly combine 'be' with 'have'.",
+            "grammarRule": "Negation with Have: Third-Person Singular"
         },
         {
             "id": "gq_l20_q2",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "They ___ at home right now - they're at work.",
-            "options": [
-                "not",
-                "don't",
-                "isn't",
-                "aren't"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "aren't",
-            "hint": "'Be' doesn't use 'don't'/'doesn't' - it takes 'not' directly.",
-            "explanation": "To make 'be' negative, add 'not' after it: They are not = They aren't. Never 'They don't be'. 'Don't'/'doesn't' is only used with action verbs (like, want, know), not with 'be'.",
-            "grammarRule": "Negatives (Present Forms)"
+            "question": "\u2014 Is there any bread left?\n\u2014 No, ___ isn't any. We need to buy some.",
+            "options": ["it", "there", "this", "they"],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "there",
+            "hint": "Match the word the question itself used to introduce the topic.",
+            "explanation": "Short answers to 'there is/are' questions stay with 'there': Is there bread? \u2014 No, there isn't. Switching to 'it' would sound unnatural here.",
+            "grammarRule": "There Is / There Are"
         },
         {
             "id": "gq_l20_q3",
-            "instruction": "RESOLVE THE PATTERN",
+            "instruction": "COMPLETE THE MESSAGE",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "I ___ finished my homework yet.",
-            "options": [
-                "am not",
-                "don't",
-                "didn't",
-                "haven't"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "haven't",
-            "hint": "'Yet' is a signal word for present perfect.",
-            "explanation": "'Yet' is used with present perfect. Negative present perfect: have/has + not = haven't/hasn't. 'I haven't finished my homework yet.' 'Yet' goes at the end of the sentence.",
-            "grammarRule": "Negatives (Present Forms)"
+            "question": "\u2014 Whose bag is this?\n\u2014 I think it's ___ ; she left it here this morning.",
+            "options": ["her", "its", "hers", "she"],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "hers",
+            "hint": "This word stands alone after 'it's', with no noun following it.",
+            "explanation": "'Hers' is a possessive pronoun that replaces 'her bag' completely: it's hers. Compare this with 'her bag' from Level 7, where 'her' sits directly before the noun.",
+            "grammarRule": "Possessive Pronouns"
         }
     ]
 }

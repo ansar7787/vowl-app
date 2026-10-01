@@ -7,139 +7,167 @@
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll have the quiche Lorraine for my starter, the eggs benedict for my main, and a mimosa to drink.",
+            "prompt": "I prefer the grilled vegetables to the fries, and I'll have the steak.",
             "options": [
-                "Quiche Lorraine",
-                "Eggs Benedict",
-                "Mimosa",
-                "Bloody Mary"
+                "Grilled Vegetables",
+                "Steak",
+                "Fries",
+                "Mashed Potatoes"
             ],
-            "correctAnswer": "Quiche Lorraine, Eggs Benedict, Mimosa",
-            "hint": "A savory tart starter, an egg dish main, and a brunch cocktail complete this order.",
-            "explanation": "A ‘mimosa’ is a classic brunch drink made with champagne and orange juice. ‘Quiche Lorraine’ is a savory tart filled with eggs, cream, and bacon.",
+            "correctAnswer": "Grilled Vegetables, Steak",
+            "hint": "'Prefer X to Y' names the actual choice first, then the rejected alternative.",
+            "explanation": "'Prefer X to Y' is a common way to state a preference between two options; X is what ends up on the plate.",
             "id": "go_l51_q1",
             "menuItems": [
-                "Quiche Lorraine",
-                "Eggs Benedict",
-                "Mimosa",
-                "Bloody Mary"
+                "Grilled Vegetables",
+                "Steak",
+                "Fries",
+                "Mashed Potatoes"
             ],
             "menuPrices": [
-                "$11.25",
-                "$4.50",
-                "$14.00",
-                "$10.00"
+                "$3.50",
+                "$22.00",
+                "$3.00",
+                "$3.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Can we start with the pastry basket, move on to the shakshuka, and end with a cold brew?",
+            "prompt": "I'd rather have the soup than the salad, and the grilled cheese, please.",
             "options": [
-                "Pastry Basket",
-                "Shakshuka",
-                "Cold Brew",
-                "Iced Latte"
+                "Grilled Cheese",
+                "Soup",
+                "Turkey Melt",
+                "Salad"
             ],
-            "correctAnswer": "Pastry Basket, Shakshuka, Cold Brew",
-            "hint": "A basket of baked goods, a spiced egg dish, and a coffee drink are named in order.",
-            "explanation": "‘Shakshuka’ is eggs poached in a spiced tomato sauce, a popular modern brunch dish. ‘Cold brew’ is coffee steeped slowly in cold water.",
+            "correctAnswer": "Grilled Cheese, Soup",
+            "hint": "'I'd rather have X than Y' works like 'prefer,' with the wanted item coming first.",
+            "explanation": "'I'd rather have X than Y' expresses a preference the same way 'prefer' does - the item right after 'rather have' is the real choice.",
             "id": "go_l51_q2",
             "menuItems": [
-                "Pastry Basket",
-                "Shakshuka",
-                "Cold Brew",
-                "Iced Latte"
+                "Grilled Cheese",
+                "Soup",
+                "Turkey Melt",
+                "Salad"
             ],
             "menuPrices": [
-                "$15.25",
-                "$5.75",
+                "$7.50",
                 "$4.50",
-                "$9.75"
+                "$8.00",
+                "$4.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'd like the granola parfait, then the smoked salmon bagel, and finally an orange juice.",
+            "prompt": "Honestly, either the chicken or the fish is fine with me - I'll just go with whatever's fresher today, and a lemonade.",
             "options": [
-                "Granola Parfait",
-                "Smoked Salmon Bagel",
-                "Orange Juice",
-                "Apple Juice"
+                "Fish",
+                "Lemonade",
+                "Chicken",
+                "Iced Tea"
             ],
-            "correctAnswer": "Granola Parfait, Smoked Salmon Bagel, Orange Juice",
-            "hint": "A layered yogurt dish, a bagel topped with fish, and a breakfast drink are all named in sequence.",
-            "explanation": "A ‘parfait’ is served in layers, usually yogurt, granola, and fruit. ‘Smoked salmon’ is a classic bagel topping at brunch.",
+            "correctAnswer": "Fish, Chicken",
+            "hint": "The customer hands the final food decision to the server's judgment about freshness.",
+            "explanation": "Saying 'whatever's fresher' means the server ultimately picks between two named options - both remain possible until the server answers, so this level asks you to notice that no single dish is confirmed yet without more context.",
             "id": "go_l51_q3",
             "menuItems": [
-                "Granola Parfait",
-                "Smoked Salmon Bagel",
-                "Orange Juice",
-                "Apple Juice"
+                "Fish",
+                "Lemonade",
+                "Chicken",
+                "Iced Tea"
             ],
             "menuPrices": [
-                "$17.75",
-                "$18.00",
-                "$20.50",
-                "$16.50"
+                "$15.00",
+                "$3.00",
+                "$13.00",
+                "$3.25"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "First the shrimp cocktail, then the ribeye steak, and last the creamed spinach, please.",
+            "prompt": "Could I swap the coleslaw for a side salad with my sandwich?",
             "options": [
-                "Shrimp Cocktail",
-                "Ribeye Steak",
-                "Creamed Spinach",
-                "Mashed Potatoes"
+                "Side Salad",
+                "Coleslaw",
+                "Soup",
+                "Sandwich"
             ],
-            "correctAnswer": "Shrimp Cocktail, Ribeye Steak, Creamed Spinach",
-            "hint": "A chilled seafood starter, a specific cut of steak, and a rich side dish are named in order.",
-            "explanation": "‘Ribeye’ is a specific cut of steak known for its marbling and flavor. ‘Creamed spinach’ is a classic steakhouse side made with spinach in a rich cream sauce.",
+            "correctAnswer": "Side Salad, Sandwich",
+            "hint": "'Swap X for Y' means Y replaces X - the replaced item never reaches the table.",
+            "explanation": "This reinforces the substitution pattern: whatever comes after 'for' is what's actually served, not the item named first.",
             "id": "go_l52_q1",
             "menuItems": [
-                "Shrimp Cocktail",
-                "Ribeye Steak",
-                "Creamed Spinach",
-                "Mashed Potatoes"
+                "Side Salad",
+                "Coleslaw",
+                "Soup",
+                "Sandwich"
             ],
             "menuPrices": [
-                "$19.25",
-                "$2.00",
-                "$21.75",
-                "$13.75"
+                "$3.00",
+                "$2.50",
+                "$4.00",
+                "$8.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll begin with the wedge salad, continue with the filet mignon, and end with the loaded baked potato.",
+            "prompt": "Instead of the standard fries, could I get sweet potato fries with my burger?",
             "options": [
-                "Wedge Salad",
-                "Filet Mignon",
-                "Loaded Baked Potato",
-                "Sweet Potato Fries"
+                "Sweet Potato Fries",
+                "Onion Rings",
+                "Burger",
+                "Fries"
             ],
-            "correctAnswer": "Wedge Salad, Filet Mignon, Loaded Baked Potato",
-            "hint": "A crisp lettuce salad, a tender cut of steak, and a topped potato side are named in order.",
-            "explanation": "‘Filet mignon’ is a tender, lean cut of steak from the smaller end of the tenderloin. A ‘wedge salad’ is a quarter head of lettuce served with dressing and toppings.",
+            "correctAnswer": "Sweet Potato Fries, Burger",
+            "hint": "'Instead of' at the start of the sentence still points forward to the item that's actually wanted.",
+            "explanation": "The substitution phrase doesn't have to come right before the replacement item - here it opens the sentence, but the logic is the same.",
             "id": "go_l52_q2",
             "menuItems": [
-                "Wedge Salad",
-                "Filet Mignon",
-                "Loaded Baked Potato",
-                "Sweet Potato Fries"
+                "Sweet Potato Fries",
+                "Onion Rings",
+                "Burger",
+                "Fries"
             ],
             "menuPrices": [
+                "$3.50",
                 "$3.25",
-                "$12.50",
-                "$13.75",
+                "$9.00",
+                "$3.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Could you swap out the bun for a lettuce wrap on my burger, and keep the fries as they are?",
+            "options": [
+                "Fries",
+                "Lettuce Wrap",
+                "Bun",
+                "Burger"
+            ],
+            "correctAnswer": "Fries, Burger",
+            "hint": "One item is substituted, while the other is explicitly kept unchanged - both are still part of the order.",
+            "explanation": "'Keep X as they are' confirms an item stays the same, which is just as important to notice as a substitution when tracking a full order.",
+            "id": "go_l52_q3",
+            "menuItems": [
+                "Fries",
+                "Lettuce Wrap",
+                "Bun",
+                "Burger"
+            ],
+            "menuPrices": [
+                "$3.00",
+                "$0.50",
+                "$0.00",
                 "$8.50"
             ]
         },
@@ -147,671 +175,615 @@
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Could I have the onion soup, followed by the New York strip, and mashed potatoes to top it off?",
+            "prompt": "Could I have the club sandwich with the bacon left out, and a side of fruit?",
             "options": [
-                "Onion Soup",
-                "New York Strip",
-                "Mashed Potatoes",
-                "Baked Potato"
+                "Bacon",
+                "Club Sandwich",
+                "Fruit",
+                "Chips"
             ],
-            "correctAnswer": "Onion Soup, New York Strip, Mashed Potatoes",
-            "hint": "A classic soup starter, a specific cut of steak, and a smooth potato side are named clearly.",
-            "explanation": "‘New York strip’ is a firm, flavorful cut of steak from the short loin. ‘Mashed’ potatoes are cooked and blended smooth, unlike a whole baked potato.",
-            "id": "go_l52_q3",
-            "menuItems": [
-                "Onion Soup",
-                "New York Strip",
-                "Mashed Potatoes",
-                "Baked Potato"
-            ],
-            "menuPrices": [
-                "$8.50",
-                "$3.25",
-                "$13.75",
-                "$18.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "We're going to start with the oysters, share the seafood platter, and finish with the key lime pie.",
-            "options": [
-                "Oysters",
-                "Seafood Platter",
-                "Key Lime Pie",
-                "Cheesecake"
-            ],
-            "correctAnswer": "Oysters, Seafood Platter, Key Lime Pie",
-            "hint": "Raw shellfish, a shared main dish, and a tangy dessert are all named.",
-            "explanation": "‘Share’ tells you the seafood platter is meant for the whole table, unlike the individual starter and dessert.",
+            "correctAnswer": "Club Sandwich, Fruit",
+            "hint": "'Left out' removes an ingredient without changing which dish is ordered.",
+            "explanation": "'Leave out X' is another way to say 'without X' - it removes one ingredient from a dish that's still ordered as named.",
             "id": "go_l53_q1",
             "menuItems": [
-                "Oysters",
-                "Seafood Platter",
-                "Key Lime Pie",
-                "Cheesecake"
+                "Bacon",
+                "Club Sandwich",
+                "Fruit",
+                "Chips"
             ],
             "menuPrices": [
-                "$21.75",
-                "$21.75",
-                "$16.50",
-                "$21.75"
+                "$1.50",
+                "$9.00",
+                "$3.00",
+                "$2.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll go for the calamari, the grilled lobster, and the chocolate lava cake.",
+            "prompt": "Take the onions out of my salad, please, and I'll have a lemonade with that.",
             "options": [
-                "Calamari",
-                "Grilled Lobster",
-                "Chocolate Lava Cake",
-                "Chocolate Mousse"
+                "Onions",
+                "Salad",
+                "Iced Tea",
+                "Lemonade"
             ],
-            "correctAnswer": "Calamari, Grilled Lobster, Chocolate Lava Cake",
-            "hint": "A fried starter, a grilled shellfish main, and a warm chocolate dessert are listed together.",
-            "explanation": "A ‘lava cake’ has a soft, warm chocolate center that flows out when cut open — different from a firmer chocolate mousse.",
+            "correctAnswer": "Salad, Lemonade",
+            "hint": "'Take X out' is the same idea as 'leave X out' - both remove an ingredient.",
+            "explanation": "'Take X out' and 'leave X out' are interchangeable in restaurant English; both signal that an ingredient should be removed from a dish.",
             "id": "go_l53_q2",
             "menuItems": [
-                "Calamari",
-                "Grilled Lobster",
-                "Chocolate Lava Cake",
-                "Chocolate Mousse"
+                "Onions",
+                "Salad",
+                "Iced Tea",
+                "Lemonade"
             ],
             "menuPrices": [
-                "$12.50",
-                "$12.50",
-                "$14.00",
-                "$12.50"
+                "$0.50",
+                "$8.00",
+                "$3.25",
+                "$3.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Let's begin with the crab cakes. Next, the grilled halibut. And to finish, the coconut cream pie.",
+            "prompt": "Could you hold the cheese on my burger? Everything else can stay the same, and a coke, please.",
             "options": [
-                "Crab Cakes",
-                "Grilled Halibut",
-                "Coconut Cream Pie",
-                "Key Lime Pie"
+                "Cheese",
+                "Coke",
+                "Burger",
+                "Bacon"
             ],
-            "correctAnswer": "Crab Cakes, Grilled Halibut, Coconut Cream Pie",
-            "hint": "A pan-fried starter, a mild white fish, and a tropical cream dessert are named in order.",
-            "explanation": "‘Halibut’ is a firm, mild white fish, popular grilled or pan-seared. ‘Coconut cream pie’ is filled with a sweet coconut custard, unlike a citrus-based key lime pie.",
+            "correctAnswer": "Coke, Burger",
+            "hint": "'Hold X' is a very common, short way in restaurants to ask for an ingredient to be left out.",
+            "explanation": "'Hold the cheese' is standard restaurant language for removing an ingredient - shorter than 'leave out' but means the same thing.",
             "id": "go_l53_q3",
             "menuItems": [
-                "Crab Cakes",
-                "Grilled Halibut",
-                "Coconut Cream Pie",
-                "Key Lime Pie"
+                "Cheese",
+                "Coke",
+                "Burger",
+                "Bacon"
             ],
             "menuPrices": [
-                "$11.25",
-                "$10.00",
-                "$7.25",
-                "$16.50"
+                "$1.00",
+                "$2.75",
+                "$8.50",
+                "$1.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll take the hummus plate first, the vegetable curry second, and the mango sorbet last.",
+            "prompt": "Could I replace the regular mayo with garlic aioli on my sandwich, and keep the chips?",
             "options": [
-                "Hummus Plate",
-                "Vegetable Curry",
-                "Mango Sorbet",
-                "Coconut Ice Cream"
+                "Regular Mayo",
+                "Chips",
+                "Garlic Aioli",
+                "Sandwich"
             ],
-            "correctAnswer": "Hummus Plate, Vegetable Curry, Mango Sorbet",
-            "hint": "A dip starter, a plant-based main, and a fruity frozen dessert are named in order.",
-            "explanation": "‘Sorbet’ is made from fruit and water, with no dairy, unlike ice cream. This order is entirely plant-based, from starter to dessert.",
+            "correctAnswer": "Chips, Sandwich",
+            "hint": "'Replace X with Y' means Y is what's actually used - X disappears from the order.",
+            "explanation": "'Replace X with Y' works like 'swap X for Y,' just with the words in a different order - Y always wins.",
             "id": "go_l54_q1",
             "menuItems": [
-                "Hummus Plate",
-                "Vegetable Curry",
-                "Mango Sorbet",
-                "Coconut Ice Cream"
+                "Regular Mayo",
+                "Chips",
+                "Garlic Aioli",
+                "Sandwich"
             ],
             "menuPrices": [
-                "$9.75",
-                "$18.00",
-                "$9.75",
-                "$20.50"
+                "$0.50",
+                "$2.50",
+                "$0.75",
+                "$7.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "For my starter, the roasted beet salad. For my main, the wild mushroom risotto. And for dessert, the vegan chocolate cake.",
+            "prompt": "I'd like the pasta with marinara instead of alfredo sauce, and a side salad, please.",
             "options": [
-                "Roasted Beet Salad",
-                "Wild Mushroom Risotto",
-                "Vegan Chocolate Cake",
-                "Cheesecake"
+                "Pasta with Alfredo",
+                "Caesar Salad",
+                "Pasta with Marinara",
+                "Side Salad"
             ],
-            "correctAnswer": "Roasted Beet Salad, Wild Mushroom Risotto, Vegan Chocolate Cake",
-            "hint": "All three courses avoid meat, though only one dessert option is fully plant-based.",
-            "explanation": "‘Vegan’ means a dish contains no animal products at all, including dairy and eggs — unlike a standard cheesecake, which contains both.",
+            "correctAnswer": "Pasta with Marinara, Side Salad",
+            "hint": "This describes one dish with a sauce substitution, plus one more separate item - not two pasta orders.",
+            "explanation": "Even though two sauces are mentioned, only one pasta dish is actually ordered; the side salad is a second, separate item.",
             "id": "go_l54_q2",
             "menuItems": [
-                "Roasted Beet Salad",
-                "Wild Mushroom Risotto",
-                "Vegan Chocolate Cake",
-                "Cheesecake"
+                "Pasta with Alfredo",
+                "Caesar Salad",
+                "Pasta with Marinara",
+                "Side Salad"
             ],
             "menuPrices": [
-                "$19.25",
-                "$12.50",
-                "$11.25",
-                "$21.75"
+                "$13.00",
+                "$3.50",
+                "$12.00",
+                "$3.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Can we start with the stuffed peppers, move on to the lentil shepherd's pie, and end with a fruit tart?",
+            "prompt": "Could you replace the fries with a cup of soup, and could I also get extra napkins?",
             "options": [
-                "Stuffed Peppers",
-                "Lentil Shepherd's Pie",
-                "Fruit Tart",
-                "Apple Crumble"
+                "Extra Napkins",
+                "Extra Ketchup",
+                "Soup",
+                "Fries"
             ],
-            "correctAnswer": "Stuffed Peppers, Lentil Shepherd's Pie, Fruit Tart",
-            "hint": "A vegetable-based starter, a plant-based twist on a classic dish, and a fruity dessert are all named.",
-            "explanation": "A traditional shepherd's pie uses lamb, but this version replaces it with lentils for a vegetarian main course.",
+            "correctAnswer": "Extra Napkins, Soup",
+            "hint": "A substitution and a genuinely new small request appear in the same sentence.",
+            "explanation": "This combines a substitution ('replace X with Y') with an unrelated extra request ('could I also get') - together they define the real order.",
             "id": "go_l54_q3",
             "menuItems": [
-                "Stuffed Peppers",
-                "Lentil Shepherd's Pie",
-                "Fruit Tart",
-                "Apple Crumble"
+                "Extra Napkins",
+                "Extra Ketchup",
+                "Soup",
+                "Fries"
             ],
             "menuPrices": [
-                "$14.00",
-                "$11.25",
-                "$19.25",
-                "$20.50"
+                "$0.00",
+                "$0.00",
+                "$3.50",
+                "$3.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'd like the pumpkin soup, then the roast turkey, and finally the pumpkin pie.",
+            "prompt": "I was going to get the burger, but the veggie burger actually sounds better - I'll have that, and a lemonade.",
             "options": [
-                "Pumpkin Soup",
-                "Roast Turkey",
-                "Pumpkin Pie",
-                "Apple Pie"
+                "Iced Tea",
+                "Veggie Burger",
+                "Lemonade",
+                "Burger"
             ],
-            "correctAnswer": "Pumpkin Soup, Roast Turkey, Pumpkin Pie",
-            "hint": "This entire order follows a classic North American holiday theme.",
-            "explanation": "‘Roast turkey’ and ‘pumpkin pie’ are the two most traditional dishes at an American Thanksgiving dinner, alongside a warm starter soup.",
+            "correctAnswer": "Veggie Burger, Lemonade",
+            "hint": "The customer thinks out loud, changing their mind before settling on a final choice.",
+            "explanation": "'I was going to... but... actually' shows a decision changing in real time - only the final, settled choice should be tapped.",
             "id": "go_l55_q1",
             "menuItems": [
-                "Pumpkin Soup",
-                "Roast Turkey",
-                "Pumpkin Pie",
-                "Apple Pie"
+                "Iced Tea",
+                "Veggie Burger",
+                "Lemonade",
+                "Burger"
             ],
             "menuPrices": [
-                "$19.25",
-                "$21.75",
-                "$2.00",
-                "$16.50"
+                "$3.25",
+                "$8.50",
+                "$3.00",
+                "$9.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll have the stuffing for my starter, the honey-glazed ham for my main, and the pecan pie for dessert.",
+            "prompt": "Between the ribeye and the sirloin, I think I'll go with the sirloin tonight, and a baked potato.",
             "options": [
-                "Stuffing",
-                "Honey-Glazed Ham",
-                "Pecan Pie",
-                "Mashed Potatoes"
+                "Mashed Potatoes",
+                "Sirloin",
+                "Ribeye",
+                "Baked Potato"
             ],
-            "correctAnswer": "Stuffing, Honey-Glazed Ham, Pecan Pie",
-            "hint": "A savory bread side, a sweet and salty main, and a rich nutty dessert are named in order.",
-            "explanation": "‘Honey-glazed’ describes a sweet, sticky coating brushed onto the ham before roasting. Stuffing is a bread-based side dish often served at holiday meals.",
+            "correctAnswer": "Sirloin, Baked Potato",
+            "hint": "'Between X and Y, I'll go with Y' names two options before revealing the actual decision.",
+            "explanation": "Comparing two options out loud before choosing is natural in real conversation; the final decision always comes after 'I'll go with.'",
             "id": "go_l55_q2",
             "menuItems": [
-                "Stuffing",
-                "Honey-Glazed Ham",
-                "Pecan Pie",
-                "Mashed Potatoes"
+                "Mashed Potatoes",
+                "Sirloin",
+                "Ribeye",
+                "Baked Potato"
             ],
             "menuPrices": [
-                "$4.50",
-                "$19.25",
-                "$13.75",
-                "$13.75"
+                "$3.00",
+                "$19.00",
+                "$24.00",
+                "$3.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "First the cranberry salad, then the roast goose, and last the Christmas pudding, please.",
+            "prompt": "The lamb chops looked great on the menu, but I think I'm actually in the mood for the fish tonight, with rice.",
             "options": [
-                "Cranberry Salad",
-                "Roast Goose",
-                "Christmas Pudding",
-                "Trifle"
+                "Mashed Potatoes",
+                "Rice",
+                "Fish",
+                "Lamb Chops"
             ],
-            "correctAnswer": "Cranberry Salad, Roast Goose, Christmas Pudding",
-            "hint": "This order reflects a traditional British Christmas dinner.",
-            "explanation": "‘Christmas pudding’ is a dense, dark, steamed dessert traditionally served at the end of a British Christmas meal, often set alight before serving.",
+            "correctAnswer": "Rice, Fish",
+            "hint": "A dish that looked appealing is mentioned first, then set aside for the customer's real mood.",
+            "explanation": "Mentioning something appealing before rejecting it ('but I think I'm actually...') is a natural way people talk through a decision - trust the final choice.",
             "id": "go_l55_q3",
             "menuItems": [
-                "Cranberry Salad",
-                "Roast Goose",
-                "Christmas Pudding",
-                "Trifle"
+                "Mashed Potatoes",
+                "Rice",
+                "Fish",
+                "Lamb Chops"
             ],
             "menuPrices": [
-                "$21.75",
-                "$16.50",
-                "$11.25",
-                "$14.00"
+                "$3.00",
+                "$3.00",
+                "$17.00",
+                "$21.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll begin with the leek and potato soup, continue with the Sunday roast, and end with the sticky toffee pudding.",
+            "prompt": "Could I get the taco salad with no sour cream, but extra guacamole, and a lemonade?",
             "options": [
-                "Leek and Potato Soup",
-                "Sunday Roast",
-                "Sticky Toffee Pudding",
-                "Apple Crumble"
+                "Extra Guacamole",
+                "Lemonade",
+                "Sour Cream",
+                "Taco Salad"
             ],
-            "correctAnswer": "Leek and Potato Soup, Sunday Roast, Sticky Toffee Pudding",
-            "hint": "A creamy soup, a classic British roast dinner, and a warm dessert are all named.",
-            "explanation": "A ‘Sunday roast’ traditionally includes roasted meat, potatoes, vegetables, and gravy — a beloved weekly tradition in the UK.",
+            "correctAnswer": "Lemonade, Taco Salad",
+            "hint": "One thing is removed and one thing is added to the same dish in the same sentence.",
+            "explanation": "Combining a removal ('no sour cream') and an addition ('extra guacamole') on one dish is common - both modifiers apply to the taco salad, but only real menu items get tapped.",
             "id": "go_l56_q1",
             "menuItems": [
-                "Leek and Potato Soup",
-                "Sunday Roast",
-                "Sticky Toffee Pudding",
-                "Apple Crumble"
+                "Extra Guacamole",
+                "Lemonade",
+                "Sour Cream",
+                "Taco Salad"
             ],
             "menuPrices": [
-                "$8.50",
-                "$19.25",
-                "$9.75",
-                "$20.50"
+                "$1.50",
+                "$3.00",
+                "$0.50",
+                "$9.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Could I have the pork scratchings, followed by the bangers and mash, and the spotted dick to top it off?",
+            "prompt": "Could you leave the cheese off my burrito, but add some jalapeños, and a side of black beans?",
             "options": [
-                "Pork Scratchings",
-                "Bangers and Mash",
-                "Spotted Dick",
-                "Trifle"
+                "Jalapeños",
+                "Cheese",
+                "Burrito",
+                "Black Beans"
             ],
-            "correctAnswer": "Pork Scratchings, Bangers and Mash, Spotted Dick",
-            "hint": "A crunchy pub snack, a sausage dish, and a traditional steamed dessert complete the order.",
-            "explanation": "‘Bangers and mash’ means sausages served with mashed potatoes. ‘Spotted dick’ is a steamed sponge pudding filled with dried fruit.",
+            "correctAnswer": "Burrito, Black Beans",
+            "hint": "Removing one ingredient and adding another still leaves just two real menu items to select.",
+            "explanation": "Even with a removal and an addition described together, the burrito and the black beans remain the two actual items in this order.",
             "id": "go_l56_q2",
             "menuItems": [
-                "Pork Scratchings",
-                "Bangers and Mash",
-                "Spotted Dick",
-                "Trifle"
+                "Jalapeños",
+                "Cheese",
+                "Burrito",
+                "Black Beans"
             ],
             "menuPrices": [
-                "$3.25",
-                "$14.00",
-                "$10.00",
-                "$14.00"
+                "$0.50",
+                "$1.00",
+                "$8.00",
+                "$2.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "We're going to start with the whitebait, share the fish pie, and finish with the apple crumble.",
+            "prompt": "For my salad, hold the croutons, swap the ranch for balsamic, and could I also get a sparkling water?",
             "options": [
-                "Whitebait",
-                "Fish Pie",
-                "Apple Crumble",
-                "Bread Pudding"
+                "Ranch",
+                "Croutons",
+                "Sparkling Water",
+                "Salad"
             ],
-            "correctAnswer": "Whitebait, Fish Pie, Apple Crumble",
-            "hint": "A small fried fish starter, a shared main, and a warm fruit dessert are all named.",
-            "explanation": "‘Whitebait’ are tiny fish, usually deep-fried whole and eaten as a starter. ‘Share’ shows the fish pie is meant for the whole table.",
+            "correctAnswer": "Sparkling Water, Salad",
+            "hint": "Three separate customization instructions apply to one dish, plus a new drink request.",
+            "explanation": "This level stacks three modifier types (removal, substitution, and a genuine addition) onto the customer's full order, which still contains only two menu items.",
             "id": "go_l56_q3",
             "menuItems": [
-                "Whitebait",
-                "Fish Pie",
-                "Apple Crumble",
-                "Bread Pudding"
+                "Ranch",
+                "Croutons",
+                "Sparkling Water",
+                "Salad"
             ],
             "menuPrices": [
-                "$21.75",
-                "$6.00",
-                "$20.50",
-                "$13.75"
+                "$0.50",
+                "$0.50",
+                "$3.00",
+                "$7.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll go for the burrata, the truffle risotto, and the birthday chocolate cake.",
+            "prompt": "Could I swap the fries for onion rings? Oh, you're out of those - I'll just take the side salad, then, with my sandwich.",
             "options": [
-                "Burrata",
-                "Truffle Risotto",
-                "Birthday Chocolate Cake",
-                "Cheesecake"
+                "Sandwich",
+                "Side Salad",
+                "Fries",
+                "Onion Rings"
             ],
-            "correctAnswer": "Burrata, Truffle Risotto, Birthday Chocolate Cake",
-            "hint": "A creamy cheese starter, a rich rice main, and a special celebration dessert are named.",
-            "explanation": "‘Burrata’ is a soft, creamy cheese with a liquid center, often served with tomatoes or bread. The occasion — a birthday — is reflected in the special cake.",
+            "correctAnswer": "Sandwich, Side Salad",
+            "hint": "The first substitution idea turns out to be unavailable, so the customer picks a different alternative instead.",
+            "explanation": "When a requested substitute isn't available, the customer often names a second alternative on the spot - the final choice, not the first idea, is what's ordered.",
             "id": "go_l57_q1",
             "menuItems": [
-                "Burrata",
-                "Truffle Risotto",
-                "Birthday Chocolate Cake",
-                "Cheesecake"
+                "Sandwich",
+                "Side Salad",
+                "Fries",
+                "Onion Rings"
             ],
             "menuPrices": [
-                "$11.25",
-                "$6.00",
-                "$15.25",
-                "$21.75"
+                "$8.00",
+                "$3.00",
+                "$2.50",
+                "$3.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Let's begin with the champagne. Next, the surf and turf. And to finish, the anniversary tart.",
+            "prompt": "I wanted to replace the rice with quinoa, but if that's not an option, plain rice is fine, with the salmon.",
             "options": [
-                "Champagne",
-                "Surf and Turf",
-                "Anniversary Tart",
-                "Cheesecake"
+                "Salmon",
+                "Rice",
+                "Mashed Potatoes",
+                "Quinoa"
             ],
-            "correctAnswer": "Champagne, Surf and Turf, Anniversary Tart",
-            "hint": "A celebratory drink, a dish combining meat and seafood, and a special dessert complete this order.",
-            "explanation": "‘Surf and turf’ combines a seafood item, like lobster, with a meat item, like steak, on one plate — a popular choice for special occasions.",
+            "correctAnswer": "Salmon, Rice",
+            "hint": "A conditional plan ('but if that's not an option') sets up a backup choice in advance.",
+            "explanation": "Planning ahead for unavailability ('if that's not an option, X is fine') is a natural, efficient way to avoid a second round of ordering.",
             "id": "go_l57_q2",
             "menuItems": [
-                "Champagne",
-                "Surf and Turf",
-                "Anniversary Tart",
-                "Cheesecake"
+                "Salmon",
+                "Rice",
+                "Mashed Potatoes",
+                "Quinoa"
             ],
             "menuPrices": [
-                "$14.00",
-                "$2.00",
-                "$17.75",
-                "$21.75"
+                "$18.00",
+                "$3.00",
+                "$3.00",
+                "$4.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll take the oysters first, the lobster tail second, and the celebration cake last.",
+            "prompt": "Server: We're out of the sweet potato fries today. Customer: No problem, regular fries then, with my burger.",
             "options": [
-                "Oysters",
-                "Lobster Tail",
-                "Celebration Cake",
-                "Chocolate Mousse"
+                "Burger",
+                "Sweet Potato Fries",
+                "Fries",
+                "Onion Rings"
             ],
-            "correctAnswer": "Oysters, Lobster Tail, Celebration Cake",
-            "hint": "A raw shellfish starter, a prized seafood main, and a special-occasion dessert are all named.",
-            "explanation": "‘Lobster tail’ refers to just the tail portion of the lobster, often grilled or broiled and served on its own for a special meal.",
+            "correctAnswer": "Burger, Fries",
+            "hint": "The server announces an unavailable item first, and the customer adjusts their order in response.",
+            "explanation": "'No problem' shows the customer accepting a substitution smoothly after hearing about an unavailable item - a common, realistic restaurant moment.",
             "id": "go_l57_q3",
             "menuItems": [
-                "Oysters",
-                "Lobster Tail",
-                "Celebration Cake",
-                "Chocolate Mousse"
+                "Burger",
+                "Sweet Potato Fries",
+                "Fries",
+                "Onion Rings"
             ],
             "menuPrices": [
-                "$21.75",
-                "$3.25",
-                "$4.50",
-                "$12.50"
+                "$8.50",
+                "$3.50",
+                "$3.00",
+                "$3.25"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'd like the corn on the cob, then the pulled pork ribs, and finally the peach cobbler.",
+            "prompt": "Customer: Either is fine, honestly - whatever's easier for the kitchen. Server: We'll do wheat, then. Customer: Perfect, and a black coffee, please.",
             "options": [
-                "Corn on the Cob",
-                "Pulled Pork Ribs",
-                "Peach Cobbler",
-                "Apple Crumble"
+                "Wheat Bread",
+                "White Bread",
+                "Herbal Tea",
+                "Black Coffee"
             ],
-            "correctAnswer": "Corn on the Cob, Pulled Pork Ribs, Peach Cobbler",
-            "hint": "A grilled vegetable side, a smoky slow-cooked main, and a warm fruit dessert are all named.",
-            "explanation": "‘Pulled pork ribs’ are slow-cooked until the meat easily pulls apart. Corn on the cob is a classic side at any American barbecue.",
+            "correctAnswer": "Wheat Bread, Black Coffee",
+            "hint": "'Either is fine' doesn't name a bread type - the server's suggestion is what actually gets ordered.",
+            "explanation": "When a customer shows no preference, the final choice often comes from the server's own suggestion in the next line - keep listening past the indifferent answer.",
             "id": "go_l58_q1",
             "menuItems": [
-                "Corn on the Cob",
-                "Pulled Pork Ribs",
-                "Peach Cobbler",
-                "Apple Crumble"
+                "Wheat Bread",
+                "White Bread",
+                "Herbal Tea",
+                "Black Coffee"
             ],
             "menuPrices": [
-                "$20.50",
-                "$6.00",
-                "$8.50",
-                "$20.50"
+                "$0.50",
+                "$0.50",
+                "$3.25",
+                "$3.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Can we start with the coleslaw, move on to the smoked brisket, and end with the s'mores?",
+            "prompt": "Customer: Whatever you'd recommend for a light lunch is great with me. Server: The grilled chicken salad is popular for that. Customer: Perfect, I'll take it, and a sparkling water.",
             "options": [
-                "Coleslaw",
-                "Smoked Brisket",
-                "S'mores",
-                "Chocolate Cake"
+                "Grilled Chicken Salad",
+                "Still Water",
+                "Sparkling Water",
+                "Club Sandwich"
             ],
-            "correctAnswer": "Coleslaw, Smoked Brisket, S'mores",
-            "hint": "A cold cabbage salad, a slow-smoked beef main, and a campfire-style dessert are all named.",
-            "explanation": "‘Brisket’ is a tough cut of beef that becomes tender after hours of slow smoking. ‘S’mores’ are made by melting marshmallow and chocolate between crackers, traditionally over a fire.",
+            "correctAnswer": "Grilled Chicken Salad, Sparkling Water",
+            "hint": "The customer's open request gets a specific answer from the server - that answer becomes the order.",
+            "explanation": "Letting the server recommend something within a general idea works because the server's actual suggestion, once accepted, becomes a concrete, tappable item.",
             "id": "go_l58_q2",
             "menuItems": [
-                "Coleslaw",
-                "Smoked Brisket",
-                "S'mores",
-                "Chocolate Cake"
+                "Grilled Chicken Salad",
+                "Still Water",
+                "Sparkling Water",
+                "Club Sandwich"
             ],
             "menuPrices": [
-                "$6.00",
-                "$7.25",
-                "$12.50",
-                "$14.00"
+                "$11.00",
+                "$2.50",
+                "$3.00",
+                "$9.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "First the potato salad, then the grilled sausages, and last the watermelon, please.",
+            "prompt": "Customer: I honestly don't mind which soup you bring - surprise me. Server: Today's soup is a roasted tomato bisque. Customer: Sounds great, and I'll have the turkey sandwich.",
             "options": [
-                "Potato Salad",
-                "Grilled Sausages",
-                "Watermelon",
-                "Fruit Salad"
+                "Roasted Tomato Bisque",
+                "Chicken Noodle Soup",
+                "Ham Sandwich",
+                "Turkey Sandwich"
             ],
-            "correctAnswer": "Potato Salad, Grilled Sausages, Watermelon",
-            "hint": "A cold side dish, a grilled main, and a refreshing fruit dessert complete this simple picnic order.",
-            "explanation": "Watermelon is a classic light dessert at summer picnics and barbecues, valued for its refreshing, juicy taste.",
+            "correctAnswer": "Roasted Tomato Bisque, Turkey Sandwich",
+            "hint": "'Surprise me' is resolved once the server names the actual soup of the day.",
+            "explanation": "'Surprise me' is a playful way to show indifference, but the order is only complete once a specific dish - here, the day's soup - is actually named.",
             "id": "go_l58_q3",
             "menuItems": [
-                "Potato Salad",
-                "Grilled Sausages",
-                "Watermelon",
-                "Fruit Salad"
+                "Roasted Tomato Bisque",
+                "Chicken Noodle Soup",
+                "Ham Sandwich",
+                "Turkey Sandwich"
             ],
             "menuPrices": [
-                "$10.00",
-                "$13.75",
-                "$18.00",
-                "$11.25"
+                "$4.50",
+                "$4.00",
+                "$7.50",
+                "$8.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll have the tzatziki for my starter, the moussaka for my main, and the baklava for dessert.",
+            "prompt": "Could I get the burger with no pickles, no onions, but extra lettuce, and a small fries?",
             "options": [
-                "Tzatziki",
-                "Moussaka",
-                "Baklava",
-                "Rice Pudding"
+                "Small Fries",
+                "Burger",
+                "Pickles",
+                "Onions"
             ],
-            "correctAnswer": "Tzatziki, Moussaka, Baklava",
-            "hint": "A cool yogurt dip, a layered Greek casserole, and a sweet, flaky pastry are named in order.",
-            "explanation": "‘Moussaka’ layers eggplant, potato, and spiced meat under a creamy topping. ‘Baklava’ is a sweet pastry made of layered filo dough, nuts, and honey.",
+            "correctAnswer": "Small Fries, Burger",
+            "hint": "Two ingredients are removed and one is increased, all on a single dish.",
+            "explanation": "Multiple modifiers on one item - two removals and one increase - still describe just that one dish plus the side ordered alongside it.",
             "id": "go_l59_q1",
             "menuItems": [
-                "Tzatziki",
-                "Moussaka",
-                "Baklava",
-                "Rice Pudding"
+                "Small Fries",
+                "Burger",
+                "Pickles",
+                "Onions"
             ],
             "menuPrices": [
+                "$3.00",
                 "$8.50",
-                "$14.00",
-                "$2.00",
-                "$4.50"
+                "$0.50",
+                "$0.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Could I have the dolmas, followed by the grilled octopus, and the yogurt cake to top it off?",
+            "prompt": "Could you swap the dressing for oil and vinegar, hold the cheese, and add extra tomatoes to my salad?",
             "options": [
-                "Dolmas",
-                "Grilled Octopus",
-                "Yogurt Cake",
-                "Baklava"
+                "Oil and Vinegar",
+                "Salad",
+                "Extra Tomatoes",
+                "Cheese"
             ],
-            "correctAnswer": "Dolmas, Grilled Octopus, Yogurt Cake",
-            "hint": "Stuffed grape leaves, a grilled seafood main, and a moist cake are all named clearly.",
-            "explanation": "‘Dolmas’ are grape leaves stuffed with rice and herbs. A ‘yogurt cake’ is a light, moist cake made with yogurt instead of extra butter.",
+            "correctAnswer": "Oil and Vinegar, Salad",
+            "hint": "Three separate modifiers stack onto one dish - a substitution, a removal, and an addition.",
+            "explanation": "This is the same 'stacking' idea as before, but with three different modifier types at once, all describing a single salad.",
             "id": "go_l59_q2",
             "menuItems": [
-                "Dolmas",
-                "Grilled Octopus",
-                "Yogurt Cake",
-                "Baklava"
+                "Oil and Vinegar",
+                "Salad",
+                "Extra Tomatoes",
+                "Cheese"
             ],
             "menuPrices": [
-                "$20.50",
-                "$10.00",
-                "$16.50",
-                "$2.00"
+                "$0.00",
+                "$7.50",
+                "$0.50",
+                "$1.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "We're going to start with the spanakopita, share the lamb souvlaki, and finish with the galaktoboureko.",
+            "prompt": "For the pizza, replace the pepperoni with mushrooms, go light on the cheese, and no olives, please.",
             "options": [
-                "Spanakopita",
-                "Lamb Souvlaki",
-                "Galaktoboureko",
-                "Baklava"
+                "Mushrooms",
+                "Pepperoni",
+                "Pizza",
+                "Olives"
             ],
-            "correctAnswer": "Spanakopita, Lamb Souvlaki, Galaktoboureko",
-            "hint": "A spinach pastry starter, a grilled skewered meat main, and a creamy custard dessert are all named.",
-            "explanation": "‘Spanakopita’ is a savory pie filled with spinach and feta cheese wrapped in filo. ‘Galaktoboureko’ is a custard-filled pastry soaked in syrup.",
+            "correctAnswer": "Mushrooms, Pizza",
+            "hint": "A substitution, a quantity reduction, and a removal all apply to the same pizza order.",
+            "explanation": "Even a heavily modified order like this one still names just one real dish - every phrase describes how that pizza should be made.",
             "id": "go_l59_q3",
             "menuItems": [
-                "Spanakopita",
-                "Lamb Souvlaki",
-                "Galaktoboureko",
-                "Baklava"
+                "Mushrooms",
+                "Pepperoni",
+                "Pizza",
+                "Olives"
             ],
             "menuPrices": [
-                "$5.75",
-                "$8.50",
-                "$2.00",
-                "$2.00"
+                "$1.50",
+                "$1.50",
+                "$13.00",
+                "$1.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll go for the patatas bravas, the paella, and the churros.",
+            "prompt": "I'll have the Cobb salad, but could you swap the bacon for grilled chicken, hold the blue cheese, and bring a sparkling water instead of my usual soda?",
             "options": [
-                "Patatas Bravas",
-                "Paella",
-                "Churros",
-                "Flan"
+                "Grilled Chicken",
+                "Sparkling Water",
+                "Blue Cheese",
+                "Cobb Salad"
             ],
-            "correctAnswer": "Patatas Bravas, Paella, Churros",
-            "hint": "A spicy potato starter, a famous rice dish, and a fried sweet treat are all named.",
-            "explanation": "‘Patatas bravas’ are fried potatoes served with a spicy tomato sauce. ‘Churros’ are fried dough pastries, often dusted with sugar and dipped in chocolate.",
+            "correctAnswer": "Grilled Chicken, Sparkling Water, Cobb Salad",
+            "hint": "A substitution on the salad's protein, a removed ingredient, and a separate drink substitution all combine here.",
+            "explanation": "This consolidates the whole unit: two substitutions (protein and drink) plus one removal, all inside a single, natural-sounding request.",
             "id": "go_l60_q1",
             "menuItems": [
-                "Patatas Bravas",
-                "Paella",
-                "Churros",
-                "Flan"
+                "Grilled Chicken",
+                "Sparkling Water",
+                "Blue Cheese",
+                "Cobb Salad"
             ],
             "menuPrices": [
-                "$13.75",
-                "$17.75",
-                "$10.00",
-                "$17.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Let's begin with the gazpacho. Next, the grilled octopus. And to finish, the flan.",
-            "options": [
-                "Gazpacho",
-                "Grilled Octopus",
-                "Flan",
-                "Churros"
-            ],
-            "correctAnswer": "Gazpacho, Grilled Octopus, Flan",
-            "hint": "A cold soup starter, a grilled seafood main, and a creamy caramel dessert complete this order.",
-            "explanation": "‘Gazpacho’ is a cold Spanish soup made from raw blended vegetables, typically tomatoes. ‘Flan’ is a custard dessert topped with caramel sauce.",
-            "id": "go_l60_q2",
-            "menuItems": [
-                "Gazpacho",
-                "Grilled Octopus",
-                "Flan",
-                "Churros"
-            ],
-            "menuPrices": [
-                "$5.75",
-                "$10.00",
-                "$17.75",
+                "$0.50",
+                "$3.00",
+                "$0.75",
                 "$10.00"
             ]
         },
@@ -819,28 +791,56 @@
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll take the jamón first, the seafood paella second, and the crema catalana last.",
+            "prompt": "Could I get the fish tacos with cabbage slaw instead of pico de gallo, no sour cream, and, if it's not too much trouble, a wedge of lime on the side?",
             "options": [
-                "Jamón",
-                "Seafood Paella",
-                "Crema Catalana",
-                "Flan"
+                "Cabbage Slaw",
+                "Sour Cream",
+                "Fish Tacos",
+                "Pico de Gallo"
             ],
-            "correctAnswer": "Jamón, Seafood Paella, Crema Catalana",
-            "hint": "Cured ham, a rice dish loaded with seafood, and a Spanish custard dessert are named in order.",
-            "explanation": "‘Jamón’ is Spanish cured ham, often thinly sliced and served on its own. ‘Crema catalana’ is similar to crème brûlée but flavored with citrus and cinnamon.",
-            "id": "go_l60_q3",
+            "correctAnswer": "Cabbage Slaw, Fish Tacos",
+            "hint": "A substitution, a removal, and a very softly-phrased extra request all appear together.",
+            "explanation": "'If it's not too much trouble' softens a small extra request, but by now you should recognize it works the same way as any other polite add-on.",
+            "id": "go_l60_q2",
             "menuItems": [
-                "Jamón",
-                "Seafood Paella",
-                "Crema Catalana",
-                "Flan"
+                "Cabbage Slaw",
+                "Sour Cream",
+                "Fish Tacos",
+                "Pico de Gallo"
             ],
             "menuPrices": [
-                "$15.25",
-                "$14.00",
-                "$7.25",
-                "$17.75"
+                "$0.50",
+                "$0.50",
+                "$9.50",
+                "$0.50"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the guest's final order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Customer: Honestly, I'll leave the sides up to you - whatever pairs well with the salmon is fine. Server: I'd suggest the grilled asparagus. Customer: Perfect - but could you make sure there's no butter on the fish itself?",
+            "options": [
+                "Grilled Asparagus",
+                "Rice Pilaf",
+                "Butter",
+                "Salmon"
+            ],
+            "correctAnswer": "Grilled Asparagus, Salmon",
+            "hint": "The flexible side request gets resolved by the server's suggestion, while the customer stays firm about one specific restriction.",
+            "explanation": "This final level shows that 'no preference' can be resolved through conversation, while a firm restriction stated in the same breath must still be honored exactly.",
+            "id": "go_l60_q3",
+            "menuItems": [
+                "Grilled Asparagus",
+                "Rice Pilaf",
+                "Butter",
+                "Salmon"
+            ],
+            "menuPrices": [
+                "$3.50",
+                "$3.00",
+                "$0.00",
+                "$18.00"
             ]
         }
     ]

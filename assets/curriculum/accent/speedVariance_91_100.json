@@ -1,607 +1,607 @@
 {
-    "gameType": "speedVariance",
-    "batchIndex": 10,
-    "levels": "91-100",
-    "quests": [
-        {
-            "id": "ACC_SPEEDVARIANCE_L91_Q1",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Talk this through carefully, since rushing the decision could cost the company a lot.",
-            "textToSpeak": "Talk this through carefully, since rushing the decision could cost the company a lot.",
-            "options": [
-                "Decelerating (a warning about a costly mistake slows the pace of the advice)",
-                "Accelerating (the speaker rushes since the decision has already basically been made)"
-            ],
-            "correctAnswer": "Decelerating (a warning about a costly mistake slows the pace of the advice)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.73,
-            "hint": "A rushed choice could be costly. Quick advice, or a careful one?",
-            "explanation": "Advice warning against a costly mistake is delivered slowly, giving the decision the weight it deserves.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L91_Q2",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Break it to them slowly, since the move is going to be a big change for everyone.",
-            "textToSpeak": "Break it to them slowly, since the move is going to be a big change for everyone.",
-            "options": [
-                "Decelerating (consideration for a major life change slows the pace of the advice)",
-                "Accelerating (the speaker rushes since kids usually adjust to change pretty quickly)"
-            ],
-            "correctAnswer": "Decelerating (consideration for a major life change slows the pace of the advice)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.69,
-            "hint": "This is a big change for the family. Quick mention, or a slow, careful one?",
-            "explanation": "Advice about announcing a major change is usually given slowly and gently, out of real consideration.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L91_Q3",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Pull the plug now, the whole server room's starting to smell like burning plastic.",
-            "textToSpeak": "Pull the plug now, the whole server room's starting to smell like burning plastic.",
-            "options": [
-                "Decelerating (the speaker slows down to explain how server rooms are normally cooled)",
-                "Accelerating (a burning smell in the server room is a real danger that speeds up the instruction)"
-            ],
-            "correctAnswer": "Accelerating (a burning smell in the server room is a real danger that speeds up the instruction)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 1.44,
-            "hint": "There's a burning smell. Urgent instruction, or a calm technical explanation?",
-            "explanation": "A burning smell is a genuine danger sign, prompting an instant, urgent instruction to act.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L92_Q1",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Weigh up your options carefully, since each plan locks you in for a full year.",
-            "textToSpeak": "Weigh up your options carefully, since each plan locks you in for a full year.",
-            "options": [
-                "Decelerating (a long commitment slows the pace of the decision-making advice)",
-                "Accelerating (the speaker rushes since all the plans look pretty similar anyway)"
-            ],
-            "correctAnswer": "Decelerating (a long commitment slows the pace of the decision-making advice)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.71,
-            "hint": "This choice locks you in for a year. Quick advice, or a careful one?",
-            "explanation": "Advice about a long commitment is given slowly so the decision gets the thought it deserves.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L92_Q2",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Get everyone out now, there's a smell of gas somewhere in the building.",
-            "textToSpeak": "Get everyone out now, there's a smell of gas somewhere in the building.",
-            "options": [
-                "Decelerating (the speaker slows down to figure out where the smell is coming from)",
-                "Accelerating (a suspected gas leak is a real emergency that speeds up the instruction)"
-            ],
-            "correctAnswer": "Accelerating (a suspected gas leak is a real emergency that speeds up the instruction)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 1.49,
-            "hint": "This could be a gas leak. Urgent instruction, or a calm investigation?",
-            "explanation": "A suspected gas leak is treated as a genuine emergency, prompting an instant instruction to evacuate.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L92_Q3",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Bring the milk to room temperature slowly, rather than heating it straight from the fridge.",
-            "textToSpeak": "Bring the milk to room temperature slowly, rather than heating it straight from the fridge.",
-            "options": [
-                "Accelerating (the speaker rushes since milk temperature rarely makes any real difference)",
-                "Decelerating (a technique detail for a better result slows the pace of the instruction)"
-            ],
-            "correctAnswer": "Decelerating (a technique detail for a better result slows the pace of the instruction)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.69,
-            "hint": "This affects how the dish turns out. Quick instruction, or a careful one?",
-            "explanation": "Instructions about a careful technique for a better result are usually delivered at a matching careful pace.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L93_Q1",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Think the argument through carefully, since a rushed conclusion will cost you real marks.",
-            "textToSpeak": "Think the argument through carefully, since a rushed conclusion will cost you real marks.",
-            "options": [
-                "Accelerating (the speaker rushes since conclusions are usually just a quick summary)",
-                "Decelerating (a direct link to losing marks slows the pace of the advice)"
-            ],
-            "correctAnswer": "Decelerating (a direct link to losing marks slows the pace of the advice)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.67,
-            "hint": "A rushed ending costs marks. Quick advice, or a careful one?",
-            "explanation": "Advice tied directly to a grade is delivered slowly so students take the point seriously.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L93_Q2",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Look into the visa rules carefully, since requirements change more often than people think.",
-            "textToSpeak": "Look into the visa rules carefully, since requirements change more often than people think.",
-            "options": [
-                "Decelerating (a caution about changing rules slows the pace of the practical advice)",
-                "Accelerating (the speaker rushes since visa rules for most countries barely change at all)"
-            ],
-            "correctAnswer": "Decelerating (a caution about changing rules slows the pace of the practical advice)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.72,
-            "hint": "These rules change often. Quick advice, or a careful one?",
-            "explanation": "Practical advice about something prone to change is given slowly so nothing important gets missed.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L93_Q3",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Step in now, things are getting pretty heated between those two.",
-            "textToSpeak": "Step in now, things are getting pretty heated between those two.",
-            "options": [
-                "Accelerating (an escalating conflict happening now speeds up the urgent instruction)",
-                "Decelerating (the speaker slows down to figure out who started the disagreement)"
-            ],
-            "correctAnswer": "Accelerating (an escalating conflict happening now speeds up the urgent instruction)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.31,
-            "hint": "The conflict is escalating right now. Urgent instruction, or a slow investigation into blame?",
-            "explanation": "An argument escalating in real time creates urgency, speeding up the instruction to step in.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L94_Q1",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Get him some water now, he's overheated and starting to feel dizzy.",
-            "textToSpeak": "Get him some water now, he's overheated and starting to feel dizzy.",
-            "options": [
-                "Decelerating (the speaker calmly explains how long he's been out in the sun)",
-                "Accelerating (worsening heat-related symptoms speed up the urgent instruction)"
-            ],
-            "correctAnswer": "Accelerating (worsening heat-related symptoms speed up the urgent instruction)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 1.37,
-            "hint": "His symptoms are getting worse. Urgent instruction, or a calm explanation of the day so far?",
-            "explanation": "Worsening symptoms like dizziness from heat are treated urgently, prompting a fast, direct instruction.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L94_Q2",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Let everyone know right now, the client's stuck in traffic and the meeting needs to move.",
-            "textToSpeak": "Let everyone know right now, the client's stuck in traffic and the meeting needs to move.",
-            "options": [
-                "Accelerating (a last-minute schedule change affecting a group speeds up the urgent notice)",
-                "Decelerating (the speaker slows down to explain exactly why the traffic is so bad today)"
-            ],
-            "correctAnswer": "Accelerating (a last-minute schedule change affecting a group speeds up the urgent notice)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.28,
-            "hint": "People are about to show up for a meeting that's changing. Urgent notice, or a calm explanation of traffic?",
-            "explanation": "A last-minute change that affects a whole group is passed on quickly, before anyone shows up unprepared.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L94_Q3",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Get moving right now, the shuttle's leaving without waiting for latecomers today.",
-            "textToSpeak": "Get moving right now, the shuttle's leaving without waiting for latecomers today.",
-            "options": [
-                "Decelerating (the speaker slows down to check when the next shuttle might come)",
-                "Accelerating (a shuttle that won't wait speeds up the urgent instruction)"
-            ],
-            "correctAnswer": "Accelerating (a shuttle that won't wait speeds up the urgent instruction)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 1.34,
-            "hint": "This shuttle won't wait for anyone. Urgent instruction, or a calm check on the next one?",
-            "explanation": "Knowing a ride won't wait for latecomers creates real pressure, speeding up the instruction to hurry.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L95_Q1",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Come look at this now, the neighbor's fence has actually just fallen right over.",
-            "textToSpeak": "Come look at this now, the neighbor's fence has actually just fallen right over.",
-            "options": [
-                "Accelerating (something dramatic happening this instant speeds up the excited call to look)",
-                "Decelerating (the speaker slows down to guess what might have caused the fence to fall)"
-            ],
-            "correctAnswer": "Accelerating (something dramatic happening this instant speeds up the excited call to look)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.32,
-            "hint": "This just happened. Fast, excited call, or a slow guessing game?",
-            "explanation": "Something dramatic and unexpected happening right now prompts a fast, excited call rather than a slow guess.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L95_Q2",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Think it over carefully, since tickets for this show can't be refunded once bought.",
-            "textToSpeak": "Think it over carefully, since tickets for this show can't be refunded once bought.",
-            "options": [
-                "Accelerating (the speaker rushes since most shows allow refunds without any real trouble)",
-                "Decelerating (a strict no-refund policy slows the pace of the practical advice)"
-            ],
-            "correctAnswer": "Decelerating (a strict no-refund policy slows the pace of the practical advice)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.7,
-            "hint": "There's no refund after buying. Quick advice, or a careful one?",
-            "explanation": "Advice tied to a strict, unchangeable policy is given slowly so the decision is made carefully.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L95_Q3",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Get in here now, the dog's gotten into something in the yard.",
-            "textToSpeak": "Get in here now, the dog's gotten into something in the yard.",
-            "options": [
-                "Accelerating (a pet possibly in danger speeds up the urgent instruction)",
-                "Decelerating (the speaker slows down to guess what the dog might have found)"
-            ],
-            "correctAnswer": "Accelerating (a pet possibly in danger speeds up the urgent instruction)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.38,
-            "hint": "The dog's found something in the yard. Urgent instruction, or a slow guessing game?",
-            "explanation": "A pet possibly in danger prompts a fast, urgent instruction rather than a slow guess about what happened.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L96_Q1",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Bring it up gently, since he still doesn't know his application got turned down.",
-            "textToSpeak": "Bring it up gently, since he still doesn't know his application got turned down.",
-            "options": [
-                "Accelerating (the speaker rushes since he'll find out one way or another soon enough)",
-                "Decelerating (sensitivity to disappointing news slows the pace of the advice)"
-            ],
-            "correctAnswer": "Decelerating (sensitivity to disappointing news slows the pace of the advice)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.68,
-            "hint": "He doesn't know the bad news yet. Quick mention, or a gentle, slow one?",
-            "explanation": "Advice about breaking disappointing news gently is naturally delivered at a slow, careful pace.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L96_Q2",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Shut it down now, the whole system's flashing warnings across every screen.",
-            "textToSpeak": "Shut it down now, the whole system's flashing warnings across every screen.",
-            "options": [
-                "Decelerating (the speaker slows down to read through each warning message carefully)",
-                "Accelerating (widespread warning signals speed up the urgent instruction to shut down)"
-            ],
-            "correctAnswer": "Accelerating (widespread warning signals speed up the urgent instruction to shut down)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 1.36,
-            "hint": "Warnings are flashing everywhere. Urgent instruction, or a slow read-through?",
-            "explanation": "Widespread warning signals across a system prompt an instant instruction to act, not a slow read-through.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L96_Q3",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Walk them through it carefully, since half the team's never used this software before.",
-            "textToSpeak": "Walk them through it carefully, since half the team's never used this software before.",
-            "options": [
-                "Decelerating (training people new to a tool calls for a slow, patient pace)",
-                "Accelerating (the speaker rushes since the software is honestly quite simple to use)"
-            ],
-            "correctAnswer": "Decelerating (training people new to a tool calls for a slow, patient pace)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.74,
-            "hint": "Half the team has never used this. Quick instruction, or a patient one?",
-            "explanation": "Training people unfamiliar with a tool is usually done slowly and patiently, regardless of how simple it seems.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L97_Q1",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Read the fine print carefully, since the deal isn't quite as good as it first looks.",
-            "textToSpeak": "Read the fine print carefully, since the deal isn't quite as good as it first looks.",
-            "options": [
-                "Decelerating (a caution about hidden details slows the pace of the practical advice)",
-                "Accelerating (the speaker rushes since the headline price is usually all that matters)"
-            ],
-            "correctAnswer": "Decelerating (a caution about hidden details slows the pace of the practical advice)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.69,
-            "hint": "The deal has hidden details. Quick advice, or a careful one?",
-            "explanation": "Advice about checking hidden details is given slowly so nothing important gets overlooked.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L97_Q2",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Get her checked out now, she's reacting badly to the new medication.",
-            "textToSpeak": "Get her checked out now, she's reacting badly to the new medication.",
-            "options": [
-                "Accelerating (a bad reaction to medication is a real concern that speeds up the instruction)",
-                "Decelerating (the speaker calmly lists the medication's known side effects)"
-            ],
-            "correctAnswer": "Accelerating (a bad reaction to medication is a real concern that speeds up the instruction)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.41,
-            "hint": "She's reacting badly right now. Urgent instruction, or a calm list of side effects?",
-            "explanation": "A bad reaction happening right now is treated urgently, prompting a fast, direct instruction to get help.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L97_Q3",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Turn your phones off now, the exam's about to officially begin.",
-            "textToSpeak": "Turn your phones off now, the exam's about to officially begin.",
-            "options": [
-                "Accelerating (an exam starting imminently speeds up the firm instruction)",
-                "Decelerating (the speaker slows down to explain the exam rules one more time)"
-            ],
-            "correctAnswer": "Accelerating (an exam starting imminently speeds up the firm instruction)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "The exam is about to start. Firm instruction, or a calm explanation of rules?",
-            "explanation": "An imminent start time prompts a quick, firm instruction rather than another slow explanation of rules.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L98_Q1",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Pull it off the heat now, it's about to boil straight over.",
-            "textToSpeak": "Pull it off the heat now, it's about to boil straight over.",
-            "options": [
-                "Accelerating (a pot about to overflow is a small emergency that speeds up the instruction)",
-                "Decelerating (the speaker slows down to explain the right cooking temperature)"
-            ],
-            "correctAnswer": "Accelerating (a pot about to overflow is a small emergency that speeds up the instruction)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.39,
-            "hint": "It's about to overflow. Urgent instruction, or a calm cooking lesson?",
-            "explanation": "A pot about to overflow needs immediate action, so the instruction comes out fast, not as a lesson.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L98_Q2",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Double check the visa dates carefully, since entry rules changed last month.",
-            "textToSpeak": "Double check the visa dates carefully, since entry rules changed last month.",
-            "options": [
-                "Decelerating (a recent rule change slows the pace of the practical advice)",
-                "Accelerating (the speaker rushes since visa dates rarely cause any real problems)"
-            ],
-            "correctAnswer": "Decelerating (a recent rule change slows the pace of the practical advice)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.71,
-            "hint": "The rules changed recently. Quick advice, or a careful one?",
-            "explanation": "Advice about a recently changed rule is given slowly so travelers don't rely on outdated information.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L98_Q3",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Get down there now, they're giving away free merchandise at the front.",
-            "textToSpeak": "Get down there now, they're giving away free merchandise at the front.",
-            "options": [
-                "Decelerating (the speaker slows down to describe what merchandise is being given away)",
-                "Accelerating (a limited, time-sensitive giveaway speeds up the excited instruction)"
-            ],
-            "correctAnswer": "Accelerating (a limited, time-sensitive giveaway speeds up the excited instruction)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 1.33,
-            "hint": "This giveaway won't last. Urgent instruction, or a slow description?",
-            "explanation": "A limited, fast-moving opportunity like a giveaway is announced quickly to prompt immediate action.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L99_Q1",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Bring it up carefully, since she's still a bit sensitive about the whole situation.",
-            "textToSpeak": "Bring it up carefully, since she's still a bit sensitive about the whole situation.",
-            "options": [
-                "Accelerating (the speaker rushes since it happened a while ago and is likely forgotten)",
-                "Decelerating (sensitivity around a delicate topic slows the pace of the advice)"
-            ],
-            "correctAnswer": "Decelerating (sensitivity around a delicate topic slows the pace of the advice)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.68,
-            "hint": "She's still sensitive about this. Quick mention, or a careful one?",
-            "explanation": "Advice about approaching a sensitive topic is usually delivered slowly and thoughtfully, out of real care.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L99_Q2",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Send it off right now, the deadline just moved up without warning.",
-            "textToSpeak": "Send it off right now, the deadline just moved up without warning.",
-            "options": [
-                "Decelerating (the speaker slows down to double-check every detail one more time)",
-                "Accelerating (a deadline moved earlier without notice speeds up the urgent instruction)"
-            ],
-            "correctAnswer": "Accelerating (a deadline moved earlier without notice speeds up the urgent instruction)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 1.35,
-            "hint": "The deadline moved up suddenly. Urgent instruction, or a slow, careful double-check?",
-            "explanation": "A deadline that moves closer without warning creates real pressure, speeding up the instruction to send it now.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L99_Q3",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Sort through it slowly, since some of these old photos are quite fragile.",
-            "textToSpeak": "Sort through it slowly, since some of these old photos are quite fragile.",
-            "options": [
-                "Decelerating (handling something fragile and sentimental slows the pace of the instruction)",
-                "Accelerating (the speaker rushes since old photos are usually sturdier than people expect)"
-            ],
-            "correctAnswer": "Decelerating (handling something fragile and sentimental slows the pace of the instruction)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.7,
-            "hint": "These photos are fragile. Quick instruction, or a careful one?",
-            "explanation": "Instructions about handling something fragile and sentimental are given slowly, matching the careful handling needed.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L100_Q1",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Back everything up carefully, since this update has caused issues for some users.",
-            "textToSpeak": "Back everything up carefully, since this update has caused issues for some users.",
-            "options": [
-                "Decelerating (a caution based on other users' problems slows the pace of the advice)",
-                "Accelerating (the speaker rushes since updates almost always install without any issues)"
-            ],
-            "correctAnswer": "Decelerating (a caution based on other users' problems slows the pace of the advice)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.73,
-            "hint": "Others have had problems with this update. Quick advice, or a careful one?",
-            "explanation": "Advice shaped by real problems others have faced is given slowly so the caution is taken seriously.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L100_Q2",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Ease back into training slowly, rather than picking up right where you left off.",
-            "textToSpeak": "Ease back into training slowly, rather than picking up right where you left off.",
-            "options": [
-                "Decelerating (advice about a gradual return slows the pace to match the message)",
-                "Accelerating (the speaker rushes since a short break shouldn't really change much)"
-            ],
-            "correctAnswer": "Decelerating (advice about a gradual return slows the pace to match the message)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.71,
-            "hint": "This is advice about going slowly. Quick delivery, or a matching slow one?",
-            "explanation": "Advice recommending a gradual approach is usually delivered at that same gradual, unhurried pace.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        },
-        {
-            "id": "ACC_SPEEDVARIANCE_L100_Q3",
-            "instruction": "Adjust the speed",
-            "subtype": "speedVariance",
-            "interactionType": "speaking",
-            "word": "Get down there now, the whole group's already left without you.",
-            "textToSpeak": "Get down there now, the whole group's already left without you.",
-            "options": [
-                "Accelerating (being left behind by the group speeds up the urgent instruction)",
-                "Decelerating (the speaker slows down to figure out exactly where the group went)"
-            ],
-            "correctAnswer": "Accelerating (being left behind by the group speeds up the urgent instruction)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.36,
-            "hint": "The group already left. Urgent instruction, or a slow figuring-out of directions?",
-            "explanation": "Realizing you've been left behind creates urgency, speeding up the instruction to catch up fast.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly.",
-            "naturalSpeed": 1,
-            "clearSpeed": 0.7
-        }
-    ]
+  "gameType": "speedVariance",
+  "batchIndex": 10,
+  "levels": "91-100",
+  "quests": [
+    {
+      "id": "ACC_SPEEDVARIANCE_L91_Q1",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "Oh no, the oven's still on, and I've left for work!",
+      "textToSpeak": "Oh no, the oven's still on, and I've left for work!",
+      "options": [
+        "Accelerating (a sudden realisation makes the speaker rush)",
+        "Decelerating (the speaker slows to describe the problem carefully)"
+      ],
+      "correctAnswer": "Accelerating (a sudden realisation makes the speaker rush)",
+      "correctAnswerIndex": 0,
+      "targetSpeed": 1.15,
+      "hint": "What has the speaker just realised, and what do they want to do?",
+      "explanation": "The words are a burst of alarm to whoever is nearby, and the pace supports the need to get help quickly.",
+      "pacingRule": "Accelerated Pacing: Sudden realisation of a problem is fast.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L91_Q2",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "We'll take the window seat, thank you, and could we see the menu when you have a moment?",
+      "textToSpeak": "We'll take the window seat, thank you, and could we see the menu when you have a moment?",
+      "options": [
+        "Decelerating (a deliberate, slow request is clearer to the server)",
+        "Accelerating (routine, polite restaurant talk is relaxed and brisk)"
+      ],
+      "correctAnswer": "Accelerating (routine, polite restaurant talk is relaxed and brisk)",
+      "correctAnswerIndex": 1,
+      "targetSpeed": 1.17,
+      "hint": "Is there any risk of the server misunderstanding this?",
+      "explanation": "Nothing here can be mistaken. The polite tone is carried by an easy, flowing pace.",
+      "pacingRule": "Accelerated Pacing: Routine polite requests flow quickly.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L91_Q3",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "To reset it, hold the button down for ten seconds until the light flashes.",
+      "textToSpeak": "To reset it, hold the button down for ten seconds until the light flashes.",
+      "options": [
+        "Decelerating (a technical procedure with timing must be followed exactly)",
+        "Accelerating (a troubleshooting step is repeated by support staff many times, so it's quick)"
+      ],
+      "correctAnswer": "Decelerating (a technical procedure with timing must be followed exactly)",
+      "correctAnswerIndex": 0,
+      "targetSpeed": 0.77,
+      "hint": "What would the listener do if they let go after four seconds?",
+      "explanation": "The reset fails unless the listener holds it down long enough. The critical parts are the duration and the signal light.",
+      "pacingRule": "Decelerated Pacing: Technical steps with timing are slowed.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L92_Q1",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "Oi, that's my bike, stop!",
+      "textToSpeak": "Oi, that's my bike, stop!",
+      "options": [
+        "Accelerating (a shouted stop at a thief is fast)",
+        "Decelerating (a clear and steady command makes the thief listen)"
+      ],
+      "correctAnswer": "Accelerating (a shouted stop at a thief is fast)",
+      "correctAnswerIndex": 0,
+      "targetSpeed": 1.34,
+      "hint": "Is the speaker giving a polite instruction?",
+      "explanation": "Shouted commands at a fleeing person are sharp and quick. A slow one gives the thief the time to escape.",
+      "pacingRule": "Accelerated Pacing: Shouted commands are fast.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L92_Q2",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "It's a little place on the corner, you'll pass a florist and then a shoe shop.",
+      "textToSpeak": "It's a little place on the corner, you'll pass a florist and then a shoe shop.",
+      "options": [
+        "Decelerating (two landmarks are in order and the listener needs to remember them)",
+        "Accelerating (a chatty tone fits because the place is easy to find)"
+      ],
+      "correctAnswer": "Decelerating (two landmarks are in order and the listener needs to remember them)",
+      "correctAnswerIndex": 0,
+      "targetSpeed": 0.81,
+      "hint": "Which detail helps the listener know they're on the right road?",
+      "explanation": "The order 'florist, then shoe shop' is the route. A relaxed, slower pace lets it be remembered.",
+      "pacingRule": "Decelerated Pacing: Landmark sequences are slowed.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L92_Q3",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "Sorry, I think I've given you the wrong date, it's actually the twenty-second.",
+      "textToSpeak": "Sorry, I think I've given you the wrong date, it's actually the twenty-second.",
+      "options": [
+        "Accelerating (the speaker rushes to lessen the embarrassment)",
+        "Decelerating (a self-correction has to overwrite the earlier mistake)"
+      ],
+      "correctAnswer": "Decelerating (a self-correction has to overwrite the earlier mistake)",
+      "correctAnswerIndex": 1,
+      "targetSpeed": 0.8,
+      "hint": "Which word must the listener catch this time?",
+      "explanation": "The listener already has the wrong date. The correction has to be heard clearly to replace it.",
+      "pacingRule": "Decelerated Pacing: Corrections are slowed.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L93_Q1",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "Honestly, it was amazing, the food, the people, the views, everything!",
+      "textToSpeak": "Honestly, it was amazing, the food, the people, the views, everything!",
+      "options": [
+        "Accelerating (gushing enthusiasm runs quickly)",
+        "Decelerating (a review is slow so each point can be appreciated)"
+      ],
+      "correctAnswer": "Accelerating (gushing enthusiasm runs quickly)",
+      "correctAnswerIndex": 0,
+      "targetSpeed": 1.32,
+      "hint": "Is the speaker listing details or expressing general joy?",
+      "explanation": "This is a burst of joy, not a review with details to catch. Enthusiasm tumbles out; a slow list would sound like a travel brochure.",
+      "pacingRule": "Accelerated Pacing: Gushing enthusiasm is fast.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L93_Q2",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "Take the first tablet tonight, and then the other one tomorrow morning, with food.",
+      "textToSpeak": "Take the first tablet tonight, and then the other one tomorrow morning, with food.",
+      "options": [
+        "Accelerating (prescriptions are routine for pharmacists and are delivered quickly)",
+        "Decelerating (a medication schedule with two parts must be clearly separated)"
+      ],
+      "correctAnswer": "Decelerating (a medication schedule with two parts must be clearly separated)",
+      "correctAnswerIndex": 1,
+      "targetSpeed": 0.77,
+      "hint": "What are the three details the listener must remember?",
+      "explanation": "Three details must survive the listening: which tablet, when, and with food. Missing any one can cause a mistake, so each gets its own space.",
+      "pacingRule": "Decelerated Pacing: Medication schedules are slowed.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L93_Q3",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "Oh, come on, it's raining again? We only just got out here!",
+      "textToSpeak": "Oh, come on, it's raining again? We only just got out here!",
+      "options": [
+        "Decelerating (a slow reaction shows the speaker accepts the rain)",
+        "Accelerating (a groan of irritation is quick)"
+      ],
+      "correctAnswer": "Accelerating (a groan of irritation is quick)",
+      "correctAnswerIndex": 1,
+      "targetSpeed": 1.18,
+      "hint": "Is the speaker reacting or analysing?",
+      "explanation": "Spontaneous complaints are short and quick. A slow delivery would sound resigned.",
+      "pacingRule": "Accelerated Pacing: Spontaneous complaints are quick.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L94_Q1",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "I'm really sorry to ask, but could you look after my dog for a couple of days?",
+      "textToSpeak": "I'm really sorry to ask, but could you look after my dog for a couple of days?",
+      "options": [
+        "Accelerating (the speaker hurries to get the request over with)",
+        "Decelerating (a big favour is asked with a hesitant, gentler pace)"
+      ],
+      "correctAnswer": "Decelerating (a big favour is asked with a hesitant, gentler pace)",
+      "correctAnswerIndex": 1,
+      "targetSpeed": 0.78,
+      "hint": "How big is this request, and how does the speaker feel?",
+      "explanation": "The speaker feels awkward and is taking care not to pressure the friend. A slower, softer pace shows that.",
+      "pacingRule": "Decelerated Pacing: Big favours are asked slowly.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L94_Q2",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "Anyway, enough about me, what's new with you?",
+      "textToSpeak": "Anyway, enough about me, what's new with you?",
+      "options": [
+        "Accelerating (a change of topic is light and flows on)",
+        "Decelerating (the question is slowed to show interest)"
+      ],
+      "correctAnswer": "Accelerating (a change of topic is light and flows on)",
+      "correctAnswerIndex": 0,
+      "targetSpeed": 1.33,
+      "hint": "Is this a serious question or a conversational turn?",
+      "explanation": "The phrase 'anyway' marks a change of direction. Changes of topic keep the conversation moving.",
+      "pacingRule": "Accelerated Pacing: Topic changes are quick.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L94_Q3",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "Wow, that's a lot of people, I wasn't expecting this many!",
+      "textToSpeak": "Wow, that's a lot of people, I wasn't expecting this many!",
+      "options": [
+        "Decelerating (a slow voice shows the speaker counting)",
+        "Accelerating (surprise at a crowd makes the speaker speak quickly)"
+      ],
+      "correctAnswer": "Accelerating (surprise at a crowd makes the speaker speak quickly)",
+      "correctAnswerIndex": 1,
+      "targetSpeed": 1.18,
+      "hint": "Is the speaker calm or reacting?",
+      "explanation": "The speaker is reacting in the moment to an unexpected sight. A quick, surprised delivery matches that; a slow one would sound like counting.",
+      "pacingRule": "Accelerated Pacing: Surprise is fast.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L95_Q1",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "Dad, the thing is, I've been thinking about changing my course.",
+      "textToSpeak": "Dad, the thing is, I've been thinking about changing my course.",
+      "options": [
+        "Decelerating (a hesitant opening to a big topic is slow)",
+        "Accelerating (a quick opening gets it out before nerves take over)"
+      ],
+      "correctAnswer": "Decelerating (a hesitant opening to a big topic is slow)",
+      "correctAnswerIndex": 0,
+      "targetSpeed": 0.79,
+      "hint": "Why would the speaker begin with 'the thing is'?",
+      "explanation": "The speaker is working up to a difficult subject. The slow pace shows the care they're taking.",
+      "pacingRule": "Decelerated Pacing: Hesitant openings are slow.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L95_Q2",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "Yes, yes, I got your message, I'm on it!",
+      "textToSpeak": "Yes, yes, I got your message, I'm on it!",
+      "options": [
+        "Decelerating (a slow reply shows the speaker is taking it seriously)",
+        "Accelerating (a busy, reassuring reply is quick)"
+      ],
+      "correctAnswer": "Accelerating (a busy, reassuring reply is quick)",
+      "correctAnswerIndex": 1,
+      "targetSpeed": 1.21,
+      "hint": "Is the speaker showing that they're on top of it?",
+      "explanation": "A fast reply signals action. A slow one might suggest that the speaker hasn't started.",
+      "pacingRule": "Accelerated Pacing: Busy replies are quick.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L95_Q3",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "Let me explain how this works: you choose a plan, add your details, and confirm by text.",
+      "textToSpeak": "Let me explain how this works: you choose a plan, add your details, and confirm by text.",
+      "options": [
+        "Accelerating (a quick explanation signals that the process is simple)",
+        "Decelerating (a process explanation for a newcomer needs clear spacing)"
+      ],
+      "correctAnswer": "Decelerating (a process explanation for a newcomer needs clear spacing)",
+      "correctAnswerIndex": 1,
+      "targetSpeed": 0.77,
+      "hint": "Has the listener used the service before?",
+      "explanation": "A beginner needs to see the steps as separate actions. A slower pace separates them.",
+      "pacingRule": "Decelerated Pacing: Process explanations for newcomers are slowed.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L96_Q1",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "You'll need to boil it for exactly three minutes, no more, otherwise it goes rubbery.",
+      "textToSpeak": "You'll need to boil it for exactly three minutes, no more, otherwise it goes rubbery.",
+      "options": [
+        "Accelerating (the speaker sounds casual to show it's easy)",
+        "Decelerating (an exact condition is followed by its consequence)"
+      ],
+      "correctAnswer": "Decelerating (an exact condition is followed by its consequence)",
+      "correctAnswerIndex": 1,
+      "targetSpeed": 0.73,
+      "hint": "What words in the sentence set the limit?",
+      "explanation": "'Exactly' and 'no more' are the rules. The reason after them makes them memorable.",
+      "pacingRule": "Decelerated Pacing: Exact rules are slowed.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L96_Q2",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "My neighbour's cat walked right into my kitchen and ate my lunch!",
+      "textToSpeak": "My neighbour's cat walked right into my kitchen and ate my lunch!",
+      "options": [
+        "Decelerating (the story is slowed to keep the humour dry)",
+        "Accelerating (an amusing story is delivered with light energy)"
+      ],
+      "correctAnswer": "Accelerating (an amusing story is delivered with light energy)",
+      "correctAnswerIndex": 1,
+      "targetSpeed": 1.33,
+      "hint": "Is the speaker laughing at the situation?",
+      "explanation": "A funny anecdote told in the moment is brisk and lively. A slow, deadpan telling could also be funny, but it would not match the speaker's energy here.",
+      "pacingRule": "Accelerated Pacing: Funny anecdotes are brisk.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L96_Q3",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "Oh, I almost forgot, happy birthday, I've left your present in the hall!",
+      "textToSpeak": "Oh, I almost forgot, happy birthday, I've left your present in the hall!",
+      "options": [
+        "Decelerating (a formal birthday wish needs time)",
+        "Accelerating (a warm, sudden remembering is quick)"
+      ],
+      "correctAnswer": "Accelerating (a warm, sudden remembering is quick)",
+      "correctAnswerIndex": 1,
+      "targetSpeed": 1.2,
+      "hint": "Is this a formal greeting or a warm spontaneous one?",
+      "explanation": "'I almost forgot' marks an impulsive, warm remark. The words tumble out; a slow version would sound like a formal greeting card.",
+      "pacingRule": "Accelerated Pacing: Spontaneous greetings are quick.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L97_Q1",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "Can you hear me okay? The signal keeps cutting out, so stop me if you miss something.",
+      "textToSpeak": "Can you hear me okay? The signal keeps cutting out, so stop me if you miss something.",
+      "options": [
+        "Decelerating (an unreliable connection means the speaker should give each phrase room)",
+        "Accelerating (the speaker speeds up to say as much as possible before the line drops)"
+      ],
+      "correctAnswer": "Decelerating (an unreliable connection means the speaker should give each phrase room)",
+      "correctAnswerIndex": 0,
+      "targetSpeed": 0.83,
+      "hint": "What is the main risk in this call?",
+      "explanation": "If the line drops mid-phrase, the listener will miss parts. Clear, slower speech gets more through.",
+      "pacingRule": "Decelerated Pacing: Bad connections call for slower speech.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L97_Q2",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "No worries, all good, I'll sort it on my way home.",
+      "textToSpeak": "No worries, all good, I'll sort it on my way home.",
+      "options": [
+        "Accelerating (a relaxed reassurance is casual and quick)",
+        "Decelerating (careful, slow speech would show that the speaker is concerned)"
+      ],
+      "correctAnswer": "Accelerating (a relaxed reassurance is casual and quick)",
+      "correctAnswerIndex": 0,
+      "targetSpeed": 1.18,
+      "hint": "Does the speaker see the matter as serious?",
+      "explanation": "The aim is to tell the other person not to stress. A relaxed, quick answer does that.",
+      "pacingRule": "Accelerated Pacing: Relaxed reassurance can be quick.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L97_Q3",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "Please take a seat, the doctor will call your name when she's ready.",
+      "textToSpeak": "Please take a seat, the doctor will call your name when she's ready.",
+      "options": [
+        "Accelerating (a receptionist says it briskly because of a busy queue)",
+        "Decelerating (a calm, clear message in a clinic helps an anxious listener)"
+      ],
+      "correctAnswer": "Decelerating (a calm, clear message in a clinic helps an anxious listener)",
+      "correctAnswerIndex": 1,
+      "targetSpeed": 0.78,
+      "hint": "How might the patient be feeling in a waiting room?",
+      "explanation": "Patients in waiting rooms are often anxious, and the receptionist's pace sets the tone. A calm, clear pace reassures, while a brisk one makes it sound like a conveyor belt.",
+      "pacingRule": "Decelerated Pacing: Clinic instructions are calm and slow.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L98_Q1",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "Okay, this is it, here we go, wish me luck!",
+      "textToSpeak": "Okay, this is it, here we go, wish me luck!",
+      "options": [
+        "Accelerating (a nervous, excited start pushes the pace)",
+        "Decelerating (the speaker takes a slow, deep breath before going)"
+      ],
+      "correctAnswer": "Accelerating (a nervous, excited start pushes the pace)",
+      "correctAnswerIndex": 0,
+      "targetSpeed": 1.15,
+      "hint": "Is the speaker about to act, or pause?",
+      "explanation": "The speaker is launching into action, so energy and pace build together. Slowing down would turn a nervous, excited start into a hesitation.",
+      "pacingRule": "Accelerated Pacing: Launching into action is fast.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L98_Q2",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "What I'm trying to say is that I need some space right now, and it's nothing you did.",
+      "textToSpeak": "What I'm trying to say is that I need some space right now, and it's nothing you did.",
+      "options": [
+        "Accelerating (the speaker hurries to get through an uncomfortable message)",
+        "Decelerating (a difficult message is delivered with care)"
+      ],
+      "correctAnswer": "Decelerating (a difficult message is delivered with care)",
+      "correctAnswerIndex": 1,
+      "targetSpeed": 0.8,
+      "hint": "What does the listener fear the speaker might say?",
+      "explanation": "The end 'it's nothing you did' is the reassurance, so slowing down lets it land.",
+      "pacingRule": "Decelerated Pacing: Difficult personal messages are slowed.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L98_Q3",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "Sunday's fine for me, I'm not doing much, and I can do any time after ten.",
+      "textToSpeak": "Sunday's fine for me, I'm not doing much, and I can do any time after ten.",
+      "options": [
+        "Accelerating (a flexible, low-stakes answer is relaxed)",
+        "Decelerating (the speaker says the time slowly so it can be noted)"
+      ],
+      "correctAnswer": "Accelerating (a flexible, low-stakes answer is relaxed)",
+      "correctAnswerIndex": 0,
+      "targetSpeed": 1.25,
+      "hint": "Is the speaker setting a firm time?",
+      "explanation": "'Any time after ten' is open, so no precise detail needs to be caught. A slow, careful delivery would make the loose offer sound like a fixed plan.",
+      "pacingRule": "Accelerated Pacing: Open availability is quick.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L99_Q1",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "It's on the second shelf, behind the blue box, no, the other blue box.",
+      "textToSpeak": "It's on the second shelf, behind the blue box, no, the other blue box.",
+      "options": [
+        "Accelerating (the speaker says it quickly since the listener can see the shelf)",
+        "Decelerating (the self-correction makes the speaker slow down to be accurate)"
+      ],
+      "correctAnswer": "Decelerating (the self-correction makes the speaker slow down to be accurate)",
+      "correctAnswerIndex": 1,
+      "targetSpeed": 0.78,
+      "hint": "What is the speaker trying to avoid?",
+      "explanation": "Two blue boxes are causing confusion. The speaker must slow down to separate them.",
+      "pacingRule": "Decelerated Pacing: Corrections with confusable items are slow.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L99_Q2",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "Oh, lovely, thank you, that's very kind of you!",
+      "textToSpeak": "Oh, lovely, thank you, that's very kind of you!",
+      "options": [
+        "Accelerating (a warm, polite reaction is light and quick)",
+        "Decelerating (real gratitude needs a slow, deep voice)"
+      ],
+      "correctAnswer": "Accelerating (a warm, polite reaction is light and quick)",
+      "correctAnswerIndex": 0,
+      "targetSpeed": 1.19,
+      "hint": "Is the speaker expressing deep thanks or polite warmth?",
+      "explanation": "It's a spontaneous expression of delight. A light pace makes it sound warm.",
+      "pacingRule": "Accelerated Pacing: Polite warmth is light.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L99_Q3",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "I just want to make sure I've understood: you'll send the parcel back, and we'll get a refund.",
+      "textToSpeak": "I just want to make sure I've understood: you'll send the parcel back, and we'll get a refund.",
+      "options": [
+        "Decelerating (a summary to confirm understanding must be carefully paced)",
+        "Accelerating (the summary is quick since the speaker is sure)"
+      ],
+      "correctAnswer": "Decelerating (a summary to confirm understanding must be carefully paced)",
+      "correctAnswerIndex": 0,
+      "targetSpeed": 0.81,
+      "hint": "Why would the speaker ask to confirm?",
+      "explanation": "The purpose is to be sure. A slow delivery gives the other person a chance to correct it.",
+      "pacingRule": "Decelerated Pacing: Confirming understanding is slowed.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L100_Q1",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "Get out, you're joking, you did not just say that!",
+      "textToSpeak": "Get out, you're joking, you did not just say that!",
+      "options": [
+        "Accelerating (playful disbelief comes out quick and bouncy)",
+        "Decelerating (a slow pace shows the speaker is actually angry)"
+      ],
+      "correctAnswer": "Accelerating (playful disbelief comes out quick and bouncy)",
+      "correctAnswerIndex": 0,
+      "targetSpeed": 1.16,
+      "hint": "Is the speaker actually angry?",
+      "explanation": "The tone is playful and the words are short and bouncy, so the rate is fast. A slow delivery would make the reaction sound genuinely angry.",
+      "pacingRule": "Accelerated Pacing: Playful disbelief is quick.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L100_Q2",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "When you're ready, let's walk through it together, one part at a time.",
+      "textToSpeak": "When you're ready, let's walk through it together, one part at a time.",
+      "options": [
+        "Accelerating (a quick, brisk invitation sounds efficient and confident)",
+        "Decelerating (a patient, supportive invitation is delivered at a slower pace)"
+      ],
+      "correctAnswer": "Decelerating (a patient, supportive invitation is delivered at a slower pace)",
+      "correctAnswerIndex": 1,
+      "targetSpeed": 0.85,
+      "hint": "What does the listener need from the speaker's voice?",
+      "explanation": "The listener may be overwhelmed. A slow pace models the one-step-at-a-time approach.",
+      "pacingRule": "Decelerated Pacing: Supportive guidance is slowed.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    },
+    {
+      "id": "ACC_SPEEDVARIANCE_L100_Q3",
+      "instruction": "Adjust the speed",
+      "subtype": "speedVariance",
+      "interactionType": "speaking",
+      "word": "Anyway, like I said, it's the same as before, so you know what to do.",
+      "textToSpeak": "Anyway, like I said, it's the same as before, so you know what to do.",
+      "options": [
+        "Accelerating (familiar information is covered lightly)",
+        "Decelerating (the speaker slows so the listener knows it is important)"
+      ],
+      "correctAnswer": "Accelerating (familiar information is covered lightly)",
+      "correctAnswerIndex": 0,
+      "targetSpeed": 1.25,
+      "hint": "Does the listener already know this?",
+      "explanation": "The speaker reminds the listener that they know what to do. A brisk pace shows the trust.",
+      "pacingRule": "Accelerated Pacing: Familiar information is quick.",
+      "naturalSpeed": 1,
+      "clearSpeed": 0.7
+    }
+  ]
 }

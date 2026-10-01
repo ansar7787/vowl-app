@@ -5,512 +5,512 @@
     "quests": [
         {
             "id": "sva_l141_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE QUESTION",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The committee's decision to implement the new policies ___ widely contested.",
-            "hint": "The subject is 'the committee's decision' (singular) - all other words are modifiers.",
-            "explanation": "The subject is 'the committee's decision', which is singular. The long modifier ('to implement the new policies') does not change agreement. 'The decision was widely contested'.",
+            "question": "___ your colleague who joined last month need any help with onboarding?",
+            "hint": "Look past the description of when your colleague joined to find the true subject.",
+            "explanation": "'Your colleague' is singular, even with 'who joined last month' in between. The question needs 'does'.",
             "options": [
-                "was",
-                "were"
+                "Do",
+                "Does"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Does",
+            "grammarRule": "Auxiliary 'do/does' agreement follows the true subject, even with an interrupting phrase",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l141_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE QUESTION",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The committee's decisions to implement the new policies ___ widely contested.",
-            "hint": "The subject is 'the committee's decisions' (plural) - all other words are modifiers.",
-            "explanation": "The subject is 'the committee's decisions', which is plural. 'The decisions were widely contested' - even with a long modifier, the subject controls the verb.",
+            "question": "___ the students who missed the lecture need to catch up on notes?",
+            "hint": "The clause about missing the lecture doesn't change how many students there are.",
+            "explanation": "'The students' is plural, so the question needs 'do'.",
             "options": [
-                "was",
-                "were"
+                "Does",
+                "Do"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswer": "Do",
+            "grammarRule": "Auxiliary 'do/does' agreement follows the true subject, even with an interrupting phrase",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l141_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE QUESTION",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The extent to which digital technology ___ transformed education is debated.",
-            "hint": "Inside the 'to which' clause, 'digital technology' is singular - uncountable.",
-            "explanation": "Inside the embedded clause, the subject is 'digital technology', which is singular and uncountable. 'Digital technology has transformed education' - singular verb.",
+            "question": "The report ___ not include the data from last quarter.",
+            "hint": "Consider how many documents 'the report' names, then think about which negative form fits.",
+            "explanation": "'The report' is singular, so the negative form uses 'does': 'does not include'.",
             "options": [
-                "has",
-                "have"
+                "do",
+                "does"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "does",
+            "grammarRule": "Auxiliary 'do/does' agreement follows the true subject, even with an interrupting phrase",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l142_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB FORM",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The extent to which digital technologies ___ transformed education is debated.",
-            "hint": "Inside the 'to which' clause, 'digital technologies' is plural.",
-            "explanation": "Inside the embedded clause, the subject is 'digital technologies', which is plural. 'Digital technologies have transformed education' - plural verb.",
+            "question": "Did the landlord ___ the request yesterday?",
+            "hint": "'Did' already shows the question is in the past - the main verb doesn't need its own ending.",
+            "explanation": "After 'did', the main verb always stays in its base form, so 'approve' is correct, not 'approves'.",
             "options": [
-                "has",
-                "have"
+                "approve",
+                "approves"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "have",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "approve",
+            "grammarRule": "The main verb stays in its base form after 'did' / 'didn't', regardless of the subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l142_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB FORM",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The extent of the changes required ___ significant.",
-            "hint": "The subject is 'the extent' (singular) - 'of the changes required' is a modifier.",
-            "explanation": "'The extent' is the singular subject; 'of the changes required' is a prepositional modifier. 'The extent is significant'.",
+            "question": "Did the students ___ their homework before class?",
+            "hint": "Even with a plural subject, the verb after 'did' still doesn't take an ending.",
+            "explanation": "After 'did', the main verb stays in its base form: 'finish', not 'finishes'.",
             "options": [
-                "is",
-                "are"
+                "finish",
+                "finishes"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswer": "finish",
+            "grammarRule": "The main verb stays in its base form after 'did' / 'didn't', regardless of the subject",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l142_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB FORM",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The scale of the reforms that ___ proposed last year is now clear.",
-            "hint": "Inside the relative clause, 'that' refers to 'the reforms' (plural).",
-            "explanation": "Inside the relative clause 'that were proposed last year', 'that' refers to 'the reforms', which is plural. The verb inside the clause is 'were'.",
+            "question": "The team didn't ___ enough time to prepare.",
+            "hint": "'Didn't' already carries the negative and the past tense - the main verb stays plain.",
+            "explanation": "After 'didn't', the main verb stays in its base form: 'have', not 'has'.",
             "options": [
-                "was",
-                "were"
+                "have",
+                "has"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "have",
+            "grammarRule": "The main verb stays in its base form after 'did' / 'didn't', regardless of the subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l143_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB FORM",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "What the long-term consequences of this policy ___ is difficult to predict.",
-            "hint": "Inside the embedded clause, 'the long-term consequences' is plural.",
-            "explanation": "Inside the embedded clause 'what the long-term consequences of this policy are', the subject is 'the long-term consequences', which is plural. The verb inside is 'are'.",
+            "question": "She can ___ five languages fluently.",
+            "hint": "Modals like 'can' never add -s, and neither does the verb that follows them.",
+            "explanation": "After 'can', the main verb always stays in its base form: 'speak', not 'speaks' - this is true no matter who the subject is.",
             "options": [
-                "are",
-                "is"
+                "speaks",
+                "speak"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "speak",
+            "grammarRule": "The verb after 'can/could' always stays in its base form, regardless of the subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l143_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB FORM",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "What the long-term consequence of this policy ___ is difficult to predict.",
-            "hint": "Inside the embedded clause, 'the long-term consequence' is singular.",
-            "explanation": "Inside the embedded clause, the subject is 'the long-term consequence', which is singular. The verb inside is 'is'. Note: changing 'consequences' to 'consequence' changes the agreement.",
+            "question": "The workers could ___ overtime if needed.",
+            "hint": "'Could' behaves the same way as 'can' - the verb after it never changes.",
+            "explanation": "After 'could', the main verb stays in its base form: 'work'.",
             "options": [
-                "are",
-                "is"
+                "work",
+                "works"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "work",
+            "grammarRule": "The verb after 'can/could' always stays in its base form, regardless of the subject",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l143_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB FORM",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The hypothesis that the researchers ___ testing proved to be correct.",
-            "hint": "Inside the relative clause, 'the researchers' is plural.",
-            "explanation": "Inside the relative clause 'that the researchers were testing', the subject is 'the researchers', which is plural. The verb inside the clause is 'were'.",
+            "question": "He can ___ the piano beautifully.",
+            "hint": "Even with a singular subject like 'he', the verb after 'can' still doesn't take -s.",
+            "explanation": "After 'can', the main verb stays in its base form: 'play', not 'plays'.",
             "options": [
-                "were",
-                "was"
+                "play",
+                "plays"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "play",
+            "grammarRule": "The verb after 'can/could' always stays in its base form, regardless of the subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l144_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB FORM",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "All that ___ needed now is patience and persistence.",
-            "hint": "'All that' functioning as a singular noun clause takes a singular verb.",
-            "explanation": "'All that is needed' uses 'all that' as a singular noun clause. It means 'the only thing that is needed', which is singular.",
+            "question": "The company will ___ its new product next month.",
+            "hint": "'Will' never changes form, and neither does the verb that follows it.",
+            "explanation": "After 'will', the main verb stays in its base form: 'launch', not 'launches'.",
             "options": [
-                "are",
-                "is"
+                "launch",
+                "launches"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "launch",
+            "grammarRule": "The verb after 'will/would' always stays in its base form, regardless of the subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l144_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB FORM",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "All those who ___ interested should submit an application by Friday.",
-            "hint": "'All those who' refers to multiple people - plural verb inside the clause.",
-            "explanation": "'All those who are interested' uses 'those' to refer to multiple people. The verb inside the relative clause is 'are' because 'those' is plural.",
+            "question": "She would ___ the offer if she had more time.",
+            "hint": "'Would' works the same way as 'will' - the verb after it stays plain.",
+            "explanation": "After 'would', the main verb stays in its base form: 'consider', not 'considers'.",
             "options": [
-                "are",
-                "is"
+                "considers",
+                "consider"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "consider",
+            "grammarRule": "The verb after 'will/would' always stays in its base form, regardless of the subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l144_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB FORM",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The committee, which ___ made up of twelve members, meets quarterly.",
-            "hint": "Inside the relative clause, 'which' refers to 'the committee' (singular collective).",
-            "explanation": "'Which' refers to 'the committee', which is a singular collective noun. The verb inside the relative clause is 'is made up'.",
+            "question": "The students will ___ their exams next week.",
+            "hint": "Even with a plural subject, the rule for the verb after 'will' doesn't change.",
+            "explanation": "After 'will', the main verb stays in its base form: 'take'.",
             "options": [
-                "are",
-                "is"
+                "take",
+                "takes"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "take",
+            "grammarRule": "The verb after 'will/would' always stays in its base form, regardless of the subject",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l145_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB FORM",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The number of cases reported each year ___ fallen significantly.",
-            "hint": "'The number of' is always singular - one total count is being described.",
-            "explanation": "'The number of' is always singular. 'The number of cases has fallen significantly' - not 'have'. One number is being discussed.",
+            "question": "He should ___ his manager about the schedule change.",
+            "hint": "'Should' never changes form, and the verb after it stays in its base form too.",
+            "explanation": "After 'should', the main verb stays in its base form: 'tell', not 'tells'.",
             "options": [
-                "has",
-                "have"
+                "tell",
+                "tells"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "tell",
+            "grammarRule": "The verb after 'should' always stays in its base form, regardless of the subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l145_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB FORM",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "A significant number of cases ___ reported each year despite the vaccine.",
-            "hint": "'A significant number of' means 'many' - plural verb with a plural noun.",
-            "explanation": "'A significant number of cases' means 'many cases'. Like 'a number of', 'a significant number of' takes a plural verb when followed by a countable plural noun.",
+            "question": "The employees should ___ their timesheets by Friday.",
+            "hint": "Even with a plural subject, the verb after 'should' still doesn't take -s.",
+            "explanation": "After 'should', the main verb stays in its base form: 'submit'.",
             "options": [
-                "is",
-                "are"
+                "submit",
+                "submits"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "submit",
+            "grammarRule": "The verb after 'should' always stays in its base form, regardless of the subject",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l145_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB FORM",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Whether the new approach ___ effective remains to be seen.",
-            "hint": "Inside the 'whether' clause, 'the new approach' is singular.",
-            "explanation": "Inside the embedded 'whether' clause, the subject is 'the new approach', which is singular. 'Whether the new approach is effective' - singular verb inside the clause.",
+            "question": "This machine should ___ regular maintenance.",
+            "hint": "Don't let a singular subject like 'this machine' tempt you into adding -s here.",
+            "explanation": "After 'should', the main verb stays in its base form: 'receive', not 'receives'.",
             "options": [
-                "is",
-                "are"
+                "receives",
+                "receive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "receive",
+            "grammarRule": "The verb after 'should' always stays in its base form, regardless of the subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l146_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB FORM",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The question of whether these methods ___ ethical continues to be debated.",
-            "hint": "Inside the 'whether' clause, 'these methods' is plural.",
-            "explanation": "Inside the embedded clause, the subject is 'these methods', which is plural. 'Whether these methods are ethical' - plural verb inside the embedded clause.",
+            "question": "The weather may ___ suddenly this afternoon.",
+            "hint": "'May' never changes form, and the verb after it stays in its base form.",
+            "explanation": "After 'may', the main verb stays in its base form: 'change', not 'changes'.",
             "options": [
-                "is",
-                "are"
+                "change",
+                "changes"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "change",
+            "grammarRule": "The verb after 'may/might' always stays in its base form, regardless of the subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l146_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB FORM",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The assumption that underlies these arguments ___ questionable.",
-            "hint": "The subject is 'the assumption' (singular) - the relative clause is descriptive.",
-            "explanation": "'The assumption' is the singular subject; the relative clause 'that underlies these arguments' describes it. 'The assumption is questionable'.",
+            "question": "She might ___ to the party if she finishes work early.",
+            "hint": "'Might' works the same way as 'may' - the verb after it stays plain.",
+            "explanation": "After 'might', the main verb stays in its base form: 'come', not 'comes'.",
             "options": [
-                "is",
-                "are"
+                "come",
+                "comes"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "come",
+            "grammarRule": "The verb after 'may/might' always stays in its base form, regardless of the subject",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l146_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB FORM",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The assumptions that underlie these arguments ___ questionable.",
-            "hint": "The subject is 'the assumptions' (plural) - relative clause is descriptive.",
-            "explanation": "'The assumptions' is the plural subject; 'that underlie these arguments' describes them. 'The assumptions are questionable'.",
+            "question": "The prices might ___ again next year.",
+            "hint": "Even with a plural subject, the verb after 'might' doesn't take -s.",
+            "explanation": "After 'might', the main verb stays in its base form: 'rise'.",
             "options": [
-                "is",
-                "are"
+                "rise",
+                "rises"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "rise",
+            "grammarRule": "The verb after 'may/might' always stays in its base form, regardless of the subject",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l147_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE QUESTION",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The pace at which these industries ___ growing has surprised many economists.",
-            "hint": "Inside the relative clause, 'which' refers to 'these industries' (plural).",
-            "explanation": "Inside the relative clause 'at which these industries are growing', 'which' refers to 'these industries', which is plural. The verb inside is 'are'.",
+            "question": "___ she often work late on Fridays?",
+            "hint": "This question has no modal, so 'do' needs to change based on the subject.",
+            "explanation": "'She' is singular, so the question needs 'does'.",
             "options": [
-                "are",
-                "is"
+                "Do",
+                "Does"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Does",
+            "grammarRule": "'Do' becomes 'does' for singular subjects in questions; modals like 'can' and 'will' never change",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l147_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE QUESTION",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The pace at which this industry ___ growing has surprised many economists.",
-            "hint": "Inside the relative clause, 'which' refers to 'this industry' (singular).",
-            "explanation": "Inside the relative clause, 'which' refers to 'this industry', which is singular. The verb inside the clause is 'is': 'at which this industry is growing'.",
+            "question": "___ the interns start next Monday?",
+            "hint": "Check whether 'the interns' is singular or plural before choosing the question word.",
+            "explanation": "'The interns' is plural, so the question needs 'do'.",
             "options": [
-                "are",
-                "is"
+                "Does",
+                "Do"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswer": "Do",
+            "grammarRule": "'Do' becomes 'does' for singular subjects in questions; modals like 'can' and 'will' never change",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l147_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "COMPLETE THE QUESTION",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The way in which these challenges ___ addressed will determine the outcome.",
-            "hint": "Inside the relative clause, 'which' refers to 'these challenges' (plural).",
-            "explanation": "'Which' refers to 'these challenges', which is plural. The verb inside the relative clause is 'are': 'in which these challenges are addressed'.",
+            "question": "___ the principal and the assistant both attend the meeting?",
+            "hint": "Two people joined by 'and' always form a plural subject - which question word matches?",
+            "explanation": "'The principal and the assistant' is a compound subject, so it's plural. The question needs 'do'.",
             "options": [
-                "are",
-                "is"
+                "Does",
+                "Do"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Do",
+            "grammarRule": "'Do' becomes 'does' for singular subjects in questions; modals like 'can' and 'will' never change",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l148_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The way in which this challenge ___ addressed will determine the outcome.",
-            "hint": "Inside the relative clause, 'which' refers to 'this challenge' (singular).",
-            "explanation": "'Which' refers to 'this challenge', which is singular. The verb inside is 'is': 'in which this challenge is addressed'.",
+            "question": "The printer ___ work when it's out of paper.",
+            "hint": "'The printer' is one machine - check how that affects the negative form.",
+            "explanation": "'The printer' is singular, so the negative form is 'doesn't'.",
             "options": [
-                "are",
-                "is"
+                "doesn't",
+                "don't"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "doesn't",
+            "grammarRule": "'Don't' / 'doesn't' agreement follows the subject, just like the positive form",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l148_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Five years ___ a long time to work in the same position without promotion.",
-            "hint": "A specific time period treated as one unit takes a singular verb.",
-            "explanation": "When a period of time is treated as a single unit or amount, the verb is singular. 'Five years is a long time' - we see it as one duration.",
+            "question": "The employees ___ have access to that folder.",
+            "hint": "Look at the subject before the blank and let its number decide between the two negative forms.",
+            "explanation": "'The employees' is plural, so the negative form is 'don't'.",
             "options": [
-                "is",
-                "are"
+                "doesn't",
+                "don't"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "don't",
+            "grammarRule": "'Don't' / 'doesn't' agreement follows the subject, just like the positive form",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l148_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHECK THE VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Millions of euros ___ spent on the project every year.",
-            "hint": "A large sum expressed as multiple units takes a plural verb.",
-            "explanation": "Unlike 'fifty dollars is too much', large sums expressed as multiple units take plural verbs when the emphasis is on the individual units. 'Millions of euros are spent'.",
+            "question": "My brother ___ enjoy spicy food at all.",
+            "hint": "'My brother' is one person - keep the negative form singular.",
+            "explanation": "'My brother' is singular, so the negative form is 'doesn't'.",
             "options": [
-                "is",
-                "are"
+                "don't",
+                "doesn't"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "doesn't",
+            "grammarRule": "'Don't' / 'doesn't' agreement follows the subject, just like the positive form",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l149_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Ten minutes ___ all the time we have left to finish this.",
-            "hint": "A duration treated as a single unit of time takes a singular verb.",
-            "explanation": "When 'ten minutes' is treated as a single block of time (not individual minutes), the verb is singular: 'ten minutes is all the time we have'.",
+            "question": "She ___ like coffee, even though she rarely drinks it in front of others.",
+            "hint": "Emphasis doesn't switch off agreement - look at the subject before choosing the form.",
+            "explanation": "'She' is singular, so the emphatic form is 'does': 'She does like coffee'.",
             "options": [
-                "is",
-                "are"
+                "do",
+                "does"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "does",
+            "grammarRule": "Emphatic 'do/does' agreement follows the subject, just like the question and negative forms",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l149_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The ten minutes we spent waiting ___ not entirely wasted.",
-            "hint": "Here 'the ten minutes' refers to individual minutes in a sequence - plural.",
-            "explanation": "When 'the ten minutes' refers to the individual minutes that passed, rather than a single unit of time, the verb is plural: 'the ten minutes were not entirely wasted'.",
+            "question": "They ___ appreciate your help, even if they don't always say so.",
+            "hint": "Check what 'they' tells you about the subject before choosing the emphatic form.",
+            "explanation": "'They' is plural, so the emphatic form is 'do': 'They do appreciate your help'.",
             "options": [
-                "was",
-                "were"
+                "does",
+                "do"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswer": "do",
+            "grammarRule": "Emphatic 'do/does' agreement follows the subject, just like the question and negative forms",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l149_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The criteria used to evaluate the proposals ___ clearly defined.",
-            "hint": "'Criteria' is the plural of 'criterion' - always takes a plural verb.",
-            "explanation": "'Criteria' is the plural form of 'criterion'. It is always plural and always takes a plural verb: 'the criteria were clearly defined'.",
+            "question": "He ___ know the answer, but he's too nervous to say it out loud.",
+            "hint": "Use the same reasoning as in the previous sentence: what does this subject call for?",
+            "explanation": "'He' is singular, so the emphatic form is 'does': 'He does know the answer'.",
             "options": [
-                "were",
-                "was"
+                "do",
+                "does"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "does",
+            "grammarRule": "Emphatic 'do/does' agreement follows the subject, just like the question and negative forms",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l150_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The criterion used to evaluate this proposal ___ clearly defined.",
-            "hint": "'Criterion' is the singular form - it takes a singular verb.",
-            "explanation": "'Criterion' is the singular form of 'criteria'. When you refer to just one standard, the verb is singular: 'the criterion was clearly defined'.",
+            "question": "___ the new employees need any additional training?",
+            "hint": "Bring back the do/does question rule: check if the subject is singular or plural.",
+            "explanation": "'The new employees' is plural, so the question needs 'do'.",
             "options": [
-                "were",
-                "was"
+                "Does",
+                "Do"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswer": "Do",
+            "grammarRule": "'Do' becomes 'does' for singular subjects in questions; modals like 'can' and 'will' never change",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l150_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The phenomena observed during the experiment ___ remarkable.",
-            "hint": "'Phenomena' is always plural - never singular.",
-            "explanation": "'Phenomena' is the plural of 'phenomenon'. It is always plural and takes a plural verb: 'the phenomena were remarkable'.",
+            "question": "The device ___ turn on properly, no matter how many times I try.",
+            "hint": "Remember the negative form rule: match 'doesn't' or 'don't' to the subject.",
+            "explanation": "'The device' is singular, so the negative form is 'doesn't'.",
             "options": [
-                "were",
-                "was"
+                "doesn't",
+                "don't"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "doesn't",
+            "grammarRule": "'Don't' / 'doesn't' agreement follows the subject, just like the positive form",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l150_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The phenomenon observed during the experiment ___ remarkable.",
-            "hint": "'Phenomenon' is singular - it takes a singular verb.",
-            "explanation": "'Phenomenon' is the singular form of 'phenomena'. When referring to one occurrence, the verb is singular: 'the phenomenon was remarkable'.",
+            "question": "The manager could ___ the meeting to next week if needed.",
+            "hint": "As a final check, recall that the verb after a modal like 'could' never takes -s.",
+            "explanation": "After 'could', the main verb stays in its base form: 'move', not 'moves'.",
             "options": [
-                "were",
-                "was"
+                "move",
+                "moves"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "move",
+            "grammarRule": "The verb after 'can/could' always stays in its base form, regardless of the subject",
             "subjectType": "Singular"
         }
     ]

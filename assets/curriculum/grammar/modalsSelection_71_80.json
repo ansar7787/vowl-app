@@ -8,417 +8,417 @@
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "Pilots ___ undergo rigorous medical examinations every six months.",
+            "question": "Auditors ___ retain financial records for a minimum of seven years by law.",
             "options": [
-                "must",
                 "might",
-                "would",
-                "could"
+                "should",
+                "could",
+                "must"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "must",
-            "hint": "Aviation safety requires mandatory regular medicals.",
-            "explanation": "'Must' expresses a mandatory regulatory obligation. Aviation authorities require pilots to undergo regular medical examinations. This is a non-negotiable safety requirement. 'Must undergo' = it is required by law.",
-            "grammarRule": "Obligation & Deduction (must)",
-            "modalMeaning": "3"
+            "hint": "This is a legal minimum with no flexibility mentioned.",
+            "explanation": "'Must' expresses a legally mandated minimum requirement, allowing no exceptions.",
+            "grammarRule": "Obligation Nuance Review",
+            "modalMeaning": "5"
         },
         {
             "id": "ms_l71_q2",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "You ___ keep your receipts if you want to claim expenses back.",
+            "question": "You ___ maybe consider a shorter commute, though I know it's not always possible.",
             "options": [
-                "can",
                 "should",
-                "must",
-                "shall"
+                "could",
+                "might",
+                "must"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "should",
-            "hint": "Practical advice about the expense claim process.",
-            "explanation": "'Should keep receipts' = practical advice. 'Should' here gives a strong recommendation. Without receipts, you may not be able to reclaim expenses, making this very important advice.",
-            "grammarRule": "Advice & Expectation (should/ought)",
-            "modalMeaning": "3"
+            "correctAnswer": "could",
+            "hint": "This is a gentle, tentative suggestion, softened further by 'maybe'.",
+            "explanation": "'Could' offers a soft, optional suggestion, weakened even further by the hedge 'maybe' and the acknowledgment that it isn't always possible.",
+            "grammarRule": "Obligation Nuance Review",
+            "modalMeaning": "5"
         },
         {
             "id": "ms_l71_q3",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "___ you like some help finding what you're looking for?",
+            "question": "Under the terms of the lease, tenants ___ give sixty days' notice before moving out.",
             "options": [
-                "shall",
-                "would",
                 "should",
+                "could",
+                "might",
                 "must"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "would",
-            "hint": "A retail assistant politely offering help.",
-            "explanation": "'Would you like some help?' is the standard polite offer formula in retail settings. 'Would' makes the offer sound professional and non-imposing, allowing the customer to decline without awkwardness.",
-            "grammarRule": "Offers & Habits (would)",
-            "modalMeaning": "2"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "must",
+            "hint": "This is a contractual obligation, formally stated.",
+            "explanation": "'Must' expresses a binding contractual requirement, a formal obligation stated in the lease.",
+            "grammarRule": "Obligation Nuance Review",
+            "modalMeaning": "5"
         },
         {
             "id": "ms_l72_q1",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "___ I have a word with you in private?",
+            "question": "It's a long shot, but the missing letter ___ still turn up somewhere in the archive.",
             "options": [
-                "may",
-                "shall",
+                "might",
                 "would",
-                "must"
+                "must",
+                "should"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "may",
-            "hint": "A formal, discreet request for a private conversation.",
-            "explanation": "'May I have a word?' is a formal, polite way to request a private conversation. It is very common in professional and formal social settings. 'May I' expresses respect for the listener's time.",
-            "grammarRule": "Formal Permission (may)",
-            "modalMeaning": "2"
+            "correctAnswer": "might",
+            "hint": "The phrase 'long shot' tells you this is a faint hope.",
+            "explanation": "'Might' expresses a faint possibility, matching the phrase 'long shot' which signals low likelihood.",
+            "grammarRule": "Weak Possibility Layered",
+            "modalMeaning": "4"
         },
         {
             "id": "ms_l72_q2",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "She ___ play competitive tennis before her knee injury changed everything.",
+            "question": "There's a slightly better chance now - the results ___ come back positive this time.",
             "options": [
                 "could",
-                "shall",
+                "should",
                 "might",
-                "would"
+                "must"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "could",
-            "hint": "A past ability that ended due to injury.",
-            "explanation": "'Could play competitive tennis' = she had this ability in the past. The context ('before her knee injury') clearly establishes that this was a past ability, now lost due to injury.",
-            "grammarRule": "Ability & Permission (can/could)",
-            "modalMeaning": "1"
+            "hint": "This possibility feels a touch more grounded than a vague guess.",
+            "explanation": "'Could' expresses a somewhat more grounded possibility than 'might', fitting the phrase 'slightly better chance'.",
+            "grammarRule": "Weak Possibility Layered",
+            "modalMeaning": "4"
         },
         {
             "id": "ms_l72_q3",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "Motorists ___ not use mobile phones while driving - it is illegal.",
+            "question": "It's not likely, but the flight ___ conceivably be cancelled if the storm worsens.",
             "options": [
-                "could",
                 "might",
-                "had",
-                "must"
+                "would",
+                "must",
+                "should"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "must",
-            "hint": "A road safety law - a prohibition.",
-            "explanation": "'Must not use mobile phones while driving' = it is illegal. This is a firm traffic law. 'Must not' expresses a legal prohibition. 'Should not' would be too soft for a law that carries fines and penalties.",
-            "grammarRule": "Obligation & Deduction (must)",
-            "modalMeaning": "3"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "might",
+            "hint": "This is an unlikely but not impossible scenario.",
+            "explanation": "'Might' expresses an unlikely but genuine possibility, appropriate for a scenario explicitly called 'not likely'.",
+            "grammarRule": "Weak Possibility Layered",
+            "modalMeaning": "4"
         },
         {
             "id": "ms_l73_q1",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "The weather app says there ___ be strong winds on Saturday.",
+            "question": "Now that the funding is approved, the project ___ definitely move forward.",
             "options": [
-                "shall",
-                "might",
-                "can",
-                "must"
+                "may",
+                "will",
+                "could",
+                "might"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "might",
-            "hint": "App prediction - uncertain future weather event.",
-            "explanation": "'Might be strong winds' = possible but uncertain. Weather apps give probabilistic forecasts. 'Might' correctly expresses that the prediction is possible but not guaranteed.",
-            "grammarRule": "Possibility (might)",
-            "modalMeaning": "3"
+            "correctAnswer": "will",
+            "hint": "A key obstacle has already been removed, making this near-certain.",
+            "explanation": "'Will' expresses strong certainty now that the main obstacle (funding) is resolved.",
+            "grammarRule": "Certainty Scale Integrated",
+            "modalMeaning": "8"
         },
         {
             "id": "ms_l73_q2",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "There's a moving van outside - the neighbours ___ be moving house.",
+            "question": "Everything points to a good outcome, so the surgery ___ go smoothly.",
             "options": [
-                "might",
+                "will",
                 "should",
-                "could",
-                "must"
+                "must",
+                "might"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "could",
-            "hint": "A van outside is a clue, but it doesn't confirm exactly what's happening.",
-            "explanation": "'Could be moving house' expresses a reasonable possibility rather than certainty. A moving van is a good clue, but it doesn't rule out other explanations, like helping a friend move or a large delivery.",
-            "grammarRule": "Ability & Permission (can/could)",
-            "modalMeaning": "1"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "should",
+            "hint": "This is likely, though medical outcomes always carry some uncertainty.",
+            "explanation": "'Should' expresses a confident but not absolute expectation, appropriate given inherent medical uncertainty.",
+            "grammarRule": "Certainty Scale Integrated",
+            "modalMeaning": "8"
         },
         {
             "id": "ms_l73_q3",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "Back in school, our teacher ___ read us a chapter of a novel every Friday afternoon.",
+            "question": "It's really hard to say, but sales ___ pick up a little next month.",
             "options": [
                 "should",
-                "would",
+                "will",
                 "must",
-                "shall"
+                "might"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "would",
-            "hint": "This happened on a regular basis, week after week.",
-            "explanation": "'Would' describes a repeated habit from the past. 'Our teacher would read us a chapter' means this happened regularly, similar in meaning to 'used to read'.",
-            "grammarRule": "Offers & Habits (would)",
-            "modalMeaning": "2"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "might",
+            "hint": "The speaker openly admits it's hard to predict.",
+            "explanation": "'Might' fits the openly admitted uncertainty in 'it's really hard to say', showing only a weak possibility.",
+            "grammarRule": "Certainty Scale Integrated",
+            "modalMeaning": "8"
         },
         {
             "id": "ms_l74_q1",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "You ___ to declare any earnings over a certain threshold to the tax authority.",
+            "question": "The invoice number matches an order that was cancelled, so this charge ___ be an error.",
             "options": [
                 "must",
-                "ought",
-                "had",
-                "can"
+                "could",
+                "might",
+                "would"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "ought",
-            "hint": "A tax obligation - moral/legal duty, followed by 'to'.",
-            "explanation": "'Ought to declare' expresses a legal duty. Tax declarations are both a legal obligation and a moral duty. 'Ought to' here has a similar strength to 'must'. Always followed by 'to'.",
-            "grammarRule": "Advice & Expectation (should/ought)",
-            "modalMeaning": "3"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "must",
+            "hint": "One piece of specific evidence supports a strong conclusion.",
+            "explanation": "'Must' expresses a confident deduction from a specific, verifiable fact (the cancelled order), not just a vague hunch.",
+            "grammarRule": "Deduction Chains",
+            "modalMeaning": "8"
         },
         {
             "id": "ms_l74_q2",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "The contractor ___ have submitted the invoices last week - payment is overdue.",
+            "question": "Since the badge readers show no entry after 6 p.m., the intruder ___ have come in through a window.",
             "options": [
+                "would",
                 "might",
                 "should",
-                "will",
-                "can"
+                "must"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "should",
-            "hint": "Overdue payment suggests invoices were expected last week.",
-            "explanation": "'Should have submitted the invoices last week' = an unmet past expectation. The overdue payment implies the invoices were expected (and should have been submitted) but were not.",
-            "grammarRule": "Advice & Expectation (should/ought)",
-            "modalMeaning": "2"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "must",
+            "hint": "One fact rules out the main entrance, pointing to a specific alternative.",
+            "explanation": "'Must have' draws a confident conclusion, since the badge log eliminates the front entrance as a possibility.",
+            "grammarRule": "Deduction Chains",
+            "modalMeaning": "13"
         },
         {
             "id": "ms_l74_q3",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "You ___ better respond to that email today - your client is waiting.",
+            "question": "We can't be totally sure yet, but the leak ___ be coming from the upstairs bathroom.",
             "options": [
-                "had",
+                "should",
+                "could",
                 "must",
-                "would",
-                "could"
+                "can't"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "had",
-            "hint": "Urgent, time-sensitive professional advice.",
-            "explanation": "'Had better respond today' = strong, urgent advice. A waiting client creates urgency. 'Had better' is more pressing than 'should' and implies a negative consequence (an unhappy client) if the advice is not followed.",
-            "grammarRule": "Strong Advice (had better)",
-            "modalMeaning": "3"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "could",
+            "hint": "This is one reasonable hypothesis still being investigated.",
+            "explanation": "'Could' introduces a plausible hypothesis under investigation, appropriate when the speaker admits uncertainty.",
+            "grammarRule": "Deduction Chains",
+            "modalMeaning": "8"
         },
         {
             "id": "ms_l75_q1",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "___ we compare both proposals before making a final decision?",
+            "question": "Guests ___ bring a gift, but it's certainly appreciated if you'd like to.",
             "options": [
                 "must",
-                "had",
-                "shall",
-                "could"
+                "should",
+                "might",
+                "don't have to"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "shall",
-            "hint": "A formal suggestion for a group decision process.",
-            "explanation": "'Shall we compare both proposals?' makes a formal suggestion. This is common in business settings when proposing a process before a decision. 'Shall we?' invites group agreement.",
-            "grammarRule": "Formal Suggestions (shall)",
-            "modalMeaning": "2"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "don't have to",
+            "hint": "This is optional and entirely up to the guest.",
+            "explanation": "'Don't have to' clarifies that bringing a gift is optional, not required, even though it would be appreciated.",
+            "grammarRule": "Advice vs Requirement Round 2",
+            "modalMeaning": "7"
         },
         {
             "id": "ms_l75_q2",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "With such a detailed map, anyone ___ navigate this trail without difficulty.",
+            "question": "If you want the wound to heal properly, you really ___ keep it clean and dry.",
             "options": [
-                "can",
-                "must",
+                "might",
+                "don't have to",
                 "should",
-                "might"
+                "must"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "can",
-            "hint": "A detailed map makes navigation possible for anyone.",
-            "explanation": "'Can navigate without difficulty' = the map makes it possible. 'Can' expresses possibility or capability enabled by a tool (the map). 'Anyone can' = it is within everyone's capability with this resource.",
-            "grammarRule": "Ability & Permission (can/could)",
-            "modalMeaning": "1"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "must",
+            "hint": "Given the stated goal, this becomes a firm, necessary step.",
+            "explanation": "'Must' expresses a firm necessity here, since proper healing genuinely depends on this specific action.",
+            "grammarRule": "Advice vs Requirement Round 2",
+            "modalMeaning": "7"
         },
         {
             "id": "ms_l75_q3",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "Staff ___ not disclose personal data without the subject's written consent.",
+            "question": "Freelancers ___ file quarterly tax estimates if they expect to owe over a certain amount.",
             "options": [
-                "must",
-                "had",
                 "might",
-                "could"
+                "should",
+                "would",
+                "must"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "must",
-            "hint": "A data protection law - GDPR and similar regulations.",
-            "explanation": "'Must not disclose personal data without consent' = this is a legal prohibition under data protection laws. 'Must not' is the correct modal for a firm legal obligation.",
-            "grammarRule": "Obligation & Deduction (must)",
-            "modalMeaning": "3"
+            "hint": "This is a legal requirement tied to a specific condition.",
+            "explanation": "'Must' expresses a legal filing requirement that applies once a specific financial condition is met.",
+            "grammarRule": "Advice vs Requirement Round 2",
+            "modalMeaning": "7"
         },
         {
             "id": "ms_l76_q1",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "He has three degrees from top universities - he ___ be extremely intelligent.",
+            "question": "The judge ruled that the witness ___ remain anonymous throughout the trial.",
             "options": [
                 "might",
-                "must",
-                "shall",
-                "could"
+                "would",
+                "may",
+                "should"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "must",
-            "hint": "Three elite degrees are very strong evidence of high intelligence.",
-            "explanation": "Earning three degrees from top universities doesn't happen by chance - it reflects a consistently high level of ability. 'Must' shows the speaker treating this as the obvious conclusion.",
-            "grammarRule": "Obligation & Deduction (must)",
-            "modalMeaning": "3"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "may",
+            "hint": "This is an official ruling granting a specific right.",
+            "explanation": "'May' grants formal permission through an official ruling, a legal-context sense of the word.",
+            "grammarRule": "Permission vs Possibility Round 2",
+            "modalMeaning": "4"
         },
         {
             "id": "ms_l76_q2",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "___ you repeat that last point? Some of us at the back could not hear.",
+            "question": "The outcome of the vote ___ influence how the next budget is drafted.",
             "options": [
-                "must",
-                "could",
-                "had",
-                "shall"
+                "may",
+                "would",
+                "should",
+                "must"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "could",
-            "hint": "A polite request for repetition in a formal setting.",
-            "explanation": "'Could you repeat that?' is a polite request for someone to say something again. It is respectful and non-demanding. 'Could you repeat that last point?' is common in lectures, meetings, and presentations.",
-            "grammarRule": "Ability & Permission (can/could)",
-            "modalMeaning": "1"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "may",
+            "hint": "This is an uncertain future effect, not a grant of permission.",
+            "explanation": "'May' here expresses possibility about a future effect, a distinct sense from granting permission.",
+            "grammarRule": "Permission vs Possibility Round 2",
+            "modalMeaning": "4"
         },
         {
             "id": "ms_l76_q3",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "New regulations ___ change how companies handle customer data next year.",
+            "question": "Under the new rules, part-time staff ___ request flexible scheduling twice a year.",
             "options": [
+                "would",
+                "should",
                 "might",
-                "shall",
-                "can",
-                "will"
+                "may"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "might",
-            "hint": "An uncertain prediction about future regulatory change.",
-            "explanation": "'Might change how companies handle data' = possible but uncertain. Regulations are under review, but their final form and timing are not guaranteed. 'Might' correctly expresses this uncertainty.",
-            "grammarRule": "Possibility (might)",
-            "modalMeaning": "1"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "may",
+            "hint": "This is an entitlement described in an official policy.",
+            "explanation": "'May' expresses a formally granted entitlement, describing a right under company policy.",
+            "grammarRule": "Permission vs Possibility Round 2",
+            "modalMeaning": "4"
         },
         {
             "id": "ms_l77_q1",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "All contestants ___ submit their entries before the closing date.",
+            "question": "I ___ be glad to answer any questions once the presentation is finished.",
             "options": [
+                "should",
+                "might",
                 "would",
-                "could",
-                "must",
-                "might"
+                "will"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "must",
-            "hint": "Competition rule - mandatory submission deadline.",
-            "explanation": "'Must submit entries before the closing date' = a mandatory rule. Competitions have firm deadlines. 'Must' expresses a strict requirement. Entries submitted late will not be accepted.",
-            "grammarRule": "Obligation & Deduction (must)",
-            "modalMeaning": "3"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "will",
+            "hint": "This is a genuine offer of willingness about a real future event.",
+            "explanation": "'Will' expresses genuine willingness about a definite future action, the speaker's real intention after the talk.",
+            "grammarRule": "Willingness vs Prediction Round 2",
+            "modalMeaning": "9"
         },
         {
             "id": "ms_l77_q2",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "That concert sold out in minutes - the band ___ have a massive following.",
+            "question": "Analysts believe the currency ___ weaken further before it stabilises.",
             "options": [
-                "shall",
-                "could",
                 "might",
-                "must"
+                "should",
+                "will",
+                "would"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "must",
-            "hint": "Selling out in minutes is very strong evidence of popularity.",
-            "explanation": "Selling out within minutes takes an enormous number of eager fans acting at once. That scale of demand is exactly the kind of strong evidence that 'must' is built for.",
-            "grammarRule": "Obligation & Deduction (must)",
-            "modalMeaning": "3"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "will",
+            "hint": "This is a professional forecast, stated with reasonable confidence.",
+            "explanation": "'Will' expresses a confident professional prediction, reflecting analysts' expectations about future trends.",
+            "grammarRule": "Willingness vs Prediction Round 2",
+            "modalMeaning": "9"
         },
         {
             "id": "ms_l77_q3",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "I ___ love to work with a mentor who has experience in my field.",
+            "question": "This old engine just ___ start in cold weather, no matter what we try.",
             "options": [
-                "shall",
-                "must",
-                "should",
-                "would"
+                "can't",
+                "shouldn't",
+                "mustn't",
+                "won't"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "would",
-            "hint": "A professional development aspiration.",
-            "explanation": "'Would love to work with a mentor' = a professional desire or aspiration. 'Would' here expresses what the speaker wants - a desire, not an obligation or ability.",
-            "grammarRule": "Offers & Habits (would)",
-            "modalMeaning": "3"
+            "correctAnswer": "won't",
+            "hint": "This describes stubborn, repeated behaviour, not a one-time inability.",
+            "explanation": "'Won't' describes the engine's persistent, frustrating refusal to start, a typical-behaviour sense of 'will'.",
+            "grammarRule": "Willingness vs Prediction Round 2",
+            "modalMeaning": "9"
         },
         {
             "id": "ms_l78_q1",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "You ___ to show respect for different cultures when travelling abroad.",
+            "question": "Got a sec? ___ you check this email before I send it?",
             "options": [
-                "must",
-                "ought",
-                "had",
-                "can"
+                "Can",
+                "Could",
+                "Might",
+                "Would"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "ought",
-            "hint": "Cultural responsibility when travelling - 'to' follows.",
-            "explanation": "'Ought to show respect' expresses a moral obligation. Respecting different cultures is a duty for any traveller. 'Ought to' is used for moral obligations that are considered right behaviour. Always followed by 'to'.",
-            "grammarRule": "Advice & Expectation (should/ought)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Can",
+            "hint": "This is a quick, breezy request between close colleagues.",
+            "explanation": "'Can you...?' fits this quick, informal tone signalled by the casual opener 'Got a sec?'",
+            "grammarRule": "Politeness Scale Continued",
             "modalMeaning": "3"
         },
         {
@@ -426,18 +426,18 @@
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "She ___ have forgotten to set the alarm - she's two hours late.",
+            "question": "___ it be possible for you to send over the updated figures by end of day?",
             "options": [
-                "must",
-                "can",
-                "shall",
-                "will"
+                "Could",
+                "Should",
+                "Would",
+                "Can"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "must",
-            "hint": "Two hours late strongly suggests she forgot.",
-            "explanation": "Being two hours late, with nothing else to explain it, leaves one obvious explanation standing. 'Must have forgotten' captures that confident, evidence-based conclusion about the past.",
-            "grammarRule": "Obligation & Deduction (must)",
+            "correctAnswer": "Could",
+            "hint": "This is a careful, professional request using an indirect structure.",
+            "explanation": "'Could it be possible...?' is an indirect, professional way of making a request, softer than a direct 'can you'.",
+            "grammarRule": "Politeness Scale Continued",
             "modalMeaning": "3"
         },
         {
@@ -445,18 +445,18 @@
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "You ___ better get a second opinion before agreeing to that surgery.",
+            "question": "I don't mean to impose, but ___ you possibly spare five minutes later?",
             "options": [
+                "shall",
+                "can",
                 "must",
-                "had",
-                "could",
-                "would"
+                "could"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "had",
-            "hint": "Important medical advice about a serious decision.",
-            "explanation": "'Had better get a second opinion' = strong, urgent advice. Surgery is a serious medical decision. 'Had better' implies that not getting a second opinion could have negative consequences for your health.",
-            "grammarRule": "Strong Advice (had better)",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "could",
+            "hint": "The phrase 'I don't mean to impose' signals an especially careful, polite tone.",
+            "explanation": "'Could' fits the extra care taken here, reinforced by the softening phrase 'I don't mean to impose'.",
+            "grammarRule": "Politeness Scale Continued",
             "modalMeaning": "3"
         },
         {
@@ -464,114 +464,114 @@
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "The new bridge design ___ reduce traffic congestion in the city centre.",
+            "question": "Kindly note that visitors ___ sign in at reception upon arrival.",
             "options": [
-                "might",
-                "will",
+                "should",
+                "gotta",
                 "can",
-                "shall"
+                "must"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "might",
-            "hint": "An uncertain prediction about a planned infrastructure project.",
-            "explanation": "'Might reduce traffic congestion' = it is possible but not certain. Infrastructure projects often have unpredictable effects. 'Might' correctly expresses the hopeful but uncertain nature of the prediction.",
-            "grammarRule": "Possibility (might)",
-            "modalMeaning": "1"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "must",
+            "hint": "This is stiff, official signage language.",
+            "explanation": "'Must' fits the formal tone of official signage, matching the elevated phrase 'kindly note'.",
+            "grammarRule": "Formal vs Informal Round 2",
+            "modalMeaning": "8"
         },
         {
             "id": "ms_l79_q2",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "That painting ___ be original - an expert verified its authenticity.",
+            "question": "Gonna be late, traffic's crazy - I ___ probably miss the first ten minutes.",
             "options": [
-                "could",
-                "must",
-                "can't",
+                "will",
+                "may",
+                "shall",
                 "might"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "must",
-            "hint": "Expert verification is very strong evidence of authenticity.",
-            "explanation": "An expert's professional verification carries real authority, so once that confirmation is in, there's little room left for doubt - which is exactly when 'must' is the natural choice.",
-            "grammarRule": "Obligation & Deduction (must)",
-            "modalMeaning": "3"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "will",
+            "hint": "This is a very casual text message between friends.",
+            "explanation": "'Will' fits this informal, conversational message, matching the relaxed spelling of 'gonna'.",
+            "grammarRule": "Formal vs Informal Round 2",
+            "modalMeaning": "9"
         },
         {
             "id": "ms_l79_q3",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "You ___ not open that file - it may contain a virus.",
+            "question": "It is hereby stated that applicants ___ furnish two forms of identification.",
             "options": [
-                "had",
-                "could",
                 "must",
+                "can",
+                "gotta",
                 "might"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "must",
-            "hint": "A security warning - a prohibition for safety.",
-            "explanation": "'Must not open that file' = a firm prohibition based on a security risk. Computer viruses can cause serious damage. 'Must not' is the correct modal for a strict safety rule. 'Should not' would be too soft.",
-            "grammarRule": "Obligation & Deduction (must)",
-            "modalMeaning": "3"
+            "hint": "This is stiff legal or bureaucratic phrasing.",
+            "explanation": "'Must' fits the formal, legalistic tone set by 'it is hereby stated', requiring a strict, official register.",
+            "grammarRule": "Formal vs Informal Round 2",
+            "modalMeaning": "8"
         },
         {
             "id": "ms_l80_q1",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "The patient was in surgery for eight hours - it ___ have been a very complex procedure.",
+            "question": "He's read every book on the subject twice - he ___ know this material inside out.",
             "options": [
-                "should",
-                "can",
+                "would",
+                "might",
                 "must",
-                "might"
+                "should"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "must",
-            "hint": "Eight hours in surgery strongly indicates great complexity.",
-            "explanation": "Most operations don't take anywhere near eight hours, so a procedure that long strongly implies real complexity. 'Must have been' reflects that confident, backward-looking conclusion.",
-            "grammarRule": "Obligation & Deduction (must)",
-            "modalMeaning": "3"
+            "hint": "The evidence about his effort strongly supports a confident conclusion.",
+            "explanation": "'Must' expresses a confident deduction, since such thorough preparation makes deep knowledge highly likely.",
+            "grammarRule": "Nuance Integrated Review",
+            "modalMeaning": "8"
         },
         {
             "id": "ms_l80_q2",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "___ you send me the report when it's ready, please?",
+            "question": "You ___ really think twice before signing anything without reading it fully.",
             "options": [
-                "could",
-                "had",
-                "shall",
-                "must"
+                "would",
+                "must",
+                "might",
+                "should"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "could",
-            "hint": "A polite professional request via email or in person.",
-            "explanation": "'Could you send me the report?' is a polite, professional request. 'Could' makes the request indirect and considerate. 'Please' adds further politeness. Common in professional emails.",
-            "grammarRule": "Ability & Permission (can/could)",
-            "modalMeaning": "1"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "should",
+            "hint": "This is heartfelt advice, not a legal requirement.",
+            "explanation": "'Should' expresses caring, sensible advice about caution, without legally forcing the listener to act.",
+            "grammarRule": "Nuance Integrated Review",
+            "modalMeaning": "16"
         },
         {
             "id": "ms_l80_q3",
             "instruction": "CHOOSE THE MODAL",
             "subtype": "modalsSelection",
             "interactionType": "choice",
-            "question": "He studied marine biology - he ___ know a lot about ocean ecosystems.",
+            "question": "___ it be possible to move our call to tomorrow afternoon instead?",
             "options": [
-                "shall",
-                "could",
-                "might",
-                "must"
+                "Could",
+                "Would",
+                "Must",
+                "Can"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "must",
-            "hint": "A marine biology degree is strong evidence of ocean knowledge.",
-            "explanation": "Ocean ecosystems sit right at the core of a marine biology degree, so his background makes deep knowledge in this area a safe, confident assumption rather than a mere possibility - which is exactly what 'must' signals.",
-            "grammarRule": "Obligation & Deduction (must)",
-            "modalMeaning": "3"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Could",
+            "hint": "This is a careful, professional way of proposing a change.",
+            "explanation": "'Could it be possible...?' politely proposes an alternative in a professional context, a nuanced, indirect request.",
+            "grammarRule": "Nuance Integrated Review",
+            "modalMeaning": "4"
         }
     ]
 }

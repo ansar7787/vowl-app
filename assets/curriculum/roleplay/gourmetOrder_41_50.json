@@ -7,587 +7,447 @@
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll start with the soup of the day, then I'll have the baguette, and I'll finish with a glass of wine.",
+            "prompt": "I'll have an iced tea and a cookie.",
             "options": [
-                "Soup of the Day",
-                "Baguette",
-                "Glass of Wine",
-                "Side Salad"
+                "Iced Tea",
+                "Cookie",
+                "Hot Tea",
+                "Brownie"
             ],
-            "correctAnswer": "Soup of the Day, Baguette, Glass of Wine",
-            "hint": "Three items are named in sequence — a starter, a bread side, and a drink.",
-            "explanation": "‘I’ll start with… then… and I’ll finish with…’ is a clear way to order three items in order. ‘Soup of the day’ changes daily, so it's selected as a whole phrase.",
+            "correctAnswer": "Iced Tea, Cookie",
+            "hint": "Check the vowel sound at the start of each item to see whether 'a' or 'an' fits.",
+            "explanation": "'An iced tea' uses 'an' because 'iced' starts with a vowel sound; 'a cookie' uses 'a' because 'cookie' starts with a consonant sound.",
             "id": "go_l41_q1",
             "menuItems": [
-                "Soup of the Day",
-                "Baguette",
-                "Glass of Wine",
-                "Side Salad"
+                "Iced Tea",
+                "Cookie",
+                "Hot Tea",
+                "Brownie"
             ],
             "menuPrices": [
-                "$9.75",
-                "$11.25",
-                "$8.50",
-                "$14.00"
+                "$3.50",
+                "$2.00",
+                "$3.00",
+                "$2.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "For my starter, the garden salad. For my main, the roast chicken. And for dessert, the apple crumble.",
+            "prompt": "Could I have an apple turnover and a hot chocolate?",
             "options": [
-                "Garden Salad",
-                "Roast Chicken",
-                "Apple Crumble",
-                "Fruit Tart"
+                "Apple Turnover",
+                "Hot Chocolate",
+                "Cold Chocolate Milk",
+                "Cherry Turnover"
             ],
-            "correctAnswer": "Garden Salad, Roast Chicken, Apple Crumble",
-            "hint": "The words ‘starter,’ ‘main,’ and ‘dessert’ label exactly which course each item belongs to.",
-            "explanation": "This is a classic three-course structure used in many sit-down restaurants: starter, main course, and dessert. Each label makes the order easy to follow.",
+            "correctAnswer": "Apple Turnover, Hot Chocolate",
+            "hint": "The flavor word before 'turnover' matters, just like the article before it.",
+            "explanation": "'An apple turnover' pairs a vowel-sound article with a specific flavor - both details help distinguish similar pastries.",
             "id": "go_l41_q2",
             "menuItems": [
-                "Garden Salad",
-                "Roast Chicken",
-                "Apple Crumble",
-                "Fruit Tart"
+                "Apple Turnover",
+                "Hot Chocolate",
+                "Cold Chocolate Milk",
+                "Cherry Turnover"
             ],
             "menuPrices": [
-                "$12.50",
-                "$20.50",
-                "$20.50",
-                "$19.25"
+                "$3.75",
+                "$4.00",
+                "$3.50",
+                "$3.75"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Could I get the mushroom soup to start, the grilled salmon for the main course, and the chocolate cake to finish?",
+            "prompt": "I don't need a whole meal, just an egg and a piece of toast.",
             "options": [
-                "Mushroom Soup",
-                "Grilled Salmon",
-                "Chocolate Cake",
-                "Lemon Tart"
+                "Egg",
+                "Bacon",
+                "Toast",
+                "Muffin"
             ],
-            "correctAnswer": "Mushroom Soup, Grilled Salmon, Chocolate Cake",
-            "hint": "‘To start’ and ‘to finish’ mark the first and last items in the order.",
-            "explanation": "‘To start’ and ‘to finish’ are natural ways to mark the beginning and end of a three-course order, even without using the words ‘starter’ and ‘dessert’ directly.",
+            "correctAnswer": "Egg, Toast",
+            "hint": "The customer explains what they don't need before naming the small order they do want.",
+            "explanation": "'I don't need a whole meal' sets expectations for a small order - the real items still follow directly after 'just.'",
             "id": "go_l41_q3",
             "menuItems": [
-                "Mushroom Soup",
-                "Grilled Salmon",
-                "Chocolate Cake",
-                "Lemon Tart"
+                "Egg",
+                "Bacon",
+                "Toast",
+                "Muffin"
             ],
             "menuPrices": [
-                "$9.75",
-                "$7.25",
-                "$14.00",
-                "$18.00"
+                "$2.00",
+                "$2.50",
+                "$1.50",
+                "$2.75"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll have the Caesar salad, the grilled steak, and the cheesecake, please.",
+            "prompt": "Could we get some breadsticks and some olives while we wait?",
             "options": [
-                "Caesar Salad",
-                "Grilled Steak",
-                "Cheesecake",
-                "Tiramisu"
+                "Breadsticks",
+                "Garlic Bread",
+                "Pickles",
+                "Olives"
             ],
-            "correctAnswer": "Caesar Salad, Grilled Steak, Cheesecake",
-            "hint": "All three items are simply listed together with commas, without extra sequencing words.",
-            "explanation": "When items are listed with commas and ‘and,’ each one is still a separate part of the order — a starter, a main, and a dessert.",
+            "correctAnswer": "Breadsticks, Olives",
+            "hint": "'Some' is used for an unspecified small quantity of more than one kind of food.",
+            "explanation": "'Some' works with countable plural nouns like 'breadsticks' and also with foods like 'olives.'",
             "id": "go_l42_q1",
             "menuItems": [
-                "Caesar Salad",
-                "Grilled Steak",
-                "Cheesecake",
-                "Tiramisu"
+                "Breadsticks",
+                "Garlic Bread",
+                "Pickles",
+                "Olives"
             ],
             "menuPrices": [
-                "$8.50",
-                "$17.75",
-                "$21.75",
-                "$12.50"
+                "$3.00",
+                "$3.50",
+                "$2.00",
+                "$3.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "We'd like the bruschetta, the chicken parmesan, and the tiramisu.",
+            "prompt": "I'd like some rice with my curry, not the naan.",
             "options": [
-                "Bruschetta",
-                "Chicken Parmesan",
-                "Tiramisu",
-                "Cheesecake"
+                "Curry",
+                "Roti",
+                "Rice",
+                "Naan"
             ],
-            "correctAnswer": "Bruschetta, Chicken Parmesan, Tiramisu",
-            "hint": "‘We’d like’ shows this three-course order is for more than one person, or one person ordering formally.",
-            "explanation": "‘We’d like…’ works the same way with three items as it does with two — every item named should be selected.",
+            "correctAnswer": "Curry, Rice",
+            "hint": "'Some rice' describes an uncountable food using 'some,' while 'not the naan' rules out an alternative side.",
+            "explanation": "'Rice' is uncountable, so it's natural to say 'some rice' rather than 'a rice' - and 'not the naan' clearly removes the other side option.",
             "id": "go_l42_q2",
             "menuItems": [
-                "Bruschetta",
-                "Chicken Parmesan",
-                "Tiramisu",
-                "Cheesecake"
+                "Curry",
+                "Roti",
+                "Rice",
+                "Naan"
             ],
             "menuPrices": [
-                "$13.75",
-                "$8.50",
-                "$12.50",
-                "$21.75"
+                "$12.00",
+                "$2.50",
+                "$2.50",
+                "$2.75"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "To begin, I'll have the shrimp cocktail. Then the grilled chicken. And to finish, the key lime pie.",
+            "prompt": "Just some water for now, and maybe some bread if you have it - we're still deciding on food.",
             "options": [
-                "Shrimp Cocktail",
-                "Grilled Chicken",
-                "Key Lime Pie",
-                "Chocolate Mousse"
+                "Water",
+                "Crackers",
+                "Soda",
+                "Bread"
             ],
-            "correctAnswer": "Shrimp Cocktail, Grilled Chicken, Key Lime Pie",
-            "hint": "Each course is introduced with its own short sentence.",
-            "explanation": "Breaking the order into three short sentences — one per course — is a natural way to speak slowly and clearly when ordering a full meal.",
+            "correctAnswer": "Water, Bread",
+            "hint": "The customer explains they're not ready to order food yet, but two small requests still count.",
+            "explanation": "'We're still deciding on food' explains why nothing else is ordered yet - the two small requests already made are still real parts of the order.",
             "id": "go_l42_q3",
             "menuItems": [
-                "Shrimp Cocktail",
-                "Grilled Chicken",
-                "Key Lime Pie",
-                "Chocolate Mousse"
+                "Water",
+                "Crackers",
+                "Soda",
+                "Bread"
             ],
             "menuPrices": [
-                "$19.25",
-                "$16.50",
-                "$16.50",
-                "$12.50"
+                "$0.00",
+                "$1.50",
+                "$2.50",
+                "$2.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll try the French onion soup, followed by the beef stew, and the bread pudding for dessert.",
+            "prompt": "Could I have a glass of orange juice and a cup of coffee?",
             "options": [
-                "French Onion Soup",
-                "Beef Stew",
-                "Bread Pudding",
-                "Apple Pie"
+                "Coffee",
+                "Orange Juice",
+                "Apple Juice",
+                "Tea"
             ],
-            "correctAnswer": "French Onion Soup, Beef Stew, Bread Pudding",
-            "hint": "‘Followed by’ connects the first two courses; ‘for dessert’ introduces the last.",
-            "explanation": "‘Followed by’ is another way to show the order of courses, similar to ‘then.’ It's common in more formal restaurant settings.",
+            "correctAnswer": "Coffee, Orange Juice",
+            "hint": "'A glass of' and 'a cup of' tell you the container, while the noun after them is what you tap.",
+            "explanation": "'A glass of' is typically used for cold drinks, and 'a cup of' for hot drinks - both are containers, not separate items.",
             "id": "go_l43_q1",
             "menuItems": [
-                "French Onion Soup",
-                "Beef Stew",
-                "Bread Pudding",
-                "Apple Pie"
+                "Coffee",
+                "Orange Juice",
+                "Apple Juice",
+                "Tea"
             ],
             "menuPrices": [
-                "$10.00",
-                "$11.25",
-                "$13.75",
-                "$16.50"
+                "$3.25",
+                "$4.00",
+                "$4.00",
+                "$3.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Let's do the calamari as a starter, the seafood linguine as the main, and the panna cotta after.",
+            "prompt": "I'll have a cup of soup instead of a bowl, and a glass of iced tea.",
             "options": [
-                "Calamari",
-                "Seafood Linguine",
-                "Panna Cotta",
-                "Tiramisu"
+                "Iced Tea",
+                "Soup",
+                "Lemonade",
+                "Salad"
             ],
-            "correctAnswer": "Calamari, Seafood Linguine, Panna Cotta",
-            "hint": "Each course is labeled directly: starter, main, and ‘after’ (meaning dessert).",
-            "explanation": "‘Let’s do…’ is a relaxed way to plan out a full meal. Labeling each course clearly — starter, main, and dessert — makes the order easy to follow, even when the last one just says ‘after.’",
+            "correctAnswer": "Iced Tea, Soup",
+            "hint": "'Instead of a bowl' tells you the size of the soup portion, not a different food item.",
+            "explanation": "Some soups can be ordered in a smaller 'cup' size instead of a full 'bowl' - this describes portion size, not a different dish.",
             "id": "go_l43_q2",
             "menuItems": [
-                "Calamari",
-                "Seafood Linguine",
-                "Panna Cotta",
-                "Tiramisu"
+                "Iced Tea",
+                "Soup",
+                "Lemonade",
+                "Salad"
             ],
             "menuPrices": [
-                "$12.50",
-                "$18.00",
-                "$3.25",
-                "$12.50"
+                "$3.00",
+                "$4.00",
+                "$2.75",
+                "$4.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll go with the minestrone, the eggplant parmesan, and then the gelato.",
+            "prompt": "Server: Would you like a cup or a bowl of the chowder? Customer: A bowl, please, and a glass of white wine.",
             "options": [
-                "Minestrone",
-                "Eggplant Parmesan",
-                "Gelato",
-                "Sorbet"
+                "White Wine",
+                "Bisque",
+                "Chowder",
+                "Red Wine"
             ],
-            "correctAnswer": "Minestrone, Eggplant Parmesan, Gelato",
-            "hint": "‘And then’ shows the dessert comes last, after the main course.",
-            "explanation": "‘I’ll go with…’ can introduce a full three-course order, not just one item. ‘And then’ signals that the gelato is the final course.",
+            "correctAnswer": "White Wine, Chowder",
+            "hint": "The customer answers a size question with just the size word - that's still enough information.",
+            "explanation": "Answering a size question with a single word ('a bowl') is a natural, efficient way to specify a portion in conversation.",
             "id": "go_l43_q3",
             "menuItems": [
-                "Minestrone",
-                "Eggplant Parmesan",
-                "Gelato",
-                "Sorbet"
+                "White Wine",
+                "Bisque",
+                "Chowder",
+                "Red Wine"
             ],
             "menuPrices": [
-                "$18.00",
-                "$21.75",
-                "$4.50",
-                "$15.25"
+                "$8.00",
+                "$7.50",
+                "$7.00",
+                "$8.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Can I have the house salad, the pork chops, and a slice of pie to finish the meal?",
+            "prompt": "Could we get a bottle of sparkling water and two glasses, please?",
             "options": [
-                "House Salad",
-                "Pork Chops",
-                "Pie",
-                "Cake"
+                "Glasses",
+                "Still Water",
+                "Cups",
+                "Sparkling Water"
             ],
-            "correctAnswer": "House Salad, Pork Chops, Pie",
-            "hint": "‘To finish the meal’ tells you the pie is the dessert, completing all three courses.",
-            "explanation": "‘To finish the meal’ is another way to introduce dessert. ‘House salad’ simply means the restaurant's standard mixed salad.",
+            "correctAnswer": "Glasses, Sparkling Water",
+            "hint": "'Glasses' here are empty containers to bring, not a food or drink item themselves - but they're still something to request.",
+            "explanation": "You can request non-food items like extra glasses or plates using the same ordering language as food and drinks.",
             "id": "go_l44_q1",
             "menuItems": [
-                "House Salad",
-                "Pork Chops",
-                "Pie",
-                "Cake"
+                "Glasses",
+                "Still Water",
+                "Cups",
+                "Sparkling Water"
             ],
             "menuPrices": [
-                "$19.25",
-                "$19.25",
-                "$18.00",
-                "$14.00"
+                "$0.00",
+                "$4.50",
+                "$0.00",
+                "$5.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll start with the clam chowder, then I'll have the fish and chips, and I'll finish with the sticky toffee pudding.",
+            "prompt": "I'd like a bottle of the house red, and could you bring some bread while we look at the menu?",
             "options": [
-                "Clam Chowder",
-                "Fish and Chips",
-                "Sticky Toffee Pudding",
-                "Apple Crumble"
+                "Bread",
+                "Breadsticks",
+                "House Red Wine",
+                "House White Wine"
             ],
-            "correctAnswer": "Clam Chowder, Fish and Chips, Sticky Toffee Pudding",
-            "hint": "A soup starter, a classic main, and a warm British dessert are named in order.",
-            "explanation": "‘Sticky toffee pudding’ is a warm British dessert made with dates and covered in toffee sauce — one of the most popular dessert orders in the UK.",
+            "correctAnswer": "Bread, House Red Wine",
+            "hint": "'The house red' refers to the restaurant's standard red wine, without a more specific name.",
+            "explanation": "'The house red/white' means the restaurant's standard, usually less expensive wine option, chosen without asking for a specific brand.",
             "id": "go_l44_q2",
             "menuItems": [
-                "Clam Chowder",
-                "Fish and Chips",
-                "Sticky Toffee Pudding",
-                "Apple Crumble"
+                "Bread",
+                "Breadsticks",
+                "House Red Wine",
+                "House White Wine"
             ],
             "menuPrices": [
-                "$3.25",
-                "$12.50",
-                "$9.75",
-                "$20.50"
+                "$2.00",
+                "$2.50",
+                "$28.00",
+                "$28.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "For my starter, the tomato bruschetta. For my main, the chicken piccata. And for dessert, the lemon tart.",
+            "prompt": "We'll get a bottle of prosecco to share between the three of us, and some sparkling water too.",
             "options": [
-                "Tomato Bruschetta",
-                "Chicken Piccata",
-                "Lemon Tart",
-                "Cheesecake"
+                "Sparkling Water",
+                "Still Water",
+                "Champagne",
+                "Prosecco"
             ],
-            "correctAnswer": "Tomato Bruschetta, Chicken Piccata, Lemon Tart",
-            "hint": "Three courses are clearly labeled — starter, main, and dessert.",
-            "explanation": "‘Chicken piccata’ is a dish made with a lemon and caper sauce, which pairs nicely with the lemon tart for dessert.",
+            "correctAnswer": "Sparkling Water, Prosecco",
+            "hint": "'To share between the three of us' explains how the bottle will be used, not how many bottles to order.",
+            "explanation": "'Share between X people' explains how one item will be divided, but it's still one bottle being ordered, not three.",
             "id": "go_l44_q3",
             "menuItems": [
-                "Tomato Bruschetta",
-                "Chicken Piccata",
-                "Lemon Tart",
-                "Cheesecake"
+                "Sparkling Water",
+                "Still Water",
+                "Champagne",
+                "Prosecco"
             ],
             "menuPrices": [
-                "$9.75",
-                "$16.50",
-                "$18.00",
-                "$21.75"
+                "$4.00",
+                "$3.50",
+                "$45.00",
+                "$32.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Could I get the spring rolls to start, the pad thai for the main course, and mango sticky rice to finish?",
+            "prompt": "Could I have a slice of pepperoni pizza and a slice of the cheese, too?",
             "options": [
-                "Spring Rolls",
-                "Pad Thai",
-                "Mango Sticky Rice",
-                "Coconut Ice Cream"
+                "Margherita Pizza",
+                "Pepperoni Pizza",
+                "Cheese Pizza",
+                "Veggie Pizza"
             ],
-            "correctAnswer": "Spring Rolls, Pad Thai, Mango Sticky Rice",
-            "hint": "All three courses come from Thai cuisine, so listen for the exact dish names.",
-            "explanation": "‘Mango sticky rice’ is a beloved Thai dessert made with sweet coconut sauce. All three courses were clearly labeled with ‘to start,’ ‘for the main course,’ and ‘to finish.’",
+            "correctAnswer": "Pepperoni Pizza, Cheese Pizza",
+            "hint": "Two different slices, two different toppings - both are ordered.",
+            "explanation": "You can order pizza by the slice, and each slice can be a different type - here, both pepperoni and cheese are wanted.",
             "id": "go_l45_q1",
             "menuItems": [
-                "Spring Rolls",
-                "Pad Thai",
-                "Mango Sticky Rice",
-                "Coconut Ice Cream"
+                "Margherita Pizza",
+                "Pepperoni Pizza",
+                "Cheese Pizza",
+                "Veggie Pizza"
             ],
             "menuPrices": [
-                "$3.25",
-                "$3.25",
-                "$8.50",
-                "$20.50"
+                "$3.75",
+                "$3.50",
+                "$3.00",
+                "$3.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll have the miso soup, the teriyaki salmon, and the mochi, please.",
+            "prompt": "I'll just have a piece of the chocolate cake and a coffee, please - I'm quite full.",
             "options": [
-                "Miso Soup",
-                "Teriyaki Salmon",
-                "Mochi",
-                "Green Tea Ice Cream"
+                "Carrot Cake",
+                "Chocolate Cake",
+                "Tea",
+                "Coffee"
             ],
-            "correctAnswer": "Miso Soup, Teriyaki Salmon, Mochi",
-            "hint": "A Japanese-style three-course meal is ordered as a simple list.",
-            "explanation": "‘Mochi’ is a soft, chewy Japanese dessert made from pounded rice, often filled with sweet bean paste or ice cream.",
+            "correctAnswer": "Chocolate Cake, Coffee",
+            "hint": "'I'm quite full' explains why the order is small, but it's not itself part of the order.",
+            "explanation": "Explaining how full you are is normal conversation before ordering a smaller item - only the actual food and drink are tapped.",
             "id": "go_l45_q2",
             "menuItems": [
-                "Miso Soup",
-                "Teriyaki Salmon",
-                "Mochi",
-                "Green Tea Ice Cream"
+                "Carrot Cake",
+                "Chocolate Cake",
+                "Tea",
+                "Coffee"
             ],
             "menuPrices": [
-                "$13.75",
-                "$2.00",
-                "$8.50",
-                "$14.00"
+                "$6.50",
+                "$6.50",
+                "$2.75",
+                "$3.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "We'd like the samosas, the chicken korma, and the gulab jamun.",
+            "prompt": "Just one slice of the tiramisu, with two forks, please, and two espressos.",
             "options": [
-                "Samosas",
-                "Chicken Korma",
-                "Gulab Jamun",
-                "Rice Pudding"
+                "Cheesecake",
+                "Espresso",
+                "Tiramisu",
+                "Americano"
             ],
-            "correctAnswer": "Samosas, Chicken Korma, Gulab Jamun",
-            "hint": "The starter, main, and dessert all come from Indian cuisine.",
-            "explanation": "‘Gulab jamun’ is a popular Indian dessert made of fried dough balls soaked in sweet syrup — a classic way to end an Indian meal.",
+            "correctAnswer": "Espresso, Tiramisu",
+            "hint": "'Two forks' tells you the dessert will be shared, but it's still ordered as a single slice.",
+            "explanation": "Asking for extra forks or spoons is a common, polite way to signal that a dessert will be shared, without changing how many desserts are ordered.",
             "id": "go_l45_q3",
             "menuItems": [
-                "Samosas",
-                "Chicken Korma",
-                "Gulab Jamun",
-                "Rice Pudding"
+                "Cheesecake",
+                "Espresso",
+                "Tiramisu",
+                "Americano"
             ],
             "menuPrices": [
-                "$7.25",
-                "$3.25",
-                "$8.50",
-                "$4.50"
+                "$7.00",
+                "$3.00",
+                "$7.50",
+                "$3.25"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll start with the shrimp bisque, then I'll have the roasted duck, and I'll finish with the crème brûlée.",
+            "prompt": "I'll have a bowl of clam chowder and a plate of fried calamari to start.",
             "options": [
-                "Shrimp Bisque",
-                "Roasted Duck",
-                "Crème Brûlée",
-                "Chocolate Mousse"
+                "Corn Chowder",
+                "Fried Calamari",
+                "Grilled Calamari",
+                "Clam Chowder"
             ],
-            "correctAnswer": "Shrimp Bisque, Roasted Duck, Crème Brûlée",
-            "hint": "A creamy soup, a main course, and a classic French dessert are named in order.",
-            "explanation": "‘Crème brûlée’ is a French custard dessert with a crisp, caramelized sugar top — one of the most widely recognized dessert names on English menus.",
+            "correctAnswer": "Fried Calamari, Clam Chowder",
+            "hint": "Both quantity words are followed by the exact food name to tap.",
+            "explanation": "'A bowl of' and 'a plate of' both introduce a specific dish, whether it's served in a bowl (soup) or on a plate (appetizer).",
             "id": "go_l46_q1",
             "menuItems": [
-                "Shrimp Bisque",
-                "Roasted Duck",
-                "Crème Brûlée",
-                "Chocolate Mousse"
+                "Corn Chowder",
+                "Fried Calamari",
+                "Grilled Calamari",
+                "Clam Chowder"
             ],
             "menuPrices": [
-                "$12.50",
-                "$17.75",
-                "$2.00",
-                "$12.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "To begin, I'll have the goat cheese salad. Then the lamb chops. And to finish, the chocolate fondant.",
-            "options": [
-                "Goat Cheese Salad",
-                "Lamb Chops",
-                "Chocolate Fondant",
-                "Cheesecake"
-            ],
-            "correctAnswer": "Goat Cheese Salad, Lamb Chops, Chocolate Fondant",
-            "hint": "Each course gets its own short sentence, ending with a warm chocolate dessert.",
-            "explanation": "A ‘chocolate fondant’ has a soft, melted center, different from a firmer chocolate cake. Breaking the order into short sentences keeps each course clear.",
-            "id": "go_l46_q2",
-            "menuItems": [
-                "Goat Cheese Salad",
-                "Lamb Chops",
-                "Chocolate Fondant",
-                "Cheesecake"
-            ],
-            "menuPrices": [
-                "$3.25",
-                "$15.25",
-                "$6.00",
-                "$21.75"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I'll try the beet salad, followed by the roast lamb, and the pavlova for dessert.",
-            "options": [
-                "Beet Salad",
-                "Roast Lamb",
-                "Pavlova",
-                "Tiramisu"
-            ],
-            "correctAnswer": "Beet Salad, Roast Lamb, Pavlova",
-            "hint": "This dessert is a meringue-based treat topped with fruit and cream.",
-            "explanation": "A ‘pavlova’ is a light, crisp meringue dessert topped with whipped cream and fresh fruit — popular on Australian and British menus.",
-            "id": "go_l46_q3",
-            "menuItems": [
-                "Beet Salad",
-                "Roast Lamb",
-                "Pavlova",
-                "Tiramisu"
-            ],
-            "menuPrices": [
-                "$7.25",
-                "$17.75",
-                "$9.75",
-                "$12.50"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Let's do the stuffed mushrooms as a starter, the beef bourguignon as the main, and the crêpes suzette after.",
-            "options": [
-                "Stuffed Mushrooms",
-                "Beef Bourguignon",
-                "Crêpes Suzette",
-                "Apple Tart"
-            ],
-            "correctAnswer": "Stuffed Mushrooms, Beef Bourguignon, Crêpes Suzette",
-            "hint": "All three courses are French dishes — a starter, a hearty stew, and a flaming dessert.",
-            "explanation": "‘Beef bourguignon’ is a French beef stew cooked in red wine. ‘Crêpes suzette’ are thin pancakes served in a sweet orange sauce.",
-            "id": "go_l47_q1",
-            "menuItems": [
-                "Stuffed Mushrooms",
-                "Beef Bourguignon",
-                "Crêpes Suzette",
-                "Apple Tart"
-            ],
-            "menuPrices": [
-                "$16.50",
-                "$21.75",
-                "$21.75",
-                "$11.25"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "I'll go with the leek soup, the chicken chasseur, and then the profiteroles.",
-            "options": [
-                "Leek Soup",
-                "Chicken Chasseur",
-                "Profiteroles",
-                "Éclair"
-            ],
-            "correctAnswer": "Leek Soup, Chicken Chasseur, Profiteroles",
-            "hint": "Two French mains sound alike here — check which chicken dish was actually named.",
-            "explanation": "‘Chicken chasseur’ is cooked in a mushroom and wine sauce. ‘Profiteroles’ are small pastry balls filled with cream and topped with chocolate sauce.",
-            "id": "go_l47_q2",
-            "menuItems": [
-                "Leek Soup",
-                "Chicken Chasseur",
-                "Profiteroles",
-                "Éclair"
-            ],
-            "menuPrices": [
-                "$2.00",
-                "$7.25",
-                "$18.00",
-                "$10.00"
-            ]
-        },
-        {
-            "instruction": "Tap the items to fulfill the customer's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "dialogue",
-            "prompt": "Can I have the pâté, the duck confit, and a chocolate soufflé to finish the meal?",
-            "options": [
-                "Pâté",
-                "Duck Confit",
-                "Chocolate Soufflé",
-                "Crème Caramel"
-            ],
-            "correctAnswer": "Pâté, Duck Confit, Chocolate Soufflé",
-            "hint": "All three French classics are named clearly in this formal-sounding order.",
-            "explanation": "‘Duck confit’ is duck slowly cooked in its own fat until tender. A ‘soufflé’ rises in the oven, so it must be ordered in advance and served immediately.",
-            "id": "go_l47_q3",
-            "menuItems": [
-                "Pâté",
-                "Duck Confit",
-                "Chocolate Soufflé",
-                "Crème Caramel"
-            ],
-            "menuPrices": [
-                "$17.75",
-                "$16.50",
-                "$12.50",
+                "$5.50",
+                "$9.00",
+                "$10.00",
                 "$6.00"
             ]
         },
@@ -595,252 +455,392 @@
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll start with the prawn cocktail, then I'll have the roast beef, and I'll finish with the trifle.",
+            "prompt": "Could we get a plate of nachos for the table, and a bowl of guacamole on the side?",
             "options": [
-                "Prawn Cocktail",
-                "Roast Beef",
-                "Trifle",
-                "Bread Pudding"
+                "Loaded Nachos",
+                "Salsa",
+                "Nachos",
+                "Guacamole"
             ],
-            "correctAnswer": "Prawn Cocktail, Roast Beef, Trifle",
-            "hint": "This is a classic British three-course meal, ending with a layered dessert.",
-            "explanation": "A ‘trifle’ is a British dessert made of layers of cake, custard, fruit, and cream. ‘Prawn cocktail’ was a hugely popular British starter for decades.",
+            "correctAnswer": "Nachos, Guacamole",
+            "hint": "'For the table' and 'on the side' describe how the two items will be served and shared.",
+            "explanation": "'For the table' signals a shared appetizer, while 'on the side' means the guacamole is served separately, though both are part of the order.",
+            "id": "go_l46_q2",
+            "menuItems": [
+                "Loaded Nachos",
+                "Salsa",
+                "Nachos",
+                "Guacamole"
+            ],
+            "menuPrices": [
+                "$11.00",
+                "$1.50",
+                "$9.00",
+                "$3.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Just a small plate of fries for now, and a couple of waters to start - we're waiting on the rest of our group before ordering the mains.",
+            "options": [
+                "Onion Rings",
+                "Soda",
+                "Water",
+                "Fries"
+            ],
+            "correctAnswer": "Water, Fries",
+            "hint": "The customer explains they're waiting for others, which affects timing but not the two small items ordered now.",
+            "explanation": "Waiting for a group before ordering mains is common; smaller items like fries and water can still be ordered right away in the meantime.",
+            "id": "go_l46_q3",
+            "menuItems": [
+                "Onion Rings",
+                "Soda",
+                "Water",
+                "Fries"
+            ],
+            "menuPrices": [
+                "$4.00",
+                "$2.50",
+                "$0.00",
+                "$3.50"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Could we get two portions of the pad thai, one mild and one spicy?",
+            "options": [
+                "Fried Rice",
+                "Mild Pad Thai",
+                "Spicy Pad Thai",
+                "Pad See Ew"
+            ],
+            "correctAnswer": "Mild Pad Thai, Spicy Pad Thai",
+            "hint": "The same dish is ordered twice, but with two different spice levels - both versions matter.",
+            "explanation": "Ordering 'two portions... one mild and one spicy' means two separate dishes with different spice levels, not one dish ordered twice identically.",
+            "id": "go_l47_q1",
+            "menuItems": [
+                "Fried Rice",
+                "Mild Pad Thai",
+                "Spicy Pad Thai",
+                "Pad See Ew"
+            ],
+            "menuPrices": [
+                "$10.00",
+                "$11.00",
+                "$11.00",
+                "$11.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "We'll split an order of pad see ew between the two of us, and each get our own spring roll.",
+            "options": [
+                "Egg Rolls",
+                "Pad See Ew",
+                "Pad Thai",
+                "Spring Rolls"
+            ],
+            "correctAnswer": "Pad See Ew, Spring Rolls",
+            "hint": "One item is shared as a single order, while the other is duplicated per person - but you still only tap each item once.",
+            "explanation": "'Split... between the two of us' means one shared order, while 'each get our own' means a separate one per person - but each is still just one item to select.",
+            "id": "go_l47_q2",
+            "menuItems": [
+                "Egg Rolls",
+                "Pad See Ew",
+                "Pad Thai",
+                "Spring Rolls"
+            ],
+            "menuPrices": [
+                "$5.50",
+                "$12.00",
+                "$12.00",
+                "$5.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "I'll have the pork belly, my partner will have the tofu stir-fry, and we'll share one order of jasmine rice.",
+            "options": [
+                "Fried Rice",
+                "Tofu Stir-fry",
+                "Pork Belly",
+                "Jasmine Rice"
+            ],
+            "correctAnswer": "Tofu Stir-fry, Pork Belly, Jasmine Rice",
+            "hint": "Two separate mains and one shared side make three total items, even though several people-related details are mentioned.",
+            "explanation": "Even with two eaters and shared/individual language mixed together, there are exactly three menu items in this order.",
+            "id": "go_l47_q3",
+            "menuItems": [
+                "Fried Rice",
+                "Tofu Stir-fry",
+                "Pork Belly",
+                "Jasmine Rice"
+            ],
+            "menuPrices": [
+                "$3.50",
+                "$13.00",
+                "$16.00",
+                "$3.00"
+            ]
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "dialogue",
+            "prompt": "Could I get two large iced coffees, one with oat milk and one with regular milk?",
+            "options": [
+                "Iced Coffee with Almond Milk",
+                "Iced Coffee with Regular Milk",
+                "Hot Coffee with Oat Milk",
+                "Iced Coffee with Oat Milk"
+            ],
+            "correctAnswer": "Iced Coffee with Regular Milk, Iced Coffee with Oat Milk",
+            "hint": "The same base drink splits into two different final orders because of the milk modifier.",
+            "explanation": "'Two... one with X and one with Y' means the same base drink becomes two distinct orders once the modifier is added.",
             "id": "go_l48_q1",
             "menuItems": [
-                "Prawn Cocktail",
-                "Roast Beef",
-                "Trifle",
-                "Bread Pudding"
+                "Iced Coffee with Almond Milk",
+                "Iced Coffee with Regular Milk",
+                "Hot Coffee with Oat Milk",
+                "Iced Coffee with Oat Milk"
             ],
             "menuPrices": [
-                "$20.50",
-                "$7.25",
-                "$14.00",
-                "$13.75"
+                "$5.25",
+                "$4.75",
+                "$4.50",
+                "$5.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "For my starter, the pea soup. For my main, the fish pie. And for dessert, the treacle tart.",
+            "prompt": "We'll have three tacos - two chicken and one beef, all with extra salsa.",
             "options": [
-                "Pea Soup",
-                "Fish Pie",
-                "Treacle Tart",
-                "Sticky Toffee Pudding"
+                "Pork Tacos",
+                "Fish Tacos",
+                "Chicken Tacos",
+                "Beef Tacos"
             ],
-            "correctAnswer": "Pea Soup, Fish Pie, Treacle Tart",
-            "hint": "All three courses are traditional British comfort foods.",
-            "explanation": "‘Treacle tart’ is made with a sweet, sticky syrup filling — a traditional British dessert. Each course here is clearly labeled with ‘starter,’ ‘main,’ and ‘dessert.’",
+            "correctAnswer": "Chicken Tacos, Beef Tacos",
+            "hint": "Even though three tacos total are ordered, they only come in two different types.",
+            "explanation": "The total number of items doesn't equal the number of different menu items - 'two chicken and one beef' still means only two types to select.",
             "id": "go_l48_q2",
             "menuItems": [
-                "Pea Soup",
-                "Fish Pie",
-                "Treacle Tart",
-                "Sticky Toffee Pudding"
+                "Pork Tacos",
+                "Fish Tacos",
+                "Chicken Tacos",
+                "Beef Tacos"
             ],
             "menuPrices": [
-                "$3.25",
-                "$6.00",
-                "$7.25",
-                "$9.75"
+                "$3.75",
+                "$4.00",
+                "$3.50",
+                "$3.75"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Could I get the Scotch egg to start, the shepherd's pie for the main course, and the Eton mess to finish?",
+            "prompt": "Could I get a small soup for me, but make my son's portion a large - he's starving - and two spoons.",
             "options": [
-                "Scotch Egg",
-                "Shepherd's Pie",
-                "Eton Mess",
-                "Trifle"
+                "Bread",
+                "Medium Soup",
+                "Large Soup",
+                "Small Soup"
             ],
-            "correctAnswer": "Scotch Egg, Shepherd's Pie, Eton Mess",
-            "hint": "A boiled egg wrapped in sausage meat, a baked meat pie, and a fruity dessert are named in order.",
-            "explanation": "‘Eton mess’ combines broken meringue, whipped cream, and berries — a simple but beloved British dessert.",
+            "correctAnswer": "Large Soup, Small Soup",
+            "hint": "Two different portion sizes of the exact same soup are ordered for two different people.",
+            "explanation": "'He's starving' explains the reason for the larger portion, but doesn't change what's counted - two soup orders in two different sizes.",
             "id": "go_l48_q3",
             "menuItems": [
-                "Scotch Egg",
-                "Shepherd's Pie",
-                "Eton Mess",
-                "Trifle"
+                "Bread",
+                "Medium Soup",
+                "Large Soup",
+                "Small Soup"
             ],
             "menuPrices": [
-                "$3.25",
-                "$15.25",
-                "$20.50",
-                "$14.00"
+                "$2.00",
+                "$5.00",
+                "$6.00",
+                "$4.00"
             ]
         },
         {
-            "instruction": "Tap the items to fulfill the customer's order.",
+            "instruction": "Tap the items to fulfill the guest's final order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll have the spinach salad, the grilled trout, and the peach cobbler, please.",
+            "prompt": "Actually, just one coffee, not two - my friend changed her mind - and a croissant.",
             "options": [
-                "Spinach Salad",
-                "Grilled Trout",
-                "Peach Cobbler",
-                "Apple Crumble"
+                "Coffee",
+                "Croissant",
+                "Tea",
+                "Muffin"
             ],
-            "correctAnswer": "Spinach Salad, Grilled Trout, Peach Cobbler",
-            "hint": "A green salad, a fish main, and a fruity baked dessert are listed together.",
-            "explanation": "A ‘cobbler’ is a baked fruit dessert topped with a biscuit-like crust, popular in American Southern cooking.",
+            "correctAnswer": "Coffee, Croissant",
+            "hint": "A quantity correction reduces the number of one item, but the item itself is still ordered once.",
+            "explanation": "'Just one, not two' is a quantity correction - the coffee is still part of the order, just in a smaller amount than first suggested.",
             "id": "go_l49_q1",
             "menuItems": [
-                "Spinach Salad",
-                "Grilled Trout",
-                "Peach Cobbler",
-                "Apple Crumble"
+                "Coffee",
+                "Croissant",
+                "Tea",
+                "Muffin"
             ],
             "menuPrices": [
-                "$5.75",
-                "$15.25",
-                "$8.50",
-                "$20.50"
+                "$3.50",
+                "$3.25",
+                "$3.25",
+                "$3.00"
             ]
         },
         {
-            "instruction": "Tap the items to fulfill the customer's order.",
+            "instruction": "Tap the items to fulfill the guest's final order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "We'd like the deviled eggs, the pulled pork sandwich, and the pecan pie.",
+            "prompt": "Sorry, could you make that three burgers instead of two? We have another guest joining, and she'll also want a lemonade.",
             "options": [
-                "Deviled Eggs",
-                "Pulled Pork Sandwich",
-                "Pecan Pie",
-                "Apple Pie"
+                "Burger",
+                "Lemonade",
+                "Iced Tea",
+                "Chicken Sandwich"
             ],
-            "correctAnswer": "Deviled Eggs, Pulled Pork Sandwich, Pecan Pie",
-            "hint": "All three dishes are classic Southern American comfort food.",
-            "explanation": "‘Pecan pie’ is a rich, sweet pie made with pecans, especially popular in the American South, alongside slow-cooked pulled pork.",
+            "correctAnswer": "Burger, Lemonade",
+            "hint": "A quantity increase and a brand-new item both appear in the same correction.",
+            "explanation": "This correction both raises a quantity (two to three burgers) and adds an entirely new item for the new guest - two kinds of change at once.",
             "id": "go_l49_q2",
             "menuItems": [
-                "Deviled Eggs",
-                "Pulled Pork Sandwich",
-                "Pecan Pie",
-                "Apple Pie"
+                "Burger",
+                "Lemonade",
+                "Iced Tea",
+                "Chicken Sandwich"
             ],
             "menuPrices": [
-                "$9.75",
-                "$3.25",
-                "$13.75",
-                "$16.50"
+                "$8.50",
+                "$3.00",
+                "$2.75",
+                "$8.00"
             ]
         },
         {
-            "instruction": "Tap the items to fulfill the customer's order.",
+            "instruction": "Tap the items to fulfill the guest's final order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "To begin, I'll have the cornbread. Then the fried catfish. And to finish, the banana pudding.",
+            "prompt": "Wait, did I say two salads? I only wanted one - and a sparkling water, please.",
             "options": [
-                "Cornbread",
-                "Fried Catfish",
-                "Banana Pudding",
-                "Bread Pudding"
+                "Salad",
+                "Caesar Salad",
+                "Sparkling Water",
+                "Still Water"
             ],
-            "correctAnswer": "Cornbread, Fried Catfish, Banana Pudding",
-            "hint": "A cornmeal side, a fried fish main, and a creamy Southern dessert are named in order.",
-            "explanation": "‘Banana pudding’ layers vanilla wafers, bananas, and custard — a classic Southern American dessert, distinct from bread pudding.",
+            "correctAnswer": "Salad, Sparkling Water",
+            "hint": "The customer questions their own earlier words before correcting the quantity.",
+            "explanation": "Questioning your own previous statement is a natural way to catch and fix a mistake in real conversation.",
             "id": "go_l49_q3",
             "menuItems": [
-                "Cornbread",
-                "Fried Catfish",
-                "Banana Pudding",
-                "Bread Pudding"
+                "Salad",
+                "Caesar Salad",
+                "Sparkling Water",
+                "Still Water"
             ],
             "menuPrices": [
-                "$14.00",
-                "$4.50",
-                "$12.50",
-                "$13.75"
+                "$8.00",
+                "$8.50",
+                "$3.00",
+                "$2.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "I'll try the crab cakes, followed by the grilled swordfish, and the key lime pie for dessert.",
+            "prompt": "We'll need a bottle of sparkling water for the table, two bowls of the tomato soup, and just one side salad to share.",
             "options": [
-                "Crab Cakes",
-                "Grilled Swordfish",
-                "Key Lime Pie",
-                "Cheesecake"
+                "Sparkling Water",
+                "Side Salad",
+                "Still Water",
+                "Tomato Soup"
             ],
-            "correctAnswer": "Crab Cakes, Grilled Swordfish, Key Lime Pie",
-            "hint": "A seafood starter, a grilled fish main, and a tangy citrus dessert complete this order.",
-            "explanation": "‘Key lime pie’ is made with the juice of small, tart key limes — different from a regular lime or lemon pie, and a specialty of the Florida Keys.",
+            "correctAnswer": "Sparkling Water, Side Salad, Tomato Soup",
+            "hint": "Three different quantity expressions each attach to a different item.",
+            "explanation": "This level combines every quantity pattern from the unit - a bottle, a countable 'two,' and a shared single item - into one natural order.",
             "id": "go_l50_q1",
             "menuItems": [
-                "Crab Cakes",
-                "Grilled Swordfish",
-                "Key Lime Pie",
-                "Cheesecake"
+                "Sparkling Water",
+                "Side Salad",
+                "Still Water",
+                "Tomato Soup"
             ],
             "menuPrices": [
-                "$11.25",
-                "$16.50",
-                "$16.50",
-                "$21.75"
+                "$5.00",
+                "$4.00",
+                "$4.50",
+                "$4.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Let's do the shrimp gumbo as a starter, the jambalaya as the main, and the beignets after.",
+            "prompt": "Could I get a cup of the soup, not a bowl? My wife would like a full bowl of hers, and we'll share one basket of bread between us.",
             "options": [
-                "Shrimp Gumbo",
-                "Jambalaya",
-                "Beignets",
-                "Bread Pudding"
+                "Soup",
+                "Breadsticks",
+                "Bread",
+                "Salad"
             ],
-            "correctAnswer": "Shrimp Gumbo, Jambalaya, Beignets",
-            "hint": "All three dishes come from Louisiana Creole and Cajun cooking traditions.",
-            "explanation": "‘Beignets’ are square, deep-fried pastries dusted with powdered sugar, a famous New Orleans treat often served after a spicy meal like jambalaya.",
+            "correctAnswer": "Soup, Bread",
+            "hint": "Two portion sizes of the same soup for two people, plus one shared item - but only two distinct menu items total.",
+            "explanation": "Despite three quantity details, this order only contains two actual menu items: soup and bread, ordered in different amounts.",
             "id": "go_l50_q2",
             "menuItems": [
-                "Shrimp Gumbo",
-                "Jambalaya",
-                "Beignets",
-                "Bread Pudding"
+                "Soup",
+                "Breadsticks",
+                "Bread",
+                "Salad"
             ],
             "menuPrices": [
-                "$19.25",
-                "$12.50",
-                "$5.75",
-                "$13.75"
+                "$4.50",
+                "$2.00",
+                "$2.50",
+                "$5.00"
             ]
         },
         {
-            "instruction": "Tap the items to fulfill the customer's order.",
+            "instruction": "Tap the items to fulfill the guest's final order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Can I have the she-crab soup, the blackened salmon, and a slice of Mississippi mud pie to finish the meal?",
+            "prompt": "So to recap: one bottle of the sparkling water, a glass of the house white for me, and two portions of the risotto - one regular, one with extra parmesan.",
             "options": [
-                "She-Crab Soup",
-                "Blackened Salmon",
-                "Mississippi Mud Pie",
-                "Pecan Pie"
+                "Sparkling Water",
+                "Still Water",
+                "Risotto",
+                "House White Wine"
             ],
-            "correctAnswer": "She-Crab Soup, Blackened Salmon, Mississippi Mud Pie",
-            "hint": "A creamy seafood soup, a spiced fish main, and a chocolate dessert are all named clearly.",
-            "explanation": "‘Blackened’ describes a cooking method using a very hot pan and a spice crust. ‘Mississippi mud pie’ is a rich chocolate dessert named for its dark, dense texture.",
+            "correctAnswer": "Sparkling Water, Risotto, House White Wine",
+            "hint": "A full recap combines a bottle, a glass, and a doubled dish - three different quantity patterns for three different items.",
+            "explanation": "This final level of the unit recaps nearly every quantity pattern learned so far, the way a server might read an order back to confirm it before it goes to the kitchen.",
             "id": "go_l50_q3",
             "menuItems": [
-                "She-Crab Soup",
-                "Blackened Salmon",
-                "Mississippi Mud Pie",
-                "Pecan Pie"
+                "Sparkling Water",
+                "Still Water",
+                "Risotto",
+                "House White Wine"
             ],
             "menuPrices": [
-                "$12.50",
-                "$9.75",
-                "$11.25",
-                "$13.75"
+                "$5.00",
+                "$4.50",
+                "$14.00",
+                "$9.00"
             ]
         }
     ]

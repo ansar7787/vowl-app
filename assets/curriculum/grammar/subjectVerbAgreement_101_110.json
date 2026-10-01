@@ -5,512 +5,512 @@
     "quests": [
         {
             "id": "sva_l101_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "If the weather ___ good tomorrow, we will go to the beach.",
-            "hint": "In a real conditional (if + present), the subject 'the weather' is singular.",
-            "explanation": "In real conditional sentences, the verb in the 'if' clause follows standard agreement rules. 'The weather' is singular, so 'is' is correct.",
+            "question": "Swimming ___ great exercise for your whole body.",
+            "hint": "'Swimming' names one single activity here, even though it's something people do many times.",
+            "explanation": "'Swimming' is a gerund acting as the subject, and gerunds are always treated as singular. The verb is 'is'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "A gerund used as the subject takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l101_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "If the results ___ positive, the project will continue.",
-            "hint": "In the 'if' clause, 'the results' is plural - verb agrees with it.",
-            "explanation": "In conditional sentences, subject-verb agreement still applies normally. 'The results' is plural, so 'are positive' is correct.",
+            "question": "Reading ___ one of my favorite ways to relax.",
+            "hint": "Treat this -ing word as one single activity, just like 'swimming'.",
+            "explanation": "'Reading' is a gerund subject, so it's singular. The verb is 'is'.",
             "options": [
                 "is",
                 "are"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "A gerund used as the subject takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l101_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Not only the manager but also the staff ___ invited to the event.",
-            "hint": "With 'not only…but also', the verb agrees with the subject nearest to it ('staff' is plural).",
-            "explanation": "With 'not only…but also', the verb agrees with the subject closest to it. 'The staff' is plural, so 'are invited' is correct.",
+            "question": "Cooking ___ a lot of patience and practice.",
+            "hint": "'Cooking' names one single activity, no matter how many dishes it involves.",
+            "explanation": "'Cooking' is a gerund subject, so it's singular. The verb takes -s: 'requires'.",
             "options": [
-                "are",
-                "is"
+                "require",
+                "requires"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "requires",
+            "grammarRule": "A gerund used as the subject takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l102_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Not only the staff but also the manager ___ invited to the event.",
-            "hint": "With 'not only…but also', the verb agrees with the nearer subject ('manager' is singular).",
-            "explanation": "With 'not only…but also', the verb agrees with the nearest subject. 'The manager' is singular, so 'is invited' is correct - even though 'the staff' is also mentioned.",
+            "question": "Learning a new language ___ years of consistent practice.",
+            "hint": "The whole phrase 'learning a new language' acts as one subject - find where it ends.",
+            "explanation": "'Learning a new language' is a gerund phrase functioning as one singular subject. The verb takes -s: 'takes'.",
             "options": [
-                "are",
-                "is"
+                "takes",
+                "take"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "takes",
+            "grammarRule": "A gerund phrase used as the subject takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l102_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Not only the students but also the teacher ___ surprised.",
-            "hint": "The nearer subject is 'the teacher' (singular) - verb agrees with it.",
-            "explanation": "With 'not only…but also', the verb agrees with the nearest subject. 'The teacher' is singular, so 'was surprised' is correct.",
+            "question": "Waking up early every morning ___ me feel more productive.",
+            "hint": "Even though this phrase is long, it still describes one single activity.",
+            "explanation": "'Waking up early every morning' is a gerund phrase, treated as singular. The verb takes -s: 'makes'.",
             "options": [
-                "was",
-                "were"
+                "makes",
+                "make"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "makes",
+            "grammarRule": "A gerund phrase used as the subject takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l102_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Not only the teacher but also the students ___ surprised.",
-            "hint": "The nearer subject is 'the students' (plural) - verb agrees with it.",
-            "explanation": "With 'not only…but also', the verb agrees with the nearest subject. 'The students' is plural, so 'were surprised' is correct.",
+            "question": "Playing video games for hours ___ his eyesight, according to his doctor.",
+            "hint": "Look at the entire activity being described, not just the last word before the verb.",
+            "explanation": "'Playing video games for hours' is a gerund phrase and counts as one singular subject. The verb takes -s: 'strains'.",
             "options": [
-                "was",
-                "were"
+                "strain",
+                "strains"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "strains",
+            "grammarRule": "A gerund phrase used as the subject takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l103_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE DISTRACTOR",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The government ___ introduced new spending cuts.",
-            "hint": "In standard English, collective nouns like 'government' take a singular verb.",
-            "explanation": "In standard English, 'government' is a collective noun that takes a singular verb when acting as a unit. 'The government has introduced' - not 'have introduced'.",
+            "question": "Collecting stamps ___ his main hobby.",
+            "hint": "'Stamps' is plural, but it's not the subject - the whole gerund phrase is.",
+            "explanation": "'Collecting stamps' is a gerund phrase and is singular, even though 'stamps' is plural. The verb is 'is'.",
             "options": [
-                "has",
-                "have"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "is",
+            "grammarRule": "A gerund phrase stays singular, even when it contains a plural noun",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l103_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE DISTRACTOR",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The government ___ divided on the issue of immigration.",
-            "hint": "When a collective noun's members act as individuals, British English often uses a plural verb.",
-            "explanation": "In British English, collective nouns like 'government' and 'team' can take a plural verb when the members act as individuals, not as a unit. 'The government are divided' is natural in British English.",
+            "question": "Fixing old cars ___ a special kind of patience.",
+            "hint": "'Cars' is plural, but the real subject is the whole activity, which is singular.",
+            "explanation": "'Fixing old cars' is a gerund phrase and is singular. The verb takes -s: 'requires'.",
             "options": [
-                "is",
-                "are"
+                "require",
+                "requires"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "requires",
+            "grammarRule": "A gerund phrase stays singular, even when it contains a plural noun",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l103_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE DISTRACTOR",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The band ___ recording a new album in Los Angeles.",
-            "hint": "The band acting as a single unit takes a singular verb.",
-            "explanation": "When a band acts together as a unit (recording together), a singular verb is standard. 'The band is recording a new album'.",
+            "question": "Organizing large events ___ careful planning and teamwork.",
+            "hint": "'Events' is plural, but don't let that distract you from the true subject.",
+            "explanation": "'Organizing large events' is a gerund phrase and is singular. The verb takes -s: 'demands'.",
             "options": [
-                "is",
-                "are"
+                "demand",
+                "demands"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "demands",
+            "grammarRule": "A gerund phrase stays singular, even when it contains a plural noun",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l104_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The budget that was set at the beginning of the year ___ now been exceeded.",
-            "hint": "The subject is 'the budget' (singular) - the relative clause is descriptive.",
-            "explanation": "The subject is 'the budget'. The relative clause 'that was set at the beginning of the year' describes it but doesn't change the agreement. 'The budget has now been exceeded'.",
+            "question": "To exercise regularly ___ important for long-term health.",
+            "hint": "'To exercise regularly' describes one single goal, so treat it as singular.",
+            "explanation": "An infinitive phrase like 'to exercise regularly' is treated as singular. The verb is 'is'.",
             "options": [
-                "have",
-                "has"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "An infinitive phrase used as the subject takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l104_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Two of the three patients who ___ treated have made a full recovery.",
-            "hint": "Inside the relative clause, 'who' refers to 'patients' (plural).",
-            "explanation": "Inside the relative clause 'who were treated', 'who' refers to 'patients', which is plural. The verb inside the clause is 'were'.",
+            "question": "To travel abroad ___ one of her lifelong dreams.",
+            "hint": "This infinitive phrase names one single dream, even though it involves visiting many places.",
+            "explanation": "'To travel abroad' is an infinitive phrase and is singular. The verb is 'is'.",
             "options": [
-                "were",
-                "was"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "is",
+            "grammarRule": "An infinitive phrase used as the subject takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l104_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The product that ___ launched last month has exceeded sales targets.",
-            "hint": "Inside the relative clause, 'that' refers to 'the product' (singular).",
-            "explanation": "'That' refers to 'the product', which is singular. The verb inside the relative clause is 'was': 'that was launched last month'.",
+            "question": "To finish this project on time ___ our top priority.",
+            "hint": "The whole 'to' phrase acts as one single subject here.",
+            "explanation": "'To finish this project on time' is an infinitive phrase and is singular. The verb is 'is'.",
             "options": [
-                "were",
-                "was"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "An infinitive phrase used as the subject takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l105_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE DISTRACTOR",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The new policies, which ___ designed to reduce costs, have had unintended effects.",
-            "hint": "Inside the relative clause, 'which' refers to 'the new policies' (plural).",
-            "explanation": "'Which' refers to 'the new policies', which is plural. The verb inside the relative clause is 'were': 'which were designed'.",
+            "question": "To master several languages ___ years of dedication.",
+            "hint": "'Languages' is plural, but the infinitive phrase as a whole is still singular.",
+            "explanation": "'To master several languages' is an infinitive phrase and is singular. The verb takes -s: 'takes'.",
             "options": [
-                "were",
-                "was"
+                "take",
+                "takes"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "takes",
+            "grammarRule": "An infinitive phrase stays singular, even when it contains a plural noun",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l105_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE DISTRACTOR",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The report, which ___ submitted last week, highlighted several risks.",
-            "hint": "Inside the relative clause, 'which' refers to 'the report' (singular).",
-            "explanation": "'Which' refers to 'the report', which is singular. The verb inside the relative clause is 'was': 'which was submitted last week'.",
+            "question": "To visit all seven continents ___ her ultimate travel goal.",
+            "hint": "'Continents' is plural, but focus on the entire infinitive phrase instead.",
+            "explanation": "'To visit all seven continents' is an infinitive phrase and is singular. The verb is 'is'.",
             "options": [
-                "were",
-                "was"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "An infinitive phrase stays singular, even when it contains a plural noun",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l105_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE DISTRACTOR",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "A total of fifty volunteers ___ needed for the study.",
-            "hint": "'A total of' with a plural noun takes a plural verb.",
-            "explanation": "'A total of fifty volunteers' takes a plural verb because the noun 'volunteers' is plural. 'A total of fifty volunteers are needed'.",
+            "question": "To answer these questions correctly ___ careful thought.",
+            "hint": "'Questions' is plural, but the true subject is the whole infinitive phrase.",
+            "explanation": "'To answer these questions correctly' is an infinitive phrase and is singular. The verb takes -s: 'requires'.",
             "options": [
-                "are",
-                "is"
+                "requires",
+                "require"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "requires",
+            "grammarRule": "An infinitive phrase stays singular, even when it contains a plural noun",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l106_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The total number of volunteers ___ fifty.",
-            "hint": "'The total number of' is always singular - it refers to one figure.",
-            "explanation": "'The total number of' is always singular, like 'the number of'. 'The total number is fifty' - not 'are fifty'.",
+            "question": "That she always arrives early ___ everyone at the office.",
+            "hint": "An entire 'that' clause can act as the subject of a sentence, and it's always singular.",
+            "explanation": "'That she always arrives early' is a 'that' clause functioning as the subject, and it's singular. The verb takes -s: 'surprises'.",
             "options": [
-                "are",
-                "is"
+                "surprise",
+                "surprises"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "surprises",
+            "grammarRule": "A 'that' clause used as the subject takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l106_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The survey results, together with the analysis, ___ submitted.",
-            "hint": "The main subject is 'the survey results' (plural) - 'together with' is parenthetical.",
-            "explanation": "'Together with the analysis' is parenthetical. The real subject is 'the survey results', which is plural. 'The survey results were submitted'.",
+            "question": "That he forgets important dates ___ his wife more than anything.",
+            "hint": "Treat the whole idea introduced by 'that' as one single subject.",
+            "explanation": "'That he forgets important dates' is a 'that' clause and is singular. The verb takes -s: 'bothers'.",
             "options": [
-                "were",
-                "was"
+                "bother",
+                "bothers"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "bothers",
+            "grammarRule": "A 'that' clause used as the subject takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l106_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Neither the price nor the quality ___ good enough.",
-            "hint": "'Neither…nor' with two singular subjects takes a singular verb.",
-            "explanation": "When 'neither…nor' joins two singular subjects ('the price' and 'the quality'), the verb is singular: 'neither is good enough'.",
+            "question": "That the plan might fail ___ a real possibility.",
+            "hint": "This 'that' clause describes one single possibility, so it's singular.",
+            "explanation": "'That the plan might fail' is a 'that' clause and is singular. The verb takes -s: 'remains'.",
             "options": [
-                "are",
-                "is"
+                "remains",
+                "remain"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "remains",
+            "grammarRule": "A 'that' clause used as the subject takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l107_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Either the heating or the windows ___ causing the heat loss.",
-            "hint": "With 'either…or', verb agrees with the nearer subject ('windows' is plural).",
-            "explanation": "With 'either…or', the verb agrees with the nearest subject. 'The windows' is plural, so 'are causing' is correct.",
+            "question": "What she says ___ everyone in the room.",
+            "hint": "A 'what' clause works just like a 'that' clause - one idea, one singular subject.",
+            "explanation": "'What she says' is a 'what' clause functioning as the subject, and it's singular. The verb takes -s: 'surprises'.",
             "options": [
-                "are",
-                "is"
+                "surprise",
+                "surprises"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "surprises",
+            "grammarRule": "A 'what' clause used as the subject takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l107_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Either the windows or the heating ___ causing the heat loss.",
-            "hint": "With 'either…or', verb agrees with the nearer subject ('heating' is singular).",
-            "explanation": "With 'either…or', the verb agrees with the nearest subject. 'The heating' is singular, so 'is causing' is correct.",
+            "question": "What the manager decides ___ final.",
+            "hint": "The whole idea introduced by 'what' counts as one singular subject.",
+            "explanation": "'What the manager decides' is a 'what' clause and is singular. The verb is 'is'.",
             "options": [
-                "are",
-                "is"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "A 'what' clause used as the subject takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l107_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The increase in global temperatures ___ alarming scientists worldwide.",
-            "hint": "The subject is 'the increase' (singular) - not 'global temperatures'.",
-            "explanation": "'The increase' is the subject; 'in global temperatures' is a prepositional phrase. Since 'increase' is singular, 'is alarming' is correct.",
+            "question": "What they discovered ___ the whole investigation.",
+            "hint": "Even though 'discovered' suggests a big finding, the clause itself is still one singular subject.",
+            "explanation": "'What they discovered' is a 'what' clause and is singular. The verb takes -s: 'changes'.",
             "options": [
-                "is",
-                "are"
+                "change",
+                "changes"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "changes",
+            "grammarRule": "A 'what' clause used as the subject takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l108_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CONTRAST",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The effects of climate change ___ becoming more visible every year.",
-            "hint": "The subject is 'the effects' (plural) - not 'climate change'.",
-            "explanation": "'The effects' is the subject; 'of climate change' is a prepositional phrase. Since 'effects' is plural, 'are becoming' is correct.",
+            "question": "Exercising every day ___ your energy levels.",
+            "hint": "This subject is a gerund phrase - recall the rule from earlier in this stage.",
+            "explanation": "'Exercising every day' is a gerund phrase and is singular. The verb takes -s: 'improves'.",
             "options": [
-                "is",
-                "are"
+                "improve",
+                "improves"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "improves",
+            "grammarRule": "Gerund phrase used as the subject takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l108_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CONTRAST",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The ability to manage stress ___ crucial in high-pressure roles.",
-            "hint": "The subject is 'the ability' (singular) - the infinitive phrase is a modifier.",
-            "explanation": "'The ability' is the singular subject; 'to manage stress' explains what kind of ability. 'The ability is crucial' - singular verb.",
+            "question": "To learn a musical instrument ___ years of daily practice.",
+            "hint": "This subject starts with 'to' - which type of subject is that?",
+            "explanation": "'To learn a musical instrument' is an infinitive phrase and is singular. The verb takes -s: 'takes'.",
             "options": [
-                "is",
-                "are"
+                "takes",
+                "take"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "takes",
+            "grammarRule": "Infinitive phrase used as the subject takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l108_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CONTRAST",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The skills needed to succeed in this industry ___ constantly evolving.",
-            "hint": "The subject is 'the skills' (plural) - the past participle phrase is a modifier.",
-            "explanation": "'The skills' is the subject; 'needed to succeed in this industry' describes which skills. Since 'skills' is plural, 'are constantly evolving' is correct.",
+            "question": "That the team missed the deadline ___ the whole department.",
+            "hint": "This subject is introduced by 'that' - remember how that type of clause behaves.",
+            "explanation": "'That the team missed the deadline' is a 'that' clause and is singular. The verb takes -s: 'worries'.",
             "options": [
-                "is",
-                "are"
+                "worry",
+                "worries"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "worries",
+            "grammarRule": "'That' clause used as the subject takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l109_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "A range of approaches ___ used to tackle this problem.",
-            "hint": "'A range of' with a singular concept takes a singular verb.",
-            "explanation": "'A range of approaches' takes a singular verb because 'a range' is singular - we are talking about one range. 'A range has been used'.",
+            "question": "Learning to code, especially at a young age, ___ many career opportunities.",
+            "hint": "The phrase between the commas is just an aside - the gerund phrase itself is still the subject.",
+            "explanation": "'Learning to code' is the true gerund subject; 'especially at a young age' is a parenthetical aside. The verb takes -s: 'opens'.",
             "options": [
-                "has been",
-                "have been"
+                "open",
+                "opens"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "has been",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "opens",
+            "grammarRule": "A gerund phrase stays singular, even with an interrupting phrase",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l109_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "A variety of methods ___ tried before this one was selected.",
-            "hint": "'A variety of' with a plural countable noun takes a plural verb.",
-            "explanation": "'A variety of methods' takes a plural verb because 'methods' is plural and each is distinct. 'A variety of methods were tried'.",
+            "question": "To finish the marathon, despite the extreme heat, ___ an incredible achievement.",
+            "hint": "Skip over the phrase about the heat and connect the infinitive subject directly to the verb.",
+            "explanation": "'To finish the marathon' is the true infinitive subject; 'despite the extreme heat' is extra detail. The verb takes -s: 'remains'.",
             "options": [
-                "was",
-                "were"
+                "remains",
+                "remain"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "remains",
+            "grammarRule": "An infinitive phrase stays singular, even with an interrupting phrase",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l109_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "A series of meetings ___ scheduled for next week.",
-            "hint": "'A series of' takes a singular verb - the series is treated as a single sequence.",
-            "explanation": "'A series of' is typically treated as singular. 'A series of meetings is scheduled' - the series itself is one thing.",
+            "question": "That the results varied so much, even after three attempts, ___ the researchers.",
+            "hint": "The phrase about the number of attempts is just extra detail inside the 'that' clause.",
+            "explanation": "The whole 'that' clause, including the aside about three attempts, is still one singular subject. The verb takes -s: 'puzzles'.",
             "options": [
-                "is",
-                "are"
+                "puzzle",
+                "puzzles"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "puzzles",
+            "grammarRule": "A 'that' clause stays singular, even with an interrupting phrase inside it",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l110_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The number of people living alone ___ increased dramatically.",
-            "hint": "'The number of' is singular - it refers to one total count.",
-            "explanation": "'The number of' is always singular. 'The number of people has increased dramatically' - not 'have increased'.",
+            "question": "Reading before bed ___ me fall asleep faster.",
+            "hint": "Bring back the gerund rule from earlier in this stage.",
+            "explanation": "'Reading before bed' is a gerund phrase and is singular. The verb takes -s: 'helps'.",
             "options": [
-                "have",
-                "has"
+                "help",
+                "helps"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "helps",
+            "grammarRule": "A gerund used as the subject takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l110_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "A large number of elderly people ___ living alone.",
-            "hint": "'A large number of' means 'many' - plural verb with a plural noun.",
-            "explanation": "'A large number of' is similar to 'a number of' - it means 'many' and takes a plural verb. 'A large number of elderly people are living alone'.",
+            "question": "To admit a mistake ___ real courage.",
+            "hint": "Remember the infinitive rule: one goal, one singular subject.",
+            "explanation": "'To admit a mistake' is an infinitive phrase and is singular. The verb takes -s: 'takes'.",
             "options": [
-                "are",
-                "is"
+                "takes",
+                "take"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "takes",
+            "grammarRule": "An infinitive phrase used as the subject takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l110_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The proportion of women in senior roles ___ risen significantly.",
-            "hint": "'The proportion' is singular - 'of women' is a prepositional modifier.",
-            "explanation": "'The proportion' is the singular subject; 'of women in senior roles' is a modifier. 'The proportion has risen' - singular verb.",
+            "question": "What she accomplished ___ everyone on the team.",
+            "hint": "As a final check, treat this 'what' clause as one singular idea.",
+            "explanation": "'What she accomplished' is a 'what' clause and is singular. The verb takes -s: 'inspires'.",
             "options": [
-                "have",
-                "has"
+                "inspire",
+                "inspires"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "inspires",
+            "grammarRule": "A 'what' clause used as the subject takes a singular verb",
             "subjectType": "Singular"
         }
     ]

@@ -1,637 +1,679 @@
 {
-    "gameType": "directIndirectSpeech",
-    "batchIndex": 11,
-    "levels": "101-110",
-    "quests": [
-        {
-            "id": "dis_l101_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I think I will pass the exam.'",
-            "options": [
-                "She said that she thought she will pass the exam.",
-                "She said that she thought she would pass the exam.",
-                "She said that she thinks she would pass the exam."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "She said that she thought she would pass the exam.",
-            "sentence": "She said, 'I think I will pass the exam.'",
-            "hint": "Two verbs need to shift here: the main verb and the verb inside the embedded clause.",
-            "explanation": "'Think' shifts to 'thought', and 'will' shifts to 'would' — both clauses backshift together.",
-            "grammarRule": "Mixed/Complex Transformation",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l101_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The advisor urged clients, 'Diversify your investments.'",
-            "options": [
-                "The advisor urged clients that they diversify their investments.",
-                "The advisor urged clients to diversify their investments.",
-                "The advisor urged clients diversify their investments."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The advisor urged clients to diversify their investments.",
-            "sentence": "The advisor urged clients, 'Diversify your investments.'",
-            "hint": "'Urged' works like 'told' — a command shifts to 'urged + people + to + verb'.",
-            "explanation": "Commands are reported with 'urged + object + to-infinitive'. 'Diversify your investments' becomes 'to diversify their investments'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l101_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The specialist asked, 'Has the pain gotten worse?'",
-            "options": [
-                "The specialist asked has the pain gotten worse.",
-                "The specialist asked whether the pain had gotten worse.",
-                "The specialist asked whether the pain has gotten worse."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The specialist asked whether the pain had gotten worse.",
-            "sentence": "The specialist asked, 'Has the pain gotten worse?'",
-            "hint": "'Whether' reports the question, with statement word order and a shifted tense.",
-            "explanation": "'Whether' introduces the question, word order becomes statement order, and 'has gotten' shifts to 'had gotten'.",
-            "grammarRule": "Reported Yes/No Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l102_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He threatened, 'I will resign.'",
-            "options": [
-                "He threatened that I would resign.",
-                "He threatened that he would resign.",
-                "He threatened that he will resign."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He threatened that he would resign.",
-            "sentence": "He threatened, 'I will resign.'",
-            "hint": "Both the modal and the pronoun shift here.",
-            "explanation": "'Will' shifts to 'would', and 'I' becomes 'he'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l102_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I know that the plan will succeed.'",
-            "options": [
-                "He said that he knows that the plan would succeed.",
-                "He said that he knew that the plan would succeed.",
-                "He said that he knew that the plan will succeed."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He said that he knew that the plan would succeed.",
-            "sentence": "He said, 'I know that the plan will succeed.'",
-            "hint": "Both the main verb and the verb inside the embedded clause need to shift here.",
-            "explanation": "'Know' shifts to 'knew', and 'will' shifts to 'would' — both clauses backshift together.",
-            "grammarRule": "Mixed/Complex Transformation",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l102_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I have been studying French.'",
-            "options": [
-                "She said that she had been studying French.",
-                "She said that she had studied French.",
-                "She said that she has been studying French."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said that she had been studying French.",
-            "sentence": "She said, 'I have been studying French.'",
-            "hint": "Present perfect continuous shifts to past perfect continuous, not to a different tense.",
-            "explanation": "'Have been studying' shifts to 'had been studying' — the continuous form is kept.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l103_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I apologize for being late.'",
-            "options": [
-                "She said that I apologized for being late.",
-                "She said that she apologizes for being late.",
-                "She said that she apologized for being late."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She said that she apologized for being late.",
-            "sentence": "She said, 'I apologize for being late.'",
-            "hint": "Shift the verb back in time, and match the pronoun; the gerund phrase after 'for' doesn't change.",
-            "explanation": "Present simple 'apologize' shifts to past simple 'apologized', and 'I' becomes 'she'. 'For being late' stays exactly the same.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l103_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He asked, 'Why does the server keep crashing?'",
-            "options": [
-                "He asked why the server kept crashing.",
-                "He asked why the server keeps crashing.",
-                "He asked why does the server keep crashing."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He asked why the server kept crashing.",
-            "sentence": "He asked, 'Why does the server keep crashing?'",
-            "hint": "Wh-questions use statement word order — no 'does', and the tense shifts.",
-            "explanation": "'Does' is dropped, word order becomes statement order, and 'keeps' shifts to 'kept'.",
-            "grammarRule": "Reported Wh-Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l103_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The doctor said, 'Regular sleep supports good health.'",
-            "options": [
-                "The doctor said that regular sleep supported good health.",
-                "The doctor said that regular sleep supports good health.",
-                "The doctor said that regular sleep had supported good health."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The doctor said that regular sleep supports good health.",
-            "sentence": "The doctor said, 'Regular sleep supports good health.'",
-            "hint": "This is a general truth that's still valid — it doesn't need to shift tense.",
-            "explanation": "General truths and widely accepted ideas often stay in the present tense in reported speech.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Tense shifted back"
-            ]
-        },
-        {
-            "id": "dis_l104_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I accuse you of missing the deadline on purpose.'",
-            "options": [
-                "He said that he accused me of missing the deadline on purpose.",
-                "He said that he accuses me of missing the deadline on purpose.",
-                "He said that he accused you of missing the deadline on purpose."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He said that he accused me of missing the deadline on purpose.",
-            "sentence": "He said, 'I accuse you of missing the deadline on purpose.'",
-            "hint": "Shift the verb, and change 'you' since he was speaking to you.",
-            "explanation": "'Accuse' shifts to 'accused', and 'you' shifts to 'me'; the gerund phrase 'of missing...' stays the same.",
-            "grammarRule": "Pronoun & Possessive Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l104_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: They said, 'We believe we have made the right choice.'",
-            "options": [
-                "They said that they believed they have made the right choice.",
-                "They said that they believed they had made the right choice.",
-                "They said that they believe they had made the right choice."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "They said that they believed they had made the right choice.",
-            "sentence": "They said, 'We believe we have made the right choice.'",
-            "hint": "This sentence has a clause inside a clause — both verbs backshift together.",
-            "explanation": "'Believe' shifts to 'believed', and 'have made' shifts to 'had made' — both clauses backshift together.",
-            "grammarRule": "Mixed/Complex Transformation",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l104_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The editor warned writers, 'Don't miss the submission deadline.'",
-            "options": [
-                "The editor warned writers not to miss the submission deadline.",
-                "The editor warned writers don't miss the submission deadline.",
-                "The editor warned writers to not miss the submission deadline."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The editor warned writers not to miss the submission deadline.",
-            "sentence": "The editor warned writers, 'Don't miss the submission deadline.'",
-            "hint": "Negative commands shift to 'warned + people + not to + verb'.",
-            "explanation": "Negative commands use 'warned + object + not to + infinitive'. 'Don't miss' becomes 'not to miss'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l105_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The doctor urged him, 'Quit smoking immediately.'",
-            "options": [
-                "The doctor urged him quit smoking immediately.",
-                "The doctor urged him to quit smoking immediately.",
-                "The doctor urged him that he quit smoking immediately."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The doctor urged him to quit smoking immediately.",
-            "sentence": "The doctor urged him, 'Quit smoking immediately.'",
-            "hint": "'Urged' works like 'told' — a command shifts to 'urged + person + to + verb'.",
-            "explanation": "Commands are reported with 'urged + object + to-infinitive'. 'Quit smoking immediately' becomes 'to quit smoking immediately'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l105_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He asked, 'Has the server been fixed yet?'",
-            "options": [
-                "He asked if the server has been fixed yet.",
-                "He asked has the server been fixed yet.",
-                "He asked if the server had been fixed yet."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "He asked if the server had been fixed yet.",
-            "sentence": "He asked, 'Has the server been fixed yet?'",
-            "hint": "Yes/No questions use 'if', with statement word order and a shifted tense.",
-            "explanation": "'If' introduces the question, word order becomes statement order, and 'has been fixed' shifts to 'had been fixed'.",
-            "grammarRule": "Reported Yes/No Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l105_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I hope the sequel is even better.'",
-            "options": [
-                "She said that she hopes the sequel was even better.",
-                "She said that she hoped the sequel is even better.",
-                "She said that she hoped the sequel was even better."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "She said that she hoped the sequel was even better.",
-            "sentence": "She said, 'I hope the sequel is even better.'",
-            "hint": "Two verbs need to shift here: the main verb and the verb inside the embedded clause.",
-            "explanation": "'Hope' shifts to 'hoped', and 'is' shifts to 'was' — both clauses backshift together.",
-            "grammarRule": "Mixed/Complex Transformation",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l106_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The tenants threatened, 'We will take legal action.'",
-            "options": [
-                "The tenants threatened that we would take legal action.",
-                "The tenants threatened that they will take legal action.",
-                "The tenants threatened that they would take legal action."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The tenants threatened that they would take legal action.",
-            "sentence": "The tenants threatened, 'We will take legal action.'",
-            "hint": "Both the modal and the pronoun shift here.",
-            "explanation": "'Will' shifts to 'would', and 'we' shifts to 'they'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l106_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I apologize for the confusion.'",
-            "options": [
-                "He said that he apologizes for the confusion.",
-                "He said that he apologized for the confusion.",
-                "He said that I apologized for the confusion."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He said that he apologized for the confusion.",
-            "sentence": "He said, 'I apologize for the confusion.'",
-            "hint": "Shift the verb back in time, and match the pronoun.",
-            "explanation": "Present simple 'apologize' shifts to past simple 'apologized', and 'I' becomes 'he'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l106_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She asked, 'How many candidates have applied?'",
-            "options": [
-                "She asked how many candidates have applied.",
-                "She asked how many candidates had applied.",
-                "She asked how many candidates applied."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "She asked how many candidates had applied.",
-            "sentence": "She asked, 'How many candidates have applied?'",
-            "hint": "Wh-questions use statement word order; present perfect shifts to past perfect.",
-            "explanation": "Word order becomes statement order, and 'have applied' shifts to 'had applied'.",
-            "grammarRule": "Reported Wh-Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l107_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I hear that prices will increase soon.'",
-            "options": [
-                "He said that he heard that prices would increase soon.",
-                "He said that he heard that prices will increase soon.",
-                "He said that he hears that prices would increase soon."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He said that he heard that prices would increase soon.",
-            "sentence": "He said, 'I hear that prices will increase soon.'",
-            "hint": "Two verbs need to shift: the main verb and the verb inside the embedded clause.",
-            "explanation": "'Hear' shifts to 'heard', and 'will' shifts to 'would' — both clauses backshift together.",
-            "grammarRule": "Mixed/Complex Transformation",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l107_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I accuse him of copying my idea.'",
-            "options": [
-                "She said that she accuses him of copying her idea.",
-                "She said that she accused him of copying her idea.",
-                "She said that she accused him of copying my idea."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "She said that she accused him of copying her idea.",
-            "sentence": "She said, 'I accuse him of copying my idea.'",
-            "hint": "Shift the verb, and change the possessive word too.",
-            "explanation": "'Accuse' shifts to 'accused', and 'my' shifts to 'her'; the gerund phrase 'of copying...' stays the same.",
-            "grammarRule": "Pronoun & Possessive Shift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l107_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The teacher said, 'Reading improves vocabulary.'",
-            "options": [
-                "The teacher said that reading had improved vocabulary.",
-                "The teacher said that reading improves vocabulary.",
-                "The teacher said that reading improved vocabulary."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The teacher said that reading improves vocabulary.",
-            "sentence": "The teacher said, 'Reading improves vocabulary.'",
-            "hint": "This is a general truth that's still valid — it doesn't need to shift tense.",
-            "explanation": "General truths and widely accepted ideas often stay in the present tense in reported speech.",
-            "grammarRule": "No-Shift Exceptions",
-            "changesList": [
-                "Tense shifted back"
-            ]
-        },
-        {
-            "id": "dis_l108_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The scientist urged leaders, 'Cut emissions faster.'",
-            "options": [
-                "The scientist urged leaders cut emissions faster.",
-                "The scientist urged leaders to cut emissions faster.",
-                "The scientist urged leaders that they cut emissions faster."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The scientist urged leaders to cut emissions faster.",
-            "sentence": "The scientist urged leaders, 'Cut emissions faster.'",
-            "hint": "'Urged' works like 'told' — a command shifts to 'urged + people + to + verb'.",
-            "explanation": "Commands are reported with 'urged + object + to-infinitive'. 'Cut emissions faster' becomes 'to cut emissions faster'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l108_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She asked, 'Will the bridge be repaired or replaced?'",
-            "options": [
-                "She asked whether the bridge would be repaired or replaced.",
-                "She asked would the bridge be repaired or replaced.",
-                "She asked whether the bridge will be repaired or replaced."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She asked whether the bridge would be repaired or replaced.",
-            "sentence": "She asked, 'Will the bridge be repaired or replaced?'",
-            "hint": "'Whether...or' reports a choice question, with statement word order and shifted modal.",
-            "explanation": "'Whether' introduces the choice, word order becomes statement order, and 'will' shifts to 'would'.",
-            "grammarRule": "Reported Yes/No Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l108_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: They said, 'We doubt the offer will be accepted.'",
-            "options": [
-                "They said that they doubted the offer would be accepted.",
-                "They said that they doubt the offer would be accepted.",
-                "They said that they doubted the offer will be accepted."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "They said that they doubted the offer would be accepted.",
-            "sentence": "They said, 'We doubt the offer will be accepted.'",
-            "hint": "Watch for two verbs here: the reporting verb's own clause, and the clause embedded inside it.",
-            "explanation": "'Doubt' shifts to 'doubted', and 'will' shifts to 'would' — both clauses backshift together.",
-            "grammarRule": "Mixed/Complex Transformation",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l109_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She threatened, 'I will cancel the order.'",
-            "options": [
-                "She threatened that I would cancel the order.",
-                "She threatened that she would cancel the order.",
-                "She threatened that she will cancel the order."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "She threatened that she would cancel the order.",
-            "sentence": "She threatened, 'I will cancel the order.'",
-            "hint": "Both the modal and the pronoun shift here.",
-            "explanation": "'Will' shifts to 'would', and 'I' becomes 'she'.",
-            "grammarRule": "Modal Verb Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l109_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: They said, 'We apologize for the delay.'",
-            "options": [
-                "They said that they apologized for the delay.",
-                "They said that we apologized for the delay.",
-                "They said that they apologize for the delay."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "They said that they apologized for the delay.",
-            "sentence": "They said, 'We apologize for the delay.'",
-            "hint": "Shift the verb back in time, and match the pronoun.",
-            "explanation": "Present simple 'apologize' shifts to past simple 'apologized', and 'we' becomes 'they'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l109_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The vet told owners, 'Vaccinate your pets yearly.'",
-            "options": [
-                "The vet told owners that they vaccinate their pets yearly.",
-                "The vet told owners vaccinate their pets yearly.",
-                "The vet told owners to vaccinate their pets yearly."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The vet told owners to vaccinate their pets yearly.",
-            "sentence": "The vet told owners, 'Vaccinate your pets yearly.'",
-            "hint": "A command shifts to 'told + people + to + verb', and 'your' shifts too.",
-            "explanation": "Commands are reported with 'told + object + to-infinitive'. 'Vaccinate your pets yearly' becomes 'to vaccinate their pets yearly'.",
-            "grammarRule": "Reported Commands & Requests",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l110_q1",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: She said, 'I promise I will call you tonight.'",
-            "options": [
-                "She said that she promised that she would call me that night.",
-                "She said that she promises that she would call me that night.",
-                "She said that she promised that she would call me tonight."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said that she promised that she would call me that night.",
-            "sentence": "She said, 'I promise I will call you tonight.'",
-            "hint": "Multiple things shift here: the reporting verb, the modal, 'you', and 'tonight'.",
-            "explanation": "'Promise' shifts to 'promised', 'will' shifts to 'would', 'you' shifts to 'me', and 'tonight' shifts to 'that night'.",
-            "grammarRule": "Mixed/Complex Transformation",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l110_q2",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: He said, 'I accuse the company of false advertising.'",
-            "options": [
-                "He said that he accuses the company of false advertising.",
-                "He said that he accused the company of false advertising.",
-                "He said that I accused the company of false advertising."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He said that he accused the company of false advertising.",
-            "sentence": "He said, 'I accuse the company of false advertising.'",
-            "hint": "Shift the verb back in time, and match the pronoun.",
-            "explanation": "Present simple 'accuse' shifts to past simple 'accused', and 'I' becomes 'he'.",
-            "grammarRule": "Tense Backshift",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        },
-        {
-            "id": "dis_l110_q3",
-            "instruction": "TRANSFORM THE SPEECH",
-            "subtype": "directIndirectSpeech",
-            "interactionType": "choice",
-            "question": "Convert to reported speech: The manager asked, 'Has everyone submitted their timesheet?'",
-            "options": [
-                "The manager asked whether everyone had submitted their timesheet.",
-                "The manager asked whether everyone has submitted their timesheet.",
-                "The manager asked has everyone submitted their timesheet."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The manager asked whether everyone had submitted their timesheet.",
-            "sentence": "The manager asked, 'Has everyone submitted their timesheet?'",
-            "hint": "'Whether' reports the question, with statement word order and shifted tense.",
-            "explanation": "'Whether' introduces the question, word order becomes statement order, and 'has submitted' shifts to 'had submitted'.",
-            "grammarRule": "Reported Yes/No Questions",
-            "changesList": [
-                "Format changed to reported speech"
-            ]
-        }
-    ]
+  "gameType": "directIndirectSpeech",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "id": "dis_l101_q1",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: Maria said that she liked her job.",
+      "options": [
+        "Maria said, \"I like my job.\"",
+        "Maria said, \"She likes her job.\"",
+        "Maria said, \"I liked my job.\""
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Maria said, \"I like my job.\"",
+      "sentence": "Maria said that she liked her job.",
+      "hint": "Reverse the backshift: past tense in reported speech usually came from present tense in the original words.",
+      "explanation": "'Liked' reverses to 'like', and 'she'/'her' reverse to 'I'/'my', since Maria was speaking about herself.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'liked' → 'like'",
+        "'she' → 'I'",
+        "'her' → 'my'"
+      ]
+    },
+    {
+      "id": "dis_l101_q2",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: Daniel said that he was tired.",
+      "options": [
+        "Daniel said, \"He was tired.\"",
+        "Daniel said, \"I was tired.\"",
+        "Daniel said, \"I am tired.\""
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Daniel said, \"I am tired.\"",
+      "sentence": "Daniel said that he was tired.",
+      "hint": "Think about what tense and pronoun Daniel would have actually used when speaking about himself.",
+      "explanation": "'Was' reverses to 'am', and 'he' reverses to 'I'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'was' → 'am'",
+        "'he' → 'I'"
+      ]
+    },
+    {
+      "id": "dis_l101_q3",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: The manager said that the meeting was important.",
+      "options": [
+        "The manager said, \"This meeting is important.\"",
+        "The manager said, \"The meeting was important.\"",
+        "The manager said, \"The meeting is important.\""
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The manager said, \"The meeting is important.\"",
+      "sentence": "The manager said that the meeting was important.",
+      "hint": "There's no pronoun to reverse here — focus only on the verb tense.",
+      "explanation": "'Was' reverses to 'is'; there's no pronoun change needed since the subject is 'the meeting'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'was' → 'is'"
+      ]
+    },
+    {
+      "id": "dis_l102_q1",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: Valentina said that she was cooking dinner.",
+      "options": [
+        "Valentina said, \"I am cooking dinner.\"",
+        "Valentina said, \"She was cooking dinner.\"",
+        "Valentina said, \"I was cooking dinner.\""
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Valentina said, \"I am cooking dinner.\"",
+      "sentence": "Valentina said that she was cooking dinner.",
+      "hint": "Reverse both the auxiliary and the pronoun.",
+      "explanation": "'Was cooking' reverses to 'am cooking', and 'she' reverses to 'I'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'was cooking' → 'am cooking'",
+        "'she' → 'I'"
+      ]
+    },
+    {
+      "id": "dis_l102_q2",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: Tobias said that his colleagues were working late.",
+      "options": [
+        "Tobias said, \"His colleagues are working late.\"",
+        "Tobias said, \"My colleagues were working late.\"",
+        "Tobias said, \"My colleagues are working late.\""
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Tobias said, \"My colleagues are working late.\"",
+      "sentence": "Tobias said that his colleagues were working late.",
+      "hint": "Reverse the possessive and the auxiliary together.",
+      "explanation": "'His' reverses to 'my', and 'were working' reverses to 'are working'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'his' → 'my'",
+        "'were working' → 'are working'"
+      ]
+    },
+    {
+      "id": "dis_l102_q3",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: The nurse said that the patient was resting comfortably.",
+      "options": [
+        "The nurse said, \"The patient was resting comfortably.\"",
+        "The nurse said, \"The patient rests comfortably.\"",
+        "The nurse said, \"The patient is resting comfortably.\""
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The nurse said, \"The patient is resting comfortably.\"",
+      "sentence": "The nurse said that the patient was resting comfortably.",
+      "hint": "Only the tense reverses here — keep the continuous '-ing' form intact.",
+      "explanation": "'Was resting' reverses to 'is resting'; the '-ing' form doesn't change.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'was resting' → 'is resting'"
+      ]
+    },
+    {
+      "id": "dis_l103_q1",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: Sofia said that she had finished her homework.",
+      "options": [
+        "Sofia said, \"She had finished her homework.\"",
+        "Sofia said, \"I have finished my homework.\"",
+        "Sofia said, \"I finished my homework.\""
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Sofia said, \"I have finished my homework.\"",
+      "sentence": "Sofia said that she had finished her homework.",
+      "hint": "Past perfect in reported speech usually reverses to present perfect in the original words.",
+      "explanation": "'Had finished' reverses to 'have finished', and 'she'/'her' reverse to 'I'/'my'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'had finished' → 'have finished'",
+        "'she' → 'I'",
+        "'her' → 'my'"
+      ]
+    },
+    {
+      "id": "dis_l103_q2",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: The technician said that he had already fixed the printer.",
+      "options": [
+        "The technician said, \"He has already fixed the printer.\"",
+        "The technician said, \"I already fixed the printer.\"",
+        "The technician said, \"I have already fixed the printer.\""
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The technician said, \"I have already fixed the printer.\"",
+      "sentence": "The technician said that he had already fixed the printer.",
+      "hint": "Keep the perfect structure — just move the auxiliary and pronoun back to the original speaker's words.",
+      "explanation": "'Had fixed' reverses to 'have fixed', and 'he' reverses to 'I'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'had fixed' → 'have fixed'",
+        "'he' → 'I'"
+      ]
+    },
+    {
+      "id": "dis_l103_q3",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: Hassan said that he had locked the door before he left.",
+      "options": [
+        "Hassan said, \"I have locked the door before I left.\"",
+        "Hassan said, \"I locked the door before I left.\"",
+        "Hassan said, \"I had locked the door before I left.\""
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Hassan said, \"I had locked the door before I left.\"",
+      "sentence": "Hassan said that he had locked the door before he left.",
+      "hint": "Not every past perfect reverses — this one describes an action completed before another past action, so it stays as past perfect.",
+      "explanation": "Since 'had locked' happened before 'left' (also past), the past perfect stays the same in direct speech; only the pronoun reverses.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'he' → 'I'",
+        "'had locked' stays unchanged (earlier past action)"
+      ]
+    },
+    {
+      "id": "dis_l104_q1",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: Chidinma said that she would call me later.",
+      "options": [
+        "Chidinma said, \"She will call me later.\"",
+        "Chidinma said, \"I will call you later.\"",
+        "Chidinma said, \"I would call you later.\""
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Chidinma said, \"I will call you later.\"",
+      "sentence": "Chidinma said that she would call me later.",
+      "hint": "'Would' in reported speech usually reverses to 'will' in the original words.",
+      "explanation": "'Would' reverses to 'will', 'she' reverses to 'I', and 'me' reverses to 'you'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'would' → 'will'",
+        "'she' → 'I'",
+        "'me' → 'you'"
+      ]
+    },
+    {
+      "id": "dis_l104_q2",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: Amir said that he could speak French.",
+      "options": [
+        "Amir said, \"He could speak French.\"",
+        "Amir said, \"I can speak French.\"",
+        "Amir said, \"I could speak French.\""
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Amir said, \"I can speak French.\"",
+      "sentence": "Amir said that he could speak French.",
+      "hint": "Reverse the modal to its present form, along with the pronoun.",
+      "explanation": "'Could' reverses to 'can', and 'he' reverses to 'I'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'could' → 'can'",
+        "'he' → 'I'"
+      ]
+    },
+    {
+      "id": "dis_l104_q3",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: The teacher said that we had to submit the assignment by Friday.",
+      "options": [
+        "The teacher said, \"You have to submit the assignment by Friday.\"",
+        "The teacher said, \"We have to submit the assignment by Friday.\"",
+        "The teacher said, \"You had to submit the assignment by Friday.\""
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The teacher said, \"You have to submit the assignment by Friday.\"",
+      "sentence": "The teacher said that we had to submit the assignment by Friday.",
+      "hint": "Reverse both the pronoun and the modal-like phrase 'had to' back to the teacher's original words.",
+      "explanation": "'We' reverses to 'you', and 'had to' reverses to 'have to' since the teacher originally used present obligation.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'we' → 'you'",
+        "'had to' → 'have to'"
+      ]
+    },
+    {
+      "id": "dis_l105_q1",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: Layla said that her brother had borrowed her car.",
+      "options": [
+        "Layla said, \"Her brother has borrowed her car.\"",
+        "Layla said, \"My brother has borrowed my car.\"",
+        "Layla said, \"My brother borrowed my car.\""
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Layla said, \"My brother has borrowed my car.\"",
+      "sentence": "Layla said that her brother had borrowed her car.",
+      "hint": "Reverse both possessives to match Layla as the original speaker.",
+      "explanation": "Both instances of 'her' reverse to 'my', and 'had borrowed' reverses to 'has borrowed'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'her' → 'my' (both instances)",
+        "'had borrowed' → 'has borrowed'"
+      ]
+    },
+    {
+      "id": "dis_l105_q2",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: The twins said that their parents were proud of them.",
+      "options": [
+        "The twins said, \"Their parents are proud of them.\"",
+        "The twins said, \"Our parents are proud of us.\"",
+        "The twins said, \"Our parents were proud of us.\""
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The twins said, \"Our parents are proud of us.\"",
+      "sentence": "The twins said that their parents were proud of them.",
+      "hint": "Reverse the possessive, the object pronoun, and the tense together.",
+      "explanation": "'Their' reverses to 'our', 'them' reverses to 'us', and 'were' reverses to 'are'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'their' → 'our'",
+        "'them' → 'us'",
+        "'were' → 'are'"
+      ]
+    },
+    {
+      "id": "dis_l105_q3",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: Omar told Yuna that he had seen her at the conference.",
+      "options": [
+        "Omar said to Yuna, \"I have seen you at the conference.\"",
+        "Omar said to Yuna, \"He saw her at the conference.\"",
+        "Omar said to Yuna, \"I saw you at the conference.\""
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Omar said to Yuna, \"I saw you at the conference.\"",
+      "sentence": "Omar told Yuna that he had seen her at the conference.",
+      "hint": "This past perfect reverses to simple past, and both pronouns switch back to first and second person.",
+      "explanation": "'Had seen' reverses to 'saw', 'he' reverses to 'I', and 'her' reverses to 'you'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'had seen' → 'saw'",
+        "'he' → 'I'",
+        "'her' → 'you'"
+      ]
+    },
+    {
+      "id": "dis_l106_q1",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: Priya said that she was leaving the next day.",
+      "options": [
+        "Priya said, \"I am leaving tomorrow.\"",
+        "Priya said, \"She is leaving tomorrow.\"",
+        "Priya said, \"I was leaving tomorrow.\""
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Priya said, \"I am leaving tomorrow.\"",
+      "sentence": "Priya said that she was leaving the next day.",
+      "hint": "'The next day' reverses to 'tomorrow' in the original words.",
+      "explanation": "'The next day' reverses to 'tomorrow', 'was leaving' reverses to 'am leaving', and 'she' reverses to 'I'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'the next day' → 'tomorrow'",
+        "'was leaving' → 'am leaving'",
+        "'she' → 'I'"
+      ]
+    },
+    {
+      "id": "dis_l106_q2",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: Julius said that he had arrived there the day before.",
+      "options": [
+        "Julius said, \"I arrived here yesterday.\"",
+        "Julius said, \"I had arrived here yesterday.\"",
+        "Julius said, \"He arrived there the day before.\""
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Julius said, \"I arrived here yesterday.\"",
+      "sentence": "Julius said that he had arrived there the day before.",
+      "hint": "Reverse the place word, the time word, and the tense together.",
+      "explanation": "'There' reverses to 'here', 'the day before' reverses to 'yesterday', and 'had arrived' reverses to 'arrived'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'there' → 'here'",
+        "'the day before' → 'yesterday'",
+        "'had arrived' → 'arrived'"
+      ]
+    },
+    {
+      "id": "dis_l106_q3",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: The manager said that the report was due that day.",
+      "options": [
+        "The manager said, \"The report is due that day.\"",
+        "The manager said, \"The report is due today.\"",
+        "The manager said, \"The report was due today.\""
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The manager said, \"The report is due today.\"",
+      "sentence": "The manager said that the report was due that day.",
+      "hint": "Two changes here: the time word and the verb tense.",
+      "explanation": "'That day' reverses to 'today', and 'was' reverses to 'is'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'that day' → 'today'",
+        "'was' → 'is'"
+      ]
+    },
+    {
+      "id": "dis_l107_q1",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: Fatima asked whether I liked spicy food.",
+      "options": [
+        "Fatima asked, \"Did you like spicy food?\"",
+        "Fatima asked, \"You like spicy food?\"",
+        "Fatima asked, \"Do you like spicy food?\""
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Fatima asked, \"Do you like spicy food?\"",
+      "sentence": "Fatima asked whether I liked spicy food.",
+      "hint": "Reverse the statement word order back into a question, and add the auxiliary 'do'.",
+      "explanation": "'Liked' reverses to 'like', the auxiliary 'do' is added back, and word order becomes a question again; 'I' reverses to 'you'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'liked' → 'do...like'",
+        "'I' → 'you'",
+        "statement word order → question word order"
+      ]
+    },
+    {
+      "id": "dis_l107_q2",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: The officer asked whether I had a valid ticket.",
+      "options": [
+        "The officer asked, \"Did you have a valid ticket?\"",
+        "The officer asked, \"Do you have a valid ticket?\"",
+        "The officer asked, \"Have you a valid ticket?\""
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The officer asked, \"Do you have a valid ticket?\"",
+      "sentence": "The officer asked whether I had a valid ticket.",
+      "hint": "Reverse 'had' to its present form and rebuild the question with 'do'.",
+      "explanation": "'Had' reverses to 'do...have', and 'I' reverses to 'you'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'had' → 'do...have'",
+        "'I' → 'you'",
+        "statement word order → question word order"
+      ]
+    },
+    {
+      "id": "dis_l107_q3",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: Bashir asked whether they would attend the wedding.",
+      "options": [
+        "Bashir asked, \"Would you attend the wedding?\"",
+        "Bashir asked, \"Will they attend the wedding?\"",
+        "Bashir asked, \"Will you attend the wedding?\""
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Bashir asked, \"Will you attend the wedding?\"",
+      "sentence": "Bashir asked whether they would attend the wedding.",
+      "hint": "Reverse the modal and the pronoun, then rebuild the question order.",
+      "explanation": "'Would' reverses to 'will', 'they' reverses to 'you', and inversion is restored.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'would' → 'will'",
+        "'they' → 'you'",
+        "statement word order → question word order"
+      ]
+    },
+    {
+      "id": "dis_l108_q1",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: Camila asked where I had parked the car.",
+      "options": [
+        "Camila asked, \"Where you parked the car?\"",
+        "Camila asked, \"Where did you park the car?\"",
+        "Camila asked, \"Where do you park the car?\""
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Camila asked, \"Where did you park the car?\"",
+      "sentence": "Camila asked where I had parked the car.",
+      "hint": "Reverse the past perfect to past simple, add 'did', and rebuild the question.",
+      "explanation": "'Had parked' reverses to 'did park', and 'I' reverses to 'you'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'had parked' → 'did park'",
+        "'I' → 'you'",
+        "statement word order → question word order"
+      ]
+    },
+    {
+      "id": "dis_l108_q2",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: The interviewer asked what my greatest weakness was.",
+      "options": [
+        "The interviewer asked, \"What is your greatest weakness?\"",
+        "The interviewer asked, \"What was your greatest weakness?\"",
+        "The interviewer asked, \"What is my greatest weakness?\""
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The interviewer asked, \"What is your greatest weakness?\"",
+      "sentence": "The interviewer asked what my greatest weakness was.",
+      "hint": "Reverse the possessive and the tense, and restore the inverted question order.",
+      "explanation": "'My' reverses to 'your', and 'was' reverses to 'is'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'my' → 'your'",
+        "'was' → 'is'",
+        "statement word order → question word order"
+      ]
+    },
+    {
+      "id": "dis_l108_q3",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: The coach asked why the players hadn't practiced harder.",
+      "options": [
+        "The coach asked, \"Why don't the players practice harder?\"",
+        "The coach asked, \"Why didn't the players practice harder?\"",
+        "The coach asked, \"Why haven't the players practiced harder?\""
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The coach asked, \"Why didn't the players practice harder?\"",
+      "sentence": "The coach asked why the players hadn't practiced harder.",
+      "hint": "Reverse the negative past perfect to a negative past simple question.",
+      "explanation": "'Hadn't practiced' reverses to 'didn't practice', and inversion is restored.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'hadn't practiced' → 'didn't practice'",
+        "statement word order → question word order"
+      ]
+    },
+    {
+      "id": "dis_l109_q1",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: The teacher told the students to close their books.",
+      "options": [
+        "The teacher said, \"Close their books.\"",
+        "The teacher said, \"Close your books.\"",
+        "The teacher told, \"Close your books.\""
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The teacher said, \"Close your books.\"",
+      "sentence": "The teacher told the students to close their books.",
+      "hint": "Reverse the infinitive back into an imperative, and reverse the possessive pronoun.",
+      "explanation": "'To close' reverses to the imperative 'Close', and 'their' reverses to 'your'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'to close' → 'close' (imperative)",
+        "'their' → 'your'"
+      ]
+    },
+    {
+      "id": "dis_l109_q2",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: The lifeguard warned the swimmers not to swim past the flags.",
+      "options": [
+        "The lifeguard said, \"Don't swim past the flags.\"",
+        "The lifeguard said, \"Swim past the flags.\"",
+        "The lifeguard said, \"Not swim past the flags.\""
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The lifeguard said, \"Don't swim past the flags.\"",
+      "sentence": "The lifeguard warned the swimmers not to swim past the flags.",
+      "hint": "Reverse 'not to' back into the negative imperative 'don't'.",
+      "explanation": "'Not to swim' reverses to 'don't swim', keeping the negative meaning intact.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'not to swim' → 'don't swim' (negative imperative)"
+      ]
+    },
+    {
+      "id": "dis_l109_q3",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: Selin asked her assistant to send the invoice that day.",
+      "options": [
+        "Selin said, \"Please send the invoice that day.\"",
+        "Selin said, \"Please send the invoice today.\"",
+        "Selin said, \"Send the invoice that day.\""
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Selin said, \"Please send the invoice today.\"",
+      "sentence": "Selin asked her assistant to send the invoice that day.",
+      "hint": "Reverse the request back into an imperative with 'please', and reverse the time word.",
+      "explanation": "'Asked...to send' reverses to the polite imperative 'Please send', and 'that day' reverses to 'today'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'asked...to send' → 'please send' (polite imperative)",
+        "'that day' → 'today'"
+      ]
+    },
+    {
+      "id": "dis_l110_q1",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: Milo said that he had been working there for five years.",
+      "options": [
+        "Milo said, \"He has been working there for five years.\"",
+        "Milo said, \"I was working here for five years.\"",
+        "Milo said, \"I have been working here for five years.\""
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Milo said, \"I have been working here for five years.\"",
+      "sentence": "Milo said that he had been working there for five years.",
+      "hint": "Reverse the past perfect continuous to present perfect continuous, and reverse the pronoun and place word.",
+      "explanation": "'Had been working' reverses to 'have been working', 'there' reverses to 'here', and 'he' reverses to 'I'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'had been working' → 'have been working'",
+        "'there' → 'here'",
+        "'he' → 'I'"
+      ]
+    },
+    {
+      "id": "dis_l110_q2",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: The client asked whether the team could deliver the project by the following Friday.",
+      "options": [
+        "The client asked, \"Could you deliver the project by next Friday?\"",
+        "The client asked, \"Can the team deliver the project by the following Friday?\"",
+        "The client asked, \"Can you deliver the project by next Friday?\""
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The client asked, \"Can you deliver the project by next Friday?\"",
+      "sentence": "The client asked whether the team could deliver the project by the following Friday.",
+      "hint": "Reverse the modal, the time expression, and rebuild the question order.",
+      "explanation": "'Could' reverses to 'can', 'the following Friday' reverses to 'next Friday', and 'the team' reverses to 'you'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'could' → 'can'",
+        "'the following Friday' → 'next Friday'",
+        "'the team' → 'you'",
+        "statement word order → question word order"
+      ]
+    },
+    {
+      "id": "dis_l110_q3",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: The manager told the staff not to leave their workstations without permission.",
+      "options": [
+        "The manager said, \"Leave your workstations without permission.\"",
+        "The manager said, \"Don't leave your workstations without permission.\"",
+        "The manager said, \"Don't leave their workstations without permission.\""
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The manager said, \"Don't leave your workstations without permission.\"",
+      "sentence": "The manager told the staff not to leave their workstations without permission.",
+      "hint": "This final review item reverses a negative command along with its possessive pronoun.",
+      "explanation": "'Not to leave' reverses to 'don't leave', and 'their' reverses to 'your'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'not to leave' → 'don't leave' (negative imperative)",
+        "'their' → 'your'"
+      ]
+    }
+  ]
 }

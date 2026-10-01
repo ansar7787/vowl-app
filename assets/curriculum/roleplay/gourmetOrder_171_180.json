@@ -7,840 +7,840 @@
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Little did I expect the oyster rockefeller to be quite this exceptional — I'll certainly have the guinea hen and the chocolate marquise as well.",
+            "prompt": "I'll have the- actually, hold on, what's in the salad again? Oh right, never mind, I remember. The Cobb salad, and a sparkling water.",
             "options": [
-                "Oyster Rockefeller",
-                "Guinea Hen",
-                "Chocolate Marquise",
-                "Pistachio Macaron"
+                "Sparkling Water",
+                "Cobb Salad",
+                "Caesar Salad",
+                "Still Water"
             ],
-            "correctAnswer": "Oyster Rockefeller, Guinea Hen, Chocolate Marquise",
-            "hint": "This sentence begins with an inverted structure, common in formal or literary English for emphasis.",
-            "explanation": "‘Little did I expect…’ inverts the normal subject-verb order for emphasis, similar to ‘Never have I seen…’ This dramatic opening doesn't change the three items being ordered.",
+            "correctAnswer": "Sparkling Water, Cobb Salad",
+            "hint": "The customer interrupts themselves to ask a question, then returns to finish the original thought.",
+            "explanation": "Self-interruption is very natural in spoken English; the sentence picks back up right where it left off.",
             "id": "go_l171_q1",
             "menuItems": [
-                "Oyster Rockefeller",
-                "Guinea Hen",
-                "Chocolate Marquise",
-                "Pistachio Macaron"
+                "Sparkling Water",
+                "Cobb Salad",
+                "Caesar Salad",
+                "Still Water"
             ],
             "menuPrices": [
+                "$3.00",
                 "$10.00",
-                "$14.00",
-                "$11.25",
-                "$15.25"
+                "$9.00",
+                "$2.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "So impressed was I by the amuse-bouche that I'll happily proceed with the duck rillettes, the wild sea trout, and the pistachio macaron.",
+            "prompt": "So I'll have the- sorry, go ahead, you were saying something? No? OK- the steak, medium, and a glass of malbec.",
             "options": [
-                "Duck Rillettes",
-                "Wild Sea Trout",
-                "Pistachio Macaron",
-                "Raspberry Pavlova"
+                "Malbec",
+                "Steak",
+                "Cabernet",
+                "Salmon"
             ],
-            "correctAnswer": "Duck Rillettes, Wild Sea Trout, Pistachio Macaron",
-            "hint": "Another inverted opening expresses strong enthusiasm before naming the full order.",
-            "explanation": "‘So impressed was I…’ is a formal inversion for emphasis, meaning ‘I was so impressed…’ An ‘amuse-bouche’ is a small, complimentary bite served before the meal begins.",
+            "correctAnswer": "Malbec, Steak",
+            "hint": "The customer pauses to let someone else speak, then resumes their own order once nothing follows.",
+            "explanation": "Yielding the floor mid-sentence and then resuming is a realistic conversational habit that doesn't change the final order.",
             "id": "go_l171_q2",
             "menuItems": [
-                "Duck Rillettes",
-                "Wild Sea Trout",
-                "Pistachio Macaron",
-                "Raspberry Pavlova"
+                "Malbec",
+                "Steak",
+                "Cabernet",
+                "Salmon"
             ],
             "menuPrices": [
-                "$21.75",
-                "$17.75",
-                "$15.25",
-                "$7.25"
+                "$9.00",
+                "$26.00",
+                "$9.50",
+                "$19.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "What I'd really like, if it's not an unreasonable request, is the scallop ceviche, followed by the coq au vin, and finished with the raspberry pavlova.",
+            "prompt": "Customer: I'll have the- Server: Sorry to interrupt, we just ran out of the halibut. Customer: Oh, no worries- then the trout, please, and a side salad.",
             "options": [
-                "Scallop Ceviche",
-                "Coq au Vin",
-                "Raspberry Pavlova",
-                "Champagne Sorbet"
+                "Side Salad",
+                "Halibut",
+                "Trout",
+                "Caesar Salad"
             ],
-            "correctAnswer": "Scallop Ceviche, Coq au Vin, Raspberry Pavlova",
-            "hint": "A cleft sentence structure (‘What I'd really like is…’) emphasizes the customer's true preference.",
-            "explanation": "This is called a ‘cleft sentence,’ splitting a simple statement into two parts for emphasis. ‘Coq au vin’ is a French chicken dish braised in wine.",
+            "correctAnswer": "Side Salad, Trout",
+            "hint": "The server's interruption changes the customer's original plan entirely.",
+            "explanation": "A server interrupting with important news (an item running out) is realistic and often changes the direction of an order mid-sentence.",
             "id": "go_l171_q3",
             "menuItems": [
-                "Scallop Ceviche",
-                "Coq au Vin",
-                "Raspberry Pavlova",
-                "Champagne Sorbet"
+                "Side Salad",
+                "Halibut",
+                "Trout",
+                "Caesar Salad"
             ],
             "menuPrices": [
-                "$7.25",
-                "$20.50",
-                "$7.25",
-                "$3.25"
+                "$4.00",
+                "$21.00",
+                "$19.00",
+                "$8.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "The wedding party has requested that the tuna crudo, the black cod, and the champagne sorbet be served to all in attendance.",
+            "prompt": "It's freezing in here, isn't it? I think I'll go with something warm - the soup, and a hot tea.",
             "options": [
-                "Tuna Crudo",
-                "Black Cod",
-                "Champagne Sorbet",
-                "Chocolate Marquise"
+                "Hot Tea",
+                "Salad",
+                "Iced Tea",
+                "Soup"
             ],
-            "correctAnswer": "Tuna Crudo, Black Cod, Champagne Sorbet",
-            "hint": "A formal request from an entire group is described using the subjunctive mood.",
-            "explanation": "‘Has requested that X be served’ uses the subjunctive mood (‘be’ rather than ‘is’), common in formal requests and instructions in English.",
+            "correctAnswer": "Hot Tea, Soup",
+            "hint": "A comment about the room's temperature explains, indirectly, why warm items are chosen.",
+            "explanation": "Native speakers often explain a choice indirectly through a comment about the situation, rather than stating a reason directly.",
             "id": "go_l172_q1",
             "menuItems": [
-                "Tuna Crudo",
-                "Black Cod",
-                "Champagne Sorbet",
-                "Chocolate Marquise"
+                "Hot Tea",
+                "Salad",
+                "Iced Tea",
+                "Soup"
             ],
             "menuPrices": [
-                "$3.25",
-                "$15.25",
-                "$3.25",
-                "$11.25"
+                "$3.00",
+                "$8.00",
+                "$3.00",
+                "$5.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "In light of the diplomatic nature of tonight's dinner, we've settled on the chestnut soup, the saffron risotto, and the hazelnut praline tart for all delegates.",
+            "prompt": "I haven't eaten all day, so... yeah, I think I'll get the big burger, and maybe some onion rings too.",
             "options": [
-                "Chestnut Soup",
-                "Saffron Risotto",
-                "Hazelnut Praline Tart",
-                "Pistachio Macaron"
+                "Onion Rings",
+                "Fries",
+                "Big Burger",
+                "Regular Burger"
             ],
-            "correctAnswer": "Chestnut Soup, Saffron Risotto, Hazelnut Praline Tart",
-            "hint": "‘In light of’ introduces a reason connected to the formality of the event.",
-            "explanation": "‘In light of…’ means ‘considering’ or ‘because of,’ often used in formal writing and speech. A diplomatic dinner often requires a carefully chosen, universally appealing menu.",
+            "correctAnswer": "Onion Rings, Big Burger",
+            "hint": "'So...' trails off, letting the listener infer the conclusion before the customer states their choice.",
+            "explanation": "A trailing 'so...' is common in casual speech; the listener is expected to infer the reasoning before the actual order follows.",
             "id": "go_l172_q2",
             "menuItems": [
-                "Chestnut Soup",
-                "Saffron Risotto",
-                "Hazelnut Praline Tart",
-                "Pistachio Macaron"
+                "Onion Rings",
+                "Fries",
+                "Big Burger",
+                "Regular Burger"
             ],
             "menuPrices": [
-                "$7.25",
-                "$9.75",
-                "$9.75",
-                "$15.25"
+                "$4.00",
+                "$3.00",
+                "$11.00",
+                "$8.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Only after much deliberation did I settle on the beef carpaccio, the rack of venison, and the chocolate marquise.",
+            "prompt": "Customer: Does the risotto have a lot of cream in it? Server: Quite a bit, yes. Customer: Hmm... I might just go with the grilled chicken instead, then, and the vegetables.",
             "options": [
-                "Beef Carpaccio",
-                "Rack of Venison",
-                "Chocolate Marquise",
-                "Pistachio Macaron"
+                "Vegetables",
+                "Rice",
+                "Risotto",
+                "Grilled Chicken"
             ],
-            "correctAnswer": "Beef Carpaccio, Rack of Venison, Chocolate Marquise",
-            "hint": "This sentence also uses inversion, this time after the limiting phrase ‘only after.’",
-            "explanation": "‘Only after much deliberation did I…’ inverts the subject and auxiliary verb because the sentence begins with a limiting expression (‘only after’), a common pattern in formal English.",
+            "correctAnswer": "Vegetables, Grilled Chicken",
+            "hint": "The customer's hesitation signals a change of mind before they actually say it.",
+            "explanation": "A hesitation sound like 'Hmm' often signals an unspoken reaction right before the customer reveals their real decision.",
             "id": "go_l172_q3",
             "menuItems": [
-                "Beef Carpaccio",
-                "Rack of Venison",
-                "Chocolate Marquise",
-                "Pistachio Macaron"
+                "Vegetables",
+                "Rice",
+                "Risotto",
+                "Grilled Chicken"
             ],
             "menuPrices": [
-                "$7.25",
-                "$6.00",
-                "$11.25",
-                "$15.25"
+                "$4.00",
+                "$3.00",
+                "$16.00",
+                "$15.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Little though I know about wine, I'll leave that entirely to you, while ordering the lobster ravioli, the monkfish, and the pistachio macaron myself.",
+            "prompt": "I'll've had- no wait, I'll have the fish, and I'd've liked a salad but I'll just get the fries instead.",
             "options": [
-                "Lobster Ravioli",
-                "Monkfish",
-                "Pistachio Macaron",
-                "Raspberry Pavlova"
+                "Chicken",
+                "Fish",
+                "Fries",
+                "Salad"
             ],
-            "correctAnswer": "Lobster Ravioli, Monkfish, Pistachio Macaron",
-            "hint": "This concessive structure admits a limitation before stating a confident food order.",
-            "explanation": "‘Little though I know…’ means ‘although I know very little,’ a formal concessive structure. The customer admits limited wine knowledge but remains confident about the food.",
+            "correctAnswer": "Fish, Fries",
+            "hint": "Unusual contractions are a natural, if messy, part of fast spoken English - focus on the final decision.",
+            "explanation": "Heavily contracted, fast speech can be hard to follow, but the final, clearly stated choice is always what matters for the order.",
             "id": "go_l173_q1",
             "menuItems": [
-                "Lobster Ravioli",
-                "Monkfish",
-                "Pistachio Macaron",
-                "Raspberry Pavlova"
+                "Chicken",
+                "Fish",
+                "Fries",
+                "Salad"
             ],
             "menuPrices": [
-                "$19.25",
-                "$19.25",
-                "$15.25",
-                "$7.25"
+                "$14.00",
+                "$18.00",
+                "$3.00",
+                "$4.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Such was the quality of the tasting portion that I've ordered a full serving of the wagyu tartare, alongside the guinea hen and the raspberry pavlova.",
+            "prompt": "Gonna get the wings, I think - and a beer, yeah, that'll do it.",
             "options": [
-                "Wagyu Tartare",
-                "Guinea Hen",
-                "Raspberry Pavlova",
-                "Champagne Sorbet"
+                "Nachos",
+                "Wings",
+                "Cider",
+                "Beer"
             ],
-            "correctAnswer": "Wagyu Tartare, Guinea Hen, Raspberry Pavlova",
-            "hint": "This structure explains a strong reaction that led directly to a bigger order.",
-            "explanation": "‘Such was the quality that…’ is a formal way of showing cause and effect — the tasting portion was so good that a full serving was ordered.",
+            "correctAnswer": "Wings, Beer",
+            "hint": "'Gonna' is the casual spoken form of 'going to,' and 'that'll do it' means the order is complete.",
+            "explanation": "'Gonna' and 'that'll do it' are everyday spoken contractions; they're informal but completely clear once you know them.",
             "id": "go_l173_q2",
             "menuItems": [
-                "Wagyu Tartare",
-                "Guinea Hen",
-                "Raspberry Pavlova",
-                "Champagne Sorbet"
+                "Nachos",
+                "Wings",
+                "Cider",
+                "Beer"
             ],
             "menuPrices": [
-                "$12.50",
-                "$14.00",
-                "$7.25",
-                "$3.25"
+                "$9.00",
+                "$11.00",
+                "$6.50",
+                "$6.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Never having tried oyster rockefeller before this evening, I found myself equally drawn to the wild sea trout and the champagne sorbet.",
+            "prompt": "I'da had the steak, but I already had one this week, so I'll go with the chicken instead, and a side of rice.",
             "options": [
-                "Oyster Rockefeller",
-                "Wild Sea Trout",
-                "Champagne Sorbet",
-                "Chocolate Marquise"
+                "Steak",
+                "Rice",
+                "Chicken",
+                "Mashed Potatoes"
             ],
-            "correctAnswer": "Oyster Rockefeller, Wild Sea Trout, Champagne Sorbet",
-            "hint": "This structure explains a first-time experience leading to genuine interest in the rest of the menu.",
-            "explanation": "‘Never having tried X before…’ is a formal, participial way of expressing a first-time experience. ‘Equally drawn to’ shows balanced interest in two more dishes.",
+            "correctAnswer": "Rice, Chicken",
+            "hint": "'I'da had' is a very casual, spoken way of saying 'I would have had' - it describes what didn't happen.",
+            "explanation": "'I'da' (I would have) describes a rejected option; only the item after 'instead' is the real order here.",
             "id": "go_l173_q3",
             "menuItems": [
-                "Oyster Rockefeller",
-                "Wild Sea Trout",
-                "Champagne Sorbet",
-                "Chocolate Marquise"
+                "Steak",
+                "Rice",
+                "Chicken",
+                "Mashed Potatoes"
             ],
             "menuPrices": [
-                "$10.00",
-                "$17.75",
-                "$3.25",
-                "$11.25"
+                "$26.00",
+                "$3.00",
+                "$14.00",
+                "$3.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "As the guest of honor tonight, I've been asked to choose for the table: the duck rillettes, the coq au vin, and the hazelnut praline tart.",
+            "prompt": "Customer: Is the chef's special very rich? Server: It's a butter-based sauce, quite heavy. Customer: Ah... maybe not, then. I'll do the grilled fish, and a salad.",
             "options": [
-                "Duck Rillettes",
-                "Coq au Vin",
-                "Hazelnut Praline Tart",
-                "Pistachio Macaron"
+                "Chef's Special",
+                "Salad",
+                "Soup",
+                "Grilled Fish"
             ],
-            "correctAnswer": "Duck Rillettes, Coq au Vin, Hazelnut Praline Tart",
-            "hint": "The customer's special role at the event explains why they're choosing for everyone.",
-            "explanation": "A ‘guest of honor’ is the person an event is held for or centered around, sometimes given the privilege of choosing the meal for the whole table.",
+            "correctAnswer": "Salad, Grilled Fish",
+            "hint": "'Ah... maybe not, then' implies rejection without saying 'no' directly.",
+            "explanation": "'Maybe not, then' is a soft, indirect way of declining something after hearing a detail you didn't expect.",
             "id": "go_l174_q1",
             "menuItems": [
-                "Duck Rillettes",
-                "Coq au Vin",
-                "Hazelnut Praline Tart",
-                "Pistachio Macaron"
+                "Chef's Special",
+                "Salad",
+                "Soup",
+                "Grilled Fish"
             ],
             "menuPrices": [
-                "$21.75",
-                "$20.50",
-                "$9.75",
-                "$15.25"
+                "$24.00",
+                "$5.00",
+                "$4.00",
+                "$18.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Little did I expect the scallop ceviche to be quite this exceptional — I'll certainly have the black cod and the chocolate marquise as well.",
+            "prompt": "Customer: How's the portion size on the pasta - pretty generous? Server: It's on the smaller side, actually. Customer: Oh. In that case I might need something more filling - the lasagna, then, and garlic bread.",
             "options": [
-                "Scallop Ceviche",
-                "Black Cod",
-                "Chocolate Marquise",
-                "Raspberry Pavlova"
+                "Pasta",
+                "Breadsticks",
+                "Lasagna",
+                "Garlic Bread"
             ],
-            "correctAnswer": "Scallop Ceviche, Black Cod, Chocolate Marquise",
-            "hint": "This inverted opening returns once more with a new starter.",
-            "explanation": "This structure continues to show genuine surprise and enthusiasm before naming the rest of the order.",
+            "correctAnswer": "Lasagna, Garlic Bread",
+            "hint": "'In that case' shows the customer's decision follows logically from the server's answer, even without saying so directly.",
+            "explanation": "'In that case' connects a piece of information to a decision - the customer never says the pasta is too small, but it's implied.",
             "id": "go_l174_q2",
             "menuItems": [
-                "Scallop Ceviche",
-                "Black Cod",
-                "Chocolate Marquise",
-                "Raspberry Pavlova"
+                "Pasta",
+                "Breadsticks",
+                "Lasagna",
+                "Garlic Bread"
             ],
             "menuPrices": [
-                "$7.25",
-                "$15.25",
-                "$11.25",
-                "$7.25"
+                "$12.00",
+                "$3.50",
+                "$14.00",
+                "$4.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "So impressed was I by the amuse-bouche that I'll happily proceed with the tuna crudo, the saffron risotto, and the pistachio macaron.",
+            "prompt": "Customer: What's the price on the lobster tonight? Server: Forty-two. Customer: Oh, wow. I think I'll just do the chicken, actually, with a side salad.",
             "options": [
-                "Tuna Crudo",
-                "Saffron Risotto",
-                "Pistachio Macaron",
-                "Hazelnut Praline Tart"
+                "Lobster",
+                "Caesar Salad",
+                "Side Salad",
+                "Chicken"
             ],
-            "correctAnswer": "Tuna Crudo, Saffron Risotto, Pistachio Macaron",
-            "hint": "This enthusiastic inverted opening appears once more.",
-            "explanation": "This structure continues to describe strong initial enthusiasm carrying through to the rest of the order.",
+            "correctAnswer": "Side Salad, Chicken",
+            "hint": "'Oh, wow' followed by a change of plan implies the price was higher than expected, without saying so directly.",
+            "explanation": "A reaction like 'Oh, wow' followed immediately by a cheaper choice strongly implies a price concern, even though it's never stated outright.",
             "id": "go_l174_q3",
             "menuItems": [
-                "Tuna Crudo",
-                "Saffron Risotto",
-                "Pistachio Macaron",
-                "Hazelnut Praline Tart"
+                "Lobster",
+                "Caesar Salad",
+                "Side Salad",
+                "Chicken"
             ],
             "menuPrices": [
-                "$3.25",
-                "$9.75",
-                "$15.25",
-                "$9.75"
+                "$42.00",
+                "$8.00",
+                "$4.00",
+                "$15.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "What I'd really like, if it's not an unreasonable request, is the chestnut soup, followed by the rack of venison, and finished with the raspberry pavlova.",
+            "prompt": "Waiter: Busy night for you? Customer: Yeah, it's been a long week! Anyway, I'll have the ribeye and a glass of cabernet.",
             "options": [
-                "Chestnut Soup",
-                "Rack of Venison",
-                "Raspberry Pavlova",
-                "Champagne Sorbet"
+                "Malbec",
+                "Ribeye",
+                "Cabernet",
+                "Sirloin"
             ],
-            "correctAnswer": "Chestnut Soup, Rack of Venison, Raspberry Pavlova",
-            "hint": "This cleft sentence structure returns once more.",
-            "explanation": "This structure continues to add emphasis to the customer's true preference through a two-part sentence.",
+            "correctAnswer": "Ribeye, Cabernet",
+            "hint": "Small talk happens before the real order, marked off by 'anyway.'",
+            "explanation": "'Anyway' is a common word for shifting back to business after a moment of small talk - the order follows right after it.",
             "id": "go_l175_q1",
             "menuItems": [
-                "Chestnut Soup",
-                "Rack of Venison",
-                "Raspberry Pavlova",
-                "Champagne Sorbet"
+                "Malbec",
+                "Ribeye",
+                "Cabernet",
+                "Sirloin"
             ],
             "menuPrices": [
-                "$7.25",
-                "$6.00",
-                "$7.25",
-                "$3.25"
+                "$9.00",
+                "$28.00",
+                "$9.00",
+                "$22.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "The wedding party has requested that the beef carpaccio, the monkfish, and the champagne sorbet be served to all in attendance.",
+            "prompt": "Customer: I love this place, by the way - great atmosphere. Waiter: Thank you! What can I get you? Customer: The seafood pasta, please, and a glass of pinot grigio.",
             "options": [
-                "Beef Carpaccio",
-                "Monkfish",
-                "Champagne Sorbet",
-                "Chocolate Marquise"
+                "Sauvignon Blanc",
+                "Seafood Pasta",
+                "Chicken Pasta",
+                "Pinot Grigio"
             ],
-            "correctAnswer": "Beef Carpaccio, Monkfish, Champagne Sorbet",
-            "hint": "This formal group-request structure returns once more.",
-            "explanation": "This structure continues to use the subjunctive mood typical of formal event planning language.",
+            "correctAnswer": "Seafood Pasta, Pinot Grigio",
+            "hint": "A compliment comes first, then the waiter's question leads into the real order.",
+            "explanation": "Compliments and small talk are common openers in a restaurant conversation before the actual ordering exchange begins.",
             "id": "go_l175_q2",
             "menuItems": [
-                "Beef Carpaccio",
-                "Monkfish",
-                "Champagne Sorbet",
-                "Chocolate Marquise"
+                "Sauvignon Blanc",
+                "Seafood Pasta",
+                "Chicken Pasta",
+                "Pinot Grigio"
             ],
             "menuPrices": [
-                "$7.25",
-                "$19.25",
-                "$3.25",
-                "$11.25"
+                "$8.00",
+                "$22.00",
+                "$16.00",
+                "$8.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "In light of the diplomatic nature of tonight's dinner, we've settled on the lobster ravioli, the guinea hen, and the hazelnut praline tart for all delegates.",
+            "prompt": "Waiter: First time here? Customer: No, actually, we come pretty often! We always get the same thing, though - the mushroom risotto and the house salad.",
             "options": [
-                "Lobster Ravioli",
-                "Guinea Hen",
-                "Hazelnut Praline Tart",
-                "Pistachio Macaron"
+                "Caesar Salad",
+                "House Salad",
+                "Mushroom Risotto",
+                "Seafood Risotto"
             ],
-            "correctAnswer": "Lobster Ravioli, Guinea Hen, Hazelnut Praline Tart",
-            "hint": "This formal-event reasoning structure returns once more.",
-            "explanation": "This structure continues to explain a carefully considered menu choice appropriate for a formal, diplomatic occasion.",
+            "correctAnswer": "House Salad, Mushroom Risotto",
+            "hint": "'We always get the same thing' hints strongly at the order before it's actually named.",
+            "explanation": "Casual conversation can foreshadow an order before it's spoken; 'the same thing' is explained right afterward by naming the actual dishes.",
             "id": "go_l175_q3",
             "menuItems": [
-                "Lobster Ravioli",
-                "Guinea Hen",
-                "Hazelnut Praline Tart",
-                "Pistachio Macaron"
+                "Caesar Salad",
+                "House Salad",
+                "Mushroom Risotto",
+                "Seafood Risotto"
             ],
             "menuPrices": [
-                "$19.25",
+                "$5.50",
+                "$5.00",
                 "$14.00",
-                "$9.75",
-                "$15.25"
+                "$18.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Only after much deliberation did I settle on the wagyu tartare, the wild sea trout, and the chocolate marquise.",
+            "prompt": "I'm not really sure, but I think maybe the salmon? And a lemonade, I guess.",
             "options": [
-                "Wagyu Tartare",
-                "Wild Sea Trout",
-                "Chocolate Marquise",
-                "Pistachio Macaron"
+                "Iced Tea",
+                "Lemonade",
+                "Trout",
+                "Salmon"
             ],
-            "correctAnswer": "Wagyu Tartare, Wild Sea Trout, Chocolate Marquise",
-            "hint": "This inverted structure returns once more after the limiting phrase ‘only after.’",
-            "explanation": "This structure continues to show a thoughtful, carefully considered decision-making process before a final order.",
+            "correctAnswer": "Lemonade, Salmon",
+            "hint": "Hedging words don't cancel the choice - they just soften how confidently it's stated.",
+            "explanation": "Words like 'maybe' and 'I guess' show uncertainty in tone, but the items named are still the real order, however hesitantly they're said.",
             "id": "go_l176_q1",
             "menuItems": [
-                "Wagyu Tartare",
-                "Wild Sea Trout",
-                "Chocolate Marquise",
-                "Pistachio Macaron"
+                "Iced Tea",
+                "Lemonade",
+                "Trout",
+                "Salmon"
             ],
             "menuPrices": [
-                "$12.50",
-                "$17.75",
-                "$11.25",
-                "$15.25"
+                "$3.00",
+                "$3.00",
+                "$17.00",
+                "$18.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Little though I know about wine, I'll leave that entirely to you, while ordering the oyster rockefeller, the coq au vin, and the pistachio macaron myself.",
+            "prompt": "I don't know, the burger sounds kind of good? I'll just go with that, I think, and maybe some fries.",
             "options": [
-                "Oyster Rockefeller",
-                "Coq au Vin",
-                "Pistachio Macaron",
-                "Raspberry Pavlova"
+                "Onion Rings",
+                "Sandwich",
+                "Burger",
+                "Fries"
             ],
-            "correctAnswer": "Oyster Rockefeller, Coq au Vin, Pistachio Macaron",
-            "hint": "This concessive structure returns once more.",
-            "explanation": "This structure continues to separate wine expertise from food confidence, delegating one while confidently handling the other.",
+            "correctAnswer": "Burger, Fries",
+            "hint": "Rising intonation shown by a question mark on a statement is a hedging pattern, not real uncertainty about the order.",
+            "explanation": "Ending a statement like a question is a common speech pattern that shows a relaxed, uncertain tone without changing the actual decision.",
             "id": "go_l176_q2",
             "menuItems": [
-                "Oyster Rockefeller",
-                "Coq au Vin",
-                "Pistachio Macaron",
-                "Raspberry Pavlova"
+                "Onion Rings",
+                "Sandwich",
+                "Burger",
+                "Fries"
             ],
             "menuPrices": [
-                "$10.00",
-                "$20.50",
-                "$15.25",
-                "$7.25"
+                "$3.50",
+                "$8.50",
+                "$9.00",
+                "$3.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Such was the quality of the tasting portion that I've ordered a full serving of the duck rillettes, alongside the black cod and the raspberry pavlova.",
+            "prompt": "Customer: I can't decide between the two pastas... Server: The marinara's lighter, if that helps. Customer: Oh, perfect - that one, then, and a side salad.",
             "options": [
-                "Duck Rillettes",
-                "Black Cod",
-                "Raspberry Pavlova",
-                "Champagne Sorbet"
+                "Caesar Salad",
+                "Alfredo Pasta",
+                "Side Salad",
+                "Marinara Pasta"
             ],
-            "correctAnswer": "Duck Rillettes, Black Cod, Raspberry Pavlova",
-            "hint": "This cause-and-effect structure returns once more.",
-            "explanation": "This structure continues to show a small taste leading directly to a larger, confident order.",
+            "correctAnswer": "Side Salad, Marinara Pasta",
+            "hint": "Genuine indecision is finally resolved by information from the server, not by the customer alone.",
+            "explanation": "Sometimes hedging reflects real indecision, which only gets resolved once someone else provides a helpful detail.",
             "id": "go_l176_q3",
             "menuItems": [
-                "Duck Rillettes",
-                "Black Cod",
-                "Raspberry Pavlova",
-                "Champagne Sorbet"
+                "Caesar Salad",
+                "Alfredo Pasta",
+                "Side Salad",
+                "Marinara Pasta"
             ],
             "menuPrices": [
-                "$21.75",
-                "$15.25",
-                "$7.25",
-                "$3.25"
+                "$4.50",
+                "$14.00",
+                "$4.00",
+                "$12.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Never having tried scallop ceviche before this evening, I found myself equally drawn to the saffron risotto and the champagne sorbet.",
+            "prompt": "Friend: I'll have the- Customer: Wait, can I go first? I've got a meeting. The soup and a coffee, quickly, please.",
             "options": [
-                "Scallop Ceviche",
-                "Saffron Risotto",
-                "Champagne Sorbet",
-                "Chocolate Marquise"
+                "Soup",
+                "Coffee",
+                "Salad",
+                "Tea"
             ],
-            "correctAnswer": "Scallop Ceviche, Saffron Risotto, Champagne Sorbet",
-            "hint": "This first-time-experience structure returns once more.",
-            "explanation": "This structure continues to describe genuine curiosity leading to a full, balanced order.",
+            "correctAnswer": "Soup, Coffee",
+            "hint": "One speaker cuts off another to go first - only their words matter here.",
+            "explanation": "Politely asking to go first is a realistic way to handle two people trying to order at once.",
             "id": "go_l177_q1",
             "menuItems": [
-                "Scallop Ceviche",
-                "Saffron Risotto",
-                "Champagne Sorbet",
-                "Chocolate Marquise"
+                "Soup",
+                "Coffee",
+                "Salad",
+                "Tea"
             ],
             "menuPrices": [
-                "$7.25",
-                "$9.75",
-                "$3.25",
-                "$11.25"
+                "$5.00",
+                "$3.00",
+                "$8.00",
+                "$2.75"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "As the guest of honor tonight, I've been asked to choose for the table: the tuna crudo, the rack of venison, and the hazelnut praline tart.",
+            "prompt": "Server: And for you, sir- Customer 1: Actually, can she order first? She has to catch a train. Customer 2: Oh- thanks! Just the sandwich and a water, quickly.",
             "options": [
-                "Tuna Crudo",
-                "Rack of Venison",
-                "Hazelnut Praline Tart",
-                "Pistachio Macaron"
+                "Sandwich",
+                "Water",
+                "Soda",
+                "Wrap"
             ],
-            "correctAnswer": "Tuna Crudo, Rack of Venison, Hazelnut Praline Tart",
-            "hint": "This special-role structure returns once more.",
-            "explanation": "This structure continues to describe the responsibility of choosing a meal on behalf of an entire table.",
+            "correctAnswer": "Sandwich, Water",
+            "hint": "The order of speaking changes, but only one person's actual order matters for this question.",
+            "explanation": "Letting someone else go first is a small, considerate gesture in a restaurant, and it doesn't change what that person actually orders.",
             "id": "go_l177_q2",
             "menuItems": [
-                "Tuna Crudo",
-                "Rack of Venison",
-                "Hazelnut Praline Tart",
-                "Pistachio Macaron"
+                "Sandwich",
+                "Water",
+                "Soda",
+                "Wrap"
             ],
             "menuPrices": [
-                "$3.25",
-                "$6.00",
-                "$9.75",
-                "$15.25"
+                "$8.00",
+                "$0.00",
+                "$2.50",
+                "$8.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Little did I expect the chestnut soup to be quite this exceptional — I'll certainly have the monkfish and the chocolate marquise as well.",
+            "prompt": "Waiter: Anything to drink? Customer 1: I'll have a- Customer 2: We'll both have iced teas, actually. And could we get the nachos to share?",
             "options": [
-                "Chestnut Soup",
-                "Monkfish",
-                "Chocolate Marquise",
-                "Raspberry Pavlova"
+                "Iced Tea",
+                "Lemonade",
+                "Nachos",
+                "Loaded Fries"
             ],
-            "correctAnswer": "Chestnut Soup, Monkfish, Chocolate Marquise",
-            "hint": "This inverted opening makes another appearance with a new starter.",
-            "explanation": "This structure continues to express pleasant surprise before confirming the rest of a confident order.",
+            "correctAnswer": "Iced Tea, Nachos",
+            "hint": "One speaker answers for both people, cutting off the other's individual response.",
+            "explanation": "One person answering on behalf of both diners is common among close friends or couples, even mid-sentence.",
             "id": "go_l177_q3",
             "menuItems": [
-                "Chestnut Soup",
-                "Monkfish",
-                "Chocolate Marquise",
-                "Raspberry Pavlova"
+                "Iced Tea",
+                "Lemonade",
+                "Nachos",
+                "Loaded Fries"
             ],
             "menuPrices": [
-                "$7.25",
-                "$19.25",
-                "$11.25",
-                "$7.25"
+                "$3.00",
+                "$3.00",
+                "$9.00",
+                "$8.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "So impressed was I by the amuse-bouche that I'll happily proceed with the beef carpaccio, the guinea hen, and the pistachio macaron.",
+            "prompt": "Customer 1: Should we get the calamari? Customer 2: Mm, not really my thing. Customer 1: Bruschetta, then? Customer 2: Sure, that works. And I'll have the salmon for my main.",
             "options": [
-                "Beef Carpaccio",
-                "Guinea Hen",
-                "Pistachio Macaron",
-                "Raspberry Pavlova"
+                "Bruschetta",
+                "Calamari",
+                "Trout",
+                "Salmon"
             ],
-            "correctAnswer": "Beef Carpaccio, Guinea Hen, Pistachio Macaron",
-            "hint": "This enthusiastic inverted opening returns once more.",
-            "explanation": "This structure continues to link initial enthusiasm about a small starter to confidence in the rest of the meal.",
+            "correctAnswer": "Bruschetta, Salmon",
+            "hint": "One starter is quietly rejected before the two diners agree on another.",
+            "explanation": "'Not really my thing' is a gentle, indirect way to say no to a suggestion - the group then settles on something else.",
             "id": "go_l178_q1",
             "menuItems": [
-                "Beef Carpaccio",
-                "Guinea Hen",
-                "Pistachio Macaron",
-                "Raspberry Pavlova"
+                "Bruschetta",
+                "Calamari",
+                "Trout",
+                "Salmon"
             ],
             "menuPrices": [
-                "$7.25",
-                "$14.00",
-                "$15.25",
-                "$7.25"
+                "$7.00",
+                "$11.00",
+                "$18.00",
+                "$19.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "What I'd really like, if it's not an unreasonable request, is the lobster ravioli, followed by the wild sea trout, and finished with the raspberry pavlova.",
+            "prompt": "Customer 1: I was thinking the steak. Customer 2: Ooh, actually same, let's both get that. And a bottle of the malbec to share.",
             "options": [
-                "Lobster Ravioli",
-                "Wild Sea Trout",
-                "Raspberry Pavlova",
-                "Champagne Sorbet"
+                "Steak",
+                "Cabernet",
+                "Malbec",
+                "Salmon"
             ],
-            "correctAnswer": "Lobster Ravioli, Wild Sea Trout, Raspberry Pavlova",
-            "hint": "This cleft sentence structure appears once more.",
-            "explanation": "This structure continues to politely emphasize a genuine preference through a two-part sentence.",
+            "correctAnswer": "Steak, Malbec",
+            "hint": "One person's suggestion is enthusiastically copied by the other.",
+            "explanation": "'Same' or 'me too' is a quick, casual way for a second diner to agree with a suggestion instead of stating a full new sentence.",
             "id": "go_l178_q2",
             "menuItems": [
-                "Lobster Ravioli",
-                "Wild Sea Trout",
-                "Raspberry Pavlova",
-                "Champagne Sorbet"
+                "Steak",
+                "Cabernet",
+                "Malbec",
+                "Salmon"
             ],
             "menuPrices": [
-                "$19.25",
-                "$17.75",
-                "$7.25",
-                "$3.25"
+                "$26.00",
+                "$34.00",
+                "$32.00",
+                "$19.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "The wedding party has requested that the wagyu tartare, the coq au vin, and the champagne sorbet be served to all in attendance.",
+            "prompt": "Customer 1: I really want pizza. Customer 2: I'm more in the mood for pasta, honestly. Customer 1: How about we split a pizza and you can add a side salad? Customer 2: Deal.",
             "options": [
-                "Wagyu Tartare",
-                "Coq au Vin",
-                "Champagne Sorbet",
-                "Chocolate Marquise"
+                "Pizza",
+                "Caesar Salad",
+                "Pasta",
+                "Side Salad"
             ],
-            "correctAnswer": "Wagyu Tartare, Coq au Vin, Champagne Sorbet",
-            "hint": "This formal group-request structure appears once more.",
-            "explanation": "This structure continues to describe a wedding's carefully planned menu using formal, subjunctive language.",
+            "correctAnswer": "Pizza, Side Salad",
+            "hint": "A small disagreement is resolved through a compromise that satisfies both people.",
+            "explanation": "'Deal' is a casual way to accept a compromise; the final order reflects the negotiated solution, not either original preference alone.",
             "id": "go_l178_q3",
             "menuItems": [
-                "Wagyu Tartare",
-                "Coq au Vin",
-                "Champagne Sorbet",
-                "Chocolate Marquise"
+                "Pizza",
+                "Caesar Salad",
+                "Pasta",
+                "Side Salad"
             ],
             "menuPrices": [
-                "$12.50",
-                "$20.50",
-                "$3.25",
-                "$11.25"
+                "$14.00",
+                "$4.50",
+                "$13.00",
+                "$4.00"
             ]
         },
         {
-            "instruction": "Tap the items to fulfill the customer's order.",
+            "instruction": "Tap the items to fulfill the guest's final order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "In light of the diplomatic nature of tonight's dinner, we've settled on the oyster rockefeller, the black cod, and the hazelnut praline tart for all delegates.",
+            "prompt": "Server: One large fries, coming up. Customer: Small. Server: Oh - small, got it. And the burger, as we said.",
             "options": [
-                "Oyster Rockefeller",
-                "Black Cod",
-                "Hazelnut Praline Tart",
-                "Pistachio Macaron"
+                "Burger",
+                "Small Fries",
+                "Large Fries",
+                "Chicken Burger"
             ],
-            "correctAnswer": "Oyster Rockefeller, Black Cod, Hazelnut Praline Tart",
-            "hint": "This formal-event reasoning structure appears once more, closing in on the end of this level range.",
-            "explanation": "This structure continues to describe a thoughtfully chosen menu suited to a formal diplomatic occasion.",
+            "correctAnswer": "Burger, Small Fries",
+            "hint": "A single repeated word is enough to correct the server without a full sentence.",
+            "explanation": "Repeating just the correct word is a very efficient, natural way to fix a small mistake in fast conversation.",
             "id": "go_l179_q1",
             "menuItems": [
-                "Oyster Rockefeller",
-                "Black Cod",
-                "Hazelnut Praline Tart",
-                "Pistachio Macaron"
+                "Burger",
+                "Small Fries",
+                "Large Fries",
+                "Chicken Burger"
             ],
             "menuPrices": [
-                "$10.00",
-                "$15.25",
-                "$9.75",
-                "$15.25"
+                "$9.00",
+                "$2.50",
+                "$3.50",
+                "$9.50"
             ]
         },
         {
-            "instruction": "Tap the items to fulfill the customer's order.",
+            "instruction": "Tap the items to fulfill the guest's final order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Only after much deliberation did I settle on the duck rillettes, the saffron risotto, and the chocolate marquise.",
+            "prompt": "Server: Two teas? Customer: One tea, one coffee. Server: Ah, sorry - one tea, one coffee, got it. And the scones, as ordered.",
             "options": [
-                "Duck Rillettes",
-                "Saffron Risotto",
-                "Chocolate Marquise",
-                "Pistachio Macaron"
+                "Coffee",
+                "Tea",
+                "Hot Chocolate",
+                "Scones"
             ],
-            "correctAnswer": "Duck Rillettes, Saffron Risotto, Chocolate Marquise",
-            "hint": "This inverted structure appears once more.",
-            "explanation": "This structure continues to reflect a careful, unhurried decision-making process before a confident final order.",
+            "correctAnswer": "Coffee, Tea, Scones",
+            "hint": "The server's mistaken guess is quietly corrected, then the rest of the order is simply confirmed.",
+            "explanation": "A short correction followed by 'as ordered' confirms the rest of the order is unchanged.",
             "id": "go_l179_q2",
             "menuItems": [
-                "Duck Rillettes",
-                "Saffron Risotto",
-                "Chocolate Marquise",
-                "Pistachio Macaron"
+                "Coffee",
+                "Tea",
+                "Hot Chocolate",
+                "Scones"
             ],
             "menuPrices": [
-                "$21.75",
-                "$9.75",
-                "$11.25",
-                "$15.25"
+                "$3.00",
+                "$3.00",
+                "$3.50",
+                "$4.00"
             ]
         },
         {
-            "instruction": "Tap the items to fulfill the customer's order.",
+            "instruction": "Tap the items to fulfill the guest's final order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Little though I know about wine, I'll leave that entirely to you, while ordering the scallop ceviche, the rack of venison, and the pistachio macaron myself.",
+            "prompt": "Server: So, the chicken. Customer: Hmm... actually, the fish. Server: Right, sorry - the fish. And the rice stays the same.",
             "options": [
-                "Scallop Ceviche",
-                "Rack of Venison",
-                "Pistachio Macaron",
-                "Raspberry Pavlova"
+                "Rice",
+                "Chicken",
+                "Fish",
+                "Mashed Potatoes"
             ],
-            "correctAnswer": "Scallop Ceviche, Rack of Venison, Pistachio Macaron",
-            "hint": "This concessive structure makes its final appearance in this set of levels.",
-            "explanation": "This structure continues to show a customer confidently ordering food while leaving wine decisions to an expert.",
+            "correctAnswer": "Rice, Fish",
+            "hint": "A described pause and expression signal hesitation before the spoken correction arrives.",
+            "explanation": "Non-verbal cues described in a scene often come right before a spoken correction - the words that follow are what matters for the order.",
             "id": "go_l179_q3",
             "menuItems": [
-                "Scallop Ceviche",
-                "Rack of Venison",
-                "Pistachio Macaron",
-                "Raspberry Pavlova"
+                "Rice",
+                "Chicken",
+                "Fish",
+                "Mashed Potatoes"
             ],
             "menuPrices": [
-                "$7.25",
-                "$6.00",
-                "$15.25",
-                "$7.25"
+                "$3.00",
+                "$14.00",
+                "$18.00",
+                "$3.50"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Such was the quality of the tasting portion that I've ordered a full serving of the tuna crudo, alongside the monkfish and the raspberry pavlova.",
+            "prompt": "Customer 1: I'll have the- Server: Sorry, one sec, go ahead. Customer 1: No worries. The steak, medium-rare, and- actually, could I get the mushroom sauce on the side? Server: Of course. Customer 1: Great, and a glass of malbec.",
             "options": [
-                "Tuna Crudo",
-                "Monkfish",
-                "Raspberry Pavlova",
-                "Champagne Sorbet"
+                "Malbec",
+                "Mushroom Sauce",
+                "Cabernet",
+                "Steak"
             ],
-            "correctAnswer": "Tuna Crudo, Monkfish, Raspberry Pavlova",
-            "hint": "This cause-and-effect structure makes its final appearance in this set of levels.",
-            "explanation": "This sentence closes out this portion of the tier with the same structure showing enthusiasm converting into a larger, confident order.",
+            "correctAnswer": "Malbec, Steak",
+            "hint": "An interruption, a self-correction, and a modifier all appear in one natural exchange - the sauce is a preparation detail, not a separate item.",
+            "explanation": "This level combines interruption, self-correction, and a modifier into one natural, multi-turn exchange.",
             "id": "go_l180_q1",
             "menuItems": [
-                "Tuna Crudo",
-                "Monkfish",
-                "Raspberry Pavlova",
-                "Champagne Sorbet"
+                "Malbec",
+                "Mushroom Sauce",
+                "Cabernet",
+                "Steak"
             ],
             "menuPrices": [
-                "$3.25",
-                "$19.25",
-                "$7.25",
-                "$3.25"
+                "$9.00",
+                "$0.50",
+                "$9.50",
+                "$28.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "Never having tried chestnut soup before this evening, I found myself equally drawn to the wild sea trout and the champagne sorbet.",
+            "prompt": "Customer 1: I really fancy the risotto. Customer 2: Same, actually - let's get one to share and I'll get my own salad too, just in case I'm still hungry.",
             "options": [
-                "Chestnut Soup",
-                "Wild Sea Trout",
-                "Champagne Sorbet",
-                "Chocolate Marquise"
+                "Salad",
+                "Soup",
+                "Risotto",
+                "Pasta"
             ],
-            "correctAnswer": "Chestnut Soup, Wild Sea Trout, Champagne Sorbet",
-            "hint": "This first-time-experience structure makes its final appearance here.",
-            "explanation": "This sentence closes out this portion of the tier, describing genuine curiosity leading to a complete, well-rounded order.",
+            "correctAnswer": "Salad, Risotto",
+            "hint": "One shared dish and one individual backup dish combine in a single, casual decision.",
+            "explanation": "This shows two diners reaching a natural compromise - one shared item plus a personal backup - phrased the way real people actually talk.",
             "id": "go_l180_q2",
             "menuItems": [
-                "Chestnut Soup",
-                "Wild Sea Trout",
-                "Champagne Sorbet",
-                "Chocolate Marquise"
+                "Salad",
+                "Soup",
+                "Risotto",
+                "Pasta"
             ],
             "menuPrices": [
-                "$7.25",
-                "$17.75",
-                "$3.25",
-                "$11.25"
+                "$5.00",
+                "$5.00",
+                "$15.00",
+                "$13.00"
             ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "dialogue",
-            "prompt": "As the guest of honor tonight, I've been asked to choose for the table: the beef carpaccio, the coq au vin, and the hazelnut praline tart.",
+            "prompt": "Customer: I'm not sure, maybe the... Server: Take your time! Customer: Thanks - actually, is the duck very rich? Server: Quite. Customer: Ah, in that case, I'll go with the chicken, and a lighter white wine, if you have one.",
             "options": [
-                "Beef Carpaccio",
-                "Coq au Vin",
-                "Hazelnut Praline Tart",
-                "Pistachio Macaron"
+                "White Wine",
+                "Red Wine",
+                "Duck",
+                "Chicken"
             ],
-            "correctAnswer": "Beef Carpaccio, Coq au Vin, Hazelnut Praline Tart",
-            "hint": "This special-role structure makes its final appearance, closing out this advanced level range.",
-            "explanation": "This sentence closes out the tier with the same structure describing the honor and responsibility of choosing a shared meal for the table.",
+            "correctAnswer": "White Wine, Chicken",
+            "hint": "Hesitation, a pause offered by the server, an implicit question, and an implied decision all combine in one natural exchange.",
+            "explanation": "This final level of the unit brings together hedging, a considerate pause, an indirect question, and an implied conclusion.",
             "id": "go_l180_q3",
             "menuItems": [
-                "Beef Carpaccio",
-                "Coq au Vin",
-                "Hazelnut Praline Tart",
-                "Pistachio Macaron"
+                "White Wine",
+                "Red Wine",
+                "Duck",
+                "Chicken"
             ],
             "menuPrices": [
-                "$7.25",
-                "$20.50",
-                "$9.75",
-                "$15.25"
+                "$8.00",
+                "$9.00",
+                "$24.00",
+                "$15.00"
             ]
         }
     ]

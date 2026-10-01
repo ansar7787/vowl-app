@@ -6,661 +6,650 @@
         {
             "id": "SPK_DIALOGUEROLEPLAY_L121_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Empathize, and suggest simplifying their schedule.",
-            "explanation": "'I know that feeling well' shows genuine empathy before offering gentle advice.",
-            "partnerDialogue": "Honestly, I feel like I'm constantly playing catch-up these days.",
-            "sampleAnswer": "I know that feeling well, maybe it's time to simplify your schedule.",
+            "instruction": "Give an opinion with a concession.",
+            "hint": "Support the idea in part and name a condition.",
+            "explanation": "A strong opinion recognizes the other side: \"yes, but only if...\". It sounds thoughtful instead of stubborn.",
+            "partnerDialogue": "Should cities ban cars from the centre?",
+            "sampleAnswer": "I think partly, yes. Fewer cars would improve air quality, though residents and shops would need good alternatives first.",
             "acceptedSynonyms": [
-                "time to simplify your schedule",
-                "know the feeling, simplify things",
-                "maybe simplify your schedule",
-                "sounds like time to cut back"
+                "i think partly, yes. fewer cars would improve air quality, though residents and shops would need good alternatives first",
+                "banning them completely seems extreme to me. limiting them at peak hours might work better",
+                "in busy areas, yes, but only if public transport is reliable. otherwise it just shifts the problem"
             ],
-            "correctAnswer": "I know that feeling well, maybe it's time to simplify your schedule.",
             "smartReplies": [
-                "I know that feeling well, maybe it's time to simplify your schedule.",
-                "I get that — maybe it's worth simplifying things.",
-                "I know the feeling, perhaps time to cut back a little."
+                "Banning them completely seems extreme to me. Limiting them at peak hours might work better.",
+                "In busy areas, yes, but only if public transport is reliable. Otherwise it just shifts the problem.",
+                "I think partly, yes. Fewer cars would improve air quality, though residents and shops would need good alternatives first."
             ],
+            "correctAnswer": "I think partly, yes. Fewer cars would improve air quality, though residents and shops would need good alternatives first.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L121_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Suggest studying smarter, not just more.",
-            "explanation": "This contrast, 'more' versus 'smarter', gives genuinely useful, memorable study advice.",
-            "partnerDialogue": "I feel like I'm falling behind even though I'm studying constantly.",
-            "sampleAnswer": "It might not be about studying more, but studying smarter.",
+            "instruction": "Weigh fairness.",
+            "hint": "Give both an advantage and an unfairness.",
+            "explanation": "Balanced opinions on fairness list who gains and who loses.",
+            "partnerDialogue": "Do you think remote interviews are fair to candidates?",
+            "sampleAnswer": "Mostly. They open doors for people who can't travel, but a bad connection can hurt someone unfairly.",
             "acceptedSynonyms": [
-                "studying smarter, not more",
-                "smarter, not just harder",
-                "study more efficiently instead",
-                "focus on smarter methods"
+                "mostly. they open doors for people who can't travel, but a bad connection can hurt someone unfairly",
+                "they're convenient, though i think it's harder to build rapport online",
+                "in many ways, yes, but not everyone has a quiet space at home",
+                "mostly. they open doors for people who cannot travel, but a bad connection can hurt someone unfairly"
             ],
-            "correctAnswer": "It might not be about studying more, but studying smarter.",
             "smartReplies": [
-                "It might not be about studying more, but studying smarter.",
-                "Maybe it's less about hours, more about method.",
-                "Studying smarter might help more than studying longer."
+                "Mostly. They open doors for people who can't travel, but a bad connection can hurt someone unfairly.",
+                "They're convenient, though I think it's harder to build rapport online.",
+                "In many ways, yes, but not everyone has a quiet space at home."
             ],
+            "correctAnswer": "Mostly. They open doors for people who can't travel, but a bad connection can hurt someone unfairly.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L121_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Suggest sending a summary before meetings.",
-            "explanation": "A specific, actionable tip, a summary beforehand, is more useful than vague sympathy.",
-            "partnerDialogue": "It feels like my ideas get overlooked in meetings sometimes.",
-            "sampleAnswer": "Maybe try sending a quick summary beforehand so they're harder to miss.",
+            "instruction": "Express doubt about a claim.",
+            "hint": "Question whether the benefit justifies the cost.",
+            "explanation": "\"I'm not convinced\" is a polite way to say you doubt something, without saying it's wrong.",
+            "partnerDialogue": "Is it worth paying more for organic food?",
+            "sampleAnswer": "It depends on what you buy. For things you eat with the skin, maybe. Otherwise I'm not convinced.",
             "acceptedSynonyms": [
-                "send a summary beforehand",
-                "try a quick summary first",
-                "share notes before meetings",
-                "send ideas ahead of time"
+                "it depends on what you buy. for things you eat with the skin, maybe. otherwise i'm not convinced",
+                "i'm not sure the difference justifies the price, to be honest",
+                "sometimes, if it's local and fresh. the label alone isn't enough for me",
+                "it depends on what you buy. for things you eat with the skin, maybe. otherwise i am not convinced"
             ],
-            "correctAnswer": "Maybe try sending a quick summary beforehand so they're harder to miss.",
             "smartReplies": [
-                "Maybe try sending a quick summary beforehand so they're harder to miss.",
-                "A quick summary beforehand might help them stand out.",
-                "Try sharing a short summary before the meeting starts."
+                "I'm not sure the difference justifies the price, to be honest.",
+                "Sometimes, if it's local and fresh. The label alone isn't enough for me.",
+                "It depends on what you buy. For things you eat with the skin, maybe. Otherwise I'm not convinced."
             ],
+            "correctAnswer": "It depends on what you buy. For things you eat with the skin, maybe. Otherwise I'm not convinced.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L122_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and suggest cutting one city.",
-            "explanation": "Suggesting a specific fix, removing one city, turns agreement into a real plan.",
-            "partnerDialogue": "I feel like we're trying to squeeze too much into one trip.",
-            "sampleAnswer": "You're right, maybe we should cut one city from the itinerary.",
+            "instruction": "Argue for a budget choice.",
+            "hint": "Compare two investments with a logical reason.",
+            "explanation": "Persuasion in meetings depends on logic: \"The problem is X, so the solution is Y.\"",
+            "partnerDialogue": "Why should we spend the budget on training rather than new equipment?",
+            "sampleAnswer": "In the long run, skilled people get more out of what we already own.",
             "acceptedSynonyms": [
-                "cut one city from the itinerary",
-                "remove a city from the plan",
-                "drop one city, maybe",
-                "cut a stop from the trip"
+                "in the long run, skilled people get more out of what we already own",
+                "new equipment won't help if we can't use it well. training is the safer investment",
+                "because the current equipment is fine, but staff aren't using it fully. training gives a faster return",
+                "because the current equipment is fine, but staff aren't using it fully"
             ],
-            "correctAnswer": "You're right, maybe we should cut one city from the itinerary.",
             "smartReplies": [
-                "You're right, maybe we should cut one city from the itinerary.",
-                "Fair — maybe drop one city to slow down.",
-                "You're right, one fewer stop might help."
+                "In the long run, skilled people get more out of what we already own.",
+                "New equipment won't help if we can't use it well. Training is the safer investment.",
+                "Because the current equipment is fine, but staff aren't using it fully. Training gives a faster return."
             ],
+            "correctAnswer": "In the long run, skilled people get more out of what we already own.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L122_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Reassure them it's normal, and suggest talking honestly.",
-            "explanation": "'Normal as you grow' offers comforting perspective before suggesting a next step.",
-            "partnerDialogue": "Sometimes I feel my parents and I see things very differently lately.",
-            "sampleAnswer": "That's normal as you grow, but it's worth having an honest talk.",
+            "instruction": "Make a case for yourself.",
+            "hint": "Give evidence, not adjectives.",
+            "explanation": "Instead of saying \"I'm great\", give proof: experience, knowledge, or immediate readiness.",
+            "partnerDialogue": "What makes you the right person to lead this?",
+            "sampleAnswer": "I understand the client's needs, and I've handled a similar deadline before.",
             "acceptedSynonyms": [
-                "worth having an honest talk",
-                "normal, but talk it out",
-                "that's typical, so just talk",
-                "common, worth an honest chat"
+                "i understand the client's needs, and i've handled a similar deadline before",
+                "i have relevant experience and good relationships in the department, which should help",
+                "i've run two similar projects, and i know this team well, so i could start immediately",
+                "i understand the client's needs, and i have handled a similar deadline before"
             ],
-            "correctAnswer": "That's normal as you grow, but it's worth having an honest talk.",
             "smartReplies": [
-                "That's normal as you grow, but it's worth having an honest talk.",
-                "That's fairly common growing up, but talk it through.",
-                "Normal, though an honest conversation could help."
+                "I have relevant experience and good relationships in the department, which should help.",
+                "I've run two similar projects, and I know this team well, so I could start immediately.",
+                "I understand the client's needs, and I've handled a similar deadline before."
             ],
+            "correctAnswer": "I understand the client's needs, and I've handled a similar deadline before.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L122_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and mention a habit you've adopted.",
-            "explanation": "Sharing your own new habit, comparing prices, makes the agreement feel genuine and useful.",
-            "partnerDialogue": "I feel like prices have crept up everywhere this year.",
-            "sampleAnswer": "They really have, I've started comparing prices more carefully.",
+            "instruction": "Explain leaving a job.",
+            "hint": "Speak positively about the past and the future.",
+            "explanation": "Never criticize the old employer in an interview. Focus on growth, not complaints.",
+            "partnerDialogue": "Why did you choose to leave your previous company?",
+            "sampleAnswer": "The company was restructuring, and I saw a chance to try something new.",
             "acceptedSynonyms": [
-                "comparing prices more carefully",
-                "started checking prices more",
-                "yes, comparing more now",
-                "really have, so i compare more"
+                "the company was restructuring, and i saw a chance to try something new",
+                "i was proud of my work there, but i'd stopped growing. i wanted a bigger challenge",
+                "it was a good place, but there was no room to progress. i felt it was time to move on",
+                "i was proud of my work there, but i'd stopped growing"
             ],
-            "correctAnswer": "They really have, I've started comparing prices more carefully.",
             "smartReplies": [
-                "They really have, I've started comparing prices more carefully.",
-                "They really have — I compare prices a lot more now.",
-                "Definitely, I've become much more careful about prices."
+                "The company was restructuring, and I saw a chance to try something new.",
+                "I was proud of my work there, but I'd stopped growing. I wanted a bigger challenge.",
+                "It was a good place, but there was no room to progress. I felt it was time to move on."
             ],
+            "correctAnswer": "The company was restructuring, and I saw a chance to try something new.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L123_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and recall bolder flavors before.",
-            "explanation": "Referencing the past, 'used to have', gives the observation a clear point of comparison.",
-            "partnerDialogue": "It feels like this menu has gotten less adventurous over time.",
-            "sampleAnswer": "I've noticed that too, it used to have bolder flavors.",
+            "instruction": "Challenge a deadline.",
+            "hint": "Respect the urgency but raise the quality risk.",
+            "explanation": "Pushback works best when it begins by acknowledging the other person's goal.",
+            "partnerDialogue": "We need to launch in March. No discussion.",
+            "sampleAnswer": "I hear you. Could we look at what happens if we delay by two weeks?",
             "acceptedSynonyms": [
-                "used to have bolder flavors",
-                "noticed that too, less bold now",
-                "yes, flavors were bolder before",
-                "agreed, it's toned down since"
+                "i hear you. could we look at what happens if we delay by two weeks",
+                "march is possible, but i'd like to hear what we're giving up. can we discuss trade-offs",
+                "i understand the urgency, but i'm concerned about quality. could we at least review the risks"
             ],
-            "correctAnswer": "I've noticed that too, it used to have bolder flavors.",
             "smartReplies": [
-                "I've noticed that too, it used to have bolder flavors.",
-                "Same here, the flavors used to be much bolder.",
-                "I've noticed — it felt more adventurous before."
+                "I hear you. Could we look at what happens if we delay by two weeks?",
+                "March is possible, but I'd like to hear what we're giving up. Can we discuss trade-offs?",
+                "I understand the urgency, but I'm concerned about quality. Could we at least review the risks?"
             ],
+            "correctAnswer": "I hear you. Could we look at what happens if we delay by two weeks?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L123_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and blame the redesign specifically.",
-            "explanation": "Naming a specific cause, the redesign, gives the complaint real, credible substance.",
-            "partnerDialogue": "I feel like this platform is becoming harder to navigate.",
-            "sampleAnswer": "Agreed, the redesign seems to have added more steps than it removed.",
+            "instruction": "Question a design politely.",
+            "hint": "Praise, then raise a usability concern.",
+            "explanation": "Ask a question (\"I wonder if...\") rather than making a statement. It makes your worry easier to hear.",
+            "partnerDialogue": "I think the customers will love this design.",
+            "sampleAnswer": "I like it, though I'd be curious how new users react.",
             "acceptedSynonyms": [
-                "redesign added more steps",
-                "agreed, the redesign complicated it",
-                "yes, the update made it harder",
-                "the redesign didn't simplify anything"
+                "i like it, though i'd be curious how new users react",
+                "it looks great. my only worry is the navigation. could we run a small test",
+                "it's striking, but i wonder if they'll find it easy to use. should we test it with a few",
+                "it's striking, but i wonder if they'll find it easy to use",
+                "i like it, though i would be curious how new users react"
             ],
-            "correctAnswer": "Agreed, the redesign seems to have added more steps than it removed.",
             "smartReplies": [
-                "Agreed, the redesign seems to have added more steps than it removed.",
-                "Agreed — the redesign made things more complicated.",
-                "True, it feels clunkier since the redesign."
+                "It looks great. My only worry is the navigation. Could we run a small test?",
+                "It's striking, but I wonder if they'll find it easy to use. Should we test it with a few?",
+                "I like it, though I'd be curious how new users react."
             ],
+            "correctAnswer": "I like it, though I'd be curious how new users react.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L123_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Recommend getting checked soon.",
-            "explanation": "'Sooner rather than later' gives clear, sensible urgency to health advice.",
-            "partnerDialogue": "I can't shake the feeling that I've been ignoring the warning signs for a while.",
-            "sampleAnswer": "It's worth getting checked sooner rather than later, just to be safe.",
+            "instruction": "Disagree with a friend about exams.",
+            "hint": "Show understanding, then challenge with a question.",
+            "explanation": "A question at the end (\"What would you replace them with?\") invites debate instead of an argument.",
+            "partnerDialogue": "Honestly, exams are pointless.",
+            "sampleAnswer": "I see what you mean, though I'd say they're still useful for structure.",
             "acceptedSynonyms": [
-                "checked sooner rather than later",
-                "worth checking soon, to be safe",
-                "better to check it soon",
-                "get it checked soon, just in case"
+                "i see what you mean, though i'd say they're still useful for structure",
+                "i get why you'd feel that way, but i think they push me to actually revise. what would you replace them with",
+                "sometimes, yes. but without them, i wouldn't study as much",
+                "i get why you'd feel that way, but they push me to revise",
+                "i see what you mean, though i would say they're still useful for structure"
             ],
-            "correctAnswer": "It's worth getting checked sooner rather than later, just to be safe.",
             "smartReplies": [
-                "It's worth getting checked sooner rather than later, just to be safe.",
-                "Better to get it checked soon, just in case.",
-                "Worth seeing someone about it sooner rather than later."
+                "I see what you mean, though I'd say they're still useful for structure.",
+                "I get why you'd feel that way, but I think they push me to actually revise. What would you replace them with?",
+                "Sometimes, yes. But without them, I wouldn't study as much."
             ],
+            "correctAnswer": "I see what you mean, though I'd say they're still useful for structure.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L124_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, but suggest it was intentional.",
-            "explanation": "'Intentional on the writer's part' shows a more nuanced view than simple criticism.",
-            "partnerDialogue": "I feel like the ending left more questions than answers.",
-            "sampleAnswer": "I agree, though I think that was intentional on the writer's part.",
+            "instruction": "Persuade a sceptic gently.",
+            "hint": "Admit it's boring at first, then suggest a small test.",
+            "explanation": "Persuasion works when you agree with the doubt first. A low-risk test is easier to say yes to.",
+            "partnerDialogue": "Why should I try meditation? It sounds boring.",
+            "sampleAnswer": "I thought the same, but after a few days I noticed less stress. It costs nothing to try.",
             "acceptedSynonyms": [
-                "intentional on the writer's part",
-                "agree, though probably on purpose",
-                "yes, but likely deliberate",
-                "true, though maybe intentional"
+                "i thought the same, but after a few days i noticed less stress. it costs nothing to try",
+                "it can be, at first. but ten minutes a day helped me focus. why not try it for a week",
+                "fair, but it's a short test. if it does nothing, you've lost ten minutes"
             ],
-            "correctAnswer": "I agree, though I think that was intentional on the writer's part.",
             "smartReplies": [
-                "I agree, though I think that was intentional on the writer's part.",
-                "Agreed, but I suspect that was deliberate.",
-                "True, though it might have been the writer's intention."
+                "It can be, at first. But ten minutes a day helped me focus. Why not try it for a week?",
+                "I thought the same, but after a few days I noticed less stress. It costs nothing to try.",
+                "Fair, but it's a short test. If it does nothing, you've lost ten minutes."
             ],
+            "correctAnswer": "I thought the same, but after a few days I noticed less stress. It costs nothing to try.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L124_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Name one habit you'd keep: a morning walk.",
-            "explanation": "Explaining why, 'sets the tone for the day', gives the choice real personal meaning.",
-            "partnerDialogue": "If you had to start your routine from scratch, what would you keep?",
-            "sampleAnswer": "I'd definitely keep my morning walk, it sets the tone for the day.",
+            "instruction": "Propose a pilot.",
+            "hint": "Reduce the risk by proposing a limited trial.",
+            "explanation": "A pilot lets skeptical managers say yes because they can stop it. Mention evidence and a time limit.",
+            "partnerDialogue": "I'm not sure we need a four-day week trial.",
+            "sampleAnswer": "I see your concern. If results are poor, we can stop, so the risk is small.",
             "acceptedSynonyms": [
-                "keep my morning walk",
-                "definitely the morning walk",
-                "my morning walk, for sure",
-                "the walk sets my tone, keeping it"
+                "i see your concern. if results are poor, we can stop, so the risk is small",
+                "that's fair. a short trial with clear targets would let us judge with real data",
+                "i understand, but other companies saw productivity stay the same. could we do a three-month pilot"
             ],
-            "correctAnswer": "I'd definitely keep my morning walk, it sets the tone for the day.",
             "smartReplies": [
-                "I'd definitely keep my morning walk, it sets the tone for the day.",
-                "My morning walk, without question — it sets my whole day.",
-                "Definitely the walk, it really shapes how my day goes."
+                "I see your concern. If results are poor, we can stop, so the risk is small.",
+                "That's fair. A short trial with clear targets would let us judge with real data.",
+                "I understand, but other companies saw productivity stay the same. Could we do a three-month pilot?"
             ],
+            "correctAnswer": "I see your concern. If results are poor, we can stop, so the risk is small.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L124_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Name your priority: practical skills over memorization.",
-            "explanation": "Contrasting two approaches, practical skills versus memorization, makes the opinion sharp and clear.",
-            "partnerDialogue": "Suppose you could redesign the curriculum — what would you prioritize?",
-            "sampleAnswer": "I'd focus more on practical skills than memorization.",
+            "instruction": "Argue for a hire.",
+            "hint": "Give a benefit for the team and one for the future.",
+            "explanation": "Two benefits, one short-term and one long-term, is a persuasive structure.",
+            "partnerDialogue": "Why should we hire an intern?",
+            "sampleAnswer": "They'd take routine tasks off us, and we can train them our way.",
             "acceptedSynonyms": [
-                "practical skills over memorization",
-                "focus on practical skills",
-                "more hands-on, less memorizing",
-                "prioritize real skills"
+                "they'd take routine tasks off us, and we can train them our way",
+                "an intern lets the team focus on higher-value work, and it's a good way to find future staff",
+                "it costs little and brings fresh ideas. we might find our next hire"
             ],
-            "correctAnswer": "I'd focus more on practical skills than memorization.",
             "smartReplies": [
-                "I'd focus more on practical skills than memorization.",
-                "More hands-on skills, less rote memorization.",
-                "I'd prioritize practical skills over memorizing facts."
+                "An intern lets the team focus on higher-value work, and it's a good way to find future staff.",
+                "They'd take routine tasks off us, and we can train them our way.",
+                "It costs little and brings fresh ideas. We might find our next hire."
             ],
+            "correctAnswer": "They'd take routine tasks off us, and we can train them our way.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L125_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Name one point to push back on: the timeline.",
-            "explanation": "Naming a specific, concrete issue, the timeline, gives a realistic negotiating answer.",
-            "partnerDialogue": "If you were negotiating this contract, what would you push back on?",
-            "sampleAnswer": "I'd push back on the tight delivery timeline first.",
+            "instruction": "Solve a meeting problem.",
+            "hint": "Offer an idea as a question.",
+            "explanation": "\"What if we...?\" invites collaboration, so it doesn't sound like you are blaming anyone.",
+            "partnerDialogue": "Our meetings never end on time.",
+            "sampleAnswer": "What if we gave each topic a time limit? I could keep track.",
             "acceptedSynonyms": [
-                "push back on the timeline",
-                "the tight delivery timeline first",
-                "challenge the delivery timeline",
-                "the timeline is too tight"
+                "what if we gave each topic a time limit? i could keep track",
+                "how about ending every meeting with a fixed stop time",
+                "maybe we could send the agenda beforehand so people come prepared"
             ],
-            "correctAnswer": "I'd push back on the tight delivery timeline first.",
             "smartReplies": [
-                "I'd push back on the tight delivery timeline first.",
-                "The delivery timeline would be my first concern.",
-                "I'd challenge that tight timeline right away."
+                "What if we gave each topic a time limit? I could keep track.",
+                "How about ending every meeting with a fixed stop time?",
+                "Maybe we could send the agenda beforehand so people come prepared."
             ],
+            "correctAnswer": "What if we gave each topic a time limit? I could keep track.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L125_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Name a place you'd linger: the countryside.",
-            "explanation": "'At least a week' gives a specific sense of how deeply you'd want to explore.",
-            "partnerDialogue": "Imagine you had unlimited time — where would you want to linger longer?",
-            "sampleAnswer": "I'd spend at least a week just exploring the countryside.",
+            "instruction": "Support someone with a workplace complaint.",
+            "hint": "Suggest a way to raise the issue.",
+            "explanation": "Solutions are better when they're official: book a room, raise it in a meeting.",
+            "partnerDialogue": "The office is so noisy that I can't concentrate.",
+            "sampleAnswer": "Maybe raise it at the team meeting. I suspect others feel the same.",
             "acceptedSynonyms": [
-                "a week exploring the countryside",
-                "linger in the countryside",
-                "spend more time in the countryside",
-                "a full week in the countryside"
+                "maybe raise it at the team meeting. i suspect others feel the same",
+                "we could ask for headphones or a quiet corner",
+                "have you thought about booking a quiet room for focus time? i'd support that request"
             ],
-            "correctAnswer": "I'd spend at least a week just exploring the countryside.",
             "smartReplies": [
-                "I'd spend at least a week just exploring the countryside.",
-                "At least a week, just wandering the countryside.",
-                "I'd want a full week out in the countryside."
+                "We could ask for headphones or a quiet corner.",
+                "Have you thought about booking a quiet room for focus time? I'd support that request.",
+                "Maybe raise it at the team meeting. I suspect others feel the same."
             ],
+            "correctAnswer": "Maybe raise it at the team meeting. I suspect others feel the same.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L125_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Name one change: less formal gatherings.",
-            "explanation": "Two paired adjectives, relaxed and less formal, clearly describe the hoped-for change.",
-            "partnerDialogue": "If you could change one family tradition, what would it be?",
-            "sampleAnswer": "I'd make the holiday gatherings a bit more relaxed and less formal.",
+            "instruction": "Advise on a family talk.",
+            "hint": "Suggest how to structure the conversation.",
+            "explanation": "For emotional conversations, advise on order: begin with what you love, then explain plans.",
+            "partnerDialogue": "I don't know how to tell my parents I'm changing my major.",
+            "sampleAnswer": "It might help to have a plan ready, so they see you've thought it through.",
             "acceptedSynonyms": [
-                "more relaxed and less formal",
-                "less formal gatherings",
-                "make it more casual",
-                "relaxed, informal gatherings"
+                "it might help to have a plan ready, so they see you've thought it through",
+                "maybe start by explaining what you enjoy about the new subject, then talk about your plans",
+                "i'd choose a calm moment and tell them why it matters to you"
             ],
-            "correctAnswer": "I'd make the holiday gatherings a bit more relaxed and less formal.",
             "smartReplies": [
-                "I'd make the holiday gatherings a bit more relaxed and less formal.",
-                "Something more relaxed and a lot less formal.",
-                "I'd loosen things up — less formal, more relaxed."
+                "Maybe start by explaining what you enjoy about the new subject, then talk about your plans.",
+                "It might help to have a plan ready, so they see you've thought it through.",
+                "I'd choose a calm moment and tell them why it matters to you."
             ],
+            "correctAnswer": "It might help to have a plan ready, so they see you've thought it through.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L126_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Give a specific counteroffer: fifteen percent less.",
-            "explanation": "A specific percentage, fifteen percent, makes a hypothetical negotiation feel realistic.",
-            "partnerDialogue": "Say you were negotiating this price — what would you offer?",
-            "sampleAnswer": "I'd offer about fifteen percent less and see what happens.",
+            "instruction": "Find middle ground.",
+            "hint": "Combine the two wishes in one plan.",
+            "explanation": "When two preferences clash, look for an option that contains both.",
+            "partnerDialogue": "I want a beach holiday and you want a city break.",
+            "sampleAnswer": "We could split the week: three days on the coast, three in town.",
             "acceptedSynonyms": [
-                "fifteen percent less",
-                "offer fifteen percent lower",
-                "about fifteen percent off",
-                "fifteen percent under asking"
+                "we could split the week: three days on the coast, three in town",
+                "why not alternate: beach this year, city next year",
+                "how about a coastal city? we'd get sightseeing and some beach time"
             ],
-            "correctAnswer": "I'd offer about fifteen percent less and see what happens.",
             "smartReplies": [
-                "I'd offer about fifteen percent less and see what happens.",
-                "I'd start around fifteen percent lower.",
-                "Maybe fifteen percent under asking, to test it."
+                "Why not alternate: beach this year, city next year?",
+                "How about a coastal city? We'd get sightseeing and some beach time.",
+                "We could split the week: three days on the coast, three in town."
             ],
+            "correctAnswer": "We could split the week: three days on the coast, three in town.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L126_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Suggest bringing back original signature dishes.",
-            "explanation": "'Bring back' suggests a thoughtful nod to the restaurant's own history and identity.",
-            "partnerDialogue": "If you were redesigning this restaurant's menu, what would you add?",
-            "sampleAnswer": "I'd bring back a few of their original signature dishes.",
+            "instruction": "Break a scheduling deadlock.",
+            "hint": "Offer to move something and set a condition.",
+            "explanation": "\"Meet halfway\" means both people give something. Say what you'll give and what you need.",
+            "partnerDialogue": "You can't do Monday, I can't do Tuesday. This is getting silly.",
+            "sampleAnswer": "How about a shorter call on Monday evening, and we finalize on Wednesday?",
             "acceptedSynonyms": [
-                "bring back signature dishes",
-                "restore the original dishes",
-                "add back classic dishes",
-                "bring back a few classics"
+                "how about a shorter call on monday evening, and we finalize on wednesday",
+                "let's meet halfway. i'll move something on tuesday if you can start after four",
+                "shall we try wednesday? i'll rearrange a meeting to make it work"
             ],
-            "correctAnswer": "I'd bring back a few of their original signature dishes.",
             "smartReplies": [
-                "I'd bring back a few of their original signature dishes.",
-                "A few of the original signature dishes, for sure.",
-                "I'd restore some of their classic dishes."
+                "Let's meet halfway. I'll move something on Tuesday if you can start after four.",
+                "How about a shorter call on Monday evening, and we finalize on Wednesday?",
+                "Shall we try Wednesday? I'll rearrange a meeting to make it work."
             ],
+            "correctAnswer": "How about a shorter call on Monday evening, and we finalize on Wednesday?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L126_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Suggest simplifying the settings menu.",
-            "explanation": "'Down to the essentials' is a clear, useful design principle for reducing complexity.",
-            "partnerDialogue": "Suppose you were redesigning this app — what would you simplify first?",
-            "sampleAnswer": "I'd cut the settings menu down to the essentials.",
+            "instruction": "Balance saving and spending.",
+            "hint": "Propose a split.",
+            "explanation": "Money disagreements between partners often end fairly with a split.",
+            "partnerDialogue": "I want to spend the bonus. You want to save it.",
+            "sampleAnswer": "We could save it, then treat ourselves to a small thing.",
             "acceptedSynonyms": [
-                "settings down to essentials",
-                "simplify the settings menu",
-                "trim settings to essentials",
-                "cut settings to the basics"
+                "we could save it, then treat ourselves to a small thing",
+                "let's split it: half for savings, half for something we both enjoy",
+                "what if we save most of it and set aside a little for something fun"
             ],
-            "correctAnswer": "I'd cut the settings menu down to the essentials.",
             "smartReplies": [
-                "I'd cut the settings menu down to the essentials.",
-                "I'd trim the settings down to just the basics.",
-                "The settings menu, down to only what's essential."
+                "Let's split it: half for savings, half for something we both enjoy.",
+                "We could save it, then treat ourselves to a small thing.",
+                "What if we save most of it and set aside a little for something fun?"
             ],
+            "correctAnswer": "We could save it, then treat ourselves to a small thing.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L127_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Name a habit to cut: late-night screens.",
-            "explanation": "Naming a specific, relatable habit makes a self-improvement answer feel genuine.",
-            "partnerDialogue": "If you were redesigning your routine, what would you cut out first?",
-            "sampleAnswer": "I'd cut back on late-night screen time before bed.",
+            "instruction": "Be honest without speculation.",
+            "hint": "Say you don't know and promise to share news.",
+            "explanation": "Without facts, don't guess. Honest uncertainty plus a promise builds trust.",
+            "partnerDialogue": "I'm going to be laid off, aren't I?",
+            "sampleAnswer": "I can't say, because I don't have the information. I'm sorry you're worried.",
             "acceptedSynonyms": [
-                "cut late-night screen time",
-                "less screen time before bed",
-                "reduce nighttime screen use",
-                "cut back on evening screens"
+                "i can't say, because i don't have the information. i'm sorry you're worried",
+                "i wish i could tell you. i know nothing, and i wouldn't want to speculate",
+                "i honestly don't know, and i don't want to guess. but i'll tell you whatever i hear as soon as i can",
+                "i honestly don't know, and i don't want to guess",
+                "i cannot say, because i do not have the information. i am sorry you are worried"
             ],
-            "correctAnswer": "I'd cut back on late-night screen time before bed.",
             "smartReplies": [
-                "I'd cut back on late-night screen time before bed.",
-                "Less screen time right before bed, for sure.",
-                "I'd drop the late-night scrolling first."
+                "I wish I could tell you. I know nothing, and I wouldn't want to speculate.",
+                "I honestly don't know, and I don't want to guess. But I'll tell you whatever I hear as soon as I can.",
+                "I can't say, because I don't have the information. I'm sorry you're worried."
             ],
+            "correctAnswer": "I can't say, because I don't have the information. I'm sorry you're worried.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L127_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Suggest giving side characters more depth.",
-            "explanation": "Naming a specific creative choice, side character depth, shows genuine storytelling insight.",
-            "partnerDialogue": "Imagine you were rewriting this story — what would you change?",
-            "sampleAnswer": "I'd give the side characters a bit more depth.",
+            "instruction": "Keep a confidence.",
+            "hint": "Promise discretion and open the door to talk.",
+            "explanation": "Promise privacy first, then offer support without pushing.",
+            "partnerDialogue": "My business is failing. Please don't tell anyone.",
+            "sampleAnswer": "I won't say a word. How can I help?",
             "acceptedSynonyms": [
-                "more depth to side characters",
-                "give side characters depth",
-                "flesh out the side characters",
-                "deeper side characters"
+                "i won't say a word. how can i help",
+                "thank you for telling me. what's the situation",
+                "of course, it stays between us. do you want to talk about what's going wrong, or just vent",
+                "i will not say a word. how can i help"
             ],
-            "correctAnswer": "I'd give the side characters a bit more depth.",
             "smartReplies": [
-                "I'd give the side characters a bit more depth.",
-                "The side characters could use more depth.",
-                "I'd flesh out the supporting characters more."
+                "Thank you for telling me. What's the situation?",
+                "I won't say a word. How can I help?",
+                "Of course, it stays between us. Do you want to talk about what's going wrong, or just vent?"
             ],
+            "correctAnswer": "I won't say a word. How can I help?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L127_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Suggest tracking sleep for a week.",
-            "explanation": "A specific, practical suggestion, tracking sleep, is more useful than a vague guess.",
-            "partnerDialogue": "I can't quite put my finger on why I've been so tired lately.",
-            "sampleAnswer": "It might be worth tracking your sleep for a week to spot patterns.",
+            "instruction": "Be honest about an inconvenience.",
+            "hint": "Admit the noise gently.",
+            "explanation": "Honesty and care can coexist: admit the problem, then show concern for the other person.",
+            "partnerDialogue": "My dog barked all night. I hope it didn't disturb you.",
+            "sampleAnswer": "I did hear him, yes. Maybe he's anxious? I hope he's all right.",
             "acceptedSynonyms": [
-                "track your sleep for a week",
-                "worth tracking sleep patterns",
-                "keep a sleep log for a week",
-                "monitor your sleep to spot patterns"
+                "i did hear him, yes. maybe he's anxious? i hope he's all right",
+                "a little, yes. i'd rather mention it than get annoyed. is something wrong with him",
+                "it did wake me once, but it's not a big deal. is he okay, though",
+                "it did wake me once, but it's not a big deal"
             ],
-            "correctAnswer": "It might be worth tracking your sleep for a week to spot patterns.",
             "smartReplies": [
-                "It might be worth tracking your sleep for a week to spot patterns.",
-                "Maybe keep a sleep log for a week or so.",
-                "Worth tracking your sleep to see if a pattern shows up."
+                "A little, yes. I'd rather mention it than get annoyed. Is something wrong with him?",
+                "I did hear him, yes. Maybe he's anxious? I hope he's all right.",
+                "It did wake me once, but it's not a big deal. Is he okay, though?"
             ],
+            "correctAnswer": "I did hear him, yes. Maybe he's anxious? I hope he's all right.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L128_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Validate the feeling, and suggest smaller groups.",
-            "explanation": "'That's understandable' validates the feeling before offering a practical way forward.",
-            "partnerDialogue": "Honestly, group discussions intimidate me more than exams do.",
-            "sampleAnswer": "That's understandable, but practicing in smaller groups first can really help.",
+            "instruction": "Give supportive advice.",
+            "hint": "Give evidence of ability, then a small action step.",
+            "explanation": "When advising someone who feels criticized, start with confidence in them, then offer one concrete step.",
+            "partnerDialogue": "Can I get your honest opinion? My manager says I don't take initiative.",
+            "sampleAnswer": "You're capable of more than you show. Maybe volunteer for one task each week.",
             "acceptedSynonyms": [
-                "practicing in smaller groups helps",
-                "smaller groups first can help",
-                "try smaller groups to build confidence",
-                "start with smaller group practice"
+                "you're capable of more than you show. maybe volunteer for one task each week",
+                "i've seen you make good decisions, so i think you could share your ideas earlier in meetings",
+                "maybe he wants to see more of your ideas. try suggesting one next time",
+                "you are capable of more than you show. maybe volunteer for one task each week"
             ],
-            "correctAnswer": "That's understandable, but practicing in smaller groups first can really help.",
             "smartReplies": [
-                "That's understandable, but practicing in smaller groups first can really help.",
-                "That makes sense, though smaller groups can ease you in.",
-                "Understandable — starting small might build your confidence."
+                "I've seen you make good decisions, so I think you could share your ideas earlier in meetings.",
+                "You're capable of more than you show. Maybe volunteer for one task each week.",
+                "Maybe he wants to see more of your ideas. Try suggesting one next time."
             ],
+            "correctAnswer": "You're capable of more than you show. Maybe volunteer for one task each week.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L128_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Acknowledge doubts, but argue for long-term value.",
-            "explanation": "'I see your point, but...' respectfully disagrees while still validating the initial concern.",
-            "partnerDialogue": "Honestly, I'm not sure this client deal is worth the trouble.",
-            "sampleAnswer": "I see your point, but the long-term partnership could outweigh the hassle.",
+            "instruction": "Describe a new hire fairly.",
+            "hint": "Give a fair evaluation with a support plan.",
+            "explanation": "Balanced evaluations state what's working, what's not, and what help will be given.",
+            "partnerDialogue": "I think my new employee is doing fine.",
+            "sampleAnswer": "Good attitude. Let's give her extra guidance on client communication.",
             "acceptedSynonyms": [
-                "long-term partnership outweighs it",
-                "worth it for the long-term value",
-                "the partnership matters more long-term",
-                "long-term benefits outweigh the hassle"
+                "good attitude. let's give her extra guidance on client communication",
+                "she's learning quickly, though her reports need more checking",
+                "overall yes, but she misses small details. maybe pair her with a mentor for a month"
             ],
-            "correctAnswer": "I see your point, but the long-term partnership could outweigh the hassle.",
             "smartReplies": [
-                "I see your point, but the long-term partnership could outweigh the hassle.",
-                "Fair concern, but it could pay off long-term.",
-                "I hear you, though the long-term value might be worth it."
+                "Good attitude. Let's give her extra guidance on client communication.",
+                "She's learning quickly, though her reports need more checking.",
+                "Overall yes, but she misses small details. Maybe pair her with a mentor for a month."
             ],
+            "correctAnswer": "Good attitude. Let's give her extra guidance on client communication.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L128_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and encourage exploring more.",
-            "explanation": "'Worth wandering off...' turns agreement into a genuine, practical travel tip.",
-            "partnerDialogue": "Honestly, this neighborhood feels more authentic than the tourist area.",
-            "sampleAnswer": "I agree, it's worth wandering off the main streets more often.",
+            "instruction": "Accept criticism professionally.",
+            "hint": "Accept responsibility and promise a change.",
+            "explanation": "When criticized fairly, accept it, and say what you'll change. Don't make excuses.",
+            "partnerDialogue": "Your team's report was late again.",
+            "sampleAnswer": "That's fair. I'll talk to the team and make a plan so it doesn't happen again.",
             "acceptedSynonyms": [
-                "worth wandering off the main streets",
-                "agree, explore beyond downtown",
-                "yes, venture off the main streets",
-                "worth exploring further out"
+                "that's fair. i'll talk to the team and make a plan so it doesn't happen again",
+                "you're right, and i'm sorry. we hit a technical delay, but i'll set earlier internal deadlines",
+                "i understand. we'll put more buffer time into the schedule",
+                "that is fair. i will talk to the team and make a plan so it does not happen again"
             ],
-            "correctAnswer": "I agree, it's worth wandering off the main streets more often.",
             "smartReplies": [
-                "I agree, it's worth wandering off the main streets more often.",
-                "Agreed — worth exploring beyond the main streets.",
-                "Definitely, it pays to wander off the beaten path."
+                "You're right, and I'm sorry. We hit a technical delay, but I'll set earlier internal deadlines.",
+                "I understand. We'll put more buffer time into the schedule.",
+                "That's fair. I'll talk to the team and make a plan so it doesn't happen again."
             ],
+            "correctAnswer": "That's fair. I'll talk to the team and make a plan so it doesn't happen again.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L129_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Empathize, and suggest stepping back sometimes.",
-            "explanation": "'I can imagine' shows empathy before gently suggesting a healthier boundary.",
-            "partnerDialogue": "Honestly, mediating between my siblings is exhausting sometimes.",
-            "sampleAnswer": "I can imagine, maybe let them work it out on their own occasionally.",
+            "instruction": "Raise a small irritation.",
+            "hint": "Say what bothers you and ask for a fix.",
+            "explanation": "Politely raising a small issue early prevents resentment. Start with \"It's small, but...\".",
+            "partnerDialogue": "You seem irritated. What is it?",
+            "sampleAnswer": "It's nothing serious. I'm just finding it hard to focus. Could you use headphones?",
             "acceptedSynonyms": [
-                "let them work it out alone",
-                "step back occasionally",
-                "let them sort it out sometimes",
-                "give them space to solve it"
+                "it's nothing serious. i'm just finding it hard to focus. could you use headphones",
+                "sorry, it's small, but the music is distracting me. would you mind turning it down",
+                "i don't want to make a fuss, but the volume's quite high for me",
+                "it is nothing serious. i am just finding it hard to focus. could you use headphones"
             ],
-            "correctAnswer": "I can imagine, maybe let them work it out on their own occasionally.",
             "smartReplies": [
-                "I can imagine, maybe let them work it out on their own occasionally.",
-                "That sounds tiring — maybe step back sometimes.",
-                "I can imagine, letting them sort it out themselves might help."
+                "Sorry, it's small, but the music is distracting me. Would you mind turning it down?",
+                "It's nothing serious. I'm just finding it hard to focus. Could you use headphones?",
+                "I don't want to make a fuss, but the volume's quite high for me."
             ],
+            "correctAnswer": "It's nothing serious. I'm just finding it hard to focus. Could you use headphones?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L129_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and mention quality versus price.",
-            "explanation": "'Doesn't always match the price tag' gives a specific, relatable consumer critique.",
-            "partnerDialogue": "Honestly, I think this brand relies too much on its name.",
-            "sampleAnswer": "I get that, the quality doesn't always match the price tag.",
+            "instruction": "Answer an awkward question kindly.",
+            "hint": "Avoid a lie and avoid an insult.",
+            "explanation": "A polite honest answer focuses on what you can truthfully say: \"different\", \"suits you\".",
+            "partnerDialogue": "Do you like my haircut?",
+            "sampleAnswer": "It's different! It'll take me a moment to get used to it, but it suits your face.",
             "acceptedSynonyms": [
-                "quality doesn't match the price",
-                "i get that, overpriced for quality",
-                "agreed, paying for the name",
-                "true, quality lags behind price"
+                "it's different! it'll take me a moment to get used to it, but it suits your face",
+                "i'm still getting used to it, but you look happy",
+                "it's a big change. i like the color, honestly",
+                "it is different! it'll take me a moment to get used to it, but it suits your face"
             ],
-            "correctAnswer": "I get that, the quality doesn't always match the price tag.",
             "smartReplies": [
-                "I get that, the quality doesn't always match the price tag.",
-                "Fair — the price doesn't always reflect the quality.",
-                "True, you're often paying more for the name."
+                "It's different! It'll take me a moment to get used to it, but it suits your face.",
+                "I'm still getting used to it, but you look happy.",
+                "It's a big change. I like the color, honestly."
             ],
+            "correctAnswer": "It's different! It'll take me a moment to get used to it, but it suits your face.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L129_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree strongly, and mention plating.",
-            "explanation": "A vivid, specific example, a beautiful plate, makes the agreement feel genuine and concrete.",
-            "partnerDialogue": "To be honest, I think presentation matters more than people admit.",
-            "sampleAnswer": "It really does, a beautiful plate changes the whole experience.",
+            "instruction": "Respond to a hint.",
+            "hint": "Understand the hidden message: they need the table.",
+            "explanation": "A waiter's question is often a polite request. Answer the real meaning and give a time.",
+            "partnerDialogue": "May I ask if you'll be staying much longer? We have a booking for this table.",
+            "sampleAnswer": "We're nearly done. Could we have a few more minutes?",
             "acceptedSynonyms": [
-                "a beautiful plate changes everything",
-                "really does, presentation matters",
-                "true, plating changes the experience",
-                "definitely, looks affect taste"
+                "we're nearly done. could we have a few more minutes",
+                "we'll be leaving in about ten minutes, if that's okay. we're just finishing",
+                "of course. we'll finish our coffee and go",
+                "we are nearly done. could we have a few more minutes"
             ],
-            "correctAnswer": "It really does, a beautiful plate changes the whole experience.",
             "smartReplies": [
-                "It really does, a beautiful plate changes the whole experience.",
-                "Completely — good plating changes everything.",
-                "Agreed, presentation really shapes the whole meal."
+                "We'll be leaving in about ten minutes, if that's okay. We're just finishing.",
+                "Of course. We'll finish our coffee and go.",
+                "We're nearly done. Could we have a few more minutes?"
             ],
+            "correctAnswer": "We're nearly done. Could we have a few more minutes?",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L130_Q1",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Acknowledge the point, but note a benefit.",
-            "explanation": "'Fair point, but...' respectfully balances agreement with a genuine counterpoint.",
-            "partnerDialogue": "Honestly, I think we rely on automation a bit too much now.",
-            "sampleAnswer": "Fair point, but it does free up time for more important tasks.",
+            "instruction": "Respond to \"Have you got a sec?\"",
+            "hint": "Show readiness and ask about urgency.",
+            "explanation": "\"Have you got a sec?\" usually means a short conversation, but not always. A quick check about urgency helps you prioritise.",
+            "partnerDialogue": "I wanted to ask you something. Have you got a sec?",
+            "sampleAnswer": "Sure. Let me just save this document. Okay, shoot.",
             "acceptedSynonyms": [
-                "frees up time for important tasks",
-                "fair point, but it saves time",
-                "true, though it helps prioritize",
-                "valid, but it does free time up"
+                "sure. let me just save this document. okay, shoot",
+                "sure, go ahead. is it urgent, or shall we sit down properly",
+                "yes, of course. what's on your mind"
             ],
-            "correctAnswer": "Fair point, but it does free up time for more important tasks.",
             "smartReplies": [
-                "Fair point, but it does free up time for more important tasks.",
-                "True, though it frees up time for what matters more.",
-                "Fair, but it does save time in the long run."
+                "Sure, go ahead. Is it urgent, or shall we sit down properly?",
+                "Sure. Let me just save this document. Okay, shoot.",
+                "Yes, of course. What's on your mind?"
             ],
+            "correctAnswer": "Sure. Let me just save this document. Okay, shoot.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L130_Q2",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree strongly, and mention unexpected effects.",
-            "explanation": "'Ways people don't expect' adds intrigue and depth to a simple agreement.",
-            "partnerDialogue": "If I'm honest, I think we underestimate how much stress affects the body.",
-            "sampleAnswer": "Completely agree, it shows up in ways people don't expect.",
+            "instruction": "Handle a rumor carefully.",
+            "hint": "Say what you know without spreading it.",
+            "explanation": "With only hints, say so. Don't add to a rumor.",
+            "partnerDialogue": "Nobody told me the office was moving. Did you know?",
+            "sampleAnswer": "Only a hint last week. I don't know the details. Let's see what they say.",
             "acceptedSynonyms": [
-                "shows up in unexpected ways",
-                "completely agree, surprising effects",
-                "yes, it affects us more than we think",
-                "agreed, often in surprising ways"
+                "only a hint last week. i don't know the details. let's see what they say",
+                "i heard rumours, but nothing official. i'd rather wait for the announcement",
+                "i didn't know for certain. have you asked hr",
+                "only a hint last week. i do not know the details. let's see what they say"
             ],
-            "correctAnswer": "Completely agree, it shows up in ways people don't expect.",
             "smartReplies": [
-                "Completely agree, it shows up in ways people don't expect.",
-                "Totally agree — it affects us in surprising ways.",
-                "Absolutely, often in ways we don't even notice."
+                "I heard rumours, but nothing official. I'd rather wait for the announcement.",
+                "Only a hint last week. I don't know the details. Let's see what they say.",
+                "I didn't know for certain. Have you asked HR?"
             ],
+            "correctAnswer": "Only a hint last week. I don't know the details. Let's see what they say.",
             "emotionTag": "Neutral"
         },
         {
             "id": "SPK_DIALOGUEROLEPLAY_L130_Q3",
             "interactionType": "dialogue",
-            "instruction": "Respond to the dialogue.",
-            "hint": "Agree, and defend the genre's craft.",
-            "explanation": "'More craft than people assume' respectfully defends something often underestimated.",
-            "partnerDialogue": "Honestly, I think this genre gets unfairly dismissed sometimes.",
-            "sampleAnswer": "It really does, there's more craft in it than people assume.",
+            "instruction": "Forgive with a boundary.",
+            "hint": "Accept the apology and set a small expectation.",
+            "explanation": "Forgiveness feels honest when it's paired with a small request for the future.",
+            "partnerDialogue": "So, do you forgive me?",
+            "sampleAnswer": "Of course I do. Let's forget about it and move on.",
             "acceptedSynonyms": [
-                "more craft than people assume",
-                "really does, underrated craft",
-                "yes, there's real skill involved",
-                "agreed, more thought than people realize"
+                "of course i do. let's forget about it and move on",
+                "i do, but next time please tell me earlier",
+                "yes. it's over. thanks for saying sorry properly"
             ],
-            "correctAnswer": "It really does, there's more craft in it than people assume.",
             "smartReplies": [
-                "It really does, there's more craft in it than people assume.",
-                "Agreed — there's real skill people overlook.",
-                "Definitely, it takes more craft than people realize."
+                "I do, but next time please tell me earlier.",
+                "Yes. It's over. Thanks for saying sorry properly.",
+                "Of course I do. Let's forget about it and move on."
             ],
+            "correctAnswer": "Of course I do. Let's forget about it and move on.",
             "emotionTag": "Neutral"
         }
     ]

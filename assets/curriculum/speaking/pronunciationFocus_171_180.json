@@ -6,391 +6,451 @@
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L171_Q1",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Let your pitch rise gently through 'pass the salt, please'.",
-            "explanation": "Let your pitch rise gently through the whole request, softening it into a polite, inviting question.",
-            "textToSpeak": "Could you pass the salt, please?",
-            "targetPhoneme": "polite rise ↗",
-            "phoneticHint": "Rise softly across the sentence, lifting a little more on 'please'.",
+            "instruction": "Read the sentence aloud as you would introduce yourself on the phone.",
+            "hint": "Say your name and organisation slowly: 'this is' links as 'thisiz', 'Amira Khan' gives each name its own stress, and 'Northfield Dental' has two stresses.",
+            "explanation": "On the phone, the first few seconds decide clarity. Slow down on names, and put the peaks on conFIRM and apPOINTment.",
+            "textToSpeak": "Hello, this is Amira Khan from Northfield Dental; I'm calling to confirm your appointment.",
+            "targetPhoneme": "phone: identifying yourself",
+            "phoneticHint": "[həˈloʊ ðɪs ɪz əˈmɪərə ˈkɑːn frəm ˈnɔːrθfiːld ˈdentəl] | [aɪm ˈkɔːlɪŋ tə kənˈfɜːrm jər əˈpɔɪntmənt].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Rushing through the name so it can't be understood",
+                "Saying 'this is' as 'this — is' with a gap",
+                "Stressing 'CONfirm' on the first syllable"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L171_Q2",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Let your pitch rise gently through 'explain that again, please'.",
-            "explanation": "A rising pitch on a request like this signals politeness — keep it gentle, not sharp or demanding.",
-            "textToSpeak": "Could you explain that again, please?",
-            "targetPhoneme": "polite rise ↗",
-            "phoneticHint": "Let your pitch climb gently, rising further still on 'please'.",
+            "instruction": "Read the sentence aloud as a polite request on a bad line.",
+            "hint": "'line is breaking up' links, 'repeat' stresses PEAT, and 'a little more slowly' takes a clear rise.",
+            "explanation": "Asking someone to repeat uses a polite rise and clear stress. 'breaking up' is a phrasal verb: the stress falls on 'up'.",
+            "textToSpeak": "Sorry, the line is breaking up; could you repeat that a little more slowly, please?",
+            "targetPhoneme": "phone: asking for repetition",
+            "phoneticHint": "[ˈsɒri ðə ˈlaɪn ɪz ˈbreɪkɪŋ ˈʌp] | [kʊdʒə rɪˈpiːt ðæt ə ˈlɪtəl ˈmɔːr ˈsloʊli pliːz].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'breaking' and 'up' equally",
+                "Stressing 'REpeat' on the first syllable",
+                "Speaking faster instead of slower"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L171_Q3",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Let your pitch rise gently through 'send that file again, please'.",
-            "explanation": "Soften this request with a rising intonation — it should sound inviting, not like a command.",
-            "textToSpeak": "Could you send that file again, please?",
-            "targetPhoneme": "polite rise ↗",
-            "phoneticHint": "The whole request lifts in pitch, peaking softly on 'please'.",
+            "instruction": "Read the sentence aloud as you would give contact details.",
+            "hint": "Each letter and digit gets its own beat; the last item in each group falls.",
+            "explanation": "Spelling and numbers need clean, even beats and a pause between groups. 'Oh' is used for zero in speech.",
+            "textToSpeak": "My name is spelled K-H-A-N, and my number is oh-seven-one, four-eight-two, nine-six-five.",
+            "targetPhoneme": "phone: spelling and numbers",
+            "phoneticHint": "[maɪ ˈneɪm ɪz ˈspeld ˈkeɪ ˈeɪtʃ ˈeɪ ˈen] | [ənd maɪ ˈnʌmbər ɪz ˈoʊ ˈsevən ˈwʌn] | [ˈfɔːr ˈeɪt ˈtuː] | [ˈnaɪn ˈsɪks ˈfaɪv].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Saying all the digits at one speed with no grouping",
+                "Stressing only the first digit in each group",
+                "Not pausing between the groups of digits"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L172_Q1",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Let your pitch rise gently through 'show me the way, please'.",
-            "explanation": "Let your voice lift gently across the sentence — that upward curve is what makes a request sound polite.",
-            "textToSpeak": "Could you show me the way, please?",
-            "targetPhoneme": "polite rise ↗",
-            "phoneticHint": "Rise gradually through the sentence, with extra lift on 'please'.",
+            "instruction": "Read the sentence aloud as a friendly voicemail.",
+            "hint": "'returning' stresses TURN, 'delivery' stresses LIV, and 'ring me back' links.",
+            "explanation": "A voicemail is a monologue: keep a steady, friendly pace, and chunk it: greeting | reason | request.",
+            "textToSpeak": "Hi Daniel, it's Priya; I'm just returning your call about the delivery, so ring me back when you can.",
+            "targetPhoneme": "voicemail: friendly message",
+            "phoneticHint": "[haɪ ˈdænjəl ɪts ˈpriːjə] | [aɪm dʒʌst rɪˈtɜːrnɪŋ jər ˈkɔːl əˈbaʊt ðə dɪˈlɪvəri] | [soʊ ˈrɪŋ mi ˈbæk wen jə ˈkæn].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'REturning' on the first syllable",
+                "Speaking without any pause between chunks",
+                "Saying 'call about the' without linking"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L172_Q2",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Let your pitch rise gently through 'help me with this, please'.",
-            "explanation": "Keep the rise soft and warm — this small upward lift is what turns an order into a polite ask.",
-            "textToSpeak": "Could you help me with this, please?",
-            "targetPhoneme": "polite rise ↗",
-            "phoneticHint": "Keep the pitch climbing gently, topping out on 'please'.",
+            "instruction": "Read the sentence aloud as a recorded office greeting.",
+            "hint": "'reached' ends in [tʃt], 'closed' ends in [zd], and 'until' stresses TIL.",
+            "explanation": "A recorded greeting is clear and unhurried: full forms, no heavy reductions. Give 'Osei' time: oh-SAY-ee.",
+            "textToSpeak": "You've reached the office of Dr. Osei; we're closed until Monday, but you can leave a message after the tone.",
+            "targetPhoneme": "voicemail: recorded greeting",
+            "phoneticHint": "[juːv ˈriːtʃt ði ˈɒfɪs əv ˈdɒktər oʊˈseɪi] | [wɪr ˈkloʊzd ənˈtɪl ˈmʌndeɪ] | [bət ju kən ˈliːv ə ˈmesɪdʒ ˈæftər ðə ˈtoʊn].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Saying 'reached' as 'reach-ed'",
+                "Rushing the doctor's name",
+                "Dropping the [d] of 'closed'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L172_Q3",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Let your pitch rise gently through 'wrap this for me, please'.",
-            "explanation": "A gentle rising pitch here signals courtesy — avoid a flat or falling tone, which can sound blunt.",
-            "textToSpeak": "Could you wrap this for me, please?",
-            "targetPhoneme": "polite rise ↗",
-            "phoneticHint": "Let the request rise smoothly, ending highest on 'please'.",
+            "instruction": "Read the sentence aloud as you would leave a callback message.",
+            "hint": "'extension' stresses TEN, and the digits four-three-one each get a beat; 'five o'clock' has a stressed CLOCK.",
+            "explanation": "When you give a number, slow down and separate each digit. 'before five o'clock' links as 'before-five-a-clock'.",
+            "textToSpeak": "It's Lena from accounts; could you call me back on extension four-three-one before five o'clock?",
+            "targetPhoneme": "voicemail: number and time",
+            "phoneticHint": "[ɪts ˈleɪnə frəm əˈkaʊnts] | [kʊdʒə ˈkɔːl mi ˈbæk ɒn ɪkˈstenʃən ˈfɔːr ˈθriː ˈwʌn] | [bɪˈfɔːr ˈfaɪv əˈklɒk].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'EXtension' on the first syllable",
+                "Merging 'four-three-one' into one long word",
+                "Saying 'o'clock' as 'oh clock' with two beats"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L173_Q1",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Let your pitch rise gently through 'bring more water, please'.",
-            "explanation": "Let the question climb gently in pitch, especially through 'please', to keep the tone warm and polite.",
-            "textToSpeak": "Could you bring more water, please?",
-            "targetPhoneme": "polite rise ↗",
-            "phoneticHint": "The sentence lifts gently in pitch, rising most on 'please'.",
+            "instruction": "Read the sentence aloud as a passenger at a check-in desk.",
+            "hint": "'check in' stresses IN; 'to check' stresses CHECK; 'Toronto' stresses RON.",
+            "explanation": "The same word plays two roles: 'check in' (phrasal verb, stress on the particle) and 'to check' (verb, stress on the verb). 'Toronto' often loses its second [t]: [təˈrɒnoʊ].",
+            "textToSpeak": "I'd like to check in for the flight to Toronto, and I have one suitcase to check.",
+            "targetPhoneme": "airport: 'check in' vs 'check'",
+            "phoneticHint": "[aɪd ˈlaɪk tə tʃek ˈɪn fə ðə ˈflaɪt tə təˈrɒnoʊ] | [ənd aɪ həv ˈwʌn ˈsuːtkeɪs tə ˈtʃek].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'check' in 'check in'",
+                "Stressing 'TOronto' on the first syllable",
+                "Saying 'suitcase' with [ʊ] in 'suit'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L173_Q2",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Let your pitch rise gently through 'restart the router, please'.",
-            "explanation": "This isn't a command — the rising pitch softens it into a courteous, easy-to-refuse request.",
-            "textToSpeak": "Could you restart the router, please?",
-            "targetPhoneme": "polite rise ↗",
-            "phoneticHint": "Climb softly through the request, with the peak on 'please'.",
+            "instruction": "Read the sentence aloud as a passenger making requests.",
+            "hint": "'aisle' is [aɪl] with a silent s, 'possible' stresses POSS, and 'vegetarian' stresses TAIR.",
+            "explanation": "'aisle' sounds like 'I'll'. Two requests, so chunk with a rise: 'aisle seat, please' | 'and is it possible to get a vegetarian meal'.",
+            "textToSpeak": "Could I have an aisle seat, please, and is it possible to get a vegetarian meal?",
+            "targetPhoneme": "airport: requests",
+            "phoneticHint": "[kʊd aɪ ˈhæv ən ˈaɪl ˈsiːt pliːz] | [ənd ɪz ɪt ˈpɒsəbəl tə ˈget ə ˌvedʒəˈteəriən ˈmiːl].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Pronouncing the s in 'aisle'",
+                "Dropping the [dʒ] in 'vegetarian', as 'veh-tarian'",
+                "Stressing 'posSIble' on the second syllable"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L173_Q3",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Let your pitch rise gently through 'check my blood pressure, please'.",
-            "explanation": "Keep your intonation light and rising — it signals you're asking, not instructing.",
-            "textToSpeak": "Could you check my blood pressure, please?",
-            "targetPhoneme": "polite rise ↗",
-            "phoneticHint": "Rise gently across the sentence, lifting extra on 'please'.",
+            "instruction": "Read the sentence aloud as a traveller asking at an airport.",
+            "hint": "'Nairobi' stresses ROH, 'leave from' ends the first question with a strong 'from', and 'boarding' stresses BOARD.",
+            "explanation": "'from' at the end of a question is strong: [frɒm]. Use a fall on 'from' and a rise on 'yet'.",
+            "textToSpeak": "Excuse me, which gate does the flight to Nairobi leave from, and has boarding started yet?",
+            "targetPhoneme": "airport: questions",
+            "phoneticHint": "[ɪkˈskjuːz mi ˈwɪtʃ ˈgeɪt dəz ðə ˈflaɪt tə naɪˈroʊbi ˈliːv ˈfrɒm] | [ənd əz ˈbɔːrdɪŋ ˈstɑːrtɪd ˈjet].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Weakening 'from' at the end of the question to 'frm'",
+                "Stressing 'NAIrobi' on the first syllable",
+                "Dropping the [ɪd] ending of 'started'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L174_Q1",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Let your pitch rise gently through 'turn the volume down, please'.",
-            "explanation": "The gentle upward lift here is what makes this sound like a polite request instead of a demand.",
-            "textToSpeak": "Could you turn the volume down, please?",
-            "targetPhoneme": "polite rise ↗",
-            "phoneticHint": "Let your pitch rise steadily, cresting softly on 'please'.",
+            "instruction": "Read the sentence aloud as a hotel guest arriving.",
+            "hint": "'reservation' stresses VAY, 'Fernandez' stresses NAN, and 'three nights' has [θr] then [ts].",
+            "explanation": "Say the surname slowly and clearly; if needed, spell it. 'three nights' links as 'three-nights' without a gap.",
+            "textToSpeak": "Good evening; I have a reservation under the name Fernandez for three nights.",
+            "targetPhoneme": "hotel: checking in",
+            "phoneticHint": "[ˈgʊd ˈiːvnɪŋ aɪ ˈhæv ə ˌrezərˈveɪʃən ˈʌndər ðə ˈneɪm fərˈnændez] | [fə ˈθriː ˈnaɪts].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'REservation' on the first syllable",
+                "Saying 'three' as 'tree'",
+                "Saying 'nights' without the [s]"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L174_Q2",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Spike your pitch on 'what' to show real surprise.",
-            "explanation": "Push heavy stress onto the surprising detail — your pitch should jump noticeably higher there.",
-            "textToSpeak": "You did what to the kitchen?",
-            "targetPhoneme": "emphatic/surprise stress",
-            "phoneticHint": "Let 'what' jump up sharply in pitch — pure disbelief.",
+            "instruction": "Read the sentence aloud as a hotel guest reporting a fault.",
+            "hint": "'conditioning' stresses DISH, 'isn't working' has [znt], and 'take a look' links.",
+            "explanation": "'conditioning' has [ʃ] from -tion. Start with the problem, then the request: a small fall on 'working', a rise on 'look'.",
+            "textToSpeak": "The air conditioning in my room isn't working; could someone come and take a look?",
+            "targetPhoneme": "hotel: reporting a fault",
+            "phoneticHint": "[ði ˈeər kənˈdɪʃənɪŋ ɪn maɪ ˈruːm ˈɪzənt ˈwɜːrkɪŋ] | [kʊd ˈsʌmwʌn ˈkʌm ənd ˈteɪk ə ˈlʊk].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Saying 'conditioning' with [s] instead of [ʃ]",
+                "Saying 'isn't' as 'is not' with two beats",
+                "Stressing 'CONditioning' on the first syllable"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L174_Q3",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Spike your pitch on 'perfect' to show real surprise.",
-            "explanation": "Let real astonishment come through: stress the unexpected word and let your pitch spike upward.",
-            "textToSpeak": "She got a perfect score on that exam?",
-            "targetPhoneme": "emphatic/surprise stress",
-            "phoneticHint": "Let 'perfect' jump up sharply in pitch — pure disbelief.",
+            "instruction": "Read the sentence aloud as a hotel guest asking for a favour.",
+            "hint": "'checkout' stresses CHECK, 'included' stresses CLUDE, and 'tomorrow' stresses MOR.",
+            "explanation": "Two requests: keep 'could we have a' quick and 'late checkout' clear; then a rising question.",
+            "textToSpeak": "Could we have a late checkout tomorrow, and is breakfast included in the rate?",
+            "targetPhoneme": "hotel: asking for a favour",
+            "phoneticHint": "[kʊd wi ˈhæv ə ˈleɪt ˈtʃekaʊt təˈmɒroʊ] | [ənd ɪz ˈbrekfəst ɪnˈkluːdɪd ɪn ðə ˈreɪt].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'checKOUT' on the second part",
+                "Stressing 'INcluded' on the first syllable",
+                "Saying 'breakfast' as 'break-FAST'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L175_Q1",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Spike your pitch on 'today' to show real surprise.",
-            "explanation": "This reaction needs energy — stress the surprising part strongly, with a clear upward pitch jump.",
-            "textToSpeak": "He resigned from the company today?",
-            "targetPhoneme": "emphatic/surprise stress",
-            "phoneticHint": "Let 'resigned' and 'today' jump up sharply in pitch — pure disbelief.",
+            "instruction": "Read the sentence aloud as a diner arriving.",
+            "hint": "'table for four' links, 'reservation' stresses VAY, and 'happy to wait' is a friendly finish.",
+            "explanation": "A polite opening: a brief request with 'please', then a soft explanation. 'don't have a' shrinks to 'don't-uv-a'.",
+            "textToSpeak": "A table for four, please; we don't have a reservation, but we're happy to wait.",
+            "targetPhoneme": "restaurant: arriving",
+            "phoneticHint": "[ə ˈteɪbəl fə ˈfɔːr pliːz] | [wi ˈdoʊnt əv ə ˌrezərˈveɪʃən] | [bət wɪr ˈhæpi tə ˈweɪt].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'for' as much as 'four'",
+                "Saying the first [z] in 'reservation' as [s]",
+                "Saying 'have a' with a full [hæv]"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L175_Q2",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Spike your pitch on 'again' to show real surprise.",
-            "explanation": "Give the shocking detail real vocal punch — a sudden rise in pitch shows genuine surprise.",
-            "textToSpeak": "Our flight got cancelled again?",
-            "targetPhoneme": "emphatic/surprise stress",
-            "phoneticHint": "Let 'cancelled' and 'again' jump up sharply in pitch — pure disbelief.",
+            "instruction": "Read the sentence aloud as a diner ordering.",
+            "hint": "'salmon' has a silent l: SAM-un; 'swap' has [sw]; 'salad' stresses SAL.",
+            "explanation": "'salmon' is [ˈsæmən]. In 'could I swap', the words link as 'coulda-swap'.",
+            "textToSpeak": "I'll have the grilled salmon, but could I swap the fries for a salad?",
+            "targetPhoneme": "restaurant: ordering",
+            "phoneticHint": "[aɪl ˈhæv ðə ˈgrɪld ˈsæmən] | [bət ˈkʊd aɪ ˈswɒp ðə ˈfraɪz fər ə ˈsæləd].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Pronouncing the l in 'salmon'",
+                "Saying 'swap' with [æ]",
+                "Stressing 'saLAD' on the second syllable"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L175_Q3",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Spike your pitch on 'another country' to show real surprise.",
-            "explanation": "Don't say this flatly — let your pitch leap upward on the part that catches you off guard.",
-            "textToSpeak": "Your sister is moving to another country?",
-            "targetPhoneme": "emphatic/surprise stress",
-            "phoneticHint": "Let 'another country' jump up sharply in pitch — pure disbelief.",
+            "instruction": "Read the sentence aloud as a parent checking about an allergy.",
+            "hint": "'contain' stresses TAIN, 'serious' stresses SER, and 'allergy' stresses AL.",
+            "explanation": "A safety question must be clear: slow down slightly, rise on 'nuts', and stress 'serious' and 'allergy'.",
+            "textToSpeak": "Excuse me, does this dish contain nuts? My daughter has a serious allergy.",
+            "targetPhoneme": "restaurant: dietary needs",
+            "phoneticHint": "[ɪkˈskjuːz mi dəz ðɪs ˈdɪʃ kənˈteɪn ˈnʌts] | [maɪ ˈdɔːtər həz ə ˈsɪəriəs ˈælərdʒi].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'CONtain' on the first syllable",
+                "Saying 'allergy' with [g] at the end",
+                "Pronouncing the 'gh' in 'daughter'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L176_Q1",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Spike your pitch on 'how much' to show real surprise.",
-            "explanation": "Stress and pitch spike together here to convey real disbelief at what you just heard.",
-            "textToSpeak": "This jacket costs how much?",
-            "targetPhoneme": "emphatic/surprise stress",
-            "phoneticHint": "Let 'how much' jump up sharply in pitch — pure disbelief.",
+            "instruction": "Read the sentence aloud as a customer in a shop.",
+            "hint": "'available' stresses VAIL, 'medium' stresses ME, and 'size smaller' links.",
+            "explanation": "A shopper's question: light small words, clear content: COAT, aVAILable, MEdium, SIZE, SMALLer.",
+            "textToSpeak": "Is this coat available in a medium, or maybe a size smaller?",
+            "targetPhoneme": "shopping: sizes",
+            "phoneticHint": "[ɪz ðɪs ˈkoʊt əˈveɪləbəl ɪn ə ˈmiːdiəm] | [ɔːr ˈmeɪbi ə ˈsaɪz ˈsmɔːlər].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'AVailable' on the first syllable",
+                "Saying 'medium' with three equal beats",
+                "Dropping the [z] in 'size'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L176_Q2",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Spike your pitch on 'that much' to show real surprise.",
-            "explanation": "The surprising word deserves a strong pitch jump — that's what makes surprise audible.",
-            "textToSpeak": "This tiny dish costs that much?",
-            "targetPhoneme": "emphatic/surprise stress",
-            "phoneticHint": "Let 'tiny' and 'that much' jump up sharply in pitch — pure disbelief.",
+            "instruction": "Read the sentence aloud as a shopper at a till.",
+            "hint": "'altogether' stresses GETH, 'accept' stresses CEPT, and 'contactless' stresses CON.",
+            "explanation": "Two questions with a rise on 'altogether' and 'payment'. 'do you accept' reduces to 'dyuh-ak-sept'.",
+            "textToSpeak": "How much is this altogether? And do you accept contactless payment?",
+            "targetPhoneme": "shopping: paying",
+            "phoneticHint": "[haʊ ˈmʌtʃ ɪz ðɪs ˌɔːltəˈgeðər] | [ənd də ju əkˈsept ˈkɒntæktləs ˈpeɪmənt].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'ALtogether' on the first syllable",
+                "Saying 'accept' as 'except'",
+                "Dropping the [t] in 'contactless'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L176_Q3",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Spike your pitch on 'whole' and 'overnight' to show real surprise.",
-            "explanation": "Let your voice rise sharply on the unexpected detail — flat delivery would lose the shock.",
-            "textToSpeak": "The whole system crashed overnight?",
-            "targetPhoneme": "emphatic/surprise stress",
-            "phoneticHint": "Let 'whole' and 'overnight' jump up sharply in pitch — pure disbelief.",
+            "instruction": "Read the sentence aloud as a customer returning an item.",
+            "hint": "'return' stresses TURN, 'bought it' links as 'bought-it', and 'receipt' has a silent p.",
+            "explanation": "A return request: clear and calm. 'I've kept the receipt' is a reassurance, said quickly with a fall on 'receipt'.",
+            "textToSpeak": "Can I return this? I bought it last week, and I've kept the receipt.",
+            "targetPhoneme": "shopping: returns",
+            "phoneticHint": "[kən aɪ rɪˈtɜːrn ðɪs] | [aɪ ˈbɔːt ɪt ˈlæst ˈwiːk] | [ənd aɪv ˈkept ðə rɪˈsiːt].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing the first syllable of 'receipt'",
+                "Stressing 'REturn' as a verb",
+                "Saying 'bought' with [aʊ]"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L177_Q1",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Spike your pitch on 'completely normal' to show real surprise.",
-            "explanation": "Really lean into the surprising word with both stress and a rising pitch — show genuine disbelief.",
-            "textToSpeak": "The results came back completely normal?",
-            "targetPhoneme": "emphatic/surprise stress",
-            "phoneticHint": "Let 'completely normal' jump up sharply in pitch — pure disbelief.",
+            "instruction": "Read the sentence aloud as a patient booking.",
+            "hint": "'appointment' stresses POINT, 'persistent' stresses SIS, and 'cough' ends with [f].",
+            "explanation": "State your purpose first, then the reason. 'make an appointment' links as 'ma-kan-appointment'.",
+            "textToSpeak": "I need to make an appointment to see the doctor; it's about a persistent cough.",
+            "targetPhoneme": "appointments: booking",
+            "phoneticHint": "[aɪ ˈniːd tə ˈmeɪk ən əˈpɔɪntmənt] | [tə ˈsiː ðə ˈdɒktər] | [ɪts əˈbaʊt ə pərˈsɪstənt ˈkɒf].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'APpointment' on the first syllable",
+                "Ending 'cough' with [g] or [k]",
+                "Saying 'make an' as 'make — an' with a gap"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L177_Q2",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Spike your pitch on 'five minutes' to show real surprise.",
-            "explanation": "This is a reaction, not a calm statement — let the surprising detail spike up in pitch and stress.",
-            "textToSpeak": "The concert sold out in five minutes?",
-            "targetPhoneme": "emphatic/surprise stress",
-            "phoneticHint": "Let 'five minutes' jump up sharply in pitch — pure disbelief.",
+            "instruction": "Read the sentence aloud as a patient describing symptoms.",
+            "hint": "'sharp pain' has clear peaks, 'since Sunday' links, and 'bend over' runs together as 'ben-dover'.",
+            "explanation": "Describing symptoms: put stress on the key words SHARP, PAIN, LOWer BACK, WORSE, BEND. Keep 'I've had a' quick.",
+            "textToSpeak": "I've had a sharp pain in my lower back since Sunday, and it gets worse when I bend over.",
+            "targetPhoneme": "appointments: describing symptoms",
+            "phoneticHint": "[aɪv hæd ə ˈʃɑːrp ˈpeɪn ɪn maɪ ˈloʊər ˈbæk sɪns ˈsʌndeɪ] | [ənd ɪt ˈgets ˈwɜːrs wen aɪ ˈbend oʊvər].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'I've had' more than 'sharp pain'",
+                "Saying 'worse' with [ɔː], as 'wors'",
+                "Separating 'bend' and 'over'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L177_Q3",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Let your pitch fall — this question doesn't really need an answer.",
-            "explanation": "This question doesn't need an answer — let your pitch fall, since everyone already agrees.",
-            "textToSpeak": "Who doesn't love a relaxing weekend?",
-            "targetPhoneme": "rhetorical fall ↘",
-            "phoneticHint": "Fall by the end — you're making a point, not asking.",
+            "instruction": "Read the sentence aloud as a patient asking about a test.",
+            "hint": "'fast' ends in [st], 'blood' has [ʌ], and 'results' stresses SULTS.",
+            "explanation": "Two questions: rise on 'test' and fall on 'take'. 'blood' has [ʌ] (as in 'cut'), not [uː].",
+            "textToSpeak": "Do I need to fast before the blood test, and how long will the results take?",
+            "targetPhoneme": "appointments: asking about a test",
+            "phoneticHint": "[də aɪ ˈniːd tə ˈfæst bɪˈfɔːr ðə ˈblʌd ˈtest] | [ənd ˈhaʊ ˈlɔːŋ wɪl ðə rɪˈzʌlts ˈteɪk].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Saying 'blood' with [uː], like 'food'",
+                "Dropping the [t] in 'fast'",
+                "Stressing 'REsults' on the first syllable"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L178_Q1",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "This question is rhetorical — let your pitch fall at the end.",
-            "explanation": "Rhetorical questions like this fall in pitch — you're making a point, not genuinely asking.",
-            "textToSpeak": "Who wants extra homework anyway?",
-            "targetPhoneme": "rhetorical fall ↘",
-            "phoneticHint": "Drop your pitch at the end — this states an obvious point.",
+            "instruction": "Read the sentence aloud as friendly small talk.",
+            "hint": "'know each' links with a [w] glide; 'two' has [uː]; 'for long' is a light chunk.",
+            "explanation": "Small talk sounds warm when the pitch moves: rise on 'other' and again on 'long'.",
+            "textToSpeak": "So, how do you two know each other? Have you been friends for long?",
+            "targetPhoneme": "social: small talk questions",
+            "phoneticHint": "[soʊ ˈhaʊ də ju ˈtuː ˈnoʊ ˈiːtʃ ˈʌðər] | [əv ju bɪn ˈfrendz fə ˈlɔːŋ].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Pausing between 'know' and 'each'",
+                "Falling on 'other'",
+                "Stressing 'have you been' heavily"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L178_Q2",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "No real answer needed here — drop your pitch like a statement.",
-            "explanation": "Let your voice drop by the end — this question assumes everyone shares the same obvious answer.",
-            "textToSpeak": "Who has time for another meeting today?",
-            "targetPhoneme": "rhetorical fall ↘",
-            "phoneticHint": "End on a falling note — no real answer is expected.",
+            "instruction": "Read the sentence aloud as a polite refusal Watch the social: polite decline.",
+            "hint": "'invite' stresses VITE, 'already' stresses READ, and 'weekend' stresses WEEK.",
+            "explanation": "A polite decline: warm start, then the reason. Use a fall-rise on 'me' to signal 'but'.",
+            "textToSpeak": "That's very kind of you to invite me, but I already have plans that weekend.",
+            "targetPhoneme": "social: polite decline",
+            "phoneticHint": "[ðæts ˈveri ˈkaɪnd əv ju tə ɪnˈvaɪt ˈmiː] fall-rise | [bət aɪ ɔːlˈredi həv ˈplænz ðæt ˈwiːkend].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Falling firmly on 'me', which sounds final",
+                "Stressing 'INvite' on the first syllable",
+                "Saying 'already' with stress on 'AL'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L178_Q3",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Say this with falling pitch — everyone already knows the answer.",
-            "explanation": "This isn't real uncertainty — the falling pitch shows you already know what everyone would say.",
-            "textToSpeak": "Who wouldn't want a free upgrade?",
-            "targetPhoneme": "rhetorical fall ↘",
-            "phoneticHint": "Let your pitch settle down — this is really a statement.",
+            "instruction": "Read the sentence aloud as a mild opinion Watch the social: giving an opinion.",
+            "hint": "'overrated' stresses RAY, 'opinion' stresses PIN, and 'enjoy' stresses JOY.",
+            "explanation": "A gentle opinion uses softeners ('a bit', 'in my opinion') said quickly and a fall on 'enjoy it'.",
+            "textToSpeak": "It's a bit overrated, in my opinion, but I can see why people enjoy it.",
+            "targetPhoneme": "social: giving an opinion",
+            "phoneticHint": "[ɪts ə ˈbɪt ˌoʊvərˈreɪtɪd] | [ɪn maɪ əˈpɪnjən] | [bət aɪ kən ˈsiː ˈwaɪ ˈpiːpəl ɪnˈdʒɔɪ ɪt].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'OVerrated' on the first syllable",
+                "Stressing 'a bit' as much as 'overrated'",
+                "Saying 'enjoy' with the stress on 'EN'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L179_Q1",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Let your voice settle downward — this is a rhetorical question.",
-            "explanation": "Say this with a falling pitch — it's a statement in question form, not a genuine request for info.",
-            "textToSpeak": "Who wouldn't enjoy grandma's cooking?",
-            "targetPhoneme": "rhetorical fall ↘",
-            "phoneticHint": "Fall at the end here — the answer is assumed by everyone.",
+            "instruction": "Read the sentence aloud as you would check directions.",
+            "hint": "'Elm' has no [h]; 'Helm' begins with [h]. Make the difference audible.",
+            "explanation": "A short contrast question: rise on 'Elm Road' and fall on 'Helm Road'. The [h] in 'Helm' is a gentle breath.",
+            "textToSpeak": "Sorry, I didn't catch the street name; was that Elm Road or Helm Road?",
+            "targetPhoneme": "clarification: [h] vs no [h]",
+            "phoneticHint": "[ˈsɒri aɪ ˈdɪdnt ˈkætʃ ðə ˈstriːt ˈneɪm] | [wəz ðæt ˈelm ˈroʊd] rising | [ɔːr ˈhelm ˈroʊd] falling.",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Adding [h] to 'Elm'",
+                "Dropping [h] from 'Helm'",
+                "Using the same pitch on both road names"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L179_Q2",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "This falls in pitch, since you're making a point, not asking.",
-            "explanation": "The falling intonation here signals 'obviously' — no one really needs to answer this question.",
-            "textToSpeak": "Who could resist a discount like that?",
-            "targetPhoneme": "rhetorical fall ↘",
-            "phoneticHint": "This ends with falling pitch, like a statement, not a question.",
+            "instruction": "Read the sentence aloud as you give directions.",
+            "hint": "Each step gets a peak: STRAIGHT, TWO BLOCKS, RIGHT, BAKery, THIRD, LEFT.",
+            "explanation": "Directions are a list of steps. Rise slightly after each step and fall on the last: 'on your LEFT'.",
+            "textToSpeak": "Go straight for two blocks, turn right at the bakery, and it's the third building on your left.",
+            "targetPhoneme": "giving directions",
+            "phoneticHint": "[ˈgoʊ ˈstreɪt fə ˈtuː ˈblɒks] | [ˈtɜːrn ˈraɪt ət ðə ˈbeɪkəri] | [ənd ɪts ðə ˈθɜːrd ˈbɪldɪŋ ɒn jə ˈleft].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Falling at the end of every step",
+                "Stressing 'and it's the' strongly",
+                "Saying 'third' with [t], as 'tird'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L179_Q3",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Drop your pitch here — the answer is obvious to everyone.",
-            "explanation": "Let your pitch settle downward — rhetorical questions state an assumed truth, they don't ask.",
-            "textToSpeak": "Who doesn't enjoy a warm bowl of soup?",
-            "targetPhoneme": "rhetorical fall ↘",
-            "phoneticHint": "Drop your voice by the end — you're not really asking.",
+            "instruction": "Read the sentence aloud as you finish directions.",
+            "hint": "'opposite' stresses OP, 'pharmacy' stresses PHAR, and 'traffic lights' is a compound with stress on TRAF.",
+            "explanation": "'You can't miss it' is a common reassurance: quick and light with a fall on 'it'. Then the landmarks: OPposite, PHARmacy, TRAFfic lights.",
+            "textToSpeak": "You can't miss it; it's opposite the pharmacy, just past the traffic lights.",
+            "targetPhoneme": "giving directions: landmarks",
+            "phoneticHint": "[ju ˈkænt ˈmɪs ɪt] | [ɪts ˈɒpəzɪt ðə ˈfɑːrməsi] | [dʒʌst ˈpæst ðə ˈtræfɪk ˈlaɪts].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'opPOsite' on the second syllable",
+                "Saying 'can't' as [kən]",
+                "Stressing 'traffic LIGHTS' equally"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L180_Q1",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "This question doesn't expect a reply — let your pitch fall.",
-            "explanation": "This falls like a statement because it essentially is one — everyone already knows the answer.",
-            "textToSpeak": "Who actually reads the whole user manual?",
-            "targetPhoneme": "rhetorical fall ↘",
-            "phoneticHint": "Let the pitch fall — this question makes a point, not a request.",
+            "instruction": "Read the sentence aloud as you report a problem.",
+            "hint": "'heating' starts with [h], 'engineer' stresses NEER, and 'in touch' links.",
+            "explanation": "Explain the problem in two parts: what happened and what hasn't. A small fall-rise on 'evening', then a fall on 'yet'.",
+            "textToSpeak": "The heating stopped working yesterday evening, and the engineer hasn't been in touch yet.",
+            "targetPhoneme": "explaining a problem",
+            "phoneticHint": "[ðə ˈhiːtɪŋ ˈstɒpt ˈwɜːrkɪŋ ˈjestərdeɪ ˈiːvnɪŋ] | [ənd ði ˌendʒɪˈnɪr ˈhæznt bɪn ɪn ˈtʌtʃ ˈjet].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Dropping the [h] in 'heating' and 'hasn't'",
+                "Stressing 'ENgineer' on the first syllable",
+                "Saying 'evening' with three syllables: 'eve-en-ing'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L180_Q2",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Say this like a statement in question form — pitch falls at the end.",
-            "explanation": "Drop your pitch at the end — you're making an obvious point, not genuinely wondering.",
-            "textToSpeak": "Who doesn't want to feel more energetic?",
-            "targetPhoneme": "rhetorical fall ↘",
-            "phoneticHint": "End low in pitch — this rhetorical question needs no reply.",
+            "instruction": "Read the sentence aloud as a customer describing a fault.",
+            "hint": "'restarting' stresses START, 'connection' stresses NEC, and 'every' has two beats: EV-ree.",
+            "explanation": "Troubleshooting: name what you tried, then the persistent issue. 'keeps dropping' is the main point: stress KEEPS and DROPping.",
+            "textToSpeak": "I've tried restarting the router twice, but the connection keeps dropping every few minutes.",
+            "targetPhoneme": "explaining a problem: troubleshooting",
+            "phoneticHint": "[aɪv ˈtraɪd ˌriːˈstɑːrtɪŋ ðə ˈruːtər ˈtwaɪs] | [bət ðə kəˈnekʃən ˈkiːps ˈdrɒpɪŋ ˈevri fjuː ˈmɪnɪts].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Stressing 'REstarting' on the first syllable",
+                "Saying 'every' with three syllables",
+                "Saying 'connection' with stress on 'CON'"
             ]
         },
         {
             "id": "SPK_PRONUNCIATIONFOCUS_L180_Q3",
             "interactionType": "echo",
-            "instruction": "Read the sentence aloud.",
-            "hint": "Let your intonation settle down — you're not really asking.",
-            "explanation": "The fall in pitch confirms this is rhetorical — said for effect, not because you need an answer.",
-            "textToSpeak": "Who isn't a sucker for a good plot twist?",
-            "targetPhoneme": "rhetorical fall ↘",
-            "phoneticHint": "Fall by the end — the obvious answer needs no response.",
+            "instruction": "Read the sentence aloud as a request for a repair visit.",
+            "hint": "'someone' stresses SOME, 'take a look' links, and 'nine would suit' runs as 'nine-wood-suit'.",
+            "explanation": "A request plus availability: a polite rise on 'week', then a clear statement of times: ANy MORning afTER NINE.",
+            "textToSpeak": "Would it be possible to send someone to take a look this week? Any morning after nine would suit me.",
+            "targetPhoneme": "making a request",
+            "phoneticHint": "[wʊd ɪt bi ˈpɒsəbəl tə ˈsend ˈsʌmwʌn tə ˈteɪk ə ˈlʊk ðɪs ˈwiːk] | [ˈeni ˈmɔːrnɪŋ ˈæftər ˈnaɪn wʊd ˈsuːt mi].",
             "commonMistakes": [
-                "Watch out for incorrect stress."
+                "Saying 'take a' as 'take — a' with a gap",
+                "Stressing 'would' strongly",
+                "Saying 'suit' as 'soot' with [ʊ]"
             ]
         }
     ]

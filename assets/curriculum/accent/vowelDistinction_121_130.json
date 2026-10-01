@@ -5,448 +5,91 @@
     "quests": [
         {
             "id": "ACC_VOWELDISTINCTION_L121_Q1",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE FIRST SYLLABLE",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "father",
-            "textToSpeak": "father",
+            "word": "photograph",
+            "textToSpeak": "photograph",
             "options": [
-                "/ɑː/",
-                "/æ/"
+                "/əʊ/",
+                "/ɒ/"
             ],
-            "correctAnswer": "/ɑː/",
+            "correctAnswer": "/əʊ/",
             "correctAnswerIndex": 0,
-            "hint": "Think of how you say 'calm'. The vowel in 'father' should feel the same way. That is the PALM sound, not the TRAP sound in 'cat'.",
-            "explanation": "'father' is built on the PALM vowel /ɑː/: a long, open-back vowel - the mouth drops wide open with unrounded lips. Keep this anchored against 'calm' so you can recognise it in new words too.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
+            "hint": "Stress hits the first syllable. Close and round your lips there.",
+            "explanation": "Stress sits on the first syllable, so that is where the full closing vowel appears. The weak middle syllable and the long final vowel are not part of this choice.",
+            "vowelTensionRule": "Listen for movement: /əʊ/ travels and ends with lip rounding, while /ɒ/ stays put.",
             "vowelChart": {
-                "x": 0.9,
-                "y": 0.95
+                "x": 0.5,
+                "y": 0.5
             }
         },
         {
             "id": "ACC_VOWELDISTINCTION_L121_Q2",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE STRESSED SYLLABLE",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "calm",
-            "textToSpeak": "calm",
+            "word": "photographer",
+            "textToSpeak": "photographer",
             "options": [
-                "/ɑː/",
-                "/æ/"
+                "/əʊ/",
+                "/ɒ/"
             ],
-            "correctAnswer": "/ɑː/",
-            "correctAnswerIndex": 0,
-            "hint": "This word uses the PALM vowel - a long, open-back vowel - the mouth drops wide open with unrounded lips. It sounds like 'father', not like 'bag' which is the TRAP vowel /æ/.",
-            "explanation": "'calm' is built on the PALM vowel /ɑː/: a long, open-back vowel - the mouth drops wide open with unrounded lips. Keep this anchored against 'calm' so you can recognise it in new words too.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
+            "correctAnswer": "/ɒ/",
+            "correctAnswerIndex": 1,
+            "hint": "Same word family, but the stress has jumped. Which syllable is loud now, and what is its vowel?",
+            "explanation": "Adding -er moves the stress to the second syllable, which now holds the short rounded vowel, while the first syllable weakens to schwa. Stress rewrites the vowel pattern.",
+            "vowelTensionRule": "Adding a suffix can move the stress and change the vowels: photograph has /əʊ/ in syllable one, photographer has /ɒ/ in syllable two.",
             "vowelChart": {
-                "x": 0.9,
-                "y": 0.95
+                "x": 0.95,
+                "y": 0.8
             }
         },
         {
             "id": "ACC_VOWELDISTINCTION_L121_Q3",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE STRESSED SYLLABLE",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "bat",
-            "textToSpeak": "bat",
+            "word": "economy",
+            "textToSpeak": "economy",
             "options": [
-                "/ɑː/",
-                "/æ/"
+                "/ʌ/",
+                "/ɒ/"
             ],
-            "correctAnswer": "/æ/",
+            "correctAnswer": "/ɒ/",
             "correctAnswerIndex": 1,
-            "hint": "Listen to the main vowel in 'bat'. It should match 'bag', the TRAP vowel /æ/ - not the PALM vowel you hear in 'calm'.",
-            "explanation": "The vowel sound in 'bat' is /æ/, the TRAP vowel - a short, low-front vowel - the jaw drops and the mouth opens wide. It contrasts with the PALM vowel /ɑː/, heard in words like 'father'.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
+            "hint": "Skip the weak first syllable and look at the stressed second one: short, open, lightly rounded.",
+            "explanation": "The short rounded vowel sits in the stressed second syllable, while the first syllable reduces to a weak /ɪ/. No central strong vowel appears anywhere.",
+            "vowelTensionRule": "Spelling o can give either: 'son' has /ʌ/ and 'sock' has /ɒ/. After w, a gives /ɒ/ (want) while o often gives /ʌ/ (wonder).",
             "vowelChart": {
-                "x": 0.2,
-                "y": 0.9
+                "x": 0.95,
+                "y": 0.8
             }
         },
         {
             "id": "ACC_VOWELDISTINCTION_L122_Q1",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE STRESSED SYLLABLE",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "palm",
-            "textToSpeak": "palm",
+            "word": "political",
+            "textToSpeak": "political",
             "options": [
-                "/ɑː/",
-                "/æ/"
+                "/iː/",
+                "/ɪ/"
             ],
-            "correctAnswer": "/ɑː/",
-            "correctAnswerIndex": 0,
-            "hint": "Compare 'father' (/ɑː/) with 'bag' (/æ/). The vowel in 'palm' matches one of these - which one feels right?",
-            "explanation": "'palm' is built on the PALM vowel /ɑː/: a long, open-back vowel - the mouth drops wide open with unrounded lips. Keep this anchored against 'calm' so you can recognise it in new words too.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
+            "correctAnswer": "/ɪ/",
+            "correctAnswerIndex": 1,
+            "hint": "Two short vowels share this word, but only one carries the stress. Pick the strong one.",
+            "explanation": "The stressed second syllable has the short vowel. The later weak vowel sounds similar, which is why the question names the stressed one.",
+            "vowelTensionRule": "/iː/ is tense and slightly advanced, /ɪ/ more relaxed. You can feel the tension in the muscles under the chin.",
             "vowelChart": {
-                "x": 0.9,
-                "y": 0.95
+                "x": 0.25,
+                "y": 0.2
             }
         },
         {
             "id": "ACC_VOWELDISTINCTION_L122_Q2",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "rat",
-            "textToSpeak": "rat",
-            "options": [
-                "/ɑː/",
-                "/æ/"
-            ],
-            "correctAnswer": "/æ/",
-            "correctAnswerIndex": 1,
-            "hint": "Think of how you say 'cat'. The vowel in 'rat' should feel the same way. That is the TRAP sound, not the PALM sound in 'calm'.",
-            "explanation": "The vowel sound in 'rat' is /æ/, the TRAP vowel - a short, low-front vowel - the jaw drops and the mouth opens wide. It contrasts with the PALM vowel /ɑː/, heard in words like 'father'.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
-            "vowelChart": {
-                "x": 0.2,
-                "y": 0.9
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L122_Q3",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "mat",
-            "textToSpeak": "mat",
-            "options": [
-                "/ɑː/",
-                "/æ/"
-            ],
-            "correctAnswer": "/æ/",
-            "correctAnswerIndex": 1,
-            "hint": "Tune your ear to 'cat'. 'mat' uses that exact vowel (/æ/), the TRAP sound. Do not let it drift toward the PALM vowel.",
-            "explanation": "'mat' is pronounced with /æ/, the TRAP vowel: a short, low-front vowel - the jaw drops and the mouth opens wide. Practising this contrast against the PALM vowel sharpens your ear for one of English's key vowel pairs.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
-            "vowelChart": {
-                "x": 0.2,
-                "y": 0.9
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L123_Q1",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "spa",
-            "textToSpeak": "spa",
-            "options": [
-                "/ɑː/",
-                "/æ/"
-            ],
-            "correctAnswer": "/ɑː/",
-            "correctAnswerIndex": 0,
-            "hint": "Compare 'calm' (/ɑː/) with 'cat' (/æ/). The vowel in 'spa' matches one of these - which one feels right?",
-            "explanation": "The vowel sound in 'spa' is /ɑː/, the PALM vowel - a long, open-back vowel - the mouth drops wide open with unrounded lips. It contrasts with the TRAP vowel /æ/, heard in words like 'cat'.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
-            "vowelChart": {
-                "x": 0.9,
-                "y": 0.95
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L123_Q2",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "drama",
-            "textToSpeak": "drama",
-            "options": [
-                "/ɑː/",
-                "/æ/"
-            ],
-            "correctAnswer": "/ɑː/",
-            "correctAnswerIndex": 0,
-            "hint": "The key difference is between /ɑː/ and /æ/. In 'drama', listen for a long, open-back vowel - the mouth drops wide open with unrounded lips, just like in 'calm'.",
-            "explanation": "The vowel sound in 'drama' is /ɑː/, the PALM vowel - a long, open-back vowel - the mouth drops wide open with unrounded lips. It contrasts with the TRAP vowel /æ/, heard in words like 'cat'.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
-            "vowelChart": {
-                "x": 0.9,
-                "y": 0.95
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L123_Q3",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "land",
-            "textToSpeak": "land",
-            "options": [
-                "/ɑː/",
-                "/æ/"
-            ],
-            "correctAnswer": "/æ/",
-            "correctAnswerIndex": 1,
-            "hint": "'land' is built on the TRAP vowel: a short, low-front vowel - the jaw drops and the mouth opens wide. Use 'bag' as your reference - that is the sound you are listening for.",
-            "explanation": "Here, 'land' uses the TRAP vowel (/æ/) - a short, low-front vowel - the jaw drops and the mouth opens wide. Notice how different this feels from the PALM vowel in 'father'.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
-            "vowelChart": {
-                "x": 0.2,
-                "y": 0.9
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L124_Q1",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "llama",
-            "textToSpeak": "llama",
-            "options": [
-                "/ɑː/",
-                "/æ/"
-            ],
-            "correctAnswer": "/ɑː/",
-            "correctAnswerIndex": 0,
-            "hint": "The vowel in 'llama' is a long, open-back vowel - the mouth drops wide open with unrounded lips. Think of 'father' - it uses the same sound. The TRAP vowel in 'cat' feels quite different.",
-            "explanation": "'llama' is pronounced with /ɑː/, the PALM vowel: a long, open-back vowel - the mouth drops wide open with unrounded lips. Practising this contrast against the TRAP vowel sharpens your ear for one of English's key vowel pairs.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
-            "vowelChart": {
-                "x": 0.9,
-                "y": 0.95
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L124_Q2",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "grand",
-            "textToSpeak": "grand",
-            "options": [
-                "/ɑː/",
-                "/æ/"
-            ],
-            "correctAnswer": "/æ/",
-            "correctAnswerIndex": 1,
-            "hint": "Listen to the main vowel in 'grand'. It should match 'cat', the TRAP vowel /æ/ - not the PALM vowel you hear in 'calm'.",
-            "explanation": "'grand' is built on the TRAP vowel /æ/: a short, low-front vowel - the jaw drops and the mouth opens wide. Keep this anchored against 'bag' so you can recognise it in new words too.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
-            "vowelChart": {
-                "x": 0.2,
-                "y": 0.9
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L124_Q3",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "stand",
-            "textToSpeak": "stand",
-            "options": [
-                "/ɑː/",
-                "/æ/"
-            ],
-            "correctAnswer": "/æ/",
-            "correctAnswerIndex": 1,
-            "hint": "Listen to the main vowel in 'stand'. It should match 'cat', the TRAP vowel /æ/ - not the PALM vowel you hear in 'father'.",
-            "explanation": "The vowel sound in 'stand' is /æ/, the TRAP vowel - a short, low-front vowel - the jaw drops and the mouth opens wide. It contrasts with the PALM vowel /ɑː/, heard in words like 'father'.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
-            "vowelChart": {
-                "x": 0.2,
-                "y": 0.9
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L125_Q1",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "bra",
-            "textToSpeak": "bra",
-            "options": [
-                "/ɑː/",
-                "/æ/"
-            ],
-            "correctAnswer": "/ɑː/",
-            "correctAnswerIndex": 0,
-            "hint": "Listen to the main vowel in 'bra'. It should match 'father', the PALM vowel /ɑː/ - not the TRAP vowel you hear in 'cat'.",
-            "explanation": "'bra' is pronounced with /ɑː/, the PALM vowel: a long, open-back vowel - the mouth drops wide open with unrounded lips. Practising this contrast against the TRAP vowel sharpens your ear for one of English's key vowel pairs.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
-            "vowelChart": {
-                "x": 0.9,
-                "y": 0.95
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L125_Q2",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "sonata",
-            "textToSpeak": "sonata",
-            "options": [
-                "/ɑː/",
-                "/æ/"
-            ],
-            "correctAnswer": "/ɑː/",
-            "correctAnswerIndex": 0,
-            "hint": "Think of how you say 'father'. The vowel in 'sonata' should feel the same way. That is the PALM sound, not the TRAP sound in 'cat'.",
-            "explanation": "Here, 'sonata' uses the PALM vowel (/ɑː/) - a long, open-back vowel - the mouth drops wide open with unrounded lips. Notice how different this feels from the TRAP vowel in 'cat'.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
-            "vowelChart": {
-                "x": 0.9,
-                "y": 0.95
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L125_Q3",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "grant",
-            "textToSpeak": "grant",
-            "options": [
-                "/ɑː/",
-                "/æ/"
-            ],
-            "correctAnswer": "/æ/",
-            "correctAnswerIndex": 1,
-            "hint": "'grant' is built on the TRAP vowel: a short, low-front vowel - the jaw drops and the mouth opens wide. Use 'cat' as your reference - that is the sound you are listening for.",
-            "explanation": "The vowel sound in 'grant' is /æ/, the TRAP vowel - a short, low-front vowel - the jaw drops and the mouth opens wide. It contrasts with the PALM vowel /ɑː/, heard in words like 'father'.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
-            "vowelChart": {
-                "x": 0.2,
-                "y": 0.9
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L126_Q1",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "banana",
-            "textToSpeak": "banana",
-            "options": [
-                "/ɑː/",
-                "/æ/"
-            ],
-            "correctAnswer": "/ɑː/",
-            "correctAnswerIndex": 0,
-            "hint": "Listen to the main vowel in 'banana'. It should match 'calm', the PALM vowel /ɑː/ - not the TRAP vowel you hear in 'cat'.",
-            "explanation": "'banana' is built on the PALM vowel /ɑː/: a long, open-back vowel - the mouth drops wide open with unrounded lips. Keep this anchored against 'calm' so you can recognise it in new words too.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
-            "vowelChart": {
-                "x": 0.9,
-                "y": 0.95
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L126_Q2",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "travel",
-            "textToSpeak": "travel",
-            "options": [
-                "/ɑː/",
-                "/æ/"
-            ],
-            "correctAnswer": "/æ/",
-            "correctAnswerIndex": 1,
-            "hint": "'travel' is built on the TRAP vowel: a short, low-front vowel - the jaw drops and the mouth opens wide. Use 'bag' as your reference - that is the sound you are listening for.",
-            "explanation": "'travel' is built on the TRAP vowel /æ/: a short, low-front vowel - the jaw drops and the mouth opens wide. Keep this anchored against 'bag' so you can recognise it in new words too.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
-            "vowelChart": {
-                "x": 0.2,
-                "y": 0.9
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L126_Q3",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "camp",
-            "textToSpeak": "camp",
-            "options": [
-                "/ɑː/",
-                "/æ/"
-            ],
-            "correctAnswer": "/æ/",
-            "correctAnswerIndex": 1,
-            "hint": "The vowel in 'camp' is a short, low-front vowel - the jaw drops and the mouth opens wide. Think of 'bag' - it uses the same sound. The PALM vowel in 'father' feels quite different.",
-            "explanation": "'camp' is pronounced with /æ/, the TRAP vowel: a short, low-front vowel - the jaw drops and the mouth opens wide. Practising this contrast against the PALM vowel sharpens your ear for one of English's key vowel pairs.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
-            "vowelChart": {
-                "x": 0.2,
-                "y": 0.9
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L127_Q1",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "pasta",
-            "textToSpeak": "pasta",
-            "options": [
-                "/ɑː/",
-                "/æ/"
-            ],
-            "correctAnswer": "/ɑː/",
-            "correctAnswerIndex": 0,
-            "hint": "Tune your ear to 'father'. 'pasta' uses that exact vowel (/ɑː/), the PALM sound. Do not let it drift toward the TRAP vowel.",
-            "explanation": "'pasta' is pronounced with /ɑː/, the PALM vowel: a long, open-back vowel - the mouth drops wide open with unrounded lips. Practising this contrast against the TRAP vowel sharpens your ear for one of English's key vowel pairs.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
-            "vowelChart": {
-                "x": 0.9,
-                "y": 0.95
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L127_Q2",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "mama",
-            "textToSpeak": "mama",
-            "options": [
-                "/ɑː/",
-                "/æ/"
-            ],
-            "correctAnswer": "/ɑː/",
-            "correctAnswerIndex": 0,
-            "hint": "Say 'father' out loud, then say 'mama'. If the stressed vowel feels the same, you are hearing /ɑː/, not the TRAP vowel in 'bag'.",
-            "explanation": "Here, 'mama' uses the PALM vowel (/ɑː/) - a long, open-back vowel - the mouth drops wide open with unrounded lips. Notice how different this feels from the TRAP vowel in 'cat'. You will often meet this word when talking about family life.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
-            "vowelChart": {
-                "x": 0.9,
-                "y": 0.95
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L127_Q3",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
-            "subtype": "vowelDistinction",
-            "interactionType": "speaking",
-            "word": "fashion",
-            "textToSpeak": "fashion",
-            "options": [
-                "/ɑː/",
-                "/æ/"
-            ],
-            "correctAnswer": "/æ/",
-            "correctAnswerIndex": 1,
-            "hint": "The key difference is between /æ/ and /ɑː/. In 'fashion', listen for a short, low-front vowel - the jaw drops and the mouth opens wide, just like in 'cat'.",
-            "explanation": "'fashion' is built on the TRAP vowel /æ/: a short, low-front vowel - the jaw drops and the mouth opens wide. Keep this anchored against 'bag' so you can recognise it in new words too.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
-            "vowelChart": {
-                "x": 0.2,
-                "y": 0.9
-            }
-        },
-        {
-            "id": "ACC_VOWELDISTINCTION_L128_Q1",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE STRESSED SYLLABLE",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
             "word": "tomato",
@@ -457,180 +100,537 @@
             ],
             "correctAnswer": "/ɑː/",
             "correctAnswerIndex": 0,
-            "hint": "Say 'father' out loud, then say 'tomato'. If the stressed vowel feels the same, you are hearing /ɑː/, not the TRAP vowel in 'bag'.",
-            "explanation": "'tomato' is built on the PALM vowel /ɑː/: a long, open-back vowel - the mouth drops wide open with unrounded lips. Keep this anchored against 'calm' so you can recognise it in new words too.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
+            "hint": "In British English the middle syllable is the strong one, and it is long and open.",
+            "explanation": "In RP the stressed middle syllable is long and open, a distinctly British feature. Other accents say it differently, but this course targets RP.",
+            "vowelTensionRule": "The tongue is pushed forward for /æ/ and pulled back and down for /ɑː/. Feel the tongue root move.",
             "vowelChart": {
                 "x": 0.9,
                 "y": 0.95
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L122_Q3",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE STRESSED SYLLABLE",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "attack",
+            "textToSpeak": "attack",
+            "options": [
+                "/æ/",
+                "/e/"
+            ],
+            "correctAnswer": "/æ/",
+            "correctAnswerIndex": 0,
+            "hint": "The first syllable is a quick schwa. The strong vowel that follows is wide open.",
+            "explanation": "Only the stressed second syllable takes the wide vowel. The first syllable is a quick schwa.",
+            "vowelTensionRule": "/e/ has the jaw half open and the tongue mid-front; /æ/ needs the jaw dropped clearly lower, tongue low and forward, mouth wide.",
+            "vowelChart": {
+                "x": 0.2,
+                "y": 0.9
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L123_Q1",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE FIRST SYLLABLE",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "atom",
+            "textToSpeak": "atom",
+            "options": [
+                "/e/",
+                "/æ/"
+            ],
+            "correctAnswer": "/æ/",
+            "correctAnswerIndex": 1,
+            "hint": "A two-syllable word, strong then weak. Drop the jaw on the first.",
+            "explanation": "A strong wide vowel in the first syllable and a weak schwa after it.",
+            "vowelTensionRule": "Check the mouth opening: roughly one finger-width for /e/, closer to two stacked fingers for /æ/.",
+            "vowelChart": {
+                "x": 0.2,
+                "y": 0.9
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L123_Q2",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE FIRST SYLLABLE",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "volume",
+            "textToSpeak": "volume",
+            "options": [
+                "/ɒ/",
+                "/ɔː/"
+            ],
+            "correctAnswer": "/ɒ/",
+            "correctAnswerIndex": 0,
+            "hint": "Short and rounded in the first syllable. Ignore the long vowel at the end.",
+            "explanation": "The first syllable is short and rounded. The long vowel at the end belongs to a different contrast.",
+            "vowelTensionRule": "Spelling is a trap: a, au, aw, or, oor and ough can all spell /ɔː/, while plain o usually spells /ɒ/.",
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.8
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L123_Q3",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE FIRST SYLLABLE",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "energy",
+            "textToSpeak": "energy",
+            "options": [
+                "/e/",
+                "/æ/"
+            ],
+            "correctAnswer": "/e/",
+            "correctAnswerIndex": 0,
+            "hint": "Strong first syllable, then two weak ones. Half-open jaw on the first.",
+            "explanation": "Only the first of three syllables is strong. The later ones are weak, so don't give the middle one extra weight.",
+            "vowelTensionRule": "/æ/ is longer and more spread than /e/. Learners often use /e/ for both, so exaggerate the jaw drop at first.",
+            "vowelChart": {
+                "x": 0.15,
+                "y": 0.4
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L124_Q1",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE STRESSED SYLLABLE",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "occasion",
+            "textToSpeak": "occasion",
+            "options": [
+                "/e/",
+                "/eɪ/"
+            ],
+            "correctAnswer": "/eɪ/",
+            "correctAnswerIndex": 1,
+            "hint": "The middle is the strong syllable. Glide the vowel upward.",
+            "explanation": "The stressed middle syllable carries the glide, and the first and last syllables are weak.",
+            "vowelTensionRule": "The a_e spelling gives /eɪ/ in most words, but ea and ai can be either sound, so trust your ear.",
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L124_Q2",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE STRESSED SYLLABLE",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "opinion",
+            "textToSpeak": "opinion",
+            "options": [
+                "/ɪ/",
+                "/e/"
+            ],
+            "correctAnswer": "/ɪ/",
+            "correctAnswerIndex": 0,
+            "hint": "A weak first syllable, then a strong short vowel. Keep the jaw nearly closed.",
+            "explanation": "The i in the spelling looks minor, but it carries the stress in the second syllable.",
+            "vowelTensionRule": "Both are short front vowels, but /e/ is lower and more open. Let the jaw drop a little further for /e/.",
+            "vowelChart": {
+                "x": 0.25,
+                "y": 0.2
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L124_Q3",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE STRESSED SYLLABLE",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "abroad",
+            "textToSpeak": "abroad",
+            "options": [
+                "/ɒ/",
+                "/ɔː/"
+            ],
+            "correctAnswer": "/ɔː/",
+            "correctAnswerIndex": 1,
+            "hint": "Hold the stressed second syllable long and rounded. The oa spelling is a trap.",
+            "explanation": "Oa usually spells the closing vowel of 'boat', but 'abroad' and 'broad' are exceptions that take the long rounded vowel.",
+            "vowelTensionRule": "Duration plus rounding: /ɔː/ is longer and rounder, /ɒ/ shorter and more open.",
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.6
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L125_Q1",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE STRESSED SYLLABLE",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "compare",
+            "textToSpeak": "compare",
+            "options": [
+                "/eə/",
+                "/e/"
+            ],
+            "correctAnswer": "/eə/",
+            "correctAnswerIndex": 0,
+            "hint": "The stress is at the end. Start half open and let the tongue relax into schwa.",
+            "explanation": "The stress is on the final syllable, which holds the glide to schwa. The weak first syllable gives no clue.",
+            "vowelTensionRule": "/eə/ is a diphthong gliding from /e/ to schwa; /e/ is short and steady.",
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L125_Q2",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE STRESSED SYLLABLE",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "career",
+            "textToSpeak": "career",
+            "options": [
+                "/ɪə/",
+                "/iː/"
+            ],
+            "correctAnswer": "/ɪə/",
+            "correctAnswerIndex": 0,
+            "hint": "Listen for a glide, not a steady vowel, in the second syllable.",
+            "explanation": "Stress falls on the second syllable and the word ends with a glide. The eer spelling matches 'engineer' and 'pioneer'.",
+            "vowelTensionRule": "Hold /iː/ still with spread lips. For /ɪə/ the lips and tongue relax into a neutral ending.",
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L125_Q3",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE STRESSED SYLLABLE",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "balloon",
+            "textToSpeak": "balloon",
+            "options": [
+                "/ʊ/",
+                "/uː/"
+            ],
+            "correctAnswer": "/uː/",
+            "correctAnswerIndex": 1,
+            "hint": "After the quick first syllable, push the lips out and hold.",
+            "explanation": "The double o signals the long rounded vowel, and the weak first syllable is a quick schwa.",
+            "vowelTensionRule": "Both are rounded, so the extra cue is tension: /uː/ feels tight, /ʊ/ feels slack.",
+            "vowelChart": {
+                "x": 0.9,
+                "y": 0.1
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L126_Q1",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE FINAL SYLLABLE",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "understand",
+            "textToSpeak": "understand",
+            "options": [
+                "/æ/",
+                "/e/"
+            ],
+            "correctAnswer": "/æ/",
+            "correctAnswerIndex": 0,
+            "hint": "The last syllable carries the main stress, so open wide for it.",
+            "explanation": "The main stress is on the last syllable, which holds the wide vowel. The first syllable has a central vowel with secondary stress, which is not part of this choice.",
+            "vowelTensionRule": "Tongue height is the cue: it falls from mid-front /e/ to low-front /æ/. Lips are slightly spread for both.",
+            "vowelChart": {
+                "x": 0.2,
+                "y": 0.9
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L126_Q2",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE FINAL SYLLABLE",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "overlook",
+            "textToSpeak": "overlook",
+            "options": [
+                "/uː/",
+                "/ʊ/"
+            ],
+            "correctAnswer": "/ʊ/",
+            "correctAnswerIndex": 1,
+            "hint": "The last syllable is the strong one: short, with lightly rounded lips.",
+            "explanation": "The final syllable has the short rounded vowel, just as 'look' does on its own.",
+            "vowelTensionRule": "Don't over-lengthen /ʊ/: a held, pouting vowel in 'book' sounds foreign.",
+            "vowelChart": {
+                "x": 0.75,
+                "y": 0.2
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L126_Q3",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE FINAL SYLLABLE",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "volunteer",
+            "textToSpeak": "volunteer",
+            "options": [
+                "/ɪə/",
+                "/iː/"
+            ],
+            "correctAnswer": "/ɪə/",
+            "correctAnswerIndex": 0,
+            "hint": "The glide is in the final syllable, which carries the main stress.",
+            "explanation": "Words ending in -eer put the main stress on that final glide.",
+            "vowelTensionRule": "The cue is movement: /ɪə/ travels towards the centre, while /iː/ stays high and front throughout.",
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L127_Q1",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE FIRST SYLLABLE",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "hotel",
+            "textToSpeak": "hotel",
+            "options": [
+                "/əʊ/",
+                "/ɒ/"
+            ],
+            "correctAnswer": "/əʊ/",
+            "correctAnswerIndex": 0,
+            "hint": "The target is in the first syllable, which is not the strongest. It still keeps a closing glide.",
+            "explanation": "The first syllable keeps a full closing vowel even though the stress is on the second syllable.",
+            "vowelTensionRule": "Time the lips: they stay set for /ɒ/ and close progressively through /əʊ/.",
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L127_Q2",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE FIRST SYLLABLE",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "molecule",
+            "textToSpeak": "molecule",
+            "options": [
+                "/ʌ/",
+                "/ɒ/"
+            ],
+            "correctAnswer": "/ɒ/",
+            "correctAnswerIndex": 1,
+            "hint": "A stressed first syllable: short and rounded.",
+            "explanation": "The short rounded vowel is in the first syllable. The long vowel at the end is a separate sound.",
+            "vowelTensionRule": "In a mirror /ɒ/ shows a round opening and /ʌ/ a relaxed one, with the jaw at about the same height.",
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.8
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L127_Q3",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE FIRST SYLLABLE",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "regular",
+            "textToSpeak": "regular",
+            "options": [
+                "/æ/",
+                "/e/"
+            ],
+            "correctAnswer": "/e/",
+            "correctAnswerIndex": 1,
+            "hint": "A stressed first syllable with a half-open jaw.",
+            "explanation": "The stressed first syllable holds the half-open vowel. Don't read the later u as the central vowel of 'cut'.",
+            "vowelTensionRule": "Spread the lips slightly for both, but let the jaw do the work: /e/ stops about halfway, /æ/ keeps going.",
+            "vowelChart": {
+                "x": 0.15,
+                "y": 0.4
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_L128_Q1",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE FIRST SYLLABLE",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "attention",
+            "textToSpeak": "attention",
+            "options": [
+                "/ə/",
+                "/ʌ/"
+            ],
+            "correctAnswer": "/ə/",
+            "correctAnswerIndex": 0,
+            "hint": "The first syllable is weak: shorter, quieter, with little jaw movement.",
+            "explanation": "It begins with schwa, spelled a. The strong vowel is in the second syllable and is a different sound.",
+            "vowelTensionRule": "Spelling is no help: a, e, o and u can all be /ə/ when unstressed, while stressed u or o often gives /ʌ/.",
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.55
             }
         },
         {
             "id": "ACC_VOWELDISTINCTION_L128_Q2",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE FIRST SYLLABLE",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "passenger",
-            "textToSpeak": "passenger",
+            "word": "tonight",
+            "textToSpeak": "tonight",
             "options": [
-                "/ɑː/",
-                "/æ/"
+                "/ʌ/",
+                "/ə/"
             ],
-            "correctAnswer": "/æ/",
+            "correctAnswer": "/ə/",
             "correctAnswerIndex": 1,
-            "hint": "This word uses the TRAP vowel - a short, low-front vowel - the jaw drops and the mouth opens wide. It sounds like 'cat', not like 'calm' which is the PALM vowel /ɑː/.",
-            "explanation": "'passenger' is pronounced with /æ/, the TRAP vowel: a short, low-front vowel - the jaw drops and the mouth opens wide. Practising this contrast against the PALM vowel sharpens your ear for one of English's key vowel pairs.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
+            "hint": "The word opens quickly and neutrally in the first syllable.",
+            "explanation": "An unstressed o is almost always schwa: neutral tongue, relaxed lips.",
+            "vowelTensionRule": "/ə/ needs almost no effort: neutral tongue, lax lips, minimal jaw movement. /ʌ/ is clearer and more open.",
             "vowelChart": {
-                "x": 0.2,
-                "y": 0.9
+                "x": 0.5,
+                "y": 0.55
             }
         },
         {
             "id": "ACC_VOWELDISTINCTION_L128_Q3",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE FIRST SYLLABLE",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "national",
-            "textToSpeak": "national",
+            "word": "control",
+            "textToSpeak": "control",
             "options": [
-                "/ɑː/",
-                "/æ/"
+                "/ə/",
+                "/ʌ/"
             ],
-            "correctAnswer": "/æ/",
-            "correctAnswerIndex": 1,
-            "hint": "The vowel in 'national' is a short, low-front vowel - the jaw drops and the mouth opens wide. Think of 'bag' - it uses the same sound. The PALM vowel in 'calm' feels quite different.",
-            "explanation": "'national' is built on the TRAP vowel /æ/: a short, low-front vowel - the jaw drops and the mouth opens wide. Keep this anchored against 'bag' so you can recognise it in new words too.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
+            "correctAnswer": "/ə/",
+            "correctAnswerIndex": 0,
+            "hint": "It is the same unstressed-syllable idea: the o is not 'oh' here.",
+            "explanation": "The first syllable can afford to be tiny because the stressed syllable carries the diphthong.",
+            "vowelTensionRule": "/ʌ/ is a full vowel in a stressed syllable; /ə/ is weak, short and quiet, with a relaxed mid-central tongue.",
             "vowelChart": {
-                "x": 0.2,
-                "y": 0.9
+                "x": 0.5,
+                "y": 0.55
             }
         },
         {
             "id": "ACC_VOWELDISTINCTION_L129_Q1",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE FINAL SYLLABLE",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "gala",
-            "textToSpeak": "gala",
+            "word": "rabbit",
+            "textToSpeak": "rabbit",
             "options": [
-                "/ɑː/",
-                "/æ/"
+                "/ɪ/",
+                "/ə/"
             ],
-            "correctAnswer": "/ɑː/",
+            "correctAnswer": "/ɪ/",
             "correctAnswerIndex": 0,
-            "hint": "The key difference is between /ɑː/ and /æ/. In 'gala', listen for a long, open-back vowel - the mouth drops wide open with unrounded lips, just like in 'calm'.",
-            "explanation": "'gala' is built on the PALM vowel /ɑː/: a long, open-back vowel - the mouth drops wide open with unrounded lips. Keep this anchored against 'calm' so you can recognise it in new words too. You will often meet this word when talking about movies, music, or entertainment.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
+            "hint": "Look at the last syllable: it is weak, but standard dictionaries give it a vowel slightly higher than schwa.",
+            "explanation": "Dictionaries mark the final syllable with a weak vowel slightly higher and more fronted than schwa, though casual speech blurs the two.",
+            "vowelTensionRule": "In weak syllables, /ɪ/ is a little higher and more fronted than /ə/. Dictionaries mark the difference even where casual speech blurs it.",
             "vowelChart": {
-                "x": 0.9,
-                "y": 0.95
+                "x": 0.25,
+                "y": 0.2
             }
         },
         {
             "id": "ACC_VOWELDISTINCTION_L129_Q2",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE FIRST SYLLABLE",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "guard",
-            "textToSpeak": "guard",
+            "word": "ago",
+            "textToSpeak": "ago",
             "options": [
-                "/ɑː/",
-                "/æ/"
+                "/ɪ/",
+                "/ə/"
             ],
-            "correctAnswer": "/ɑː/",
-            "correctAnswerIndex": 0,
-            "hint": "'guard' is built on the PALM vowel: a long, open-back vowel - the mouth drops wide open with unrounded lips. Use 'calm' as your reference - that is the sound you are listening for.",
-            "explanation": "'guard' contains the PALM vowel /ɑː/: a long, open-back vowel - the mouth drops wide open with unrounded lips. This is the same vowel sound found in 'father' and 'calm'.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
+            "correctAnswer": "/ə/",
+            "correctAnswerIndex": 1,
+            "hint": "The first syllable is almost nothing: no effort from the jaw or the lips.",
+            "explanation": "The first syllable is schwa. The stressed syllable carries a diphthong, which stays out of the way.",
+            "vowelTensionRule": "The tongue stays neutral for /ə/ and edges forward and up for /ɪ/. In weak syllables the difference is subtle but real.",
             "vowelChart": {
-                "x": 0.9,
-                "y": 0.95
+                "x": 0.5,
+                "y": 0.55
             }
         },
         {
             "id": "ACC_VOWELDISTINCTION_L129_Q3",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE FIRST SYLLABLE",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "actual",
-            "textToSpeak": "actual",
+            "word": "again",
+            "textToSpeak": "again",
             "options": [
-                "/ɑː/",
-                "/æ/"
+                "/ɪ/",
+                "/ə/"
             ],
-            "correctAnswer": "/æ/",
+            "correctAnswer": "/ə/",
             "correctAnswerIndex": 1,
-            "hint": "'actual' is built on the TRAP vowel: a short, low-front vowel - the jaw drops and the mouth opens wide. Use 'cat' as your reference - that is the sound you are listening for.",
-            "explanation": "Here, 'actual' uses the TRAP vowel (/æ/) - a short, low-front vowel - the jaw drops and the mouth opens wide. Notice how different this feels from the PALM vowel in 'father'.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
+            "hint": "The word opens with a very weak vowel before the stressed syllable.",
+            "explanation": "The word starts with schwa. The stressed second syllable has the half-open vowel, which is not part of this choice.",
+            "vowelTensionRule": "Weak-syllable spelling gives no clue: a, e, i, o and u can each be either sound depending on word and speaker.",
             "vowelChart": {
-                "x": 0.2,
-                "y": 0.9
+                "x": 0.5,
+                "y": 0.55
             }
         },
         {
             "id": "ACC_VOWELDISTINCTION_L130_Q1",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE STRESSED SYLLABLE",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "are",
-            "textToSpeak": "are",
+            "word": "tradition",
+            "textToSpeak": "tradition",
             "options": [
-                "/ɑː/",
-                "/æ/"
+                "/iː/",
+                "/ɪ/"
             ],
-            "correctAnswer": "/ɑː/",
-            "correctAnswerIndex": 0,
-            "hint": "Say 'father' out loud, then say 'are'. If the stressed vowel feels the same, you are hearing /ɑː/, not the TRAP vowel in 'cat'.",
-            "explanation": "'are' contains the PALM vowel /ɑː/: a long, open-back vowel - the mouth drops wide open with unrounded lips. This is the same vowel sound found in 'father' and 'calm'.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
+            "correctAnswer": "/ɪ/",
+            "correctAnswerIndex": 1,
+            "hint": "Judge the stressed syllable: tongue near the top, no spread lips.",
+            "explanation": "Don't stretch it just because the i comes before -tion. The stressed syllable is short.",
+            "vowelTensionRule": "Both vowels are high and front, so the gap is small. Listen for a slight brightness in /iː/ rather than a huge difference.",
             "vowelChart": {
-                "x": 0.9,
-                "y": 0.95
+                "x": 0.25,
+                "y": 0.2
             }
         },
         {
             "id": "ACC_VOWELDISTINCTION_L130_Q2",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE STRESSED SYLLABLE",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "channel",
-            "textToSpeak": "channel",
+            "word": "forget",
+            "textToSpeak": "forget",
             "options": [
-                "/ɑː/",
+                "/e/",
                 "/æ/"
             ],
-            "correctAnswer": "/æ/",
-            "correctAnswerIndex": 1,
-            "hint": "Compare 'bag' (/æ/) with 'father' (/ɑː/). The vowel in 'channel' matches one of these - which one feels right?",
-            "explanation": "'channel' contains the TRAP vowel /æ/: a short, low-front vowel - the jaw drops and the mouth opens wide. This is the same vowel sound found in 'cat' and 'bag'.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
+            "correctAnswer": "/e/",
+            "correctAnswerIndex": 0,
+            "hint": "Keep the jaw half open on the stressed syllable after the weak start.",
+            "explanation": "The stressed second syllable has the half-open vowel, and the weak first syllable is schwa.",
+            "vowelTensionRule": "If a word with /æ/ is coming out as /e/, check that the front of the tongue is low, not hovering at mid-height.",
             "vowelChart": {
-                "x": 0.2,
-                "y": 0.9
+                "x": 0.15,
+                "y": 0.4
             }
         },
         {
             "id": "ACC_VOWELDISTINCTION_L130_Q3",
-            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE STRESSED SYLLABLE",
             "subtype": "vowelDistinction",
             "interactionType": "speaking",
-            "word": "sandwich",
-            "textToSpeak": "sandwich",
+            "word": "dessert",
+            "textToSpeak": "dessert",
             "options": [
-                "/ɑː/",
-                "/æ/"
+                "/ɔː/",
+                "/ɜː/"
             ],
-            "correctAnswer": "/æ/",
+            "correctAnswer": "/ɜː/",
             "correctAnswerIndex": 1,
-            "hint": "This word uses the TRAP vowel - a short, low-front vowel - the jaw drops and the mouth opens wide. It sounds like 'bag', not like 'father' which is the PALM vowel /ɑː/.",
-            "explanation": "'sandwich' contains the TRAP vowel /æ/: a short, low-front vowel - the jaw drops and the mouth opens wide. This is the same vowel sound found in 'cat' and 'bag'.",
-            "vowelTensionRule": "/æ/ (TRAP) is made with the tongue low and forward and the mouth spread wide. /ɑː/ (PALM) pulls the tongue back and keeps the jaw dropped, with the sound held longer.",
+            "hint": "A steady, long central vowel after the weak first syllable, with neutral lips.",
+            "explanation": "Er in a stressed syllable spells the steady central vowel. The ss spelling of /z/ is another oddity.",
+            "vowelTensionRule": "/ɜː/ is central with neutral or slightly spread lips; /ɔː/ is back with clearly rounded lips.",
             "vowelChart": {
-                "x": 0.2,
-                "y": 0.9
+                "x": 0.5,
+                "y": 0.5
             }
         }
     ]

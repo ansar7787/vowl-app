@@ -6,632 +6,812 @@
         {
             "id": "ELT_STORYBUILDER_L141_Q1",
             "interactionType": "writing",
-            "hint": "Find the sentence describing the tight layover before Leo's sprint through the terminal - the danger has to be established before the dash to the gate makes sense.",
-            "explanation": "The story opens with the layover that puts Leo at risk of missing his flight, then shows him making it by the narrowest margin. His luggage's separate fate is revealed next, and the story closes with the outcome despite the chaos. Each sentence follows the trip's events in the order they happened.",
+            "hint": "Ask what each sentence explains, and what it makes possible.",
+            "explanation": "The stain is the visible symptom, and the wet floor upstairs is the explanation. The neighbor's admission names the cause, which lets the technician fix it. Only when the leak has been fixed does it make sense to paint over the damage.",
             "sentences": [
-                "Leo's connecting flight to the Seoul conference was rerouted through a city he had never transited before, with a layover of only fifty minutes.",
-                "He ran the length of the terminal and reached the gate as the agents were preparing to close the doors for good.",
-                "His suitcase, it turned out later, had not made the same connection and arrived a full day after he did.",
-                "He gave his presentation in a borrowed jacket and considered it, afterward, one of the more satisfying days of his career."
+                "Mabel noticed a brown stain spreading across her bedroom ceiling.",
+                "A technician replaced the hose and dried the floor.",
+                "The ceiling looked spotless, and Mabel could sleep without worrying about it.",
+                "A wet patch on the floor of the flat above explained it.",
+                "Her upstairs neighbor admitted that the dishwasher hose had been leaking for weeks.",
+                "The landlord sent a painter to cover the stain."
             ],
             "correctOrder": [
                 0,
+                3,
+                4,
                 1,
-                2,
-                3
+                5,
+                2
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Chronological Order",
-            "plotStructure": "Beginning, Middle, Climax, Ending"
+            "instruction": "Place the events in the order they must occur.",
+            "sequenceLogic": "Symptom → Cause → Repair → Restoration",
+            "plotStructure": "Symptom, Explanation, Admission, Repair, Restoration, Outcome"
         },
         {
             "id": "ELT_STORYBUILDER_L141_Q2",
             "interactionType": "writing",
-            "hint": "Look for the sentence that introduces the interpretive tradition that the work will depart from - departure requires prior arrival.",
-            "explanation": "The interpretive tradition is introduced first, establishing what it has produced and what it has systematically failed to notice. The departure is then described as a methodological choice, its rationale is explained, and the story concludes with the finding that the departure made possible and a reflection on what the tradition's blind spot reveals about its constitutive assumptions.",
+            "hint": "Which step is needed before the next person can respond?",
+            "explanation": "The posting sets the goal, and the portfolio requirement gives him a task. The recruiter can only react to a submitted portfolio, and the manager's questions come from the interview she proposes. An offer depends on all of these.",
             "sentences": [
-                "The dominant tradition in the field had read the archive as a record of intentions, treating every document as a direct expression of its author's purpose.",
-                "Mia chose to read the archive for what it contradicted about itself - the slippages, redundancies, and silences that intention-reading required ignoring.",
-                "She found a systematic pattern of self-contradiction that was invisible if you assumed coherence and unmistakable if you looked for its absence.",
-                "The pattern revealed that the institution had been pursuing two incompatible goals simultaneously and had been producing a literature designed to make that incompatibility invisible."
+                "The application asked for a portfolio of past projects.",
+                "The manager asked him to explain the design choices behind one dashboard.",
+                "Tarik saw a posting for a data analyst role that matched his skills.",
+                "She proposed a video interview with the hiring manager.",
+                "Tarik gathered three dashboards he had built for his previous employer and removed the confidential figures.",
+                "A recruiter emailed to say the portfolio stood out.",
+                "A written offer arrived in his inbox."
             ],
             "correctOrder": [
-                0,
-                1,
                 2,
-                3
+                0,
+                4,
+                5,
+                3,
+                1,
+                6
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Chronological Order",
-            "plotStructure": "Beginning, Middle, Climax, Ending"
+            "instruction": "Work out the order in which these events unfold.",
+            "sequenceLogic": "Application → Screening → Interview → Offer",
+            "plotStructure": "Opportunity, Requirement, Submission, Response, Interview, Evaluation, Outcome"
         },
         {
             "id": "ELT_STORYBUILDER_L141_Q3",
             "interactionType": "writing",
-            "hint": "Find the sentence that introduces the original state of the relationship before the slow estrangement and its cause - estrangement must depart from something.",
-            "explanation": "The original state is described first, establishing the closeness that the estrangement will depart from. The slow estrangement is then traced, its cause is identified not as a single event but as a structural divergence in what each person was becoming, and the story concludes with a reflection on the specific sadness of estrangements that are no one's fault.",
+            "hint": "Which claim is tested by evidence, and which sentence shows what the evidence proved?",
+            "explanation": "The problem produces two competing theories. The logs test both and point to a third cause, rotation speed. Fixing that shows the diagnosis was right, and the extra grip pad is a secondary improvement the logs also suggested.",
             "sentences": [
-                "For the first decade they had been as close as any two people Sam had ever known, which made the second decade's distance more disorienting than any rupture would have been.",
-                "The estrangement had no incident, no grievance, and no explanation that either could offer.",
-                "Sam eventually understood that they had become people who had less and less in common each year, without anyone being changed for the worse.",
-                "He came to regard this form of estrangement as the most instructive about identity: the truest sign that two people had become themselves."
+                "The programmers blamed the gripper's strength.",
+                "The mechanics insisted the software released the cube too soon.",
+                "Log files showed the release command firing at the exact moment the arm rotated.",
+                "Slowing the rotation kept the cube in place.",
+                "The robotics team's arm kept dropping the test cube.",
+                "The competition robot carried both changes.",
+                "The rotation speed was throwing the cube out of the gripper.",
+                "The mechanics added a rubber pad to the gripper anyway, since the logs showed the grip was marginal."
             ],
             "correctOrder": [
+                4,
                 0,
                 1,
                 2,
-                3
+                6,
+                3,
+                7,
+                5
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Cause & Effect",
-            "plotStructure": "Action, Reaction, Consequence, Outcome"
+            "instruction": "Put the events in the order that makes the story coherent.",
+            "sequenceLogic": "Problem → Competing Theories → Evidence → Diagnosis → Fix → Extension",
+            "plotStructure": "Problem, Dispute, Evidence, Diagnosis, Fix, Extra Fix, Outcome"
         },
         {
             "id": "ELT_STORYBUILDER_L142_Q1",
             "interactionType": "writing",
-            "hint": "Find the sentence that introduces the theoretical framework before its encounter with the recalcitrant particular - frameworks must exist before particulars can challenge them.",
-            "explanation": "The theoretical framework is introduced first, characterised by its explanatory power and its elegance. The recalcitrant particular is then described - the case that the framework cannot absorb - and the story concludes with the choice between preserving the framework at the cost of the particular or revising the framework to accommodate what it cannot explain.",
+            "hint": "Each failed test removes one possible cause.",
+            "explanation": "The symptom leads to testing the case, then the cable. When those are ruled out, the website suggests a new cause, and cleaning the contacts fixes it. The red light is the proof.",
             "sentences": [
-                "The framework had explained eleven of the twelve cases in the dataset with a parsimony that Leo found genuinely satisfying.",
-                "The twelfth case resisted the framework entirely and could not be treated as an outlier because of its significance.",
-                "He spent a year testing every modification of the framework that might accommodate the twelfth case without losing the other eleven.",
-                "He eventually published a paper arguing that the twelfth case was evidence of a category that the existing framework had no mechanism to recognise."
+                "A different cable made no difference.",
+                "A cotton swab with alcohol removed a film of grime.",
+                "The charging case showed no light when plugged in.",
+                "The indicator glowed red, and the headphones began charging.",
+                "The support website suggested cleaning the metal contacts inside the case.",
+                "Dorothea's headphones stopped charging."
             ],
             "correctOrder": [
-                0,
-                1,
+                5,
                 2,
+                0,
+                4,
+                1,
                 3
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Chronological Order",
-            "plotStructure": "Beginning, Middle, Climax, Ending"
+            "instruction": "Arrange the events so each action logically leads to the next.",
+            "sequenceLogic": "Problem → Tests → Elimination → Solution → Confirmation",
+            "plotStructure": "Problem, Observation, Elimination, Advice, Fix, Confirmation"
         },
         {
             "id": "ELT_STORYBUILDER_L142_Q2",
             "interactionType": "writing",
-            "hint": "Look for the sentence that introduces the long preparation before the single moment it was preparing for - preparation is only intelligible retrospectively as preparation for something.",
-            "explanation": "The long preparation is described first, characterised by its apparent purposelessness. The moment it was preparing for is then described, the fit between preparation and moment is examined, and the story concludes with a reflection on how the most important preparations are those undertaken without knowing what they are preparing for.",
+            "hint": "Which piece of information changes the answer to his original request?",
+            "explanation": "The goal meets a refusal, and the colleague's plan creates a possible opening. Lazar's question turns the news into an opportunity, and the manager's answer allows him to apply. The offer is the result.",
             "sentences": [
-                "Mia had spent twelve years studying a body of materials with no specific project in mind and with no expectation that a project would emerge.",
-                "When the materials finally became a book, the book arrived almost fully formed in a period of four months.",
-                "She found it impossible to say whether the twelve years had been preparation for the four months or whether the four months had been the justification for the twelve years.",
-                "She concluded that the distinction did not matter: what mattered was that neither period would have been possible without the other."
+                "His manager confirmed it would and encouraged him to apply.",
+                "The position was offered to him, and he joined the day team.",
+                "His manager said the day team had no openings.",
+                "Lazar submitted a short letter listing his relevant experience.",
+                "Lazar asked whether her position would be posted.",
+                "A colleague on the day team mentioned that she planned to move to another city.",
+                "Lazar wanted to swap his night shift for regular hours."
             ],
             "correctOrder": [
-                0,
-                1,
+                6,
                 2,
-                3
+                5,
+                4,
+                0,
+                3,
+                1
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Chronological Order",
-            "plotStructure": "Beginning, Middle, Climax, Ending"
+            "instruction": "Arrange the sentences into a coherent account of what happened.",
+            "sequenceLogic": "Goal → Obstacle → Information → Inquiry → Application → Outcome",
+            "plotStructure": "Goal, Obstacle, Opportunity, Inquiry, Encouragement, Action, Outcome"
         },
         {
             "id": "ELT_STORYBUILDER_L142_Q3",
             "interactionType": "writing",
-            "hint": "Find the sentence that introduces the specific form of professional dishonesty that is most institutionally protected - protected dishonesty must be named before it can be challenged.",
-            "explanation": "The protected form of dishonesty is named first, characterised by what makes it difficult to challenge and why institutions protect it. The mechanism of its protection is then identified, the challenge to it is described, and the story concludes with what the challenge produced and why it was only partially successful.",
+            "hint": "What does the agent need to know before asking the customer to open anything?",
+            "explanation": "The complaint leads to a question, and the answer connects the device to a known fault. That link justifies the check, which reveals the bent contact. The fix and the report spread the lesson to engineering.",
             "sentences": [
-                "The most institutionally protected form of dishonesty Sam encountered was the confident assertion of things that had not been verified.",
-                "Its protection derived from the fact that challenging it required demonstrating a negative - proving that something had not been done - which was procedurally much harder than asserting it had.",
-                "He developed a verification protocol that required positive evidence of checking rather than the absence of evidence of not checking.",
-                "The protocol was adopted in three departments and resisted in two, and the pattern of resistance mapped precisely onto the departments with the highest rates of unverified assertion."
+                "The agent asked the customer to open the back panel and check the battery contacts.",
+                "A customer reported that the smart thermostat kept switching itself off.",
+                "The agent noted the batch number for the engineering team.",
+                "The engineers used the report to prepare a corrective notice for that batch.",
+                "The model number matched a batch with a known battery fault.",
+                "The support agent asked for the device's model number.",
+                "The customer straightened it with a fingernail, and the thermostat stayed on.",
+                "One contact was bent."
             ],
             "correctOrder": [
-                0,
                 1,
+                5,
+                4,
+                0,
+                7,
+                6,
                 2,
                 3
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Chronological Order",
-            "plotStructure": "Beginning, Middle, Climax, Ending"
+            "instruction": "Decide which event comes first, and build the sequence from there.",
+            "sequenceLogic": "Report → Identification → Diagnosis → Fix → Escalation",
+            "plotStructure": "Complaint, Inquiry, Match, Inspection, Discovery, Fix, Record, Consequence"
         },
         {
             "id": "ELT_STORYBUILDER_L143_Q1",
             "interactionType": "writing",
-            "hint": "Find the sentence that introduces the problem of representation before the methodological response to it - representation problems must be identified before methodology can address them.",
-            "explanation": "The representation problem is identified first, establishing what it prevents and why it matters. The methodological response is then designed, implemented, and evaluated, and the story concludes with a reflection on how the choice of who is included in a study shapes not just the findings but the questions it is possible to ask.",
+            "hint": "Which events depend on someone else's decision?",
+            "explanation": "The announcement creates the demand, and the sell-out creates the shortage. The waiting list is her response, and it only works when a cancellation frees a seat. Being close to the stage is the reward.",
             "sentences": [
-                "Every existing study of the experience had been conducted with participants drawn from populations that had sought formal support - a self-selecting minority.",
-                "Leo designed a methodology for reaching the majority who had not sought formal support, using community partnerships and peer referral.",
-                "The findings from the previously unreached population contradicted the established findings at several significant points.",
-                "He argued that the field had been producing a confident body of knowledge about a selected subgroup while believing it was describing a general experience."
+                "She stood near the stage, close enough to see the drummer's sticks.",
+                "Zuzana missed out and joined the waiting list.",
+                "The band announced a surprise show in a small club.",
+                "The club emailed the waiting list, and Zuzana was the first to reply.",
+                "A cancellation freed up two seats.",
+                "Tickets sold out within minutes."
             ],
             "correctOrder": [
-                0,
-                1,
                 2,
-                3
+                5,
+                1,
+                4,
+                3,
+                0
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Chronological Order",
-            "plotStructure": "Beginning, Middle, Climax, Ending"
+            "instruction": "Sort the sentences into the sequence that makes sense.",
+            "sequenceLogic": "Demand → Shortage → Waiting → Opportunity → Reward",
+            "plotStructure": "Announcement, Sellout, Response, Opening, Action, Reward"
         },
         {
             "id": "ELT_STORYBUILDER_L143_Q2",
             "interactionType": "writing",
-            "hint": "Look for the sentence where Mia first starts watching the watch's price - the later negotiation only makes sense once her original limit is known.",
-            "explanation": "Mia's patient price-tracking is established first, setting up the moment a new listing appears above her budget. Her in-person negotiation tactic is described next, and the story ends with a deal that satisfies both her price limit and the seller. The order follows a negotiation from research to resolution.",
+            "hint": "Ask why a report would be more effective than a complaint.",
+            "explanation": "The residents' frustration is the motive, and Ansa's measurements give it substance. The report reaches the council, whose inspector confirms the data, and the confirmation justifies the budget. The repairs and lunch close the story.",
             "sentences": [
-                "Mia had been watching the price of a particular vintage watch for eight months, waiting for it to drop below her limit.",
-                "When a private seller listed one in excellent condition but priced fifteen percent over her limit, she arranged to view it in person anyway.",
-                "In the meeting she pointed out a small scratch on the case back and used it to open a negotiation.",
-                "They settled on a price just under her original limit, and she left with the watch and the seller's contact for future pieces."
+                "The council's roads department received it and responded within a week.",
+                "An inspector visited and confirmed the measurements.",
+                "Fresh asphalt covered the holes, and the residents thanked Ansa with a street lunch.",
+                "Ansa, a retired surveyor, photographed and measured each one.",
+                "Residents of Quill Street were tired of the potholes outside their houses.",
+                "She compiled the photos into a short report with a map.",
+                "The repair work was added to the roads budget."
             ],
             "correctOrder": [
+                4,
+                3,
+                5,
                 0,
                 1,
-                2,
-                3
+                6,
+                2
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Step-by-Step Process",
-            "plotStructure": "Preparation, Step 1, Step 2, Completion"
+            "instruction": "Put the events in the order that makes the story coherent.",
+            "sequenceLogic": "Grievance → Evidence → Submission → Verification → Decision → Result",
+            "plotStructure": "Grievance, Documentation, Report, Response, Verification, Decision, Outcome"
         },
         {
             "id": "ELT_STORYBUILDER_L143_Q3",
             "interactionType": "writing",
-            "hint": "Find the sentence that introduces the founding intellectual error that the discipline must acknowledge - acknowledgement cannot precede what is being acknowledged.",
-            "explanation": "The founding error is described first, established with specificity and historical precision. The acknowledgement process is then described, the resistance to acknowledgement is identified, and the story concludes with what acknowledgement made possible that the error had been preventing.",
+            "hint": "What must be established before the library can make an announcement?",
+            "explanation": "The bundle's absence from the catalog raises a question, and the records check confirms it is unrecorded. The handwriting suggests an author, and the specialist tests that idea. Only after verification can the library announce and manage the interest.",
             "sentences": [
-                "The discipline had been founded on a measurement instrument that its creator had acknowledged privately was inadequate but that had been treated as definitive for sixty years.",
-                "Sam spent four years documenting every study that had been compromised by the instrument's specific inadequacies.",
-                "He presented the documentation at the discipline's largest conference and the response divided along predictable generational lines.",
-                "Within ten years the instrument had been retired and the replacement studies it had prevented for sixty years were finally underway."
+                "A specialist compared the letters' loops and slants with verified samples.",
+                "The handwriting resembled that of a poet whose papers the library held.",
+                "The comparison suggested the letters were genuine.",
+                "A university library digitized its collection of unpublished letters.",
+                "A scanner operator noticed a bundle tied with ribbon that was missing from the catalog.",
+                "The library announced the discovery, and scholars asked to see the bundle.",
+                "A reading room was set aside for the letters, with a waiting list of researchers.",
+                "The archivist checked the accession records and found no entry."
             ],
             "correctOrder": [
-                0,
+                3,
+                4,
+                7,
                 1,
+                0,
                 2,
-                3
+                5,
+                6
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Step-by-Step Process",
-            "plotStructure": "Preparation, Step 1, Step 2, Completion"
+            "instruction": "Order these sentences so the situation develops logically.",
+            "sequenceLogic": "Discovery → Records Check → Hypothesis → Verification → Announcement → Response",
+            "plotStructure": "Discovery, Investigation, Hypothesis, Testing, Confirmation, Announcement, Demand, Outcome"
         },
         {
             "id": "ELT_STORYBUILDER_L144_Q1",
             "interactionType": "writing",
-            "hint": "Find the sentence that introduces the form of courage that is exercised across time rather than in a moment - temporal courage must be distinguished from situational courage before it can be examined.",
-            "explanation": "The temporal form of courage is introduced first, distinguished from the situational form and characterised by what makes it more demanding. Three instances of it are then described, each illustrating a different context in which sustained commitment over time requires more than a single act of courage, and the story concludes with a reflection on what sustains temporal courage when situational courage has long since been spent.",
+            "hint": "What has to be arranged before the club can advertise?",
+            "explanation": "The observation gives her the idea, and permission is the next requirement. The condition creates a need for a supervisor, and Mr. Lindgren meets it. Posters only make sense when a room and a supervisor exist.",
             "sentences": [
-                "Leo came to believe that the most demanding form of courage was not the single act under pressure but the sustained commitment across a long period of attrition.",
-                "His twenty-year campaign for access to the medical records had required a different kind of resolve each year as the context shifted.",
-                "In the early years it had required the courage to persist without support; in the middle years, to persist without progress; in the final years, to persist without certainty that access would matter even if granted.",
-                "He described the twenty years not as a sustained high but as a long sequence of small decisions to continue, each one made in the ordinary light of an ordinary morning."
+                "Posters went up in the corridors.",
+                "The principal agreed as long as another teacher supervised.",
+                "She asked the principal for a room after school.",
+                "Ms. Achebe noticed several students building small games in their free time.",
+                "Twelve students filled the room.",
+                "Mr. Lindgren, who taught math, offered to help."
             ],
             "correctOrder": [
-                0,
-                1,
+                3,
                 2,
-                3
+                1,
+                5,
+                0,
+                4
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Chronological Order",
-            "plotStructure": "Beginning, Middle, Climax, Ending"
+            "instruction": "Place the events in the order they must occur.",
+            "sequenceLogic": "Idea → Permission → Condition → Solution → Promotion → Result",
+            "plotStructure": "Observation, Request, Condition, Help, Promotion, Result"
         },
         {
             "id": "ELT_STORYBUILDER_L144_Q2",
             "interactionType": "writing",
-            "hint": "Look for the sentence that introduces the constitutive role of failure in the character's creative formation - formation must precede what is formed.",
-            "explanation": "The role of failure in formation is introduced first, characterised not as incidental but as constitutive - the creative identity was produced by failure rather than in spite of it. Three specific failures are then described, the specific contribution of each to the formation is identified, and the story concludes with a reflection on what this implies about how creative development should be supported.",
+            "hint": "An inspection follows a pattern: finding, response, and verification.",
+            "explanation": "The visit leads to a finding, and the manager's explanation provides the cause. The warning sets the standard, the repair meets it, and the follow-up visit verifies. The rating is preserved as a result.",
             "sentences": [
-                "Mia's creative formation was built almost entirely from a sequence of failures whose specific character had produced her specific strengths.",
-                "The failure of her first long work had taught her that ambition without authority produced work that resembled itself without embodying itself.",
-                "The failure of her collaborative work had taught her that she could not make work honestly in conditions that required her to persuade rather than discover.",
-                "The failure of her most technically accomplished work had taught her that technical mastery in the service of the wrong question produced nothing."
+                "The restaurant kept its top rating.",
+                "A follow-up visit confirmed the fix.",
+                "A technician replaced the seal, and the temperature dropped to a safe level.",
+                "His manager explained that the door seal had been failing.",
+                "The inspector noted a warning and set a deadline for repair.",
+                "A health inspector arrived at Teodor's kitchen without notice.",
+                "The inspector checked the refrigerator temperature and found it slightly high."
             ],
             "correctOrder": [
-                0,
-                1,
+                5,
+                6,
+                3,
+                4,
                 2,
-                3
+                1,
+                0
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Chronological Order",
-            "plotStructure": "Beginning, Middle, Climax, Ending"
+            "instruction": "Reorder the sentences to produce the most logical version of events.",
+            "sequenceLogic": "Inspection → Finding → Explanation → Requirement → Repair → Verification → Outcome",
+            "plotStructure": "Inspection, Finding, Explanation, Warning, Repair, Verification, Outcome"
         },
         {
             "id": "ELT_STORYBUILDER_L144_Q3",
             "interactionType": "writing",
-            "hint": "Find the sentence that introduces the political philosophy before the historical events that test it - philosophy precedes the history that tests it.",
-            "explanation": "The political philosophy is introduced first, characterised by its elegance at the level of principle. The historical events that test it are then described, the specific respects in which the philosophy failed to account for what the events produced are identified, and the story concludes with a revised philosophy that has been shaped by rather than merely applied to historical experience.",
+            "hint": "The evidence narrows down where the problem begins.",
+            "explanation": "The dead fish are the symptom, and samples locate the change. Normal upstream results exclude the earlier stretch, and the factory's acidity points to the source. The manager's account and the drain explain how it reached the river, and the order to install a tank follows.",
             "sentences": [
-                "Sam had developed a philosophy of democratic transition that predicted stable outcomes following free elections in previously authoritarian states.",
-                "He observed seven transitions across fifteen years and found that three produced stable outcomes and four produced outcomes his model had not anticipated.",
-                "He found that his model had failed to account for the structural conditions - economic inequality, ethnic fragmentation, institutional legacy - that determined which form the transition took.",
-                "He revised his philosophy to treat elections as a necessary but far from sufficient condition and to foreground the structural factors his original model had treated as constants."
+                "Samples from upstream were normal.",
+                "Fish returned to the stretch of river within a season.",
+                "Inspectors examined the drain and found it connected directly to the river.",
+                "The factory's manager said a storage tank had been emptied for cleaning.",
+                "The factory was ordered to install a treatment tank.",
+                "Samples near the old dye factory showed high acidity.",
+                "A biologist collected water samples from several points.",
+                "Volunteers found dead fish along the riverbank."
             ],
             "correctOrder": [
+                7,
+                6,
                 0,
-                1,
+                5,
+                3,
                 2,
-                3
+                4,
+                1
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Chronological Order",
-            "plotStructure": "Beginning, Middle, Climax, Ending"
+            "instruction": "Work out the order in which these events unfold.",
+            "sequenceLogic": "Symptom → Sampling → Localization → Explanation → Verification → Remedy → Recovery",
+            "plotStructure": "Symptom, Investigation, Elimination, Source, Explanation, Verification, Remedy, Outcome"
         },
         {
             "id": "ELT_STORYBUILDER_L145_Q1",
             "interactionType": "writing",
-            "hint": "Find the sentence that introduces the hidden dependency before the crisis that exposes it - hidden dependencies are only visible when they fail.",
-            "explanation": "The hidden dependency is described first, characterised by its invisibility and its systemic nature. The crisis that exposes it is then described, the full extent of the dependency becomes visible, and the story concludes with a structural redesign that makes the dependency legible and manageable before the next crisis arrives.",
+            "hint": "What weakness must be found before it can be trained?",
+            "explanation": "The goal leads to lessons, and the instructor's diagnosis targets one weakness. The practice addresses it, and the examiner's remark shows that it worked. The license is the reward.",
             "sentences": [
-                "The entire supply chain for the health system's critical medications depended on a single manufacturing facility that appeared nowhere in the system's risk register.",
-                "When the facility was destroyed by fire, the dependency became visible simultaneously to every department that had been unaware of it.",
-                "Leo spent the following year mapping every similar hidden dependency across the system's infrastructure.",
-                "He produced a dependency atlas that was subsequently used as the basis for a national resilience standard in the sector."
+                "The examiner remarked that his observation was thorough.",
+                "Nicanor wanted to pass his driving test.",
+                "Practice sessions focused on mirror habits.",
+                "Nicanor booked lessons with an instructor recommended by a coworker.",
+                "The instructor spotted that he checked his mirrors too rarely.",
+                "Nicanor held his license in his hand by the end of the day."
             ],
             "correctOrder": [
-                0,
                 1,
+                3,
+                4,
                 2,
-                3
+                0,
+                5
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Chronological Order",
-            "plotStructure": "Beginning, Middle, Climax, Ending"
+            "instruction": "Decide which event comes first, and build the sequence from there.",
+            "sequenceLogic": "Goal → Training → Diagnosis → Practice → Evaluation → Achievement",
+            "plotStructure": "Goal, Instruction, Diagnosis, Practice, Assessment, Achievement"
         },
         {
             "id": "ELT_STORYBUILDER_L145_Q2",
             "interactionType": "writing",
-            "hint": "Look for the sentence that introduces the specific thing that cannot be taught but can only be witnessed - what cannot be taught must be described before what witnessing it produces.",
-            "explanation": "The untransmittable quality is described first, establishing why it cannot be taught. The experience of witnessing it is then described, the effect of the witnessing on the observer is traced, and the story concludes with a reflection on the relationship between presence and understanding in domains where transmission fails.",
+            "hint": "Which sentence gives her a reason to reject the first offer?",
+            "explanation": "The cancellation creates the problem, and the voucher is the default offer. Her circumstances make it useless, so she looks for another right in the terms. The claim needs evidence, approval follows, and payment is the last step.",
             "sentences": [
-                "What Mia could not teach her students about musical phrasing was the specific quality she called presence - the sense that the music was happening rather than being played.",
-                "She arranged for each student to observe a single master class given by a performer she considered to have the quality in its highest form.",
-                "Two of her twelve students came back from the observation transformed in a way that nothing she had said in three years of teaching had produced.",
-                "She noted that she could not predict which students would be transformed or why, and that this was consistent with the untransmittable nature of what they had witnessed."
+                "Sabrina filed a claim with her ticket receipt attached.",
+                "Sabrina's concert was cancelled at short notice.",
+                "The promoter approved a full refund.",
+                "The promoter offered a voucher valid for one year.",
+                "Sabrina read the terms and found a refund clause for cancellations made by the promoter.",
+                "The money reached her account within two weeks.",
+                "Sabrina would be living abroad by then and wanted her money back."
             ],
             "correctOrder": [
-                0,
                 1,
+                3,
+                6,
+                4,
+                0,
                 2,
-                3
+                5
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Cause & Effect",
-            "plotStructure": "Action, Reaction, Consequence, Outcome"
+            "instruction": "Arrange the events so each action logically leads to the next.",
+            "sequenceLogic": "Disruption → Default Offer → Constraint → Right → Claim → Approval → Payment",
+            "plotStructure": "Disruption, Offer, Constraint, Discovery, Claim, Approval, Outcome"
         },
         {
             "id": "ELT_STORYBUILDER_L145_Q3",
             "interactionType": "writing",
-            "hint": "Find the sentence that introduces the institutional attempt to codify the uncodifiable before the failure that follows - the attempt must precede the failure.",
-            "explanation": "The attempt is described first, characterised by its apparent ambition and the institutional investment it represents. The failure is then described, the specific reason for the failure is identified, and the story concludes with a reflection on the relationship between codification and the qualities that codification cannot reach.",
+            "hint": "A failed test can suggest what to try instead.",
+            "explanation": "The goal leads to a question, and the baker's hint shapes her guess. The first batch tests the guess and fails, but the flavor tells her what is missing. The smoking experiment succeeds, and the box is her thank-you.",
             "sentences": [
-                "The institution had invested three years in developing a comprehensive framework for assessing creative talent.",
-                "Sam led the evaluation of the framework and found that it identified technical competence with high reliability and creative potential with no reliability at all.",
-                "The creative potential assessments showed no correlation with any outcome measure collected over the following decade.",
-                "He concluded that the framework had succeeded in assessing what could be assessed and thereby proved that what mattered most was precisely what could not be."
+                "The pastry matched her memory, and she mailed the baker a box of her version.",
+                "The result tasted perfumed instead of smoky.",
+                "Zinnia tasted a pastry at a café and wanted to recreate it.",
+                "She tried smoking tea in a covered pan on the stove.",
+                "He smiled and would only say it involved something from the garden.",
+                "She asked the baker what gave it a smoky flavor.",
+                "The perfumed taste suggested the leaves needed smoking rather than steeping.",
+                "Zinnia guessed tea leaves and tested a batch."
             ],
             "correctOrder": [
-                0,
-                1,
                 2,
-                3
+                5,
+                4,
+                7,
+                1,
+                6,
+                3,
+                0
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Chronological Order",
-            "plotStructure": "Beginning, Middle, Climax, Ending"
+            "instruction": "Place the events in the order they must occur.",
+            "sequenceLogic": "Goal → Clue → Hypothesis → Failure → Insight → Success",
+            "plotStructure": "Goal, Inquiry, Clue, Guess, Failure, Insight, Attempt, Outcome"
         },
         {
             "id": "ELT_STORYBUILDER_L146_Q1",
             "interactionType": "writing",
-            "hint": "Find the sentence where Sam receives the recipe from his grandfather - the struggle to recreate the broth cannot begin before that handover.",
-            "explanation": "The inheritance of the stall comes first, followed by Sam's early failed attempts to match the original flavour. A small missing detail is revealed by his grandmother, and the story ends with the broth finally tasting right. The sequence shows how one forgotten detail closed the gap between trying and succeeding.",
+            "hint": "What information does the electrician provide that Simeon's guess lacked?",
+            "explanation": "The symptom leads to a theory, and the electrician tests it and finds the specific cause. The new circuit is the remedy, and the labeling records what was learned.",
             "sentences": [
-                "Sam's grandfather had run the same noodle stall for forty years before handing down the recipe, but not the exact method, to Sam.",
-                "Sam spent his first month quietly failing to recreate the broth, which always tasted slightly thinner than he remembered.",
-                "He finally asked his grandmother, who mentioned in passing that his grandfather always let the bones rest overnight before the second simmer.",
-                "The next batch matched the broth Sam had grown up eating, and regular customers noticed within the first week."
+                "The house lights flickered whenever the kettle boiled.",
+                "Simeon labeled the breaker box for future reference.",
+                "Simeon suspected an overloaded circuit.",
+                "The flickering stopped.",
+                "An electrician tested the kitchen sockets and found the kettle and toaster shared one line.",
+                "A second circuit was fitted for the kettle."
             ],
             "correctOrder": [
                 0,
-                1,
                 2,
-                3
+                4,
+                5,
+                3,
+                1
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Problem & Solution",
-            "plotStructure": "Setup, Action, Climax, Resolution"
+            "instruction": "Reconstruct the story so that every event follows from the one before it.",
+            "sequenceLogic": "Symptom → Theory → Test → Fix → Result → Record",
+            "plotStructure": "Symptom, Theory, Diagnosis, Fix, Result, Record"
         },
         {
             "id": "ELT_STORYBUILDER_L146_Q2",
             "interactionType": "writing",
-            "hint": "Look for the sentence that introduces the founding decision whose consequences are still unfolding - consequences can only unfold from prior decisions.",
-            "explanation": "The founding decision is described first, establishing its content and the reasoning behind it. Its unfolding consequences are then traced across three time periods, and the story concludes with a reflection on what the pattern of consequences reveals about the quality of the original reasoning.",
+            "hint": "Which option is removed by evidence, and which decision follows?",
+            "explanation": "The two outlines allow comparison, and the advisor raises a problem with one. The archive confirms the problem, which leaves the remaining topic. The committee's narrowing request leads to a revision.",
             "sentences": [
-                "The decision to design the city's water infrastructure for a population of two million had been made when the population was eight hundred thousand.",
-                "Within thirty years the population reached two million and the infrastructure was performing exactly as designed.",
-                "Within fifty years the population reached three point two million and the infrastructure had become the primary constraint on the city's further development.",
-                "Mia's analysis showed that the original decision had been excellent planning for the century it was designed for and inadequate planning for the century that followed."
+                "Adaeze was undecided between two thesis topics.",
+                "The committee approved it with a request for a narrower focus.",
+                "Adaeze checked with the archive and confirmed the data was unavailable.",
+                "Adaeze revised the introduction to match, and the project began.",
+                "Adaeze sketched a short outline for each.",
+                "Her advisor read both and said the second needed data the university did not hold.",
+                "The remaining topic went forward as her proposal."
             ],
             "correctOrder": [
                 0,
-                1,
+                4,
+                5,
                 2,
+                6,
+                1,
                 3
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Chronological Order",
-            "plotStructure": "Beginning, Middle, Climax, Ending"
+            "instruction": "Arrange the sentences into a coherent account of what happened.",
+            "sequenceLogic": "Options → Evaluation → Elimination → Decision → Approval → Revision",
+            "plotStructure": "Dilemma, Comparison, Warning, Verification, Decision, Approval, Revision"
         },
         {
             "id": "ELT_STORYBUILDER_L146_Q3",
             "interactionType": "writing",
-            "hint": "Find the sentence that introduces the specific form of knowledge that the archive uniquely preserves - preservation must occur before what is preserved can be valued.",
-            "explanation": "The archive and its unique preservation are described first, characterised by what it preserves that no other source contains. The use to which that preservation is put is then described, the findings it produces are presented, and the story concludes with a reflection on the relationship between what is preserved and what becomes possible because it was preserved.",
+            "hint": "The technician narrows where the fault is. What tells him where to look?",
+            "explanation": "The complaints identify a shared problem, and testing at the cabinet excludes the source. The contrast between strong and weak signal directs the search to the cable, and the pinch explains the fault. The carpenter's fix is the last step.",
             "sentences": [
-                "The archive contained the unedited working papers of forty-three economists who had advised governments during the 1930s depression.",
-                "Sam found that the gap between the economists' private reasoning and their public recommendations was systematic and significant.",
-                "In private they expressed far more uncertainty, far more awareness of the limitations of their models, and far more concern about distributional consequences.",
-                "The archive revealed not a gap between what they knew and what they said but between what they said and what they thought it was professionally possible to say."
+                "Two households on the same street complained about a sudden loss of internet.",
+                "He followed the cable along the wall of a house and found it pinched under a gate hinge.",
+                "The gate had been rehung recently.",
+                "He moved the hinge a few centimeters.",
+                "Its owner, a carpenter, had installed it without knowing what lay behind.",
+                "The provider's technician tested the line at the street cabinet.",
+                "The signal was strong at the cabinet but weak at the houses.",
+                "The signal returned to both houses."
             ],
             "correctOrder": [
                 0,
+                5,
+                6,
                 1,
                 2,
-                3
+                4,
+                3,
+                7
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Cause & Effect",
-            "plotStructure": "Action, Reaction, Consequence, Outcome"
+            "instruction": "Order these sentences so the situation develops logically.",
+            "sequenceLogic": "Complaint → Testing → Localization → Discovery → Explanation → Fix",
+            "plotStructure": "Complaint, Test, Localization, Discovery, Explanation, Cause, Fix, Outcome"
         },
         {
             "id": "ELT_STORYBUILDER_L147_Q1",
             "interactionType": "writing",
-            "hint": "Find the sentence that introduces the critical distinction between the two things that have been treated as one - distinctions must be made before their consequences can be developed.",
-            "explanation": "The critical distinction is made first, separating two things that have been treated as equivalent. The consequences of having treated them as equivalent are then traced, the consequences of treating them as distinct are described, and the story concludes with a practical recommendation that follows from the distinction.",
+            "hint": "Which step needs the bench to be in good condition?",
+            "explanation": "The bench's condition is the problem, and the neighbor's idea is the plan. The sander is a tool, and the oil finishes the wood. The plaque is added only to a restored bench, and the walkers' use is the result.",
             "sentences": [
-                "Leo argued that the field had been treating transparency and legibility as synonyms when they were, in practice, almost opposites.",
-                "Transparency made information available; legibility made it comprehensible to those for whom it was relevant.",
-                "An organisation could be fully transparent - all its data public - while remaining entirely illegible to the communities most affected by its decisions.",
-                "He recommended that accountability frameworks require legibility assessments conducted by the affected communities rather than transparency audits conducted by the organisation itself."
+                "Walkers began stopping there to rest.",
+                "Volunteers borrowed a sander from the hardware store.",
+                "Fresh oil deepened the wood's color.",
+                "A plaque with the donor's name was screwed to the backrest.",
+                "A neighbor suggested sanding and oiling it.",
+                "The bench by the pond had gone gray and splintered."
             ],
             "correctOrder": [
-                0,
+                5,
+                4,
                 1,
                 2,
-                3
+                3,
+                0
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Chronological Order",
-            "plotStructure": "Beginning, Middle, Climax, Ending"
+            "instruction": "Sort the sentences into the sequence that makes sense.",
+            "sequenceLogic": "Problem → Plan → Tool → Restoration → Recognition → Result",
+            "plotStructure": "Problem, Idea, Preparation, Restoration, Recognition, Outcome"
         },
         {
             "id": "ELT_STORYBUILDER_L147_Q2",
             "interactionType": "writing",
-            "hint": "Look for the sentence that introduces the radical formal experiment before its reception - experiments must be conducted before their reception can be described.",
-            "explanation": "The formal experiment is introduced first, characterised by its radicalism and the risks it takes. The reception is then described, the relationship between the experiment's radicalism and the reception's ambivalence is examined, and the story concludes with a reflection on what formal experimentation requires from its audience and why that requirement is so rarely met.",
+            "hint": "Why does the owner's method of finding the problem matter?",
+            "explanation": "The drift is the puzzle, and asking is the method that reveals the cause. The complaint shapes the search for an alternative, and staff training makes the new system usable. The retirement of the old cards follows its success.",
             "sentences": [
-                "Mia's novel had no protagonist, no chronological sequence, and no authorial voice - three conventions whose simultaneous absence had no precedent in her literary tradition.",
-                "The critical response was divided between those who experienced the absence of conventions as liberation and those who experienced it as deprivation.",
-                "She found that the division corresponded almost entirely to what each reader had assumed the conventions were for.",
-                "She published an essay on the experience arguing that formal experiment was most useful not for what it produced but for what it revealed about the assumptions embedded in established form."
+                "Regulars returned, and new customers signed up for the app's small welcome discount.",
+                "Staff learned to scan customers' phones.",
+                "She researched app-based alternatives and chose a simple one.",
+                "A café owner wondered why regulars were drifting away.",
+                "Many mentioned that the loyalty cards were awkward to carry.",
+                "She asked several of them directly.",
+                "The owner retired the paper cards."
             ],
             "correctOrder": [
-                0,
-                1,
+                3,
+                5,
+                4,
                 2,
-                3
+                1,
+                0,
+                6
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Chronological Order",
-            "plotStructure": "Beginning, Middle, Climax, Ending"
+            "instruction": "Place the events in the order they must occur.",
+            "sequenceLogic": "Puzzle → Inquiry → Cause → Solution → Implementation → Result",
+            "plotStructure": "Puzzle, Inquiry, Cause, Solution, Implementation, Result, Closure"
         },
         {
             "id": "ELT_STORYBUILDER_L147_Q3",
             "interactionType": "writing",
-            "hint": "Find the sentence that introduces the long accumulation before the single act in which it becomes legible - legibility requires prior accumulation.",
-            "explanation": "The accumulation is described first, characterised by its long, quiet, invisible nature. The single act in which it becomes legible is then described, the relationship between the accumulation and the act is examined, and the story concludes with a reflection on how much of what appears as individual achievement is in fact the made-legible form of a long, invisible accumulation.",
+            "hint": "What has to be discovered before an amendment makes sense?",
+            "explanation": "The two versions create a hidden conflict, and the manager's planning exposes it. The lawyers' comparison determines the meaning, and their agreement leads to a signed amendment. The peaceful deliveries are the outcome.",
             "sentences": [
-                "The insight had not arrived suddenly: it had been arriving for twenty years in a series of partial forms that Sam had never been able to hold simultaneously.",
-                "On the morning he wrote the paragraph that contained it fully, he had no sense of its significance.",
-                "He reread it two days later and understood that it had synthesised a pattern he had been circling since the beginning of his career.",
-                "He published it as a single paragraph in the conclusion of an otherwise conventional paper and it was the only paragraph from any of his work that was subsequently widely cited."
+                "The English version said deliveries were due monthly.",
+                "A small firm signed a distribution agreement written in two languages.",
+                "A manager noticed the discrepancy while planning the shipping schedule.",
+                "An amendment stating this was signed by both sides.",
+                "The lawyers agreed that the English text should prevail.",
+                "She asked both parties' lawyers to compare the clauses.",
+                "Deliveries followed a monthly rhythm without dispute.",
+                "The Spanish version, on closer reading, said every four weeks."
             ],
             "correctOrder": [
-                0,
                 1,
+                0,
+                7,
                 2,
-                3
+                5,
+                4,
+                3,
+                6
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Chronological Order",
-            "plotStructure": "Beginning, Middle, Climax, Ending"
+            "instruction": "Work out the order in which these events unfold.",
+            "sequenceLogic": "Agreement → Hidden Conflict → Discovery → Review → Decision → Amendment → Outcome",
+            "plotStructure": "Agreement, Discrepancy, Discovery, Review, Decision, Amendment, Result"
         },
         {
             "id": "ELT_STORYBUILDER_L148_Q1",
             "interactionType": "writing",
-            "hint": "Find the sentence that introduces the founding paradox of the discipline that its practitioners rarely examine - unexamined paradoxes must be surfaced before they can be examined.",
-            "explanation": "The founding paradox is surfaced first, characterised by its centrality and its invisibility. The examination is then conducted, the implications of the paradox for the discipline's foundational claims are traced, and the story concludes with a proposed resolution that preserves what is worth preserving and honestly discards what is not.",
+            "hint": "The advice at the end is based on what the tuner found.",
+            "explanation": "The harsh sound is the symptom, and the tuner's tools show he plans to correct it. Tightening the strings is the repair, and the melody confirms it. The advice about the window addresses the cause of the drift.",
             "sentences": [
-                "The discipline was founded on the claim that human behaviour was lawlike and on the method of statistical inference, which provided probabilistic rather than lawlike results.",
-                "Leo spent a year examining every major paper in the field for evidence that practitioners noticed the tension between the founding claim and the method.",
-                "He found that the tension was consistently present and consistently managed by describing probabilistic findings in language that implied necessity.",
-                "He proposed that the discipline adopt the weaker but more honest claim that human behaviour has tendencies rather than laws, and that its methods were designed to identify those tendencies reliably."
+                "Nikodem tightened the strings that had drifted flat.",
+                "Nikodem moved it to the inside wall.",
+                "A tuner arrived with a fork and a set of felt strips.",
+                "The tuner advised keeping the piano away from the window.",
+                "Nikodem's piano sounded harsh in the upper notes.",
+                "The harshness vanished from the melody Nikodem played."
             ],
             "correctOrder": [
-                0,
-                1,
+                4,
                 2,
-                3
+                0,
+                5,
+                3,
+                1
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Chronological Order",
-            "plotStructure": "Beginning, Middle, Climax, Ending"
+            "instruction": "Restore the story's natural progression.",
+            "sequenceLogic": "Symptom → Repair → Confirmation → Advice → Prevention",
+            "plotStructure": "Symptom, Arrival, Repair, Confirmation, Advice, Prevention"
         },
         {
             "id": "ELT_STORYBUILDER_L148_Q2",
             "interactionType": "writing",
-            "hint": "Look for the sentence that introduces the original relationship between the author and her subject before its transformation - transformation requires a prior state.",
-            "explanation": "The original relationship is described first, establishing its apparent stability and the confidence it provided. The transformation is then traced - not a sudden change but a slow discovery - and the story concludes with the character occupying a very different relationship to the same subject and finding that the new relationship is both more honest and more productive.",
+            "hint": "Each requirement depends on the one that follows it. Trace the chain of conditions.",
+            "explanation": "The dream leads to the permit requirement, which depends on the inspection, which depends on the sink. She solves the chain from the last requirement backward, and her success comes in the reverse order.",
             "sentences": [
-                "Mia had written about her subject with the confident authority of someone who understood it from inside.",
-                "Fifteen years into the work she began to suspect that what she had understood from inside was only one version of a much larger thing.",
-                "She spent three years deliberately seeking the experiences and perspectives that her inside position had made invisible to her.",
-                "She published the subsequent work not with authority but with the different kind of credibility that comes from having honestly revised your own position."
+                "A plumber fitted a sink and a water tank.",
+                "Carys found a used truck that lacked one.",
+                "The permit was issued, and she opened for business.",
+                "The inspection required a truck with a working sink.",
+                "Carys dreamed of running a food truck.",
+                "The city required a permit that needed a health inspection.",
+                "The truck passed the inspection."
             ],
             "correctOrder": [
-                0,
+                4,
+                5,
+                3,
                 1,
-                2,
-                3
+                0,
+                6,
+                2
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Chronological Order",
-            "plotStructure": "Beginning, Middle, Climax, Ending"
+            "instruction": "Reconstruct the story so that every event follows from the one before it.",
+            "sequenceLogic": "Goal → Requirement Chain → Fix → Approval → Launch",
+            "plotStructure": "Goal, Requirement, Requirement, Obstacle, Solution, Approval, Launch"
         },
         {
             "id": "ELT_STORYBUILDER_L148_Q3",
             "interactionType": "writing",
-            "hint": "Find the sentence that introduces the structural feature that makes the institution resistant to the reform it needs - resistance must be structural before structural reform can address it.",
-            "explanation": "The structural feature is identified first, characterised by what it does and why it produces resistance. The reform approach is then designed in direct response to the structural feature, implemented, and the story concludes with an assessment of how much the structural feature could be changed from within.",
+            "hint": "Which sentence explains a cause, and which sentence tests it?",
+            "explanation": "The symptom leads to an inspection that excludes one cause, and the neighbor suggests another. The lab result confirms low nitrogen, and the burn explains why. Fertilizer is the treatment, and the green shoots are the proof.",
             "sentences": [
-                "The institution's promotion criteria rewarded the behaviour most inconsistent with its stated mission and systematically disadvantaged the behaviour most consistent with it.",
-                "Sam spent a year documenting the correlation between promotion success and mission inconsistency across fifty individual careers.",
-                "He used the documentation to make the case for a dual-track promotion system that recognised mission-consistent and conventional career paths separately.",
-                "The dual-track system was adopted but the conventional track continued to attract three times the applications, which he interpreted as the structure's answer to the reform."
+                "The patch coincided with a spot where straw had been burned last season.",
+                "A neighbor suggested a soil test.",
+                "The lab report showed low nitrogen in the yellow area.",
+                "New green shoots covered the area within weeks.",
+                "She inspected the leaves and found no insects.",
+                "She spread fertilizer over the patch.",
+                "The burn had consumed nutrients near the surface.",
+                "A farmer noticed a yellow patch spreading through her wheat field."
             ],
             "correctOrder": [
-                0,
+                7,
+                4,
                 1,
                 2,
+                0,
+                6,
+                5,
                 3
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Chronological Order",
-            "plotStructure": "Beginning, Middle, Climax, Ending"
+            "instruction": "Put the events in the order that makes the story coherent.",
+            "sequenceLogic": "Symptom → Elimination → Test → Diagnosis → Explanation → Treatment → Result",
+            "plotStructure": "Symptom, Elimination, Suggestion, Finding, Explanation, Mechanism, Treatment, Result"
         },
         {
             "id": "ELT_STORYBUILDER_L149_Q1",
             "interactionType": "writing",
-            "hint": "Find the sentence that introduces the epistemic condition that makes genuine dialogue possible - conditions must exist before what they enable can occur.",
-            "explanation": "The epistemic condition is introduced first - what must be true of the participants for genuine dialogue to occur. Three cases are then described in which the condition was and was not met, and the story concludes with a reflection on what produces the condition and why it is so fragile.",
+            "hint": "Which step depends on access?",
+            "explanation": "The trouble leads to help, and the path gives access. Access lets him open the folder, and the unclear brief prompts the email. The reply resolves the confusion.",
             "sentences": [
-                "Leo had spent years studying dialogue and had come to believe that genuine dialogue required each participant to be genuinely uncertain about something the other might know.",
-                "In the three cases where this condition was met, the conversations produced outcomes that neither participant had entered with.",
-                "In the seven cases where one or both participants were certain in advance, the conversations produced advocacy rather than dialogue regardless of how collaborative the format appeared.",
-                "He concluded that the appearance of dialogue was remarkably easy to produce and genuine dialogue was remarkably rare and required specific conditions that could not be designed in but only cultivated."
+                "A colleague gave him the network path.",
+                "The new hire, Ottmar, had trouble finding the shared drive.",
+                "Ottmar emailed the project lead to confirm.",
+                "The lead replied with a revised schedule.",
+                "The folder held a brief with unclear deadlines.",
+                "Ottmar mapped the drive and opened the client folder."
             ],
             "correctOrder": [
-                0,
                 1,
+                0,
+                5,
+                4,
                 2,
                 3
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Chronological Order",
-            "plotStructure": "Beginning, Middle, Climax, Ending"
+            "instruction": "Arrange the sentences into a coherent account of what happened.",
+            "sequenceLogic": "Obstacle → Help → Access → Discovery → Inquiry → Resolution",
+            "plotStructure": "Obstacle, Help, Access, Discovery, Inquiry, Resolution"
         },
         {
             "id": "ELT_STORYBUILDER_L149_Q2",
             "interactionType": "writing",
-            "hint": "Look for the sentence that introduces the form of authority that derives from having been changed by experience - this form of authority must be distinguished from others before its character can be examined.",
-            "explanation": "The form of authority is introduced first, distinguished from the authority of position, expertise, or charisma. Its source - having been genuinely changed by what one has encountered - is then described, three examples of how it manifests are given, and the story concludes with a reflection on why it is both more rare and more durable than other forms.",
+            "hint": "A plan can fail and still lead to something better.",
+            "explanation": "The goal and the forecast set the plan, and the setup acts on it. The fog defeats the plan, and Rui adapts by using it. The silhouettes are the result, and the footage's placement shows how it turned out.",
             "sentences": [
-                "What made Mia's testimony different was not what she knew but the visible evidence that what she knew had cost her something.",
-                "She described not conclusions but transitions - the specific moments at which what she had believed had been displaced by what she had encountered.",
-                "Her audiences responded not to her authority but to her honesty, which turned out to produce a kind of authority that disagreement could not undermine.",
-                "She came to believe that the authority worth seeking was not the kind that came from knowing more than others but the kind that came from having been more thoroughly changed by what you knew."
+                "He changed his plan and used the fog as a soft backdrop.",
+                "Fog rolled over the water instead of clear air.",
+                "Weather forecasts promised clear skies.",
+                "Rui set up his camera at the pier in the dark.",
+                "The footage became the film's opening image.",
+                "Filmmaker Rui wanted a scene showing dawn over a fishing harbor.",
+                "The boats emerged as silhouettes."
             ],
             "correctOrder": [
-                0,
-                1,
+                5,
                 2,
-                3
+                3,
+                1,
+                0,
+                6,
+                4
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Chronological Order",
-            "plotStructure": "Beginning, Middle, Climax, Ending"
+            "instruction": "Place the events in the order they must occur.",
+            "sequenceLogic": "Plan → Setup → Disruption → Adaptation → Result → Outcome",
+            "plotStructure": "Goal, Forecast, Setup, Disruption, Adaptation, Result, Outcome"
         },
         {
             "id": "ELT_STORYBUILDER_L149_Q3",
             "interactionType": "writing",
-            "hint": "Identify the sentence describing the routine, half-hearted Sunday calls before the hospital stay that changes them - the change only has meaning against the earlier habit.",
-            "explanation": "The story opens with a relationship running on habit rather than genuine connection, then a health scare shifts its meaning. Sam starts listening differently, drawing out new stories, and the calls grow richer as a result. The sequence traces how a difficult moment quietly transformed an old routine.",
+            "hint": "What has to be understood before the rule can be rewritten?",
+            "explanation": "The suspicion leads to a comparison that isolates the error, and the script review explains it. Only then can the rule be changed, and the correction and audit follow as consequences.",
             "sentences": [
-                "For years Sam had called his mother every Sunday out of habit rather than desire, and both of them seemed to sense it.",
-                "After she was hospitalised briefly with pneumonia, the Sunday call became the part of his week he looked forward to most.",
-                "He began asking her questions about her own childhood instead of narrating his week, and she began telling him stories he had never heard.",
-                "By the time she recovered fully, the calls had grown to an hour long, and neither of them mentioned going back to the old routine."
+                "The script counted hours by calendar day rather than by shift.",
+                "Corrected payments were issued to the affected employees.",
+                "The company audited earlier months for the same error.",
+                "The output ignored hours logged past midnight.",
+                "The IT contact reviewed the payroll script.",
+                "Payroll clerk Leontina noticed that overtime pay for two employees looked too low.",
+                "He rewrote the rule to group hours by shift.",
+                "Leontina compared their timesheets with the payroll output."
             ],
             "correctOrder": [
+                5,
+                7,
+                3,
+                4,
                 0,
+                6,
                 1,
-                2,
-                3
+                2
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Cause & Effect",
-            "plotStructure": "Action, Reaction, Consequence, Outcome"
+            "instruction": "Rebuild the sequence from beginning to outcome.",
+            "sequenceLogic": "Suspicion → Comparison → Isolation → Diagnosis → Fix → Correction → Audit",
+            "plotStructure": "Suspicion, Comparison, Finding, Review, Cause, Fix, Correction, Follow-up"
         },
         {
             "id": "ELT_STORYBUILDER_L150_Q1",
             "interactionType": "writing",
-            "hint": "Find the sentence that introduces the initial formulation before the decades of revision that produce the final one - formulations must be made before they can be revised.",
-            "explanation": "The initial formulation is described first, characterised by its moment of production and the confidence that produced it. The revisions are then traced across decades, each one adding a layer of complexity and honesty, and the story concludes with the final formulation and a reflection on what thirty years of revision added to the original insight.",
+            "hint": "What discovery makes the curtains a sensible choice?",
+            "explanation": "The muddy sound is the problem, and the clapping test locates the cause. The reverb explains the sound, and the curtains absorb it. The clear rehearsal confirms it, and the booking follows.",
             "sentences": [
-                "Leo had formulated the central proposition at thirty-two in a paper that he had considered his most important work.",
-                "He spent the following thirty years revising it through the accumulated experience of what it failed to predict and what it had not been designed to accommodate.",
-                "Each revision preserved something essential while dismantling something that had seemed essential and proved not to be.",
-                "The final formulation was half the length of the original, significantly less ambitious in scope, and in every meaningful sense more true."
+                "The conductor walked the room, clapping to hear the echo.",
+                "Rehearsal in the same hall produced a clear sound.",
+                "Volunteers hung heavy curtains there.",
+                "The choir sounded muddy in the new hall.",
+                "The choir booked the hall for the season.",
+                "Bare walls at the back returned a long reverb."
             ],
             "correctOrder": [
+                3,
                 0,
-                1,
+                5,
                 2,
-                3
+                1,
+                4
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Chronological Order",
-            "plotStructure": "Beginning, Middle, Climax, Ending"
+            "instruction": "Sort the sentences into the sequence that makes sense.",
+            "sequenceLogic": "Problem → Test → Cause → Fix → Confirmation → Decision",
+            "plotStructure": "Problem, Test, Cause, Fix, Confirmation, Decision"
         },
         {
             "id": "ELT_STORYBUILDER_L150_Q2",
             "interactionType": "writing",
-            "hint": "Look for the sentence that introduces the gift that cannot be acknowledged until long after it is given - gifts given in advance of their recognition must be described first.",
-            "explanation": "The gift is described first - what was given and when - establishing that it was not recognised as a gift at the time. The recognition is then described, arriving decades later, and the story concludes with a reflection on why some of the most significant gifts are given in forms that cannot be recognised until the recipient has become the person the gift was given to help them become.",
+            "hint": "Follow the trail from the defect back to its source.",
+            "explanation": "The scratches are the symptom, and the batch number leads to the station. The worn cloth explains the defect, and the admission confirms the maintenance gap. The new cloths fix it, and the checklist prevents a repeat.",
             "sentences": [
-                "Her teacher had given Mia, at nineteen, a criticism so precise and so demanding that she had experienced it as an attack.",
-                "She had left the session shaking and had spent the following year proving the criticism wrong by doing exactly what it required.",
-                "At fifty-one, re-reading her early work, she found the evidence of what the criticism had produced and could finally name it as a gift.",
-                "She wrote to her teacher, who was by then ninety-two, and described what she had seen; her teacher replied that she had been waiting thirty-two years for that letter."
+                "New cloths arrived and were fitted.",
+                "The station supervisor admitted replacements were overdue.",
+                "Inspector Rowan found scratches on a batch of metal panels.",
+                "Rowan traced the batch number to the polishing station.",
+                "Sample panels came out smooth.",
+                "The plant added cloth replacement to its weekly checklist.",
+                "The polishing cloth at that station was worn thin."
             ],
             "correctOrder": [
-                0,
-                1,
                 2,
-                3
+                3,
+                6,
+                1,
+                0,
+                4,
+                5
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Chronological Order",
-            "plotStructure": "Beginning, Middle, Climax, Ending"
+            "instruction": "Order these sentences so the situation develops logically.",
+            "sequenceLogic": "Defect → Trace → Cause → Admission → Fix → Verification → Prevention",
+            "plotStructure": "Defect, Trace, Cause, Admission, Fix, Verification, Policy"
         },
         {
             "id": "ELT_STORYBUILDER_L150_Q3",
             "interactionType": "writing",
-            "hint": "Find the sentence that introduces the final act before the meaning it retrospectively confers - final acts give retrospective meaning to what preceded them.",
-            "explanation": "The final act is described first, establishing its apparent simplicity. Its retrospective meaning - what it reveals about the preceding work and life - is then identified, and the story concludes with a reflection on how final acts, by their finality, produce a particular kind of clarity about what everything else was for.",
+            "hint": "Two versions of a fact need a reliable source to decide between them.",
+            "explanation": "The complaint prompts verification, and the conflicting spellings show that the question is real. The deed is the decisive source, and its signature settles it. The correction and thanks follow, and the visitors are a side effect.",
             "sentences": [
-                "The last paper Sam published before his death was a single page that asked one question he could not answer.",
-                "Everyone who had read his previous forty years of work recognised the question as the one toward which everything he had written had been moving.",
-                "He had not planned for it to be his last: it was simply the question that remained after everything else had been addressed.",
-                "His colleagues described it as the most complete final statement any of them had encountered - not a summary but a demonstration that the work was still alive."
+                "She visited the historical society, where a curator produced a signed deed.",
+                "The paper printed a correction.",
+                "The editor asked a reporter to verify the claim.",
+                "A reader wrote to say the paper had misnamed the town's founder.",
+                "The reporter found the founder's name spelled two ways in old records.",
+                "The historical society received visitors curious about the founder.",
+                "The signature matched the reader's spelling.",
+                "The reader was thanked in the correction note."
             ],
             "correctOrder": [
-                0,
-                1,
+                3,
                 2,
-                3
+                4,
+                0,
+                6,
+                1,
+                7,
+                5
             ],
-            "instruction": "Read the sentences and arrange them in the correct order.",
-            "sequenceLogic": "Chronological Order",
-            "plotStructure": "Beginning, Middle, Climax, Ending"
+            "instruction": "Arrange the sentences into a coherent account of what happened.",
+            "sequenceLogic": "Complaint → Verification → Conflict → Source → Resolution → Correction → Effect",
+            "plotStructure": "Complaint, Assignment, Conflict, Evidence, Resolution, Correction, Acknowledgment, Consequence"
         }
     ]
 }

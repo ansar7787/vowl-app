@@ -8,8 +8,8 @@
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The airline is adding new routes this year.",
-            "sentence": "The airline is adding new routes this year.",
+            "question": "You can return this item within thirty days for a full refund.",
+            "sentence": "You can return this item within thirty days for a full refund.",
             "options": [
                 "Active",
                 "Passive"
@@ -17,39 +17,39 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before the verb is adding.",
-            "explanation": "This is active voice: the airline (the doer) is performing the action adding directly on new routes. In passive, this would flip to: New routes are being added by the airline this year.",
-            "grammarRule": "Present Continuous Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer right before can return.",
+            "explanation": "You is the doer of can return, modal active: modal + base verb. Passive version: This item can be returned within thirty days for a full refund.",
+            "grammarRule": "Modal Verbs Active",
+            "activeVoice": "You can return this item within thirty days for a full refund.",
+            "passiveVoice": "This item can be returned within thirty days for a full refund."
         },
         {
             "id": "vs_l31_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Scientists are studying the effects of the new drug.",
-            "sentence": "Scientists are studying the effects of the new drug.",
+            "question": "This form can be submitted online or in person at the office.",
+            "sentence": "This form can be submitted online or in person at the office.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Who performs the action are studying? Look right before the verb.",
-            "explanation": "This is active voice: scientists (the doer) are performing the action studying directly on the effects. In passive, this would flip to: The effects of the new drug are being studied by scientists.",
-            "grammarRule": "Present Continuous Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "A form can't submit itself. Look for can be plus a past participle.",
+            "explanation": "This form (receiver) can be submitted - modal passive: can + be + past participle, with no submitter named since either option is open to the reader. Active form: You can submit this form online or in person at the office.",
+            "grammarRule": "Modal Verbs Passive",
+            "activeVoice": "You can submit this form online or in person at the office.",
+            "passiveVoice": "This form can be submitted online or in person at the office."
         },
         {
             "id": "vs_l31_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The website is being redesigned for mobile users.",
-            "sentence": "The website is being redesigned for mobile users.",
+            "question": "Loose cables can't be left near the walkway for safety reasons.",
+            "sentence": "Loose cables can't be left near the walkway for safety reasons.",
             "options": [
                 "Active",
                 "Passive"
@@ -57,79 +57,79 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for is being plus a past participle (redesigned). The subject receives the action here.",
-            "explanation": "This is passive voice: the website (receiver) is being redesigned, but no designer is named directly. In active, this would flip to: The design team is redesigning the website for mobile users.",
-            "grammarRule": "Present Continuous Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Cables don't leave themselves anywhere. Look for can't be plus a past participle.",
+            "explanation": "Loose cables (receiver) can't be left - the negative modal passive follows modal + not + be + past participle, with no specific worker named. Active form: Workers can't leave loose cables near the walkway for safety reasons.",
+            "grammarRule": "Modal Verbs Passive (Negative)",
+            "activeVoice": "Workers can't leave loose cables near the walkway for safety reasons.",
+            "passiveVoice": "Loose cables can't be left near the walkway for safety reasons."
         },
         {
             "id": "vs_l32_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The contract was being negotiated for several weeks.",
-            "sentence": "The contract was being negotiated for several weeks.",
+            "question": "Employees should complete the safety training before their first shift.",
+            "sentence": "Employees should complete the safety training before their first shift.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for was being plus a past participle (negotiated). The subject receives the action here.",
-            "explanation": "This is passive voice: the contract (receiver) was being negotiated, but no negotiator is named directly. In active, this would flip to: Both companies were negotiating the contract for several weeks.",
-            "grammarRule": "Past Continuous Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer right before should complete.",
+            "explanation": "Employees is the doer of should complete, modal active expressing a recommendation. Passive version: The safety training should be completed before an employee's first shift.",
+            "grammarRule": "Modal Verbs Active",
+            "activeVoice": "Employees should complete the safety training before their first shift.",
+            "passiveVoice": "The safety training should be completed before an employee's first shift."
         },
         {
             "id": "vs_l32_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The baby was being rocked gently to sleep.",
-            "sentence": "The baby was being rocked gently to sleep.",
+            "question": "Security should scan all incoming packages before they reach the mailroom.",
+            "sentence": "Security should scan all incoming packages before they reach the mailroom.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for was being plus a past participle (rocked). The subject receives the action here.",
-            "explanation": "This is passive voice: the baby (receiver) was being rocked, but no rocker is named directly. In active, this would flip to: The mother was rocking the baby gently to sleep.",
-            "grammarRule": "Past Continuous Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer right before should scan.",
+            "explanation": "Security is the doer of should scan, modal active expressing a recommendation. Passive version: All incoming packages should be scanned before they reach the mailroom.",
+            "grammarRule": "Modal Verbs Active",
+            "activeVoice": "Security should scan all incoming packages before they reach the mailroom.",
+            "passiveVoice": "All incoming packages should be scanned before they reach the mailroom."
         },
         {
             "id": "vs_l32_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "My parents were renovating the kitchen last spring.",
-            "sentence": "My parents were renovating the kitchen last spring.",
+            "question": "Passwords shouldn't be shared with anyone, including coworkers.",
+            "sentence": "Passwords shouldn't be shared with anyone, including coworkers.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before the verb were renovating.",
-            "explanation": "This is active voice: my parents (the doer) were performing the action renovating directly on the kitchen. In passive, this would flip to: The kitchen was being renovated by my parents last spring.",
-            "grammarRule": "Past Continuous Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Passwords can't share themselves. Look for shouldn't be plus a past participle.",
+            "explanation": "Passwords (receiver) shouldn't be shared - negative modal passive: modal + not + be + past participle, giving a general rule with no specific person named. Active form: You shouldn't share passwords with anyone, including coworkers.",
+            "grammarRule": "Modal Verbs Passive (Negative)",
+            "activeVoice": "You shouldn't share passwords with anyone, including coworkers.",
+            "passiveVoice": "Passwords shouldn't be shared with anyone, including coworkers."
         },
         {
             "id": "vs_l33_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The hospital is expanding its busy emergency department.",
-            "sentence": "The hospital is expanding its busy emergency department.",
+            "question": "Visitors must sign the logbook at the front desk.",
+            "sentence": "Visitors must sign the logbook at the front desk.",
             "options": [
                 "Active",
                 "Passive"
@@ -137,19 +137,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Who performs the action is expanding? Look right before the verb.",
-            "explanation": "This is active voice: the hospital (the doer) is performing the action expanding directly on its emergency department. In passive, this would flip to: Its busy emergency department is being expanded by the hospital.",
-            "grammarRule": "Present Continuous Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer right before must sign.",
+            "explanation": "Visitors is the doer of must sign, modal active expressing a strict requirement. Passive version: The logbook must be signed by visitors at the front desk.",
+            "grammarRule": "Modal Verbs Active",
+            "activeVoice": "Visitors must sign the logbook at the front desk.",
+            "passiveVoice": "The logbook must be signed by visitors at the front desk."
         },
         {
             "id": "vs_l33_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Volunteers are distributing warm food at the shelter.",
-            "sentence": "Volunteers are distributing warm food at the shelter.",
+            "question": "Staff must keep all fire exits clear at all times.",
+            "sentence": "Staff must keep all fire exits clear at all times.",
             "options": [
                 "Active",
                 "Passive"
@@ -157,19 +157,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before the verb are distributing.",
-            "explanation": "This is active voice: volunteers (the doer) are performing the action distributing directly on warm food. In passive, this would flip to: Warm food is being distributed at the shelter by volunteers.",
-            "grammarRule": "Present Continuous Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer right before must keep.",
+            "explanation": "Staff is the doer of must keep, modal active expressing a strict requirement. Passive version: All fire exits must be kept clear at all times.",
+            "grammarRule": "Modal Verbs Active",
+            "activeVoice": "Staff must keep all fire exits clear at all times.",
+            "passiveVoice": "All fire exits must be kept clear at all times."
         },
         {
             "id": "vs_l33_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "New treatments are being tested in clinical trials.",
-            "sentence": "New treatments are being tested in clinical trials.",
+            "question": "Raw chicken must never be left at room temperature for long.",
+            "sentence": "Raw chicken must never be left at room temperature for long.",
             "options": [
                 "Active",
                 "Passive"
@@ -177,79 +177,79 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for are being plus a past participle (tested). The subject receives the action here.",
-            "explanation": "This is passive voice: new treatments (receiver) are being tested, but no tester is named directly. In active, this would flip to: Researchers are testing new treatments in clinical trials.",
-            "grammarRule": "Present Continuous Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Chicken doesn't place itself anywhere. Look for must never be plus a past participle.",
+            "explanation": "Raw chicken (receiver) must never be left - the adverb never slots between must and be without breaking the passive pattern. No specific cook is named. Active form: You must never leave raw chicken at room temperature for long.",
+            "grammarRule": "Modal Verbs Passive (Negative Adverb)",
+            "activeVoice": "You must never leave raw chicken at room temperature for long.",
+            "passiveVoice": "Raw chicken must never be left at room temperature for long."
         },
         {
             "id": "vs_l34_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The store window was being decorated for the holidays.",
-            "sentence": "The store window was being decorated for the holidays.",
+            "question": "The airline may delay the flight due to severe weather.",
+            "sentence": "The airline may delay the flight due to severe weather.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for was being plus a past participle (decorated). The subject receives the action here.",
-            "explanation": "This is passive voice: the store window (receiver) was being decorated, but no decorator is named directly. In active, this would flip to: An artist was decorating the store window for the holidays.",
-            "grammarRule": "Past Continuous Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer right before may delay.",
+            "explanation": "The airline is the doer of may delay, modal active expressing possibility. Passive version: The flight may be delayed due to severe weather.",
+            "grammarRule": "Modal Verbs Active",
+            "activeVoice": "The airline may delay the flight due to severe weather.",
+            "passiveVoice": "The flight may be delayed due to severe weather."
         },
         {
             "id": "vs_l34_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The final scene was being filmed at midnight.",
-            "sentence": "The final scene was being filmed at midnight.",
+            "question": "The courier may apply extra charges if the package exceeds the weight limit.",
+            "sentence": "The courier may apply extra charges if the package exceeds the weight limit.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "The subject here does not act on its own. Ask who was doing the filming.",
-            "explanation": "This is passive voice: the final scene (receiver) was being filmed, but no filmmaker is named directly. In active, this would flip to: The crew was filming the final scene at midnight.",
-            "grammarRule": "Past Continuous Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer right before may apply.",
+            "explanation": "The courier is the doer of may apply, modal active expressing possibility. Passive version: Extra charges may be applied if the package exceeds the weight limit.",
+            "grammarRule": "Modal Verbs Active",
+            "activeVoice": "The courier may apply extra charges if the package exceeds the weight limit.",
+            "passiveVoice": "Extra charges may be applied if the package exceeds the weight limit."
         },
         {
             "id": "vs_l34_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "She was carefully comparing prices at several shops.",
-            "sentence": "She was carefully comparing prices at several shops.",
+            "question": "The concert might be cancelled if ticket sales stay this low.",
+            "sentence": "The concert might be cancelled if ticket sales stay this low.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before the verb was comparing.",
-            "explanation": "This is active voice: she (the doer) was performing the action comparing directly on prices. In passive, this would flip to: Prices were being carefully compared at several shops by her.",
-            "grammarRule": "Past Continuous Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "A concert can't cancel itself. Look for might be plus a past participle.",
+            "explanation": "The concert (receiver) might be cancelled - might be + past participle expresses a weaker possibility than may, with no organizer named. Active form: The organizers might cancel the concert if ticket sales stay this low.",
+            "grammarRule": "Modal Verbs Passive",
+            "activeVoice": "The organizers might cancel the concert if ticket sales stay this low.",
+            "passiveVoice": "The concert might be cancelled if ticket sales stay this low."
         },
         {
             "id": "vs_l35_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The professor is explaining a difficult new theory.",
-            "sentence": "The professor is explaining a difficult new theory.",
+            "question": "The store could offer a small discount to customers who order in bulk.",
+            "sentence": "The store could offer a small discount to customers who order in bulk.",
             "options": [
                 "Active",
                 "Passive"
@@ -257,19 +257,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Who performs the action is explaining? Look right before the verb.",
-            "explanation": "This is active voice: the professor (the doer) is performing the action explaining directly on a difficult new theory. In passive, this would flip to: A difficult new theory is being explained by the professor.",
-            "grammarRule": "Present Continuous Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer right before could offer.",
+            "explanation": "The store is the doer of could offer, modal active suggesting a possible action. Passive version: A small discount could be offered to customers who order in bulk.",
+            "grammarRule": "Modal Verbs Active",
+            "activeVoice": "The store could offer a small discount to customers who order in bulk.",
+            "passiveVoice": "A small discount could be offered to customers who order in bulk."
         },
         {
             "id": "vs_l35_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The firm is hiring several new college graduates.",
-            "sentence": "The firm is hiring several new college graduates.",
+            "question": "Tenants have to renew their lease thirty days before it expires.",
+            "sentence": "Tenants have to renew their lease thirty days before it expires.",
             "options": [
                 "Active",
                 "Passive"
@@ -277,19 +277,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before the verb is hiring.",
-            "explanation": "This is active voice: the firm (the doer) is performing the action hiring directly on several new graduates. In passive, this would flip to: Several new college graduates are being hired by the firm.",
-            "grammarRule": "Present Continuous Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer right before have to renew.",
+            "explanation": "Tenants is the doer of have to renew, expressing obligation with have to rather than must, but still active voice: modal-like phrase + base verb. Passive version: The lease has to be renewed thirty days before it expires.",
+            "grammarRule": "Modal Passive (have to/ought to) - Active",
+            "activeVoice": "Tenants have to renew their lease thirty days before it expires.",
+            "passiveVoice": "The lease has to be renewed thirty days before it expires."
         },
         {
             "id": "vs_l35_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The final exam results are being posted online.",
-            "sentence": "The final exam results are being posted online.",
+            "question": "This warning label ought to be printed in a larger font.",
+            "sentence": "This warning label ought to be printed in a larger font.",
             "options": [
                 "Active",
                 "Passive"
@@ -297,19 +297,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for are being plus a past participle (posted). The subject receives the action here.",
-            "explanation": "This is passive voice: the exam results (receiver) are being posted, but no poster is named directly. In active, this would flip to: The university is posting the final exam results online.",
-            "grammarRule": "Present Continuous Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "A label doesn't print itself. Look for ought to be plus a past participle.",
+            "explanation": "This warning label (receiver) ought to be printed - ought to be + past participle is a slightly formal modal passive expressing a recommendation. Active form: The manufacturer ought to print this warning label in a larger font.",
+            "grammarRule": "Modal Passive (have to/ought to)",
+            "activeVoice": "The manufacturer ought to print this warning label in a larger font.",
+            "passiveVoice": "This warning label ought to be printed in a larger font."
         },
         {
             "id": "vs_l36_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The train was being delayed by heavy snow.",
-            "sentence": "The train was being delayed by heavy snow.",
+            "question": "The delay should have been announced much earlier.",
+            "sentence": "The delay should have been announced much earlier.",
             "options": [
                 "Active",
                 "Passive"
@@ -317,79 +317,79 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for was being plus a past participle (delayed), followed by by naming the cause.",
-            "explanation": "This is passive voice: the train (receiver) was being delayed by heavy snow, the cause named after by. In active, this would flip to: Heavy snow was delaying the train.",
-            "grammarRule": "Past Continuous Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Look for should have been plus a past participle - a modal combined with the perfect passive.",
+            "explanation": "The delay (receiver) should have been announced - modal + have + been + past participle expresses a past action that was recommended but didn't happen. No announcer is named. Active form: The airline should have announced the delay much earlier.",
+            "grammarRule": "Perfect Modal Passive",
+            "activeVoice": "The airline should have announced the delay much earlier.",
+            "passiveVoice": "The delay should have been announced much earlier."
         },
         {
             "id": "vs_l36_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The heavy suitcase was being searched at customs.",
-            "sentence": "The heavy suitcase was being searched at customs.",
+            "question": "The engineers must have tested the software before releasing it.",
+            "sentence": "The engineers must have tested the software before releasing it.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for was being plus a past participle (searched). The subject receives the action here.",
-            "explanation": "This is passive voice: the suitcase (receiver) was being searched, but no searcher is named directly. In active, this would flip to: An officer was searching the heavy suitcase at customs.",
-            "grammarRule": "Past Continuous Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer right before must have tested.",
+            "explanation": "The engineers is the doer of must have tested, modal perfect active expressing a confident guess about the past. Passive version: The software must have been tested before it was released.",
+            "grammarRule": "Perfect Modal Passive Active",
+            "activeVoice": "The engineers must have tested the software before releasing it.",
+            "passiveVoice": "The software must have been tested before it was released."
         },
         {
             "id": "vs_l36_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "We were nervously checking the airport departure board.",
-            "sentence": "We were nervously checking the airport departure board.",
+            "question": "The contract could have been reviewed more carefully before it was signed.",
+            "sentence": "The contract could have been reviewed more carefully before it was signed.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before the verb were checking.",
-            "explanation": "This is active voice: we (the doer) were performing the action checking directly on the departure board. In passive, this would flip to: The airport departure board was being nervously checked by us.",
-            "grammarRule": "Past Continuous Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "A contract can't review itself. Look for could have been plus a past participle.",
+            "explanation": "The contract (receiver) could have been reviewed - modal perfect passive expressing a missed possibility, with no reviewer named. Active form: The legal team could have reviewed the contract more carefully before it was signed.",
+            "grammarRule": "Perfect Modal Passive",
+            "activeVoice": "The legal team could have reviewed the contract more carefully before it was signed.",
+            "passiveVoice": "The contract could have been reviewed more carefully before it was signed."
         },
         {
             "id": "vs_l37_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The city is installing solar panels on rooftops.",
-            "sentence": "The city is installing solar panels on rooftops.",
+            "question": "The error shouldn't have been overlooked during the final review.",
+            "sentence": "The error shouldn't have been overlooked during the final review.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Who performs the action is installing? Look right before the verb.",
-            "explanation": "This is active voice: the city (the doer) is performing the action installing directly on solar panels. In passive, this would flip to: Solar panels are being installed on rooftops by the city.",
-            "grammarRule": "Present Continuous Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Look for shouldn't have been plus a past participle - a negative modal perfect passive.",
+            "explanation": "The error (receiver) shouldn't have been overlooked - negative modal perfect passive: modal + not + have + been + past participle, describing a mistake in the past. No reviewer is named. Active form: The reviewer shouldn't have overlooked the error during the final review.",
+            "grammarRule": "Perfect Modal Passive (Negative)",
+            "activeVoice": "The reviewer shouldn't have overlooked the error during the final review.",
+            "passiveVoice": "The error shouldn't have been overlooked during the final review."
         },
         {
             "id": "vs_l37_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Our engineers are testing the new network connection.",
-            "sentence": "Our engineers are testing the new network connection.",
+            "question": "The manufacturer can't have known about the defect before shipping.",
+            "sentence": "The manufacturer can't have known about the defect before shipping.",
             "options": [
                 "Active",
                 "Passive"
@@ -397,19 +397,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Who is carrying out the testing here? Check right before the verb.",
-            "explanation": "This is active voice: our engineers (the doer) are performing the action testing directly on the network connection. In passive, this would flip to: The new network connection is being tested by our engineers.",
-            "grammarRule": "Present Continuous Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer right before can't have known, and note that know here is used without a passable object structure.",
+            "explanation": "The manufacturer is the doer of can't have known, modal perfect active expressing near-certainty about the past. Since the defect functions as the object of know, a passive form is possible: The defect can't have been known about before shipping.",
+            "grammarRule": "Perfect Modal Passive Active",
+            "activeVoice": "The manufacturer can't have known about the defect before shipping.",
+            "passiveVoice": "The defect can't have been known about before shipping."
         },
         {
             "id": "vs_l37_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Local roads are being monitored for traffic flow.",
-            "sentence": "Local roads are being monitored for traffic flow.",
+            "question": "The funds shouldn't have been transferred without written approval.",
+            "sentence": "The funds shouldn't have been transferred without written approval.",
             "options": [
                 "Active",
                 "Passive"
@@ -417,39 +417,39 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for are being plus a past participle (monitored). The subject receives the action here.",
-            "explanation": "This is passive voice: local roads (receiver) are being monitored, but no monitor is named directly. In active, this would flip to: The city is monitoring local roads for traffic flow.",
-            "grammarRule": "Present Continuous Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Funds can't transfer themselves. Look for shouldn't have been plus a past participle.",
+            "explanation": "The funds (receiver) shouldn't have been transferred - negative modal perfect passive, with no specific staff member named as responsible. Active form: The bank shouldn't have transferred the funds without written approval.",
+            "grammarRule": "Perfect Modal Passive (Negative)",
+            "activeVoice": "The bank shouldn't have transferred the funds without written approval.",
+            "passiveVoice": "The funds shouldn't have been transferred without written approval."
         },
         {
             "id": "vs_l38_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The turkey was being roasted for several hours.",
-            "sentence": "The turkey was being roasted for several hours.",
+            "question": "The developers must fix this bug before the next update goes live.",
+            "sentence": "The developers must fix this bug before the next update goes live.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for was being plus a past participle (roasted). The subject receives the action here.",
-            "explanation": "This is passive voice: the turkey (receiver) was being roasted, but no cook is named directly. In active, this would flip to: My mother was roasting the turkey for several hours.",
-            "grammarRule": "Past Continuous Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer right before must fix.",
+            "explanation": "The developers is the doer of must fix, modal active expressing urgency. Passive version: This bug must be fixed before the next update goes live.",
+            "grammarRule": "Modal Verbs Active",
+            "activeVoice": "The developers must fix this bug before the next update goes live.",
+            "passiveVoice": "This bug must be fixed before the next update goes live."
         },
         {
             "id": "vs_l38_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The recipe was being tested in the kitchen.",
-            "sentence": "The recipe was being tested in the kitchen.",
+            "question": "The server should have been backed up before the migration started.",
+            "sentence": "The server should have been backed up before the migration started.",
             "options": [
                 "Active",
                 "Passive"
@@ -457,19 +457,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for was being plus a past participle (tested). The subject receives the action here.",
-            "explanation": "This is passive voice: the recipe (receiver) was being tested, but no tester is named directly. In active, this would flip to: The chef was testing the recipe in the kitchen.",
-            "grammarRule": "Past Continuous Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "A server doesn't back itself up. Look for should have been plus a past participle.",
+            "explanation": "The server (receiver) should have been backed up - modal perfect passive describing a missed step in the past, with no IT staff member named. Active form: The IT team should have backed up the server before the migration started.",
+            "grammarRule": "Perfect Modal Passive",
+            "activeVoice": "The IT team should have backed up the server before the migration started.",
+            "passiveVoice": "The server should have been backed up before the migration started."
         },
         {
             "id": "vs_l38_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "My uncle was grilling vegetables for the party.",
-            "sentence": "My uncle was grilling vegetables for the party.",
+            "question": "New hires must complete an orientation session within their first week.",
+            "sentence": "New hires must complete an orientation session within their first week.",
             "options": [
                 "Active",
                 "Passive"
@@ -477,19 +477,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before the verb was grilling.",
-            "explanation": "This is active voice: my uncle (the doer) was performing the action grilling directly on vegetables. In passive, this would flip to: Vegetables were being grilled for the party by my uncle.",
-            "grammarRule": "Past Continuous Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer right before must complete.",
+            "explanation": "New hires is the doer of must complete, modal active. Passive version: An orientation session must be completed within a new hire's first week.",
+            "grammarRule": "Modal Verbs Active",
+            "activeVoice": "New hires must complete an orientation session within their first week.",
+            "passiveVoice": "An orientation session must be completed within a new hire's first week."
         },
         {
             "id": "vs_l39_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The company is reviewing all its safety policies.",
-            "sentence": "The company is reviewing all its safety policies.",
+            "question": "Students may retake the exam if they missed it due to illness.",
+            "sentence": "Students may retake the exam if they missed it due to illness.",
             "options": [
                 "Active",
                 "Passive"
@@ -497,19 +497,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Who performs the action is reviewing? Look right before the verb.",
-            "explanation": "This is active voice: the company (the doer) is performing the action reviewing directly on its safety policies. In passive, this would flip to: All its safety policies are being reviewed by the company.",
-            "grammarRule": "Present Continuous Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer right before may retake.",
+            "explanation": "Students is the doer of may retake, modal active expressing permission. Passive version: The exam may be retaken if a student missed it due to illness.",
+            "grammarRule": "Modal Verbs Active",
+            "activeVoice": "Students may retake the exam if they missed it due to illness.",
+            "passiveVoice": "The exam may be retaken if a student missed it due to illness."
         },
         {
             "id": "vs_l39_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The medication was being administered every four hours.",
-            "sentence": "The medication was being administered every four hours.",
+            "question": "Late assignments may not be accepted without a valid excuse.",
+            "sentence": "Late assignments may not be accepted without a valid excuse.",
             "options": [
                 "Active",
                 "Passive"
@@ -517,79 +517,39 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for was being plus a past participle (administered). The subject receives the action here.",
-            "explanation": "This is passive voice: the medication (receiver) was being administered, but no nurse is named directly. In active, this would flip to: The nurse was administering the medication every four hours.",
-            "grammarRule": "Past Continuous Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Assignments don't accept themselves. Look for may not be plus a past participle.",
+            "explanation": "Late assignments (receiver) may not be accepted - negative modal passive, may + not + be + past participle, with no teacher named. Active form: The teacher may not accept late assignments without a valid excuse.",
+            "grammarRule": "Modal Verbs Passive (Negative)",
+            "activeVoice": "The teacher may not accept late assignments without a valid excuse.",
+            "passiveVoice": "Late assignments may not be accepted without a valid excuse."
         },
         {
             "id": "vs_l39_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The fitness trainer was demonstrating the exercise slowly.",
-            "sentence": "The fitness trainer was demonstrating the exercise slowly.",
+            "question": "The scholarship recipients should have been notified by email last week.",
+            "sentence": "The scholarship recipients should have been notified by email last week.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before the verb was demonstrating.",
-            "explanation": "This is active voice: the fitness trainer (the doer) was performing the action demonstrating directly on the exercise. In passive, this would flip to: The exercise was being demonstrated slowly by the fitness trainer.",
-            "grammarRule": "Past Continuous Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Recipients don't notify themselves. Look for should have been plus a past participle.",
+            "explanation": "The scholarship recipients (receiver) should have been notified - modal perfect passive pointing out a delay, with no office named. Active form: The financial aid office should have notified the scholarship recipients by email last week.",
+            "grammarRule": "Perfect Modal Passive",
+            "activeVoice": "The financial aid office should have notified the scholarship recipients by email last week.",
+            "passiveVoice": "The scholarship recipients should have been notified by email last week."
         },
         {
             "id": "vs_l40_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The stadium is being renovated before the tournament.",
-            "sentence": "The stadium is being renovated before the tournament.",
-            "options": [
-                "Active",
-                "Passive"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for is being plus a past participle (renovated). The subject receives the action here.",
-            "explanation": "This checkpoint reviews passive voice: the stadium (receiver) is being renovated, but no builder is named directly. In active, this would flip to: The city is renovating the stadium before the tournament.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
-        },
-        {
-            "id": "vs_l40_q2",
-            "instruction": "FLIP THE VOICE TRANSMUTER",
-            "subtype": "voiceSwap",
-            "interactionType": "choice",
-            "question": "The injury was being examined by a specialist.",
-            "sentence": "The injury was being examined by a specialist.",
-            "options": [
-                "Active",
-                "Passive"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for was being plus a past participle (examined), followed by by naming who does the action.",
-            "explanation": "This checkpoint reviews passive voice: the injury (receiver) was being examined by a specialist, the agent named after by. In active, this would flip to: A specialist was examining the injury.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
-        },
-        {
-            "id": "vs_l40_q3",
-            "instruction": "FLIP THE VOICE TRANSMUTER",
-            "subtype": "voiceSwap",
-            "interactionType": "choice",
-            "question": "The whole team is finalizing the marketing plan.",
-            "sentence": "The whole team is finalizing the marketing plan.",
+            "question": "This checkpoint reviews modal forms: Guests must check out before eleven in the morning.",
+            "sentence": "This checkpoint reviews modal forms: Guests must check out before eleven in the morning.",
             "options": [
                 "Active",
                 "Passive"
@@ -597,11 +557,51 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before the verb is finalizing, then decide the voice.",
-            "explanation": "This checkpoint reviews active voice: the team (the doer) is performing the action finalizing directly on the marketing plan. In passive, this would flip to: The marketing plan is being finalized by the whole team.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer right before must check out.",
+            "explanation": "This checkpoint reviews modal active: guests is the doer of must check out. Passive version: Check-out must be completed by guests before eleven in the morning.",
+            "grammarRule": "Modal Verbs Active",
+            "activeVoice": "Guests must check out before eleven in the morning.",
+            "passiveVoice": "Check-out must be completed by guests before eleven in the morning."
+        },
+        {
+            "id": "vs_l40_q2",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "This checkpoint reviews modal forms: The recall notice should have been issued as soon as the defect was found.",
+            "sentence": "This checkpoint reviews modal forms: The recall notice should have been issued as soon as the defect was found.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "A notice doesn't issue itself. Look for should have been plus a past participle.",
+            "explanation": "This checkpoint reviews modal perfect passive: the recall notice (receiver) should have been issued, with no department named. Active form: The manufacturer should have issued the recall notice as soon as the defect was found.",
+            "grammarRule": "Perfect Modal Passive",
+            "activeVoice": "The manufacturer should have issued the recall notice as soon as the defect was found.",
+            "passiveVoice": "The recall notice should have been issued as soon as the defect was found."
+        },
+        {
+            "id": "vs_l40_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "This checkpoint reviews modal forms: Confidential files can't be left unattended on any desk.",
+            "sentence": "This checkpoint reviews modal forms: Confidential files can't be left unattended on any desk.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Files don't leave themselves anywhere. Look for can't be plus a past participle.",
+            "explanation": "This checkpoint reviews negative modal passive: confidential files (receiver) can't be left, with no employee singled out - the rule applies to everyone. Active form: Employees can't leave confidential files unattended on any desk.",
+            "grammarRule": "Modal Verbs Passive (Negative)",
+            "activeVoice": "Employees can't leave confidential files unattended on any desk.",
+            "passiveVoice": "Confidential files can't be left unattended on any desk."
         }
     ]
 }

@@ -8,720 +8,720 @@
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The hotel was comfortable, but the breakfast was disappointing.",
-            "textToSpeak": "The hotel was comfortable, but the breakfast was disappointing.",
+            "word": "So last summer, I went to this tiny village in the mountains.",
+            "textToSpeak": "So last summer, I went to this tiny village in the mountains.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Lifts on 'summer' and 'village', fall on 'mountains'",
+                "Falls on 'summer', 'village' and 'mountains'"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Lifts on 'summer' and 'village', fall on 'mountains'",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                1,
-                0,
-                2
+                3,
+                3,
+                0
             ],
-            "hint": "This sentence gives a mixed review using 'but.' Listen to the pitch on 'comfortable' for a dip-and-lift rather than a plain fall.",
-            "explanation": "The fall-rise pattern on 'comfortable' signals a qualified opinion. The speaker liked one part but is about to mention a problem.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Curious"
+            "hint": "A story is beginning. Which parts of the opening are setting the scene rather than finishing it?",
+            "explanation": "Scene-setting details lift because the story hasn't started yet. The last fall completes the opening.",
+            "pitchRule": "📖 Story openings lift through scene-setting details.",
+            "emotionContext": "Nostalgic"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L151_Q2",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The beach resort exceeded all our expectations.",
-            "textToSpeak": "The beach resort exceeded all our expectations.",
+            "word": "And I swear, that was the loudest laugh I have ever heard in my life.",
+            "textToSpeak": "And I swear, that was the loudest laugh I have ever heard in my life.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Peak on 'laugh' — the thing being described",
+                "Peak on 'loudest', slow fall — exaggerated emphasis"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Peak on 'loudest', slow fall — exaggerated emphasis",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
-                2,
                 1,
+                2,
+                4,
                 0
             ],
-            "hint": "This sentence gives one clear, enthusiastic opinion. Listen to the pitch on 'expectations.'",
-            "explanation": "This is a definite statement, so the pitch falls once at the end, on 'expectations,' with no hesitation.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Excited"
+            "hint": "The speaker is exaggerating for effect. Which word is stretched?",
+            "explanation": "A peak on 'loudest' and a slow fall create storytelling exaggeration. 'Laugh' is just the topic.",
+            "pitchRule": "📖🎯 Exaggeration in a story puts the peak on the superlative.",
+            "emotionContext": "Amused"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L151_Q3",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The flight was smooth, but it left two hours late.",
-            "textToSpeak": "The flight was smooth, but it left two hours late.",
+            "word": "It had been a long, strange day.",
+            "textToSpeak": "It had been a long, strange day.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Slow pace, lowered fall on 'day' — reflective tone",
+                "Quick pace, bright fall on 'day' — cheerful opening"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Slow pace, lowered fall on 'day' — reflective tone",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
                 1,
-                0,
-                2
+                1,
+                0
             ],
-            "hint": "This sentence gives a mixed review using 'but.' Listen to the pitch on 'smooth' for a dip-and-lift.",
-            "explanation": "The fall-rise on 'smooth' shows the praise is incomplete, signaling a complaint about the delay is coming.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Doubtful"
+            "hint": "A story opening can set a mood. How fast does the speaker begin?",
+            "explanation": "A slow pace and a lowered fall signal a reflective, slightly uneasy mood. A bright, quick opening would promise a light story.",
+            "pitchRule": "📖 A slow, low opening sets a reflective mood.",
+            "emotionContext": "Reflective"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L152_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The city tour was absolutely unforgettable.",
-            "textToSpeak": "The city tour was absolutely unforgettable.",
+            "word": "You'll never guess what happened next.",
+            "textToSpeak": "You'll never guess what happened next.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Stress on 'never', rise on 'next' — teaser",
+                "Falling on 'next' — plain statement"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Stress on 'never', rise on 'next' — teaser",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
-                2,
                 1,
-                0
+                3,
+                4,
+                2
             ],
-            "hint": "This sentence gives one clear, enthusiastic opinion. Listen to the pitch on 'unforgettable.'",
-            "explanation": "This is a definite statement with one falling pitch at the end, on 'unforgettable.'",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Neutral"
+            "hint": "The speaker wants the listener to be curious. Which ending creates suspense?",
+            "explanation": "A rise on 'next' leaves the story hanging and encourages the listener to ask. A fall would flatten the teaser.",
+            "pitchRule": "📖📈 A rising ending on a teaser builds suspense.",
+            "emotionContext": "Mischievous"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L152_Q2",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The food was tasty, but the portions were small.",
-            "textToSpeak": "The food was tasty, but the portions were small.",
+            "word": "And that's when I noticed the door was open.",
+            "textToSpeak": "And that's when I noticed the door was open.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Quick, bright fall on 'open' — casual remark",
+                "Slowing, stress on 'noticed', low fall — building unease"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
+            "correctAnswer": "Slowing, stress on 'noticed', low fall — building unease",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
-                1,
-                0,
-                2
-            ],
-            "hint": "This sentence gives a mixed review using 'but.' Listen to the pitch on 'tasty' for a dip-and-lift rather than a plain fall.",
-            "explanation": "The fall-rise pattern on 'tasty' signals reservation. The speaker liked the taste but is about to add a complaint.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Surprised"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L152_Q3",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "Our guide knew the history extremely well.",
-            "textToSpeak": "Our guide knew the history extremely well.",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
-            ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                2,
-                2,
+                4,
                 1,
                 0
             ],
-            "hint": "This sentence gives one clear, positive opinion. Listen to the pitch on 'well.'",
-            "explanation": "This is a definite statement, so the pitch falls once at the end, on 'well.'",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Determined"
+            "hint": "Something has changed in the story. How does the pace change?",
+            "explanation": "Slowing down with stress on 'noticed' builds unease before the detail. A bright, quick fall would sound casual.",
+            "pitchRule": "📖 Slowing down before the detail builds tension.",
+            "emotionContext": "Uneasy"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L152_Q3",
+            "instruction": "You tell a friend about opening a mysterious envelope.",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "I opened the envelope, and inside was...",
+            "textToSpeak": "I opened the envelope, and inside was...",
+            "options": [
+                "Fall on 'envelope', fall on 'was' — statement",
+                "Lift on 'envelope', held level on 'was' — suspense"
+            ],
+            "correctAnswer": "Lift on 'envelope', held level on 'was' — suspense",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                2,
+                2,
+                3,
+                3
+            ],
+            "hint": "The sentence stops before revealing something. Which ending keeps the listener waiting?",
+            "explanation": "Both parts remain lifted because the reveal is missing. A fall would suggest the sentence was complete.",
+            "pitchRule": "📖 A trailing sentence stays lifted and level.",
+            "emotionContext": "Excited"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L153_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The room had a nice view, but it was quite noisy.",
-            "textToSpeak": "The room had a nice view, but it was quite noisy.",
+            "word": "I must have called her ten times that night.",
+            "textToSpeak": "I must have called her ten times that night.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Peak on 'ten', fall on 'night' — highlighting the number",
+                "Peak on 'called' — highlighting the action"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Peak on 'ten', fall on 'night' — highlighting the number",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
                 1,
-                0,
-                2
+                2,
+                4,
+                0
             ],
-            "hint": "This sentence gives a mixed review using 'but.' Listen to the pitch on 'view' for a dip-and-lift.",
-            "explanation": "The fall-rise on 'view' shows the praise is qualified, hinting at the noise complaint that follows.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Curious"
+            "hint": "The speaker wants to show how desperate they were. Which word measures it?",
+            "explanation": "The number 'ten' measures the desperation, so it takes the peak. 'Called' is the expected verb.",
+            "pitchRule": "📖🎯 A number that measures feeling takes the peak.",
+            "emotionContext": "Anxious"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L153_Q2",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This museum has the best collection in the country.",
-            "textToSpeak": "This museum has the best collection in the country.",
+            "word": "She never said a word. Not one.",
+            "textToSpeak": "She never said a word. Not one.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Pause after 'word', low fall on 'one' — emphatic afterthought",
+                "No pause, rising 'one' — turning it into a question"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Pause after 'word', low fall on 'one' — emphatic afterthought",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
+                1,
                 1,
                 0
             ],
-            "hint": "This sentence gives one clear, confident opinion. Listen to the pitch on 'country.'",
-            "explanation": "This is a definite statement with one falling pitch at the end, on 'country.'",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Excited"
+            "hint": "The second sentence is an afterthought. How is it separated from the first?",
+            "explanation": "A pause and a low fall on 'one' turn the repeat into emphasis. A rise would turn it into a question.",
+            "pitchRule": "📖📉 An emphatic afterthought is set off by a pause and falls low.",
+            "emotionContext": "Resentful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L153_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You tell a friend about your first week at a new job.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The trip was relaxing, but the weather wasn't great.",
-            "textToSpeak": "The trip was relaxing, but the weather wasn't great.",
+            "word": "I met the team, learned the systems, and got lost twice.",
+            "textToSpeak": "I met the team, learned the systems, and got lost twice.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Lifts on 'team' and 'systems', fall on 'twice'",
+                "Falls on 'team', 'systems' and 'twice'"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Lifts on 'team' and 'systems', fall on 'twice'",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                1,
-                0,
-                2
+                3,
+                3,
+                0
             ],
-            "hint": "This sentence gives a mixed review using 'but.' Listen to the pitch on 'relaxing' for a dip-and-lift rather than a plain fall.",
-            "explanation": "The fall-rise pattern on 'relaxing' signals reservation, hinting at the weather complaint to come.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Doubtful"
+            "hint": "The last item gives the funny ending. Where does the voice fall?",
+            "explanation": "The first two items lift in a normal list pattern, and the last falls, which delivers the joke.",
+            "pitchRule": "📖 The last item of a list is often the punchline.",
+            "emotionContext": "Amused"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L154_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The mountain view from the hotel was stunning.",
-            "textToSpeak": "The mountain view from the hotel was stunning.",
+            "word": "And that was the end of that.",
+            "textToSpeak": "And that was the end of that.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Rise on 'that' — story continues",
+                "Low, final fall — story closed"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Low, final fall — story closed",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
-                2,
+                1,
                 1,
                 0
             ],
-            "hint": "This sentence gives one clear, enthusiastic opinion. Listen to the pitch on 'stunning.'",
-            "explanation": "This is a definite statement, so the pitch falls once at the end, on 'stunning.'",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Neutral"
+            "hint": "The story is over. Listen to how firmly the voice lands.",
+            "explanation": "A low, final fall signals that nothing more will be said. A rise would leave the story open.",
+            "pitchRule": "📖📉 A closing line drops low and finishes.",
+            "emotionContext": "Wry"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L154_Q2",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The service was friendly, but a little slow.",
-            "textToSpeak": "The service was friendly, but a little slow.",
+            "word": "So that's how I met my husband.",
+            "textToSpeak": "So that's how I met my husband.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Lifted rise — starting another story",
+                "Warm, definite fall — concluding line"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
+            "correctAnswer": "Warm, definite fall — concluding line",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
-                1,
-                0,
-                2
-            ],
-            "hint": "This sentence gives a mixed review using 'but.' Listen to the pitch on 'friendly' for a dip-and-lift.",
-            "explanation": "The fall-rise on 'friendly' shows the praise is incomplete, signaling the speed complaint that follows.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Surprised"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L154_Q3",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "This island is the most beautiful place we've visited.",
-            "textToSpeak": "This island is the most beautiful place we've visited.",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
-            ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                2,
+                3,
                 2,
                 1,
                 0
             ],
-            "hint": "This sentence gives one clear, confident opinion. Listen to the pitch on 'visited.'",
-            "explanation": "This is a definite statement with one falling pitch at the end, on 'visited.'",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Determined"
+            "hint": "The speaker is bringing the anecdote to a natural end. Which ending feels concluded?",
+            "explanation": "A warm, definite fall delivers the ending and shows the story is complete. A lift would start another part.",
+            "pitchRule": "📖📉 The last sentence of a story falls with warmth.",
+            "emotionContext": "Fond"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L154_Q3",
+            "instruction": "You finish a story about an old friendship.",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "And we never spoke again.",
+            "textToSpeak": "And we never spoke again.",
+            "options": [
+                "Slow, low fall — sad ending",
+                "Bright, quick fall — cheerful ending"
+            ],
+            "correctAnswer": "Slow, low fall — sad ending",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                2,
+                1,
+                0,
+                0
+            ],
+            "hint": "The ending is sad. Which delivery matches?",
+            "explanation": "A slow, low fall carries sadness and closure. A bright, quick fall would clash with the meaning.",
+            "pitchRule": "📖 Sad endings slow down and drop low.",
+            "emotionContext": "Wistful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L155_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The price was fair, but the location was inconvenient.",
-            "textToSpeak": "The price was fair, but the location was inconvenient.",
+            "word": "It was three in the morning when the phone rang.",
+            "textToSpeak": "It was three in the morning when the phone rang.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Peak on 'phone' — the object",
+                "Peak on 'three' — the surprising time"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
+            "correctAnswer": "Peak on 'three' — the surprising time",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
                 1,
-                0,
-                2
+                4,
+                1,
+                0
             ],
-            "hint": "This sentence gives a mixed review using 'but.' Listen to the pitch on 'fair' for a dip-and-lift rather than a plain fall.",
-            "explanation": "The fall-rise pattern on 'fair' signals reservation, hinting at the location complaint to come.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Curious"
+            "hint": "The time is what makes the story dramatic. Which word carries the peak?",
+            "explanation": "The important detail is the hour, so 'three' takes the peak. The phone is expected and stays low.",
+            "pitchRule": "🎯 In a story, the surprising detail gets the peak.",
+            "emotionContext": "Tense"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L155_Q2",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The local cuisine completely amazed us.",
-            "textToSpeak": "The local cuisine completely amazed us.",
+            "word": "The key wasn't in the drawer, it was in the fridge.",
+            "textToSpeak": "The key wasn't in the drawer, it was in the fridge.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Peak on 'key' — the missing object being stressed",
+                "Peaks on 'drawer' and 'fridge' — contrasted places"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Peaks on 'drawer' and 'fridge' — contrasted places",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
-                2,
                 1,
-                0
+                4,
+                1,
+                4
             ],
-            "hint": "This sentence gives one clear, enthusiastic opinion. Listen to the pitch on 'us.'",
-            "explanation": "This is a definite statement, so the pitch falls once at the end, on 'us.'",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Excited"
+            "hint": "The story turns on a surprising place. Which two words carry the contrast?",
+            "explanation": "The two places are compared, so they take the peaks. 'Key' is the topic and stays low.",
+            "pitchRule": "🎯 Surprising places carry the peaks in a story.",
+            "emotionContext": "Amused"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L155_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You tell a friend about the night your car broke down.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The cruise was enjoyable, but the cabin felt cramped.",
-            "textToSpeak": "The cruise was enjoyable, but the cabin felt cramped.",
+            "word": "We were fifty kilometers from anywhere, and it had just started to snow.",
+            "textToSpeak": "We were fifty kilometers from anywhere, and it had just started to snow.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Peak on 'kilometers' — the unit of distance stressed",
+                "Peaks on 'fifty' and 'snow' — the worst details"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
+            "correctAnswer": "Peaks on 'fifty' and 'snow' — the worst details",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
                 1,
-                0,
-                2
+                4,
+                4,
+                0
             ],
-            "hint": "This sentence gives a mixed review using 'but.' Listen to the pitch on 'enjoyable' for a dip-and-lift.",
-            "explanation": "The fall-rise on 'enjoyable' shows the praise is qualified, signaling the space complaint that follows.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Doubtful"
+            "hint": "Two details make the situation worse. Which words stand out?",
+            "explanation": "The distance and the snow raise the tension, so they receive the strongest peaks. The unit is background.",
+            "pitchRule": "🎯 Details that raise tension take the peaks.",
+            "emotionContext": "Anxious"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L156_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This train ride offered incredible scenery.",
-            "textToSpeak": "This train ride offered incredible scenery.",
+            "word": "And I was like, 'Are you serious?'",
+            "textToSpeak": "And I was like, 'Are you serious?'",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "High rise on 'serious' — incredulous quotation",
+                "Falling on 'serious' — calm quotation"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "High rise on 'serious' — incredulous quotation",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
-                2,
                 1,
-                0
+                3,
+                4,
+                4
             ],
-            "hint": "This sentence gives one clear, positive opinion. Listen to the pitch on 'scenery.'",
-            "explanation": "This is a definite statement with one falling pitch at the end, on 'scenery.'",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Neutral"
+            "hint": "The speaker is quoting their own reaction. How is the reaction delivered?",
+            "explanation": "When quoting a reaction, speakers reproduce the emotion. A high rise on 'serious' recreates the disbelief.",
+            "pitchRule": "📖📈 Quoted reactions copy the original emotion.",
+            "emotionContext": "Incredulous"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L156_Q2",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The hostel was clean, but the walls were thin.",
-            "textToSpeak": "The hostel was clean, but the walls were thin.",
+            "word": "He looked at me and said, 'You're late.'",
+            "textToSpeak": "He looked at me and said, 'You're late.'",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Flat, low fall on 'late' — cold quotation",
+                "Bright, wide fall on 'late' — warm quotation"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Flat, low fall on 'late' — cold quotation",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
                 1,
                 0,
-                2
+                0
             ],
-            "hint": "This sentence gives a mixed review using 'but.' Listen to the pitch on 'clean' for a dip-and-lift rather than a plain fall.",
-            "explanation": "The fall-rise pattern on 'clean' signals reservation, hinting at the noise complaint to come.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Surprised"
+            "hint": "The quoted character is unhappy. Which delivery reveals this?",
+            "explanation": "A flat, low fall gives the character a cold voice. A bright quote would contradict the words.",
+            "pitchRule": "📖 Quoted voices carry the character's attitude.",
+            "emotionContext": "Tense"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L156_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You tell a friend how your boss reacted to good news.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The festival was the highlight of our entire trip.",
-            "textToSpeak": "The festival was the highlight of our entire trip.",
+            "word": "She just smiled and said, 'I knew you could do it.'",
+            "textToSpeak": "She just smiled and said, 'I knew you could do it.'",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Sharp fall on 'it' — cold quotation",
+                "Warm, slow fall on 'it' — proud quotation"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Warm, slow fall on 'it' — proud quotation",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
                 2,
                 1,
                 0
             ],
-            "hint": "This sentence gives one clear, enthusiastic opinion. Listen to the pitch on 'trip.'",
-            "explanation": "This is a definite statement, so the pitch falls once at the end, on 'trip.'",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Determined"
+            "hint": "The quoted person was proud. Which delivery captures that?",
+            "explanation": "A warm, slow fall adds pride to the quote. A sharp fall would suggest coldness.",
+            "pitchRule": "📖 A warm fall in the quote conveys pride.",
+            "emotionContext": "Proud"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L157_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The guide was knowledgeable, but talked a bit too fast.",
-            "textToSpeak": "The guide was knowledgeable, but talked a bit too fast.",
+            "word": "Then... silence.",
+            "textToSpeak": "Then... silence.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "No pause after 'then', rise on 'silence' at the end",
+                "Long pause after 'then', low fall on 'silence'"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
+            "correctAnswer": "Long pause after 'then', low fall on 'silence'",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
                 1,
                 0,
-                2
+                0
             ],
-            "hint": "This sentence gives a mixed review using 'but.' Listen to the pitch on 'knowledgeable' for a dip-and-lift.",
-            "explanation": "The fall-rise on 'knowledgeable' shows the praise is incomplete, signaling the pacing complaint that follows.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Curious"
+            "hint": "The word 'then' is followed by a deliberate stop. Which delivery would give the listener a shiver?",
+            "explanation": "The pause builds tension, and the low fall on 'silence' lands the effect. A rise would ruin the drama.",
+            "pitchRule": "📖 Pauses build suspense before a low fall.",
+            "emotionContext": "Ominous"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L157_Q2",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This national park is breathtaking in every season.",
-            "textToSpeak": "This national park is breathtaking in every season.",
+            "word": "Nobody moved. Nobody spoke. Nobody dared.",
+            "textToSpeak": "Nobody moved. Nobody spoke. Nobody dared.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Three rises, each higher than the last",
+                "Three falls, each lower than the last"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Three falls, each lower than the last",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
+                3,
                 2,
                 1,
                 0
             ],
-            "hint": "This sentence gives one clear, confident opinion. Listen to the pitch on 'season.'",
-            "explanation": "This is a definite statement with one falling pitch at the end, on 'season.'",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Excited"
+            "hint": "The sentence repeats a pattern. Which shape creates the dread?",
+            "explanation": "Each short sentence falls lower than the last, so the tension deepens. Rising would make it sound like a question.",
+            "pitchRule": "📖📉 Repeated short sentences step down for effect.",
+            "emotionContext": "Ominous"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L157_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You retell a ghost story at a campfire.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The rental car was reliable, but smaller than we expected.",
-            "textToSpeak": "The rental car was reliable, but smaller than we expected.",
+            "word": "Something was standing at the end of the corridor.",
+            "textToSpeak": "Something was standing at the end of the corridor.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Slow pace, lowered fall on 'corridor' — creepy",
+                "Bright rise on 'corridor' — light-hearted"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Slow pace, lowered fall on 'corridor' — creepy",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
                 1,
                 0,
-                2
+                0
             ],
-            "hint": "This sentence gives a mixed review using 'but.' Listen to the pitch on 'reliable' for a dip-and-lift rather than a plain fall.",
-            "explanation": "The fall-rise pattern on 'reliable' signals reservation, hinting at the size complaint to come.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Doubtful"
+            "hint": "You want to give everyone goosebumps. Which delivery does it?",
+            "explanation": "A slow pace with a lowered fall makes the sentence sound eerie. A bright rise would sound like a joke.",
+            "pitchRule": "📖 Creepy narration is slow and low.",
+            "emotionContext": "Ominous"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L158_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The street food in this city was incredible.",
-            "textToSpeak": "The street food in this city was incredible.",
+            "word": "And the sign on the door said 'closed'.",
+            "textToSpeak": "And the sign on the door said 'closed'.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Rising, drawn out — questioning tone",
+                "Flat, quick fall — deadpan punchline"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Flat, quick fall — deadpan punchline",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
                 2,
                 1,
                 0
             ],
-            "hint": "This sentence gives one clear, enthusiastic opinion. Listen to the pitch on 'incredible.'",
-            "explanation": "This is a definite statement, so the pitch falls once at the end, on 'incredible.'",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Neutral"
+            "hint": "The joke depends on the surprise. Which delivery is understated?",
+            "explanation": "A flat, quick fall lets the punchline speak for itself. A rise would weaken it.",
+            "pitchRule": "😏 Deadpan punchlines are flat and quick.",
+            "emotionContext": "Deadpan"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L158_Q2",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The hotel pool was lovely, but always crowded.",
-            "textToSpeak": "The hotel pool was lovely, but always crowded.",
+            "word": "So I did what any sensible person would do: I panicked.",
+            "textToSpeak": "So I did what any sensible person would do: I panicked.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Peak on 'panicked', quick fall — comic reveal",
+                "Fall on 'sensible', level on 'panicked' — calm summary"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                2,
-                1,
-                0,
-                2
-            ],
-            "hint": "This sentence gives a mixed review using 'but.' Listen to the pitch on 'lovely' for a dip-and-lift.",
-            "explanation": "The fall-rise on 'lovely' shows the praise is qualified, signaling the crowding complaint that follows.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Surprised"
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L158_Q3",
-            "instruction": "Identify the intonation",
-            "subtype": "intonationMimic",
-            "interactionType": "speaking",
-            "word": "We will definitely come back to this destination.",
-            "textToSpeak": "We will definitely come back to this destination.",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
-            ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Peak on 'panicked', quick fall — comic reveal",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
+                3,
+                4,
+                0
+            ],
+            "hint": "The story ends with a small joke. Where does the joke land?",
+            "explanation": "The word 'panicked' is the comic twist, so it takes the peak and the fall. A calm summary would miss it.",
+            "pitchRule": "😏 The joke word takes the last peak.",
+            "emotionContext": "Amused"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L158_Q3",
+            "instruction": "You finish a story about a terrible haircut.",
+            "subtype": "intonationMimic",
+            "interactionType": "speaking",
+            "word": "I looked in the mirror and, well, let's just say it grew back.",
+            "textToSpeak": "I looked in the mirror and, well, let's just say it grew back.",
+            "options": [
+                "Lift on 'well', lowered fall on 'back' — wry understatement",
+                "Bright rise on 'well' and on 'back' — proud tone"
+            ],
+            "correctAnswer": "Lift on 'well', lowered fall on 'back' — wry understatement",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
                 2,
+                3,
                 1,
                 0
             ],
-            "hint": "This sentence gives one clear, confident statement. Listen to the pitch on 'destination.'",
-            "explanation": "This is a definite statement with one falling pitch at the end, on 'destination.'",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Determined"
+            "hint": "You are joking about how bad it was. Which delivery is wry?",
+            "explanation": "A lift on 'well' and a lowered fall on 'back' make the understatement funny. A bright rise would sound proud.",
+            "pitchRule": "😏 Understatement is delivered low, with a small lift before it.",
+            "emotionContext": "Wry"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L159_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The airline was efficient, but the seats were uncomfortable.",
-            "textToSpeak": "The airline was efficient, but the seats were uncomfortable.",
+            "word": "It was honestly the best day of my life.",
+            "textToSpeak": "It was honestly the best day of my life.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Narrow, flat fall on 'life' — neutral",
+                "Wide, warm fall on 'life' — joy"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
+            "correctAnswer": "Wide, warm fall on 'life' — joy",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
+                3,
+                4,
                 1,
-                0,
-                2
+                0
             ],
-            "hint": "This sentence gives a mixed review using 'but.' Listen to the pitch on 'efficient' for a dip-and-lift rather than a plain fall.",
-            "explanation": "The fall-rise pattern on 'efficient' signals reservation, hinting at the comfort complaint to come.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Curious"
+            "hint": "This is a heartfelt statement. Listen to the range.",
+            "explanation": "A wide range and warm fall show real joy. A narrow one would make the statement sound insincere.",
+            "pitchRule": "😊 Joy in a story widens the range.",
+            "emotionContext": "Joyful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L159_Q2",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This sunset view was the best we've ever seen.",
-            "textToSpeak": "This sunset view was the best we've ever seen.",
+            "word": "I can still smell the rain on that pavement.",
+            "textToSpeak": "I can still smell the rain on that pavement.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Slow pace, soft fall on 'pavement' — vivid memory",
+                "Quick pace, bright fall on 'pavement' — casual comment"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Slow pace, soft fall on 'pavement' — vivid memory",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
+                1,
                 1,
                 0
             ],
-            "hint": "This sentence gives one clear, enthusiastic opinion. Listen to the pitch on 'seen.'",
-            "explanation": "This is a definite statement, so the pitch falls once at the end, on 'seen.'",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Excited"
+            "hint": "The speaker is remembering, not reporting. How does the pace reflect this?",
+            "explanation": "A slow pace and a soft fall show a vivid, almost sensory memory. A quick, bright delivery would sound casual.",
+            "pitchRule": "📖 Vivid memories are slow and soft.",
+            "emotionContext": "Wistful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L159_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You explain how you felt when you first arrived in a foreign country.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The local market was charming, but very crowded.",
-            "textToSpeak": "The local market was charming, but very crowded.",
+            "word": "Everything felt so new, so loud, so different.",
+            "textToSpeak": "Everything felt so new, so loud, so different.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Rising on 'new' and 'loud', fall on 'different'",
+                "Falling on each — three flat statements"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rising on 'new' and 'loud', fall on 'different'",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                1,
-                0,
-                2
+                3,
+                3,
+                0
             ],
-            "hint": "This sentence gives a mixed review using 'but.' Listen to the pitch on 'charming' for a dip-and-lift.",
-            "explanation": "The fall-rise on 'charming' shows the praise is incomplete, signaling the crowding complaint that follows.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Doubtful"
+            "hint": "The sentence lists feelings. Which words stay open?",
+            "explanation": "A rising list builds the sense of being overwhelmed, and the final fall settles it. Three falls would sound flat.",
+            "pitchRule": "📖 A list of feelings lifts until the last.",
+            "emotionContext": "Overwhelmed"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L160_Q1",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Our entire trip went exactly as planned.",
-            "textToSpeak": "Our entire trip went exactly as planned.",
+            "word": "So we get to the station, and the train is already gone.",
+            "textToSpeak": "So we get to the station, and the train is already gone.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Fall on 'station', fall on 'gone'",
+                "Lift on 'station', fall on 'gone'"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Lift on 'station', fall on 'gone'",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
-                2,
+                3,
                 1,
                 0
             ],
-            "hint": "This sentence gives one clear, confident statement. Listen to the pitch on 'planned.'",
-            "explanation": "This is a definite statement with one falling pitch at the end, on 'planned.'",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Neutral"
+            "hint": "This is the setup and the twist. Where does the story hold back?",
+            "explanation": "The arrival is only the setup, so it lifts. The twist lands on 'gone' with a fall.",
+            "pitchRule": "📖 Setup lifts, twist falls.",
+            "emotionContext": "Frustrated"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L160_Q2",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The resort was beautiful, but a bit far from the beach.",
-            "textToSpeak": "The resort was beautiful, but a bit far from the beach.",
+            "word": "And you know what she said? Nothing.",
+            "textToSpeak": "And you know what she said? Nothing.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Rise on 'said', low fall on 'nothing' — teaser and punchline",
+                "Fall on 'said', rise on 'nothing' — statement and question"
             ],
-            "correctAnswer": "Fall-Rise Intonation (Hesitation/Reservation)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rise on 'said', low fall on 'nothing' — teaser and punchline",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
                 1,
-                0,
-                2
+                3,
+                3,
+                0
             ],
-            "hint": "This sentence gives a mixed review using 'but.' Listen to the pitch on 'beautiful' for a dip-and-lift rather than a plain fall.",
-            "explanation": "The fall-rise pattern on 'beautiful' signals reservation, hinting at the location complaint to come.",
-            "pitchRule": "📉📈 Pitch dips and then lifts slightly to signal a hedge, doubt, or an unfinished thought.",
-            "emotionContext": "Surprised"
+            "hint": "The speaker asks a question in the story and answers it. Where does the drama land?",
+            "explanation": "The teaser rises to hold the listener, and 'nothing' falls low for the payoff. A fall on 'said' would ruin the suspense.",
+            "pitchRule": "📖📈 A rhetorical question rises, and its answer falls.",
+            "emotionContext": "Dramatic"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L160_Q3",
             "instruction": "Identify the intonation",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This vacation gave us memories we'll cherish forever.",
-            "textToSpeak": "This vacation gave us memories we'll cherish forever.",
+            "word": "Looking back, I wouldn't change a thing.",
+            "textToSpeak": "Looking back, I wouldn't change a thing.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Fall-Rise Intonation (Hesitation/Reservation)"
+                "Quick, flat fall on 'thing' — indifferent remark",
+                "Warm, slow fall on 'thing' — content reflection"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Warm, slow fall on 'thing' — content reflection",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 2,
                 2,
                 1,
                 0
             ],
-            "hint": "This sentence gives one clear, heartfelt statement. Listen to the pitch on 'forever.'",
-            "explanation": "This is a definite statement with one falling pitch at the end, on 'forever,' completing this tier's practice with fall-rise hedging.",
-            "pitchRule": "📉 Pitch falls at the end of a statement to signal a complete, certain thought.",
-            "emotionContext": "Determined"
+            "hint": "The statement is about the speaker's whole experience. Which delivery shows satisfaction?",
+            "explanation": "A warm, slow fall shows genuine contentment. A flat, quick fall would sound indifferent.",
+            "pitchRule": "😊 Contentment is warm and unhurried.",
+            "emotionContext": "Content"
         }
     ]
 }

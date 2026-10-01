@@ -8,23 +8,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'market' as used in the sentence below?",
-            "targetWord": "market",
-            "sentence": "We bought fresh vegetables at the outdoor farmers' market.",
+            "question": "Which part of speech is 'book' as it is used here?",
+            "targetWord": "book",
+            "sentence": "Please book the conference room for Thursday afternoon.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Adverb",
+                "Verb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name places where things are sold. Is 'market' naming a type of place?",
-            "explanation": "'Market' is a noun - it names a place where goods are sold. It follows the preposition 'at', confirming it is a noun.",
-            "grammarRule": "Nouns",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Verb",
+            "hint": "Some words can act as either a noun or a word depending on the sentence. What is the reader being asked to do here?",
+            "explanation": "'Book' functions as a verb here — it's the action the reader is instructed to perform, meaning to reserve something. In other sentences, 'book' can be a noun naming an object to read.",
+            "grammarRule": "Imperative verb giving an instruction",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "verb use"
             ]
         },
         {
@@ -32,23 +32,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'over' as used in the sentence below?",
-            "targetWord": "over",
-            "sentence": "A rainbow appeared over the valley after the afternoon shower.",
+            "question": "Next, what role does 'book' play in this sentence?",
+            "targetWord": "book",
+            "sentence": "Elias left his book on the train seat by mistake.",
             "options": [
+                "Verb",
                 "Noun",
-                "Preposition",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Adjective"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Preposition",
-            "hint": "Prepositions show position above something. Does 'over' show the rainbow's position?",
-            "explanation": "'Over' is a preposition - it indicates the rainbow is positioned above and spanning the valley.",
-            "grammarRule": "Prepositions",
+            "correctAnswer": "Noun",
+            "hint": "The same word can also name a physical object. What did Elias leave behind?",
+            "explanation": "Here 'book' is a noun naming the object Elias left on the train — unlike the previous example, there is no instruction or action attached to it.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "verb use"
             ]
         },
         {
@@ -56,23 +56,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'mine' as used in the sentence below?",
-            "targetWord": "mine",
-            "sentence": "This red coat is mine - my name is written on the label inside.",
+            "question": "What grammatical job does 'herself' do in this sentence?",
+            "targetWord": "herself",
+            "sentence": "Wendy treated herself to a coffee after the long shift.",
             "options": [
                 "Pronoun",
                 "Noun",
-                "Adjective",
-                "Verb"
+                "Verb",
+                "Adjective"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "Pronoun",
-            "hint": "Possessive pronouns stand alone to show ownership. Does 'mine' show the coat belongs to the speaker?",
-            "explanation": "'Mine' is a possessive pronoun - it stands alone (without a noun) to indicate ownership. Compare: 'my coat' (determiner + noun) vs. 'it is mine' (standalone pronoun).",
-            "grammarRule": "Pronouns",
+            "hint": "Check the words directly around it for clues. Who did Wendy treat?",
+            "explanation": "'Herself' is a reflexive pronoun referring back to the subject 'Wendy' — it shows that she was both the one giving and receiving the treat.",
+            "grammarRule": "Reflexive pronoun referring back to the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "subject form",
+                "reflexive form"
             ]
         },
         {
@@ -80,23 +80,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'foggy' as used in the sentence below?",
-            "targetWord": "foggy",
-            "sentence": "It was a foggy morning, so several flights were delayed.",
+            "question": "Which grammatical category best describes 'light' here?",
+            "targetWord": "light",
+            "sentence": "Grandma switched off the light before leaving the room.",
             "options": [
-                "Noun",
+                "Adverb",
                 "Adjective",
-                "Verb",
-                "Adverb"
+                "Noun",
+                "Verb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe weather conditions. What does 'foggy' describe?",
-            "explanation": "'Foggy' is an adjective - it describes the weather. Weather adjectives (foggy, sunny, windy, cloudy, stormy) end in '-y'.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Noun",
+            "hint": "The same word can name an object, describe a quality, or show an action. What object did Grandma switch off?",
+            "explanation": "'Light' is a noun here, naming the lamp or fixture Grandma turned off — it functions as the direct object of 'switched off'.",
+            "grammarRule": "Common noun functioning as a direct object",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "adjective use"
             ]
         },
         {
@@ -104,23 +104,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'towards' as used in the sentence below?",
-            "targetWord": "towards",
-            "sentence": "She walked slowly towards the exit at the back of the building.",
+            "question": "Now, which category describes 'light' in this sentence?",
+            "targetWord": "light",
+            "sentence": "The recipe called for a light, fluffy sponge cake.",
             "options": [
                 "Noun",
-                "Verb",
-                "Preposition",
-                "Adjective"
+                "Adverb",
+                "Adjective",
+                "Verb"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Preposition",
-            "hint": "Prepositions can show direction of movement. Does 'towards' indicate the direction she is moving?",
-            "explanation": "'Towards' is a preposition - it shows the direction of movement in relation to a destination. Directional prepositions (towards, away from, into, out of) describe movement relative to a point.",
-            "grammarRule": "Prepositions",
+            "correctAnswer": "Adjective",
+            "hint": "Now the same word describes a quality of the cake rather than naming an object. What quality does 'light' describe?",
+            "explanation": "'Light' functions as an adjective here, describing the airy texture of the cake — a different role from the noun use in the earlier sentence.",
+            "grammarRule": "Attributive adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "noun use"
             ]
         },
         {
@@ -128,23 +128,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'sells' as used in the sentence below?",
-            "targetWord": "sells",
-            "sentence": "That stall sells the best grilled fish in the whole market.",
+            "question": "This time, 'light' is functioning as a:",
+            "targetWord": "light",
+            "sentence": "The campers struggled to light the fire in the wind.",
             "options": [
-                "Noun",
-                "Verb",
+                "Adverb",
                 "Adjective",
-                "Adverb"
+                "Noun",
+                "Verb"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Verb",
-            "hint": "Verbs describe what a business does. What does the stall do?",
-            "explanation": "'Sells' is a verb - it describes the commercial activity of the stall. Present-tense verbs with '-s' agree with a singular third-person subject.",
-            "grammarRule": "Verbs",
+            "hint": "Here the same word names an action instead of an object or quality. What were the campers trying to do?",
+            "explanation": "'Light' functions as a verb here, meaning to ignite — a third possible role for this word, alongside the noun and adjective uses seen earlier.",
+            "grammarRule": "Action verb expressing an attempted action",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb use",
+                "noun use"
             ]
         },
         {
@@ -152,9 +152,201 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'bought' as used in the sentence below?",
-            "targetWord": "bought",
-            "sentence": "She bought a new dress for her sister's wedding ceremony.",
+            "question": "Which category fits 'watch' in this sentence?",
+            "targetWord": "watch",
+            "sentence": "Diego received a silver watch for his graduation.",
+            "options": [
+                "Adverb",
+                "Noun",
+                "Verb",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Noun",
+            "hint": "Notice what the word is attached to. What gift did Diego receive?",
+            "explanation": "'Watch' is a noun here, naming the object Diego received as a gift — it functions as the direct object of 'received'.",
+            "grammarRule": "Common noun functioning as a direct object",
+            "transformations": [
+                "noun use",
+                "verb use"
+            ]
+        },
+        {
+            "id": "pos_l33_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Now, how is 'watch' functioning here?",
+            "targetWord": "watch",
+            "sentence": "The lifeguards watch the pool closely during busy afternoons.",
+            "options": [
+                "Verb",
+                "Adjective",
+                "Noun",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Verb",
+            "hint": "The same word can also name an action of observing. What do the lifeguards do to the pool?",
+            "explanation": "'Watch' functions as a verb here, describing the lifeguards' ongoing action of observing the pool — unlike the earlier sentence, where it named an object.",
+            "grammarRule": "Action verb in present tense",
+            "transformations": [
+                "verb use",
+                "noun use"
+            ]
+        },
+        {
+            "id": "pos_l33_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "What part of speech is 'beside' in this sentence?",
+            "targetWord": "beside",
+            "sentence": "The lifeguard stood beside the diving board all morning.",
+            "options": [
+                "Noun",
+                "Verb",
+                "Preposition",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Preposition",
+            "hint": "Look at what this word does in this exact sentence. Where did the lifeguard stand?",
+            "explanation": "'Beside' is a preposition introducing the phrase that shows the lifeguard's position next to the diving board.",
+            "grammarRule": "Preposition introducing a location phrase",
+            "transformations": [
+                "preposition use",
+                "related adverb use"
+            ]
+        },
+        {
+            "id": "pos_l34_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "The word 'clean' is being used as which grammatical category?",
+            "targetWord": "clean",
+            "sentence": "The mechanic wiped the engine until it looked clean.",
+            "options": [
+                "Verb",
+                "Adjective",
+                "Noun",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "Some words can describe a state as well as name an action. What state was the engine in after wiping?",
+            "explanation": "'Clean' is an adjective here, describing the engine's condition after the linking verb 'looked' — it does not describe an action being performed.",
+            "grammarRule": "Predicate adjective after a linking verb",
+            "transformations": [
+                "adjective use",
+                "verb use"
+            ]
+        },
+        {
+            "id": "pos_l34_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Now look at 'clean' here. What part of speech is it?",
+            "targetWord": "clean",
+            "sentence": "Every Friday, the interns clean the shared kitchen.",
+            "options": [
+                "Verb",
+                "Adjective",
+                "Adverb",
+                "Noun"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Verb",
+            "hint": "The same word can also name a regular action. What do the interns do to the kitchen every Friday?",
+            "explanation": "'Clean' functions as a verb here, describing the interns' weekly action — contrast this with the earlier sentence, where 'clean' described a resulting state rather than an action.",
+            "grammarRule": "Action verb in present tense",
+            "transformations": [
+                "verb use",
+                "adjective use"
+            ]
+        },
+        {
+            "id": "pos_l34_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "What role does 'for' play in this sentence?",
+            "targetWord": "for",
+            "sentence": "The interns tidied the kitchen, for the manager was hosting guests.",
+            "options": [
+                "Verb",
+                "Preposition",
+                "Noun",
+                "Conjunction"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Conjunction",
+            "hint": "This short word usually introduces a reason here. Why did the interns tidy the kitchen?",
+            "explanation": "'For' functions as a coordinating conjunction here, meaning 'because' — it introduces the reason the interns tidied the kitchen, joining two independent clauses.",
+            "grammarRule": "Coordinating conjunction introducing a reason",
+            "transformations": [
+                "conjunction use",
+                "preposition use"
+            ]
+        },
+        {
+            "id": "pos_l35_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Identify the part of speech of 'fast' in this context.",
+            "targetWord": "fast",
+            "sentence": "The courier rides a fast motorbike through the city center.",
+            "options": [
+                "Adverb",
+                "Adjective",
+                "Noun",
+                "Verb"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "Ask how it connects to the words near it. What quality does 'fast' give to the motorbike?",
+            "explanation": "'Fast' is an adjective here, modifying the noun 'motorbike' and describing its speed.",
+            "grammarRule": "Attributive adjective modifying a noun",
+            "transformations": [
+                "adjective use",
+                "adverb use"
+            ]
+        },
+        {
+            "id": "pos_l35_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "This time, what part of speech is 'fast'?",
+            "targetWord": "fast",
+            "sentence": "The courier rides fast through the city center every morning.",
+            "options": [
+                "Adverb",
+                "Adjective",
+                "Noun",
+                "Verb"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adverb",
+            "hint": "Now there's no noun directly after 'fast.' What does it describe instead?",
+            "explanation": "Here 'fast' is an adverb modifying the verb 'rides' — it describes how the courier rides rather than describing a noun. Notice that 'fast' keeps the same spelling in both its adjective and adverb forms.",
+            "grammarRule": "Manner adverb modifying a verb",
+            "transformations": [
+                "adjective use",
+                "adverb use"
+            ]
+        },
+        {
+            "id": "pos_l35_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Classify 'navigates' as it appears in this sentence.",
+            "targetWord": "navigates",
+            "sentence": "The courier navigates the narrow alleys before rush hour begins.",
             "options": [
                 "Noun",
                 "Adjective",
@@ -163,204 +355,12 @@
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "Verb",
-            "hint": "Verbs describe purchasing actions. What commercial action did she perform?",
-            "explanation": "'Bought' is a verb - it is the irregular past tense of 'buy'. Irregular past-tense verbs (bought, sold, caught) must be memorised.",
-            "grammarRule": "Verbs",
+            "hint": "Look at what this word does in this exact sentence. What does the courier do with the narrow alleys?",
+            "explanation": "'Navigates' is a verb describing the courier's action of finding a way through the alleys.",
+            "grammarRule": "Action verb in present tense",
             "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l33_q2",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'ours' as used in the sentence below?",
-            "targetWord": "ours",
-            "sentence": "The house with the yellow gate and red roof is ours.",
-            "options": [
-                "Noun",
-                "Adjective",
-                "Pronoun",
-                "Verb"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Pronoun",
-            "hint": "Possessive pronouns stand alone. Does 'ours' indicate the house belongs to 'us'?",
-            "explanation": "'Ours' is a possessive pronoun - it stands alone without a following noun. Compare: 'our house' (determiner) vs. 'it is ours' (pronoun).",
-            "grammarRule": "Pronouns",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l33_q3",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'stormy' as used in the sentence below?",
-            "targetWord": "stormy",
-            "sentence": "The stormy weather forced them to cancel the boat trip.",
-            "options": [
-                "Noun",
-                "Adjective",
-                "Verb",
-                "Adverb"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe weather conditions. What does 'stormy' tell us about the weather?",
-            "explanation": "'Stormy' is an adjective - it describes the weather. Like other weather adjectives, it is formed by adding '-y' to a weather noun (storm + y).",
-            "grammarRule": "Adjectives",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l34_q1",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'discount' as used in the sentence below?",
-            "targetWord": "discount",
-            "sentence": "She managed to get a large discount at the end-of-season sale.",
-            "options": [
-                "Noun",
-                "Verb",
-                "Adjective",
-                "Adverb"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Nouns name commercial concepts. What does 'discount' name here?",
-            "explanation": "'Discount' is a noun - it names a reduction in price. It follows the article 'a' and the adjective 'large', confirming it is a noun.",
-            "grammarRule": "Nouns",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l34_q2",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'without' as used in the sentence below?",
-            "targetWord": "without",
-            "sentence": "He somehow left the house without his wallet or phone.",
-            "options": [
-                "Noun",
-                "Preposition",
-                "Adjective",
-                "Adverb"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Preposition",
-            "hint": "Prepositions can show absence. Does 'without' show something is lacking?",
-            "explanation": "'Without' is a preposition - it means 'not having'. It shows the relationship between the action (leaving) and the absent items (wallet, phone).",
-            "grammarRule": "Prepositions",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l34_q3",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'theirs' as used in the sentence below?",
-            "targetWord": "theirs",
-            "sentence": "The bright yellow tent next to the river is theirs.",
-            "options": [
-                "Pronoun",
-                "Noun",
-                "Verb",
-                "Adjective"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Pronoun",
-            "hint": "Possessive pronouns show ownership without a following noun. Does 'theirs' show the tent belongs to a group?",
-            "explanation": "'Theirs' is a possessive pronoun - it indicates that the tent belongs to 'them', standing alone without a following noun.",
-            "grammarRule": "Pronouns",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l35_q1",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'against' as used in the sentence below?",
-            "targetWord": "against",
-            "sentence": "The bicycle was leaning against the old stone wall.",
-            "options": [
-                "Noun",
-                "Verb",
-                "Preposition",
-                "Adjective"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Preposition",
-            "hint": "Prepositions show physical contact or support. Does 'against' show the bicycle's position?",
-            "explanation": "'Against' is a preposition - it shows the bicycle is in physical contact with and supported by the wall.",
-            "grammarRule": "Prepositions",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l35_q2",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'snowy' as used in the sentence below?",
-            "targetWord": "snowy",
-            "sentence": "The snowy peaks of the Alps looked spectacular in the morning light.",
-            "options": [
-                "Noun",
-                "Adjective",
-                "Verb",
-                "Adverb"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe visual qualities of natural features. What does 'snowy' describe?",
-            "explanation": "'Snowy' is an adjective - it describes the appearance of the mountain peaks.",
-            "grammarRule": "Adjectives",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l35_q3",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'nobody' as used in the sentence below?",
-            "targetWord": "nobody",
-            "sentence": "Nobody in the class knew the answer to the teacher's question.",
-            "options": [
-                "Pronoun",
-                "Noun",
-                "Adjective",
-                "Verb"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Pronoun",
-            "hint": "Indefinite pronouns refer to unspecified people. Does 'nobody' refer to 'no person'?",
-            "explanation": "'Nobody' is an indefinite pronoun - it refers to no person without naming anyone. Negative pronouns (nobody, nothing, nowhere) indicate the absence of someone or something.",
-            "grammarRule": "Pronouns",
-            "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "-s form"
             ]
         },
         {
@@ -368,23 +368,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'receipt' as used in the sentence below?",
-            "targetWord": "receipt",
-            "sentence": "Always keep your receipt in case you need to return an item.",
+            "question": "What kind of word is 'back' in this sentence?",
+            "targetWord": "back",
+            "sentence": "A sharp pain shot through her back after the long flight.",
             "options": [
-                "Noun",
+                "Adverb",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Noun",
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "Noun",
-            "hint": "Nouns name documents. What document does 'receipt' name?",
-            "explanation": "'Receipt' is a noun - it names a printed document confirming a purchase. It follows 'your', confirming it is a noun.",
-            "grammarRule": "Nouns",
+            "hint": "Think about the job it performs here. What body part is mentioned here?",
+            "explanation": "'Back' is a noun here, naming the part of the body where the pain occurred.",
+            "grammarRule": "Common noun naming a body part",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "adverb use"
             ]
         },
         {
@@ -392,23 +392,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'despite' as used in the sentence below?",
-            "targetWord": "despite",
-            "sentence": "Despite the heavy rain, they enjoyed the outdoor food festival.",
+            "question": "Now what part of speech is 'back' in this sentence?",
+            "targetWord": "back",
+            "sentence": "The manager asked everyone to step back from the counter.",
             "options": [
                 "Noun",
-                "Adverb",
-                "Conjunction",
-                "Preposition"
+                "Verb",
+                "Adjective",
+                "Adverb"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Preposition",
-            "hint": "Prepositions can introduce contrasting circumstances. Does 'despite' show something happened in spite of an obstacle?",
-            "explanation": "'Despite' is a preposition - it is followed by a noun phrase ('the heavy rain') and shows the main action happened regardless. It is similar to 'in spite of'.",
-            "grammarRule": "Prepositions",
+            "correctAnswer": "Adverb",
+            "hint": "The same word can also show direction of movement. Which way were people asked to step?",
+            "explanation": "'Back' functions as an adverb here, showing the direction of the requested movement — a different role from the noun use naming a body part.",
+            "grammarRule": "Direction adverb modifying a verb",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adverb use",
+                "noun use"
             ]
         },
         {
@@ -416,23 +416,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'everyone' as used in the sentence below?",
-            "targetWord": "everyone",
-            "sentence": "Everyone in the office attended the farewell lunch for the manager.",
+            "question": "Next, what role does 'back' play in this sentence?",
+            "targetWord": "back",
+            "sentence": "They used the back entrance because the front was locked.",
             "options": [
-                "Noun",
-                "Pronoun",
                 "Verb",
-                "Adjective"
+                "Adjective",
+                "Noun",
+                "Adverb"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Pronoun",
-            "hint": "Indefinite pronouns refer to all people in a group. Does 'everyone' refer to all people without naming them?",
-            "explanation": "'Everyone' is an indefinite pronoun - it refers to all people in a group. 'Everyone' is always singular ('everyone was there').",
-            "grammarRule": "Pronouns",
+            "correctAnswer": "Adjective",
+            "hint": "Now the word directly describes which entrance is meant. What quality does 'back' give the entrance?",
+            "explanation": "'Back' functions as an adjective here, modifying 'entrance' and specifying which one is meant, in contrast to the front entrance.",
+            "grammarRule": "Attributive adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective use",
+                "noun use"
             ]
         },
         {
@@ -440,23 +440,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'windy' as used in the sentence below?",
-            "targetWord": "windy",
-            "sentence": "It was far too windy to sit outside for lunch today.",
+            "question": "In this sentence, 'work' is functioning as a:",
+            "targetWord": "work",
+            "sentence": "There was too much work left before the deadline.",
             "options": [
                 "Noun",
-                "Verb",
                 "Adjective",
+                "Verb",
                 "Adverb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe weather. What does 'windy' describe here?",
-            "explanation": "'Windy' is an adjective - it describes the weather. It is formed from 'wind' + '-y'. Weather adjectives (windy, sunny, rainy, snowy) are very common in English.",
-            "grammarRule": "Adjectives",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Check the words directly around it for clues. What was left before the deadline?",
+            "explanation": "'Work' is a noun here, naming the tasks that remained — it is the thing said to exist in the 'There was...' construction.",
+            "grammarRule": "Uncountable noun in a 'there was' construction",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "verb use"
             ]
         },
         {
@@ -464,23 +464,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'across' as used in the sentence below?",
-            "targetWord": "across",
-            "sentence": "They jogged across the bridge in the crisp early morning air.",
+            "question": "This time, 'work' is functioning as a:",
+            "targetWord": "work",
+            "sentence": "Both of them work night shifts at the hospital.",
             "options": [
-                "Noun",
-                "Preposition",
                 "Adjective",
-                "Adverb"
+                "Verb",
+                "Adverb",
+                "Noun"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Preposition",
-            "hint": "Prepositions show movement over a surface. Does 'across' show how they moved in relation to the bridge?",
-            "explanation": "'Across' is a preposition here - it shows movement from one end of the bridge to the other. ('Across' returns as an adverb in level 42 when no object follows it.)",
-            "grammarRule": "Prepositions",
+            "correctAnswer": "Verb",
+            "hint": "The same word can also name a regular action. What do both people do at the hospital?",
+            "explanation": "'Work' functions as a verb here, describing the regular action performed by both people — contrast this with the earlier noun use naming a quantity of tasks.",
+            "grammarRule": "Action verb in present tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb use",
+                "noun use"
             ]
         },
         {
@@ -488,23 +488,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'anyone' as used in the sentence below?",
-            "targetWord": "anyone",
-            "sentence": "Does anyone here know how to speak Mandarin?",
+            "question": "What role does 'They' play in this sentence?",
+            "targetWord": "They",
+            "sentence": "They arrived early to prepare for the night shift.",
             "options": [
-                "Noun",
                 "Verb",
-                "Pronoun",
-                "Adjective"
+                "Noun",
+                "Adjective",
+                "Pronoun"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Pronoun",
-            "hint": "Indefinite pronouns refer to unspecified people. Does 'anyone' refer to any person in general?",
-            "explanation": "'Anyone' is an indefinite pronoun - it refers to any person without identifying who. It is used in questions and negative sentences.",
-            "grammarRule": "Pronouns",
+            "hint": "Ask how it connects to the words near it. Who arrived early?",
+            "explanation": "'They' is a personal pronoun functioning as the subject of the sentence, referring to a group of people already known from context.",
+            "grammarRule": "Personal pronoun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "subject form",
+                "object form"
             ]
         },
         {
@@ -512,23 +512,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'bargain' as used in the sentence below?",
-            "targetWord": "bargain",
-            "sentence": "Finding a great bargain is the highlight of any shopping trip.",
+            "question": "What grammatical job does 'play' do in this sentence?",
+            "targetWord": "play",
+            "sentence": "The children's play received a standing ovation from parents.",
             "options": [
                 "Noun",
                 "Verb",
-                "Adjective",
-                "Adverb"
+                "Adverb",
+                "Adjective"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "Noun",
-            "hint": "Nouns name commercial concepts. What does 'bargain' name here?",
-            "explanation": "'Bargain' is a noun - it names a good deal at a low price. It is the object of 'Finding' ('finding a bargain'). 'Bargain' can also be a verb, but here it follows 'a great'.",
-            "grammarRule": "Nouns",
+            "hint": "Look at what this word does in this exact sentence. What received the ovation?",
+            "explanation": "'Play' is a noun here, naming the performance the children put on — it functions as the subject of the sentence.",
+            "grammarRule": "Common noun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "verb use"
             ]
         },
         {
@@ -536,23 +536,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'until' as used in the sentence below?",
-            "targetWord": "until",
-            "sentence": "She studied hard until midnight to prepare for the final exam.",
+            "question": "Now, how is 'play' functioning here?",
+            "targetWord": "play",
+            "sentence": "After dinner, the kids play board games in the living room.",
             "options": [
+                "Verb",
                 "Noun",
-                "Preposition",
-                "Conjunction",
+                "Adjective",
                 "Adverb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Preposition",
-            "hint": "Prepositions show the end point of a time period. Does 'until' show how long the studying lasted?",
-            "explanation": "'Until' is a preposition - it is followed by a noun ('midnight') and shows the end point. When followed by a clause, 'until' becomes a conjunction.",
-            "grammarRule": "Prepositions",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Verb",
+            "hint": "The same word can also name a regular action. What do the kids do after dinner?",
+            "explanation": "'Play' functions as a verb here, describing the kids' regular activity — contrast this with the earlier noun use naming a performance.",
+            "grammarRule": "Action verb in present tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb use",
+                "noun use"
             ]
         },
         {
@@ -560,23 +560,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'somebody' as used in the sentence below?",
-            "targetWord": "somebody",
-            "sentence": "Somebody left their backpack on the seat at the back of the bus.",
+            "question": "Which grammatical category best describes 'unnecessarily' here?",
+            "targetWord": "unnecessarily",
+            "sentence": "The negotiations dragged on unnecessarily long.",
             "options": [
                 "Noun",
                 "Verb",
-                "Pronoun",
-                "Adjective"
+                "Adjective",
+                "Adverb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Pronoun",
-            "hint": "Indefinite pronouns refer to an unidentified person. Does 'somebody' refer to an unknown person?",
-            "explanation": "'Somebody' is an indefinite pronoun - it refers to an unspecified or unknown person. It is used in positive sentences.",
-            "grammarRule": "Pronouns",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adverb",
+            "hint": "Let the sentence, not the spelling, decide. How long did the negotiations drag on, according to the speaker?",
+            "explanation": "'Unnecessarily' is a degree adverb modifying the adjective 'long', showing the speaker's judgment that the delay was excessive.",
+            "grammarRule": "Degree adverb modifying an adjective",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "adverb form"
             ]
         },
         {
@@ -584,57 +584,9 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'humid' as used in the sentence below?",
-            "targetWord": "humid",
-            "sentence": "The humid weather during the monsoon season felt suffocating.",
-            "options": [
-                "Noun",
-                "Adjective",
-                "Verb",
-                "Adverb"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Adjective",
-            "hint": "Adjectives describe weather and climate. What quality of the weather does 'humid' describe?",
-            "explanation": "'Humid' is an adjective - it describes weather with high moisture in the air. Climate adjectives (humid, arid, tropical) describe atmospheric conditions.",
-            "grammarRule": "Adjectives",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l39_q2",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'beyond' as used in the sentence below?",
-            "targetWord": "beyond",
-            "sentence": "The hiking trail continues far beyond the edge of the village.",
-            "options": [
-                "Noun",
-                "Adverb",
-                "Preposition",
-                "Adjective"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Preposition",
-            "hint": "Prepositions can show that something extends past a point. Does 'beyond' show the trail extends past the village?",
-            "explanation": "'Beyond' is a preposition - it shows that something extends further than a specified point.",
-            "grammarRule": "Prepositions",
-            "transformations": [
-                "noun form",
-                "verb form"
-            ]
-        },
-        {
-            "id": "pos_l39_q3",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "subtype": "partsOfSpeech",
-            "interactionType": "choice",
-            "question": "What part of speech is 'refund' as used in the sentence below?",
-            "targetWord": "refund",
-            "sentence": "She requested a full refund because the item arrived damaged.",
+            "question": "Based on how it is used here, 'answer' is a:",
+            "targetWord": "answer",
+            "sentence": "Her answer surprised everyone on the panel.",
             "options": [
                 "Noun",
                 "Verb",
@@ -643,12 +595,60 @@
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "Noun",
-            "hint": "Nouns name commercial transactions. What does 'refund' name here?",
-            "explanation": "'Refund' is a noun - it names the return of money. It follows the article 'a' and adjective 'full'. ('Refund' can also be a verb: 'they refunded her money'.)",
-            "grammarRule": "Nouns",
+            "hint": "Think about the job it performs here. What surprised the panel?",
+            "explanation": "'Answer' is a noun here, naming the response that surprised the panel — it functions as the subject of the sentence.",
+            "grammarRule": "Common noun functioning as the subject",
             "transformations": [
-                "noun form",
-                "verb form"
+                "noun use",
+                "verb use"
+            ]
+        },
+        {
+            "id": "pos_l39_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "This time, what part of speech is 'answer'?",
+            "targetWord": "answer",
+            "sentence": "Please answer the question honestly.",
+            "options": [
+                "Verb",
+                "Noun",
+                "Adverb",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Verb",
+            "hint": "The same word can also name an action. What is the reader being asked to do?",
+            "explanation": "'Answer' functions as a verb here, the action the reader is instructed to perform — contrast this with the earlier noun use naming the response itself.",
+            "grammarRule": "Imperative verb giving an instruction",
+            "transformations": [
+                "verb use",
+                "noun use"
+            ]
+        },
+        {
+            "id": "pos_l39_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "How is 'change' functioning in this sentence?",
+            "targetWord": "change",
+            "sentence": "A small change in the schedule caused confusion.",
+            "options": [
+                "Verb",
+                "Adjective",
+                "Noun",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Noun",
+            "hint": "Set aside what you know about this word in general. What caused the confusion?",
+            "explanation": "'Change' is a noun here, naming the modification to the schedule that caused confusion — it functions as the subject of the sentence.",
+            "grammarRule": "Common noun functioning as the subject",
+            "transformations": [
+                "noun use",
+                "verb use"
             ]
         },
         {
@@ -656,23 +656,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'freezing' as used in the sentence below?",
-            "targetWord": "freezing",
-            "sentence": "The freezing temperatures last night damaged many crops in the region.",
+            "question": "What kind of word is 'called' in this sentence?",
+            "targetWord": "called",
+            "sentence": "Before the game, Coach Lee called a quick team meeting, and everyone agreed to change the starting lineup at the last minute.",
             "options": [
-                "Noun",
-                "Verb",
                 "Adjective",
-                "Adverb"
+                "Adverb",
+                "Verb",
+                "Noun"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Participial adjectives describe extreme conditions. What does 'freezing' tell us about the temperatures?",
-            "explanation": "'Freezing' is an adjective - it is a present participle used before 'temperatures' to describe extreme cold. It answers 'what kind of temperatures?' - a key test for adjectives.",
-            "grammarRule": "Adjectives",
+            "correctAnswer": "Verb",
+            "hint": "Check the words directly around it for clues. What action did Coach Lee take before the game?",
+            "explanation": "'Called' is a verb describing Coach Lee's action of gathering the team together for a meeting.",
+            "grammarRule": "Action verb in past tense",
             "transformations": [
-                "noun form",
-                "verb form"
+                "base form",
+                "past-tense form"
             ]
         },
         {
@@ -680,23 +680,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'except' as used in the sentence below?",
-            "targetWord": "except",
-            "sentence": "Everyone passed the exam except for two students who were absent.",
+            "question": "Staying with that sentence, which category describes 'quick'?",
+            "targetWord": "quick",
+            "sentence": "Before the game, Coach Lee called a quick team meeting, and everyone agreed to change the starting lineup at the last minute.",
             "options": [
-                "Conjunction",
                 "Noun",
-                "Preposition",
-                "Adverb"
+                "Verb",
+                "Adverb",
+                "Adjective"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Preposition",
-            "hint": "Prepositions can indicate exclusion. Does 'except' exclude someone from the general statement?",
-            "explanation": "'Except' is a preposition - it is followed by 'for two students' and indicates exclusion. When followed by a clause, it functions as a conjunction.",
-            "grammarRule": "Prepositions",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "Set aside what you know about this word in general. What kind of meeting did Coach Lee call?",
+            "explanation": "'Quick' is an adjective modifying 'meeting', describing how brief the gathering was — just as 'quick' modified 'answer' back in an earlier lesson.",
+            "grammarRule": "Attributive adjective modifying a noun",
             "transformations": [
-                "noun form",
-                "verb form"
+                "adjective form",
+                "adverb form"
             ]
         },
         {
@@ -704,23 +704,23 @@
             "instruction": "IDENTIFY THE FUNCTION",
             "subtype": "partsOfSpeech",
             "interactionType": "choice",
-            "question": "What part of speech is 'another' as used in the sentence below?",
-            "targetWord": "another",
-            "sentence": "I've already read this one - could you recommend another?",
+            "question": "In the same sentence, what role does 'change' play?",
+            "targetWord": "change",
+            "sentence": "Before the game, Coach Lee called a quick team meeting, and everyone agreed to change the starting lineup at the last minute.",
             "options": [
                 "Noun",
-                "Pronoun",
+                "Verb",
                 "Adjective",
-                "Verb"
+                "Adverb"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Pronoun",
-            "hint": "Pronouns can stand alone to replace a noun phrase. Does 'another' stand alone here?",
-            "explanation": "'Another' is a pronoun - it stands alone (without a following noun) to replace 'another book'. When used before a noun ('another book'), it is a determiner.",
-            "grammarRule": "Pronouns",
+            "correctAnswer": "Verb",
+            "hint": "Here the same word from an earlier lesson names an action instead of a thing. What did everyone agree to do to the lineup?",
+            "explanation": "'Change' functions as a verb here, meaning to alter the lineup — contrast this with the earlier sentence where 'change' was a noun naming the modification itself.",
+            "grammarRule": "Action verb following 'agreed to'",
             "transformations": [
-                "noun form",
-                "verb form"
+                "verb use",
+                "noun use"
             ]
         }
     ]

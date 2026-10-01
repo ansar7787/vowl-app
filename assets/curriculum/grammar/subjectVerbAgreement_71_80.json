@@ -5,512 +5,512 @@
     "quests": [
         {
             "id": "sva_l71_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The audience that came to the premiere ___ enthusiastic.",
-            "hint": "The subject is 'the audience' (singular collective) - the relative clause is descriptive.",
-            "explanation": "'The audience' is the subject. The relative clause 'that came to the premiere' provides detail. 'Audience' as a collective is singular: 'the audience was enthusiastic'.",
+            "question": "Sixty percent of the voters ___ in favor of the proposal.",
+            "hint": "Look at the noun right after 'of' - is it one countable thing or many?",
+            "explanation": "'The voters' is a countable plural noun, so the percentage expression behaves like a plural subject. The verb is 'are'.",
             "options": [
-                "was",
-                "were"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are",
+            "grammarRule": "Percentage + 'of' + plural noun takes a plural verb",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l71_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The team that ___ hardest usually wins the championship.",
-            "hint": "Inside the relative clause, 'that' refers to 'team' (singular) - verb in the clause agrees with it.",
-            "explanation": "Inside the relative clause 'that trains hardest', 'that' refers to 'the team', which is singular. So the verb in the relative clause is 'trains', not 'train'.",
+            "question": "About forty percent of the employees ___ from home twice a week.",
+            "hint": "'Employees' is a plural, countable noun - let that guide your choice of verb.",
+            "explanation": "Since 'employees' is plural and countable, the percentage takes a plural verb: 'work'.",
             "options": [
-                "train",
-                "trains"
+                "works",
+                "work"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "trains",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswer": "work",
+            "grammarRule": "Percentage + 'of' + plural noun takes a plural verb",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l71_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The employees who ___ hardest should be recognised.",
-            "hint": "Inside the relative clause, 'who' refers to 'employees' (plural).",
-            "explanation": "Inside the relative clause, 'who' refers to 'the employees', which is plural. So the verb inside the clause is 'work', not 'works'.",
+            "question": "Nearly ninety percent of the students ___ the assignment on time.",
+            "hint": "Check whether 'students' can be counted one by one - that decides the verb form.",
+            "explanation": "'Students' is plural and countable, so the verb stays in the base form: 'submit'.",
             "options": [
-                "work",
-                "works"
+                "submit",
+                "submits"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "work",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswer": "submit",
+            "grammarRule": "Percentage + 'of' + plural noun takes a plural verb",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l72_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The best part of the holiday ___ the beaches.",
-            "hint": "The subject is 'the best part' (singular) - the complement 'beaches' does not control the verb.",
-            "explanation": "With linking verbs like 'be', the verb always agrees with the subject, not the complement noun after it. 'The best part' is singular, so 'was' is correct even though 'beaches' is plural.",
+            "question": "Sixty percent of the cake ___ already gone.",
+            "hint": "This time, look at 'the cake' - can you count it the same way you'd count people?",
+            "explanation": "'Cake' is uncountable here (thought of as one whole dessert), so the percentage takes a singular verb: 'is'.",
             "options": [
-                "were",
-                "was"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "Percentage + 'of' + singular/uncountable noun takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l72_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The problem in most cities ___ traffic jams.",
-            "hint": "The subject is 'the problem' (singular) - not 'traffic jams'.",
-            "explanation": "The subject is 'the problem', not 'traffic jams'. With linking verbs, the verb agrees with the subject: 'the problem is traffic jams'.",
+            "question": "About twenty percent of the budget ___ toward marketing.",
+            "hint": "'The budget' is treated as one single amount, not a group of countable items.",
+            "explanation": "'Budget' is singular here, so the percentage takes a singular verb: 'goes'.",
             "options": [
-                "is",
-                "are"
+                "goes",
+                "go"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "goes",
+            "grammarRule": "Percentage + 'of' + singular/uncountable noun takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l72_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "Traffic jams ___ the biggest problem in most cities.",
-            "hint": "The subject is 'traffic jams' (plural) - the complement doesn't control the verb.",
-            "explanation": "Now 'traffic jams' is the subject. Even though the complement ('the biggest problem') is singular, the verb agrees with the subject: 'traffic jams are'.",
+            "question": "Nearly half of the water in this reservoir ___ from melted snow.",
+            "hint": "'Water' can't be counted one by one - think about what that means for the verb.",
+            "explanation": "'Water' is uncountable, so 'nearly half of the water' takes a singular verb: 'comes'.",
             "options": [
-                "is",
-                "are"
+                "come",
+                "comes"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswer": "comes",
+            "grammarRule": "Percentage + 'of' + singular/uncountable noun takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l73_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CONTRAST",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The reason for all these delays ___ the roadworks.",
-            "hint": "The subject is 'the reason' (singular) - complement 'roadworks' doesn't control the verb.",
-            "explanation": "The subject is 'the reason'. The linking verb agrees with the subject, not the predicate noun. 'The reason is the roadworks' - not 'are'.",
+            "question": "Two-thirds of the pizza ___ already eaten.",
+            "hint": "'Pizza' isn't usually counted individually - think of it as one whole item here.",
+            "explanation": "'Pizza' is uncountable in this sense, so the fraction takes a singular verb: 'is'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "Fraction + 'of' + noun agrees with the noun after 'of'",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l73_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CONTRAST",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "What worries me most ___ the long queues.",
-            "hint": "The subject clause 'What worries me most' functions as a singular noun phrase.",
-            "explanation": "A subject clause beginning with 'what' ('what worries me most') functions as a singular noun phrase. The verb is 'is', not 'are'.",
+            "question": "Two-thirds of the students ___ part-time jobs.",
+            "hint": "Compare this to the pizza example - 'students' can definitely be counted one by one.",
+            "explanation": "'Students' is countable and plural, so the fraction takes a plural verb: 'have'.",
             "options": [
-                "are",
-                "is"
+                "has",
+                "have"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "correctAnswer": "have",
+            "grammarRule": "Fraction + 'of' + noun agrees with the noun after 'of'",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l73_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "SPOT THE CONTRAST",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "What we need ___ more volunteers.",
-            "hint": "The subject clause 'What we need' functions as singular - use a singular verb.",
-            "explanation": "'What we need' is a subject clause that acts as a singular noun phrase, so the verb is 'is'. This is a common linking-verb pattern: 'What we need is more volunteers'.",
+            "question": "One-quarter of the applicants ___ prior experience in this field.",
+            "hint": "'Applicants' is just as countable as 'students' - apply the same logic.",
+            "explanation": "'Applicants' is plural and countable, so the verb stays in the base form: 'lack'.",
+            "options": [
+                "lacks",
+                "lack"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "lack",
+            "grammarRule": "Fraction + 'of' + noun agrees with the noun after 'of'",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l74_q1",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Ten dollars ___ a fair price for this used book.",
+            "hint": "Ten dollars is being described as one total price, not as ten separate coins.",
+            "explanation": "When money is thought of as a single sum, it's singular. The verb here is 'is'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l74_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The class of students ___ working quietly.",
-            "hint": "'The class' is the subject (singular collective) - the students are inside the class.",
-            "explanation": "'The class' is the subject, a singular collective noun. 'Of students' is a prepositional phrase. 'The class is working' - treating the group as a unit.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "grammarRule": "Money expressed as a single total amount takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l74_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The data from this survey ___ very useful.",
-            "hint": "'Data' in formal English is sometimes treated as singular - especially with a singular concept.",
-            "explanation": "'Data' is commonly used as a singular noun in modern English. 'The data is very useful' is standard in everyday and business contexts.",
+            "question": "Two hundred dollars ___ enough to cover the repair.",
+            "hint": "Think of '$200' as one lump sum needed for the repair.",
+            "explanation": "'Two hundred dollars' refers to one total amount, so the verb takes -s: 'seems'.",
             "options": [
-                "is",
-                "are"
+                "seem",
+                "seems"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "seems",
+            "grammarRule": "Money expressed as a single total amount takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l74_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The cattle ___ grazing in the field.",
-            "hint": "'Cattle' is always plural - it has no singular form.",
-            "explanation": "'Cattle' is always plural and always takes a plural verb. There is no singular form of 'cattle' - a single animal would be 'a cow' or 'a bull'.",
+            "question": "Fifty euros ___ more than I expected to pay for entry.",
+            "hint": "This amount is being talked about as a single price, not as fifty separate coins.",
+            "explanation": "'Fifty euros' is one overall amount here, so the verb takes -s: 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "Money expressed as a single total amount takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l75_q1",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Two years ___ a long time to wait for results.",
+            "hint": "Two years here is one stretch of waiting, not two separate units being counted.",
+            "explanation": "A span of time is usually treated as one period, so the verb is 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "Time expressed as a single duration takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l75_q2",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Six months ___ enough time to learn the basics.",
+            "hint": "Six months is being described as one length of time to learn something.",
+            "explanation": "'Six months' is a single duration here, so the verb takes -s: 'seems'.",
+            "options": [
+                "seem",
+                "seems"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "seems",
+            "grammarRule": "Time expressed as a single duration takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l75_q3",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Three hours ___ too long for this meeting.",
+            "hint": "Three hours describes one overall length for the meeting, not three separate hours being counted.",
+            "explanation": "'Three hours' is treated as a single duration, so the verb is 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "Time expressed as a single duration takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l76_q1",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Five miles ___ a reasonable distance to bike each day.",
+            "hint": "Five miles here describes one overall distance, not five separate miles being counted.",
+            "explanation": "A distance is usually treated as one single measurement, so the verb is 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "Distance or weight expressed as a single measurement takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l76_q2",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Ten kilograms ___ too heavy for this shelf to hold.",
+            "hint": "Ten kilograms is being described as one total weight for the shelf to support.",
+            "explanation": "'Ten kilograms' is a single measurement here, so the verb takes -s: 'seems'.",
+            "options": [
+                "seem",
+                "seems"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "seems",
+            "grammarRule": "Distance or weight expressed as a single measurement takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l76_q3",
+            "instruction": "MATCH THE SUBJECT TO THE VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Two hundred meters ___ the length of the new bridge.",
+            "hint": "Two hundred meters is one overall length, not two hundred separate meters being counted.",
+            "explanation": "'Two hundred meters' is treated as a single measurement, so the verb is 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "Distance or weight expressed as a single measurement takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l77_q1",
+            "instruction": "SPOT THE CONTRAST",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "A number of employees ___ requested a schedule change.",
+            "hint": "'A number of' means roughly 'several' - treat the whole phrase as plural.",
+            "explanation": "'A number of employees' means 'several employees', so it takes a plural verb: 'have'.",
+            "options": [
+                "has",
+                "have"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "have",
+            "grammarRule": "'A number of' + plural noun takes a plural verb",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l77_q2",
+            "instruction": "SPOT THE CONTRAST",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "The number of employees ___ increasing steadily this year.",
+            "hint": "'The number of' refers to the count itself - one single figure, so it's singular.",
+            "explanation": "'The number of employees' refers to a single figure or statistic, so the verb is 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "'The number of' + plural noun takes a singular verb",
+            "subjectType": "Singular"
+        },
+        {
+            "id": "sva_l77_q3",
+            "instruction": "SPOT THE CONTRAST",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "A number of complaints ___ under review.",
+            "hint": "This phrase means 'several complaints' - apply the plural rule from earlier in this level.",
+            "explanation": "'A number of complaints' means 'several complaints', so the verb stays in the base form: 'remain'.",
+            "options": [
+                "remains",
+                "remain"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "remain",
+            "grammarRule": "'A number of' + plural noun takes a plural verb",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l78_q1",
+            "instruction": "CHOOSE THE CORRECT VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "A couple of chairs ___ still missing from the set.",
+            "hint": "Phrases like 'a couple of' work like quantifiers - they take their number from the noun that follows.",
+            "explanation": "'A couple of chairs' behaves like 'two chairs', so the verb is plural: 'are'.",
+            "options": [
+                "are",
+                "is"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "are",
+            "grammarRule": "Quantifier expressions ('a couple of', 'a dozen of', 'a handful of') agree with the noun after 'of'",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l78_q2",
+            "instruction": "CHOOSE THE CORRECT VERB",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "A dozen of the applicants ___ scheduled for interviews next week.",
+            "hint": "'A dozen of' behaves the same way as 'a couple of' - check the noun after 'of'.",
+            "explanation": "'A dozen of the applicants' behaves like 'twelve applicants', so the verb is plural: 'are'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l75_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The police ___ investigating the incident.",
-            "hint": "'Police' is always plural - it refers to a body of officers.",
-            "explanation": "'Police' is always treated as plural in standard English. 'The police are investigating' - never 'the police is'.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l75_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The public ___ not always aware of the risks.",
-            "hint": "'The public' as a collective body takes a singular verb.",
-            "explanation": "'The public' is usually treated as singular when it refers to society as a whole: 'the public is not always aware'. This is different from 'the police', which is always plural.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l75_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The average tourist ___ about two hundred photos per trip.",
-            "hint": "'The average tourist' is singular - the verb needs -s.",
-            "explanation": "'The average tourist' is a singular noun phrase. The verb takes the -s ending: 'takes'. This is a generalisation about a single representative tourist.",
-            "options": [
-                "takes",
-                "take"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "takes",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l76_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Here ___ my answer to your question.",
-            "hint": "The real subject is 'my answer' (singular).",
-            "explanation": "In 'here is/are', the verb agrees with the real subject. 'My answer' is singular, so 'here is' is correct.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l76_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "There ___ no simple answers to this question.",
-            "hint": "The real subject is 'answers' (plural) - verb agrees with it.",
-            "explanation": "The real subject is 'no simple answers', which is plural. So 'there are' is correct.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l76_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Where ___ the information I asked for?",
-            "hint": "The subject is 'the information' (uncountable, singular).",
-            "explanation": "'Information' is uncountable and always singular. 'Where is the information?' is correct.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l77_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The Beatles ___ formed in Liverpool in 1960.",
-            "hint": "'The Beatles' is a band name that is grammatically plural in form - what does that mean for the verb?",
-            "explanation": "Band names that are plural in form, like 'The Beatles' or 'The Rolling Stones', take a plural verb. 'The Beatles were formed in Liverpool in 1960.'",
-            "options": [
-                "were",
-                "was"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l77_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "Shakespeare's play 'Romeo and Juliet' ___ written in the 1590s.",
-            "hint": "The title of one play is singular - single work, singular verb.",
-            "explanation": "The title of a single work is always treated as singular. 'Romeo and Juliet was written by Shakespeare' - it is one play.",
-            "options": [
-                "were",
-                "was"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l77_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The bread that ___ left on the counter has gone stale.",
-            "hint": "Inside the relative clause, 'that' refers to 'the bread' (singular).",
-            "explanation": "'That' in the relative clause refers to 'the bread', which is singular. So the verb inside the clause is 'was', not 'were'.",
-            "options": [
-                "was",
-                "were"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l78_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The people who ___ at the front of the queue got served first.",
-            "hint": "Inside the relative clause, 'who' refers to 'people' (plural).",
-            "explanation": "'Who' in the relative clause refers to 'the people', which is plural. The verb inside the clause is 'were', not 'was'.",
-            "options": [
-                "was",
-                "were"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l78_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "The athlete as well as her coaches ___ recognised.",
-            "hint": "'As well as' is parenthetical - the verb agrees with 'the athlete' (singular).",
-            "explanation": "'As well as her coaches' is a parenthetical addition and does not create a compound subject. The real subject is 'the athlete', which is singular, so 'was recognised' is correct.",
-            "options": [
-                "was",
-                "were"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
-            "subjectType": "Singular"
+            "grammarRule": "Quantifier expressions ('a couple of', 'a dozen of', 'a handful of') agree with the noun after 'of'",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l78_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "CHOOSE THE CORRECT VERB",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The athletes, as well as their coach, ___ recognised.",
-            "hint": "The main subject is 'the athletes' (plural) - 'as well as' doesn't change that.",
-            "explanation": "The subject is 'the athletes', which is plural. 'As well as their coach' is parenthetical and does not change the subject. 'The athletes were recognised'.",
+            "question": "A handful of volunteers ___ helping with the cleanup.",
+            "hint": "'A handful of' also takes its number from the noun that follows it.",
+            "explanation": "'A handful of volunteers' behaves like 'several volunteers', so the verb is plural: 'are'.",
             "options": [
-                "was",
-                "were"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswer": "are",
+            "grammarRule": "Quantifier expressions ('a couple of', 'a dozen of', 'a handful of') agree with the noun after 'of'",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l79_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The goods ordered last week ___ arrived this morning.",
-            "hint": "'Goods' is always plural - it takes a plural verb.",
-            "explanation": "'Goods' is a plural noun with no singular form (like 'police' and 'cattle'). It always takes a plural verb: 'the goods have arrived'.",
+            "question": "Seventy-five percent of the reports submitted this quarter ___ under review.",
+            "hint": "Trace past the description of when the reports were submitted and apply the percentage rule.",
+            "explanation": "'Seventy-five percent of the reports' is plural because 'reports' is countable; 'submitted this quarter' is just extra detail. The verb stays in the base form: 'remain'.",
             "options": [
-                "have",
-                "has"
+                "remain",
+                "remains"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "have",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswer": "remain",
+            "grammarRule": "Percentage + 'of' + plural noun stays plural, even with an interrupting phrase",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l79_q2",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The premises ___ checked by the health inspector.",
-            "hint": "'Premises' (a building/location) is always plural in English.",
-            "explanation": "'Premises' is always plural. It refers to a building and its grounds, and always takes a plural verb: 'the premises were checked'.",
+            "question": "The number of accidents on this highway ___ every year.",
+            "hint": "Focus on 'the number of', not the highway description that follows.",
+            "explanation": "'The number of accidents' is singular, since it refers to a single count; 'on this highway' is extra detail. The verb takes -s: 'decreases'.",
             "options": [
-                "was",
-                "were"
+                "decreases",
+                "decrease"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "decreases",
+            "grammarRule": "'The number of' + plural noun takes a singular verb, even with an interrupting phrase",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l79_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE REAL SUBJECT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The outskirts of the city ___ developing rapidly.",
-            "hint": "'Outskirts' is always plural - it always takes a plural verb.",
-            "explanation": "'Outskirts' is a plural-only noun. It refers to the outer areas of a city and always takes a plural verb: 'the outskirts are developing'.",
+            "question": "A number of issues raised during the meeting ___ unresolved.",
+            "hint": "This phrase still means 'several issues', even with the extra description in between.",
+            "explanation": "'A number of issues' is plural; 'raised during the meeting' is just extra detail. The verb stays in the base form: 'remain'.",
             "options": [
-                "are",
-                "is"
+                "remains",
+                "remain"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "remain",
+            "grammarRule": "'A number of' + plural noun takes a plural verb, even with an interrupting phrase",
+            "subjectType": "Plural"
         },
         {
             "id": "sva_l80_q1",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The earnings from last year ___ well above expectations.",
-            "hint": "'Earnings' is always plural - plural verb required.",
-            "explanation": "'Earnings' is always plural. Like 'savings' and 'belongings', it refers to an amount and always takes a plural verb: 'earnings were above expectations'.",
-            "options": [
-                "was",
-                "were"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "were",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
-            "subjectType": "Singular"
-        },
-        {
-            "id": "sva_l80_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "interactionType": "choice",
-            "subtype": "subjectVerbAgreement",
-            "question": "My savings ___ enough to cover the deposit.",
-            "hint": "'Savings' is always plural - it refers to an accumulated amount.",
-            "explanation": "'Savings' is always treated as plural: 'my savings are enough'. This is true even when referring to a total sum of money.",
+            "question": "Nearly half of the cookies ___ gone before the party even started.",
+            "hint": "Bring back the percentage/fraction rule: check whether 'cookies' can be counted individually.",
+            "explanation": "'Cookies' is countable and plural, so 'nearly half of the cookies' takes a plural verb: 'are'.",
             "options": [
                 "are",
                 "is"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "are",
-            "grammarRule": "Subject-Verb Agreement (Plural)",
+            "grammarRule": "Percentage or fraction + 'of' + plural noun takes a plural verb",
+            "subjectType": "Plural"
+        },
+        {
+            "id": "sva_l80_q2",
+            "instruction": "FIND THE CORRECT AGREEMENT",
+            "interactionType": "choice",
+            "subtype": "subjectVerbAgreement",
+            "question": "Twenty dollars ___ too much to spend on a single meal.",
+            "hint": "Remember: an amount of money described as one total sum is singular.",
+            "explanation": "'Twenty dollars' is treated as one total amount, so the verb takes -s: 'seems'.",
+            "options": [
+                "seem",
+                "seems"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "seems",
+            "grammarRule": "Money expressed as a single total amount takes a singular verb",
             "subjectType": "Singular"
         },
         {
             "id": "sva_l80_q3",
-            "instruction": "SYNC THE AGREEMENT",
+            "instruction": "FIND THE CORRECT AGREEMENT",
             "interactionType": "choice",
             "subtype": "subjectVerbAgreement",
-            "question": "The software on all these devices ___ out of date.",
-            "hint": "'Software' is uncountable - it always takes a singular verb.",
-            "explanation": "'Software' is an uncountable noun and always takes a singular verb. 'The software is out of date' - even across many devices.",
+            "question": "The number of visitors ___ every summer.",
+            "hint": "As a final check, recall that 'the number of' always refers to one single count.",
+            "explanation": "'The number of visitors' is singular, so the verb takes -s: 'rises'.",
             "options": [
-                "are",
-                "is"
+                "rise",
+                "rises"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "is",
-            "grammarRule": "Subject-Verb Agreement (Singular)",
+            "correctAnswer": "rises",
+            "grammarRule": "'The number of' + plural noun takes a singular verb",
             "subjectType": "Singular"
         }
     ]

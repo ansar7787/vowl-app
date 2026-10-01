@@ -4,633 +4,633 @@
     "levels": "1-10",
     "quests": [
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the opening statement that would make the strongest first impression.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about yourself.",
+            "interviewerQuestion": "Tell me a little about yourself before we start.",
             "options": [
-                "I don't really like talking about myself.",
-                "I'm a hard worker who is excited to learn and contribute to your team.",
-                "That's kind of a personal question, isn't it?"
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Interviewers want a short, positive summary connected to the job.",
-            "explanation": "A brief, positive answer that shows enthusiasm is the best way to start an interview. It's your chance to make a strong first impression.",
-            "id": "ji_l1_q1",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Can you introduce yourself?",
-            "options": [
-                "I'm a marketing graduate with two years of retail experience and a passion for customer service.",
-                "Um, I guess I'm just a normal person looking for work.",
-                "Why do you need to know that?"
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "A good introduction mentions your background and connects it to the job.",
-            "explanation": "Mentioning your background and relevant experience helps the interviewer quickly understand what you bring to the role.",
-            "id": "ji_l1_q2",
-            "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Walk me through your background.",
-            "options": [
-                "It's a long story, I'm not sure where to start.",
-                "I'd rather talk about the job instead.",
-                "I studied business and have worked in customer service for the past year, and I'm ready for a new challenge."
+                "There's not much to say, really — I've just had a few different jobs here and there.",
+                "I don't love talking about myself, but I guess I'm a hard worker and a fast learner, and I've always gotten good feedback from my managers wherever I've been.",
+                "I recently finished a business diploma and spent the last year in a retail role, where I built strong customer service and problem-solving skills."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Interviewers want a clear, organized summary, not a vague or evasive answer.",
-            "explanation": "A clear, organized summary of your education and experience shows you're prepared and confident.",
-            "id": "ji_l1_q3",
+            "hint": "A strong opening is short, specific, and gives the interviewer something concrete to work with.",
+            "explanation": "Naming your background and a relevant skill in one or two sentences gives the interviewer useful information immediately. Hesitant or vague openings make it harder for them to see what you bring.",
+            "id": "ji_l1_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "unconvinced",
+                "waiting for more",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which introduction gives the interviewer the clearest picture of who you are?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Why do you want this job?",
+            "interviewerQuestion": "Can you walk me through who you are professionally?",
             "options": [
-                "I'm excited about this role because it matches my skills and interests.",
-                "I need any job right now.",
-                "My friend told me the pay is good."
+                "I'm a people person, I guess, and I like working with others. I'm friendly, easy to talk to,. but that's a rough guess more than anything solid.",
+                "I studied administration and spent my final year interning at a small accounting firm, handling scheduling and client communication.",
+                "I'm honestly still figuring out what I want, but I've done a bit of everything, from retail to some office work, so I can adapt to most things."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "Interviewers want a real snapshot of your background, not just a personality trait.",
+            "explanation": "A specific answer about education and hands-on experience is more convincing than a general personality claim, which anyone could say without evidence behind it.",
+            "id": "ji_l1_q2",
+            "interviewerReaction": [
+                "waiting for more",
+                "interested",
+                "uncertain"
+            ]
+        },
+        {
+            "instruction": "Select the introduction that gives the interviewer real evidence to work with.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Give me a quick introduction to who you are.",
+            "options": [
+                "I've worked front desk and event support for two summers, and I enjoy roles where I'm solving problems for guests on the spot.",
+                "I'm a hospitality person at heart, I just love people and good energy.",
+                "I'm not totally sure how to answer that, but I can work anywhere really."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Employers want to hear genuine interest in the role, not just a need for income.",
-            "explanation": "Showing genuine enthusiasm for the specific role tells the employer you'll be motivated and engaged if hired.",
+            "professionalismRating": 4,
+            "hint": "Ground your introduction in something you've actually done, not just an attitude or personality claim.",
+            "explanation": "Mentioning specific experience and what you enjoy about it gives the interviewer real evidence, while a personality-only answer or an uncertain one gives them nothing to evaluate.",
+            "id": "ji_l1_q3",
+            "interviewerReaction": [
+                "impressed",
+                "curious",
+                "losing interest"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that connects your education to something practical.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Tell me about your educational background.",
+            "options": [
+                "I completed an associate degree in IT, with a focus on troubleshooting and network basics, and I did a short internship at a helpdesk.",
+                "I went to college for a while but didn't finish. I've mostly learned things on my own since then, through videos and helping friends with their computers.",
+                "School was fine, I did okay, nothing special to report."
+            ],
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Name your area of study and connect it to something practical you did with it.",
+            "explanation": "Pairing your education with a concrete application, like an internship, makes your background feel relevant rather than just a list of facts.",
             "id": "ji_l2_q1",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "curious",
+                "unconvinced"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which answer shows genuine purpose behind your studies?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What interests you about this position?",
+            "interviewerQuestion": "What's your academic background in?",
             "options": [
-                "Honestly, nothing specific, I just applied to a lot of jobs.",
-                "I'm drawn to the chance to use my skills and grow in this field.",
-                "It's close to my house."
+                "I studied a bit of everything before settling on a major.",
+                "Economics, mostly. It wasn't really my first choice, but it's fine.",
+                "I majored in economics and did a research project on local small-business lending, which is part of why I'm drawn to finance roles."
             ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "A strong answer connects the job to your skills or goals.",
-            "explanation": "Connecting the job to your own skills and goals shows the interviewer you've thought carefully about the opportunity.",
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "Show that your studies connect to genuine interest in the field, not just circumstance.",
+            "explanation": "Linking a specific project or interest to the field you're applying for shows purpose. Answers that sound accidental or indifferent raise doubts about motivation.",
             "id": "ji_l2_q2",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "neutral",
+                "intrigued"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the summary that builds the most credibility for this specific role.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Why did you apply to work here?",
+            "interviewerQuestion": "Can you summarize your work history so far?",
             "options": [
-                "I applied to a lot of places and this was one of them.",
-                "I'm not sure, my friend suggested it.",
-                "I researched your company and admire the work you do."
+                "I've had a few jobs, nothing really related to healthcare though.",
+                "It's kind of a mix, I don't think it's worth going through all of it, since most of my jobs were short and not especially related to each other.",
+                "I spent a year and a half as a receptionist at a medical clinic, handling scheduling, patient records, and insurance calls."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Mentioning research about the company shows genuine interest.",
-            "explanation": "Mentioning specific research about the company shows real interest and preparation, which employers value highly.",
+            "hint": "A clear, relevant work history builds credibility for the specific role.",
+            "explanation": "Summarizing responsibilities from a related role shows the interviewer you already understand parts of the job. Dismissing your own history undersells you, even if it genuinely is varied.",
             "id": "ji_l2_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "curious",
+                "losing interest",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that shows the clearest, specific motivation for this role.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What is your greatest strength?",
+            "interviewerQuestion": "Why are you interested in this position?",
             "options": [
-                "I don't really have any strengths.",
-                "I guess I'm okay at most things.",
-                "I'm very reliable and always meet my deadlines."
+                "This role focuses on social media content, which is exactly the kind of hands-on marketing experience I've been looking to build.",
+                "It seemed like a good stepping stone, even if it's not exactly what I pictured.",
+                "I applied to a lot of similar jobs, so I'm not too picky."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Pick one clear strength and be confident about it.",
-            "explanation": "Naming one clear, specific strength with confidence makes a stronger impression than a vague or uncertain answer.",
+            "hint": "Connect the specific tasks of this role to something you actually want to do.",
+            "explanation": "Naming a concrete part of the role that matches your goals shows real interest. A generic or indifferent answer suggests you'd take any job, which is less convincing.",
             "id": "ji_l3_q1",
             "interviewerReaction": [
+                "pleased",
+                "uncertain",
+                "unconvinced"
+            ]
+        },
+        {
+            "instruction": "Which response shows the strongest fit between the role and your own strengths?",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "What made you apply for this role specifically?",
+            "options": [
+                "I needed a job and this one came up first.",
+                "I like the structure of logistics work, and this role's mix of coordination and problem-solving fits what I'm good at.",
+                "Honestly, the hours worked well with my schedule, and the location is convenient, so it seemed like a practical choice for me right now."
+            ],
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "A strong answer shows the job matches your actual skills or interests, not just convenience.",
+            "explanation": "Explaining a fit between your strengths and the role's demands shows thought. Practical convenience might be true, but leading with it doesn't demonstrate genuine motivation.",
+            "id": "ji_l3_q2",
+            "interviewerReaction": [
                 "disappointed",
-                "disappointed",
+                "impressed",
+                "neutral"
+            ]
+        },
+        {
+            "instruction": "Choose the answer that best explains what draws you to the actual work.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "Why does this job appeal to you?",
+            "options": [
+                "I enjoy solving problems for people directly, and this role seems to focus a lot on that kind of one-on-one support.",
+                "It pays a bit more than my last job.",
+                "I'm open to anything right now, so this works too, and I figure I'll find out what I like about it once I've started working here."
+            ],
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Employers want to hear what specifically drew you to this type of work.",
+            "explanation": "Pointing to something specific about the role's day-to-day work shows you understand what you're applying for. Pay or general openness doesn't explain why you'd be a motivated fit.",
+            "id": "ji_l3_q3",
+            "interviewerReaction": [
+                "interested",
+                "neutral",
+                "losing interest"
+            ]
+        },
+        {
+            "instruction": "Which answer shows the most genuine research into the company?",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "What do you know about our company, and why do you want to work here?",
+            "options": [
+                "Not much, honestly, I mostly just saw the job posting.",
+                "I heard the company is doing well and growing fast.",
+                "I've followed your product launches this year, and I like that the company is still small enough that individual contributions are visible."
+            ],
+            "correctAnswerIndex": 2,
+            "professionalismRating": 5,
+            "hint": "Mentioning something specific you've noticed about the company shows real research.",
+            "explanation": "Referencing a specific, current detail about the company shows you've done real research. A vague sense that it's doing well, or no research at all, makes your interest seem shallow.",
+            "id": "ji_l4_q1",
+            "interviewerReaction": [
+                "concerned",
+                "curious",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that draws the clearest link between you and this organization.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What would you say is your strongest skill?",
+            "interviewerQuestion": "Why this organization in particular?",
             "options": [
-                "I'm a strong communicator and enjoy helping others.",
-                "I'm not sure, you'd have to ask my old boss.",
-                "Probably nothing special, I'm pretty average."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Choose a strength and explain briefly how it helps you at work.",
-            "explanation": "Naming a specific skill and briefly explaining its value shows self-awareness and confidence.",
-            "id": "ji_l3_q2",
-            "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "How would you describe your top skill?",
-            "options": [
-                "I don't like to brag about myself.",
-                "I work well under pressure and stay calm when things get busy.",
-                "I'm okay, nothing amazing."
+                "I like that it's a nonprofit, they tend to have a better atmosphere and people there seem to care more about what they're doing than at other places.",
+                "Your after-school program model is similar to one I volunteered with, and I've seen firsthand how effective that structure can be.",
+                "I'm looking for something meaningful, and this seemed like a good fit for that."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Confidently naming a real skill is better than downplaying yourself.",
-            "explanation": "Confidently describing a specific skill shows self-awareness, while downplaying yourself can seem like a lack of confidence.",
-            "id": "ji_l3_q3",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "What is your greatest weakness?",
-            "options": [
-                "I have no weaknesses.",
-                "I sometimes take on too many tasks, but I'm learning to manage my time better.",
-                "I don't work well with others."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "A good answer names a real weakness and shows you're working to improve it.",
-            "explanation": "Naming a real weakness and explaining how you're improving shows honesty and self-awareness — both valued by employers.",
-            "id": "ji_l4_q1",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "What's an area you're working to improve?",
-            "options": [
-                "I struggle with public speaking, so I've been practicing by joining a local group.",
-                "I can't think of anything.",
-                "I'm perfect, honestly."
-            ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Mentioning steps you're taking to improve makes a weakness sound like growth.",
-            "explanation": "Describing concrete steps to improve turns a simple weakness into a story about growth, which interviewers respond well to.",
+            "professionalismRating": 4,
+            "hint": "Specific, relevant experience with something similar to the organization's work is more convincing than a general impression.",
+            "explanation": "Drawing a direct link between your own experience and the organization's actual approach shows genuine, informed interest, rather than a broad assumption about nonprofits in general.",
             "id": "ji_l4_q2",
             "interviewerReaction": [
+                "neutral",
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "uncertain"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Select the answer that gives the most believable, specific reason for applying here.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Tell me about a skill you'd like to develop.",
+            "interviewerQuestion": "What made you choose to apply here rather than somewhere else?",
             "options": [
-                "Nothing comes to mind.",
-                "That's a trick question, isn't it?",
-                "I'd like to improve my data skills, so I've started an online course."
+                "This was just one of several places I applied to.",
+                "It's close to home, which makes the commute easier.",
+                "I've shopped here for years and always noticed how the staff seem genuinely trained to help, which is the kind of team I'd want to be part of."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "A specific skill plus a specific action shows real self-improvement.",
-            "explanation": "Naming a specific skill and a specific action, like taking a course, shows real initiative toward self-improvement.",
+            "professionalismRating": 4,
+            "hint": "A believable, specific observation about the company beats a purely practical reason.",
+            "explanation": "A concrete observation about the company's culture, based on real experience, shows more thought than a convenience-based reason or no reason at all, even though convenience is real for many people.",
             "id": "ji_l4_q3",
             "interviewerReaction": [
                 "disappointed",
-                "disappointed",
-                "impressed"
+                "neutral",
+                "pleased"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the strength that comes with real, believable evidence.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Why should we hire you?",
+            "interviewerQuestion": "What would you say is one of your key strengths?",
             "options": [
-                "I really need a job right now.",
-                "My experience and skills match exactly what you're looking for.",
-                "I'm not sure, you'll have to decide."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Connect your specific skills directly to what the job needs.",
-            "explanation": "Directly connecting your skills to the job's needs gives the interviewer a clear reason to choose you.",
-            "id": "ji_l5_q1",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "What makes you the right person for this role?",
-            "options": [
-                "I bring relevant experience and a strong work ethic to the team.",
-                "I'm just looking for any opportunity.",
-                "I guess I'm as good as anyone else who applied."
+                "I'm organized — I kept a shared task tracker for my last team project, which helped everyone stay on the same page.",
+                "I don't know, maybe being nice to people? I've always gotten along well with pretty much everyone I've worked with, so maybe that.",
+                "I'm pretty good at most things, so it's hard to pick just one. I've never really had a task at work that I couldn't figure out eventually."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Be specific about the value you bring, not just that you want the job.",
-            "explanation": "Being specific about the value you bring shows confidence and helps you stand out from other candidates.",
+            "hint": "A strong strength answer names one skill and backs it with a small, real example.",
+            "explanation": "A specific strength paired with a small concrete example is far more convincing than a broad claim or a vague trait with no evidence behind it.",
+            "id": "ji_l5_q1",
+            "interviewerReaction": [
+                "impressed",
+                "unconvinced",
+                "uncertain"
+            ]
+        },
+        {
+            "instruction": "Which answer shows a strength that's clearly useful for this kind of work?",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "What's a skill you feel especially confident about?",
+            "options": [
+                "Staying patient with frustrated customers — I've handled complaint calls before and usually manage to calm things down.",
+                "I'm a fast learner, though I haven't really had to prove that yet.",
+                "I guess I'm just generally a good employee overall."
+            ],
+            "correctAnswerIndex": 0,
+            "professionalismRating": 4,
+            "hint": "Pick a strength that's directly useful in this kind of work, and show you've actually used it.",
+            "explanation": "Choosing a strength relevant to the role, and briefly showing where you've used it, demonstrates both self-awareness and real capability.",
             "id": "ji_l5_q2",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "neutral",
+                "unconvinced"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the strength that's specific enough to be convincing.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What sets you apart from other candidates?",
+            "interviewerQuestion": "What do you consider your strongest quality at work?",
             "options": [
-                "I don't know what other people are like.",
-                "Nothing really, we probably all have similar resumes.",
-                "I combine strong technical skills with a genuine passion for this field."
+                "I'm not sure, I've never really thought about it.",
+                "Probably my attitude, I try to stay positive most days,. even if I haven't fully thought it through.",
+                "Attention to detail — I rarely miss small errors, which mattered a lot in my last role checking invoices."
             ],
             "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Highlight a specific combination of skills or qualities that makes you unique.",
-            "explanation": "Highlighting a specific, genuine combination of skills or passion helps the interviewer remember you positively.",
+            "professionalismRating": 4,
+            "hint": "A strength tied to the specific demands of the role will land better than a general personal quality.",
+            "explanation": "A precise, role-relevant strength with a real example gives the interviewer confidence you understand what the job actually requires.",
             "id": "ji_l5_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "losing interest",
+                "neutral",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the description that shows a real, specific communication habit.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Are you a team player?",
+            "interviewerQuestion": "How would you describe your communication style at work?",
             "options": [
-                "Yes, I enjoy collaborating and supporting my teammates.",
-                "I prefer to work completely alone.",
-                "I can be, if I have to."
+                "I try to be direct but friendly, and I check in early if I'm unsure about something instead of guessing.",
+                "I'm a great communicator, probably one of the best, and everyone I've worked with has said I explain things really clearly.",
+                "I mostly just get on with my work and don't talk much unless I have to."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Show genuine enthusiasm about working with others.",
-            "explanation": "A confident, positive answer about collaboration reassures the employer that you'll work well with the team.",
+            "professionalismRating": 4,
+            "hint": "A believable answer describes an actual habit, not just a confident label.",
+            "explanation": "Describing a specific communication habit, like checking in early, gives the interviewer something real to picture. A bare label like great communicator, with no support, sounds like an unsupported claim.",
             "id": "ji_l6_q1",
             "interviewerReaction": [
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "skeptical",
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which answer shows a concrete technique, not just a general attitude?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you work within a team?",
+            "interviewerQuestion": "How do you make sure you're communicating clearly with customers?",
             "options": [
-                "I usually just do my own thing.",
-                "I let others take the lead and stay quiet.",
-                "I listen to others' ideas and contribute my own to reach the best outcome."
+                "I just try to be polite the whole time,. though that's really just my own read on it.",
+                "I repeat back what I understood before I act on it, so we're both on the same page.",
+                "I usually just wing it and hope it comes across fine."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Good teamwork involves both listening and contributing.",
-            "explanation": "Describing both listening and contributing shows a balanced, healthy approach to teamwork.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "A concrete technique for confirming understanding is stronger than a general attitude.",
+            "explanation": "A specific technique, like confirming understanding, shows a practical communication skill. Politeness matters, but alone it doesn't demonstrate clarity, and winging it suggests a lack of method.",
             "id": "ji_l6_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "neutral",
+                "reassured",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Select the response that shows the clearest, most practical approach under pressure.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Do you prefer working alone or with others?",
+            "interviewerQuestion": "How do you handle communicating with coworkers during a busy shift?",
             "options": [
-                "Only alone, I don't like teams.",
-                "I enjoy both, depending on the task, but I always communicate well with others.",
-                "It doesn't matter, I don't really care either way."
+                "It depends on the day, sometimes I just get quiet and focus on my own tasks until the rush is over and things calm back down.",
+                "I keep it short and specific — like flagging exactly what needs help, so no one has to guess.",
+                "I try to help out where I can and hope everyone else does the same, since it usually works out fine when we're all pitching in."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Flexibility plus good communication is an especially strong answer.",
-            "explanation": "Showing flexibility and a commitment to communication demonstrates that you can adapt to different working styles.",
+            "professionalismRating": 4,
+            "hint": "Look for the answer that shows a clear, practical approach to communicating under pressure.",
+            "explanation": "Being specific and efficient in communication during busy periods is a practical skill that keeps a team running. Vague hopefulness or withdrawing under pressure are both less effective in a fast-paced environment.",
             "id": "ji_l6_q3",
             "interviewerReaction": [
-                "disappointed",
+                "concerned",
                 "impressed",
-                "disappointed"
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that is honest about the gap while still sounding confident.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What is your greatest achievement?",
+            "interviewerQuestion": "You don't have direct experience in this field — how do you feel about that?",
             "options": [
-                "I can't think of one.",
-                "I led a project that improved our team's efficiency by 20 percent.",
-                "Nothing major has happened in my career yet."
+                "I don't have direct experience yet, but I pick things up quickly and I'm ready to put in the work to learn.",
+                "I actually do have experience, just not in exactly this area.",
+                "That's a bit worrying to me too, honestly, but I'll try my best."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "A specific, measurable achievement is more convincing than a vague one.",
-            "explanation": "A specific, measurable achievement gives the interviewer concrete proof of your capabilities.",
+            "hint": "The strongest answer acknowledges the gap honestly and pairs it with genuine confidence.",
+            "explanation": "Owning a gap honestly while showing confidence in your ability to learn is more convincing than sounding unsure, or sidestepping the question instead of answering it directly.",
             "id": "ji_l7_q1",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "encouraged",
+                "skeptical",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which answer sounds confident because it's grounded in something real?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What accomplishment are you most proud of?",
+            "interviewerQuestion": "This is a fairly fast-paced environment — do you think you can keep up?",
             "options": [
-                "Completing my degree while working part-time to support myself.",
-                "I don't like to talk about my achievements.",
-                "I guess getting this interview counts?"
+                "I've worked in busy settings before, and I actually do well when there's a lot going on.",
+                "I hope so, I've never really been tested like that before, but I'm a quick learner and I'd try my best to keep pace.",
+                "Sure, I can do anything, that's not really a concern for me."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Choose an achievement that shows effort, responsibility, or growth.",
-            "explanation": "Choosing an achievement that shows effort and responsibility helps the interviewer understand your character, not just your skills.",
+            "professionalismRating": 4,
+            "hint": "A convincing answer is confident but grounded in something real, not just a blanket claim.",
+            "explanation": "Grounding confidence in a bit of real experience feels credible. Pure hope sounds unsure, while an unqualified I can do anything sounds overconfident and untested.",
             "id": "ji_l7_q2",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "reassured",
+                "uncertain",
+                "skeptical"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that shows real openness to feedback.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Can you share a recent success at work?",
+            "interviewerQuestion": "How do you feel about being corrected if you make a mistake?",
             "options": [
-                "Nothing comes to mind right now.",
-                "I just do my job, nothing special.",
-                "I successfully trained two new employees who are now top performers."
+                "I don't love being corrected, but I understand it happens, and I try not to take it too personally when it does.",
+                "I'd rather know right away so I can fix it and not repeat it.",
+                "I don't really make mistakes very often, and when I do they're usually small ones that fix themselves."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Mentioning a result you helped create shows real impact.",
-            "explanation": "Describing a result you helped create — like training successful employees — shows real, measurable impact.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "The best answer shows openness to feedback, not just tolerance of it or a claim of perfection.",
+            "explanation": "Welcoming correction as useful information shows real openness to feedback. Merely tolerating it, or claiming to rarely make mistakes, both suggest less self-awareness.",
             "id": "ji_l7_q3",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "neutral",
+                "impressed",
+                "skeptical"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that shows a specific habit, not just a general attitude.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you handle stress?",
+            "interviewerQuestion": "How important is punctuality to you?",
             "options": [
-                "I stay calm and focus on one task at a time.",
-                "I usually panic a little, but it's fine.",
-                "I just avoid stressful situations."
+                "I'm usually pretty good about it, more or less.",
+                "Very — if I'm going to be even a few minutes late, I make sure to message ahead so my team can plan around it.",
+                "I try to be on time, but traffic can make that tricky sometimes, so I can't promise I'll never be a few minutes behind."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Employers want to see a calm, practical approach to stress.",
-            "explanation": "A calm, practical approach reassures the employer that you can perform well even under pressure.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "A strong answer shows a specific habit, not just a general attitude toward punctuality.",
+            "explanation": "Describing a concrete habit, like communicating ahead when running late, shows real reliability. Vague reassurances don't give the interviewer anything solid to trust.",
             "id": "ji_l8_q1",
             "interviewerReaction": [
+                "unconvinced",
                 "impressed",
-                "disappointed",
-                "disappointed"
+                "neutral"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which response handles a missed deadline the most professionally?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "How do you stay calm under pressure?",
+            "interviewerQuestion": "What do you do if you realize you won't meet a deadline?",
             "options": [
-                "I don't really have a method, I just get through it.",
-                "I tend to get overwhelmed easily.",
-                "I take a deep breath and prioritize what needs to get done first."
+                "It hasn't really happened to me before, so I'm not sure.",
+                "I try to quietly finish it as fast as I can without mentioning anything, since I'd rather not worry my manager for no reason.",
+                "I flag it to my manager as early as possible, along with a plan for how I'll catch up."
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "A specific coping strategy is more convincing than a vague statement.",
-            "explanation": "Naming a specific strategy, like prioritizing tasks, shows you have a practical, repeatable way to manage pressure.",
+            "hint": "Early, honest communication about a missed deadline is more valuable than trying to fix it silently.",
+            "explanation": "Flagging a delay early, with a plan attached, keeps your manager informed and shows accountability. Handling it silently risks surprising your team later, which is a bigger problem than the delay itself.",
             "id": "ji_l8_q2",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "uncertain",
+                "concerned",
+                "reassured"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the answer that responds to this directly and with confidence.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Describe how you manage a busy workload.",
+            "interviewerQuestion": "Can your previous employer confirm you have a strong attendance record?",
             "options": [
-                "I just hope things work out.",
-                "I make a list and tackle the most important tasks first.",
-                "I get stressed and it affects my work."
+                "I think so, attendance wasn't something I paid too much attention to, and I never really kept track of the days I missed.",
+                "Yes — I missed very few days, and when I did, I always gave as much notice as possible.",
+                "I'm not totally sure what they'd say, since we never really talked about my attendance while I worked there at all."
             ],
             "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "A clear method for managing tasks shows organization skills.",
-            "explanation": "Describing a clear method, like making a list of priorities, shows strong organizational skills.",
+            "professionalismRating": 4,
+            "hint": "A confident, specific answer about your record is far stronger than an uncertain one.",
+            "explanation": "Answering directly and specifically about your attendance record builds trust. Uncertainty about something this checkable can raise unnecessary doubt.",
             "id": "ji_l8_q3",
             "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
+                "uncertain",
+                "reassured",
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that respects the coworker's need to plan.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Why did you leave your last job?",
+            "interviewerQuestion": "What would you do if a coworker asked you to cover part of their shift with only a day's notice?",
             "options": [
-                "My boss was terrible and I couldn't stand working there.",
-                "I got fired, but it wasn't really my fault.",
-                "I'm looking for new challenges and opportunities to grow."
+                "I'd probably say yes even if it's a stretch, just to be helpful.",
+                "I'd check my schedule honestly and let them know quickly either way, so they have time to find another option if I can't.",
+                "I'd wait and see if someone else offers first."
             ],
-            "correctAnswerIndex": 2,
-            "professionalismRating": 5,
-            "hint": "Keep the answer positive and forward-looking, even if the real reason was difficult.",
-            "explanation": "A positive, forward-looking answer keeps the focus on growth rather than complaints, which reflects well on you.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "A quick, honest response respects the other person's need to plan, whether or not you can help.",
+            "explanation": "Responding quickly and honestly, even with a no, is more helpful to a coworker than an overcommitment you might regret, or a delay that leaves them without options.",
             "id": "ji_l9_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
+                "neutral",
+                "impressed",
+                "concerned"
+            ]
+        },
+        {
+            "instruction": "Which approach handles unclear priority the most sensibly?",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "If you were given two small tasks at the same time, how would you decide which to do first?",
+            "options": [
+                "I'd probably try to do both at the same time, switching back and forth so neither one has to sit there waiting.",
+                "I'd just start with whichever one is easier to finish first, since that gets one thing off my plate quickly.",
+                "I'd quickly ask which one is more urgent if it's not obvious, then start there."
+            ],
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "When priority isn't obvious, checking is more reliable than guessing or multitasking.",
+            "explanation": "Clarifying urgency when it's unclear avoids wasted effort on the wrong task. Choosing based on ease, or trying to multitask, can lead to the more important task being delayed.",
+            "id": "ji_l9_q2",
+            "interviewerReaction": [
+                "uncertain",
+                "neutral",
                 "impressed"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the response that protects the customer from a wrong answer.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What made you decide to look for a new position?",
+            "interviewerQuestion": "How would you handle it if you didn't know the answer to a customer's question?",
             "options": [
-                "I wanted to complain about my old company.",
-                "I'm seeking a role that better matches my long-term career goals.",
-                "My old job was boring, honestly."
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Connect your job search to your own goals, not complaints about the past.",
-            "explanation": "Framing your job search around your own goals sounds more professional than focusing on complaints about a previous employer.",
-            "id": "ji_l9_q2",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Why are you leaving your current company?",
-            "options": [
-                "I'm ready to take on more responsibility than my current role allows.",
-                "Everyone there was difficult to work with.",
-                "I just don't like it there anymore."
+                "I'd let them know I'll find out for them, then check with a coworker or resource instead of guessing.",
+                "I'd probably just say I don't know and move on.",
+                "I'd give my best guess so they don't have to wait, since most customers just want a quick answer and would rather not be kept on hold."
             ],
             "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "A reason based on growth is stronger than a vague complaint.",
-            "explanation": "A reason based on wanting more responsibility sounds ambitious and professional, rather than negative.",
+            "professionalismRating": 4,
+            "hint": "Getting the right answer matters more than answering quickly with a guess.",
+            "explanation": "Honestly saying you'll find out, and then following through, protects the customer from bad information. Guessing risks giving wrong information, and simply not knowing without following up leaves the customer unhelped.",
             "id": "ji_l9_q3",
             "interviewerReaction": [
-                "impressed",
+                "reassured",
                 "disappointed",
-                "disappointed"
+                "concerned"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Choose the closing question that shows interest in doing the job well.",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "Do you have any questions for us?",
+            "interviewerQuestion": "Do you have any questions for me before we wrap up?",
             "options": [
-                "No, I think you covered everything.",
-                "What does success look like in this role after the first few months?",
-                "How much does this job pay?"
-            ],
-            "correctAnswerIndex": 1,
-            "professionalismRating": 5,
-            "hint": "Asking a thoughtful question about the role shows genuine interest.",
-            "explanation": "Asking a thoughtful question about success in the role shows genuine interest and helps you learn more about expectations.",
-            "id": "ji_l10_q1",
-            "interviewerReaction": [
-                "disappointed",
-                "impressed",
-                "disappointed"
-            ]
-        },
-        {
-            "instruction": "Choose the response that shows the most professionalism.",
-            "subtype": "jobInterview",
-            "interactionType": "dialogue",
-            "interviewerQuestion": "Is there anything you'd like to ask before we finish?",
-            "options": [
-                "Not really, I'm good.",
-                "When do I find out if I got the job?",
-                "Can you tell me more about the team I'd be working with?"
+                "How many people are you interviewing for this job, and when do you expect to make a decision about who gets it?",
+                "Not really, I think you've covered everything already, and I don't want to take up any more of your time today.",
+                "Yes — what does a typical first month in this role usually look like?"
             ],
             "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "A question about the team or role shows engagement with the job itself.",
-            "explanation": "Asking about the team shows you're thinking about how you'll fit in and contribute, which leaves a strong final impression.",
-            "id": "ji_l10_q2",
+            "hint": "A good closing question shows interest in doing the job well, not just interest in the process.",
+            "explanation": "Asking about the role itself shows you're already thinking about succeeding in it. Declining to ask anything can seem incurious, and questions about the hiring process focus on the wrong thing.",
+            "id": "ji_l10_q1",
             "interviewerReaction": [
-                "disappointed",
-                "disappointed",
-                "impressed"
+                "surprised",
+                "neutral",
+                "pleased"
             ]
         },
         {
-            "instruction": "Choose the response that shows the most professionalism.",
+            "instruction": "Which closing question fits best at this early stage of the conversation?",
             "subtype": "jobInterview",
             "interactionType": "dialogue",
-            "interviewerQuestion": "What questions do you have for me?",
+            "interviewerQuestion": "Before we finish, is there anything you'd like to know?",
             "options": [
-                "What would a typical day in this role look like?",
-                "I think I already know everything I need.",
-                "Is there a lot of overtime required?"
+                "What's the salary range for this position, and is there any room for negotiating it if I have the experience?",
+                "I'd love to know more about how the team usually collaborates day to day.",
+                "I think I'm good, you've explained the role pretty well and I feel like I understand what the job involves."
             ],
-            "correctAnswerIndex": 0,
-            "professionalismRating": 5,
-            "hint": "Asking about daily responsibilities shows you're picturing yourself in the role.",
-            "explanation": "Asking about daily responsibilities shows you're already imagining yourself succeeding in the role, which is a great final impression to leave.",
+            "correctAnswerIndex": 1,
+            "professionalismRating": 4,
+            "hint": "At this basic stage, a question about the team or role usually lands better than one about compensation.",
+            "explanation": "A question about team collaboration shows genuine interest in how you'd work day to day. Compensation is a fair topic eventually, but raising it as your only closing question this early can look premature.",
+            "id": "ji_l10_q2",
+            "interviewerReaction": [
+                "surprised",
+                "interested",
+                "neutral"
+            ]
+        },
+        {
+            "instruction": "Choose the closing remark that leaves the strongest final impression.",
+            "subtype": "jobInterview",
+            "interactionType": "dialogue",
+            "interviewerQuestion": "That's everything from my side. Any final thoughts before we end?",
+            "options": [
+                "I hope I did okay, this was a bit nerve-wracking.",
+                "Nope, I think that covers it.",
+                "Just that I'm genuinely excited about this opportunity, and thank you for taking the time to speak with me."
+            ],
+            "correctAnswerIndex": 2,
+            "professionalismRating": 4,
+            "hint": "A brief, genuine closing statement leaves a stronger final impression than silence or an anxious remark.",
+            "explanation": "A short, sincere closing statement reinforces your interest and leaves a positive final impression. Saying nothing wastes the moment, and voicing nervousness shifts focus away from your qualifications.",
             "id": "ji_l10_q3",
             "interviewerReaction": [
-                "impressed",
-                "disappointed",
-                "disappointed"
+                "sympathetic",
+                "neutral",
+                "pleased"
             ]
         }
     ]

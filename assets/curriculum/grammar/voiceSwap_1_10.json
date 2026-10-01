@@ -8,8 +8,8 @@
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "My father drives the car to work.",
-            "sentence": "My father drives the car to work.",
+            "question": "My aunt waters the tomato plants every evening.",
+            "sentence": "My aunt waters the tomato plants every evening.",
             "options": [
                 "Active",
                 "Passive"
@@ -17,39 +17,39 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer of the action right before the verb. Here, who drives the car?",
-            "explanation": "This is active voice: my father (the doer) performs the action drives directly on the car. In passive, this would flip to: The car is driven to work by my father.",
+            "hint": "Find the word right before the verb waters. Is that person doing the watering, or having it done to them?",
+            "explanation": "My aunt is the doer here: she performs the action waters directly on the tomato plants, which are the receiver. That doer-before-the-verb pattern is the clearest sign of active voice. Turned around, the same idea becomes passive: The tomato plants are watered every evening by my aunt.",
             "grammarRule": "Simple Present Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "activeVoice": "My aunt waters the tomato plants every evening.",
+            "passiveVoice": "The tomato plants are watered every evening by my aunt."
         },
         {
             "id": "vs_l1_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The teacher explains the lesson clearly.",
-            "sentence": "The teacher explains the lesson clearly.",
+            "question": "The tomato plants are watered every evening by my aunt.",
+            "sentence": "The tomato plants are watered every evening by my aunt.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Look at what comes right before the verb explains. Is it the doer or the receiver of the action?",
-            "explanation": "This is active voice: the teacher (the doer) performs the action explains directly on the lesson. In passive, this would flip to: The lesson is explained clearly by the teacher.",
-            "grammarRule": "Simple Present Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "The subject, the tomato plants, cannot water anything. Ask what is actually happening to it.",
+            "explanation": "Here the tomato plants (the receiver) sit in subject position even though they don't perform the action - my aunt does. That's the heart of passive voice: the receiver of an action becomes the grammatical subject, with are watered marking the passive verb form. The same fact stated actively is: My aunt waters the tomato plants every evening.",
+            "grammarRule": "Simple Present Passive",
+            "activeVoice": "My aunt waters the tomato plants every evening.",
+            "passiveVoice": "The tomato plants are watered every evening by my aunt."
         },
         {
             "id": "vs_l1_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The mail is delivered every morning.",
-            "sentence": "The mail is delivered every morning.",
+            "question": "Fresh bread is sold at the corner bakery.",
+            "sentence": "Fresh bread is sold at the corner bakery.",
             "options": [
                 "Active",
                 "Passive"
@@ -57,39 +57,39 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for is/are plus a past participle form (delivered). The subject doesn't do the action here.",
-            "explanation": "This is passive voice: the mail (the receiver) does not act - it is delivered by someone else. Passive pattern: subject + is/are + past participle. In active, this would flip to: The mail carrier delivers the mail every morning.",
-            "grammarRule": "Simple Present Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "There's no named baker here. Ask instead: does the bread do the selling, or does something happen to it?",
+            "explanation": "Fresh bread cannot sell itself, so even without a named agent, this is still passive: the bread receives the action, marked by is sold. Passive sentences often drop the doer entirely when it's obvious or unimportant. A natural active version would need to supply a doer: The bakery sells fresh bread at the corner shop.",
+            "grammarRule": "Simple Present Passive (No Agent)",
+            "activeVoice": "The bakery sells fresh bread at the corner shop.",
+            "passiveVoice": "Fresh bread is sold at the corner bakery."
         },
         {
             "id": "vs_l2_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The homework is checked by the teacher.",
-            "sentence": "The homework is checked by the teacher.",
+            "question": "This gym is open to members every day of the week.",
+            "sentence": "This gym is open to members every day of the week.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for is/are plus a past participle (checked), followed by 'by' naming who does the action.",
-            "explanation": "This is passive voice: the homework (receiver) is checked by the teacher, the agent named after by. In active, this would flip to: The teacher checks the homework.",
-            "grammarRule": "Simple Present Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Check the verb carefully - is open here isn't a passive verb form at all. Ask whether anything is actually being done to the gym.",
+            "explanation": "This sentence only looks passive because it has is in it, but open is an adjective describing the gym's state, not a past participle showing an action done to it. No one is 'opening' the gym in this sentence - it simply describes a fact, so it counts as active in structure. Compare this with a true passive: The gym is opened by staff at six every morning.",
+            "grammarRule": "Active with Adjective (Not Passive)",
+            "activeVoice": "This gym is open to members every day of the week.",
+            "passiveVoice": "The gym is opened by staff at six every morning."
         },
         {
             "id": "vs_l2_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "New books are ordered every semester.",
-            "sentence": "New books are ordered every semester.",
+            "question": "New uniforms are issued to the team at the start of each season.",
+            "sentence": "New uniforms are issued to the team at the start of each season.",
             "options": [
                 "Active",
                 "Passive"
@@ -97,19 +97,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for are plus a past participle (ordered). No agent is named, but the subject still receives the action.",
-            "explanation": "This is passive voice: new books (receiver) are ordered, but the sentence does not say by whom. In active, this would flip to: The school orders new books every semester.",
-            "grammarRule": "Simple Present Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Ask whether the uniforms hand themselves out, or whether someone must be doing the issuing.",
+            "explanation": "The uniforms (receiver) are issued - someone else, left unnamed, must be doing the issuing. This is passive because the grammatical subject undergoes the action rather than performing it. Supplying a doer gives the active version: The club issues new uniforms to the team at the start of each season.",
+            "grammarRule": "Simple Present Passive (No Agent)",
+            "activeVoice": "The club issues new uniforms to the team at the start of each season.",
+            "passiveVoice": "New uniforms are issued to the team at the start of each season."
         },
         {
             "id": "vs_l2_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Students submit their homework assignments online.",
-            "sentence": "Students submit their homework assignments online.",
+            "question": "Local farmers grow most of the vegetables sold in this market.",
+            "sentence": "Local farmers grow most of the vegetables sold in this market.",
             "options": [
                 "Active",
                 "Passive"
@@ -117,19 +117,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before the verb. Who submits the assignments?",
-            "explanation": "This is active voice: students (the doer) perform the action submit directly on their assignments. In passive, this would flip to: Assignments are submitted online by students.",
-            "grammarRule": "Simple Present Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Two verbs appear here. Focus on the main one, grow, and find who is doing that growing.",
+            "explanation": "Local farmers is the doer of grow, so the main clause is active, even though sold later in the sentence describes the vegetables passively. Whenever a sentence contains more than one verb, decide voice clause by clause rather than judging the whole sentence at a glance. The main idea flipped to passive would read: Most of the vegetables sold in this market are grown by local farmers.",
+            "grammarRule": "Active with Embedded Passive Phrase",
+            "activeVoice": "Local farmers grow most of the vegetables sold in this market.",
+            "passiveVoice": "Most of the vegetables sold in this market are grown by local farmers."
         },
         {
             "id": "vs_l3_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "My grandmother baked a cake yesterday.",
-            "sentence": "My grandmother baked a cake yesterday.",
+            "question": "My uncle fixed the leaking faucet in ten minutes.",
+            "sentence": "My uncle fixed the leaking faucet in ten minutes.",
             "options": [
                 "Active",
                 "Passive"
@@ -137,59 +137,59 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find who performed the action before the past-tense verb baked.",
-            "explanation": "This is active voice: my grandmother (the doer) performed the action baked directly on the cake. In passive, this would flip to: A cake was baked by my grandmother yesterday.",
+            "hint": "Find who performed the action fixed. That person belongs right before the verb in active voice.",
+            "explanation": "My uncle is the doer of fixed, acting directly on the faucet, so this sentence is active. Notice the pattern doer + past-tense verb + receiver. The same event told from the faucet's point of view becomes passive: The leaking faucet was fixed in ten minutes by my uncle.",
             "grammarRule": "Simple Past Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "activeVoice": "My uncle fixed the leaking faucet in ten minutes.",
+            "passiveVoice": "The leaking faucet was fixed in ten minutes by my uncle."
         },
         {
             "id": "vs_l3_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "My brother repaired the old bicycle.",
-            "sentence": "My brother repaired the old bicycle.",
+            "question": "The window was cracked by a falling branch during the storm.",
+            "sentence": "The window was cracked by a falling branch during the storm.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Look at who comes before the verb repaired. Are they doing the action or receiving it?",
-            "explanation": "This is active voice: my brother (the doer) performed the action repaired directly on the bicycle. In passive, this would flip to: The old bicycle was repaired by my brother.",
-            "grammarRule": "Simple Past Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Look for was plus a past-tense verb form that describes something happening to the window, not something the window did.",
+            "explanation": "The window (receiver) was cracked - it didn't crack anything itself. Was cracked is the passive form: was + past participle. The agent, a falling branch, is named after by, but even without that phrase the sentence would still be passive. Active version: A falling branch cracked the window during the storm.",
+            "grammarRule": "Simple Past Passive",
+            "activeVoice": "A falling branch cracked the window during the storm.",
+            "passiveVoice": "The window was cracked by a falling branch during the storm."
         },
         {
             "id": "vs_l3_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The window was broken during the storm.",
-            "sentence": "The window was broken during the storm.",
+            "question": "Someone left a package outside my apartment door.",
+            "sentence": "Someone left a package outside my apartment door.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus a past participle (broken). The subject receives the action here.",
-            "explanation": "This is passive voice: the window (receiver) was broken, with no doer clearly named. In active, this would flip to: The storm broke the window.",
-            "grammarRule": "Simple Past Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Even though we don't know who someone is, check whether they perform the action or receive it.",
+            "explanation": "Someone is a vague subject, but it still performs the action left, making this active voice - an unknown doer doesn't change the structure. Passive voice hides the doer differently, by removing the subject slot altogether: A package was left outside my apartment door.",
+            "grammarRule": "Simple Past Active (Vague Subject)",
+            "activeVoice": "Someone left a package outside my apartment door.",
+            "passiveVoice": "A package was left outside my apartment door."
         },
         {
             "id": "vs_l4_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The soup was prepared with fresh vegetables.",
-            "sentence": "The soup was prepared with fresh vegetables.",
+            "question": "The soup was seasoned with too much salt last night.",
+            "sentence": "The soup was seasoned with too much salt last night.",
             "options": [
                 "Active",
                 "Passive"
@@ -197,139 +197,139 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus a past participle (prepared). The subject doesn't cook - it gets cooked.",
-            "explanation": "This is passive voice: the soup (receiver) was prepared, but no cook is named. In active, this would flip to: The chef prepared the soup with fresh vegetables.",
-            "grammarRule": "Simple Past Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Ask whether the soup did the seasoning, or whether it happened to the soup.",
+            "explanation": "The soup (receiver) was seasoned - it cannot season itself, so this is passive even though no cook is named. Passive sentences frequently drop the doer when the sentence is more about the result than about who caused it. Naming a doer gives: The cook seasoned the soup with too much salt last night.",
+            "grammarRule": "Simple Past Passive (No Agent)",
+            "activeVoice": "The cook seasoned the soup with too much salt last night.",
+            "passiveVoice": "The soup was seasoned with too much salt last night."
         },
         {
             "id": "vs_l4_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The bread was baked fresh this morning.",
-            "sentence": "The bread was baked fresh this morning.",
+            "question": "The store refunded my money without asking any questions.",
+            "sentence": "The store refunded my money without asking any questions.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus a past participle (baked). Ask whether the subject acted or was acted upon.",
-            "explanation": "This is passive voice: the bread (receiver) was baked, with no baker named directly. In active, this would flip to: The baker baked the bread fresh this morning.",
-            "grammarRule": "Simple Past Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find who carried out the action refunded - it sits right before the verb.",
+            "explanation": "The store is the doer, performing refunded directly on my money, so this is active voice, not passive. Don't be misled by the word store sounding like a place rather than a person - grammatically it still acts as the subject doing the action. In passive form: My money was refunded without any questions being asked.",
+            "grammarRule": "Simple Past Active",
+            "activeVoice": "The store refunded my money without asking any questions.",
+            "passiveVoice": "My money was refunded without any questions being asked."
         },
         {
             "id": "vs_l4_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The waiter served our meal quickly.",
-            "sentence": "The waiter served our meal quickly.",
+            "question": "Two flights were cancelled because of the heavy fog.",
+            "sentence": "Two flights were cancelled because of the heavy fog.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before the past-tense verb served.",
-            "explanation": "This is active voice: the waiter (the doer) performed the action served directly on our meal. In passive, this would flip to: Our meal was served quickly by the waiter.",
-            "grammarRule": "Simple Past Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Flights can't cancel themselves. Look for were plus the past participle that shows something being done to them.",
+            "explanation": "Two flights (receiver) were cancelled - the fog caused it, but the fog isn't grammatically named as an agent here. Were cancelled is the passive pattern for a plural subject. If we wanted to name a cause as agent, it would read: Heavy fog caused two flights to be cancelled - but the simplest active match is: The airline cancelled two flights because of the heavy fog.",
+            "grammarRule": "Simple Past Passive (No Agent)",
+            "activeVoice": "The airline cancelled two flights because of the heavy fog.",
+            "passiveVoice": "Two flights were cancelled because of the heavy fog."
         },
         {
             "id": "vs_l5_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The manager reviews every report carefully.",
-            "sentence": "The manager reviews every report carefully.",
+            "question": "Complaints about noise are handled by the building manager.",
+            "sentence": "Complaints about noise are handled by the building manager.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Who performs the action reviews? Find the doer before the verb.",
-            "explanation": "This is active voice: the manager (the doer) performs the action reviews directly on every report. In passive, this would flip to: Every report is reviewed carefully by the manager.",
-            "grammarRule": "Simple Present Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Complaints cannot handle themselves. Look for are plus a past participle, then check if a doer is named after by.",
+            "explanation": "Complaints (receiver) are handled - the building manager is the true doer, but is named only after by, in the agent position rather than the subject position. This is the classic passive pattern: receiver-as-subject + be + past participle + by-agent. Active form: The building manager handles complaints about noise.",
+            "grammarRule": "Simple Present Passive",
+            "activeVoice": "The building manager handles complaints about noise.",
+            "passiveVoice": "Complaints about noise are handled by the building manager."
         },
         {
             "id": "vs_l5_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The office is cleaned every night.",
-            "sentence": "The office is cleaned every night.",
+            "question": "Our barista remembers every regular customer's order by heart.",
+            "sentence": "Our barista remembers every regular customer's order by heart.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for is plus a past participle (cleaned). No agent is named, but the subject still receives the action.",
-            "explanation": "This is passive voice: the office (receiver) is cleaned, but the sentence does not say by whom. In active, this would flip to: A cleaning crew cleans the office every night.",
-            "grammarRule": "Simple Present Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Who is doing the remembering? Find that word right before the verb.",
+            "explanation": "Our barista performs the action remembers directly on every regular customer's order, so this is active voice - remembers is never used in a passive form since it isn't the kind of verb typically flipped that way with a direct object like this. Passive version, if needed for emphasis: Every regular customer's order is remembered by our barista.",
+            "grammarRule": "Simple Present Active",
+            "activeVoice": "Our barista remembers every regular customer's order by heart.",
+            "passiveVoice": "Every regular customer's order is remembered by our barista."
         },
         {
             "id": "vs_l5_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "She answers all customer calls politely.",
-            "sentence": "She answers all customer calls politely.",
+            "question": "The recycling gets collected on Tuesday mornings.",
+            "sentence": "The recycling gets collected on Tuesday mornings.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Find who is doing the action right before the verb answers.",
-            "explanation": "This is active voice: she (the doer) performs the action answers directly on customer calls. In passive, this would flip to: Customer calls are answered politely by her.",
-            "grammarRule": "Simple Present Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Notice the pattern gets + past participle. This is another way English forms the passive besides be.",
+            "explanation": "Gets collected is an informal passive pattern using get instead of be - the recycling (receiver) doesn't collect itself. Get-passives are common in everyday speech, especially for things that happen to someone or something. In more formal active language: The city collects the recycling on Tuesday mornings.",
+            "grammarRule": "Get-Passive",
+            "activeVoice": "The city collects the recycling on Tuesday mornings.",
+            "passiveVoice": "The recycling gets collected on Tuesday mornings."
         },
         {
             "id": "vs_l6_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The trip was planned months in advance.",
-            "sentence": "The trip was planned months in advance.",
+            "question": "Volunteers rebuilt the playground after the flood.",
+            "sentence": "Volunteers rebuilt the playground after the flood.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus a past participle (planned). Ask if the subject acted or received the action.",
-            "explanation": "This is passive voice: the trip (receiver) was planned, with no planner named directly. In active, this would flip to: The travel agency planned the trip months in advance.",
-            "grammarRule": "Simple Past Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer right before the past-tense verb rebuilt.",
+            "explanation": "Volunteers is the doer, performing rebuilt directly on the playground, which makes this active voice. Past-tense active verbs like rebuilt need no auxiliary at all, unlike their passive counterparts. Passive version: The playground was rebuilt by volunteers after the flood.",
+            "grammarRule": "Simple Past Active",
+            "activeVoice": "Volunteers rebuilt the playground after the flood.",
+            "passiveVoice": "The playground was rebuilt by volunteers after the flood."
         },
         {
             "id": "vs_l6_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The park was cleaned by local volunteers.",
-            "sentence": "The park was cleaned by local volunteers.",
+            "question": "The border was closed for nearly six months last year.",
+            "sentence": "The border was closed for nearly six months last year.",
             "options": [
                 "Active",
                 "Passive"
@@ -337,19 +337,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus a past participle (cleaned), followed by by naming who did the action.",
-            "explanation": "This is passive voice: the park (receiver) was cleaned by local volunteers, the agent named after by. In active, this would flip to: Local volunteers cleaned the park.",
-            "grammarRule": "Simple Past Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "A border cannot close itself in this sense. Look for was plus a past participle describing what happened to it.",
+            "explanation": "The border (receiver) was closed - no specific authority is named as the agent, which is common when the exact decision-maker isn't the point of the sentence. This still counts as passive because the subject undergoes rather than performs the action. If we added a doer: Government officials closed the border for nearly six months last year.",
+            "grammarRule": "Simple Past Passive (No Agent)",
+            "activeVoice": "Government officials closed the border for nearly six months last year.",
+            "passiveVoice": "The border was closed for nearly six months last year."
         },
         {
             "id": "vs_l6_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "We visited a small village last weekend.",
-            "sentence": "We visited a small village last weekend.",
+            "question": "We finally reached the summit just before sunset.",
+            "sentence": "We finally reached the summit just before sunset.",
             "options": [
                 "Active",
                 "Passive"
@@ -357,19 +357,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before the past-tense verb visited.",
-            "explanation": "This is active voice: we (the doer) performed the action visited directly on a small village. In passive, this would flip to: A small village was visited by us last weekend.",
+            "hint": "Look at we, right before reached. Are we performing the action, or receiving it?",
+            "explanation": "We is the doer here, performing reached directly on the summit, so this sentence is active. Notice that intransitive-feeling verbs like reach still take an object (the summit) and can be flipped to passive when needed: The summit was finally reached just before sunset.",
             "grammarRule": "Simple Past Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "activeVoice": "We finally reached the summit just before sunset.",
+            "passiveVoice": "The summit was finally reached just before sunset."
         },
         {
             "id": "vs_l7_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The app tracks your daily steps.",
-            "sentence": "The app tracks your daily steps.",
+            "question": "This app reminds users to drink water throughout the day.",
+            "sentence": "This app reminds users to drink water throughout the day.",
             "options": [
                 "Active",
                 "Passive"
@@ -377,99 +377,39 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Who or what performs the action tracks? Look right before the verb.",
-            "explanation": "This is active voice: the app (the doer) performs the action tracks directly on your daily steps. In passive, this would flip to: Your daily steps are tracked by the app.",
+            "hint": "Who or what performs the action reminds? Check right before the verb.",
+            "explanation": "This app is the doer, performing reminds directly on users, so the sentence is active - a non-human subject like an app can still be an active-voice doer. Passive version: Users are reminded to drink water throughout the day by this app.",
             "grammarRule": "Simple Present Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "activeVoice": "This app reminds users to drink water throughout the day.",
+            "passiveVoice": "Users are reminded to drink water throughout the day by this app."
         },
         {
             "id": "vs_l7_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Our teacher grades the tests overnight.",
-            "sentence": "Our teacher grades the tests overnight.",
+            "question": "Final exam scores are posted within a week of the test date.",
+            "sentence": "Final exam scores are posted within a week of the test date.",
             "options": [
                 "Active",
                 "Passive"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Active",
-            "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before the verb grades.",
-            "explanation": "This is active voice: our teacher (the doer) performs the action grades directly on the tests. In passive, this would flip to: The tests are graded overnight by our teacher.",
-            "grammarRule": "Simple Present Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Scores don't post themselves. Look for are plus a past participle, and notice that no one is named as doing the posting.",
+            "explanation": "Final exam scores (receiver) are posted - the school or teacher is the implied doer, but it's left out entirely, which passive voice easily allows. This kind of agentless passive is common when the process matters more than the person behind it. Active form: The school posts final exam scores within a week of the test date.",
+            "grammarRule": "Simple Present Passive (No Agent)",
+            "activeVoice": "The school posts final exam scores within a week of the test date.",
+            "passiveVoice": "Final exam scores are posted within a week of the test date."
         },
         {
             "id": "vs_l7_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "This software is updated automatically each week.",
-            "sentence": "This software is updated automatically each week.",
-            "options": [
-                "Active",
-                "Passive"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for is plus a past participle (updated). The subject receives the action here.",
-            "explanation": "This is passive voice: this software (receiver) is updated, but the sentence does not name who updates it. In active, this would flip to: The system updates this software automatically each week.",
-            "grammarRule": "Simple Present Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
-        },
-        {
-            "id": "vs_l8_q1",
-            "instruction": "FLIP THE VOICE TRANSMUTER",
-            "subtype": "voiceSwap",
-            "interactionType": "choice",
-            "question": "The groceries were delivered this afternoon.",
-            "sentence": "The groceries were delivered this afternoon.",
-            "options": [
-                "Active",
-                "Passive"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for were plus a past participle (delivered). Ask whether the subject acted or received the action.",
-            "explanation": "This is passive voice: the groceries (receiver) were delivered, with no deliverer named directly. In active, this would flip to: The store delivered the groceries this afternoon.",
-            "grammarRule": "Simple Past Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
-        },
-        {
-            "id": "vs_l8_q2",
-            "instruction": "FLIP THE VOICE TRANSMUTER",
-            "subtype": "voiceSwap",
-            "interactionType": "choice",
-            "question": "The discount was offered to loyal customers.",
-            "sentence": "The discount was offered to loyal customers.",
-            "options": [
-                "Active",
-                "Passive"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus a past participle (offered). The subject receives the action here.",
-            "explanation": "This is passive voice: the discount (receiver) was offered, but the sentence does not name who offered it. In active, this would flip to: The store offered the discount to loyal customers.",
-            "grammarRule": "Simple Past Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
-        },
-        {
-            "id": "vs_l8_q3",
-            "instruction": "FLIP THE VOICE TRANSMUTER",
-            "subtype": "voiceSwap",
-            "interactionType": "choice",
-            "question": "She returned the broken toaster yesterday.",
-            "sentence": "She returned the broken toaster yesterday.",
+            "question": "The library extends borrowing periods during exam season.",
+            "sentence": "The library extends borrowing periods during exam season.",
             "options": [
                 "Active",
                 "Passive"
@@ -477,19 +417,79 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before the past-tense verb returned.",
-            "explanation": "This is active voice: she (the doer) performed the action returned directly on the broken toaster. In passive, this would flip to: The broken toaster was returned by her yesterday.",
+            "hint": "Find the doer right before extends - who or what is granting the extension?",
+            "explanation": "The library is the doer, performing extends directly on borrowing periods, so this is active voice even though a library is an institution rather than a person. In passive form: Borrowing periods are extended during exam season by the library.",
+            "grammarRule": "Simple Present Active",
+            "activeVoice": "The library extends borrowing periods during exam season.",
+            "passiveVoice": "Borrowing periods are extended during exam season by the library."
+        },
+        {
+            "id": "vs_l8_q1",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "My order was shipped a day earlier than expected.",
+            "sentence": "My order was shipped a day earlier than expected.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "An order cannot ship itself. Look for was plus the past participle shipped.",
+            "explanation": "My order (receiver) was shipped - the seller or courier is the real doer but stays unnamed, which is typical when a customer only cares about what happened to their package. Active form: The seller shipped my order a day earlier than expected.",
+            "grammarRule": "Simple Past Passive (No Agent)",
+            "activeVoice": "The seller shipped my order a day earlier than expected.",
+            "passiveVoice": "My order was shipped a day earlier than expected."
+        },
+        {
+            "id": "vs_l8_q2",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "The cashier double-checked the receipt before handing it over.",
+            "sentence": "The cashier double-checked the receipt before handing it over.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find who is doing the checking, right before the verb.",
+            "explanation": "The cashier is the doer, performing double-checked directly on the receipt, so this is active voice - compound verbs like double-check still follow the same doer-first pattern. Passive version: The receipt was double-checked before being handed over by the cashier.",
             "grammarRule": "Simple Past Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "activeVoice": "The cashier double-checked the receipt before handing it over.",
+            "passiveVoice": "The receipt was double-checked before being handed over by the cashier."
+        },
+        {
+            "id": "vs_l8_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "Damaged items are exchanged free of charge within thirty days.",
+            "sentence": "Damaged items are exchanged free of charge within thirty days.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Damaged items can't exchange themselves. Look for are plus a past participle showing something done to them.",
+            "explanation": "Damaged items (receiver) are exchanged - the store performs the action but is never named, which keeps the focus on the store's policy rather than on staff. Active version: The store exchanges damaged items free of charge within thirty days.",
+            "grammarRule": "Simple Present Passive (No Agent)",
+            "activeVoice": "The store exchanges damaged items free of charge within thirty days.",
+            "passiveVoice": "Damaged items are exchanged free of charge within thirty days."
         },
         {
             "id": "vs_l9_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The nurse checks the temperature of each patient.",
-            "sentence": "The nurse checks the temperature of each patient.",
+            "question": "A nurse checks each patient's temperature every four hours.",
+            "sentence": "A nurse checks each patient's temperature every four hours.",
             "options": [
                 "Active",
                 "Passive"
@@ -498,18 +498,18 @@
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
             "hint": "Who performs the action checks? Look right before the verb.",
-            "explanation": "This is active voice: the nurse (the doer) performs the action checks directly on the temperature. In passive, this would flip to: The temperature of each patient is checked by the nurse.",
+            "explanation": "A nurse is the doer, performing checks directly on each patient's temperature, so this is active voice. Passive version: Each patient's temperature is checked every four hours by a nurse.",
             "grammarRule": "Simple Present Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "activeVoice": "A nurse checks each patient's temperature every four hours.",
+            "passiveVoice": "Each patient's temperature is checked every four hours by a nurse."
         },
         {
             "id": "vs_l9_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The concert was cancelled due to rain.",
-            "sentence": "The concert was cancelled due to rain.",
+            "question": "The outdoor concert was postponed due to the thunderstorm.",
+            "sentence": "The outdoor concert was postponed due to the thunderstorm.",
             "options": [
                 "Active",
                 "Passive"
@@ -517,19 +517,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus a past participle (cancelled). The subject receives the action here.",
-            "explanation": "This is passive voice: the concert (receiver) was cancelled, but the sentence does not say by whom. In active, this would flip to: The organizers cancelled the concert due to rain.",
-            "grammarRule": "Simple Past Passive",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "A concert can't postpone itself. Look for was plus a past participle describing what happened to it.",
+            "explanation": "The outdoor concert (receiver) was postponed - the organizers are the implied doer but aren't named, since the reason (the thunderstorm) matters more here than who made the call. Active form: The organizers postponed the outdoor concert due to the thunderstorm.",
+            "grammarRule": "Simple Past Passive (No Agent)",
+            "activeVoice": "The organizers postponed the outdoor concert due to the thunderstorm.",
+            "passiveVoice": "The outdoor concert was postponed due to the thunderstorm."
         },
         {
             "id": "vs_l9_q3",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The band played three new songs.",
-            "sentence": "The band played three new songs.",
+            "question": "The paramedics arrived at the scene within four minutes.",
+            "sentence": "The paramedics arrived at the scene within four minutes.",
             "options": [
                 "Active",
                 "Passive"
@@ -537,19 +537,19 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before the past-tense verb played.",
-            "explanation": "This is active voice: the band (the doer) performed the action played directly on three new songs. In passive, this would flip to: Three new songs were played by the band.",
-            "grammarRule": "Simple Past Active",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer right before arrived. Note that this verb has no object at all.",
+            "explanation": "The paramedics is the doer of arrived, and since arrived describes movement rather than an action done to something else, it has no object and cannot be turned into passive voice at all - only verbs that act on a receiver can be flipped this way. This sentence simply stays active in either direction.",
+            "grammarRule": "Simple Past Active (No Passive Possible)",
+            "activeVoice": "The paramedics arrived at the scene within four minutes.",
+            "passiveVoice": "Not applicable - arrive has no object, so no passive form exists."
         },
         {
             "id": "vs_l10_q1",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "The letter was mailed this morning.",
-            "sentence": "The letter was mailed this morning.",
+            "question": "This checkpoint mixes everything so far: The community garden was designed by three local architects.",
+            "sentence": "This checkpoint mixes everything so far: The community garden was designed by three local architects.",
             "options": [
                 "Active",
                 "Passive"
@@ -557,39 +557,19 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "Passive",
             "correctAnswerCategory": "Passive",
-            "hint": "Look for was plus a past participle (mailed). Ask if the subject acted or received the action.",
-            "explanation": "This checkpoint reviews passive voice: the letter (receiver) was mailed, with no sender named directly. In active, this would flip to: She mailed the letter this morning.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "A garden cannot design itself. Look for was plus a past participle, then notice who is named after by.",
+            "explanation": "This checkpoint reviews passive voice: the community garden (receiver) was designed, and the true doers, three local architects, appear only in the by-phrase rather than as the subject. Active version: Three local architects designed the community garden.",
+            "grammarRule": "Simple Past Passive",
+            "activeVoice": "Three local architects designed the community garden.",
+            "passiveVoice": "The community garden was designed by three local architects."
         },
         {
             "id": "vs_l10_q2",
             "instruction": "FLIP THE VOICE TRANSMUTER",
             "subtype": "voiceSwap",
             "interactionType": "choice",
-            "question": "Fresh coffee is served every morning.",
-            "sentence": "Fresh coffee is served every morning.",
-            "options": [
-                "Active",
-                "Passive"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Passive",
-            "correctAnswerCategory": "Passive",
-            "hint": "Look for is plus a past participle (served). The subject receives the action here.",
-            "explanation": "This checkpoint reviews passive voice: fresh coffee (receiver) is served, but the sentence does not name who serves it. In active, this would flip to: The cafe serves fresh coffee every morning.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
-        },
-        {
-            "id": "vs_l10_q3",
-            "instruction": "FLIP THE VOICE TRANSMUTER",
-            "subtype": "voiceSwap",
-            "interactionType": "choice",
-            "question": "Our neighbor waters the garden daily.",
-            "sentence": "Our neighbor waters the garden daily.",
+            "question": "This checkpoint mixes everything so far: Most commuters prefer the earlier train on weekdays.",
+            "sentence": "This checkpoint mixes everything so far: Most commuters prefer the earlier train on weekdays.",
             "options": [
                 "Active",
                 "Passive"
@@ -597,11 +577,31 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "Active",
             "correctAnswerCategory": "Active",
-            "hint": "Find the doer right before the verb waters, then decide the voice.",
-            "explanation": "This checkpoint reviews active voice: our neighbor (the doer) performs the action waters directly on the garden. In passive, this would flip to: The garden is watered daily by our neighbor.",
-            "grammarRule": "Active/Passive Voice",
-            "activeVoice": "Active sentence",
-            "passiveVoice": "Passive sentence"
+            "hint": "Find the doer right before prefer. Are commuters acting, or being acted upon?",
+            "explanation": "This checkpoint reviews active voice: most commuters is the doer, performing prefer directly on the earlier train, so the sentence is active despite the topic feeling like a passive habit or routine. Passive version: The earlier train is preferred by most commuters on weekdays.",
+            "grammarRule": "Simple Present Active",
+            "activeVoice": "Most commuters prefer the earlier train on weekdays.",
+            "passiveVoice": "The earlier train is preferred by most commuters on weekdays."
+        },
+        {
+            "id": "vs_l10_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "This checkpoint mixes everything so far: Fresh flowers get delivered to the lobby every Monday.",
+            "sentence": "This checkpoint mixes everything so far: Fresh flowers get delivered to the lobby every Monday.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Flowers can't deliver themselves. Look for the get + past participle pattern you saw earlier in this file.",
+            "explanation": "This checkpoint reviews the get-passive: fresh flowers (receiver) get delivered - no florist or courier is named, since the routine itself is the point. Active version: A florist delivers fresh flowers to the lobby every Monday.",
+            "grammarRule": "Get-Passive",
+            "activeVoice": "A florist delivers fresh flowers to the lobby every Monday.",
+            "passiveVoice": "Fresh flowers get delivered to the lobby every Monday."
         }
     ]
 }

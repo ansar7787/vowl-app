@@ -5,723 +5,723 @@
     "quests": [
         {
             "id": "ACC_INTONATIONMIMIC_L171_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "A colleague presents a very tight schedule, and you're doubtful.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "I feel absolutely fantastic this morning!",
-            "textToSpeak": "I feel absolutely fantastic this morning!",
+            "word": "That's certainly an ambitious timeline.",
+            "textToSpeak": "That's certainly an ambitious timeline.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Slight stress on 'certainly', level fall — polite doubt",
+                "Warm peak on 'ambitious', wide fall — real admiration"
             ],
-            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Slight stress on 'certainly', level fall — polite doubt",
+            "correctAnswerIndex": 0,
             "intonationMap": [
+                2,
+                2,
                 1,
-                3,
-                1,
-                3
+                1
             ],
-            "hint": "This reaction uses an enthusiastic word, 'fantastic,' about how the speaker feels. Notice how far the pitch travels from word to word — does the voice stay fairly level, or does it move a lot?",
-            "explanation": "Wide pitch range across the sentence signals genuine physical and emotional energy this morning.",
-            "pitchRule": "🔺 A wide, energetic pitch range across the whole sentence signals genuine enthusiasm.",
-            "emotionContext": "Curious"
+            "hint": "'Ambitious' can be a compliment or a warning. Which delivery hints at the second?",
+            "explanation": "Stress on 'certainly' with a level fall suggests reservation. A warm peak on 'ambitious' would sound admiring.",
+            "pitchRule": "🤨 Polite doubt hides in a level fall.",
+            "emotionContext": "Doubtful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L171_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "Your colleague's plan isn't ideal, but you'll go along with it.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "I feel fine, I guess. Nothing special.",
-            "textToSpeak": "I feel fine, I guess. Nothing special.",
+            "word": "Well, I suppose that works.",
+            "textToSpeak": "Well, I suppose that works.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Low, slow fall — grudging acceptance",
+                "Bright, quick fall — pleased acceptance"
             ],
-            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
+            "correctAnswer": "Low, slow fall — grudging acceptance",
             "correctAnswerIndex": 0,
             "intonationMap": [
+                2,
                 1,
                 1,
-                1,
-                1
+                0
             ],
-            "hint": "This reaction uses flat, hedging words about how the speaker feels today. Notice how far the pitch travels from word to word — does the voice stay fairly level, or does it move a lot?",
-            "explanation": "A narrow pitch range signals low energy or indifference about today, even though the word 'fine' isn't negative.",
-            "pitchRule": "➖ A narrow, flat pitch range across the sentence signals low interest, boredom, or sarcasm.",
-            "emotionContext": "Excited"
+            "hint": "The phrase 'I suppose' already hints at reluctance. Which delivery matches?",
+            "explanation": "A low, slow fall signals that the speaker isn't happy. A bright fall would give the opposite message.",
+            "pitchRule": "🤨 Grudging acceptance is slow and low.",
+            "emotionContext": "Reluctant"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L171_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "A colleague has clearly rushed a report, and hands it in with a smile.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This new gym class is so much fun!",
-            "textToSpeak": "This new gym class is so much fun!",
+            "word": "You've clearly put a lot of thought into this.",
+            "textToSpeak": "You've clearly put a lot of thought into this.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Flat, stress on 'clearly' — ironic",
+                "Warm rise-fall on 'lot' — sincere"
             ],
-            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Flat, stress on 'clearly' — ironic",
+            "correctAnswerIndex": 0,
             "intonationMap": [
+                2,
+                2,
                 1,
-                3,
-                1,
-                3
+                0
             ],
-            "hint": "This reaction expresses enjoyment of a gym class directly. Pay attention to the energy in the voice: is the pitch lively and varied, or does it barely change?",
-            "explanation": "Wide pitch range signals genuine enthusiasm for the new class. The voice moves energetically across the sentence.",
-            "pitchRule": "🔺 A wide, energetic pitch range across the whole sentence signals genuine enthusiasm.",
-            "emotionContext": "Doubtful"
+            "hint": "Compare what the words say with what the situation suggests.",
+            "explanation": "Stress on 'clearly' and a flat fall turn the praise into irony. A warm peak on 'lot' would be sincere.",
+            "pitchRule": "🤨 Flat stress on an adverb can signal irony.",
+            "emotionContext": "Ironic"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L172_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "You arrive at eight and hint at someone who didn't.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The walk was fine. Pretty much the same as always.",
-            "textToSpeak": "The walk was fine. Pretty much the same as always.",
+            "word": "Some of us were here at eight.",
+            "textToSpeak": "Some of us were here at eight.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Peak on 'eight', falling tone — factual time report",
+                "Stress on 'some', level tone — implied criticism"
             ],
-            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Stress on 'some', level tone — implied criticism",
+            "correctAnswerIndex": 1,
             "intonationMap": [
+                2,
+                4,
                 1,
-                1,
-                1,
-                1
+                0
             ],
-            "hint": "This reaction compares today's walk to routine. Notice how far the pitch travels from word to word — does the voice stay fairly level, or does it move a lot?",
-            "explanation": "A narrow pitch range signals routine, unexcited feelings about the walk. The voice stays fairly level.",
-            "pitchRule": "➖ A narrow, flat pitch range across the sentence signals low interest, boredom, or sarcasm.",
-            "emotionContext": "Neutral"
+            "hint": "The speaker points at a contrast between people. Which word carries it?",
+            "explanation": "Stress on 'some' sets a group against another, which implies criticism. Peak on 'eight' would state a time.",
+            "pitchRule": "🤨 Stress on a pronoun can imply a comparison between people.",
+            "emotionContext": "Pointed"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L172_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "You hint that you did think the idea was bad, but stayed quiet.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "That workout left me feeling incredible!",
-            "textToSpeak": "That workout left me feeling incredible!",
+            "word": "I didn't say it was a bad idea.",
+            "textToSpeak": "I didn't say it was a bad idea.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Peak on 'say' — implies 'but I thought it'",
+                "Peak on 'bad' — implies 'it was a different kind of idea'"
             ],
-            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Peak on 'say' — implies 'but I thought it'",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
-                3,
-                1,
-                3
+                4,
+                2,
+                0
             ],
-            "hint": "This reaction uses a strong word, 'incredible,' about how a workout felt. The words are a clue, but check the voice too: how much does the pitch really move here?",
-            "explanation": "Wide pitch range signals genuine post-workout excitement and energy. The voice swings dramatically.",
-            "pitchRule": "🔺 A wide, energetic pitch range across the whole sentence signals genuine enthusiasm.",
-            "emotionContext": "Surprised"
+            "hint": "The speaker denies one thing but hints at another. Which word shows that?",
+            "explanation": "Stress on 'say' implies that the speaker thought it without saying it. Stress on 'bad' would imply a different kind of criticism.",
+            "pitchRule": "🤨 Stress on 'say' implies an unspoken thought.",
+            "emotionContext": "Coy"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L172_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "A visitor asks if they can walk to the station, and you'd rather they didn't.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Sure, the food was okay, I suppose.",
-            "textToSpeak": "Sure, the food was okay, I suppose.",
+            "word": "It's quite a walk from here.",
+            "textToSpeak": "It's quite a walk from here.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Stress on 'quite', slight lift — implies 'not advisable'",
+                "Level fall, no stress — just describing the distance"
             ],
-            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
+            "correctAnswer": "Stress on 'quite', slight lift — implies 'not advisable'",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
-                1,
-                1,
-                1
+                2,
+                2,
+                2,
+                3
             ],
-            "hint": "This reaction uses hedging words like 'I suppose' about a meal. The words are a clue, but check the voice too: how much does the pitch really move here?",
-            "explanation": "A narrow pitch range signals low enthusiasm about the food, even though the word 'okay' isn't negative.",
-            "pitchRule": "➖ A narrow, flat pitch range across the sentence signals low interest, boredom, or sarcasm.",
-            "emotionContext": "Determined"
+            "hint": "You are giving more than information. Which delivery hints at it?",
+            "explanation": "Stress on 'quite' with a slight lift leaves 'so maybe don't' unspoken. A level fall would only describe.",
+            "pitchRule": "🤨 A slight lift leaves an implication hanging.",
+            "emotionContext": "Tactful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L173_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "A colleague has missed deadlines before and promises again.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "I am so thrilled about my progress this month!",
-            "textToSpeak": "I am so thrilled about my progress this month!",
+            "word": "He said he'd have it ready by Friday.",
+            "textToSpeak": "He said he'd have it ready by Friday.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Peak on 'Friday' — highlighting the date",
+                "Stress on 'said', level end — doubt"
             ],
-            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
+            "correctAnswer": "Stress on 'said', level end — doubt",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
                 3,
-                1,
-                3
+                2,
+                0
             ],
-            "hint": "This reaction directly states excitement about personal progress. Notice how far the pitch travels from word to word — does the voice stay fairly level, or does it move a lot?",
-            "explanation": "Wide pitch range signals genuine pride and enthusiasm about this month's progress. The voice moves energetically across the sentence.",
-            "pitchRule": "🔺 A wide, energetic pitch range across the whole sentence signals genuine enthusiasm.",
-            "emotionContext": "Curious"
+            "hint": "The speaker is reporting, not believing. Which word carries the doubt?",
+            "explanation": "Stress on 'said' distances the speaker from the promise. A peak on 'Friday' would highlight the deadline instead.",
+            "pitchRule": "🤨 Stress on the reporting verb can signal doubt.",
+            "emotionContext": "Skeptical"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L173_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "The parcel has been late every time before.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "My progress is fine. Nothing to brag about.",
-            "textToSpeak": "My progress is fine. Nothing to brag about.",
+            "word": "Oh, I'm sure it'll arrive on time.",
+            "textToSpeak": "Oh, I'm sure it'll arrive on time.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Warm fall on 'time', no stress — confident",
+                "Stress on 'sure', flat fall — doubting"
             ],
-            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Stress on 'sure', flat fall — doubting",
+            "correctAnswerIndex": 1,
             "intonationMap": [
+                2,
+                4,
                 1,
-                1,
-                1,
-                1
+                0
             ],
-            "hint": "This reaction downplays personal progress. Listen to how much the pitch actually moves across the sentence, not just to the words themselves.",
-            "explanation": "A narrow pitch range signals modest or indifferent feelings about one's own progress.",
-            "pitchRule": "➖ A narrow, flat pitch range across the sentence signals low interest, boredom, or sarcasm.",
-            "emotionContext": "Excited"
+            "hint": "The past experience matters. Which delivery matches it?",
+            "explanation": "Stress on 'sure' with a flat fall gives away the speaker's doubt. A warm fall would sound confident.",
+            "pitchRule": "🤨 Stress on 'sure' can signal doubt.",
+            "emotionContext": "Skeptical"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L173_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend repeats a company's empty promise.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This new diet has changed my life completely!",
-            "textToSpeak": "This new diet has changed my life completely!",
+            "word": "That's what they always say.",
+            "textToSpeak": "That's what they always say.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Rising — asking",
+                "Low, flat fall — cynical"
             ],
-            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
+            "correctAnswer": "Low, flat fall — cynical",
             "correctAnswerIndex": 1,
             "intonationMap": [
+                2,
                 1,
-                3,
                 1,
-                3
+                0
             ],
-            "hint": "This reaction makes a big claim, 'changed my life,' about a diet. Pay attention to the energy in the voice: is the pitch lively and varied, or does it barely change?",
-            "explanation": "Wide pitch range signals strong, genuine enthusiasm about a major lifestyle change. The voice swings dramatically across the sentence.",
-            "pitchRule": "🔺 A wide, energetic pitch range across the whole sentence signals genuine enthusiasm.",
-            "emotionContext": "Doubtful"
+            "hint": "The speaker has heard this before. Which delivery is weary?",
+            "explanation": "A low, flat fall shows cynicism. A rise would ask a question.",
+            "pitchRule": "🤨 Cynicism drops and flattens.",
+            "emotionContext": "Cynical"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L174_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "A colleague you expected later walks in.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The yoga class was fine, I guess. Pretty slow.",
-            "textToSpeak": "The yoga class was fine, I guess. Pretty slow.",
+            "word": "Oh, you're already here.",
+            "textToSpeak": "Oh, you're already here.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Small lift on 'already' — mild surprise",
+                "Wide peak on 'already' — big shock"
             ],
-            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
+            "correctAnswer": "Small lift on 'already' — mild surprise",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
-                1,
-                1,
-                1
+                2,
+                3,
+                2,
+                0
             ],
-            "hint": "This reaction uses flat, hedging words about a yoga class's pace. The words are a clue, but check the voice too: how much does the pitch really move here?",
-            "explanation": "A narrow pitch range signals low enthusiasm or mild disappointment with the slow class.",
-            "pitchRule": "➖ A narrow, flat pitch range across the sentence signals low interest, boredom, or sarcasm.",
-            "emotionContext": "Neutral"
+            "hint": "This is a small surprise, not a shock. How wide is the movement?",
+            "explanation": "A small lift on 'already' shows mild surprise. A wide peak would signal astonishment.",
+            "pitchRule": "😲 Mild surprise is small and quick.",
+            "emotionContext": "Mildly surprised"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L174_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend reveals something that is new but not thrilling.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "I slept amazingly well last night!",
-            "textToSpeak": "I slept amazingly well last night!",
+            "word": "Huh, I didn't know that.",
+            "textToSpeak": "Huh, I didn't know that.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Level start, small fall — mild interest",
+                "High start, wide fall — real excitement"
             ],
-            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Level start, small fall — mild interest",
+            "correctAnswerIndex": 0,
             "intonationMap": [
+                2,
+                2,
                 1,
-                3,
-                1,
-                3
+                0
             ],
-            "hint": "This reaction uses a strong word, 'amazingly,' about a night's sleep. The words are a clue, but check the voice too: how much does the pitch really move here?",
-            "explanation": "Wide pitch range signals genuine delight about restful sleep. The voice moves energetically across the sentence.",
-            "pitchRule": "🔺 A wide, energetic pitch range across the whole sentence signals genuine enthusiasm.",
-            "emotionContext": "Surprised"
+            "hint": "The speaker is curious, not thrilled. Listen to the range.",
+            "explanation": "A small range on 'that' shows quiet interest. A high fall would sound excited.",
+            "pitchRule": "😲 Quiet interest has a narrow range.",
+            "emotionContext": "Mildly interested"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L174_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "The bill arrives and it's higher than you expected.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "It was an okay run. Nothing exciting.",
-            "textToSpeak": "It was an okay run. Nothing exciting.",
+            "word": "That's a bit more than I expected.",
+            "textToSpeak": "That's a bit more than I expected.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Bright rise-fall — pleasantly surprised",
+                "Stress on 'more', lowered fall — mildly unwelcome"
             ],
-            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Stress on 'more', lowered fall — mildly unwelcome",
+            "correctAnswerIndex": 1,
             "intonationMap": [
+                2,
+                2,
                 1,
-                1,
-                1,
-                1
+                0
             ],
-            "hint": "This reaction directly says a run wasn't exciting. Pay attention to the energy in the voice: is the pitch lively and varied, or does it barely change?",
-            "explanation": "A narrow pitch range signals indifference toward the run, matching the plain, unenthusiastic words.",
-            "pitchRule": "➖ A narrow, flat pitch range across the sentence signals low interest, boredom, or sarcasm.",
-            "emotionContext": "Determined"
+            "hint": "The surprise is negative. Which delivery is quieter?",
+            "explanation": "A lowered fall with stress on 'more' expresses mild disappointment. A bright rise-fall would sound pleased.",
+            "pitchRule": "😲 Unwelcome surprise lowers the pitch.",
+            "emotionContext": "Disappointed"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L175_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "A colleague shows you a decent mockup, and you're pleased but reserved.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "I'm having the most wonderful day ever!",
-            "textToSpeak": "I'm having the most wonderful day ever!",
+            "word": "That'd be pretty good, actually.",
+            "textToSpeak": "That'd be pretty good, actually.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Wide rise-fall on 'good', slow — thrilled delight",
+                "Small lift on 'good', quick fall — understated pleasure"
             ],
-            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
+            "correctAnswer": "Small lift on 'good', quick fall — understated pleasure",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
+                2,
                 3,
-                1,
-                3
+                2,
+                0
             ],
-            "hint": "This reaction uses a superlative, 'most wonderful,' about today. Focus on the melody of the whole sentence — does the pitch stay nearly flat, or does it rise and fall noticeably?",
-            "explanation": "Wide pitch range signals genuine joy about the day. The voice swings dramatically across the sentence.",
-            "pitchRule": "🔺 A wide, energetic pitch range across the whole sentence signals genuine enthusiasm.",
-            "emotionContext": "Curious"
+            "hint": "The word 'pretty' cools the praise. Which delivery matches?",
+            "explanation": "A small lift and a quick fall show that you like it without gushing. A wide rise-fall would exaggerate.",
+            "pitchRule": "😊 Understated pleasure has a small lift.",
+            "emotionContext": "Restrained"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L175_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "The results are acceptable and you feel a quiet satisfaction.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "It's an okay day, I guess. Same as usual.",
-            "textToSpeak": "It's an okay day, I guess. Same as usual.",
+            "word": "Not a bad result, all things considered.",
+            "textToSpeak": "Not a bad result, all things considered.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "High start, wide fall — jubilant celebration",
+                "Level start, gentle fall — restrained satisfaction"
             ],
-            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Level start, gentle fall — restrained satisfaction",
+            "correctAnswerIndex": 1,
             "intonationMap": [
+                2,
+                2,
                 1,
-                1,
-                1,
-                1
+                0
             ],
-            "hint": "This reaction compares today to an ordinary day. Pay attention to the energy in the voice: is the pitch lively and varied, or does it barely change?",
-            "explanation": "A narrow pitch range signals routine, unexcited feelings about today. The voice stays fairly level.",
-            "pitchRule": "➖ A narrow, flat pitch range across the sentence signals low interest, boredom, or sarcasm.",
-            "emotionContext": "Excited"
+            "hint": "You are satisfied but not celebrating. Which delivery fits?",
+            "explanation": "A level start and gentle fall show contained satisfaction. A wide fall would signal celebration.",
+            "pitchRule": "😊 Contained satisfaction avoids a wide range.",
+            "emotionContext": "Content"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L175_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You've accomplished something you expected to be hard.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This new routine has given me so much energy!",
-            "textToSpeak": "This new routine has given me so much energy!",
+            "word": "I'm quite pleased with how it turned out.",
+            "textToSpeak": "I'm quite pleased with how it turned out.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Slight lift on 'quite', warm fall — modest pride",
+                "Bright peak on 'pleased' — bursting pride"
             ],
-            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Slight lift on 'quite', warm fall — modest pride",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
+                2,
                 3,
                 1,
-                3
+                0
             ],
-            "hint": "This reaction describes a big positive change from a new routine. Listen to how much the pitch actually moves across the sentence, not just to the words themselves.",
-            "explanation": "Wide pitch range signals genuine enthusiasm about newfound energy. The voice moves energetically across the sentence.",
-            "pitchRule": "🔺 A wide, energetic pitch range across the whole sentence signals genuine enthusiasm.",
-            "emotionContext": "Doubtful"
+            "hint": "The word 'quite' softens the pride. Which delivery keeps it modest?",
+            "explanation": "A slight lift and a warm fall show modest pride. A bright peak would suggest bragging.",
+            "pitchRule": "😊 Modest pride uses a small lift and a warm fall.",
+            "emotionContext": "Modest"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L176_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "You object to a proposal while sounding open.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The check-up went fine. Nothing important to report.",
-            "textToSpeak": "The check-up went fine. Nothing important to report.",
+            "word": "That could work, though I'm wondering about the cost.",
+            "textToSpeak": "That could work, though I'm wondering about the cost.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Lift on 'work', lift on 'wondering', fall on 'cost' — cautious objection",
+                "Fall on 'work', 'wondering' and 'cost' — flat rejection"
             ],
-            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
+            "correctAnswer": "Lift on 'work', lift on 'wondering', fall on 'cost' — cautious objection",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
-                1,
-                1,
-                1
+                2,
+                3,
+                2,
+                0
             ],
-            "hint": "This reaction is plain and uninformative about a medical check-up. Pay attention to the energy in the voice: is the pitch lively and varied, or does it barely change?",
-            "explanation": "A narrow pitch range signals indifference about an unremarkable check-up. The voice stays fairly level.",
-            "pitchRule": "➖ A narrow, flat pitch range across the sentence signals low interest, boredom, or sarcasm.",
-            "emotionContext": "Neutral"
+            "hint": "You want to raise a concern without blocking. Which delivery sounds open?",
+            "explanation": "The lifts keep the tone tentative and the fall on 'cost' delivers the concern. Two falls would sound like rejection.",
+            "pitchRule": "🤝 Indirect objections keep lifts before the concern.",
+            "emotionContext": "Diplomatic"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L176_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "You'd like to suggest more options without criticizing.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "My doctor said I'm in fantastic health!",
-            "textToSpeak": "My doctor said I'm in fantastic health!",
+            "word": "Maybe we could look at other options too?",
+            "textToSpeak": "Maybe we could look at other options too?",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Falling — firm instruction",
+                "Rising — softened objection"
             ],
-            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
+            "correctAnswer": "Rising — softened objection",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                3,
-                1,
-                3
+                2,
+                2,
+                4
             ],
-            "hint": "This reaction shares great health news enthusiastically. The words are a clue, but check the voice too: how much does the pitch really move here?",
-            "explanation": "Wide pitch range signals genuine relief and excitement about good health news. The voice swings dramatically across the sentence.",
-            "pitchRule": "🔺 A wide, energetic pitch range across the whole sentence signals genuine enthusiasm.",
-            "emotionContext": "Surprised"
+            "hint": "You don't want to appear negative. Which ending is gentle?",
+            "explanation": "A rise on 'too' turns the objection into a suggestion. A fall would sound like an instruction.",
+            "pitchRule": "🤝📈 A rise softens an objection.",
+            "emotionContext": "Tactful"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L176_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You don't agree, but you're avoiding a direct no.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "I guess the medicine is working, sort of.",
-            "textToSpeak": "I guess the medicine is working, sort of.",
+            "word": "I'm not sure that's the direction we want.",
+            "textToSpeak": "I'm not sure that's the direction we want.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Stress on 'sure', lifted end — indirect no",
+                "Firm fall on 'want' — direct no"
             ],
-            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
+            "correctAnswer": "Stress on 'sure', lifted end — indirect no",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
-                1,
-                1,
-                1
+                2,
+                2,
+                2,
+                3
             ],
-            "hint": "This reaction uses uncertain, hedging words about medicine's effect. Listen to how much the pitch actually moves across the sentence, not just to the words themselves.",
-            "explanation": "A narrow pitch range signals uncertainty or low confidence about the treatment's results.",
-            "pitchRule": "➖ A narrow, flat pitch range across the sentence signals low interest, boredom, or sarcasm.",
-            "emotionContext": "Determined"
+            "hint": "The words are indirect. Which delivery matches?",
+            "explanation": "Stress on 'sure' and a lifted end invite discussion. A firm fall would sound like a decision.",
+            "pitchRule": "🤝 A lifted end keeps an indirect no open.",
+            "emotionContext": "Diplomatic"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L177_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "You see a colleague in a very casual outfit before a client meeting.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This weekend was absolutely perfect from start to finish!",
-            "textToSpeak": "This weekend was absolutely perfect from start to finish!",
+            "word": "Is that what you're wearing?",
+            "textToSpeak": "Is that what you're wearing?",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Stress on 'wearing', rising — asks about the outfit type",
+                "Stress on 'that', rising — implies criticism"
             ],
-            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
+            "correctAnswer": "Stress on 'that', rising — implies criticism",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                3,
-                1,
-                3
+                4,
+                4,
+                0
             ],
-            "hint": "This reaction uses a strong word, 'perfect,' about a whole weekend. Focus on the melody of the whole sentence — does the pitch stay nearly flat, or does it rise and fall noticeably?",
-            "explanation": "Wide pitch range signals genuine enthusiasm about an entire weekend. The voice moves energetically across the sentence.",
-            "pitchRule": "🔺 A wide, energetic pitch range across the whole sentence signals genuine enthusiasm.",
-            "emotionContext": "Curious"
+            "hint": "The same words could be a simple question. Which stress implies something more?",
+            "explanation": "Stress on 'that' singles out the outfit as a problem. Stress on 'wearing' would ask what item of clothing it is.",
+            "pitchRule": "🤨📈 Stress on 'that' turns a question into a hint.",
+            "emotionContext": "Pointed"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L177_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend gets up to leave the party earlier than expected.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The weekend was fine. Pretty uneventful, really.",
-            "textToSpeak": "The weekend was fine. Pretty uneventful, really.",
+            "word": "You're not leaving already?",
+            "textToSpeak": "You're not leaving already?",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Stress on 'leaving', rising — surprised at the action",
+                "Stress on 'already', rising — disappointed"
             ],
-            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Stress on 'already', rising — disappointed",
+            "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
-                1,
-                1
+                3,
+                4,
+                2
             ],
-            "hint": "This reaction describes a weekend as uneventful. Notice how far the pitch travels from word to word — does the voice stay fairly level, or does it move a lot?",
-            "explanation": "A narrow pitch range signals boredom about an unremarkable weekend, matching the plain words.",
-            "pitchRule": "➖ A narrow, flat pitch range across the sentence signals low interest, boredom, or sarcasm.",
-            "emotionContext": "Excited"
+            "hint": "You wanted them to stay. Which word carries that feeling?",
+            "explanation": "Stress on 'already' shows that the time is too early for you. Stress on 'leaving' would express surprise at the action itself.",
+            "pitchRule": "📈 'Already' carries disappointment about time.",
+            "emotionContext": "Disappointed"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L177_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "A colleague shows you a beautifully made presentation.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "I can't stop smiling about today!",
-            "textToSpeak": "I can't stop smiling about today!",
+            "word": "Did you make this yourself?",
+            "textToSpeak": "Did you make this yourself?",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Stress on 'yourself', rising — impressed",
+                "Stress on 'make', rising — suspecting a purchase"
             ],
-            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Stress on 'yourself', rising — impressed",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
                 3,
-                1,
-                3
+                4,
+                2
             ],
-            "hint": "This reaction describes ongoing joy about today. Listen to how much the pitch actually moves across the sentence, not just to the words themselves.",
-            "explanation": "Wide pitch range signals genuine, lasting happiness about today. The voice swings dramatically.",
-            "pitchRule": "🔺 A wide, energetic pitch range across the whole sentence signals genuine enthusiasm.",
-            "emotionContext": "Doubtful"
+            "hint": "You are impressed. Which word carries admiration?",
+            "explanation": "Stress on 'yourself' shows that you can't believe one person did it. Stress on 'make' would question whether it was made or bought.",
+            "pitchRule": "📈 Stress on 'yourself' shows admiration.",
+            "emotionContext": "Impressed"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L178_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "A colleague informs you of a small change.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The recipe turned out okay, I suppose.",
-            "textToSpeak": "The recipe turned out okay, I suppose.",
+            "word": "Thank you for letting me know.",
+            "textToSpeak": "Thank you for letting me know.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Warm fall — sincere thanks",
+                "Flat, clipped fall — cold acknowledgement"
             ],
-            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
+            "correctAnswer": "Warm fall — sincere thanks",
             "correctAnswerIndex": 0,
             "intonationMap": [
+                3,
+                2,
                 1,
-                1,
-                1,
-                1
+                0
             ],
-            "hint": "This reaction uses hedging words like 'I suppose' about a recipe's outcome. Notice how far the pitch travels from word to word — does the voice stay fairly level, or does it move a lot?",
-            "explanation": "A narrow pitch range signals modest or indifferent feelings about how a recipe turned out.",
-            "pitchRule": "➖ A narrow, flat pitch range across the sentence signals low interest, boredom, or sarcasm.",
-            "emotionContext": "Neutral"
+            "hint": "The words are polite but can be delivered coldly. Which delivery is friendly?",
+            "explanation": "A warm fall shows real appreciation. A flat, clipped fall would sound cold or annoyed.",
+            "pitchRule": "😊 The same polite words can sound warm or cold.",
+            "emotionContext": "Appreciative"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L178_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "You have been left out of an email chain and are annoyed.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This homemade meal turned out absolutely delicious!",
-            "textToSpeak": "This homemade meal turned out absolutely delicious!",
+            "word": "No, that's fine, I'll figure it out.",
+            "textToSpeak": "No, that's fine, I'll figure it out.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Warm, wide fall — genuinely relaxed",
+                "Flat, clipped fall — hurt but hiding it"
             ],
-            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
+            "correctAnswer": "Flat, clipped fall — hurt but hiding it",
             "correctAnswerIndex": 1,
             "intonationMap": [
+                2,
                 1,
-                3,
-                1,
-                3
+                0,
+                0
             ],
-            "hint": "This reaction uses an enthusiastic word, 'delicious,' about a homemade meal. Listen to how much the pitch actually moves across the sentence, not just to the words themselves.",
-            "explanation": "Wide pitch range signals genuine pride and enthusiasm about a successful meal. The voice moves energetically across the sentence.",
-            "pitchRule": "🔺 A wide, energetic pitch range across the whole sentence signals genuine enthusiasm.",
-            "emotionContext": "Surprised"
+            "hint": "The words say 'no problem'. Which delivery sounds like there is one?",
+            "explanation": "A flat, clipped fall on 'out' hides irritation. A warm fall would show real relaxation.",
+            "pitchRule": "🤨 Flat delivery undermines polite words.",
+            "emotionContext": "Hurt"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L178_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend gives you an unwanted but well-meant gift.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "It was a fine dinner. Nothing memorable.",
-            "textToSpeak": "It was a fine dinner. Nothing memorable.",
+            "word": "Oh, how thoughtful of you.",
+            "textToSpeak": "Oh, how thoughtful of you.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Flat, low fall with a pause — sarcastic tone",
+                "Slightly lifted, warm fall — polite gratitude"
             ],
-            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Slightly lifted, warm fall — polite gratitude",
+            "correctAnswerIndex": 1,
             "intonationMap": [
+                2,
+                3,
                 1,
-                1,
-                1,
-                1
+                0
             ],
-            "hint": "This reaction directly says a dinner wasn't memorable. Pay attention to the energy in the voice: is the pitch lively and varied, or does it barely change?",
-            "explanation": "A narrow pitch range signals indifference toward the dinner, matching the plain, unenthusiastic words.",
-            "pitchRule": "➖ A narrow, flat pitch range across the sentence signals low interest, boredom, or sarcasm.",
-            "emotionContext": "Determined"
+            "hint": "Both readings are possible. Which fits a well-meant gift?",
+            "explanation": "A lifted, warm delivery shows polite gratitude. A flat, low fall would suggest sarcasm.",
+            "pitchRule": "😊 A warm lift keeps a polite phrase sincere.",
+            "emotionContext": "Polite"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L179_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "You've just spilled coffee on your laptop.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "I am beyond excited for this new chapter in my life!",
-            "textToSpeak": "I am beyond excited for this new chapter in my life!",
+            "word": "Well, that went well.",
+            "textToSpeak": "Well, that went well.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Warm, wide fall — sincere",
+                "Flat, low fall — ironic"
             ],
-            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
+            "correctAnswer": "Flat, low fall — ironic",
             "correctAnswerIndex": 1,
             "intonationMap": [
+                2,
                 1,
-                3,
-                1,
-                3
+                0,
+                0
             ],
-            "hint": "This reaction directly states strong excitement about a life change. The words are a clue, but check the voice too: how much does the pitch really move here?",
-            "explanation": "Wide pitch range signals genuine enthusiasm about a major personal milestone. The voice swings dramatically across the sentence.",
-            "pitchRule": "🔺 A wide, energetic pitch range across the whole sentence signals genuine enthusiasm.",
-            "emotionContext": "Curious"
+            "hint": "The situation clashes with the words. Which delivery shows irony?",
+            "explanation": "A flat, low fall on 'well' makes the sentence ironic. A warm, wide fall would sound sincere.",
+            "pitchRule": "🤨 Irony is delivered flat and low.",
+            "emotionContext": "Ironic"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L179_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "The presentation software crashed just as you began.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "It's just another day, really. Nothing special.",
-            "textToSpeak": "It's just another day, really. Nothing special.",
+            "word": "Great, just what I needed.",
+            "textToSpeak": "Great, just what I needed.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Flat, sharp fall on 'needed' — sarcastic",
+                "Bright, wide fall on 'needed' — sincere"
             ],
-            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
+            "correctAnswer": "Flat, sharp fall on 'needed' — sarcastic",
             "correctAnswerIndex": 0,
             "intonationMap": [
+                2,
                 1,
-                1,
-                1,
-                1
+                0,
+                0
             ],
-            "hint": "This reaction downplays the day completely. The words are a clue, but check the voice too: how much does the pitch really move here?",
-            "explanation": "A narrow pitch range signals boredom or indifference about an ordinary day, matching the dismissive words.",
-            "pitchRule": "➖ A narrow, flat pitch range across the sentence signals low interest, boredom, or sarcasm.",
-            "emotionContext": "Excited"
+            "hint": "The mishap contradicts the words. Which delivery reveals the truth?",
+            "explanation": "A flat, sharp fall makes it sarcastic. A bright delivery would sound sincere.",
+            "pitchRule": "🤨 Sarcasm flattens the pitch.",
+            "emotionContext": "Sarcastic"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L179_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "A colleague asks for a favor during your busiest week.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "This support group has changed everything for me!",
-            "textToSpeak": "This support group has changed everything for me!",
+            "word": "Oh, sure, I've got nothing else going on.",
+            "textToSpeak": "Oh, sure, I've got nothing else going on.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Warm, bright delivery, no stress — sincere reply",
+                "Flat delivery, stress on 'nothing' — sarcastic"
             ],
-            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
+            "correctAnswer": "Flat delivery, stress on 'nothing' — sarcastic",
             "correctAnswerIndex": 1,
             "intonationMap": [
+                2,
+                2,
                 1,
-                3,
-                1,
-                3
+                0
             ],
-            "hint": "This reaction makes a big, heartfelt claim about a support group. Notice how far the pitch travels from word to word — does the voice stay fairly level, or does it move a lot?",
-            "explanation": "Wide pitch range signals genuine gratitude and enthusiasm about meaningful support. The voice moves energetically across the sentence.",
-            "pitchRule": "🔺 A wide, energetic pitch range across the whole sentence signals genuine enthusiasm.",
-            "emotionContext": "Doubtful"
+            "hint": "You're overworked. Which delivery shows it?",
+            "explanation": "Stress on 'nothing' with a flat delivery signals that the opposite is true. A bright delivery would be sincere.",
+            "pitchRule": "🤨 Stress on an absolute word can signal sarcasm.",
+            "emotionContext": "Sarcastic"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L180_Q1",
-            "instruction": "Identify the intonation",
+            "instruction": "A friend asks whether you liked a movie you found mediocre.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "The therapy session was fine. We just talked, I guess.",
-            "textToSpeak": "The therapy session was fine. We just talked, I guess.",
+            "word": "It was okay, I guess.",
+            "textToSpeak": "It was okay, I guess.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Level, slowly fading fall — lukewarm",
+                "Warm, clear fall — positive opinion of it"
             ],
-            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
+            "correctAnswer": "Level, slowly fading fall — lukewarm",
             "correctAnswerIndex": 0,
             "intonationMap": [
+                2,
                 1,
                 1,
-                1,
-                1
+                0
             ],
-            "hint": "This reaction is plain and uses hedging words about a therapy session. Pay attention to the energy in the voice: is the pitch lively and varied, or does it barely change?",
-            "explanation": "A narrow pitch range signals indifference about the session, matching the vague, unenthusiastic words.",
-            "pitchRule": "➖ A narrow, flat pitch range across the sentence signals low interest, boredom, or sarcasm.",
-            "emotionContext": "Neutral"
+            "hint": "The words are noncommittal. Which delivery reveals your real opinion?",
+            "explanation": "A level, fading fall shows a lack of enthusiasm. A warm fall would sound positive.",
+            "pitchRule": "🤨 Lukewarm opinions fade at the end.",
+            "emotionContext": "Lukewarm"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L180_Q2",
-            "instruction": "Identify the intonation",
+            "instruction": "A colleague you respect brings you an idea you weren't expecting.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "I feel like a completely new person today!",
-            "textToSpeak": "I feel like a completely new person today!",
+            "word": "Huh. That's actually not bad at all.",
+            "textToSpeak": "Huh. That's actually not bad at all.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Small lift on 'actually', warm fall — pleasantly surprised",
+                "Flat fall on 'actually' and 'bad' — faint praise"
             ],
-            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Small lift on 'actually', warm fall — pleasantly surprised",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
+                2,
                 3,
-                1,
-                3
+                2,
+                0
             ],
-            "hint": "This reaction makes a big, joyful claim about personal change. Listen to how much the pitch actually moves across the sentence, not just to the words themselves.",
-            "explanation": "Wide pitch range signals genuine excitement and renewal. The voice swings dramatically across the sentence.",
-            "pitchRule": "🔺 A wide, energetic pitch range across the whole sentence signals genuine enthusiasm.",
-            "emotionContext": "Surprised"
+            "hint": "There is a note of surprise. Which delivery signals it?",
+            "explanation": "A small lift on 'actually' shows that the idea exceeded expectations. A flat fall would sound like faint praise.",
+            "pitchRule": "😲 'Actually' with a small lift signals pleasant surprise.",
+            "emotionContext": "Pleasantly surprised"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L180_Q3",
-            "instruction": "Identify the intonation",
+            "instruction": "You want to gently push back on an idea.",
             "subtype": "intonationMimic",
             "interactionType": "speaking",
-            "word": "Sure, things are okay. Same as always, I suppose.",
-            "textToSpeak": "Sure, things are okay. Same as always, I suppose.",
+            "word": "I love the energy, but I'm not sure it's realistic.",
+            "textToSpeak": "I love the energy, but I'm not sure it's realistic.",
             "options": [
-                "Narrow Pitch Range (Boredom/Sarcasm)",
-                "Wide Pitch Range (Enthusiasm)"
+                "Fall on 'energy', firm fall — flat rejection",
+                "Lift on 'energy', lifted end — warm, indirect no"
             ],
-            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Lift on 'energy', lifted end — warm, indirect no",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
-                1,
-                1
+                2,
+                2,
+                2,
+                3
             ],
-            "hint": "This reaction uses flat, hedging words about life in general. Focus on the melody of the whole sentence — does the pitch stay nearly flat, or does it rise and fall noticeably?",
-            "explanation": "A narrow pitch range signals overall indifference, completing this tier's focus on recognizing emotional tone through pitch range.",
-            "pitchRule": "➖ A narrow, flat pitch range across the sentence signals low interest, boredom, or sarcasm.",
-            "emotionContext": "Determined"
+            "hint": "Praise is followed by doubt. How does the delivery balance them?",
+            "explanation": "A lift on 'energy' keeps the praise sincere, and a lifted end keeps the doubt gentle. A firm fall would sound harsh.",
+            "pitchRule": "🤝 Gentle pushback keeps both halves lifted.",
+            "emotionContext": "Tactful"
         }
     ]
 }
