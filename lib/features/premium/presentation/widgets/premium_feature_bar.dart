@@ -25,7 +25,9 @@ class ModernFeatureBar extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 4.w),
           child: Text(
-            context.tr('premium.whats_included', fallback: "PREMIUM PERKS"),
+            context
+                .tr('premium.whats_included', fallback: "PREMIUM PERKS")
+                .toUpperCase(),
             style: TextStyle(
               fontFamily: 'Outfit',
               color: isDark ? Colors.white70 : AppColors.slate500,
@@ -40,10 +42,14 @@ class ModernFeatureBar extends StatelessWidget {
           width: double.infinity,
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
           decoration: BoxDecoration(
-            color: isDark ? AppColors.slate900.withValues(alpha: 0.5) : Colors.white,
+            color: isDark
+                ? AppColors.slate900.withValues(alpha: 0.5)
+                : Colors.white,
             borderRadius: BorderRadius.circular(24.r),
             border: Border.all(
-              color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05),
+              color: isDark
+                  ? Colors.white10
+                  : Colors.black.withValues(alpha: 0.05),
               width: 1.5,
             ),
             boxShadow: [
@@ -58,16 +64,97 @@ class ModernFeatureBar extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _buildListFeature(context, icon: LucideIcons.bot, title: context.tr('premium.feature_smart_reply', fallback: 'AI Smart Reply'), color: IllustrationColors.brightBlue),
-              _buildListFeature(context, icon: LucideIcons.camera, title: context.tr('premium.feature_photo_vocab', fallback: 'Photo Vocabulary'), color: AppColors.teal500),
-              _buildListFeature(context, icon: LucideIcons.scan, title: context.tr('premium.feature_scan_learn', fallback: 'Scan & Learn Documents'), color: AppColors.indigo500),
-              _buildListFeature(context, icon: LucideIcons.sparkles, title: context.tr('premium.feature_translations', fallback: 'Offline AI Translations'), color: AppColors.rose500),
-              _buildListFeature(context, icon: LucideIcons.shieldCheck, title: context.tr('premium.feature_zero_ads', fallback: 'No Ads (100% Ad-Free)'), color: AppColors.emerald500),
-              _buildListFeature(context, icon: LucideIcons.zap, title: context.tr('premium.feature_2x_speed', fallback: 'Enhanced Learning Tools'), color: AppColors.amber500),
-              _buildListFeature(context, icon: LucideIcons.wifiOff, title: context.tr('premium.feature_play_offline', fallback: 'Play Offline Anywhere'), color: AppColors.slate500),
-              _buildListFeature(context, icon: LucideIcons.unlock, title: context.tr('premium.feature_unlimited_levels', fallback: 'Unlock All Difficulty Vaults'), color: _LocalPalette.color06b6d4),
-              _buildListFeature(context, icon: LucideIcons.gift, title: context.tr('premium.feature_vip_loot', fallback: '100 Free Bonus Coins Daily'), color: IllustrationColors.vibrantPink),
-              _buildListFeature(context, icon: LucideIcons.award, title: context.tr('premium.feature_vip_badges', fallback: 'Exclusive VIP Badges'), color: _LocalPalette.coloreab308, isLast: true),
+              _buildListFeature(
+                context,
+                icon: LucideIcons.bot,
+                title: context.tr(
+                  'premium.feature_smart_reply',
+                  fallback: 'AI Smart Reply',
+                ),
+                color: IllustrationColors.brightBlue,
+              ),
+              _buildListFeature(
+                context,
+                icon: LucideIcons.camera,
+                title: context.tr(
+                  'premium.feature_photo_vocab',
+                  fallback: 'Photo Vocabulary',
+                ),
+                color: AppColors.teal500,
+              ),
+              _buildListFeature(
+                context,
+                icon: LucideIcons.scan,
+                title: context.tr(
+                  'premium.feature_scan_learn',
+                  fallback: 'Scan & Learn Documents',
+                ),
+                color: AppColors.indigo500,
+              ),
+              _buildListFeature(
+                context,
+                icon: LucideIcons.sparkles,
+                title: context.tr(
+                  'premium.feature_translations',
+                  fallback: 'Offline AI Translations',
+                ),
+                color: AppColors.rose500,
+              ),
+              _buildListFeature(
+                context,
+                icon: LucideIcons.shieldCheck,
+                title: context.tr(
+                  'premium.feature_zero_ads',
+                  fallback: 'No Ads (100% Ad-Free)',
+                ),
+                color: AppColors.emerald500,
+              ),
+              _buildListFeature(
+                context,
+                icon: LucideIcons.zap,
+                title: context.tr(
+                  'premium.feature_2x_speed',
+                  fallback: 'Enhanced Learning Tools',
+                ),
+                color: AppColors.amber500,
+              ),
+              _buildListFeature(
+                context,
+                icon: LucideIcons.wifiOff,
+                title: context.tr(
+                  'premium.feature_play_offline',
+                  fallback: 'Play Offline Anywhere',
+                ),
+                color: AppColors.slate500,
+              ),
+              _buildListFeature(
+                context,
+                icon: LucideIcons.unlock,
+                title: context.tr(
+                  'premium.feature_unlimited_levels',
+                  fallback: 'Unlock All Difficulty Vaults',
+                ),
+                color: _LocalPalette.color06b6d4,
+              ),
+              _buildListFeature(
+                context,
+                icon: LucideIcons.gift,
+                title: context.tr(
+                  'premium.feature_vip_loot',
+                  fallback: '100 Free Bonus Coins Daily',
+                ),
+                color: IllustrationColors.vibrantPink,
+              ),
+              _buildListFeature(
+                context,
+                icon: LucideIcons.award,
+                title: context.tr(
+                  'premium.feature_vip_badges',
+                  fallback: 'Exclusive VIP Badges',
+                ),
+                color: _LocalPalette.coloreab308,
+                isLast: true,
+              ),
             ],
           ),
         ),
@@ -85,10 +172,13 @@ class ModernFeatureBar extends StatelessWidget {
     // If a translation file returns ALL CAPS (e.g. "ZERO ADS"), normalize it to Title Case.
     String formattedTitle = title;
     if (title.isNotEmpty && title == title.toUpperCase()) {
-      formattedTitle = title.split(' ').map((word) {
-        if (word.isEmpty) return word;
-        return word[0].toUpperCase() + word.substring(1).toLowerCase();
-      }).join(' ');
+      formattedTitle = title
+          .split(' ')
+          .map((word) {
+            if (word.isEmpty) return word;
+            return word[0].toUpperCase() + word.substring(1).toLowerCase();
+          })
+          .join(' ');
     }
 
     return Padding(

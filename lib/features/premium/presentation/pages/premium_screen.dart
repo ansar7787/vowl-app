@@ -464,7 +464,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
               if (InAppPurchaseService.shouldUseIAP) {
                 _isProcessingVal = true;
                 _updateState();
-                
+
                 final iap = InAppPurchaseService.instance;
                 iap.onPurchaseRestored = () {
                   if (mounted) {
@@ -492,9 +492,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
                     );
                   }
                 };
-                
+
                 await iap.restorePurchases();
-                
+
                 // If there are no past purchases, the stream won't emit anything.
                 // We should timeout the loading state just in case.
                 Future.delayed(const Duration(seconds: 5), () {
@@ -504,11 +504,12 @@ class _PremiumScreenState extends State<PremiumScreen> {
                   }
                 });
               } else {
-                 CustomSnackBar.show(
+                CustomSnackBar.show(
                   context: context,
                   message: context.tr(
                     'premium.restore_not_supported',
-                    fallback: 'Restore is only available for Google Play purchases.',
+                    fallback:
+                        'Restore is only available for Google Play purchases.',
                   ),
                   type: CustomSnackBarType.info,
                 );
@@ -665,7 +666,12 @@ class _PremiumScreenState extends State<PremiumScreen> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 4.w),
             child: Text(
-              context.tr('premium.select_payment_method', fallback: 'PAYMENT METHOD'),
+              context
+                  .tr(
+                    'premium.select_payment_method',
+                    fallback: 'PAYMENT METHOD',
+                  )
+                  .toUpperCase(),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 color: isDark ? Colors.white70 : AppColors.slate500,
@@ -678,19 +684,25 @@ class _PremiumScreenState extends State<PremiumScreen> {
           SizedBox(height: 12.h),
           Container(
             decoration: BoxDecoration(
-              color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.05)
+                  : Colors.white,
               borderRadius: BorderRadius.circular(20.r),
               border: Border.all(
-                color: isDark ? Colors.white.withValues(alpha: 0.1) : AppColors.slate200,
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.1)
+                    : AppColors.slate200,
                 width: 1,
               ),
-              boxShadow: isDark ? [] : [
-                BoxShadow(
-                  color: AppColors.slate200.withValues(alpha: 0.5),
-                  blurRadius: 10,
-                  offset: const Offset(0, 4),
-                ),
-              ],
+              boxShadow: isDark
+                  ? []
+                  : [
+                      BoxShadow(
+                        color: AppColors.slate200.withValues(alpha: 0.5),
+                        blurRadius: 10,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
             ),
             child: Column(
               children: [
@@ -707,7 +719,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 Divider(
                   height: 1,
                   thickness: 1,
-                  color: isDark ? Colors.white.withValues(alpha: 0.05) : AppColors.slate100,
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.05)
+                      : AppColors.slate100,
                   indent: 56.w,
                 ),
                 _buildPaymentTile(
@@ -752,7 +766,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
         duration: const Duration(milliseconds: 200),
         padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
         decoration: BoxDecoration(
-          color: isSelected ? AppColors.indigo500.withValues(alpha: 0.15) : Colors.transparent,
+          color: isSelected
+              ? AppColors.indigo500.withValues(alpha: 0.15)
+              : Colors.transparent,
           borderRadius: BorderRadius.vertical(
             top: isFirst ? Radius.circular(20.r) : Radius.zero,
             bottom: isLast ? Radius.circular(20.r) : Radius.zero,
@@ -802,7 +818,11 @@ class _PremiumScreenState extends State<PremiumScreen> {
                   color: AppColors.indigo500,
                   shape: BoxShape.circle,
                 ),
-                child: Icon(Icons.check_rounded, color: Colors.white, size: 14.sp),
+                child: Icon(
+                  Icons.check_rounded,
+                  color: Colors.white,
+                  size: 14.sp,
+                ),
               )
             else
               Container(
