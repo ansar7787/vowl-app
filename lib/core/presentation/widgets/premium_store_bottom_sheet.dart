@@ -17,6 +17,7 @@ import 'package:vowl/core/utils/coin_packs_service.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/services/in_app_purchase_service.dart';
 
 class PremiumStoreBottomSheet extends StatefulWidget {
   final bool isKidsMode;
@@ -46,6 +47,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
   CoinPack? _pendingPack;
   List<CoinPack> _activePacks = [];
   bool _isLoadingPacks = true;
+  late bool _useGooglePlay;
 
   late final ValueNotifier<int> _stateHash = ValueNotifier(0);
 
@@ -93,6 +95,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
   @override
   void initState() {
     super.initState();
+    _useGooglePlay = !InAppPurchaseService.isUserInIndia;
     _paymentService.init(
       onSuccess: _handlePaymentSuccess,
       onFailure: _handlePaymentFailure,
@@ -236,6 +239,64 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
     _pendingPack = pack;
 
     final packTitle = context.tr(pack.titleKey, fallback: pack.titleFallback);
+
+    if (_useGooglePlay) {
+      String productId;
+      if (pack.id == 'starter_pack') {
+        productId = InAppPurchaseService.coinPack100;
+      } else if (pack.id == 'explorer_pack') {
+        productId = InAppPurchaseService.coinPack500;
+      } else if (pack.id == 'master_pack') {
+        productId = InAppPurchaseService.coinPack1000;
+      } else {
+        productId = InAppPurchaseService.coinPack100;
+      }
+
+      final iap = InAppPurchaseService.instance;
+      try {
+        final product = iap.products.firstWhere((p) => p.id == productId);
+        iap.onPurchaseSuccess = (purchase) {
+          if (!mounted) return;
+          di.sl<HapticService>().success();
+          context.read<AuthBloc>().add(const AuthReloadUser());
+          _isProcessing = false;
+          _updateState();
+          _pendingPack = null;
+          CustomSnackBar.show(
+            context: context,
+            message: context.tr(
+              'store.purchase_success',
+              fallback: 'Purchase successful! Enjoy your items.',
+            ),
+            type: CustomSnackBarType.success,
+          );
+        };
+        iap.onPurchaseError = (error) {
+          if (!mounted) return;
+          di.sl<HapticService>().error();
+          _isProcessing = false;
+          _updateState();
+          _pendingPack = null;
+          CustomSnackBar.show(
+            context: context,
+            message: error,
+            type: CustomSnackBarType.error,
+          );
+        };
+        await iap.buyProduct(product);
+      } catch (e) {
+        if (!mounted) return;
+        _isProcessing = false;
+        _updateState();
+        _pendingPack = null;
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr('store.checkout_error', fallback: 'Product not found'),
+          type: CustomSnackBarType.error,
+        );
+      }
+      return;
+    }
 
     try {
       final orderData = await _paymentService.createOrder(packId: pack.id);
@@ -469,6 +530,8 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                           ).animate().fadeIn(delay: 200.ms),
 
                           SizedBox(height: 16.h),
+                          _buildPaymentMethodSelector(isDark),
+                          SizedBox(height: 8.h),
 
                           if (_isLoadingPacks)
                             Column(
@@ -593,6 +656,171 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
               color: Colors.white,
               size: 20.r,
             ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildPaymentMethodSelector(bool isDark) {
+    if (!InAppPurchaseService.isUserInIndia) return const SizedBox.shrink();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 4.w),
+          child: Text(
+            context.tr('premium.select_payment_method', fallback: 'PAYMENT METHOD'),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              color: isDark ? Colors.white54 : AppColors.slate500,
+              fontSize: 11.sp,
+              fontWeight: FontWeight.w800,
+              letterSpacing: 1.5,
+            ),
+          ),
+        ),
+        SizedBox(height: 12.h),
+        Container(
+          decoration: BoxDecoration(
+            color: isDark ? AppColors.slate800.withValues(alpha: 0.5) : Colors.white,
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(
+              color: isDark ? Colors.white.withValues(alpha: 0.05) : AppColors.slate200,
+              width: 1,
+            ),
+            boxShadow: isDark ? [] : [
+              BoxShadow(
+                color: AppColors.slate200.withValues(alpha: 0.5),
+                blurRadius: 10,
+                offset: const Offset(0, 4),
+              ),
+            ],
+          ),
+          child: Column(
+            children: [
+              _buildPaymentMethodOption(
+                isGooglePlay: false,
+                isDark: isDark,
+                title: 'UPI / Credit Card',
+                subtitle: 'Zero extra platform fees',
+                icon: Icons.account_balance_wallet_rounded,
+                iconColor: AppColors.violet500,
+                isFirst: true,
+                isLast: false,
+              ),
+              Divider(
+                height: 1,
+                thickness: 1,
+                color: isDark ? Colors.white.withValues(alpha: 0.05) : AppColors.slate100,
+                indent: 56.w,
+              ),
+              _buildPaymentMethodOption(
+                isGooglePlay: true,
+                isDark: isDark,
+                title: 'Google Play Billing',
+                subtitle: 'Includes local taxes & fees',
+                icon: Icons.play_arrow_rounded,
+                iconColor: AppColors.emerald500,
+                isFirst: false,
+                isLast: true,
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildPaymentMethodOption({
+    required bool isGooglePlay,
+    required bool isDark,
+    required String title,
+    required String subtitle,
+    required IconData icon,
+    required Color iconColor,
+    required bool isFirst,
+    required bool isLast,
+  }) {
+    final isSelected = _useGooglePlay == isGooglePlay;
+    return GestureDetector(
+      onTap: () {
+        if (!isSelected) {
+          di.sl<HapticService>().selection();
+          setState(() {
+            _useGooglePlay = isGooglePlay;
+          });
+        }
+      },
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
+        decoration: BoxDecoration(
+          color: isSelected ? AppColors.indigo500.withValues(alpha: 0.15) : Colors.transparent,
+          borderRadius: BorderRadius.vertical(
+            top: isFirst ? Radius.circular(20.r) : Radius.zero,
+            bottom: isLast ? Radius.circular(20.r) : Radius.zero,
+          ),
+        ),
+        child: Row(
+          children: [
+            Container(
+              padding: EdgeInsets.all(8.r),
+              decoration: BoxDecoration(
+                color: iconColor.withValues(alpha: 0.15),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(icon, color: iconColor, size: 20.sp),
+            ),
+            SizedBox(width: 16.w),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: isDark ? Colors.white : AppColors.slate900,
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  SizedBox(height: 2.h),
+                  Text(
+                    subtitle,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: isDark ? Colors.white60 : AppColors.slate500,
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            if (isSelected)
+              Container(
+                padding: EdgeInsets.all(4.r),
+                decoration: const BoxDecoration(
+                  color: AppColors.indigo500,
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(Icons.check_rounded, color: Colors.white, size: 14.sp),
+              )
+            else
+              Container(
+                width: 22.r,
+                height: 22.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: isDark ? Colors.white30 : AppColors.slate300,
+                    width: 2,
+                  ),
+                ),
+              ),
           ],
         ),
       ),
@@ -735,7 +963,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                           borderRadius: BorderRadius.circular(12.r),
                         ),
                         child: Text(
-                          pack.priceString,
+                          '₹${(_useGooglePlay ? (pack.price * 1.30) : pack.price).toInt()}',
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 16.sp,

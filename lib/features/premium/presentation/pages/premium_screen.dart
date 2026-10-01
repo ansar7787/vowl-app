@@ -15,6 +15,7 @@ import 'package:vowl/core/utils/payment_service.dart';
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:confetti/confetti.dart';
@@ -30,6 +31,8 @@ class _LocalPalette {
   static const Color color020617 = Color(0xFF020617);
 }
 
+enum PaymentMethod { razorpay, googlePlay }
+
 class PremiumScreen extends StatefulWidget {
   const PremiumScreen({super.key});
 
@@ -42,6 +45,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
   int _selectedPlanIndexVal = 0;
   bool _isProcessingVal = false;
   bool _paymentCompletedVal = false;
+  PaymentMethod _selectedPaymentMethod = PaymentMethod.razorpay;
   bool? _paymentSuccessVal;
   String? _errorMessageVal;
   String? _transactionIdVal;
@@ -95,6 +99,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
     _confettiController = ConfettiController(
       duration: const Duration(seconds: 3),
     );
+    if (!InAppPurchaseService.isUserInIndia) {
+      _selectedPaymentMethod = PaymentMethod.googlePlay;
+    }
     _paymentService.init(
       onSuccess: _handlePaymentSuccess,
       onFailure: _handlePaymentFailure,
@@ -434,6 +441,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
   /// original four `Spacer`/`Spacer(flex: 2)` had), since flexible gaps
   /// cannot be used inside a scrollable's unbounded main axis.
   Widget _buildScrollableBody() {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: Column(
@@ -447,12 +455,64 @@ class _PremiumScreenState extends State<PremiumScreen> {
           SizedBox(height: 24.h),
           const ModernFeatureBar(),
           SizedBox(height: 32.h),
+          _buildPaymentMethodSelector(isDark),
           _buildCTAButton(),
           SizedBox(height: 12.h),
           TextButton(
-            onPressed: () {
+            onPressed: () async {
               di.sl<HapticService>().selection();
-              InAppPurchaseService.instance.restorePurchases();
+              if (InAppPurchaseService.shouldUseIAP) {
+                _isProcessingVal = true;
+                _updateState();
+                
+                final iap = InAppPurchaseService.instance;
+                iap.onPurchaseRestored = () {
+                  if (mounted) {
+                    context.read<AuthBloc>().add(const AuthReloadUser());
+                    _isProcessingVal = false;
+                    _updateState();
+                    CustomSnackBar.show(
+                      context: context,
+                      message: context.tr(
+                        'premium.restore_success',
+                        fallback: 'Purchases restored successfully.',
+                      ),
+                      type: CustomSnackBarType.success,
+                    );
+                  }
+                };
+                iap.onPurchaseError = (error) {
+                  if (mounted) {
+                    _isProcessingVal = false;
+                    _updateState();
+                    CustomSnackBar.show(
+                      context: context,
+                      message: error,
+                      type: CustomSnackBarType.error,
+                    );
+                  }
+                };
+                
+                await iap.restorePurchases();
+                
+                // If there are no past purchases, the stream won't emit anything.
+                // We should timeout the loading state just in case.
+                Future.delayed(const Duration(seconds: 5), () {
+                  if (mounted && _isProcessingVal) {
+                    _isProcessingVal = false;
+                    _updateState();
+                  }
+                });
+              } else {
+                 CustomSnackBar.show(
+                  context: context,
+                  message: context.tr(
+                    'premium.restore_not_supported',
+                    fallback: 'Restore is only available for Google Play purchases.',
+                  ),
+                  type: CustomSnackBarType.info,
+                );
+              }
             },
             child: Text(
               context.tr(
@@ -594,22 +654,195 @@ class _PremiumScreenState extends State<PremiumScreen> {
     );
   }
 
+  Widget _buildPaymentMethodSelector(bool isDark) {
+    if (!InAppPurchaseService.isUserInIndia) return const SizedBox.shrink();
+
+    return Padding(
+      padding: EdgeInsets.only(bottom: 24.h),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 4.w),
+            child: Text(
+              context.tr('premium.select_payment_method', fallback: 'PAYMENT METHOD'),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                color: isDark ? Colors.white70 : AppColors.slate500,
+                fontSize: 11.sp,
+                fontWeight: FontWeight.w800,
+                letterSpacing: 1.5,
+              ),
+            ),
+          ),
+          SizedBox(height: 12.h),
+          Container(
+            decoration: BoxDecoration(
+              color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
+              borderRadius: BorderRadius.circular(20.r),
+              border: Border.all(
+                color: isDark ? Colors.white.withValues(alpha: 0.1) : AppColors.slate200,
+                width: 1,
+              ),
+              boxShadow: isDark ? [] : [
+                BoxShadow(
+                  color: AppColors.slate200.withValues(alpha: 0.5),
+                  blurRadius: 10,
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
+            child: Column(
+              children: [
+                _buildPaymentTile(
+                  isDark: isDark,
+                  method: PaymentMethod.razorpay,
+                  title: 'UPI / Credit Card',
+                  subtitle: 'Zero extra platform fees',
+                  icon: Icons.account_balance_wallet_rounded,
+                  iconColor: AppColors.violet500,
+                  isFirst: true,
+                  isLast: false,
+                ),
+                Divider(
+                  height: 1,
+                  thickness: 1,
+                  color: isDark ? Colors.white.withValues(alpha: 0.05) : AppColors.slate100,
+                  indent: 56.w,
+                ),
+                _buildPaymentTile(
+                  isDark: isDark,
+                  method: PaymentMethod.googlePlay,
+                  title: 'Google Play Billing',
+                  subtitle: 'Includes local taxes & fees',
+                  icon: Icons.play_arrow_rounded,
+                  iconColor: AppColors.emerald500,
+                  isFirst: false,
+                  isLast: true,
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildPaymentTile({
+    required bool isDark,
+    required PaymentMethod method,
+    required String title,
+    required String subtitle,
+    required IconData icon,
+    required Color iconColor,
+    required bool isFirst,
+    required bool isLast,
+  }) {
+    final isSelected = _selectedPaymentMethod == method;
+    return GestureDetector(
+      onTap: () {
+        if (!isSelected) {
+          di.sl<HapticService>().selection();
+          setState(() {
+            _selectedPaymentMethod = method;
+          });
+        }
+      },
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
+        decoration: BoxDecoration(
+          color: isSelected ? AppColors.indigo500.withValues(alpha: 0.15) : Colors.transparent,
+          borderRadius: BorderRadius.vertical(
+            top: isFirst ? Radius.circular(20.r) : Radius.zero,
+            bottom: isLast ? Radius.circular(20.r) : Radius.zero,
+          ),
+        ),
+        child: Row(
+          children: [
+            Container(
+              padding: EdgeInsets.all(8.r),
+              decoration: BoxDecoration(
+                color: iconColor.withValues(alpha: 0.15),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(icon, color: iconColor, size: 20.sp),
+            ),
+            SizedBox(width: 16.w),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: isDark ? Colors.white : AppColors.slate900,
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  SizedBox(height: 2.h),
+                  Text(
+                    subtitle,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: isDark ? Colors.white60 : AppColors.slate500,
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            if (isSelected)
+              Container(
+                padding: EdgeInsets.all(4.r),
+                decoration: const BoxDecoration(
+                  color: AppColors.indigo500,
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(Icons.check_rounded, color: Colors.white, size: 14.sp),
+              )
+            else
+              Container(
+                width: 22.r,
+                height: 22.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: isDark ? Colors.white30 : AppColors.slate300,
+                    width: 2,
+                  ),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+
   Widget _buildCTAButton() {
     final selectedPlan = _activePlansVal[_selectedPlanIndexVal];
+    double displayPrice = selectedPlan.price;
+    if (_selectedPaymentMethod == PaymentMethod.googlePlay) {
+      displayPrice = displayPrice * 1.30; // 30% Google Play markup
+    }
+
     final priceFormatted = NumberFormat.simpleCurrency(
       locale: Localizations.localeOf(context).toString(),
       name: selectedPlan.currency,
       decimalDigits: 0,
-    ).format(selectedPlan.price);
+    ).format(displayPrice);
 
-    final ctaLabel = _isProcessingVal
+    final leftText = _isProcessingVal
         ? context.tr('premium.cta_processing', fallback: 'Processing...')
-        : '${context.tr('premium.cta_activate', fallback: 'Activate Premium')} — $priceFormatted';
+        : context.tr('premium.cta_continue', fallback: 'Continue');
 
     return Semantics(
       button: true,
       enabled: !_isProcessingVal,
-      label: ctaLabel,
+      label: leftText,
       child: ScaleButton(
         onTap: _isProcessingVal ? null : _onActivatePressed,
         child: Container(
@@ -635,33 +868,42 @@ class _PremiumScreenState extends State<PremiumScreen> {
               ),
             ],
           ),
-          child: Center(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Flexible(
-                  child: Text(
-                    ctaLabel,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: Colors.white,
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: 1,
-                    ),
+                Text(
+                  leftText,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    color: Colors.white,
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w900,
+                    letterSpacing: 1,
                   ),
                 ),
-                if (!_isProcessingVal) ...[
-                  SizedBox(width: 10.w),
-                  const Icon(
-                    Icons.arrow_forward_ios_rounded,
-                    color: Colors.white,
-                    size: 16,
+                if (!_isProcessingVal)
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        priceFormatted,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          color: Colors.white.withValues(alpha: 0.9),
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                      SizedBox(width: 8.w),
+                      const Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: Colors.white,
+                        size: 16,
+                      ),
+                    ],
                   ),
-                ],
               ],
             ),
           ),
@@ -697,7 +939,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
         return;
       }
 
-      if (InAppPurchaseService.shouldUseIAP) {
+      if (_selectedPaymentMethod == PaymentMethod.googlePlay) {
         String productId;
         switch (plan.id) {
           case 'weekly':
@@ -722,13 +964,6 @@ class _PremiumScreenState extends State<PremiumScreen> {
             try {
               final user = context.read<AuthBloc>().state.user;
               if (user != null) {
-                final selectedPlan = _activePlansVal[_selectedPlanIndexVal];
-                await _paymentService.upgradeToPremium(
-                  orderId: purchase.purchaseID ?? '',
-                  paymentId: purchase.purchaseID ?? '',
-                  signature: 'iap_verified',
-                  days: selectedPlan.days,
-                );
                 if (mounted) {
                   context.read<AuthBloc>().add(const AuthReloadUser());
                   di.sl<HapticService>().success();
