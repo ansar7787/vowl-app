@@ -4,9 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 
 import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/illustration_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
+  static const Color color06b6d4 = Color(0xFF06B6D4);
   static const Color coloreab308 = Color(0xFFEAB308);
 }
 
@@ -40,7 +42,7 @@ class ModernFeatureBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            context.tr('premium.whats_included', fallback: "Everything you get"),
+            context.tr('premium.whats_included', fallback: "What you get"),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 18.sp,
@@ -48,100 +50,48 @@ class ModernFeatureBar extends StatelessWidget {
               color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
-          SizedBox(height: 24.h),
-          
-          _buildGroupedFeature(
-            context,
-            icon: LucideIcons.brainCircuit,
-            title: context.tr('premium.group_ai_title', fallback: 'Complete AI Suite'),
-            subtitle: context.tr(
-              'premium.group_ai_desc', 
-              fallback: 'Unlimited Smart Reply, Photo Vocabulary, Scan & Learn, and Offline AI Translations.'
-            ),
-            color: AppColors.violet500,
-            isDark: isDark,
-          ),
-          SizedBox(height: 24.h),
-          
-          _buildGroupedFeature(
-            context,
-            icon: LucideIcons.shieldCheck,
-            title: context.tr('premium.group_focus_title', fallback: 'Pure Focus Mode'),
-            subtitle: context.tr(
-              'premium.group_focus_desc', 
-              fallback: 'Zero interruptions with a 100% Ad-Free experience and full Anywhere Offline Mode.'
-            ),
-            color: AppColors.emerald500,
-            isDark: isDark,
-          ),
-          SizedBox(height: 24.h),
-
-          _buildGroupedFeature(
-            context,
-            icon: LucideIcons.crown,
-            title: context.tr('premium.group_vip_title', fallback: 'Ultimate VIP Access'),
-            subtitle: context.tr(
-              'premium.group_vip_desc', 
-              fallback: 'Unlock all Vaults instantly, claim 100 free coins daily, and flaunt Golden VIP Badges.'
-            ),
-            color: _LocalPalette.coloreab308,
-            isDark: isDark,
-          ),
+          SizedBox(height: 20.h),
+          _buildListFeature(context, icon: LucideIcons.bot, title: context.tr('premium.feature_smart_reply', fallback: 'AI Smart Reply'), color: IllustrationColors.brightBlue),
+          _buildListFeature(context, icon: LucideIcons.camera, title: context.tr('premium.feature_photo_vocab', fallback: 'Photo Vocabulary'), color: AppColors.teal500),
+          _buildListFeature(context, icon: LucideIcons.scan, title: context.tr('premium.feature_scan_learn', fallback: 'Scan & Learn Documents'), color: AppColors.indigo500),
+          _buildListFeature(context, icon: LucideIcons.sparkles, title: context.tr('premium.feature_translations', fallback: 'Offline AI Translations'), color: AppColors.rose500),
+          _buildListFeature(context, icon: LucideIcons.shieldCheck, title: context.tr('premium.feature_zero_ads', fallback: 'No Ads (100% Ad-Free)'), color: AppColors.emerald500),
+          _buildListFeature(context, icon: LucideIcons.wifiOff, title: context.tr('premium.feature_play_offline', fallback: 'Play Offline Anywhere'), color: AppColors.slate500),
+          _buildListFeature(context, icon: LucideIcons.unlock, title: context.tr('premium.feature_unlimited_levels', fallback: 'Unlock All Difficulty Vaults'), color: _LocalPalette.color06b6d4),
+          _buildListFeature(context, icon: LucideIcons.gift, title: context.tr('premium.feature_vip_loot', fallback: '100 Free Bonus Coins Daily'), color: IllustrationColors.vibrantPink),
+          _buildListFeature(context, icon: LucideIcons.award, title: context.tr('premium.feature_vip_badges', fallback: 'Exclusive VIP Badges'), color: _LocalPalette.coloreab308, isLast: true),
         ],
       ),
     );
   }
 
-  Widget _buildGroupedFeature(
+  Widget _buildListFeature(
     BuildContext context, {
     required IconData icon,
     required String title,
-    required String subtitle,
     required Color color,
-    required bool isDark,
+    bool isLast = false,
   }) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          padding: EdgeInsets.all(12.r),
-          decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.15),
-            shape: BoxShape.circle,
-            border: Border.all(
-              color: color.withValues(alpha: 0.3),
+    return Padding(
+      padding: EdgeInsets.only(bottom: isLast ? 0 : 14.h),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Icon(icon, color: color, size: 22.r),
+          SizedBox(width: 14.w),
+          Expanded(
+            child: Text(
+              title,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 15.sp,
+                fontWeight: FontWeight.w500,
+                color: Theme.of(context).colorScheme.onSurface,
+              ),
             ),
           ),
-          child: Icon(icon, color: color, size: 24.r),
-        ),
-        SizedBox(width: 16.w),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w800,
-                  color: Theme.of(context).colorScheme.onSurface,
-                ),
-              ),
-              SizedBox(height: 4.h),
-              Text(
-                subtitle,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 13.5.sp,
-                  height: 1.4,
-                  color: isDark ? Colors.white70 : Colors.black87,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
