@@ -19,50 +19,58 @@ class ModernFeatureBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.all(24.r),
-      decoration: BoxDecoration(
-        color: isDark ? AppColors.slate900.withValues(alpha: 0.5) : Colors.white,
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(
-          color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05),
-          width: 1.5,
-        ),
-        boxShadow: [
-          if (!isDark)
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.03),
-              blurRadius: 15,
-              offset: const Offset(0, 8),
-            ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            context.tr('premium.whats_included', fallback: "What you get"),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: EdgeInsets.only(left: 8.w, bottom: 12.h),
+          child: Text(
+            context.tr('premium.whats_included', fallback: "PREMIUM PERKS"),
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 18.sp,
-              fontWeight: FontWeight.w800,
-              color: Theme.of(context).colorScheme.onSurface,
+              fontSize: 13.sp,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 1.2,
+              color: isDark ? Colors.white54 : Colors.black54,
             ),
           ),
-          SizedBox(height: 20.h),
-          _buildListFeature(context, icon: LucideIcons.bot, title: context.tr('premium.feature_smart_reply', fallback: 'AI Smart Reply'), color: IllustrationColors.brightBlue),
-          _buildListFeature(context, icon: LucideIcons.camera, title: context.tr('premium.feature_photo_vocab', fallback: 'Photo Vocabulary'), color: AppColors.teal500),
-          _buildListFeature(context, icon: LucideIcons.scan, title: context.tr('premium.feature_scan_learn', fallback: 'Scan & Learn Documents'), color: AppColors.indigo500),
-          _buildListFeature(context, icon: LucideIcons.sparkles, title: context.tr('premium.feature_translations', fallback: 'Offline AI Translations'), color: AppColors.rose500),
-          _buildListFeature(context, icon: LucideIcons.shieldCheck, title: context.tr('premium.feature_zero_ads', fallback: 'No Ads (100% Ad-Free)'), color: AppColors.emerald500),
-          _buildListFeature(context, icon: LucideIcons.zap, title: context.tr('premium.feature_2x_speed', fallback: 'Enhanced Learning Tools'), color: AppColors.amber500),
-          _buildListFeature(context, icon: LucideIcons.wifiOff, title: context.tr('premium.feature_play_offline', fallback: 'Play Offline Anywhere'), color: AppColors.slate500),
-          _buildListFeature(context, icon: LucideIcons.unlock, title: context.tr('premium.feature_unlimited_levels', fallback: 'Unlock All Difficulty Vaults'), color: _LocalPalette.color06b6d4),
-          _buildListFeature(context, icon: LucideIcons.gift, title: context.tr('premium.feature_vip_loot', fallback: '100 Free Bonus Coins Daily'), color: IllustrationColors.vibrantPink),
-          _buildListFeature(context, icon: LucideIcons.award, title: context.tr('premium.feature_vip_badges', fallback: 'Exclusive VIP Badges'), color: _LocalPalette.coloreab308, isLast: true),
-        ],
-      ),
+        ),
+        Container(
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+          decoration: BoxDecoration(
+            color: isDark ? AppColors.slate900.withValues(alpha: 0.5) : Colors.white,
+            borderRadius: BorderRadius.circular(24.r),
+            border: Border.all(
+              color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05),
+              width: 1.5,
+            ),
+            boxShadow: [
+              if (!isDark)
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.03),
+                  blurRadius: 15,
+                  offset: const Offset(0, 8),
+                ),
+            ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _buildListFeature(context, icon: LucideIcons.bot, title: context.tr('premium.feature_smart_reply', fallback: 'AI Smart Reply'), color: IllustrationColors.brightBlue),
+              _buildListFeature(context, icon: LucideIcons.camera, title: context.tr('premium.feature_photo_vocab', fallback: 'Photo Vocabulary'), color: AppColors.teal500),
+              _buildListFeature(context, icon: LucideIcons.scan, title: context.tr('premium.feature_scan_learn', fallback: 'Scan & Learn Documents'), color: AppColors.indigo500),
+              _buildListFeature(context, icon: LucideIcons.sparkles, title: context.tr('premium.feature_translations', fallback: 'Offline AI Translations'), color: AppColors.rose500),
+              _buildListFeature(context, icon: LucideIcons.shieldCheck, title: context.tr('premium.feature_zero_ads', fallback: 'No Ads (100% Ad-Free)'), color: AppColors.emerald500),
+              _buildListFeature(context, icon: LucideIcons.zap, title: context.tr('premium.feature_2x_speed', fallback: 'Enhanced Learning Tools'), color: AppColors.amber500),
+              _buildListFeature(context, icon: LucideIcons.wifiOff, title: context.tr('premium.feature_play_offline', fallback: 'Play Offline Anywhere'), color: AppColors.slate500),
+              _buildListFeature(context, icon: LucideIcons.unlock, title: context.tr('premium.feature_unlimited_levels', fallback: 'Unlock All Difficulty Vaults'), color: _LocalPalette.color06b6d4),
+              _buildListFeature(context, icon: LucideIcons.gift, title: context.tr('premium.feature_vip_loot', fallback: '100 Free Bonus Coins Daily'), color: IllustrationColors.vibrantPink),
+              _buildListFeature(context, icon: LucideIcons.award, title: context.tr('premium.feature_vip_badges', fallback: 'Exclusive VIP Badges'), color: _LocalPalette.coloreab308, isLast: true),
+            ],
+          ),
+        ),
+      ],
     );
   }
 
@@ -74,18 +82,18 @@ class ModernFeatureBar extends StatelessWidget {
     bool isLast = false,
   }) {
     return Padding(
-      padding: EdgeInsets.only(bottom: isLast ? 0 : 14.h),
+      padding: EdgeInsets.only(bottom: isLast ? 0 : 12.h),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(icon, color: color, size: 22.r),
-          SizedBox(width: 14.w),
+          Icon(icon, color: color, size: 20.r),
+          SizedBox(width: 12.w),
           Expanded(
             child: Text(
               title,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 15.sp,
+                fontSize: 14.sp,
                 fontWeight: FontWeight.w500,
                 color: Theme.of(context).colorScheme.onSurface,
               ),
