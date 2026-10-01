@@ -23,18 +23,19 @@ class ModernFeatureBar extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.only(left: 8.w, bottom: 12.h),
+          padding: EdgeInsets.symmetric(horizontal: 4.w),
           child: Text(
             context.tr('premium.whats_included', fallback: "PREMIUM PERKS"),
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 13.sp,
-              fontWeight: FontWeight.w700,
-              letterSpacing: 1.2,
-              color: isDark ? Colors.white54 : Colors.black54,
+              color: isDark ? Colors.white70 : AppColors.slate500,
+              fontSize: 11.sp,
+              fontWeight: FontWeight.w800,
+              letterSpacing: 1.5,
             ),
           ),
         ),
+        SizedBox(height: 12.h),
         Container(
           width: double.infinity,
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
