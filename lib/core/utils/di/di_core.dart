@@ -40,7 +40,7 @@ import 'package:vowl/core/utils/ml_services/image_labeling_service.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_audio_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/features/auth/domain/usecases/get_current_user.dart';
+
 // FIX (HIGH-3): AppLogger imported so it can be registered in the DI graph.
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/services/in_app_purchase_service.dart';
