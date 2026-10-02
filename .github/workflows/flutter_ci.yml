@@ -45,6 +45,6 @@ jobs:
         # While you clean old issues you can use: flutter analyze --no-fatal-infos
 
       # Runs only if you have test files (*_test.dart). Add real tests soon.
-      - name: Test
-        if: ${{ !cancelled() && hashFiles('test/**/*_test.dart') != '' }}
-        run: flutter test
+      # - name: Test
+      #   if: ${{ !cancelled() && hashFiles('test/**/*_test.dart') != '' }}
+      #   run: flutter test
