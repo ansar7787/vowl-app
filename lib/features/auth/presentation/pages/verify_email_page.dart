@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/auth_error_handler.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -118,9 +117,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
 
   Color _bgColor(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = context.select<ThemeCubit, bool>(
-      (c) => c.state.isMidnight,
-    );
+    final isMidnight = (Theme.of(context).brightness == Brightness.dark && Theme.of(context).scaffoldBackgroundColor == Colors.black);
     return isMidnight
         ? _LocalPalette.color000000
         : (isDark ? AppColors.slate900 : AppColors.slate50);

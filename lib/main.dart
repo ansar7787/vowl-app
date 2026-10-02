@@ -424,11 +424,7 @@ class _AppShell extends StatelessWidget {
                     fallback: 'Securing Data...',
                   ),
                   child: Container(
-                    color: isMidnight
-                        ? Colors.black
-                        : (isActuallyDark
-                              ? AppTheme.scaffoldDark
-                              : AppTheme.scaffoldLight),
+                    color: Theme.of(context).scaffoldBackgroundColor,
                     child: child!,
                   ),
                 );

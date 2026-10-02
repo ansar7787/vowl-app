@@ -14,7 +14,6 @@ import 'package:confetti/confetti.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
@@ -58,7 +57,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
+    final isMidnight = (Theme.of(context).brightness == Brightness.dark && Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final bgColor = isMidnight
         ? Colors.black
         : (isDark ? _LocalPalette.color1e3a8a : AppColors.slate50);

@@ -10,7 +10,6 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/profile/presentation/bloc/trophy_room_cubit.dart';
 import 'package:vowl/core/theme/category_colors.dart';
 import 'package:vowl/core/theme/app_colors.dart';
@@ -46,7 +45,7 @@ class _TrophyRoomView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
+    final isMidnight = isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     return Scaffold(
       backgroundColor: isMidnight ? _LocalPalette.color020617 : null,

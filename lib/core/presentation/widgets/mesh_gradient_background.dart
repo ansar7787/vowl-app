@@ -1,10 +1,8 @@
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/theme/theme_cubit.dart';
 
 // ─── Pre-computed color palettes ────────────────────────────────────────────
 // All colors are compile-time constants — zero runtime allocation.
@@ -78,18 +76,14 @@ class MeshGradientBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = context.select<ThemeCubit, bool>(
-      (cubit) => cubit.state.isMidnight,
-    );
+    final isMidnight = isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     return RepaintBoundary(
       child: Stack(
         children: [
           // 1. Base colour
           ColoredBox(
-            color: isMidnight
-                ? Colors.black
-                : (isDark ? AppColors.slate900 : AppColors.slate50),
+            color: Theme.of(context).scaffoldBackgroundColor,
             child: const SizedBox.expand(),
           ),
 

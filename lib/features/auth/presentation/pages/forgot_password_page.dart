@@ -1,4 +1,3 @@
-import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,7 +7,6 @@ import 'package:vowl/core/presentation/widgets/holographic_card.dart';
 import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
-import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/injection_container.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -17,11 +15,6 @@ import 'package:vowl/features/auth/presentation/widgets/forgot_password_widgets.
 import 'package:vowl/features/home/presentation/widgets/vowly_auth_companion.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/app_router.dart';
-
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color000000 = Color(0xFF000000);
-}
 
 // ---------------------------------------------------------------------------
 // Page — provides the dedicated [ForgotPasswordCubit]
@@ -103,13 +96,9 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
           },
         ),
       ],
-      child: BlocSelector<ThemeCubit, ThemeState, bool>(
-        selector: (themeState) => themeState.isMidnight,
-        builder: (context, isMidnight) {
-          final isDark = Theme.of(context).brightness == Brightness.dark;
-          final bgColor = isMidnight
-              ? _LocalPalette.color000000
-              : (isDark ? AppColors.slate900 : AppColors.slate50);
+      child: Builder(
+        builder: (context) {
+          final bgColor = Theme.of(context).scaffoldBackgroundColor;
 
           return BlocBuilder<ForgotPasswordCubit, ForgotPasswordState>(
             // Previously rebuilt this entire subtree (gradient background,
@@ -418,3 +407,4 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
     );
   }
 }
+

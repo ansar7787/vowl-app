@@ -15,7 +15,6 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_global_progres
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_category_grid.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_smart_mix_widget.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_zone_home_header.dart';
-import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
 import 'package:vowl/core/utils/age_gate_service.dart';
@@ -121,7 +120,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
       return const Scaffold(body: SafeArea(child: HomeShimmerLoading()));
     }
 
-    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
+    final isMidnight = (Theme.of(context).brightness == Brightness.dark && Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final bgColor = isMidnight
         ? Colors.black
         : (isDark ? AppColors.slate900 : AppColors.slate50);

@@ -1,20 +1,12 @@
-import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color020617 = Color(0xFF020617);
-}
 
 class MainWrapper extends StatelessWidget {
   const MainWrapper({required this.navigationShell, super.key});
@@ -24,12 +16,10 @@ class MainWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
+    final isMidnight = isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     return Scaffold(
-      backgroundColor: isMidnight
-          ? _LocalPalette.color020617
-          : (isDark ? AppColors.slate900 : Colors.white),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       extendBody: true,
       body: navigationShell,
       bottomNavigationBar: RepaintBoundary(
@@ -247,3 +237,4 @@ class MainWrapper extends StatelessWidget {
     );
   }
 }
+

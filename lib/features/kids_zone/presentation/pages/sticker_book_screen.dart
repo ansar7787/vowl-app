@@ -1,6 +1,5 @@
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
-import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -55,7 +54,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
 
   @override
   Widget build(BuildContext context) {
-    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
+    final isMidnight = (Theme.of(context).brightness == Brightness.dark && Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
 

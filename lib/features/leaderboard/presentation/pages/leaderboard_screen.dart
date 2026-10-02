@@ -19,7 +19,6 @@ import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_heade
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_podium.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_rank_card.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_rank_tile.dart';
-import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
 class LeaderboardScreen extends StatefulWidget {
@@ -50,9 +49,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     // FIX (MEDIUM-1): Use context.select instead of context.watch to scope
     // rebuilds to only the isMidnight boolean, not the entire ThemeCubit state.
-    final isMidnight = context.select<ThemeCubit, bool>(
-      (c) => c.state.isMidnight,
-    );
+    final isMidnight = (Theme.of(context).brightness == Brightness.dark && Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final bgColor = isMidnight
         ? Colors.black
         : (isDark ? AppColors.slate900 : Colors.white);

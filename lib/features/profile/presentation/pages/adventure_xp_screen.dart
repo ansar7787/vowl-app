@@ -7,7 +7,6 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/ad_reward_card.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -77,7 +76,7 @@ class AdventureXPScreen extends StatelessWidget {
       },
       child: Builder(
         builder: (context) {
-          final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
+          final isMidnight = (Theme.of(context).brightness == Brightness.dark && Theme.of(context).scaffoldBackgroundColor == Colors.black);
           final bgColor = isMidnight
               ? Colors.black
               : (isDark ? AppColors.slate900 : AppColors.slate50);

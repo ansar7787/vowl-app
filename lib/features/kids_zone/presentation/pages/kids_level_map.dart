@@ -16,7 +16,6 @@ import 'package:vowl/features/kids_zone/presentation/utils/kids_assets.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/story_service.dart';
 import 'package:vowl/core/presentation/widgets/story_dialogue_box.dart';
-import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_star_vault_bottom_sheet.dart';
 import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -352,9 +351,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
 
           // PERF: context.select instead of context.watch — only rebuild
           // when `isMidnight` actually changes, not on every ThemeCubit emission.
-          final isMidnight = context.select<ThemeCubit, bool>(
-            (cubit) => cubit.state.isMidnight,
-          );
+          final isMidnight = (Theme.of(context).brightness == Brightness.dark && Theme.of(context).scaffoldBackgroundColor == Colors.black);
           final bgColor = isMidnight
               ? Colors.black
               : (isDark

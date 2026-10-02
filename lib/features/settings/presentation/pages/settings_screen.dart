@@ -264,13 +264,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    // FIX (MEDIUM-1): context.select to scope rebuilds to isMidnight only.
-    final isMidnight = context.select<ThemeCubit, bool>(
-      (c) => c.state.isMidnight,
-    );
-    final bgColor = isMidnight
-        ? Colors.black
-        : (isDark ? AppColors.slate900 : AppColors.slate50);
+    final bgColor = Theme.of(context).scaffoldBackgroundColor;
 
     return ValueListenableBuilder<int>(
       valueListenable: _stateHash,

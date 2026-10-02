@@ -21,7 +21,6 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_layout.da
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_play_game.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_clean_activity.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_daily_care_card.dart';
-import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
@@ -322,7 +321,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
           },
           child: Builder(
             builder: (context) {
-              final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
+              final isMidnight = (Theme.of(context).brightness == Brightness.dark && Theme.of(context).scaffoldBackgroundColor == Colors.black);
               final isDark = Theme.of(context).brightness == Brightness.dark;
               final bgColor = isMidnight
                   ? Colors.black

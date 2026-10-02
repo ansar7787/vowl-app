@@ -8,7 +8,6 @@ import 'package:vowl/core/presentation/widgets/holographic_card.dart';
 import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
-import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/injection_container.dart';
@@ -18,11 +17,6 @@ import 'package:vowl/features/auth/presentation/bloc/login_cubit.dart';
 import 'package:vowl/features/auth/presentation/widgets/login_widgets.dart';
 import 'package:vowl/features/home/presentation/widgets/vowly_auth_companion.dart';
 import 'package:vowl/core/theme/app_colors.dart';
-
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color000000 = Color(0xFF000000);
-}
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -130,15 +124,10 @@ class _LoginViewState extends State<LoginView> {
           },
         ),
       ],
-      // Separate ThemeCubit watch from LoginCubit watch to prevent
-      // theme changes from triggering full LoginCubit rebuilds.
-      child: BlocSelector<ThemeCubit, ThemeState, bool>(
-        selector: (themeState) => themeState.isMidnight,
-        builder: (context, isMidnight) {
-          final isDark = Theme.of(context).brightness == Brightness.dark;
-          final bgColor = isMidnight
-              ? _LocalPalette.color000000
-              : (isDark ? AppColors.slate900 : AppColors.slate50);
+      // Theme changes trigger rebuilds automatically via MaterialApp
+      child: Builder(
+        builder: (context) {
+          final bgColor = Theme.of(context).scaffoldBackgroundColor;
 
           return BlocBuilder<LoginCubit, LoginState>(
             buildWhen: (previous, current) =>
@@ -447,3 +436,4 @@ class _LoginViewState extends State<LoginView> {
     );
   }
 }
+

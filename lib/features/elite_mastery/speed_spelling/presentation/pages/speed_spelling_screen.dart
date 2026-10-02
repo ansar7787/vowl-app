@@ -1,5 +1,4 @@
 import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -156,7 +155,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
+    final isMidnight = (Theme.of(context).brightness == Brightness.dark && Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final theme = LevelThemeHelper.getTheme(
       widget.gameType.name,
       level: widget.level,
