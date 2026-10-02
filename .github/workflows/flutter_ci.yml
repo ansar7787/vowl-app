@@ -24,8 +24,7 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: stable
-          # Use the SAME version as on your PC. Run `flutter --version` and write the number here:
-          # flutter-version: "3.XX.X"
+          flutter-version: "3.38.7"
           cache: true
 
       - name: Show Flutter and Dart versions
